@@ -1,0 +1,23 @@
+{
+  "version": "2.0",
+  "note": "情绪→Live2D 表情/动作映射（按表情名与动作组名，模型无关）。运行期由 live2d.js 解析。15 类：原 7 类 + 新增 8 类细分（expression 沿用父类、motion 细分）。",
+  "emotions": {
+    "happy":    { "expression": "e_weixiao", "motion": "b_diantou", "priority": 2 },
+    "sad":      { "expression": "e_nanguo",  "motion": "t_nanguo",  "priority": 2 },
+    "angry":    { "expression": "e_yansu",   "motion": "b_yaotou",  "priority": 3 },
+    "anxious":  { "expression": "e_yihuo",   "motion": "b_shanzi",  "priority": 2 },
+    "surprise": { "expression": "e_yihuo",   "motion": "t_yihuo",   "priority": 3 },
+    "fear":     { "expression": "e_yansu",   "motion": "b_zhelian", "priority": 3 },
+    "neutral":  { "expression": "e_idle",    "motion": "b_idle",    "priority": 1 },
+    "love":         { "expression": "e_weixiao", "motion": "t_weixiao",  "priority": 3 },
+    "grateful":     { "expression": "e_weixiao", "motion": "b_diantou",  "priority": 2 },
+    "excited":      { "expression": "e_weixiao", "motion": "b_liaofa",   "priority": 3 },
+    "disappointed": { "expression": "e_nanguo",  "motion": "b_yaotou",  "priority": 3 },
+    "lonely":       { "expression": "e_nanguo",  "motion": "b_zhelian", "priority": 2 },
+    "embarrassed":  { "expression": "e_yihuo",   "motion": "b_zhelian", "priority": 2 },
+    "confused":     { "expression": "e_yihuo",   "motion": "b_shanzi",  "priority": 2 },
+    "sleepy":       { "expression": "e_idle",    "motion": "b_diantou", "priority": 1 }
+  },
+  "default": { "expression": "e_idle", "motion": "b_idle", "priority": 1 },
+  "score_threshold": 0.3
+}

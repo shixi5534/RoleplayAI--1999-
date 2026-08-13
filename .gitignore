@@ -1,0 +1,27 @@
+# 依赖与虚拟环境
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 数据与本地配置（运行时数据、敏感配置不入库）
+data/
+src/data/
+.env
+.env.*.local
+
+# 运行日志
+logs/
+
+# 测试缓存
+.pytest_cache/
+
+# 编辑器
+.idea/
+.vscode/
+
+# 临时/备份文件
+*.bak
+*.bak-*
+*.tmp
+*.log

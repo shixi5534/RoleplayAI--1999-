@@ -1,0 +1,18 @@
+# 运行时依赖（锁定版本，保证可复现构建）
+fastapi==0.115.6
+uvicorn[standard]==0.51.0
+pydantic==2.10.3
+pydantic-settings==2.14.2
+httpx==0.28.1
+starlette==0.40.0
+
+# 可选：联网 RAG 的 chroma 向量库
+# chromadb>=0.5
+
+# 可选：PDF/DOCX 资料导入
+# pypdf>=4.0
+# python-docx>=1.1
+
+# 开发 / 测试依赖
+# pytest==9.1.1
+# pytest-asyncio==1.4.0

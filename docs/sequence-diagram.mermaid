@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant FE as 前端 chat.js
+    participant API as api/chat.py
+    participant ORC as ChatOrchestrator
+    participant EM as FallbackChainDetector
+    participant LLM as LLMEmotionDetector
+    participant CLS as LocalClassifierDetector
+    participant KW as KeywordEmotionDetector
+    participant GEN as LLMPort(对话生成)
+
+    FE->>API: POST /chat/stream
+    API->>ORC: stream(req)
+    par 并行
+        ORC->>EM: await detect(text)
+        EM->>LLM: await detect(text)
+        alt LLM 可用且非中性
+            LLM-->>EM: EmotionInfo(llm, score>=thr)
+        else LLM 超时/异常/低置信
+            EM->>CLS: await detect(text)
+            alt 分类器可用
+                CLS-->>EM: EmotionInfo(classifier, score>=thr)
+            else 依赖缺失/低置信
+                EM->>KW: await detect(text)
+                KW-->>EM: EmotionInfo(keyword) 永不失败
+            end
+        end
+        EM-->>ORC: EmotionInfo(+source)
+        ORC->>GEN: await generate_stream(...)
+    end
+    ORC-->>API: yield {type:emotion, emotion, score}
+    loop 逐 token
+        ORC-->>API: yield {type:chunk, text}
+    end
+    ORC-->>API: yield {type:done, follow_ups, live2d}
+    API-->>FE: SSE emotion→chunk*→done

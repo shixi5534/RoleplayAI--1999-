@@ -1,0 +1,85 @@
+```mermaid
+classDiagram
+    class ProfileEntry {
+        +str type  # preference|habit|important_date|fact|correction
+        +str key
+        +str value
+        +float importance
+        +float confidence
+        +int source_round
+        +str updated_at
+        +int versions
+        +list[str] history
+        +dedup_key() str
+        +to_meta() dict
+    }
+    class UserProfile {
+        +KnowledgeBase _kb
+        +str _ns
+        +async upsert(entries, source_round) int
+        +async retrieve(query, top_k) list~RetrievedChunk~
+        +check_reminders(today) list~str~
+        +count() int
+        +list_entries() list~ProfileEntry~
+        -_find_exact(entry) dict|None
+        -_find_by_key(key) dict|None
+        -_find_synonym(entry) dict|None
+        -_apply_correction(entry) bool
+        -_prune_to_max() int
+        -_to_text(entry) str
+    }
+    class KnowledgeBase {
+        +async aadd(texts, metadatas, namespace) list~str~
+        +async asearch(query, top_k, namespaces, min_score) list~RetrievedChunk~
+        +remove(namespace, item_id) bool
+        +filter_remove(namespace, pred) int
+        +list_items(namespace) list~dict~
+        +count(namespace) dict
+    }
+    class RuleProfileExtractor {
+        +extract(turns) list~ProfileEntry~
+    }
+    class LLMProfileExtractor {
+        +LLMPort _llm
+        +float _timeout
+        +async extract(turns) list~ProfileEntry~
+        -_parse_json(raw) list~ProfileEntry~
+    }
+    class extract_profile_entries {
+        +async (turns, rule, llm, llm_available) list~ProfileEntry~
+    }
+    class LongTermMemory {
+        +async consolidate(session_id, turns, character_id) int
+        +async retrieve(query, top_k, character_id) list~RetrievedChunk~
+    }
+    class KnowledgeServices {
+        +KnowledgeBase knowledge_base
+        +CharacterStore character_store
+        +object web_search
+        +LongTermMemory long_term_memory
+        +UserProfile user_profile
+    }
+    class ChatOrchestrator {
+        +UserProfile _user_profile
+        +bool _enable_profile
+        +int _profile_extract_every
+        +int _profile_top_k
+        +dict _profile_cursor
+        +async _prepare(req) tuple
+        +async _persist(req, reply, character_id)
+    }
+    class persona_prompt {
+        +build_roleplay_prompt(card_json, fallback_prompt, default_card, message, chunks, card, profile_chunks) str
+        +build_profile_context(chunks, max_chars) str
+        +build_rag_context(chunks, max_chars) str
+    }
+    KnowledgeBase <-- UserProfile : 组合(_kb)
+    UserProfile <-- KnowledgeServices : user_profile
+    UserProfile ..> ProfileEntry : 输入/输出
+    RuleProfileExtractor ..> ProfileEntry : 产出
+    LLMProfileExtractor ..> ProfileEntry : 产出
+    extract_profile_entries ..> ProfileEntry : 合并产出
+    ChatOrchestrator --> UserProfile : _user_profile
+    ChatOrchestrator --> persona_prompt : build_roleplay_prompt
+    LongTermMemory --> KnowledgeBase : 并列(均挂 KnowledgeServices)
+```

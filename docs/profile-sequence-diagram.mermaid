@@ -1,0 +1,39 @@
+```mermaid
+sequenceDiagram
+    participant FE as 前端 chat.js
+    participant API as api/chat.py
+    participant ORC as ChatOrchestrator
+    participant PRO as UserProfile
+    participant KB as KnowledgeBase
+    participant EXT as Rule+LLM Extractor
+    participant GEN as LLMPort(对话生成)
+
+    FE->>API: POST /chat/stream
+    API->>ORC: stream(req)
+    ORC->>ORC: _prepare(req)（会话锁外）
+    par 并行 gather（第三路 profile）
+        ORC->>PRO: await retrieve(message, top_k=5)
+        PRO->>KB: asearch(query, namespaces=["profile"])
+        KB-->>PRO: chunks（score×衰减×importance×confidence 排序）
+        PRO-->>ORC: profile_chunks
+        ORC->>PRO: check_reminders()
+        PRO-->>ORC: 提醒行（±3天，置顶）
+        ORC->>GEN: (emotion/rag 并行路，略)
+    end
+    ORC->>ORC: build_roleplay_prompt(..., profile_chunks) → 人设/语气/【用户资料】/【角色资料库】
+    ORC->>GEN: await generate_stream(system=..., user=..., history=...)
+    loop 逐 token
+        GEN-->>ORC: chunk
+        ORC-->>API: yield {type:chunk, text}
+    end
+    ORC->>ORC: _persist(req, reply, cid)（会话锁内）
+    alt 轮数 % profile_extract_every == 0 且游标后有新轮次
+        ORC->>EXT: extract_profile_entries(turns[cursor:])
+        EXT-->>ORC: entries（规则+LLM合并，LLM不可用仅规则）
+        ORC->>PRO: await upsert(entries, source_round)
+        PRO->>KB: list_items/remove/aadd（去重/同义/correction/上限淘汰）
+        ORC->>ORC: 推进 _profile_cursor
+    end
+    ORC-->>API: yield {type:done, follow_ups, live2d}
+    API-->>FE: SSE emotion→chunk*→done
+```
