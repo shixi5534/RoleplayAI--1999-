@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roleplay-ai"
+version = "0.1.0"
+description = "角色扮演AI整合项目：RAG + 情感编排 + Live2D 表现层对接（Clean Architecture）"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.51.0",
+    "pydantic==2.10.3",
+    "pydantic-settings==2.14.2",
+    "httpx==0.28.1",
+    "starlette==0.40.0",
+    "python-multipart>=0.0.6",
+]
+
+[project.optional-dependencies]
+rag = ["chromadb>=0.5"]
+docs = ["pypdf>=4.0", "python-docx>=1.1"]
+voice = ["edge-tts>=6.1", "faster-whisper>=1.0"]
+emotion = ["numpy>=1.26"]
+dev = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "httpx==0.28.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

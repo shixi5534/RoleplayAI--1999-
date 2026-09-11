@@ -1,0 +1,171 @@
+/*
+ * pet-subtitle.css —— 宠物语音双语字幕（仿《重返未来：1999》游戏内台词字幕）
+ *
+ * 视觉基线取自游戏内剧情字幕：
+ *   - 深棕黑半透明底 + 金棕细边框 + 左侧金色竖线（Art Deco 装饰感）
+ *   - 中文主行：衬线字体、米白色（游戏内台词正文的暖白）
+ *   - 英文副行：衬线、浅金（弱化层级，同时满足双语同显）
+ *   - 右上角「中/EN」配音切换徽章（金棕描边圆片）
+ * 独立文件：加载失败只影响字幕外观，不影响语音播放。
+ */
+
+#pet-subtitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  /* P0-2：全宽基准 + fit-content + auto 边距居中，
+     替代 left:50% + translateX(-50%)（shrink-to-fit 时只有半窗宽） */
+  margin-inline: auto;
+  width: fit-content;
+  transform: translateY(6px);
+  z-index: 24; /* P1-12：低于菜单/设置抽屉（26~30），字幕不遮挡菜单 */
+  max-width: 92%;
+  box-sizing: border-box;
+  padding: 7px 12px;
+  background: rgba(22, 17, 12, 0.88);
+  border: 1px solid rgba(179, 146, 94, 0.45);
+  border-left: 3px solid rgba(201, 168, 106, 0.85);
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 260ms ease, bottom 260ms ease;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN",
+    "STZhongsong", "SimSun", serif;
+}
+#pet-subtitle.show {
+  opacity: 1;
+  bottom: 64px; /* P1-12：显示时上移，避让宠物脚部区域 */
+  transform: translateY(0);
+  pointer-events: auto;   /* 显示时允许点击语言徽章 */
+}
+
+/* 聊天页适配：字幕/徽章挂在 .stage 内（index.html），显示时再抬高，
+   避开舞台底部的参数 HUD（两行 ~80px 高 + 12px 底距 + 间距余量） */
+.stage #pet-subtitle.show {
+  bottom: 134px;
+}
+
+/* 顶部装饰角线（游戏字幕条上缘的双线金饰） */
+#pet-subtitle::before {
+  content: "";
+  position: absolute;
+  top: 2px; left: 10px; right: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent,
+    rgba(201, 168, 106, 0.5) 18%, rgba(201, 168, 106, 0.5) 82%, transparent);
+  pointer-events: none;
+}
+
+#pet-subtitle .sub-zh {
+  color: #f2ead6;                       /* 游戏内台词暖白 */
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+#pet-subtitle .sub-en {
+  color: #c9b78c;                       /* 英文弱化为浅金 */
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.4;
+  font-style: italic;
+  margin-top: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+#pet-subtitle .sub-en:empty { display: none; }
+
+/* 配音语言切换徽章：常驻窗口右上角，独立于字幕条——
+   不播放语音时也能随时切换中/英配音（旧版藏在字幕条上、仅播放时可见，已废弃） */
+#pet-lang-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 25; /* 高于字幕条(24)，低于菜单/设置抽屉(26~30) */
+  padding: 2px 9px;
+  font-size: 10px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.06em;
+  color: #d8c49a;
+  background: rgba(36, 28, 19, 0.92);
+  border: 1px solid rgba(201, 168, 106, 0.65);
+  border-radius: 9px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  transition: color 160ms ease, background 160ms ease;
+}
+#pet-lang-badge:hover {
+  color: #f2ead6;
+  background: #3a2d1c;
+}
+/* 徽章上的当前语言高亮点 */
+#pet-lang-badge b { color: #f2ead6; font-weight: 600; }
+#pet-lang-badge i { font-style: normal; opacity: 0.55; }
+
+/* Live2D 位置锁定按钮（聊天页舞台右上角，与语言徽章并排）：
+   锁定后拖拽禁用、双击不重置——连续点击角色不再误触复位 */
+#live2d-lock-btn {
+  position: absolute;
+  top: 6px;
+  right: 64px;   /* 语言徽章(约50px宽)左侧 */
+  z-index: 25;
+  padding: 2px 9px;
+  font-size: 10px;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.06em;
+  color: #d8c49a;
+  background: rgba(36, 28, 19, 0.92);
+  border: 1px solid rgba(201, 168, 106, 0.65);
+  border-radius: 9px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  transition: color 160ms ease, background 160ms ease;
+}
+#live2d-lock-btn:hover {
+  color: #f2ead6;
+  background: #3a2d1c;
+}
+#live2d-lock-btn.locked {
+  color: #f2ead6;
+  background: #4a3a20;
+  border-color: rgba(230, 200, 130, 0.9);
+}
+
+/* ── v4 语音状态反馈样式 ── */
+/* 加载中：字幕 60% 透明 + 省略号提示（音频 loading 阶段） */
+#pet-subtitle.is-loading {
+  opacity: 0.6;
+}
+#pet-subtitle.is-loading .sub-zh::after {
+  content: " …";
+  color: #c9b78c;
+}
+/* 冷却被拒：回显上一句（60% 透明，700ms 后自动隐藏） */
+#pet-subtitle.is-replay {
+  opacity: 0.6;
+}
+/* 播放中：语言徽章呼吸光圈 */
+#pet-lang-badge.is-playing {
+  animation: pv-badge-breathe 1.6s ease-in-out infinite;
+}
+@keyframes pv-badge-breathe {
+  0%, 100% { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4),
+    0 0 0 0 rgba(201, 168, 106, 0.0); }
+  50% { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4),
+    0 0 8px 2px rgba(201, 168, 106, 0.45); }
+}
+/* 键盘焦点可见性（无障碍） */
+#pet-lang-badge:focus-visible,
+#live2d-lock-btn:focus-visible {
+  outline: 2px solid rgba(201, 168, 106, 0.85);
+  outline-offset: 1px;
+}
+/* 用户偏好减弱动效时关闭呼吸动画 */
+@media (prefers-reduced-motion: reduce) {
+  #pet-lang-badge.is-playing { animation: none; }
+}

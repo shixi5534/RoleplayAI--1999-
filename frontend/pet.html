@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <title>无名者 · 桌面宠物</title>
+  <link rel="stylesheet" href="./css/pet.css?v=1">
+  <link rel="stylesheet" href="./css/pet-subtitle.css?v=4">
+  <!-- 关键内联样式：即使外部 pet.css 加载失败，下列令牌/规则也必须生效 -->
+  <style id="pet-critical">
+    /* 方向 C 设计令牌（内联冗余，保证离线/加载失败时不丢失调色板） */
+    :root {
+      --c-bg: #0E1116;       /* 基色：暗底 */
+      --c-primary: #7F77DD;  /* 霓虹紫：主强调 */
+      --c-accent: #1D9E75;   /* 青：成功/正向 */
+      --c-pink: #D4537E;     /* 粉：警示/危险 */
+      --c-text: #EDEDED;     /* 文本浅色 */
+      --bubble-scale: 1;     /* 气泡缩放，pet.js 运行时覆写 */
+    }
+    /* 错误层 hidden 时必须彻底不占位，防止 CSS 缺失时全窗黑底 */
+    .pet-error[hidden] { display: none; }
+    /* 点击反馈层基样式（与 pet.css 同名类保持一致，离线兜底） */
+    .fx-ripple {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(127, 119, 221, 0.35), rgba(127, 119, 221, 0.05));
+      animation: fx-ripple 420ms ease-out forwards;
+    }
+    #pet-canvas.pulse { animation: pet-pulse 420ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes pet-pulse {
+      0% { transform: scale(1); }
+      38% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body data-mode="pet" class="ui-hidden">
+  <!-- 标记宠物模式：chat.js 只暴露 RoleplayChat 对话核心，跳过聊天页 DOM 绑定 -->
+
+  <!-- 品牌条 -->
+  <div id="pet-brand"><b>无名者</b> · 桌面宠物</div>
+
+  <!-- 模型舞台（Spine 人偶专用容器） -->
+  <div id="pet-canvas"></div>
+  <div class="pet-loading" id="pet-loading">
+    <div class="spinner"></div>
+    <div>唤醒无名者…</div>
+  </div>
+  <div class="pet-error" id="pet-error" hidden></div>
+
+  <!-- P2 点击反馈层（ripple/粒子，pointer-events:none） -->
+  <div id="pet-feedback" aria-hidden="true"></div>
+
+  <!-- 锁位虚线框（P1-4 视觉预置） -->
+  <div id="pet-lockframe"></div>
+
+  <!-- 气泡 -->
+  <div id="pet-bubble" role="status" aria-live="polite">
+    <span id="pet-bubble-text"></span>
+    <div class="bubble-actions" id="pet-bubble-actions">
+      <button type="button" data-bact="copy" title="复制"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg></button>
+      <button type="button" data-bact="speak" title="朗读"><svg class="ico sm" aria-hidden="true"><use href="#i-audio"/></svg></button>
+      <button type="button" data-bact="prev" title="上一句 (↑)"><svg class="ico sm" aria-hidden="true"><use href="#i-chev-up"/></svg></button>
+      <button type="button" data-bact="next" title="下一句 (↓)"><svg class="ico sm" aria-hidden="true"><use href="#i-chev-down"/></svg></button>
+      <button type="button" data-bact="close" title="关闭"><svg class="ico sm" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+
+  <!-- 状态 chips：后端 / Ollama / 录音 / 勿扰(动态) / 锁位(动态) -->
+  <div id="pet-status">
+    <span class="chip" id="chip-backend" title="网页版后端连接状态"><span class="dot"></span><span class="chip-label">后端</span></span>
+    <span class="chip" id="chip-ollama" title="本地 Ollama 状态"><span class="dot"></span><span class="chip-label">Ollama</span></span>
+    <span class="chip" id="chip-mic" title="麦克风录音状态"><span class="dot"></span><span class="chip-label">录音</span></span>
+    <span class="chip breath" id="chip-dnd" title="勿扰模式中"><span class="dot"></span><span class="chip-label">勿扰</span></span>
+    <span class="chip" id="chip-lock" title="位置已锁定，长按 1.5s 解锁"><span class="dot"></span><span class="chip-label">已锁位</span></span>
+  </div>
+
+  <!-- 底部输入条：折叠圆钮 + 展开输入 -->
+  <button id="pet-input-fold" type="button" title="打字聊天（Ctrl+Enter）">✎</button>
+  <div id="pet-inputbar">
+    <input id="pet-input" type="text" placeholder="说点什么…（Enter 发送 / Esc 收起）" autocomplete="off" />
+    <button id="pet-input-send" type="button">发送</button>
+    <button id="pet-input-voice" class="ghost" type="button" title="语音对话">🎙</button>
+  </div>
+
+  <!-- 右键菜单（P1-1：三组 + SVG 图标） -->
+  <div id="pet-menu" role="menu">
+    <button id="menu-dnd-exit" data-act="dnd-exit" role="menuitem">勿扰中 · 点击解除</button>
+    <button data-act="talk" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-message"/></svg>说话</button>
+    <button data-act="type" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-keyboard"/></svg>打字聊天<span class="hint">Ctrl+Enter</span></button>
+    <button data-act="motion" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-dices"/></svg>随机动作</button>
+    <button data-act="voice" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-mic"/></svg>语音对话<span class="hint">Alt+Space</span></button>
+    <div class="sep"></div>
+    <button data-act="screen" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-scan"/></svg>识别屏幕</button>
+    <button data-act="spine" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-repeat"/></svg><span id="menu-spine-label">骨骼动画</span></button>
+    <button data-act="zoom-in" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-zoom-in"/></svg>放大模型</button>
+    <button data-act="zoom-out" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-zoom-out"/></svg>缩小模型</button>
+    <button data-act="bubble-bigger" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-bubble"/></svg>气泡放大<span class="hint" id="menu-bubble-label">100%</span></button>
+    <button data-act="bubble-smaller" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-bubble"/></svg>气泡缩小</button>
+    <div class="sep"></div>
+    <button data-act="dnd" role="menuitem" id="menu-dnd"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg><span id="menu-dnd-label">勿扰</span></button>
+    <button data-act="lock" role="menuitem" id="menu-lock"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span id="menu-lock-label">锁位</span></button>
+    <button data-act="mute" role="menuitem" id="menu-mute"><svg class="ico" aria-hidden="true"><use id="ico-mute" href="#i-volume-x"/></svg><span id="menu-mute-label">静音</span></button>
+    <button data-act="settings" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>设置</button>
+    <button data-act="hide" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>隐藏宠物</button>
+    <button data-act="share" role="menuitem"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>分享截图</button>
+    <button data-act="quit" role="menuitem" class="danger"><svg class="ico" aria-hidden="true"><use href="#i-logout"/></svg>退出</button>
+  </div>
+
+  <!-- 设置抽屉（五 tab：模型/对话/语音/屏幕识别/桌面端） -->
+  <div id="pet-settings">
+    <button class="close-x" id="settings-close" type="button" title="关闭">×</button>
+    <h3>宠物设置</h3>
+    <div class="tabbar" id="settings-tabs" role="tablist"></div>
+    <div id="settings-body"></div>
+  </div>
+
+  <!-- 新手引导滑层（5 步） -->
+  <div id="pet-onboarding" role="dialog" aria-modal="true" aria-label="使用引导">
+    <div class="card">
+      <div class="steps" id="onb-steps">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="pic" id="onb-pic">示意图</div>
+      <h2 id="onb-title"></h2>
+      <p id="onb-desc"></p>
+      <div class="actions">
+        <button class="skip" id="onb-skip" type="button">跳过</button>
+        <div class="nav">
+          <button class="navbtn ghost" id="onb-prev" type="button">上一步</button>
+          <button class="navbtn" id="onb-next" type="button">下一步</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 浏览器预览提示 -->
+  <div id="browser-hint"></div>
+
+  <!-- SVG 图标 sprite（P1-1：描边 1.5 / currentColor，Lucide 同语义） -->
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></symbol>
+      <symbol id="i-dices" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h.01M16 16h.01M12 12h.01M16 8h.01M8 16h.01"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></symbol>
+      <symbol id="i-volume-x" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6"/><path d="m17 9 6 6"/></symbol>
+      <symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+      <symbol id="i-audio" viewBox="0 0 24 24"><path d="M2 10v3M6 6v11M10 3v18M14 8v7M18 5v13M22 10v3"/></symbol>
+      <symbol id="i-chev-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+      <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+      <symbol id="i-zoom-in" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></symbol>
+      <symbol id="i-zoom-out" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M8 11h6"/></symbol>
+      <symbol id="i-bubble" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h8"/></symbol>
+      <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- P0：仅加载 Spine 运行时；Live2D 运行时与 live2d.js/bootstrap 不再进入宠物页 -->
+  <!-- Spine 运行时（素材包自带 4.2，含 spine-core + spine-webgl + SpineCanvas/SpinePlayer） -->
+  <script src="./assets/lib/spine-player.js?v=2"></script>
+  <!-- P3：共享动作库 + 意图事件（Web 与桌面壳共用） -->
+  <script src="./shared/pet-core.js?v=1"></script>
+  <script src="./js/voice.js?v=7"></script>
+  <!-- chat.js：宠物模式（data-mode=pet）下仅暴露 window.RoleplayChat，不做页面 DOM 绑定 -->
+  <script src="./js/chat.js?v=9"></script>
+  <!-- Spine 人偶适配器（window.RoleplaySpine，PetRenderer 接口） -->
+  <script src="./js/spine.js?v=4"></script>
+  <script src="./js/pet-voice.js?v=6"></script>
+  <script src="./js/pet-subtitle.js?v=4"></script>
+  <script src="./js/pet.js?v=8"></script>
+</body>
+</html>

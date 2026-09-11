@@ -1,0 +1,23 @@
+{
+  "name": "roleplay-desktop-pet",
+  "version": "0.2.0",
+  "description": "无名者桌面宠物 —— roleplay-ai 网页版的 Electron 悬浮窗壳（透明/置顶/穿透/拖拽/快捷键/截图）",
+  "main": "src/main/index.js",
+  "author": "roleplay-ai",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check src/main/index.js && node --check src/main/windows.js && node --check src/main/backend.js && node --check src/main/config.js && node --check src/main/physics.js && node --check src/main/behavior.js && node --check src/main/ocr.js && node --check src/main/control-server.js && node --check src/preload/pet.js && node --check scripts/smoke_electron.js && node --check scripts/smoke_render.js",
+    "smoke": "node scripts/smoke_electron.js && electron scripts/smoke_render.js",
+    "smoke:render": "electron scripts/smoke_render.js",
+    "dist": "electron-builder --win nsis",
+    "dist:cn": "set ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/&& set ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/&& electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "tesseract.js": "^7.0.0"
+  }
+}

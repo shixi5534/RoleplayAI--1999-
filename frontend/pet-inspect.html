@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动画巡检页 · Spine 小模型</title>
+  <link rel="stylesheet" href="./css/pet-inspect.css?v=1">
+</head>
+<body>
+  <div id="stage-wrap">
+    <div id="stage"></div>
+    <div class="hint">320×420 参考框：模型应居中偏下 · 头顶留白 8% · 落地线 −16px</div>
+  </div>
+
+  <div id="panel">
+    <h1>动 画 巡 检</h1>
+    <p>实播 <b>s_room.skel</b> 全部动画 → 逐个确认语义槽位 → 导出 <code>animation_map.json</code>。
+       记录自动存 localStorage，刷新不丢。</p>
+    <div class="row">
+      <span id="count" class="badge">0 动画</span>
+      <span id="done-count" class="badge warn">已标注 0</span>
+      <button id="btn-play" type="button">▶ 播放</button>
+      <button id="btn-pause" type="button">⏸ 暂停</button>
+      <label><input type="checkbox" id="chk-loop" checked /> 循环</label>
+      <label><input type="checkbox" id="chk-flip" /> 镜像</label>
+      <button id="btn-slow" type="button">0.5×</button>
+      <button id="btn-normal" type="button" class="playing">1×</button>
+      <button id="btn-fast" type="button">2×</button>
+    </div>
+    <div class="row">
+      <select id="slot">
+        <option value="unknown" selected>（未标注）</option>
+        <option value="idle">待机（默认循环）</option>
+        <option value="idle-pool">待机姿势池</option>
+        <option value="walk">行走/移动</option>
+        <option value="enter">入场/出场</option>
+        <option value="click">点击互动</option>
+        <option value="happy">情绪·开心/正向</option>
+        <option value="sad">情绪·难过/低能量</option>
+        <option value="surprise">情绪·惊讶/强情绪</option>
+        <option value="listen">聆听/疑惑</option>
+        <option value="rest">休息/收纳</option>
+        <option value="sleep-in">睡眠·入场</option>
+        <option value="sleep-deep">睡眠·深睡</option>
+        <option value="sleep-wake">睡眠·唤醒</option>
+        <option value="egg">彩蛋</option>
+        <option value="unused">不可用/损坏</option>
+      </select>
+      <input type="text" id="note" placeholder="备注（可选）" style="flex:1;min-width:120px" />
+      <button id="btn-record" class="primary" type="button">记录当前动画</button>
+    </div>
+    <div id="anim-list"><select id="sel" size="12"></select></div>
+    <div class="row">
+      <button id="btn-export" type="button">导出 animation_map.json</button>
+      <button id="btn-copy" type="button">复制 JSON</button>
+      <button id="btn-clear" type="button">清空标注</button>
+    </div>
+    <div id="records"><table><thead><tr><th>动画名</th><th>语义槽位</th><th>备注</th></tr></thead><tbody id="rec-body"></tbody></table></div>
+    <div id="log">就绪。</div>
+  </div>
+
+  <script src="./assets/lib/spine-player.js?v=1"></script>
+  <script src="./js/pet-inspect.js?v=1"></script>
+</body>
+</html>

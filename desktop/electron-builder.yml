@@ -1,0 +1,42 @@
+# electron-builder 打包配置（桌面宠物壳）
+# 打包：npm run dist  →  dist/ 下生成 NSIS 安装包
+appId: com.roleplay.desktop-pet
+productName: RoleplayPet
+copyright: "roleplay-ai (个人学习研究使用)"
+
+directories:
+  output: dist
+  buildResources: resources
+
+files:
+  - src/**/*
+  - package.json
+  - "!resources/ocr/traineddata"   # 语言包走 extraResources 放置
+
+extraResources:
+  - from: resources/ocr/traineddata
+    to: ocr/traineddata
+    filter:
+      - "*.traineddata"
+
+asar: true
+asarUnpack: []
+
+win:
+  target:
+    - nsis
+  # icon: resources/icons/icon.ico   # 未提供图标时使用 Electron 默认图标
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  shortcutName: 无名者桌面宠物
+
+protocols:
+  - name: RoleplayPet
+    schemes:
+      - roleplaypet
+
+npmRebuild: false

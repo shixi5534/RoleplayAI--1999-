@@ -1,0 +1,809 @@
+
+    /* ════════════════════════════════════════════════════════════════
+       无名者 · 桌面宠物 —— 方向 C：暗色高对比重制
+       基色 #0E1116 · 霓虹紫 #7F77DD · 青 #1D9E75 · 粉 #D4537E
+       圆润无衬线 · 放大点击热区 · UI hover/交互时浮现
+       ════════════════════════════════════════════════════════════════ */
+    :root {
+      /* ── 色彩（方向 C：暗色高对比 · 霓虹紫/青/粉） ── */
+      --fg: #EDEDED;
+      --fg-dim: #A7A5B8;
+      --fg-faint: rgba(237, 237, 237, 0.25);
+      --accent: #7F77DD;                     /* 霓虹紫：主强调 */
+      --accent-dim: rgba(127, 119, 221, 0.55);
+      --accent-glow: rgba(127, 119, 221, 0.16);
+      --accent-bright: #A29BF2;              /* 按钮 hover */
+      --accent-2: #1D9E75;                   /* 青：成功/正向状态 */
+      --accent-3: #D4537E;                   /* 粉：警示/危险 */
+      --ok: #1D9E75;
+      --danger: #D4537E;
+      --warn: #E9B85C;
+      --bg-base: #0E1116;
+      --bg-panel: rgba(14, 17, 22, 0.92);
+      --bg-panel-hover: rgba(24, 29, 40, 0.94);
+      --bg-panel-active: rgba(34, 39, 56, 0.95);
+      --bg-chip: rgba(10, 12, 16, 0.68);
+      --line: rgba(127, 119, 221, 0.28);
+      --line-strong: rgba(127, 119, 221, 0.52);
+      --line-faint: rgba(127, 119, 221, 0.14);
+
+      /* ── 字体（方向 C：圆润无衬线） ── */
+      --font-sans: "Varela Round", "Microsoft YaHei UI", "PingFang SC", "HarmonyOS Sans SC", "Segoe UI", system-ui, sans-serif;
+      --font-serif: var(--font-sans);        /* 旧名别名，页面统一无衬线 */
+      --font-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
+      --fs-chip: 10px;
+      --fs-caption: 11px;
+      --fs-small: 12px;
+      --fs-body: 13px;
+      --fs-bubble: 14px;
+      --fs-title: 16px;
+      --fs-heading: 18px;
+      --lh-tight: 1.4;
+      --lh-normal: 1.55;
+      --lh-loose: 1.7;
+
+      /* ── 间距（4px 栅格） ── */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+
+      /* ── 气泡/弹窗大小（由 pet.js 写 body.style，默认 1） ── */
+      --bubble-scale: 1;
+
+      /* ── 圆角（方向 C：整体更圆润） ── */
+      --radius-chip: 999px;
+      --radius-card: 12px;
+      --radius-bubble: 14px;
+      --radius-drawer: 16px;
+
+      /* ── 阴影 ── */
+      --shadow-s1: 0 4px 12px rgba(0, 0, 0, 0.35);
+      --shadow-s2: 0 6px 24px rgba(0, 0, 0, 0.45);
+      --shadow-s3: 0 10px 32px rgba(0, 0, 0, 0.55);
+      --shadow-s4: 0 20px 60px rgba(0, 0, 0, 0.65);
+
+      /* ── 动效 ── */
+      --dur-fast: 120ms;
+      --dur-mid: 200ms;
+      --dur-slow: 350ms;
+      --dur-xslow: 600ms;
+      --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+      --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+    }
+    /* 高对比模式覆写（风格板 §11） */
+    @media (prefers-contrast: more) {
+      :root {
+        --fg: #ffffff;
+        --fg-dim: #cfcddc;
+        --line: rgba(127, 119, 221, 0.60);
+        --bg-panel: rgba(14, 17, 22, 0.97);
+      }
+    }
+    /* 减少动效：全局瞬时切换（风格板 §11） */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: transparent;           /* 关键：宠物窗透明 */
+      overflow: hidden;
+      font-family: var(--font-sans);
+      color: var(--fg);
+      user-select: none;
+      -webkit-user-select: none;
+      animation: page-in var(--dur-xslow) var(--ease-enter); /* P2-1 入场淡入 */
+    }
+    @keyframes page-in { from { opacity: 0; } }
+    :focus-visible {
+      outline: 1px dashed var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ── 模型舞台（Spine 唯一渲染器容器） ── */
+    #pet-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      cursor: grab;
+      transform-origin: 50% 85%;
+    }
+    /* P1 提亮：舞台径向高光底 + 画布轻提亮（透明窗口本体不受影响） */
+    #pet-canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 62% 58% at 50% 64%, rgba(127, 119, 221, 0.13), rgba(29, 158, 117, 0.05) 52%, transparent 74%),
+        radial-gradient(ellipse 34% 30% at 50% 30%, rgba(237, 237, 237, 0.08), transparent 70%);
+    }
+    #pet-canvas canvas {
+      position: relative;
+      z-index: 1;
+      filter: brightness(1.07) saturate(1.04) contrast(1.02);
+    }
+    #pet-canvas.pulse { animation: pet-pulse 420ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes pet-pulse {
+      0% { transform: scale(1); }
+      38% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    body.dragging #pet-canvas { cursor: grabbing; }
+    body.dragging #pet-canvas canvas { filter: brightness(1.1) saturate(1.08) contrast(1.04); }
+
+    /* ── P2 点击反馈层：ripple + 粒子，animationend 后由 pet.js 移除 ── */
+    #pet-feedback {
+      position: absolute;
+      inset: 0;
+      z-index: 45;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .fx-ripple {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      margin: -7px 0 0 -7px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(127, 119, 221, 0.35), rgba(127, 119, 221, 0.05));
+      animation: fx-ripple 420ms var(--ease-exit) forwards;
+    }
+    @keyframes fx-ripple {
+      0% { transform: scale(0.4); opacity: 0.95; }
+      100% { transform: scale(3.4); opacity: 0; }
+    }
+    .fx-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      margin: -3px 0 0 -3px;
+      border-radius: 50%;
+      background: var(--fx-clr, var(--accent-2));
+      box-shadow: 0 0 8px var(--fx-clr, var(--accent-2));
+      animation: fx-particle 620ms var(--ease-exit) forwards;
+    }
+    @keyframes fx-particle {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--fx-dx, 0px), var(--fx-dy, 0px)) scale(0.25); opacity: 0; }
+    }
+
+    .pet-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg-dim);
+      font-size: var(--fs-small);
+      letter-spacing: 0.15em;
+      pointer-events: none;
+      transition: opacity var(--dur-slow) ease;
+    }
+    .pet-loading.hidden { opacity: 0; }
+    .pet-loading .spinner {
+      width: 22px; height: 22px;
+      border: 2px solid var(--line);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .pet-error {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: var(--danger);
+      font-size: var(--fs-body);
+      background: rgba(14, 17, 22, 0.86);
+    }
+    .pet-error code {
+      font-family: var(--font-mono);
+      color: var(--fg-dim);
+      word-break: break-all;
+    }
+    /* HTML hidden 属性必须压过 author display:flex，否则错误层常驻把全窗盖成黑底 */
+    .pet-error[hidden] { display: none; }
+
+    /* ── 品牌条 ── */
+    #pet-brand {
+      position: absolute;
+      top: var(--space-1);
+      left: var(--space-2);
+      z-index: 5;
+      font-size: var(--fs-chip);
+      letter-spacing: 0.2em;
+      color: rgba(237, 237, 237, 0.62);
+      pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: opacity var(--dur-mid) ease;
+    }
+    #pet-brand b { color: var(--accent); font-weight: 600; }
+    /* P1 降信息密度：品牌条 / 状态 chips 默认隐藏，hover 或交互（pet-ui）时浮现 */
+    body.ui-visible #pet-brand,
+    body.pet-ui #pet-brand { opacity: 1; }
+
+    /* ── 气泡（§4.1 / 风格板 §7.1） ── */
+    #pet-bubble {
+      position: absolute;
+      left: 50%;
+      top: var(--space-2);
+      z-index: 10;
+      transform: translateX(-50%);
+      max-width: calc(88% * var(--bubble-scale, 1));
+      min-width: calc(120px * var(--bubble-scale, 1));
+      max-height: calc(36% * var(--bubble-scale, 1));
+      overflow-y: auto;
+      padding: calc(var(--space-3) * var(--bubble-scale, 1)) calc(14px * var(--bubble-scale, 1));
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-bubble);
+      font-size: calc(var(--fs-bubble) * var(--bubble-scale, 1));
+      line-height: var(--lh-normal);
+      color: var(--fg);
+      box-shadow: var(--shadow-s2);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--dur-mid) var(--ease-enter), transform var(--dur-mid) var(--ease-enter);
+      transform: translateX(-50%) translateY(4px);
+      word-break: break-word;
+    }
+    #pet-bubble.show { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    #pet-bubble .caret {
+      display: inline-block;
+      width: 1px;
+      margin-left: 1px;
+      color: var(--accent);
+      animation: caret-blink 530ms steps(1) infinite;
+    }
+    @keyframes caret-blink { 50% { opacity: 0; } }
+    #pet-bubble::after {                       /* 小尾巴：指向模型头顶 */
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 10px;
+      height: 10px;
+      margin-left: -5px;
+      background: var(--bg-panel);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transform: rotate(45deg);
+    }
+    #pet-bubble.flipped::after {               /* 翻转态：尾巴朝上（位置翻转到模型下方） */
+      bottom: auto;
+      top: -6px;
+      border-right: none;
+      border-bottom: none;
+      border-left: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      transform: rotate(45deg);
+    }
+    #pet-bubble::-webkit-scrollbar { width: 4px; }
+    #pet-bubble::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+    /* 气泡操作行（P2-3：复制/朗读/上一句/下一句/关闭） */
+    #pet-bubble .bubble-actions {
+      display: none;
+      justify-content: flex-end;
+      gap: var(--space-2);
+      margin-top: 6px;
+      border-top: 1px solid var(--line-faint);
+      padding-top: 6px;
+    }
+    #pet-bubble.done .bubble-actions { display: flex; }
+    #pet-bubble .bubble-actions button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.5;
+      display: flex;
+    }
+    #pet-bubble .bubble-actions button:hover { opacity: 1; }
+    #pet-bubble .bubble-actions .ico { color: var(--accent); }
+
+    /* ── 状态 chips（§4.4 / 风格板 §7.4） ── */
+    #pet-status {
+      position: absolute;
+      top: var(--space-2);
+      right: var(--space-2);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: var(--space-2);
+      opacity: 0;
+      transition: opacity var(--dur-mid) ease;
+      pointer-events: none;
+    }
+    #pet-status.show { opacity: 1; }
+    body.ui-hidden #pet-status.show { opacity: 0; pointer-events: none; }
+    body.ui-visible #pet-status.show,
+    body.pet-ui #pet-status.show { pointer-events: auto; }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      height: 20px;
+      padding: 0 var(--space-2);
+      border-radius: var(--radius-chip);
+      background: var(--bg-chip);
+      border: 1px solid var(--line-faint);
+      font-size: var(--fs-chip);
+      letter-spacing: 0.08em;
+      color: var(--fg-dim);
+      pointer-events: auto;                    /* 悬停 tooltip 需要 */
+      cursor: default;
+    }
+    .chip:hover { background: var(--bg-panel-hover); box-shadow: var(--shadow-s1); }
+    .chip .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--fg-dim);
+      flex: none;
+    }
+    .chip.ok .dot { background: var(--ok); }
+    .chip.ok { color: var(--fg); }
+    .chip.bad .dot { background: var(--danger); }
+    .chip.bad { color: var(--danger); }
+    .chip.warn .dot { background: var(--warn); }
+    .chip.warn { color: var(--warn); }
+    .chip.dim { color: var(--fg-dim); border-color: var(--line-faint); }
+    .chip.dim .dot { background: var(--fg-dim); }
+    .chip.breath .dot { animation: dot-breathe 1200ms var(--ease-standard) infinite; }
+    @keyframes dot-breathe { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    #chip-dnd { display: none; }
+    #chip-dnd.show { display: flex; }
+    #chip-lock { display: none; }
+    #chip-lock.show { display: flex; }
+
+    /* ── 底部输入条（§4.5 / 风格板 §7.5/7.6） ── */
+    #pet-input-fold {
+      position: absolute;
+      right: var(--space-2);
+      bottom: var(--space-2);
+      z-index: 15;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 15px;
+      line-height: 1;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--dur-mid) ease;
+    }
+    #pet-input-fold.show { display: flex; opacity: 0; pointer-events: none; }
+    body.ui-visible #pet-input-fold.show,
+    body.pet-ui #pet-input-fold.show { opacity: 1; pointer-events: auto; }
+    #pet-input-fold:hover { border-color: var(--line-strong); box-shadow: var(--shadow-s1); }
+    #pet-inputbar {
+      position: absolute;
+      left: var(--space-2);
+      right: var(--space-2);
+      bottom: var(--space-2);
+      z-index: 15;
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+    #pet-inputbar.open { display: flex; }
+    #pet-inputbar input {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+      padding: 0 var(--space-3);
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      color: var(--fg);
+      font: inherit;
+      font-size: var(--fs-body);
+      outline: none;
+    }
+    #pet-inputbar input:focus { border-color: var(--accent); }
+    #pet-inputbar button {
+      height: 36px;
+      padding: 0 14px;
+      background: var(--accent);
+      color: #1a1408;
+      border: none;
+      border-radius: var(--radius-card);
+      font: inherit;
+      font-size: var(--fs-body);
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: background var(--dur-fast) ease;
+    }
+    #pet-inputbar button:hover { background: var(--accent-bright); }
+    #pet-inputbar button.ghost {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--fg-dim);
+      letter-spacing: 0;
+    }
+    #pet-inputbar button.ghost:hover { border-color: var(--line-strong); color: var(--fg); }
+    #pet-inputbar button:disabled { opacity: 0.45; pointer-events: none; }
+
+    /* ── 右键菜单（§4.2 / 风格板 §7.2）──
+       菜单 ~18 项远超窗高（最大档 640px），必须限高一屏并内部滚动，
+       否则靠下的「退出」等项永远落在窗外。高度钳制由 pet.js placeFloating 配合真实测量完成。
+       z-index 26：需压过底部预览提示条（25），S 档时菜单底部与其重叠 */
+    #pet-menu {
+      position: absolute;
+      z-index: 26;
+      min-width: 172px;
+      max-height: calc(100vh - var(--space-2) * 2);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 5px 0;
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-s3);
+      display: none;
+      font-size: var(--fs-small);
+      line-height: var(--lh-tight);
+    }
+    #pet-menu::-webkit-scrollbar { width: 4px; }
+    #pet-menu::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+    #pet-menu.open { display: block; animation: menu-in var(--dur-mid) var(--ease-enter); }
+    @keyframes menu-in { from { opacity: 0; transform: translateY(-3px); } }
+    #pet-menu button {
+      display: flex;
+      width: 100%;
+      height: 32px;
+      flex: none;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      background: none;
+      border: none;
+      color: var(--fg);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    #pet-menu button:hover { background: var(--accent-glow); }
+    #pet-menu button.danger { color: var(--danger); }
+    #pet-menu button.danger:hover { background: rgba(201, 106, 106, 0.12); }
+    #pet-menu .sep {
+      height: 1px;
+      margin: var(--space-1) var(--space-2);
+      background: var(--line-faint);
+    }
+    #pet-menu button[disabled] { opacity: 0.4; pointer-events: none; }
+    #pet-menu .hint { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-chip); color: var(--fg-dim); }
+    /* SVG 图标（P1-1：sprite <use>，currentColor 经 .ico color 染色） */
+    .ico {
+      width: 16px; height: 16px;
+      flex: none;
+      color: var(--accent);
+    }
+    #pet-menu button.danger .ico { color: var(--danger); }
+    .ico.sm { width: 12px; height: 12px; }
+
+    /* ── 勿扰（P1-3：模型 0.55 + 呼吸减半 + 菜单顶部解除行） ── */
+    body.dnd #pet-canvas { opacity: 0.55; transition: opacity var(--dur-slow) ease; }
+    #pet-menu #menu-dnd-exit { display: none; color: var(--fg-dim); border-bottom: 1px solid var(--line-faint); }
+    #pet-menu.dnd #menu-dnd-exit { display: flex; }
+    body.dnd #chip-dnd .dot { animation: dot-breathe 1200ms var(--ease-standard) infinite; }
+
+    /* ── 浏览器预览提示条 ── */
+    #browser-hint {
+      position: absolute;
+      left: 50%;
+      bottom: var(--space-2);
+      transform: translateX(-50%);
+      z-index: 25;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-chip);
+      background: var(--bg-chip);
+      border: 1px solid var(--line);
+      color: var(--fg-dim);
+      font-size: var(--fs-caption);
+      letter-spacing: 0.1em;
+      display: none;
+      pointer-events: none;
+    }
+    #browser-hint.show { display: block; }
+
+    /* ── toast（voice.js 动态创建，与 index.html 同视觉） ── */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 7px 14px;
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-chip);
+      color: var(--fg);
+      font-size: var(--fs-small);
+      box-shadow: var(--shadow-s2);
+      pointer-events: none;
+      animation: toast-in var(--dur-mid) var(--ease-enter);
+    }
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ── 设置抽屉（§4.3 / 风格板 §7.3） ── */
+    #pet-settings {
+      position: absolute;
+      inset: 0;
+      z-index: 30;
+      background: rgba(14, 17, 22, 0.95);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-drawer);
+      padding: var(--space-4);
+      display: none;
+      overflow-y: auto;
+      font-size: var(--fs-body);
+      animation: drawer-in var(--dur-slow) var(--ease-enter);
+    }
+    @keyframes drawer-in { from { opacity: 0; transform: translateY(8px); } }
+    #pet-settings.open { display: block; }
+    #pet-settings h3 {
+      margin: 0 0 var(--space-3);
+      font-size: var(--fs-title);
+      font-weight: normal;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: var(--space-2);
+    }
+    #pet-settings .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    #pet-settings .row label { color: var(--fg-dim); font-size: var(--fs-small); }
+    #pet-settings select,
+    #pet-settings input[type="text"],
+    #pet-settings input[type="number"],
+    #pet-settings input[type="range"] {
+      height: 28px;
+      background: rgba(24, 29, 40, 0.92);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 0 var(--space-2);
+      font: inherit;
+      font-size: var(--fs-small);
+    }
+    #pet-settings select:focus, #pet-settings input:focus { border-color: var(--line-strong); }
+    #pet-settings .close-x {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--fg-dim);
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #pet-settings .close-x:hover { color: var(--fg); }
+    /* P1-2：五 tab 结构 */
+    #pet-settings .tabbar {
+      display: flex;
+      gap: var(--space-4);
+      height: 32px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      margin: 0 0 var(--space-3);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    #pet-settings .tabbar button {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--fg-dim);
+      font: inherit;
+      font-size: var(--fs-small);
+      letter-spacing: 0.1em;
+      padding: 4px 2px;
+      height: 100%;
+      cursor: pointer;
+      flex: none;
+    }
+    #pet-settings .tabbar button.on {
+      color: var(--accent);
+      border-bottom-color: var(--line-strong);
+    }
+    #pet-settings .card {
+      background: rgba(24, 29, 40, 0.62);
+      border: 1px solid var(--line-faint);
+      border-radius: var(--radius-card);
+      padding: var(--space-3) var(--space-4);
+      margin-bottom: var(--space-3);
+    }
+    #pet-settings .card h4 {
+      margin: 0 0 var(--space-2);
+      font-size: var(--fs-caption);
+      font-weight: normal;
+      letter-spacing: 0.2em;
+      color: var(--fg-dim);
+    }
+    #pet-settings .hintline {
+      font-size: var(--fs-caption);
+      color: var(--fg-dim);
+      margin: var(--space-2) 0;
+    }
+
+    /* ── 新手引导滑层（§4.6 / 风格板 §7.6） ── */
+    #pet-onboarding {
+      position: absolute;
+      inset: 0;
+      z-index: 40;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 10, 14, 0.72);
+      animation: fade-in var(--dur-slow) ease;
+    }
+    @keyframes fade-in { from { opacity: 0; } }
+    #pet-onboarding.open { display: flex; }
+    #pet-onboarding .card {
+      width: 260px;
+      background: var(--bg-panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-drawer);
+      box-shadow: var(--shadow-s4);
+      padding: var(--space-5) var(--space-4) var(--space-4);
+      text-align: center;
+    }
+    #pet-onboarding .steps { display: flex; justify-content: center; gap: var(--space-2); margin-bottom: var(--space-3); }
+    #pet-onboarding .steps span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--fg-faint);
+      transition: background var(--dur-fast) ease;
+    }
+    #pet-onboarding .steps span.on { background: var(--accent); }
+    #pet-onboarding .pic {
+      width: 200px; height: 140px;
+      margin: 0 auto var(--space-3);
+      border: 1px dashed var(--fg-faint);
+      border-radius: var(--radius-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg-faint);
+      font-size: var(--fs-small);
+      letter-spacing: 0.2em;
+    }
+    #pet-onboarding h2 {
+      margin: 0 0 var(--space-2);
+      font-size: var(--fs-heading);
+      font-weight: normal;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+    }
+    #pet-onboarding p {
+      margin: 0 0 var(--space-4);
+      font-size: var(--fs-body);
+      line-height: var(--lh-loose);
+      color: var(--fg);
+    }
+    #pet-onboarding .actions { display: flex; justify-content: space-between; align-items: center; }
+    #pet-onboarding .actions .skip {
+      background: none; border: none;
+      color: var(--fg-dim);
+      font: inherit; font-size: var(--fs-small);
+      cursor: pointer;
+    }
+    #pet-onboarding .actions .skip:hover { color: var(--fg); }
+    #pet-onboarding .actions .nav {
+      display: flex; gap: var(--space-2); align-items: center;
+    }
+    #pet-onboarding .actions button.navbtn {
+      background: var(--accent);
+      color: #1a1408;
+      border: none;
+      border-radius: var(--radius-chip);
+      font: inherit; font-size: var(--fs-small);
+      padding: 6px 14px;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+    }
+    #pet-onboarding .actions button.navbtn.ghost {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--fg-dim);
+    }
+
+    /* ── 锁位虚线框（P1-4 视觉预置） ── */
+    #pet-lockframe {
+      position: absolute;
+      inset: var(--space-2);
+      z-index: 1;
+      border: 1px dashed var(--line-strong);
+      border-radius: 4px;
+      display: none;
+      pointer-events: none;
+    }
+    #pet-lockframe.show { display: block; }
+
+    /* P1 hover 兜底：CSS :hover 也能唤出极简 UI（pet.js 的 ui-visible/pet-ui 为主通道） */
+    @media (hover: hover) {
+      body:hover #pet-brand,
+      body:hover #pet-status.show,
+      body:hover #pet-input-fold.show { opacity: 1; }
+    }
+
+    /* ── 三档断点（C6：S<380 / M 380~460 / L>460） ── */
+    @media (max-width: 379px) {
+      /* S 档：chip 收起为圆点 + 异常计数 */
+      .chip .chip-label { display: none; }
+      .chip { padding: 0 5px; height: 14px; }
+      #pet-bubble { max-width: 76%; }
+    }
+    @media (min-width: 380px) and (max-width: 460px) {
+      /* M 档：chip 横排展开文字 */
+      #pet-status { flex-direction: column; }
+    }
+    @media (min-width: 461px) {
+      /* L 档：抽屉内边距加大 */
+      #pet-settings { padding: var(--space-4); }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       重构：排版层级提质（与 index 页的编辑排版语言呼应）
+       ──────────────────────────────────────────────────────────
+       约束：本页是透明桌面宠物窗，全部元素依赖绝对定位，
+       因此这里只调整字距 / 行高等纯视觉属性，
+       不改动任何尺寸、定位与显隐方式。
+
+       安全性说明：
+       - js/pet.js 的 placeFloating 依赖 visibility:hidden 实时测量，
+         字距引起的文字宽度变化会被自动纳入计算，不会破坏气泡翻转
+       - .caret / .show / .flipped / .done / .dnd 等状态类由 JS 控制，
+         本次改动不涉及这些类名
+       ══════════════════════════════════════════════════════════ */
+    #pet-bubble-text {
+      letter-spacing: 0.02em;
+      line-height: var(--lh-loose, 1.7);
+    }
+    #pet-brand { letter-spacing: 0.18em; }
+    .chip { letter-spacing: 0.04em; }
+
+    /* 高对比偏好：加粗气泡描边（与 index 页一致的降级策略） */
+    @media (prefers-contrast: more) {
+      #pet-bubble { border-width: 2px; }
+    }
+  

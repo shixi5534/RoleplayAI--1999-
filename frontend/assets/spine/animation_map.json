@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "source": "314701_wmz_s_room.skel / 314701_wmz_room.skel / 314702_wmz_room.skel",
+    "status": "verified",
+    "note": "2026-09-05 经 spine 运行时实测三模型动画清单：314701_s 仅含 idle；314701 与 314702 均为 click/hit/idle/idle_birthday_loop/idle_birthday_up/idle_room/interact/sleep/walk。此前 provisional 版中的 st*/j*/xc*/cx*/djc*/cs2/hua/bian*/mao/xiangzishang/x_ls_*/target* 等候选在任一模型中均不存在，已清除。运行时仍按当前 .skel 过滤后取候选。",
+    "verifiedAt": "2026-09-05"
+  },
+  "slots": {
+    "idle": ["idle_room", "idle"],
+    "idle_pool": ["idle_room", "idle", "idle_birthday_loop", "idle_birthday_up"],
+    "walk": ["walk"],
+    "enter": ["idle_birthday_up", "idle_room", "idle"],
+    "click": ["click", "interact"],
+    "happy": ["interact", "click"],
+    "sad": ["hit"],
+    "surprise": ["hit", "click"],
+    "listen": ["interact", "idle_room", "idle"],
+    "rest": ["idle_room", "idle"],
+    "sleep_in": ["sleep"],
+    "sleep_deep": ["sleep"],
+    "sleep_wake": ["idle_room", "idle"],
+    "egg": ["interact", "click"],
+    "unknown": ["idle_room", "idle"]
+  }
+}

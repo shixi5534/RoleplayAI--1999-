@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "note": "情感事件 → Spine 小模型动画。2026-09-05 按三模型实测清单（click/hit/idle/idle_birthday_loop/idle_birthday_up/idle_room/interact/sleep/walk）定稿：314701/314702 全部候选真实存在；314701_s 仅 idle，经槽位回退自动落回待机。",
+    "status": "verified",
+    "verifiedAt": "2026-09-05"
+  },
+  "emotions": {
+    "happy": { "animations": ["interact", "click"], "fallback": "idle_pool" },
+    "sad": { "animations": ["hit"], "fallback": "idle_pool" },
+    "angry": { "animations": ["hit", "click"], "fallback": "idle_pool" },
+    "anxious": { "animations": ["interact", "click"], "fallback": "idle_pool" },
+    "surprise": { "animations": ["hit", "click"], "fallback": "idle_pool" },
+    "fear": { "animations": ["hit"], "fallback": "idle_pool" },
+    "neutral": { "animations": ["idle_room", "idle"], "fallback": "idle_pool" },
+    "love": { "animations": ["interact", "click"], "fallback": "idle_pool" },
+    "grateful": { "animations": ["interact", "click"], "fallback": "idle_pool" },
+    "excited": { "animations": ["click", "interact"], "fallback": "idle_pool" },
+    "disappointed": { "animations": ["hit"], "fallback": "idle_pool" },
+    "lonely": { "animations": ["idle_room", "idle"], "fallback": "idle_pool" },
+    "embarrassed": { "animations": ["hit", "click"], "fallback": "idle_pool" },
+    "confused": { "animations": ["interact", "click"], "fallback": "idle_pool" },
+    "sleepy": { "animations": ["sleep"], "fallback": "idle_pool" }
+  }
+}

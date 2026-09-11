@@ -1,0 +1,49 @@
+classDiagram
+    class EmotionInfo {
+        +str emotion
+        +float score
+        +str source
+    }
+    class EmotionPort {
+        <<abstract>>
+        +detect(text: str) EmotionInfo*
+    }
+    class KeywordEmotionDetector {
+        +bool enabled
+        +detect(text: str) EmotionInfo
+    }
+    class LocalClassifierDetector {
+        +str backend
+        +detect(text: str) EmotionInfo
+        -_hash_features(text) list[float]
+        -_predict(vec) tuple[str, float]
+    }
+    class LLMEmotionDetector {
+        +LLMPort llm
+        +float timeout
+        +float confidence
+        +detect(text: str) EmotionInfo
+        -_parse_json(raw: str) EmotionInfo
+    }
+    class FallbackChainDetector {
+        +list[EmotionPort] chain
+        +detect(text: str) EmotionInfo
+    }
+    class ChatOrchestrator {
+        +EmotionPort _emotion
+        +async _prepare(req) tuple
+        +async run(req) OrchestratorResult
+        +async stream(req) async_gen
+    }
+    class Live2DEmotionMapper {
+        +resolve(emotion, score, model_id) dict
+    }
+    EmotionPort <|.. KeywordEmotionDetector
+    EmotionPort <|.. LocalClassifierDetector
+    EmotionPort <|.. LLMEmotionDetector
+    EmotionPort <|.. FallbackChainDetector
+    FallbackChainDetector o-- EmotionPort : chain
+    ChatOrchestrator --> EmotionPort : _emotion
+    ChatOrchestrator --> Live2DEmotionMapper : _mapper
+    LLMEmotionDetector --> LLMPort : llm(复用全局)
+    EmotionInfo --> EmotionLabel : emotion

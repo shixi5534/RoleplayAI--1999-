@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>无名者 · 后端引导</title>
+  <style>
+    :root {
+      --fg: #e8e2d4; --fg-dim: #9a968a; --accent: #c9a86a; --danger: #c96a6a;
+      --bg: #10161c; --line: rgba(201, 168, 106, 0.3);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%; margin: 0;
+      background: transparent;
+      font-family: "Georgia", "Songti SC", "SimSun", serif;
+      color: var(--fg);
+      user-select: none;
+      overflow: hidden;
+    }
+    .panel {
+      position: absolute; inset: 10px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      background: rgba(16, 22, 28, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { margin: 0; font-size: 15px; font-weight: normal; letter-spacing: 0.25em; color: var(--accent); }
+    p { margin: 0; font-size: 12.5px; color: var(--fg-dim); line-height: 1.7; }
+    p.err { color: var(--danger); word-break: break-all; }
+    .state { font-size: 11px; color: var(--fg-dim); letter-spacing: 0.1em; }
+    button {
+      min-width: 140px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #1a1408;
+      border: none;
+      border-radius: 6px;
+      font: inherit;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.08); }
+    button:disabled { opacity: 0.45; cursor: default; }
+    button.ghost {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--fg-dim);
+    }
+    .dots { display: flex; gap: 6px; }
+    .dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--fg-dim); }
+    .dots span.ok { background: #7fb069; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>无 名 者</h1>
+    <p>网页版后端未运行。<br />桌面宠物依赖网页版 <code>http://127.0.0.1:8000</code> 提供页面与对话服务。</p>
+    <p class="err" id="err" hidden></p>
+    <button id="btn-launch">启动网页版后端</button>
+    <button id="btn-retry" class="ghost">重试</button>
+    <button id="btn-quit" class="ghost">退出</button>
+    <div class="dots"><span id="dot"></span></div>
+    <div class="state" id="state">检测中…</div>
+  </div>
+  <script src="./fallback.js"></script>
+</body>
+</html>

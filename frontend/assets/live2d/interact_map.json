@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "note": "点击部位互动配置。rect 为归一化坐标 [x,y,w,h]（相对模型原始像素，0~1，先头后身按数组顺序判定）。stages 为递进序列：同区域连续点击按顺序轮换，到尾循环。cooldown 为该区域冷却（ms），冷却中点击仅更新防连击时间戳不触发。text 为气泡台词，tts 为语音文本（空则不播）。动作全部取两套模型（314701/314702）共有动作。",
+  "regions": [
+    {
+      "id": "head",
+      "rect": [0.28, 0.06, 0.44, 0.22],
+      "cooldown": 2500,
+      "stages": [
+        { "motion": "b_diantou", "expression": "e_yihuo", "text": "……嗯？", "tts": "嗯？" },
+        { "motion": "b_zhelian", "expression": "e_yansu", "text": "别碰面具。", "tts": "别碰面具。" },
+        { "motion": "t_mianju", "expression": "e_mianju", "text": "……有些东西，不适合被看见。", "tts": "有些东西，不适合被看见。" }
+      ]
+    },
+    {
+      "id": "body",
+      "rect": [0.18, 0.28, 0.64, 0.42],
+      "cooldown": 3000,
+      "stages": [
+        { "motion": "b_taishou", "expression": "e_idle", "text": "……在听。", "tts": "在听。" },
+        { "motion": "b_diantou", "expression": "e_weixiao", "text": "想说什么都可以。", "tts": "想说什么都可以。" },
+        { "motion": "b_liaofa", "expression": "e_weixiao", "text": "坐近些，也无妨。", "tts": "坐近些，也无妨。" }
+      ]
+    },
+    {
+      "id": "lower",
+      "rect": [0.30, 0.70, 0.40, 0.30],
+      "cooldown": 3500,
+      "stages": [
+        { "motion": "b_liaofa", "expression": "e_yihuo", "text": "……有事？", "tts": "有事？" },
+        { "motion": "t_idle", "expression": "e_idle", "text": "我在这儿，不走。", "tts": "我在这儿，不走。" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+
+    /* 巡检页：暗调实用风（临时调试工具，非交付视觉） */
+    :root {
+      --fg: #e8e2d4; --fg-dim: #9a968a; --accent: #c9a86a; --danger: #c96a6a; --ok: #7fb069;
+      --bg: #0c1014; --panel: rgba(16, 22, 28, 0.92); --line: rgba(201, 168, 106, 0.28);
+      --font: "Georgia", "Songti SC", "SimSun", serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      background: var(--bg); color: var(--fg);
+      font-family: var(--font);
+      display: flex; gap: 16px; padding: 16px;
+    }
+    #stage-wrap {
+      flex: 1; min-width: 420px; max-width: 560px;
+      position: relative;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(45deg, rgba(201,168,106,0.04) 25%, transparent 25%, transparent 75%, rgba(201,168,106,0.04) 75%),
+        linear-gradient(45deg, rgba(201,168,106,0.04) 25%, transparent 25%, transparent 75%, rgba(201,168,106,0.04) 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      height: 560px;
+    }
+    #stage { position: absolute; inset: 0; }
+    .hint {
+      position: absolute; left: 8px; bottom: 8px;
+      font-size: 11px; color: var(--fg-dim); letter-spacing: 0.15em;
+      pointer-events: none;
+    }
+    #panel {
+      width: 420px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 10px;
+      height: 560px; overflow-y: auto;
+    }
+    h1 { margin: 0; font-size: 15px; font-weight: normal; letter-spacing: 0.25em; color: var(--accent); }
+    p { margin: 0; font-size: 11.5px; color: var(--fg-dim); line-height: 1.6; }
+    .row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    select, button, input[type="text"] {
+      background: rgba(22, 30, 38, 0.9);
+      color: var(--fg); border: 1px solid var(--line); border-radius: 4px;
+      font: inherit; font-size: 12.5px; padding: 6px 10px;
+    }
+    button { cursor: pointer; }
+    button:hover { border-color: var(--accent); }
+    button.primary { background: var(--accent); color: #1a1408; border-color: var(--accent); }
+    button.playing { background: rgba(201, 168, 106, 0.2); }
+    #anim-list { flex: 1; min-height: 120px; }
+    #anim-list select { width: 100%; height: 180px; font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    th, td { border-bottom: 1px solid rgba(201, 168, 106, 0.14); padding: 4px 6px; text-align: left; }
+    th { color: var(--fg-dim); font-weight: normal; letter-spacing: 0.1em; }
+    .badge { font-size: 10.5px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg-dim); }
+    .badge.warn { color: var(--accent); border-color: var(--accent); }
+    .tag-unknown { color: var(--danger); }
+    .tag-mapped { color: var(--ok); }
+    #log { font-size: 11px; color: var(--fg-dim); min-height: 40px; }
+    .kbd { font-family: monospace; background: rgba(22,30,38,0.9); border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; font-size: 11px; }
+
+    /* ══════════════════════════════════════════════════════════
+       重构:记录表 table → CSS grid
+       用 display:contents 让 thead / tbody / tr 在栅格中"透明",
+       th / td 直接成为 grid item。
+       好处:无需改动 HTML 与 js/pet-inspect.js 的行生成逻辑,
+       动态插入的 <tr> 会自动按栅格排布。
+       ══════════════════════════════════════════════════════════ */
+    #records table {
+      display: grid;
+      grid-template-columns: minmax(110px, 1.4fr) minmax(80px, 1fr) minmax(110px, 1.6fr);
+      gap: 4px 12px;
+      align-items: center;
+    }
+    #records thead,
+    #records tbody,
+    #records tr { display: contents; }
+    #records th {
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--line);
+    }
+    #records td {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(201, 168, 106, 0.10);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* 响应式:此前该页没有任何断点,窄屏会横向溢出 */
+    @media (max-width: 900px) {
+      body { flex-direction: column; }
+      #stage-wrap { min-width: 0; max-width: none; height: 380px; }
+      #panel { width: auto; height: auto; }
+    }
+    /* 记录表在窄屏单列堆叠 */
+    @media (max-width: 640px) {
+      #records table { grid-template-columns: 1fr; }
+      #records thead { display: none; }
+      #records td { padding: 3px 0; white-space: normal; }
+    }
+  

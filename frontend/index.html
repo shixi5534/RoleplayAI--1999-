@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <title>RoleplayAI · 无名者</title>
+  <link rel="stylesheet" href="./css/index.css?v=2">
+  <link rel="stylesheet" href="./css/pet-subtitle.css?v=4">
+</head>
+<body data-theme="dark">
+  <!-- 全屏主视觉背景 + 暗化遮罩 + 胶片颗粒 + 雨滴(暴雨母题) -->
+  <div class="kv-backdrop" aria-hidden="true"></div>
+  <div class="kv-veil" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="rain" id="rain-layer" aria-hidden="true"></div>
+
+  <!-- 顶栏:官方 Logo + 档案风格品牌区 -->
+  <div class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="./assets/r1999/logo.png" alt="重返未来:1999" />
+      <span class="brand-en">RoleplayAI · 无名者</span>
+    </div>
+    <div class="spacer"></div>
+    <!-- 窄屏菜单开关:仅 <860px 显示,展开后 topbar-nav 变为侧边抽屉 -->
+    <button id="btn-menu" class="topbar-btn menu-btn" type="button" title="菜单" aria-label="展开菜单" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="topbar-nav" id="topbar-nav">
+    <button id="btn-theme" class="topbar-btn" type="button" title="切换明暗主题 (T)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="btn-theme-icon">主题</span> <kbd>T</kbd>
+    </button>
+    <button id="btn-llm" class="topbar-btn" type="button" title="模型切换(本地 Ollama ↔ 云端)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="10" y="10" width="4" height="4" rx="1"/></svg>
+      <span id="btn-llm-name">模型</span>
+    </button>
+    <button id="btn-clear" class="topbar-btn" type="button" title="清空对话记忆 (C)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
+      清空记忆 <kbd>C</kbd>
+    </button>
+    <button id="btn-help" class="topbar-btn" type="button" title="快捷键帮助 (?)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M10 13h.01M14 13h.01M6 17h8"/></svg>
+      快捷键 <kbd>?</kbd>
+    </button>
+    <button id="btn-characters" class="topbar-btn" type="button" title="角色人设管理(多角色 / 新增 / 编辑 / 切换)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9.5" r="2.5"/><path d="M15.5 20a6 6 0 0 1 6-6"/></svg>
+      人设
+    </button>
+    <button id="btn-knowledge" class="topbar-btn" type="button" title="知识库管理(文档 / 上传 / 检索)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      知识库
+    </button>
+    <button id="btn-desktop-pet" class="topbar-btn" type="button" title="打开桌面宠物(悬浮窗形态,需已安装桌面端)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+      桌面宠物 <span class="pet-dot" id="pet-status-dot" title="桌面宠物运行状态"></span>
+    </button>
+    </nav>
+  </div>
+
+  <div id="app">
+    <!-- 左:数字人舞台 + 实时变量 HUD -->
+    <div class="stage">
+      <!-- 档案齿孔角标 -->
+      <span class="stage-corner tl" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V10L12 4l8 6v10"/><path d="M9 20v-6h6v6"/></svg>
+      </span>
+      <span class="stage-corner br" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V10L12 4l8 6v10"/><path d="M9 20v-6h6v6"/></svg>
+      </span>
+      <div id="live2d-canvas"></div>
+      <div class="live2d-loading" id="live2d-loading">
+        <div class="spinner"></div>
+        <div>正在唤醒数字人…</div>
+      </div>
+      <div class="live2d-status" id="live2d-status" hidden></div>
+      <div class="stage-overlay">
+        <div class="stage-name" id="stage-name">无名者</div>
+        <div class="stage-tag" id="stage-tag">Ms. Stranger · Live2D</div>
+        <!-- 模型切换 tabs(segmented control) -->
+        <div class="model-tabs" role="tablist" aria-label="选择模型">
+          <button class="model-tab" type="button" role="tab" data-model="314701" aria-selected="true">无名·初见</button>
+          <button class="model-tab" type="button" role="tab" data-model="314702" aria-selected="false">无名·无尽路</button>
+        </div>
+        <button class="reset-pos-btn" id="reset-pos-btn" type="button" title="重置位置 (F / 双击舞台)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          重置位置
+        </button>
+      </div>
+      <!-- 关键变量:常驻显示当前值与对应按键 -->
+      <div class="stage-hud" id="stage-hud">
+        <button class="hud-toggle" id="hud-toggle" type="button" title="折叠/展开变量面板" aria-expanded="true">≡</button>
+        <span class="hud-chip"><span class="k">温度</span><span class="v" id="hud-temp">0.85</span><kbd>− / =</kbd></span>
+        <span class="hud-chip"><span class="k">灵敏度</span><span class="v" id="hud-sens">0.30</span><kbd>[ / ]</kbd></span>
+        <span class="hud-chip"><span class="k">速度</span><span class="v" id="hud-speed">5×</span><kbd>, / .</kbd></span>
+        <span class="hud-chip"><span class="k">缩放</span><span class="v" id="hud-zoom">100%</span><kbd>( / )</kbd></span>
+        <span class="hud-chip"><span class="k">数字人</span><span class="v" id="hud-model">显示</span><kbd>M</kbd></span>
+        <span class="hud-chip"><span class="k">模型</span><span class="v" id="hud-model-name">无名·初见</span><kbd>1 / 2</kbd></span>
+        <span class="hud-chip"><span class="k">位置</span><span class="v" id="hud-pos">居中</span><kbd>F</kbd></span>
+        <span class="hud-chip"><span class="k">LLM</span><span class="v" id="hud-llm">加载中…</span></span>
+        <span class="hud-chip"><span class="k">主题</span><span class="v" id="hud-theme">暗</span><kbd>T</kbd></span>
+      </div>
+    </div>
+
+    <!-- 可拖拽分隔条:调节舞台/聊天宽度比例,双击复位 -->
+    <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" tabindex="0" title="拖拽调节宽度,双击复位"></div>
+
+    <!-- 右:聊天 -->
+    <div class="chat">
+      <div class="chat-header">
+        <div class="avatar" id="chat-avatar">无</div>
+        <div class="meta">
+          <div class="name" id="chat-name">无名者</div>
+          <div class="status"><span class="dot-online"></span> 在线 · 记得你说过的话</div>
+        </div>
+        <button id="clear-btn" class="clear-btn" type="button" title="让无名者忘记本次对话">清空记忆</button>
+      </div>
+      <div class="messages" id="messages"></div>
+      <div class="composer">
+        <label class="web-toggle" id="web-toggle-wrap" title="开启后本轮将实时联网检索并把结果注入知识库">
+          <input type="checkbox" id="web-toggle" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
+          联网
+        </label>
+        <button id="mic-btn" class="mic-btn" type="button" title="点击录音(语音输入)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg>
+        </button>
+        <button id="voice-panel-btn" class="voice-panel-btn" type="button" title="语音设置">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        </button>
+        <input id="message-input" placeholder="说点什么…(试试「我有点难过」· 按 ? 看快捷键)" autocomplete="off" />
+        <button id="send-btn">发送</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 角色人设管理弹层(多角色:列表 / 新建 / 编辑 / 切换 / 删除) -->
+  <div class="modal-backdrop" id="char-backdrop" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="角色人设管理">
+      <button class="close-x" id="char-close" type="button" title="关闭 (Esc)">×</button>
+      <h2>角色人设管理</h2>
+      <p class="sub">管理多个角色人设,对话中可随时切换;人设会自动同步进知识库以维持角色一致性。</p>
+
+      <div class="char-list" id="char-list"></div>
+
+      <div style="display:flex; gap:10px; margin: 14px 0 4px;">
+        <button class="clear-btn" id="char-new" type="button" style="margin:0;">
+          <span style="display:inline-flex;align-items:center;gap:5px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>新建角色</span>
+        </button>
+        <button class="clear-btn" id="char-web" type="button" style="margin:0;">
+          <span style="display:inline-flex;align-items:center;gap:5px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>联网入库</span>
+        </button>
+      </div>
+
+      <!-- 新建 / 编辑表单 -->
+      <div class="char-form" id="char-form" hidden>
+        <div class="char-form-title" id="char-form-title">新建角色</div>
+        <p class="sub" style="margin:0 0 2px;">提示:长文本将自动规范(统一空白/标点;行为准则、性格等支持"1) xx 2) yy"或"一、xx 二、yy"自动转换行列表)。</p>
+        <label>名称 *<input id="f-name" type="text" placeholder="角色名" maxlength="48" /></label>
+        <label>简介<input id="f-description" type="text" placeholder="一句话简介" maxlength="120" /></label>
+        <label>性格特征<textarea id="f-personality" rows="2" placeholder="性格、口头禅;可写多条,如:1) 冷静  2) 果断" maxlength="1000"></textarea></label>
+        <label>背景设定<textarea id="f-background" rows="2" placeholder="身世、世界观背景;可写多条" maxlength="2000"></textarea></label>
+        <label>行为准则<textarea id="f-behavior_rules" rows="2" placeholder="什么该做、什么不该做;建议分条,如:1) …  2) …" maxlength="2000"></textarea></label>
+        <label>核心锚点(每行一条,3–5 条;每轮置底重复注入,防长对话角色漂移)<textarea id="f-core_anchors" rows="2" placeholder="用轻描淡写和黑色幽默缓冲沉重话题" maxlength="600"></textarea></label>
+        <label>情绪回应策略(每行一条,格式:情绪标签: 回应策略;未配置该表则不做动态注入)<textarea id="f-emotion_strategies" rows="3" placeholder="sad: 先停半拍,再陪着,不要说教" maxlength="3000"></textarea></label>
+        <label>情感节奏 / 防备层(P1-3,JSON 格式;留空=不启用)<textarea id="f-emotional_layers" rows="4" placeholder='{"surface":"日常疏离带轻讽","trigger_topics":["过去","身份"],"trigger_reaction":"先回避,追问才透露一点","trust_signals":["对方主动示弱"],"trust_reaction":"罕见说句真心话,再用玩笑拉回"}' maxlength="2000"></textarea></label>
+        <label>场景<textarea id="f-scenario" rows="2" placeholder="当前所处场景;可写多条" maxlength="1000"></textarea></label>
+        <label>语气 / 文风<textarea id="f-tone" rows="2" placeholder="说话风格,如:低沉、简短、爱用比喻" maxlength="500"></textarea></label>
+        <label>开场白<textarea id="f-first_mes" rows="2" placeholder="第一句台词" maxlength="1000"></textarea></label>
+        <label>对话示例<textarea id="f-mes_example" rows="2" placeholder="示例对话" maxlength="2000"></textarea></label>
+        <label>系统提示词(覆盖自动拼装)<textarea id="f-system_prompt" rows="2" placeholder="留空则按上述字段自动生成" maxlength="4000"></textarea></label>
+        <div class="char-form-actions">
+          <button class="clear-btn" id="char-cancel" type="button">取消</button>
+          <button class="send-btn" id="char-save" type="button">保存</button>
+        </div>
+        <div class="char-form-err" id="char-form-err"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 知识库管理弹层(knowledge.js 驱动:文档列表 / 上传 / 块预览 / 检索测试) -->
+  <div class="modal-backdrop kb-backdrop" id="kb-backdrop" hidden>
+    <div class="modal-panel kb-panel" role="dialog" aria-modal="true" aria-label="知识库管理">
+      <button class="close-x" id="kb-close" type="button" title="关闭 (Esc)">×</button>
+      <h2>知识库管理</h2>
+      <p class="sub">文档按命名空间隔离(角色资料自动映射 lore_&lt;角色名&gt;);支持拖拽上传与检索测试。</p>
+
+      <div class="kb-toolbar">
+        <label class="kb-ns-label">命名空间
+          <select id="kb-ns" class="kb-ns-select"></select>
+        </label>
+        <span class="kb-count" id="kb-count"></span>
+        <button class="clear-btn kb-refresh-btn" id="kb-refresh" type="button" title="刷新">↻ 刷新</button>
+      </div>
+
+      <!-- 拖拽上传区 -->
+      <div class="kb-upload" id="kb-upload-drop" title="点击或拖拽文件到此处">
+        <div class="kb-upload-icon" aria-hidden="true">⤒</div>
+        <div class="kb-upload-hint">拖拽文件到此处,或点击选择</div>
+        <div class="kb-upload-sub">支持 .md / .markdown / .txt / .html / .json / .csv / .pdf / .docx</div>
+        <input type="file" id="kb-file-input" multiple accept=".md,.markdown,.txt,.html,.htm,.json,.csv,.pdf,.docx" hidden />
+      </div>
+      <div class="kb-upload-progress" id="kb-upload-progress" hidden>
+        <div class="kb-upload-name" id="kb-upload-name"></div>
+        <div class="kb-upload-bar"><div class="kb-upload-fill" id="kb-upload-fill"></div></div>
+      </div>
+      <div class="kb-upload-msg" id="kb-upload-msg"></div>
+
+      <!-- 文档列表 -->
+      <div class="kb-doc-head">
+        <span>文档列表</span>
+        <span class="kb-doc-legend">点击「块预览」查看切分详情</span>
+      </div>
+      <div class="kb-doc-list" id="kb-doc-list"></div>
+
+      <!-- 检索测试 -->
+      <div class="kb-search-box">
+        <input type="text" id="kb-search-q" placeholder="输入检索词,测试知识库命中…" maxlength="200" />
+        <select id="kb-search-k" title="返回条数">
+          <option value="3">3</option><option value="5">5</option><option value="8">8</option>
+        </select>
+        <button class="clear-btn" id="kb-search-btn" type="button">检索</button>
+      </div>
+      <div class="kb-search-results" id="kb-search-results"></div>
+    </div>
+  </div>
+
+  <!-- 知识块预览弹层 -->
+  <div class="modal-backdrop kb-chunks-backdrop" id="kb-chunks-backdrop" hidden>
+    <div class="modal-panel kb-panel kb-chunks-panel" role="dialog" aria-modal="true" aria-label="知识块预览">
+      <button class="close-x" id="kb-chunks-close" type="button" title="关闭 (Esc)">×</button>
+      <h2 id="kb-chunks-title">知识块预览</h2>
+      <p class="sub" id="kb-chunks-sub"></p>
+      <div class="kb-chunks-list" id="kb-chunks-list"></div>
+    </div>
+  </div>
+
+  <!-- 快捷键帮助弹层 -->
+  <div class="help-backdrop" id="help-backdrop" hidden>
+    <div class="help-modal" role="dialog" aria-modal="true" aria-label="键盘快捷键">
+      <button class="close-x" id="help-close" type="button" title="关闭 (Esc)">×</button>
+      <h2>键盘快捷键</h2>
+      <p class="sub">输入框聚焦时,除 Ctrl/⌘+K、Ctrl/⌘+Enter、Esc 外,其余按键不打断你的输入。</p>
+
+      <div class="help-group-title">发送与聚焦</div>
+      <div class="help-row"><span class="desc">发送消息</span><span class="help-keys"><kbd class="key">Enter</kbd><kbd class="key">Ctrl/⌘ + Enter</kbd></span></div>
+      <div class="help-row"><span class="desc">聚焦输入框</span><span class="help-keys"><kbd class="key">Ctrl/⌘ + K</kbd></span></div>
+
+      <div class="help-group-title">调节关键变量(数值 − / +)</div>
+      <div class="help-row"><span class="desc">温度(创意度)</span><span class="help-keys"><kbd class="key">−</kbd><kbd class="key">=</kbd><kbd class="key">Alt + ↓/↑</kbd></span></div>
+      <div class="help-row"><span class="desc">情绪灵敏度</span><span class="help-keys"><kbd class="key">[</kbd><kbd class="key">]</kbd><kbd class="key">Alt + ←/→</kbd></span></div>
+      <div class="help-row"><span class="desc">打字速度</span><span class="help-keys"><kbd class="key">,</kbd><kbd class="key">.</kbd><kbd class="key">Alt + Shift + ↓/↑</kbd></span></div>
+      <div class="help-row"><span class="desc">数字人缩放</span><span class="help-keys"><kbd class="key">(</kbd><kbd class="key">)</kbd><kbd class="key">Alt + Shift + ←/→</kbd></span></div>
+
+      <div class="help-group-title">切换状态</div>
+      <div class="help-row"><span class="desc">显隐数字人</span><span class="help-keys"><kbd class="key">M</kbd></span></div>
+      <div class="help-row"><span class="desc">切换明暗主题</span><span class="help-keys"><kbd class="key">T</kbd></span></div>
+      <div class="help-row"><span class="desc">清空对话记忆</span><span class="help-keys"><kbd class="key">C</kbd></span></div>
+
+      <div class="help-group-title">模型与角色</div>
+      <div class="help-row"><span class="desc">模型切换(本地 Ollama ↔ 云端)</span><span class="help-keys"><kbd class="key">顶栏模型按钮</kbd></span></div>
+      <div class="help-row"><span class="desc">切换 Live2D 模型</span><span class="help-keys"><kbd class="key">1</kbd><kbd class="key">2</kbd></span></div>
+      <div class="help-row"><span class="desc">重置数字人位置</span><span class="help-keys"><kbd class="key">F</kbd><kbd class="key">Shift + R</kbd></span></div>
+      <div class="help-row"><span class="desc">拖动数字人(拖动后双击复位)</span><span class="help-keys"><kbd class="key">鼠标拖拽</kbd></span></div>
+      <div class="help-row"><span class="desc">点击数字人:头部/身体/下摆触发不同互动,连点递进;空白处随机互动</span><span class="help-keys"><kbd class="key">单击</kbd></span></div>
+
+      <div class="help-group-title">文本指令(在对话中嵌入)</div>
+      <div class="help-row"><span class="desc">触发指定动作(支持中文「动作」或英文 action)</span><span class="help-keys"><kbd class="key">{动作:动作名}</kbd></span></div>
+      <div class="help-row"><span class="desc">可用动作:b_shanzi / b_liaofa / b_taishou / b_diantou / t_weixiao / t_nanguo / b_yaotou 等</span><span class="help-keys"></span></div>
+      <div class="help-row"><span class="desc">指令会从显示文本中自动剥离,仅触发动作</span><span class="help-keys"></span></div>
+
+      <div class="help-group-title">通用</div>
+      <div class="help-row"><span class="desc">打开 / 关闭本帮助</span><span class="help-keys"><kbd class="key">?</kbd><kbd class="key">H</kbd></span></div>
+      <div class="help-row"><span class="desc">关闭弹层 / 取消输入焦点</span><span class="help-keys"><kbd class="key">Esc</kbd></span></div>
+    </div>
+  </div>
+
+  <!-- Toast 反馈容器 -->
+  <div id="toasts" aria-live="polite"></div>
+
+  <!-- 语音设置面板由 voice.js 动态创建并注入 body -->
+
+  <!-- Live2D 运行时:必须按此顺序加载(cubismcore → pixi → live2d-display) -->
+  <script src="./assets/lib/live2dcubismcore.min.js?v=7"></script>
+  <script src="./assets/lib/pixi.min.js?v=7"></script>
+  <script src="./assets/lib/pixi-live2d-display-cubism4.min.js?v=7"></script>
+  <script src="./js/rain.js?v=1"></script>
+  <script src="./js/live2d.js?v=9"></script>
+  <script src="./js/voice.js?v=7"></script>
+  <!-- 模型切换(本地 Ollama ↔ 云端):在 chat.js 之前加载,chat.js 依赖 window.RoleplayLLM -->
+  <script src="./js/llm-switch.js?v=2"></script>
+  <!-- Live2D 引导脚本(独立文件以符合 CSP script-src 'self',禁止内联脚本) -->
+  <script src="./js/live2d-bootstrap.js?v=8"></script>
+  <!-- P3：桌面宠物共享动作库/意图事件（Web 聊天页与 pet.html 同源复用） -->
+  <script src="./shared/pet-core.js?v=1"></script>
+  <script src="./js/pet-voice.js?v=6"></script>
+  <script src="./js/pet-subtitle.js?v=4"></script>
+  <script src="./js/chat.js?v=9"></script>
+  <!-- 知识库管理弹层(独立外置文件以符合 CSP script-src 'self') -->
+  <script src="./js/knowledge.js?v=1"></script>
+  <!-- 桌面宠物桥接(顶栏按钮:探测/唤起) -->
+  <script src="./js/desktop-pet.js?v=4"></script>
+  <!-- 布局交互(分栏拖拽 / HUD 折叠 / 窄屏抽屉):独立外置文件以符合 CSP script-src 'self' -->
+  <script src="./js/layout.js?v=1"></script>
+</body>
+</html>
