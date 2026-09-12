@@ -26,6 +26,7 @@ from roleplay.core.knowledge.plot_graph import (
     is_noise_entity,
     load_alias_table,
     mine_entity_candidates,
+    rescue_noise_entity,
     prompt_for_lang,
 )
 from roleplay.core.persona_prompt import build_plot_context, build_roleplay_prompt
@@ -322,17 +323,42 @@ def test_noise_entity_filter():
         assert not is_noise_entity(good), good
 
 
+def test_rescue_noise_entity_via_alias():
+    """5 类误杀：name 命中噪声但有干净别名时，别名升为正名、原 name 降为别名。"""
+    cases = [
+        # 句点误杀
+        ({"name": "T.Kettler", "aliases": ["T Kettler"]}, "T Kettler"),
+        # the 前缀误杀
+        ({"name": "the Sixes", "aliases": ["Sixes"]}, "Sixes"),
+        # 常用词同形误杀
+        ({"name": "mine", "aliases": ["Mine (Ida)"]}, "Mine (Ida)"),
+        # 首个别名也是噪声时跳过，取第二个
+        ({"name": "mine", "aliases": ["it", "Ida's gun"]}, "Ida's gun"),
+    ]
+    for entity, expected in cases:
+        rescued = rescue_noise_entity(entity)
+        assert rescued is not None, entity
+        assert rescued["name"] == expected, (entity, rescued)
+        assert entity["name"] in rescued["aliases"], (entity, rescued)
+    # 全噪声别名 / 无别名 → 不打捞
+    assert rescue_noise_entity({"name": "mine", "aliases": ["it"]}) is None
+    assert rescue_noise_entity({"name": "Z", "aliases": []}) is None
+    # 契约：rescue 仅在 name 已判噪声时由调用方触发，本函数只做别名交换，
+    # 不重复判定 name 是否噪声（干净名的短路在调用方）。
+
+
 def test_build_graph_filters_noise_entities(tmp_path):
-    """建图时噪声实体被丢弃，正牌实体与关系正常入库。"""
+    """建图时纯噪声（无干净别名）被丢弃；带干净别名的误杀实体被打捞，
+    且旧 name 降为别名后关系端点仍可解析。"""
     from roleplay.core.knowledge.graph_extract import GraphCache
 
     corpus, _store = _build_mini(tmp_path)
     cache = GraphCache(tmp_path / "cache")
     payload = {
         "entities": [
-            {"name": "ma'am", "aliases": ["Madam Lucy"]},
+            {"name": "ma'am", "aliases": ["Madam Lucy"]},   # 误杀 → 打捞
+            {"name": "An exorcist", "aliases": []},          # 纯噪声 → 丢弃
             {"name": "凯拉", "aliases": []},
-            {"name": "An exorcist", "aliases": ["露西"]},
         ],
         "relations": [{"src": "ma'am", "dst": "凯拉", "relation": "遇见",
                        "confidence": 0.9}],
@@ -349,10 +375,13 @@ def test_build_graph_filters_noise_entities(tmp_path):
         return stats, store2
 
     stats, store2 = asyncio.run(_run())
-    assert stats["noise_filtered"] >= 2  # ma'am 与 An exorcist 被丢弃
+    assert stats["noise_rescued"] >= 1  # ma'am → Madam Lucy 打捞
+    assert stats["noise_filtered"] >= 1  # An exorcist（无干净别名）丢弃
     names = {e["name"] for e in store2.entities()}
-    assert "凯拉" in names
+    assert "凯拉" in names and "Madam Lucy" in names
     assert "ma'am" not in names and "An exorcist" not in names
+    # 旧 name 降为别名后，src="ma'am" 的关系端点仍解析成功 → 建边
+    assert stats["edges"] >= 1
 
 
 class _PassThroughExtractor:

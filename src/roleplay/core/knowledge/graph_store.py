@@ -44,6 +44,19 @@ def norm_name(text: str) -> str:
     return unicodedata.normalize("NFKC", text or "").strip().lower()
 
 
+def normalize_entity_type(raw: object) -> str:
+    """实体类型归一：``"角色|物品|地点"`` → ``"角色"``；空值 → ``"未分类"``。
+
+    只用于**读取视图**（stats/调试接口）：抽取模型偶发把多个类型拼在一个字段里，
+    直接展示会让"类型分布"出现一堆一次性桶。不写回数据文件。
+    """
+    text = str(raw or "").strip()
+    if not text:
+        return "未分类"
+    first = text.split("|")[0].strip()
+    return first or "未分类"
+
+
 def entity_id(name: str) -> str:
     """canonical 名 → 确定性实体 id（同名必同 id，重建图谱不漂移）。"""
     digest = hashlib.sha1(norm_name(name).encode("utf-8")).hexdigest()[:12]
@@ -127,9 +140,14 @@ class GraphStore:
         self._load_entity_count: int = 0
         # bind_alias_table 因别名冲突（已被其他实体占有）被丢弃的条数（观测性）
         self._alias_ambiguous_dropped: int = 0
+        # bind_alias_table(on_conflict="merge") 因人工表优先而改指的条数（观测性）
+        self._alias_reassigned: int = 0
         # 边索引 (src, dst, relation) -> edge：upsert_edge 合并查找 O(n) → O(1)。
         # 仅运行时维护，**不落盘**（save 的 payload 不含它，_load 后重建）。
         self._edge_idx: dict[tuple[str, str, str], dict] = {}
+        # 图内容版本号：任何写操作 +1。检索层据此缓存「过滤后的边表 + PPR 邻接表」，
+        # 既避免每查询重扫 5000+ 边，又保证测试里改了图之后立刻看到新结果（不会读到旧缓存）。
+        self._revision: int = 0
         self._load()
 
     # ── 持久化 ──
@@ -202,6 +220,7 @@ class GraphStore:
         self._anchored = set(anchored) if isinstance(anchored, list) else set()
         self._load_entity_count = len(self._entities)
         self._rebuild_edge_index()
+        self._revision += 1
 
     def _rebuild_edge_index(self) -> None:
         """重建边索引（加载后 / 边被删除后调用）。
@@ -302,6 +321,16 @@ class GraphStore:
         """bind_alias_table 因别名已被其他实体占有而丢弃的条数。"""
         return self._alias_ambiguous_dropped
 
+    @property
+    def alias_reassigned(self) -> int:
+        """bind_alias_table(on_conflict="merge") 把别名从抽取实体改指人工规范实体的条数。"""
+        return self._alias_reassigned
+
+    @property
+    def revision(self) -> int:
+        """图内容版本号（每次写操作自增）：检索层缓存失效键。"""
+        return self._revision
+
     # ── 实体 ──
     def upsert_entities(
         self, items: list[dict], *, pending: bool = False
@@ -332,6 +361,7 @@ class GraphStore:
                 self._entities[eid]["mentions"] = (
                     int(self._entities[eid].get("mentions") or 0) + 1
                 )
+        self._revision += 1
         return eids
 
     def _ensure_entity(
@@ -384,11 +414,20 @@ class GraphStore:
                 self._alias_index[na] = eid
         return eid, existed
 
-    def bind_alias_table(self, mapping: dict[str, list[str]]) -> int:
+    def bind_alias_table(
+        self, mapping: dict[str, list[str]], *, on_conflict: str = "skip"
+    ) -> int:
         """绑定角色卡 entity_aliases（人工权威别名表，最高归并优先级）。
 
         为每个 canonical 名确保实体存在（必要时创建，不视为 pending），
         并登记别名 + 锚定（零度不清除）。返回登记的别名条数。
+
+        ``on_conflict``（P4 新增，默认 ``"skip"`` 保持既有语义不变）：
+        - ``"skip"``：别名已被其他实体占有时跳过并计数（历史行为，lore 层在用）；
+        - ``"merge"``：**人工表最高优先**——把该别名改指人工规范实体（原持有者保留
+          其余名字），并计入 ``alias_reassigned``。文档一直宣称人工表是最高优先级的
+          归并来源，但旧实现是"首注册优先"，实测生产数据里 4 条冲突全部由抽取出来的
+          噪声实体胜出（如 ``Noir`` 压在人工规范名「菲林士多」上），令人工表形同虚设。
         """
         count = 0
         with self._lock:
@@ -405,20 +444,47 @@ class GraphStore:
                         continue
                     other = self._alias_index.get(na)
                     if other is not None and other != eid:
-                        self._alias_ambiguous_dropped += 1
-                        logger.warning(
-                            "别名冲突：%s 已指向 %s，忽略对 %s 的绑定", alias, other, name
+                        if on_conflict != "merge" or other in self._anchored:
+                            # 默认语义 / 对方同样被人工表锚定（两条人工条目争同一别名）
+                            # → 保持首注册，跳过并计数
+                            self._alias_ambiguous_dropped += 1
+                            logger.warning(
+                                "别名冲突：%s 已指向 %s，忽略对 %s 的绑定", alias, other, name
+                            )
+                            continue
+                        # merge：人工表改指成功，摘掉原持有者的这条别名（其余名字不动）
+                        self._detach_alias(other, na)
+                        self._alias_reassigned += 1
+                        logger.info(
+                            "别名改指（人工表优先）：%s 由 %s 改指 %s", alias, other, eid
                         )
-                        continue
                     if na not in self._alias_index:
                         self._entities[eid].setdefault("aliases", []).append(alias)
                         self._alias_index[na] = eid
                         count += 1
+        self._revision += 1
         return count
+
+    def _detach_alias(self, eid: str, normalized_alias: str) -> None:
+        """把某条归一名从实体 ``eid`` 的别名表与全局索引里摘掉（调用方持锁）。"""
+        ent = self._entities.get(eid)
+        if ent is not None:
+            kept = [
+                a for a in (ent.get("aliases") or []) if norm_name(str(a)) != normalized_alias
+            ]
+            ent["aliases"] = kept
+        if self._alias_index.get(normalized_alias) == eid:
+            self._alias_index.pop(normalized_alias, None)
 
     def link_exact(self, mention: str) -> str | None:
         """别名/正名精确链接（归一后 O(1)）。"""
         return self._alias_index.get(norm_name(mention))
+
+    @property
+    def anchored_ids(self) -> frozenset[str]:
+        """被人工别名表锚定的实体 id 集合（只读视图）。"""
+        with self._lock:
+            return frozenset(self._anchored)
 
     def entities(self) -> list[dict]:
         with self._lock:
@@ -519,6 +585,7 @@ class GraphStore:
                     x for x in evidence_list if (x["ns"], x["doc_id"], x["hash"]) not in existing
                 ]
                 e["ts"] = max(e.get("ts", 0.0), ts or time.time())
+                self._revision += 1
                 return True
             edge = {
                 "src": src,
@@ -532,6 +599,7 @@ class GraphStore:
             }
             self._edges.append(edge)
             self._edge_idx[key] = edge
+            self._revision += 1
             return True
 
     def neighbors(self, eid: str) -> list[tuple[dict, str]]:
@@ -595,6 +663,7 @@ class GraphStore:
                 self._entities.pop(eid, None)
                 for key in [k for k, v in self._alias_index.items() if v == eid]:
                     self._alias_index.pop(key, None)
+        self._revision += 1  # 证据可能被过滤（影响孤证门控），故无条件失效缓存
         return removed
 
     # ── 统计 ──
@@ -603,18 +672,26 @@ class GraphStore:
             by_type: dict[str, int] = {}
             degree: dict[str, int] = {}
             for ent in self._entities.values():
-                t = ent.get("type") or "未分类"
+                # 抽取偶发把多个类型用 | 拼在一起（"角色|物品|地点|…"，实测 6 个实体）：
+                # 统计视图只取首个类型（**不写回文件**，数据文件保持原样）。
+                t = normalize_entity_type(ent.get("type"))
                 by_type[t] = by_type.get(t, 0) + 1
             for e in self._edges:
                 degree[e["src"]] = degree.get(e["src"], 0) + 1
                 degree[e["dst"]] = degree.get(e["dst"], 0) + 1
             top = sorted(degree.items(), key=lambda kv: kv[1], reverse=True)[:10]
             conv = sum(1 for e in self._edges if e.get("source") == "conversation")
+            zero_degree = sum(1 for eid in self._entities if degree.get(eid, 0) == 0)
             return {
                 "entities": len(self._entities),
                 "edges": len(self._edges),
                 "edges_lore": len(self._edges) - conv,
                 "edges_conversation": conv,
+                # 零度实体（无任何边）：只可能走"提及 grep"，占真实图谱 41.2%（2809/6814），
+                # 是数据面后续重建的裁剪对象——这里只做观测，检索层由种子门控兜住。
+                "zero_degree_entities": zero_degree,
+                "alias_ambiguous_dropped": self._alias_ambiguous_dropped,
+                "alias_reassigned": self._alias_reassigned,
                 "by_type": by_type,
                 "top_degree": [
                     {

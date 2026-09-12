@@ -189,6 +189,19 @@ def _build_extract_llm(settings):
     )
 
 
+class _ReplayOnlyExtractor:
+    """零 LLM 重放专用抽取器：永不发起模型调用，缓存未命中即判失败。
+
+    ``build_plot_graph`` 只在缓存 miss 时才调 ``extract``，返回 ``None`` 会让该块
+    计入 ``stats["failed"]`` 并跳过——正好是「只重放已有抽取结果」要的语义。
+    """
+
+    available = True
+
+    async def extract(self, text: str, system: str | None = None):  # noqa: ARG002
+        return None
+
+
 async def _cmd_build_graph(
     settings,
     character_id: str,
@@ -196,6 +209,7 @@ async def _cmd_build_graph(
     lang: str | None,
     rebuild: bool,
     allow_noop: bool = False,
+    rebuild_graph_only: bool = False,
 ) -> int:
     _src, cpath, gpath, cache_dir = _paths(settings, character_id)
     if not cpath.exists():
@@ -208,6 +222,14 @@ async def _cmd_build_graph(
     # no-op 判定的「前」快照必须在 --rebuild 删图之前取，否则永远判不出来
     before = _graph_snapshot(gpath)
     cache = GraphCache(cache_dir)
+    if rebuild_graph_only:
+        # 只重建图谱、保住缓存（删图但不 clear）。
+        # 这是别名归并（M1）**唯一能真正生效**的路径：在旧图上 bind_alias_table
+        # 会因 first-write-wins 把已被其它实体占用的别名全部跳过，脚本仍报成功
+        # ——即 B2「静默 no-op」。必须先删图，让别名表成为首个注册者。
+        if gpath.exists():
+            gpath.unlink()
+        print("[rebuild-graph-only] 已删除旧图谱，抽取缓存保留")
     if rebuild:
         n = cache.clear()
         if gpath.exists():
@@ -240,11 +262,23 @@ async def _cmd_build_graph(
         print(f"[error] 图谱加载失败，已拒绝落盘（防空图覆盖）：{store.load_error}")
         return 1
 
-    llm = _build_extract_llm(settings)
-    extractor = GraphExtractor(llm=llm, timeout=float(settings.plot_extract_timeout))
-    if not extractor.available:
-        print("[error] LLM 不可用：请设置 ROLEPLAY_LLM_PROVIDER/ROLEPLAY_LLM_MODEL")
-        return 1
+    if rebuild_graph_only:
+        extractor = _ReplayOnlyExtractor()
+        miss = [c.hash for c in corpus.chunks if cache.get(c.hash) is None]
+        hit = len(corpus.chunks) - len(miss)
+        print(
+            f"[rebuild-graph-only] 缓存覆盖 {hit}/{len(corpus.chunks)} 块"
+            "｜零 LLM，未命中块直接跳过"
+        )
+        if miss:
+            print(f"[rebuild-graph-only][warn] {len(miss)} 块无缓存，本次不会写入")
+            print(f"[rebuild-graph-only] 缺失样例：{miss[:5]}")
+    else:
+        llm = _build_extract_llm(settings)
+        extractor = GraphExtractor(llm=llm, timeout=float(settings.plot_extract_timeout))
+        if not extractor.available:
+            print("[error] LLM 不可用：请设置 ROLEPLAY_LLM_PROVIDER/ROLEPLAY_LLM_MODEL")
+            return 1
     ns = plot_namespace(character_id)
     print(
         f"[graph] 开始构建：语料 {len(corpus.chunks)} 块"
@@ -280,7 +314,8 @@ async def _cmd_build_graph(
     print(f"[graph] 落盘 {gpath}（schema={PLOT_GRAPH_SCHEMA}）")
     # ── no-op 检测（M0-4）：跑了一大轮却一个字节都没变 = 白跑，明确报错 ──
     after = _graph_snapshot(gpath)
-    if not rebuild and _is_noop(before, after):  # --rebuild 先删图，同内容属正常
+    # --rebuild 与 --rebuild-graph-only 都是「先删图再重建」，同内容属正常，不判 no-op
+    if not rebuild and not rebuild_graph_only and _is_noop(before, after):
         print(
             "[no-op][warn] 图谱构建前后完全一致："
             f"sha256={after['sha256'][:12]}…｜实体 {after['entities']}｜边 {after['edges']}"
@@ -307,6 +342,12 @@ def main() -> int:
     ap.add_argument("--mine-entities", action="store_true", help="挖掘英文专名候选（译名对照草稿）")
     ap.add_argument("--rebuild", action="store_true", help="配合 --build-graph：清缓存与旧图谱")
     ap.add_argument(
+        "--rebuild-graph-only",
+        action="store_true",
+        help="配合 --build-graph：只删图谱、保留抽取缓存，零 LLM 重放重建。"
+        "别名表改动后必须用这个才生效（否则合并会被 first-write-wins 静默跳过）",
+    )
+    ap.add_argument(
         "--allow-noop",
         action="store_true",
         help="豁免 no-op 检测：图谱构建前后完全一致时仍返回 0（默认返回 2）",
@@ -316,6 +357,9 @@ def main() -> int:
     ap.add_argument("--chunk-size", type=int, default=600, help="切块字符数")
     ap.add_argument("--top", type=int, default=300, help="--mine-entities 候选条数")
     args = ap.parse_args()
+
+    if args.rebuild and args.rebuild_graph_only:
+        ap.error("--rebuild 与 --rebuild-graph-only 互斥（前者清缓存，后者保留）")
 
     settings = get_settings()
     if args.build_corpus:
@@ -331,6 +375,7 @@ def main() -> int:
                 args.lang,
                 args.rebuild,
                 allow_noop=args.allow_noop,
+                rebuild_graph_only=args.rebuild_graph_only,
             )
         )
     if args.stats:

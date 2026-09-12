@@ -113,6 +113,23 @@ def build_plot_registry(settings: Settings | None = None) -> PlotGraphRegistry:
         max_hops=int(getattr(s, "plot_max_hops", 2)),
         damping=float(getattr(s, "plot_ppr_damping", 0.85)),
         link_threshold=float(getattr(s, "plot_link_threshold", 0.5)),
+        # P2 三通道 RRF 融合参数（默认值与 Settings 一致，避免直接构造注册表时行为漂移）
+        fuse_k=int(getattr(s, "plot_fuse_k", 3)),
+        weight_edge=float(getattr(s, "plot_weight_edge", 1.0)),
+        weight_mention=float(getattr(s, "plot_weight_mention", 1.0)),
+        weight_lexical=float(getattr(s, "plot_weight_lexical", 0.6)),
+        diversity_per_doc=int(getattr(s, "plot_diversity_per_doc", 1)),
+        mention_cache_size=int(getattr(s, "plot_mention_cache_size", 512)),
+        # P3 种子门控
+        require_anchored_token_seeds=bool(
+            getattr(s, "plot_require_anchored_token_seeds", True)
+        ),
+        filter_generic_seeds=bool(getattr(s, "plot_filter_generic_seeds", True)),
+        mention_scoring=str(getattr(s, "plot_mention_scoring", "count")),
+        cooccurrence_bonus=bool(getattr(s, "plot_cooccurrence_bonus", True)),
+        mention_group_by_entity=bool(getattr(s, "plot_mention_group_by_entity", True)),
+        # P4 人工别名表权威性（仅剧情层；lore 层保持 GraphStore 默认 skip 语义）
+        alias_authoritative=bool(getattr(s, "plot_alias_authoritative", True)),
     )
 
 

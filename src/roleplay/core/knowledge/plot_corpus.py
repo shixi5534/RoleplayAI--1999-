@@ -91,6 +91,8 @@ ANALYSIS_TITLE_KEYWORDS = (
 )
 
 CJK_RE = re.compile(r"[\u4e00-\u9fff]")
+# CJK 连续段（分词用）：二元组只在段内生成，避免跨标点/换行拼出假词元
+CJK_RUN_RE = re.compile(r"[\u4e00-\u9fff]+")
 LATIN_RE = re.compile(r"[A-Za-z]")
 
 # 英文转写里高频的口语填充词（词法检索降噪用）
@@ -309,6 +311,8 @@ class PlotCorpus:
         # hash → chunk 的 O(1) 索引（N0-3）：剧情图谱回查证据时逐块 by_hash，
         # 旧实现线性扫描 2477 块 × 每次检索，是检索热路径上的 O(n²)。
         self._by_hash: dict[str, PlotChunk] = {}
+        # (doc_id, hash) → chunk：重复 hash 时按文档归位（P4 证据溯源修复）
+        self._by_doc_hash: dict[tuple[str, str], PlotChunk] = {}
         self.load()
 
     # ── 构建 ──
@@ -396,12 +400,21 @@ class PlotCorpus:
         self._rebuild_hash_index()
 
     def _rebuild_hash_index(self) -> None:
-        """重建 hash → chunk 索引（重复 hash 保留首个，与旧线性扫描语义一致）。"""
+        """重建 hash → chunk 索引（重复 hash 保留首个，与旧线性扫描语义一致）。
+
+        同时建 ``(doc_id, hash) → chunk`` 索引：同一段转述常出现在不同 BV（实测
+        130 组重复 hash / 262 块），只按 hash 取首块会让图谱证据归属到另一支视频。
+        """
         index: dict[str, PlotChunk] = {}
+        by_doc: dict[tuple[str, str], PlotChunk] = {}
         for c in self.chunks:
-            if c.hash and c.hash not in index:
+            if not c.hash:
+                continue
+            if c.hash not in index:
                 index[c.hash] = c
+            by_doc.setdefault((c.doc_id, c.hash), c)
         self._by_hash = index
+        self._by_doc_hash = by_doc
 
     def _ensure_hash_index(self) -> None:
         """惰性兜底：直接改过 ``corpus.chunks`` 而没走 build/load 时也能命中索引。"""
@@ -409,11 +422,20 @@ class PlotCorpus:
             self._rebuild_hash_index()
 
     # ── 查询 ──
-    def by_hash(self, h: str) -> PlotChunk | None:
-        """O(1) 按文本指纹取块（旧实现为 O(n) 线性扫描）。"""
+    def by_hash(self, h: str, doc_id: str | None = None) -> PlotChunk | None:
+        """O(1) 按文本指纹取块（旧实现为 O(n) 线性扫描）。
+
+        ``doc_id`` 给定时优先返回**同一文档**的副本（图谱 evidence 里带 doc_id）：
+        重复 hash 的块文本相同但 title/url/篇章归属不同，按 doc 归位才能让证据块
+        的引用指向正确的视频；查不到再回落到「首个」的既有语义。
+        """
         if not h:
             return None
         self._ensure_hash_index()
+        if doc_id:
+            alt = self._by_doc_hash.get((str(doc_id), h))
+            if alt is not None:
+                return alt
         return self._by_hash.get(h)
 
     def by_source_kind(self, kind: str) -> list[PlotChunk]:
@@ -449,6 +471,44 @@ class PlotCorpus:
             idf = math.log(1 + (n_docs - len(plist) + 0.5) / (len(plist) + 0.5))
             scored[tok] = [(h, w * idf) for h, w in plist]
         self._bm25 = scored
+
+    def token_postings(self) -> dict[str, list[tuple[str, float]]]:
+        """词元倒排表（惰性构建，BM25 与「提及前置过滤」共用同一份，不重复占内存）。"""
+        self._ensure_bm25()
+        return self._bm25 if self._bm25 is not None else {}
+
+    def candidate_hashes(self, name: str) -> set[str] | None:
+        """实体名 → **可能含该名字**的块 hash 超集；``None`` 表示无可用词元、须全扫兜底。
+
+        用途（P1 性能修复）：剧情图谱的「种子提及块挖掘」原本对每个名字/别名都
+        扫全部语料块做正则 ``findall``（实测单查询 128 个名字 × 8358 块 =
+        1069824 次调用 / 16.9s，占检索总耗时 97.6%）。这里先用倒排把候选收敛到
+        「含该名字词元的块」（实测均值 63 块），调用方再在候选上跑**同一个精确计数器**。
+
+        正确性依据（候选集是真实命中的超集，故截断不丢结果）：
+        - 拉丁名字：``tokenize`` 用 ``[a-z0-9]+`` 切分全部词，任何含该词的块必有对应词元；
+        - CJK 名字：字与**相邻**二元组都进倒排，含「露西」的块必含词元 露/西/露西；
+        - 任一词元不在倒排中 ⇒ 语料里根本没有该词元 ⇒ 该名字零命中，返回空集；
+        - ``tokenize`` 会丢弃单字母拉丁词与英文停用词，因此「J」「the」这类名字会拿到
+          ``None``（交由调用方全扫），不会静默丢结果。
+        """
+        toks = {t for t in tokenize(name) if t}
+        if not toks:
+            return None
+        postings = self.token_postings()
+        cand: set[str] | None = None
+        for tok in toks:
+            plist = postings.get(tok)
+            if plist is None:
+                return set()  # 词元不存在 ⇒ 该名字在语料中零命中
+            cur = {h for h, _w in plist}
+            if cand is None:
+                cand = cur
+            else:
+                cand &= cur
+                if not cand:
+                    return set()
+        return cand or set()
 
     def search(
         self,
@@ -504,15 +564,22 @@ class PlotCorpus:
 
 
 def tokenize(text: str) -> list[str]:
-    """中英混合分词：拉丁词 + CJK 单字与二元组（与 vector_store._BM25 同风格）。"""
+    """中英混合分词：拉丁词 + CJK 单字与**相邻**二元组（与 vector_store._BM25 同风格）。
+
+    缺陷修复（P4）：旧实现用 ``zip(cjk, cjk[1:])`` 在**扁平化后的 CJK 字序列**上拼
+    二元组，会把文本里并不相邻的两个字拼成假词元——实测 ``tokenize("暴。雨")``
+    返回 ``['暴','雨','暴雨']``，让 BM25 与实体名兜底链接都出现跨标点/换行的伪命中。
+    现按 CJK 连续段（``CJK_RUN_RE``）分别拼二元组，只保留真正相邻的组合。
+    """
     out: list[str] = []
-    for m in re.finditer(r"[a-z0-9]+", (text or "").lower()):
+    raw = text or ""
+    for m in re.finditer(r"[a-z0-9]+", raw.lower()):
         w = m.group(0)
         if len(w) > 1 and w not in EN_STOPWORDS:
             out.append(w)
-    cjk = CJK_RE.findall(text or "")
-    out.extend(cjk)
-    out.extend(a + b for a, b in zip(cjk, cjk[1:]))
+    for run in CJK_RUN_RE.findall(raw):
+        out.extend(run)
+        out.extend(a + b for a, b in zip(run, run[1:]))
     return out
 
 

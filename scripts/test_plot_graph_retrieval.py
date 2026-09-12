@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from roleplay.config import get_settings  # noqa: E402
-from roleplay.core.knowledge.plot_graph import PlotGraphRegistry  # noqa: E402
+from roleplay.core.knowledge.factory import build_plot_registry  # noqa: E402
 
 CHARACTER = "wu_ming_zhe"
 
@@ -48,8 +48,67 @@ QUERIES = [
     "SPDM",
 ]
 
-# 上一轮系统性幻觉清单（应已清零，若重新出现即为回归）
-HALLUCINATION_WATCH = ["Madam Lucy", "露西", "Lucy"]
+# ── R13（噪声敏感性）监控口径（2026-09-12 修订）─────────────────────────────
+# 历史缺陷：抽取模型把「Madam Lucy」当成**正名**写进 227 个正文根本没有 Lucy 的块。
+# 旧监控口径是「检索结果文本里只要出现 Madam Lucy/露西/Lucy 就算幻觉」——但露西是
+# 人工别名表锚定、灰机核实的**独立真实角色**（拉普拉斯科算中心负责人，与无名者是
+# 两个人），正常提及会被这条口径误判。故改为两个**可证伪**的不变式：
+#   ① 图中不得存在以称谓/句段形态为**正名**的实体（历史幻觉的落图形态）；
+#   ② 因某实体名而入选的检索块，正文必须真的出现该实体的某个干净名字。
+HALLUCINATION_WATCH = ["Madam Lucy", "露西", "Lucy"]  # 保留清单（报告字段兼容）
+
+
+def _clean_names(store, ent_name: str) -> list[str]:
+    """实体的「干净名字」集合（正名 + 非噪声别名，全部小写归一）。"""
+    from roleplay.core.knowledge.graph_store import norm_name
+    from roleplay.core.knowledge.plot_graph import is_noise_entity
+
+    eid = store.link_exact(ent_name)
+    ent = store.get_entity(eid) if eid else None
+    if not ent:
+        return []
+    names = [str(ent.get("name") or "")] + [str(a) for a in (ent.get("aliases") or [])]
+    return [norm_name(n) for n in names if n and not is_noise_entity(n)]
+
+
+def _noise_canonical_hits(retr) -> list[str]:
+    """不变式①：图中不得存在以**光杆称谓/语气词**为正名的实体。
+
+    历史缺陷（docs/剧情图谱全量审查报告.md §三）：抽取模型把「Madam Lucy」写进
+    227 个正文根本没有 Lucy 的块。落图后的可观测形态有两类：
+      a. 光杆称谓被当成实体正名（``ma'am``/``señora``/``okay``…）——本不变式检查它；
+      b. 带称谓的正常英文名（``Madam Lucy``/``St. Pavlov Foundation``）本身**合法**
+         （``is_noise_entity`` 明确放行），其真伪只能靠"证据块正文是否出现该名字"
+         判定，而共指（正文用 she/她 指代）会让该判定产生误报——故不在此断言，
+         仅由不变式②兜住"检索层不得给出正文无该名的提及块"。
+    """
+    bare = {
+        "ma'am", "senora", "señora", "senorita", "señorita", "madam", "madame",
+        "sir", "miss", "mister", "mr", "ms", "mrs", "dr", "okay", "alright",
+        "truly", "sorry", "please", "thank you", "excuse me", "everyone", "somebody",
+    }
+    hits: list[str] = []
+    for ent in retr.store.entities():
+        name = str(ent.get("name") or "").strip()
+        if name and name.lower() in bare:
+            hits.append(f"实体正名为光杆称谓：{name!r}")
+    return hits
+
+
+def _ungrounded_mention_hits(retr, chunks: list) -> list[str]:
+    """不变式②：因某实体名而入选的提及块，正文必须真的出现该实体的干净名字。"""
+    hits: list[str] = []
+    clean = _clean_names(retr.store, "露西")
+    if not clean:
+        return hits
+    for c in chunks:
+        meta = c.metadata or {}
+        if str(meta.get("seed_mention") or "") != "露西":
+            continue
+        low = c.text.lower()
+        if not any(n in low for n in clean):
+            hits.append(f"露西提及块正文无该名：{c.text[:40]!r}")
+    return hits
 
 
 def _backfill_hashes() -> set[str]:
@@ -115,18 +174,18 @@ def main() -> int:
     args = ap.parse_args()
 
     settings = get_settings()
-    # Settings 是 frozen model，命令行覆盖只能走局部变量
+    # 与生产共用装配路径（build_plot_registry ← Settings），避免"调试脚本参数与生产漂移"
+    # ——本脚本一度手工 new 注册表只传 include_weak，新增参数全被默认值覆盖。
+    registry = build_plot_registry(settings)
+    # Settings 是 frozen model，命令行覆盖只能改注册表内部配置并清缓存
     include_weak = (
         bool(args.include_weak)
         if args.include_weak is not None
         else bool(settings.plot_include_weak)
     )
-    registry = PlotGraphRegistry(
-        corpus_dir=settings.plot_corpus_dir,
-        graph_dir=settings.plot_graph_dir,
-        alias_dir=settings.plot_lore_dir,
-        include_weak=include_weak,
-    )
+    if include_weak != bool(settings.plot_include_weak):
+        registry._cfg["include_weak"] = include_weak
+        registry._cache.clear()
     print(f"[cfg ] plot_include_weak={include_weak}")
     retr = registry.get(CHARACTER)
     if retr is None:
@@ -145,7 +204,7 @@ def main() -> int:
     hit_backfill: set[str] = set()
     via_graph = via_lexical = 0
     no_result: list[str] = []
-    hallu_hits = 0
+    hallu_hits = len(_noise_canonical_hits(retr))
 
     for q in QUERIES:
         try:
@@ -181,13 +240,9 @@ def main() -> int:
             h = text2hash.get(c.text, "")
             if h in backfill:
                 hit_backfill.add(h)
-            text = c.text
-            for w in HALLUCINATION_WATCH:
-                if w in text and w not in q:
-                    hallu_hits += 1
-                    break
             if args.verbose:
-                print(f"      - ({c.metadata.get('via')}) {text[:110]}")
+                print(f"      - ({c.metadata.get('via')}/{c.metadata.get('path')}) {c.text[:110]}")
+        hallu_hits += len(_ungrounded_mention_hits(retr, chunks))
 
     print("\n==== 汇总 ====")
     print(f"查询数 {len(QUERIES)}｜图谱路径命中 {via_graph}｜纯词法兜底 {via_lexical}｜无结果 {len(no_result)}")

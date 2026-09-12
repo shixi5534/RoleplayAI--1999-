@@ -30,7 +30,16 @@ from verify_wiki_canonical import (  # noqa: E402
 )
 
 # —— 基线（不得回退）——
-BASELINE = {"plot": 11, "lore": 13, "union": 17}
+# ⚠️ 2026-09-11 下调 plot 1 条（11→10）、并集 1 条（17→16），**待 N1 后复核**。
+# 这不是抽取质量回退，而是图谱首次「干净重建」的必然结果：
+# 重建前 plot 图里躺着 269 条 relation=="待审核" 的边，是早期版本遗留的未核验关系。
+# 而 canonicalize_relation("待审核") 恒返回 None（该词不在 77 条受控词表内，只是
+# REVIEW_SENTINEL 哨兵），因此**任何一次干净重建都会把它们全部清除**——总结 B7 已预判
+# （「边数 4 035 降至约 3 766，这是预期而非回归」）。
+# 被扣掉的是 `无名者 —隶属— 圣洛夫基金会`：它原先只以「圣洛夫基金会 —待审核→ 无名者」
+# 的形态存在，本就不该计为正典命中。
+# 恢复路径：N1 云端抽取产出明确的「隶属」边后，基线应调回 11 / 17。
+BASELINE = {"plot": 10, "lore": 13, "union": 16}
 
 
 @pytest.fixture(scope="module")
@@ -106,6 +115,11 @@ def test_no_wrong_afflatus(graphs, gname):
 KNOWN_GAPS = {
     ("芝诺军备学院", "隶属", "鸽子屋"):
         "corpus_pending：两图谱均缺该边；鸽子屋→芝诺指挥链属早期设定剧情，语料未导入（wiki 置信度 高）",
+    ("无名者", "隶属", "圣洛夫基金会"):
+        "review_purged：2026-09-11 图谱干净重建清除了 269 条 relation=='待审核' 的边"
+        "（canonicalize_relation 对该词恒返回 None）。本条原先仅以"
+        "「圣洛夫基金会 —待审核→ 无名者」形态存在，属未核验关系，不计正典命中。"
+        "待 N1 云端抽取产出明确「隶属」边后应移除本缺口并调回基线 11/17",
 }
 
 
@@ -128,8 +142,10 @@ def test_high_confidence_core_facts_present(results):
 
 def test_known_gaps_not_stale():
     """白名单不得无限膨胀：缺口数不得增加"""
-    assert len(KNOWN_GAPS) <= 1, (
-        f"已知缺口数增加到 {len(KNOWN_GAPS)}（基线 1），请核查是否引入新的正典覆盖退化"
+    # 基线 1 → 2（2026-09-11）：新增的一条是「待审核」边清理的连带结果，
+    # 非新的覆盖退化，已在 KNOWN_GAPS 内注明 review_purged 与 N1 恢复路径。
+    assert len(KNOWN_GAPS) <= 2, (
+        f"已知缺口数增加到 {len(KNOWN_GAPS)}（基线 2），请核查是否引入新的正典覆盖退化"
     )
 
 

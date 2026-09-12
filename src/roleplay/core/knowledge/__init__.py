@@ -69,6 +69,7 @@ from .plot_graph import (
     is_noise_entity,
     load_alias_table,
     mine_entity_candidates,
+    rescue_noise_entity,
 )
 
 __all__ = [
@@ -124,6 +125,7 @@ __all__ = [
     "PlotGraphRetriever",
     "build_plot_graph",
     "is_noise_entity",
+    "rescue_noise_entity",
     "load_alias_table",
     "mine_entity_candidates",
 ]

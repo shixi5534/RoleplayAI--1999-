@@ -128,6 +128,42 @@ class Settings(BaseSettings):
     plot_context_max_chars: int = Field(1000, ge=0, le=20_000)  # 独立注入预算
     plot_link_threshold: float = Field(0.5, ge=0.0, le=1.0)  # 词元实体链接阈值（0.35 实测过松）
     plot_ppr_damping: float = Field(0.85, ge=0.1, le=0.99)
+    # ---- 剧情检索排序（P2：三通道 RRF 融合）----
+    # 三条通道分数量纲互不可比（边证据≈0.2 / 提及≈1.2 / 词法 BM25 30–75），
+    # 旧实现直接混排排序，导致图结构证据被提及路稳压、且进不了提示词（组内 0.85 相对门）。
+    # RRF 只用名次，天然免疫量纲问题。
+    # k 必须取**小值**：k=60（RRF 论文默认）时 1/(60+rank) 几乎不随名次变化，
+    # 通道权重会完全压过名次——实测 k=60 时边证据霸占全部名额（路径占比 87%），
+    # 严格通过率只有 42%；k=3 时两路真正交错，回到 46%（=旧实现水平）。
+    plot_fuse_k: int = Field(3, ge=1, le=1000)
+    plot_weight_edge: float = Field(1.0, ge=0.0, le=10.0)  # 边证据（结构化关系路径）
+    plot_weight_mention: float = Field(1.0, ge=0.0, le=10.0)  # 实体提及块（属性题）
+    plot_weight_lexical: float = Field(0.6, ge=0.0, le=10.0)  # 词法兜底（BM25）
+    plot_diversity_per_doc: int = Field(1, ge=0, le=10)  # 同一 doc 的软上限（先按此去冗余）
+    plot_mention_cache_size: int = Field(512, ge=16, le=100_000)  # 名字命中表缓存条数
+    # 提及块打分口径（300 题消融实测）：
+    #   count = Σ 权重×出现次数（旧口径）→ 严格通过 46.0%
+    #   idf   = Σ 权重×idf×(1+0.3·ln 次数)（稀有名字加权）→ 42.0%
+    # 结论：ASR 语料里"反复提到某角色"的块往往就是该角色的主场戏（答案块），
+    # 稀有别名命中多为顺带一提——故默认保留旧口径，idf 仅供换语料时复评。
+    plot_mention_scoring: Literal["count", "idf"] = "count"
+    # 多实体共现加成：块命中 ≥2 个目标实体时 ×(1+0.5·(k−1))（关系/多跳题的答案特征）
+    plot_cooccurrence_bonus: bool = True
+    # 提及块是否按**实体分组**输出（种子按 PPR 降序 → 邻居，组内按命中分降序）。
+    # 旧实现所有提及块共用同一分数、靠稳定排序自然形成该分组；实测（300 题）改为
+    # "全局按分数交错"会让严格通过率掉约 6pt，故默认保持分组序。
+    plot_mention_group_by_entity: bool = True
+    # ---- 剧情检索精度门控（P3：种子卫生）----
+    # 词元兜底种子必须被人工别名表锚定：实测 300 题只有 7 题走该路径（种子全是碎片），
+    # 而离题问句几乎全靠它蹭上 restaurant / this place 这类实体。
+    plot_require_anchored_token_seeds: bool = True
+    # 丢弃命中「世界常识泛词」的非锚定种子（天气/经济/故事…），
+    # 泛词表见 plot_graph.GENERIC_SEED_NAMES（只收与作品无关的日常词）。
+    plot_filter_generic_seeds: bool = True
+    # ---- 剧情图谱加载期语义（P4）----
+    # 人工别名表冲突时改指人工规范实体（merge），而不是被抽取实体反压（skip）。
+    # 仅作用于剧情层；GraphStore 默认仍是 skip，lore 层与既有测试语义不变。
+    plot_alias_authoritative: bool = True
     # 并发数：本地 CPU 小模型（7B）实测 8 并发会把单块耗时推过 60s 超时，
     # 默认 4（≈ 单块 20-30s、成功率 >90%）；纯 CPU 机器可 env 调到 2-3。
     plot_extract_concurrency: int = Field(4, ge=1, le=64)

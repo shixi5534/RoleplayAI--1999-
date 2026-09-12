@@ -48,12 +48,18 @@ def _score_group(meta: dict) -> str:
     |---|---|---|
     | ``vector`` | 向量库（混合重排后按最大值相对归一化） | top1 恒≈1.0 |
     | ``events`` | 长期记忆（原始余弦，未经混合重排） | 0.5–0.75 |
-    | ``plot_graph`` | 剧情图谱（PPR 派生 × confidence） | 0.1–0.2 |
-    | ``plot_lexical`` | 剧情词法兜底（BM25 原始分，无上界） | 30–75 |
+    | ``plot_graph`` | 剧情图谱（三通道 RRF 融合后归一到分数带） | 0.6–1.0 |
+    | ``plot_lexical`` | 剧情词法兜底（同一分数带内归一） | 0.6–1.0 |
     | ``profile`` | 用户画像（余弦 × 重要性） | 0–1 |
 
     历史缺陷：合并列表后套同一个 ``0.85 × top1``，导致 lore 命中强时长期记忆
     被整段丢弃、剧情图谱块被词法块挤掉（见 deliverables/rag-graphrag-audit）。
+
+    P2 更新（2026-09-12，见 deliverables/plot-rag-audit-20260912.md）：剧情层两条通道
+    原先分别是 0.1–0.2（PPR×confidence）与 30–75（BM25 原始分），**组内相对门因此把
+    边证据块整批丢掉**（阈值≈0.85×1.2=1.04 > 0.2）。现在剧情检索器在内部用 RRF 融合
+    并按名次归一到 0.6–1.0，两条通道量纲一致：相对门只在"同一通道内"筛掉明显劣后
+    的块（例如 1.0 vs 0.6），这正是该门本来的语义。
     """
     via = str(meta.get("via") or "")
     if via in ("plot_graph", "plot_lexical"):

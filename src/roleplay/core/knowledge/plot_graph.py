@@ -23,11 +23,18 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import math
 import re
 from pathlib import Path
 
 from ...core.rag.base import RetrievedChunk  # 复用检索块结构，便于统一渲染
-from .graph_ppr import WEAK_EVIDENCE_MIN, hop_distance, personalized_pagerank
+from .graph_ppr import (
+    WEAK_EVIDENCE_MIN,
+    build_adjacency,
+    filter_edges,
+    hop_distance,
+    personalized_pagerank,
+)
 from .graph_store import (
     GraphStore,
     build_local_endpoint_map,
@@ -50,6 +57,14 @@ PLOT_GRAPH_SCHEMA = "plot-v1"
 IMPORTANCE_TRANSCRIPT = 0.6
 # 证据条数 < 2 的边视为「孤证」：ASR 误识别风险高，默认不注入上下文
 # （WEAK_EVIDENCE_MIN 定义在 graph_ppr，与 PPR 传播口径共用同一常量）
+
+# ── P2 融合分数带 ──
+# 融合后把分数映射到 [0.6, 1.0]：下界必须高于 persona_prompt.MIN_CONTEXT_SCORE(0.05)，
+# 否则剧情块会被绝对门整批滤掉；上界 1.0 表示"本通道融合最强"。
+FUSE_MIN_SCORE = 0.6
+FUSE_MAX_SCORE = 1.0
+# 同一块被多路命中时的主 path 归属（数字大者优先）：结构化的边证据最有解释力
+FUSE_PATH_PRIORITY = {"edge": 3, "mention": 2, "lexical": 1}
 
 
 # ── 语言感知抽取提示词 ──
@@ -139,6 +154,38 @@ _RE_SENTENCE_MARK = re.compile(r"[,.!?;:]")
 # 会污染链接种子
 _RE_VERSION_ENTITY = re.compile(r"^\d+\.\d+\s*版本", re.IGNORECASE)
 
+# ── 泛词种子黑名单（P3 门控）──
+# 实测（300 题 + 10 条离题负样本）：图里混着大量"世界常识泛词"实体——它们因为
+# 转写里有人聊天气/经济/三餐而被抽出来，甚至带 1–11 条边。离题问句一旦精确命中
+# 这些名字，就会拿到 5–7 块剧情上下文注入人设提示词（实测「今天天气怎么样」→ 5 块）。
+# 这张表只收**与作品无关的世界常识泛词**，不收剧情专名（圣火/雅典/伦敦/灯塔/钥匙/
+# 十字街/滚鳄书店 等实测是题集里的有效种子，一律保留）。
+GENERIC_SEED_NAMES = frozenset(
+    {
+        # 中文：日常/世界常识
+        "天气", "气候", "春天", "夏天", "秋天", "冬天", "季节",
+        "经济", "股市", "房价", "新闻", "广告", "会议", "上班", "下班",
+        "时间", "名字", "故事", "笑话", "诗歌", "机器", "软件", "电脑",
+        "手机", "网络", "游戏", "电影", "音乐", "咖啡", "茶", "餐厅",
+        "饭店", "食物", "早餐", "午餐", "晚餐", "城市", "国家", "世界",
+        "朋友", "家人", "旅行", "假期", "考试", "学校", "医院", "银行",
+        # 英文：日常/世界常识（转写里高频的口语名词）
+        "weather", "time", "times", "day", "days", "week", "year", "years",
+        "story", "stories", "name", "names", "thing", "things", "stuff",
+        "place", "places", "world", "people", "person", "man", "woman",
+        "girl", "boy", "young lady", "friend", "friends", "family",
+        "restaurant", "food", "water", "coffee", "tea", "movie", "music",
+        "game", "computer", "phone", "software", "machine", "city", "country",
+        "money", "job", "work", "school", "hospital", "bank", "holiday",
+        "joke", "poem", "news", "economy", "weather report",
+    }
+)
+
+
+def is_generic_seed_name(name: str) -> bool:
+    """种子名是否为「世界常识泛词」（P3 门控用；剧情专名一律返回 False）。"""
+    return norm_name(name) in GENERIC_SEED_NAMES
+
 
 def is_noise_entity(name: str) -> bool:
     """判定抽取正名是否为转写噪声（句子片段/称谓/语气词）。
@@ -166,9 +213,39 @@ def is_noise_entity(name: str) -> bool:
     return len(core.split()) >= 4  # ≥4 个拉丁词 → 句子片段
 
 
+def rescue_noise_entity(entity: dict) -> dict | None:
+    """name 命中噪声但存在干净别名时，把别名升为正名（name 与该别名互换）。
+
+    ``is_noise_entity`` 5 类误杀（``T.Kettler`` / ``the Sixes`` / ``mine`` /
+    单字母 ``Z`` / ≥4 词机构名）的打捞路径：过滤器保持严格（句子片段绝不进图），
+    但 worker 把完整形式写进 ``aliases`` 时信息不再丢——取第一个干净别名当正名，
+    原噪声 name 降级为别名（端点解析靠别名索引仍可命中）。
+   无可打捞别名时返回 ``None``（调用方按噪声丢弃计数）。
+    """
+    name = str(entity.get("name") or "").strip()
+    aliases = [
+        str(a).strip()
+        for a in (entity.get("aliases") or [])
+        if str(a).strip()
+    ]
+    for i, alias in enumerate(aliases):
+        if alias != name and not is_noise_entity(alias):
+            rescued = dict(entity)
+            rescued["name"] = alias
+            rest = [a for j, a in enumerate(aliases) if j != i]
+            rest.append(name)
+            rescued["aliases"] = rest
+            return rescued
+    return None
+
+
 def _substantial_tokens(text: str) -> set[str]:
     """有区分度的词元：拉丁词与 CJK 二元组（CJK 单字如「生」「了」太泛，弃用）。"""
     return {t for t in tokenize(text) if len(t) >= 2}
+
+
+# 提及命中缓存的「未命中」哨兵：与「命中但零次」({} 空字典) 严格区分。
+_MISS = object()
 
 
 # ── 跨语言别名表 ──
@@ -331,6 +408,17 @@ class PlotGraphRetriever:
         damping: float = 0.85,
         max_iter: int = 40,
         link_threshold: float = 0.5,
+        mention_cache_size: int = 512,
+        fuse_k: int = 3,
+        weight_edge: float = 1.0,
+        weight_mention: float = 1.0,
+        weight_lexical: float = 0.6,
+        diversity_per_doc: int = 1,
+        require_anchored_token_seeds: bool = True,
+        filter_generic_seeds: bool = True,
+        mention_scoring: str = "count",
+        cooccurrence_bonus: bool = True,
+        mention_group_by_entity: bool = True,
     ) -> None:
         self.corpus = corpus
         self.store = store
@@ -342,13 +430,76 @@ class PlotGraphRetriever:
         self.damping = damping
         self.max_iter = max_iter
         self.link_threshold = link_threshold
+        # P2 融合参数（RRF：见 _fuse_channels）
+        self.fuse_k = max(1, int(fuse_k))
+        self.weight_edge = float(weight_edge)
+        self.weight_mention = float(weight_mention)
+        self.weight_lexical = float(weight_lexical)
+        # 同一 doc（同一支视频/同一分P）在最终结果里的软上限：先按此去冗余，
+        # 名额没填满时再放宽（避免"多样性"把返回条数压到 1 条，反而丢掉证据覆盖）
+        self.diversity_per_doc = max(1, int(diversity_per_doc))
+        # P3 种子门控（见 seed_gate / GENERIC_SEED_NAMES）
+        self.require_anchored_token_seeds = bool(require_anchored_token_seeds)
+        self.filter_generic_seeds = bool(filter_generic_seeds)
+        # P2 提及打分模式（"count" = 旧口径；"idf" = 稀有名字加权，实测更差，见消融）
+        self.mention_scoring = str(mention_scoring)
+        self.cooccurrence_bonus = bool(cooccurrence_bonus)
+        self.mention_group_by_entity = bool(mention_group_by_entity)
         self._entities_cache: list[dict] | None = None
+        # 种子实体提及块挖掘（P0 融合策略）的惰性缓存：
+        # 小写文本副本（CJK/拉丁名一次归一，多次查询复用）+ 拉丁词边界正则缓存
+        self._low_texts_cache: list[str] | None = None
+        self._name_pat_cache: dict[str, re.Pattern[str] | None] = {}
+        # ── P1 性能缓存（全部随 store.revision / 重建而失效）──
+        # 名字 → {块下标: 精确命中次数}：旧实现对每个名字全扫 8358 块，是检索热路径
+        # 上唯一的秒级开销；这里按归一名字缓存（FIFO 上限 mention_cache_size）。
+        self._mention_hits_cache: dict[str, dict[int, int] | None] = {}
+        self._mention_cache_size = max(1, int(mention_cache_size))
+        # hash → 块下标（候选 hash 集 → 下标集合，用于提及计数）
+        self._hash_idx_cache: dict[str, int] | None = None
+        # 实体 (eid, 正名归一名, [名字归一名...])：避免每查询对 14938 个别名重跑 norm_name
+        self._named_cache: list[tuple[str, str, list[str]]] | None = None
+        self._canon_map_cache: dict[str, str] = {}
+        # 名字 → 有区分度词元（词法兜底打分复用，避免每查询重算 14k 次 tokenize）
+        self._name_tokens_cache: dict[str, frozenset[str]] = {}
+        # 过滤后的边表 + PPR 邻接 + hop 邻接，键为 (revision, min_confidence, include_weak)
+        self._graph_view_cache: tuple[tuple, list[dict], tuple, dict[str, list[str]]] | None = None
 
     # —— 实体链接 ——
     def _entities(self) -> list[dict]:
         if self._entities_cache is None:
             self._entities_cache = self.store.entities()
         return self._entities_cache
+
+    def _named_entities(self) -> list[tuple[str, str, list[str]]]:
+        """``(eid, 正名归一名, [名字归一名...])`` 预计算表（P1）。
+
+        旧实现每次 ``link()`` 都对 6814 实体 × 14938 别名重跑 ``norm_name``（unicode
+        归一化不便宜），单查询实测 10–17ms 全花在这上面。名字只随图内容变化，
+        故与 ``_entities_cache`` 同生命周期缓存一次。
+        """
+        if self._named_cache is None:
+            named: list[tuple[str, str, list[str]]] = []
+            canon: dict[str, str] = {}
+            for ent in self._entities():
+                eid = str(ent.get("id"))
+                raw = [str(ent.get("name") or "")] + [
+                    str(a) for a in (ent.get("aliases") or [])
+                ]
+                cnorm = norm_name(raw[0])
+                canon[eid] = cnorm
+                named.append((eid, cnorm, [norm_name(n) for n in raw]))
+            self._named_cache = named
+            self._canon_map_cache = canon
+        return self._named_cache
+
+    def _tokens_of(self, name: str) -> frozenset[str]:
+        """名字的有区分度词元（缓存）：词法兜底打分旧实现每次查询重算 14k 次 tokenize。"""
+        cached = self._name_tokens_cache.get(name)
+        if cached is None:
+            cached = frozenset(_substantial_tokens(name))
+            self._name_tokens_cache[name] = cached
+        return cached
 
     def link(self, query: str) -> dict[str, float]:
         """查询 → {eid: weight}：精确别名最长匹配 → 词元 BM25 兜底。
@@ -357,22 +508,42 @@ class PlotGraphRetriever:
         种子——防止同一别名被多个（噪声）实体共享时种子爆炸
         （实测「露西女士是谁」曾带出 11 个种子）。
         """
+        return {eid: info["weight"] for eid, info in self.link_detailed(query).items()}
+
+    def link_detailed(self, query: str) -> dict[str, dict]:
+        """同 :meth:`link`，但附带命中来源，供 P3 种子门控使用。
+
+        返回 ``{eid: {"weight", "path": "exact"|"token", "name": 命中的归一名}}``。
+        路径信息是门控的关键：实测 300 题里 293 题走精确匹配，只有 7 题落到词元兜底
+        （且这 7 题的兜底种子全是「找到他发生了什么」这类碎片）——而离题问句
+        （「推荐几家附近的餐厅」「用 Python 写一个快速排序」）几乎全靠词元兜底
+        蹭上「restaurant」「this place」这类实体。因此词元兜底种子必须另有锚定才可用。
+        """
         q = query or ""
         if not q:
             return {}
         qn = norm_name(q)
+        named = self._named_entities()
+        canon_map = self._canon_map_cache
         # ① 精确匹配：实体正名与别名的**最长**命中优先（避免「露西」命中「露西娅」短名）
         best_len = 0
         matches: dict[str, str] = {}  # eid -> 命中的归一名
-        for ent in self._entities():
-            names = [str(ent.get("name") or "")] + [
-                str(a) for a in (ent.get("aliases") or [])
-            ]
-            eid = str(ent.get("id"))
-            for n in names:
-                nn = norm_name(n)
-                if not nn or len(nn) < 2 or nn not in qn:
+        for eid, _canon, names in named:
+            for nn in names:
+                if not nn or nn not in qn:
                     continue
+                if len(nn) < 2:
+                    # 单字默认跳过（ASR 噪声别名多），但**单字母拉丁别名**例外：
+                    # 如 Jay 的别名 "J"——只有它在查询里独立成词（严格词边界）
+                    # 时才命中，避免 "j" 命中 "joy" 这类子串误伤。
+                    if not (
+                        len(nn) == 1
+                        and re.fullmatch(r"[a-z0-9]", nn)
+                        and re.search(
+                            r"(?<![a-z0-9])" + re.escape(nn) + r"(?![a-z0-9])", qn
+                        )
+                    ):
+                        continue
                 # 拉丁名按词边界匹配，避免 "ania" 命中 "mania"
                 if re.fullmatch(r"[a-z0-9 ]+", nn) and not re.search(
                     r"(?<![a-z0-9])" + re.escape(nn) + r"(?![a-z0-9])", qn
@@ -384,49 +555,401 @@ class PlotGraphRetriever:
                 elif len(nn) == best_len:
                     matches.setdefault(eid, nn)
         if matches:
+            # ① 并列 cap：同长并列时按「正名命中 > mentions 高」取至多 3 个
             def _rank(eid: str) -> tuple[int, int]:
                 ent = self.store.get_entity(eid) or {}
-                is_canon = norm_name(str(ent.get("name") or "")) == matches.get(eid)
+                is_canon = canon_map.get(eid, "") == matches.get(eid)
                 return (0 if is_canon else 1, -int(ent.get("mentions") or 0))
 
-            return {eid: 1.0 for eid in sorted(matches, key=_rank)[:3]}
+            primary = sorted(matches, key=_rank)[:3]
+            # ② 跨片段补充：查询里**不同提及片段**命中的较短名也参与链接
+            # （如「自由海风号邮轮的音乐总监」——自由海风号 与 音乐总监 指向
+            # 两个实体，都该做种子）。两条压制线防种子爆炸/误带：
+            #   a. 同一提及跨度的子串短名不得带出（「露西娅在哪」⊂匹配的「露西」）；
+            #   b. 仅收**人工别名表锚定**的实体——图内抽取的泛词实体
+            #      （小说/故事/维也纳…）mentions 高但语义杂，禁止走此通道。
+            winners = list(matches.values())
+            anchored = self.store.anchored_ids
+            extras: dict[str, str] = {}
+            for eid, _canon, names in named:
+                if eid in matches or eid not in anchored:
+                    continue
+                for nn in names:
+                    if (
+                        not nn
+                        or len(nn) < 2
+                        or len(nn) >= best_len
+                        or nn not in qn
+                        or any(nn in w for w in winners)
+                    ):
+                        continue
+                    if re.fullmatch(r"[a-z0-9 ]+", nn) and not re.search(
+                        r"(?<![a-z0-9])" + re.escape(nn) + r"(?![a-z0-9])", qn
+                    ):
+                        continue
+                    extras.setdefault(eid, nn)
+                    break
+            seeds_out = primary + sorted(extras, key=_rank)[
+                : max(0, 4 - len(primary))
+            ]
+            return {
+                eid: {"weight": 1.0, "path": "exact", "name": matches.get(eid, "")}
+                for eid in seeds_out
+            }
         # ② 词元兜底：实体名/别名的 token 与查询 token 交集打分
         q_tokens = _substantial_tokens(q)
         if not q_tokens:
             return {}
-        seeds: dict[str, float] = {}
-        scored: list[tuple[str, float]] = []
-        for ent in self._entities():
-            names = [str(ent.get("name") or "")] + [
-                str(a) for a in (ent.get("aliases") or [])
-            ]
+        scored: list[tuple[str, float, str]] = []
+        for eid, _canon, names in named:
             hit = 0
             total = 0
-            for n in names:
-                toks = _substantial_tokens(n)
+            hit_name = ""
+            for nn in names:
+                toks = self._tokens_of(nn)
                 if not toks:
                     continue
                 total += 1
                 if toks & q_tokens:
                     hit += 1
+                    if not hit_name:
+                        hit_name = nn
             if hit and total:
-                scored.append((str(ent.get("id")), hit / total))
+                scored.append((eid, hit / total, hit_name))
         scored.sort(key=lambda kv: kv[1], reverse=True)
-        for eid, s in scored[:3]:
+        out: dict[str, dict] = {}
+        for eid, s, hit_name in scored[:3]:
             if s >= self.link_threshold:
-                seeds[eid] = max(seeds.get(eid, 0.0), float(s))
-        return seeds
+                prev = out.get(eid)
+                if prev is None or s > prev["weight"]:
+                    out[eid] = {"weight": float(s), "path": "token", "name": hit_name}
+        return out
+
+    # —— P3 种子门控 ——
+    def seed_gate(self, seeds: dict[str, dict]) -> dict[str, float]:
+        """过滤链接结果，只留「值得信」的种子（P3 精度门控）。
+
+        三条规则（全部实测驱动，见 deliverables/plot-rag-audit-20260912.md §P3）：
+        1. **人工别名表锚定**的实体一律保留（人写的名字最可信）；
+        2. **词元兜底**（path=token）种子必须被锚定——实测 300 题里只有 7 题落到这条
+           路径且种子全是碎片，而离题问句几乎全靠它蹭上 restaurant / this place；
+        3. 非锚定种子命中**世界常识泛词**（``GENERIC_SEED_NAMES``）时丢弃——
+           「今天天气怎么样」正是命中泛词实体「天气」才注入 5 块剧情上下文。
+
+        返回 ``{eid: weight}``；调用方在结果为空时**整体短路**（词法兜底也不启用），
+        即"剧情层只回答图能认得的问题"。
+        """
+        if not seeds:
+            return {}
+        anchored = self.store.anchored_ids
+        out: dict[str, float] = {}
+        for eid, info in seeds.items():
+            if eid in anchored:
+                out[eid] = float(info.get("weight", 1.0))
+                continue
+            if info.get("path") == "token" and self.require_anchored_token_seeds:
+                continue
+            if self.filter_generic_seeds and is_generic_seed_name(str(info.get("name") or "")):
+                continue
+            out[eid] = float(info.get("weight", 1.0))
+        return out
+
+    # —— 图谱视图缓存（P1）——
+    def _graph_view(self) -> tuple[list[dict], tuple, dict[str, list[str]]]:
+        """按 ``(store.revision, min_confidence, include_weak)`` 缓存的图视图。
+
+        返回 ``(过滤后的边表, PPR 邻接(adj, deg), hop 邻接)``。
+        旧实现每次 ``retrieve()`` 都要 3 次 ``all_edges()`` 浅拷贝 + 3 次过滤 +
+        2 次邻接重建（5719 边量级），实测 PPR 一次 88ms。
+        """
+        key = (self.store.revision, float(self.min_confidence), bool(self.include_weak))
+        cached = self._graph_view_cache
+        if cached is not None and cached[0] == key:
+            return cached[1], cached[2], cached[3]
+        # 边表与邻接必须用**同一份**过滤口径（graph_ppr.filter_edges 是唯一来源），
+        # 否则会出现「邻接里没有、边循环里却有」的弱证据边漏网。
+        edges = filter_edges(
+            _edges_of_store(self.store),
+            min_confidence=self.min_confidence,
+            include_weak=self.include_weak,
+        )
+        ppr_adj = build_adjacency(edges, min_confidence=0.0, include_weak=True)
+        hop_adj: dict[str, list[str]] = {}
+        for src, nbrs in ppr_adj[0].items():
+            hop_adj.setdefault(src, [])
+            for dst, _w in nbrs:
+                hop_adj[src].append(dst)
+        self._graph_view_cache = (key, edges, ppr_adj, hop_adj)
+        return edges, ppr_adj, hop_adj
+
+    # —— 种子实体提及块（P0 融合策略）——
+    def _low_texts(self) -> list[str]:
+        """全部 chunk 正文的小写副本（惰性构建一次，供提及计数复用）。"""
+        if self._low_texts_cache is None:
+            self._low_texts_cache = [c.text.lower() for c in self.corpus.chunks]
+        return self._low_texts_cache
+
+    def _hash_to_idx(self) -> dict[str, int]:
+        """hash → 块下标（候选 hash 集反查下标）。重复 hash 保留首个，与 by_hash 同口径。"""
+        if self._hash_idx_cache is None:
+            idx: dict[str, int] = {}
+            for i, c in enumerate(self.corpus.chunks):
+                if c.hash and c.hash not in idx:
+                    idx[c.hash] = i
+            self._hash_idx_cache = idx
+        return self._hash_idx_cache
+
+    def _name_hits(self, name: str) -> tuple[dict[int, int] | None, float]:
+        """实体名 → ``({块下标: 精确命中次数}, 权重)``；名字不可用返回 ``(None, 0.0)``。
+
+        P1 性能修复（本层最大的单点开销）：旧实现给每个名字造一个闭包，再对**全部
+        8358 块**跑一次 ``re.findall``/``str.count``——实测单查询 128 个名字 ⇒
+        1,069,824 次 ``findall``、16.9s，占 ``retrieve()`` 总耗时 97.6%。
+        现在先取 ``corpus.candidate_hashes(name)`` 候选集（含该名字词元的块，实测均值
+        63 块），只在候选上跑**语义完全相同**的计数器；名字无可用词元时回落全扫。
+
+        命中次数与权重口径与旧 ``_name_counter`` 逐条一致：
+        拉丁名按词边界正则计数、单字母权重 0.3、其余 1.0；CJK/混合名子串计数、权重 0.6。
+        结果按归一名字缓存（FIFO 上限 ``mention_cache_size``），跨查询复用。
+        """
+        low = norm_name(name)
+        if not low or "?" in low:
+            return None, 0.0  # ASR 疑似误识别别名（如 "Henpal?"）不参与
+        if is_noise_entity(name):
+            return None, 0.0  # 代词/称谓/句子片段别名会扫出海量噪声块
+        is_latin = re.fullmatch(r"[a-z0-9 ]+", low) is not None
+        weight = (0.3 if len(low) == 1 else 1.0) if is_latin else 0.6
+
+        cached = self._mention_hits_cache.get(low, _MISS)
+        if cached is not _MISS:
+            return cached, weight  # type: ignore[return-value]
+
+        low_texts = self._low_texts()
+        if is_latin:
+            pat = self._name_pat_cache.get(low)
+            if pat is None:
+                pat = re.compile(r"(?<![a-z0-9])" + re.escape(low) + r"(?![a-z0-9])")
+                self._name_pat_cache[low] = pat
+
+            def _count_at(i: int, p=pat, texts=low_texts) -> int:
+                return len(p.findall(texts[i]))
+
+        else:
+
+            def _count_at(i: int, n=low, texts=low_texts) -> int:
+                return texts[i].count(n)
+
+        cand = self.corpus.candidate_hashes(name)
+        if cand is None:
+            idxs: range | list[int] = range(len(self.corpus.chunks))
+        else:
+            h2i = self._hash_to_idx()
+            idxs = [h2i[h] for h in cand if h in h2i]
+        hits: dict[int, int] = {}
+        for i in idxs:
+            n = _count_at(i)
+            if n:
+                hits[i] = n
+        # FIFO 淘汰：字典保持插入序，超限时丢最早的一条
+        if len(self._mention_hits_cache) >= self._mention_cache_size:
+            self._mention_hits_cache.pop(next(iter(self._mention_hits_cache)), None)
+        self._mention_hits_cache[low] = hits
+        return hits, weight
+
+    def _mention_channel(
+        self,
+        targets: dict[str, float],
+        *,
+        per_entity: int = 3,
+        total_cap: int = 6,
+    ) -> list[tuple[float, object, dict]]:
+        """提及通道：**idf 加权**的实体名命中块（属性题主战场）。
+
+        背景：PPR 证据回查只从**边**取块，属性题（X 的 Y 是谁）的答案块往往只含种子
+        实体自身的提及而不在任何入选边里，故需要单开一路"含实体名自身的块"。
+
+        打分（P2，模式由 ``mention_scoring`` 决定；消融结果见审计报告 §P2）：
+        - ``"count"``（默认）：``score = Σ_名字 w(名)·出现次数``，即旧口径；
+        - ``"idf"``：``score = Σ_名字 w(名)·idf(名)·(1+0.3·ln 次数)``，稀有名字加权。
+          实测在本语料上 **idf 反而更差**（严格通过率 −4pt：ASR 转写里"反复提到某角色"
+          的块通常正是该角色的主场戏，也就是答案块；稀有别名命中多为顺带一提）。
+          故默认回到旧口径，idf 作为可选模式保留，供换语料时重新评估。
+        - ``cooccurrence_bonus``：块命中 k≥2 个目标实体时 ``×(1+0.5·(k−1))``——
+          多实体共现是关系题/多跳题答案块的特征；
+        - ``seed_factor``：种子 1.0 / PPR 邻居 0.5（保持"种子优先"的既有语义）；
+        - 每实体先取前 ``per_entity`` 块再汇总，与旧实现的候选收敛口径一致。
+
+        返回 ``[(score, PlotChunk, meta_extra)]``，按分数降序（并列按下标升序，确保可复现）。
+        """
+        if not targets or per_entity <= 0:
+            return []
+        chunks = self.corpus.chunks
+        total_docs = max(1, len(chunks))
+        use_idf = self.mention_scoring == "idf"
+        # 每个目标实体 → [(命中表, 原始权重, idf 权重)]
+        per_entity_data: list[tuple[str, float, list[tuple[dict[int, int], float, float]]]] = []
+        for eid, base in targets.items():
+            ent = self.store.get_entity(eid)
+            if not ent:
+                continue
+            ent_name = str(ent.get("name") or eid)
+            names: list[tuple[dict[int, int], float, float]] = []
+            for n in [ent_name] + [str(a) for a in (ent.get("aliases") or [])]:
+                hits, weight = self._name_hits(n)
+                if not hits:
+                    continue
+                idf = math.log(1.0 + total_docs / max(1, len(hits)))
+                names.append((hits, weight, weight * idf))
+            if names:
+                per_entity_data.append((ent_name, 1.0 if base >= 1.0 else 0.5, names))
+        if not per_entity_data:
+            return []
+
+        # 块 → {实体序号: 该实体给出的分数}
+        picks: dict[int, dict[int, float]] = {}
+        ranked_by_entity: dict[int, list[tuple[float, int]]] = {}
+        for ei, (_name, seed_factor, names) in enumerate(per_entity_data):
+            per_chunk: dict[int, float] = {}
+            for hits, w_raw, w_idf in names:
+                if use_idf:
+                    # idf 加权 + 次线性词频：稀有名字命中更有区分度
+                    for i, n in hits.items():
+                        per_chunk[i] = per_chunk.get(i, 0.0) + w_idf * (1.0 + 0.3 * math.log(n))
+                else:
+                    # 原始加权词频（旧口径，实测在本语料上更优，见审计报告 §P2 消融）
+                    for i, n in hits.items():
+                        per_chunk[i] = per_chunk.get(i, 0.0) + w_raw * n
+            ranked = sorted(per_chunk.items(), key=lambda kv: (-kv[1], kv[0]))[:per_entity]
+            ranked_by_entity[ei] = [(s * seed_factor, i) for i, s in ranked]
+            for i, s in ranked:
+                picks.setdefault(i, {})[ei] = s * seed_factor
+
+        if self.mention_group_by_entity:
+            # **实体分组序**（默认）：种子按 base(=1+PPR) 降序、邻居按 PPR 降序，
+            # 每个实体的代表块连续排列。旧实现所有提及块共用同一分数、靠稳定排序
+            # 自然形成这个顺序；显式实现它才能既保住该顺序、又让每个块有可比的分数。
+            # 实测（300 题）：全局按分数交错会让严格通过率掉 ~6pt。
+            groups = sorted(
+                range(len(per_entity_data)),
+                key=lambda ei: (-per_entity_data[ei][1], ei),
+            )
+            ordered: list[tuple[float, int, str]] = []
+            for ei in groups:
+                name = per_entity_data[ei][0]
+                for s, i in ranked_by_entity.get(ei, []):
+                    ordered.append((s, i, name))
+            return [
+                (float(s), chunks[i], {"path": "mention", "seed_mention": name})
+                for s, i, name in ordered[:total_cap]
+            ]
+
+        scored: list[tuple[float, int, str]] = []
+        for i, by_entity in picks.items():
+            k = len(by_entity)
+            total = sum(by_entity.values())
+            if self.cooccurrence_bonus:
+                total *= 1.0 + 0.5 * (k - 1)
+            best_ei = max(by_entity, key=lambda e: (by_entity[e], -e))
+            scored.append((total, i, per_entity_data[best_ei][0]))
+        scored.sort(key=lambda kv: (-kv[0], kv[1]))
+        return [
+            (float(s), chunks[i], {"path": "mention", "seed_mention": name})
+            for s, i, name in scored[:total_cap]
+        ]
+
+    # —— P2 通道融合 ——
+    def _fuse_channels(
+        self,
+        channels: list[tuple[str, float, list[tuple[float, object, dict]]]],
+        *,
+        limit: int,
+    ) -> list[tuple[float, object, dict]]:
+        """RRF 融合多路候选，返回 ``[(归一化分数, chunk, meta_extra)]``（分数降序）。
+
+        为什么必须融合：三条通道的分数量纲**互不可比**——边证据 ≈0.2（PPR×confidence）、
+        提及块 ≈1.2（旧实现给常数 1.0 + 种子 PPR）、词法兜底是 BM25 原始分（30–75）。
+        旧实现把它们直接塞进一个列表排序，实际效果是"提及路稳压边证据、词法路稳压两者"，
+        图结构（PPR/多跳）这条最有价值的能力**从未真正进入过提示词**
+        （``persona_prompt`` 的 0.85 组内相对门会把 0.2 的边证据整批丢掉）。
+
+        RRF（reciprocal rank fusion）只用**名次**不用原始分，天然免疫量纲问题：
+        ``fused(h) = Σ_c w_c / (k + rank_c(h))``，k=``fuse_k``。
+        融合后线性映射到 ``[0.6, 1.0]``：既保证高于 ``persona_prompt.MIN_CONTEXT_SCORE``
+        （0.05），又让分数保持可比的排序含义（首位 1.0，其余按融合强度递减）。
+        """
+        fused: dict[str, float] = {}
+        order: list[str] = []
+        chunk_by_hash: dict[str, object] = {}
+        meta_by_hash: dict[str, dict] = {}
+        paths_by_hash: dict[str, list[str]] = {}
+        for path, weight, items in channels:
+            if weight <= 0:
+                continue
+            for rank, (_s, chunk, extra) in enumerate(items):
+                h = str(getattr(chunk, "hash", "") or "")
+                if not h:
+                    continue
+                if h not in fused:
+                    order.append(h)
+                    chunk_by_hash[h] = chunk
+                    meta_by_hash[h] = dict(extra or {})
+                    paths_by_hash[h] = []
+                fused[h] = fused.get(h, 0.0) + weight / (self.fuse_k + rank)
+                if path not in paths_by_hash[h]:
+                    paths_by_hash[h].append(path)
+        if not order:
+            return []
+        top = max(fused.values()) or 1.0
+        out: list[tuple[float, object, dict]] = []
+        for h in order:
+            meta = meta_by_hash[h]
+            best = max(paths_by_hash[h], key=lambda p: (FUSE_PATH_PRIORITY.get(p, 0), p))
+            meta["path"] = best
+            meta["paths"] = sorted(paths_by_hash[h])
+            out.append((FUSE_MIN_SCORE + (FUSE_MAX_SCORE - FUSE_MIN_SCORE) * (fused[h] / top),
+                        chunk_by_hash[h], meta))
+        # 稳定排序：同分保持通道内名次（order 的插入顺序即"边证据优先、再提及"）
+        out.sort(key=lambda item: -item[0])
+        # 同一 doc 软去冗余：先按上限取，名额没填满再放宽（避免返回条数被压到 1 条）
+        if self.diversity_per_doc > 0:
+            kept: list[tuple[float, object, dict]] = []
+            per_doc: dict[str, int] = {}
+            for item in out:
+                doc = str(getattr(item[1], "doc_id", "") or "")
+                if per_doc.get(doc, 0) >= self.diversity_per_doc:
+                    continue
+                per_doc[doc] = per_doc.get(doc, 0) + 1
+                kept.append(item)
+                if len(kept) >= limit:
+                    break
+            if len(kept) < limit:
+                for item in out:
+                    if item in kept:
+                        continue
+                    kept.append(item)
+                    if len(kept) >= limit:
+                        break
+            out = kept
+        return out[:limit]
 
     # —— PPR ——
     def _ppr(self, seeds: dict[str, float]) -> dict[str, float]:
-        """个性化 PageRank（无向化传播，多跳关联自然浮到前排）。"""
+        """个性化 PageRank（无向化传播，多跳关联自然浮到前排）。
+
+        邻接表由 :meth:`_graph_view` 按 store 版本缓存：旧实现每次检索都重扫
+        5719 边重建邻接（PPR 实测 88ms/次，其中约三成花在重建上）。
+        这里传 ``edges`` 仅为「无可用边时原样返回种子」的短路判断，过滤口径
+        已由 ``build_adjacency`` 在缓存构建时施加（故传中性过滤参数）。
+        """
+        edges, ppr_adj, _hop = self._graph_view()
         return personalized_pagerank(
-            _edges_of_store(self.store),
+            edges,
             seeds,
-            min_confidence=self.min_confidence,
-            include_weak=self.include_weak,
+            min_confidence=0.0,
+            include_weak=True,
             damping=self.damping,
             max_iter=self.max_iter,
+            adjacency=ppr_adj,
         )
 
     def _hop_distance(self, seeds: set[str], max_hops: int) -> dict[str, int]:
@@ -435,12 +958,14 @@ class PlotGraphRetriever:
         过滤口径与 ``_ppr`` / ``retrieve`` 保持一致（min_confidence + 弱证据门），
         否则会出现「有跳距但零 PPR 分」的节点，令筛选逻辑难以解释。
         """
+        edges, _ppr_adj, hop_adj = self._graph_view()
         return hop_distance(
-            _edges_of_store(self.store),
+            edges,
             seeds,
             max_hops,
-            min_confidence=self.min_confidence,
-            include_weak=self.include_weak,
+            min_confidence=0.0,
+            include_weak=True,
+            adjacency=hop_adj,
         )
 
     # —— 检索入口 ——
@@ -452,29 +977,33 @@ class PlotGraphRetriever:
         lexical_fallback: int = 2,
         topup: bool = False,
     ) -> list[RetrievedChunk]:
-        """返回剧情证据块（图谱路优先，词法兜底按需补充）。
+        """返回剧情证据块（三通道 RRF 融合：边证据 / 提及块 / 词法兜底）。
 
         - ``topup=False``（默认）：**仅当图谱路零命中**才走词法兜底。
           这是 Settings.plot_lexical_fallback 的既定语义（"图零命中时的词法兜底"），
-          也避免无关查询被 BM25 噪声占满上下文（实测「今天天气怎么样」会注入
-          两段与话题无关的转写碎片）。
+          也避免无关查询被 BM25 噪声占满上下文。
         - ``topup=True``：图谱命中不足 top_chunks 时也补齐（旧行为，可显式开启）。
 
+        P2 排序契约（``metadata``）：
+        - ``via``：``plot_graph``（图路两通道）/ ``plot_lexical``（词法兜底）——**不变**；
+        - ``path``：``edge`` / ``mention`` / ``lexical``，用于区分"图结构到底有没有起作用"
+          （旧实现下 ``via`` 恒为 plot_graph，图谱路径占比是个恒 1.0 的无效指标）；
+        - ``paths``：该块被哪些通道命中（多路命中排名更高）；
+        - ``edge`` / ``edge_score`` / ``seed_mention`` 保留原字段，API 与前端零改动。
+
+        分数为 RRF 融合后归一到 ``[0.6, 1.0]`` 的可比分数（见 :meth:`_fuse_channels`）；
         返回条数上限为 ``top_chunks + max(0, lexical_fallback)``。
         """
-        seeds = self.link(query)
-        out: list[RetrievedChunk] = []
-        seen: set[str] = set()
+        seeds = self.seed_gate(self.link_detailed(query))
+        edge_items: list[tuple[float, object, dict]] = []
+        mention_items: list[tuple[float, object, dict]] = []
         if seeds:
             ranks = self._ppr(seeds)
             dist = self._hop_distance(set(seeds), self.max_hops)
+            edges_view = self._graph_view()[0]  # 已按 min_confidence + 弱证据门过滤（缓存）
             scored: list[tuple[float, dict]] = []
-            for e in _edges_of_store(self.store):
-                if e.get("confidence", 0.0) < self.min_confidence:
-                    continue
+            for e in edges_view:
                 weak = len(e.get("evidence") or []) < WEAK_EVIDENCE_MIN
-                if weak and not self.include_weak:
-                    continue
                 s, dd = str(e.get("src")), str(e.get("dst"))
                 if s not in dist or dd not in dist:
                     continue
@@ -488,45 +1017,110 @@ class PlotGraphRetriever:
                 if score > 0:
                     scored.append((score, e))
             scored.sort(key=lambda kv: kv[0], reverse=True)
+            # 通道①：边证据（结构化关系路径）。每条边只取一条代表证据，避免同边刷屏。
+            seen_edge_ev: set[str] = set()
             for score, e in scored[: self.max_edges]:
                 for ev in e.get("evidence") or []:
                     h = ev.get("hash")
-                    if not h or h in seen:
+                    if not h or h in seen_edge_ev:
                         continue
-                    chunk = self.corpus.by_hash(str(h))
+                    chunk = self.corpus.by_hash(str(h), doc_id=ev.get("doc_id"))
                     if chunk is None:
                         continue
-                    seen.add(h)
-                    meta = chunk.meta(self.namespace)
-                    meta.update(
-                        {
-                            "via": "plot_graph",
-                            "edge": f"{_name_of(self.store, e.get('src'))}"
-                            f" —{e.get('relation')}→ "
-                            f"{_name_of(self.store, e.get('dst'))}",
-                            "edge_score": round(float(score), 4),
-                        }
+                    seen_edge_ev.add(str(h))
+                    edge_items.append(
+                        (
+                            float(score),
+                            chunk,
+                            {
+                                "via": "plot_graph",
+                                "path": "edge",
+                                "edge": f"{_name_of(self.store, e.get('src'))}"
+                                f" —{e.get('relation')}→ "
+                                f"{_name_of(self.store, e.get('dst'))}",
+                                "edge_score": round(float(score), 4),
+                            },
+                        )
                     )
-                    out.append(
-                        RetrievedChunk(text=chunk.text, score=float(score), metadata=meta)
-                    )
-                    break  # 每条边只取一条代表证据，避免同边刷屏
-                if len(out) >= max(0, top_chunks):
                     break
-        # 词法兜底：图谱零命中（或显式 topup 时不足）→ 用 BM25 直接翻语料
-        need_fallback = not out if not topup else len(out) < max(0, top_chunks)
+            # 通道②：种子/高 PPR 实体自身的提及块（属性题主战场）。
+            # targets: 种子给 1.0+（seed_factor=1.0），PPR top 邻居按 rank 竞争（0.5）。
+            if top_chunks > 0:
+                targets = {eid: 1.0 + float(ranks.get(eid, 0.0)) for eid in seeds}
+                for eid, rank in sorted(
+                    ranks.items(), key=lambda kv: kv[1], reverse=True
+                ):
+                    if len(targets) >= 4:
+                        break
+                    if eid not in targets and rank > 0:
+                        targets[eid] = float(rank)
+                mention_items = self._mention_channel(targets)
+
+        # 通道③：词法兜底（BM25）。口径不变：**仅在图谱零命中**时启用（plot_lexical_topup
+        # 语义），或显式 topup=True 时补齐；否则无关查询会被 BM25 噪声占满上下文。
+        lexical_items: list[tuple[float, object, dict]] = []
+        # 图路"命中数"必须按**去重后的块**计：同一块常同时出现在边证据与提及两路，
+        # 按通道条目数相加会把 1 块当成 2 块，导致 topup 判定失效（该补词法却不补）。
+        graph_hashes = {
+            str(getattr(c, "hash", "") or "")
+            for _s, c, _m in list(edge_items) + list(mention_items)
+        }
+        graph_count = len(graph_hashes - {""})
+        # 词法兜底只服务于「图能认得」的查询（**通过门控的种子非空**）：
+        # 没有任何可信种子时整体短路——否则任何含常见词的问句都会被 BM25 灌进
+        # 5–7 块无关转写（实测「1+1 等于几」「给我讲个笑话」各注入 5 块）。
+        need_fallback = bool(seeds) and (
+            graph_count == 0 if not topup else graph_count < max(0, top_chunks)
+        )
         if need_fallback and lexical_fallback > 0:
-            need = max(0, top_chunks) - len(out)
-            for chunk, s in self.corpus.search(query, top_k=need + len(seen)):
-                if chunk.hash in seen:
-                    continue
-                seen.add(chunk.hash)
-                meta = chunk.meta(self.namespace)
-                meta["via"] = "plot_lexical"
-                out.append(RetrievedChunk(text=chunk.text, score=float(s), metadata=meta))
-                if len(out) >= max(0, top_chunks):
-                    break
-        out.sort(key=lambda c: c.score, reverse=True)
+            need = max(0, top_chunks) + max(0, lexical_fallback)
+            for chunk, s in self.corpus.search(query, top_k=need):
+                lexical_items.append(
+                    (float(s), chunk, {"via": "plot_lexical", "path": "lexical"})
+                )
+
+        # RRF 融合 + 归一化分数带 + 同一 doc 软去冗余（见 _fuse_channels）
+        # 预算语义（与旧实现一致）：**图路可用满整个返回预算**
+        # （top_chunks + lexical_fallback）；词法兜底只在图路不足时占用剩余名额。
+        # 实测教训：把图路硬压到 top_chunks(=3) 会让返回块数从 4.83 掉到 2.86，
+        # 严格通过率直降 9pt——证据块并集口径下，"少给块"就是"少覆盖"。
+        graph_limit = max(0, top_chunks)
+        if lexical_items and graph_count:
+            # 两路共存（topup）：图路占 top_chunks 名额，词法只补 lexical_fallback 个
+            fused = self._fuse_channels(
+                [
+                    ("edge", self.weight_edge, edge_items),
+                    ("mention", self.weight_mention, mention_items),
+                    ("lexical", self.weight_lexical, lexical_items),
+                ],
+                limit=graph_limit + max(0, lexical_fallback),
+            )
+            graph_kept = [it for it in fused if it[2].get("path") != "lexical"][:graph_limit]
+            lex_kept = [it for it in fused if it[2].get("path") == "lexical"][
+                : max(0, lexical_fallback)
+            ]
+            fused = graph_kept + lex_kept
+            fused.sort(key=lambda item: -item[0])
+        elif lexical_items:
+            # 只有词法路（图谱零命中）：同样归一到分数带，保持跨通道可比
+            fused = self._fuse_channels(
+                [("lexical", self.weight_lexical, lexical_items)],
+                limit=max(0, lexical_fallback) or len(lexical_items),
+            )
+        else:
+            fused = self._fuse_channels(
+                [
+                    ("edge", self.weight_edge, edge_items),
+                    ("mention", self.weight_mention, mention_items),
+                ],
+                limit=graph_limit + max(0, lexical_fallback),
+            )
+
+        out: list[RetrievedChunk] = []
+        for score, chunk, extra in fused:
+            meta = chunk.meta(self.namespace)
+            meta.update(extra or {})
+            out.append(RetrievedChunk(text=chunk.text, score=float(score), metadata=meta))
         return out[: max(0, top_chunks + max(0, lexical_fallback))]
 
 
@@ -573,6 +1167,18 @@ class PlotGraphRegistry:
         max_hops: int = 2,
         damping: float = 0.85,
         link_threshold: float = 0.5,
+        fuse_k: int = 3,
+        weight_edge: float = 1.0,
+        weight_mention: float = 1.0,
+        weight_lexical: float = 0.6,
+        diversity_per_doc: int = 1,
+        mention_cache_size: int = 512,
+        require_anchored_token_seeds: bool = True,
+        filter_generic_seeds: bool = True,
+        mention_scoring: str = "count",
+        cooccurrence_bonus: bool = True,
+        mention_group_by_entity: bool = True,
+        alias_authoritative: bool = True,
     ) -> None:
         self._corpus_dir = Path(corpus_dir)
         self._graph_dir = Path(graph_dir)
@@ -584,6 +1190,18 @@ class PlotGraphRegistry:
             max_hops=max_hops,
             damping=damping,
             link_threshold=link_threshold,
+            fuse_k=fuse_k,
+            weight_edge=weight_edge,
+            weight_mention=weight_mention,
+            weight_lexical=weight_lexical,
+            diversity_per_doc=diversity_per_doc,
+            mention_cache_size=mention_cache_size,
+            require_anchored_token_seeds=require_anchored_token_seeds,
+            filter_generic_seeds=filter_generic_seeds,
+            mention_scoring=mention_scoring,
+            cooccurrence_bonus=cooccurrence_bonus,
+            mention_group_by_entity=mention_group_by_entity,
+            alias_authoritative=alias_authoritative,
         )
         self._cache: dict[str, tuple[float, float, PlotGraphRetriever]] = {}
 
@@ -617,7 +1235,11 @@ class PlotGraphRegistry:
             # 双语别名表按角色存放：<lore_dir>/<cid>/plot_aliases.json
             table = load_alias_table(self._alias_dir / key / "plot_aliases.json")
             if table:
-                store.bind_alias_table(table)
+                # P4：剧情层让人工别名表**真正**最高优先（冲突时改指人工规范实体）；
+                # GraphStore 默认仍是 skip（lore 层与既有测试语义不变）。
+                store.bind_alias_table(
+                    table, on_conflict="merge" if self._cfg["alias_authoritative"] else "skip"
+                )
         retr = PlotGraphRetriever(
             corpus,
             store,
@@ -628,6 +1250,17 @@ class PlotGraphRegistry:
             max_hops=self._cfg["max_hops"],
             damping=self._cfg["damping"],
             link_threshold=self._cfg["link_threshold"],
+            fuse_k=self._cfg["fuse_k"],
+            weight_edge=self._cfg["weight_edge"],
+            weight_mention=self._cfg["weight_mention"],
+            weight_lexical=self._cfg["weight_lexical"],
+            diversity_per_doc=self._cfg["diversity_per_doc"],
+            mention_cache_size=self._cfg["mention_cache_size"],
+            require_anchored_token_seeds=self._cfg["require_anchored_token_seeds"],
+            filter_generic_seeds=self._cfg["filter_generic_seeds"],
+            mention_scoring=self._cfg["mention_scoring"],
+            cooccurrence_bonus=self._cfg["cooccurrence_bonus"],
+            mention_group_by_entity=self._cfg["mention_group_by_entity"],
         )
         self._cache[key] = (cm, gm, retr)
         return retr
@@ -676,6 +1309,7 @@ async def build_plot_graph(
         "skipped": 0,
         "edges": 0,
         "noise_filtered": 0,
+        "noise_rescued": 0,  # name 命中噪声但经别名打捞保住的实体数
         "rel_filtered": 0,  # 谓语卫生过滤丢弃的关系数（否定/超长/标点/黑名单/映射不到）
     }
     failed: list[str] = []
@@ -698,8 +1332,16 @@ async def build_plot_graph(
         # 转写噪声实体（称谓/句子片段）不进图谱：防抢占正牌实体的别名索引
         kept: list[dict] = []
         for e in entities:
-            if isinstance(e, dict) and not is_noise_entity(str(e.get("name") or "")):
+            if not isinstance(e, dict):
+                stats["noise_filtered"] += 1
+                continue
+            if not is_noise_entity(str(e.get("name") or "")):
                 kept.append(e)
+                continue
+            rescued = rescue_noise_entity(e)
+            if rescued is not None:
+                stats["noise_rescued"] += 1
+                kept.append(rescued)
             else:
                 stats["noise_filtered"] += 1
         if not kept and not relations:

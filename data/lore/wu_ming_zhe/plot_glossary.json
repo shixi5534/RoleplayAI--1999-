@@ -1,375 +1,1370 @@
 {
-  "_meta": {
-    "schema": "plot-glossary-v1",
-    "character_id": "wu_ming_zhe",
-    "created": "2026-09-10",
-    "fact_base": "https://res1999.huijiwiki.com/",
-    "companion_doc": "docs/剧情术语对照词表.md",
-    "upstream": ["data/lore/wu_ming_zhe/plot_aliases.json", "data/lore/wu_ming_zhe/wiki_zh_en.json"],
-    "usage": "本文件为术语单一事实源。terms 供人工维护与审计；alias_flat 为 plot_aliases.json 的兼容格式，合并后由 build_plot_graph.py 的 load_alias_table 加载，优先级高于 LLM 抽取结果。",
-    "merge_note": "合并进 plot_aliases.json 前必须备份原文件；合并后以 --build-graph 零 LLM 重放重建图谱。"
+ "_meta": {
+  "schema": "plot-glossary-v1",
+  "character_id": "wu_ming_zhe",
+  "created": "2026-09-10",
+  "fact_base": "https://res1999.huijiwiki.com/",
+  "companion_doc": "docs/剧情术语对照词表.md",
+  "upstream": [
+   "data/lore/wu_ming_zhe/plot_aliases.json",
+   "data/lore/wu_ming_zhe/wiki_zh_en.json"
+  ],
+  "usage": "本文件为术语单一事实源。terms 供人工维护与审计；alias_flat 为 plot_aliases.json 的兼容格式，合并后由 build_plot_graph.py 的 load_alias_table 加载，优先级高于 LLM 抽取结果。",
+  "merge_note": "合并进 plot_aliases.json 前必须备份原文件；合并后以 --build-graph 零 LLM 重放重建图谱。"
+ },
+ "type_whitelist": [
+  "角色",
+  "组织",
+  "地点",
+  "概念",
+  "物品",
+  "事件",
+  "时间"
+ ],
+ "terms": {
+  "维尔汀": {
+   "type": "角色",
+   "en": "Vertin",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/维尔汀",
+   "aliases": [
+    "Vertin",
+    "Vertan",
+    "Verton",
+    "Verte n",
+    "Veltin",
+    "Verta",
+    "Vartan",
+    "维尔廷",
+    "维尔特",
+    "司辰",
+    "Timekeeper"
+   ],
+   "note": "司辰＝维尔汀。Virgin/Fertin/Bertin/Merton/Martin 需人工确认上下文后再并，避免误并真人角色。｜司辰（Timekeeper）是本人在圣洛夫基金会担任的职位称号，非独立人物：灰机 wiki /wiki/司辰 直接重定向到 /wiki/维尔汀，原文「维尔汀（Vertin）是圣洛夫基金会的司辰」。2026-09-11 已并入本条目别名链。"
   },
-
-  "type_whitelist": ["角色", "组织", "地点", "概念", "物品", "事件", "时间"],
-
-  "terms": {
-    "维尔汀": {
-      "type": "角色", "en": "Vertin", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/维尔汀",
-      "aliases": ["Vertin", "Vertan", "Verton", "Verte n", "Veltin", "Verta", "Vartan", "维尔廷", "维尔特"],
-      "note": "司辰＝维尔汀。Virgin/Fertin/Bertin/Merton/Martin 需人工确认上下文后再并，避免误并真人角色。"
-    },
-    "司辰": {
-      "type": "角色", "en": "Timekeeper", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Timekeeper", "Time Keeper", "Time Keepers", "Timekeepers", "timekeeper"],
-      "note": "头衔而非人名；现任为维尔汀。与‘维尔汀’保持为两个节点，用‘担任’关系相连。"
-    },
-    "无名者": {
-      "type": "角色", "en": "Ms. Stranger", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/无名者",
-      "aliases": ["Ms. Stranger", "Miss Stranger", "Ms.Grace", "淑女格蕾丝", "陌生人小姐", "无名之人", "格蕾丝", "莉莉", "凯拉", "塞西莉"],
-      "note": "ID 3147；实装 2026-05-21（3.7）；征集「剥茧为名」Beneath the Guise of Her Cocoon。原展出于冰岛→秘密转移至圣洛夫基金会→曾短暂展出于重塑之手。"
-    },
-    "淑女格蕾丝": {
-      "type": "角色", "en": "Ms. Grace", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/其他角色一览/2.x",
-      "aliases": ["Ms. Grace", "Madam Grace", "Grace"],
-      "note": "＝无名者的化名。ID 6249；2.0「飞驰！明日之城」登场；「复乐园」证实为圣洛夫基金会安插的卧底。作为独立节点保留并通过‘化名’关系指向无名者，便于检索命中。"
-    },
-    "伊戈尔": {
-      "type": "角色", "en": "Igor", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/重塑之手",
-      "aliases": ["Igor", "Egor", "Admiral Igor", "Igor the Admiral"],
-      "note": "阵营为动态：芝诺 →「忧郁的热带」叛变加入重塑之手 →「远征记」(3.3) 脱离 → 3.7 基金会推迟审判、保留Ⅻ小队指挥权。见人物去向图。"
-    },
-    "阿尔卡纳": {
-      "type": "角色", "en": "Arcana", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Arcana", "Arcanum", "Arcanus", "Arkana"],
-      "note": "重塑之手领袖。wiki 无独立条目（红链），依据暴雨页与重塑之手页引述。曾于阿派朗岛被杀，南极事件复活。"
-    },
-    "露西": {
-      "type": "角色", "en": "Lucy", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Lucy", "Madam Lucy", "Madame Lucy", "露西女士", "露西夫人"],
-      "note": "拉普拉斯科算中心负责人（已革职）。警告：与无名者是两个不同角色，禁止互相挂别名。"
-    },
-    "康斯坦丁": {
-      "type": "角色", "en": "Constantine", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Constantine", "Vice President Constantine"],
-      "note": "圣洛夫基金会副会长；人类党团要人；无名者的养父/上级（代号「普帕」的授予者）。"
-    },
-    "Z女士": {
-      "type": "角色", "en": "Madam Z", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Madam Z", "Ms. Z", "Miss Z", "Z", "Z女士"],
-      "note": "联合委员会成员、第一防线学校校长。注意单字母 Z 易与噪声混淆，仅在与基金会/学校共现时归并。"
-    },
-    "乌尔里希": {
-      "type": "角色", "en": "Ulrich", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Ulrich"], "note": "拉普拉斯科算中心成员。"
-    },
-    "哑谜": {
-      "type": "角色", "en": "Enigma", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Enigma"], "note": "拉普拉斯科算中心负责人（露西革职后接任）。"
-    },
-    "玛尔纱": {
-      "type": "角色", "en": "Marsha", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Marsha", "Masha", "Marcia"], "note": "「Ⅻ」小队队医。"
-    },
-    "叶尔莫莱": {
-      "type": "角色", "en": "Yemelai", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Yemelai", "Sergeant Yemelai", "Yermolai"], "note": "「Ⅻ」小队，代号「猎犬」。"
-    },
-    "梅蕾尔·范德维尔": {
-      "type": "角色", "en": "Meryl Vanderville", "priority": "P1", "status": "pending",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Meryl", "Meryn"],
-      "note": "「Ⅻ」小队，代号「乌鸫」。中文名已核实，英文名 Meryl Vanderville 为推测，待游戏英文文本确认。"
-    },
-    "纳西索斯": {
-      "type": "角色", "en": "Narcissus", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表",
-      "aliases": ["Narcissus"], "note": ""
-    },
-    "诺谛卡": {
-      "type": "角色", "en": "Nautika", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表",
-      "aliases": ["Nautika", "Nautica"], "note": ""
-    },
-    "十四行诗": {
-      "type": "角色", "en": "Sonetto", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Sonetto"], "note": "司辰小队第一助手。"
-    },
-    "APPLe": {
-      "type": "角色", "en": "APPLe", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表",
-      "aliases": ["APPLe", "Apple", "apple", "Mr.Apple", "Mr. Apple"],
-      "note": "注意与 Adel/Adele 区分：Adele 为独立名字，不得并入 APPLe。"
-    },
-    "星锑": {
-      "type": "角色", "en": "Regulus", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表", "aliases": ["Regulus"], "note": ""
-    },
-    "槲寄生": {
-      "type": "角色", "en": "Druvis III", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表", "aliases": ["Druvis III", "Druvis"], "note": ""
-    },
-    "苏芙比": {
-      "type": "角色", "en": "Sotheby", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/角色列表", "aliases": ["Sotheby"], "note": ""
-    },
-    "塞梅尔维斯": {
-      "type": "角色", "en": "Semmelweis", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会", "aliases": ["Semmelweis"], "note": "委外合约人才管理组织。"
-    },
-    "卡卡尼亚": {
-      "type": "角色", "en": "Kakania", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会", "aliases": ["Kakania"], "note": "委外合约人才管理组织。"
-    },
-    "兀尔德": {
-      "type": "角色", "en": "Urd", "priority": "P1", "status": "pending",
-      "source": "",
-      "aliases": ["Urd", "乌尔德", "兀尔德"],
-      "note": "译名用字未定：本地 ASR/视频文案作「乌尔德」(33 处)，剧情脉络文档作「兀尔德」(2 处)，wiki 无独立条目。3.3 远征记中由伊戈尔护送赴哈萨克斯坦阻止暴雨。待游戏内文本确认后锁定用字。"
-    },
-
-    "重塑之手": {
-      "type": "组织", "en": "Manus Vindictae", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/重塑之手",
-      "aliases": ["Manus Vindictae", "Manus Vindicte", "Manus Vindicti", "Manus Vendictae", "Manus Vendicti", "Manus Vindictor", "Manus Vindicta", "Manus vindicti", "Manus Fendicte", "Manus Vindictes", "Manos Vindicte", "Manus Mendicte", "Manas Vindicte", "Manus Findictae", "Manas vindicti", "Malus Vindictae", "Manus"],
-      "note": "神秘学恐怖组织，领袖阿尔卡纳。ASR 变体多达 16 种，是本图谱最严重的节点分裂源（合计 82 次提及）。"
-    },
-    "圣洛夫基金会": {
-      "type": "组织", "en": "St. Pavlov Foundation", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Foundation", "The Foundation", "St. Pavlov Foundation", "St Pavlov", "St. Pavlov", "基金会"],
-      "note": "人类和平安全理事会旗下。合计 173 次提及分裂为 4 个节点，修复优先级最高。"
-    },
-    "拉普拉斯科算中心": {
-      "type": "组织", "en": "Laplace Scientific Computing Center", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Laplace", "LSCC", "Laplace Scientific Computing Center", "拉普拉斯"],
-      "note": "注意 Place/palace/place 为 ASR 同音噪声，禁止归并。"
-    },
-    "芝诺军备学院": {
-      "type": "组织", "en": "Zeno", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Zeno", "Xeno", "Xena", "Zenos", "Zino"], "note": ""
-    },
-    "委外合约人才管理组织": {
-      "type": "组织", "en": "SPDM", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["SPDM", "S.P.D.M."], "note": "基金会外勤组织。"
-    },
-    "第一防线学校": {
-      "type": "组织", "en": "First Line School", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["First Line School", "the school", "防线学校"], "note": "教育机构；校长理查德、Z 女士。"
-    },
-    "司辰小队": {
-      "type": "组织", "en": "Timekeeper Squad", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Timekeeper Squad", "the Timekeeper's team", "Timekeeper's Squad"],
-      "note": "拥有独立编制；成员：十四行诗、星锑、APPLe、槲寄生、苏芙比、无名者。"
-    },
-    "Ⅻ小队": {
-      "type": "组织", "en": "Squad XII", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["12 squad", "the Twelfth", "XII squad", "Squad 12", "12th squad"],
-      "note": "刻雷乌斯（队长）、「警官」帕拉维扬、「猎犬」叶尔莫莱、玛尔纱（队医）、「乌鸫」梅蕾尔。"
-    },
-    "夜巡特遣管理局": {
-      "type": "组织", "en": "Night Watch Bureau", "priority": "P2", "status": "pending",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Night Watch", "Nightwatch"], "note": "英文名 Night Watch Bureau 为推测，待确认。"
-    },
-    "人类党团": {
-      "type": "组织", "en": "Human Faction", "priority": "P2", "status": "pending",
-      "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
-      "aliases": ["Human Faction", "Human Party"], "note": "领袖「中锋」伯纳德。英文名待确认。"
-    },
-    "鸽子屋": {
-      "type": "组织", "en": "The Pax House", "priority": "P2", "status": "verified",
-      "source": "data/lore/wu_ming_zhe/plot_aliases.json",
-      "aliases": ["The Pax House", "Pigeon House"], "note": ""
-    },
-
-    "暴雨": {
-      "type": "概念", "en": "The Storm", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["The Storm", "Storm", "the storm", "storm", "雨幕", "the rain"],
-      "note": "又称「雨幕」，阿派朗岛居民称「流溢」。第一场发生于 1999-12-31。合计 137 次提及分裂为 4 个节点。"
-    },
-    "暴雨症候": {
-      "type": "概念", "en": "The Storm Syndrome", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Storm Syndrome", "时代病"], "note": "使人的常识异变、趋于疯狂而不自知。"
-    },
-    "神秘学家": {
-      "type": "概念", "en": "Arcanist", "priority": "P0", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/神秘学家",
-      "aliases": ["Arcanist", "arcanist", "Arcanists", "arcanists"], "note": ""
-    },
-    "神秘术": {
-      "type": "概念", "en": "Arcanum", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Arcanum", "arcane skill", "arcane arts"],
-      "note": "注意 Arcanum(10) 曾被误并为阿尔卡纳 Arcana，须按上下文区分。"
-    },
-    "洪水": {
-      "type": "事件", "en": "The Flood", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["the Flood", "Flood", "deluge"], "note": "暴雨的另一种表现形式，体现于「复乐园」。"
-    },
-    "回溯": {
-      "type": "概念", "en": "Reverse Flow", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["回溯", "reverse flow", "rewind"], "note": ""
-    },
-    "手提箱": {
-      "type": "物品", "en": "The Suitcase", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/手提箱",
-      "aliases": ["the suitcase", "the case", "Vertin's case", "箱子"],
-      "note": "可隔绝暴雨、带神秘学家度过，对人类无效。"
-    },
-    "非对称核素R": {
-      "type": "概念", "en": "Asymmetric Nuclide R", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Asymmetric Nuclide R", "Nuclide R", "asymmetric nuclide"], "note": "重塑面具原料。"
-    },
-    "平衡伞": {
-      "type": "物品", "en": "Balance Umbrella", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨", "aliases": ["Balance Umbrella", "the umbrella"], "note": ""
-    },
-    "霍夫曼结": {
-      "type": "概念", "en": "Hoffman Knot", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨", "aliases": ["Hoffman Knot", "Hoffmann knot"], "note": ""
-    },
-    "重塑之手面具": {
-      "type": "物品", "en": "Manus Mask", "priority": "P2", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Manus mask", "the mask", "重塑面具"], "note": "佩戴后难以摘下，对佩戴者造成严重危害。"
-    },
-    "南极": {
-      "type": "地点", "en": "Antarctica", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Antarctica", "Antarctic", "the South Pole"], "note": "南极事件：阿尔卡纳复活并引发洪水。"
-    },
-    "阿派朗岛": {
-      "type": "地点", "en": "Apeiron", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/暴雨",
-      "aliases": ["Apeiron", "Apeiron Island", "阿派朗"], "note": "《孤独之歌》；富含非对称核素 R。"
-    },
-    "芝加哥": {
-      "type": "地点", "en": "Chicago", "priority": "P1", "status": "verified",
-      "source": "docs/剧情脉络与关键事件.md",
-      "aliases": ["Chicago"], "note": "1929 情人节大屠杀，林肯公园街 2122 号地下车库。"
-    },
-    "瓦尔登湖": {
-      "type": "地点", "en": "Walden", "priority": "P1", "status": "verified",
-      "source": "docs/剧情脉络与关键事件.md",
-      "aliases": ["Walden", "Walden Lake"], "note": "魔药酒吧；老板勿忘我。"
-    },
-    "伦敦": {
-      "type": "地点", "en": "London", "priority": "P1", "status": "verified",
-      "source": "docs/剧情脉络与关键事件.md", "aliases": ["London"], "note": "1966 年维尔汀首次登场地。"
-    },
-    "德克萨斯": {
-      "type": "地点", "en": "Texas", "priority": "P1", "status": "verified",
-      "source": "docs/剧情脉络与关键事件.md", "aliases": ["Texas"], "note": "1990 年「77 号往事」蓝手帕旅馆。"
-    },
-    "冰岛": {
-      "type": "地点", "en": "Iceland", "priority": "P1", "status": "verified",
-      "source": "https://res1999.huijiwiki.com/wiki/无名者", "aliases": ["Iceland"], "note": "无名者原展出地。"
-    },
-    "哈萨克斯坦": {
-      "type": "地点", "en": "Kazakhstan", "priority": "P1", "status": "pending",
-      "source": "docs/剧情图谱-灰机wiki事实核对报告.md",
-      "aliases": ["Kazakhstan"], "note": "3.3 远征记阻止暴雨任务地点，wiki 未直接确认。"
-    }
+  "司辰": {
+   "type": "角色",
+   "en": "Timekeeper",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Timekeeper",
+    "Time Keeper",
+    "Time Keepers",
+    "Timekeepers",
+    "timekeeper"
+   ],
+   "note": "＝维尔汀本人担任的职位称号（非独立人物）。灰机 wiki /wiki/司辰 重定向至 /wiki/维尔汀。已并入维尔汀别名链（见 alias_flat.维尔汀），保留本条目仅供审计，勿据此重建独立组。"
   },
-
-  "alias_flat": {
-    "_note": "plot_aliases.json 兼容格式：{规范译名: [需归并的表层形式]}。合并时按 key 取并集，不得覆盖已有条目。",
-    "维尔汀": ["Vertin", "Vertan", "Verton", "Veltin", "Verta", "Vartan", "维尔廷", "维尔特"],
-    "司辰": ["Timekeeper", "Time Keeper", "Time Keepers", "Timekeepers"],
-    "无名者": ["Ms. Stranger", "Miss Stranger", "淑女格蕾丝", "陌生人小姐", "无名之人", "格蕾丝", "莉莉", "凯拉", "塞西莉"],
-    "淑女格蕾丝": ["Ms. Grace", "Madam Grace"],
-    "伊戈尔": ["Igor", "Egor", "Admiral Igor"],
-    "阿尔卡纳": ["Arcana", "Arcanum", "Arcanus", "Arkana"],
-    "露西": ["Lucy", "Madam Lucy", "Madame Lucy", "露西女士", "露西夫人"],
-    "康斯坦丁": ["Constantine", "Vice President Constantine"],
-    "Z女士": ["Madam Z", "Ms. Z", "Miss Z"],
-    "乌尔里希": ["Ulrich"],
-    "哑谜": ["Enigma"],
-    "玛尔纱": ["Marsha", "Masha", "Marcia"],
-    "叶尔莫莱": ["Yemelai", "Sergeant Yemelai", "Yermolai"],
-    "梅蕾尔·范德维尔": ["Meryl", "Meryn"],
-    "纳西索斯": ["Narcissus"],
-    "诺谛卡": ["Nautika", "Nautica"],
-    "十四行诗": ["Sonetto"],
-    "APPLe": ["APPLe", "Apple", "Mr.Apple", "Mr. Apple"],
-    "星锑": ["Regulus"],
-    "槲寄生": ["Druvis III", "Druvis"],
-    "苏芙比": ["Sotheby"],
-    "塞梅尔维斯": ["Semmelweis"],
-    "卡卡尼亚": ["Kakania"],
-    "兀尔德": ["Urd", "乌尔德"],
-    "重塑之手": ["Manus Vindictae", "Manus Vindicte", "Manus Vindicti", "Manus Vendictae", "Manus Vendicti", "Manus Vindictor", "Manus Vindicta", "Manus vindicti", "Manus Fendicte", "Manus Vindictes", "Manos Vindicte", "Manus Mendicte", "Manas Vindicte", "Manus Findictae", "Manas vindicti", "Malus Vindictae", "Manus"],
-    "圣洛夫基金会": ["Foundation", "The Foundation", "St. Pavlov Foundation", "St Pavlov", "基金会"],
-    "拉普拉斯科算中心": ["Laplace", "LSCC", "Laplace Scientific Computing Center", "拉普拉斯"],
-    "芝诺军备学院": ["Zeno", "Xeno", "Xena", "Zenos", "Zino"],
-    "委外合约人才管理组织": ["SPDM"],
-    "第一防线学校": ["First Line School", "防线学校"],
-    "司辰小队": ["Timekeeper Squad", "the Timekeeper's team"],
-    "Ⅻ小队": ["12 squad", "the Twelfth", "XII squad", "Squad 12"],
-    "夜巡特遣管理局": ["Night Watch", "Nightwatch"],
-    "人类党团": ["Human Faction", "Human Party"],
-    "鸽子屋": ["The Pax House", "Pigeon House"],
-    "暴雨": ["The Storm", "Storm", "storm", "the storm", "雨幕"],
-    "暴雨症候": ["Storm Syndrome", "时代病"],
-    "神秘学家": ["Arcanist", "arcanist", "Arcanists"],
-    "神秘术": ["Arcanum", "arcane skill"],
-    "洪水": ["the Flood", "Flood", "deluge"],
-    "回溯": ["reverse flow"],
-    "手提箱": ["the suitcase", "the case", "Vertin's case", "箱子"],
-    "非对称核素R": ["Asymmetric Nuclide R", "Nuclide R"],
-    "平衡伞": ["Balance Umbrella"],
-    "霍夫曼结": ["Hoffman Knot"],
-    "重塑之手面具": ["Manus mask", "重塑面具"],
-    "南极": ["Antarctica", "Antarctic"],
-    "阿派朗岛": ["Apeiron", "Apeiron Island"],
-    "芝加哥": ["Chicago"],
-    "瓦尔登湖": ["Walden", "Walden Lake"],
-    "伦敦": ["London"],
-    "德克萨斯": ["Texas"],
-    "冰岛": ["Iceland"],
-    "哈萨克斯坦": ["Kazakhstan"]
+  "无名者": {
+   "type": "角色",
+   "en": "Ms. Stranger",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/无名者",
+   "aliases": [
+    "Ms. Stranger",
+    "Miss Stranger",
+    "Ms.Grace",
+    "淑女格蕾丝",
+    "陌生人小姐",
+    "无名之人",
+    "格蕾丝",
+    "莉莉",
+    "凯拉",
+    "塞西莉",
+    "Ms. Grace",
+    "Madam Grace",
+    "Grace",
+    "Miss Grace"
+   ],
+   "note": "ID 3147；实装 2026-05-21（3.7）；征集「剥茧为名」Beneath the Guise of Her Cocoon。原展出于冰岛→秘密转移至圣洛夫基金会→曾短暂展出于重塑之手。｜淑女格蕾丝（Ms. Grace，ID 6249）为本人的 2.0「飞驰！明日之城」化名身份，灰机 wiki 其他角色一览/2.x 明确列出「淑女格蕾丝 / Ms. Grace / 无名者」为同一人，「复乐园」证实该身份为圣洛夫基金会安插的卧底。已并入本条目别名链，不再独立成节点。"
   },
-
-  "noise": {
-    "_note": "以下形式由 ASR 同音/误切产生，属噪声，应从实体集中删除而非归并。判定原则：该形式在语料中从不与已确认剧情实体共现，且不属于任何术语条目。",
-    "confirmed": ["Place", "palace", "place", "door", "mural", "masks", "ants", "game", "data", "work", "core", "north", "hero", "tent", "wars", "pain", "party", "parties", "many", "mask", "meal", "metal", "money", "Mother Spirit", "Mother"],
-    "generic_zh": ["城市", "人类", "士兵", "士兵们", "战争", "学校", "火山", "教授", "那场梦", "他们的信", "我们的起源", "她的助手", "咱们衙门"],
-    "pronoun_en": ["my father", "my parents", "her team", "my life", "his request", "my emotion module", "your true colors", "your wounds", "my namesake"],
-    "pending_review": ["Adele", "Adel", "Adèle", "Kele", "Celia", "Alia", "Amelia", "Lilia", "Cillia", "Célia", "Felicienne", "Felicien", "Feliciane", "Muriel", "Krutov", "Maxim", "Vanya", "Adler", "Senato", "Lucian", "Erd", "Andreas", "Teresita", "Marguerite", "Pericles", "Typhon", "Berograd", "Berigrad", "Piros", "Pyros", "vampire", "soldiers", "bandits", "father", "mama", "Maria", "Marie", "toy box", "train", "ritual", "the ritual", "长生", "长生剑", "梅花教", "白马派"]
+  "淑女格蕾丝": {
+   "type": "角色",
+   "en": "Ms. Grace",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/其他角色一览/2.x",
+   "aliases": [
+    "Ms. Grace",
+    "Madam Grace",
+    "Grace",
+    "格蕾丝"
+   ],
+   "note": "＝无名者本人（灰机 wiki 其他角色一览/2.x：淑女格蕾丝 / Ms. Grace / 无名者）。ID 6249；2.0「飞驰！明日之城」登场；「复乐园」证实为圣洛夫基金会安插的卧底。**已并入无名者别名链（见 alias_flat.无名者），不再作为独立节点**——保留本条目仅供审计，勿据此重建独立组。"
   },
-
-  "pending": [
-    {"id": "F1", "item": "主线 NPC 官方译名", "names": ["Celia", "Felicienne", "Muriel", "Krutov", "Maxim", "Vanya", "Adler", "Senato", "Lucian", "Erd", "Andreas", "Teresita", "Marguerite", "Pericles", "Typhon"], "blocker": "high", "action": "从视频文案/游戏内文本反查官方译名"},
-    {"id": "F2", "item": "聚合浪潮/翡冷翠之春/入雅典记 的版本号", "blocker": "medium", "action": "补 version 字段"},
-    {"id": "F3", "item": "兀尔德 vs 乌尔德 用字", "blocker": "medium", "action": "游戏内文本确认后锁定"},
-    {"id": "F5", "item": "非主线来源文档混入库（9 个文档 / 5 个 UP 主）", "blocker": "high", "action": "加 source_kind 字段区分 canon/analysis"},
-    {"id": "F6", "item": "3.4 不老春 语料偏少（73 chunks）", "blocker": "medium", "action": "补采"},
-    {"id": "F7", "item": "阿尔卡纳/康斯坦丁/Z女士/夜巡特遣管理局 的英文名", "blocker": "low", "action": "英文客户端或 wiki 其他语言版补全"},
-    {"id": "F8", "item": "3.8 世纪末尺度 / 3.9 重燃！流金之海 的剧情内年代", "blocker": "medium", "action": "章节文本确认"}
+  "伊戈尔": {
+   "type": "角色",
+   "en": "Igor",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/重塑之手",
+   "aliases": [
+    "Igor",
+    "Egor",
+    "Admiral Igor",
+    "Igor the Admiral"
+   ],
+   "note": "阵营为动态：芝诺 →「忧郁的热带」叛变加入重塑之手 →「远征记」(3.3) 脱离 → 3.7 基金会推迟审判、保留Ⅻ小队指挥权。见人物去向图。"
+  },
+  "阿尔卡纳": {
+   "type": "角色",
+   "en": "Arcana",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Arcana",
+    "Arcanum",
+    "Arcanus",
+    "Arkana"
+   ],
+   "note": "重塑之手领袖。wiki 无独立条目（红链），依据暴雨页与重塑之手页引述。曾于阿派朗岛被杀，南极事件复活。"
+  },
+  "露西": {
+   "type": "角色",
+   "en": "Lucy",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Lucy",
+    "Madam Lucy",
+    "Madame Lucy",
+    "露西女士",
+    "露西夫人"
+   ],
+   "note": "拉普拉斯科算中心负责人（已革职）。警告：与无名者是两个不同角色，禁止互相挂别名。"
+  },
+  "康斯坦丁": {
+   "type": "角色",
+   "en": "Constantine",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Constantine",
+    "Vice President Constantine"
+   ],
+   "note": "圣洛夫基金会副会长；人类党团要人；无名者的养父/上级（代号「普帕」的授予者）。"
+  },
+  "Z女士": {
+   "type": "角色",
+   "en": "Madam Z",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Madam Z",
+    "Ms. Z",
+    "Miss Z",
+    "Z",
+    "Z女士"
+   ],
+   "note": "联合委员会成员、第一防线学校校长。注意单字母 Z 易与噪声混淆，仅在与基金会/学校共现时归并。"
+  },
+  "乌尔里希": {
+   "type": "角色",
+   "en": "Ulrich",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Ulrich"
+   ],
+   "note": "拉普拉斯科算中心成员。"
+  },
+  "哑谜": {
+   "type": "角色",
+   "en": "Enigma",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Enigma"
+   ],
+   "note": "拉普拉斯科算中心负责人（露西革职后接任）。"
+  },
+  "玛尔纱": {
+   "type": "角色",
+   "en": "Marsha",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Marsha",
+    "Masha",
+    "Marcia"
+   ],
+   "note": "「Ⅻ」小队队医。"
+  },
+  "叶尔莫莱": {
+   "type": "角色",
+   "en": "Yemelai",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Yemelai",
+    "Sergeant Yemelai",
+    "Yermolai"
+   ],
+   "note": "「Ⅻ」小队，代号「猎犬」。"
+  },
+  "梅蕾尔·范德维尔": {
+   "type": "角色",
+   "en": "Meryl Vanderville",
+   "priority": "P1",
+   "status": "pending",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Meryl",
+    "Meryn"
+   ],
+   "note": "「Ⅻ」小队，代号「乌鸫」。中文名已核实，英文名 Meryl Vanderville 为推测，待游戏英文文本确认。"
+  },
+  "纳西索斯": {
+   "type": "角色",
+   "en": "Narcissus",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "Narcissus"
+   ],
+   "note": ""
+  },
+  "诺谛卡": {
+   "type": "角色",
+   "en": "Nautika",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "Nautika",
+    "Nautica"
+   ],
+   "note": ""
+  },
+  "十四行诗": {
+   "type": "角色",
+   "en": "Sonetto",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Sonetto"
+   ],
+   "note": "司辰小队第一助手。"
+  },
+  "APPLe": {
+   "type": "角色",
+   "en": "APPLe",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "APPLe",
+    "Apple",
+    "apple",
+    "Mr.Apple",
+    "Mr. Apple"
+   ],
+   "note": "注意与 Adel/Adele 区分：Adele 为独立名字，不得并入 APPLe。"
+  },
+  "星锑": {
+   "type": "角色",
+   "en": "Regulus",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "Regulus"
+   ],
+   "note": ""
+  },
+  "槲寄生": {
+   "type": "角色",
+   "en": "Druvis III",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "Druvis III",
+    "Druvis"
+   ],
+   "note": ""
+  },
+  "苏芙比": {
+   "type": "角色",
+   "en": "Sotheby",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/角色列表",
+   "aliases": [
+    "Sotheby"
+   ],
+   "note": ""
+  },
+  "塞梅尔维斯": {
+   "type": "角色",
+   "en": "Semmelweis",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Semmelweis"
+   ],
+   "note": "委外合约人才管理组织。"
+  },
+  "卡卡尼亚": {
+   "type": "角色",
+   "en": "Kakania",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Kakania"
+   ],
+   "note": "委外合约人才管理组织。"
+  },
+  "兀尔德": {
+   "type": "角色",
+   "en": "Urd",
+   "priority": "P1",
+   "status": "pending",
+   "source": "",
+   "aliases": [
+    "Urd",
+    "乌尔德",
+    "兀尔德"
+   ],
+   "note": "译名用字未定：本地 ASR/视频文案作「乌尔德」(33 处)，剧情脉络文档作「兀尔德」(2 处)，wiki 无独立条目。3.3 远征记中由伊戈尔护送赴哈萨克斯坦阻止暴雨。待游戏内文本确认后锁定用字。"
+  },
+  "重塑之手": {
+   "type": "组织",
+   "en": "Manus Vindictae",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/重塑之手",
+   "aliases": [
+    "Manus Vindictae",
+    "Manus Vindicte",
+    "Manus Vindicti",
+    "Manus Vendictae",
+    "Manus Vendicti",
+    "Manus Vindictor",
+    "Manus Vindicta",
+    "Manus vindicti",
+    "Manus Fendicte",
+    "Manus Vindictes",
+    "Manos Vindicte",
+    "Manus Mendicte",
+    "Manas Vindicte",
+    "Manus Findictae",
+    "Manas vindicti",
+    "Malus Vindictae",
+    "Manus"
+   ],
+   "note": "神秘学恐怖组织，领袖阿尔卡纳。ASR 变体多达 16 种，是本图谱最严重的节点分裂源（合计 82 次提及）。"
+  },
+  "圣洛夫基金会": {
+   "type": "组织",
+   "en": "St. Pavlov Foundation",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Foundation",
+    "The Foundation",
+    "St. Pavlov Foundation",
+    "St Pavlov",
+    "St. Pavlov",
+    "基金会"
+   ],
+   "note": "人类和平安全理事会旗下。合计 173 次提及分裂为 4 个节点，修复优先级最高。"
+  },
+  "拉普拉斯科算中心": {
+   "type": "组织",
+   "en": "Laplace Scientific Computing Center",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Laplace",
+    "LSCC",
+    "Laplace Scientific Computing Center",
+    "拉普拉斯"
+   ],
+   "note": "注意 Place/palace/place 为 ASR 同音噪声，禁止归并。"
+  },
+  "芝诺军备学院": {
+   "type": "组织",
+   "en": "Zeno",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Zeno",
+    "Xeno",
+    "Xena",
+    "Zenos",
+    "Zino"
+   ],
+   "note": ""
+  },
+  "委外合约人才管理组织": {
+   "type": "组织",
+   "en": "SPDM",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "SPDM",
+    "S.P.D.M."
+   ],
+   "note": "基金会外勤组织。"
+  },
+  "第一防线学校": {
+   "type": "组织",
+   "en": "First Line School",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "First Line School",
+    "the school",
+    "防线学校"
+   ],
+   "note": "教育机构；校长理查德、Z 女士。"
+  },
+  "司辰小队": {
+   "type": "组织",
+   "en": "Timekeeper Squad",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Timekeeper Squad",
+    "the Timekeeper's team",
+    "Timekeeper's Squad"
+   ],
+   "note": "拥有独立编制；成员：十四行诗、星锑、APPLe、槲寄生、苏芙比、无名者。"
+  },
+  "Ⅻ小队": {
+   "type": "组织",
+   "en": "Squad XII",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "12 squad",
+    "the Twelfth",
+    "XII squad",
+    "Squad 12",
+    "12th squad"
+   ],
+   "note": "刻雷乌斯（队长）、「警官」帕拉维扬、「猎犬」叶尔莫莱、玛尔纱（队医）、「乌鸫」梅蕾尔。"
+  },
+  "夜巡特遣管理局": {
+   "type": "组织",
+   "en": "Night Watch Bureau",
+   "priority": "P2",
+   "status": "pending",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Night Watch",
+    "Nightwatch"
+   ],
+   "note": "英文名 Night Watch Bureau 为推测，待确认。"
+  },
+  "人类党团": {
+   "type": "组织",
+   "en": "Human Faction",
+   "priority": "P2",
+   "status": "pending",
+   "source": "https://res1999.huijiwiki.com/wiki/圣洛夫基金会",
+   "aliases": [
+    "Human Faction",
+    "Human Party"
+   ],
+   "note": "领袖「中锋」伯纳德。英文名待确认。"
+  },
+  "鸽子屋": {
+   "type": "组织",
+   "en": "The Pax House",
+   "priority": "P2",
+   "status": "verified",
+   "source": "data/lore/wu_ming_zhe/plot_aliases.json",
+   "aliases": [
+    "The Pax House",
+    "Pigeon House"
+   ],
+   "note": ""
+  },
+  "暴雨": {
+   "type": "概念",
+   "en": "The Storm",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "The Storm",
+    "Storm",
+    "the storm",
+    "storm",
+    "雨幕",
+    "the rain"
+   ],
+   "note": "又称「雨幕」，阿派朗岛居民称「流溢」。第一场发生于 1999-12-31。合计 137 次提及分裂为 4 个节点。"
+  },
+  "暴雨症候": {
+   "type": "概念",
+   "en": "The Storm Syndrome",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Storm Syndrome",
+    "时代病"
+   ],
+   "note": "使人的常识异变、趋于疯狂而不自知。"
+  },
+  "神秘学家": {
+   "type": "概念",
+   "en": "Arcanist",
+   "priority": "P0",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/神秘学家",
+   "aliases": [
+    "Arcanist",
+    "arcanist",
+    "Arcanists",
+    "arcanists"
+   ],
+   "note": ""
+  },
+  "神秘术": {
+   "type": "概念",
+   "en": "Arcanum",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Arcanum",
+    "arcane skill",
+    "arcane arts"
+   ],
+   "note": "注意 Arcanum(10) 曾被误并为阿尔卡纳 Arcana，须按上下文区分。"
+  },
+  "洪水": {
+   "type": "事件",
+   "en": "The Flood",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "the Flood",
+    "Flood",
+    "deluge"
+   ],
+   "note": "暴雨的另一种表现形式，体现于「复乐园」。"
+  },
+  "回溯": {
+   "type": "概念",
+   "en": "Reverse Flow",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "回溯",
+    "reverse flow",
+    "rewind"
+   ],
+   "note": ""
+  },
+  "手提箱": {
+   "type": "物品",
+   "en": "The Suitcase",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/手提箱",
+   "aliases": [
+    "the suitcase",
+    "the case",
+    "Vertin's case",
+    "箱子"
+   ],
+   "note": "可隔绝暴雨、带神秘学家度过，对人类无效。"
+  },
+  "非对称核素R": {
+   "type": "概念",
+   "en": "Asymmetric Nuclide R",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Asymmetric Nuclide R",
+    "Nuclide R",
+    "asymmetric nuclide"
+   ],
+   "note": "重塑面具原料。"
+  },
+  "平衡伞": {
+   "type": "物品",
+   "en": "Balance Umbrella",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Balance Umbrella",
+    "the umbrella"
+   ],
+   "note": ""
+  },
+  "霍夫曼结": {
+   "type": "概念",
+   "en": "Hoffman Knot",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Hoffman Knot",
+    "Hoffmann knot"
+   ],
+   "note": ""
+  },
+  "重塑之手面具": {
+   "type": "物品",
+   "en": "Manus Mask",
+   "priority": "P2",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Manus mask",
+    "the mask",
+    "重塑面具"
+   ],
+   "note": "佩戴后难以摘下，对佩戴者造成严重危害。"
+  },
+  "南极": {
+   "type": "地点",
+   "en": "Antarctica",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Antarctica",
+    "Antarctic",
+    "the South Pole"
+   ],
+   "note": "南极事件：阿尔卡纳复活并引发洪水。"
+  },
+  "阿派朗岛": {
+   "type": "地点",
+   "en": "Apeiron",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/暴雨",
+   "aliases": [
+    "Apeiron",
+    "Apeiron Island",
+    "阿派朗"
+   ],
+   "note": "《孤独之歌》；富含非对称核素 R。"
+  },
+  "芝加哥": {
+   "type": "地点",
+   "en": "Chicago",
+   "priority": "P1",
+   "status": "verified",
+   "source": "docs/剧情脉络与关键事件.md",
+   "aliases": [
+    "Chicago"
+   ],
+   "note": "1929 情人节大屠杀，林肯公园街 2122 号地下车库。"
+  },
+  "瓦尔登湖": {
+   "type": "地点",
+   "en": "Walden",
+   "priority": "P1",
+   "status": "verified",
+   "source": "docs/剧情脉络与关键事件.md",
+   "aliases": [
+    "Walden",
+    "Walden Lake"
+   ],
+   "note": "魔药酒吧；老板勿忘我。"
+  },
+  "伦敦": {
+   "type": "地点",
+   "en": "London",
+   "priority": "P1",
+   "status": "verified",
+   "source": "docs/剧情脉络与关键事件.md",
+   "aliases": [
+    "London"
+   ],
+   "note": "1966 年维尔汀首次登场地。"
+  },
+  "德克萨斯": {
+   "type": "地点",
+   "en": "Texas",
+   "priority": "P1",
+   "status": "verified",
+   "source": "docs/剧情脉络与关键事件.md",
+   "aliases": [
+    "Texas"
+   ],
+   "note": "1990 年「77 号往事」蓝手帕旅馆。"
+  },
+  "冰岛": {
+   "type": "地点",
+   "en": "Iceland",
+   "priority": "P1",
+   "status": "verified",
+   "source": "https://res1999.huijiwiki.com/wiki/无名者",
+   "aliases": [
+    "Iceland"
+   ],
+   "note": "无名者原展出地。"
+  },
+  "哈萨克斯坦": {
+   "type": "地点",
+   "en": "Kazakhstan",
+   "priority": "P1",
+   "status": "pending",
+   "source": "docs/剧情图谱-灰机wiki事实核对报告.md",
+   "aliases": [
+    "Kazakhstan"
+   ],
+   "note": "3.3 远征记阻止暴雨任务地点，wiki 未直接确认。"
+  }
+ },
+ "alias_flat": {
+  "_note": "plot_aliases.json 兼容格式：{规范译名: [需归并的表层形式]}。合并时按 key 取并集，不得覆盖已有条目。",
+  "维尔汀": [
+   "Vertin",
+   "Vertan",
+   "Verton",
+   "Veltin",
+   "Verta",
+   "Vartan",
+   "维尔廷",
+   "维尔特",
+   "Timekeeper",
+   "Time Keeper",
+   "Time Keepers",
+   "Timekeepers",
+   "司辰"
+  ],
+  "无名者": [
+   "Ms. Stranger",
+   "Miss Stranger",
+   "淑女格蕾丝",
+   "陌生人小姐",
+   "无名之人",
+   "格蕾丝",
+   "莉莉",
+   "凯拉",
+   "塞西莉",
+   "Ms. Grace",
+   "Madam Grace",
+   "Ms.Grace",
+   "Grace",
+   "Miss Grace"
+  ],
+  "伊戈尔": [
+   "Igor",
+   "Egor",
+   "Admiral Igor"
+  ],
+  "阿尔卡纳": [
+   "Arcana",
+   "Arcanum",
+   "Arcanus",
+   "Arkana"
+  ],
+  "露西": [
+   "Lucy",
+   "Madam Lucy",
+   "Madame Lucy",
+   "露西女士",
+   "露西夫人"
+  ],
+  "康斯坦丁": [
+   "Constantine",
+   "Vice President Constantine"
+  ],
+  "Z女士": [
+   "Madam Z",
+   "Ms. Z",
+   "Miss Z"
+  ],
+  "乌尔里希": [
+   "Ulrich"
+  ],
+  "哑谜": [
+   "Enigma"
+  ],
+  "玛尔纱": [
+   "Marsha",
+   "Masha",
+   "Marcia"
+  ],
+  "叶尔莫莱": [
+   "Yemelai",
+   "Sergeant Yemelai",
+   "Yermolai"
+  ],
+  "梅蕾尔·范德维尔": [
+   "Meryl",
+   "Meryn"
+  ],
+  "纳西索斯": [
+   "Narcissus"
+  ],
+  "诺谛卡": [
+   "Nautika",
+   "Nautica"
+  ],
+  "十四行诗": [
+   "Sonetto"
+  ],
+  "APPLe": [
+   "APPLe",
+   "Apple",
+   "Mr.Apple",
+   "Mr. Apple"
+  ],
+  "星锑": [
+   "Regulus"
+  ],
+  "槲寄生": [
+   "Druvis III",
+   "Druvis"
+  ],
+  "苏芙比": [
+   "Sotheby"
+  ],
+  "塞梅尔维斯": [
+   "Semmelweis"
+  ],
+  "卡卡尼亚": [
+   "Kakania"
+  ],
+  "兀尔德": [
+   "Urd",
+   "乌尔德"
+  ],
+  "重塑之手": [
+   "Manus Vindictae",
+   "Manus Vindicte",
+   "Manus Vindicti",
+   "Manus Vendictae",
+   "Manus Vendicti",
+   "Manus Vindictor",
+   "Manus Vindicta",
+   "Manus vindicti",
+   "Manus Fendicte",
+   "Manus Vindictes",
+   "Manos Vindicte",
+   "Manus Mendicte",
+   "Manas Vindicte",
+   "Manus Findictae",
+   "Manas vindicti",
+   "Malus Vindictae",
+   "Manus"
+  ],
+  "圣洛夫基金会": [
+   "Foundation",
+   "The Foundation",
+   "St. Pavlov Foundation",
+   "St Pavlov",
+   "基金会"
+  ],
+  "拉普拉斯科算中心": [
+   "Laplace",
+   "LSCC",
+   "Laplace Scientific Computing Center",
+   "拉普拉斯"
+  ],
+  "芝诺军备学院": [
+   "Zeno",
+   "Xeno",
+   "Xena",
+   "Zenos",
+   "Zino"
+  ],
+  "委外合约人才管理组织": [
+   "SPDM"
+  ],
+  "第一防线学校": [
+   "First Line School",
+   "防线学校"
+  ],
+  "司辰小队": [
+   "Timekeeper Squad",
+   "the Timekeeper's team"
+  ],
+  "Ⅻ小队": [
+   "12 squad",
+   "the Twelfth",
+   "XII squad",
+   "Squad 12"
+  ],
+  "夜巡特遣管理局": [
+   "Night Watch",
+   "Nightwatch"
+  ],
+  "人类党团": [
+   "Human Faction",
+   "Human Party"
+  ],
+  "鸽子屋": [
+   "The Pax House",
+   "Pigeon House"
+  ],
+  "暴雨": [
+   "The Storm",
+   "Storm",
+   "storm",
+   "the storm",
+   "雨幕"
+  ],
+  "暴雨症候": [
+   "Storm Syndrome",
+   "时代病"
+  ],
+  "神秘学家": [
+   "Arcanist",
+   "arcanist",
+   "Arcanists"
+  ],
+  "神秘术": [
+   "Arcanum",
+   "arcane skill"
+  ],
+  "洪水": [
+   "the Flood",
+   "Flood",
+   "deluge"
+  ],
+  "回溯": [
+   "reverse flow"
+  ],
+  "手提箱": [
+   "the suitcase",
+   "the case",
+   "Vertin's case",
+   "箱子"
+  ],
+  "非对称核素R": [
+   "Asymmetric Nuclide R",
+   "Nuclide R"
+  ],
+  "平衡伞": [
+   "Balance Umbrella"
+  ],
+  "霍夫曼结": [
+   "Hoffman Knot"
+  ],
+  "重塑之手面具": [
+   "Manus mask",
+   "重塑面具"
+  ],
+  "南极": [
+   "Antarctica",
+   "Antarctic"
+  ],
+  "阿派朗岛": [
+   "Apeiron",
+   "Apeiron Island"
+  ],
+  "芝加哥": [
+   "Chicago"
+  ],
+  "瓦尔登湖": [
+   "Walden",
+   "Walden Lake"
+  ],
+  "伦敦": [
+   "London"
+  ],
+  "德克萨斯": [
+   "Texas"
+  ],
+  "冰岛": [
+   "Iceland"
+  ],
+  "哈萨克斯坦": [
+   "Kazakhstan"
+  ],
+  "Willow": [
+   "Charlotte O'Hagan",
+   "Charlotte",
+   "Miss O'Hagan",
+   "the Fog Lady",
+   "the fog hag",
+   "Latterbeige",
+   "Latterbead",
+   "Miss Latch",
+   "Scarlet",
+   "Ms.Willow",
+   "Miss Willow",
+   "Ms Willows",
+   "Ms.Willa",
+   "the wicked hag friend",
+   "that ugly toad witch",
+   "笃笃骨",
+   "薇洛"
+  ],
+  "纸信圈儿": [
+   "Liberty Grove",
+   "Liberty",
+   "The little mocker-up of Flutterpage",
+   "Liberti Grove"
+  ],
+  "格蕾塔·霍夫曼": [
+   "Madam Hoffman",
+   "Madame Hoffman",
+   "Greta Hoffman",
+   "Hoffman",
+   "madam Hoffman",
+   "Madam Hoffman's",
+   "Miss Hoffman",
+   "Greta",
+   "investigator Greta Hoffman",
+   "Madame Hoffman's"
+  ],
+  "Spathodea": [
+   "可燃点",
+   "小火"
+  ],
+  "Recoleta": [
+   "虚构集"
+  ],
+  "Aleph": [
+   "阿莱夫"
+  ],
+  "Komala": [
+   "科马拉"
+  ],
+  "Mercuria": [
+   "环状水星",
+   "疗愈师"
+  ],
+  "Jay": [
+   "J",
+   "乔·布朗",
+   "Joe Brown"
+  ],
+  "Paulina": [
+   "保利娜·勒萨奇",
+   "Paulina Lesage",
+   "保利娜"
+  ],
+  "Barcarola": [
+   "芭卡洛儿",
+   "芭卡洛儿·斯特拉迪瓦里",
+   "Barcarola Stradivari",
+   "自由海风号",
+   "音乐总监"
+  ],
+  "Tutu": [
+   "图图石子",
+   "Fatutu"
+  ],
+  "Melania": [
+   "梅兰妮"
+  ],
+  "Pickles": [
+   "皮克勒斯"
+  ],
+  "Acie": [
+   "艾西"
+  ],
+  "Matilda": [
+   "玛蒂尔达",
+   "Matilda Bouanich"
+  ],
+  "Pioneer": [
+   "先驱者"
+  ],
+  "Marcus": [
+   "马库斯"
+  ],
+  "Kakania": [
+   "卡卡尼亚",
+   "克拉拉·温格勒",
+   "Klara Vingler",
+   "克拉拉"
+  ],
+  "Isolde": [
+   "伊索尔德"
+  ],
+  "Heinrich": [
+   "海因里希"
+  ],
+  "Schwartz": [
+   "施瓦茨"
+  ],
+  "Semmelweis": [
+   "塞梅尔维斯"
+  ],
+  "Ulrich": [
+   "乌尔里希"
+  ],
+  "Cremona": [
+   "克雷莫纳"
+  ],
+  "Free Breeze": [
+   "自由海风号"
+  ],
+  "巴别塔之骰": [
+   "巴比伦之骰"
+  ],
+  "Eternity": [
+   "温妮弗雷德",
+   "Winnifred"
+  ],
+  "Brimley": [
+   "宽檐帽"
+  ],
+  "Desert Flannel": [
+   "沙丝绒"
+  ],
+  "Geo": [
+   "杰洛",
+   "Gio"
+  ],
+  "Legerza": [
+   "莱格斯",
+   "Legers"
+  ],
+  "Apostle": [
+   "使徒米修斯",
+   "Apostle Matheus",
+   "Matheus"
+  ],
+  "Salone": [
+   "塞洛尼",
+   "Selone"
+  ],
+  "Toa": [
+   "托阿"
+  ],
+  "Octavia": [
+   "奥克塔维奥"
+  ],
+  "Elden": [
+   "埃尔登"
+  ],
+  "Scott": [
+   "斯考特"
+  ],
+  "齐星": [
+   "奇星"
+  ],
+  "Iverson": [
+   "艾弗森"
+  ],
+  "Fogg": [
+   "福葛",
+   "亚瑟·福葛",
+   "Arthur Fog"
+  ],
+  "Sophia": [
+   "苏菲亚"
+  ],
+  "Dora": [
+   "朵拉"
+  ],
+  "Charlton": [
+   "查尔顿"
+  ],
+  "菲林士多": [
+   "Noire",
+   "Noir",
+   "神秘警探C07"
+  ],
+  "Nuku Teow": [
+   "努库泰澳",
+   "Nukutai",
+   "Nukateao"
+  ],
+  "阿马尔菲塔诺村": [
+   "理性家族的崛起与衰落",
+   "理性家族",
+   "Amalfitano",
+   "阿马尔菲塔诺"
   ]
+ },
+ "noise": {
+  "_note": "以下形式由 ASR 同音/误切产生，属噪声，应从实体集中删除而非归并。判定原则：该形式在语料中从不与已确认剧情实体共现，且不属于任何术语条目。",
+  "confirmed": [
+   "Place",
+   "palace",
+   "place",
+   "door",
+   "mural",
+   "masks",
+   "ants",
+   "game",
+   "data",
+   "work",
+   "core",
+   "north",
+   "hero",
+   "tent",
+   "wars",
+   "pain",
+   "party",
+   "parties",
+   "many",
+   "mask",
+   "meal",
+   "metal",
+   "money",
+   "Mother Spirit",
+   "Mother"
+  ],
+  "generic_zh": [
+   "城市",
+   "人类",
+   "士兵",
+   "士兵们",
+   "战争",
+   "学校",
+   "火山",
+   "教授",
+   "那场梦",
+   "他们的信",
+   "我们的起源",
+   "她的助手",
+   "咱们衙门"
+  ],
+  "pronoun_en": [
+   "my father",
+   "my parents",
+   "her team",
+   "my life",
+   "his request",
+   "my emotion module",
+   "your true colors",
+   "your wounds",
+   "my namesake"
+  ],
+  "pending_review": [
+   "Adele",
+   "Adel",
+   "Adèle",
+   "Kele",
+   "Celia",
+   "Alia",
+   "Amelia",
+   "Lilia",
+   "Cillia",
+   "Célia",
+   "Felicienne",
+   "Felicien",
+   "Feliciane",
+   "Muriel",
+   "Krutov",
+   "Maxim",
+   "Vanya",
+   "Adler",
+   "Senato",
+   "Lucian",
+   "Erd",
+   "Andreas",
+   "Teresita",
+   "Marguerite",
+   "Pericles",
+   "Typhon",
+   "Berograd",
+   "Berigrad",
+   "Piros",
+   "Pyros",
+   "vampire",
+   "soldiers",
+   "bandits",
+   "father",
+   "mama",
+   "Maria",
+   "Marie",
+   "toy box",
+   "train",
+   "ritual",
+   "the ritual",
+   "长生",
+   "长生剑",
+   "梅花教",
+   "白马派"
+  ]
+ },
+ "pending": [
+  {
+   "id": "F1",
+   "item": "主线 NPC 官方译名",
+   "names": [
+    "Celia",
+    "Felicienne",
+    "Muriel",
+    "Krutov",
+    "Maxim",
+    "Vanya",
+    "Adler",
+    "Senato",
+    "Lucian",
+    "Erd",
+    "Andreas",
+    "Teresita",
+    "Marguerite",
+    "Pericles",
+    "Typhon"
+   ],
+   "blocker": "high",
+   "action": "从视频文案/游戏内文本反查官方译名"
+  },
+  {
+   "id": "F2",
+   "item": "聚合浪潮/翡冷翠之春/入雅典记 的版本号",
+   "blocker": "medium",
+   "action": "补 version 字段"
+  },
+  {
+   "id": "F3",
+   "item": "兀尔德 vs 乌尔德 用字",
+   "blocker": "medium",
+   "action": "游戏内文本确认后锁定"
+  },
+  {
+   "id": "F5",
+   "item": "非主线来源文档混入库（9 个文档 / 5 个 UP 主）",
+   "blocker": "high",
+   "action": "加 source_kind 字段区分 canon/analysis"
+  },
+  {
+   "id": "F6",
+   "item": "3.4 不老春 语料偏少（73 chunks）",
+   "blocker": "medium",
+   "action": "补采"
+  },
+  {
+   "id": "F7",
+   "item": "阿尔卡纳/康斯坦丁/Z女士/夜巡特遣管理局 的英文名",
+   "blocker": "low",
+   "action": "英文客户端或 wiki 其他语言版补全"
+  },
+  {
+   "id": "F8",
+   "item": "3.8 世纪末尺度 / 3.9 重燃！流金之海 的剧情内年代",
+   "blocker": "medium",
+   "action": "章节文本确认"
+  }
+ ]
 }

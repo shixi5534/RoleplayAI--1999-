@@ -46,6 +46,7 @@ from roleplay.core.knowledge.plot_corpus import PlotCorpus  # noqa: E402
 from roleplay.core.knowledge.plot_graph import (  # noqa: E402
     is_noise_entity,
     norm_name,
+    rescue_noise_entity,
 )
 from roleplay.core.knowledge.relation_vocab import (  # noqa: E402
     CANONICAL_RELATIONS,
@@ -134,6 +135,7 @@ def _cmd_dump(
     batch: int,
     size: int,
     title_contains: str | None,
+    offset: int | None = None,
 ) -> int:
     cpath, cloud_dir, _cache = _paths(settings, character_id)
     if not cpath.exists():
@@ -147,12 +149,23 @@ def _cmd_dump(
         if not chunks:
             print(f"[error] 标题筛选「{key}」无匹配块")
             return 1
-    total_batches = max(1, (len(chunks) + max(1, size) - 1) // max(1, size))
-    if not 0 <= batch < total_batches:
-        print(f"[error] 批次越界：--batch 需在 0..{total_batches - 1}（当前 {batch}）")
-        return 1
+    # --offset：跳过筛选后的前 N 块。用「从 offset 起取 size 块」的语义，
+    # 此时 --batch **只作输出文件标签**、不参与切片 —— 否则换了 --size 之后
+    # 批号划分整体错位，已完成的批次会被重复抽取或漏抽。
+    if offset is not None:
+        chunks = chunks[max(0, offset):]
+        if not chunks:
+            print(f"[error] --offset {offset} 超出范围")
+            return 1
+        part = chunks[: max(1, size)]
+        total_batches = 1
+    else:
+        total_batches = max(1, (len(chunks) + max(1, size) - 1) // max(1, size))
+        if not 0 <= batch < total_batches:
+            print(f"[error] 批次越界：--batch 需在 0..{total_batches - 1}（当前 {batch}）")
+            return 1
 
-    part = chunks[batch * size : (batch + 1) * size]
+        part = chunks[batch * size : (batch + 1) * size]
     cloud_dir.mkdir(parents=True, exist_ok=True)
     types = _load_type_whitelist(character_id)
 
@@ -161,7 +174,8 @@ def _cmd_dump(
         "",
         f"- 角色：`{character_id}`",
         f"- 批次：**{batch}** / 共 {total_batches} 批（每批 {size} 块）｜本批块数：**{len(part)}**",
-        f"- 筛选：{('标题含「%s」' % title_contains) if title_contains else '无'}",
+        f"- 筛选：{('标题含「%s」' % title_contains) if title_contains else '无'}"
+        f"｜offset {offset if offset is not None else '-'}",
         f"- 规范版本：{SPEC_VERSION}",
         f"- 输出：`{cloud_dir.name}/batch_{batch:03d}.jsonl`",
         "",
@@ -191,6 +205,7 @@ def _cmd_dump(
         "size": size,
         "total_batches": total_batches,
         "title_contains": title_contains,
+        "offset": offset,
         "chunks": [
             {"hash": c.hash, "doc_id": c.doc_id, "lang": c.lang,
              "title": c.title, "version": c.version}
@@ -222,7 +237,7 @@ def _clean_one(
 ) -> tuple[str, dict, dict]:
     """校验并清洗单行产出。返回 (hash, 清洗后 data, 丢弃统计)。"""
     stat = {
-        "ent_noise": 0, "ent_empty": 0, "ent_type_fallback": 0,
+        "ent_noise": 0, "ent_rescued": 0, "ent_empty": 0, "ent_type_fallback": 0,
         "rel_no_canon": 0, "rel_endpoint": 0, "rel_selfloop": 0,
         "rel_conf": 0,
     }
@@ -243,9 +258,14 @@ def _clean_one(
             stat["ent_empty"] += 1
             continue
         if is_noise_entity(name):
-            # 建图时同样会被 is_noise_entity 过滤，这里提前丢弃保持缓存干净
-            stat["ent_noise"] += 1
-            continue
+            # 5 类误杀打捞：有干净别名时升为正名（与建图侧 rescue 同一规则源）
+            rescued = rescue_noise_entity(e)
+            if rescued is None:
+                stat["ent_noise"] += 1
+                continue
+            stat["ent_rescued"] += 1
+            e = rescued
+            name = str(e.get("name") or "").strip()
         etype = str(e.get("type") or "").strip()
         if etype not in types:
             etype = _FALLBACK_TYPE
@@ -320,7 +340,7 @@ def _cmd_apply(
             print(f"[warn] 第 {ln} 行不是合法 JSON，已跳过")
 
     total = {k: 0 for k in (
-        "ent_noise", "ent_empty", "ent_type_fallback",
+        "ent_noise", "ent_rescued", "ent_empty", "ent_type_fallback",
         "rel_no_canon", "rel_endpoint", "rel_selfloop", "rel_conf",
     )}
     written = 0
@@ -346,10 +366,36 @@ def _cmd_apply(
             )
         written += 1
 
+    # 类型分布体检：概念类占比过高 = 把叙述里的普通抽象名词当实体抽了
+    # （实测有一批抽出 597 实体 / 325 概念 = 54%，而正常批次是 3%~10%）。
+    # 这类假节点会霸占别名索引（`truth` 被注册后含该词的查询会被误链接）。
+    type_dist: dict[str, int] = {}
+    ent_total = 0
+    for item in rows:
+        h, data, _st = _clean_one(item, allowed, types)
+        if not h:
+            continue
+        for e in data["entities"]:
+            t = e.get("type") or "未分类"
+            type_dist[t] = type_dist.get(t, 0) + 1
+            ent_total += 1
+
     missing = sorted(allowed - covered)
     tag = "[dry-run] " if dry_run else ""
     print(f"[apply] {tag}批次 {batch}｜产出 {len(rows)} 行｜写入 {written} 块"
           f"｜覆盖 {len(covered)}/{len(allowed)}")
+    if type_dist:
+        top = " / ".join(f"{k} {v}" for k, v in sorted(
+            type_dist.items(), key=lambda kv: -kv[1]))
+        print(f"[apply] 类型分布：{top}")
+        con = type_dist.get("概念", 0)
+        if ent_total and con / ent_total > 0.2:
+            print(
+                f"[apply][warn] 概念类占比 {con}/{ent_total} = {con / ent_total:.0%}，超过 20% 阈值。"
+                "正常批次是 3%~15%——很可能是把叙述里的普通抽象名词"
+                "（truth / ritual / side effects / research 之类）当实体抽了。"
+                "这些假节点会霸占别名索引，建议退回清理后重新 --apply。"
+            )
     if bad_lines:
         print(f"[apply] 非法 JSON 行：{bad_lines}")
     if dup:
@@ -441,6 +487,8 @@ def main() -> int:
     ap.add_argument("--batch", type=int, default=0, help="批次号（从 0 开始）")
     ap.add_argument("--size", type=int, default=40, help="每批块数")
     ap.add_argument("--title-contains", help="dump 时只取标题包含该子串的块")
+    ap.add_argument("--offset", type=int, default=None,
+                    help="dump 时跳过筛选后的前 N 块（改 --size 后继续推进用，防批号错位重抽）")
     ap.add_argument("--dry-run", action="store_true", help="apply 时只校验不写盘")
     args = ap.parse_args()
 
@@ -449,7 +497,8 @@ def main() -> int:
         return _cmd_plan(settings, args.character, args.size)
     if args.dump:
         return _cmd_dump(
-            settings, args.character, args.batch, args.size, args.title_contains
+            settings, args.character, args.batch, args.size,
+            args.title_contains, args.offset,
         )
     if args.apply:
         return _cmd_apply(settings, args.character, args.batch, args.dry_run)

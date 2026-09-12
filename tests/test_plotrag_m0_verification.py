@@ -940,11 +940,21 @@ class TestM04NoopDetection:
         assert mod._is_noop(missing, missing) is False
 
     def test_rebuild_path_is_exempt_from_noop(self):
-        """--rebuild 先删图再建，同内容属正常：源码必须有 `not rebuild` 守卫。"""
+        """--rebuild / --rebuild-graph-only 都是先删图再建，同内容属正常。
+
+        源码守卫必须豁免**两者**：
+          - ``not rebuild``               （--rebuild 清缓存 + 删图）
+          - ``not rebuild_graph_only``    （--rebuild-graph-only 只删图、保缓存）
+        否则重建后同内容会被误判成 no-op 并返回退出码 2。
+        """
         mod = _load_script("build_plot_graph.py")
         source = (ROOT / "scripts" / "build_plot_graph.py").read_text(encoding="utf-8")
-        assert re.search(r"if not rebuild and _is_noop\(before, after\)", source), (
-            "--rebuild 缺少 no-op 豁免守卫，重建后同内容会被误判成 no-op"
+        assert re.search(
+            r"if not rebuild and not rebuild_graph_only and _is_noop\(before, after\)",
+            source,
+        ), (
+            "no-op 检测缺少 --rebuild / --rebuild-graph-only 豁免守卫，"
+            "重建后同内容会被误判成 no-op"
         )
         assert mod.NOOP_EXIT_CODE == 2
         # before 快照必须在删图之前取，否则永远判不出来
