@@ -1,0 +1,217 @@
+{
+ "standard": "灰机wiki(res1999.huijiwiki.com) 2026-09-12 核查",
+ "top_chunks": 10,
+ "argv": [
+  "scripts\\eval_rag_huiji.py",
+  "--top",
+  "10"
+ ],
+ "ran_at": "2026-09-12 21:32:02",
+ "path_counts": {
+  "edge": 73,
+  "mention": 58
+ },
+ "summary": {
+  "cases": 14,
+  "passed": 12
+ },
+ "cases": [
+  {
+   "q": "薇洛的真名是什么？",
+   "ref": "Charlotte O'Hagan（伦敦十字街女巫，前乌卢鲁运动会最年轻金牌得主）",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 1,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 6,
+    "mention": 6
+   }
+  },
+  {
+   "q": "可燃点体内的火到底是什么？",
+   "ref": "乌卢鲁圣火，本体为 Ulu（和平乌鲁）",
+   "pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 9,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 7,
+    "mention": 5
+   }
+  },
+  {
+   "q": "旧金山海特街的疗愈师是谁？",
+   "ref": "环状水星（Mercuria），兼迪厅舞女",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 3,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 7,
+    "mention": 5
+   }
+  },
+  {
+   "q": "J 的义妹是谁？",
+   "ref": "保利娜·勒萨奇（Paulina），原圣洛夫基金会调查员，第二次暴雨中被回溯而死",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 3,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 8,
+    "mention": 4
+   }
+  },
+  {
+   "q": "雷米特杯失窃案里 Melania 的保安公司叫什么？",
+   "ref": "拉米雷斯保安公司（Ramirez security company）",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 6,
+   "n_relevant": 1,
+   "n_via_graph": 6,
+   "paths": {
+    "edge": 1,
+    "mention": 5
+   }
+  },
+  {
+   "q": "《神秘警探C07》三部曲的导演是谁？",
+   "ref": "菲林士多（Noire），中国香港导演",
+   "pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_via_graph": 3,
+   "paths": {
+    "mention": 3
+   }
+  },
+  {
+   "q": "《疯癫与文明》里那座巨型监狱叫什么？",
+   "ref": "科马拉（Komala），全景监狱",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 9,
+   "n_relevant": 1,
+   "n_via_graph": 9,
+   "paths": {
+    "edge": 4,
+    "mention": 5
+   }
+  },
+  {
+   "q": "虚构集的小说《理性家族的崛起与衰落》的故事发生地是哪里？",
+   "ref": "阿马尔菲塔诺（Amalfitano，取自波拉尼奥《2666》人名）",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 4,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 7,
+    "mention": 5
+   }
+  },
+  {
+   "q": "卡卡尼亚的本名是什么？",
+   "ref": "克拉拉·温格勒（Klara Vingler），维也纳精神科医学生",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 3,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 9,
+    "mention": 3
+   }
+  },
+  {
+   "q": "维也纳篇与卡卡尼亚对峙决斗的医生是谁？",
+   "ref": "施瓦茨医生（Dr. Schwartz，以电击治疗骗财）",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 1,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 9,
+    "mention": 3
+   }
+  },
+  {
+   "q": "海因里希最后被谁杀死？",
+   "ref": "被叛变的伊索尔德开枪击毙",
+   "pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "n_chunks": 12,
+   "n_relevant": 6,
+   "n_via_graph": 12,
+   "paths": {
+    "edge": 8,
+    "mention": 4
+   }
+  },
+  {
+   "q": "自由海风号邮轮的音乐总监是谁？",
+   "ref": "芭卡洛儿·斯特拉迪瓦里（Barcarola Stradivari），克雷莫纳人",
+   "pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "n_chunks": 11,
+   "n_relevant": 3,
+   "n_via_graph": 11,
+   "paths": {
+    "edge": 7,
+    "mention": 4
+   }
+  },
+  {
+   "q": "努库泰澳的岛民都有谁？",
+   "ref": "图图石子（Fatutu）、托阿（Toa）、塞洛尼（Selone）、卡穆塔（Kamuta）",
+   "pass": false,
+   "covered": "2/3",
+   "missing_groups": [
+    2
+   ],
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_via_graph": 3,
+   "paths": {
+    "mention": 3
+   }
+  },
+  {
+   "q": "在中央塔里自囚的医生是谁？",
+   "ref": "阿莱夫（Aleph，碎裂品所属，2.6 主线 BOSS 形态）",
+   "pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_via_graph": 3,
+   "paths": {
+    "mention": 3
+   }
+  }
+ ]
+}

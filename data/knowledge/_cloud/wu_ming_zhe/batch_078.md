@@ -1,0 +1,992 @@
+# 剧情图谱抽取 · batch 078
+
+- 角色：`wu_ming_zhe`
+- 批次：**78** / 共 1 批（每批 95 块）｜本批块数：**95**
+- 筛选：标题含「1.5」｜offset 0
+- 规范版本：cloud-extract-v1
+- 输出：`wu_ming_zhe/batch_078.jsonl`
+
+## 硬约束（违反即被 `--apply` 丢弃，且**不报错**——产出即静默消失）
+
+1. `type` 只能是以下 7 类之一：角色 / 组织 / 地点 / 概念 / 物品 / 事件 / 时间。
+   越界一律回落 `概念`。
+2. `relation` 必须命中下方受控词表（77 条）。
+   否定的、含拉丁字母的、超过 8 个字的谓语一律丢弃。
+3. `src` / `dst` 必须是**本块内某个实体的 name 或 alias**，
+   不能引用块外实体，不能用代词泛指。
+4. 禁止自环：`src` 与 `dst` 不能是同一个实体，**同一实体的正名与别名之间、别名与别名之间也算自环**。
+   例：若本块实体是「无名者」（别名含 凯拉 / Ms. Stranger），则 `凯拉 → Ms. Stranger` 会被建图判为自环静默丢弃。
+5. 禁止把 you / she / he / we / they / 她 / 他 / 我们 等代词当实体正名。
+6. 只抽取**文本里明确说了**的关系，不要脑补、不要补背景知识。
+   拿不准就留空 relations，宁缺毋滥。
+7. 机器转写有识别错误：同一角色的不同拼写（ASR 变体）请收进 `aliases`，
+   不要新建重复实体。
+
+## 受控词表（77 条）
+
+是、别名、称呼、隶属、担任、象征、转变、包含、位于、前往、离开、返回、来自、居住、连接、持有、使用、获得、给予、制造、摧毁、修复、封印、亲属、同伴、指导、保护、帮助、信任、怀疑、感谢、背叛、对立、对抗、攻击、杀死、击败、威胁、阻止、追踪、隐藏、知晓、发现、寻找、研究、学习、告知、提及、记载、询问、对话、请求、指挥、命令、派遣、服从、依据、许可、发动、参与、关联、导致、遇见、经历、发生于、约定、计划、预言、影响、控制、需要、免疫、希望、等待、关注、警告、指责
+
+## 输出格式
+
+写一个 `batch_<N>.jsonl`，**每行一个 JSON 对象**，顺序与下方 chunk 一致，
+并且**必须原样带回每个 chunk 的 hash**（写错 hash 会导致结果写进错误的缓存槽）。
+
+```json
+{"hash":"<16位hash>","entities":[{"name":"规范称呼","type":"角色","aliases":["曾用名/代称/昵称"]}],"relations":[{"src":"A","dst":"B","relation":"隶属","confidence":0.9}]}
+```
+
+`confidence` 取值 0.0–1.0，只在你**确信**文本明确表达了该关系时给到 0.8 以上。
+低于 0.55 的边建图时会被 `min_confidence` 直接拒收。
+
+## chunks
+
+### [0] hash=`47878a31f4fab5d3`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+It's one of the Arcanus lineages.A rare kind, Miss Bathodea.Based on the past cases, you will eventually become yourself again.The old self.What you saw in your mind were not illusions,but memories from your past self.Under the starry sky, rotting sand, countless Arcanus ran like a herd of beasts.I don't think any Arcanus would say no to witnessing the revival of the onceA junior student from Melbourne, an old soul reincarnated.
+```
+
+### [1] hash=`143fcf905e07d5bb`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+What's her attitude and what will she do?Find out with me!Come on, Flammie.Let's light up the allure torch.You've reached Desert Flannel.I'm not home right now, or I don't have time for calls.Please leave a message after the beep.It's before the game starts.Where are you?It's here now unless you're dead!Look, I know you're not into these games, but you can really use the money, right?Otherwise, you wouldn't have come to me.
+```
+
+### [2] hash=`76f345e5ae3140a7`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Pick me up again, we're both...Just leave it to Thursday.The game on Thursday is crucial.I will get expelled if I mess it up.I'm begging you.Tim, over, now!Thursday?Wait...We missed the right junction.The roads are different from the map Mr.Slouch Hat gave us.It's too outdated to provide any useful information.Terrific.We've gone wrong again.Again, this is like, yeah, the fourth time.Since my short life is supposed to be spent
+```
+
+### [3] hash=`429febdec3f72834`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+in creating huge value for all the living thingsin this world, Foundation should have sent meanother bodyguard, a more reliable one.And the contact here should have offered usa more reliable map.I am the one and only reliable bodyguardwho can keep you safe among all the othersin the Foundation.You are of great significance to Laplace.They don't want you to...take any risks.We can go back to the last junction or keep going forward.
+```
+
+### [4] hash=`ba95d76770017e62`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+There is a trail about 300 meters ahead, and it leads all the way to the Rolling Croc Bookstore.You want to check them out?When things don't work out one way, a researcher will find another.See?There comes another way.Hey, wait.Miss Spa...Spathadia, right?Till I know you?We arrived in Australia not long ago.We've been lost for way too long, so long that the human society has begun to suffereconomic losses because I've been loafing around.
+```
+
+### [5] hash=`1e2690996a56cba9`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Now you are given an opportunity to help the whole of humanity, and it only takesa few minutes.Well, maybe hours of your meaningless life.Take us to the Rolling Croc!The Rolling Croc!Exercise!Go straight ahead, turn right into the lane after passing by a cafe with an orangereally break some part of myself.I said I passed out, but it doesn't feel likethat to me.My vest is dusty, but I don't feel any pain at all.
+```
+
+### [6] hash=`99391538bfee6478`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Maybe I need moreice water.No, maybe it's hot tea that I need.I should have gone to that lablettuce place with those wacky people and had a physical examination.Let meBransford was very popular amongst arcaneists, the Uluru games of that year had more treesthan that in any of the years, and then in 1900, Saint Pavlov Foundation took over theUluru games.Out of security concerns, they abolished one third of the events that involved dangerous
+```
+
+### [7] hash=`3ba5daff9039f246`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+actions and imposed a lot of regulations on the rest.Jones got first place in the game that year, the games in 1938, it was the mostSuccessful whenever since the foundation took overIt was so successful almost everyone thought the games would be revived and brought back to the publicUntil I wish I could see the uberu stadium with my own eyes againEven for just a minute like like how I used to host the opening ceremonies in there sit on the highest platform
+```
+
+### [8] hash=`091ba338cd5c919d`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+igniting a flame from the wood saturated by ointment andthenflew on a rosewood branchFalling a canoe in water and gently pushing it forward, but the flame had a fight withme.It trembled with anger because she was such an unreasonable blockhead, and my sight wasfilled with darkness.My sight?Just say something?What are these things doing in my head?Are they illusions?When did I go to the desert?Since when did I?
+```
+
+### [9] hash=`1df1c614b3d8d775`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+My stomach is much better now but my throat is burning!Summarize what happened.You fell into a coma for 16 minutes and 30 seconds yesterdaydue to external impact.Then you woke up and found yourself fine.That's right!On that night, you felt an unusual burncoming up to your throat from your stomach.At the same time, you had weird illusions.And at last, you vomited a ball of fire.Yes, that's right, exactly!
+```
+
+### [10] hash=`c8fb8c65685986b6`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+For one last time, are you sure no one in your family is related to the red dragon?100% positive!I checked all the family photos and medical records, and even rang mum and dad!Dirty of it!The symptom is really rare to see.Don't walk away on me.Are you really buying that?I don't doubt it.Then you're a fucking donut.Would have lost all your clothes to any rauder that comes up to you if you wandered long enough on the streets.
+```
+
+### [11] hash=`ccb3cf66abe498a1`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Take your little claws off me!Let me go now!Hey, you were the one who first said a nowhere and knocked me over!Now my brain's not working right and you're responsible for it!Yeah?You mean this smidge of zombie fire?You reckon this is the first time an arcanist sees it?Can get you twenty of these in two days in any workshop.You gotta try harder if you want to fool me.Oh, whoa.Oh, yeahI saw that ball of fire come out of my mouth
+```
+
+### [12] hash=`5edc40a0212cad3c`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You frauds never stop coming up with new scams.No cheat.No eat heard that beforeGo home with your fake fire.If you continue doing this be careful of the bunyipsThey will crawl into your house through the storage and take your tongue because lies are their favorite foodBut there is no evidence to prove that she's telling a lieEvidence?I have more than enough evidence to prove she's not someinnocent lamb.
+```
+
+### [13] hash=`f85e1da02657f20b`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+She climbed up the tree outside my window and was shouting andscreaming there in the middle of the night.The moment I went outside she tookme here like she was carrying a bag of groceries.One main fur that she wasshocked by the fire-voluntary bus displayed abnormal behaviors.My godAnd don't you have adults at home to put some senses in your head?Haven't they taught you not to trust the strangers' words?
+```
+
+### [14] hash=`4136d4a2cfd8146b`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Especially if they show up at late hours?The stranger?I know something's wrong with my head and I'm not even sure who I really am anymore!But you shouldn't have forgotten me!Neighbours, Desert Flannel!I live three streets away!I even said hello to you!Three streets away?How does it make us neighbours?And I don't think our litter covered street is part of your fancy community, where peoplesit by the white fountains and walk in the street gardens.
+```
+
+### [15] hash=`ba263e368860fde2`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+The last time I checked, I was not from some rich immigrant family.No matter what you're looking for, for money or for fun, I couldn't care less aboutit.The only thing I care about is that my landlord will kick me out if I fail topay rent this month.So let me go!You must not leave.I think I just nicked you in the teeth.I'm just an ordinary person like anyone else living at the end of the century.These things shouldn't be in my mind.
+```
+
+### [16] hash=`5397b8cdadae0bcb`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+There's something wrong with me.With my head or other parts.Can't just go nuts now.My training plan.Have a game to play at the end of the year.Relax.The symptoms may not last.Sensing omens doesn't always mean danger to arcanists.Given the complexity of the situation,I think you need a more detailed physical examination to find the crux.What?What are you staring at?She's having a body check-up.Do I have to tag along?
+```
+
+### [17] hash=`fd2d7bcfe614bcb3`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You're gonna sneak away for those part-time jobs, aren't you?Fine, genius.You win.Oi!You with the suitcase!Do you know how I can get a job here?Looks like they pay their employees well.Here is Ms.Spathadia's physical examination.Oh, how sweet.They even got you the Salvia Zopaclone patches.with over a hundred steps thank goodness you live in the right timeotherwise you would have tumbled all the way down there
+```
+
+### [18] hash=`e944f43632eb0ee3`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+in that case no one could tell what you would vomit fire or maybe somethingeven worse hmm wait here i need to get someonea weirdo for sure yet the best person we can turn to for this problemall right i think that's the last thing i'd like to hear from a doctorwould you just let go of my hand sheila or the good doctor here willto cut this hand off later because of necrosis hold it for another five minutes please i'm sort
+```
+
+### [19] hash=`929c68c7c788ffab`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+of nervous that's right breathe in breathe out then unbend the fingers i'm also human ifeel pain too sweetheart i can't believe how lucky i am we haven't seen a living case fordecades this is exciting thank you for letting me know about this medicine pocket not at allI've been waiting for this for too long.Ms.Spathedia, I came for you.I've been briefed on your case and had a basic understanding of the inner flame temperature and the fuel through the laboratory report.
+```
+
+### [20] hash=`006841375e806554`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Here's a list summarizing all the conditions.It's still a draft, but please, take a look.Since your condition is stabilized, and as a teenager, you're still in a developmental stage,I'd recommend you to run a test which is more friendly and pleasant to your nose.Now, please blink three times at this dowsing rod, and blow on it as lightly as possible.Wha...what's this?Oh, no, not like that.Just be gentle with it.
+```
+
+### [21] hash=`64d65ef20f84e27b`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Lower your voice so that you don't blow away the spores on the filter.Okay.Blink three times, and blow.And we're going to roll it up and fix it on the dowsing rod.now time will do its magic.Doctor, is there a cure for my head?Wait, is that the smell of mushroom?It is related to mushrooms, and I'm not a doctor.Please forgive me, Ms.Spathedia.I was sooverjoyed I forgot to introduce myself.Hello, I'm Ezra.
+```
+
+### [22] hash=`145e7853b75f1c3d`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I'm a human researcher at the LaplaceI'm a fire-breathing mushroom girl?No, I'm not here to diagnose your abnormality, Ms.Spathodea.You're perfectly healthy.Your brain CT result looks normal, and I can see you're in good shape.In a stricter medical sense, you're almost one of the healthiest people I've everseen.Finally, someone has a sharp eye!So, the truth has been unraveled.There has never been any illusions, nor is anybody putting on some strange, absurd,
+```
+
+### [23] hash=`a5a26b310a5e3a8e`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+fire-spitting show and...But she did not lie.Please, take a look at this.According to the analysis,the core of a fire consists of anobsidian gravel that has 22 evenlydistributed layers.This is no modern thing.It's old,dating back thousands of years.What?What do you mean?Whose side are you on?Um, have I made itdifficult for you to understand?Well, you'll know when you see it.Please bear with me for five minutes.
+```
+
+### [24] hash=`464418fd2b2773af`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Have you heard of the Reincarnators?It's one of the Arcanus lineages, a rare kind.Since this power can only be randomly triggeredand its manifestation could happen anywhere,anytime, and in any fashion,it is hard to identify them when there is one.The most well-known case must be Dorothy of London.She fell down the stairs in her own houseand lost every vital sign.But she woke again and became the ancient Egyptian Bentreshit.
+```
+
+### [25] hash=`28f9ab54b7f784ed`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You...you're not saying that she's...Miss Spathedia is a reincarnator.Those so-called illusions are not a result of any brain damage.They were once real.It's her past.Based on the past cases, she'll go through a period of mental turmoil that could beshort or longer than anyone could expect.but eventually she will become herself again, the old self.But how is that possible?Everybody knows that the reincarnators are just some lousy made up tabloid stories.
+```
+
+### [26] hash=`24acdef993e5e246`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+That's right, sensationalism.That's the mainstream opinion about the reincarnators.In Dorothy's case, her experience of learning Egyptian and her career as an archaeologistalso caused controversies over her true lineage,which is understandable, since people haven't seen a reincarnator in years.But at the beginning of the 20th century, when Dorothy fell down the stairs which decided her fate,Laplace's Scientific Computing Center established its Australia branch, carrying out studies of local fungi.
+```
+
+### [27] hash=`6f653ea30c72f4e6`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+The fungi study is a brand new direction, and it has been secretly developing next to the public since,like the Australian honey fungus, growing without getting anyone's attention.Facts will speak for themselves.Please allow me to prove it to youMedicine pocket, could you please turn off the lights for us?Cheers.When we talk about reincarnationThe real question behind it is whether the soul exists
+```
+
+### [28] hash=`6a18d49f8caed961`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Because the soul is commonly considered to be the essence of what makes a person who he or she isIf a person dies his or her soul will return to the ever circulating networkA theory developed from Riemens on the hypotheses which underlie geometry described the worldas an eternal, vast, invisible yet ubiquitous net.And as the news story described, a reincarnator is a miracle where a soul disappears from
+```
+
+### [29] hash=`e23a95e99ae04167`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+point A and shows up at point B without any clear reasons.Exactly, Ms.Verdin.I'm amazed that you know so much about the Reincarnators.Port described the Reincarnators as incomprehensible and spontaneous, but the truth is, we'venever gotten close enough to observe and study them.That work I read in the textbook!You have a sharp sense.You Arcanists never cease to amaze me.The latest studies haveshown that the working mechanism of mushroom flora may be similar to the brains, and
+```
+
+### [30] hash=`b1e386f67a3a2e59`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+we have made some progress from that.This is why the study of mushrooms is important.It enriches our understanding of the reincarnators,for they are hard to find.It means floating in the air.Mushrooms?The Australian honey fungus.The mushrooms living beneath the ground.It's a pathogenic gem that causes roots to rot.It was first discovered in a eucalyptus plantationin southeastern Australia.At the end of the 1970s,
+```
+
+### [31] hash=`df74a2a2b6d6d247`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Laplace researchers who intervened in the local environment protection found that, unlikeother fungi which reproduce through the spreading of spores, the honey fungi spread by thegrowth of their underground mycelia all over the forest.You think it's like that invisible net?Yes.A net hiding underground, in which you see an object disappear at point A, andmagically emerge again at point B.The reincarnators are very similar to Australian
+```
+
+### [32] hash=`4108419c90dc40a4`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+honey fungus in this aspect.And with her breath, a small amount of her saliva, and the dowsing rod, we will be ableto find her net and map her movements on it.And when her gaze emblazes the Umphalardus nidiformis…Umphal…Umphalardus…What?Isn't that a ghost fungus?Yes, the ghost fungus.The mushrooms that glow in the dark.They're called chinga in older times, which means spirit and soul, the sparkleideas in human minds.
+```
+
+### [33] hash=`2d69b490656d613f`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+If the mushroom has simulated Spathedia's gnat, then these two light spots arethe one closer to us represents the current Miss Spathedia, and the farther and brighter one iswhat put her through the changes now.So that's me in the past?I will gradually turn into...Five minutes.We are right on time.Miss Desertflannel, how do you feel?Damn it!If she's so badly injured, how much would the compensation be?
+```
+
+### [34] hash=`ca5c0586c839dfab`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Is this how my life will be?Being heavily in debt?Ms.Desert Flannel, you're nibbling at your nails.You will get hurt from it.Please stop.I-I'm fine.You-are you talking to me?You were saying?Yes.I was asking how you were doing.Did you get my drift?I-I think.Well, I know it's highly unlikely that this little girl was hatched from a dragon's egg,but is it possible that she's just some kind of uncommon lizard?
+```
+
+### [35] hash=`43b6ef4d963612bd`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You know, the really ancient ones?Any-anything but a reincarnator?But-but what you said doesn't make sense.What do you mean it doesn't make sense?There was fire coming out of her mouth!Family here is a pixel in you!Does it make sense to you?I don't follow.I know this is not your fault.It's just your Arcanus nature taking over.It's very normal if you got too carried away by your emotions and became delusional and hysterical.
+```
+
+### [36] hash=`8fdea3d91d244cb6`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Please, take my hand.I was once trained to help Arcanus calm down.Now breathe with me.And out.You know about Arcanus.You're not even one of us.Everyone.Please believe me that I meant you no harm, Ms.Spathedia.I was only trying to help.By calling us delusional?There's nothing I hate more than humans like you saying that others are over-emotional!People!No, nothing like that.Ms.Spathedia, it is not my intention to criticize anything or anyone.
+```
+
+### [37] hash=`f0d89013ee9609d5`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+It's just, biologically,Arcanists tend to be more sensitive and easily affected.Level 2, extinguishing the fire.Source of ignition confirmed.Request for permission to use kangaroo foam fire extinguisher 3.I don't know why, but it's important this is for sure!Those bubble kangaroos will kick its butt once they see the flames!I don't want that!I'll protect it for you.Don't worry.Chief!There you go.Now you're free from the fuzzy foam.
+```
+
+### [38] hash=`d1c1c4e398f716ad`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Thank goodness.Um, I mean, thank you.Though I still smell like a Joey.I know I should have been responsible and noticed the anomaly earlier.I was completely lost in the argument.The silver lining is, as the fire was still under control, they used the kangaroo foam fire extinguisher and thus it didn't cause any casualties.Please write down your emotional changes and physical reactions that occurred during the incident on this sheet of paper.
+```
+
+### [39] hash=`ddc8e7fbd7b54d7a`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+We'll keep tracking your physical health information.The concentration potion is on that table, and there are blankets and type 2 PMMA safety boxes in the cabinet under the table.Please keep the hazards sealed for safekeeping.Okay, got it.You are still in an unstable state.Please have a rest here and don't move around.If you need anything, please press the call bell on your left and our nursing staff will come to help.
+```
+
+### [40] hash=`f1ece3d416e8c474`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+In case we burr, the fog she mentioned is...Oh, here it is.No freedom matters, Little Flame.We have no choice.Sorry, buddy.Alright, listen.My teacher said fire needs oxygen to burn.So I'll leave a small window for you to breathe.I didn't see you.The Cobra.To all games.Uluru Games?Little Flame, make it clear!What's going on with the Uluru Games?Is this the Laplace fashion of dealing with emergencies?
+```
+
+### [41] hash=`d71931e3b92bfcb5`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I swear, if anyone walks past us now,schoolers or deros,I will be instantly killed by their silent judgment.As a matter of fact,when the patient or the subjectbecomes unstable during contact,it is necessary to isolate themfrom the triggering cause immediately.But we just burnt down the isolation room.No wonder head nurse Judith was so angry.Miss Vertin, are you all right?That kangaroo is punching your nose.
+```
+
+### [42] hash=`f14dcb0645c52576`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I'm fine.So is the kangaroo.I'm sure Medicine Pocket will bring usthe concentration potion soon.We look like a bunch of kangaroos,feel like kangaroos, and even, ugh, smell like kangaroos.We will make tomorrow's headline of the Australian Nagaand become the three kangaroos hanging outon a public lawn at midnight.That'd be the end of our social lives as humans, and the beginning of a life as kangaroos!
+```
+
+### [43] hash=`85217b6d12f39ee2`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Make the headline?Ah, I see.Please, don't worry.Although it's true that Medicine Pocket is a frequent celebrity on the news,the Concentration Potion is not their work.Besides, we didn't use anything new in its development.I'm not worried about that guy, I was talking about myself.There are paparazzi following me around these days.I didn't know you were famous.It's just that someone wants my name spread in a bad way.
+```
+
+### [44] hash=`d3d9037e65975879`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Ugh, trust me, you should never piss off the paparazzi.You should turn to the police for help.Yeah, yeah, just shut up and keep your eyes peeled for anything suspicious.I will toss his shoes on the power lines if I find him here.Ms.Desert Flannel, watch your back!What are those paparazzi?Is this...fire?Ugh, Ms.Desert Flannel, the lake is over there!Get in there!Stupid kangaroo kicked me in the arse!
+```
+
+### [45] hash=`85e86ab052db8f21`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I can't see where the lake is!Wait, calm down.You are not in danger.She is.Are you joking?I was getting burned.Huh?There's nothing on my skin.It didn't cause any damage on me.Just burning the foam on my skin.Is that some new method developedto get rid of the potion?But what is Miss Spathodea doing here?The head nurse shouldn't have let an unstable patient walk around freely.Did...did she sneak out?
+```
+
+### [46] hash=`8a773a247792f317`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Gosh, mate, she's on fire!Does she even remotely look stable to you?Rice like a deal.Stipping on the red soil where vines and woods grow.She's as well heated as a boiling pot!We can't let her go on like this!Her brain is going to be roasted in that little head!Spathedia!Your temperature is dangerously high!Chill out!Lizard and concrete number two with cream is the best dish in pipe material.Spathedia are suffering confusion.
+```
+
+### [47] hash=`369130faae2b9da6`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+It's probably the flames doing.We need to separate them first.Okay, okay.Ms.Verton, please step back.This is just some spores, Ms.Desert Flannel.Worry not.They are the tranquilizer that the locals used to pacify animals, and was once widelyused among Arcanists in early times for hunting.As long as we calm her down, we can bring her back to-A-Real game, this is where sportsmanship originates.Young people.
+```
+
+### [48] hash=`082a3813acadc369`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Young.People.Did I use the wrong mushroom?Miss Spathedia has become even more restless.What about Miss Desertfunnel?Is she?No, you didn't.She's behaving exactly the way you described.Is it, Flannel?Is this the house for me?Does this mean I don't have to pay rent anymore?Looks like this is how she has her mental break.I will bring her back to normal immediately.It won't take more than five minutes.
+```
+
+### [49] hash=`70ca92baf96d8778`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+But I think Ms.Spathady is going to attack again.What we need is the reopening of the gate to the Scorching Land......and......preval of the raw.Fire is getting stronger!Get down!We are running out of time.Let's deal with the burning issue first.I will.I will try my best.Peace be with us.Be careful, young man.Fine.What are you doing here, guys?I thought you were driven away.Great!She's back to normal!
+```
+
+### [50] hash=`a62517d457b6d0bd`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I remember it now.Spathedia!We must revive.We're at Gabe's.I've heard what's going on.We will check if her organs are injured by the high temperature after returning to Laplace.You can visit her tomorrow after 11am.Oh, you mean the journalist following you?Was that a flash?Speak of the devil.Be yourself!Don't make me force you!Makua, don't you dare involve others.This is between you and me.I've told you long ago that one day I will make you feel the same misery that I did.
+```
+
+### [51] hash=`a0a2c5993130980a`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I have been following you all the time.And this is the moment.The moment of vengeance.now I have more than enough photos as for these other people you didn't strikeme as such a kind-hearted person I didn't know you were so shameless let'ssee what tomorrow's newspaper has to say about this miss photographer getaway he your enemy maybe arch enemy what happened between you two if youto be one of the burning kangaroos on the headline tomorrow shut up and start running
+```
+
+### [52] hash=`83484eecce8cdfd6`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+we have to stop him g'day you uh got the latest australian naga here nice choice everyone istalking about it a strange party held in the city park last night the witness claimed to seethe burning kangaroos mushroom intoxicated rolling croc and the teenage arsonist dancingtogether.A secret event on the public lawn.The revival of the Uluru Games.Itsaddens us to admit that the recession and inflation have walloped some young
+```
+
+### [53] hash=`1d168c520c725c0f`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+adults.They were crawling in the park at night, groaning and moaning likebeasts, dragging themselves along and losing consciousness.Wait, your voice?Uh, you?Do you have to talk to me right now?I'm busyI was just unlucky.It was pure bad luck that I ran into those weirdos,got taken to the hospital,and let Makawa get what he wants.I shouldn't have let him get away.If I see him again, I swear,I will pull out his tongue and tie it around his neck.
+```
+
+### [54] hash=`3959381fd34fd118`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Oh, look at this gibberish.He said, we are the dope headswho eat bunyips from the sewerage,a burning kangaroo,and I am a nutter because I can't find a wayto afford rent.Oh, this is great!I might as well be a kangaroo!At least it's true that you're banging your head against the wall for rent.Yeah, mindful that you're talking to a nutter.Whatever.I will soon lose my part-time jobs and be kicked out of the house where my granny lived for decades.
+```
+
+### [55] hash=`2c1286eb7be95906`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I'm heading back.Let me know if you know of any job vacancies.I can do a lot of things.As long as the money is good.No, as long as I'm paid.Wait, desert flannel!Come and take a look at this.So many people came here thismorning asking about the Uluru Games and one hour before the Scissors Jerrybrought me this.This is a pre-sale ticket to the Uluru Games?I've soldover 50 tickets at a unit price of this much.
+```
+
+### [56] hash=`a85e0b81d87ebb7c`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+It has been suspended fortoo long.So long that everyone thinks society has forgotten it.But we remember.Our ancestorstold us about those amazing and funny sports.That big, wide and fancy stadium.They all remember it.Even looking forward to it.And even bid up for a fake ticket.Mate, did you get more of these from the other gangs?Two boxes left.These are from the Slicky and Eucalyptus brotherhood.Eucalyptus and what?
+```
+
+### [57] hash=`e0fa621109f97621`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Didn't catch that name.Do you have the mints that I bought from you before?The least purchased ones?You always put them at the bottom of your box?Alright.Now give me my ticket back and I'll put it away.I don't want any of the gangs to find out.I'm dealing with the other...Desert Flannel?That's what I keep telling everyone.Muddying the water is what this bad girl does.That's right.Desert Flannel has taken the fake tickets with her.
+```
+
+### [58] hash=`ddb3a1eb14f0f58f`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+the ones from Clippy, Slicky, and the Eucalyptus Brotherhood.She's gone.No, not to the black market.Sir, I heard that the bunyips are getting restless again.Is that true?I'm gonna make a fortune out of it!I will be able to buy that house,get myself a new oven, some new clothes, and that giant wool nest for Plippy!Those bunyips are out again.Haven't seen them out in the sun for a while now.Ugh, I must hurry.
+```
+
+### [59] hash=`28cb29224085893a`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Wait, are they coming my way?I've got my eyes on them.They are more interested in her than in me.Oh, this makes sense.Since the Uluru Games have madethe biggest news of the week,the people are going on and on about it all day.And where else will therumor-loving bunyaps go at this point?The last time I sawsomething like this was when that scandal of Mr.Pompadour broke.It will be a big story.Almost as certainly
+```
+
+### [60] hash=`c8a191cda9656ce1`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+as a cut will bleed.I will pause my other projects and focus on this one.This is verykind of you.I really appreciate it.Nobody, nor any arcane creatures can stop me from getting rich!Let alone that youhaven't eaten enough rumours to grow into a three-floor-high and multi-legged giganticmonster!Pappy, give me a hand!Smell of rumours from the ticket box?Come get it yourself!I told you I'm super healthy!
+```
+
+### [61] hash=`c38da0043cb3c2d5`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You should let me go now!But you need our care, Miss Spathedia.It's also our responsibility to make sure that you're safe and stable.When our canists were first introduced to their power, they would experience a 4-12 week adjustment period,during which they may suffer emotional breakdowns, strong hallucinations, or frequent comas.I have something very important to do right now!I mean it!I'm fine!There'll be no more confusion, mental breakdown, hallucination, or coma!
+```
+
+### [62] hash=`e053b9ed012672f9`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Yet the fire in my body seemed completely natural as if it was destined to burn inside meIt whispered just one phrase to meagain and againLike what you mentioned last night to revive the Uluru gamesBut what are you going to do?Let's not get to the paperwork of applications security arrangement and permission from the local government just yetThe location of entrance to the Uluru games was never fixed
+```
+
+### [63] hash=`c3f47a2a4590a3a4`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Only few Arcanists could find it, and the games are for Arcanists only.There has never been a human athlete in there, and they have been cancelled for all theseyears because they were completely lost in the war of 1942.Nobody has found them since.I could find it, found my ancient self.I'm the only person in this time who has been to that land, and my flame ismy compass.Although I have not yet figured out why my memories are all about the conflicts with the flame,
+```
+
+### [64] hash=`36907909dc2710de`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I felt so whole again when we burned together.I'm sure it will help me and unite with me,because it trusts me so much that it traveled all the way here through the endless darkness and rainy seasonsto come out of my mouth.It's here for me, and now it's going to take me somewhere else.I'll follow wherever it goes.Verdin, you said you would take care of me.done and go pack.I need to prepare as many mushrooms as possible so that I can
+```
+
+### [65] hash=`059e82c9dec3b324`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+better assist you on the way.You?On the way?What?Coming to?Of course!We've beenthrough so many things together, am I not part of the team?No, of course not!What can I take you and the revival squad?I'm at Far Canis!You've read thedocuments right?Since the very beginning of history humans have madecountless attempts to find the entrance to the stadium yet none of themYou are such a rare opportunity to us, because none of us know when and where the next reincarnator
+```
+
+### [66] hash=`70ab00a56a2a0669`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+will be found.If we miss this opportunity, the academic circle may have to wait for another decadeto further their research.The discovery you and I made may shock many.Our names might go down in history, but most importantly, it's going to help alot of people.Have you heard of Cengiz, invented by Dame Parodi?It was inspired by a long-legged shepherd in France.It has helped many athletes with disabilities to walk and run again.
+```
+
+### [67] hash=`f8be8e18d36220be`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Miss Batherdia, you look miserable in the blanket.Keep going, Ezra.You're very close.Me?Close to what?I don't follow.Well, speaking of close, guess who is close to becoming the most successful business person here?Desert Funnel.Where have you been?What did I thought?I'm not some monster crawling out of the syringe.You look a mess.What happened?I didn't ask you why you're crouching in bed like an ostrich, did I?
+```
+
+### [68] hash=`5d9cf7b209ed49e5`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+So maybe you can return the favour and keep your nose out of my business, yes?And what really matters is the good stuff here.Know how unbelievably lucky we are, my dear business po- uh, friends?Yeah, no.I don't.Ugh, Ezreal alone is already too much information for my brain.Fine, you restless and humorless people.We'll bring back the oo-Hey!What kind of reaction is this?Why are you quiet as stones?
+```
+
+### [69] hash=`4167ab570eea8b47`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+This is a great idea!And you're giving me this?Join my revival squad.Handshake?Handshake.Then I-No!Not you!Even more beautiful than the one I saw in my dream!So that's why Ezra took you to the room before we left, to tell you all this.Ezra is worried about you, and so are we.Aww, someone is feeling bad about what she said earlier.If you ask me, that human girl has a good heart.Maybe she can work on her ways of communicating with people,
+```
+
+### [70] hash=`e59239053e4de668`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+but that altruism in her is almost angel-like.And she has the face of a little angel.Wouldn't be such a bad idea to put her in some baby care commercials.And...it's transforming!What is this, a rocket?No more waiting.Everyone, mind your steps and keep up!It's in the desert, eww!I wonder why I'm not as clever and creative as you are!Miss Ferdin, was she talking to me?She always looks over.Perhaps she knows that I'm following them.
+```
+
+### [71] hash=`7b80ce5a0ce1b3ef`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+But...no.I'm hiding well.They shouldn't know.Having emotional turmoil, acting impulsively, feeling fanatical about theretrieved memories, and the unstoppable urge to return to the homeland.These all match the description in the research notes.And now the fire, whichis also the key in this case, is burning vigorously.The notes end here.That's all we know about reincarnators.Can't adopt more based on the
+```
+
+### [72] hash=`e74f171328fd724c`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+data.But at the same time, the unknown can be dangerous, yet exciting.It may bring aboutcatastrophes or miracles, just like arcanists, so charming and lively.My job is to helpand protect them, so their burning enthusiasm will not be dampened.Like what Mum said,This is our mission as mankind.The annual jump of frog mushroom, the fairy ring powders, and the butterfly-shaped portobellomushroom.Very well.
+```
+
+### [73] hash=`a29917e23b30b9d3`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I have them all.This time, I'm prepared for any danger.Oh no, I'm running away from...Journey...The beginning of the journey?No.We set off from Melbourne.We're close to Uluru now, so it's almost so distant.Gosh.What are these?These are murals.No.They are reliefs.All the marks are carved out of the wall.These carvings existed longbefore any murals.And they are rougher.Of course they are!Just think, when did our ancestors learn to draw with paints?
+```
+
+### [74] hash=`0f8d24dd77262a75`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+And when did they start carving with sharp stones?Beautiful.Like star trails, one circle and another.I think I've seen them before.They feel familiar and make me thirsty at the same time.Look, this circle's just like a spring.We don't need a spring.We brought water ourselves.Drink as much as you want.Look here.These are most probably some ancient relics.This one looks like an animal.And this a plant.
+```
+
+### [75] hash=`9c4ea40f9fb81a8a`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+And what is this?Birdie?They have something to do with people's lives.These marks have to mean something.Maybe they will lead us to the entrance to the stadium.This is a time when Spathedia's opinion matters more than ours.Come, key girl, take a look at this.Spathedia?Where...where did she go?And that fire...they're all gone.What the hell is going on again?She better be pulling a prank on me.I heard her footsteps behind me just now.
+```
+
+### [76] hash=`da2d0c70af429572`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Relax, Desert Flannel.We've got help.Ezra?How did you get here?Wait, how long have you been following us?From the beginning, when you were at the hospital.Sorry, Mr.Desert Flannel.Please let me check this first.This smell.I can't be wrong.This is Devil's Thorn.What's that?Does it have anything to do with her missing?A rare kind of mushroom that grows in the desert.Allegedly it's genetically connected to lizards.
+```
+
+### [77] hash=`9ab1e75fb841e394`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I've only seen its pictures inbooks.It has wide open piliers with sharp spikes and its roots are asabsorbent as a sponge which allows it to absorb and preserve undergroundwater.They only appear around water sources and with this spiral patternon the wall I think think I might have a way to find her.Please comewith me.Flame?My throat, it hurts.Will you remember me?I travel through the endlessflood, drought, rain, and waterfalls to finally reach you.
+```
+
+### [78] hash=`cef4e6b7fe712511`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Do you remember me?I do, but not really.Can't recall your name or your face, but I do remember.Will you remember our intelligence and spirit we are bound to find?Make up with you, you dumb ball of fire!Neither do I!My hands are burning, like they're soaked in fire.That's because you reached into me.We had a fight, fucking each other with nails like two cats.Just like I can feel my knees trembling again.
+```
+
+### [79] hash=`aa5a1305ea8ff5e0`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I know this game, a port which is not popular enough to be included in any commercial or professional games.It's also the sport for which I've been secretly training myself every day after lunch.The lightbulbs picking game, Malingi's Harvest, no, no, not lightbulbs for the athletes topick up from the ground, but fire, and I don't have such a burning campfire at home, canonly be found here, beside the flowing spring, under the starry sky, on the scorching sand,
+```
+
+### [80] hash=`1a2738fa04f3325a`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I saw the burning campfire, and the sparks scattering in all directions, my hands surroundedby blazing flames, I touched the inner cone again and again as I flew by, immersed ingreat joy, I dove down from the air, that time, our hands held each other in the flames,our traces went on, from one torch to another, yes I know, I remember it now, I once drankYeah, I can explain it later.We have to deal with them first.
+```
+
+### [81] hash=`98dd9f582349f0bc`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+No time to hesitateProtects by the deer and engageThey are downEveryone for the sake of prudence, please stay back and do not approach before confirming the danger has been eliminatedNo, no more danger now look no need to worry or hesitateIt's all clearLong story short, mate.I've retrieved many memoriesFrom Flammie, I obtained the Uluru Flame from the fire of my own hands.I was the first Priestess in the history of the Uluru Games.
+```
+
+### [82] hash=`7b84e81b884a5c69`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+The Flame had traveled all the way from the ancient times inside me.I will become the next Priestess in the history of the Uluru Games.What I said, Mace?My Flame?I succumbed it.I'm said good kids never lie.So?The garden behind the wall, I finally get to see the sun again.The world out there has completely changed, but you remain the same, Flemmie.My dear friend, you found me and put an end to the long dark dream.
+```
+
+### [83] hash=`702bc2a1f61f34f0`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+You set me on fire again, bringing me back to what a flame should be like.Welcome to the end of the 20th century, Ulu.For you, this is an interesting era, with many, many new things.Well, I think we can learn them together.Later, one by one.Well, from my dear, brave friend, to the Euler my dear, brave friend, waiting for.The chondrine of the entrance to the Uluru Stadium is sourced from a fantastic arcane ritual.
+```
+
+### [84] hash=`115dc19548848161`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Instead of a summon, it's closer to a sacrifice.The fire element also plays an important part in the sacrifice.In Spathedia's case, Ulu is her flame.Will it have anything to do with the unique condition Miss Spathedia has?Unlike other reincarnators, she still has a clear memory of this life, despite heryoung age.It's because the two light spots of hers, the older self and the modern self, arenot that different, so she's spared going through any drastic changes.
+```
+
+### [85] hash=`2cb24da9831ebad8`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+And the reason behind it might be…Yes, I'm here!What can I do for you?Miss Spathedia?What's not?Waiting for you to join us!We're going to the stadium together!I...come to think about what I've suffered.Coma, hallucination, confusion, thirst, misconception that I was almighty.And then as you can see, I fell into a coma again after my sudden disappearance.I think you're right.I do need a doctor by my side.
+```
+
+### [86] hash=`d9c452981ba7bf8f`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+but mankind cannot enter the stadium we all know thatblah blah blah please the stadium has never shown itself to any humans beforewhen life gives you cake just dig right inthis is the Uluru Stadium?it's even more splendid than I thought and more comfortable and pleasingcomfortable and pleasing?I don't feel the same way as you doBut not in the sense that this place doesn't look beautiful to me.On the contrary, it's stunning.
+```
+
+### [87] hash=`71d5b6e9deb620d2`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+But physically, I don't feel anything special.Maybe because you're human!Hey!Wait!Not so fast!Careful, Mizulu!You will fall!This is exactly what her canes should feel.Mizulu!Pardon me, may I call you that?Go ahead if you want, child.But of course, I would appreciate it if you called me Madam, since I'm a few hundredyears older than all of you.Besides, I am the most sacred flame of the games.Hm?Have anything like that bef-
+```
+
+### [88] hash=`69010bea4342026d`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+And those benches!Things change, Flammie.Past hundreds of years, when you were absent, countless changes happened to the Uluru games.New lawns and benches had somehow appeared in the stadium.But none of these changes were made by Arcanists.Actually made by Arcanists for new events, new rules, and new management.These are the changes that really made the Uluru Games different.I've never seen ice racewalking in my memories.
+```
+
+### [89] hash=`746e06dfb4fb0458`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+So there was no stone-bearing divination, or a new tridecathlon either.Ice racewalking is not a traditional sport in Australia.It originated in Northern Europe and became popular in cold countries.That's right, Race Walking was introduced to the game since 1926.If my memory serves me well, it was introduced by the Saint Pavlov Foundation.On one hand, they hope to show the internationality and inclusiveness of the game.
+```
+
+### [90] hash=`d433234eb07d6409`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+On the other...It took the place of Fire Race Walking.I see.I read it somewhere before.At the beginning of the 20th century, after St.Pavlov Foundation took over the Uluru Games,some challenging and relatively dangerous sports were cancelled.This was also the turning point of the Uluru Games.From then on, the games declined in popularity, and fewer and fewer athletes came each year.People!Idiots!They know nothing about the essence of the Alcanist sporting event!
+```
+
+### [91] hash=`07324fdba366b8d4`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Where on earth can you find an Alcanist who would burn their own legs in fire race-walking?Everyone knows you'll be fine as long as you believe the fire's harmless.In point of fact, fire is dangerous.Think about it.Cleavable.Given your short fuse, I can't believe you just let them cancel your favorite event, Ulu.Short fuse?Yeah, you heard it right.She's got the hottest temper, burns like a self.Change for me, I have already spent over a thousand years in this world.
+```
+
+### [92] hash=`346789ddc849ca51`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+I am no longer the young, hot-headed flame of your age.Then your grandmother should call me Grandma now.Grandma?So they can just take away your favorite event just because you're old now?Anyway, Flemmi is back.It's time Arcanists took back the Uluru Games from the Foundation.Let's design a new list of events that fit real Arcanists.We'll start from Fire Racewalking.There are woods here.Ula can start some bonfires with them.
+```
+
+### [93] hash=`7ec6da8bf29b2265`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+Instead of a bunch of weak office workers who would pant from climbing a few stairs,what I need is some real athletes who can help me complete the fire race walking.I don't mind whether they're cute or weird, I only need them to be energetic.This is the only thing we ask of athletes in this sport.Great idea, but the only inconvenience is that we are in the middle of the desert,A place where only flies visit.
+```
+
+### [94] hash=`c5268ea123511485`
+
+- lang：`en`｜version：`1.5`｜arc：`—`
+- doc：`BV1eo4y1u7aW_p43`
+- title：《重返未来：1999》公测 全剧情【4K英配/电影画幅】（【1.5-活动】复兴！乌卢鲁运动会｜1~8）
+
+```text
+And as I checked my contact list, I saw only client, client, and client.The ordinary ones and the ones I once stood up.Where are we going to find athletes?Well, I happen to know many arcanists who meet your need.And they happen to be here.Right now.What?Come I can't see them anywhere.Hey, you're opening the suitcase.Are you gonna organize your stuff here?Anyone care to have some fresh air a smell of grass with smoked fragrance
+```
+

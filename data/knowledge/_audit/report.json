@@ -1,0 +1,255 @@
+{
+  "sample_blocks": 15,
+  "scored_blocks": 13,
+  "entity_precision": 0.675,
+  "entity_recall": 0.574,
+  "relation_precision": 0.111,
+  "relation_recall": 0.15,
+  "pair_precision": 0.24,
+  "pair_recall": 0.3,
+  "counts": {
+    "local_entities": 40,
+    "local_relations": 27,
+    "cloud_entities": 47,
+    "cloud_relations": 20,
+    "matched_entities": 27,
+    "matched_relations": 3
+  },
+  "empty_block_miss_rate": 1.0,
+  "verdict_dist": {
+    "差": 8,
+    "中等": 4,
+    "良好": 3
+  },
+  "issue_freq": {
+    "噪声实体": 2,
+    "关系臆造": 3,
+    "别名错误": 3,
+    "漏抽": 10,
+    "关系谓语错误": 1,
+    "自环边": 1,
+    "主语臆断": 1,
+    "谓语非中文": 1,
+    "别名重复自指": 1,
+    "关系主语错误": 1,
+    "ASR噪声实体": 1
+  },
+  "by_group": {
+    "contrib": {
+      "blocks": 10,
+      "local_e": 40,
+      "local_r": 27,
+      "cloud_e": 39,
+      "cloud_r": 17,
+      "hit_e": 27,
+      "hit_r": 3
+    },
+    "empty": {
+      "blocks": 3,
+      "local_e": 0,
+      "local_r": 0,
+      "cloud_e": 8,
+      "cloud_r": 3,
+      "hit_e": 0,
+      "hit_r": 0
+    },
+    "cloud18": {
+      "blocks": 2,
+      "local_e": 16,
+      "local_r": 13,
+      "cloud_e": 0,
+      "cloud_r": 0,
+      "hit_e": 0,
+      "hit_r": 0
+    }
+  },
+  "rows": [
+    {
+      "hash": "a8ab700510c4f71e",
+      "group": "contrib",
+      "verdict": "差",
+      "issues": [
+        "噪声实体",
+        "关系臆造",
+        "别名错误",
+        "漏抽"
+      ],
+      "local": "E2/R1",
+      "cloud": "E4/R2",
+      "hit": "E1/R0",
+      "note": "本地把称谓 señora 当成实体并挂上 Madam Lucy/露西 别名（正文完全没有露西），关系「señora 拥有 Camilla」纯属臆造；真正可抽的 Camilla 身中诅咒、Argos、神秘学医生全部漏掉。"
+    },
+    {
+      "hash": "97afe71e19da3021",
+      "group": "contrib",
+      "verdict": "中等",
+      "issues": [
+        "别名错误",
+        "漏抽"
+      ],
+      "local": "E3/R0",
+      "cloud": "E4/R1",
+      "hit": "E2/R0",
+      "note": "实体基本对，但 Keeperina 是 Kiperina 的转写错拼，正确中文名是「库珀花环」（灰机 wiki），本地译成「凯瑞娜」属臆造译名；漏抽 language disorder，且一条关系都没抽。"
+    },
+    {
+      "hash": "f38d5241a9d8a1a1",
+      "group": "contrib",
+      "verdict": "差",
+      "issues": [
+        "噪声实体",
+        "漏抽"
+      ],
+      "local": "E4/R4",
+      "cloud": "E2/R1",
+      "hit": "E1/R0",
+      "note": "本地造出「她/他/你」三个中文代词实体，4 条关系全是代词互指（她→他 指示、她→你 偷窃），对检索完全无效；只抽对了 Miss Ever Echo。"
+    },
+    {
+      "hash": "10d030e16320ee62",
+      "group": "contrib",
+      "verdict": "中等",
+      "issues": [
+        "关系臆造",
+        "别名错误"
+      ],
+      "local": "E4/R4",
+      "cloud": "E4/R3",
+      "hit": "E4/R0",
+      "note": "实体 4 个全对；但 4 条关系里 3 条无文本依据（杀死 / 前往 / 象征），正确应为「Adele 持有项链」与「Madame Poinish 协助 Adele」。别名「卢西」疑为误挂（Lucy 与 Poinish 无关）。"
+    },
+    {
+      "hash": "a42b0264ebd1a747",
+      "group": "contrib",
+      "verdict": "中等",
+      "issues": [
+        "关系谓语错误",
+        "漏抽"
+      ],
+      "local": "E2/R1",
+      "cloud": "E4/R2",
+      "hit": "E2/R0",
+      "note": "唯一一条关系谓语错：正文是「our investigation into Hill 299」，应为「调查」而非「前往」；漏抽 teleportation array 与「一万名士兵被藏进 Hill 299」。"
+    },
+    {
+      "hash": "7d19a4629b9120f6",
+      "group": "contrib",
+      "verdict": "良好",
+      "issues": [],
+      "local": "E6/R3",
+      "cloud": "E6/R3",
+      "hit": "E6/R2",
+      "note": "6 实体 3 关系基本都成立，属本地抽取的优等品；仅 Jailer→Panopticon 的谓语「位于」略糙（正文是 ruler of this prison，宜作「管辖」）。"
+    },
+    {
+      "hash": "d16a9868d5cbee73",
+      "group": "contrib",
+      "verdict": "差",
+      "issues": [
+        "关系臆造",
+        "漏抽"
+      ],
+      "local": "E5/R3",
+      "cloud": "E3/R1",
+      "hit": "E1/R0",
+      "note": "本地把四种药名抽成实体后，编造了「阿托品→氯解磷定 尝试」这类药物互相作用的关系（正文只是一串试药清单）；真正的陈述「拉普拉斯研究员配制解毒剂」完全漏掉。"
+    },
+    {
+      "hash": "13dbe6f8e93a9c07",
+      "group": "contrib",
+      "verdict": "差",
+      "issues": [
+        "自环边",
+        "漏抽"
+      ],
+      "local": "E4/R4",
+      "cloud": "E2/R1",
+      "hit": "E2/R0",
+      "note": "出现 2 条自环边（Marianne→Marianne 冷静 / 无需恐慌），是无效结构；「the chauvinism of the telekinesis」是句子片段（建图时已被噪声过滤）；唯一有效关系「Marianne 与怪物战斗」没抽到。"
+    },
+    {
+      "hash": "b7a3b16729c31fa5",
+      "group": "contrib",
+      "verdict": "差",
+      "issues": [
+        "主语臆断",
+        "谓语非中文",
+        "别名重复自指"
+      ],
+      "local": "E3/R2",
+      "cloud": "E3/R0",
+      "hit": "E2/R0",
+      "note": "正文全程是「I」，没有出现 Lucy，本地却把两条关系的主语写成 Madam Lucy；关系谓语混入英文 'escort'（违反「谓语必须中文」约束）；polis' elders / merchant fleets 的 aliases 与正名完全重复（自指别名）。本块实际只能稳定抽出 3 个实体，关系证据不足应留空。"
+    },
+    {
+      "hash": "fec6a2eacc8f4433",
+      "group": "contrib",
+      "verdict": "中等",
+      "issues": [
+        "关系主语错误",
+        "ASR噪声实体",
+        "漏抽"
+      ],
+      "local": "E7/R5",
+      "cloud": "E7/R3",
+      "hit": "E6/R1",
+      "note": "实体抽取尚可；但「引荐」这条关系的主语错了——正文是「昨晚路思建在戏台上为你引荐釜顶」，应为「路思建 引荐 釜顶」，本地写成「露丝姐 引荐 路思建 / 釜顶」。另外「路思建（陆思简）」「釜顶」是 ASR 错字，需靠别名表归并；漏抽慧姑与长生之法。"
+    },
+    {
+      "hash": "a430623ba9ca7aaf",
+      "group": "empty",
+      "verdict": "差",
+      "issues": [
+        "漏抽"
+      ],
+      "local": "E0/R0",
+      "cloud": "E4/R2",
+      "hit": "E0/R0",
+      "note": "整块为空输出，但正文信息量充足：Amalfitano 村、索诺拉沙漠、巴比伦的塔多、来访的研究员，4 实体 2 关系全部漏抽。属于最典型的假阴性。"
+    },
+    {
+      "hash": "233a290412cea2df",
+      "group": "empty",
+      "verdict": "差",
+      "issues": [
+        "漏抽"
+      ],
+      "local": "E0/R0",
+      "cloud": "E2/R0",
+      "hit": "E0/R0",
+      "note": "内容偏修辞，可抽的确少；但「那个盲眼的女人」是跨段落的关键指代（疑似指某位重要角色），至少应留实体痕迹，本地完全输出空。"
+    },
+    {
+      "hash": "f56f4aeac5cfc968",
+      "group": "empty",
+      "verdict": "差",
+      "issues": [
+        "漏抽"
+      ],
+      "local": "E0/R0",
+      "cloud": "E2/R1",
+      "hit": "E0/R0",
+      "note": "Kozlov 夫妇与马戏团是可抽且对 2.7 剧情有意义的实体，本地输出空。注意整名 Mr. and Mrs. Kozlov 会被 is_noise_entity 的 ≥4 拉丁词规则判为句子片段，正确写法是收敛成 Kozlov。"
+    },
+    {
+      "hash": "58e2b8696ba87295",
+      "group": "cloud18",
+      "verdict": "良好",
+      "issues": [],
+      "local": "E9/R7",
+      "cloud": "E0/R0",
+      "hit": "E0/R0",
+      "note": "对照组（云端产出）。7 条关系中「Ember Room 破坏绿湖营地」证据偏弱（正文只说 compared to what the Ember Room did，未明说地点），自评扣半档。"
+    },
+    {
+      "hash": "3642207c78778d8b",
+      "group": "cloud18",
+      "verdict": "良好",
+      "issues": [],
+      "local": "E7/R6",
+      "cloud": "E0/R0",
+      "hit": "E0/R0",
+      "note": "对照组（云端产出）。7 实体 6 关系均有直接文本依据，别名与灰机 wiki 一致（Adele/阿黛尔、French Blue/法兰西之蓝）。"
+    }
+  ]
+}

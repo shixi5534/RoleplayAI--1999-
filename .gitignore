@@ -6,13 +6,25 @@ __pycache__/
 
 # 数据与本地配置
 # 原则：只入库「不可再生的种子」，派生产物一律不入库。
-#   种子（入库）：data/lore 原始文案、data/characters 角色卡
-#   派生（不入库）：向量库 / 图谱 / 抽取缓存 —— 均由种子 + scripts 重建；
+#   种子（入库）：data/lore 原始文案、data/characters 角色卡、data/knowledge 的
+#                 检索产物（剧情语料/剧情图谱/时间线/审计报告/云端抽取结果）
+#   派生（不入库）：向量库 / 抽取缓存 / 备份 / 归档 —— 均由种子 + scripts 重建；
 #                   且向量库每次重嵌会全量变化，进 git 会让快照体积爆炸
 data/*
 !data/lore/
 !data/characters/
+!data/knowledge/
 data/lore/_bilibili_tmp/
+# 知识库排除项（2026-09-12 入库策略：核心可检索产物 21MB 入库，其余 152MB 排除）
+#   向量库：绑定具体嵌入模型（本项目为 nomic-embed-text），换模型即失效且可重建
+data/knowledge/lore_*.json
+data/knowledge/graph_*.json
+data/knowledge/web.json
+data/knowledge/persona.json
+#   抽取缓存（plot_cache*/graph_cache*，约 1.6 万个文件）与备份/归档
+data/knowledge/*cache*/
+data/knowledge/*.bak*
+data/knowledge/_archive/
 src/data/
 .env
 .env.*.local

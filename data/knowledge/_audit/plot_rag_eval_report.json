@@ -1,0 +1,8374 @@
+{
+ "meta": {
+  "tool": "scripts/eval_plot_rag.py",
+  "standard": "rag_testset_300.json（证据组并集子串覆盖）+ 负样本零注入",
+  "character": "wu_ming_zhe",
+  "argv": [
+   "scripts\\eval_plot_rag.py",
+   "--quiet",
+   "--baseline",
+   "data\\knowledge\\_audit\\plot_rag_eval_report_baseline.json",
+   "--check-targets"
+  ],
+  "top": 3,
+  "lexical_fallback": 2,
+  "sample": 0,
+  "seed": 7,
+  "limit": 0,
+  "config": {
+   "plot_alias_authoritative": true,
+   "plot_cache_dir": "./data/knowledge/plot_cache",
+   "plot_context_max_chars": 1000,
+   "plot_cooccurrence_bonus": true,
+   "plot_corpus_dir": "./data/knowledge",
+   "plot_diversity_per_doc": 1,
+   "plot_edge_min_confidence": 0.6,
+   "plot_extract_concurrency": 4,
+   "plot_extract_max_tokens": 800,
+   "plot_extract_timeout": 60.0,
+   "plot_filter_generic_seeds": true,
+   "plot_fuse_k": 3,
+   "plot_graph_dir": "./data/knowledge",
+   "plot_graph_enabled": false,
+   "plot_include_weak": true,
+   "plot_lexical_fallback": 2,
+   "plot_lexical_topup": false,
+   "plot_link_threshold": 0.5,
+   "plot_lore_dir": "./data/lore",
+   "plot_max_chunks": 3,
+   "plot_max_edges": 10,
+   "plot_max_hops": 2,
+   "plot_mention_cache_size": 512,
+   "plot_mention_group_by_entity": true,
+   "plot_mention_scoring": "count",
+   "plot_ppr_damping": 0.85,
+   "plot_require_anchored_token_seeds": true,
+   "plot_weight_edge": 1.0,
+   "plot_weight_lexical": 0.6,
+   "plot_weight_mention": 1.0
+  },
+  "assets_sha256_head16": {
+   "plot_graph": "324e5fe6d58af19c",
+   "plot_corpus": "c0e35a96ba10ad9b",
+   "testset": "2acbe40494d0c0b1"
+  },
+  "started_at": "2026-09-12 21:31:36",
+  "elapsed_s": 67.4
+ },
+ "summary": {
+  "cases": 300,
+  "ceiling_cases": 273,
+  "strict_pass": 0.46,
+  "strict_pass_n": 138,
+  "ceiling_pass": 0.5055,
+  "chunk_precision": 0.3382,
+  "answer_chunk_rate": 0.2264,
+  "mrr": 0.3264,
+  "recall": 0.3028,
+  "avg_returned_chunks": 4.59,
+  "latency_p50_ms": 248.5,
+  "latency_p90_ms": 279.6,
+  "latency_p95_ms": 293.6,
+  "latency_max_ms": 878.4,
+  "path_counts": {
+   "edge": 787,
+   "mention": 581,
+   "lexical": 10
+  },
+  "empty_rate": 0.04
+ },
+ "by_dims": {
+  "type": {
+   "factoid": {
+    "cases": 200,
+    "strict_pass": 0.54,
+    "chunk_precision": 0.4152,
+    "latency_p50_ms": 247.0
+   },
+   "multi-hop": {
+    "cases": 60,
+    "strict_pass": 0.3167,
+    "chunk_precision": 0.1463,
+    "latency_p50_ms": 248.5
+   },
+   "reasoning": {
+    "cases": 30,
+    "strict_pass": 0.2333,
+    "chunk_precision": 0.2971,
+    "latency_p50_ms": 258.2
+   },
+   "temporal": {
+    "cases": 10,
+    "strict_pass": 0.4,
+    "chunk_precision": 0.1333,
+    "latency_p50_ms": 245.6
+   }
+  },
+  "difficulty": {
+   "easy": {
+    "cases": 150,
+    "strict_pass": 0.62,
+    "chunk_precision": 0.3819,
+    "latency_p50_ms": 245.0
+   },
+   "hard": {
+    "cases": 50,
+    "strict_pass": 0.28,
+    "chunk_precision": 0.4826,
+    "latency_p50_ms": 256.7
+   },
+   "medium": {
+    "cases": 100,
+    "strict_pass": 0.31,
+    "chunk_precision": 0.2063,
+    "latency_p50_ms": 250.4
+   }
+  },
+  "depth": {
+   "deep": {
+    "cases": 50,
+    "strict_pass": 0.28,
+    "chunk_precision": 0.4826,
+    "latency_p50_ms": 256.7
+   },
+   "medium": {
+    "cases": 80,
+    "strict_pass": 0.2875,
+    "chunk_precision": 0.2263,
+    "latency_p50_ms": 250.4
+   },
+   "shallow": {
+    "cases": 170,
+    "strict_pass": 0.5941,
+    "chunk_precision": 0.3503,
+    "latency_p50_ms": 245.7
+   }
+  },
+  "hop": {
+   "multi": {
+    "cases": 100,
+    "strict_pass": 0.31,
+    "chunk_precision": 0.2912,
+    "latency_p50_ms": 250.4
+   },
+   "single": {
+    "cases": 200,
+    "strict_pass": 0.535,
+    "chunk_precision": 0.3622,
+    "latency_p50_ms": 246.9
+   }
+  },
+  "chapter": {
+   "1.4": {
+    "cases": 20,
+    "strict_pass": 0.2,
+    "chunk_precision": 0.1236,
+    "latency_p50_ms": 251.6
+   },
+   "1.7": {
+    "cases": 20,
+    "strict_pass": 0.4,
+    "chunk_precision": 0.5368,
+    "latency_p50_ms": 262.9
+   },
+   "1.9": {
+    "cases": 20,
+    "strict_pass": 0.35,
+    "chunk_precision": 0.36,
+    "latency_p50_ms": 259.6
+   },
+   "1971": {
+    "cases": 20,
+    "strict_pass": 0.25,
+    "chunk_precision": 0.3667,
+    "latency_p50_ms": 248.3
+   },
+   "其他": {
+    "cases": 220,
+    "strict_pass": 0.5182,
+    "chunk_precision": 0.3337,
+    "latency_p50_ms": 245.9
+   }
+  },
+  "text_len": {
+   "long": {
+    "cases": 80,
+    "strict_pass": 0.3375,
+    "chunk_precision": 0.2737,
+    "latency_p50_ms": 251.8
+   },
+   "medium": {
+    "cases": 120,
+    "strict_pass": 0.4417,
+    "chunk_precision": 0.3188,
+    "latency_p50_ms": 248.3
+   },
+   "short": {
+    "cases": 100,
+    "strict_pass": 0.58,
+    "chunk_precision": 0.4165,
+    "latency_p50_ms": 246.2
+   }
+  }
+ },
+ "negatives": {
+  "cases": 10,
+  "negative_injection_total": 0,
+  "negative_clean": true,
+  "rows": [
+   {
+    "q": "今天天气怎么样",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 3.46
+   },
+   {
+    "q": "帮我写一首关于春天的诗",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 2.98
+   },
+   {
+    "q": "1+1 等于几",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 8.18
+   },
+   {
+    "q": "推荐几家附近的餐厅",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 9.89
+   },
+   {
+    "q": "你怎么看最近的经济形势",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 3.69
+   },
+   {
+    "q": "给我讲个笑话",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 9.89
+   },
+   {
+    "q": "明天几点开会",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 9.73
+   },
+   {
+    "q": "这个软件怎么安装",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 10.7
+   },
+   {
+    "q": "你好呀，在吗",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 9.42
+   },
+   {
+    "q": "用 Python 写一个快速排序",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 9.45
+   }
+  ]
+ },
+ "items": [
+  {
+   "id": "R001",
+   "q": "薇洛的真名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 878.38
+  },
+  {
+   "id": "R002",
+   "q": "洞穴的囚徒篇中被称作 standkeeper 的女性是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 333.03
+  },
+  {
+   "id": "R003",
+   "q": "洞穴的囚徒篇里海盗船上的歌手是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.02
+  },
+  {
+   "id": "R004",
+   "q": "笃笃骨的真名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 223.71
+  },
+  {
+   "id": "R005",
+   "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 211.96
+  },
+  {
+   "id": "R006",
+   "q": "洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 352.73
+  },
+  {
+   "id": "R007",
+   "q": "洞穴的囚徒篇里的滚鳄书店英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.03
+  },
+  {
+   "id": "R008",
+   "q": "洞穴的囚徒篇里名为 Zero 的角色对应数字几？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 10.86
+  },
+  {
+   "id": "R009",
+   "q": "洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 279.58
+  },
+  {
+   "id": "R010",
+   "q": "洞穴的囚徒篇里的努玛是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.78
+  },
+  {
+   "id": "R011",
+   "q": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 258.0
+  },
+  {
+   "id": "R012",
+   "q": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 263.1
+  },
+  {
+   "id": "R013",
+   "q": "洞穴的囚徒篇中与管理船只日常的 standkeeper 对话的是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 252.04
+  },
+  {
+   "id": "R014",
+   "q": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 277.17
+  },
+  {
+   "id": "R015",
+   "q": "在洞穴的囚徒篇的航行里，出资买下摇滚苹果号、随身携带药箱的贵族小姐是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.08
+  },
+  {
+   "id": "R016",
+   "q": "在洞穴的囚徒篇的开场里，向维尔汀递交钥匙、请她整理档案的管家是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 283.65
+  },
+  {
+   "id": "R017",
+   "q": "伦敦十字街的雾中女巫是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 15.2
+  },
+  {
+   "id": "R018",
+   "q": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 102.98
+  },
+  {
+   "id": "R019",
+   "q": "既管理灯塔又保管档案钥匙的女性是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 236.26
+  },
+  {
+   "id": "R020",
+   "q": "以“雾女士”著称的伦敦女巫是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 251.17
+  },
+  {
+   "id": "R021",
+   "q": "卡卡尼亚的本名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 297.02
+  },
+  {
+   "id": "R022",
+   "q": "维也纳篇与卡卡尼亚对峙决斗的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 280.63
+  },
+  {
+   "id": "R023",
+   "q": "海因里希最后被谁杀死？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 254.81
+  },
+  {
+   "id": "R024",
+   "q": "今夜星光灿烂篇中红极一时的维也纳女演员是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 386.62
+  },
+  {
+   "id": "R025",
+   "q": "今夜星光灿烂篇里的年轻调查员马库斯的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 266.19
+  },
+  {
+   "id": "R026",
+   "q": "特奥菲尔的英文名是什么？（维也纳篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 265.3
+  },
+  {
+   "id": "R027",
+   "q": "以电击治疗骗财、与卡卡尼亚对峙的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 260.42
+  },
+  {
+   "id": "R028",
+   "q": "格蕾塔·霍夫曼的英文名是什么？（今夜星光灿烂篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.17
+  },
+  {
+   "id": "R029",
+   "q": "今夜星光灿烂篇里出现的「血痛」概念英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 14.06
+  },
+  {
+   "id": "R030",
+   "q": "多里斯医生的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 271.14
+  },
+  {
+   "id": "R031",
+   "q": "卡卡尼亚的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.04
+  },
+  {
+   "id": "R032",
+   "q": "血痛概念出现在哪个维也纳篇章里？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 238.7
+  },
+  {
+   "id": "R033",
+   "q": "海因里希的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 277.51
+  },
+  {
+   "id": "R034",
+   "q": "伊索尔德的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 282.72
+  },
+  {
+   "id": "R035",
+   "q": "维也纳的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 282.39
+  },
+  {
+   "id": "R036",
+   "q": "施瓦茨的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 264.37
+  },
+  {
+   "id": "R037",
+   "q": "海因里希效忠的重塑之手在英文里叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.41
+  },
+  {
+   "id": "R038",
+   "q": "在今夜星光灿烂篇的维也纳舞台上红极一时、最终枪杀海因里希的女演员是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 224.58
+  },
+  {
+   "id": "R039",
+   "q": "在今夜星光灿烂篇的维也纳社交场里，本姓温格勒、以精神分析见长的年轻医生是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.97
+  },
+  {
+   "id": "R040",
+   "q": "根据她在维也纳行动、且本姓温格勒这两点，可以推断这位精神科医生是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.2
+  },
+  {
+   "id": "R041",
+   "q": "维尔汀在阿派朗岛击败阿尔卡纳之后获得的、能庇护更多人的道具是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.25
+  },
+  {
+   "id": "R042",
+   "q": "阿尔卡纳最终死于哪种轰炸武器？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.83
+  },
+  {
+   "id": "R043",
+   "q": "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.63
+  },
+  {
+   "id": "R044",
+   "q": "阿派朗岛与下面哪个英文名对应？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.78
+  },
+  {
+   "id": "R045",
+   "q": "孤独之歌篇里零号概念的讲解围绕数字几展开？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 268.91
+  },
+  {
+   "id": "R046",
+   "q": "乌尔里希是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 239.06
+  },
+  {
+   "id": "R047",
+   "q": "露西是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 255.95
+  },
+  {
+   "id": "R048",
+   "q": "索菲亚的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 278.49
+  },
+  {
+   "id": "R049",
+   "q": "苏菲亚与 37 同属哪个篇章？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 259.54
+  },
+  {
+   "id": "R050",
+   "q": "阿德勒与乌尔里希同属哪座岛屿的故事？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 260.16
+  },
+  {
+   "id": "R051",
+   "q": "Six 与 37 同属哪座岛屿的故事？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 266.69
+  },
+  {
+   "id": "R052",
+   "q": "阿尔卡纳在大限将至时推举谁接任重塑之手的新领袖？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.21
+  },
+  {
+   "id": "R053",
+   "q": "重塑之手首领盯上的、盛产非对称核素 R 的岛屿是哪座？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 291.21
+  },
+  {
+   "id": "R054",
+   "q": "杀死阿尔卡纳的行动中，与基金会配合作战的军备学院是哪家？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 253.31
+  },
+  {
+   "id": "R055",
+   "q": "孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 259.69
+  },
+  {
+   "id": "R056",
+   "q": "在孤独之歌篇的阿派朗岛上，与 37 同以数字为名、被称作“六”的少女叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 286.17
+  },
+  {
+   "id": "R057",
+   "q": "岛上时间停留在 2007 年且未被暴雨回溯，据此推断这座与世隔绝的小岛是哪里？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 251.68
+  },
+  {
+   "id": "R058",
+   "q": "根据曾指挥真空弹轰炸、使重塑之手首领灰飞烟灭的这一战，推断这位首领是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 259.91
+  },
+  {
+   "id": "R059",
+   "q": "孤独之歌这个篇章名，与哪位独自留守海岛、钻研数学的数字少女有关？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 269.28
+  },
+  {
+   "id": "R060",
+   "q": "阿派朗岛上的时间停滞在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 241.89
+  },
+  {
+   "id": "R061",
+   "q": "绿湖噩梦篇的故事发生地是哪个营地？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.56
+  },
+  {
+   "id": "R062",
+   "q": "绿湖营地的传说中，森林里出没的怪物是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.99
+  },
+  {
+   "id": "R063",
+   "q": "绿湖噩梦中痴迷恐怖片的男孩的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 10.27
+  },
+  {
+   "id": "R064",
+   "q": "洁西卡的英文名是什么？（绿湖噩梦篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 245.34
+  },
+  {
+   "id": "R065",
+   "q": "迈克尔的英文名是什么？（绿湖噩梦篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 249.42
+  },
+  {
+   "id": "R066",
+   "q": "弗莱迪的英文名是什么？（绿湖噩梦篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.09
+  },
+  {
+   "id": "R067",
+   "q": "冷周六的英文名是什么？（绿湖噩梦篇登场角色）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 335.93
+  },
+  {
+   "id": "R068",
+   "q": "巨怪传说与失踪案发生在哪一年的绿湖？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 280.09
+  },
+  {
+   "id": "R069",
+   "q": "绿湖噩梦篇的孩子们在森林里遭遇了什么怪物？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 229.65
+  },
+  {
+   "id": "R070",
+   "q": "绿湖噩梦篇里的灯塔传说与哪个营地相关？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 243.33
+  },
+  {
+   "id": "R071",
+   "q": "绿湖噩梦篇里的巨怪英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 247.11
+  },
+  {
+   "id": "R072",
+   "q": "绿湖营地发生的案件类型是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 258.6
+  },
+  {
+   "id": "R073",
+   "q": "绿湖噩梦篇里的巨怪居住在什么地方？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 246.36
+  },
+  {
+   "id": "R074",
+   "q": "在 1971 年的绿湖营地，负责孩子们医疗健康的医生英文名叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 251.87
+  },
+  {
+   "id": "R075",
+   "q": "Horropedia 与 Jessica 同属哪个营地的故事？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 257.79
+  },
+  {
+   "id": "R076",
+   "q": "在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 252.2
+  },
+  {
+   "id": "R077",
+   "q": "在绿湖噩梦篇的夏令营里，一边讲恐怖片桥段一边协助调查失踪案的男孩是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 236.42
+  },
+  {
+   "id": "R078",
+   "q": "根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 240.41
+  },
+  {
+   "id": "R079",
+   "q": "绿湖营地的孩子们不敢进入的是哪里？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.42
+  },
+  {
+   "id": "R080",
+   "q": "绿湖噩梦篇的故事发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 3.53
+  },
+  {
+   "id": "R081",
+   "q": "可燃点体内的火到底是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 300.19
+  },
+  {
+   "id": "R082",
+   "q": "旧金山海特街的疗愈师是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 274.63
+  },
+  {
+   "id": "R083",
+   "q": "J 的义妹是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 266.51
+  },
+  {
+   "id": "R084",
+   "q": "雷米特杯失窃案里 Melania 的保安公司叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 114.62
+  },
+  {
+   "id": "R085",
+   "q": "《神秘警探C07》三部曲的导演是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 20.35
+  },
+  {
+   "id": "R086",
+   "q": "《疯癫与文明》里那座巨型监狱叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 284.55
+  },
+  {
+   "id": "R087",
+   "q": "虚构集的小说《理性家族的崛起与衰落》的故事发生地是哪里？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 234.9
+  },
+  {
+   "id": "R088",
+   "q": "自由海风号邮轮的音乐总监是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 237.72
+  },
+  {
+   "id": "R089",
+   "q": "努库泰澳的岛民都有谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "2/3",
+   "missing_groups": [
+    2
+   ],
+   "ceiling": false,
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 19.07
+  },
+  {
+   "id": "R090",
+   "q": "在中央塔里自囚的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.9
+  },
+  {
+   "id": "R091",
+   "q": "雷米特杯失窃案里出现的机器人保安英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 97.91
+  },
+  {
+   "id": "R092",
+   "q": "唐人街影话篇的故事发生在哪条街？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 4.81
+  },
+  {
+   "id": "R093",
+   "q": "《神秘警探C07》系列的故事出自哪个篇章？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 15.43
+  },
+  {
+   "id": "R094",
+   "q": "Noire 的中文译名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.78
+  },
+  {
+   "id": "R095",
+   "q": "梅林的英文名是什么？（唐人街影话篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 10.6
+  },
+  {
+   "id": "R096",
+   "q": "诺亚的英文名是什么？（唐人街影话篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 18.98
+  },
+  {
+   "id": "R097",
+   "q": "斯科特的英文名是什么？（唐人街影话篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1
+   },
+   "latency_ms": 217.57
+  },
+  {
+   "id": "R098",
+   "q": "再见，来亚什基篇里的村庄英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 286.05
+  },
+  {
+   "id": "R099",
+   "q": "来亚什基的少年奥古斯特的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 260.52
+  },
+  {
+   "id": "R100",
+   "q": "叶夫根尼的英文名是什么？（再见，来亚什基篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 244.3
+  },
+  {
+   "id": "R101",
+   "q": "克努特的英文名是什么？（再见，来亚什基篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 239.82
+  },
+  {
+   "id": "R102",
+   "q": "基克尔恩的英文名是什么？（再见，来亚什基篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 308.26
+  },
+  {
+   "id": "R103",
+   "q": "温松的英文名是什么？（再见，来亚什基篇里的歌手）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 227.57
+  },
+  {
+   "id": "R104",
+   "q": "忧郁的热带篇里的女军官是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 251.08
+  },
+  {
+   "id": "R105",
+   "q": "卡森的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 244.98
+  },
+  {
+   "id": "R106",
+   "q": "邓肯的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 255.88
+  },
+  {
+   "id": "R107",
+   "q": "莉莉娅的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 243.53
+  },
+  {
+   "id": "R108",
+   "q": "佩拉的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 233.56
+  },
+  {
+   "id": "R109",
+   "q": "使徒兄弟会的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 253.19
+  },
+  {
+   "id": "R110",
+   "q": "金伯利女郎指的是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 256.65
+  },
+  {
+   "id": "R111",
+   "q": "斯特凡的英文名是什么？（77 号往事）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 232.15
+  },
+  {
+   "id": "R112",
+   "q": "芭芭拉的英文名是什么？（77 号往事）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 2,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "lexical": 2
+   },
+   "latency_ms": 17.06
+  },
+  {
+   "id": "R113",
+   "q": "阿格斯的英文名是什么？（77 号往事）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 245.95
+  },
+  {
+   "id": "R114",
+   "q": "77 号往事发生在哪条公路沿线？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 234.59
+  },
+  {
+   "id": "R115",
+   "q": "自由海风号邮轮的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 119.24
+  },
+  {
+   "id": "R116",
+   "q": "芭卡洛儿的故乡是哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 238.91
+  },
+  {
+   "id": "R117",
+   "q": "努库泰澳岛的英文拼法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 13.69
+  },
+  {
+   "id": "R118",
+   "q": "图图石子的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.58
+  },
+  {
+   "id": "R119",
+   "q": "托阿的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 273.05
+  },
+  {
+   "id": "R120",
+   "q": "塞洛尼的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 107.18
+  },
+  {
+   "id": "R121",
+   "q": "梅莉的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.67
+  },
+  {
+   "id": "R122",
+   "q": "乌卢鲁运动会圣火中的小精灵叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 280.4
+  },
+  {
+   "id": "R123",
+   "q": "乌卢鲁运动会的主会场叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 246.03
+  },
+  {
+   "id": "R124",
+   "q": "参加乌卢鲁运动会的火焰系选手是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 247.49
+  },
+  {
+   "id": "R125",
+   "q": "复兴！乌卢鲁运动会以哪座巨岩命名？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 242.45
+  },
+  {
+   "id": "R126",
+   "q": "马库阿的英文名是什么？（乌卢鲁运动会篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 246.77
+  },
+  {
+   "id": "R127",
+   "q": "福格先生发明的大型装置是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 252.94
+  },
+  {
+   "id": "R128",
+   "q": "卡罗琳·巴特利的英文名是什么？（圣火纪行篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 2,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "lexical": 2
+   },
+   "latency_ms": 24.02
+  },
+  {
+   "id": "R129",
+   "q": "布里姆利的英文名是什么？（圣火纪行篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 242.12
+  },
+  {
+   "id": "R130",
+   "q": "圣火纪行篇里伦敦举办的选拔赛叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 17.95
+  },
+  {
+   "id": "R131",
+   "q": "1987 宇宙组曲篇里远赴太空的旅人是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.44
+  },
+  {
+   "id": "R132",
+   "q": "波因特的英文名是什么？（1987 宇宙组曲篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.09
+  },
+  {
+   "id": "R133",
+   "q": "科兹洛夫的英文名是什么？（1987 宇宙组曲篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 236.9
+  },
+  {
+   "id": "R134",
+   "q": "诺谛卡的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 278.72
+  },
+  {
+   "id": "R135",
+   "q": "复乐园篇的故事发生在哪块大陆？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 5.83
+  },
+  {
+   "id": "R136",
+   "q": "阿黛尔的全名是什么？（迁流的盛宴篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 247.53
+  },
+  {
+   "id": "R137",
+   "q": "塞莉亚的英文名是什么？（迁流的盛宴篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 252.83
+  },
+  {
+   "id": "R138",
+   "q": "费利西恩的英文名是什么？（迁流的盛宴篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.8
+  },
+  {
+   "id": "R139",
+   "q": "迁流的盛宴篇的故事发生在哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 3.48
+  },
+  {
+   "id": "R140",
+   "q": "绿松石蛇俱乐部篇的故事发生在哪个国家？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 256.28
+  },
+  {
+   "id": "R141",
+   "q": "拉莫纳的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 233.0
+  },
+  {
+   "id": "R142",
+   "q": "绿松石蛇俱乐部篇里发生的命案中文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 240.87
+  },
+  {
+   "id": "R143",
+   "q": "蝴蝶小姐的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 233.38
+  },
+  {
+   "id": "R144",
+   "q": "特蕾西塔的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 245.68
+  },
+  {
+   "id": "R145",
+   "q": "穆里尔的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 247.18
+  },
+  {
+   "id": "R146",
+   "q": "佩雷斯的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 233.41
+  },
+  {
+   "id": "R147",
+   "q": "克鲁托夫的英文名是什么？（远征记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 251.16
+  },
+  {
+   "id": "R148",
+   "q": "伊万的英文名是什么？（远征记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 283.08
+  },
+  {
+   "id": "R149",
+   "q": "远征记篇里的骑兵首领伊戈尔的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.75
+  },
+  {
+   "id": "R150",
+   "q": "谢尔盖的英文名是什么？（远征记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 267.7
+  },
+  {
+   "id": "R151",
+   "q": "长夜鸣笛篇的列车故事发生在哪条河流沿岸？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 258.92
+  },
+  {
+   "id": "R152",
+   "q": "塞梅尔维斯的英文名是什么？（长夜鸣笛篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 331.34
+  },
+  {
+   "id": "R153",
+   "q": "野树莓的英文名是什么？（长夜鸣笛篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 330.1
+  },
+  {
+   "id": "R154",
+   "q": "皮罗斯大叔的英文名是什么？（长夜鸣笛篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 250.5
+  },
+  {
+   "id": "R155",
+   "q": "长夜鸣笛篇里列车上的女售票员英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 239.21
+  },
+  {
+   "id": "R156",
+   "q": "入雅典记篇的故事发生在哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 2,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "lexical": 2
+   },
+   "latency_ms": 15.15
+  },
+  {
+   "id": "R157",
+   "q": "酒神节的英文名是什么？（入雅典记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 262.47
+  },
+  {
+   "id": "R158",
+   "q": "卡珊德拉的英文名是什么？（入雅典记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 274.22
+  },
+  {
+   "id": "R159",
+   "q": "翡冷翠之春篇中的城市指的是哪座意大利城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 3.69
+  },
+  {
+   "id": "R160",
+   "q": "乌切洛的英文名是什么？（翡冷翠之春篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 223.52
+  },
+  {
+   "id": "R161",
+   "q": "不老春篇里村民们疯狂追求的东西是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.22
+  },
+  {
+   "id": "R162",
+   "q": "不老春篇里的教派叫什么名字？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 4,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 3
+   },
+   "latency_ms": 216.67
+  },
+  {
+   "id": "R163",
+   "q": "不老春篇里传说中的宝剑叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.98
+  },
+  {
+   "id": "R164",
+   "q": "朔日手记篇里酿得好酒的酒馆娘是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 243.03
+  },
+  {
+   "id": "R165",
+   "q": "朔日手记篇里九方之地举办的节日叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 248.15
+  },
+  {
+   "id": "R166",
+   "q": "九方是朔日手记篇里的什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 242.19
+  },
+  {
+   "id": "R167",
+   "q": "聚合浪潮篇里的机器人集体组织叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 262.71
+  },
+  {
+   "id": "R168",
+   "q": "马克西姆的英文名是什么？（聚合浪潮篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 243.21
+  },
+  {
+   "id": "R169",
+   "q": "瓦尼亚的英文名是什么？（聚合浪潮篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 239.74
+  },
+  {
+   "id": "R170",
+   "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 241.33
+  },
+  {
+   "id": "R171",
+   "q": "他者的悲哀篇里出现的学园缩写是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 11.86
+  },
+  {
+   "id": "R172",
+   "q": "重燃！流金之海篇里的海上神祇纳西索斯的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 271.63
+  },
+  {
+   "id": "R173",
+   "q": "赫多涅的英文名是什么？（重燃！流金之海篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 241.46
+  },
+  {
+   "id": "R174",
+   "q": "重燃！流金之海篇里举办的水上竞技会英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 226.53
+  },
+  {
+   "id": "R175",
+   "q": "世纪末尺度篇里出现的时间异常现象英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 269.36
+  },
+  {
+   "id": "R176",
+   "q": "在暴雨中唯一能自由行动的司辰是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.82
+  },
+  {
+   "id": "R177",
+   "q": "维尔汀随身携带的、能庇护神秘学家的道具是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 283.47
+  },
+  {
+   "id": "R178",
+   "q": "芝加哥情人节大屠杀发生在哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 267.42
+  },
+  {
+   "id": "R179",
+   "q": "无名者的神秘术能把记忆转换成什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 278.63
+  },
+  {
+   "id": "R180",
+   "q": "无名者幼年被植入的、能生成人格与记忆的装置叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.53
+  },
+  {
+   "id": "R181",
+   "q": "无名者在基金会内务档案中的机构代号是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 266.06
+  },
+  {
+   "id": "R182",
+   "q": "十四行诗的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 256.7
+  },
+  {
+   "id": "R183",
+   "q": "玛蒂尔达的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 235.57
+  },
+  {
+   "id": "R184",
+   "q": "星锑的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 242.53
+  },
+  {
+   "id": "R185",
+   "q": "苏芙比的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 240.08
+  },
+  {
+   "id": "R186",
+   "q": "牙仙的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 259.33
+  },
+  {
+   "id": "R187",
+   "q": "神秘学家的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 262.34
+  },
+  {
+   "id": "R188",
+   "q": "重塑之手的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 250.51
+  },
+  {
+   "id": "R189",
+   "q": "圣洛夫基金会的英文全称是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.09
+  },
+  {
+   "id": "R190",
+   "q": "鸽子屋的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 246.96
+  },
+  {
+   "id": "R191",
+   "q": "拉普拉斯的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 248.79
+  },
+  {
+   "id": "R192",
+   "q": "芝诺的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 9.74
+  },
+  {
+   "id": "R193",
+   "q": "暴雨的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 239.96
+  },
+  {
+   "id": "R194",
+   "q": "司辰的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 237.82
+  },
+  {
+   "id": "R195",
+   "q": "J 的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 240.38
+  },
+  {
+   "id": "R196",
+   "q": "伊戈尔是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 250.0
+  },
+  {
+   "id": "R197",
+   "q": "多瑙河的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 2
+   },
+   "latency_ms": 97.27
+  },
+  {
+   "id": "R198",
+   "q": "雅典的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 2,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "lexical": 2
+   },
+   "latency_ms": 14.34
+  },
+  {
+   "id": "R199",
+   "q": "LSCC 是什么机构？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 246.07
+  },
+  {
+   "id": "R200",
+   "q": "Charon 是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 238.16
+  },
+  {
+   "id": "R201",
+   "q": "Enigma 是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 259.95
+  },
+  {
+   "id": "R202",
+   "q": "芝加哥的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 236.03
+  },
+  {
+   "id": "R203",
+   "q": "雅致的多瑙河篇章名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 2
+   },
+   "latency_ms": 102.91
+  },
+  {
+   "id": "R204",
+   "q": "苏菲亚接手的重塑之手与阿尔卡纳的关系是？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 269.38
+  },
+  {
+   "id": "R205",
+   "q": "勿忘我与斯奈德同属哪一年的芝加哥故事？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 260.98
+  },
+  {
+   "id": "R206",
+   "q": "77 号往事里淑女格蕾丝主持的行动代号与哪条公路有关？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 238.51
+  },
+  {
+   "id": "R207",
+   "q": "「无名者」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 227.11
+  },
+  {
+   "id": "R208",
+   "q": "「露西」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 254.85
+  },
+  {
+   "id": "R209",
+   "q": "《重返未来：1999》剧情转写里「圣洛夫基金会」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 301.14
+  },
+  {
+   "id": "R210",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「重塑之手」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 253.68
+  },
+  {
+   "id": "R211",
+   "q": "「拉普拉斯」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 230.75
+  },
+  {
+   "id": "R212",
+   "q": "《重返未来：1999》剧情转写里「暴雨」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 249.84
+  },
+  {
+   "id": "R213",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「神秘学家」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 262.75
+  },
+  {
+   "id": "R214",
+   "q": "「伊戈尔」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 253.95
+  },
+  {
+   "id": "R215",
+   "q": "「乌尔里希」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 234.51
+  },
+  {
+   "id": "R216",
+   "q": "《重返未来：1999》剧情转写里「诺谛卡」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 239.98
+  },
+  {
+   "id": "R217",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「卡珊德拉」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 244.51
+  },
+  {
+   "id": "R218",
+   "q": "「赫多涅」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 235.68
+  },
+  {
+   "id": "R219",
+   "q": "《重返未来：1999》剧情转写里「哑谜」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 236.49
+  },
+  {
+   "id": "R220",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「远旅」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 270.01
+  },
+  {
+   "id": "R221",
+   "q": "《重返未来：1999》剧情转写里「维拉」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 241.17
+  },
+  {
+   "id": "R222",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「玛蒂尔达」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 254.12
+  },
+  {
+   "id": "R223",
+   "q": "《重返未来：1999》剧情转写里「谢尔盖」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 233.15
+  },
+  {
+   "id": "R224",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「阿黛尔」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 243.22
+  },
+  {
+   "id": "R225",
+   "q": "《重返未来：1999》剧情转写里「芦草结」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 238.5
+  },
+  {
+   "id": "R226",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「十四行诗」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 247.45
+  },
+  {
+   "id": "R227",
+   "q": "《重返未来：1999》剧情转写里「贝丽尔」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 249.81
+  },
+  {
+   "id": "R228",
+   "q": "拉米雷斯保安公司的老板是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 229.78
+  },
+  {
+   "id": "R229",
+   "q": "Melania 与 Pickles 同属哪一起案件？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 4,
+    "edge": 1
+   },
+   "latency_ms": 114.82
+  },
+  {
+   "id": "R230",
+   "q": "来亚什基矿区出产的特殊矿物在英文里叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 265.03
+  },
+  {
+   "id": "R231",
+   "q": "77 号往事里与格蕾丝对立的契约魅魔是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 246.39
+  },
+  {
+   "id": "R232",
+   "q": "入雅典记篇里雅典的统治者是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 2,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "lexical": 2
+   },
+   "latency_ms": 16.56
+  },
+  {
+   "id": "R233",
+   "q": "圣洛夫基金会的副会长、无名者的养母是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 239.29
+  },
+  {
+   "id": "R234",
+   "q": "康斯坦丁给无名者的第一个名字是什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 248.52
+  },
+  {
+   "id": "R235",
+   "q": "在康复中心为无名者做人工梦游诊察的医生是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 237.14
+  },
+  {
+   "id": "R236",
+   "q": "基金会的首席助手、维尔汀的第一防线学校同窗是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 242.8
+  },
+  {
+   "id": "R237",
+   "q": "苏菲亚从阿尔卡纳手中接管的组织叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 238.46
+  },
+  {
+   "id": "R238",
+   "q": "苏菲亚与阿尼姆斯在南极事件中复活了谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 256.04
+  },
+  {
+   "id": "R239",
+   "q": "康斯坦丁的养女最终以什么身份加入司辰小队？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 248.54
+  },
+  {
+   "id": "R240",
+   "q": "破坏无名者发条装置的重塑之手首领是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 250.84
+  },
+  {
+   "id": "R241",
+   "q": "保利娜的义兄、人称 J 的男人叫什么名字？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 266.65
+  },
+  {
+   "id": "R242",
+   "q": "乔·布朗的义妹、原基金会调查员是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 246.39
+  },
+  {
+   "id": "R243",
+   "q": "芝加哥事件中被阿尔卡纳折磨的少女是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.74
+  },
+  {
+   "id": "R244",
+   "q": "救走斯奈德姐姐的行动发生在哪座城市？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3
+   },
+   "latency_ms": 261.38
+  },
+  {
+   "id": "R245",
+   "q": "可燃点体内的和平乌鲁与哪场运动会的圣火相关？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 277.96
+  },
+  {
+   "id": "R246",
+   "q": "以斯拉导演的运动会里，圣火的本体是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.92
+  },
+  {
+   "id": "R247",
+   "q": "施瓦茨医生的骗局最终被哪位维也纳医生揭穿？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 363.23
+  },
+  {
+   "id": "R248",
+   "q": "海因里希效忠的重塑之手首领是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 234.93
+  },
+  {
+   "id": "R249",
+   "q": "拉莫纳的俱乐部坐落在哪个国家？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 231.89
+  },
+  {
+   "id": "R250",
+   "q": "杜硕节在朔日手记篇的哪个地点举办？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 266.69
+  },
+  {
+   "id": "R251",
+   "q": "温松的歌声回荡在哪座矿业村庄？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 248.17
+  },
+  {
+   "id": "R252",
+   "q": "诺谛卡出现的大陆是哪块？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 247.59
+  },
+  {
+   "id": "R253",
+   "q": "本名克拉拉·温格勒的医生在维也纳以什么名字为人所知？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 240.7
+  },
+  {
+   "id": "R254",
+   "q": "在自由海风号上经历试炼的乘客们乘坐的邮轮英文名叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 101.24
+  },
+  {
+   "id": "R255",
+   "q": "阿尔卡纳盯上的非对称核素 R 可以让人免疫什么灾难？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.27
+  },
+  {
+   "id": "R256",
+   "q": "在《重返未来：1999》第一章的芝加哥事件里，经营瓦尔登湖地下酒吧的重塑之手成员是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 258.41
+  },
+  {
+   "id": "R257",
+   "q": "在 1990 年德克萨斯 77 号公路的往事里，被重塑之手追随者误认成格蕾丝的农场女孩是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 244.86
+  },
+  {
+   "id": "R258",
+   "q": "在雷米特杯失窃案里协助警方寻回失窃奖杯、因此声名大噪的侦探狗叫什么名字？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 110.18
+  },
+  {
+   "id": "R259",
+   "q": "在迁流的盛宴篇的巴黎社交季里，出身塔维尼耶家族的年轻女士是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 14.59
+  },
+  {
+   "id": "R260",
+   "q": "在绿松石蛇俱乐部的墨西哥故事里，与画家圈子来往密切的女主角是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 234.43
+  },
+  {
+   "id": "R261",
+   "q": "在入雅典记的雅典城邦故事里，主持酒神节、执掌城邦的领袖人物是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2
+   },
+   "latency_ms": 110.3
+  },
+  {
+   "id": "R262",
+   "q": "在长夜鸣笛篇的多瑙河夜行列车上，与吸血鬼传闻纠缠在一起的女学者是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 215.38
+  },
+  {
+   "id": "R263",
+   "q": "在 1987 宇宙组曲篇的太空任务里，跨越星海、远赴外层空间的旅人是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 13.93
+  },
+  {
+   "id": "R264",
+   "q": "在再见来亚什基篇的矿业村庄里，教孩子们唱歌、想去看海的少年是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 235.08
+  },
+  {
+   "id": "R265",
+   "q": "在忧郁的热带篇的圣保罗贫民窟故事里，身居军职、行事果决的女军官是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 249.14
+  },
+  {
+   "id": "R266",
+   "q": "在圣火纪行东区黎明的伦敦雾霾里，坚信自己的巨型机器能净化全城的绅士是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 15.73
+  },
+  {
+   "id": "R267",
+   "q": "在复兴乌卢鲁运动会篇的赛场上，操控火焰参赛、守护和平乌鲁圣火的选手是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 4
+   },
+   "latency_ms": 268.29
+  },
+  {
+   "id": "R268",
+   "q": "在地球上最后的夜晚篇的南太平洋航线上，奉命登船执行任务、代号淑女格蕾丝的间谍是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 265.42
+  },
+  {
+   "id": "R269",
+   "q": "在朔日手记篇的大唐九方之地，于杜硕节期间酿出令人称奇的好酒的娘子是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 257.68
+  },
+  {
+   "id": "R270",
+   "q": "在唐人街影话篇的香港取景故事里，执导《神秘警探C07》三部曲的导演是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3
+   },
+   "latency_ms": 15.14
+  },
+  {
+   "id": "R271",
+   "q": "在无路可返的个人剧情里，于康复中心为无名者进行人工梦游诊察的医生是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 247.68
+  },
+  {
+   "id": "R272",
+   "q": "在聚合浪潮篇的苏联背景故事里，与集体 2.0 的机器人群体打交道的研究者是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 270.1
+  },
+  {
+   "id": "R273",
+   "q": "有位少女教师用神秘术守护村庄，而这座村庄以矿业为生，这座村庄是哪里？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 259.14
+  },
+  {
+   "id": "R274",
+   "q": "以火焰本能参赛并守护圣火的选手，与和平乌鲁多次同框，这位选手是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": false,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 258.78
+  },
+  {
+   "id": "R275",
+   "q": "一场运动会因位于澳洲腹地的巨岩而得名，这场运动会叫什么？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "latency_ms": 11.64
+  },
+  {
+   "id": "R276",
+   "q": "伦敦雾霾事件里发明巨型净化机的先生是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 292.02
+  },
+  {
+   "id": "R277",
+   "q": "一列夜行列车上流传着吸血鬼的传闻，这条列车行驶在哪条河沿岸？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 5
+   },
+   "latency_ms": 242.84
+  },
+  {
+   "id": "R278",
+   "q": "圣洛夫基金会的英文名与哪位条件反射理论家同名？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 275.56
+  },
+  {
+   "id": "R279",
+   "q": "一家以条件反射理论家命名的基金会收容并管理神秘学家，它的英文名是什么？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 2
+   },
+   "latency_ms": 282.46
+  },
+  {
+   "id": "R280",
+   "q": "一位神秘学家能免疫暴雨并带着手提箱穿越时代，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 264.54
+  },
+  {
+   "id": "R281",
+   "q": "有人把两位好友的消失归咎于一场暴雨，这位幸存的司辰是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 254.61
+  },
+  {
+   "id": "R282",
+   "q": "有人以“浸没于纯白中的执棋者”形容一位总是面带微笑的副会长，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 257.96
+  },
+  {
+   "id": "R283",
+   "q": "一位基金会副会长常以棋局比喻事件，她也是无名者的养母，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.33
+  },
+  {
+   "id": "R284",
+   "q": "一个组织的首领别名“受苦者”，是芝加哥与维也纳事件的罪魁祸首，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 371.89
+  },
+  {
+   "id": "R285",
+   "q": "一个组织试图回溯至“秩序正确”的时代并人为加速暴雨的到来，它是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 269.37
+  },
+  {
+   "id": "R286",
+   "q": "由鸽子意象命名、与基金会收容事务相关的场所有个绰号，它叫什么？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 244.53
+  },
+  {
+   "id": "R287",
+   "q": "一位特工能把记忆化作飞蛾循光传递情报，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 107.86
+  },
+  {
+   "id": "R288",
+   "q": "一位怀疑神秘学家终将被淘汰的精神科医生坚持在康复中心工作，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 245.27
+  },
+  {
+   "id": "R289",
+   "q": "一位精神科医生的同学包括维尔汀与玛蒂尔达，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 293.46
+  },
+  {
+   "id": "R290",
+   "q": "一位女士既是基金会间谍又以“淑女”自称，她的化名是什么？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 261.94
+  },
+  {
+   "id": "R291",
+   "q": "被阿尔卡纳称作“我的无名者”、以蛹为喻的角色是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 277.19
+  },
+  {
+   "id": "R292",
+   "q": "一位随维尔汀行动的女演员最终开枪杀死了一名重塑之手成员，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 258.42
+  },
+  {
+   "id": "R293",
+   "q": "77 号往事发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 254.34
+  },
+  {
+   "id": "R294",
+   "q": "第一次暴雨发生于哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1
+   },
+   "latency_ms": 301.07
+  },
+  {
+   "id": "R295",
+   "q": "1999 年 12 月 31 日那天发生了什么灾难？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 320.0
+  },
+  {
+   "id": "R296",
+   "q": "芝加哥情人节大屠杀发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 248.84
+  },
+  {
+   "id": "R297",
+   "q": "维尔汀在第一防线学校时是多少岁策划学生出逃的？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 278.17
+  },
+  {
+   "id": "R298",
+   "q": "雷米特杯失窃案发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 4
+   },
+   "latency_ms": 90.02
+  },
+  {
+   "id": "R299",
+   "q": "1966 年的伦敦发生了哪起震惊世界的失窃案？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 2
+   },
+   "latency_ms": 241.38
+  },
+  {
+   "id": "R300",
+   "q": "维尔汀首次登场的年份是哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "ceiling": true,
+   "n_chunks": 5,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3
+   },
+   "latency_ms": 242.29
+  }
+ ]
+}
