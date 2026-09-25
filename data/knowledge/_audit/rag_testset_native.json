@@ -1,0 +1,5270 @@
+{
+  "_meta": {
+    "built_from": "data/compendium_rag/graph.json（#36 产物）",
+    "rules": [
+      "答案词必在语料",
+      "答案词不在题面",
+      "每版每题型限额(factoid 3／definition 4)",
+      "seed=20260925 可复现"
+    ],
+    "counts": {
+      "pool_T1": 309,
+      "pool_T1r": 112,
+      "pool_T2": 313,
+      "after_sample_total": 250,
+      "target": 250
+    }
+  },
+  "cases": [
+    {
+      "id": "N001",
+      "q": "「铅玻璃」标记的对象是什么？",
+      "ref": "实验便签条",
+      "evidence": [
+        [
+          "实验便签条"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1913_淑女的守则",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1913_淑女的守则:5.0.4",
+      "_pool": "T1"
+    },
+    {
+      "id": "N002",
+      "q": "谁转述了「尼娜」？",
+      "ref": "维拉",
+      "evidence": [
+        [
+          "维拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:11.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N003",
+      "q": "故事中的英雄——这是哪个角色？",
+      "ref": "提丰",
+      "evidence": [
+        [
+          "提丰"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1913_淑女的守则",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1913_淑女的守则:0.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N004",
+      "q": "「尼娜」转述的对象是谁？",
+      "ref": "维拉",
+      "evidence": [
+        [
+          "维拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:11.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N005",
+      "q": "哪个组织解禁了「雨前调度中心」？",
+      "ref": "圣洛夫基金会",
+      "evidence": [
+        [
+          "圣洛夫基金会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_113_他者的悲哀",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__113_他者的悲哀:9.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N006",
+      "q": "掩饰采掘的木厂；掩护挖矿井的作坊——这是哪个地点？",
+      "ref": "锯木厂",
+      "evidence": [
+        [
+          "锯木厂"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:11.2.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N007",
+      "q": "「奠基石」离乡的对象是哪里？",
+      "ref": "诺瓦米奇",
+      "evidence": [
+        [
+          "诺瓦米奇"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:1.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N008",
+      "q": "谁告知了「维尔汀」？",
+      "ref": "牙仙",
+      "evidence": [
+        [
+          "牙仙"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_12101_绿湖噩梦",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__12101_绿湖噩梦:1.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N009",
+      "q": "载有第25条培训条文的指南——这是哪个物品？",
+      "ref": "魔精培训指南",
+      "evidence": [
+        [
+          "魔精培训指南"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__027_2_2_荒原经营驯化_6",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__027_2_2_荒原经营驯化_6:0.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N010",
+      "q": "「回声谣」提及的对象是什么？",
+      "ref": "时空灾害",
+      "evidence": [
+        [
+          "时空灾害"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:16.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N011",
+      "q": "谁追问了「小梅斯梅尔」？",
+      "ref": "左伶",
+      "evidence": [
+        [
+          "左伶"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_385101_聚合浪潮",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__385101_聚合浪潮:5.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N012",
+      "q": "面露忧愁的寂静队员；担忧病号的年轻寂静者——这是哪个角色？",
+      "ref": "拉丽莎",
+      "evidence": [
+        [
+          "拉丽莎"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:12.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N013",
+      "q": "「维尔汀」告知的对象是谁？",
+      "ref": "牙仙",
+      "evidence": [
+        [
+          "牙仙"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_12101_绿湖噩梦",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__12101_绿湖噩梦:1.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N014",
+      "q": "谁翻译了「无线电小姐」？",
+      "ref": "约翰·提托",
+      "evidence": [
+        [
+          "约翰·提托"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1914_只有泉水知道",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1914_只有泉水知道:1.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N015",
+      "q": "山上的伏击者——这是哪个角色？",
+      "ref": "敌人",
+      "evidence": [
+        [
+          "敌人"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1910_风吹乌哈拉",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1910_风吹乌哈拉:2.0.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N016",
+      "q": "「小梅斯梅尔」追问的对象是谁？",
+      "ref": "左伶",
+      "evidence": [
+        [
+          "左伶"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_385101_聚合浪潮",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__385101_聚合浪潮:5.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N017",
+      "q": "谁追问下落了「塞梅尔维斯」？",
+      "ref": "罗蕾莱",
+      "evidence": [
+        [
+          "罗蕾莱"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__022_1_9_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__022_1_9_地牢剧情:4.1.3",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N018",
+      "q": "齐声应和的学生——这是哪个概念？",
+      "ref": "学生众",
+      "evidence": [
+        [
+          "学生众"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_103_故事一无所有",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__103_故事一无所有:0.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N019",
+      "q": "「无线电小姐」翻译的对象是谁？",
+      "ref": "约翰·提托",
+      "evidence": [
+        [
+          "约翰·提托"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1914_只有泉水知道",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1914_只有泉水知道:1.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N020",
+      "q": "谁宣称了「蓝手帕」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_21101_77号往事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__21101_77号往事:16.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N021",
+      "q": "蒙玛尔特的画家工坊——这是哪个地点？",
+      "ref": "流动洗衣房",
+      "evidence": [
+        [
+          "流动洗衣房"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:8.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N022",
+      "q": "「鹭鸶剪」自陈的对象是什么？",
+      "ref": "长生之法",
+      "evidence": [
+        [
+          "长生之法"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34101_不老春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__34101_不老春:5.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N023",
+      "q": "谁进言了「十四行诗」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__003_1_4_回归活动",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__003_1_4_回归活动:1.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N024",
+      "q": "被质疑方向的颠覆性艺术运动——这是哪个概念？",
+      "ref": "壁画复兴运动",
+      "evidence": [
+        [
+          "壁画复兴运动"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:16.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N025",
+      "q": "「塞梅尔维斯」追问下落的对象是谁？",
+      "ref": "罗蕾莱",
+      "evidence": [
+        [
+          "罗蕾莱"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__022_1_9_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__022_1_9_地牢剧情:4.1.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N026",
+      "q": "谁警示了「卡珊德拉」？",
+      "ref": "伯里克利",
+      "evidence": [
+        [
+          "伯里克利"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_305201_入雅典记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__305201_入雅典记:1.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N027",
+      "q": "闻名于世的维也纳甜点——这是哪个物品？",
+      "ref": "萨赫蛋糕",
+      "evidence": [
+        [
+          "萨赫蛋糕"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_106_今夜星光灿烂",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__106_今夜星光灿烂:2.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N028",
+      "q": "「蓝手帕」宣称的对象是谁？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_21101_77号往事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__21101_77号往事:16.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N029",
+      "q": "谁维护了「维尔汀」？",
+      "ref": "苏芙比",
+      "evidence": [
+        [
+          "苏芙比"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1913_淑女的守则",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1913_淑女的守则:3.1.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N030",
+      "q": "37据以理解星锑的类别——这是哪个概念？",
+      "ref": "无理数",
+      "evidence": [
+        [
+          "无理数"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_105_洞穴的囚徒",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__105_洞穴的囚徒:18.2.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N031",
+      "q": "「十四行诗」进言的对象是谁？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__003_1_4_回归活动",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__003_1_4_回归活动:1.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N032",
+      "q": "谁致电了「洛佩拉」？",
+      "ref": "莫莉德尔",
+      "evidence": [
+        [
+          "莫莉德尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_22911_洛佩拉玩法剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N033",
+      "q": "无可奉告的施工方代表——这是哪个角色？",
+      "ref": "神秘相关人士",
+      "evidence": [
+        [
+          "神秘相关人士"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:18.0.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N034",
+      "q": "「卡珊德拉」警示的对象是谁？",
+      "ref": "伯里克利",
+      "evidence": [
+        [
+          "伯里克利"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_305201_入雅典记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__305201_入雅典记:1.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N035",
+      "q": "谁倾听了「卡卡尼亚」？",
+      "ref": "伊索尔德",
+      "evidence": [
+        [
+          "伊索尔德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_19603_犹在镜中",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__19603_犹在镜中:7.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N036",
+      "q": "建议给主角取名者；虚构集的诗人伙伴——这是哪个角色？",
+      "ref": "玛利亚",
+      "evidence": [
+        [
+          "玛利亚"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_109_疯癫与文明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__109_疯癫与文明:0.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N037",
+      "q": "「牙仙」警告的对象是什么？",
+      "ref": "魔精",
+      "evidence": [
+        [
+          "魔精"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_12101_绿湖噩梦",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__12101_绿湖噩梦:17.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N038",
+      "q": "谁迷惘了「维尔汀」？",
+      "ref": "斑纹马",
+      "evidence": [
+        [
+          "斑纹马"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16101_朔日手记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__16101_朔日手记:22.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N039",
+      "q": "响起在身上的联络器——这是哪个物品？",
+      "ref": "塞梅尔维斯的通讯设备",
+      "evidence": [
+        [
+          "塞梅尔维斯的通讯设备"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__005_1_6_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__005_1_6_地牢剧情:1.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N040",
+      "q": "「维尔汀」维护的对象是谁？",
+      "ref": "苏芙比",
+      "evidence": [
+        [
+          "苏芙比"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1913_淑女的守则",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1913_淑女的守则:3.1.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N041",
+      "q": "谁道听了「野木蓝」？",
+      "ref": "拉莫纳",
+      "evidence": [
+        [
+          "拉莫纳"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:6.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N042",
+      "q": "有位盲眼医生，稿件寄出地——这是哪个地点？",
+      "ref": "荣军院",
+      "evidence": [
+        [
+          "荣军院"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:0.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N043",
+      "q": "「克努特大叔」宽慰的对象是谁？",
+      "ref": "北方哨歌",
+      "evidence": [
+        [
+          "北方哨歌"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:13.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N044",
+      "q": "谁报告了「安保员」？",
+      "ref": "艾弗森",
+      "evidence": [
+        [
+          "艾弗森"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:13.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N045",
+      "q": "被她保存得很好的那枝花——这是哪个物品？",
+      "ref": "致意亚琛",
+      "evidence": [
+        [
+          "致意亚琛"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__057_2_4_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__057_2_4_地牢剧情:0.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N046",
+      "q": "「洛佩拉」致电的对象是谁？",
+      "ref": "莫莉德尔",
+      "evidence": [
+        [
+          "莫莉德尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_22911_洛佩拉玩法剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N047",
+      "q": "谁瓦解了「灵魂移转术」？",
+      "ref": "渡鸦使魔",
+      "evidence": [
+        [
+          "渡鸦使魔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:13.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N048",
+      "q": "明黄质地脉痕迹的掘矿魔精——这是哪个概念？",
+      "ref": "霍伊图克",
+      "evidence": [
+        [
+          "霍伊图克"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:7.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N049",
+      "q": "「莱昂纳多」出示的对象是什么？",
+      "ref": "双层穹顶",
+      "evidence": [
+        [
+          "双层穹顶"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_305101_翡冷翠之春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__305101_翡冷翠之春:4.2.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N050",
+      "q": "哪个组织代表了「尤里」？",
+      "ref": "骑兵军",
+      "evidence": [
+        [
+          "骑兵军"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:12.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N051",
+      "q": "被拉入的奇异空间——这是哪个地点？",
+      "ref": "宇宙的侧面",
+      "evidence": [
+        [
+          "宇宙的侧面"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_27101_1987宇宙组曲",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__27101_1987宇宙组曲:17.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N052",
+      "q": "「卡卡尼亚」倾听的对象是谁？",
+      "ref": "伊索尔德",
+      "evidence": [
+        [
+          "伊索尔德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_19603_犹在镜中",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__19603_犹在镜中:7.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N053",
+      "q": "谁担忧了「艾米莉亚」？",
+      "ref": "卢卡斯",
+      "evidence": [
+        [
+          "卢卡斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_113_他者的悲哀",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__113_他者的悲哀:2.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N054",
+      "q": "把三轮借给坎吉拉的人——这是哪个角色？",
+      "ref": "辛哈大叔",
+      "evidence": [
+        [
+          "辛哈大叔"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:2.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N055",
+      "q": "「维尔汀」迷惘的对象是谁？",
+      "ref": "斑纹马",
+      "evidence": [
+        [
+          "斑纹马"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16101_朔日手记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__16101_朔日手记:22.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N056",
+      "q": "谁赠予了「贾纳丹」？",
+      "ref": "坎吉拉",
+      "evidence": [
+        [
+          "坎吉拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1924_在路上",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1924_在路上:7.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N057",
+      "q": "剃刀小队支援后要回去出任务之地——这是哪个地点？",
+      "ref": "巴尔干半岛",
+      "evidence": [
+        [
+          "巴尔干半岛"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_105_洞穴的囚徒",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__105_洞穴的囚徒:4.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N058",
+      "q": "「奇星」引述的对象是什么？",
+      "ref": "强梁",
+      "evidence": [
+        [
+          "强梁"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_25101_唐人街影话",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__25101_唐人街影话:3.2.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N059",
+      "q": "谁求情了「卡戎」？",
+      "ref": "布劳恩少校",
+      "evidence": [
+        [
+          "布劳恩少校"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_111_行于漫漫长路上",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__111_行于漫漫长路上:5.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N060",
+      "q": "另一名芝诺士兵——这是哪个角色？",
+      "ref": "安东尼奥",
+      "evidence": [
+        [
+          "安东尼奥"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_22911_洛佩拉玩法剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__22911_洛佩拉玩法剧情:3.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N061",
+      "q": "「布莱克汉警长」定址的对象是哪里？",
+      "ref": "老鼠大道",
+      "evidence": [
+        [
+          "老鼠大道"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20601_旧金山小子",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__20601_旧金山小子:5.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N062",
+      "q": "谁劝慰了「贝蒂」？",
+      "ref": "琼斯",
+      "evidence": [
+        [
+          "琼斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1922_最后的电影",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1922_最后的电影:6.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N063",
+      "q": "在蓝手帕旅馆有过一面之缘者——这是哪个角色？",
+      "ref": "金伯利女郎",
+      "evidence": [
+        [
+          "金伯利女郎"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:3.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N064",
+      "q": "「野木蓝」道听的对象是谁？",
+      "ref": "拉莫纳",
+      "evidence": [
+        [
+          "拉莫纳"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_35101_绿松石蛇俱乐部",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__35101_绿松石蛇俱乐部:6.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N065",
+      "q": "谁承诺了「邓肯先生」？",
+      "ref": "洛佩拉",
+      "evidence": [
+        [
+          "洛佩拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:5.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N066",
+      "q": "受伤的幸存者——这是哪个角色？",
+      "ref": "牧羊女",
+      "evidence": [
+        [
+          "牧羊女"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1910_风吹乌哈拉",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1910_风吹乌哈拉:2.0.3",
+      "_pool": "T2"
+    },
+    {
+      "id": "N067",
+      "q": "「亚齐」闭关的对象是哪里？",
+      "ref": "阿派朗",
+      "evidence": [
+        [
+          "阿派朗"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_19101_漫漫之夜行迹",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__19101_漫漫之夜行迹:1.0.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N068",
+      "q": "谁回应了「迪吉里木」？",
+      "ref": "笃笃骨",
+      "evidence": [
+        [
+          "笃笃骨"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23101_圣火纪行_东区黎明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__23101_圣火纪行_东区黎明:17.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N069",
+      "q": "不翼而飞的箱子核心——这是哪个物品？",
+      "ref": "玩具箱的核心",
+      "evidence": [
+        [
+          "玩具箱的核心"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__063_3_1_雨前漫游",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__063_3_1_雨前漫游:0.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N070",
+      "q": "「安保员」报告的对象是谁？",
+      "ref": "艾弗森",
+      "evidence": [
+        [
+          "艾弗森"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:13.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N071",
+      "q": "谁阐明了「未锈铠」？",
+      "ref": "泥鯭的士",
+      "evidence": [
+        [
+          "泥鯭的士"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1907_第九条美德",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1907_第九条美德:3.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N072",
+      "q": "训练所在基地——这是哪个地点？",
+      "ref": "普列谢茨克航天发射场",
+      "evidence": [
+        [
+          "普列谢茨克航天发射场"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:3.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N073",
+      "q": "「雾行者」声明的对象是什么？",
+      "ref": "应急预案",
+      "evidence": [
+        [
+          "应急预案"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1914_只有泉水知道",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1914_只有泉水知道:5.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N074",
+      "q": "哪个组织宣告了「玛蒂尔达」？",
+      "ref": "圣洛夫基金会",
+      "evidence": [
+        [
+          "圣洛夫基金会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20101_飞驰_明日之城",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__20101_飞驰_明日之城:16.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N075",
+      "q": "眼珠转动喉头发响的乘客——这是哪个角色？",
+      "ref": "生病的乘客",
+      "evidence": [
+        [
+          "生病的乘客"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_31101_长夜鸣笛",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__31101_长夜鸣笛:8.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N076",
+      "q": "「伽菈波那」演讲的对象是什么？",
+      "ref": "类星体",
+      "evidence": [
+        [
+          "类星体"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:0.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N077",
+      "q": "谁催促了「费利西安」？",
+      "ref": "贝丽尔",
+      "evidence": [
+        [
+          "贝丽尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:17.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N078",
+      "q": "富商为仙人办的戏台典礼——这是哪个事件？",
+      "ref": "入世典仪",
+      "evidence": [
+        [
+          "入世典仪"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34101_不老春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__34101_不老春:4.0.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N079",
+      "q": "「玛蒂尔达」设想的对象是哪里？",
+      "ref": "隧道",
+      "evidence": [
+        [
+          "隧道"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:11.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N080",
+      "q": "谁释明了「帕米埃」？",
+      "ref": "乔治",
+      "evidence": [
+        [
+          "乔治"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1903_帕米埃角色故事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1903_帕米埃角色故事:7.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N081",
+      "q": "格雷克家养女，重塑之手雇佣的枪手——这是哪个角色？",
+      "ref": "斯奈德",
+      "evidence": [
+        [
+          "斯奈德"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_101_在我们的时代里",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__101_在我们的时代里:4.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N082",
+      "q": "「野树莓」摩挲的对象是什么？",
+      "ref": "卡瓦尔长笛",
+      "evidence": [
+        [
+          "卡瓦尔长笛"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_31101_长夜鸣笛",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__31101_长夜鸣笛:3.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N083",
+      "q": "谁类比了「卡戎」？",
+      "ref": "帕蒂塔",
+      "evidence": [
+        [
+          "帕蒂塔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_30601_三重赋格",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__30601_三重赋格:3.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N084",
+      "q": "RGD5编号之手雷——这是哪个物品？",
+      "ref": "高爆手榴弹",
+      "evidence": [
+        [
+          "高爆手榴弹"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_110_复乐园",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__110_复乐园:7.0.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N085",
+      "q": "「尤里」代表的对象是哪个组织？",
+      "ref": "骑兵军",
+      "evidence": [
+        [
+          "骑兵军"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:12.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N086",
+      "q": "哪个组织尽责了「任仙子」？",
+      "ref": "梅花教",
+      "evidence": [
+        [
+          "梅花教"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34101_不老春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__34101_不老春:9.0.3",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N087",
+      "q": "检查钻机的工人——这是哪个角色？",
+      "ref": "埃琳娜",
+      "evidence": [
+        [
+          "埃琳娜"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:15.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N088",
+      "q": "「艾米莉亚」担忧的对象是谁？",
+      "ref": "卢卡斯",
+      "evidence": [
+        [
+          "卢卡斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_113_他者的悲哀",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__113_他者的悲哀:2.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N089",
+      "q": "谁意图了「康斯坦丁」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_103_故事一无所有",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__103_故事一无所有:13.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N090",
+      "q": "失魂的歌唱家——这是哪个角色？",
+      "ref": "伊文洁琳",
+      "evidence": [
+        [
+          "伊文洁琳"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_17701_小房间",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__17701_小房间:0.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N091",
+      "q": "「冷周六」贺礼的对象是什么？",
+      "ref": "工牌",
+      "evidence": [
+        [
+          "工牌"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_27101_1987宇宙组曲",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__27101_1987宇宙组曲:11.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N092",
+      "q": "谁抚慰了「小鸟」？",
+      "ref": "利伯蒂",
+      "evidence": [
+        [
+          "利伯蒂"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23601_夜游十字街",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__23601_夜游十字街:0.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N093",
+      "q": "即将失理智的成员；躯化油画的队员——这是哪个角色？",
+      "ref": "安杰罗",
+      "evidence": [
+        [
+          "安杰罗"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__022_1_9_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__022_1_9_地牢剧情:9.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N094",
+      "q": "「贾纳丹」赠予的对象是谁？",
+      "ref": "坎吉拉",
+      "evidence": [
+        [
+          "坎吉拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1924_在路上",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1924_在路上:7.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N095",
+      "q": "谁忌惮了「哑谜」？",
+      "ref": "康斯坦丁",
+      "evidence": [
+        [
+          "康斯坦丁"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_36101_人们向何处去",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__36101_人们向何处去:4.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N096",
+      "q": "失败主义与绝望——这是哪个概念？",
+      "ref": "时代病",
+      "evidence": [
+        [
+          "时代病"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_113_他者的悲哀",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__113_他者的悲哀:10.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N097",
+      "q": "「托阿」坚持的对象是什么？",
+      "ref": "古铜色面具",
+      "evidence": [
+        [
+          "古铜色面具"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:14.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N098",
+      "q": "谁看守了「剃刀」？",
+      "ref": "伊索尔德",
+      "evidence": [
+        [
+          "伊索尔德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_107_孤独之歌",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__107_孤独之歌:25.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N099",
+      "q": "推搡并污蔑女巫的男孩——这是哪个角色？",
+      "ref": "淘气鬼弗洛狄",
+      "evidence": [
+        [
+          "淘气鬼弗洛狄"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23101_圣火纪行_东区黎明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__23101_圣火纪行_东区黎明:4.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N100",
+      "q": "「斯考特」毕业的对象是哪里？",
+      "ref": "第一防线学校",
+      "evidence": [
+        [
+          "第一防线学校"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_25101_唐人街影话",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__25101_唐人街影话:5.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N101",
+      "q": "谁呼唤了「塞梅尔维斯」？",
+      "ref": "罗蕾莱",
+      "evidence": [
+        [
+          "罗蕾莱"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__057_2_4_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__057_2_4_地牢剧情:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N102",
+      "q": "针对兀尔德的实验——这是哪个事件？",
+      "ref": "灌体实验",
+      "evidence": [
+        [
+          "灌体实验"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:10.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N103",
+      "q": "「库玛尔」欲言的对象是谁？",
+      "ref": "伽菈波那",
+      "evidence": [
+        [
+          "伽菈波那"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:0.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N104",
+      "q": "谁约战了「秀郎中」？",
+      "ref": "程和光",
+      "evidence": [
+        [
+          "程和光"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34701_打虎记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__34701_打虎记:3.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N105",
+      "q": "捂住女孩面孔的难民男子——这是哪个角色？",
+      "ref": "雅科夫",
+      "evidence": [
+        [
+          "雅科夫"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_31101_长夜鸣笛",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__31101_长夜鸣笛:10.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N106",
+      "q": "「梁月」认清的对象是哪里？",
+      "ref": "唐人街",
+      "evidence": [
+        [
+          "唐人街"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_25101_唐人街影话",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__25101_唐人街影话:17.2.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N107",
+      "q": "谁掩护了「贝托尔特」？",
+      "ref": "红弩箭",
+      "evidence": [
+        [
+          "红弩箭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1910_风吹乌哈拉",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1910_风吹乌哈拉:3.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N108",
+      "q": "威尔森公司员工——这是哪个角色？",
+      "ref": "男性职员",
+      "evidence": [
+        [
+          "男性职员"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1908_齿轮的意志",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1908_齿轮的意志:5.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N109",
+      "q": "「小梅斯梅尔」收走的对象是什么？",
+      "ref": "聚合物针剂",
+      "evidence": [
+        [
+          "聚合物针剂"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_385101_聚合浪潮",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__385101_聚合浪潮:2.3.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N110",
+      "q": "谁拒听了「琳赛女士」？",
+      "ref": "塞梅尔维斯",
+      "evidence": [
+        [
+          "塞梅尔维斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__061_2_6_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:1.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N111",
+      "q": "三张纸牌中被寻获的王后——这是哪个物品？",
+      "ref": "黑桃王后",
+      "evidence": [
+        [
+          "黑桃王后"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__002_1_3_最初的诗赛季剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__002_1_3_最初的诗赛季剧情:0.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N112",
+      "q": "「贝蒂」使用的对象是什么？",
+      "ref": "神秘术",
+      "evidence": [
+        [
+          "神秘术"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1922_最后的电影",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1922_最后的电影:1.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N113",
+      "q": "谁拒绝谈判了「霍夫曼」？",
+      "ref": "海因里希",
+      "evidence": [
+        [
+          "海因里希"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_106_今夜星光灿烂",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__106_今夜星光灿烂:19.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N114",
+      "q": "即将驶入的聚集区海怪——这是哪个概念？",
+      "ref": "巨齿飞鳐",
+      "evidence": [
+        [
+          "巨齿飞鳐"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:6.2.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N115",
+      "q": "「卡卡尼亚」赶赴的对象是什么事件？",
+      "ref": "艺术沙龙",
+      "evidence": [
+        [
+          "艺术沙龙"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__022_1_9_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__022_1_9_地牢剧情:1.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N116",
+      "q": "谁赠予了「金蜜儿」？",
+      "ref": "小杰克",
+      "evidence": [
+        [
+          "小杰克"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1915_起火点",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1915_起火点:5.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N117",
+      "q": "蹦上观测台高处的黑影——这是哪个概念？",
+      "ref": "特里波德罗",
+      "evidence": [
+        [
+          "特里波德罗"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:3.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N118",
+      "q": "「小叶尼塞」追问的对象是谁？",
+      "ref": "巨鸟",
+      "evidence": [
+        [
+          "巨鸟"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16101_朔日手记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__16101_朔日手记:4.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N119",
+      "q": "谁抵赖了「贝克特」？",
+      "ref": "霍利克",
+      "evidence": [
+        [
+          "霍利克"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20601_旧金山小子",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__20601_旧金山小子:7.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N120",
+      "q": "在伦敦制造彩虹泡泡的艺术怪人——这是哪个角色？",
+      "ref": "挖掘艺术",
+      "evidence": [
+        [
+          "挖掘艺术"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:0.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N121",
+      "q": "「上一任雾行者」带去的对象是什么？",
+      "ref": "希望",
+      "evidence": [
+        [
+          "希望"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1901_雾行者角色故事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1901_雾行者角色故事:5.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N122",
+      "q": "谁应制了「诺娜·伊斯特」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1912_塞梅尔维斯",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1912_塞梅尔维斯:5.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N123",
+      "q": "所有人共有的意识之湖——这是哪个概念？",
+      "ref": "集体潜意识",
+      "evidence": [
+        [
+          "集体潜意识"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:3.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N124",
+      "q": "「卡戎」求情的对象是谁？",
+      "ref": "布劳恩少校",
+      "evidence": [
+        [
+          "布劳恩少校"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_111_行于漫漫长路上",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__111_行于漫漫长路上:5.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N125",
+      "q": "谁拥抱了「威廉姆斯」？",
+      "ref": "珍妮弗",
+      "evidence": [
+        [
+          "珍妮弗"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1905_庸碌喜剧",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1905_庸碌喜剧:5.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N126",
+      "q": "考验观者眼力者——这是哪个角色？",
+      "ref": "罗贝托",
+      "evidence": [
+        [
+          "罗贝托"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_109_疯癫与文明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__109_疯癫与文明:5.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N127",
+      "q": "「贝蒂」劝慰的对象是谁？",
+      "ref": "琼斯",
+      "evidence": [
+        [
+          "琼斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1922_最后的电影",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1922_最后的电影:6.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N128",
+      "q": "谁招呼了「德洛姆」？",
+      "ref": "弗雷明",
+      "evidence": [
+        [
+          "弗雷明"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1925_钻石游戏",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1925_钻石游戏:4.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N129",
+      "q": "把孩子与父母冲散的流放——这是哪个事件？",
+      "ref": "大流放",
+      "evidence": [
+        [
+          "大流放"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:6.2.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N130",
+      "q": "「邓肯先生」承诺的对象是谁？",
+      "ref": "洛佩拉",
+      "evidence": [
+        [
+          "洛佩拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:5.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N131",
+      "q": "谁提议了「佩德拉」？",
+      "ref": "露西",
+      "evidence": [
+        [
+          "露西"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1918_长夜未逝",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1918_长夜未逝:7.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N132",
+      "q": "实验所在之处——这是哪个地点？",
+      "ref": "洛伦兹实验室",
+      "evidence": [
+        [
+          "洛伦兹实验室"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_305101_翡冷翠之春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__305101_翡冷翠之春:0.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N133",
+      "q": "「未锈铠」阐明的对象是谁？",
+      "ref": "泥鯭的士",
+      "evidence": [
+        [
+          "泥鯭的士"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1907_第九条美德",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1907_第九条美德:3.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N134",
+      "q": "哪个组织说明了「爱兹拉」？",
+      "ref": "科算中心",
+      "evidence": [
+        [
+          "科算中心"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_15101_复兴_乌卢鲁运动会",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__15101_复兴_乌卢鲁运动会:6.1.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N135",
+      "q": "圣保罗城中的奇物——这是哪个角色？",
+      "ref": "白朗姆",
+      "evidence": [
+        [
+          "白朗姆"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:1.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N136",
+      "q": "「玛蒂尔达」宣告的对象是哪个组织？",
+      "ref": "圣洛夫基金会",
+      "evidence": [
+        [
+          "圣洛夫基金会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20101_飞驰_明日之城",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__20101_飞驰_明日之城:16.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N137",
+      "q": "谁质问了「绅士约翰尼」？",
+      "ref": "星锑",
+      "evidence": [
+        [
+          "星锑"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1920_最佳乐队",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1920_最佳乐队:6.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N138",
+      "q": "未到场投票的成员——这是哪个角色？",
+      "ref": "彼得洛夫",
+      "evidence": [
+        [
+          "彼得洛夫"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16101_朔日手记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__16101_朔日手记:1.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N139",
+      "q": "「伊戈尔」报告的对象是谁？",
+      "ref": "卡卡尼亚",
+      "evidence": [
+        [
+          "卡卡尼亚"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:9.0.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N140",
+      "q": "谁自陈了「星锑」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:14.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N141",
+      "q": "被扶正的通讯胸针——这是哪个物品？",
+      "ref": "蛛网胸针",
+      "evidence": [
+        [
+          "蛛网胸针"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34101_不老春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__34101_不老春:0.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N142",
+      "q": "「费利西安」催促的对象是谁？",
+      "ref": "贝丽尔",
+      "evidence": [
+        [
+          "贝丽尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:17.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N143",
+      "q": "谁讲述了「伽菈波那」？",
+      "ref": "蚁垤",
+      "evidence": [
+        [
+          "蚁垤"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__002_1_3_最初的诗赛季剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__002_1_3_最初的诗赛季剧情:3.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N144",
+      "q": "河对岸伏击者——这是哪个角色？",
+      "ref": "匪军",
+      "evidence": [
+        [
+          "匪军"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:0.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N145",
+      "q": "「回声谣」追悔的对象是谁？",
+      "ref": "小洪扎",
+      "evidence": [
+        [
+          "小洪扎"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:15.3.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N146",
+      "q": "谁展读留书了「白雪松」？",
+      "ref": "曲娘",
+      "evidence": [
+        [
+          "曲娘"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__006_1_6_赛季剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__006_1_6_赛季剧情:4.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N147",
+      "q": "长着翅膀的人形生物——这是哪个角色？",
+      "ref": "巨鸟",
+      "evidence": [
+        [
+          "巨鸟"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16101_朔日手记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__16101_朔日手记:4.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N148",
+      "q": "「指针」示警的对象是什么？",
+      "ref": "玩具箱",
+      "evidence": [
+        [
+          "玩具箱"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_36101_人们向何处去",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__36101_人们向何处去:6.1.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N149",
+      "q": "谁邀演了「布莱恩·芬努」？",
+      "ref": "温妮弗雷德",
+      "evidence": [
+        [
+          "温妮弗雷德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1909_致温妮弗雷德",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1909_致温妮弗雷德:3.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N150",
+      "q": "挖掘艺术纵身跃入的狭小通道——这是哪个物品？",
+      "ref": "通风管道",
+      "evidence": [
+        [
+          "通风管道"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:6.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N151",
+      "q": "「帕米埃」释明的对象是谁？",
+      "ref": "乔治",
+      "evidence": [
+        [
+          "乔治"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1903_帕米埃角色故事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1903_帕米埃角色故事:7.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N152",
+      "q": "谁认出了「槲寄生」？",
+      "ref": "红弩箭",
+      "evidence": [
+        [
+          "红弩箭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_104_老虎的金黄",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__104_老虎的金黄:19.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N153",
+      "q": "提供稿件来源信息者——这是哪个角色？",
+      "ref": "数羊羔",
+      "evidence": [
+        [
+          "数羊羔"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:0.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N154",
+      "q": "「卡卡尼亚」自省的对象是谁？",
+      "ref": "中年男人",
+      "evidence": [
+        [
+          "中年男人"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_19603_犹在镜中",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__19603_犹在镜中:2.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N155",
+      "q": "谁自陈了「阿莱夫」？",
+      "ref": "虚构集",
+      "evidence": [
+        [
+          "虚构集"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_109_疯癫与文明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__109_疯癫与文明:14.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N156",
+      "q": "指挥阿贾尔行窃的少女——这是哪个角色？",
+      "ref": "坎吉拉",
+      "evidence": [
+        [
+          "坎吉拉"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:1.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N157",
+      "q": "「卡戎」类比的对象是谁？",
+      "ref": "帕蒂塔",
+      "evidence": [
+        [
+          "帕蒂塔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_30601_三重赋格",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__30601_三重赋格:3.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N158",
+      "q": "谁附和了「梅兰妮」？",
+      "ref": "艾西",
+      "evidence": [
+        [
+          "艾西"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__074_雷米特杯赛季活动",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__074_雷米特杯赛季活动:1.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N159",
+      "q": "尼娜最喜爱的食物——这是哪个物品？",
+      "ref": "阿廖卡",
+      "evidence": [
+        [
+          "阿廖卡"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:0.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N160",
+      "q": "「挖掘艺术」惊惧的对象是什么？",
+      "ref": "勃朗宁手枪",
+      "evidence": [
+        [
+          "勃朗宁手枪"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1916_权利归花儿",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1916_权利归花儿:1.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N161",
+      "q": "谁禀报了「十四行诗」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1923_海风的往事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1923_海风的往事:0.0.2",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N162",
+      "q": "有太多称呼的那个所在——这是哪个概念？",
+      "ref": "迷思海",
+      "evidence": [
+        [
+          "迷思海"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:11.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N163",
+      "q": "「圈环」使用的对象是什么？",
+      "ref": "沙米尔虫",
+      "evidence": [
+        [
+          "沙米尔虫"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_103_故事一无所有",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__103_故事一无所有:15.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N164",
+      "q": "哪个组织仿自了「玩具箱」？",
+      "ref": "科算中心",
+      "evidence": [
+        [
+          "科算中心"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__067_3_4_雨前漫游",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__067_3_4_雨前漫游:1.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N165",
+      "q": "打趣老查理的舵手——这是哪个角色？",
+      "ref": "舵手乔瓦尼",
+      "evidence": [
+        [
+          "舵手乔瓦尼"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_24101_地球上最后的夜晚",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__24101_地球上最后的夜晚:7.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N166",
+      "q": "「任仙子」尽责的对象是哪个组织？",
+      "ref": "梅花教",
+      "evidence": [
+        [
+          "梅花教"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34101_不老春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__34101_不老春:9.0.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N167",
+      "q": "谁压迫了「卡尔」？",
+      "ref": "伊索尔德",
+      "evidence": [
+        [
+          "伊索尔德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_17701_小房间",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__17701_小房间:7.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N168",
+      "q": "与会者仅两人的茶话会——这是哪个事件？",
+      "ref": "血食怪下午茶话会",
+      "evidence": [
+        [
+          "血食怪下午茶话会"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__061_2_6_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:3.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N169",
+      "q": "「修士」质询的对象是谁？",
+      "ref": "帕米埃",
+      "evidence": [
+        [
+          "帕米埃"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1903_帕米埃角色故事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1903_帕米埃角色故事:6.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N170",
+      "q": "谁追问了「命名日」？",
+      "ref": "冷周六",
+      "evidence": [
+        [
+          "冷周六"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_27101_1987宇宙组曲",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__27101_1987宇宙组曲:6.0.3",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N171",
+      "q": "旧部，后勤专车司机——这是哪个角色？",
+      "ref": "埃米尔",
+      "evidence": [
+        [
+          "埃米尔"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1912_塞梅尔维斯",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1912_塞梅尔维斯:0.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N172",
+      "q": "「莱昂纳多」命名的对象是哪里？",
+      "ref": "雨幕舞台",
+      "evidence": [
+        [
+          "雨幕舞台"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_305101_翡冷翠之春",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__305101_翡冷翠之春:0.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N173",
+      "q": "谁寄语了「信件」？",
+      "ref": "罗兰",
+      "evidence": [
+        [
+          "罗兰"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1907_第九条美德",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1907_第九条美德:6.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N174",
+      "q": "自天际与体内同响的声音；自称你是我们者——这是哪个角色？",
+      "ref": "无明的回声",
+      "evidence": [
+        [
+          "无明的回声"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:15.2.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N175",
+      "q": "「坦南特」说明的对象是什么？",
+      "ref": "木炭",
+      "evidence": [
+        [
+          "木炭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1925_钻石游戏",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1925_钻石游戏:3.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N176",
+      "q": "谁告知了「十四行诗」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_110_复乐园",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__110_复乐园:24.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N177",
+      "q": "需收回工具后自力更生的工作——这是哪个概念？",
+      "ref": "除灵",
+      "evidence": [
+        [
+          "除灵"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1921_鬼马探灵记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1921_鬼马探灵记:4.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N178",
+      "q": "「康斯坦丁」意图的对象是谁？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_103_故事一无所有",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__103_故事一无所有:13.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N179",
+      "q": "谁齐答了「众学生」？",
+      "ref": "教员",
+      "evidence": [
+        [
+          "教员"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1904_埃里克角色故事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1904_埃里克角色故事:1.2.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N180",
+      "q": "以硝酸闪光纸骗过机器人的窃贼——这是哪个角色？",
+      "ref": "梅兰妮",
+      "evidence": [
+        [
+          "梅兰妮"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:1.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N181",
+      "q": "「小鸟」抚慰的对象是谁？",
+      "ref": "利伯蒂",
+      "evidence": [
+        [
+          "利伯蒂"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23601_夜游十字街",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__23601_夜游十字街:0.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N182",
+      "q": "谁指控了「星锑」？",
+      "ref": "无线电小姐",
+      "evidence": [
+        [
+          "无线电小姐"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_105_洞穴的囚徒",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__105_洞穴的囚徒:0.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N183",
+      "q": "北方哨歌所研究的学派——这是哪个概念？",
+      "ref": "理线学",
+      "evidence": [
+        [
+          "理线学"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_18101_再见_来亚什基",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__18101_再见_来亚什基:1.2.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N184",
+      "q": "「布莱恩·芬努」认忆的对象是哪里？",
+      "ref": "房子",
+      "evidence": [
+        [
+          "房子"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1909_致温妮弗雷德",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1909_致温妮弗雷德:7.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N185",
+      "q": "谁投喂了「曲娘」？",
+      "ref": "酒诗人",
+      "evidence": [
+        [
+          "酒诗人"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16601_曲香蒙求",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__16601_曲香蒙求:3.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N186",
+      "q": "折返传召的基金会职员——这是哪个角色？",
+      "ref": "圣洛夫基金会职员",
+      "evidence": [
+        [
+          "圣洛夫基金会职员"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_38101_世纪末尺度",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__38101_世纪末尺度:17.0.3",
+      "_pool": "T2"
+    },
+    {
+      "id": "N187",
+      "q": "「哑谜」忌惮的对象是谁？",
+      "ref": "康斯坦丁",
+      "evidence": [
+        [
+          "康斯坦丁"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_36101_人们向何处去",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__36101_人们向何处去:4.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N188",
+      "q": "谁并坐了「牙仙」？",
+      "ref": "利伯蒂",
+      "evidence": [
+        [
+          "利伯蒂"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23101_圣火纪行_东区黎明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__23101_圣火纪行_东区黎明:13.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N189",
+      "q": "死于谋杀的幽灵——这是哪个角色？",
+      "ref": "赶驴人",
+      "evidence": [
+        [
+          "赶驴人"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_109_疯癫与文明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__109_疯癫与文明:5.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N190",
+      "q": "「玛蒂尔达」监督的对象是什么事件？",
+      "ref": "扭扭舞会",
+      "evidence": [
+        [
+          "扭扭舞会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__018_1_9_去往新世界_玛蒂尔达",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__018_1_9_去往新世界_玛蒂尔达:0.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N191",
+      "q": "谁应允了「环状水星」？",
+      "ref": "断指",
+      "evidence": [
+        [
+          "断指"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1919_黄金与悲喜剧",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1919_黄金与悲喜剧:1.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N192",
+      "q": "梦见星星带自己进镇的女孩——这是哪个角色？",
+      "ref": "库珀花环",
+      "evidence": [
+        [
+          "库珀花环"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_27101_1987宇宙组曲",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__27101_1987宇宙组曲:3.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N193",
+      "q": "「剃刀」看守的对象是谁？",
+      "ref": "伊索尔德",
+      "evidence": [
+        [
+          "伊索尔德"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_107_孤独之歌",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__107_孤独之歌:25.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N194",
+      "q": "谁询问了「兔毛手袋」？",
+      "ref": "冷周六",
+      "evidence": [
+        [
+          "冷周六"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__063_3_1_雨前漫游",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__063_3_1_雨前漫游:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N195",
+      "q": "科算中心内部机构，寻求暴雨真相——这是哪个组织？",
+      "ref": "洛伦兹研究所",
+      "evidence": [
+        [
+          "洛伦兹研究所"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_101_在我们的时代里",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__101_在我们的时代里:8.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N196",
+      "q": "「蓝手帕」递予的对象是谁？",
+      "ref": "红弩箭",
+      "evidence": [
+        [
+          "红弩箭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_21101_77号往事",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__21101_77号往事:3.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N197",
+      "q": "谁相认了「小春雀儿」？",
+      "ref": "泽维尔",
+      "evidence": [
+        [
+          "泽维尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1911_小春雀儿",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1911_小春雀儿:6.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N198",
+      "q": "展览馆的讲解员——这是哪个角色？",
+      "ref": "捷列什科娃",
+      "evidence": [
+        [
+          "捷列什科娃"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_385101_聚合浪潮",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__385101_聚合浪潮:2.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N199",
+      "q": "「暴雨小组组长乌尔里希」催促的对象是什么？",
+      "ref": "物资申请表",
+      "evidence": [
+        [
+          "物资申请表"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__062_2_8_启示录变相_收藏品",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__062_2_8_启示录变相_收藏品:0.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N200",
+      "q": "谁嘱清点了「小梅斯梅尔」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__014_1_9_去往新世界_小梅斯梅尔",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__014_1_9_去往新世界_小梅斯梅尔:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N201",
+      "q": "露西所怀念之物——这是哪个物品？",
+      "ref": "充电桩",
+      "evidence": [
+        [
+          "充电桩"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_107_孤独之歌",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__107_孤独之歌:29.0.3",
+      "_pool": "T2"
+    },
+    {
+      "id": "N202",
+      "q": "「尼古拉·富凯」曾拥有的对象是什么？",
+      "ref": "法兰西之蓝",
+      "evidence": [
+        [
+          "法兰西之蓝"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:7.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N203",
+      "q": "谁隶属了「佩希塔」？",
+      "ref": "重塑追随者",
+      "evidence": [
+        [
+          "重塑追随者"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__005_1_6_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__005_1_6_地牢剧情:1.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N204",
+      "q": "别列格勒市民代表——这是哪个角色？",
+      "ref": "费奥多尔·彼得罗维奇",
+      "evidence": [
+        [
+          "费奥多尔·彼得罗维奇"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:9.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N205",
+      "q": "「塞梅尔维斯」呼唤的对象是谁？",
+      "ref": "罗蕾莱",
+      "evidence": [
+        [
+          "罗蕾莱"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__057_2_4_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__057_2_4_地牢剧情:0.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N206",
+      "q": "哪个组织交流了「岛屿」？",
+      "ref": "阿派朗学派",
+      "evidence": [
+        [
+          "阿派朗学派"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__004_1_4_赛季剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__004_1_4_赛季剧情:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N207",
+      "q": "张罗庆祝的女士画像——这是哪个角色？",
+      "ref": "女性的画像",
+      "evidence": [
+        [
+          "女性的画像"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:13.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N208",
+      "q": "「秀郎中」约战的对象是谁？",
+      "ref": "程和光",
+      "evidence": [
+        [
+          "程和光"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_34701_打虎记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__34701_打虎记:3.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N209",
+      "q": "谁拉开了「基金会员工」？",
+      "ref": "芭芭拉",
+      "evidence": [
+        [
+          "芭芭拉"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20603_第一千夜",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__20603_第一千夜:7.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N210",
+      "q": "项目核心——向航天器送补给的术式——这是哪个概念？",
+      "ref": "传送术式",
+      "evidence": [
+        [
+          "传送术式"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_27101_1987宇宙组曲",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__27101_1987宇宙组曲:1.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N211",
+      "q": "「贝托尔特」掩护的对象是谁？",
+      "ref": "红弩箭",
+      "evidence": [
+        [
+          "红弩箭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1910_风吹乌哈拉",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1910_风吹乌哈拉:3.2.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N212",
+      "q": "哪个组织婉拒了「马库斯」？",
+      "ref": "圣洛夫基金会",
+      "evidence": [
+        [
+          "圣洛夫基金会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_17703_灯塔集",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__17703_灯塔集:1.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N213",
+      "q": "钳住李安安手腕的男孩——这是哪个角色？",
+      "ref": "大只佬",
+      "evidence": [
+        [
+          "大只佬"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1921_鬼马探灵记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1921_鬼马探灵记:1.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N214",
+      "q": "「马库斯」拾起的对象是什么？",
+      "ref": "匕首",
+      "evidence": [
+        [
+          "匕首"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_106_今夜星光灿烂",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__106_今夜星光灿烂:20.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N215",
+      "q": "哪个组织称赞了「苏芙比」？",
+      "ref": "圣洛夫基金会",
+      "evidence": [
+        [
+          "圣洛夫基金会"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__020_1_9_去往新世界_苏芙比",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__020_1_9_去往新世界_苏芙比:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N216",
+      "q": "对光点的误认——这是哪个概念？",
+      "ref": "萤火虫",
+      "evidence": [
+        [
+          "萤火虫"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23601_夜游十字街",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__23601_夜游十字街:2.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N217",
+      "q": "「查尔顿」怂恿的对象是谁？",
+      "ref": "皮克勒斯",
+      "evidence": [
+        [
+          "皮克勒斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_11101_雷米特杯失窃案",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__11101_雷米特杯失窃案:6.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N218",
+      "q": "谁嘱托了「教练」？",
+      "ref": "笃笃骨",
+      "evidence": [
+        [
+          "笃笃骨"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23501_太阳的背面",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__23501_太阳的背面:3.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N219",
+      "q": "被推荐的先生——这是哪个角色？",
+      "ref": "柳郎君",
+      "evidence": [
+        [
+          "柳郎君"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_16601_曲香蒙求",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__16601_曲香蒙求:2.0.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N220",
+      "q": "「琳赛女士」拒听的对象是谁？",
+      "ref": "塞梅尔维斯",
+      "evidence": [
+        [
+          "塞梅尔维斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__061_2_6_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:1.1.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N221",
+      "q": "谁录备了「星锑」？",
+      "ref": "强尼·卡什",
+      "evidence": [
+        [
+          "强尼·卡什"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__023_1_9_磁场留声机_收藏品",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__023_1_9_磁场留声机_收藏品:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N222",
+      "q": "能存储大型神秘术的载体——这是哪个物品？",
+      "ref": "软盘",
+      "evidence": [
+        [
+          "软盘"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_000_此即明日",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__000_此即明日:2.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N223",
+      "q": "「爱兹拉」阐明的对象是什么？",
+      "ref": "引火线虫草",
+      "evidence": [
+        [
+          "引火线虫草"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1917_乘法轴上的一天",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1917_乘法轴上的一天:2.0.3",
+      "_pool": "T1"
+    },
+    {
+      "id": "N224",
+      "q": "谁感谢了「槲寄生」？",
+      "ref": "勿忘我",
+      "evidence": [
+        [
+          "勿忘我"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_102_夜色温柔",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__102_夜色温柔:12.0.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N225",
+      "q": "被抢方向盘殃及的青年车主——这是哪个角色？",
+      "ref": "文森特",
+      "evidence": [
+        [
+          "文森特"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_32101_迁流的盛宴",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__32101_迁流的盛宴:2.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N226",
+      "q": "「哈桑」致谢的对象是谁？",
+      "ref": "红弩箭",
+      "evidence": [
+        [
+          "红弩箭"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1910_风吹乌哈拉",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1910_风吹乌哈拉:3.2.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N227",
+      "q": "谁讶异会言了「盘查的警察」？",
+      "ref": "皮克勒斯",
+      "evidence": [
+        [
+          "皮克勒斯"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__073_雷米特杯兑换活动",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__073_雷米特杯兑换活动:5.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N228",
+      "q": "罕见的神秘学家血脉——这是哪个概念？",
+      "ref": "轮回者",
+      "evidence": [
+        [
+          "轮回者"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_15101_复兴_乌卢鲁运动会",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__15101_复兴_乌卢鲁运动会:2.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N229",
+      "q": "「伯纳德先生」询问的对象是谁？",
+      "ref": "职员菲娜",
+      "evidence": [
+        [
+          "职员菲娜"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_20101_飞驰_明日之城",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__20101_飞驰_明日之城:2.0.4",
+      "_pool": "T1"
+    },
+    {
+      "id": "N230",
+      "q": "谁验证推断了「火渡船」？",
+      "ref": "珐琅眼",
+      "evidence": [
+        [
+          "珐琅眼"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__069_3_7_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__069_3_7_地牢剧情:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N231",
+      "q": "受命行窃却失手的男孩——这是哪个角色？",
+      "ref": "阿贾尔",
+      "evidence": [
+        [
+          "阿贾尔"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_13101_行至摩卢旁卡",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__13101_行至摩卢旁卡:1.1.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N232",
+      "q": "「弄臣」察觉的对象是什么？",
+      "ref": "魔精",
+      "evidence": [
+        [
+          "魔精"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__037_2_2_荒原经营驯化_弄臣",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__037_2_2_荒原经营驯化_弄臣:2.0.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N233",
+      "q": "谁计时了「露西」？",
+      "ref": "希梅娜",
+      "evidence": [
+        [
+          "希梅娜"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_19601_飞渡往日",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__19601_飞渡往日:0.0.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N234",
+      "q": "漂浮在空中被疯狂追赶的气球——这是哪个物品？",
+      "ref": "红气球",
+      "evidence": [
+        [
+          "红气球"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1919_黄金与悲喜剧",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1919_黄金与悲喜剧:1.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N235",
+      "q": "「弗兰兹」回避的对象是谁？",
+      "ref": "卡戎",
+      "evidence": [
+        [
+          "卡戎"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_30601_三重赋格",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "character__30601_三重赋格:7.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N236",
+      "q": "谁索邀了「玛蒂尔达」？",
+      "ref": "维尔汀",
+      "evidence": [
+        [
+          "维尔汀"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__018_1_9_去往新世界_玛蒂尔达",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__018_1_9_去往新世界_玛蒂尔达:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N237",
+      "q": "仪式所崇拜的神祇——这是哪个概念？",
+      "ref": "太阳神",
+      "evidence": [
+        [
+          "太阳神"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23101_圣火纪行_东区黎明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__23101_圣火纪行_东区黎明:18.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N238",
+      "q": "「塞梅尔维斯」评点的对象是什么？",
+      "ref": "感染种",
+      "evidence": [
+        [
+          "感染种"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_31101_长夜鸣笛",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__31101_长夜鸣笛:16.2.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N239",
+      "q": "哪个组织离开了「露西」？",
+      "ref": "科算中心",
+      "evidence": [
+        [
+          "科算中心"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__021_1_9_去往新世界_露西",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__021_1_9_去往新世界_露西:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N240",
+      "q": "梅蕾尔曾受训之处——这是哪个组织？",
+      "ref": "执夜队",
+      "evidence": [
+        [
+          "执夜队"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_112_远征记",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__112_远征记:14.0.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N241",
+      "q": "「霍夫曼」拒绝谈判的对象是谁？",
+      "ref": "海因里希",
+      "evidence": [
+        [
+          "海因里希"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_106_今夜星光灿烂",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__106_今夜星光灿烂:19.0.2",
+      "_pool": "T1"
+    },
+    {
+      "id": "N242",
+      "q": "谁转赴传话了「阿夫西维」？",
+      "ref": "彼得森",
+      "evidence": [
+        [
+          "彼得森"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__007_1_8_地图支线",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__007_1_8_地图支线:2.1.1",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N243",
+      "q": "最广为人知的轮回者——这是哪个角色？",
+      "ref": "多萝西",
+      "evidence": [
+        [
+          "多萝西"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_15101_复兴_乌卢鲁运动会",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__15101_复兴_乌卢鲁运动会:2.1.2",
+      "_pool": "T2"
+    },
+    {
+      "id": "N244",
+      "q": "「嚼嚼松果」嘱其试验的对象是什么？",
+      "ref": "星锑的唱片",
+      "evidence": [
+        [
+          "星锑的唱片"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__072_第十章10_25",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__072_第十章10_25:0.1.0",
+      "_pool": "T1"
+    },
+    {
+      "id": "N245",
+      "q": "谁察其动静了「歌唱家的风」？",
+      "ref": "珐琅眼",
+      "evidence": [
+        [
+          "珐琅眼"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__069_3_7_地牢剧情",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__069_3_7_地牢剧情:1.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N246",
+      "q": "挖掘艺术所能画的宣传品——这是哪个物品？",
+      "ref": "海报",
+      "evidence": [
+        [
+          "海报"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1916_权利归花儿",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1916_权利归花儿:5.0.1",
+      "_pool": "T2"
+    },
+    {
+      "id": "N247",
+      "q": "「金蜜儿」赠予的对象是谁？",
+      "ref": "小杰克",
+      "evidence": [
+        [
+          "小杰克"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_1915_起火点",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "anecdote__1915_起火点:5.0.1",
+      "_pool": "T1"
+    },
+    {
+      "id": "N248",
+      "q": "谁惊愕于「暴雨小组组长乌尔里希」？",
+      "ref": "星锑",
+      "evidence": [
+        [
+          "星锑"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "unbound__067_3_4_雨前漫游",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "appendix_unbound__067_3_4_雨前漫游:0.1.0",
+      "_pool": "T1r"
+    },
+    {
+      "id": "N249",
+      "q": "即将开赛的项目——这是哪个概念？",
+      "ref": "自由祭祀",
+      "evidence": [
+        [
+          "自由祭祀"
+        ]
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_23101_圣火纪行_东区黎明",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "activity__23101_圣火纪行_东区黎明:3.1.0",
+      "_pool": "T2"
+    },
+    {
+      "id": "N250",
+      "q": "「苏菲亚」承应的对象是谁？",
+      "ref": "伊戈尔",
+      "evidence": [
+        [
+          "伊戈尔"
+        ]
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "depth": "shallow",
+        "hop": "single",
+        "chapter": "_108_忧郁的热带",
+        "text_len": "short"
+      },
+      "source": "graph_generated_native",
+      "_from_chunk": "mainline__108_忧郁的热带:21.0.0",
+      "_pool": "T1"
+    }
+  ]
+}

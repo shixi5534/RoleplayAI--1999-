@@ -136,6 +136,31 @@ WELD_DROPS = [
     ("拉蒂斯", "教士", "职务泛称"),
     ("维也纳警卫", "卫兵", "泛称"),
     ("莱比", "伙计", "称呼语"),
+
+    # ── 第 22 会话：`_audit_generic_alias.py` 全库体检（7033 实体 / 29967 边）残留的
+    #    **裸泛称 alias**。这类词的危险不在「多一条别名」，而在**链指污染**：
+    #    `女士` 挂在 卡卡尼亚 上 ⇒ 任何含「女士」的查询都把 deg=439 的整条邻域当种子拉进
+    #    重排，等于给全库 911 个块发通行证。以下 17 条逐条实测：
+    #    全部**无任何块以该词作 name 声明**（`_audit_alias_decl_range.py` 打印 name侧块=0），
+    #    故剥离不会造成 §4.11 的「成员抹除」——被抹掉的本来就不该是实体handle。
+    ("卡卡尼亚", "女士", "裸称谓 语料DF=911"),
+    ("卡卡尼亚", "医生", "裸职务 语料DF=228"),
+    ("卡卡尼亚", "社会活动家", "身份泛称"),
+    ("卡卡尼亚", "盲眼医生", "描述性称号(且所指另有其人=德洛丝医生)"),
+    ("卡卡尼亚", "盲眼女士", "描述性称号(同上)"),
+    ("卡卡尼亚", "荣军院的医生", "描述性称号(同上)"),
+    ("星锑", "船长", "裸职务 语料DF=118"),
+    ("伊戈尔", "将军", "裸军衔 语料DF=103"),
+    ("苏菲亚", "祭司", "裸职务"),
+    ("命名日", "职员", "裸职务 语料DF=198(事件节点挂人职称)"),
+    ("莫莉德尔", "中尉", "裸军衔(同词已为 红弩箭 剥离过)"),
+    ("布劳恩少校", "少校", "裸军衔"),
+    ("娜斯佳", "护士", "裸职务"),
+    ("希施费尔德上校", "上校", "裸军衔"),
+    ("希施费尔德", "上校", "裸军衔(同词跨两宿主=DSU 焊接来源)"),
+    ("穆伦贝格先生", "老师", "裸称谓 语料DF=106"),
+    ("水蚺", "蛇", "物种裸名 语料DF=176"),
+    ("监狱守卫", "同志", "裸称谓 语料DF=131"),
 ]
 # ── 第 20 会话二次裁定：**明确保留**的同人/同物跨类型焊点(仅登记，不剥离) ──
 # 保留依据均为原文同位语或灰机词条实证，写在这里是为了让「为什么不删」可查。
@@ -149,6 +174,10 @@ KEPT_MERGES = [
     ("37", "赫尔墨斯之星", "唯一命名块 desc 即『37的称号』"),
     ("阿尔卡纳", "复苏之母", "110:20 关系『等同』，原文『那是……阿尔卡纳』"),
     ("复苏之母", "引导之人", "111:9 原文同位语『复苏之母，引导之人……』"),
+    # ── 第 22 会话：全库体检的另 2 条「高频且不含宿主名」命中，实测**不是**焊点，明确保留 ──
+    ("维尔汀", "司辰", "专名化职衔：全库 **224 块**均以 `司辰` 指她本人，且无任何块把 `司辰`"
+                       "当独立 name 声明（`_audit_alias_decl_range.py` name侧块=0）→ 剥即抹除"),
+    ("科算中心", "拉普拉斯", "机构短名：`拉普拉斯` 无独立 name 落点，语料中该词即指拉普拉斯科算中心"),
 ]
 # ── **无法裁定**：灰机无对应词条、语料内证据互斥 → 按「宁可分建不可并错」剥离并登记 ──
 UNDECIDED = [
@@ -203,9 +232,30 @@ FIXED_WELDS = [
 # 删的只是「谁都能认领这个号」的 alias 声明侧。
 RE_DIGIT_ID = re.compile(r"\d{1,4}")
 
+# ── 第 22 会话新增：**可证明的裸泛称**白名单，用于放宽下面的二次落盘守卫 ──
+# 守卫的原意：collapse=0 而 strip>0 说明输入已是本遍产物，此时被 alias 承载的写法
+# **多半是上一遍 name 侧改写留下的真名**（如 德洛丝/玛尔塔/兀尔德），再剥即 §4.11 抹除。
+# 但「多半」不等于「全部」：本轮新剥的 17 个词是**普通名词**，判据三条同时成立才准入 ——
+#   ① 全库 3676 个 cache 文件中**无任何块以该词作 entity name**（`_audit_alias_decl_range.py` 实测）；
+#   ② 灰机 canon（characters/npcs/name_table 共 901 条）**无该词条** → 它不是专名；
+#   ③ 它在全语料里以普通名词身份高频出现（DF 见各行括注）。
+# 白名单只放行「本轮新增的泛称剥离」，真名类写法（兀尔德/德洛丝/玛尔塔…）一律不在列，
+# 因此守卫对原有风险**没有减弱**；任一被剥词不在白名单，照旧拒绝落盘。
+SAFE_NAMELESS_GENERIC = {
+    "女士", "医生", "社会活动家", "盲眼医生", "盲眼女士", "荣军院的医生",
+    "船长", "将军", "祭司", "职员", "中尉", "少校", "护士", "上校", "老师",
+    "蛇", "同志",
+}
 
-def strip_aliases(obj: dict) -> int:
-    """删掉 WELD_DROPS 列出的 alias 声明 + 纯数字 alias，返回删除条数。"""
+
+def strip_aliases(obj: dict, removed: set, skipped: set | None = None) -> int:
+    """删掉 WELD_DROPS 列出的 alias 声明 + 纯数字 alias，返回删除条数。
+
+    removed 收集本次真正被删掉的 alias **写法**（归一后），供守卫复核。
+    skipped 非 None 时进入**增量模式**：只删白名单内的裸泛称与数字编号，其余
+    命中 DROP_MAP 的写法**跳过并登记**——增量遍面对的 cache 已 collapse 过，
+    那些写法是第 20 会话「name 侧回填 alias」留下的唯一落点，再剥即 §4.11 抹除。
+    """
     n = 0
     for e in obj.get("entities") or []:
         al = e.get("aliases") or []
@@ -213,12 +263,25 @@ def strip_aliases(obj: dict) -> int:
         if not al:
             continue
         bad = DROP_MAP.get(nm, set())
-        keep = [a for a in al
-                if a not in bad and _norm_name(a) not in bad
-                and not RE_DIGIT_ID.fullmatch(_norm_name(a))]
+
+        def doomed(a: str) -> bool:
+            if a not in bad and _norm_name(a) not in bad:
+                return False                       # 不在裁定表里，留
+            if RE_DIGIT_ID.fullmatch(_norm_name(a)):
+                return True                        # 数字编号认领侧，任何遍都照剥
+            if skipped is None or _norm_name(a) in SAFE_NAMELESS_GENERIC:
+                return True
+            skipped.add(_norm_name(a))             # 增量遍：真名写法不动
+            return False
+
+        keep = [a for a in al if not doomed(a)]
         n += len(al) - len(keep)
+        for a in al:
+            if a not in keep:
+                removed.add(_norm_name(a))
         e["aliases"] = keep
     return n
+
 
 
 def canon_map(pairs: list) -> dict:
@@ -317,8 +380,26 @@ def main() -> int:
         if raw is not None:
             pairs.append((c, key, raw))
 
+    # ── ⓪ 先判本遍是「首遍」还是「增量遍」：strip 前复算一次 collapse 映射，
+    #      非 canonical 写法为 0 ⇒ cache 已是本流程产物 ⇒ 进入增量模式 ──
+    pre_resid = canon_map(pairs)
+    skipped: set | None = None if pre_resid else set()
+    mode = (f"首遍（collapse 待做 {len(pre_resid)} 个写法）" if pre_resid
+            else "增量遍（cache 已收敛，只剥白名单裸泛称 + 数字编号）")
+    print(f"模式：{mode}")
+
     # ── ① strip 泛称/数字 alias ──
-    n_strip = sum(strip_aliases(r) for _, _, r in pairs)
+    removed: set = set()
+    n_strip = sum(strip_aliases(r, removed, skipped) for _, _, r in pairs)
+    # 全库 name 侧落点（strip 前统计）：被剥写法若在别处是 name，剥它不会造成抹除；
+    # 若**只**活在 alias 里且不是白名单裸泛称，就是 §4.11 的成员抹除风险。
+    name_set = {_norm_name(e.get("name", "")) for _, _, r in pairs
+                for e in (r.get("entities") or [])}
+    # 纯数字编号按 RE_DIGIT_ID 单列（它们本身就是 name 节点，删的只是认领侧）
+    strayed = {r for r in removed
+               if r not in SAFE_NAMELESS_GENERIC and not RE_DIGIT_ID.fullmatch(r)}
+    erased = {r for r in removed if r not in name_set}
+
     # ── ② collapse：复算 canonical 并把成员写法并到 canonical，迭代到不动点
     #    (改写会改变各写法的观察次数 → canonical 归属可能再变，故需复算) ──
     maps: list[dict] = []
@@ -337,9 +418,20 @@ def main() -> int:
         # 二次落盘守卫：首轮必然 strip>0 且 collapse>0；collapse 归零而 strip 仍>0
         # 说明输入的已是**本遍产物**——此时被 alias 承载的写法多为 name 侧改写产物，
         # 再剥一次就是 §4.11「成员抹除」（resolve 永久 None）。
-        print(f"!! 拒绝落盘：strip {n_strip} 但 collapse 0 轮 —— 输入的 cache 已是本遍产物，"
-              f"请先从 *_backup_pre_welds 还原再跑")
-        return 2
+        # 唯一例外：被剥写法**全部**落在 SAFE_NAMELESS_GENERIC 白名单内（三条判据见该常量）。
+        if not strayed:
+            print(f"守卫：collapse 0 轮但 strip 的 {len(removed)} 个写法**全部**在裸泛称白名单内，"
+                  f"且其中 {len(erased)} 个在全库无 name 落点（普通名词，剥除即取消错误链指入口）"
+                  f"→ 放行落盘；增量遍跳过 {len(skipped or ())} 个无 name 落点的真名写法 "
+                  f"{sorted(skipped or ())[:12]}")
+        else:
+            print(f"!! 拒绝落盘：strip {n_strip} 但 collapse 0 轮 —— 输入的 cache 已是本遍产物，"
+                  f"请先从 *_backup_pre_welds 还原再跑")
+            print(f"   白名单外的被剥写法 {len(strayed)} 个：{sorted(strayed)[:12]}")
+            print(f"   其中全库无 name 落点（真·抹除风险）{len(erased & strayed)} 个："
+                  f"{sorted(erased & strayed)[:12]}")
+            return 2
+
     if apply:
         for c, k, raw in pairs:
             cache.put_raw(k, raw)
@@ -356,7 +448,7 @@ def main() -> int:
         for blk in data.values():
             if not isinstance(blk, dict):
                 continue
-            if strip_aliases(blk):
+            if strip_aliases(blk, removed, skipped):
                 changed = True
             for mp in maps:
                 if collapse_block(blk, mp)[0]:
@@ -372,6 +464,8 @@ def main() -> int:
           f"｜collapse 迭代 {len(maps)} 轮，改写 name+端点 {n_collapse} 处"
           f"｜同块撞名合并 {n_merged} 条｜自环关系丢弃 {n_selfloop} 条"
           f"｜batch 文件改动 {n_files} 个")
+    print(f"剥离写法明细 {len(removed)} 个：白名单外 {len(strayed)} 个"
+          f"｜全库无 name 落点 {len(erased)} 个 {sorted(erased)[:20]}")
     print(f"复核：collapse 后剩余非 canonical 写法 {len(resid)} 个（应为 0）"
           + ("" if not resid else f" 例: {list(resid.items())[:5]}"))
     # ── ④ 全量复核：裁定剥离的 (宿主, alias) 落盘后是否**真的**不再同组 ──
