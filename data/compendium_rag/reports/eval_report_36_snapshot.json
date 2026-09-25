@@ -1,0 +1,908 @@
+{
+  "summary": {
+    "full": {
+      "cases": 13,
+      "hit@k": 1.0,
+      "MRR": 1.0,
+      "seed_recall": 0.9615,
+      "grounded": 1.0,
+      "avg_seconds": 5.359,
+      "by_kind": {
+        "单跳": 1.0,
+        "多跳": 1.0,
+        "跨篇章": 1.0
+      }
+    },
+    "graph_only": {
+      "cases": 13,
+      "hit@k": 1.0,
+      "MRR": 1.0,
+      "seed_recall": 0.9615,
+      "grounded": 1.0,
+      "avg_seconds": 4.632,
+      "by_kind": {
+        "单跳": 1.0,
+        "多跳": 1.0,
+        "跨篇章": 1.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "qid": "s1",
+      "query": "维尔汀是谁，她属于哪个组织？",
+      "kind": "单跳",
+      "expect_any": [
+        "维尔汀",
+        "基金会"
+      ],
+      "expect_entities": [
+        "维尔汀",
+        "圣洛夫基金会"
+      ],
+      "note": "主角身份，应命中主线语料"
+    },
+    {
+      "qid": "s2",
+      "query": "星锑的船叫什么名字？",
+      "kind": "单跳",
+      "expect_any": [
+        "APPLe",
+        "星锑"
+      ],
+      "expect_entities": [
+        "星锑"
+      ],
+      "note": "主角船名，序章出现"
+    },
+    {
+      "qid": "s3",
+      "query": "伊索尔德是谁？",
+      "kind": "单跳",
+      "expect_any": [
+        "伊索尔德"
+      ],
+      "expect_entities": [
+        "伊索尔德"
+      ],
+      "note": "106 今夜星光灿烂登场角色"
+    },
+    {
+      "qid": "s4",
+      "query": "重塑之手是什么组织？",
+      "kind": "单跳",
+      "expect_any": [
+        "重塑之手"
+      ],
+      "expect_entities": [
+        "重塑之手"
+      ],
+      "note": "主要敌对组织"
+    },
+    {
+      "qid": "m1",
+      "query": "星锑和重塑之手之间发生了什么冲突？",
+      "kind": "多跳",
+      "expect_any": [
+        "星锑",
+        "重塑之手",
+        "炮击",
+        "APPLe"
+      ],
+      "expect_entities": [
+        "星锑",
+        "重塑之手"
+      ],
+      "note": "序章海盗船被炮击"
+    },
+    {
+      "qid": "m2",
+      "query": "伊索尔德在诊疗中遭遇了什么？",
+      "kind": "多跳",
+      "expect_any": [
+        "伊索尔德",
+        "施瓦茨",
+        "电击",
+        "诊疗"
+      ],
+      "expect_entities": [
+        "伊索尔德"
+      ],
+      "note": "106 电疗场景"
+    },
+    {
+      "qid": "m3",
+      "query": "雾行者的父亲是做什么的？",
+      "kind": "多跳",
+      "expect_any": [
+        "雾行者",
+        "父亲",
+        "福葛"
+      ],
+      "expect_entities": [
+        "雾行者"
+      ],
+      "note": "轶事 1901 角色故事"
+    },
+    {
+      "qid": "m4",
+      "query": "J和玛蒂尔达是什么关系？",
+      "kind": "多跳",
+      "expect_any": [
+        "J",
+        "玛蒂尔达"
+      ],
+      "expect_entities": [
+        "J",
+        "玛蒂尔达"
+      ],
+      "note": "飞驰！明日之城 2.0 角色"
+    },
+    {
+      "qid": "c1",
+      "query": "有哪些角色隶属于圣洛夫基金会？",
+      "kind": "跨篇章",
+      "expect_any": [
+        "基金会"
+      ],
+      "expect_entities": [
+        "圣洛夫基金会",
+        "基金会"
+      ],
+      "note": "需要跨多篇聚合"
+    },
+    {
+      "qid": "c2",
+      "query": "暴雨是什么？",
+      "kind": "跨篇章",
+      "expect_any": [
+        "暴雨"
+      ],
+      "expect_entities": [
+        "暴雨"
+      ],
+      "note": "世界观核心概念，多篇出现"
+    },
+    {
+      "qid": "c3",
+      "query": "维尔汀和十四行诗一起出现过吗？",
+      "kind": "跨篇章",
+      "expect_any": [
+        "维尔汀",
+        "十四行诗"
+      ],
+      "expect_entities": [
+        "维尔汀",
+        "十四行诗"
+      ],
+      "note": "跨篇章共现"
+    },
+    {
+      "qid": "c4",
+      "query": "使徒米修斯是谁？",
+      "kind": "跨篇章",
+      "expect_any": [
+        "使徒米修斯",
+        "受苦者"
+      ],
+      "expect_entities": [
+        "使徒米修斯"
+      ],
+      "note": "飞驰！明日之城 反派"
+    },
+    {
+      "qid": "c5",
+      "query": "海特街在哪里被提到？",
+      "kind": "跨篇章",
+      "expect_any": [
+        "海特街",
+        "J",
+        "保利娜"
+      ],
+      "expect_entities": [
+        "海特街"
+      ],
+      "note": "J 的家乡"
+    }
+  ],
+  "graph_stats": {
+    "entities": 7033,
+    "edges": 29967,
+    "entity_types": {
+      "角色": 2023,
+      "物品": 2005,
+      "概念": 1206,
+      "地点": 1134,
+      "组织": 338,
+      "事件": 327
+    },
+    "relation_types": 8352,
+    "top_relations": [
+      [
+        "自陈",
+        367
+      ],
+      [
+        "询问",
+        292
+      ],
+      [
+        "说明",
+        263
+      ],
+      [
+        "告知",
+        238
+      ],
+      [
+        "追问",
+        229
+      ],
+      [
+        "断言",
+        227
+      ],
+      [
+        "提及",
+        199
+      ],
+      [
+        "质疑",
+        174
+      ],
+      [
+        "提议",
+        150
+      ],
+      [
+        "质问",
+        150
+      ],
+      [
+        "推断",
+        148
+      ],
+      [
+        "承诺",
+        144
+      ],
+      [
+        "解释",
+        144
+      ],
+      [
+        "宣告",
+        135
+      ],
+      [
+        "拒绝",
+        129
+      ],
+      [
+        "讲述",
+        125
+      ],
+      [
+        "发现",
+        121
+      ],
+      [
+        "评价",
+        118
+      ],
+      [
+        "警告",
+        110
+      ],
+      [
+        "否认",
+        109
+      ]
+    ],
+    "isolated_entities": 1124,
+    "isolated_ratio": 0.1598,
+    "multi_edge_entities": 3506
+  },
+  "rows": [
+    {
+      "qid": "s1",
+      "kind": "单跳",
+      "query": "维尔汀是谁，她属于哪个组织？",
+      "seeds": [
+        "维尔汀",
+        "维尔汀的帽子",
+        "维尔汀的表",
+        "维尔汀的箱子",
+        "维恩",
+        "瓦伦缇娜"
+      ],
+      "seed_hits": [
+        "维尔汀"
+      ],
+      "seed_recall": 0.5,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 8.539,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "s2",
+      "kind": "单跳",
+      "query": "星锑的船叫什么名字？",
+      "seeds": [
+        "星锑",
+        "星锑的摇滚",
+        "星锑的唱片",
+        "星锑的摇滚精神",
+        "星锑空间望远镜",
+        "星锑的旁支脚本"
+      ],
+      "seed_hits": [
+        "星锑"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.519,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "s3",
+      "kind": "单跳",
+      "query": "伊索尔德是谁？",
+      "seeds": [
+        "伊索尔德",
+        "索尔",
+        "伊索尔德之母",
+        "伊森",
+        "伊戈尔",
+        "伊索妮娅"
+      ],
+      "seed_hits": [
+        "伊索尔德"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.555,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "s4",
+      "kind": "单跳",
+      "query": "重塑之手是什么组织？",
+      "seeds": [
+        "重塑之手",
+        "重塑之手的领袖",
+        "重塑之手的徽章",
+        "重塑仪式",
+        "重塑之手的仪式面具",
+        "重塑乐团"
+      ],
+      "seed_hits": [
+        "重塑之手"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.106,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "m1",
+      "kind": "多跳",
+      "query": "星锑和重塑之手之间发生了什么冲突？",
+      "seeds": [
+        "重塑之手",
+        "星锑",
+        "星锑的摇滚",
+        "星锑的唱片",
+        "星锑的摇滚精神",
+        "重塑之手的无头"
+      ],
+      "seed_hits": [
+        "星锑",
+        "重塑之手"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.377,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "m2",
+      "kind": "多跳",
+      "query": "伊索尔德在诊疗中遭遇了什么？",
+      "seeds": [
+        "伊索尔德",
+        "索尔",
+        "诊所",
+        "伊索尔德之母",
+        "幻觉中的医生",
+        "病人Ⅰ"
+      ],
+      "seed_hits": [
+        "伊索尔德"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.642,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "m3",
+      "kind": "多跳",
+      "query": "雾行者的父亲是做什么的？",
+      "seeds": [
+        "雾行者",
+        "父亲",
+        "雾行者之职",
+        "上一任雾行者",
+        "野树莓的父亲",
+        "雾行者之怀表"
+      ],
+      "seed_hits": [
+        "雾行者"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.868,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "m4",
+      "kind": "多跳",
+      "query": "J和玛蒂尔达是什么关系？",
+      "seeds": [
+        "玛蒂尔达",
+        "J",
+        "玛蒂尔达的母亲",
+        "玛蒂尔达的资料",
+        "玛蒂尔达的水晶球",
+        "玛蒂尔达的旁支脚本"
+      ],
+      "seed_hits": [
+        "J",
+        "玛蒂尔达"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.846,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "c1",
+      "kind": "跨篇章",
+      "query": "有哪些角色隶属于圣洛夫基金会？",
+      "seeds": [
+        "圣洛夫基金会",
+        "圣洛夫基金会职员",
+        "圣洛夫基金会职员Ⅰ",
+        "圣洛夫基金会总部",
+        "圣洛夫基金会办公室",
+        "圣洛夫基金会职员Ⅱ"
+      ],
+      "seed_hits": [
+        "圣洛夫基金会",
+        "基金会"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.12,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "c2",
+      "kind": "跨篇章",
+      "query": "暴雨是什么？",
+      "seeds": [
+        "暴雨",
+        "暴雨症候群",
+        "暴雨症候",
+        "暴雨受害者",
+        "暴雨集会",
+        "暴雨眼"
+      ],
+      "seed_hits": [
+        "暴雨"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.549,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "c3",
+      "kind": "跨篇章",
+      "query": "维尔汀和十四行诗一起出现过吗？",
+      "seeds": [
+        "十四行诗",
+        "维尔汀",
+        "维尔汀的帽子",
+        "维尔汀的表",
+        "维尔汀的箱子",
+        "十四行诗的任务记录"
+      ],
+      "seed_hits": [
+        "维尔汀",
+        "十四行诗"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.824,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "c4",
+      "kind": "跨篇章",
+      "query": "使徒米修斯是谁？",
+      "seeds": [
+        "使徒米修斯",
+        "米诺斯",
+        "米莎",
+        "商贩梅克卢？",
+        "使徒的赐福",
+        "天堂使徒"
+      ],
+      "seed_hits": [
+        "使徒米修斯"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.642,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "c5",
+      "kind": "跨篇章",
+      "query": "海特街在哪里被提到？",
+      "seeds": [
+        "海特街",
+        "海特街警局",
+        "海特街舞厅",
+        "海滨长街",
+        "洛杉矶的街道",
+        "绅士街"
+      ],
+      "seed_hits": [
+        "海特街"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.077,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "s1",
+      "kind": "单跳",
+      "query": "维尔汀是谁，她属于哪个组织？",
+      "seeds": [
+        "维尔汀"
+      ],
+      "seed_hits": [
+        "维尔汀"
+      ],
+      "seed_recall": 0.5,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.174,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "s2",
+      "kind": "单跳",
+      "query": "星锑的船叫什么名字？",
+      "seeds": [
+        "星锑"
+      ],
+      "seed_hits": [
+        "星锑"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.113,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "s3",
+      "kind": "单跳",
+      "query": "伊索尔德是谁？",
+      "seeds": [
+        "伊索尔德",
+        "索尔"
+      ],
+      "seed_hits": [
+        "伊索尔德"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.564,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "s4",
+      "kind": "单跳",
+      "query": "重塑之手是什么组织？",
+      "seeds": [
+        "重塑之手"
+      ],
+      "seed_hits": [
+        "重塑之手"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.364,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "m1",
+      "kind": "多跳",
+      "query": "星锑和重塑之手之间发生了什么冲突？",
+      "seeds": [
+        "重塑之手",
+        "星锑"
+      ],
+      "seed_hits": [
+        "星锑",
+        "重塑之手"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.468,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "m2",
+      "kind": "多跳",
+      "query": "伊索尔德在诊疗中遭遇了什么？",
+      "seeds": [
+        "伊索尔德",
+        "索尔",
+        "诊所"
+      ],
+      "seed_hits": [
+        "伊索尔德"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.614,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "m3",
+      "kind": "多跳",
+      "query": "雾行者的父亲是做什么的？",
+      "seeds": [
+        "雾行者",
+        "父亲"
+      ],
+      "seed_hits": [
+        "雾行者"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 22,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.391,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "m4",
+      "kind": "多跳",
+      "query": "J和玛蒂尔达是什么关系？",
+      "seeds": [
+        "玛蒂尔达",
+        "J"
+      ],
+      "seed_hits": [
+        "J",
+        "玛蒂尔达"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 19,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.692,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "c1",
+      "kind": "跨篇章",
+      "query": "有哪些角色隶属于圣洛夫基金会？",
+      "seeds": [
+        "圣洛夫基金会"
+      ],
+      "seed_hits": [
+        "圣洛夫基金会",
+        "基金会"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.045,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "c2",
+      "kind": "跨篇章",
+      "query": "暴雨是什么？",
+      "seeds": [
+        "暴雨"
+      ],
+      "seed_hits": [
+        "暴雨"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.234,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "c3",
+      "kind": "跨篇章",
+      "query": "维尔汀和十四行诗一起出现过吗？",
+      "seeds": [
+        "十四行诗",
+        "维尔汀"
+      ],
+      "seed_hits": [
+        "维尔汀",
+        "十四行诗"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.509,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "c4",
+      "kind": "跨篇章",
+      "query": "使徒米修斯是谁？",
+      "seeds": [
+        "使徒米修斯"
+      ],
+      "seed_hits": [
+        "使徒米修斯"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 10,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.478,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "c5",
+      "kind": "跨篇章",
+      "query": "海特街在哪里被提到？",
+      "seeds": [
+        "海特街"
+      ],
+      "seed_hits": [
+        "海特街"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 20,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.566,
+      "note": "",
+      "mode": "graph_only"
+    }
+  ]
+}
