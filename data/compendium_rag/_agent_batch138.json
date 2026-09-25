@@ -1,0 +1,2483 @@
+{
+ "eff5cda75525d4c9fb20a469": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在巴黎引发骚乱的艺术家"
+   },
+   {
+    "name": "警察Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "会说英语的审讯警官"
+   },
+   {
+    "name": "警察Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "另一名法国警察"
+   },
+   {
+    "name": "律师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不请自来的律师,实为重塑之手所派"
+   },
+   {
+    "name": "香榭丽舍大街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "骚乱发生地"
+   },
+   {
+    "name": "巴黎警察局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "审讯挖掘艺术之处"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令人失去知觉的肥皂泡"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挖掘艺术所仗之能"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以律师接引神秘学家的组织"
+   },
+   {
+    "name": "声音",
+    "type": "概念",
+    "aliases": [],
+    "desc": "审讯中传来的口音与话语"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警察Ⅰ",
+    "relation": "审讯",
+    "dst": "挖掘艺术",
+    "evidence": "针对以上情况，你有什么想要申辩的吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察Ⅰ",
+    "relation": "询问",
+    "dst": "挖掘艺术",
+    "evidence": "您来法国做什么呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察Ⅰ",
+    "relation": "承诺",
+    "dst": "挖掘艺术",
+    "evidence": "警署会充分尊重您的人权",
+    "confidence": 0.9
+   },
+   {
+    "src": "警察Ⅱ",
+    "relation": "询问",
+    "dst": "警察Ⅰ",
+    "evidence": "Qu'est-ce qu'il a dit?",
+    "confidence": 0.9
+   },
+   {
+    "src": "警察Ⅰ",
+    "relation": "告知",
+    "dst": "挖掘艺术",
+    "evidence": "我会为你联系报社的编辑",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "制造",
+    "dst": "镜面肥皂泡",
+    "evidence": "是您制造了这场骚动",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "目睹",
+    "dst": "香榭丽舍大街",
+    "evidence": "昨天下午，香榭丽舍大街上发生了一场骚乱",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "困于",
+    "dst": "巴黎警察局",
+    "evidence": "先生，这里是警察局",
+    "confidence": 0.9
+   },
+   {
+    "src": "律师",
+    "relation": "闯入",
+    "dst": "巴黎警察局",
+    "evidence": "不请自来的客人闯入了审讯室",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "自称",
+    "dst": "巴黎警察局",
+    "evidence": "他从公文包里掏出了名片，呈递给了两名警官",
+    "confidence": 0.85
+   },
+   {
+    "src": "律师",
+    "relation": "受雇于",
+    "dst": "重塑之手",
+    "evidence": "重塑……之手？",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "打断",
+    "dst": "警察Ⅰ",
+    "evidence": "突如其来的敲门声打断了警察的质问",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "fe4fcacd85993a5774e16782": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被律师保释的艺术家"
+   },
+   {
+    "name": "律师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以神秘学道具带人离开的律师"
+   },
+   {
+    "name": "警察Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放人的警官"
+   },
+   {
+    "name": "警察Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "更冷静的警察"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "委托人所属的组织"
+   },
+   {
+    "name": "神秘学家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等待被拯救的同类"
+   },
+   {
+    "name": "巴黎警察局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "律师保释挖掘艺术之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "捏碎道具即可远行的术法"
+   },
+   {
+    "name": "阶梯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "昏暗酒吧里透光的阶梯"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "委托人所在的另一端"
+   }
+  ],
+  "relations": [
+   {
+    "src": "律师",
+    "relation": "保释",
+    "dst": "挖掘艺术",
+    "evidence": "您再次拥有了自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "误解",
+    "dst": "律师",
+    "evidence": "非常感谢您的帮助。……但是我没有积蓄",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "纠正",
+    "dst": "挖掘艺术",
+    "evidence": "您误解了我的意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "否认",
+    "dst": "挖掘艺术",
+    "evidence": "对于有些人而言，金钱的份量没有那么重要",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "难道，这是隶属于人道主义的援助？",
+    "confidence": 0.9
+   },
+   {
+    "src": "警察Ⅱ",
+    "relation": "询问",
+    "dst": "律师",
+    "evidence": "Êtes-vous là à la demande de ce monsieur",
+    "confidence": 0.9
+   },
+   {
+    "src": "警察Ⅰ",
+    "relation": "拒绝",
+    "dst": "律师",
+    "evidence": "我不让律师扰乱审讯",
+    "confidence": 0.9
+   },
+   {
+    "src": "律师",
+    "relation": "说服",
+    "dst": "警察Ⅰ",
+    "evidence": "警察的眉头舒展了",
+    "confidence": 0.85
+   },
+   {
+    "src": "律师",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "他捏碎了一个小东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "带离",
+    "dst": "挖掘艺术",
+    "evidence": "抓紧我",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "离开",
+    "dst": "巴黎警察局",
+    "evidence": "随后，他们离开了警局",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "引导",
+    "dst": "神殿之门",
+    "evidence": "您只要穿过这扇门，就能见到他",
+    "confidence": 0.95
+   },
+   {
+    "src": "律师",
+    "relation": "拯救",
+    "dst": "神秘学家",
+    "evidence": "还有很多像您一样的神秘学家，正等着我们去拯救",
+    "confidence": 0.9
+   },
+   {
+    "src": "律师",
+    "relation": "离开",
+    "dst": "挖掘艺术",
+    "evidence": "先失陪了，先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "前往",
+    "dst": "阶梯",
+    "evidence": "昏暗的酒吧，唯有阶梯上的门透出隐约的光亮",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "b92b163924daa63a0ff3d736": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称要把波普艺术带进现实者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "酒吧老板,重塑之手成员"
+   },
+   {
+    "name": "律师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将挖掘艺术送到酒吧的接引者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "招募挖掘艺术的离经叛道者集会"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "酒吧中委托人所在的那扇门"
+   },
+   {
+    "name": "瓦尔登湖酒吧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "位于伦敦的酒吧"
+   },
+   {
+    "name": "卡纳比街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术制造肥皂泡之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仅需触媒便能跨越大洋的神秘术"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "卡纳比街上引发交通瘫痪的泡泡"
+   },
+   {
+    "name": "环欧洲巡回游行",
+    "type": "事件",
+    "aliases": [],
+    "desc": "反对战争的环欧洲巡回游行"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术与勿忘我交谈之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "律师",
+    "relation": "离开",
+    "dst": "挖掘艺术",
+    "evidence": "他脱帽致礼，离开了此地",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "前往",
+    "dst": "神殿之门",
+    "evidence": "他向着眼前的门走去",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抵达",
+    "dst": "瓦尔登湖酒吧",
+    "evidence": "「瓦尔登湖」酒吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "讥讽",
+    "dst": "挖掘艺术",
+    "evidence": "一名哗众取宠的艺术家",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "断言",
+    "dst": "挖掘艺术",
+    "evidence": "显然，您的“艺术”失败了",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "指控",
+    "dst": "挖掘艺术",
+    "evidence": "一个狭隘的自我主义者应有的结局",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "反驳",
+    "dst": "勿忘我",
+    "evidence": "那是一次伟大、新型的……将波普艺术带到现实的尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "制造",
+    "dst": "镜面肥皂泡",
+    "evidence": "在卡纳比街上制造了镜面肥皂泡，导致交通瘫痪",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜面肥皂泡",
+    "relation": "瘫痪",
+    "dst": "卡纳比街",
+    "evidence": "导致交通瘫痪的罪魁祸首",
+    "confidence": 0.9
+   },
+   {
+    "src": "勿忘我",
+    "relation": "否定",
+    "dst": "挖掘艺术",
+    "evidence": "那些人并不认可你的艺术",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "拉拢",
+    "dst": "挖掘艺术",
+    "evidence": "我们正在筹划一个“环欧洲巡回游行”",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "提议",
+    "dst": "环欧洲巡回游行",
+    "evidence": "主题是反对战争",
+    "confidence": 0.95
+   },
+   {
+    "src": "环欧洲巡回游行",
+    "relation": "属于",
+    "dst": "重塑之手",
+    "evidence": "我很喜欢你们的名字——重塑之手",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "拒绝",
+    "dst": "重塑之手",
+    "evidence": "我不想加入你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "同意",
+    "dst": "环欧洲巡回游行",
+    "evidence": "我同意！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "误解",
+    "dst": "勿忘我",
+    "evidence": "这简直是为我量身打造的艺术活动！",
+    "confidence": 0.85
+   },
+   {
+    "src": "勿忘我",
+    "relation": "谎言",
+    "dst": "挖掘艺术",
+    "evidence": "这种游行一般不会有什么好结果",
+    "confidence": 0.85
+   },
+   {
+    "src": "勿忘我",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "仅需要一个神秘术触媒，就能跨越大洋之间的阻隔",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "置身",
+    "dst": "伦敦",
+    "evidence": "招牌、酒单、装饰字……这里是——英国？！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4aa871607ff4c3dd62b2b566": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被派往和平小岛的无理数"
+   },
+   {
+    "name": "重塑使徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向挖掘艺术下达任务的重塑使徒"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "红发的除错师,以数字分类世人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "无人能够逃出的组织"
+   },
+   {
+    "name": "小岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "没有警察的和平小岛"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术坐看落日之处"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "黏糊糊的、充满怪异气味的面具"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "埋在沙中被误认为贝壳的手枪"
+   },
+   {
+    "name": "除错师",
+    "type": "概念",
+    "aliases": [],
+    "desc": "苏菲亚所担任的职分"
+   },
+   {
+    "name": "无理数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学派对无序与混乱者的称呼"
+   },
+   {
+    "name": "整数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "为寻找失踪无理数而彻夜未眠者"
+   },
+   {
+    "name": "数学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被用来框定一切选择的体系"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学派要求无理数接受的训导"
+   },
+   {
+    "name": "反对战争",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挖掘艺术为死者发声的立场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑使徒",
+    "relation": "警告",
+    "dst": "挖掘艺术",
+    "evidence": "没有人能够逃出重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑使徒",
+    "relation": "派遣",
+    "dst": "挖掘艺术",
+    "evidence": "下一次的行动，是在一座和平的岛上",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "接受",
+    "dst": "面具",
+    "evidence": "在你戴上面具的那一刻，就已经注定会发生",
+    "confidence": 0.95
+   },
+   {
+    "src": "面具",
+    "relation": "束缚",
+    "dst": "挖掘艺术",
+    "evidence": "黏糊糊的、充满了怪异气味的面具",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑使徒",
+    "relation": "告知",
+    "dst": "挖掘艺术",
+    "evidence": "我有一个好消息要告诉你",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑使徒",
+    "relation": "拒绝",
+    "dst": "挖掘艺术",
+    "evidence": "别再做这种无谓的尝试了",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "摧毁",
+    "dst": "小岛",
+    "evidence": "哈，摧毁和平……这就是我的任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "置身",
+    "dst": "海岸",
+    "evidence": "他赤脚坐在海岸线上",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "质问",
+    "dst": "挖掘艺术",
+    "evidence": "你不应该在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "寻找",
+    "dst": "挖掘艺术",
+    "evidence": "几位整数，为了找到消失的无理数而彻夜未眠",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "归类",
+    "dst": "挖掘艺术",
+    "evidence": "你是无理数，是无序和混乱的集合",
+    "confidence": 0.9
+   },
+   {
+    "src": "整数",
+    "relation": "寻找",
+    "dst": "无理数",
+    "evidence": "为了找到消失的无理数而彻夜未眠",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "质疑",
+    "dst": "数学",
+    "evidence": "为什么人要用数字来表达？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "质疑",
+    "dst": "真理",
+    "evidence": "但这些都是必要的——为了摆正你们趋于过度的灵魂",
+    "confidence": 0.85
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "反对",
+    "dst": "反对战争",
+    "evidence": "这个世界不需要战争！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "发现",
+    "dst": "勃朗宁手枪",
+    "evidence": "一把漆黑的勃朗宁手枪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eb02b7062333aa2e0a5db8ea": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以黄昏与海潮反驳数学者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不为修辞所动的除错师"
+   },
+   {
+    "name": "数学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被指名无法解释一切的体系"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "太阳将落之处"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "撞到脚趾的所谓贝壳"
+   },
+   {
+    "name": "声音",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潮水拍打与海鸥归巢的静默"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "质疑",
+    "dst": "数学",
+    "evidence": "你不能用数学解释一切",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "断言",
+    "dst": "数学",
+    "evidence": "数学里不会有这些",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "描述",
+    "dst": "海岸",
+    "evidence": "你看，太阳快落下去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "反驳",
+    "dst": "挖掘艺术",
+    "evidence": "那不是贝壳",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "误解",
+    "dst": "勃朗宁手枪",
+    "evidence": "有贝壳撞到了我的脚趾",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "发现",
+    "dst": "勃朗宁手枪",
+    "evidence": "一把漆黑的勃朗宁手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "惊惧",
+    "dst": "勃朗宁手枪",
+    "evidence": "枪，枪，为什么这里会有一把枪？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "听见",
+    "dst": "声音",
+    "evidence": "潮水拍打着他的皮肤",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "efd0916107a556efd1de2ef9": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执意要销毁手枪的艺术家"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为保岛屿安宁而出手者"
+   },
+   {
+    "name": "孩子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回忆中与苏菲亚玩射击游戏的孩子"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聒噪的追随者,想做侦察兵"
+   },
+   {
+    "name": "重塑追随者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寡言的女性追随者"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被踢飞却只落在十米外的手枪"
+   },
+   {
+    "name": "尺规",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏菲亚手中的尺规"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术被打落之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "苏菲亚以@为号施展的术法"
+   },
+   {
+    "name": "小岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "必须维持安宁的小岛"
+   },
+   {
+    "name": "几何体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "凭空出现的几何体辉光"
+   }
+  ],
+  "relations": [
+   {
+    "src": "孩子",
+    "relation": "射击",
+    "dst": "苏菲亚",
+    "evidence": "你已经被手枪射中了——已经死了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子",
+    "relation": "质问",
+    "dst": "苏菲亚",
+    "evidence": "苏菲亚，你为什么还站着？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "回忆",
+    "dst": "孩子",
+    "evidence": "这是她曾目睹的游戏",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "握持",
+    "dst": "尺规",
+    "evidence": "她暗自握紧了手中的尺规",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "松开",
+    "dst": "尺规",
+    "evidence": "她松开了手中的尺规",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "警告",
+    "dst": "苏菲亚",
+    "evidence": "如果，你以后在海岸看到了类似的东西，一定要像这样——",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "踢飞",
+    "dst": "勃朗宁手枪",
+    "evidence": "把它踢得远远的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "阻止",
+    "dst": "挖掘艺术",
+    "evidence": "为了岛屿的安宁，我不能让你碰到这把枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "攻击",
+    "dst": "挖掘艺术",
+    "evidence": "为了岛屿的安宁，我不能让你碰到这把枪",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "守护",
+    "dst": "小岛",
+    "evidence": "为了岛屿的安宁",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "@",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "生成",
+    "dst": "几何体",
+    "evidence": "陌生的神秘术辉光在海面上闪烁",
+    "confidence": 0.85
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "坠入",
+    "dst": "海岸",
+    "evidence": "他跌入水中，鼻腔满溢潮水的咸腥",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "推测",
+    "dst": "挖掘艺术",
+    "evidence": "你一定是在寻找逃离通道的过程中，被那个红发妞看见——",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "告知",
+    "dst": "挖掘艺术",
+    "evidence": "在海的彼端，一定有正常的人类文明",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "照料",
+    "dst": "挖掘艺术",
+    "evidence": "寡言的女性将一杯水递到了挖掘艺术的面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "畏惧",
+    "dst": "苏菲亚",
+    "evidence": "他的脑袋肯定被那个红发妞砸坏了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "c10a5137c687db54643fa727": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被追问侦察成果的艺术家"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急于确认逃离路线的追随者"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已不能用的手枪"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术所见的夕阳"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "告知",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "确实，我在海岸边上找到了一把手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "询问",
+    "dst": "挖掘艺术",
+    "evidence": "所以，你找到什么逃出去的路线了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "询问",
+    "dst": "挖掘艺术",
+    "evidence": "那你有什么收获吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "回答",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "岛上的夕阳很美——你们应当亲自去看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "抱怨",
+    "dst": "挖掘艺术",
+    "evidence": "我忘了你是个搞艺术的",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "失望",
+    "dst": "挖掘艺术",
+    "evidence": "该死的，从最开始就不应该让你去当侦察兵",
+    "confidence": 0.85
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "评价",
+    "dst": "勃朗宁手枪",
+    "evidence": "别那么激动，它已经不能用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "关注",
+    "dst": "海岸",
+    "evidence": "地理、习惯，以及我们最关心排班表",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "97b38882c7e0f342e4d62b9c": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在数学课上走神的艺术家"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蓝发少女,教授无理数数学"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以排中律发问的聒噪追随者"
+   },
+   {
+    "name": "重塑追随者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打叉号提议讨论逃走的寡言者"
+   },
+   {
+    "name": "教众Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接手教育无理数的教众"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "代表平衡的数字,其散步路线被埋炸弹"
+   },
+   {
+    "name": "传道者之厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "讲授数学的厅堂"
+   },
+   {
+    "name": "数学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被反复讲授的课程"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "教众要求无理数接受的指引"
+   },
+   {
+    "name": "无限定者的试炼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37被领袖召去参加的试炼"
+   },
+   {
+    "name": "炸弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "追随者Ⅱ埋下的炸弹"
+   },
+   {
+    "name": "爱与和平",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挖掘艺术念念不忘的信条"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "讲授",
+    "dst": "数学",
+    "evidence": "一如既往的课堂，一如既往的数学",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "质疑",
+    "dst": "37",
+    "evidence": "为什么π既能等同于一串无限不循环小数，又能等同于某一个确切的角度？",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "纠正",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "使用排中律的前提是，两个思想相互排斥",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "赞扬",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "但你们能尝试使用逻辑来解决数理问题，这是伟大的进步！",
+    "confidence": 0.9
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "否定",
+    "dst": "数学",
+    "evidence": "全部的，不、明白",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "解释",
+    "dst": "重塑追随者Ⅱ",
+    "evidence": "那我从最开始的步骤开始讲述",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "沉思",
+    "dst": "爱与和平",
+    "evidence": "如果没有相应的行动，只会让它沦为一句口号",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "召见",
+    "dst": "37",
+    "evidence": "37，领袖正在找您，为无限定者的试炼",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "接手",
+    "dst": "数学",
+    "evidence": "我会接手这些无理数的教育问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "离开",
+    "dst": "传道者之厅",
+    "evidence": "蓝发少女离去后，她的接任者立刻板起了脸",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "敌视",
+    "dst": "挖掘艺术",
+    "evidence": "显然，他并不欢迎这些外乡人",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "置疑",
+    "dst": "数学",
+    "evidence": "别学了，来讨论下逃走的事吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "谋划",
+    "dst": "炸弹",
+    "evidence": "我在那里埋了一枚炸弹",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "跟踪",
+    "dst": "6",
+    "evidence": "我发现了6散步的路线",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸弹",
+    "relation": "威胁",
+    "dst": "6",
+    "evidence": "只要它能够成功爆炸，我们就能离开这个地方",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "172762208b479db48e26045e": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试图阻止同伴暴露手枪者"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议劫持领袖者,拾得手枪"
+   },
+   {
+    "name": "重塑追随者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚称炸弹只是没触发的追随者"
+   },
+   {
+    "name": "教众Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑挖掘艺术数学素养的教众"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "代表平衡与调和的数字"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被追1在海岸边捡到的勃朗宁"
+   },
+   {
+    "name": "炸弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被追1质疑真伪的装置"
+   },
+   {
+    "name": "数学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被教众延长讲授的课程"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "教众口中的唯一指引"
+   },
+   {
+    "name": "爱与和平",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挖掘艺术仍未放弃的信条"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "质疑",
+    "dst": "重塑追随者Ⅱ",
+    "evidence": "你的数学作业都是抄我的——炸弹可比三角函数难多了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "坚持",
+    "dst": "炸弹",
+    "evidence": "它只是没触发而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "提议",
+    "dst": "6",
+    "evidence": "我们趁那个领袖散步的时候，劫持他",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "拾得",
+    "dst": "勃朗宁手枪",
+    "evidence": "我在海岸边，捡到了一把勃朗宁手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "打断",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "不——",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "喝止",
+    "dst": "挖掘艺术",
+    "evidence": "安静！你个蠢货！",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "追问",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "……勃朗宁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "掩饰",
+    "dst": "教众Ⅰ",
+    "evidence": "不不，这是一种名叫布朗尼[Brownie]的甜点……",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "询问",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "你们要趁领袖散步的时候做什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "撒谎",
+    "dst": "6",
+    "evidence": "我们想与他一起散步",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "奉承",
+    "dst": "6",
+    "evidence": "在你们的理论中，6代表着调和",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "建议",
+    "dst": "教众Ⅰ",
+    "evidence": "也许你们应该关心一下领袖的心理健康",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "反问",
+    "dst": "挖掘艺术",
+    "evidence": "你是如何得知有关于“人的本质”的推论呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "延长",
+    "dst": "数学",
+    "evidence": "我会延长今日的数学课程",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅰ",
+    "relation": "训导",
+    "dst": "挖掘艺术",
+    "evidence": "如果失去了真理的指引，一切的探索无异于原地打转",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "厌恶",
+    "dst": "数学",
+    "evidence": "我再也不想学数学了",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "绝望",
+    "dst": "爱与和平",
+    "evidence": "我也是，头好痛",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "怀疑",
+    "dst": "爱与和平",
+    "evidence": "可是——如果不使用泡泡，要怎样才能让大家看到那个美好的世界呢……？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3f98f01a6a87cba6028649d9": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想到伪装成岛民逃离者"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向挖掘艺术讨创意的追随者"
+   },
+   {
+    "name": "爱与和平",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无法说服眼前之人的信条"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以爱与和平为信条者无法说服的组织"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被禁用后使暴力不再合理的术法"
+   },
+   {
+    "name": "几何体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "海滩边残骸中出现的几何体"
+   },
+   {
+    "name": "残骸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "海岸上船与几何体的残骸"
+   },
+   {
+    "name": "小岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "必须扮成其住民才能离开的小岛"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "残骸所在之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "询问",
+    "dst": "挖掘艺术",
+    "evidence": "你有什么逃出小岛的好创意吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "意识到",
+    "dst": "爱与和平",
+    "evidence": "也许“爱与和平”无法说服眼前的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱与和平",
+    "relation": "抵触",
+    "dst": "重塑之手",
+    "evidence": "这从来不是重塑之手的信条",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "断言",
+    "dst": "神秘术",
+    "evidence": "在我们被禁用了神秘术的情况下……暴力是不合理的",
+    "confidence": 0.9
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "目睹",
+    "dst": "残骸",
+    "evidence": "我看见有船和几何体的残骸",
+    "confidence": 0.95
+   },
+   {
+    "src": "残骸",
+    "relation": "位于",
+    "dst": "海岸",
+    "evidence": "在海滩边上的时候",
+    "confidence": 0.9
+   },
+   {
+    "src": "残骸",
+    "relation": "包含",
+    "dst": "几何体",
+    "evidence": "有船和几何体的残骸",
+    "confidence": 0.85
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "推断",
+    "dst": "小岛",
+    "evidence": "他们似乎有过走出岛屿的尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "提议",
+    "dst": "小岛",
+    "evidence": "我们需要扮成小岛上的人……才能找到走出去的机会",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eb70a0aa5aa853ad9a6f624e": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为伪装长袍把关的艺术家"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张必须学习数学的追随者"
+   },
+   {
+    "name": "重塑追随者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在沙滩埋下炸弹的寡言者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧流溢将至的除错师"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以黄金螺旋线为例的蓝发少女"
+   },
+   {
+    "name": "素色袍子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "重塑之手的披挂长袍"
+   },
+   {
+    "name": "数学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被列入准备清单的课程"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学派要无理数接受的规训"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将到来的灾难"
+   },
+   {
+    "name": "炸弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "埋在领袖必经沙地的炸弹"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "无数海鸥掠过的海岸"
+   },
+   {
+    "name": "小岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "伪装潜入的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "抱怨",
+    "dst": "素色袍子",
+    "evidence": "这玩意裹在身上，真的不会掉下来吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "纠正",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "他们服装的特征是披挂、垂褶和缠绕",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "指导",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "避免我们的灵魂趋于过度",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "复述",
+    "dst": "真理",
+    "evidence": "避免我们的灵魂、趋于过度……",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "主张",
+    "dst": "数学",
+    "evidence": "数学的学习是有必要的",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "置疑",
+    "dst": "数学",
+    "evidence": "学习数学？——这是谁写上去的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "担忧",
+    "dst": "流溢",
+    "evidence": "“流溢”即将到来",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "告诫",
+    "dst": "挖掘艺术",
+    "evidence": "你不应在这些琐碎的地方消耗精力了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "举例",
+    "dst": "数学",
+    "evidence": "就像黄金螺旋线",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "赞扬",
+    "dst": "挖掘艺术",
+    "evidence": "我相信，他确实从课程中学到了什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "坦白",
+    "dst": "炸弹",
+    "evidence": "我在那、那里埋了一颗……炸弹",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸弹",
+    "relation": "埋于",
+    "dst": "海岸",
+    "evidence": "她指向沙滩的一侧",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "疑惑",
+    "dst": "挖掘艺术",
+    "evidence": "我总觉得我和你之间需要一名翻译",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "熟悉",
+    "dst": "海岸",
+    "evidence": "这条路……很熟悉——我来过",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "邀请",
+    "dst": "重塑追随者Ⅱ",
+    "evidence": "每个人都应该来这里看看夕阳",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "阻止",
+    "dst": "炸弹",
+    "evidence": "哦……不！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c13a120f6a74c2d98054c63c": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蹲在沙地里翻找引爆器者"
+   },
+   {
+    "name": "重塑追随者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承认炸弹要杀领袖的追随者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "手持引爆器现身的除错师"
+   },
+   {
+    "name": "炸弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "埋在这片沙地之中的炸弹"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "追随者Ⅱ所要刺杀的目标"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "埋弹的沙滩"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令领袖之位动摇的暴力手段"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "承认",
+    "dst": "炸弹",
+    "evidence": "我在那、那里埋了一颗……炸弹",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "指出",
+    "dst": "6",
+    "evidence": "那里是、是领袖一定……会走过的、地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "谋划",
+    "dst": "6",
+    "evidence": "杀了、领袖……就能从、从根源上……解决问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "询问",
+    "dst": "重塑追随者Ⅱ",
+    "evidence": "你还能找到那颗炸弹吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸弹",
+    "relation": "埋于",
+    "dst": "海岸",
+    "evidence": "它就在这片沙、地之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "寻找",
+    "dst": "炸弹",
+    "evidence": "他蹲下了身，开始从沙地之中寻找引爆器",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "发现",
+    "dst": "炸弹",
+    "evidence": "你们在找这个吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "质问",
+    "dst": "挖掘艺术",
+    "evidence": "你让我把凶器重新放回凶手的掌心吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "索要",
+    "dst": "炸弹",
+    "evidence": "这是很危险的装置……可以把它给我吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "拒绝",
+    "dst": "挖掘艺术",
+    "evidence": "……",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅱ",
+    "relation": "反对",
+    "dst": "神秘术",
+    "evidence": "杀了、领袖……就能从、从根源上……解决问题",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "c8d16848692338576f0af1bd": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以演讲宣扬爱与和平的艺术家"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被演讲动摇却更觉恐惧的除错师"
+   },
+   {
+    "name": "重塑追随者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "举枪瞄准苏菲亚的追随者"
+   },
+   {
+    "name": "勃朗宁手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被插入玫瑰的泡水手枪"
+   },
+   {
+    "name": "玫瑰",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插进枪管的玫瑰"
+   },
+   {
+    "name": "爱与和平",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挖掘艺术布道的信条"
+   },
+   {
+    "name": "无理数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被指为生来不可逾越的类别"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "苏菲亚要上报的裁决者"
+   },
+   {
+    "name": "分类学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以标准划分优越阶级的学说"
+   },
+   {
+    "name": "巴别塔",
+    "type": "概念",
+    "aliases": [],
+    "desc": "人们亲手造就的社会阶级"
+   },
+   {
+    "name": "岛外的世界",
+    "type": "地点",
+    "aliases": [],
+    "desc": "战争与分类学盛行的外界"
+   },
+   {
+    "name": "小岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "没有战争的和平小岛"
+   },
+   {
+    "name": "几何体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "束缚住挖掘艺术的几何体"
+   },
+   {
+    "name": "炸弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将被上报领袖裁决的炸弹"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "追1要防范的术式"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "威胁",
+    "dst": "苏菲亚",
+    "evidence": "我警告你别乱动，子弹可不长眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "持枪",
+    "dst": "勃朗宁手枪",
+    "evidence": "他掏出了手枪，瞄准了苏菲亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "断言",
+    "dst": "无理数",
+    "evidence": "无理数生来就是无理数……这是不可逾越的鸿沟",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "反对",
+    "dst": "分类学",
+    "evidence": "所有的生物里，只有人会对自己的族群进行如此事无巨细的分类……",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "批判",
+    "dst": "岛外的世界",
+    "evidence": "每一个标准都划分出“生而优越”的阶级",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "否定",
+    "dst": "分类学",
+    "evidence": "但这一切只是一个谎言！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "断言",
+    "dst": "巴别塔",
+    "evidence": "真正的巴别塔……是人们亲手造就的社会阶级",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "宣扬",
+    "dst": "爱与和平",
+    "evidence": "祝您拥有爱与和平，我的兄弟、姐妹们……",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "赞扬",
+    "dst": "小岛",
+    "evidence": "你们这里没有战争，已经比岛外的世界好上太多",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "插入",
+    "dst": "玫瑰",
+    "evidence": "他将袖间的玫瑰插入了枪管",
+    "confidence": 0.95
+   },
+   {
+    "src": "玫瑰",
+    "relation": "阻塞",
+    "dst": "勃朗宁手枪",
+    "evidence": "它有炸膛的风险",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "警告",
+    "dst": "重塑追随者Ⅰ",
+    "evidence": "朋友，不要使用这把泡水的手枪……",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑追随者Ⅰ",
+    "relation": "催促",
+    "dst": "挖掘艺术",
+    "evidence": "你得抓住她的手……防止她用出神秘学的术式！",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "束缚",
+    "dst": "挖掘艺术",
+    "evidence": "从天而降的几何体束缚住了他的四肢",
+    "confidence": 0.95
+   },
+   {
+    "src": "几何体",
+    "relation": "束缚",
+    "dst": "挖掘艺术",
+    "evidence": "几何体束缚住了他的四肢",
+    "confidence": 0.85
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "动摇",
+    "dst": "爱与和平",
+    "evidence": "在某个瞬间，我的意志松动了，一度想要相信你所描述的世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "警惕",
+    "dst": "挖掘艺术",
+    "evidence": "修辞的矫饰，常常会掩盖本质",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "上报",
+    "dst": "6",
+    "evidence": "我会上报领袖，让他来作出相关的裁决",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "承诺",
+    "dst": "挖掘艺术",
+    "evidence": "你和你的同伴不会受到任何的伤害",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "52461681a0db79521f8a6cc6": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在回忆之梦中重历善款骗局者"
+   },
+   {
+    "name": "伦纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赫赫有名的慈善骗子,理应服刑"
+   },
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在摄政街叫卖新闻的报童"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施术令挖掘艺术陷入回忆者"
+   },
+   {
+    "name": "海岸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "夕阳收起最后一抹余晖之处"
+   },
+   {
+    "name": "摄政街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术梦回之地"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "报童手中的报纸"
+   },
+   {
+    "name": "反对战争",
+    "type": "概念",
+    "aliases": [],
+    "desc": "报童播报所涉的征兵危机"
+   },
+   {
+    "name": "影像",
+    "type": "概念",
+    "aliases": [],
+    "desc": "眼前闪烁变幻的一幕幕影像"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使挖掘艺术陷入灵性水流的术法"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "共计5磅13先令的硬币"
+   },
+   {
+    "name": "支票",
+    "type": "物品",
+    "aliases": [],
+    "desc": "伦纳德所索要的捐款方式"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "能让人看见美好未来的肥皂泡"
+   },
+   {
+    "name": "海报",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挖掘艺术所能画的宣传品"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏菲亚",
+    "relation": "施术",
+    "dst": "挖掘艺术",
+    "evidence": "在神秘术的作用下，他逐渐失去了意识",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "唤醒",
+    "dst": "影像",
+    "evidence": "眼前的光芒闪烁变幻，一幕幕影像随之出现",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "旁观",
+    "dst": "影像",
+    "evidence": "他似乎沉溺在了灵性的水流之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抵达",
+    "dst": "摄政街",
+    "evidence": "天哪……是摄政街！我又回到了这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "叫卖",
+    "dst": "报纸",
+    "evidence": "大新闻！今日特大新闻！",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "播报",
+    "dst": "反对战争",
+    "evidence": "美国面临最严重的征兵危机",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "询问",
+    "dst": "伦纳德",
+    "evidence": "您获得了假释？",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦纳德",
+    "relation": "欺骗",
+    "dst": "挖掘艺术",
+    "evidence": "三分钟之前，您还为自己不能捐太多的款而感到内疚……",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "交付",
+    "dst": "硬币",
+    "evidence": "挖掘艺术从口袋里摸出了几个大小不一的硬币，共计5磅13先令",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦纳德",
+    "relation": "索取",
+    "dst": "支票",
+    "evidence": "没有现金的话，支票也可以",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦纳德",
+    "relation": "提议",
+    "dst": "挖掘艺术",
+    "evidence": "我们正在筹划一个慈善晚宴",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "拒绝",
+    "dst": "伦纳德",
+    "evidence": "我的肥皂泡绝不是供他们享乐的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "控诉",
+    "dst": "伦纳德",
+    "evidence": "那些特权阶级，他们才是战争真正的发起人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "使用",
+    "dst": "镜面肥皂泡",
+    "evidence": "我的神秘术还能制作肥皂泡",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "提供",
+    "dst": "海报",
+    "evidence": "我能够画海报和涂鸦——",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "置身",
+    "dst": "海岸",
+    "evidence": "无声的海岸上，夕阳收起了最后一抹余晖",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3dfc232741376a5b8e4f98b2": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从报纸日期察觉异象者"
+   },
+   {
+    "name": "伦纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拒绝后大跨步离开的骗子"
+   },
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "继续售卖报纸的报童"
+   },
+   {
+    "name": "影像",
+    "type": "概念",
+    "aliases": [],
+    "desc": "接连而至的异象"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被挖掘艺术买下的一份报纸"
+   },
+   {
+    "name": "海报",
+    "type": "物品",
+    "aliases": [],
+    "desc": "卡纳比街上引起警觉的旧海报"
+   },
+   {
+    "name": "卡纳比街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术梦游之地"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用来买报纸的硬币"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "拒绝为特权阶级表演的肥皂泡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "控诉",
+    "dst": "伦纳德",
+    "evidence": "他们通过战争赚足了黄金与美钞",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦纳德",
+    "relation": "斥责",
+    "dst": "挖掘艺术",
+    "evidence": "我看你是得了失心疯",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦纳德",
+    "relation": "离开",
+    "dst": "挖掘艺术",
+    "evidence": "说完，他大跨步地离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "游荡",
+    "dst": "卡纳比街",
+    "evidence": "艺术家漫无目的地游荡在卡纳比街上",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "警觉",
+    "dst": "海报",
+    "evidence": "还有这些海报……",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "付钱",
+    "dst": "报童",
+    "evidence": "艺术家数出了几个硬币，拦下了正在售卖报纸的报童",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "购买",
+    "dst": "报纸",
+    "evidence": "一份报纸，谢谢",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "发现",
+    "dst": "报纸",
+    "evidence": "他很快找到了报纸发行的日期",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "惊疑",
+    "dst": "影像",
+    "evidence": "接连而至的异象引起了他的警觉",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "拒绝",
+    "dst": "镜面肥皂泡",
+    "evidence": "我的肥皂泡绝不是供他们享乐的！",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

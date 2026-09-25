@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-09-17 14:55:09",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "budget": 8,
+    "cases": 300
+  },
+  "results": [
+    {
+      "label": "A 基线(5,10)",
+      "per_entity": 5,
+      "total_cap": 10,
+      "rerank": false,
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass_n": 177,
+      "inject_pass": 0.59,
+      "pool_avg": 20.4,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        }
+      },
+      "elapsed_s": 288.7
+    },
+    {
+      "label": "C 扩池+余弦重排(keep_top=3)",
+      "per_entity": 5,
+      "total_cap": 10,
+      "rerank": true,
+      "strict_pass_n": 207,
+      "strict_pass": 0.69,
+      "inject_pass_n": 178,
+      "inject_pass": 0.5933,
+      "pool_avg": 20.4,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        }
+      },
+      "elapsed_s": 407.8
+    }
+  ],
+  "delta_vs_baseline": [
+    {
+      "label": "A 基线(5,10)",
+      "d_strict": 0,
+      "d_inject": 0,
+      "d_neg_cases": 0
+    },
+    {
+      "label": "C 扩池+余弦重排(keep_top=3)",
+      "d_strict": 12,
+      "d_inject": 1,
+      "d_neg_cases": 0
+    }
+  ]
+}

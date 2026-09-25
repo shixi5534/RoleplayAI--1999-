@@ -1,0 +1,70 @@
+expand_1   items=300  inject=0.69
+entnolist_1 items=300  inject=0.6167
+
+inject 判定不同的题：44 题
+
+id      expand   entnolist  query
+----------------------------------------------------------------------------------------------------
+R003    True     False      洞穴的囚徒篇里海盗船上的歌手是谁？
+        entnolist 记录的 q：洞穴的囚徒篇里海盗船上的歌手是谁？
+R013    True     False      苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？
+        entnolist 记录的 q：苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？
+R017    True     False      伦敦十字街的雾中女巫是谁？
+        entnolist 记录的 q：伦敦十字街的雾中女巫是谁？
+R021    True     False      卡卡尼亚的本名是什么？
+        entnolist 记录的 q：卡卡尼亚的本名是什么？
+R042    True     False      阿尔卡纳最终死于哪种轰炸武器？
+        entnolist 记录的 q：阿尔卡纳最终死于哪种轰炸武器？
+R055    True     False      孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？ Apeiron
+        entnolist 记录的 q：孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？
+R070    True     False      绿湖噩梦篇里的灯塔传说与哪个营地相关？
+        entnolist 记录的 q：绿湖噩梦篇里的灯塔传说与哪个营地相关？
+R071    False    True       绿湖噩梦篇里的巨怪英文叫什么？ troll
+        entnolist 记录的 q：绿湖噩梦篇里的巨怪英文叫什么？
+R075    False    True       在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？ troll
+        entnolist 记录的 q：在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？
+R077    True     False      根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？
+        entnolist 记录的 q：根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？
+R080    True     False      绿湖噩梦篇的故事发生在哪一年？
+        entnolist 记录的 q：绿湖噩梦篇的故事发生在哪一年？
+R090    False    True       在中央塔里自囚的医生是谁？
+        entnolist 记录的 q：在中央塔里自囚的医生是谁？
+R091    True     False      雷米特杯失窃案里出现的机器人保安英文叫什么？
+        entnolist 记录的 q：雷米特杯失窃案里出现的机器人保安英文叫什么？
+R095    True     False      梅林的英文名是什么？（唐人街影话篇）
+        entnolist 记录的 q：梅林的英文名是什么？（唐人街影话篇）
+R096    True     False      诺亚的英文名是什么？（唐人街影话篇）
+        entnolist 记录的 q：诺亚的英文名是什么？（唐人街影话篇）
+R099    False    True       来亚什基的少年奥古斯特的英文名是什么？
+        entnolist 记录的 q：来亚什基的少年奥古斯特的英文名是什么？
+R112    True     False      斯特凡的英文名是什么？（77 号往事）
+        entnolist 记录的 q：斯特凡的英文名是什么？（77 号往事）
+R113    True     False      芭芭拉的英文名是什么？（77 号往事）
+        entnolist 记录的 q：芭芭拉的英文名是什么？（77 号往事）
+R114    True     False      阿格斯的英文名是什么？（77 号往事）
+        entnolist 记录的 q：阿格斯的英文名是什么？（77 号往事）
+R131    True     False      圣火纪行篇里伦敦举办的选拔赛叫什么？
+        entnolist 记录的 q：圣火纪行篇里伦敦举办的选拔赛叫什么？
+R143    True     False      绿松石蛇俱乐部篇里发生的命案中文叫什么？
+        entnolist 记录的 q：绿松石蛇俱乐部篇里发生的命案中文叫什么？
+R144    False    True       蝴蝶小姐的英文名是什么？（绿松石蛇俱乐部篇）
+        entnolist 记录的 q：蝴蝶小姐的英文名是什么？（绿松石蛇俱乐部篇）
+R152    True     False      长夜鸣笛篇的列车故事发生在哪条河流沿岸？
+        entnolist 记录的 q：长夜鸣笛篇的列车故事发生在哪条河流沿岸？
+R164    True     False      不老春篇里传说中的宝剑叫什么？
+        entnolist 记录的 q：不老春篇里传说中的宝剑叫什么？
+R165    True     False      朔日手记篇里酿得好酒的酒馆娘是谁？
+        entnolist 记录的 q：朔日手记篇里酿得好酒的酒馆娘是谁？
+... 另有 19 题
+
+抽查（前 5 道差异题）的返回块数与 missing_groups：
+  [R003] expand: n_chunks=8 inject_missing=[] injected_chars=2379
+        entnolist: n_chunks=8 inject_missing=[0] injected_chars=2376
+  [R013] expand: n_chunks=8 inject_missing=[] injected_chars=2531
+        entnolist: n_chunks=8 inject_missing=[0, 1] injected_chars=2552
+  [R017] expand: n_chunks=8 inject_missing=[] injected_chars=2701
+        entnolist: n_chunks=8 inject_missing=[0, 1] injected_chars=2692
+  [R021] expand: n_chunks=8 inject_missing=[] injected_chars=2531
+        entnolist: n_chunks=8 inject_missing=[0] injected_chars=2654
+  [R042] expand: n_chunks=8 inject_missing=[] injected_chars=2698
+        entnolist: n_chunks=8 inject_missing=[0] injected_chars=2730

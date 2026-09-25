@@ -1,0 +1,1196 @@
+{
+ "b162399bfc76327d4369e2eb": {
+  "entities": [
+   {
+    "name": "主席",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持最后投票并宣布法案通过者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "缩在凳子旁的康复中心职员"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "砸窗闯入病房者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被唤醒的病患"
+   },
+   {
+    "name": "高级守卫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令制服入侵者的守卫"
+   },
+   {
+    "name": "主持人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报赞成票情况者"
+   },
+   {
+    "name": "暴雨改革：增员与秩序",
+    "type": "物品",
+    "aliases": [
+     "法案"
+    ],
+    "desc": "正式表决通过的法案"
+   },
+   {
+    "name": "好天气",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "1525房间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "发生入侵的房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "主席",
+    "relation": "宣布通过",
+    "dst": "暴雨改革：增员与秩序",
+    "evidence": "《暴雨改革：增员与秩序》法案通过",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "闯入",
+    "dst": "1525房间",
+    "evidence": "这里的玻璃没我想象中的硬啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "唤醒",
+    "dst": "维尔汀",
+    "evidence": "喂，该起床了，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "高级守卫",
+    "relation": "下令",
+    "dst": "命名日",
+    "evidence": "制服入侵者！",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "自限",
+    "dst": "受伤人数",
+    "evidence": "我会尽可能地把受伤人数控制在八个以内",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "ca3dc0029da3ff80d17d6658": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "载维尔汀驾扫帚飞出者"
+   },
+   {
+    "name": "高级守卫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "紧急呼叫救援的守卫"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刚苏醒被带离病房者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊惶未追的康复中心职员"
+   },
+   {
+    "name": "传呼机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被打飞的通讯设备"
+   },
+   {
+    "name": "扫帚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭的飞行载具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "载走",
+    "dst": "维尔汀",
+    "evidence": "过来，给我坐到扫帚上",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "打飞",
+    "dst": "传呼机",
+    "evidence": "红弩箭一扫帚打飞了传呼机",
+    "confidence": 0.95
+   },
+   {
+    "src": "高级守卫",
+    "relation": "呼叫",
+    "dst": "救援",
+    "evidence": "救援，1525房间紧急呼叫救援",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "逃离",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "那刺目的，耀眼的白光",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "e2110ae85e4501b45372e16a": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "载维尔汀返程的飞行女巫"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出院归来的司辰"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被列巴噎住后哭喊的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "递水并提醒慢咽的苹果"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关心维尔汀身体状况者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问维尔汀从何处归来者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "为维尔汀撑伞者之一"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为维尔汀撑伞者之一"
+   },
+   {
+    "name": "列巴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "噎住星锑的面包"
+   },
+   {
+    "name": "健康沙拉",
+    "type": "物品",
+    "aliases": [],
+    "desc": "APPLe提议的补给"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "红弩箭称会过去的一场灾难"
+   },
+   {
+    "name": "归巢的鸟群",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "载送",
+    "dst": "维尔汀",
+    "evidence": "兜够风了，是时候返程了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "重逢",
+    "dst": "维尔汀",
+    "evidence": "维尔汀——！！！你回来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "关心",
+    "dst": "维尔汀",
+    "evidence": "你的身体还好吗？我看到你身上接了很多设备",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "提醒",
+    "dst": "星锑",
+    "evidence": "请小口小口喝，不要对食道造成太大的压力",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "支援",
+    "dst": "维尔汀",
+    "evidence": "所有人……都在不约而同地为你撑伞，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "支援",
+    "dst": "维尔汀",
+    "evidence": "从改革法案、宣战抗议……到无数次的打探、辩论与计算",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "b6a64398e54b7a3587846086": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称维尔汀为唯一朋友者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布法案通过并提及白色石屋者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "获知自主权扩大的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与维尔汀对视无语者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "将转达修订细节者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑治疗说法者"
+   },
+   {
+    "name": "暴雨改革：秩序与增员",
+    "type": "物品",
+    "aliases": [
+     "法案"
+    ],
+    "desc": "已通过、待理事会审阅的法案"
+   },
+   {
+    "name": "人类和平安全理事会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将审阅法案的机构"
+   },
+   {
+    "name": "白色石屋",
+    "type": "组织",
+    "aliases": [],
+    "desc": "白鸽所来自之处"
+   },
+   {
+    "name": "白鸽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伫立树上的鸟，象征被注意"
+   }
+  ],
+  "relations": [
+   {
+    "src": "康斯坦丁",
+    "relation": "宣布",
+    "dst": "暴雨改革：秩序与增员",
+    "evidence": "《暴雨改革：秩序与增员》法案在基金会通过了",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类和平安全理事会",
+    "relation": "审阅",
+    "dst": "暴雨改革：秩序与增员",
+    "evidence": "等人类和平安全理事会审阅无误，它便会成为一部正式的法律",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "判定",
+    "dst": "维尔汀",
+    "evidence": "这次审查治疗的结果为低风险，判定为安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "质疑",
+    "dst": "康斯坦丁",
+    "evidence": "那这治疗怎么说？",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "告知",
+    "dst": "维尔汀",
+    "evidence": "看来你遇到了来自白色石屋的鸽子",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "珍视",
+    "dst": "维尔汀",
+    "evidence": "你可是我们留在这个世界上唯一的……朋友了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c53c92faaa27f5dead685181": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "收到黑白棋子与贺函者"
+   },
+   {
+    "name": "秘书莎朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转交方盒并提及农历日期者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [
+     "副会长"
+    ],
+    "desc": "赠予棋子并写下贺函者"
+   },
+   {
+    "name": "黑白棋子",
+    "type": "物品",
+    "aliases": [
+     "棋子"
+    ],
+    "desc": "小叶紫檀香气的新棋"
+   },
+   {
+    "name": "贺函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写有“很高兴见证了你的成长”"
+   },
+   {
+    "name": "办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "Z的普通且适用的房间"
+   },
+   {
+    "name": "今时往日",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秘书莎朗",
+    "relation": "转交",
+    "dst": "Z",
+    "evidence": "副会长要我把这个交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "赠予",
+    "dst": "黑白棋子",
+    "evidence": "是崭新的黑白棋子",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "题写",
+    "dst": "贺函",
+    "evidence": "很高兴见证了你的成长",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "15ce4a3d4a8617511870ae1a": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "船长"
+    ],
+    "desc": "拒绝弃船的海盗"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断船将沉没者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告进水比例与传送失败者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "欲开启传送软盘者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝船长接受离别的苹果"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为众人买新船者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [
+     "收音机"
+    ],
+    "desc": "被雨水冲刷、开着花的设备"
+   },
+   {
+    "name": "转念即至",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无法开启的传送术式载体"
+   },
+   {
+    "name": "APPLe号摇滚巨轮二世",
+    "type": "物品",
+    "aliases": [
+     "摇滚巨轮二世"
+    ],
+    "desc": "苏芙比买的新船，正在下沉"
+   },
+   {
+    "name": "外派任务避难须知",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记载暴雨前求助条款的手册"
+   },
+   {
+    "name": "洞穴的囚徒",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "爱琴海游记",
+    "type": "物品",
+    "aliases": [],
+    "desc": "收音机播报的1999年内容"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "星锑怀疑收音机为其间谍"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "担任船长于",
+    "dst": "APPLe号摇滚巨轮二世",
+    "evidence": "我要和APPLe号“摇滚巨轮”二世同生共死",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "购置",
+    "dst": "APPLe号摇滚巨轮二世",
+    "evidence": "这可是苏芙比给我们买的新船啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "报告",
+    "dst": "维尔汀",
+    "evidence": "左舱进水60%，右舱进水75%",
+    "confidence": 0.95
+   },
+   {
+    "src": "转念即至",
+    "relation": "失效于",
+    "dst": "海域",
+    "evidence": "“转念即至”传送软盘无法开启",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "指控",
+    "dst": "无线电小姐",
+    "evidence": "想笑就笑吧，重塑之手的间谍！你还要装到什么时候",
+    "confidence": 0.9
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "播报",
+    "dst": "爱琴海游记",
+    "evidence": "因为你播报了什么来自1999年的爱琴海游记",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "劝诫",
+    "dst": "星锑",
+    "evidence": "我想我们最好坦然接受人生的离别，船长",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6dee49890baed9b9efcd450e": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "痛惜唱片与电台的海盗"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打算把旋钮拨回1913年者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [
+     "收音机"
+    ],
+    "desc": "没有视觉、只能靠触听想象的播报者"
+   },
+   {
+    "name": "约翰·提托",
+    "type": "角色",
+    "aliases": [
+     "约翰·列侬"
+    ],
+    "desc": "星锑提及其也无用的人物"
+   },
+   {
+    "name": "唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑珍视的收藏"
+   },
+   {
+    "name": "胡椒博士",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑心爱的饮料"
+   },
+   {
+    "name": "海盗电台",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑珍视之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无线电小姐",
+    "relation": "播报",
+    "dst": "音乐",
+    "evidence": "一阵悠扬的音乐从收音机里传了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "回溯至",
+    "dst": "1913年",
+    "evidence": "就需要把旋钮往前稍稍拨回。拨回至……1913年",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "珍视",
+    "dst": "唱片",
+    "evidence": "我的唱片、我的胡椒博士、我的海盗电台",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8e4b69f725c7c68d7f2dc41a": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "获正式任命书的司辰小队队长"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "递交任命书并说明借调权限者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "期待配给新船的海盗"
+   },
+   {
+    "name": "司辰小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "获法律认可的独立部门"
+   },
+   {
+    "name": "暴雨改革：秩序与增员",
+    "type": "物品",
+    "aliases": [
+     "法案"
+    ],
+    "desc": "被人类和平安全理事会通过的法案"
+   },
+   {
+    "name": "人类和平安全理事会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "通过法案的机构"
+   },
+   {
+    "name": "奥利图欧基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "从未被暴雨回溯的重塑饲养基地"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯",
+     "拉普拉斯科算中心"
+    ],
+    "desc": "可借调人员的机构"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [
+     "芝诺军备学院"
+    ],
+    "desc": "可借调人员的机构"
+   },
+   {
+    "name": "教管学校",
+    "type": "组织",
+    "aliases": [],
+    "desc": "风险较高神秘学家将进入之处"
+   },
+   {
+    "name": "藏宝地",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "递交",
+    "dst": "维尔汀",
+    "evidence": "基金会的正式任命书",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类和平安全理事会",
+    "relation": "通过",
+    "dst": "暴雨改革：秩序与增员",
+    "evidence": "人类和平安全理事会正式通过了法案",
+    "confidence": 0.95
+   },
+   {
+    "src": "司辰小队",
+    "relation": "借调于",
+    "dst": "科算中心",
+    "evidence": "司辰小队也可以从基金会、拉普拉斯科算中心和芝诺军备学院的现有人员中进行借调",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "调查",
+    "dst": "奥利图欧基地",
+    "evidence": "我想再去那里调查一下",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "委派",
+    "dst": "维尔汀",
+    "evidence": "最高指挥权在你，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "汇报于",
+    "dst": "Z",
+    "evidence": "我们在基金会的对接人，还是由您负责吗",
+    "confidence": 0.9
+   },
+   {
+    "src": "神秘学家",
+    "relation": "接受",
+    "dst": "风险评估",
+    "evidence": "所有隶属于司辰编制的神秘学家，都要由基金会进行统一的风险评估",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5bf76d71419cf697baffc4d4": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "率队前往奥利图欧基地者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "船长"
+    ],
+    "desc": "被派来跑腿的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "说明他人去向的苹果"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因闯入康复中心受行政处罚者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "正在办理编制转移交接者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因清理森林消耗精力休息者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "仍在休息的闺秀"
+   },
+   {
+    "name": "莫桑女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "司辰小队正式成员，苏芙比前家庭教师"
+   },
+   {
+    "name": "奥利图欧基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "仅二十米走道免疫暴雨"
+   },
+   {
+    "name": "芝诺大门",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雾气掩盖的入口"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯"
+    ],
+    "desc": "曾派实验犬搜索基地的机构"
+   },
+   {
+    "name": "奥利图欧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "惯于憩息在有水源山谷的生物"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "基地仅走道可免疫"
+   },
+   {
+    "name": "河谷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "水汽氤氲之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莫桑女士",
+    "relation": "加入",
+    "dst": "司辰小队",
+    "evidence": "以后我就是司辰小队的正式成员了",
+    "confidence": 0.95
+   },
+   {
+    "src": "莫桑女士",
+    "relation": "任教于",
+    "dst": "苏芙比",
+    "evidence": "她以前是苏芙比的家庭教师",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "受罚于",
+    "dst": "圣洛夫基金会",
+    "evidence": "红弩箭小姐也因为闯入康复中心遭到了行政处罚",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "办理",
+    "dst": "编制转移",
+    "evidence": "十四行诗小姐正在总部办理编制转移的交接手续",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "倚重",
+    "dst": "星锑",
+    "evidence": "星锑是光学神秘术的专家，她或许能看出什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "搜索",
+    "dst": "奥利图欧基地",
+    "evidence": "拉普拉斯的那群家伙让实验犬一寸一寸地去嗅",
+    "confidence": 0.9
+   },
+   {
+    "src": "奥利图欧",
+    "relation": "栖息于",
+    "dst": "河谷",
+    "evidence": "它们惯于憩息在有水源的山谷",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a5dd5a9c11f9bec1aac42f76": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "星锑船长"
+    ],
+    "desc": "遭暗算攻击的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉雾气浓度异常者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断本不应有埋伏者"
+   },
+   {
+    "name": "莫桑女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥撤退与掩护者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰小姐"
+    ],
+    "desc": "负责掩护者"
+   },
+   {
+    "name": "河谷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雾气异常的深处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "警示",
+    "dst": "星锑",
+    "evidence": "这片雾气的浓度似乎不太正常",
+    "confidence": 0.95
+   },
+   {
+    "src": "未知袭击者",
+    "relation": "攻击",
+    "dst": "星锑",
+    "evidence": "有人在暗算我？！我，我的帽子差点被打掉了",
+    "confidence": 0.9
+   },
+   {
+    "src": "莫桑女士",
+    "relation": "指挥",
+    "dst": "星锑",
+    "evidence": "请谨慎地撤退到这边来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "掩护",
+    "dst": "莫桑女士",
+    "evidence": "司辰小姐，掩护就拜托您了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0fbfd4f7570e4dae0e2da5c1": {
+  "entities": [
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误击后出示证件的基金会调查员"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说明人类科技倒退的调查员"
+   },
+   {
+    "name": "莫桑女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与调查员攀谈并核实证件者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑调查必要性的飞行女巫"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻检物资箱发现军用巧克力者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "解释犬科不能食可可碱的苹果"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现自己名字刻在物资箱上者"
+   },
+   {
+    "name": "军用巧克力",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拉普拉斯出品的高能量军用品"
+   },
+   {
+    "name": "物资箱",
+    "type": "物品",
+    "aliases": [
+     "木头箱子"
+    ],
+    "desc": "刻着维尔汀名字的木箱"
+   },
+   {
+    "name": "红外线鸟枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "基地落灰物资"
+   },
+   {
+    "name": "磁悬浮自动喂食器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "基地落灰物资"
+   },
+   {
+    "name": "K位素校验仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "基地落灰物资"
+   },
+   {
+    "name": "奥利图欧基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "废弃已久、正被回收之处"
+   },
+   {
+    "name": "压箱底",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "调查员Ⅰ",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们是基金会的调查员，这是我们的身份识别证明",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "回收",
+    "dst": "物资箱",
+    "evidence": "我们来此回收散落的70年代科技制品",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "发现",
+    "dst": "军用巧克力",
+    "evidence": "一大箱拉普拉斯出品的军用巧克力",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "发现",
+    "dst": "物资箱",
+    "evidence": "你手里的那个给我看看……上面刻着我的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "质疑",
+    "dst": "调查员Ⅰ",
+    "evidence": "这块基地已经废弃很久了吧，有什么现在才来调查的必要吗",
+    "confidence": 0.9
+   },
+   {
+    "src": "莫桑女士",
+    "relation": "请教",
+    "dst": "调查员Ⅰ",
+    "evidence": "我有一些关于基地的问题想请教两位",
+    "confidence": 0.9
+   },
+   {
+    "src": "人类科技",
+    "relation": "倒退至",
+    "dst": "1913年",
+    "evidence": "外界时间已经被回溯到了1913年",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

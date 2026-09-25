@@ -1,0 +1,51 @@
+======================================================================================
+① 实体识别准确率｜agent（强模型）vs 本地 qwen2.5:7b（此前 15.0%）
+======================================================================================
+  命中 42/67 = **62.7%**
+
+  置信度           题数       命中率
+  high           6     83.3%
+  mid           22     90.9%
+  low           39     43.6%
+
+  来源              题数       命中率
+  cand            19     42.1%
+  guess           16     56.2%
+  knowledge       32     78.1%
+
+======================================================================================
+② 接入收益（A 类 67 题）—— 把预测实体追加到 query
+======================================================================================
+  指标                    不用预测         用预测           Δ
+  inject_pass         0.0000      0.3134     +0.3134
+  strict_pass         0.0000      0.3433     +0.3433
+  top2_hit            0.0000      0.1493     +0.1493
+======================================================================================
+  耗时 1.5 min
+
+逐题明细（前 25 条）：
+  ✅ R002  mid   knowledge 选中=['Zanetta']  真值=['zanetta']
+  ❌ R005  high  cand      选中=['Polina Lesage', 'Polina']  真值=['paulina', 'regulus', 'sotheby', '星锑']
+  ✅ R006  mid   knowledge 选中=['Zero']  真值=['zero']
+  ✅ R008  high  cand      选中=['Tooth Fairy']  真值=['regulus', 'schneider', 'sotheby', 'tooth fairy']
+  ✅ R010  mid   knowledge 选中=['Plato']  真值=['plato', '柏拉图']
+  ✅ R011  high  cand      选中=['Tooth Fairy']  真值=['rockin', 'schneider', 'ship', 'tooth fairy']
+  ✅ R012  mid   cand      选中=['Apeiron']  真值=['apeiron', 'ship', '船', '阿派朗']
+  ✅ R014  low   knowledge 选中=['Zanetta']  真值=['timekeeper', 'vertin', 'zanetta', '维尔汀']
+  ✅ R016  mid   knowledge 选中=['Zanetta']  真值=['zanetta']
+  ✅ R018  mid   knowledge 选中=['Shamane']  真值=['shamane', '鬃毛沙砾']
+  ✅ R019  low   knowledge 选中=['Zanetta']  真值=['zanetta']
+  ✅ R027  mid   cand      选中=['Schwartz']  真值=['kakania', 'schwartz', '卡卡尼亚', '施瓦茨']
+  ✅ R029  mid   knowledge 选中=['bloody pain']  真值=['bloody pain']
+  ✅ R032  low   knowledge 选中=['Vienna']  真值=['bloody pain', 'vienna', '维也纳']
+  ✅ R037  high  cand      选中=['Manus Vindictae']  真值=['heinrich', 'manus', 'manus vindictae', '海因里希']
+  ✅ R041  mid   knowledge 选中=['umbrella']  真值=['umbrella']
+  ✅ R044  high  cand      选中=['Apeiron']  真值=['apeiron']
+  ✅ R045  low   guess     选中=['Zero']  真值=['apeiron', 'zero', '阿派朗']
+  ❌ R052  low   knowledge 选中=['Sotheby']  真值=['sophia', '苏菲亚']
+  ✅ R053  low   cand      选中=['Apeiron']  真值=['apeiron', 'manus', 'manus vindictae', '重塑之手']
+  ✅ R055  low   guess     选中=['Apeiron']  真值=['apeiron', 'scroll', '卷轴', '阿派朗']
+  ✅ R058  mid   knowledge 选中=['Arcana']  真值=['arcana', 'vacuum', '阿尔卡纳']
+  ✅ R059  mid   knowledge 选中=['37', 'Thirty-seven']  真值=['37', 'apeiron', 'thirty-seven', '阿派朗']
+  ✅ R062  mid   knowledge 选中=['troll']  真值=['camp', 'green lake', 'troll', '巨怪']
+  ✅ R063  mid   knowledge 选中=['Horropedia']  真值=['horropedia', '恐怖通']

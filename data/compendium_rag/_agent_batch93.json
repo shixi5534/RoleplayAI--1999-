@@ -1,0 +1,672 @@
+{
+ "bf80fc54dd286fd6d5ed77d8": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "波士顿的工程师"
+   },
+   {
+    "name": "公司代理人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来电撤资者"
+   },
+   {
+    "name": "威尔伯和奥维尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "竞争对手"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挂载式单人飞行翼"
+   },
+   {
+    "name": "维克多工作室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "波士顿的工作处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "公司代理人",
+    "relation": "撤资",
+    "dst": "维克多",
+    "evidence": "我们认为这个项目不再适合投入后续资源",
+    "confidence": 0.95
+   },
+   {
+    "src": "维克多",
+    "relation": "焦虑",
+    "dst": "威尔伯和奥维尔",
+    "evidence": "俄亥俄人的大家伙比我们的进度快太多了",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "劝解",
+    "dst": "维克多",
+    "evidence": "在以百年计的尺度看来，三五年的差距微乎其微",
+    "confidence": 0.9
+   },
+   {
+    "src": "维克多",
+    "relation": "研发",
+    "dst": "飞行翼",
+    "evidence": "挂载式单人飞行翼工程",
+    "confidence": 0.85
+   },
+   {
+    "src": "露西",
+    "relation": "坚持",
+    "dst": "飞行翼",
+    "evidence": "去准备车，两个钟头后我们到停车场准备试飞",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "b008f3d1991d2fdd1ea57f53": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "动摇的工程师"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将被带往河边试飞"
+   },
+   {
+    "name": "查尔斯河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "改往的试飞地"
+   },
+   {
+    "name": "佛罗里达",
+    "type": "地点",
+    "aliases": [],
+    "desc": "维克多欲归之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维克多",
+    "relation": "失信心",
+    "dst": "飞行翼",
+    "evidence": "也许这从一开始就是个不可能实现的幻想",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "坚持",
+    "dst": "飞行翼",
+    "evidence": "这不会是最后一次……在穷极所有的可能性之前，匆忙放弃并不明智",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "改地",
+    "dst": "查尔斯河",
+    "evidence": "不，带到查尔斯河河边……这个季节的河风更温和",
+    "confidence": 0.9
+   },
+   {
+    "src": "维克多",
+    "relation": "欲归",
+    "dst": "佛罗里达",
+    "evidence": "我打算回家，回佛罗里达",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "2f09454e7dae5f46e282b272": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急于成功者"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待组装"
+   },
+   {
+    "name": "查尔斯河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "河畔广场"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "露西拒绝的捷径"
+   },
+   {
+    "name": "杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记者朋友"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维克多",
+    "relation": "建议使用",
+    "dst": "神秘术",
+    "evidence": "用一下你的神秘术……最好还是……",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "拒绝",
+    "dst": "神秘术",
+    "evidence": "神秘术的时效有限，而且存在失败的风险……这不是一条可行之道",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "组装",
+    "dst": "飞行翼",
+    "evidence": "去把机翼搬下来，该把它们组装起来了",
+    "confidence": 0.9
+   },
+   {
+    "src": "维克多",
+    "relation": "布置",
+    "dst": "查尔斯河",
+    "evidence": "忙着在河畔广场给自己抢出一块空地",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "f2e82fcd9549d55c61107f28": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等不及者"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将装上暗银色手臂"
+   },
+   {
+    "name": "围观的游人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑者"
+   },
+   {
+    "name": "麻黄色设计稿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "浸湿的稿纸"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "待风",
+    "dst": "飞行翼",
+    "evidence": "风向很乱，不能在这时候起飞……等到风向有利",
+    "confidence": 0.95
+   },
+   {
+    "src": "维克多",
+    "relation": "催促",
+    "dst": "露西",
+    "evidence": "再等下去，别说路人了，连记者都会撤走！",
+    "confidence": 0.9
+   },
+   {
+    "src": "围观的游人",
+    "relation": "讥讽",
+    "dst": "飞行翼",
+    "evidence": "一个机器人？一个装在机器人背上的机器翅膀？哈哈！",
+    "confidence": 0.85
+   },
+   {
+    "src": "露西",
+    "relation": "宽慰",
+    "dst": "维克多",
+    "evidence": "一次失败会怎么样呢？你已经失败了上百次",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "组装",
+    "dst": "飞行翼",
+    "evidence": "机械女士将飞行翼装上自己的暗银色手臂",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "098234f368ed18b1a7768094": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "试飞者"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夸说者"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "燃气驱动"
+   },
+   {
+    "name": "查尔斯河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "试飞处"
+   },
+   {
+    "name": "麻黄色设计稿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被主人遗弃"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "试飞",
+    "dst": "飞行翼",
+    "evidence": "机械女士展开银翼，向着查尔斯河一跃而下……比我预想中糟糕",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞行翼",
+    "relation": "落水",
+    "dst": "查尔斯河",
+    "evidence": "燃油快耗尽了……她落水了",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "捡回",
+    "dst": "麻黄色设计稿",
+    "evidence": "捡起那摞被主人遗弃的设计稿",
+    "confidence": 0.9
+   },
+   {
+    "src": "维克多",
+    "relation": "夸说",
+    "dst": "飞行翼",
+    "evidence": "安全、稳定、可靠……只需要投入小小的一笔资金",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "75559d9c2c0d5bcbc126ce08": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "维克多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离去者"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拖拽"
+   },
+   {
+    "name": "马特洪峰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "旅人畏退之喻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "劝留",
+    "dst": "维克多",
+    "evidence": "你要和希梅娜一样，走到半路就离开吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维克多",
+    "relation": "放弃",
+    "dst": "飞行翼",
+    "evidence": "就这样吧……压低帽檐，转身消失在河畔人潮中",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "自况",
+    "dst": "马特洪峰",
+    "evidence": "就像面对马特洪峰的旅人，被眼前的高山和苦厄吓坏了",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "守持",
+    "dst": "飞行翼",
+    "evidence": "拖拽着落水的飞翼，沉默地回到自己的命运中……但她不会停下脚步",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1c226c31886aaf42fb7ce628": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [
+     "职员"
+    ],
+    "desc": "航天中心职员"
+   },
+   {
+    "name": "胡安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "湾岸中学的旧同事"
+   },
+   {
+    "name": "航天中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "露西服务两年之所"
+   },
+   {
+    "name": "湾岸中学",
+    "type": "地点",
+    "aliases": [],
+    "desc": "胡安娜所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "休假",
+    "dst": "航天中心",
+    "evidence": "很感谢您两年来在航天中心的服务……接下来请享受您的假期",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "联络",
+    "dst": "胡安娜",
+    "evidence": "请致电湾岸中学外联办公室，胡安娜女士接……我今天就到",
+    "confidence": 0.95
+   },
+   {
+    "src": "胡安娜",
+    "relation": "任教",
+    "dst": "湾岸中学",
+    "evidence": "我在学校等你",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "期待",
+    "dst": "航天中心",
+    "evidence": "预祝你们顺利，我十分期待看到登月舱抵达月球的历史性时刻",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "40a0e585d51bb0148ee73fe2": {
+  "entities": [
+   {
+    "name": "胡安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "退休教师"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "麻黄色设计稿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所赠的礼物"
+   },
+   {
+    "name": "湾岸中学",
+    "type": "地点",
+    "aliases": [],
+    "desc": "胡安娜任教处"
+   },
+   {
+    "name": "航天中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "维护团队被抽调处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "胡安娜",
+    "relation": "展示",
+    "dst": "麻黄色设计稿",
+    "evidence": "记得这个吗？这是胡安娜离开时她赠与的礼物",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "完善",
+    "dst": "麻黄色设计稿",
+    "evidence": "是你一直在完善它",
+    "confidence": 0.9
+   },
+   {
+    "src": "胡安娜",
+    "relation": "任教",
+    "dst": "湾岸中学",
+    "evidence": "带这些青春期小孩可一点不比在航天中心的工作轻松",
+    "confidence": 0.85
+   },
+   {
+    "src": "露西",
+    "relation": "关切",
+    "dst": "胡安娜",
+    "evidence": "你看起来很健康，比从前更健康",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "eb325042202b91359cdc0f0b": {
+  "entities": [
+   {
+    "name": "胡安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "教师"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "麻黄色设计稿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被称作种子"
+   }
+  ],
+  "relations": [
+   {
+    "src": "胡安娜",
+    "relation": "践行",
+    "dst": "麻黄色设计稿",
+    "evidence": "他们向往飞行，所以我拿着你给的设计，跟他们一起折腾",
+    "confidence": 0.95
+   },
+   {
+    "src": "胡安娜",
+    "relation": "喻作",
+    "dst": "麻黄色设计稿",
+    "evidence": "去看看你播下的小小的种子们……它已经萌芽、茁壮",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "断言",
+    "dst": "麻黄色设计稿",
+    "evidence": "没有任何项目该被草率放弃，除非它们已被确证毫无价值",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "adf67daf3ef13eca758db1f4": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "机械女士"
+    ],
+    "desc": "机械女士"
+   },
+   {
+    "name": "胡安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带领孩子者"
+   },
+   {
+    "name": "飞行翼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "孩子们的翅膀"
+   },
+   {
+    "name": "湾岸镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "1969 年的海滩"
+   },
+   {
+    "name": "百慕大三角",
+    "type": "地点",
+    "aliases": [],
+    "desc": "传闻之海"
+   }
+  ],
+  "relations": [
+   {
+    "src": "胡安娜",
+    "relation": "率童",
+    "dst": "飞行翼",
+    "evidence": "我让孩子们跟我一起把这件事做下去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "评量",
+    "dst": "飞行翼",
+    "evidence": "没有神秘术的辅助也能稳定滞空一分钟以上……这比以前好了不少",
+    "confidence": 0.9
+   },
+   {
+    "src": "胡安娜",
+    "relation": "述奇",
+    "dst": "百慕大三角",
+    "evidence": "与百慕大群岛形成三角区域，就在这片漂亮的海域",
+    "confidence": 0.85
+   },
+   {
+    "src": "露西",
+    "relation": "存疑",
+    "dst": "百慕大三角",
+    "evidence": "我不相信……未经验证的报道中往往存在大量误导",
+    "confidence": 0.9
+   },
+   {
+    "src": "胡安娜",
+    "relation": "执教",
+    "dst": "湾岸镇",
+    "evidence": "湾岸镇海滩",
+    "confidence": 0.8
+   }
+  ]
+ }
+}

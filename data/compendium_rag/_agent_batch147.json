@@ -1,0 +1,1765 @@
+{
+ "ddc1e63509abd6d50d684b4b": {
+  "entities": [
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为星锑介绍淘金镇的司机女士"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被墙上禁令激怒的摇滚海盗"
+   },
+   {
+    "name": "淘金镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "比想象中更热闹的城镇"
+   },
+   {
+    "name": "广播台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "由旧剧院改建的广播台"
+   },
+   {
+    "name": "发电厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "由淘金客旧居改建的发电厂"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "上个月做了议员的势力"
+   },
+   {
+    "name": "自治法令",
+    "type": "概念",
+    "aliases": [],
+    "desc": "新增的多条自治法令修正案"
+   },
+   {
+    "name": "摇滚乐",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被第二十九修正案禁止的演出"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "镇上禁止使用的能力"
+   },
+   {
+    "name": "街头少年",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被招呼来停车又沉默的街头少年"
+   },
+   {
+    "name": "停车小子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替莱莉找停车场的小子"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被星锑质问是否为此地掌控者的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "广播台",
+    "evidence": "淘金镇的广播台——就是街口往前走几步的那栋建筑",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "解释",
+    "dst": "广播台",
+    "evidence": "从前是座剧院，后来没人看歌剧，就让广播台的人拿去用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "发电厂",
+    "evidence": "现在是发电厂，但没几天就会闹停电",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "设想",
+    "dst": "广播台",
+    "evidence": "要是在剧院里放重金属一定很有意思！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "询问",
+    "dst": "星锑",
+    "evidence": "我还不知道你是做什么的呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "自介",
+    "dst": "莱莉",
+    "evidence": "泰晤士河上最快最酷的海盗星锑～☆",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "招呼",
+    "dst": "街头少年",
+    "evidence": "她笑着回答，顺便朝街对面的少年招手",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "吩咐",
+    "dst": "停车小子",
+    "evidence": "小子，替我找个停车场",
+    "confidence": 0.95
+   },
+   {
+    "src": "街头少年",
+    "relation": "沉默",
+    "dst": "莱莉",
+    "evidence": "火热的生意褪去，人群交头接耳，然后共同沉默",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "发现",
+    "dst": "自治法令",
+    "evidence": "自治法令第七修正案：入境/过境神秘学家应当登记",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "抗议",
+    "dst": "摇滚乐",
+    "evidence": "禁止本镇居民举办摇滚乐演出或持有任何相关音像制品",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "质疑",
+    "dst": "圣洛夫基金会",
+    "evidence": "这儿是基金会的地盘吗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会",
+    "relation": "推行",
+    "dst": "自治法令",
+    "evidence": "上个月，启明会的人做了议员，不久后就出了这些新规矩",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "提及",
+    "dst": "启明会",
+    "evidence": "上个月，启明会的人做了议员",
+    "confidence": 0.95
+   },
+   {
+    "src": "自治法令",
+    "relation": "禁止",
+    "dst": "神秘术",
+    "evidence": "禁止居民私下与神秘学家交流",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会",
+    "relation": "控制",
+    "dst": "淘金镇",
+    "evidence": "反正他们控制着警局和广播",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "44057fe4d85931a5ad63ba37": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被禁令震惊的摇滚海盗"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀请星锑看演出的策划者"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "制定新规矩的势力"
+   },
+   {
+    "name": "启明会议员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "启明会推出的议员"
+   },
+   {
+    "name": "摇滚乐",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被画上大叉禁止的音乐"
+   },
+   {
+    "name": "甲壳虫旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "消费住宿即可免费入场的旅店"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被介绍为聪明神秘学家的苹果"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "镇上不受欢迎的能力"
+   },
+   {
+    "name": "玩具手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "莱莉掏出并射出彩带的道具"
+   },
+   {
+    "name": "彩带",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从玩具枪口射出的节日装饰"
+   },
+   {
+    "name": "自治法令",
+    "type": "概念",
+    "aliases": [],
+    "desc": "新增的多条自治法令修正案"
+   },
+   {
+    "name": "城镇警卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "正在张贴新告示的城镇警卫"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "谴责",
+    "dst": "摇滚乐",
+    "evidence": "这是扼杀自由！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "告知",
+    "dst": "星锑",
+    "evidence": "上个月，启明会的人做了议员，不久后就出了这些新规矩",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "转述",
+    "dst": "自治法令",
+    "evidence": "禁止居民私下与神秘学家交流",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "说明",
+    "dst": "启明会",
+    "evidence": "反正他们控制着警局和广播",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "邀请",
+    "dst": "星锑",
+    "evidence": "我和我的朋友们在筹备一场演出，有兴趣吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "提议",
+    "dst": "甲壳虫旅馆",
+    "evidence": "如果你愿意花钱住在甲壳虫旅馆，可以免费入场",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "接受",
+    "dst": "莱莉",
+    "evidence": "很好，本海盗接受了这个邀请",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "介绍",
+    "dst": "APPLe",
+    "evidence": "APPLe先生是一位聪明的神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "告诫",
+    "dst": "星锑",
+    "evidence": "神秘学家就像摇滚歌手一样，在这儿不受欢迎",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "出示",
+    "dst": "玩具手枪",
+    "evidence": "突然掏出一把“手枪”",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "射出",
+    "dst": "彩带",
+    "evidence": "一股彩带如欢庆节日般从枪口射出",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "误认",
+    "dst": "玩具手枪",
+    "evidence": "枪！？",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会议员",
+    "relation": "推行",
+    "dst": "自治法令",
+    "evidence": "面包店烤制面包必须在四十分钟以上",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会",
+    "relation": "指派",
+    "dst": "启明会议员",
+    "evidence": "上个月，启明会的人做了议员",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "张贴",
+    "dst": "自治法令",
+    "evidence": "警卫正向灰色的墙上张贴着新的告示",
+    "confidence": 0.85
+   },
+   {
+    "src": "星锑",
+    "relation": "警惕",
+    "dst": "神秘术",
+    "evidence": "他们还禁止神秘术呢",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "68bc43fe14772168b4102d59": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布今天是海盗旅行日者"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指明旅馆路线的司机"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "依旧昏迷的苹果伙伴"
+   },
+   {
+    "name": "甲壳虫旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有星星挂坠玻璃门的旅店"
+   },
+   {
+    "name": "淘金镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "纠集不受欢迎者的城市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "宣布",
+    "dst": "莱莉",
+    "evidence": "本海盗现在宣布，今天是海盗旅行日！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "担心",
+    "dst": "APPLe",
+    "evidence": "我们还是赶紧找个“港”靠岸，APPLe先生的情况不太妙",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "叮嘱",
+    "dst": "星锑",
+    "evidence": "要是你想找地方住，别忘了，甲壳虫旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "指路",
+    "dst": "甲壳虫旅馆",
+    "evidence": "在下一个拐角右转，直走两首歌的时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "告别",
+    "dst": "星锑",
+    "evidence": "现在我得去见我的朋友们了，回头再见，伙计",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "昏迷",
+    "dst": "淘金镇",
+    "evidence": "已经昏迷的APPLe先生依旧曝晒在烈日之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "同行",
+    "dst": "APPLe",
+    "evidence": "她和她唯一的船员",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9246e75277d38f369bde685f": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以光学迷彩隐匿自身的摇滚海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "经生理盐水浸泡后恢复的苹果"
+   },
+   {
+    "name": "城镇警卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "奉命搜查301房的城镇警卫"
+   },
+   {
+    "name": "闹事年轻人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在走廊喊冤的吵闹住客"
+   },
+   {
+    "name": "酒店侍从",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送来所需物品的旅店侍从"
+   },
+   {
+    "name": "甲壳虫旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "走廊吵闹的甲壳虫旅馆"
+   },
+   {
+    "name": "生理盐水",
+    "type": "物品",
+    "aliases": [],
+    "desc": "浸泡苹果的0.9%生理盐水"
+   },
+   {
+    "name": "植物营养液",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑索要的植物营养液"
+   },
+   {
+    "name": "基金会急救手册",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑照着操作的基金会急救手册"
+   },
+   {
+    "name": "光学迷彩",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将星锑隐匿在光亮之下的神秘术"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "骗过警卫的小小把戏"
+   },
+   {
+    "name": "启明会议员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "声称目标就在附近的启明会议员"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "载星锑来淘金镇的司机女士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "索要",
+    "dst": "生理盐水",
+    "evidence": "一些生理盐水！是的，是的，301房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "索要",
+    "dst": "植物营养液",
+    "evidence": "然后……植物营养液",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "询问",
+    "dst": "闹事年轻人",
+    "evidence": "嘿，你们在干什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒店侍从",
+    "relation": "送达",
+    "dst": "生理盐水",
+    "evidence": "旅店侍从送来了她要求的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "浸泡",
+    "dst": "APPLe",
+    "evidence": "浸泡在浓度0.9%的生理盐水中，持续一分钟",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "参照",
+    "dst": "基金会急救手册",
+    "evidence": "照着基金会急救手册将同伴放入杯中",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "苏醒",
+    "dst": "星锑",
+    "evidence": "船长？APPLe某记得……应该在一条公路边",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "告知",
+    "dst": "APPLe",
+    "evidence": "淘金镇，一个海图上没有标注的“孤岛”",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "施术",
+    "dst": "光学迷彩",
+    "evidence": "神秘术的辉光悄悄闪烁，将摇滚海盗隐匿在光亮之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "光学迷彩",
+    "relation": "欺骗",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "小小的光学把戏骗过了警卫",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "搜查",
+    "dst": "甲壳虫旅馆",
+    "evidence": "他走进房间，检查了每一处能躲藏的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "提及",
+    "dst": "启明会议员",
+    "evidence": "可议员大人说过，目标就在这附近",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "感慨",
+    "dst": "莱莉",
+    "evidence": "莱莉可没告诉我这地方还有这样的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "隐匿",
+    "dst": "星锑",
+    "evidence": "神秘术的辉光悄悄闪烁",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "无视",
+    "dst": "APPLe",
+    "evidence": "但他看不见被光影藏起来的摇滚海盗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d955ab8f445e5eae05ba6974": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同时违反三条禁令的摇滚海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称本色出演的苹果"
+   },
+   {
+    "name": "摇滚乐",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被小镇禁止演出的音乐"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被小镇禁止的能力"
+   },
+   {
+    "name": "N&N's红绿圣诞巧克力",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从基金会偷出的红绿圣诞巧克力"
+   },
+   {
+    "name": "唱片机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "背包中取出并接上音箱的机器"
+   },
+   {
+    "name": "唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "放上唱针的心爱唱片"
+   },
+   {
+    "name": "音箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与唱片机相连的设备"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被星锑偷出巧克力的机构"
+   },
+   {
+    "name": "洛杉矶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "名字已传到其唐人街的地方"
+   },
+   {
+    "name": "普利茅斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "名字已传出的造船厂所在"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "名声所从来的地方"
+   },
+   {
+    "name": "甲壳虫旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "警卫前来例行检查的旅店"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "称赞",
+    "dst": "APPLe",
+    "evidence": "APPLe先生，你演得不错！",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "自嘲",
+    "dst": "星锑",
+    "evidence": "APPLe某只是沉默地躺在枕头边",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "推测",
+    "dst": "星锑",
+    "evidence": "也许是把我们当成了弹吉他扰民的旅客",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "厌恶",
+    "dst": "摇滚乐",
+    "evidence": "我不喜欢这个镇子，尤其是品位糟糕的广播音乐",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "厌恶",
+    "dst": "神秘术",
+    "evidence": "他们禁止摇滚乐演出，也禁止神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "打趣",
+    "dst": "星锑",
+    "evidence": "你已经成为了这儿的通缉犯？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "得意",
+    "dst": "APPLe",
+    "evidence": "这将是本海盗的又一个荣誉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "恭维",
+    "dst": "星锑",
+    "evidence": "从普利茅斯的造船厂到洛杉矶的唐人街，我们的名字已经无人不知无人不晓",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "取出",
+    "dst": "N&N's红绿圣诞巧克力",
+    "evidence": "取出一袋从基金会“偷”出的N&N's红绿圣诞巧克力",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "连接",
+    "dst": "唱片机",
+    "evidence": "抱出背包中的唱片机，连接音箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "播放",
+    "dst": "唱片",
+    "evidence": "放上心爱的唱片，再定位好音臂",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "吞食",
+    "dst": "N&N's红绿圣诞巧克力",
+    "evidence": "咬下巧克力，如同一只贪吃的小耗子咬断电线",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "窃自",
+    "dst": "圣洛夫基金会",
+    "evidence": "从基金会“偷”出的N&N's红绿圣诞巧克力",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "声明",
+    "dst": "伦敦",
+    "evidence": "本海盗的名声已经从伦敦传到了这个莫名其妙的淘金镇",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "隐匿",
+    "dst": "甲壳虫旅馆",
+    "evidence": "然后她“消失”在灯光之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "呼喊",
+    "dst": "摇滚乐",
+    "evidence": "艺术自由！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "96042088877187df38564391": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研判停电原因的苹果"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绅士递信邀请的摇滚海盗"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提到过启明会的司机"
+   },
+   {
+    "name": "城镇警卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带走年轻人的城镇警卫"
+   },
+   {
+    "name": "闹事年轻人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指参与非法摇滚集会的青年"
+   },
+   {
+    "name": "绅士约翰尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称启明会的绅士,递来手写信"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "在广播剧院举办聚会的势力"
+   },
+   {
+    "name": "受苦者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "聚会所颂赞的对象"
+   },
+   {
+    "name": "摇滚乐",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被指为非法的集会主题"
+   },
+   {
+    "name": "邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "约翰尼递来的字迹优雅手写信"
+   },
+   {
+    "name": "颂赞歌会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "星期天的例行颂赞歌会"
+   },
+   {
+    "name": "广播剧院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "今晚将举办聚会的广播剧院"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "分析",
+    "dst": "星锑",
+    "evidence": "临时停电，船长，就像海上遇到的某些小型热带风暴",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "推测",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "警卫在电闸附近拉起了警戒线，也许是谁对它做了恶作剧",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "询问",
+    "dst": "APPLe",
+    "evidence": "能听清他们在说什么吗，APPLe先生？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "告知",
+    "dst": "启明会",
+    "evidence": "APPLe某只能听清“启明会”这个词",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "追问",
+    "dst": "莱莉",
+    "evidence": "启明会？莱莉也提到过，这又是什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "指控",
+    "dst": "闹事年轻人",
+    "evidence": "你们涉嫌参与非法的摇滚乐集会",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "不满",
+    "dst": "摇滚乐",
+    "evidence": "什么叫“非法”摇滚乐集会？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "劝阻",
+    "dst": "星锑",
+    "evidence": "在这里发生冲突并不是一个明智的选择",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "自介",
+    "dst": "启明会",
+    "evidence": "我是启明会的约翰尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "邀请",
+    "dst": "星锑",
+    "evidence": "今晚在广播剧院，我们有一场聚会",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "递交",
+    "dst": "邀请函",
+    "evidence": "绅士递来一张字迹优雅的手写信",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "询问",
+    "dst": "绅士约翰尼",
+    "evidence": "颂赞谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "告知",
+    "dst": "受苦者",
+    "evidence": "为了祂，我们聚在一块儿，唱歌、吃饼",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "主持",
+    "dst": "颂赞歌会",
+    "evidence": "是的，星期天的例行活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "带走",
+    "dst": "闹事年轻人",
+    "evidence": "请和我们走一趟吧，很快就会结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "前往",
+    "dst": "广播剧院",
+    "evidence": "今晚在广播剧院，我们有一场聚会",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会",
+    "relation": "举办",
+    "dst": "颂赞歌会",
+    "evidence": "为了祂，我们聚在一块儿，唱歌、吃饼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3f7706d00cb5d36fc0f0d4f0": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝聚会邀请的海盗"
+   },
+   {
+    "name": "绅士约翰尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢迎神秘学家同胞的绅士"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劝登记身份的苹果"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀星锑入伙的破坏分子"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被星锑提及的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给出便携软盘者"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "欢迎每一位神秘学家同胞的聚会主办方"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使用需在基金会登记许可的能力"
+   },
+   {
+    "name": "软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十四行诗给的便携神秘术软盘"
+   },
+   {
+    "name": "公共区域安全法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "规定神秘术使用许可的法规"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "负责登记神秘术许可的机构"
+   },
+   {
+    "name": "N&N's红绿圣诞巧克力",
+    "type": "物品",
+    "aliases": [],
+    "desc": "莱莉递给星锑的巧克力糖球"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "提及",
+    "dst": "维尔汀",
+    "evidence": "像维尔汀和维尔汀的小跟班在学校里做的事那样？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "拒绝",
+    "dst": "绅士约翰尼",
+    "evidence": "老兄，我们对这个没有兴趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "招募",
+    "dst": "APPLe",
+    "evidence": "我们欢迎每一位神秘学家同胞",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "劝告",
+    "dst": "APPLe",
+    "evidence": "可别忘了向当局登记自己的身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "绅士约翰尼",
+    "relation": "告别",
+    "dst": "星锑",
+    "evidence": "他深鞠一躬，杵着手杖离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "猜测",
+    "dst": "启明会",
+    "evidence": "他就是那个“议员大人”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "否认",
+    "dst": "启明会",
+    "evidence": "APPLe某对这个组织一无所知",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "推断",
+    "dst": "启明会",
+    "evidence": "既然是议员，这些奇怪的禁令就是他发起的吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "招呼",
+    "dst": "星锑",
+    "evidence": "嘿，星锑——",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "问候",
+    "dst": "APPLe",
+    "evidence": "这就是你之前说的“苹果朋友”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "说明",
+    "dst": "软盘",
+    "evidence": "当时差点儿就要用上十四行诗给的软盘呢！",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "解释",
+    "dst": "公共区域安全法",
+    "evidence": "使用神秘术需要在圣洛夫基金会登记许可",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "补充",
+    "dst": "神秘术",
+    "evidence": "否则会被视作“擅用神秘术”",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "主张",
+    "dst": "星锑",
+    "evidence": "如果触犯规则不会伤害任何人，也不会受到惩罚，那为什么还要被约束呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "递予",
+    "dst": "N&N's红绿圣诞巧克力",
+    "evidence": "她将巧克力糖球递给摇滚海盗",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "邀请",
+    "dst": "星锑",
+    "evidence": "你想入伙吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "赠予",
+    "dst": "星锑",
+    "evidence": "十四行诗给的软盘",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "登记",
+    "dst": "神秘术",
+    "evidence": "使用神秘术需要在圣洛夫基金会登记许可",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e62f9d5192ec3c649f50ef72": {
+  "entities": [
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀星锑给小镇来点有趣东西者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一口答应的摇滚海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "表明追随船长的苹果"
+   },
+   {
+    "name": "淘金镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被评价为闷闷的小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱莉",
+    "relation": "提议",
+    "dst": "淘金镇",
+    "evidence": "我们打算做点儿“有趣”的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "加入",
+    "dst": "莱莉",
+    "evidence": "那就算我一个，伙计",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "追随",
+    "dst": "星锑",
+    "evidence": "APPLe某当然会追随自己的船长",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "行礼",
+    "dst": "莱莉",
+    "evidence": "苹果先生在空中上下晃动，以示礼节",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "引导",
+    "dst": "星锑",
+    "evidence": "很好，跟我来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a8bfd20bde043d1527ad4689": {
+  "entities": [
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍乐队的发起人"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议占领广播剧院的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被乐队成员围观的会说话苹果"
+   },
+   {
+    "name": "四指”强尼",
+    "type": "角色",
+    "aliases": [
+     "“四指”强尼"
+    ],
+    "desc": "乐队贝斯手"
+   },
+   {
+    "name": "闪光”莱安娜",
+    "type": "角色",
+    "aliases": [
+     "“闪光”莱安娜"
+    ],
+    "desc": "乐队吉他手"
+   },
+   {
+    "name": "战锤”尤尼",
+    "type": "角色",
+    "aliases": [
+     "“战锤”尤尼"
+    ],
+    "desc": "乐队鼓手"
+   },
+   {
+    "name": "章鱼”德米特里",
+    "type": "角色",
+    "aliases": [
+     "“章鱼”德米特里"
+    ],
+    "desc": "乐队键盘手,骨碟办法的传授者"
+   },
+   {
+    "name": "甲壳虫舞厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旅店地下的甲壳虫舞厅"
+   },
+   {
+    "name": "X光片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用作录制碟片材料的废旧X光片"
+   },
+   {
+    "name": "骨碟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以X光片录制唱片的复古手法"
+   },
+   {
+    "name": "莫斯科",
+    "type": "地点",
+    "aliases": [],
+    "desc": "风声最紧时靠骨碟接触摇滚乐的地方"
+   },
+   {
+    "name": "广播剧院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "星锑提议占领的广播剧院"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "星锑",
+    "evidence": "我给大家带了个新朋友回来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "说明",
+    "dst": "甲壳虫舞厅",
+    "evidence": "这只是个舞台，和旧金山的海滩没区别",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "评价",
+    "dst": "星锑",
+    "evidence": "在这方面，船长的品味一向……令人叹服",
+    "confidence": 0.95
+   },
+   {
+    "src": "四指”强尼",
+    "relation": "惊讶",
+    "dst": "APPLe",
+    "evidence": "一颗会说话的苹果？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "维护",
+    "dst": "APPLe",
+    "evidence": "他是我最好的船员！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "四指”强尼",
+    "evidence": "贝斯手“四指”强尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "闪光”莱安娜",
+    "evidence": "吉他手“闪光”莱安娜",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "战锤”尤尼",
+    "evidence": "鼓手“战锤”尤尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "介绍",
+    "dst": "章鱼”德米特里",
+    "evidence": "键盘“章鱼”德米特里",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "自任",
+    "dst": "甲壳虫舞厅",
+    "evidence": "然后是我——主唱莱莉",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "筹划",
+    "dst": "X光片",
+    "evidence": "我们打算录一套新唱片，然后偷偷分发给人们",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "惊讶",
+    "dst": "X光片",
+    "evidence": "用这东西录唱片吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "说明",
+    "dst": "章鱼”德米特里",
+    "evidence": "这都是俄国朋友带过来的办法，是我们亲爱的德米特里伙计教给大家的",
+    "confidence": 0.95
+   },
+   {
+    "src": "章鱼”德米特里",
+    "relation": "传授",
+    "dst": "骨碟",
+    "evidence": "“骨碟”给了大伙儿接触摇滚乐的机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "骨碟",
+    "relation": "盛行",
+    "dst": "莫斯科",
+    "evidence": "在莫斯科风声最紧的日子",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "提议",
+    "dst": "广播剧院",
+    "evidence": "我们为什么不去占领广播剧院呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "提醒",
+    "dst": "星锑",
+    "evidence": "要占领广播剧院或许不是一件容易的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "迟疑",
+    "dst": "星锑",
+    "evidence": "这个想法会不会有点儿太激进了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "四指”强尼",
+    "relation": "响应",
+    "dst": "星锑",
+    "evidence": "这可太酷了，算我一个！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b932a1aa206eeca480d421e1": {
+  "entities": [
+   {
+    "name": "四指”强尼",
+    "type": "角色",
+    "aliases": [
+     "“四指”强尼"
+    ],
+    "desc": "率先响应海盗提议的贝斯手"
+   },
+   {
+    "name": "闪光”莱安娜",
+    "type": "角色",
+    "aliases": [
+     "“闪光”莱安娜"
+    ],
+    "desc": "喜欢扮演船员与玩笑的吉他手"
+   },
+   {
+    "name": "莱莉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以家传绳子捆住警卫的发起人"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定带邀请函闯入剧院的船长"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疑心邀请函被神秘术定位的苹果"
+   },
+   {
+    "name": "城镇警卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "找到舞厅却被捆住的城镇警卫"
+   },
+   {
+    "name": "广播剧院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "海盗们要占领的目标"
+   },
+   {
+    "name": "邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑坚持带入剧院的信"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可能用于定位的神秘术"
+   },
+   {
+    "name": "绳子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "莱莉父亲后备箱里的家传绳子"
+   },
+   {
+    "name": "麦克风",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑握住下令的麦克风"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "海盗今日的目标码头"
+   },
+   {
+    "name": "甲壳虫舞厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旅店地下的甲壳虫舞厅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "四指”强尼",
+    "relation": "询问",
+    "dst": "莱莉",
+    "evidence": "你愿意跟我们一起去吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "闪光”莱安娜",
+    "relation": "表态",
+    "dst": "莱莉",
+    "evidence": "是时候换个地方演出了，莱莉",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "闯入",
+    "dst": "甲壳虫舞厅",
+    "evidence": "在这儿！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "宣战",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "本海盗要狠狠敲打你们这些坏东西的脑袋！",
+    "confidence": 0.95
+   },
+   {
+    "src": "城镇警卫Ⅰ",
+    "relation": "被缚",
+    "dst": "绳子",
+    "evidence": "被打败的警卫让绳子捆住，扔在舞台边",
+    "confidence": 0.95
+   },
+   {
+    "src": "四指”强尼",
+    "relation": "担忧",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "他们万一逃走了，一定会来追我们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "宽慰",
+    "dst": "四指”强尼",
+    "evidence": "这绳子可是我老爸一直放在后备箱里的家传宝贝",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "追问",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "可他们是怎么找到这儿的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "推测",
+    "dst": "邀请函",
+    "evidence": "我们在路上遇到了一位自称启明会的先生，他送了船长一张邀请函",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "怀疑",
+    "dst": "神秘术",
+    "evidence": "也许是某种神秘术定位？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "推断",
+    "dst": "启明会",
+    "evidence": "因为本海盗没有按照规定，去做什么“神秘学家入境登记”吗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱莉",
+    "relation": "建议",
+    "dst": "星锑",
+    "evidence": "那我们最好烧掉那封信，星锑",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "拒绝",
+    "dst": "莱莉",
+    "evidence": "不。我们不仅要去占领剧院，还要带上这份信",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "宣告",
+    "dst": "广播剧院",
+    "evidence": "剧院里就应该有乐队！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "警告",
+    "dst": "城镇警卫Ⅰ",
+    "evidence": "等你们追上来的时候，摇滚的声音早就传遍整个小镇了",
+    "confidence": 0.95
+   },
+   {
+    "src": "闪光”莱安娜",
+    "relation": "挑衅",
+    "dst": "星锑",
+    "evidence": "这是一种挑衅对不对，小海盗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "闪光”莱安娜",
+    "relation": "宣布",
+    "dst": "四指”强尼",
+    "evidence": "放火狂欢应该在洗劫城镇之后！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "握住",
+    "dst": "麦克风",
+    "evidence": "摇滚海盗握住麦克风",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "下令",
+    "dst": "启明会",
+    "evidence": "今天的目标是“启明会”码头！",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "感慨",
+    "dst": "星锑",
+    "evidence": "他们似乎把我俩当成了真正的海盗，船长",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

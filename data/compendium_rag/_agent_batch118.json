@@ -1,0 +1,1231 @@
+{
+ "3a308adc3682ab40ee593acb": {
+  "entities": [
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力竭的团长"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称许者"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道贺者"
+   },
+   {
+    "name": "老人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢呼者"
+   },
+   {
+    "name": "商贩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢呼者"
+   },
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撤退者"
+   },
+   {
+    "name": "人群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "真实存在者"
+   },
+   {
+    "name": "护国公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受挫之权"
+   },
+   {
+    "name": "幻象",
+    "type": "概念",
+    "aliases": [],
+    "desc": "破碎的泡沫"
+   },
+   {
+    "name": "火堆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "广场中央"
+   },
+   {
+    "name": "广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欢呼之处"
+   },
+   {
+    "name": "城镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "骑兵所离之地"
+   },
+   {
+    "name": "演出",
+    "type": "事件",
+    "aliases": [],
+    "desc": "真正的重头戏"
+   }
+  ],
+  "relations": [
+   {
+    "src": "骑兵",
+    "relation": "撤离",
+    "dst": "城镇",
+    "evidence": "骑兵们灰溜溜地离开了城镇",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "幻化",
+    "dst": "幻象",
+    "evidence": "景象变为了破碎的泡沫，露出了“街道”的真实容貌",
+    "confidence": 0.95
+   },
+   {
+    "src": "人群",
+    "relation": "实存",
+    "dst": "夏利",
+    "evidence": "这并非幻影，而是真实之物",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "赞许",
+    "dst": "夏利",
+    "evidence": "完美的演出！夏利团长",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "称誉",
+    "dst": "夏利",
+    "evidence": "您真的吓退了护国公的骑兵们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "归功",
+    "dst": "夏利",
+    "evidence": "是你给予了我们反抗的勇气",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "提醒",
+    "dst": "夏利",
+    "evidence": "接下来，才是真正的、最为重要的演出",
+    "confidence": 0.95
+   },
+   {
+    "src": "火堆",
+    "relation": "燃于",
+    "dst": "广场",
+    "evidence": "象征着节日的火堆依旧在广场上熊熊燃烧",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "15f0e8172a9e8fc408da4960": {
+  "entities": [
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登台者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收束者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听故事的人"
+   },
+   {
+    "name": "戏剧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所守信之物"
+   },
+   {
+    "name": "幻影",
+    "type": "概念",
+    "aliases": [],
+    "desc": "并非泡沫"
+   },
+   {
+    "name": "米诺斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所战胜之贪欲"
+   },
+   {
+    "name": "苦难",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所战胜者"
+   },
+   {
+    "name": "剧目",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所演之戏"
+   },
+   {
+    "name": "圣诞节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "剧目对应之时"
+   }
+  ],
+  "relations": [
+   {
+    "src": "夏利",
+    "relation": "许诺",
+    "dst": "弄臣",
+    "evidence": "属于我们的戏剧不会在这里终结",
+    "confidence": 0.95
+   },
+   {
+    "src": "戏剧",
+    "relation": "战胜",
+    "dst": "苦难",
+    "evidence": "它足以战胜苦难，足以战胜胆怯，足以战胜米诺斯的贪欲",
+    "confidence": 0.95
+   },
+   {
+    "src": "戏剧",
+    "relation": "战胜",
+    "dst": "米诺斯",
+    "evidence": "足以战胜米诺斯的贪欲",
+    "confidence": 0.9
+   },
+   {
+    "src": "夏利",
+    "relation": "断言",
+    "dst": "幻影",
+    "evidence": "即便是幻影，人们所经历的一切，也绝非是毫无意义的泡沫",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "提问",
+    "dst": "维尔汀",
+    "evidence": "不知道您对这个故事是否满意呢，维尔汀小姐？",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "阐明",
+    "dst": "戏剧",
+    "evidence": "这就是戏剧的真谛所在",
+    "confidence": 0.95
+   },
+   {
+    "src": "剧目",
+    "relation": "对应",
+    "dst": "圣诞节",
+    "evidence": "对于圣诞节而言，它作为剧目未免有点太早了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "83fed4f8e5a3c9e5c7134a99": {
+  "entities": [
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最年轻的主裁判官"
+   },
+   {
+    "name": "迈克尔主教",
+    "type": "角色",
+    "aliases": [],
+    "desc": "修道院的主教"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "工作评判之地"
+   },
+   {
+    "name": "卷宗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所整理者"
+   },
+   {
+    "name": "酒馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "帕米埃所问"
+   },
+   {
+    "name": "裁判所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被疑为授意者"
+   },
+   {
+    "name": "大瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "夺命之灾"
+   },
+   {
+    "name": "信众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来祷告者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "迈克尔主教",
+    "relation": "迎候",
+    "dst": "帕米埃",
+    "evidence": "帕米埃老爷，我们热切地欢迎您的——",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "打断",
+    "dst": "迈克尔主教",
+    "evidence": "类似的发言并不会影响此地工作的评判结果",
+    "confidence": 0.95
+   },
+   {
+    "src": "迈克尔主教",
+    "relation": "呈交",
+    "dst": "卷宗",
+    "evidence": "对应的卷宗已经整理好了，请跟我来",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "询问",
+    "dst": "迈克尔主教",
+    "evidence": "这里的酒馆在哪里？",
+    "confidence": 0.95
+   },
+   {
+    "src": "迈克尔主教",
+    "relation": "劝阻",
+    "dst": "帕米埃",
+    "evidence": "在工作时间内，我们不应当醉酒！",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "表明",
+    "dst": "迈克尔主教",
+    "evidence": "我只不过希望得到一个更真实的答案",
+    "confidence": 0.95
+   },
+   {
+    "src": "迈克尔主教",
+    "relation": "探问",
+    "dst": "裁判所",
+    "evidence": "这是裁判所的意思，还是……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "自陈",
+    "dst": "迈克尔主教",
+    "evidence": "没有人是不可取代的，迈克尔主教……当然也包括我",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "评议",
+    "dst": "大瘟疫",
+    "evidence": "大瘟疫害死了许多人。可我们在这场灾难中并无作为",
+    "confidence": 0.95
+   },
+   {
+    "src": "信众",
+    "relation": "祷告",
+    "dst": "修道院",
+    "evidence": "每天都有许多人前来祷告",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "ab3e9f8ea3363861dd2e1fa8": {
+  "entities": [
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "固执仰头者"
+   },
+   {
+    "name": "迈克尔主教",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从命者"
+   },
+   {
+    "name": "太阳",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所愿普照"
+   },
+   {
+    "name": "人手",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所须调派"
+   }
+  ],
+  "relations": [
+   {
+    "src": "迈克尔主教",
+    "relation": "辩解",
+    "dst": "帕米埃",
+    "evidence": "这并不是我们的错……我们什么也做不了",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "反驳",
+    "dst": "迈克尔主教",
+    "evidence": "但总比什么也不做好",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "陈愿",
+    "dst": "迈克尔主教",
+    "evidence": "我只是希望太阳能照的地方再多一点而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "仰视",
+    "dst": "太阳",
+    "evidence": "太阳几乎刺得人睁不开眼，她仍固执地抬起头来",
+    "confidence": 0.95
+   },
+   {
+    "src": "迈克尔主教",
+    "relation": "从命",
+    "dst": "帕米埃",
+    "evidence": "我这就去安排人手为您领路",
+    "confidence": 0.95
+   },
+   {
+    "src": "迈克尔主教",
+    "relation": "祝祷",
+    "dst": "帕米埃",
+    "evidence": "愿主保佑您",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "df0c1238c913ec8a71b57219": {
+  "entities": [
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻人者"
+   },
+   {
+    "name": "乔治",
+    "type": "角色",
+    "aliases": [],
+    "desc": "酒鬼兼向导"
+   },
+   {
+    "name": "酒馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被斥的掌柜"
+   },
+   {
+    "name": "白葡萄酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所索之酒"
+   },
+   {
+    "name": "市场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "买卖特产之处"
+   },
+   {
+    "name": "塔楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "荒废之处"
+   },
+   {
+    "name": "食尸鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "塔楼传闻"
+   },
+   {
+    "name": "土堆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "巷中孤坟"
+   },
+   {
+    "name": "十字架",
+    "type": "物品",
+    "aliases": [],
+    "desc": "腐坏的木质"
+   },
+   {
+    "name": "大瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "致荒之灾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乔治",
+    "relation": "质问",
+    "dst": "酒馆老板",
+    "evidence": "你到底在里面掺了多少水？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒馆老板",
+    "relation": "逐客",
+    "dst": "乔治",
+    "evidence": "滚出去，满嘴胡说八道的穷鬼！",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "索酒",
+    "dst": "酒馆老板",
+    "evidence": "这儿最好的白葡萄酒，两杯",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "寻访",
+    "dst": "乔治",
+    "evidence": "一个对这片土地最为了解的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "自荐",
+    "dst": "帕米埃",
+    "evidence": "大人，我正是您要找的人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "赠予",
+    "dst": "乔治",
+    "evidence": "两杯都是你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "介绍",
+    "dst": "塔楼",
+    "evidence": "还没荒废的时候，算是我们的塔楼",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "传言",
+    "dst": "食尸鬼",
+    "evidence": "大家都说里面藏着食尸鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "评断",
+    "dst": "土堆",
+    "evidence": "这里荒凉得不像个市场——倒像是个坟茔",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔楼",
+    "relation": "荒废",
+    "dst": "大瘟疫",
+    "evidence": "自从大瘟疫之后，这儿已经没人打理了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9d7a0e0fe341979c169dedf7": {
+  "entities": [
+   {
+    "name": "马拉基",
+    "type": "角色",
+    "aliases": [],
+    "desc": "马拉基神父"
+   },
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执法官"
+   },
+   {
+    "name": "乔治",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被喝斥的酒鬼"
+   },
+   {
+    "name": "切塞纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已故的修士"
+   },
+   {
+    "name": "朗格多克",
+    "type": "物品",
+    "aliases": [],
+    "desc": "酒之产地"
+   },
+   {
+    "name": "食尸鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "关于死者之传闻"
+   },
+   {
+    "name": "巫师",
+    "type": "概念",
+    "aliases": [],
+    "desc": "另一说"
+   },
+   {
+    "name": "食物配额",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所挟之物"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "待之久矣"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马拉基",
+    "relation": "喝斥",
+    "dst": "乔治",
+    "evidence": "滚开，肮脏的家伙，你怎可玷污执法官大人的衣袍！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "迎候",
+    "dst": "帕米埃",
+    "evidence": "您终于莅临此地，我们在修道院等您很久了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "指斥",
+    "dst": "乔治",
+    "evidence": "这个酒鬼是个疯子",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "嗅出",
+    "dst": "朗格多克",
+    "evidence": "你身上怎么有朗格多克的气味？",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "质询",
+    "dst": "马拉基",
+    "evidence": "一起未报告的死亡案件，对么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "陈述",
+    "dst": "切塞纳",
+    "evidence": "死者叫切塞纳，是一位……修士",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "述闻",
+    "dst": "食尸鬼",
+    "evidence": "大家都说他就是那个被藏起来的食尸鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "威胁",
+    "dst": "乔治",
+    "evidence": "还是说，你不需要之后的食物配额了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "初判",
+    "dst": "切塞纳",
+    "evidence": "切塞纳应该死于酒后失足",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "另指",
+    "dst": "巫师",
+    "evidence": "但说不准，他是个巫师",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "25b55c31b4cf636146fec79e": {
+  "entities": [
+   {
+    "name": "马拉基",
+    "type": "角色",
+    "aliases": [],
+    "desc": "进言者"
+   },
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒斥者"
+   },
+   {
+    "name": "巫师",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所讳言者"
+   },
+   {
+    "name": "食尸鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所讳言者"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏人之所"
+   },
+   {
+    "name": "民众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待安抚者"
+   },
+   {
+    "name": "剑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "敲击作响"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马拉基",
+    "relation": "进言",
+    "dst": "帕米埃",
+    "evidence": "真相是什么并不重要",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "主张",
+    "dst": "帕米埃",
+    "evidence": "民众需要安抚，而不是真相，大人",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "拒绝",
+    "dst": "马拉基",
+    "evidence": "我不接受",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "申明",
+    "dst": "马拉基",
+    "evidence": "它肯定不在你我毫无价值的谈话里",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "顾虑",
+    "dst": "修道院",
+    "evidence": "修道院里藏了个巫师，总归不是什么值得张扬的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "陈情",
+    "dst": "帕米埃",
+    "evidence": "居民们对我们的信任却一直没能恢复",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "斥令",
+    "dst": "马拉基",
+    "evidence": "你应该做的是提供有效的信息，而非在一旁指手画脚",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e3706679a913a04af6374711": {
+  "entities": [
+   {
+    "name": "修士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "战战兢兢的年轻修士"
+   },
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问询者"
+   },
+   {
+    "name": "切塞纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "孤僻的死者"
+   },
+   {
+    "name": "马拉基",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被称为长者者"
+   },
+   {
+    "name": "稿纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "夹藏书中"
+   },
+   {
+    "name": "福音书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "满是油污"
+   },
+   {
+    "name": "酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "名贵之礼"
+   },
+   {
+    "name": "贿赂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所断之性"
+   },
+   {
+    "name": "修士起居室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "破旧房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "修士",
+    "relation": "请罪",
+    "dst": "帕米埃",
+    "evidence": "别审判我——人不是我害死的",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "安抚",
+    "dst": "修士",
+    "evidence": "你的忏悔似乎找错了对象",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "问询",
+    "dst": "修士",
+    "evidence": "切塞纳就住在这里？",
+    "confidence": 0.95
+   },
+   {
+    "src": "修士",
+    "relation": "描述",
+    "dst": "切塞纳",
+    "evidence": "他很孤僻，平常也很少和我们说话",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "抽出",
+    "dst": "稿纸",
+    "evidence": "轻轻地将夹在其中的一页稿纸抽了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "福音书",
+    "relation": "遭玷污",
+    "dst": "切塞纳",
+    "evidence": "它粗糙，满是油污，显然遭遇了不可原谅的玷污",
+    "confidence": 0.95
+   },
+   {
+    "src": "修士",
+    "relation": "回忆",
+    "dst": "切塞纳",
+    "evidence": "有一次切塞纳修士提着很名贵的酒去找长者",
+    "confidence": 0.95
+   },
+   {
+    "src": "修士",
+    "relation": "指认",
+    "dst": "马拉基",
+    "evidence": "是……马拉基神父",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "判定",
+    "dst": "贿赂",
+    "evidence": "更合适的说法应该是贿赂",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "开释",
+    "dst": "修士",
+    "evidence": "恭喜，你获释了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "05341d171b463a09cf53b14c": {
+  "entities": [
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追谣者"
+   },
+   {
+    "name": "乔治",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追述者"
+   },
+   {
+    "name": "切塞纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被诬的死者"
+   },
+   {
+    "name": "乔治的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于瘟疫者"
+   },
+   {
+    "name": "坟场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "城外东边的枯树林"
+   },
+   {
+    "name": "大瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "吞噬一切"
+   },
+   {
+    "name": "谣言",
+    "type": "概念",
+    "aliases": [],
+    "desc": "帕米埃所定性"
+   },
+   {
+    "name": "神秘的人体",
+    "type": "物品",
+    "aliases": [],
+    "desc": "切塞纳的笔记"
+   },
+   {
+    "name": "尸体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "解剖之对象"
+   },
+   {
+    "name": "铁锹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被细致描述"
+   },
+   {
+    "name": "食尸鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "流言之名"
+   },
+   {
+    "name": "修士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "修道院众人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乔治",
+    "relation": "迎候",
+    "dst": "帕米埃",
+    "evidence": "执法官大人，您终于来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "问询",
+    "dst": "乔治",
+    "evidence": "食尸鬼的说法，是如何传开的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "追述",
+    "dst": "切塞纳",
+    "evidence": "最开始是有人说切塞纳修士深夜总在郊外的坟场转悠",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "提及",
+    "dst": "乔治的父亲",
+    "evidence": "那儿的尸体堆积成山，都是推车们一车车运过去的……我的父亲也是",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "追问",
+    "dst": "乔治",
+    "evidence": "他们都死于那场大瘟疫吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "引述",
+    "dst": "修士",
+    "evidence": "修道院的要么是些懒汉，要么是些稀奇古怪的怪人",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "定性",
+    "dst": "谣言",
+    "evidence": "一种罪行……谣言",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "力证",
+    "dst": "帕米埃",
+    "evidence": "我能作证！那几个人我都认识，根本喝不了多少",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "出示",
+    "dst": "神秘的人体",
+    "evidence": "这是切塞纳的笔记，《神秘的人体》",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘的人体",
+    "relation": "记录",
+    "dst": "尸体",
+    "evidence": "这上面确实记录了很多解剖尸体的内容",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ccdab69590128fc583b8a81d": {
+  "entities": [
+   {
+    "name": "帕米埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "设局者"
+   },
+   {
+    "name": "乔治",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携酒告解者"
+   },
+   {
+    "name": "马拉基",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受贿的神父"
+   },
+   {
+    "name": "玻璃瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "绯红之酒"
+   },
+   {
+    "name": "焰形剑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "赤色之刃"
+   },
+   {
+    "name": "天使像",
+    "type": "物品",
+    "aliases": [],
+    "desc": "大理石圣像"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "长廊与房间"
+   },
+   {
+    "name": "尸体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所共分享者"
+   },
+   {
+    "name": "葡萄酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所献之礼"
+   },
+   {
+    "name": "切塞纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指害的死者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乔治",
+    "relation": "请示",
+    "dst": "帕米埃",
+    "evidence": "大人，我们真要这么做吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "释规",
+    "dst": "乔治",
+    "evidence": "如这儿的修士所言，适量饮酒是被允许的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "告解",
+    "dst": "马拉基",
+    "evidence": "我是有罪之人",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "索献",
+    "dst": "乔治",
+    "evidence": "你带回了属于主的牛羊吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "呈献",
+    "dst": "马拉基",
+    "evidence": "老爷，请您闻闻它的香气……",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "赦罪",
+    "dst": "乔治",
+    "evidence": "你的罪责被一笔勾销了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "醉倒",
+    "dst": "天使像",
+    "evidence": "醉倒在大理石圣像前",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "现身",
+    "dst": "马拉基",
+    "evidence": "你看起来很忠诚，马拉基神父",
+    "confidence": 0.95
+   },
+   {
+    "src": "马拉基",
+    "relation": "辩解",
+    "dst": "切塞纳",
+    "evidence": "是他自己不小心掉下去，不、不是我害的",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "持握",
+    "dst": "焰形剑",
+    "evidence": "手里握着赤色的焰形剑",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕米埃",
+    "relation": "讽喻",
+    "dst": "马拉基",
+    "evidence": "你们分享福音，分享美酒，甚至包括尸体",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

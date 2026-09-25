@@ -1,0 +1,959 @@
+{
+ "0a014f6906c80019b989239f": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "张之之"
+    ],
+    "desc": "提议戴罪立功"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "考虑提议"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "申请入队者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "提交申请者"
+   },
+   {
+    "name": "歌唱家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追踪目标"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "情报追踪对象"
+   },
+   {
+    "name": "第二防线计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无名者所涉"
+   },
+   {
+    "name": "趋光性定律",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自愿不修复"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "批复机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "提议",
+    "dst": "康斯坦丁",
+    "evidence": "或许，可以给他们一个将功补过的机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "考虑",
+    "dst": "Z",
+    "evidence": "我会考虑这份提议",
+    "confidence": 0.85
+   },
+   {
+    "src": "Z",
+    "relation": "转呈",
+    "dst": "康斯坦丁",
+    "evidence": "无名者的情况涉及第二防线计划，我不能单独批复",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "申请",
+    "dst": "康斯坦丁",
+    "evidence": "司辰希望无名者以普通神秘学家的身份，成为司辰小队的成员",
+    "confidence": 0.85
+   },
+   {
+    "src": "无名者",
+    "relation": "拒绝",
+    "dst": "趋光性定律",
+    "evidence": "她不打算修复自己被阿尔卡纳破坏的“趋光性定律”",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "自愿",
+    "dst": "圣洛夫基金会",
+    "evidence": "自愿保留目前为止的所有记忆",
+    "confidence": 0.8
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "信任",
+    "dst": "无名者",
+    "evidence": "这至少能证明她没有投向重塑之手的意图",
+    "confidence": 0.8
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "惜才",
+    "dst": "无名者",
+    "evidence": "还是目前为止最优秀的一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "追询",
+    "dst": "康斯坦丁",
+    "evidence": "那你同意无名者的请求吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "065483d0fa2d073c84cf3b02": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "寻友申请者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻名者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "张之之"
+    ],
+    "desc": "批准申请者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻找目标"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被借场地"
+   },
+   {
+    "name": "金色纺线",
+    "type": "概念",
+    "aliases": [],
+    "desc": "回溯所见"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "借用办公室"
+   },
+   {
+    "name": "飞蛾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传递申请"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "修复中"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "寻友",
+    "dst": "梅蕾尔",
+    "evidence": "是梅蕾尔",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "报告",
+    "dst": "Z",
+    "evidence": "我看见了一根金色的纺线",
+    "confidence": 0.85
+   },
+   {
+    "src": "Z",
+    "relation": "批准",
+    "dst": "维尔汀",
+    "evidence": "我会批准你的申请",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "问询",
+    "dst": "无名者",
+    "evidence": "我的申请有结论了吗？",
+    "confidence": 0.8
+   },
+   {
+    "src": "无名者",
+    "relation": "求名",
+    "dst": "Z",
+    "evidence": "我觉得这个世界上已经没有适合我的名字了",
+    "confidence": 0.85
+   },
+   {
+    "src": "无名者",
+    "relation": "松弛",
+    "dst": "维尔汀",
+    "evidence": "你比过去有活力多了",
+    "confidence": 0.8
+   },
+   {
+    "src": "科算中心",
+    "relation": "受累",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会都要向科算中心临时借用办公室了",
+    "confidence": 0.8
+   },
+   {
+    "src": "无名者",
+    "relation": "候批",
+    "dst": "Z",
+    "evidence": "我的申请有结论了吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7ffb21bed5e8f1af18310d45": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "张之之"
+    ],
+    "desc": "宣布入队"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新队员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "小队之长"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲寻回队员"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报线索者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被示踪者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带走第一梯队"
+   },
+   {
+    "name": "灌体实验",
+    "type": "事件",
+    "aliases": [],
+    "desc": "药剂再败"
+   },
+   {
+    "name": "雨前反应部队",
+    "type": "组织",
+    "aliases": [
+     "第一梯队"
+    ],
+    "desc": "被伊戈尔带走的车队"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "功绩被抹"
+   },
+   {
+    "name": "Ⅻ”小队",
+    "type": "组织",
+    "aliases": [
+     "“Ⅻ”小队",
+     "第十二小队"
+    ],
+    "desc": "仅剩一人"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "记录删除"
+   },
+   {
+    "name": "审理委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "决议保留编制"
+   },
+   {
+    "name": "示踪剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "失效的定位"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "接纳",
+    "dst": "无名者",
+    "evidence": "欢迎加入司辰小队，无名者",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "告知",
+    "dst": "无名者",
+    "evidence": "你在基金会的记录会被删除",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "加入",
+    "dst": "维尔汀",
+    "evidence": "欢迎加入司辰小队",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "功绩",
+    "dst": "风网",
+    "evidence": "包括发现并关闭“风网”的功绩",
+    "confidence": 0.85
+   },
+   {
+    "src": "无名者",
+    "relation": "效忠",
+    "dst": "圣洛夫基金会",
+    "evidence": "司辰小队是我最好的去处",
+    "confidence": 0.8
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "告知",
+    "dst": "刻雷乌斯",
+    "evidence": "是他带走了第一梯队的人",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "带走",
+    "dst": "雨前反应部队",
+    "evidence": "第一梯队没有抵达第一防线学校",
+    "confidence": 0.8
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "寻人",
+    "dst": "梅蕾尔",
+    "evidence": "我要去找回我的人",
+    "confidence": 0.8
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "隶属",
+    "dst": "Ⅻ”小队",
+    "evidence": "它和解散也没有什么区别",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "报告",
+    "dst": "灌体实验",
+    "evidence": "“灌体”的药剂再一次失败了",
+    "confidence": 0.85
+   },
+   {
+    "src": "示踪剂",
+    "relation": "失效",
+    "dst": "梅蕾尔",
+    "evidence": "我们的定位装置无法在“暴雨”之后定位实验品在这个时代的下落",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "施压",
+    "dst": "刻雷乌斯",
+    "evidence": "但你必须跟进与示踪剂相关的事",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "定策",
+    "dst": "刻雷乌斯",
+    "evidence": "我们需要相互帮助",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "84ee99e54435f5d993b638ab": {
+  "entities": [
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重整旗鼓"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "焦虑的政客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "合作对象"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "打乱步调者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "跟进",
+    "dst": "重塑之手",
+    "evidence": "我们会重新控制住局面的",
+    "confidence": 0.8
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "联络",
+    "dst": "维尔汀",
+    "evidence": "司辰那边，我会试着与她保持联络……",
+    "confidence": 0.8
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "警示",
+    "dst": "刻雷乌斯",
+    "evidence": "尝试和她合作估计不会像之前那么简单了",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "研判",
+    "dst": "刻雷乌斯",
+    "evidence": "我不管你要怎么应付小队成员失踪的事",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "016cfe6437b07902470daf20": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "服莓寻友"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行解读"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失踪的友人"
+   },
+   {
+    "name": "小瑞安侬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "果园主人"
+   },
+   {
+    "name": "妖精莓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "灭绝复现之果"
+   },
+   {
+    "name": "妖精的视野",
+    "type": "概念",
+    "aliases": [],
+    "desc": "食莓之效"
+   },
+   {
+    "name": "威尔士常见神秘学植物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记载之书"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "果园保护"
+   },
+   {
+    "name": "妖精莓果园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "隐居之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "寻找",
+    "dst": "梅蕾尔",
+    "evidence": "我们正在附近寻找一位失踪的友人",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "鉴定",
+    "dst": "妖精莓",
+    "evidence": "这应该是《威尔士常见神秘学植物》中记载的“妖精莓”",
+    "confidence": 0.9
+   },
+   {
+    "src": "妖精莓",
+    "relation": "赋予",
+    "dst": "妖精的视野",
+    "evidence": "食用妖精莓可以让神秘学家获得妖精的视野",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "服用",
+    "dst": "妖精莓",
+    "evidence": "难道你想要……",
+    "confidence": 0.8
+   },
+   {
+    "src": "术阵",
+    "relation": "庇护",
+    "dst": "妖精莓果园",
+    "evidence": "她生活的地方会被一种不为外界知晓的术阵保护着",
+    "confidence": 0.85
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "惊呼",
+    "dst": "维尔汀",
+    "evidence": "那个看起来很有钱的老爷要吃下妖精莓了！",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "f3e5d015adb059f5a6d12fb8": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "自我介绍者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "石化怪鸟者"
+   },
+   {
+    "name": "小瑞安侬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驯鸟女巫"
+   },
+   {
+    "name": "小脑瓜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "捣蛋的灰鸟"
+   },
+   {
+    "name": "尘酿鹰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "濒危鸟种"
+   },
+   {
+    "name": "隐居寓所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "女巫小屋"
+   },
+   {
+    "name": "妖精莓果园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "居所外围"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "维尔汀所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "石化",
+    "dst": "小脑瓜",
+    "evidence": "灰色怪鸟凝固在原地",
+    "confidence": 0.9
+   },
+   {
+    "src": "小脑瓜",
+    "relation": "袭扰",
+    "dst": "维尔汀",
+    "evidence": "不受控制地啄咬着入侵者的鞋子",
+    "confidence": 0.8
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "驯养",
+    "dst": "小脑瓜",
+    "evidence": "这小东西劲可比野猪还大",
+    "confidence": 0.85
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "救护",
+    "dst": "维尔汀",
+    "evidence": "我先帮你们处理一下伤口",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "自报",
+    "dst": "小瑞安侬",
+    "evidence": "我是圣洛夫基金会的司辰",
+    "confidence": 0.85
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "自述",
+    "dst": "维尔汀",
+    "evidence": "佩斯郡最负盛名的女巫，我的神秘学百科全书",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "9d743cf16909ef4c229053aa": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "示好邀旅者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忆同窗者"
+   },
+   {
+    "name": "小瑞安侬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "守望果园者"
+   },
+   {
+    "name": "小脑瓜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓伤客人的鸟"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已逝的同窗"
+   },
+   {
+    "name": "尘酿鹰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "最后的栖息地"
+   },
+   {
+    "name": "隐居寓所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "告别之处"
+   },
+   {
+    "name": "妖精莓果园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "方解石小路"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "分部联络"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小瑞安侬",
+    "relation": "照料",
+    "dst": "小脑瓜",
+    "evidence": "我用一块纱布蘸了几滴刺鼻的药水",
+    "confidence": 0.8
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "守护",
+    "dst": "尘酿鹰",
+    "evidence": "这里是尘酿鹰最后的栖息地",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "邀请",
+    "dst": "小瑞安侬",
+    "evidence": "你也会出去旅行吗？",
+    "confidence": 0.8
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "婉拒",
+    "dst": "维尔汀",
+    "evidence": "我不能去太远的地方",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "追忆",
+    "dst": "梅蕾尔",
+    "evidence": "已经溶化在了跨时代的雨幕中",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "承诺",
+    "dst": "小瑞安侬",
+    "evidence": "说你是司辰维尔汀的朋友，他们会帮你联系到我的",
+    "confidence": 0.85
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "修补",
+    "dst": "妖精莓果园",
+    "evidence": "我已经修补好了防御术阵",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "16de35abf9055d7e37b3bfc8": {
+  "entities": [
+   {
+    "name": "小瑞安侬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被叼上天者"
+   },
+   {
+    "name": "格林杜尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携包裹的巨鹰"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被施遗忘咒者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同被施咒者"
+   },
+   {
+    "name": "瑞安侬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来信的母亲"
+   },
+   {
+    "name": "遗忘咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被打断的咒语"
+   },
+   {
+    "name": "妖精莓蜜饯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包裹之物"
+   },
+   {
+    "name": "利齿子儿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包裹之物"
+   },
+   {
+    "name": "尘酿鹰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "格林杜尔所属"
+   },
+   {
+    "name": "妖精莓果园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "北去之路"
+   },
+   {
+    "name": "威尔士",
+    "type": "地点",
+    "aliases": [],
+    "desc": "群山所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小瑞安侬",
+    "relation": "欲咒",
+    "dst": "维尔汀",
+    "evidence": "只是遗忘咒而已",
+    "confidence": 0.85
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "欲咒",
+    "dst": "十四行诗",
+    "evidence": "只是遗忘咒而已",
+    "confidence": 0.85
+   },
+   {
+    "src": "格林杜尔",
+    "relation": "打断",
+    "dst": "小瑞安侬",
+    "evidence": "伴随狂风而来的长啸打断了施术者的咒语",
+    "confidence": 0.85
+   },
+   {
+    "src": "格林杜尔",
+    "relation": "携带",
+    "dst": "小瑞安侬",
+    "evidence": "把它拉上了天空",
+    "confidence": 0.9
+   },
+   {
+    "src": "瑞安侬",
+    "relation": "遣物",
+    "dst": "格林杜尔",
+    "evidence": "是妈妈派你过来赶我走的？",
+    "confidence": 0.85
+   },
+   {
+    "src": "瑞安侬",
+    "relation": "为母",
+    "dst": "小瑞安侬",
+    "evidence": "是妈妈派你过来赶我走的？",
+    "confidence": 0.9
+   },
+   {
+    "src": "格林杜尔",
+    "relation": "隶属",
+    "dst": "尘酿鹰",
+    "evidence": "被称为格林杜尔的成年尘酿鹰",
+    "confidence": 0.9
+   },
+   {
+    "src": "小瑞安侬",
+    "relation": "追踪",
+    "dst": "格林杜尔",
+    "evidence": "我们快追上去，十四行诗",
+    "confidence": 0.8
+   },
+   {
+    "src": "格林杜尔",
+    "relation": "飞往",
+    "dst": "威尔士",
+    "evidence": "向妖精莓果园外的威尔士群山飞去",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,1455 @@
+{
+ "bfba2136bd915399dd1c57d3": {
+  "entities": [
+   {
+    "name": "特别检察官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主审的检察官"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受问询的安全区负责人"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被派往前线的队员"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁听席上的鹰派代表"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "刻雷乌斯的所属"
+   },
+   {
+    "name": "联合委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "批准收容扩容的机构"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "威胁收容者的敌手"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "第十次暴雨已过"
+   },
+   {
+    "name": "应急预案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未经批准擅自执行"
+   },
+   {
+    "name": "收容人员扩大决议",
+    "type": "事件",
+    "aliases": [],
+    "desc": "1920年12月通过的决议"
+   },
+   {
+    "name": "鹰派",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伊里内伊所代表"
+   },
+   {
+    "name": "收容资质许可",
+    "type": "物品",
+    "aliases": [],
+    "desc": "刻雷乌斯超额签发"
+   }
+  ],
+  "relations": [
+   {
+    "src": "特别检察官",
+    "relation": "问询",
+    "dst": "刻雷乌斯",
+    "evidence": "这次传唤你回总部，主要是为了问询，而非你认为的“审判”",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "派遣",
+    "dst": "叶尔莫莱",
+    "evidence": "我派出自己的队员叶尔莫莱，前往前线执行任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "执行",
+    "dst": "应急预案",
+    "evidence": "在没有获得联合委员会批准的情况下擅自执行了“应急预案”",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "签发",
+    "dst": "收容资质许可",
+    "evidence": "签发了超过基金会预计数量的收容资质许可",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "因为我看到基金会需要他们",
+    "confidence": 0.95
+   },
+   {
+    "src": "联合委员会",
+    "relation": "通过",
+    "dst": "收容人员扩大决议",
+    "evidence": "借联合委员会在1920年12月通过的《收容人员扩大决议》",
+    "confidence": 0.95
+   },
+   {
+    "src": "收容人员扩大决议",
+    "relation": "授权",
+    "dst": "收容资质许可",
+    "evidence": "签发了超过基金会预计数量的收容资质许可",
+    "confidence": 0.85
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "旁听",
+    "dst": "特别检察官",
+    "evidence": "旁听席上的“鹰派”代表",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "威胁",
+    "dst": "圣洛夫基金会",
+    "evidence": "只是为了保护自己不受重塑之手的侵害",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "剥离",
+    "dst": "刻雷乌斯",
+    "evidence": "我们都曾经被从自己的时代中剥离",
+    "confidence": 0.95
+   },
+   {
+    "src": "鹰派",
+    "relation": "归属",
+    "dst": "伊里内伊",
+    "evidence": "旁听席上的“鹰派”代表",
+    "confidence": 0.7
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "隶属",
+    "dst": "联合委员会",
+    "evidence": "委员先生保持严肃",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "c6acce72350e64eb465f754a": {
+  "entities": [
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受审者"
+   },
+   {
+    "name": "特别检察官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转问示踪剂一事"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命注射示踪剂"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被打跟踪药剂者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "住院的红发骑士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "同行探望者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心后遗症的医生"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "手术所救者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "刻雷乌斯所属"
+   },
+   {
+    "name": "示踪剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曼陀罗提取物制成"
+   },
+   {
+    "name": "曼陀罗提取物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "使受试者平静"
+   },
+   {
+    "name": "身份识别卡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "梅蕾尔收好"
+   },
+   {
+    "name": "探访须知",
+    "type": "物品",
+    "aliases": [],
+    "desc": "更新过许多版"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "玛尔纱留院处"
+   },
+   {
+    "name": "电梯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "银色封闭空间出口"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "受审",
+    "dst": "特别检察官",
+    "evidence": "有关你对自己的小队成员使用“示踪剂”一事",
+    "confidence": 0.95
+   },
+   {
+    "src": "特别检察官",
+    "relation": "追查",
+    "dst": "示踪剂",
+    "evidence": "有关你对自己的小队成员使用“示踪剂”一事",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "命令",
+    "dst": "叶尔莫莱",
+    "evidence": "刻雷乌斯要我给她打上跟踪药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "注射",
+    "dst": "示踪剂",
+    "evidence": "刻雷乌斯要我给她打上跟踪药剂",
+    "confidence": 0.9
+   },
+   {
+    "src": "示踪剂",
+    "relation": "作用",
+    "dst": "梅蕾尔",
+    "evidence": "曼陀罗提取物已发挥作用，受试者的精神状态趋于平静",
+    "confidence": 0.95
+   },
+   {
+    "src": "示踪剂",
+    "relation": "含有",
+    "dst": "曼陀罗提取物",
+    "evidence": "曼陀罗提取物已发挥作用",
+    "confidence": 0.9
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "探望",
+    "dst": "玛尔纱",
+    "evidence": "玛尔纱？是我，梅蕾尔，还有维尔汀也来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "探望",
+    "dst": "玛尔纱",
+    "evidence": "玛尔纱？是我，梅蕾尔，还有维尔汀也来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "留院",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "现在我还不被允许下床",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "主治",
+    "dst": "玛尔纱",
+    "evidence": "小梅斯梅尔小姐担心那些感觉会对精神状态造成潜在的持续影响",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "救治",
+    "dst": "卡戎",
+    "evidence": "之前为卡戎做手术时积攒的恐惧感",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我现在暂时被划到司辰小队了",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "2b66d53fc16d828523c7a62d": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠手作小鸟者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收礼的病友"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "说明差事的司辰"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被带走的长官"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾探望玛尔纱"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "刻雷乌斯所属"
+   },
+   {
+    "name": "审理委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "带走刻雷乌斯"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "手作小鸟的附魔"
+   },
+   {
+    "name": "手工小鸟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "灭绝物种还原图制成"
+   },
+   {
+    "name": "珍奇神秘学生物饲养者走访札记",
+    "type": "物品",
+    "aliases": [],
+    "desc": "小鸟图样出处"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两人将赴之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "时代将临之灾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "赠予",
+    "dst": "玛尔纱",
+    "evidence": "我会把它留在身边的",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "制作",
+    "dst": "手工小鸟",
+    "evidence": "看不清的地方我就自己发挥了一下",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "施展",
+    "dst": "神秘术",
+    "evidence": "我在附魔的时候还加上了很多很多我能想到的咒语",
+    "confidence": 0.95
+   },
+   {
+    "src": "手工小鸟",
+    "relation": "取材",
+    "dst": "珍奇神秘学生物饲养者走访札记",
+    "evidence": "我是在《珍奇神秘学生物饲养者走访札记》里看到的",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "说明",
+    "dst": "第一防线学校",
+    "evidence": "最近几个月，第一防线学校接收了很多“暴雨”孤儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我现在暂时被划到司辰小队了",
+    "confidence": 0.7
+   },
+   {
+    "src": "审理委员会",
+    "relation": "带走",
+    "dst": "刻雷乌斯",
+    "evidence": "说他被审理委员会带走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕拉维扬",
+    "relation": "探望",
+    "dst": "玛尔纱",
+    "evidence": "上次帕拉维扬过来看我的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "威胁",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会已经在组织召回人员了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "77b6830631043513c44c2715": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "先行赴校者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "总部办事者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问暴雨的病友"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "会场接应者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与维尔汀同来者"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "没空探望者"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "没空探望者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被审理者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "召回人员"
+   },
+   {
+    "name": "审理委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "搜集线索者"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅蕾尔赴任处"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "时代将逝"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛尔纱",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "对你们来说……真的是这样吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "安抚",
+    "dst": "玛尔纱",
+    "evidence": "别担心，玛尔纱，你在这里很安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指派",
+    "dst": "玛蒂尔达",
+    "evidence": "玛蒂尔达会在开学典礼的会场等你",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "接应",
+    "dst": "梅蕾尔",
+    "evidence": "她会告诉你需要做什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "身份",
+    "dst": "圣洛夫基金会",
+    "evidence": "她现在的主要身份是基金会调查员",
+    "confidence": 0.8
+   },
+   {
+    "src": "维尔汀",
+    "relation": "召集",
+    "dst": "十四行诗",
+    "evidence": "我和十四行诗马上会来和你们会合",
+    "confidence": 0.95
+   },
+   {
+    "src": "审理委员会",
+    "relation": "问询",
+    "dst": "刻雷乌斯",
+    "evidence": "审理委员会应该只是想在“暴雨”前从刻雷乌斯身上搜集一些线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "威胁",
+    "dst": "第一防线学校",
+    "evidence": "基金会已经在组织召回人员了",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "18cfe5ee995e6506e7d4e10e": {
+  "entities": [
+   {
+    "name": "奥斯本",
+    "type": "角色",
+    "aliases": [
+     "奥斯本队长"
+    ],
+    "desc": "第一梯队队长"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "临时帮助的新兵"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [
+     "猎犬"
+    ],
+    "desc": "临时帮助的新兵"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倒霉的长官"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "执勤对象"
+   },
+   {
+    "name": "雨前反应部队",
+    "type": "组织",
+    "aliases": [
+     "第一梯队"
+    ],
+    "desc": "机动武装力量"
+   },
+   {
+    "name": "雨前调度中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "雨前接管军力"
+   },
+   {
+    "name": "收容人员扩大决议",
+    "type": "事件",
+    "aliases": [],
+    "desc": "入总人数十倍增"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "宣传渗透者"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将降临"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [
+     "监禁室"
+    ],
+    "desc": "避雨者的漏洞"
+   },
+   {
+    "name": "基金会大门",
+    "type": "地点",
+    "aliases": [],
+    "desc": "唯一合法通道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奥斯本",
+    "relation": "统辖",
+    "dst": "雨前反应部队",
+    "evidence": "我是奥斯本，在“暴雨”结束前算是你们的长官",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "接收",
+    "dst": "帕拉维扬",
+    "evidence": "雨前反应部队第一梯队很高兴能得到二位的临时帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "接收",
+    "dst": "叶尔莫莱",
+    "evidence": "雨前反应部队第一梯队很高兴能得到二位的临时帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕拉维扬",
+    "relation": "隶属",
+    "dst": "雨前反应部队",
+    "evidence": "在“暴雨”结束前算是你们的长官",
+    "confidence": 0.85
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "隶属",
+    "dst": "雨前反应部队",
+    "evidence": "在“暴雨”结束前算是你们的长官",
+    "confidence": 0.85
+   },
+   {
+    "src": "雨前反应部队",
+    "relation": "隶属",
+    "dst": "雨前调度中心",
+    "evidence": "我们的顶头上司是雨前调度中心",
+    "confidence": 0.95
+   },
+   {
+    "src": "雨前调度中心",
+    "relation": "接管",
+    "dst": "圣洛夫基金会",
+    "evidence": "他们都会接管基金会的主要军事和安保力量",
+    "confidence": 0.95
+   },
+   {
+    "src": "收容人员扩大决议",
+    "relation": "扩容",
+    "dst": "基金会大门",
+    "evidence": "进入基金会的人比过去要多了起码十倍",
+    "confidence": 0.8
+   },
+   {
+    "src": "重塑之手",
+    "relation": "渗透",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们不能忽视重塑之手的宣传",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "驻守",
+    "dst": "基金会大门",
+    "evidence": "配合安检系统，阻止没有资质的人进入总部",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕拉维扬",
+    "relation": "执勤",
+    "dst": "基金会大门",
+    "evidence": "你们的工作就是配合安检系统",
+    "confidence": 0.8
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "执勤",
+    "dst": "基金会大门",
+    "evidence": "你们的工作就是配合安检系统",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "d27e783aed4248dbdc717119": {
+  "entities": [
+   {
+    "name": "奥斯本",
+    "type": "角色",
+    "aliases": [],
+    "desc": "誓献身于基金会"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑收容准则者"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打圆场的猎犬"
+   },
+   {
+    "name": "闯入者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被撵的求避雨者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "收容方"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "闯入者所惧之灾"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [
+     "监禁室"
+    ],
+    "desc": "会成为漏洞"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶尔莫莱",
+    "relation": "劝止",
+    "dst": "帕拉维扬",
+    "evidence": "叶尔莫莱一把按住了他的肩膀，示意他不要再多说",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕拉维扬",
+    "relation": "质疑",
+    "dst": "奥斯本",
+    "evidence": "撵出去？如果他们只是想避雨，为什么不让他们……",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "训诫",
+    "dst": "帕拉维扬",
+    "evidence": "宽容是一个危险的词，年轻人",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "陈述",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会是航行在洪水中的方舟",
+    "confidence": 0.95
+   },
+   {
+    "src": "闯入者",
+    "relation": "恳求",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会不能把我们扔在外面不管！",
+    "confidence": 0.95
+   },
+   {
+    "src": "闯入者",
+    "relation": "斥骂",
+    "dst": "圣洛夫基金会",
+    "evidence": "你们——都是些蠢货，被基金会骗得团团转",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "处置",
+    "dst": "闯入者",
+    "evidence": "我希望你们在他造成更大的破坏之前，把事件解决",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥斯本",
+    "relation": "宣誓",
+    "dst": "圣洛夫基金会",
+    "evidence": "我已经发誓要把自己的人生奉献给基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "剥夺",
+    "dst": "奥斯本",
+    "evidence": "我才意识到自己抛下了妻子和孩子",
+    "confidence": 0.8
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "拒绝",
+    "dst": "闯入者",
+    "evidence": "基金会不可能收容全世界的人避雨",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fdf6b52635f9f8260dc7e604": {
+  "entities": [
+   {
+    "name": "校长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致辞的老校长"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "秩序协助小组组长"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "临时助手"
+   },
+   {
+    "name": "学生合唱团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "六年级演出团"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "巡检小组所属"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "开学典礼所在"
+   },
+   {
+    "name": "开学典礼",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本学年典礼"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不可让学生知晓"
+   }
+  ],
+  "relations": [
+   {
+    "src": "校长",
+    "relation": "致辞",
+    "dst": "开学典礼",
+    "evidence": "欢迎各位师生参加本学年的开学典礼",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生合唱团",
+    "relation": "演出",
+    "dst": "开学典礼",
+    "evidence": "感谢六年级生合唱团的演出",
+    "confidence": 0.95
+   },
+   {
+    "src": "校长",
+    "relation": "统辖",
+    "dst": "第一防线学校",
+    "evidence": "第一防线学校会调和差异性制造的冲突",
+    "confidence": 0.9
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "巡检",
+    "dst": "第一防线学校",
+    "evidence": "来自基金会的巡检小组会与我们共同度过这难忘的一天",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "协助",
+    "dst": "第一防线学校",
+    "evidence": "在开学典礼期间协助维持学校的秩序",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "协助",
+    "dst": "玛蒂尔达",
+    "evidence": "你就是我的助手？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "就说你是秩序协助小组组长玛蒂尔达的临时助手",
+    "confidence": 0.8
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "毕业于",
+    "dst": "第一防线学校",
+    "evidence": "你已经毕业两年多了，梅蕾尔！",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "威胁",
+    "dst": "第一防线学校",
+    "evidence": "“暴雨”是不能让学生知道的",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "863832a82773fa7446f0ed9b": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交代巡检任务"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命巡检者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知气象鸽情报的长官"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "免疫区边界装置"
+   },
+   {
+    "name": "鸽子屋",
+    "type": "组织",
+    "aliases": [],
+    "desc": "提供气象鸽者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "辖区免疫中心"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "依赖气象鸽"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [
+     "瞭望塔"
+    ],
+    "desc": "气象鸽所在"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯"
+    ],
+    "desc": "研究暴雨者"
+   },
+   {
+    "name": "校验面板",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插入基座检测"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "免疫区外有回溯之险"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "交代",
+    "dst": "梅蕾尔",
+    "evidence": "负责巡检“暴雨气象稳定鸽”",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "巡检",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "负责巡检“暴雨气象稳定鸽”",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "告知",
+    "dst": "梅蕾尔",
+    "evidence": "这是加入“Ⅻ”小队之后从我长官那里听来的",
+    "confidence": 0.85
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "庇护",
+    "dst": "第一防线学校",
+    "evidence": "就要依赖气象鸽才能避免被“暴雨”回溯",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "抗性",
+    "dst": "暴雨",
+    "evidence": "这是一种能让“暴雨”免疫区边界变形的装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸽子屋",
+    "relation": "供应",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "它们都是由鸽子屋提供的",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "迷惑",
+    "dst": "科算中心",
+    "evidence": "连拉普拉斯里专门研究“暴雨”的研究员都不知道它的运作原理",
+    "confidence": 0.85
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "安装",
+    "dst": "中央瞭望塔",
+    "evidence": "瞭望塔顶上的气象鸽",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "使用",
+    "dst": "校验面板",
+    "evidence": "只要把它插进气象鸽基座的校验面板就行",
+    "confidence": 0.7
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "免疫",
+    "dst": "暴雨",
+    "evidence": "整个基金会辖区内其实只有中心地带有天然免疫能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "从我长官那里听来的",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "2696eacc781fb287ba54ee00": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "布置巡查者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的助手"
+   },
+   {
+    "name": "拉文德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "汇报者"
+   },
+   {
+    "name": "福格尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报信的教员"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "走失学生所在"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "备用装置存放"
+   },
+   {
+    "name": "防空设施",
+    "type": "地点",
+    "aliases": [],
+    "desc": "备用装置库"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [
+     "瞭望塔"
+    ],
+    "desc": "塔顶存放处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉文德",
+    "relation": "汇报",
+    "dst": "玛蒂尔达",
+    "evidence": "我正要汇报这件事",
+    "confidence": 0.95
+   },
+   {
+    "src": "福格尔",
+    "relation": "委托",
+    "dst": "拉文德",
+    "evidence": "之前福格尔女士委托你寻找的走失学生找到了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "福格尔",
+    "relation": "报告",
+    "dst": "玛蒂尔达",
+    "evidence": "她还发现了另一位没参加开学典礼的学生",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉文德",
+    "relation": "搜寻",
+    "dst": "第一防线学校",
+    "evidence": "教学楼和宿舍楼两个可能的地点都没有他的影子",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "指派",
+    "dst": "拉文德",
+    "evidence": "玛蒂尔达小姐，你等到秩序协助小组的其他成员了吗",
+    "confidence": 0.6
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "存放",
+    "dst": "防空设施",
+    "evidence": "备用装置都存放在瞭望塔地下的防空设施里",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "存放",
+    "dst": "中央瞭望塔",
+    "evidence": "中央瞭望塔的地下区域正在封闭维护，所以那边的备用气象鸽都存放在塔顶",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0ad5b63248d74b06f8538417": {
+  "entities": [
+   {
+    "name": "卢卡斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主导召唤术阵的学生"
+   },
+   {
+    "name": "艾米莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擅长计划的女生"
+   },
+   {
+    "name": "马可",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要溜出来的同伙"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓包的纪律辅员"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拦人的助手"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "召唤术阵"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "聚会之处"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欲逃离之校"
+   },
+   {
+    "name": "开学典礼",
+    "type": "事件",
+    "aliases": [],
+    "desc": "掩护出逃"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来校的委员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卢卡斯",
+    "relation": "谋划",
+    "dst": "神秘术",
+    "evidence": "一旦召唤术阵布置完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢卡斯",
+    "relation": "策划",
+    "dst": "艾米莉亚",
+    "evidence": "这是你的计划，还记得吗？艾米莉亚",
+    "confidence": 0.6
+   },
+   {
+    "src": "卢卡斯",
+    "relation": "同伙",
+    "dst": "马可",
+    "evidence": "再加上马可，一共三个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾米莉亚",
+    "relation": "担忧",
+    "dst": "卢卡斯",
+    "evidence": "这真的会有用吗，卢卡斯？",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾米莉亚",
+    "relation": "感知",
+    "dst": "玛蒂尔达",
+    "evidence": "我听见的更像是女孩子的脚步声",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "抓捕",
+    "dst": "卢卡斯",
+    "evidence": "抓到你们了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "抓捕",
+    "dst": "艾米莉亚",
+    "evidence": "抓到你们了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "调派",
+    "dst": "梅蕾尔",
+    "evidence": "梅蕾尔，从另一边拦住他们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "拦截",
+    "dst": "卢卡斯",
+    "evidence": "就位了！",
+    "confidence": 0.7
+   },
+   {
+    "src": "卢卡斯",
+    "relation": "逃学",
+    "dst": "第一防线学校",
+    "evidence": "就可以去学校外面看看了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "参观",
+    "dst": "第一防线学校",
+    "evidence": "听说这次来的可是委员呢",
+    "confidence": 0.7
+   }
+  ]
+ }
+}

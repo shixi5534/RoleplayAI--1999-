@@ -1,0 +1,6 @@
+http://localhost:11434/api/tags → **失败** HTTPError: HTTP Error 502: Bad Gateway
+http://localhost:11434/api/embed → **失败** HTTPError: HTTP Error 502: Bad Gateway
+
+registry.semantic_status = {'wu_ming_zhe': '索引过期：嵌入模型不符（索引 ollama:bge-m3 ≠ 当前 hashing）'}
+retr.semantic = NoneType
+build_embedder() 现在会返回：HashingEmbedder｜name=hashing

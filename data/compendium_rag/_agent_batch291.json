@@ -1,0 +1,1339 @@
+{
+ "5d90a750fa91be195c707910": {
+  "entities": [
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唯一有旅行经验的除错师"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "渴望外界讲演的传道者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以几何评判目的地的少女"
+   },
+   {
+    "name": "领袖6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称想法不重要的领袖"
+   },
+   {
+    "name": "休",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与苏菲亚一同登岛的同伴"
+   },
+   {
+    "name": "岛屿",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人所在的隔绝之岛"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "请教",
+    "dst": "苏菲亚",
+    "evidence": "苏菲亚，作为我们之中唯一有旅行经验的人，你有什么建议吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "回忆",
+    "dst": "休",
+    "evidence": "你指的是我与休一同来到岛屿时的事情吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "忘却",
+    "dst": "岛屿",
+    "evidence": "当时我的年龄太小，几乎不记得旅途上的事情了",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "遗憾",
+    "dst": "苏菲亚",
+    "evidence": "我原本还以为能够在你这里获得更多的知识呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "提醒",
+    "dst": "苏菲亚",
+    "evidence": "苏菲亚，你回答210的问题就是个错误，他不会放弃这种好机会的",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "探问",
+    "dst": "苏菲亚",
+    "evidence": "假如要离开岛屿的话，你会去往哪里呢，苏菲亚？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "想回",
+    "dst": "岛屿",
+    "evidence": "如果可以的话，我想要回家看看。",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "自评",
+    "dst": "岛屿",
+    "evidence": "尽管我在那里的童年称不上愉快，但是，也并非全部如此",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "赞许",
+    "dst": "岛屿",
+    "evidence": "那里的几何位置决定了它是一个优秀的旅行目的地",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "问询",
+    "dst": "领袖6",
+    "evidence": "6，你是怎么想的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "类比",
+    "dst": "领袖6",
+    "evidence": "所以你是说，你会跟77一样追随着真理的脚步来选择目的地吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "领袖6",
+    "relation": "回绝",
+    "dst": "37",
+    "evidence": "……我不想旅行。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "465bf62abe55584b5e0efbf2": {
+  "entities": [
+   {
+    "name": "赛季剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "赛季剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "赛季剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a448c0dfbdbbb31d35907342": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为自身缺席而叹息的传道者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被称作赫尔墨斯之星的少女"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "合书解围的除错师"
+   },
+   {
+    "name": "《海岸漫步》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "遗漏了关键一环的杂志"
+   },
+   {
+    "name": "岛屿",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被外来者审视的岛屿"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被杂志书写思想的学派"
+   },
+   {
+    "name": "上一任领袖6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "杂志谈及的上一位领袖"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "叹息",
+    "dst": "《海岸漫步》",
+    "evidence": "但我发现了这本书籍的致命缺憾",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "重读",
+    "dst": "岛屿",
+    "evidence": "以一个外来者的视角重新审视岛屿，是一段颇为新奇的体验",
+    "confidence": 0.95
+   },
+   {
+    "src": "《海岸漫步》",
+    "relation": "描写",
+    "dst": "岛屿",
+    "evidence": "这本杂志对于岛屿的地理和学派的思想进行了充分的描写",
+    "confidence": 0.95
+   },
+   {
+    "src": "《海岸漫步》",
+    "relation": "描写",
+    "dst": "阿派朗学派",
+    "evidence": "这本杂志对于岛屿的地理和学派的思想进行了充分的描写",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "厌倦",
+    "dst": "210",
+    "evidence": "我已经开始厌倦了你无意义的修辞了，210",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "自诩",
+    "dst": "《海岸漫步》",
+    "evidence": "就是缺乏对于210——也就是本人的描写",
+    "confidence": 0.95
+   },
+   {
+    "src": "《海岸漫步》",
+    "relation": "谈及",
+    "dst": "上一任领袖6",
+    "evidence": "杂志中谈到了77、上一位“6”",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "回击",
+    "dst": "210",
+    "evidence": "成功地避免了自己的书籍变为一团废纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "讥讽",
+    "dst": "37",
+    "evidence": "你这位同样没有出现在书籍中的“赫尔墨斯之星”",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "自持",
+    "dst": "《海岸漫步》",
+    "evidence": "经历不足以支撑他们理解我的研究课题",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "解围",
+    "dst": "210",
+    "evidence": "这只是因为当时你们还没有成年，不适宜出现在书籍里面",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9d429d83ecb158899f82fcaf": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fea6c4b58e19cc94140d3bfa": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "六人小队中央的领导者"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一路抱怨的塞尔维亚队员"
+   },
+   {
+    "name": "塔泽尔亚龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "领地被踩进的山中怪物"
+   },
+   {
+    "name": "佩希塔",
+    "type": "组织",
+    "aliases": [],
+    "desc": "在把戏背后作祟的教派"
+   },
+   {
+    "name": "重塑追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "小队追踪的一伙人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "追随者所奉的邪教"
+   },
+   {
+    "name": "委外合约人才管理组织",
+    "type": "组织",
+    "aliases": [],
+    "desc": "下达命令的合约机关"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "队伍启程离开的城市"
+   },
+   {
+    "name": "贝尔格莱德分部",
+    "type": "地点",
+    "aliases": [],
+    "desc": "殉职报告将被送往的分部"
+   },
+   {
+    "name": "山麓草甸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雨后泥泞的山麓草地"
+   },
+   {
+    "name": "神秘学家难民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指为不知死活的一群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小队队员埃米尔",
+    "relation": "抱怨",
+    "dst": "山麓草甸",
+    "evidence": "我受够了这座该死的山脉",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "忆及",
+    "dst": "维也纳",
+    "evidence": "我们当时就不应该离开维也纳的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "列举",
+    "dst": "佩希塔",
+    "evidence": "不知死活的神秘学家难民，又或是来自佩希塔的邪恶把戏？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "列举",
+    "dst": "神秘学家难民",
+    "evidence": "不知死活的神秘学家难民，又或是来自佩希塔的邪恶把戏？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "警告",
+    "dst": "小队队员埃米尔",
+    "evidence": "别忘了我们还处在塔泽尔亚龙【Tatzelwurm】的领地之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "取笑",
+    "dst": "小队队员埃米尔",
+    "evidence": "他用脑袋验证了塔泽尔亚龙牙齿与臭气的威力",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "忌惮",
+    "dst": "塔泽尔亚龙",
+    "evidence": "埃米尔警惕地缩了缩脑袋，小心翼翼地环顾了一圈四周",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "担忧",
+    "dst": "贝尔格莱德分部",
+    "evidence": "我可不愿意变成一封殉职报告被送到贝尔格莱德分部",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "接单",
+    "dst": "委外合约人才管理组织",
+    "evidence": "这次任务来自于委外合约人才管理组织的高层，我们没有拒绝的权力",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追捕",
+    "dst": "重塑追随者",
+    "evidence": "直到我们找到那伙重塑追随者之前，我们都必须与冰冷的睡袋为伍了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "轻蔑",
+    "dst": "重塑之手",
+    "evidence": "他们甚至连真正的重塑之手都算不上！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "不耐",
+    "dst": "山麓草甸",
+    "evidence": "我们到底还要在这座该死的山里待多久？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fbbf65913592999822ac6397": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷静分析局势的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对同胞感到耻辱的队员"
+   },
+   {
+    "name": "重塑追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "熟知社会规则的狂热分支"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "煽动难民的幕后"
+   },
+   {
+    "name": "神秘学家难民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被迫迁徙的混血神秘学家"
+   },
+   {
+    "name": "巴尔干半岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "难民的来处"
+   },
+   {
+    "name": "奥匈帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与基金会一同排查的帝国"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "排查难民的机关"
+   },
+   {
+    "name": "神秘学家至上",
+    "type": "概念",
+    "aliases": [],
+    "desc": "在可怜人中流传的理念"
+   },
+   {
+    "name": "纯血种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被埃米尔吹捧的血统"
+   },
+   {
+    "name": "混血种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "难民大多所属的血统"
+   },
+   {
+    "name": "塞尔维亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "埃米尔的故乡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "戒惧",
+    "dst": "重塑追随者",
+    "evidence": "这些狂热的追随者有些时候更为棘手",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "迁怒",
+    "dst": "神秘学家难民",
+    "evidence": "还不如好好查查那些神秘学家难民",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "印证",
+    "dst": "神秘学家难民",
+    "evidence": "我们先前所处理的暴动、谋杀案件，也确实证明了这一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "溯源",
+    "dst": "巴尔干半岛",
+    "evidence": "他们大多来自巴尔干半岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民",
+    "relation": "避入",
+    "dst": "奥匈帝国",
+    "evidence": "因遭受了政治斗争与对神秘学家的种族迫害才来到奥匈帝国",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "流传",
+    "dst": "神秘学家至上",
+    "evidence": "“神秘学家至上”的理念自然会在这些可怜人中得到广泛的认可",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥匈帝国",
+    "relation": "排查",
+    "dst": "神秘学家难民",
+    "evidence": "现在无论是基金会还是奥匈帝国，都在尽力地排查这些难民",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "排查",
+    "dst": "神秘学家难民",
+    "evidence": "现在无论是基金会还是奥匈帝国，都在尽力地排查这些难民",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "轻蔑",
+    "dst": "混血种",
+    "evidence": "这些难民大多都不是纯血种，只是一群混血种",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "吹捧",
+    "dst": "纯血种",
+    "evidence": "能够在重塑之手如鱼得水的，多是“尊贵”和“强大”的纯血种",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辩驳",
+    "dst": "小队队员埃米尔",
+    "evidence": "即便是神秘学家，也并非人人都能够顺利地使用神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "悲叹",
+    "dst": "神秘学家难民",
+    "evidence": "但不少难民已经被那些激进的宣传彻底洗脑了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "羞辱",
+    "dst": "塞尔维亚",
+    "evidence": "一想到其中有些白痴跟我同样来自塞尔维亚，我就感到耻辱！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "类比",
+    "dst": "神秘学家难民",
+    "evidence": "就像是一群丢失了蜂巢方位的工蜂",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "警讯",
+    "dst": "小队队员埃米尔",
+    "evidence": "你有没有闻到一股臭味？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d98c0a1fad241d1512ec3106": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定循迹查看的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识出气味的队员"
+   },
+   {
+    "name": "塔泽尔亚龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "曾以为只是传说的怪物"
+   },
+   {
+    "name": "龙海芋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与硫磺混杂的气味来源"
+   },
+   {
+    "name": "山麓草甸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "留有碾压痕迹的草地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小队队员埃米尔",
+    "relation": "辨认",
+    "dst": "龙海芋",
+    "evidence": "像是硫磺与龙海芋混合在一起的气味……是塔泽尔亚龙？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "辨认",
+    "dst": "塔泽尔亚龙",
+    "evidence": "像是硫磺与龙海芋混合在一起的气味……是塔泽尔亚龙？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "意外",
+    "dst": "塔泽尔亚龙",
+    "evidence": "我还以为这只是个传说",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "承认",
+    "dst": "塔泽尔亚龙",
+    "evidence": "不得不说，我先前也是这么以为的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "察验",
+    "dst": "山麓草甸",
+    "evidence": "这边的草地有碾压的痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "请示",
+    "dst": "塞梅尔维斯",
+    "evidence": "要去看看吗，队长？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追踪",
+    "dst": "塔泽尔亚龙",
+    "evidence": "气味很淡，显然它已经离开了很长一段时间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "允诺",
+    "dst": "小队队员埃米尔",
+    "evidence": "如果它袭击了其他旅行者，我们需要伸出援手",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b5ca0b536dbca1d4fe27102a": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cd0b88b3310a439b10bda971": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "由痕迹推断敌情的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出脓液的队员"
+   },
+   {
+    "name": "委外合约小队队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见到残肢作呕的随队者"
+   },
+   {
+    "name": "塔泽尔亚龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "留下断尾的怪物"
+   },
+   {
+    "name": "山麓林地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "气味浓郁的林地"
+   },
+   {
+    "name": "山麓营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "经历大战后撤离的营地"
+   },
+   {
+    "name": "塞梅尔维斯的笔记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记有怪物形貌的手册"
+   },
+   {
+    "name": "重塑追随者的黑色脓液",
+    "type": "物品",
+    "aliases": [],
+    "desc": "树干上滴落的黑液"
+   },
+   {
+    "name": "重塑追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仓促撤离的一伙人"
+   },
+   {
+    "name": "佩希塔",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以中央帐篷为居处的教派"
+   },
+   {
+    "name": "软禁囚犯的帐篷",
+    "type": "物品",
+    "aliases": [],
+    "desc": "营地中央无遮蔽的帐篷"
+   },
+   {
+    "name": "蒙纱的神秘术镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "角落中闪光的朦胧器物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "戒备",
+    "dst": "塔泽尔亚龙",
+    "evidence": "做好战斗准备",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔泽尔亚龙",
+    "relation": "现身",
+    "dst": "山麓林地",
+    "evidence": "气味越来越浓郁了，塔泽尔亚龙显然就在不远处",
+    "confidence": 0.95
+   },
+   {
+    "src": "山麓营地",
+    "relation": "凌乱",
+    "dst": "山麓林地",
+    "evidence": "半掀的帐篷、散落的木材与拦腰折断的树木",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约小队队员",
+    "relation": "嫌恶",
+    "dst": "塔泽尔亚龙",
+    "evidence": "呃……这到底是什么东西？好恶心",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "比对",
+    "dst": "塞梅尔维斯的笔记本",
+    "evidence": "塞梅尔维斯翻开笔记本，将这节看上去像是尾巴的怪物肢体与记载进行了比对",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "确认",
+    "dst": "塔泽尔亚龙",
+    "evidence": "没错，这确实是塔泽尔亚龙的尾部",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "推断",
+    "dst": "重塑追随者",
+    "evidence": "看来，他们顺利地击退了塔泽尔亚龙",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "惊觉",
+    "dst": "重塑追随者的黑色脓液",
+    "evidence": "这难道是……重塑追随者身上的黑色脓液？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "锁定",
+    "dst": "重塑追随者",
+    "evidence": "塔泽尔亚龙所袭击的是我们正在追踪的那伙追随者的营地",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "搜寻",
+    "dst": "山麓营地",
+    "evidence": "埃米尔，你跟我一起搜寻这个营地，确认这里是否留有线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "下令",
+    "dst": "委外合约小队队员",
+    "evidence": "其余的人前往附近进行戒备",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "测时",
+    "dst": "山麓营地",
+    "evidence": "篝火还留有余温，他们大约是在两小时前离开营地的",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "指向",
+    "dst": "软禁囚犯的帐篷",
+    "evidence": "塔泽尔亚龙的目标是营地中央的这顶帐篷",
+    "confidence": 0.95
+   },
+   {
+    "src": "佩希塔",
+    "relation": "居于",
+    "dst": "软禁囚犯的帐篷",
+    "evidence": "被围在中央的帐篷……是“佩希塔”的领导者的住处吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "佩希塔",
+    "relation": "隶属",
+    "dst": "重塑追随者",
+    "evidence": "但“佩希塔”却是一个不折不扣的重塑分支教派",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "隐去",
+    "dst": "佩希塔",
+    "evidence": "在与埃米尔谈话时，塞梅尔维斯隐去了一条最为重要的线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "拾得",
+    "dst": "蒙纱的神秘术镜",
+    "evidence": "塞梅尔维斯却被角落中的一个闪光的物件吸引到了注意力",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "端详",
+    "dst": "蒙纱的神秘术镜",
+    "evidence": "一面……镜子？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a59247af6e03294868a1942": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吃了闭门羹仍笑的队长"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掌握内情却惜言的上司"
+   },
+   {
+    "name": "蒙纱的神秘术镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "背面刻着咒语的造物"
+   },
+   {
+    "name": "光影立显",
+    "type": "概念",
+    "aliases": [],
+    "desc": "用以照亮镜面的语句"
+   },
+   {
+    "name": "塞梅尔维斯的通讯设备",
+    "type": "物品",
+    "aliases": [],
+    "desc": "响起在身上的联络器"
+   },
+   {
+    "name": "软禁囚犯的帐篷",
+    "type": "物品",
+    "aliases": [],
+    "desc": "软禁囚犯之处"
+   },
+   {
+    "name": "佩希塔",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被调查的分支教派"
+   },
+   {
+    "name": "塔泽尔亚龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被用来寻踪的怪物"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "造物所属的力量"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蒙纱的神秘术镜",
+    "relation": "刻有",
+    "dst": "光影立显",
+    "evidence": "镜子的背面则刻上了一行用以照亮镜子的咒语",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "念出",
+    "dst": "光影立显",
+    "evidence": "塞梅尔维斯念出了咒语",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "判定",
+    "dst": "蒙纱的神秘术镜",
+    "evidence": "很显然，这是一件神秘术造物",
+    "confidence": 0.95
+   },
+   {
+    "src": "光影立显",
+    "relation": "失效",
+    "dst": "塞梅尔维斯",
+    "evidence": "无情地拒绝了这句难以被称之为咒语的语句",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "收起",
+    "dst": "蒙纱的神秘术镜",
+    "evidence": "便将这面镜子收了起来，开始寻找其他可用的线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "蒙纱的神秘术镜",
+    "relation": "闪光",
+    "dst": "塞梅尔维斯",
+    "evidence": "在她收起镜子的一瞬间，朦胧的镜面闪过了一道奇异的光辉",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯的通讯设备",
+    "relation": "响起",
+    "dst": "塞梅尔维斯",
+    "evidence": "塞梅尔维斯身上的通讯设备响了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "联络",
+    "dst": "琳赛女士",
+    "evidence": "琳赛女士，您找我有什么事情？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "垂询",
+    "dst": "佩希塔",
+    "evidence": "关于“佩希塔”的调查进展怎么样了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "赞许",
+    "dst": "塞梅尔维斯",
+    "evidence": "你能够想到利用塔泽尔亚龙来寻找“佩希塔”组织的行踪",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "感念",
+    "dst": "琳赛女士",
+    "evidence": "也多亏了您向我教授了关于塔泽尔亚龙的生活习性",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔泽尔亚龙",
+    "relation": "循波",
+    "dst": "神秘术",
+    "evidence": "塔泽尔亚龙没有眼睛，只能依靠神秘术波动来确定地表猎物位置",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔泽尔亚龙",
+    "relation": "择袭",
+    "dst": "佩希塔",
+    "evidence": "塔泽尔亚龙会更加倾向于袭击后者",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "点破",
+    "dst": "软禁囚犯的帐篷",
+    "evidence": "很简单，这是用于软禁囚犯的帐篷",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "拒答",
+    "dst": "塞梅尔维斯",
+    "evidence": "不，没有需要向你透露的信息",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "试探",
+    "dst": "琳赛女士",
+    "evidence": "我还以为我们是朋友呢",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c8b01d7c0452d06d7966e23c": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被歌声牵引的听者"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告魔精行踪的队员"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "单方面结束通讯的上司"
+   },
+   {
+    "name": "萦绕不去的歌声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "唯有队长听得见的幻听"
+   },
+   {
+    "name": "塞梅尔维斯的通讯设备",
+    "type": "物品",
+    "aliases": [],
+    "desc": "隐约漏出女声的设备"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "闻讯而来的群物"
+   },
+   {
+    "name": "塔泽尔亚龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "留下臭味的怪物"
+   },
+   {
+    "name": "山麓林地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "歌声传来的那一侧"
+   },
+   {
+    "name": "委外合约小队队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在外围警戒的随队者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琳赛女士",
+    "relation": "下令",
+    "dst": "塞梅尔维斯",
+    "evidence": "继续执行任务，塞梅尔维斯。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯的通讯设备",
+    "relation": "传出",
+    "dst": "萦绕不去的歌声",
+    "evidence": "通讯设备的另一侧传来了若有若无的女声",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辨认",
+    "dst": "塞梅尔维斯的通讯设备",
+    "evidence": "嗯？通讯设备旁边还有人吗？你好？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "听见",
+    "dst": "萦绕不去的歌声",
+    "evidence": "这是……歌声？",
+    "confidence": 0.95
+   },
+   {
+    "src": "萦绕不去的歌声",
+    "relation": "来自",
+    "dst": "山麓林地",
+    "evidence": "而是仿佛来自山麓另外一侧的歌声",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "步向",
+    "dst": "萦绕不去的歌声",
+    "evidence": "塞梅尔维斯一步一步地朝着歌声的方向走去",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "报告",
+    "dst": "塞梅尔维斯",
+    "evidence": "队长，出问题了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "打断",
+    "dst": "萦绕不去的歌声",
+    "evidence": "仿佛一道极不和谐的破音声，将这首迷人的旋律拦腰打断",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约小队队员",
+    "relation": "发现",
+    "dst": "魔精",
+    "evidence": "警戒的队员们传来信息，他们在周围发现了一群魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "循味",
+    "dst": "塔泽尔亚龙",
+    "evidence": "也是被塔泽尔亚龙的臭味所吸引",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "迎战",
+    "dst": "魔精",
+    "evidence": "召集小队成员，准备迎战吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "否认",
+    "dst": "萦绕不去的歌声",
+    "evidence": "不，报告队长，我什么也没有听见",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自省",
+    "dst": "萦绕不去的歌声",
+    "evidence": "幻觉已经真实到了这个地步吗……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1f7c02a97ae7b04fc24abe58": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

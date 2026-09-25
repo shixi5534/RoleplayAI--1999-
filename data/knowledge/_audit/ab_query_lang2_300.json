@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-09-17 23:02:28",
+  "config": {
+    "testset": "rag_testset_300_clean.json",
+    "cases": 300
+  },
+  "results": [
+    {
+      "label": "A 基线（中文 query）",
+      "strict_pass_n": 203,
+      "strict_pass": 0.6767,
+      "inject_pass_n": 186,
+      "inject_pass": 0.62,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54
+      },
+      "elapsed_s": 152.3
+    },
+    {
+      "label": "B 中英双路融合（语义通道双查）",
+      "strict_pass_n": 210,
+      "strict_pass": 0.7,
+      "inject_pass_n": 194,
+      "inject_pass": 0.6467,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54
+      },
+      "elapsed_s": 150.6
+    }
+  ],
+  "delta": {
+    "d_strict": 7,
+    "d_inject": 8,
+    "d_neg": 0
+  },
+  "fixed": [
+    "R015",
+    "R026",
+    "R027",
+    "R037",
+    "R043",
+    "R101",
+    "R103",
+    "R145",
+    "R156",
+    "R203",
+    "R227",
+    "R233",
+    "R252",
+    "R253",
+    "R275"
+  ],
+  "broken": [
+    "R022",
+    "R040",
+    "R080",
+    "R165",
+    "R166",
+    "R167",
+    "R250",
+    "R256"
+  ]
+}

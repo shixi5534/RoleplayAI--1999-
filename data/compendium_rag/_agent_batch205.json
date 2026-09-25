@@ -1,0 +1,942 @@
+{
+ "0a335e321a7a357c59f8cd37": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追查凯拉下落的雇佣兵"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阿尔古斯正在寻找的农场女孩"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "信众口中的密教组织"
+   },
+   {
+    "name": "启明会”信众Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "“启明会”信众Ⅰ"
+    ],
+    "desc": "跛足、自称擅长割草的信众"
+   },
+   {
+    "name": "启明会”信众Ⅱ",
+    "type": "角色",
+    "aliases": [
+     "“启明会”信众Ⅱ"
+    ],
+    "desc": "开枪并藏有发卡的信众"
+   },
+   {
+    "name": "德克萨斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雨水润湿土壤的原野所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "追查",
+    "dst": "农场女孩凯拉",
+    "evidence": "你见过一个叫“凯拉”的女孩吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "勘验",
+    "dst": "德克萨斯",
+    "evidence": "被雨水润湿的土壤，微微凹陷的脚印",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅱ",
+    "relation": "斥责",
+    "dst": "启明会”信众Ⅰ",
+    "evidence": "蠢货，这当然不是",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "询问",
+    "dst": "启明会”信众Ⅱ",
+    "evidence": "那位大人所需要的材料就在这儿吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅱ",
+    "relation": "枪击",
+    "dst": "启明会”信众Ⅰ",
+    "evidence": "我想，她此刻应当正在天堂等您",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "制伏",
+    "dst": "启明会”信众Ⅱ",
+    "evidence": "她一脚踩住男人的胸膛",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "救下",
+    "dst": "启明会”信众Ⅰ",
+    "evidence": "子弹擦伤了施暴者的面颊",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "隶属",
+    "dst": "启明会",
+    "evidence": "老大，那位大人所需要的材料就在这儿吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4350e36388bd5ef511b29627": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以枪逼问凯拉下落的雇佣兵"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遗落发卡、被反复追问者"
+   },
+   {
+    "name": "启明会”信众Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "“启明会”信众Ⅰ"
+    ],
+    "desc": "被救下后追问其身份的信众"
+   },
+   {
+    "name": "启明会”信众Ⅱ",
+    "type": "角色",
+    "aliases": [
+     "“启明会”信众Ⅱ"
+    ],
+    "desc": "供出旅馆线索后被打晕者"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被信众敬畏的密教"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被信众视为敌对者的机构"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "信众遇见凯拉之处"
+   },
+   {
+    "name": "发卡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "凯拉遗落、被信众占有的饰物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "盘问",
+    "dst": "启明会”信众Ⅱ",
+    "evidence": "我有话要问你，有什么就说什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "逼问",
+    "dst": "农场女孩凯拉",
+    "evidence": "告诉我，你是在哪里遇见她的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅱ",
+    "relation": "供述",
+    "dst": "蓝手帕旅馆",
+    "evidence": "我在一个叫蓝手帕旅馆的地方遇见她的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "砸晕",
+    "dst": "启明会”信众Ⅱ",
+    "evidence": "用枪柄砸晕了眼前的男人",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "误认",
+    "dst": "圣洛夫基金会",
+    "evidence": "您、您是“基金会”的人吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "否认",
+    "dst": "圣洛夫基金会",
+    "evidence": "我不认识你口中的“基金会”",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "出示",
+    "dst": "发卡",
+    "evidence": "那你的表袋里怎么会有凯拉的发卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "农场女孩凯拉",
+    "relation": "遗失",
+    "dst": "发卡",
+    "evidence": "那个姑娘遗失了她的发卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "隶属",
+    "dst": "启明会",
+    "evidence": "他们很讨厌“基金会”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d2e331e98b78c1895cc4eca2": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收下报酬与电话后离去的雇佣兵"
+   },
+   {
+    "name": "启明会”信众Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "“启明会”信众Ⅰ"
+    ],
+    "desc": "托付母亲线索并赠予美钞的信众"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在公路上拦车的羊首人身神秘学家"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "阿尔古斯问路之处"
+   },
+   {
+    "name": "牧马人越野车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "数羊羔绕着打转的越野车"
+   },
+   {
+    "name": "德克萨斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "公路与红土地所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "恳求",
+    "dst": "阿尔古斯",
+    "evidence": "如果您在路上见到了我母亲的踪迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "启明会”信众Ⅰ",
+    "relation": "赠予",
+    "dst": "阿尔古斯",
+    "evidence": "翻出几张面额不大的美钞",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "拦车",
+    "dst": "阿尔古斯",
+    "evidence": "您能载我一程吗？这是公务行程",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "拒绝",
+    "dst": "数羊羔",
+    "evidence": "不行",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "观察",
+    "dst": "阿尔古斯",
+    "evidence": "您的眼睛为什么这样的红",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "徘徊",
+    "dst": "牧马人越野车",
+    "evidence": "围着一辆牧马人越野车打转",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "前往",
+    "dst": "蓝手帕旅馆",
+    "evidence": "告诉我，蓝手帕旅馆在哪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f680044821ee62860d1b2d32": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因夜盲症在黑夜中出事的雇佣兵"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回忆中救活羊羔的农场女孩"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阿尔古斯折返寻找未果者"
+   },
+   {
+    "name": "牧马人越野车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "阿尔古斯驾驶的车"
+   },
+   {
+    "name": "夜盲症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使阿尔古斯入夜失明的病症"
+   },
+   {
+    "name": "羔羊",
+    "type": "概念",
+    "aliases": [],
+    "desc": "凯拉割断脐带救下的新生羊羔"
+   }
+  ],
+  "relations": [
+   {
+    "src": "农场女孩凯拉",
+    "relation": "接生",
+    "dst": "羔羊",
+    "evidence": "用剪子割断了羔羊的脐带",
+    "confidence": 0.95
+   },
+   {
+    "src": "农场女孩凯拉",
+    "relation": "提醒",
+    "dst": "阿尔古斯",
+    "evidence": "天一黑，你的眼睛就什么都看不见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "农场女孩凯拉",
+    "relation": "劝说",
+    "dst": "阿尔古斯",
+    "evidence": "没有什么东西是为了死去而降临的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "患有",
+    "dst": "夜盲症",
+    "evidence": "因夜盲症而导致的黑暗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "折返",
+    "dst": "数羊羔",
+    "evidence": "以最短的时间回到了那个地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "撞毁",
+    "dst": "牧马人越野车",
+    "evidence": "刺耳的脚刹声没能阻止一场车祸的发生",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ab6cf7ca225d116a667e6056": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受基金会委派与编辑接洽的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "牵挂红色38的飞行员"
+   },
+   {
+    "name": "TTT",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述德州都市怪谈者"
+   },
+   {
+    "name": "公路司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒载并警告怪事的公路司机"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传达基金会紧急通知的装置"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "委派接洽任务的机构"
+   },
+   {
+    "name": "芝诺基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "在德克萨斯州大规模撤离的基地"
+   },
+   {
+    "name": "红色38",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭留在军备工厂检修的扫帚"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前往77号公路取材的UTTU编辑"
+   },
+   {
+    "name": "传记作家兀尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会被要求查明下落者"
+   },
+   {
+    "name": "奇索斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "军备工厂所在、怪事频发的镇子"
+   },
+   {
+    "name": "奇索斯的军备工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "红色38正在检修之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "TTT",
+    "relation": "讲述",
+    "dst": "维尔汀",
+    "evidence": "TTT告诉了我一个关于德克萨斯的都市怪谈",
+    "confidence": 0.95
+   },
+   {
+    "src": "通讯器",
+    "relation": "通报",
+    "dst": "维尔汀",
+    "evidence": "位于美国德克萨斯州的芝诺基地进行了大规模的撤离",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "委派",
+    "dst": "维尔汀",
+    "evidence": "基金会需要您尽快与这位编辑接洽",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "接洽",
+    "dst": "数羊羔",
+    "evidence": "UTTU的编辑数羊羔近日前往77号公路进行取材",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "提供",
+    "dst": "传记作家兀尔德",
+    "evidence": "以获取兀尔德的下落",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "抱怨",
+    "dst": "芝诺基地",
+    "evidence": "结果今天就撤离了？见鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "牵挂",
+    "dst": "红色38",
+    "evidence": "那我的红色38怎么办",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "请求",
+    "dst": "公路司机",
+    "evidence": "能送我们到奇索斯镇吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "公路司机",
+    "relation": "警告",
+    "dst": "奇索斯",
+    "evidence": "那个镇子最近一直在发生怪事",
+    "confidence": 0.95
+   },
+   {
+    "src": "奇索斯的军备工厂",
+    "relation": "位于",
+    "dst": "奇索斯",
+    "evidence": "它位于奇索斯镇，路途并不算太远",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "建议",
+    "dst": "红弩箭",
+    "evidence": "可以直接去军备工厂看看",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "72b4664cf84928caccefcbf9": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指出魔精来历的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认定雾气源头是魔精的飞行员"
+   },
+   {
+    "name": "公路司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述传说后昏过去者"
+   },
+   {
+    "name": "穆姆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "产生雾气的黑白相间魔精"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "车辆附近出没的生物族群"
+   },
+   {
+    "name": "77号公路",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雾气翻涌时不可下车之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "公路司机",
+    "relation": "警告",
+    "dst": "77号公路",
+    "evidence": "当雾气在77号公路翻涌时，一旦下车",
+    "confidence": 0.95
+   },
+   {
+    "src": "公路司机",
+    "relation": "畏惧",
+    "dst": "77号公路",
+    "evidence": "给再多的钱也不干",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "质疑",
+    "dst": "公路司机",
+    "evidence": "你就是故事里的那个司机",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "辨认",
+    "dst": "穆姆",
+    "evidence": "那个是穆姆，一种在美国南部极为常见的魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "穆姆",
+    "relation": "属于",
+    "dst": "魔精",
+    "evidence": "在受到惊吓时，会从头部的呼吸角产生一种形似于雾的气体",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "误解",
+    "dst": "穆姆",
+    "evidence": "只是一些魔精在车顶上瘙痒而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "提议",
+    "dst": "维尔汀",
+    "evidence": "咱们换个位置",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c822da57f7017f3fe0c309bd": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "系上安全带、赞同下车的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把汽车当飞行器操作而失败的飞行员"
+   },
+   {
+    "name": "穆姆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被认定为其雾气源头者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需被驱逐出公路的族群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "自嘲",
+    "dst": "维尔汀",
+    "evidence": "我得承认我搞不定这铁家伙",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "决定",
+    "dst": "穆姆",
+    "evidence": "把它们驱逐出这儿就行了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "赞同",
+    "dst": "红弩箭",
+    "evidence": "我非常赞同你的决定",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "受困",
+    "dst": "魔精",
+    "evidence": "既然这些雾气的源头是魔精",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4157c9f77f345f1eef5f1b7f": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉有人施放神秘术的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒做好战斗准备的飞行员"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [
+     "侍应生"
+    ],
+    "desc": "自称被魔精困住的侍应生"
+   },
+   {
+    "name": "穆姆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "骤然张嘴露出牙齿的魔精"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "远处被人使用的术法"
+   },
+   {
+    "name": "襁褓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "侍应生怀中紧抱之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "察觉",
+    "dst": "神秘术",
+    "evidence": "有人在使用神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "求救",
+    "dst": "维尔汀",
+    "evidence": "孩子们，帮帮我",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "抱怨",
+    "dst": "穆姆",
+    "evidence": "这些魔精堵塞了道路",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "怀抱",
+    "dst": "襁褓",
+    "evidence": "紧紧地怀抱着一个襁褓",
+    "confidence": 0.95
+   },
+   {
+    "src": "穆姆",
+    "relation": "攻击",
+    "dst": "蓝手帕",
+    "evidence": "它要进攻了",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "戒备",
+    "dst": "穆姆",
+    "evidence": "它们的眼里可没写着“温驯”两个字",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0eddf1646950ec499350193a": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [
+     "侍应生"
+    ],
+    "desc": "邀请二人入住旅馆的侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以司机为由婉拒的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惦记行李与现金的飞行员"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "蓝手帕自报的旅店"
+   },
+   {
+    "name": "公路司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "丢下行李独自逃走者"
+   },
+   {
+    "name": "穆姆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "摩擦车顶、惧怕动静的魔精"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使雾气不散的生物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "介绍",
+    "dst": "蓝手帕旅馆",
+    "evidence": "那是一个叫“蓝手帕旅馆”的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "引路",
+    "dst": "维尔汀",
+    "evidence": "让我带你们过去吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "邀请",
+    "dst": "红弩箭",
+    "evidence": "你们需要暂时地歇歇脚吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "等待",
+    "dst": "蓝手帕旅馆",
+    "evidence": "我在这儿等了两个小时了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "拒绝",
+    "dst": "蓝手帕",
+    "evidence": "我们的司机还在车内",
+    "confidence": 0.95
+   },
+   {
+    "src": "公路司机",
+    "relation": "遗弃",
+    "dst": "维尔汀",
+    "evidence": "他把我们的行李丢了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "穆姆",
+    "relation": "骚扰",
+    "dst": "蓝手帕",
+    "evidence": "它们总是喜欢踩着汽车的顶部",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7a047bf4117e417386d33061": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为二人引路的旅馆侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问旅馆远近的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的飞行员"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "小径尽头灯火将亮的汽车旅馆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "引路",
+    "dst": "蓝手帕旅馆",
+    "evidence": "这里有一条易于行走的小径",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "欢迎",
+    "dst": "维尔汀",
+    "evidence": "孩子们，欢迎来到蓝手帕旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "承诺",
+    "dst": "红弩箭",
+    "evidence": "每一个迷途的旅人都能得到柔软的床榻",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

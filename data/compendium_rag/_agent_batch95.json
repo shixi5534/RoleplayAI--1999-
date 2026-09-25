@@ -1,0 +1,981 @@
+{
+ "fe71794e08f503a21aea5ffe": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉·温格勒",
+     "克拉拉"
+    ],
+    "desc": "以镜为术的心理医生"
+   },
+   {
+    "name": "泽姆菲拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠镜的流浪者"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沉重华丽的第一枚手镜"
+   },
+   {
+    "name": "小贩Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "伊里奇"
+    ],
+    "desc": "幻觉中的旧识"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令人恐惧的术"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "收容与传唤方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "泽姆菲拉",
+    "relation": "赠予",
+    "dst": "卡卡尼亚",
+    "evidence": "你应该有一面手镜，用来留给你自己",
+    "confidence": 0.95
+   },
+   {
+    "src": "泽姆菲拉",
+    "relation": "评说",
+    "dst": "神秘术",
+    "evidence": "你的神秘术……神奇的神秘术，却也是令人恐惧的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "收下",
+    "dst": "手镜",
+    "evidence": "好吧，那我就……收下它了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小贩Ⅰ",
+    "relation": "现身",
+    "dst": "卡卡尼亚",
+    "evidence": "不是的……等等，伊里奇？",
+    "confidence": 0.85
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "幻觉",
+    "dst": "圣洛夫基金会",
+    "evidence": "你为什么会还在这里？……在基金会？",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "失去",
+    "dst": "手镜",
+    "evidence": "手镜已经从掌心消失",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "接受",
+    "dst": "圣洛夫基金会",
+    "evidence": "帮助……是的",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "596a2b75883e66c7472f952d": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉·温格勒"
+    ],
+    "desc": "自陈姓名者"
+   },
+   {
+    "name": "接线员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "康复中心接线者"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "收治之所"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "证人传唤方"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待控制者"
+   },
+   {
+    "name": "催眠",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待解者"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "配合研究之题"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "自陈",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "我是……克拉拉·温格勒",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自愿",
+    "dst": "圣洛夫基金会",
+    "evidence": "我自愿接受基金会的证人传唤，配合“暴雨”研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "求助",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "以及接受相应的心理援助",
+    "confidence": 0.9
+   },
+   {
+    "src": "接线员",
+    "relation": "安排",
+    "dst": "卡卡尼亚",
+    "evidence": "我们会尽快安排专员与您接洽",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "决意",
+    "dst": "神秘术",
+    "evidence": "控制我的神秘术",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "决意",
+    "dst": "催眠",
+    "evidence": "解开催眠",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "53df66570d9a7c51868e5534": {
+  "entities": [
+   {
+    "name": "心理医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主治医生"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追溯创伤者"
+   },
+   {
+    "name": "泽姆菲拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别者"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不可打破的镜"
+   },
+   {
+    "name": "小贩Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "伊里奇"
+    ],
+    "desc": "被追忆者"
+   },
+   {
+    "name": "劳瑞尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被追忆者"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将别之城"
+   },
+   {
+    "name": "祝福",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以镜为凭者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与记忆紊乱相系"
+   }
+  ],
+  "relations": [
+   {
+    "src": "心理医生",
+    "relation": "问询",
+    "dst": "卡卡尼亚",
+    "evidence": "这种失控，一般发生在什么样的情况下？",
+    "confidence": 0.95
+   },
+   {
+    "src": "泽姆菲拉",
+    "relation": "道别",
+    "dst": "卡卡尼亚",
+    "evidence": "就送到这里吧，我的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "泽姆菲拉",
+    "relation": "祝祷",
+    "dst": "卡卡尼亚",
+    "evidence": "所以我祝福你。前提是，那面镜子不会被打破",
+    "confidence": 0.95
+   },
+   {
+    "src": "泽姆菲拉",
+    "relation": "嘱告",
+    "dst": "卡卡尼亚",
+    "evidence": "这镜不可被打破，否则必将降临灾祸",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "追忆",
+    "dst": "小贩Ⅰ",
+    "evidence": "从伊里奇那里得到了对金钱的渴望",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "追忆",
+    "dst": "劳瑞尔",
+    "evidence": "从劳瑞尔那里了解了四处逃窜的艰难",
+    "confidence": 0.9
+   },
+   {
+    "src": "手镜",
+    "relation": "紊乱",
+    "dst": "卡卡尼亚",
+    "evidence": "当我想起它时，我的神秘术和记忆总有一样会陷入紊乱",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "a4f292870ecb1f46c8400c3f": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉"
+    ],
+    "desc": "被要求认同者"
+   },
+   {
+    "name": "阿尔伯德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "兄长"
+   },
+   {
+    "name": "中年男人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "温格勒家的父亲"
+   },
+   {
+    "name": "心理医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记录者"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "第一枚手镜"
+   },
+   {
+    "name": "台镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "暴雨中碎者"
+   },
+   {
+    "name": "铭纹",
+    "type": "概念",
+    "aliases": [],
+    "desc": "温格勒的承认"
+   },
+   {
+    "name": "温格勒家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "客厅"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "致灾之雨"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "展示",
+    "dst": "阿尔伯德",
+    "evidence": "你看，我有手镜了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔伯德",
+    "relation": "建议",
+    "dst": "卡卡尼亚",
+    "evidence": "你应该告诉父亲，让他承认这枚镜子",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "抗拒",
+    "dst": "中年男人",
+    "evidence": "我为什么一定要得到他的承认？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自省",
+    "dst": "中年男人",
+    "evidence": "我应该更尊重父亲",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "类比",
+    "dst": "台镜",
+    "evidence": "就像在“暴雨”里摔碎的那面台镜？",
+    "confidence": 0.9
+   },
+   {
+    "src": "心理医生",
+    "relation": "疏解",
+    "dst": "卡卡尼亚",
+    "evidence": "这很常见，不必感到抱歉",
+    "confidence": 0.9
+   },
+   {
+    "src": "手镜",
+    "relation": "承载",
+    "dst": "铭纹",
+    "evidence": "但这上面还没有温格勒的铭纹",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "d4aa7208d274160f42acb455": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉·温格勒"
+    ],
+    "desc": "失控者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁观赞叹者"
+   },
+   {
+    "name": "中年男人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斥责的父亲"
+   },
+   {
+    "name": "镜面",
+    "type": "物品",
+    "aliases": [],
+    "desc": "同时受影响的反射面"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "碎如镜者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "扰动",
+    "dst": "镜面",
+    "evidence": "几乎四周所有反光的镜面都在同一时间受到了影响",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "赞叹",
+    "dst": "镜面",
+    "evidence": "这真是……美丽……它更像是墙上的画框",
+    "confidence": 0.9
+   },
+   {
+    "src": "中年男人",
+    "relation": "斥责",
+    "dst": "卡卡尼亚",
+    "evidence": "克拉拉·温格勒！你究竟在做些什么！",
+    "confidence": 0.95
+   },
+   {
+    "src": "中年男人",
+    "relation": "斥为",
+    "dst": "镜面",
+    "evidence": "这甚至不能被称为镜子，而是对温格勒姓氏完完全全的玷污",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "哀叹",
+    "dst": "维也纳",
+    "evidence": "是的，镜子碎了，就像……维也纳",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "2622a0b51a295a0004270e0d": {
+  "entities": [
+   {
+    "name": "心理医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释疗法者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉"
+    ],
+    "desc": "受疗者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "选定疗法者"
+   },
+   {
+    "name": "镜面",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被禁接触之物"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾去之房"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待研究之灾"
+   },
+   {
+    "name": "弗洛伊德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "精神分析奠基人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "心理医生",
+    "relation": "告知",
+    "dst": "卡卡尼亚",
+    "evidence": "我们应该避免你与镜面或反光可映射物件的接触",
+    "confidence": 0.95
+   },
+   {
+    "src": "心理医生",
+    "relation": "申明",
+    "dst": "卡卡尼亚",
+    "evidence": "这就是基金会为你选择的治疗方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "追忆",
+    "dst": "维也纳",
+    "evidence": "我曾经去过这样的房间，在维也纳的时候",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "论评",
+    "dst": "心理医生",
+    "evidence": "这和我所知的心理治疗完全不一样",
+    "confidence": 0.9
+   },
+   {
+    "src": "心理医生",
+    "relation": "澄清",
+    "dst": "卡卡尼亚",
+    "evidence": "心理学的实际进展，已经不是你所知的20世纪初期摸索阶段了",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "师承",
+    "dst": "弗洛伊德",
+    "evidence": "就来源于弗洛伊德先生的学说",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "0f22346b4227f87724bccce3": {
+  "entities": [
+   {
+    "name": "心理医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问术式者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉"
+    ],
+    "desc": "幻觉重现者"
+   },
+   {
+    "name": "弗洛伊德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被超越者"
+   },
+   {
+    "name": "温格勒魔镜",
+    "type": "概念",
+    "aliases": [],
+    "desc": "窥探心念之术"
+   },
+   {
+    "name": "镜片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "掌中碎片"
+   },
+   {
+    "name": "行为主义",
+    "type": "概念",
+    "aliases": [],
+    "desc": "强化理论"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "致失律之因"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "收治机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "心理医生",
+    "relation": "断言",
+    "dst": "弗洛伊德",
+    "evidence": "他的许多理论都被现代心理学进步证明了错误",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "幻觉",
+    "dst": "镜片",
+    "evidence": "我出现了幻觉……一片……镜子的碎片",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "释义",
+    "dst": "温格勒魔镜",
+    "evidence": "能窥探一个人心中所想……我能令人们的欲望在镜面中具现成像",
+    "confidence": 0.95
+   },
+   {
+    "src": "心理医生",
+    "relation": "点明",
+    "dst": "卡卡尼亚",
+    "evidence": "现在我是你的医生，而你是我的病人",
+    "confidence": 0.95
+   },
+   {
+    "src": "心理医生",
+    "relation": "介绍",
+    "dst": "行为主义",
+    "evidence": "你可以把它当作行为主义没那么极端的完善和发展",
+    "confidence": 0.9
+   },
+   {
+    "src": "心理医生",
+    "relation": "提及",
+    "dst": "暴雨",
+    "evidence": "在基金会总部还有更多因为亲眼见证“暴雨”而行为失律的人",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c472128de37514f3c862dc17": {
+  "entities": [
+   {
+    "name": "心理医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发问者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自疑者"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "观照自我之器"
+   },
+   {
+    "name": "台镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "映射他人之器"
+   },
+   {
+    "name": "弗洛伊德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "学说之源"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "创伤之源"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "融合疗法之手段"
+   }
+  ],
+  "relations": [
+   {
+    "src": "心理医生",
+    "relation": "追问",
+    "dst": "卡卡尼亚",
+    "evidence": "你用那些镜子，“看”过自己吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自疑",
+    "dst": "手镜",
+    "evidence": "我也有过一枚手镜，我不可能——",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自陈",
+    "dst": "心理医生",
+    "evidence": "所以神秘术只是我的手段之一",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "师法",
+    "dst": "弗洛伊德",
+    "evidence": "实际用于解析个案的策略，就来源于弗洛伊德先生的学说",
+    "confidence": 0.9
+   },
+   {
+    "src": "心理医生",
+    "relation": "归因",
+    "dst": "暴雨",
+    "evidence": "那些在“暴雨”中，没能走进安全圈而被回溯的朋友",
+    "confidence": 0.9
+   },
+   {
+    "src": "台镜",
+    "relation": "用于",
+    "dst": "卡卡尼亚",
+    "evidence": "第一面台镜用于映射他人",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "13cdff0164c401d22760a455": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉·温格勒",
+     "克拉拉"
+    ],
+    "desc": "顶撞父亲者"
+   },
+   {
+    "name": "中年男人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贬斥的父亲"
+   },
+   {
+    "name": "阿尔伯德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "居中调停的兄长"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被斥为残次品"
+   },
+   {
+    "name": "镜子",
+    "type": "物品",
+    "aliases": [
+     "内视镜"
+    ],
+    "desc": "用于自由联想之喻"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "便于自由联想者"
+   },
+   {
+    "name": "温格勒家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "陈列之所"
+   }
+  ],
+  "relations": [
+   {
+    "src": "中年男人",
+    "relation": "贬斥",
+    "dst": "手镜",
+    "evidence": "这甚至不能被称为镜子，而是对温格勒姓氏完完全全的玷污",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "顶撞",
+    "dst": "中年男人",
+    "evidence": "我既不寻求你的承认，也不询问你的意见，父亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔伯德",
+    "relation": "维护",
+    "dst": "卡卡尼亚",
+    "evidence": "父亲，这是克拉拉的朋友给她的礼物，是一个祝福",
+    "confidence": 0.95
+   },
+   {
+    "src": "中年男人",
+    "relation": "命令",
+    "dst": "阿尔伯德",
+    "evidence": "把那个残次品从她手里拿过来，阿尔伯德！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "讥刺",
+    "dst": "中年男人",
+    "evidence": "看来您真是完全忘记自己的发家史了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "施用",
+    "dst": "神秘术",
+    "evidence": "我使用了一点神秘术来便于自由联想",
+    "confidence": 0.9
+   },
+   {
+    "src": "镜子",
+    "relation": "比拟",
+    "dst": "神秘术",
+    "evidence": "您可以把它当作一个心理手术用的“内视镜”",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "68a3e9a1507dcc9eb012df44": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉·温格勒"
+    ],
+    "desc": "摔镜者"
+   },
+   {
+    "name": "中年男人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言的父亲"
+   },
+   {
+    "name": "阿尔伯德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无力挽回的兄长"
+   },
+   {
+    "name": "手镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "四分五裂"
+   },
+   {
+    "name": "台镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "暴雨中碎者"
+   },
+   {
+    "name": "社会",
+    "type": "概念",
+    "aliases": [],
+    "desc": "一地碎片"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "再入其雨幕"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "讥讽",
+    "dst": "中年男人",
+    "evidence": "如果温格勒这个姓氏真的像您自以为的那样体面",
+    "confidence": 0.95
+   },
+   {
+    "src": "中年男人",
+    "relation": "辱骂",
+    "dst": "卡卡尼亚",
+    "evidence": "我看你早就疯了，才会这样羞辱和顶撞你的父亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "中年男人",
+    "relation": "断言",
+    "dst": "卡卡尼亚",
+    "evidence": "更应该被送进精神病院的，的确不是你那些病人……而是你",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "摔碎",
+    "dst": "手镜",
+    "evidence": "它摔出去，坚硬与坚硬更亲密地相碰",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自省",
+    "dst": "手镜",
+    "evidence": "我应该没有用镜子真正地“看”过自己",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "断言",
+    "dst": "社会",
+    "evidence": "整个社会都是一地碎片",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "沉入",
+    "dst": "暴雨",
+    "evidence": "她令自己再度沉入维也纳的雨幕",
+    "confidence": 0.9
+   },
+   {
+    "src": "手镜",
+    "relation": "比照",
+    "dst": "台镜",
+    "evidence": "就像那面在“暴雨”里碎裂的台镜一样，手镜也碎了",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

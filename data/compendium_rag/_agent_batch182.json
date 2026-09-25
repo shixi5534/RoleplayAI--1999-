@@ -1,0 +1,1113 @@
+{
+ "71d3e15d85c1999b2148bc77": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施术占卜方向的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘱托验证活水的学者"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想亲眼看神秘术的年长者"
+   },
+   {
+    "name": "鄂木河水的玻璃瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "占卜方向与验证活水之物"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小叶尼塞所施之水术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "尤利恩",
+    "relation": "请求",
+    "dst": "小叶尼塞",
+    "evidence": "我只是感兴趣，想亲眼看一看",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "拒绝",
+    "dst": "尤利恩",
+    "evidence": "这不是什么观赏品，也不是剧院里的演出",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "嘱托",
+    "dst": "小叶尼塞",
+    "evidence": "可以施展你的神秘术，在占卜方向的同时，也实际验证那水",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "应承",
+    "dst": "探险家别斯米尔",
+    "evidence": "我会占卜方向，验证活水，确定是否异常",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "施术",
+    "dst": "神秘术",
+    "evidence": "神圣之水，请您奔涌，奔涌",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "使用",
+    "dst": "鄂木河水的玻璃瓶",
+    "evidence": "光点汇集，逐渐充盈空落的玻璃瓶",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "指认",
+    "dst": "探险家别斯米尔",
+    "evidence": "东南",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "告知",
+    "dst": "探险家别斯米尔",
+    "evidence": "这条河在诸多道路中，选择了东南",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "自省",
+    "dst": "小叶尼塞",
+    "evidence": "也许是我判断失误",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9584aecee49708b98fbc8445": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨别地形的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断海拔的学者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼吸困难的青年"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称头痛的年长者"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言不对劲的队员"
+   },
+   {
+    "name": "考察队员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问去向的队员"
+   },
+   {
+    "name": "高原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "海拔超过三千米之地"
+   },
+   {
+    "name": "刺蓟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不应此时此地出现的植物"
+   },
+   {
+    "name": "草原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "春色一路延展之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "克罗利克",
+    "relation": "质疑",
+    "dst": "小叶尼塞",
+    "evidence": "我们是不是走错路了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "坚持",
+    "dst": "克罗利克",
+    "evidence": "是这个方向没错",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "判断",
+    "dst": "高原",
+    "evidence": "这地方的海拔绝对超过3000米了",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "解释",
+    "dst": "克罗利克",
+    "evidence": "你们或许是不适应这种高度",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "请求",
+    "dst": "探险家别斯米尔",
+    "evidence": "能不能至少先休整一下？我已经头痛有一阵子了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "发现",
+    "dst": "刺蓟",
+    "evidence": "刺蓟好像不应该出现在这种地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "疑惑",
+    "dst": "刺蓟",
+    "evidence": "可现在不是它们播种的季节",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "断言",
+    "dst": "高原",
+    "evidence": "这不对劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅱ",
+    "relation": "质问",
+    "dst": "小叶尼塞",
+    "evidence": "你们究竟想把我们带去哪儿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅱ",
+    "relation": "指出",
+    "dst": "高原",
+    "evidence": "那些石头上的水蚀洞也绝对不是这个气候应该出现的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "观察",
+    "dst": "草原",
+    "evidence": "草原的春色一路延展",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c8b79df56bef6d50106f42d4": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不识异花的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以考验自辩的学者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推搡别斯米尔的青年"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持交易之说的年长者"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称此地遭诅咒的队员"
+   },
+   {
+    "name": "高原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "引来异常与猜疑之地"
+   },
+   {
+    "name": "刺蓟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自盛开便立刻枯萎之花"
+   },
+   {
+    "name": "所求必应",
+    "type": "概念",
+    "aliases": [],
+    "desc": "商人所说的考验"
+   },
+   {
+    "name": "献祭仪式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尤利恩所持的交易仪式之说"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尤利恩所指的交换对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "困惑",
+    "dst": "刺蓟",
+    "evidence": "我不认识这种花，它看起来像迷你的葵花",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "触碰",
+    "dst": "刺蓟",
+    "evidence": "花瓣也在她指尖迅速干枯",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "主张",
+    "dst": "小叶尼塞",
+    "evidence": "我说了，我们应该往回走。这鬼地方不对劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "支持",
+    "dst": "克罗利克",
+    "evidence": "遇上异常状况，在退路没有被封死的情况下，我们应该往回走",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "承认",
+    "dst": "探险家别斯米尔",
+    "evidence": "这确实有些超出想象了",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "断言",
+    "dst": "高原",
+    "evidence": "这里就像是遭到了诅咒",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "劝说",
+    "dst": "尤利恩",
+    "evidence": "这是那些商人说过的，实现“所求必应”的考验",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "主张",
+    "dst": "献祭仪式",
+    "evidence": "我认为那是神秘学家与自然进行某种交易的仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "质疑",
+    "dst": "探险家别斯米尔",
+    "evidence": "你追逐着神秘术，却带我们来到了这种地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "推开",
+    "dst": "探险家别斯米尔",
+    "evidence": "年轻人毫不犹豫地推开别斯米尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "发誓",
+    "dst": "克罗利克",
+    "evidence": "我发誓，我绝对没有那样的想法！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "维护",
+    "dst": "探险家别斯米尔",
+    "evidence": "别斯米尔女士不会那样做的",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "要挟",
+    "dst": "小叶尼塞",
+    "evidence": "那你就必须跟我们走了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "981c1522bef54278e5f9c4a9": {
+  "entities": [
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定弃人的青年"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝指路的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选择折返的学者"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以武力压制的队员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "声明",
+    "dst": "探险家别斯米尔",
+    "evidence": "我是同别斯米尔女士一起来的，她不回去，我也不会走",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "退让",
+    "dst": "小叶尼塞",
+    "evidence": "我们往回走吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "安抚",
+    "dst": "小叶尼塞",
+    "evidence": "虽然我看不见，但我可以想象眼前的景象有多么令人惊讶",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "拒绝",
+    "dst": "探险家别斯米尔",
+    "evidence": "我们不能带上你",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "主张",
+    "dst": "考察队员Ⅰ",
+    "evidence": "我认为物资已经不足以支撑我们所有人顺利返回",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "阻挡",
+    "dst": "克罗利克",
+    "evidence": "将失魂落魄的别斯米尔完全挡住",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "拒绝",
+    "dst": "克罗利克",
+    "evidence": "如果不带上别斯米尔女士，我是不会为你们指路的",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "劝说",
+    "dst": "小叶尼塞",
+    "evidence": "不，孩子。你要和他们走",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "致歉",
+    "dst": "小叶尼塞",
+    "evidence": "抱歉了，女士们",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cbee0fd5e1ed0aae12074775": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目睹变故全程的人"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尚未察觉异变者"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同伴所化之类"
+   },
+   {
+    "name": "同伴所化的斑纹马",
+    "type": "事件",
+    "aliases": [],
+    "desc": "同伴变为奇蹄目之事"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "惊见",
+    "dst": "同伴所化的斑纹马",
+    "evidence": "你们、你们这是——发生了什么？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "斑纹马",
+    "relation": "嘶鸣",
+    "dst": "小叶尼塞",
+    "evidence": "咴咴——咴——",
+    "confidence": 0.95
+   },
+   {
+    "src": "同伴所化的斑纹马",
+    "relation": "发生",
+    "dst": "小叶尼塞",
+    "evidence": "小叶尼塞得不到回答，是因为眼前的人们已经失去用言语回答的能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "困惑",
+    "dst": "同伴所化的斑纹马",
+    "evidence": "这是什么声音？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e8e4be150550e6cd60dccf68": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨识巨鸟的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以听觉推断的盲眼学者"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已化为斑纹马者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已化为斑纹马者"
+   },
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "长着翅膀的人形生物"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被乐声引动的兽群"
+   },
+   {
+    "name": "火石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "别斯米尔提议取用之引火物"
+   },
+   {
+    "name": "沙蓬",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可燃以驱赶猛禽的植物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "目睹",
+    "dst": "斑纹马",
+    "evidence": "同行者从双脚站立的人类，突然变成四肢着地的奇蹄目动物",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "询问",
+    "dst": "克罗利克",
+    "evidence": "克罗利克先生？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "求助",
+    "dst": "小叶尼塞",
+    "evidence": "小叶尼塞，我看不见。我需要你的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "描述",
+    "dst": "斑纹马",
+    "evidence": "它们看起来比马要小一些，又比驴的体型更大、更高",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "斑纹马",
+    "evidence": "也许是某种温带草原上特有的动物",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "报告",
+    "dst": "探险家别斯米尔",
+    "evidence": "那看起来像是一个长着翅膀的人，而不是普通的猛禽",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "指示",
+    "dst": "火石",
+    "evidence": "把火石拿出来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "指示",
+    "dst": "沙蓬",
+    "evidence": "然后找团沙蓬点燃来驱赶它！",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "振翅",
+    "dst": "斑纹马",
+    "evidence": "猛禽翅膀急速划破空气的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "斑纹马",
+    "relation": "聆听",
+    "dst": "巨鸟",
+    "evidence": "马群随旋律抬头，和剩下的两人一样都在聆听着",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "吸引",
+    "dst": "探险家别斯米尔",
+    "evidence": "似乎攥住了别斯米尔全部的注意力",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2f07f762c0c0fc5600c9bf4d": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "描述巨鸟形貌的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推想鹰身女妖的学者"
+   },
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "人面有翼、隔空奏乐者"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随巨鸟而去的兽群"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可能控制思维之力"
+   },
+   {
+    "name": "巨鸟的术杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "隔空发声之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "追问",
+    "dst": "小叶尼塞",
+    "evidence": "它和那个术杖都长什么样子？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "描述",
+    "dst": "巨鸟",
+    "evidence": "长着人的脑袋，披着衣服……双手却是黑色的猛禽翅膀",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "描述",
+    "dst": "巨鸟的术杖",
+    "evidence": "它甚至没用手抓着它！那东西似乎是隔空在发出声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推测",
+    "dst": "巨鸟",
+    "evidence": "抛开术杖的部分，听起来像鹰身女妖",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "质疑",
+    "dst": "探险家别斯米尔",
+    "evidence": "可它羽毛的颜色，和这里的环境……和书上说的不一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "飞离",
+    "dst": "斑纹马",
+    "evidence": "扇动翅膀缓缓飞离，马群就仿佛受到感召一般紧随其后",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "神秘术",
+    "evidence": "是祈祷这是某种可以控制思维的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "决意",
+    "dst": "巨鸟",
+    "evidence": "我们需要追上去，打断施术者的行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "追击",
+    "dst": "巨鸟",
+    "evidence": "它似乎不用回头就知道身后发生的事",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3ef9a889280c94fb6197ec46": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问巨鸟的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨识声音音色的学者"
+   },
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以古语劝归者"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被驱遣回头的兽群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "质问",
+    "dst": "巨鸟",
+    "evidence": "停下！你到底要做什么！",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "劝告",
+    "dst": "小叶尼塞",
+    "evidence": "此处并无尔等所寻之物",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "劝告",
+    "dst": "小叶尼塞",
+    "evidence": "既如此，不如归去",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "辨别",
+    "dst": "巨鸟",
+    "evidence": "为什么听起来更像青年男子的音色？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "改判",
+    "dst": "巨鸟",
+    "evidence": "也许可以认为它不是鹰身女妖了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "困惑",
+    "dst": "巨鸟",
+    "evidence": "可声调很奇怪，我从没听过这种语言",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "警告",
+    "dst": "小叶尼塞",
+    "evidence": "若执着于此……便是光阴蹉跎，前程惘然",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "驱遣",
+    "dst": "斑纹马",
+    "evidence": "随“巨鸟”翅膀抬起而动作的……还有蓦然回头的马群",
+    "confidence": 0.95
+   },
+   {
+    "src": "斑纹马",
+    "relation": "拦阻",
+    "dst": "小叶尼塞",
+    "evidence": "失去控制的同伴拦在路中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a0d9c2eb51f84e0f8d64867f": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "突然听懂对方语言的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨出通言之术的学者"
+   },
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施展通言之术者"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "围堵去路的兽群"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "巨鸟欲将变马者交予之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使人语言相通之力"
+   },
+   {
+    "name": "巨鸟的术杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "自巨鸟身上飞出的白色短杖"
+   }
+  ],
+  "relations": [
+   {
+    "src": "斑纹马",
+    "relation": "围堵",
+    "dst": "小叶尼塞",
+    "evidence": "同伴变作的斑纹马被“巨鸟”驱遣着，掉转头来挡住她的去路",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "警告",
+    "dst": "巨鸟",
+    "evidence": "马肉的味道很腥",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "掷出",
+    "dst": "巨鸟的术杖",
+    "evidence": "一枚细长白色的短杖自它身上飞出",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "辨别",
+    "dst": "神秘术",
+    "evidence": "我能感觉到神秘术波动的气息",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "使人",
+    "dst": "小叶尼塞",
+    "evidence": "它似乎能使人语言相通",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "听懂",
+    "dst": "巨鸟",
+    "evidence": "我能听懂了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "判定",
+    "dst": "斑纹马",
+    "evidence": "你们所寻之人……自走入此地，饮下流水起，就已与你们无关",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "告知",
+    "dst": "职祠",
+    "evidence": "此事需交由职祠处理",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "追问",
+    "dst": "职祠",
+    "evidence": "你说要将他们带到“职祠”处去，我需要知道那儿究竟是哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "追问",
+    "dst": "巨鸟",
+    "evidence": "你究竟是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "自陈",
+    "dst": "小叶尼塞",
+    "evidence": "四书五经，堪舆风水，谶纬天地",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "自陈",
+    "dst": "小叶尼塞",
+    "evidence": "自然是解惑之道",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d97897696df2c4cd9a047a23": {
+  "entities": [
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝正面回答者"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议以物资交换的学者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲拖延时间的少女"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已被带走的同伴"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被带走的兽群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "建议",
+    "dst": "小叶尼塞",
+    "evidence": "我们也许不应该这样向他提问",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "坚持",
+    "dst": "探险家别斯米尔",
+    "evidence": "我们总得知道些什么，或者拖延时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "担忧",
+    "dst": "尤利恩",
+    "evidence": "他会带走尤利恩先生他们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "提议",
+    "dst": "巨鸟",
+    "evidence": "能不能用物资和他交换我们的同伴？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "斑纹马",
+    "evidence": "更有可能是因为现在的尤利恩先生他们身上，有他想要的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "拒绝",
+    "dst": "小叶尼塞",
+    "evidence": "既无所问，两位这便留步罢",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "自陈",
+    "dst": "探险家别斯米尔",
+    "evidence": "我所欲，渺然远矣，不知亦不可追",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨鸟",
+    "relation": "飞离",
+    "dst": "斑纹马",
+    "evidence": "巨鸟回身振翅，比先前更快地飞远了",
+    "confidence": 0.95
+   },
+   {
+    "src": "斑纹马",
+    "relation": "跟随",
+    "dst": "巨鸟",
+    "evidence": "奇蹄目在翅膀挥舞所带动的风声中，仍然紧跟其后",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "追随",
+    "dst": "小叶尼塞",
+    "evidence": "我们得快点追上去",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

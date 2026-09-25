@@ -1,0 +1,2118 @@
+{
+ "fdc0bbe5cb7bf5119401406c": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶赴电影节的导演,以珍妮弗自称"
+   },
+   {
+    "name": "警员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "公路巡警"
+   },
+   {
+    "name": "蒙面劫匪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劫车六人"
+   },
+   {
+    "name": "求救的声音",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敲窗呼救者,留下碳末掌印"
+   },
+   {
+    "name": "电影样片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "参赛样片"
+   },
+   {
+    "name": "电影节邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "此行目的"
+   },
+   {
+    "name": "行李箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被劫之物"
+   },
+   {
+    "name": "打火机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "照明之用"
+   },
+   {
+    "name": "毛毯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所扯之物"
+   },
+   {
+    "name": "77号公路",
+    "type": "地点",
+    "aliases": [],
+    "desc": "劫案现场"
+   },
+   {
+    "name": "火海",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦中所逃"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警员",
+    "relation": "问询",
+    "dst": "金蜜儿",
+    "evidence": "您是在哪里遭遇抢劫的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "蒙面劫匪",
+    "relation": "抢劫",
+    "dst": "金蜜儿",
+    "evidence": "几名蒙面劫匪就突然冲过来。他们大概有六个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "蒙面劫匪",
+    "relation": "劫走",
+    "dst": "行李箱",
+    "evidence": "我的行李箱！",
+    "confidence": 0.95
+   },
+   {
+    "src": "行李箱",
+    "relation": "装载",
+    "dst": "电影样片",
+    "evidence": "那里面装着我的紧急药箱、手提摄像机……最重要的是，还有我的电影样片",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "强调",
+    "dst": "电影节邀请函",
+    "evidence": "没了它我来这里就没有任何意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "驶入",
+    "dst": "77号公路",
+    "evidence": "汽车拐上公路，沿主干道朝南驶进",
+    "confidence": 0.95
+   },
+   {
+    "src": "求救的声音",
+    "relation": "呼救",
+    "dst": "金蜜儿",
+    "evidence": "救救我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "梦见",
+    "dst": "火海",
+    "evidence": "她梦见自己在走廊上奔跑，逃离发出震天怒吼的火海",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "取出",
+    "dst": "打火机",
+    "evidence": "她从裤子口袋拿出打火机，打亮了两秒",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "扯过",
+    "dst": "毛毯",
+    "evidence": "随手扯过一张毛毯捂住自己的脑袋",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "7b3dfc50e72b378872dcf607": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追踪者"
+   },
+   {
+    "name": "求救的声音",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敲窗者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "黑黄相间的生物"
+   },
+   {
+    "name": "掌印",
+    "type": "物品",
+    "aliases": [],
+    "desc": "车窗上的漆黑印记"
+   },
+   {
+    "name": "碳末",
+    "type": "物品",
+    "aliases": [],
+    "desc": "掌印所留黑粉"
+   },
+   {
+    "name": "白蜡树",
+    "type": "物品",
+    "aliases": [],
+    "desc": "巢穴所在"
+   },
+   {
+    "name": "巢穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "魔精之居"
+   },
+   {
+    "name": "树林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "脚印所向"
+   }
+  ],
+  "relations": [
+   {
+    "src": "求救的声音",
+    "relation": "拍打",
+    "dst": "掌印",
+    "evidence": "一个漆黑的掌印赫然出现在她的眼前",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "触摸",
+    "dst": "掌印",
+    "evidence": "她触碰着车窗上的手印",
+    "confidence": 0.95
+   },
+   {
+    "src": "掌印",
+    "relation": "留下",
+    "dst": "碳末",
+    "evidence": "手指摸到细碎的黑色粉末",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "识别",
+    "dst": "碳末",
+    "evidence": "这是……碳末？",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "跳出",
+    "dst": "巢穴",
+    "evidence": "一只黑黄相间的魔精跳出巢穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "巢穴",
+    "relation": "位于",
+    "dst": "白蜡树",
+    "evidence": "长满绿色叶片的白蜡树下方的巢穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "追踪",
+    "dst": "树林",
+    "evidence": "深黑色的脚印从她的车边一路延伸，止于一处树林",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "戏问",
+    "dst": "魔精",
+    "evidence": "你不会把那个幽灵当晚餐了吧？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6052ce3540f8fab0172d204b": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "投宿者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旅馆经营者"
+   },
+   {
+    "name": "夜枭旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "距公路四英里的偏僻处"
+   },
+   {
+    "name": "妮可蕾斯模型公司",
+    "type": "组织",
+    "aliases": [],
+    "desc": "假枪出品方"
+   },
+   {
+    "name": "假枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塑料手枪"
+   },
+   {
+    "name": "电影节邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所付抵押"
+   },
+   {
+    "name": "老鼠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沿鞋尖爬过"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [
+     "收音机"
+    ],
+    "desc": "前台所置"
+   },
+   {
+    "name": "十七杂志",
+    "type": "物品",
+    "aliases": [],
+    "desc": "老板所读"
+   },
+   {
+    "name": "加州旅馆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所奏乐曲"
+   },
+   {
+    "name": "13号客房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所住房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "投宿",
+    "dst": "夜枭旅馆",
+    "evidence": "她推开了旅馆的大门",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "报价",
+    "dst": "金蜜儿",
+    "evidence": "今晚的房间起价是一百二十美元一晚",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "质押",
+    "dst": "电影节邀请函",
+    "evidence": "金蜜儿将电影节邀请函重重地甩在前台上",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "阅读",
+    "dst": "十七杂志",
+    "evidence": "旅馆老板坐在前台后，啪啪翻阅着一本《十七》杂志",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "播放",
+    "dst": "加州旅馆",
+    "evidence": "老鹰乐队正在演奏《加州旅馆》",
+    "confidence": 0.95
+   },
+   {
+    "src": "妮可蕾斯模型公司",
+    "relation": "制造",
+    "dst": "假枪",
+    "evidence": "塑料材质上刻着：妮可蕾斯模型公司出品",
+    "confidence": 0.95
+   },
+   {
+    "src": "老鼠",
+    "relation": "爬过",
+    "dst": "金蜜儿",
+    "evidence": "一只老鼠极度惊险地从她的鞋尖爬过",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "入住",
+    "dst": "13号客房",
+    "evidence": "夜枭旅馆·13号客房",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "bcc1fcad855371e68aec5bfe": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "观电视者"
+   },
+   {
+    "name": "主持人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新闻报道者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [
+     "公路杀手",
+     "巴蒂斯特"
+    ],
+    "desc": "公路杀手"
+   },
+   {
+    "name": "电视",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所开之器"
+   },
+   {
+    "name": "高跟鞋声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "廊间所闻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "开启",
+    "dst": "电视",
+    "evidence": "她拿起电视遥控器，按下按键",
+    "confidence": 0.95
+   },
+   {
+    "src": "主持人",
+    "relation": "报道",
+    "dst": "旅馆老板",
+    "evidence": "主持人正在报道“公路杀手”巴蒂斯特犯下的命案",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "喝止",
+    "dst": "高跟鞋声",
+    "evidence": "别再用高跟鞋制造噪音了！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "35278523701fa4677df0c726": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应聘服务员者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "雇主"
+   },
+   {
+    "name": "普娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点水的房客"
+   },
+   {
+    "name": "醉酒的房客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "巴黎来的汤姆,醉醺醺的男房客"
+   },
+   {
+    "name": "采购清单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "料理台所置"
+   },
+   {
+    "name": "停水通知",
+    "type": "物品",
+    "aliases": [],
+    "desc": "粉红纸上所印"
+   },
+   {
+    "name": "刷痕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "浅色痕迹"
+   },
+   {
+    "name": "漂白剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "柜中所藏"
+   },
+   {
+    "name": "手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挂于酱汁罐上方"
+   },
+   {
+    "name": "救猫咪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "编剧方法论"
+   },
+   {
+    "name": "狄克·崔西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旅馆老板所提"
+   },
+   {
+    "name": "夜枭旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "大堂"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "应聘",
+    "dst": "旅馆老板",
+    "evidence": "……你要在我这里工作？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "陈明",
+    "dst": "旅馆老板",
+    "evidence": "我要赎回我的邀请函，在电影节结束之前赶出新的剧本",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "嘱托",
+    "dst": "金蜜儿",
+    "evidence": "你该为我们的客人准备晚餐了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "发现",
+    "dst": "刷痕",
+    "evidence": "这是什么？刷痕吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "找到",
+    "dst": "采购清单",
+    "evidence": "金蜜儿在料理台上找到一份采购清单和几张购物优惠券",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "读到",
+    "dst": "停水通知",
+    "evidence": "一张明亮的粉红色纸上印着一则停水通知",
+    "confidence": 0.9
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "戏言",
+    "dst": "金蜜儿",
+    "evidence": "没准哪一天你能成为至尊神探狄克·崔西",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "服务",
+    "dst": "普娜",
+    "evidence": "水就好了，亲爱的",
+    "confidence": 0.95
+   },
+   {
+    "src": "醉酒的房客",
+    "relation": "搭话",
+    "dst": "金蜜儿",
+    "evidence": "真是个标致的小妞！你招到了一个不错的厨子啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "手枪",
+    "relation": "悬挂",
+    "dst": "夜枭旅馆",
+    "evidence": "酱汁罐子的上方挂着一把手枪",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "贬评",
+    "dst": "救猫咪",
+    "evidence": "所以我讨厌《救猫咪》和方法论",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "3d3448a9ef7f48a582a89483": {
+  "entities": [
+   {
+    "name": "醉酒的房客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述传闻者"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倾听者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "据传曾建酒窖者"
+   },
+   {
+    "name": "斯塔尔先生",
+    "type": "角色",
+    "aliases": [
+     "海因兹·斯塔尔"
+    ],
+    "desc": "旅馆前主人"
+   },
+   {
+    "name": "斯塔尔先生的妻子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被谋杀者"
+   },
+   {
+    "name": "酒窖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "脚下所建"
+   },
+   {
+    "name": "布里斯托尔奶油雪利酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "送来之酒"
+   },
+   {
+    "name": "森林火灾",
+    "type": "事件",
+    "aliases": [],
+    "desc": "失踪当夜所发"
+   },
+   {
+    "name": "游灵",
+    "type": "概念",
+    "aliases": [
+     "幽灵"
+    ],
+    "desc": "所疑之物"
+   },
+   {
+    "name": "夜枭旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "谈话之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "醉酒的房客",
+    "relation": "搭讪",
+    "dst": "金蜜儿",
+    "evidence": "你应该是美国人吧？我是巴黎人",
+    "confidence": 0.95
+   },
+   {
+    "src": "醉酒的房客",
+    "relation": "告知",
+    "dst": "金蜜儿",
+    "evidence": "这家旅馆的前主人斯塔尔先生是一个真正的美酒鉴赏家",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯塔尔先生",
+    "relation": "建造",
+    "dst": "酒窖",
+    "evidence": "他甚至建造了一座酒窖，就在你的脚底下",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "效力",
+    "dst": "斯塔尔先生",
+    "evidence": "旅馆老板就是当年负责建造酒窖的工人之一",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯塔尔先生",
+    "relation": "失踪",
+    "dst": "森林火灾",
+    "evidence": "就在他失踪的当天晚上，还爆发了森林火灾",
+    "confidence": 0.95
+   },
+   {
+    "src": "醉酒的房客",
+    "relation": "怀疑",
+    "dst": "游灵",
+    "evidence": "说不定他早就为自己选好了躲藏的地点",
+    "confidence": 0.9
+   },
+   {
+    "src": "斯塔尔先生的妻子",
+    "relation": "被谋杀",
+    "dst": "斯塔尔先生",
+    "evidence": "他的妻子被谋杀了啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "采购",
+    "dst": "布里斯托尔奶油雪利酒",
+    "evidence": "我要去市中心采购些应急货物",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "追问",
+    "dst": "醉酒的房客",
+    "evidence": "那个发生火灾的森林是在哪里？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "af242b48de942c624c057822": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送餐者"
+   },
+   {
+    "name": "朱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "憔悴的女房客"
+   },
+   {
+    "name": "芬尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "朱迪的狗"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [
+     "杰克·斯塔尔"
+    ],
+    "desc": "衣柜里的男孩"
+   },
+   {
+    "name": "照片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "枕下所藏"
+   },
+   {
+    "name": "阁楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "上锁之室"
+   },
+   {
+    "name": "四柱床",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所置之床"
+   },
+   {
+    "name": "衣柜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "男孩藏身之处"
+   },
+   {
+    "name": "夜枭旅馆走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "送餐之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "送餐",
+    "dst": "朱迪",
+    "evidence": "你好，客房服务",
+    "confidence": 0.95
+   },
+   {
+    "src": "朱迪",
+    "relation": "误认",
+    "dst": "金蜜儿",
+    "evidence": "斯塔尔！你得帮我弄更多“雪利酒”过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "朱迪",
+    "relation": "索求",
+    "dst": "芬尼",
+    "evidence": "我们下次再找小杰克玩，好吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "进入",
+    "dst": "阁楼",
+    "evidence": "她听到一声清脆的“咔嗒”。随后，门开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "翻找",
+    "dst": "照片",
+    "evidence": "在枕头下方发现一张照片",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "辨认",
+    "dst": "小杰克",
+    "evidence": "看来这里应该就是杰克·斯塔尔的房间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "藏身",
+    "dst": "衣柜",
+    "evidence": "声音是从衣柜里传出来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "芬尼",
+    "relation": "呜咽",
+    "dst": "朱迪",
+    "evidence": "小狗芬尼发出呜咽声",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "32e432e0f2ccf8fb28d27167": {
+  "entities": [
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [
+     "杰克·斯塔尔"
+    ],
+    "desc": "寻找父亲的孩子"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许诺者"
+   },
+   {
+    "name": "斯塔尔先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "所寻之父"
+   },
+   {
+    "name": "黑暗先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诗集所出"
+   },
+   {
+    "name": "黑甲虫",
+    "type": "物品",
+    "aliases": [],
+    "desc": "空壳之虫"
+   },
+   {
+    "name": "黑暗先生的诗集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "父所诵读"
+   },
+   {
+    "name": "案发森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所赴之处"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潜伏巢穴"
+   },
+   {
+    "name": "灵魂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "杰克所问"
+   },
+   {
+    "name": "衣柜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "男孩钻出之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小杰克",
+    "relation": "钻出",
+    "dst": "衣柜",
+    "evidence": "男孩从衣柜里钻了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "你不是爸爸。你是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "邀演",
+    "dst": "小杰克",
+    "evidence": "我就特别想邀请你出演我最新的电影！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "立志",
+    "dst": "斯塔尔先生",
+    "evidence": "——我要找到爸爸",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "约定",
+    "dst": "小杰克",
+    "evidence": "那就一言为定了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "发问",
+    "dst": "金蜜儿",
+    "evidence": "为什么虫子在死去的时候身体会变成一个空壳呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "释疑",
+    "dst": "小杰克",
+    "evidence": "它们腐烂只有一个原因，那就是它们死了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "提及",
+    "dst": "黑暗先生",
+    "evidence": "爸爸经常念给我听的黑暗先生的诗集里有很多这样的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑暗先生",
+    "relation": "著作",
+    "dst": "黑暗先生的诗集",
+    "evidence": "黑暗先生的诗集",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "贬评",
+    "dst": "灵魂",
+    "evidence": "很多人把“灵魂”与“死亡”理解为某种时尚风潮",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "21d6227efd28a095deec9d0d": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现尸骸者"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行者"
+   },
+   {
+    "name": "斯塔尔先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "车中所窜者"
+   },
+   {
+    "name": "卡玛洛汽车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "黄色汽车"
+   },
+   {
+    "name": "盾形纹章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "斯塔尔家徽"
+   },
+   {
+    "name": "旗帜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "绑于挡风玻璃"
+   },
+   {
+    "name": "尸骸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "两具焦黑遗体"
+   },
+   {
+    "name": "腕表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "斯塔尔先生之物"
+   },
+   {
+    "name": "汽油",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所闻之气"
+   },
+   {
+    "name": "案发森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "尸骸所在"
+   },
+   {
+    "name": "生活在希望中",
+    "type": "概念",
+    "aliases": [],
+    "desc": "斯塔尔家纹章的题词"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡玛洛汽车",
+    "relation": "冲撞",
+    "dst": "金蜜儿",
+    "evidence": "一辆黄色的卡玛洛汽车从侧边冲出，七扭八歪地朝她和杰克撞过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "窜出",
+    "dst": "卡玛洛汽车",
+    "evidence": "从里面窜出了几只魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "旗帜",
+    "relation": "绘有",
+    "dst": "盾形纹章",
+    "evidence": "旗帜上的图案是斯塔尔家的盾形纹章",
+    "confidence": 0.95
+   },
+   {
+    "src": "盾形纹章",
+    "relation": "题词",
+    "dst": "生活在希望中",
+    "evidence": "下面还有一句题词“生活在希望中”",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "嗅到",
+    "dst": "汽油",
+    "evidence": "……是汽油",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "发现",
+    "dst": "尸骸",
+    "evidence": "两具焦黑如炭的尸骸拥抱在一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "认出",
+    "dst": "腕表",
+    "evidence": "这是……斯塔尔先生的腕表！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5fbd9562707e86f3ab775319": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被袭者"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失踪者"
+   },
+   {
+    "name": "尸骸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无名孩童之尸"
+   },
+   {
+    "name": "求救的声音",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回荡之声"
+   },
+   {
+    "name": "重击",
+    "type": "事件",
+    "aliases": [],
+    "desc": "来自背后的袭击"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "疑惑",
+    "dst": "尸骸",
+    "evidence": "斯塔尔先生旁边的那个尸体，看起来是个小孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "追问",
+    "dst": "小杰克",
+    "evidence": "那这个和斯塔尔先生死在一起的小孩是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "求救的声音",
+    "relation": "回荡",
+    "dst": "金蜜儿",
+    "evidence": "救救我……",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "察觉",
+    "dst": "小杰克",
+    "evidence": "没有人回应。金蜜儿赶忙扭头，发现自己的身侧竟空无一人",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "被击",
+    "dst": "重击",
+    "evidence": "她的后脑勺左侧遭到重重一击，眼前一黑",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "e1df9aca3668a88019ee65c4": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绑者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [
+     "巴蒂斯特"
+    ],
+    "desc": "真身为公路杀手"
+   },
+   {
+    "name": "警员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来电者"
+   },
+   {
+    "name": "便条",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所留之字"
+   },
+   {
+    "name": "尖头锤",
+    "type": "物品",
+    "aliases": [],
+    "desc": "凶器"
+   },
+   {
+    "name": "皮质扁酒瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所取之器"
+   },
+   {
+    "name": "漂白剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "除痕之用"
+   },
+   {
+    "name": "尼龙绳",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所缚之绳"
+   },
+   {
+    "name": "朱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被售药者"
+   },
+   {
+    "name": "快乐水",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所售违禁物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警员",
+    "relation": "致电",
+    "dst": "金蜜儿",
+    "evidence": "我是暴力犯罪分析中心的协调员",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "测量",
+    "dst": "金蜜儿",
+    "evidence": "他用两根手指按住她的颈侧，测量她的脉搏",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "灌酒",
+    "dst": "金蜜儿",
+    "evidence": "酒液被汩汩地灌进喉咙",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "揭破",
+    "dst": "旅馆老板",
+    "evidence": "……巴蒂斯特？",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "把弄",
+    "dst": "尖头锤",
+    "evidence": "巴蒂斯特把弄着一把金属尖头锤",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "指认",
+    "dst": "旅馆老板",
+    "evidence": "向朱迪女士售卖“快乐水”的人是不是你？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "推断",
+    "dst": "旅馆老板",
+    "evidence": "你把那些违禁物藏进了酒里",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "控诉",
+    "dst": "旅馆老板",
+    "evidence": "你杀害了斯塔尔先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "切割",
+    "dst": "尼龙绳",
+    "evidence": "该死的绳子……她加快了切割绳子的速度",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "指证",
+    "dst": "漂白剂",
+    "evidence": "还有一瓶漂白剂，你可以用它去除指纹、血迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "留下",
+    "dst": "便条",
+    "evidence": "只在前台上看到了一张便条",
+    "confidence": 0.9
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "携带",
+    "dst": "皮质扁酒瓶",
+    "evidence": "从外套里取出一只皮质扁酒瓶",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "945bddbb63939574f7cdc5d9": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反抗者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [
+     "巴蒂斯特"
+    ],
+    "desc": "公路杀手"
+   },
+   {
+    "name": "男孩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为救父而死者"
+   },
+   {
+    "name": "刷痕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "血渍所留"
+   },
+   {
+    "name": "雪莉酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "收藏之酒"
+   },
+   {
+    "name": "树枝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所抓之器"
+   },
+   {
+    "name": "画纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所拍出者"
+   },
+   {
+    "name": "尼龙绳",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所缚之绳"
+   },
+   {
+    "name": "漂白剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "除痕之用"
+   }
+  ],
+  "relations": [
+   {
+    "src": "旅馆老板",
+    "relation": "加入",
+    "dst": "漂白剂",
+    "evidence": "他加入漂白剂清洗，却留下了一块浅褐色、踏脚垫大小的刷痕",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "追问",
+    "dst": "旅馆老板",
+    "evidence": "那个孩子的尸体是怎么回事？",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "自陈",
+    "dst": "男孩",
+    "evidence": "他太想拯救他的父亲了，甚至不惜付出自己的生命",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "品尝",
+    "dst": "雪莉酒",
+    "evidence": "我尝了一瓶她收藏的雪莉酒",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "割断",
+    "dst": "尼龙绳",
+    "evidence": "尼龙绳终于被割断",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "刺击",
+    "dst": "树枝",
+    "evidence": "她迅速抓起手边的树枝，直朝巴蒂斯特的眼睛刺去",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "抓住",
+    "dst": "金蜜儿",
+    "evidence": "下一秒手腕就被他单手抓住",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拍出",
+    "dst": "画纸",
+    "evidence": "她拍出了一张画纸",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ab906916d4ecc90955aadc04": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逃亡者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [
+     "巴蒂斯特"
+    ],
+    "desc": "公路杀手"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "奔来者"
+   },
+   {
+    "name": "汽车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所乘之车"
+   },
+   {
+    "name": "尖头锤",
+    "type": "物品",
+    "aliases": [],
+    "desc": "敲碎车窗之器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "旅馆老板",
+    "relation": "高举",
+    "dst": "金蜜儿",
+    "evidence": "一双手臂从背后将她抱住，接着她的身体就被高举起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "肘击",
+    "dst": "旅馆老板",
+    "evidence": "金蜜儿抬起手肘攻击男子的鼻梁",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "挥动",
+    "dst": "尖头锤",
+    "evidence": "巴蒂斯特一边挥动着金属尖头锤",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "奔逃",
+    "dst": "汽车",
+    "evidence": "车……我的车！必须赶快回去",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "呼喊",
+    "dst": "金蜜儿",
+    "evidence": "金蜜儿小姐！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拉入",
+    "dst": "小杰克",
+    "evidence": "你这小鬼——快进来！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6946e2e9bacbf3454043fbc2": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纵火退敌者"
+   },
+   {
+    "name": "旅馆老板",
+    "type": "角色",
+    "aliases": [
+     "巴蒂斯特"
+    ],
+    "desc": "公路杀手"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托求援者"
+   },
+   {
+    "name": "醉酒的房客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被唤起的房客"
+   },
+   {
+    "name": "点三八口径左轮手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "壁上所挂"
+   },
+   {
+    "name": "酒液",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所射之物"
+   },
+   {
+    "name": "火焰",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沿酒液蔓延"
+   },
+   {
+    "name": "酒窖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "唯一出入口"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "推门",
+    "dst": "旅馆老板",
+    "evidence": "金蜜儿忽然用力将门往前一推，弹开的门板把巴蒂斯特撞得滚下台阶",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "取下",
+    "dst": "点三八口径左轮手枪",
+    "evidence": "她将挂在壁炉上的点三八口径左轮手枪塞进腰间",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "退入",
+    "dst": "酒窖",
+    "evidence": "酒窖……酒窖就在这个方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "嘱托",
+    "dst": "小杰克",
+    "evidence": "我会尽力拖住他，你就趁机离开这里，去搬救兵",
+    "confidence": 0.95
+   },
+   {
+    "src": "旅馆老板",
+    "relation": "撞开",
+    "dst": "酒窖",
+    "evidence": "直接撞开酒窖的门，巨大的冲击力使她连退几步",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "射击",
+    "dst": "酒液",
+    "evidence": "瞄准巴蒂斯特脚下的酒液射击",
+    "confidence": 0.95
+   },
+   {
+    "src": "火焰",
+    "relation": "蔓延",
+    "dst": "酒液",
+    "evidence": "火花迸溅，沿着酒液表面的纹理滑行，蔓延",
+    "confidence": 0.95
+   },
+   {
+    "src": "火焰",
+    "relation": "攀爬",
+    "dst": "旅馆老板",
+    "evidence": "火焰愈发汹涌，顺着巴蒂斯特的裤脚一路向上攀爬",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "唤援",
+    "dst": "醉酒的房客",
+    "evidence": "旅馆起火了！快去看看其他房间里还有没有人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "随行",
+    "dst": "金蜜儿",
+    "evidence": "我跟你一起去！金蜜儿小姐！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a299a5a68a55bcc1058f3eb4": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "救人者"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留步者"
+   },
+   {
+    "name": "朱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被救者"
+   },
+   {
+    "name": "斯塔尔先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被误认者"
+   },
+   {
+    "name": "汽车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所发动之车"
+   },
+   {
+    "name": "夜枭旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "燃烧之馆"
+   },
+   {
+    "name": "伊丽莎白·弗雷泽",
+    "type": "角色",
+    "aliases": [],
+    "desc": "歌者"
+   },
+   {
+    "name": "24号房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "朱迪所住"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "踢开",
+    "dst": "24号房",
+    "evidence": "直接将钥匙插入锁孔，将门踢开",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "催促",
+    "dst": "朱迪",
+    "evidence": "朱迪女士！快跟我走！",
+    "confidence": 0.95
+   },
+   {
+    "src": "朱迪",
+    "relation": "拒绝",
+    "dst": "金蜜儿",
+    "evidence": "我才不去！我哪里都不去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "朱迪",
+    "relation": "误指",
+    "dst": "斯塔尔先生",
+    "evidence": "斯塔尔！你竟然在这里纵火？",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拉起",
+    "dst": "朱迪",
+    "evidence": "她一把抓起朱迪的手臂",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "发动",
+    "dst": "汽车",
+    "evidence": "车子的引擎发出三声怒吼",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "拒绝",
+    "dst": "金蜜儿",
+    "evidence": "我不能跟你走了，金蜜儿小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "识破",
+    "dst": "小杰克",
+    "evidence": "我知道你是谁，杰克",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拉入",
+    "dst": "小杰克",
+    "evidence": "她将杰克拉进了车子",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "求助",
+    "dst": "小杰克",
+    "evidence": "能帮我打个电话吗？杰克，号码是911",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊丽莎白·弗雷泽",
+    "relation": "献唱",
+    "dst": "汽车",
+    "evidence": "驾驶座的窗户缝隙传出伊丽莎白·弗雷泽的歌声",
+    "confidence": 0.9
+   },
+   {
+    "src": "夜枭旅馆",
+    "relation": "燃烧",
+    "dst": "汽车",
+    "evidence": "燃烧的夜枭旅馆目送着车子加速驶离",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "10c3e3c5a4ae3fadbd10584a": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驾车者"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同车者"
+   },
+   {
+    "name": "醉酒的房客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "醉卧者"
+   },
+   {
+    "name": "朱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唱歌者"
+   },
+   {
+    "name": "芬尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吠叫的狗"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [
+     "收音机"
+    ],
+    "desc": "所放之乐"
+   },
+   {
+    "name": "大举进攻乐队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "所奏乐队"
+   },
+   {
+    "name": "雪利酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所抢救者"
+   },
+   {
+    "name": "地平线",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所望之处"
+   },
+   {
+    "name": "州际公路",
+    "type": "地点",
+    "aliases": [],
+    "desc": "行驶之路"
+   },
+   {
+    "name": "火海",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦中之焰"
+   }
+  ],
+  "relations": [
+   {
+    "src": "大举进攻乐队",
+    "relation": "演奏",
+    "dst": "无线电小姐",
+    "evidence": "收音机里的大举进攻乐队演奏得相当大声",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "行驶",
+    "dst": "州际公路",
+    "evidence": "她正沿着州际公路行驶",
+    "confidence": 0.95
+   },
+   {
+    "src": "醉酒的房客",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "你说今晚的新闻节目上会用什么标题？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "猜题",
+    "dst": "醉酒的房客",
+    "evidence": "我猜会是“夜枭旅馆惊恐狂潮”",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "讲述",
+    "dst": "小杰克",
+    "evidence": "通常我会梦见自己的恐惧和渴望",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "梦见",
+    "dst": "火海",
+    "evidence": "我梦到自己在走廊上奔跑，火焰排山倒海而来",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "穿透",
+    "dst": "小杰克",
+    "evidence": "自己的手竟毫无阻碍地穿过了他的手腕",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "请求",
+    "dst": "金蜜儿",
+    "evidence": "我想在夜晚来临之前就在这里下车",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "抢救",
+    "dst": "雪利酒",
+    "evidence": "那几瓶酒是我们从酒窖里抢救出来的",
+    "confidence": 0.9
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "眺望",
+    "dst": "地平线",
+    "evidence": "所有粒子一同聚集在地平线上嬉跃",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "930ffd2261e5bf76c1961b16": {
+  "entities": [
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诵诗者"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠物者"
+   },
+   {
+    "name": "黑暗先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诗作者"
+   },
+   {
+    "name": "回忆面包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "母亲所做"
+   },
+   {
+    "name": "杰克旅馆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所赠涂鸦"
+   },
+   {
+    "name": "手表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所赠之物"
+   },
+   {
+    "name": "石瀑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "诗集篇名"
+   },
+   {
+    "name": "花冠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "诗集篇名"
+   },
+   {
+    "name": "临近酒和绝望",
+    "type": "物品",
+    "aliases": [],
+    "desc": "诗集篇名"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小杰克",
+    "relation": "诵诗",
+    "dst": "黑暗先生",
+    "evidence": "我越过人类的圈栏，骑着上帝去远方",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "追忆",
+    "dst": "黑暗先生",
+    "evidence": "爸爸会让我坐在杰克的床边，拿出一本黑暗先生的诗集念给我们听",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "自陈",
+    "dst": "金蜜儿",
+    "evidence": "毕竟“杰克”其实从未真正存在过，不是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "致谢",
+    "dst": "金蜜儿",
+    "evidence": "是你让我明白了这一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "讲述",
+    "dst": "小杰克",
+    "evidence": "小时候我妈妈经常做这种面包给我吃",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "赠予",
+    "dst": "小杰克",
+    "evidence": "这是……属于你的“杰克旅馆”",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "递予",
+    "dst": "小杰克",
+    "evidence": "她从口袋里掏出一块手表递给他",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "嘱托",
+    "dst": "小杰克",
+    "evidence": "替它找个新家吧，你有权力这么做",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "确认",
+    "dst": "小杰克",
+    "evidence": "你是，杰克",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a35e04cc897a06694b0cf5df": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收束者"
+   },
+   {
+    "name": "小杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "骑驰于地平线者"
+   },
+   {
+    "name": "汽车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "扬长而去之车"
+   },
+   {
+    "name": "地平线",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所望之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "坚信",
+    "dst": "小杰克",
+    "evidence": "而那个小鬼声称自己从未存在过……但我知道他在",
+    "confidence": 0.95
+   },
+   {
+    "src": "小杰克",
+    "relation": "骑驰",
+    "dst": "地平线",
+    "evidence": "你向地平线望过去，就能看到他在骑驰",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "驶离",
+    "dst": "汽车",
+    "evidence": "主角一个人驾驶着租来的汽车扬长而去",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

@@ -1,0 +1,1412 @@
+{
+ "85a1695c22e0f095aae3a794": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开启手提箱的司辰"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲言又止的姑娘"
+   },
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对皇家护卫之说困惑的人"
+   },
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨识魔鬼蜥蜴的古火种"
+   },
+   {
+    "name": "哒哒达利",
+    "type": "角色",
+    "aliases": [
+     "达利阿拉伯"
+    ],
+    "desc": "钻出手提箱的骏马"
+   },
+   {
+    "name": "魔鬼蜥蜴",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从热土中化生的巨兽"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "深不见底、可容人出入的箱子"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "魔鬼蜥蜴盘踞之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "开启",
+    "dst": "箱子",
+    "evidence": "沿着边沿敲击两下，里头的回声清晰可闻",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "箱子",
+    "evidence": "有谁想要出来感受一下新鲜空气吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "现身",
+    "dst": "箱子",
+    "evidence": "率先冒出的是一袭美丽鬃毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "赞赏",
+    "dst": "乌卢鲁运动场",
+    "evidence": "多么丰润动人的青草香气呀，带着烟熏的焦香气息！",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "错认",
+    "dst": "魔鬼蜥蜴",
+    "evidence": "它们一定是来迎接伟大的达利阿拉伯的",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "困惑",
+    "dst": "哒哒达利",
+    "evidence": "皇家护卫？它在说什么玩意儿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "说明",
+    "dst": "魔鬼蜥蜴",
+    "evidence": "它们从热土中化生，获得了巨大的身姿",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "决意",
+    "dst": "魔鬼蜥蜴",
+    "evidence": "多说无益，让它们归为尘与土",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔鬼蜥蜴",
+    "relation": "怒吼",
+    "dst": "乌卢鲁运动场",
+    "evidence": "运动场深处传来低声怒吼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1e5c3d5a304c5d5938e99c7c": {
+  "entities": [
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高举手臂号召的人"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与沙丝绒相碰的姑娘"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "源源不断冒出新面孔的箱子"
+   }
+  ],
+  "relations": [
+   {
+    "src": "沙丝绒",
+    "relation": "庆祝",
+    "dst": "可燃点",
+    "evidence": "也献给沙丝绒小姐！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "碰杯",
+    "dst": "沙丝绒",
+    "evidence": "年轻姑娘们的手在空中碰了一下虚拟的酒杯",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "号召",
+    "dst": "箱子",
+    "evidence": "有谁不畏怕火焰，且愿意行走于火中的，请来此报道！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "999091040dde99e798df9fe1": {
+  "entities": [
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "如另一枚太阳般燃烧的古火种"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "连场参赛后瘫软的姑娘"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "初见这般场面的研究员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嗅出熟悉味道的司辰"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "醉态般摇晃的摇滚海盗"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [
+     "兔子小姐"
+    ],
+    "desc": "维持秩序的兔女郎"
+   },
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掰手腕胜出者"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "令神秘学家振奋之处"
+   },
+   {
+    "name": "火中行走竞速",
+    "type": "概念",
+    "aliases": [],
+    "desc": "运动会项目之一"
+   },
+   {
+    "name": "闪现400米短跑",
+    "type": "概念",
+    "aliases": [],
+    "desc": "运动会项目之一"
+   },
+   {
+    "name": "飞跃树梢",
+    "type": "概念",
+    "aliases": [],
+    "desc": "运动会项目之一"
+   },
+   {
+    "name": "马林吉的收获",
+    "type": "概念",
+    "aliases": [],
+    "desc": "运动会项目之一"
+   },
+   {
+    "name": "湿毛巾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "为可燃点降温的湿巾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "和平乌鲁",
+    "relation": "鼓励",
+    "dst": "可燃点",
+    "evidence": "再跑快些，再跳高些！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "评价",
+    "dst": "和平乌鲁",
+    "evidence": "你看起来就像是从前我认识的和平乌鲁！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "参与",
+    "dst": "火中行走竞速",
+    "evidence": "我们已经实践了这样多的项目了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "参与",
+    "dst": "闪现400米短跑",
+    "evidence": "火中行走竞速、闪现400米短跑、飞跃树梢",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "参与",
+    "dst": "飞跃树梢",
+    "evidence": "飞跃树梢与马林吉的收获",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "参与",
+    "dst": "马林吉的收获",
+    "evidence": "飞跃树梢与马林吉的收获",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "提及",
+    "dst": "芭妮芭妮",
+    "evidence": "和芭妮芭妮小姐掰手腕比赛就要开始了",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "感慨",
+    "dst": "乌卢鲁运动场",
+    "evidence": "每个人都过得如此开心，脸上挂满汗珠",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "推想",
+    "dst": "乌卢鲁运动场",
+    "evidence": "这是一种针对于神秘学家起效的康益神秘术吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "熟悉",
+    "dst": "乌卢鲁运动场",
+    "evidence": "这里的……味道，闻起来很熟悉",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "赞同",
+    "dst": "维尔汀",
+    "evidence": "没错！说得对！我也这么觉得！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "自陈",
+    "dst": "乌卢鲁运动场",
+    "evidence": "我一点儿酒都没喝，但总感觉脑袋晕乎乎的",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "搀扶",
+    "dst": "星锑",
+    "evidence": "星锑，小心。你要摔倒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "宣告",
+    "dst": "沙丝绒",
+    "evidence": "比赛结束！沙丝绒小姐——胜出！",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "自夸",
+    "dst": "可燃点",
+    "evidence": "比掰手腕是没人赢得过我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "认输",
+    "dst": "沙丝绒",
+    "evidence": "你的力气太大了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "救护",
+    "dst": "可燃点",
+    "evidence": "快，快把湿毛巾拿来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "判断",
+    "dst": "可燃点",
+    "evidence": "这次应该不是因为神秘学反应",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a46b2b86476615b52c238c13": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令全员返回箱子者"
+   },
+   {
+    "name": "哒哒达利",
+    "type": "角色",
+    "aliases": [
+     "达利阿拉伯"
+    ],
+    "desc": "惊叫后退的小马"
+   },
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "描述可燃点旧状的人"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问异常表现的随行医生"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把火团误认作 APPLe 的人"
+   },
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失控燃烧的古火种"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [
+     "兔子小姐"
+    ],
+    "desc": "抱起星锑撤离的兔女郎"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "昏厥的姑娘"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被误认作红色巨石的同伴"
+   },
+   {
+    "name": "喀嚓喀嚓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被驮在背上的同伴"
+   },
+   {
+    "name": "泉水精灵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掉队后被拱入箱中的精灵"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "众人避入的容器"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "汗水所赞誉的红土"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哒哒达利",
+    "relation": "询问",
+    "dst": "可燃点",
+    "evidence": "她还好吗？她接触起来很热",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "说明",
+    "dst": "哒哒达利",
+    "evidence": "这姑娘曾经浑身都燃着火",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "安抚",
+    "dst": "哒哒达利",
+    "evidence": "请不要太过惊慌",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "询问",
+    "dst": "沙丝绒",
+    "evidence": "在忽然昏厥之前，她身上有任何异常表现吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "描述",
+    "dst": "可燃点",
+    "evidence": "她看起来就像是醉了一样，情绪高涨",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "警觉",
+    "dst": "星锑",
+    "evidence": "醉酒，意识游离……糟了，星锑！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "误认",
+    "dst": "和平乌鲁",
+    "evidence": "你现在简直就像是一块儿苹果红色的巨石",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "拥抱",
+    "dst": "和平乌鲁",
+    "evidence": "来！来吧——让我们拥抱一个——",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "烫伤",
+    "dst": "和平乌鲁",
+    "evidence": "哇啊啊！好烫！好烫啊！我的手——！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "判断",
+    "dst": "和平乌鲁",
+    "evidence": "是和平乌鲁女士，她失控了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "宣扬",
+    "dst": "乌卢鲁运动场",
+    "evidence": "汗水就是对这片红土最高的赞誉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "救护",
+    "dst": "星锑",
+    "evidence": "你怎么也晕过去了呀！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "警示",
+    "dst": "维尔汀",
+    "evidence": "我们必须立刻离开这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "号令",
+    "dst": "芭妮芭妮",
+    "evidence": "带上所有人返回箱子里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "驮载",
+    "dst": "喀嚓喀嚓",
+    "evidence": "背后驮着喀嚓喀嚓，口中叼着APPLe",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "叼起",
+    "dst": "APPLe",
+    "evidence": "背后驮着喀嚓喀嚓，口中叼着APPLe",
+    "confidence": 0.95
+   },
+   {
+    "src": "哒哒达利",
+    "relation": "拱入",
+    "dst": "泉水精灵",
+    "evidence": "拱着掉队的泉水精灵一起跳入手提箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "泉水精灵",
+    "relation": "跳入",
+    "dst": "箱子",
+    "evidence": "一起跳入手提箱",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "974c6f3cd29fa19bdd83bd5e": {
+  "entities": [
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挥洒热能的古火种"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧引发火灾的研究员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意让她暂时熄灭的司辰"
+   },
+   {
+    "name": "火苗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "千百年持续燃烧的圣火"
+   }
+  ],
+  "relations": [
+   {
+    "src": "和平乌鲁",
+    "relation": "亢奋",
+    "dst": "火苗",
+    "evidence": "我如同千年前一样燃烧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "邀舞",
+    "dst": "火苗",
+    "evidence": "让我们手挽着手，为崇高的日头起舞吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "警告",
+    "dst": "和平乌鲁",
+    "evidence": "这样太危险了，可能会引发火灾的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "决意",
+    "dst": "和平乌鲁",
+    "evidence": "我们得让她暂时熄灭",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "自陈",
+    "dst": "爱兹拉",
+    "evidence": "我们是一对熟练的灭火拍档",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9095055a2a6f7c93f8e8c894": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问后遗症的司辰"
+   },
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "症状轻微、忙于事务的人"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "照料昏厥者的人类研究员"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [
+     "兔子小姐"
+    ],
+    "desc": "误认爱兹拉为女性的兔女郎"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刚转醒的姑娘"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已苏醒的摇滚海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已苏醒的同伴"
+   },
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍沉睡的古火种"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "令人身体状态提高之处"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "限选手只报三项的赛会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "爱兹拉",
+    "evidence": "这会对她的身体产生有害的影响么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "说明",
+    "dst": "沙丝绒",
+    "evidence": "沙丝绒小姐的不良反应很轻微",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "说明",
+    "dst": "可燃点",
+    "evidence": "在接下来至少三天内，她都需要卧床休息",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "通报",
+    "dst": "爱兹拉",
+    "evidence": "APPLe先生和星锑都醒过来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "说明",
+    "dst": "和平乌鲁",
+    "evidence": "和平乌鲁女士与其他昏厥的神秘学家不同",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "说明",
+    "dst": "乌卢鲁运动场",
+    "evidence": "在进入运动场后感到了身体状态的提高",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "担忧",
+    "dst": "乌卢鲁运动场",
+    "evidence": "那儿这样危险，还能继续举办运动会吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "说明",
+    "dst": "乌卢鲁运动会",
+    "evidence": "一位选手只允许参加三个项目",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "误称",
+    "dst": "爱兹拉",
+    "evidence": "您不是女性，还能是男性吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "纠正",
+    "dst": "芭妮芭妮",
+    "evidence": "但其实……我并不是女性",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "证实",
+    "dst": "爱兹拉",
+    "evidence": "爱兹拉他的确是一位男性",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "震惊",
+    "dst": "爱兹拉",
+    "evidence": "男——男性？！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ad9021f09eda9ad15991e2b4": {
+  "entities": [
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持病患静卧的随行医生"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "震惊于爱兹拉性别者"
+   },
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带回申请表的策划助理"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [
+     "兔子小姐"
+    ],
+    "desc": "目睹二人拉扯的兔女郎"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维尔汀的本地向导"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与向导书信往来者"
+   },
+   {
+    "name": "大型活动申请表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需递交市政厅的大型活动申请"
+   },
+   {
+    "name": "爱丽丝泉市政府",
+    "type": "地点",
+    "aliases": [],
+    "desc": "递交申请之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "可燃点",
+    "relation": "质问",
+    "dst": "爱兹拉",
+    "evidence": "你什么时候……变成男的的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "澄清",
+    "dst": "可燃点",
+    "evidence": "我从出生，到现在，都是男性",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "澄清",
+    "dst": "爱兹拉",
+    "evidence": "你好像也从来没有说过你就是个女孩儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "持有",
+    "dst": "大型活动申请表",
+    "evidence": "沙丝绒晃晃手里的纸页",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "读信",
+    "dst": "维尔汀",
+    "evidence": "亲爱的维尔汀小姐，很高兴收到你的回信",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "说明",
+    "dst": "宽檐帽先生",
+    "evidence": "他是我的本地向导，我们最近一直有书信往来",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "发现",
+    "dst": "爱丽丝泉市政府",
+    "evidence": "大型活动申请表……爱丽丝泉政府部门",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "宣布",
+    "dst": "可燃点",
+    "evidence": "只要我们到了市政厅，写完这个，再交上去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "阻止",
+    "dst": "可燃点",
+    "evidence": "你的身体还十分虚弱，需要静卧休息！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "拉扯",
+    "dst": "爱兹拉",
+    "evidence": "你也和我一起来就好了吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "惊叹",
+    "dst": "可燃点",
+    "evidence": "可燃点小姐跑得可真快",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8454b0045d5e5fd246f74e55": {
+  "entities": [
+   {
+    "name": "沙丝绒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读不懂表格术语的人"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [
+     "兔子小姐"
+    ],
+    "desc": "询问逃生通道的兔女郎"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "啃着铅笔填表的学生"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赌气拒绝帮忙的研究员"
+   },
+   {
+    "name": "市政员工",
+    "type": "角色",
+    "aliases": [],
+    "desc": "审核表格的市政员工"
+   },
+   {
+    "name": "北领地活动安全法",
+    "type": "物品",
+    "aliases": [],
+    "desc": "表格所援引的安全法规"
+   },
+   {
+    "name": "Ⅲ型场地安全核验证书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "表格所要求的场地证书"
+   },
+   {
+    "name": "爱丽丝泉市政府",
+    "type": "地点",
+    "aliases": [],
+    "desc": "表格受审之处"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被问及有无逃生通道之处"
+   },
+   {
+    "name": "朱迪尔小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "可燃点的数学老师"
+   }
+  ],
+  "relations": [
+   {
+    "src": "沙丝绒",
+    "relation": "困惑",
+    "dst": "北领地活动安全法",
+    "evidence": "什么是“北领地活动安全法”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙丝绒",
+    "relation": "困惑",
+    "dst": "Ⅲ型场地安全核验证书",
+    "evidence": "什么又是“Ⅲ型场地安全核验证书”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "询问",
+    "dst": "可燃点",
+    "evidence": "乌卢鲁运动场中有逃生通道吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "自陈",
+    "dst": "乌卢鲁运动场",
+    "evidence": "我过去的记忆中没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "拒绝",
+    "dst": "沙丝绒",
+    "evidence": "我不想帮助对自己身体不负责的病患",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "类比",
+    "dst": "朱迪尔小姐",
+    "evidence": "像极了朱迪尔小姐——也就是我的数学老师",
+    "confidence": 0.95
+   },
+   {
+    "src": "市政员工",
+    "relation": "退回",
+    "dst": "可燃点",
+    "evidence": "满是墨渍的表格从柜台深处被退回",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "自称",
+    "dst": "市政员工",
+    "evidence": "我是可燃点！这个活动的主要负责人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "市政员工",
+    "relation": "提供",
+    "dst": "可燃点",
+    "evidence": "我会为您准备一个脚凳的",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "身处",
+    "dst": "爱丽丝泉市政府",
+    "evidence": "爱丽丝泉市政府",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b33add5dcb01f9dadd3c1598": {
+  "entities": [
+   {
+    "name": "市政员工",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受理三项表格的员工"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感激拥抱爱兹拉的姑娘"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替女孩们扛下文书的研究员"
+   },
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与维尔汀对谈的古火种"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈期许更甚的司辰"
+   },
+   {
+    "name": "大型活动申请表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已完成的三项申请表"
+   },
+   {
+    "name": "运动比赛流程与项目申报表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需另附安全许可的申报表"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "维尔汀寄予希望之赛会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "市政员工",
+    "relation": "受理",
+    "dst": "大型活动申请表",
+    "evidence": "三项已经完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "市政员工",
+    "relation": "告知",
+    "dst": "可燃点",
+    "evidence": "大部分项目经查验并不在许可运动之列",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "询问",
+    "dst": "市政员工",
+    "evidence": "我要怎么得到这些安全许可？",
+    "confidence": 0.95
+   },
+   {
+    "src": "市政员工",
+    "relation": "要求",
+    "dst": "可燃点",
+    "evidence": "您需要填写这些表格",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "申报",
+    "dst": "运动比赛流程与项目申报表",
+    "evidence": "《运动比赛流程与项目申报表》后半页此处",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "接管",
+    "dst": "可燃点",
+    "evidence": "请把——那些表格，给我——吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "感谢",
+    "dst": "爱兹拉",
+    "evidence": "你简直就是我认识的最好的人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "承诺",
+    "dst": "爱兹拉",
+    "evidence": "我一定会好好吃药的，一秒也不犹豫",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "自陈",
+    "dst": "可燃点",
+    "evidence": "看所有人痛苦，比我自己痛苦更让我难受百倍",
+    "confidence": 0.95
+   },
+   {
+    "src": "市政员工",
+    "relation": "提供",
+    "dst": "爱兹拉",
+    "evidence": "脚凳。那里还有一架脚凳",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "致谢",
+    "dst": "市政员工",
+    "evidence": "感谢您的提醒，我会好好使用它的",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "自陈",
+    "dst": "可燃点",
+    "evidence": "运动会与小火将千年前还是个小火苗的我唤醒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "和平乌鲁",
+    "evidence": "什么是“现在的我”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "自陈",
+    "dst": "维尔汀",
+    "evidence": "一个持续燃烧千年的老人",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "评价",
+    "dst": "维尔汀",
+    "evidence": "你比小火更关注这场比赛",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "自陈",
+    "dst": "乌卢鲁运动会",
+    "evidence": "我对它有所希望，比可燃点期望得更多",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2969379b87858d50cd3b4c6e": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问来者身份的司辰"
+   },
+   {
+    "name": "可燃点",
+    "type": "角色",
+    "aliases": [],
+    "desc": "规划场地修缮的负责人"
+   },
+   {
+    "name": "维修队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受派而来的维修队员"
+   },
+   {
+    "name": "和平乌鲁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忧心构造被改变的古火种"
+   },
+   {
+    "name": "本耶普",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被流言引来的水怪"
+   },
+   {
+    "name": "魔鬼蜥蜴",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从运动场溜出的巨兽"
+   },
+   {
+    "name": "凉亭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可燃点拟建的入口设施"
+   },
+   {
+    "name": "建筑设计图",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待提交的建筑设计图"
+   },
+   {
+    "name": "《澳大利亚叮当快报》",
+    "type": "物品",
+    "aliases": [
+     "叮当快报",
+     "叮咚快报"
+    ],
+    "desc": "黏在怪物嘴里的八卦报纸"
+   },
+   {
+    "name": "乌卢鲁运动场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "自然神力馈赠的赛场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "可燃点",
+    "relation": "规划",
+    "dst": "凉亭",
+    "evidence": "我想在这儿修建一个漂亮的入口，我需要凉亭",
+    "confidence": 0.95
+   },
+   {
+    "src": "维修队员",
+    "relation": "承诺",
+    "dst": "可燃点",
+    "evidence": "我们的工程师明天下午五点之前带来建材小样",
+    "confidence": 0.95
+   },
+   {
+    "src": "维修队员",
+    "relation": "提交",
+    "dst": "建筑设计图",
+    "evidence": "而建筑设计图，我们会在明天早上提交给您",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "可燃点",
+    "evidence": "可燃点，这些是？",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "说明",
+    "dst": "维修队员",
+    "evidence": "这些是拉普拉斯特派来的维修队员！",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "询问",
+    "dst": "可燃点",
+    "evidence": "这会改变运动场的内部构造吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "否认",
+    "dst": "和平乌鲁",
+    "evidence": "我当然不会允许那种事情发生啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "说明",
+    "dst": "乌卢鲁运动场",
+    "evidence": "乌卢鲁运动场并非神秘学家的造物",
+    "confidence": 0.95
+   },
+   {
+    "src": "本耶普",
+    "relation": "袭来",
+    "dst": "可燃点",
+    "evidence": "是本耶普！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔鬼蜥蜴",
+    "relation": "溜出",
+    "dst": "乌卢鲁运动场",
+    "evidence": "那些从乌卢鲁运动场里溜出来的魔鬼蜥蜴",
+    "confidence": 0.95
+   },
+   {
+    "src": "可燃点",
+    "relation": "抱怨",
+    "dst": "本耶普",
+    "evidence": "都怪那些八卦报纸！",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "质问",
+    "dst": "可燃点",
+    "evidence": "你们在外面到底都做了什么呀？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "和平乌鲁",
+    "relation": "辨认",
+    "dst": "《澳大利亚叮当快报》",
+    "evidence": "它们的嘴里还沾着一些纸片，这是……报纸？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

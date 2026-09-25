@@ -1,0 +1,2055 @@
+{
+ "2a91be6854eb98d49086bf0a": {
+  "entities": [
+   {
+    "name": "执夜人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追查密教线索的审讯者"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [
+     "灰调蓝"
+    ],
+    "desc": "接受验谎讯问的鉴定者"
+   },
+   {
+    "name": "夜巡局的审讯室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "摆上黑镜的谈话室"
+   },
+   {
+    "name": "验谎的黑镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "蒙雾般漆黑的验谎镜"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她自陈接触密教之城"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "渗透各个时代的密教"
+   },
+   {
+    "name": "黄金黎明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与密教有所往来的结社"
+   },
+   {
+    "name": "重塑之手的无头",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被简称为无头的团体"
+   },
+   {
+    "name": "蔷薇十字会后继者",
+    "type": "组织",
+    "aliases": [],
+    "desc": "各式蔷薇十字会后继者"
+   },
+   {
+    "name": "心理学家荣格",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不自觉与密教往来的瑞士人"
+   },
+   {
+    "name": "西格蒙德·弗洛伊德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与密教往来的维也纳医生"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "铅笔画上缀钻的项链"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传说最美丽的蓝钻石"
+   },
+   {
+    "name": "希望钻石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "蓝钻重切后最大的一块"
+   },
+   {
+    "name": "路易十四",
+    "type": "角色",
+    "aliases": [
+     "太阳王"
+    ],
+    "desc": "晚年光辉尽失的太阳王"
+   },
+   {
+    "name": "路易十五",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于天花的法国国王"
+   },
+   {
+    "name": "蒙特斯庞夫人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厄运名单上的侯爵夫人"
+   },
+   {
+    "name": "尼古拉·富凯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厄运名单上的财政总监"
+   },
+   {
+    "name": "叶卡捷琳娜二世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厄运名单上的俄国女皇"
+   },
+   {
+    "name": "乔治四世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厄运名单上的英国国王"
+   },
+   {
+    "name": "托马斯·霍普",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厄运名单上的英国银行家"
+   },
+   {
+    "name": "塔沃尼尔家",
+    "type": "组织",
+    "aliases": [],
+    "desc": "最早把蓝钻带回法国的一家"
+   },
+   {
+    "name": "水晶工房的贵宾室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "时钟回响的会客室"
+   }
+  ],
+  "relations": [
+   {
+    "src": "执夜人",
+    "relation": "讯问",
+    "dst": "阿黛拉",
+    "evidence": "关于重塑之手，你当时了解多少？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "身处",
+    "dst": "夜巡局的审讯室",
+    "evidence": "谈话室中，一叠照片被推到了阿黛拉的面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "执夜人",
+    "relation": "摆出",
+    "dst": "验谎的黑镜",
+    "evidence": "一面黑色的镜子被摆在了桌上",
+    "confidence": 0.95
+   },
+   {
+    "src": "验谎的黑镜",
+    "relation": "映出",
+    "dst": "阿黛拉",
+    "evidence": "蒙了雾一样的镜面模糊地映出阿黛拉的面容",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "辩白",
+    "dst": "重塑之手",
+    "evidence": "我应该没有招惹过什么重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "接触",
+    "dst": "重塑之手",
+    "evidence": "在巴黎时你应该也和重塑之手接触过",
+    "confidence": 0.95
+   },
+   {
+    "src": "黄金黎明会",
+    "relation": "往来",
+    "dst": "重塑之手",
+    "evidence": "黄金黎明会、无头、各种各样的蔷薇十字会后继者",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手的无头",
+    "relation": "往来",
+    "dst": "重塑之手",
+    "evidence": "、无头、各种各样的蔷薇十字会后继者",
+    "confidence": 0.95
+   },
+   {
+    "src": "蔷薇十字会后继者",
+    "relation": "关联",
+    "dst": "重塑之手",
+    "evidence": "各种各样的蔷薇十字会后继者",
+    "confidence": 0.95
+   },
+   {
+    "src": "心理学家荣格",
+    "relation": "往来",
+    "dst": "重塑之手",
+    "evidence": "甚至卡尔·荣格与西格蒙德·弗洛伊德都自觉或不自觉地",
+    "confidence": 0.95
+   },
+   {
+    "src": "西格蒙德·弗洛伊德",
+    "relation": "往来",
+    "dst": "重塑之手",
+    "evidence": "卡尔·荣格与西格蒙德·弗洛伊德都自觉或不自觉地",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "绘制",
+    "dst": "好运项链",
+    "evidence": "这是你画的当时出现在你手上的项链，没错吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "好运项链",
+    "relation": "缀着",
+    "dst": "法兰西之蓝",
+    "evidence": "他的指尖点向项链上缀着的那枚硕大的钻石",
+    "confidence": 0.95
+   },
+   {
+    "src": "执夜人",
+    "relation": "质疑",
+    "dst": "法兰西之蓝",
+    "evidence": "你声称上面的钻石是法兰西之蓝",
+    "confidence": 0.95
+   },
+   {
+    "src": "法兰西之蓝",
+    "relation": "重切为",
+    "dst": "希望钻石",
+    "evidence": "早在一个世纪前，法兰西之蓝就被重新切割",
+    "confidence": 0.95
+   },
+   {
+    "src": "路易十四",
+    "relation": "失去",
+    "dst": "法兰西之蓝",
+    "evidence": "法国经济崩溃，太阳王在晚年光辉尽失",
+    "confidence": 0.95
+   },
+   {
+    "src": "路易十五",
+    "relation": "沾染",
+    "dst": "法兰西之蓝",
+    "evidence": "然后是路易十五死于天花，最后洪水滔天",
+    "confidence": 0.95
+   },
+   {
+    "src": "蒙特斯庞夫人",
+    "relation": "曾拥有",
+    "dst": "法兰西之蓝",
+    "evidence": "像蒙特斯庞夫人、尼古拉·富凯",
+    "confidence": 0.95
+   },
+   {
+    "src": "尼古拉·富凯",
+    "relation": "曾拥有",
+    "dst": "法兰西之蓝",
+    "evidence": "蒙特斯庞夫人、尼古拉·富凯、叶卡捷琳娜二世",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶卡捷琳娜二世",
+    "relation": "曾拥有",
+    "dst": "法兰西之蓝",
+    "evidence": "尼古拉·富凯、叶卡捷琳娜二世、乔治四世、托马斯·霍普",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治四世",
+    "relation": "曾拥有",
+    "dst": "法兰西之蓝",
+    "evidence": "叶卡捷琳娜二世、乔治四世、托马斯·霍普那些人的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "托马斯·霍普",
+    "relation": "曾拥有",
+    "dst": "法兰西之蓝",
+    "evidence": "乔治四世、托马斯·霍普那些人的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔沃尼尔家",
+    "relation": "带回",
+    "dst": "法兰西之蓝",
+    "evidence": "毕竟最初将它带回法国的，就是塔沃尼尔家的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "熟稔",
+    "dst": "法兰西之蓝",
+    "evidence": "从小我听过无数关于这枚钻石的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "滞留",
+    "dst": "水晶工房的贵宾室",
+    "evidence": "你已经看了三个小时了，阿黛拉小姐",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "00b840792d7a5c3021043c78": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "验出真钻后手足无措"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "平静讲论灵性的占卜师"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出现在阿黛拉梦中的友人"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "六十七克拉的无伪蓝钻"
+   },
+   {
+    "name": "希望钻石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传闻流落在外的蓝钻"
+   },
+   {
+    "name": "麦克林夫人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被怀疑持有假钻的名媛"
+   },
+   {
+    "name": "塔沃尼尔家",
+    "type": "组织",
+    "aliases": [],
+    "desc": "秘传真钻的发现者家族"
+   },
+   {
+    "name": "卡巴拉主义者",
+    "type": "组织",
+    "aliases": [],
+    "desc": "主张灵性劣化的学派"
+   },
+   {
+    "name": "精神四世界",
+    "type": "概念",
+    "aliases": [],
+    "desc": "灵性必经的四重劣化"
+   },
+   {
+    "name": "灵性流溢",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使精神重归物质的流溢"
+   },
+   {
+    "name": "水晶工房的净化仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被阿黛拉质疑的仪式"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙"
+    ],
+    "desc": "对准钻石张口的幼龙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "鉴定",
+    "dst": "法兰西之蓝",
+    "evidence": "没有一点伪造痕迹，绝对不是仿品",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "存疑",
+    "dst": "希望钻石",
+    "evidence": "难道麦克林夫人的希望钻石是假货？",
+    "confidence": 0.95
+   },
+   {
+    "src": "麦克林夫人",
+    "relation": "持有",
+    "dst": "希望钻石",
+    "evidence": "麦克林夫人的希望钻石是假货",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔沃尼尔家",
+    "relation": "秘藏",
+    "dst": "法兰西之蓝",
+    "evidence": "真正的法兰西之蓝其实一直在它的发现者，塔沃尼尔家族内流传",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "质问",
+    "dst": "贝丽尔",
+    "evidence": "贝丽尔女士，您究竟想干什么？找来这么大一颗蓝钻对我恶作剧",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "关联",
+    "dst": "水晶工房的净化仪式",
+    "evidence": "这就是您说的净化仪式？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "拒认",
+    "dst": "法兰西之蓝",
+    "evidence": "水晶工房不出售钻石",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "点化",
+    "dst": "阿黛拉",
+    "evidence": "梦境往往更能示人以真",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "援引",
+    "dst": "卡巴拉主义者",
+    "evidence": "按照卡巴拉主义者的观点",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡巴拉主义者",
+    "relation": "主张",
+    "dst": "精神四世界",
+    "evidence": "物质世界只是完全的灵性在经过精神四世界时不断劣化",
+    "confidence": 0.95
+   },
+   {
+    "src": "灵性流溢",
+    "relation": "复现",
+    "dst": "法兰西之蓝",
+    "evidence": "经由灵性的再次流溢而回归物质世界也并非不可能",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "断言",
+    "dst": "法兰西之蓝",
+    "evidence": "你握在手上的，或许正是再次物质化的精神",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "梦见",
+    "dst": "西莉亚",
+    "evidence": "我梦见西莉亚把它给了我",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "担忧",
+    "dst": "西莉亚",
+    "evidence": "我得去找西莉亚……我有种不好的预感",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "指向",
+    "dst": "法兰西之蓝",
+    "evidence": "她按住了幼龙刚刚对准钻石的脑袋",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "088ead4d97d50abbd9ec6e6e": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急着寻友的宝石鉴定者"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提前关门随车出发的占卜师"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "占卜要找的失踪友人"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "门扉即将合上的工房"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "纯粹却视野浑浊的蓝钻"
+   },
+   {
+    "name": "占卜的信物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "寄有旧情的可占卜之物"
+   },
+   {
+    "name": "命运",
+    "type": "概念",
+    "aliases": [],
+    "desc": "占卜师口中的老板"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "求助",
+    "dst": "贝丽尔",
+    "evidence": "您能占卜出西莉亚现在的位置吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "审视",
+    "dst": "法兰西之蓝",
+    "evidence": "虽然这枚钻石的质地非常纯粹，它提供的视野却并非如此",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "说明",
+    "dst": "占卜的信物",
+    "evidence": "最好是提供她曾长期持有的、寄有感情的物件",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "翻找",
+    "dst": "占卜的信物",
+    "evidence": "那我立刻回家里一趟找找看",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "应允",
+    "dst": "阿黛拉",
+    "evidence": "但我并不介意在回去的路上，坐你的车绕上一小段路",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "关闭",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "占卜师得体地微笑着，关上了水晶工房的门扉",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "听命",
+    "dst": "命运",
+    "evidence": "命运会把你的报酬在合适的时机支付给我",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "揣测",
+    "dst": "命运",
+    "evidence": "您这句话，是说您的老板是“命运”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "思量",
+    "dst": "命运",
+    "evidence": "自己随口的俏皮话竟真令贝丽尔思考了片刻",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "466baa236c3a1ce7532e929c": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在自家抽屉翻找信物"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逐信阅览捕捉辉光的占卜师"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被这座城市吞没的友人"
+   },
+   {
+    "name": "阿黛拉的公寓",
+    "type": "地点",
+    "aliases": [],
+    "desc": "堆满原石与地图的房间"
+   },
+   {
+    "name": "阿黛拉与西莉亚的黑白照片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "装裱起来的双人旧照"
+   },
+   {
+    "name": "阿黛拉收到的家书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "邮票翘起的工整家书"
+   },
+   {
+    "name": "阿黛拉的父母",
+    "type": "角色",
+    "aliases": [],
+    "desc": "常年不返巴黎的冒险家"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "父母久别之下的都城"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏有骷髅壁画的地下世界"
+   },
+   {
+    "name": "死亡之舞壁画",
+    "type": "物品",
+    "aliases": [],
+    "desc": "西莉亚要去研究的壁画"
+   },
+   {
+    "name": "起舞的亡灵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与墓穴同在的亡灵"
+   },
+   {
+    "name": "大瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "留下地下世界的遗产"
+   },
+   {
+    "name": "占卜的信物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用来定位友人的旧物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "开锁",
+    "dst": "阿黛拉的公寓",
+    "evidence": "阿黛拉转向了隔壁的门，从口袋中摸出一把钥匙",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "端详",
+    "dst": "阿黛拉与西莉亚的黑白照片",
+    "evidence": "贝丽尔的目光锁定了一张被装裱好的照片",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉与西莉亚的黑白照片",
+    "relation": "记录",
+    "dst": "西莉亚",
+    "evidence": "黑白照片中的形象仍旧鲜活，一个小女孩兴致勃勃",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "回忆",
+    "dst": "阿黛拉的父母",
+    "evidence": "老爸老妈忙于他们的大冒险",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "抱出",
+    "dst": "阿黛拉收到的家书",
+    "evidence": "阿黛拉从最下方的抽屉中抱出一摞信件",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "回避",
+    "dst": "阿黛拉收到的家书",
+    "evidence": "也不想在此时谈论信件的来历",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "翻阅",
+    "dst": "阿黛拉收到的家书",
+    "evidence": "她开始一封封翻阅信件，只像是日常生活的一部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉收到的家书",
+    "relation": "充作",
+    "dst": "占卜的信物",
+    "evidence": "这些信……好的，当然可以",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的父母",
+    "relation": "久离",
+    "dst": "巴黎",
+    "evidence": "你的父母很久没有回到巴黎了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "预言",
+    "dst": "西莉亚",
+    "evidence": "你的友人被这座城市吞没，坠入幽暗的洞穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "大瘟疫",
+    "relation": "留下",
+    "dst": "地下墓穴",
+    "evidence": "大瘟疫的遗产，地下的另一个世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "起舞的亡灵",
+    "relation": "同在",
+    "dst": "地下墓穴",
+    "evidence": "地下的另一个世界……与起舞的亡灵同在",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "研究",
+    "dst": "死亡之舞壁画",
+    "evidence": "她昨天说过要去研究死亡之舞",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "推定",
+    "dst": "地下墓穴",
+    "evidence": "她现在一定在地下墓穴能观察到那些骷髅壁画的地方",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3b277444291344105842b92f": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不听预示仍要赴险"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "言及牺牲的平静占卜师"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不请自坐副驾的大小姐"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阿黛拉执意相救的友人"
+   },
+   {
+    "name": "雷曼女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已经死去的另一位占卜师"
+   },
+   {
+    "name": "命运",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被阿黛拉尊重的无形者"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "预示中有牺牲之地"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "停在公寓楼下的爱车"
+   },
+   {
+    "name": "拉杜丽的甜点",
+    "type": "物品",
+    "aliases": [
+     "马卡龙"
+    ],
+    "desc": "被轻巧拈起的马卡龙"
+   },
+   {
+    "name": "工人罢工",
+    "type": "事件",
+    "aliases": [],
+    "desc": "街头到处都在闹的罢工"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "来处成谜的蓝钻项链"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "警示",
+    "dst": "阿黛拉",
+    "evidence": "如果你仍要前往，前方注定会有牺牲",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "不顾",
+    "dst": "西莉亚",
+    "evidence": "我可不能为了一句缥缈的预示就放弃西莉亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "尊重",
+    "dst": "命运",
+    "evidence": "我尊重命运的方式，就是听从自己的判断",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "伴行",
+    "dst": "阿黛拉",
+    "evidence": "司机逐渐放缓走向爱车的脚步",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "试探",
+    "dst": "贝丽尔",
+    "evidence": "贝丽尔女士，对占卜师而言，梦境是否可控？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "剖白",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉小姐，我不曾操纵过你的梦境",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "提及",
+    "dst": "雷曼女士",
+    "evidence": "恰好，我最近只接触过两个占卜师，其中一个已经死了",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "占据",
+    "dst": "标致201",
+    "evidence": "却发现已有人占了座位",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "嗔怪",
+    "dst": "费利西安",
+    "evidence": "真是让我好等！你想怎么辩解？阿黛拉？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "提醒",
+    "dst": "工人罢工",
+    "evidence": "现在到处都在闹罢工",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "持有",
+    "dst": "好运项链",
+    "evidence": "不对，你的项链从哪儿来的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "拈起",
+    "dst": "拉杜丽的甜点",
+    "evidence": "大小姐轻巧地拿起一枚马卡龙",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "abba79aed38df1082eb99a4e": {
+  "entities": [
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣称宝石属于自己的幻影"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与空气争吵也浑然不知"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看见空荡座位的旁观者"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "项链原主的推测对象"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "两度易主的蓝宝石项链"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "胸前那颗宝石"
+   },
+   {
+    "name": "巴隆家",
+    "type": "组织",
+    "aliases": [],
+    "desc": "怀有宿愿的旧家族"
+   },
+   {
+    "name": "巴隆家的宿愿",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未被未来伤害的愿望"
+   },
+   {
+    "name": "无人得见的费利西安",
+    "type": "事件",
+    "aliases": [],
+    "desc": "副驾上无人可见的对峙"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "只剩空位的副驾驶席"
+   },
+   {
+    "name": "拉杜丽的甜点",
+    "type": "物品",
+    "aliases": [
+     "马卡龙"
+    ],
+    "desc": "被苛刻品评的甜点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "费利西安",
+    "relation": "夺占",
+    "dst": "好运项链",
+    "evidence": "那是西莉亚给我的项链！怎么会在你这里？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "赠予",
+    "dst": "好运项链",
+    "evidence": "那是西莉亚给我的项链",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "占有",
+    "dst": "好运项链",
+    "evidence": "这是我的东西！我亲自找回的宝物",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "攥住",
+    "dst": "法兰西之蓝",
+    "evidence": "高傲的小姐将宝石一把攥住",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "宣称",
+    "dst": "巴隆家的宿愿",
+    "evidence": "没有被未来伤害的，巴隆家的宿愿，那美好时代的遗物",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴隆家",
+    "relation": "怀有",
+    "dst": "巴隆家的宿愿",
+    "evidence": "没有被未来伤害的，巴隆家的宿愿",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "拈起",
+    "dst": "拉杜丽的甜点",
+    "evidence": "大小姐轻巧地拿起一枚马卡龙",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "隶属",
+    "dst": "巴隆家",
+    "evidence": "是我一生中冒险的最高收获",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "扶持",
+    "dst": "阿黛拉",
+    "evidence": "贝丽尔从身后扶住了摇摇欲坠的司机",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "质疑",
+    "dst": "费利西安",
+    "evidence": "你还在担心那位“费利西安”吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "无人得见的费利西安",
+    "relation": "显现于",
+    "dst": "标致201",
+    "evidence": "副驾驶席上并没有任何人",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "惊觉",
+    "dst": "无人得见的费利西安",
+    "evidence": "你打开车门之后，就一直在和空气争吵",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "63c41e28acaf14a628ab0823": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掏不出半点证据的司机"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士"
+    ],
+    "desc": "打破社交距离的占卜师"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指认为幻觉的雇主"
+   },
+   {
+    "name": "无人得见的费利西安",
+    "type": "事件",
+    "aliases": [],
+    "desc": "证据归零的存在疑云"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不该被拿走的赠礼"
+   },
+   {
+    "name": "阿黛拉的钱夹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "倒不出硬币的空钱夹"
+   },
+   {
+    "name": "金法郎",
+    "type": "物品",
+    "aliases": [],
+    "desc": "首日雇客给的旧金币"
+   },
+   {
+    "name": "拉杜丽的甜点",
+    "type": "物品",
+    "aliases": [
+     "马卡龙"
+    ],
+    "desc": "尚未吃完的那一盒"
+   },
+   {
+    "name": "香榭丽舍大街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "初次载客要去的大街"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "改日再访的工房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "辩白",
+    "dst": "贝丽尔",
+    "evidence": "布翁尼女士，您的玩笑确实不错。但很抱歉",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "维护",
+    "dst": "好运项链",
+    "evidence": "再怎么任性，她都不该拿走朋友送我的项链",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "断言",
+    "dst": "费利西安",
+    "evidence": "我从未见过你口中的那位“费利西安”",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "占算",
+    "dst": "好运项链",
+    "evidence": "我可以帮你占卜它的下落",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "叩问",
+    "dst": "阿黛拉",
+    "evidence": "你们第一次见面是什么时候？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "回忆",
+    "dst": "香榭丽舍大街",
+    "evidence": "让我立刻开到香榭丽舍大街",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "付酬",
+    "dst": "金法郎",
+    "evidence": "她还给了我几枚金法郎做纪念",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "翻找",
+    "dst": "阿黛拉的钱夹",
+    "evidence": "她将钱夹翻来覆去，倒了个个儿，拉开又合上",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的钱夹",
+    "relation": "空无",
+    "dst": "金法郎",
+    "evidence": "没有一枚硬币或一张票子从里头掉出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "举证",
+    "dst": "拉杜丽的甜点",
+    "evidence": "那几盒马卡龙——有一盒她还没吃完",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "承认",
+    "dst": "无人得见的费利西安",
+    "evidence": "费利西安从不存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "宽慰",
+    "dst": "阿黛拉",
+    "evidence": "这并不是你的问题，而是这个时代共有的疾病",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "改日再访",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "改天，也许明天，我再来拜访您",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0dac5385d01c628f8a0a71a1": {
+  "entities": [
+   {
+    "name": "罢工群众Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高呼不容忍暴政的工人"
+   },
+   {
+    "name": "罢工群众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要去赎回床垫的工人"
+   },
+   {
+    "name": "罢工群众Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高喊保卫共和的工人"
+   },
+   {
+    "name": "罢工群众Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喊公社万岁的工人"
+   },
+   {
+    "name": "弗里吉亚帽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被挥舞的鲜红自由帽"
+   },
+   {
+    "name": "国民自卫军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被当作榜样的武装"
+   },
+   {
+    "name": "政府军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被斥为卖国的军队"
+   },
+   {
+    "name": "巴黎公社",
+    "type": "事件",
+    "aliases": [],
+    "desc": "影响绝不是一时的公社"
+   },
+   {
+    "name": "一八七一年的巴黎",
+    "type": "事件",
+    "aliases": [],
+    "desc": "众人眼中的炎热夏天"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士"
+    ],
+    "desc": "点破癔症真相的占卜师"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不肯承认说辞的司机"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "由癔症化出的活人"
+   },
+   {
+    "name": "城市的癔症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使人为兽的城市症候"
+   },
+   {
+    "name": "占卜沙龙",
+    "type": "地点",
+    "aliases": [],
+    "desc": "野兽论调的旧话题地"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "或也是癔症的产物"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被带走的研究者"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被恐慌笼罩的城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罢工群众Ⅰ",
+    "relation": "抗争",
+    "dst": "政府军",
+    "evidence": "我们要跟上国民自卫军，和那些卖国的政府军斗争到底",
+    "confidence": 0.95
+   },
+   {
+    "src": "罢工群众Ⅰ",
+    "relation": "追随",
+    "dst": "国民自卫军",
+    "evidence": "我们要跟上国民自卫军",
+    "confidence": 0.95
+   },
+   {
+    "src": "罢工群众Ⅱ",
+    "relation": "呐喊",
+    "dst": "巴黎公社",
+    "evidence": "而我，要去当铺把自己的床垫拿回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "罢工群众Ⅲ",
+    "relation": "保卫",
+    "dst": "巴黎",
+    "evidence": "保卫巴黎！保卫共和！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罢工群众Ⅳ",
+    "relation": "呼喊",
+    "dst": "巴黎公社",
+    "evidence": "公社万岁！法兰西万岁！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罢工群众Ⅰ",
+    "relation": "挥舞",
+    "dst": "弗里吉亚帽",
+    "evidence": "他正挥舞着鲜红的弗里吉亚帽",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "搭话",
+    "dst": "罢工群众Ⅰ",
+    "evidence": "贝丽尔叫住了离车最近的工人",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "预祝",
+    "dst": "巴黎公社",
+    "evidence": "你们会如愿以偿",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴黎公社",
+    "relation": "显形于",
+    "dst": "巴黎",
+    "evidence": "看起来他们是为了改变现状开始游行了",
+    "confidence": 0.95
+   },
+   {
+    "src": "一八七一年的巴黎",
+    "relation": "笼罩",
+    "dst": "巴黎",
+    "evidence": "在他们眼中，现在正是那个炎热的1871年夏天",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "诊断",
+    "dst": "城市的癔症",
+    "evidence": "这就是流言，或者癔症、一种城市的症候",
+    "confidence": 0.95
+   },
+   {
+    "src": "城市的癔症",
+    "relation": "化出",
+    "dst": "热沃当的野兽",
+    "evidence": "这癔症使人成为野兽",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "加害",
+    "dst": "占卜沙龙",
+    "evidence": "是他们害了占卜沙龙里的女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "带走",
+    "dst": "西莉亚",
+    "evidence": "还带走了西莉亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "质问",
+    "dst": "贝丽尔",
+    "evidence": "说实话，布翁尼女士，我很难再相信您的这些话",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "疑心",
+    "dst": "城市的癔症",
+    "evidence": "所有真正的异常都是我见到您之后开始的",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "牵系",
+    "dst": "城市的癔症",
+    "evidence": "还有费利西安，可能也……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0bd4cd574e9b5cd705b80f8b": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夺门欲走的怀疑者"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愿为幻影占卜的占卜师"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "命运待占的存疑之人"
+   },
+   {
+    "name": "命运",
+    "type": "概念",
+    "aliases": [],
+    "desc": "占卜师无权干涉的命运"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍下落不明的友人"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "凭空消失的梦中项链"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "离开工房时项链尚在"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自身后逼近的腥气"
+   },
+   {
+    "name": "街头野兽袭击",
+    "type": "事件",
+    "aliases": [],
+    "desc": "街头的猝然扑击"
+   },
+   {
+    "name": "无人得见的费利西安",
+    "type": "事件",
+    "aliases": [],
+    "desc": "悬而未决的存在之疑"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "推给",
+    "dst": "命运",
+    "evidence": "这是你自己的命运。我无权干涉它，也无从解释它",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "占算",
+    "dst": "好运项链",
+    "evidence": "这条项链也是你在梦中取得的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "痛失",
+    "dst": "好运项链",
+    "evidence": "它切切实实地从我身上消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "好运项链",
+    "relation": "离身于",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "离开工房的时候它还在！费利西安把它拿走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "占算",
+    "dst": "费利西安",
+    "evidence": "我也能为你占卜“费利西安”的命运",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "牵系",
+    "dst": "无人得见的费利西安",
+    "evidence": "如果她的确是一个真实存在的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "回避",
+    "dst": "贝丽尔",
+    "evidence": "我想我现在最需要的是找个地方独自静一静",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "喝止",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉！后面！",
+    "confidence": 0.95
+   },
+   {
+    "src": "街头野兽袭击",
+    "relation": "打断",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉趁机猛地探身，抓住了把手",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "迫近",
+    "dst": "阿黛拉",
+    "evidence": "潮湿而腥涩的气息从她颈边吹来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e310f516ba79761792c7b074": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点燃野兽后递出好意"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为救人见血的占卜师"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "大白天的街头扑人者"
+   },
+   {
+    "name": "街头野兽袭击",
+    "type": "事件",
+    "aliases": [],
+    "desc": "白日街头的扑击"
+   },
+   {
+    "name": "贝丽尔的抓伤",
+    "type": "概念",
+    "aliases": [],
+    "desc": "淌落血珠的手臂抓伤"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙"
+    ],
+    "desc": "拍翅喷出火光的幼龙"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "限时找回的友人"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "另一位失踪的朋友"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "预言牺牲仍要前往之地"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "命运攀附的阴影"
+   },
+   {
+    "name": "命运",
+    "type": "概念",
+    "aliases": [],
+    "desc": "窥看诅咒走向的赌局"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "拉扯",
+    "dst": "阿黛拉",
+    "evidence": "她顺着贝丽尔拉扯自己的力道后撤",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "焚灼",
+    "dst": "热沃当的野兽",
+    "evidence": "幼龙拍动翅膀，赶在那头野兽消散之前点燃了它的皮毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "街头野兽袭击",
+    "relation": "抓伤",
+    "dst": "贝丽尔",
+    "evidence": "您的手！让我瞧瞧——是被抓伤了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔的抓伤",
+    "relation": "渗血",
+    "dst": "贝丽尔",
+    "evidence": "血从她更加苍白的皮肤上淌落",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "承认",
+    "dst": "热沃当的野兽",
+    "evidence": "我承认，您说的有些话是真的。比如“热沃当的野兽”",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "照料",
+    "dst": "贝丽尔的抓伤",
+    "evidence": "虽然看起来不严重，但我不能就这样放着您不管",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "寻觅",
+    "dst": "西莉亚",
+    "evidence": "我需要加快脚步找回那两位失踪的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "担忧",
+    "dst": "费利西安",
+    "evidence": "否则她们很可能有生命危险",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "决意",
+    "dst": "地下墓穴",
+    "evidence": "你还是要去地下墓穴，即使预言告诉你，前路会有牺牲",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "坦言",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "你的身上有一个诅咒，一个命运攀附的阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔沃尼尔的诅咒",
+    "relation": "攀附",
+    "dst": "命运",
+    "evidence": "一个诅咒，一个命运攀附的阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "探究",
+    "dst": "命运",
+    "evidence": "而我想知道它会向何处发展",
+    "confidence": 0.95
+   },
+   {
+    "src": "街头野兽袭击",
+    "relation": "危及",
+    "dst": "阿黛拉",
+    "evidence": "流血的就不仅是贝丽尔的手臂",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "44818496a5a15cae5db5b555": {
+  "entities": [
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出同行要求的占卜师"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "默许同行的司机"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "穿过人群的座车"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "既定的终点"
+   },
+   {
+    "name": "贝丽尔的抓伤",
+    "type": "概念",
+    "aliases": [],
+    "desc": "让手不便的伤口"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "同行",
+    "dst": "阿黛拉",
+    "evidence": "去地下墓穴寻找你的答案吧，阿黛拉。你在那里还会需要我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "允诺",
+    "dst": "贝丽尔",
+    "evidence": "这是一个迟到许久的同行要求",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "照料",
+    "dst": "贝丽尔的抓伤",
+    "evidence": "您手上有伤，不太方便。我帮您打开门",
+    "confidence": 0.95
+   },
+   {
+    "src": "标致201",
+    "relation": "驶向",
+    "dst": "地下墓穴",
+    "evidence": "标致201穿过人群，拐进一条更空旷的小路，驶向它既定的终点",
+    "confidence": 0.95
+   },
+   {
+    "src": "地下墓穴",
+    "relation": "藏有",
+    "dst": "阿黛拉",
+    "evidence": "你在那里还会需要我的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c8364983ee913ec46ff237c3": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在甬道刻下箭头的寻友者"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士"
+    ],
+    "desc": "以灵摆指出方向的占卜师"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "命运交汇处的寻找目标"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "警察也顾不上看管的城"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "三百公里长的地下迷宫"
+   },
+   {
+    "name": "地下墓穴的岔路口",
+    "type": "地点",
+    "aliases": [],
+    "desc": "刻满箭头的通道口"
+   },
+   {
+    "name": "贝丽尔的灵摆",
+    "type": "物品",
+    "aliases": [
+     "水晶灵摆"
+    ],
+    "desc": "散出微弱荧光的水晶灵摆"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被视为天赋的诅咒"
+   },
+   {
+    "name": "墙壁上的箭头记号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "碎石划出的引路箭头"
+   },
+   {
+    "name": "地下采石场通道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中世纪采石留下的甬道"
+   },
+   {
+    "name": "法国大革命",
+    "type": "事件",
+    "aliases": [],
+    "desc": "留下秘密通道的动荡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "深入",
+    "dst": "地下墓穴",
+    "evidence": "漆黑的地下通道中，脚步声踏出单调的回音",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴黎",
+    "relation": "无暇看管",
+    "dst": "地下墓穴",
+    "evidence": "城里的警察朋友们现在大概也顾不上看管这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "地下墓穴",
+    "relation": "发端于",
+    "dst": "地下采石场通道",
+    "evidence": "据说这些通道最初是中世纪时为了开采石头挖的",
+    "confidence": 0.95
+   },
+   {
+    "src": "法国大革命",
+    "relation": "开凿",
+    "dst": "地下采石场通道",
+    "evidence": "加上那些据说在大革命时期或是战争期间挖的秘密通道",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴黎",
+    "relation": "藏着",
+    "dst": "地下墓穴",
+    "evidence": "对外开放的只是一小部分，它的绝大多数身躯都还藏在黑暗中",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "求助",
+    "dst": "贝丽尔",
+    "evidence": "既然占卜告诉了您西莉亚的所在，想必您一定能再做一次",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "窥探",
+    "dst": "西莉亚",
+    "evidence": "你们的命运紧密相关，窥探你的命运，也能辨识她的去向",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "解读",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "你背负着塔沃尼尔的诅咒，而诅咒有时候是一种天赋",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "背负",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "你背负着塔沃尼尔的诅咒",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "摇动",
+    "dst": "贝丽尔的灵摆",
+    "evidence": "水晶灵摆散发出微弱的荧光",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔的灵摆",
+    "relation": "指向",
+    "dst": "地下墓穴的岔路口",
+    "evidence": "贝丽尔点点头，水晶灵摆散发出微弱的荧光",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "划下",
+    "dst": "墙壁上的箭头记号",
+    "evidence": "阿黛拉拾起一块碎石，在墙壁上划出不知第多少个箭头",
+    "confidence": 0.95
+   },
+   {
+    "src": "墙壁上的箭头记号",
+    "relation": "标记",
+    "dst": "地下墓穴的岔路口",
+    "evidence": "我们已经来到相当深的地方了，但走了这么久什么都没找到",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "隐于",
+    "dst": "地下墓穴的岔路口",
+    "evidence": "看起来我们有所收获了",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

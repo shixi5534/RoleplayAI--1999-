@@ -1,0 +1,1258 @@
+{
+ "09641282f6e57cd79c1af427": {
+  "entities": [
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问伊戈尔意图"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促此刻达成协定"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "受伊戈尔引导者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "兀尔德"
+    ],
+    "desc": "线索关联之人"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可重获和平之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "军长伊万",
+    "relation": "质问",
+    "dst": "伊戈尔",
+    "evidence": "你知道你在说什么吗，伊戈尔？",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "提议",
+    "dst": "军长伊万",
+    "evidence": "合作的结果对我们都有利",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "引导",
+    "dst": "维尔汀",
+    "evidence": "我也能引导司辰找到与兀尔德有关的线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "促成和平",
+    "dst": "顿河",
+    "evidence": "顿河能重获和平",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "催促",
+    "dst": "军长伊万",
+    "evidence": "我希望能在此刻达成协定",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "365ba554c65926da294c4ab5": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝伊万合作者"
+   },
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [
+     "伊万"
+    ],
+    "desc": "为家乡安全让步"
+   },
+   {
+    "name": "斯捷尔诺娃",
+    "type": "角色",
+    "aliases": [
+     "莎宾娜"
+    ],
+    "desc": "不信叛徒的参谋长"
+   },
+   {
+    "name": "联合委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "伊戈尔可推测其想法"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "定制抑制咒文者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "不愿骑兵军冲突"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [
+     "芝诺骑兵军"
+    ],
+    "desc": "伊万所领之军"
+   },
+   {
+    "name": "哥萨克",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伊万的身份与牵累"
+   },
+   {
+    "name": "抑制咒文",
+    "type": "概念",
+    "aliases": [],
+    "desc": "刻于伊戈尔小臂的咒文"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可使军队自战场消失"
+   },
+   {
+    "name": "鹰派",
+    "type": "概念",
+    "aliases": [],
+    "desc": "要伊万性命的一派"
+   },
+   {
+    "name": "索姆将军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "可能受牵连者"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人长大的地方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "斯捷尔诺娃",
+    "relation": "质疑",
+    "dst": "伊戈尔",
+    "evidence": "叛徒永远是叛徒，不可信任",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "定制",
+    "dst": "抑制咒文",
+    "evidence": "芝诺过去为每一个神秘学家将领单独定制的抑制神秘术咒文",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "持有",
+    "dst": "抑制咒文",
+    "evidence": "一圈刻工规整的符号在夜色中散发着微光",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "掌握",
+    "dst": "神秘术",
+    "evidence": "我知道你的神秘术能让一支军队从战场上消失",
+    "confidence": 0.95
+   },
+   {
+    "src": "军长伊万",
+    "relation": "防范",
+    "dst": "伊戈尔",
+    "evidence": "我不能没有防范",
+    "confidence": 0.95
+   },
+   {
+    "src": "鹰派",
+    "relation": "威胁",
+    "dst": "军长伊万",
+    "evidence": "“鹰派”的老东西会要了我的命",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "推测",
+    "dst": "联合委员会",
+    "evidence": "只要在联合委员会里坐着的还是那一批人，我就能猜出他们的想法",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "征召",
+    "dst": "哥萨克",
+    "evidence": "你是哥萨克，所以他们把你送到顿河，补充兵员",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵军",
+    "relation": "隶属",
+    "dst": "芝诺",
+    "evidence": "他们不愿意让你驻留家乡",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "成长",
+    "dst": "别列格勒",
+    "evidence": "这里是我们长大的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "军长伊万",
+    "relation": "成长",
+    "dst": "别列格勒",
+    "evidence": "这里是我们长大的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "约束",
+    "dst": "骑兵军",
+    "evidence": "我知道基金会不希望骑兵军与我发生冲突",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "bdacaf50dbdf415b7b051ba5": {
+  "entities": [
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制服行刺者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇刺的叛军首领"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "顿河祸乱之源"
+   },
+   {
+    "name": "阿廖沙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传令兵之弟，死于圣保罗"
+   },
+   {
+    "name": "金色饥荒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将令顿河荒芜的饥荒"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被寄望的转机"
+   },
+   {
+    "name": "仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "季节倒错的成因"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "伊戈尔被指投靠者"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "受灾之地"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "阿廖沙殒命之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格鲁托夫",
+    "relation": "祸乱",
+    "dst": "顿河",
+    "evidence": "格鲁托夫甚至不是顿河唯一的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "金色饥荒",
+    "relation": "荒废",
+    "dst": "顿河",
+    "evidence": "“金色饥荒”最终会将这个时代的顿河变成一片荒芜之地",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "揭示",
+    "dst": "仪式",
+    "evidence": "季节倒错是一场仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿廖沙",
+    "relation": "死于",
+    "dst": "圣保罗",
+    "evidence": "他的血染红了圣保罗",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "投靠",
+    "dst": "重塑之手",
+    "evidence": "因为他对你投靠重塑之手没有价值",
+    "confidence": 0.85
+   },
+   {
+    "src": "军长伊万",
+    "relation": "寄望",
+    "dst": "暴雨",
+    "evidence": "现在反而只能寄希望于一场“暴雨”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "059ccad2a07dee7bf8461638": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "按下行刺不究"
+   },
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劝止者"
+   },
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迟来一步的养子"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意进军别列格勒"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以俘虏试术者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "金色饥荒的制造者"
+   },
+   {
+    "name": "金色饥荒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "重塑之手的杰作"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "多重节点维系之术式"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "格鲁托夫欲攻之城"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "术式欲覆之区"
+   },
+   {
+    "name": "第聂伯河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "术式欲覆之区"
+   },
+   {
+    "name": "欧洲",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将陷入饥饿之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "托勒密",
+    "relation": "效忠",
+    "dst": "伊戈尔",
+    "evidence": "忠诚的孩子怨恨自己迟来一步",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "劝止",
+    "dst": "军长伊万",
+    "evidence": "这件事我可以忘记，你也可以",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "制造",
+    "dst": "金色饥荒",
+    "evidence": "这是重塑之手的杰作，由多重节点术式维系",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "扩展",
+    "dst": "术阵",
+    "evidence": "他们最终希望将仪式扩展到整个顿河与第聂伯河地区",
+    "confidence": 0.95
+   },
+   {
+    "src": "金色饥荒",
+    "relation": "波及",
+    "dst": "欧洲",
+    "evidence": "整个欧洲都会陷入饥饿",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "进军",
+    "dst": "别列格勒",
+    "evidence": "两个小时之后，我的军队就要前往别列格勒",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "隶属",
+    "dst": "重塑之手",
+    "evidence": "所有的功业都属于祂",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "质疑",
+    "dst": "仪式术士",
+    "evidence": "为什么不把他们带到“冰山”上去研究？",
+    "confidence": 0.95
+   },
+   {
+    "src": "术阵",
+    "relation": "笼罩",
+    "dst": "顿河",
+    "evidence": "正在控制顿河天气的术阵",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "fd644bde3860f153948fe340": {
+  "entities": [
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "强索奇迹的叛将"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不惧死亡的信徒"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收尸的亡者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "格鲁托夫所服务者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被格鲁托夫轻蔑者"
+   },
+   {
+    "name": "奇迹",
+    "type": "概念",
+    "aliases": [],
+    "desc": "格鲁托夫欲夺之物"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "格鲁托夫欲取之城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "仪式术士",
+    "relation": "反对",
+    "dst": "格鲁托夫",
+    "evidence": "“冰山”的命令可不是攻取城市",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "威胁",
+    "dst": "仪式术士",
+    "evidence": "一把手枪顶上术士的前额",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "索取",
+    "dst": "奇迹",
+    "evidence": "如果你们不给我那一份奇迹，我就会自己去夺过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "轻蔑",
+    "dst": "伊戈尔",
+    "evidence": "伊戈尔只是一个孱弱而优柔寡断的中间派",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "笃信",
+    "dst": "重塑之手",
+    "evidence": "祂最终会令所有神秘学家的灵魂复苏",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "服侍",
+    "dst": "格鲁托夫",
+    "evidence": "如果我的顺从能换来你对生命的敬重，我不会拒绝",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "诘问",
+    "dst": "格鲁托夫",
+    "evidence": "那为什么要为他们服务？",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "驱使",
+    "dst": "卡戎",
+    "evidence": "他们的死都会算在你头上",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "进军",
+    "dst": "别列格勒",
+    "evidence": "我的军队就要前往别列格勒",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "9397731b7fbb2c8581ac700d": {
+  "entities": [
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "另有安排者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被捆缚的亡者"
+   },
+   {
+    "name": "安德烈森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "卡戎的黑马"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格鲁托夫",
+    "relation": "挽留",
+    "dst": "卡戎",
+    "evidence": "如果你能留在我身边，会是一个好的聊天对象",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "拘押",
+    "dst": "卡戎",
+    "evidence": "此刻正用粗硬的草绳捆缚他的双手",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "安排",
+    "dst": "卡戎",
+    "evidence": "我对你有别的安排",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "呼唤",
+    "dst": "安德烈森",
+    "evidence": "安德烈森？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cdc0918cfcc9305b616cb939": {
+  "entities": [
+   {
+    "name": "斯捷尔诺娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不解市民敌意"
+   },
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲安抚市民"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "肋部带伤随行"
+   },
+   {
+    "name": "费奥多尔·彼得罗维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "别列格勒市民代表"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "在修道院等候"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "红弩箭中尉"
+    ],
+    "desc": "制订空袭计划"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "入城之军"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "交付任务者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与基金会立场相左"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "如空城般寂静"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "司辰等候之处"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "控制顿河天气"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待解决之敌"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "天气被术阵控制"
+   }
+  ],
+  "relations": [
+   {
+    "src": "骑兵军",
+    "relation": "进驻",
+    "dst": "别列格勒",
+    "evidence": "在军队的马蹄踏入别列格勒时，城市用死一样的寂静迎接骑兵军的到来",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯捷尔诺娃",
+    "relation": "疑问",
+    "dst": "军长伊万",
+    "evidence": "为什么别列格勒的人对骑兵军会是这个态度？",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "分析",
+    "dst": "别列格勒",
+    "evidence": "他们会猜测，骑兵军是不是要在走之前将别列格勒洗劫一空",
+    "confidence": 0.95
+   },
+   {
+    "src": "军长伊万",
+    "relation": "安抚",
+    "dst": "费奥多尔·彼得罗维奇",
+    "evidence": "我会让他相信骑兵军没有恶意",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "建议",
+    "dst": "红弩箭",
+    "evidence": "我建议将解决术阵的问题交给红弩箭的飞行中队",
+    "confidence": 0.95
+   },
+   {
+    "src": "军长伊万",
+    "relation": "转交",
+    "dst": "红弩箭",
+    "evidence": "你提供的地点我已经转交给红弩箭中尉",
+    "confidence": 0.95
+   },
+   {
+    "src": "军长伊万",
+    "relation": "图谋",
+    "dst": "格鲁托夫",
+    "evidence": "解决格鲁托夫，最好逮捕或杀死他本人",
+    "confidence": 0.95
+   },
+   {
+    "src": "术阵",
+    "relation": "控制",
+    "dst": "顿河",
+    "evidence": "正在控制顿河天气的术阵",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "会见",
+    "dst": "维尔汀",
+    "evidence": "我该去见司辰了，她正在修道院等我",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "109e6037130eefa3f07538b7": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引路下地窖者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "红弩箭中尉"
+    ],
+    "desc": "立誓押解伊戈尔"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "只身入琥珀屋"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "第一助手"
+    ],
+    "desc": "留守地面的一助"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地面等候者"
+   },
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带人开凿隧道"
+   },
+   {
+    "name": "琥珀屋",
+    "type": "概念",
+    "aliases": [],
+    "desc": "此行之目的"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地窖通达琥珀屋外围"
+   },
+   {
+    "name": "隧道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通向琥珀屋的简易通道"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "节点坐标已交付"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "红弩箭不能忘之事"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "红弩箭警告之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "警告",
+    "dst": "维尔汀",
+    "evidence": "但你得万事小心",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "追究",
+    "dst": "伊戈尔",
+    "evidence": "我都不会忘记你在圣保罗做的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "立誓",
+    "dst": "伊戈尔",
+    "evidence": "我会亲手把你押送到审判席上，让你面对每一条罪行",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "交付",
+    "dst": "红弩箭",
+    "evidence": "交给你的术阵节点坐标也是真实的",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "受命",
+    "dst": "托勒密",
+    "evidence": "我已经让托勒密带人开凿了一条通向目的地的简易隧道",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "开凿",
+    "dst": "隧道",
+    "evidence": "带人开凿了一条通向目的地的简易隧道",
+    "confidence": 0.95
+   },
+   {
+    "src": "隧道",
+    "relation": "通向",
+    "dst": "琥珀屋",
+    "evidence": "刚好与琥珀屋的外围空间相隔不远",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "进入",
+    "dst": "琥珀屋",
+    "evidence": "只有我和伊戈尔能进入琥珀屋，这是之前说好的",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "进入",
+    "dst": "琥珀屋",
+    "evidence": "只有我和伊戈尔能进入琥珀屋",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "忧心",
+    "dst": "维尔汀",
+    "evidence": "您真的要一个人下去吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "等候",
+    "dst": "玛尔纱",
+    "evidence": "你和玛尔纱在地面等我出来就好",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "481a14e869f07a1f928d66db": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "追问琥珀屋来历"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "卸下遮掩的背叛者"
+   },
+   {
+    "name": "琥珀屋",
+    "type": "概念",
+    "aliases": [],
+    "desc": "对暴雨免疫之物"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被琥珀屋免疫之灾"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "联手兴建实验室"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "联手兴建实验室"
+   },
+   {
+    "name": "换生灵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伊戈尔喻琥珀屋之项目"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "换生灵项目受害地"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "军事警戒区所在"
+   },
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "身份可疑的士兵"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琥珀屋",
+    "relation": "免疫",
+    "dst": "暴雨",
+    "evidence": "它对“暴雨”免疫的能力稍微向四周蔓延",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "联手",
+    "dst": "芝诺",
+    "evidence": "在基金会与芝诺联手在琥珀屋建立实验室的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "兴建",
+    "dst": "琥珀屋",
+    "evidence": "基金会与芝诺联手建造的实验室",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "参与",
+    "dst": "琥珀屋",
+    "evidence": "我答应参与之后，得到进驻别列格勒近郊",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "驻守",
+    "dst": "别列格勒",
+    "evidence": "得到进驻别列格勒近郊，在地面上建立军事警戒区",
+    "confidence": 0.95
+   },
+   {
+    "src": "换生灵",
+    "relation": "伤害",
+    "dst": "绿湖营地",
+    "evidence": "“换生灵”项目还是给绿湖营地的游客，以及周边的居民带来了伤害",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "排查",
+    "dst": "芝诺",
+    "evidence": "基金会要求我排查那些在“暴雨”后各时代中为芝诺服役…的士兵",
+    "confidence": 0.85
+   },
+   {
+    "src": "琥珀屋",
+    "relation": "类同",
+    "dst": "换生灵",
+    "evidence": "我以为这只是一个类似于“换生灵”的研究项目",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "f99d2b277827e7f5dafa26a1": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述兀尔德往事"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "听述并联想"
+   },
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "貌类失踪故人者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "兀尔德女士",
+     "兀尔德",
+     "德洛丝医生"
+    ],
+    "desc": "脱离琥珀屋控制者；与兀尔德判若两人者"
+   },
+   {
+    "name": "琥珀屋",
+    "type": "概念",
+    "aliases": [],
+    "desc": "兀尔德曾被带入之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伊戈尔亲历之灾"
+   },
+   {
+    "name": "鸽子屋",
+    "type": "组织",
+    "aliases": [],
+    "desc": "要求封锁信息者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "首次暴雨时防御薄弱"
+   },
+   {
+    "name": "仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "兀尔德欲近中心之仪式"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "德洛丝出现之地"
+   },
+   {
+    "name": "南极",
+    "type": "地点",
+    "aliases": [],
+    "desc": "德洛丝所在之地"
+   },
+   {
+    "name": "哈萨克斯坦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "1999年军队驻守地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "联想",
+    "dst": "邓肯先生",
+    "evidence": "他的外貌与曾经消失在“暴雨”中的一位故人十分相似",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "脱离",
+    "dst": "琥珀屋",
+    "evidence": "她在“暴雨”持续期间设法脱离了琥珀屋的控制",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸽子屋",
+    "relation": "封锁",
+    "dst": "琥珀屋",
+    "evidence": "在鸽子屋的要求下，他们对项目外的人封锁了信息",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "后悔",
+    "dst": "卡卡尼亚",
+    "evidence": "但这就是令我后悔的事……在第六次“暴雨”之后，他们带来了兀尔德",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "见证",
+    "dst": "暴雨",
+    "evidence": "我，还有很多人，都见证了第一次“暴雨”的降临",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "报告",
+    "dst": "卡卡尼亚",
+    "evidence": "兀尔德女士，军队全员已经做好战斗准备了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "接近",
+    "dst": "仪式",
+    "evidence": "我需要在那个瞬间靠近仪式中心",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "驻守",
+    "dst": "哈萨克斯坦",
+    "evidence": "那时候我们的军队在哈萨克斯坦严阵以待",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "防守",
+    "dst": "伊戈尔",
+    "evidence": "重塑之手的防御很薄弱",
+    "confidence": 0.6
+   }
+  ]
+ }
+}

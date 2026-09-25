@@ -1,0 +1,1215 @@
+{
+ "e31b55399ccfffa871e941a2": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗",
+     "士官"
+    ],
+    "desc": "收殓者，真名保罗"
+   },
+   {
+    "name": "威利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "法比安的战友，中校勤务兵出身"
+   },
+   {
+    "name": "法比安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失踪的旧友"
+   },
+   {
+    "name": "安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "法比安的妻子"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻人失踪者"
+   },
+   {
+    "name": "相片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "怀抱矢车菊的女性"
+   },
+   {
+    "name": "士兵Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求援者"
+   },
+   {
+    "name": "士兵Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忧心者"
+   },
+   {
+    "name": "卡戎之名",
+    "type": "概念",
+    "aliases": [],
+    "desc": "冥界船夫之喻"
+   },
+   {
+    "name": "无人区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "相片认领处"
+   },
+   {
+    "name": "树林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "法比安失踪地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威利",
+    "relation": "认领",
+    "dst": "相片",
+    "evidence": "不，那是我的朋友，法比安的相片",
+    "confidence": 0.95
+   },
+   {
+    "src": "威利",
+    "relation": "指认",
+    "dst": "安娜",
+    "evidence": "这是安娜，法比安的妻子",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "确信",
+    "dst": "法比安",
+    "evidence": "安娜的确存在，法比安没有在妄想",
+    "confidence": 0.95
+   },
+   {
+    "src": "威利",
+    "relation": "嘱托",
+    "dst": "卡戎",
+    "evidence": "你把相片给他，告诉他，安娜在家里等他",
+    "confidence": 0.95
+   },
+   {
+    "src": "威利",
+    "relation": "追述",
+    "dst": "法比安",
+    "evidence": "为了安娜，这小子十五岁就能揍倒两个兵痞",
+    "confidence": 0.9
+   },
+   {
+    "src": "士兵Ⅰ",
+    "relation": "求援",
+    "dst": "卡戎",
+    "evidence": "快，你能不能去把弗兰兹找回来？",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "寻人",
+    "dst": "法比安",
+    "evidence": "他打听到消息，说相片的主人叫法比安",
+    "confidence": 0.95
+   },
+   {
+    "src": "士兵Ⅰ",
+    "relation": "释名",
+    "dst": "卡戎",
+    "evidence": "他每天走上前线埋葬遗体，至今毫发无伤",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎之名",
+    "relation": "喻指",
+    "dst": "卡戎",
+    "evidence": "冥界的船夫应该就是不会死的吧？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "63cd5fb58e74b799cc3cf15a": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "不死之身者"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "舍身相救者"
+   },
+   {
+    "name": "敌人侦察兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开枪者"
+   },
+   {
+    "name": "相片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已寻得其主"
+   },
+   {
+    "name": "子弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "穿身而过"
+   },
+   {
+    "name": "胸膛的空洞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "子弹穿行之处"
+   },
+   {
+    "name": "树林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "西南方伏击处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "弗兰兹",
+    "relation": "警告",
+    "dst": "卡戎",
+    "evidence": "你是在等敌人一枪打穿你的脑袋吗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "告知",
+    "dst": "弗兰兹",
+    "evidence": "相片的主人已经找到了，我们还是尽快回去",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "扑倒",
+    "dst": "卡戎",
+    "evidence": "弗兰兹在捕捉到这一危险的瞬间，已经将卡戎扑倒在树丛中",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "负伤",
+    "dst": "卡戎",
+    "evidence": "猩红的液体砸落在草叶上，卡戎伸手捂住他冒血的后背",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "谎称",
+    "dst": "敌人侦察兵",
+    "evidence": "神父！这个人是神父！不要伤及无辜！",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡戎",
+    "relation": "承受",
+    "dst": "子弹",
+    "evidence": "不顾阻拦，卡戎站了起来，接住了这一枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "内里为",
+    "dst": "胸膛的空洞",
+    "evidence": "在衣料的层层包裹下，酝酿的是一片空洞",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "宣告",
+    "dst": "敌人侦察兵",
+    "evidence": "你走吧，你杀不死我",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "疏离",
+    "dst": "卡戎",
+    "evidence": "你是不死之身",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cb1d4974c1491fb28b9f87f2": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "已死之人"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决裂者"
+   },
+   {
+    "name": "子弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "擦伤之物"
+   },
+   {
+    "name": "迷彩大衣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包裹之物"
+   },
+   {
+    "name": "丛林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "独留之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡戎",
+    "relation": "自陈",
+    "dst": "弗兰兹",
+    "evidence": "我已经死了，但即便如此，我也并非无坚不摧",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "责问",
+    "dst": "卡戎",
+    "evidence": "但你为什么不告诉我？你想看我白白为你送死？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "辩解",
+    "dst": "弗兰兹",
+    "evidence": "我只是不知道该怎么说，我也没想过定义现在的自己",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "控诉",
+    "dst": "卡戎",
+    "evidence": "我以为我们是可以交付后背的战友，我以为我们是互相信任的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "离去",
+    "dst": "卡戎",
+    "evidence": "他提起枪，独自转身离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "伫立",
+    "dst": "丛林",
+    "evidence": "卡戎僵硬地伫立在丛林之中",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "cc90764c09607bf83b4743d7": {
+  "entities": [
+   {
+    "name": "帕蒂塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "旁观者"
+   },
+   {
+    "name": "沃尔克中校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不佩枪的中校"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受伤者"
+   },
+   {
+    "name": "瓦尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于友方炮击"
+   },
+   {
+    "name": "斯卡特牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "中校所好"
+   },
+   {
+    "name": "香肠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所许之物"
+   },
+   {
+    "name": "酒馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中校退役后所想"
+   },
+   {
+    "name": "防空洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中校所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "帕蒂塔",
+    "relation": "诘问",
+    "dst": "沃尔克中校",
+    "evidence": "你在情报可能有误的情况下，下令炮击，误伤了友方",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "承认",
+    "dst": "帕蒂塔",
+    "evidence": "我清楚我恐怕罪有应得",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "自比",
+    "dst": "帕蒂塔",
+    "evidence": "我们所有人都是坦克的履带板，收到推进的命令就只能碾过一切",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "追述",
+    "dst": "瓦尔特",
+    "evidence": "瓦尔特很年轻，但他是个健谈、敏锐且有思考的孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "邀死",
+    "dst": "帕蒂塔",
+    "evidence": "尽管杀死我，我不会有任何怨言，只要你真的做好了准备",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "谋划",
+    "dst": "酒馆",
+    "evidence": "如果我不再是军人，最想做的就是开酒馆",
+    "confidence": 0.9
+   },
+   {
+    "src": "沃尔克中校",
+    "relation": "许诺",
+    "dst": "弗兰兹",
+    "evidence": "那就叫他来，我给他佐一份免费的香肠",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4957a9906202cf210823b0c1": {
+  "entities": [
+   {
+    "name": "沃尔克中校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交枪者"
+   },
+   {
+    "name": "帕蒂塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受枪者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "劝说者"
+   },
+   {
+    "name": "威利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "勤务兵"
+   },
+   {
+    "name": "袖珍手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "申领所得"
+   },
+   {
+    "name": "子弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仅留一粒"
+   },
+   {
+    "name": "防空洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中校进入之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "沃尔克中校",
+    "relation": "交给",
+    "dst": "帕蒂塔",
+    "evidence": "你申领的枪到了，帕蒂塔，我把它交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "权衡",
+    "dst": "袖珍手枪",
+    "evidence": "她接过了这把小巧的袖珍手枪，轻轻掂量它的重量",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "劝诫",
+    "dst": "帕蒂塔",
+    "evidence": "夺走生命只能让痛苦变本加厉",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "留弹",
+    "dst": "子弹",
+    "evidence": "她一粒粒地取出子弹，只余留一粒装回枪中",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "塞予",
+    "dst": "卡戎",
+    "evidence": "她将取出的子弹塞进卡戎的口袋",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "宣告",
+    "dst": "卡戎",
+    "evidence": "我会离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "告知",
+    "dst": "威利",
+    "evidence": "他进了防空洞",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "280512e9a2d5d0877a84b669": {
+  "entities": [
+   {
+    "name": "威利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭破谎言者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "醒悟者"
+   },
+   {
+    "name": "帕蒂塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开枪者"
+   },
+   {
+    "name": "沃尔克中校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "中弹者"
+   },
+   {
+    "name": "瓦尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阵亡的挚友"
+   },
+   {
+    "name": "步枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "中校所佩"
+   },
+   {
+    "name": "防空洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "枪声之处"
+   },
+   {
+    "name": "授勋",
+    "type": "事件",
+    "aliases": [],
+    "desc": "中校将得"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威利",
+    "relation": "揭破",
+    "dst": "沃尔克中校",
+    "evidence": "中校会从前线转到后方指挥，怎么会突然退役？",
+    "confidence": 0.95
+   },
+   {
+    "src": "威利",
+    "relation": "说明",
+    "dst": "授勋",
+    "evidence": "他正在被保荐授勋，到了秋天，应该就是上校了",
+    "confidence": 0.95
+   },
+   {
+    "src": "威利",
+    "relation": "自陈",
+    "dst": "沃尔克中校",
+    "evidence": "我是中校的勤务兵出身",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "斥骂",
+    "dst": "沃尔克中校",
+    "evidence": "那个杀千刀的骗子！那只阴险狡猾的狐狸！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "回想",
+    "dst": "瓦尔特",
+    "evidence": "该死，我没抓住他的手把他拽进弹坑",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "闯入",
+    "dst": "防空洞",
+    "evidence": "她快而敏捷地钻进了防空洞中",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "开枪",
+    "dst": "沃尔克中校",
+    "evidence": "卡戎看见中校捂紧胸口抽搐",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aa796476d6825b4e18ca9eed": {
+  "entities": [
+   {
+    "name": "布劳恩少校",
+    "type": "角色",
+    "aliases": [
+     "艾伯哈特"
+    ],
+    "desc": "连长"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "自责者"
+   },
+   {
+    "name": "帕蒂塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待枪决者"
+   },
+   {
+    "name": "沃尔克中校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于傲慢者"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抽中行刑者"
+   },
+   {
+    "name": "法比安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已死者"
+   },
+   {
+    "name": "相片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未能交付"
+   },
+   {
+    "name": "信仰",
+    "type": "物品",
+    "aliases": [
+     "信"
+    ],
+    "desc": "噩耗之书"
+   },
+   {
+    "name": "安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "法比安的妻子"
+   },
+   {
+    "name": "瓦尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "卡戎未能救下者"
+   },
+   {
+    "name": "卷烟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "婉拒之礼"
+   },
+   {
+    "name": "掘墓铲",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最后的职责"
+   }
+  ],
+  "relations": [
+   {
+    "src": "布劳恩少校",
+    "relation": "评断",
+    "dst": "沃尔克中校",
+    "evidence": "沃尔克死于傲慢",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "评议",
+    "dst": "沃尔克中校",
+    "evidence": "他的谎言化作了那枚射向他的子弹",
+    "confidence": 0.95
+   },
+   {
+    "src": "布劳恩少校",
+    "relation": "告知",
+    "dst": "卡戎",
+    "evidence": "在今天医院撤离之前，帕蒂塔会被枪决",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "抽中",
+    "dst": "帕蒂塔",
+    "evidence": "最后我们一起抓了阄，弗兰兹抽中了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "埋葬",
+    "dst": "法比安",
+    "evidence": "法比安死了，我今天会埋葬他",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "悔愧",
+    "dst": "法比安",
+    "evidence": "我没能履行我的诺言，在他死前陪他最后一程",
+    "confidence": 0.95
+   },
+   {
+    "src": "布劳恩少校",
+    "relation": "转交",
+    "dst": "信仰",
+    "evidence": "威利给了我一封信，是早上从后方送来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "信仰",
+    "relation": "告知",
+    "dst": "安娜",
+    "evidence": "法比安和妻子居住的小楼，在一周前消失于一场大火中",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "后悔",
+    "dst": "瓦尔特",
+    "evidence": "但是“我”后悔没有救下瓦尔特",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "婉拒",
+    "dst": "卷烟",
+    "evidence": "他们挥手婉拒，随后离开了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "03e0b59e925f6ed46e085661": {
+  "entities": [
+   {
+    "name": "帕蒂塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诀别者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "送别者"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "行刑者"
+   },
+   {
+    "name": "法比安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将葬之死者"
+   },
+   {
+    "name": "步枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "上膛之枪"
+   },
+   {
+    "name": "掘墓铲",
+    "type": "物品",
+    "aliases": [],
+    "desc": "扬起尘土"
+   },
+   {
+    "name": "军车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "绝尘而去"
+   }
+  ],
+  "relations": [
+   {
+    "src": "帕蒂塔",
+    "relation": "洞察",
+    "dst": "卡戎",
+    "evidence": "我发现了一些关于你的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "致谢",
+    "dst": "卡戎",
+    "evidence": "不重要了，谢谢你，卡戎",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕蒂塔",
+    "relation": "祝愿",
+    "dst": "卡戎",
+    "evidence": "我希望你可以找到真正的自己",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "上膛",
+    "dst": "步枪",
+    "evidence": "但他依然只是看着弗兰兹将子弹上膛",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰兹",
+    "relation": "回避",
+    "dst": "卡戎",
+    "evidence": "僵硬而冷漠地扭过了头",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "目送",
+    "dst": "军车",
+    "evidence": "车群发出启动的轰鸣……一路绝尘而去",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡戎",
+    "relation": "拾起",
+    "dst": "掘墓铲",
+    "evidence": "他拾起铲子，扬起尘土",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "履职",
+    "dst": "法比安",
+    "evidence": "履行他最后的，也是唯一的职责",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "7367bd0cab0c141e351dd2fc": {
+  "entities": [
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "衙门抄书者，会使刀"
+   },
+   {
+    "name": "母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "患痨病的母亲"
+   },
+   {
+    "name": "厉晦锋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来访的守备"
+   },
+   {
+    "name": "吴郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开新方子者"
+   },
+   {
+    "name": "二姨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托照看者"
+   },
+   {
+    "name": "衙门",
+    "type": "组织",
+    "aliases": [],
+    "desc": "程和光抄书之处"
+   },
+   {
+    "name": "百部",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所抓之药"
+   },
+   {
+    "name": "大造丸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "吴郎中新制"
+   },
+   {
+    "name": "账本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录收支"
+   },
+   {
+    "name": "泛黄的纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "守备所予"
+   },
+   {
+    "name": "程宅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "古祝县"
+   },
+   {
+    "name": "济世堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "平日抓药处"
+   },
+   {
+    "name": "水乡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "涣州府别县治下村落"
+   }
+  ],
+  "relations": [
+   {
+    "src": "程和光",
+    "relation": "抄书",
+    "dst": "衙门",
+    "evidence": "在衙门抄书，折下来一天仍是三十文左右",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "记录",
+    "dst": "账本",
+    "evidence": "取笔蘸墨，细细记录今日的收支",
+    "confidence": 0.95
+   },
+   {
+    "src": "母亲",
+    "relation": "披衣",
+    "dst": "程和光",
+    "evidence": "有人轻步走到程和光身后，给他披上一件衣裳",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "抓药",
+    "dst": "吴郎中",
+    "evidence": "我刚去吴郎中那里抓了些百部",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "求方",
+    "dst": "大造丸",
+    "evidence": "我听说他又新制了些大造丸",
+    "confidence": 0.95
+   },
+   {
+    "src": "母亲",
+    "relation": "叮嘱",
+    "dst": "程和光",
+    "evidence": "我早不许你去！早说要断绝来往",
+    "confidence": 0.95
+   },
+   {
+    "src": "厉晦锋",
+    "relation": "来访",
+    "dst": "程和光",
+    "evidence": "我这次来，是为了给你一个机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "厉晦锋",
+    "relation": "付予",
+    "dst": "泛黄的纸",
+    "evidence": "程和光攥着一张泛黄的纸返回屋内",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "托付",
+    "dst": "二姨",
+    "evidence": "我明日去找二姨，拜托她来照顾一阵",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "辞行",
+    "dst": "母亲",
+    "evidence": "我要出趟远门",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "309aefb51243543551387db3": {
+  "entities": [
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持刀斡旋者"
+   },
+   {
+    "name": "乡民首领",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鸣冤者"
+   },
+   {
+    "name": "严肃的家丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拦阻者"
+   },
+   {
+    "name": "冷静的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诉冤者"
+   },
+   {
+    "name": "沮丧的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诉冤者"
+   },
+   {
+    "name": "胡海岳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "胡家朝奉"
+   },
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "水乡的医生"
+   },
+   {
+    "name": "受伤的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被虎咬伤者"
+   },
+   {
+    "name": "弓箭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所夺之械"
+   },
+   {
+    "name": "腰刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "家丁所持"
+   },
+   {
+    "name": "盾牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "列阵之具"
+   },
+   {
+    "name": "羽箭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被劈为两半"
+   },
+   {
+    "name": "忠孝节义牌坊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "胡家院前所立"
+   },
+   {
+    "name": "胡家庭院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "朝奉宅院"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乡民首领",
+    "relation": "求医",
+    "dst": "秀郎中",
+    "evidence": "我兄弟被大虫咬伤，命悬一线！",
+    "confidence": 0.95
+   },
+   {
+    "src": "严肃的家丁",
+    "relation": "拦阻",
+    "dst": "乡民首领",
+    "evidence": "秀郎中是我家真金白银请来的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乡民首领",
+    "relation": "喝斥",
+    "dst": "胡海岳",
+    "evidence": "胡海岳怕死，手划破一道口子也要请郎中开药",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷静的乡民",
+    "relation": "诉冤",
+    "dst": "胡海岳",
+    "evidence": "他家趁着田价贱，用一两银子就买了我两亩地",
+    "confidence": 0.95
+   },
+   {
+    "src": "沮丧的乡民",
+    "relation": "诉冤",
+    "dst": "胡海岳",
+    "evidence": "胡家放债，最后竟然要收我五分的利息",
+    "confidence": 0.95
+   },
+   {
+    "src": "乡民首领",
+    "relation": "张弓",
+    "dst": "弓箭",
+    "evidence": "乡民首领夺过同伴手里的弓箭，竟对着家丁拉开了弓",
+    "confidence": 0.95
+   },
+   {
+    "src": "严肃的家丁",
+    "relation": "列阵",
+    "dst": "盾牌",
+    "evidence": "家丁们抽出腰刀，举起盾牌，组成一堵密不透风的人墙",
+    "confidence": 0.9
+   },
+   {
+    "src": "程和光",
+    "relation": "劈箭",
+    "dst": "羽箭",
+    "evidence": "只是未及射中，便被刀光劈为两半",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "劝阻",
+    "dst": "严肃的家丁",
+    "evidence": "人命关天，放他们进去又有何不可？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

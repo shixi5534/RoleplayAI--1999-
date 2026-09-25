@@ -1,0 +1,658 @@
+{
+ "meta": {
+  "note": "由 evidence_overrides.json 按 q 文本映射到新题集 id",
+  "count": 65
+ },
+ "overrides": {
+  "R002": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Rockin 是船名，问『女性是谁』与船名无因果",
+   "round": 1
+  },
+  "R003": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Sotheby/苏芙比来自船上点唱机歌名《Please Please Sotheby》，源剧情无苏芙比（用户确认）",
+   "round": 1
+  },
+  "R005": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Sotheby/Regulus 是共现角色，问单角色英文名",
+   "round": 1
+  },
+  "R006": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Regulus/星锑 是共现角色，问『Zero 对应数字几』",
+   "round": 1
+  },
+  "R008": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Sotheby/Regulus 共现，问牙仙英文名",
+   "round": 1
+  },
+  "R011": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 ship/Rockin 是载具，与答案无因果",
+   "round": 1
+  },
+  "R026": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为题面已给的篇章信息",
+   "round": 1
+  },
+  "R028": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为题面已给",
+   "round": 1
+  },
+  "R030": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为题面已给",
+   "round": 1
+  },
+  "R032": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 是场景非答案（问的是篇章名）",
+   "round": 1
+  },
+  "R035": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Kakania/卡卡尼亚 为人物，与『维也纳的英文』无关",
+   "round": 1
+  },
+  "R036": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为题面已给",
+   "round": 1
+  },
+  "R037": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Heinrich/海因里希 为线索人物非答案",
+   "round": 1
+  },
+  "R041": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Apeiron/阿派朗 为题面已给地点",
+   "round": 1
+  },
+  "R043": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 37 为人物，与『乌尔里希英文名』无关",
+   "round": 1
+  },
+  "R045": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Apeiron/阿派朗 为地点，问的是数字",
+   "round": 1
+  },
+  "R053": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Manus/重塑之手 为题面已给",
+   "round": 1
+  },
+  "R057": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 2007 为年份线索，问的是岛屿",
+   "round": 1
+  },
+  "R058": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 vacuum 为题面已给的线索（真空弹）",
+   "round": 1
+  },
+  "R059": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Apeiron/阿派朗 为地点，问的是人物",
+   "round": 1
+  },
+  "R060": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 37 为人物，问的是年份",
+   "round": 1
+  },
+  "R061": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 troll/巨怪 为怪物，问的是营地",
+   "round": 1
+  },
+  "R062": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 为地点（题面已给），问的是怪物",
+   "round": 1
+  },
+  "R063": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 为题面已给地点",
+   "round": 1
+  },
+  "R067": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 为题面已给地点",
+   "round": 1
+  },
+  "R069": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 woods/forest/森林 为地点，问的是怪物",
+   "round": 1
+  },
+  "R074": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 为题面已给地点与年份",
+   "round": 1
+  },
+  "R135": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Antarctica/南极 为地点，问的是人物英文名",
+   "round": 1
+  },
+  "R183": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Sonnet/十四行诗 为他人，与答案无关",
+   "round": 1
+  },
+  "R184": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Sotheby/苏芙比 为他人，问星锑英文名",
+   "round": 1
+  },
+  "R185": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Regulus/星锑 为他人，问苏芙比英文名",
+   "round": 1
+  },
+  "R203": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 vampire 为题面线索，问的是篇章名",
+   "round": 1
+  },
+  "R275": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Ulu/和平乌鲁 为题面已给的同框人物",
+   "round": 1
+  },
+  "R277": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 purifier/净化 为题面已给（净化机）",
+   "round": 1
+  },
+  "R289": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Matilda/玛蒂尔达 为题面已给（同学）",
+   "round": 1
+  },
+  "R292": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Heinrich/海因里希 为线索人物非答案",
+   "round": 1
+  },
+  "R013": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Rockin（船名）题面已给『摇滚苹果号』",
+   "round": 2
+  },
+  "R017": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 fog/雾 题面已给『雾中女巫』",
+   "round": 2
+  },
+  "R024": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为章节上下文",
+   "round": 2
+  },
+  "R025": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为章节上下文",
+   "round": 2
+  },
+  "R031": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 为章节上下文",
+   "round": 2
+  },
+  "R033": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Isolde/伊索尔德 为他人，问海因里希英文名",
+   "round": 2
+  },
+  "R034": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Heinrich/海因里希 为他人，问伊索尔德英文名",
+   "round": 2
+  },
+  "R040": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Vienna/维也纳 题面已给",
+   "round": 2
+  },
+  "R042": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Manus/重塑之手 为背景组织",
+   "round": 2
+  },
+  "R054": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Arcana/阿尔卡纳 为背景人物",
+   "round": 2
+  },
+  "R064": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 题面已给『绿湖噩梦篇』",
+   "round": 2
+  },
+  "R065": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 题面已给",
+   "round": 2
+  },
+  "R066": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 题面已给",
+   "round": 2
+  },
+  "R077": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 题面已给『绿湖营地』",
+   "round": 2
+  },
+  "R080": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Green Lake/camp 题面已给",
+   "round": 2
+  },
+  "R085": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 C07/神秘警探 题面已给《神秘警探C07》",
+   "round": 2
+  },
+  "R090": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 中央塔/自囚 题面已给",
+   "round": 2
+  },
+  "R230": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Ryashki 题面已给『来亚什基』",
+   "round": 2
+  },
+  "R276": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 games/运动会 题面已给",
+   "round": 2
+  },
+  "R281": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Storm/暴雨 题面已给",
+   "round": 2
+  },
+  "R284": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Manus/重塑之手 为干扰项（答案为 Arcana）",
+   "round": 2
+  },
+  "R285": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Storm/暴雨 题面已给",
+   "round": 2
+  },
+  "R290": {
+   "keep_groups": [
+    0
+   ],
+   "drop_groups": [
+    1
+   ],
+   "reason": "辅助组 Foundation/基金会 题面已给『基金会间谍』",
+   "round": 2
+  },
+  "R055": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案 Apeiron/阿派朗 被放进辅助组，道具 scroll/卷轴 反成主组；交换",
+   "round": 1
+  },
+  "R068": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案 1971 被放进辅助组，怪物 troll/巨怪 反成主组；交换",
+   "round": 1
+  },
+  "R023": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案『伊索尔德』在辅助组、题面实体『海因里希』占了主组；交换",
+   "round": 2
+  },
+  "R070": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案『绿湖营地』在辅助组、题面词『灯塔』占了主组；交换",
+   "round": 2
+  },
+  "R228": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案『Melania』在辅助组、题面实体『拉米雷斯』占了主组；交换",
+   "round": 2
+  },
+  "R295": {
+   "keep_groups": [
+    1
+   ],
+   "drop_groups": [
+    0
+   ],
+   "reason": "答案『暴雨』在辅助组、题面词『1999』占了主组；交换",
+   "round": 2
+  }
+ }
+}

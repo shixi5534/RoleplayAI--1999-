@@ -1,0 +1,808 @@
+{
+ "d046acd727d3b4a218eadb1a": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [
+     "小九"
+    ],
+    "desc": "接掌酒坊者"
+   },
+   {
+    "name": "酒坊老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "还乡者"
+   },
+   {
+    "name": "酒诗人",
+    "type": "角色",
+    "aliases": [
+     "李官郎"
+    ],
+    "desc": "常客"
+   },
+   {
+    "name": "酒翁",
+    "type": "角色",
+    "aliases": [
+     "沈阿翁"
+    ],
+    "desc": "常客"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许娘子所化?"
+   },
+   {
+    "name": "许娘子",
+    "type": "角色",
+    "aliases": [
+     "许三娘子"
+    ],
+    "desc": "酒味之源"
+   },
+   {
+    "name": "郎官清",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最正宗"
+   },
+   {
+    "name": "酒坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "新老板娘"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "成全他人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "酒坊老板",
+    "relation": "转让",
+    "dst": "酒坊",
+    "evidence": "那酒坊的老板把铺面转手了，回了老家",
+    "confidence": 0.9
+   },
+   {
+    "src": "曲娘",
+    "relation": "接掌",
+    "dst": "酒坊",
+    "evidence": "现在成了酒坊的新老板娘",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "重现",
+    "dst": "郎官清",
+    "evidence": "她酿出的酒和当初许娘子酿制的分毫不差",
+    "confidence": 0.9
+   },
+   {
+    "src": "斑纹马",
+    "relation": "现身",
+    "dst": "酒坊",
+    "evidence": "一只长了斑纹的马怯生生地走了出来",
+    "confidence": 0.85
+   },
+   {
+    "src": "曲娘",
+    "relation": "成全",
+    "dst": "酒坊老板",
+    "evidence": "他有愿望，我便帮他一把",
+    "confidence": 0.85
+   },
+   {
+    "src": "酒翁",
+    "relation": "打趣",
+    "dst": "曲娘",
+    "evidence": "不知后面会不会又有个小娘子来",
+    "confidence": 0.8
+   },
+   {
+    "src": "酒诗人",
+    "relation": "盛赞",
+    "dst": "郎官清",
+    "evidence": "这郎官清还是此处最正宗",
+    "confidence": 0.85
+   },
+   {
+    "src": "曲娘",
+    "relation": "思念",
+    "dst": "斑纹马",
+    "evidence": "你们要是看见了，可要跟我说一声",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "c5be06801f0d84a73eb4b3f9": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [
+     "小九"
+    ],
+    "desc": "新晋老板娘"
+   },
+   {
+    "name": "道士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "路之指引"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "排忧解难"
+   },
+   {
+    "name": "沛城",
+    "type": "地点",
+    "aliases": [],
+    "desc": "朔日夜市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "践行",
+    "dst": "祥瑞",
+    "evidence": "去做祥瑞要做的事",
+    "confidence": 0.9
+   },
+   {
+    "src": "曲娘",
+    "relation": "依循",
+    "dst": "道士",
+    "evidence": "依照着道士的话",
+    "confidence": 0.85
+   },
+   {
+    "src": "曲娘",
+    "relation": "守护",
+    "dst": "沛城",
+    "evidence": "还有许多心愿要被完满",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "3473734651b50c37057ed696": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "寻杖与玉佩的鸟"
+   },
+   {
+    "name": "里正",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问询的官者"
+   },
+   {
+    "name": "骨杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "羽骨所制"
+   },
+   {
+    "name": "玉佩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随身之物"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "随心念施术"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "随处可见之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天",
+    "relation": "报失",
+    "dst": "里正",
+    "evidence": "此番入城是为寻两样随身物件",
+    "confidence": 0.95
+   },
+   {
+    "src": "里正",
+    "relation": "问询",
+    "dst": "葛天",
+    "evidence": "需得您多费些工夫，略为叙说其来历",
+    "confidence": 0.95
+   },
+   {
+    "src": "葛天",
+    "relation": "绘制",
+    "dst": "骨杖",
+    "evidence": "与我随身的骨杖及玉佩一般无二",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "轻看",
+    "dst": "骨杖",
+    "evidence": "只是从身边取用的寻常物件",
+    "confidence": 0.8
+   },
+   {
+    "src": "里正",
+    "relation": "警惕",
+    "dst": "骨杖",
+    "evidence": "恐怕会遇着有心人藏匿、偷占",
+    "confidence": 0.85
+   },
+   {
+    "src": "里正",
+    "relation": "许诺",
+    "dst": "葛天",
+    "evidence": "我们必定将其寻回，原样奉还",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "质疑",
+    "dst": "里正",
+    "evidence": "骨杖是否“更为重要”",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "1f041fe44338d54641ebe4af": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "忆断桥者"
+   },
+   {
+    "name": "里正",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻失踪者"
+   },
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "消失的娘子"
+   },
+   {
+    "name": "许娘子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失踪的娘子"
+   },
+   {
+    "name": "断桥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "桥下白骨"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "红裙青衫之喻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "里正",
+    "relation": "寻人",
+    "dst": "曲娘",
+    "evidence": "城中有一位酒坊娘子不见踪影",
+    "confidence": 0.85
+   },
+   {
+    "src": "里正",
+    "relation": "寻人",
+    "dst": "许娘子",
+    "evidence": "您入城前，是否曾在周遭见过着红裙、青衫的姑娘？",
+    "confidence": 0.8
+   },
+   {
+    "src": "葛天",
+    "relation": "忆及",
+    "dst": "断桥",
+    "evidence": "桥下许多白骨，皆是想要跃过断口的人与动物所留",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "否认",
+    "dst": "里正",
+    "evidence": "你要寻的二人，没有理由，也绝无可能跃过桥去",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "记起",
+    "dst": "曲娘",
+    "evidence": "——曲娘呢？她也过去了",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "存疑",
+    "dst": "断桥",
+    "evidence": "疑虑仍旧像一阵令人不适的细小气流",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "efc59dbae112173991571087": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "直陈者"
+   },
+   {
+    "name": "里正",
+    "type": "角色",
+    "aliases": [],
+    "desc": "允诺交待者"
+   },
+   {
+    "name": "骨杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不可失去"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天",
+    "relation": "警示",
+    "dst": "里正",
+    "evidence": "这更像礼貌的警示",
+    "confidence": 0.85
+   },
+   {
+    "src": "里正",
+    "relation": "应承",
+    "dst": "葛天",
+    "evidence": "我定会给出交待",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "质问",
+    "dst": "里正",
+    "evidence": "你可有假借他人身份？",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "换取",
+    "dst": "骨杖",
+    "evidence": "希望你听完能将它归还给我",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "76c4dc9c984b5915bd48d102": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "不愿下山者"
+   },
+   {
+    "name": "葛天族人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意下山者"
+   },
+   {
+    "name": "历法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "山下人的规则"
+   },
+   {
+    "name": "槐树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "族栖之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天族人",
+    "relation": "辞行",
+    "dst": "葛天",
+    "evidence": "我的书本和乐器便托给你了",
+    "confidence": 0.95
+   },
+   {
+    "src": "葛天",
+    "relation": "受托",
+    "dst": "葛天族人",
+    "evidence": "得麻烦你照料大家的巢",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天族人",
+    "relation": "习得",
+    "dst": "历法",
+    "evidence": "他们称之为“历法”",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "留守",
+    "dst": "槐树",
+    "evidence": "我只是……寻不到应当如此的缘由",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天族人",
+    "relation": "预言",
+    "dst": "葛天",
+    "evidence": "我想，总有一天，你会动身下山",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "身处",
+    "dst": "槐树",
+    "evidence": "你不愿下山，是因为不舍这片土地？",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "c953b711833c037da0c14abd": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "代拾骸骨者"
+   },
+   {
+    "name": "拾骨人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离职的职责"
+   },
+   {
+    "name": "葛天族人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "逝去的同族"
+   },
+   {
+    "name": "祠堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "遗骸归处"
+   },
+   {
+    "name": "槐树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "长青之树"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拾骨人",
+    "relation": "交代",
+    "dst": "葛天",
+    "evidence": "为族人收敛骨骸的职责最后也只能落到你身上",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "代劳",
+    "dst": "拾骨人",
+    "evidence": "我可为他代劳",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "收取",
+    "dst": "葛天族人",
+    "evidence": "前往同族最后停留的方向",
+    "confidence": 0.85
+   },
+   {
+    "src": "葛天",
+    "relation": "安放",
+    "dst": "祠堂",
+    "evidence": "我会把这些家伙都送入族中祠堂",
+    "confidence": 0.8
+   },
+   {
+    "src": "葛天",
+    "relation": "独存",
+    "dst": "槐树",
+    "evidence": "唯独鸟儿们停驻的槐树兀自舒展着枝叶",
+    "confidence": 0.8
+   },
+   {
+    "src": "葛天",
+    "relation": "超然",
+    "dst": "葛天族人",
+    "evidence": "他人的因果，又与我何干呢",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "ffc583e33e4302eb55c53fa6": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "问骨无答者"
+   },
+   {
+    "name": "葛天族人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已成腐骨"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "对话白骨之术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天",
+    "relation": "叩问",
+    "dst": "葛天族人",
+    "evidence": "你们到山下去，所欲为何？",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "弃用",
+    "dst": "神秘术",
+    "evidence": "他并未使用能与骨头对话的神秘术",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "自语",
+    "dst": "葛天族人",
+    "evidence": "生则尧、舜，死则腐骨",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "585b0a1b5901dc42078ab2df": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "吐露骨杖来历"
+   },
+   {
+    "name": "里正",
+    "type": "角色",
+    "aliases": [],
+    "desc": "实为职员伪装"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [
+     "那家伙",
+     "职员",
+     "列昂尼德"
+    ],
+    "desc": "基金会职员"
+   },
+   {
+    "name": "骨杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "羽骨雕成"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "圣诺夫基金会"
+    ],
+    "desc": "俄罗斯分部"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被援助对象"
+   },
+   {
+    "name": "下诺夫格罗德",
+    "type": "地点",
+    "aliases": [],
+    "desc": "骨雕之乡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天",
+    "relation": "吐露",
+    "dst": "骨杖",
+    "evidence": "是取羽翼上的骨节所制",
+    "confidence": 0.95
+   },
+   {
+    "src": "葛天",
+    "relation": "研习",
+    "dst": "下诺夫格罗德",
+    "evidence": "我特意研习过山下人的雕刻技术",
+    "confidence": 0.8
+   },
+   {
+    "src": "里正",
+    "relation": "化身",
+    "dst": "命名日",
+    "evidence": "老者的轮廓就像水中化开的一滴墨那般消散",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "供职",
+    "dst": "圣洛夫基金会",
+    "evidence": "我供职于圣诺夫基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "援助",
+    "dst": "神秘学家",
+    "evidence": "为他们提供必要援助的庞大组织",
+    "confidence": 0.9
+   },
+   {
+    "src": "命名日",
+    "relation": "误捕",
+    "dst": "葛天",
+    "evidence": "谁知道竟误打误撞地碰着了您",
+    "confidence": 0.9
+   },
+   {
+    "src": "命名日",
+    "relation": "代管",
+    "dst": "骨杖",
+    "evidence": "将您随身的物件取走，暂时在分部保管了起来",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "28e4049565fc40fbc57bb5e8": {
+  "entities": [
+   {
+    "name": "葛天",
+    "type": "角色",
+    "aliases": [
+     "燕平"
+    ],
+    "desc": "愿赔偿者"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [
+     "列昂尼德"
+    ],
+    "desc": "释疑者"
+   },
+   {
+    "name": "利齿子儿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "通行货币"
+   },
+   {
+    "name": "骨杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曾亮起"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "圣诺夫基金会"
+    ],
+    "desc": "分部所在"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "通译之因"
+   }
+  ],
+  "relations": [
+   {
+    "src": "葛天",
+    "relation": "赔偿",
+    "dst": "命名日",
+    "evidence": "是我误食了有主的粮食，理应赔偿",
+    "confidence": 0.9
+   },
+   {
+    "src": "命名日",
+    "relation": "解释",
+    "dst": "利齿子儿",
+    "evidence": "通行的货币，神秘学家们大多都用这个",
+    "confidence": 0.9
+   },
+   {
+    "src": "葛天",
+    "relation": "认知",
+    "dst": "利齿子儿",
+    "evidence": "倒是与我曾见过的铜钱模样类似",
+    "confidence": 0.85
+   },
+   {
+    "src": "骨杖",
+    "relation": "发功",
+    "dst": "神秘术",
+    "evidence": "您的骨杖突然亮起",
+    "confidence": 0.85
+   },
+   {
+    "src": "命名日",
+    "relation": "验证",
+    "dst": "神秘术",
+    "evidence": "是否是您所施展的神秘术的作用",
+    "confidence": 0.8
+   },
+   {
+    "src": "命名日",
+    "relation": "安置",
+    "dst": "葛天",
+    "evidence": "我领您找一处合适的房间坐下",
+    "confidence": 0.85
+   }
+  ]
+ }
+}

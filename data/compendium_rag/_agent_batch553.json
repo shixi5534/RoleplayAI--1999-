@@ -1,0 +1,862 @@
+{
+ "3d35ec26a3c76d0dbd65b585": {
+  "entities": [
+   {
+    "name": "类聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从破碎之躯涌出的记忆载体"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "身体崩解的亡者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "牺牲算力换取密码的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接入梦游装置的舞伶"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被中断连接的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "猜测其共享算力的研究者"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "过载倒地的双子"
+   },
+   {
+    "name": "能量防护网",
+    "type": "物品",
+    "aliases": [],
+    "desc": "卵形的临时安全区"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潜入梦境的技术"
+   },
+   {
+    "name": "神经毒素解毒剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随密码一同现身的配方"
+   },
+   {
+    "name": "自毁程序",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被终止的毁灭进程"
+   },
+   {
+    "name": "八音盒枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奏出乐声的改装手枪"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揣度机器意志的治疗师"
+   }
+  ],
+  "relations": [
+   {
+    "src": "类聚合物",
+    "relation": "涌出",
+    "dst": "马克西姆",
+    "evidence": "类聚合物的物质源源不断地从马克西姆破碎的身体中喷涌而出",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "撑开",
+    "dst": "能量防护网",
+    "evidence": "左伶展开一张卵形的能量防护网",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "走向",
+    "dst": "马克西姆",
+    "evidence": "钢铁向马克西姆走去，但越靠近马克西姆，越寸步难行",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "通报",
+    "dst": "维尔汀",
+    "evidence": "我们已经清理了大部分具有威胁的失控机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "接入",
+    "dst": "人工梦游",
+    "evidence": "另一半机器果断地将人工梦游装置接入了自己的身体",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "推断",
+    "dst": "双生舞伶",
+    "evidence": "总之她们应该正在共享计算能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "报出",
+    "dst": "神经毒素解毒剂",
+    "evidence": "这是……密码和……解毒剂的成分",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "中止",
+    "dst": "自毁程序",
+    "evidence": "自毁程序已停止",
+    "confidence": 0.95
+   },
+   {
+    "src": "八音盒枪",
+    "relation": "唤醒",
+    "dst": "左伶",
+    "evidence": "几乎瘫倒的机器人在音乐声中直起身来",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "揣度",
+    "dst": "左伶",
+    "evidence": "她能加入人工梦游，是否说明她原本就拥有自己的意志",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8b1cb0329a50f9b3c1bfdac2": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问梦之可能者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自问能否有梦的舞伶"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力主机器人有情的军人"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "被担心怪罪的博士"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拿来作吵架对象的同伴"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦境所依附的技术"
+   },
+   {
+    "name": "灵薄域",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦中曾至的意识空间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "憧憬",
+    "dst": "人工梦游",
+    "evidence": "我会有梦吗？在那个……灵薄域……人工梦游中",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "神往",
+    "dst": "灵薄域",
+    "evidence": "在那个……灵薄域……人工梦游中",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "揣度",
+    "dst": "人工梦游",
+    "evidence": "那她甚至可以做梦",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "断言",
+    "dst": "左伶",
+    "evidence": "我觉得，机器人大概也会做梦",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "念叨",
+    "dst": "手套查尔斯",
+    "evidence": "否则我天天和查尔斯吵架算什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "打趣",
+    "dst": "谢切诺夫",
+    "evidence": "希望谢切诺夫博士不要介意我们弄坏了他的贴身保镖",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5cfed1bf4a565013c647fb70": {
+  "entities": [
+   {
+    "name": "切洛梅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被喜庆点装的飞行之城"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将正式开启的系统"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问安全性的治疗师"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报善后情况的研究者"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重获新身的双子"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "婉拒挽留的访客"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "主导庆典的科学家"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被问及下落的当事人"
+   },
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "遭封锁的案发之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "切洛梅",
+    "relation": "迎来",
+    "dst": "大集体2.0",
+    "evidence": "切洛梅被喜庆装点",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "确认",
+    "dst": "X",
+    "evidence": "所有幸存的科学家都康复了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "封锁",
+    "dst": "聚合物展览馆",
+    "evidence": "聚合物展览馆也被封锁起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "关切",
+    "dst": "双生舞伶",
+    "evidence": "双生舞伶怎么样了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "转述",
+    "dst": "双生舞伶",
+    "evidence": "谢切诺夫博士为她们做了一副新的身体",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "询问",
+    "dst": "马克西姆",
+    "evidence": "马克西姆呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "致谢",
+    "dst": "维尔汀",
+    "evidence": "多亏了你们，我们才能在损失最小的情况下解决这次危机",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "招揽",
+    "dst": "维尔汀",
+    "evidence": "如果你们有想追随的导师，我可以为你们写一封推荐信",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "婉拒",
+    "dst": "谢切诺夫",
+    "evidence": "我们没办法留在这里太久",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "质疑",
+    "dst": "大集体2.0",
+    "evidence": "似乎并没有您说得那样安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "完善",
+    "dst": "大集体2.0",
+    "evidence": "科学家们正在着手修补马克西姆利用过的所有系统漏洞",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "46e96a2b1e471ee590a0ca40": {
+  "entities": [
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "匆匆赶赴演讲的主人"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被妥善安置的亡者"
+   },
+   {
+    "name": "莫洛托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与谢意见不合的政客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告退的访客"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "河边取饮的军人"
+   },
+   {
+    "name": "鸨式机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "悬停递饮的机器人"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "演讲后正式开启的系统"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鸣枪放彩的研究者"
+   },
+   {
+    "name": "八音盒枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "改装成彩炮的手枪"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报出曲名的机械同伴"
+   },
+   {
+    "name": "《花之圆舞曲》",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令机器感动的圆舞曲"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揣摩曲意者"
+   },
+   {
+    "name": "烈士遗孤方队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "纪念前人的游行队列"
+   }
+  ],
+  "relations": [
+   {
+    "src": "谢切诺夫",
+    "relation": "安置",
+    "dst": "马克西姆",
+    "evidence": "马克西姆已经被妥善安置",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "迁怒",
+    "dst": "莫洛托夫",
+    "evidence": "莫洛托夫与我的意见向来不合",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "告退",
+    "dst": "谢切诺夫",
+    "evidence": "那我们就不打扰您了",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "取饮",
+    "dst": "鸨式机器人",
+    "evidence": "的腹腔中接过一杯汽水",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "预告",
+    "dst": "大集体2.0",
+    "evidence": "就会开始演讲，然后正式开启",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "鸣枪",
+    "dst": "八音盒枪",
+    "evidence": "取而代之的是飞舞的彩带，音乐也随之喷涌而出",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "请教",
+    "dst": "X",
+    "evidence": "可我怎么都弄不懂你这是怎么改装的",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "道出",
+    "dst": "《花之圆舞曲》",
+    "evidence": "《花之圆舞曲》，少校",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "揣摩",
+    "dst": "《花之圆舞曲》",
+    "evidence": "我一直在想，这首歌对她的意义是什么呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "探问",
+    "dst": "烈士遗孤方队",
+    "evidence": "这是什么队列",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "释读",
+    "dst": "烈士遗孤方队",
+    "evidence": "横幅上写的是“烈士遗孤方队”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "716ed841900c003196532e66": {
+  "entities": [
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忆曲而不自知的军人"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与P-3斗嘴的机械同伴"
+   },
+   {
+    "name": "《花之圆舞曲》",
+    "type": "概念",
+    "aliases": [],
+    "desc": "牵动P-3记忆的曲子"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "趁斗嘴脱身的研究者"
+   },
+   {
+    "name": "庆典上的小女孩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指认气球的孩子"
+   },
+   {
+    "name": "小女孩的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "答以未来的中年女性"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒备礼的访客"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "被惦记的旧上司"
+   }
+  ],
+  "relations": [
+   {
+    "src": "手套查尔斯",
+    "relation": "打趣",
+    "dst": "P-3",
+    "evidence": "那一定是对方选的",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "追忆",
+    "dst": "《花之圆舞曲》",
+    "evidence": "它肯定有什么特殊的意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "脱身",
+    "dst": "维尔汀",
+    "evidence": "悄悄从P-3的钳制下溜走，回到同伴身边",
+    "confidence": 0.95
+   },
+   {
+    "src": "庆典上的小女孩",
+    "relation": "寻找",
+    "dst": "小女孩的母亲",
+    "evidence": "里面也有我的气球",
+    "confidence": 0.95
+   },
+   {
+    "src": "庆典上的小女孩",
+    "relation": "追问",
+    "dst": "小女孩的母亲",
+    "evidence": "它们会飞去哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "提醒",
+    "dst": "露西",
+    "evidence": "你想好要给露西女士带什么礼物了吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ee1cfcaf4aab60ea58bacfec": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "乐于试验的研究员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归档报告的访客"
+   },
+   {
+    "name": "啁啾表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "录音表的意外产物"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "谈人道的前上司"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持全套检查的治疗师"
+   },
+   {
+    "name": "戈德堡机械",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被举作类比的繁复机械"
+   },
+   {
+    "name": "蝴蝶效应",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被并举的效应之说"
+   },
+   {
+    "name": "氢电池",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从彼端带回的器件"
+   },
+   {
+    "name": "全景观测空间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "氢电池原属的观测空间"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代办观光身份者"
+   },
+   {
+    "name": "人道主义",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被置于首位的原则"
+   },
+   {
+    "name": "切洛梅康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "接收检查之地"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "归档的实验主题"
+   }
+  ],
+  "relations": [
+   {
+    "src": "氢电池",
+    "relation": "源自",
+    "dst": "全景观测空间",
+    "evidence": "这就是“全景观测空间”中的氢电池吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "氢电池",
+    "relation": "变换",
+    "dst": "啁啾表",
+    "evidence": "回到这里后就变成了啁啾表",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "说明",
+    "dst": "啁啾表",
+    "evidence": "不，这只是一只有录音功能的表",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "称奇",
+    "dst": "蝴蝶效应",
+    "evidence": "这也是戈德堡机械与蝴蝶效应的魅力之一",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "类比",
+    "dst": "戈德堡机械",
+    "evidence": "输入和输出差别巨大",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "代办",
+    "dst": "维尔汀",
+    "evidence": "那么我会为几位申请正式的观光客身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "担责",
+    "dst": "X",
+    "evidence": "作为支持他行动的前上司，我也应该负起一些责任",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "秉持",
+    "dst": "人道主义",
+    "evidence": "非特殊情况下，人道主义总是在第一位的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "押送",
+    "dst": "切洛梅康复中心",
+    "evidence": "我先把X押送到康复中心",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "感佩",
+    "dst": "维尔汀",
+    "evidence": "我已经阅读了维尔汀他们的探险报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "整理",
+    "dst": "聚合物",
+    "evidence": "收拾好关于“聚合物”的各项实验报告",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cd132679289761293ec37961": {
+  "entities": [
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以进化论作比者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摘下面具的思考者"
+   },
+   {
+    "name": "进化论",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被引为类比的理论"
+   },
+   {
+    "name": "人道主义",
+    "type": "概念",
+    "aliases": [],
+    "desc": "面具所本的准则"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "比方",
+    "dst": "进化论",
+    "evidence": "就像是进化论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "超越",
+    "dst": "进化论",
+    "evidence": "由智慧与思考引发的进步早就超越了自然选择的理论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "外化",
+    "dst": "人道主义",
+    "evidence": "出于人道主义而制造的面容",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

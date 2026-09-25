@@ -1,0 +1,703 @@
+{
+  "generated_at": "2026-09-17 13:09:37",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "degraded": false
+  },
+  "counts": {
+    "items": 30,
+    "pass": 12,
+    "fail": 18,
+    "fail_seedless": 2,
+    "fail_seeds_no_truth": 6,
+    "fail_seeds_has_truth": 10
+  },
+  "pass_rate_by_seed_quality": {
+    "has_truth": {
+      "n": 20,
+      "pass": 10,
+      "pass_rate": 0.5
+    },
+    "no_truth": {
+      "n": 8,
+      "pass": 2,
+      "pass_rate": 0.25
+    },
+    "seedless": {
+      "n": 2,
+      "pass": 0,
+      "pass_rate": 0.0
+    }
+  },
+  "seed_path_distribution": {
+    "has_exact": 28,
+    "none": 2
+  },
+  "top_wrong_seed_names": [
+    [
+      "洞穴",
+      4
+    ],
+    [
+      "海盗",
+      1
+    ],
+    [
+      "乘客",
+      1
+    ],
+    [
+      "船只",
+      1
+    ],
+    [
+      "维尔汀",
+      1
+    ],
+    [
+      "灯塔",
+      1
+    ],
+    [
+      "钥匙",
+      1
+    ],
+    [
+      "档案",
+      1
+    ]
+  ],
+  "per_case": [
+    {
+      "id": "R001",
+      "q": "薇洛的真名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 185,
+      "seeds": [
+        {
+          "eid": "e_ca70918e5246",
+          "name": "薇洛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "q": "洞穴的囚徒篇中被称作 standkeeper 的女性是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "q": "洞穴的囚徒篇里海盗船上的歌手是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 56,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_3a9fc2fd105b",
+          "name": "海盗",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "q": "笃笃骨的真名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 164,
+      "seeds": [
+        {
+          "eid": "e_ca70918e5246",
+          "name": "笃笃骨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 436,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R006",
+      "q": "洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 14,
+      "seeds": [
+        {
+          "eid": "e_0c0da6ec9840",
+          "name": "保利娜",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R007",
+      "q": "洞穴的囚徒篇里的滚鳄书店英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 50,
+      "seeds": [
+        {
+          "eid": "e_5dc4ae05a713",
+          "name": "滚鳄书店",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R008",
+      "q": "洞穴的囚徒篇里名为 Zero 的角色对应数字几？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 24,
+      "seeds": [
+        {
+          "eid": "e_aa8c41330509",
+          "name": "zero",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R009",
+      "q": "洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 16,
+      "seeds": [
+        {
+          "eid": "e_341041c2a675",
+          "name": "牙仙",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_64f85f7ea7c8",
+          "name": "乘客",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R010",
+      "q": "洞穴的囚徒篇里的努玛是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 216,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_c41c64e4460e",
+          "name": "努玛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R011",
+      "q": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_64f85f7ea7c8",
+          "name": "乘客",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R012",
+      "q": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_68d0cb4cc747",
+          "name": "苏芙比",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_5100ff7685de",
+          "name": "扎内塔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R013",
+      "q": "洞穴的囚徒篇中与管理船只日常的 standkeeper 对话的是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 18,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_f6496012a44b",
+          "name": "船只",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R014",
+      "q": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 15,
+      "seeds": [
+        {
+          "eid": "e_f0874a93c76b",
+          "name": "shamane",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R015",
+      "q": "在洞穴的囚徒篇的航行里，出资买下摇滚苹果号、随身携带药箱的贵族小姐是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 508,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b38d961e7096",
+          "name": "苹果",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_82b78f7fa350",
+          "name": "小姐",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R016",
+      "q": "在洞穴的囚徒篇的开场里，向维尔汀递交钥匙、请她整理档案的管家是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 44,
+      "seeds": [
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R017",
+      "q": "伦敦十字街的雾中女巫是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 74,
+      "seeds": [
+        {
+          "eid": "e_fa712d87e828",
+          "name": "十字街",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R018",
+      "q": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 19,
+      "seeds": [
+        {
+          "eid": "e_f63cea667697",
+          "name": "r(角色名)",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_0da838b043cd",
+          "name": "x(角色)",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_40bfb85e41e1",
+          "name": "将神秘术咒语结合人类的科学技术所研发的产物",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R019",
+      "q": "既管理灯塔又保管档案钥匙的女性是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": false,
+      "n_truth_entities": 44,
+      "seeds": [
+        {
+          "eid": "e_a868cfdf1858",
+          "name": "灯塔",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_187e6e6d8bb4",
+          "name": "钥匙",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_ebfb55f4432b",
+          "name": "档案",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R020",
+      "q": "以“雾女士”著称的伦敦女巫是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 272,
+      "seeds": [
+        {
+          "eid": "e_18b3f065ec7a",
+          "name": "雾女士",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R021",
+      "q": "卡卡尼亚的本名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 219,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R022",
+      "q": "维也纳篇与卡卡尼亚对峙决斗的医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 98,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R023",
+      "q": "海因里希最后被谁杀死？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R024",
+      "q": "今夜星光灿烂篇中红极一时的维也纳女演员是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 193,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R025",
+      "q": "今夜星光灿烂篇里的年轻调查员马库斯的英文名是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 88,
+      "seeds": [
+        {
+          "eid": "e_c1a6ec92fe30",
+          "name": "马库斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_165ce8e71503",
+          "name": "调查员",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R026",
+      "q": "特奥菲尔的英文名是什么？（维也纳篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 64,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R027",
+      "q": "以电击治疗骗财、与卡卡尼亚对峙的医生是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 40,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R028",
+      "q": "格蕾塔·霍夫曼的英文名是什么？（今夜星光灿烂篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 153,
+      "seeds": [
+        {
+          "eid": "e_1adc00aaeebe",
+          "name": "格蕾塔·霍夫曼",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R029",
+      "q": "今夜星光灿烂篇里出现的「血痛」概念英文叫什么？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 52,
+      "seeds": [
+        {
+          "eid": "e_19b662e2995f",
+          "name": "九万个为什么——神秘学种族篇",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_17474eb51a9d",
+          "name": "找到他发生了什么",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_65f32480ae94",
+          "name": "发生了什么",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R030",
+      "q": "多里斯医生的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 18,
+      "seeds": [
+        {
+          "eid": "e_90d8024a6153",
+          "name": "多里斯医生",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    }
+  ]
+}

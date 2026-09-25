@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>开匣 · 无名者 — RoleplayAI 标本档案</title>
+<meta name="description" content="RoleplayAI · 无名者：把「角色脑」（RAG 检索 + 情感编排 + Character Card V2 人设）与 Live2D 表现层用 Clean Architecture 重新组装的静态标本档案。" />
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+<!-- 字体：Bodoni Moda（展示/狄多尼高对比衬线）· Noto Serif SC（中文正文）· Azeret Mono（编号与仪表读数） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+SC:wght@200..900&display=swap">
+
+<script>document.documentElement.className = 'js';</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════════
+   开匣 · THE CASE OPENED — 视觉语言
+   ───────────────────────────────────────────────────────────────────────
+   场景     一间昏暗的昆虫学标本室。一盏灯。玻璃标本匣被打开了，
+            而标本站在它不该站的地方，回头看着你。
+   张力     分类的器械（编号 / 黄铜标尺 / 索引卡 / 系在线上的标本签 / 火漆印）
+            压在一个人身上——而人拒绝被钉住。
+   色彩     暖调近黑（房间） × 黄铜（器械） × 骨白（纸）
+            × 唯一的暴烈冷色：国际克莱因蓝 #002FA7
+            —— 那是她换过所有身份之后，唯一留下的颜色。
+   光       光标即光源。发条装置随「光源」生成人格，于是页面里
+            唯一的光，是你带进来的那一束。
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. 设计令牌 ───────────────────────────────────────────────────────── */
+:root{
+  /* 房间 / 匣体：暖调近黑，不是纯黑 */
+  --ink-0:#0A0806;
+  --ink-1:#100C09;
+  --ink-2:#17120D;
+  --ink-3:#1F1811;
+  --ink-4:#2A2118;
+
+  /* 纸与骨 */
+  --paper:#EDE4D2;
+  --paper-2:#C8BCA4;
+  --paper-3:#A89C88;   /* 次级正文，对比度 4.6:1 on --ink-0 */
+
+  /* 黄铜：结构、标尺、编号、框线 */
+  --brass:#B08A3C;
+  --brass-lit:#E3C170;
+  --brass-dim:rgba(176,138,60,.34);
+  --brass-hair:rgba(176,138,60,.18);
+
+  /* 克莱因蓝：唯一强调色。--klein 是颜料，--klein-lit 是点亮后的它 */
+  --klein:#002FA7;
+  --klein-lit:#4E7DFF;
+  --klein-glow:#7BA2FF;
+  --klein-tint:rgba(78,125,255,.12);
+
+  /* 灯光 */
+  --lamp:#E8A54B;
+
+  --danger:#C4593F;
+
+  /* 字体 */
+  --f-display:"Bodoni Moda","Noto Serif SC","Songti SC",Georgia,serif;
+  --f-body:"Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+  --f-mono:"Azeret Mono",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+
+  /* 尺度 */
+  --rail-w:76px;
+  --gut:clamp(20px,4.2vw,68px);
+  --maxw:1400px;
+
+  /* 动效 */
+  --e-out:cubic-bezier(.16,1,.3,1);
+  --e-in:cubic-bezier(.4,0,.2,1);
+  --d-micro:160ms;
+  --d-base:340ms;
+  --d-scene:720ms;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0}
+body{
+  background:var(--ink-0);
+  color:var(--paper);
+  font-family:var(--f-body);
+  font-size:16.5px;
+  line-height:1.72;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--klein);color:#fff}
+
+/* 焦点环：克莱因蓝，永远可见 */
+:focus-visible{
+  outline:2px solid var(--klein-lit);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ── 2. 环境层：房间、光柱、尘埃、颗粒 ─────────────────────────────────── */
+.env{position:fixed;inset:0;pointer-events:none;z-index:0}
+
+/* 房间底色：一盏灯在天花板偏右上 */
+.env-room{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 85% at 74% -8%, rgba(232,165,75,.20) 0%, rgba(232,165,75,.07) 26%, transparent 58%),
+    radial-gradient(90% 60% at 12% 108%, rgba(0,47,167,.20) 0%, transparent 62%),
+    linear-gradient(178deg,#120D09 0%,#0C0907 46%,#080605 100%);
+}
+/* 光柱：玻璃匣里斜切进来的一束，极慢地游移 */
+.env-shaft{
+  position:absolute;top:-32%;left:26%;
+  width:44vw;height:175vh;
+  transform:rotate(15deg);
+  transform-origin:50% 0;
+  background:linear-gradient(180deg,rgba(232,165,75,.13) 0%,rgba(232,165,75,.055) 34%,rgba(232,165,75,.02) 62%,transparent 84%);
+  filter:blur(22px);
+  animation:shaftDrift 26s var(--e-in) infinite alternate;
+}
+@keyframes shaftDrift{
+  from{transform:rotate(15deg) translateX(-2.2vw);opacity:.82}
+  to  {transform:rotate(13.1deg) translateX(2.6vw);opacity:1}
+}
+/* 尘埃：光柱里浮着的颗粒 */
+.env-motes{position:absolute;inset:0;overflow:hidden;opacity:.55}
+.mote{
+  position:absolute;
+  width:2px;height:2px;border-radius:50%;
+  background:rgba(232,196,120,.85);
+  box-shadow:0 0 6px 1px rgba(232,165,75,.5);
+  animation:moteRise linear infinite;
+}
+@keyframes moteRise{
+  0%  {transform:translate3d(0,12vh,0) scale(.6);opacity:0}
+  12% {opacity:.85}
+  80% {opacity:.5}
+  100%{transform:translate3d(var(--mx,20px),-92vh,0) scale(1.05);opacity:0}
+}
+/* 胶片颗粒：一处纹理，不铺满 */
+.env-grain{
+  position:absolute;inset:-40%;
+  opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* 玻璃上的雨丝：暴雨母题，只出现一次，作纹理不作母题 */
+.env-rain{
+  position:absolute;inset:0;
+  opacity:.1;
+  background-image:repeating-linear-gradient(101deg,transparent 0 3px,rgba(200,214,255,.5) 3px 3.6px,transparent 3.6px 9px);
+  mask-image:radial-gradient(70% 55% at 50% 40%,transparent 34%,#000 100%);
+  -webkit-mask-image:radial-gradient(70% 55% at 50% 40%,transparent 34%,#000 100%);
+}
+
+/* 光源 = 光标。两层：身后投下的暖光 + 覆在纸面上的掠射光 */
+.lamp,.lamp-2{
+  position:fixed;top:0;left:0;
+  width:1000px;height:1000px;margin:-500px 0 0 -500px;
+  border-radius:50%;pointer-events:none;
+  will-change:transform;opacity:0;transition:opacity .5s ease;
+}
+.lamp{
+  z-index:1;
+  background:radial-gradient(circle,rgba(232,165,75,.17) 0%,rgba(232,165,75,.07) 30%,rgba(232,165,75,.02) 50%,transparent 66%);
+  mix-blend-mode:screen;
+}
+.lamp-2{
+  z-index:45;
+  width:680px;height:680px;margin:-340px 0 0 -340px;
+  background:radial-gradient(circle,rgba(255,226,170,.10) 0%,rgba(255,226,170,.04) 34%,transparent 62%);
+  mix-blend-mode:soft-light;
+}
+body.lit .lamp{opacity:1}
+body.lit .lamp-2{opacity:.9}
+
+/* ── 3. 左侧黄铜导轨：章节 + 发条进度 + 上弦钥匙 ───────────────────────── */
+.rail{
+  position:fixed;top:0;left:0;bottom:0;
+  width:var(--rail-w);
+  z-index:60;
+  display:flex;flex-direction:column;align-items:center;
+  padding:16px 0 18px;
+  background:linear-gradient(180deg,rgba(23,18,13,.9),rgba(10,8,6,.94));
+  border-right:1px solid var(--brass-hair);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+}
+.rail-mark{
+  font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.34em;
+  color:var(--brass-lit);
+  writing-mode:vertical-rl;
+  padding:10px 0;
+  border-top:1px solid var(--brass-dim);
+  border-bottom:1px solid var(--brass-dim);
+}
+.rail-nav{
+  display:flex;flex-direction:column;gap:2px;
+  margin:18px 0;
+  flex:1;overflow:hidden;
+}
+.rail-nav a{
+  position:relative;
+  font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:.1em;
+  color:var(--paper-3);
+  width:44px;min-height:44px;
+  display:flex;align-items:center;justify-content:center;
+  transition:color var(--d-micro) var(--e-out),background var(--d-micro) var(--e-out);
+}
+.rail-nav a::before{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:0;height:0;border-radius:50%;
+  background:var(--klein-tint);
+  transition:width var(--d-base) var(--e-out),height var(--d-base) var(--e-out);
+}
+.rail-nav a:hover{color:var(--brass-lit)}
+.rail-nav a:hover::before{width:34px;height:34px}
+.rail-nav a.on{color:var(--klein-glow)}
+.rail-nav a.on::before{width:34px;height:34px;background:var(--klein-tint)}
+.rail-nav a:focus-visible{outline-offset:1px}
+/* 主发条：随阅读进度展开 */
+.rail-spring{
+  width:2px;flex:0 0 96px;
+  background:var(--brass-hair);
+  position:relative;overflow:hidden;border-radius:2px;
+}
+.rail-spring i{
+  position:absolute;left:0;top:0;width:100%;height:0%;
+  background:linear-gradient(180deg,var(--klein-glow),var(--klein));
+  box-shadow:0 0 10px rgba(78,125,255,.8);
+}
+/* 上弦钥匙：随进度旋转 */
+.rail-key{width:34px;height:34px;flex:0 0 auto;margin-top:12px;color:var(--brass)}
+.rail-key svg{width:100%;height:100%;transform-origin:50% 50%}
+.rail-pct{
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;
+  color:var(--brass);margin-top:7px;
+}
+
+/* ── 4. 版面骨架 ──────────────────────────────────────────────────────── */
+.page{position:relative;z-index:2;padding-left:var(--rail-w)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+/* 报头：细窄，随页滚走 */
+.masthead{
+  border-bottom:1px solid var(--brass-hair);
+  padding:12px 0;
+}
+.masthead .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.wordmark{
+  font-family:var(--f-mono);font-weight:600;font-size:12.5px;letter-spacing:.22em;
+  color:var(--paper);
+}
+.wordmark b{color:var(--brass-lit);font-weight:600}
+.masthead .spacer{flex:1}
+.mh-note{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.13em;color:var(--paper-3);
+}
+.mh-badge{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.13em;
+  color:var(--klein-glow);
+  border:1px solid rgba(78,125,255,.42);
+  background:var(--klein-tint);
+  padding:4px 10px;border-radius:2px;
+}
+/* 报头常驻主操作：无论视口多矮，第一屏一定有一个入口 */
+.mh-cta{min-height:44px;padding:0 18px;font-size:11.5px;margin-left:2px}
+
+/* 章节头 */
+.sec{position:relative;padding:clamp(72px,9.5vw,150px) 0}
+.sec-head{margin-bottom:clamp(34px,4.6vw,64px);position:relative}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--f-mono);font-size:11px;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--brass);
+  margin-bottom:18px;
+}
+.eyebrow::after{
+  content:"";flex:1;height:1px;max-width:200px;
+  background:linear-gradient(90deg,var(--brass-dim),transparent);
+}
+.eyebrow .num{color:var(--klein-glow)}
+.sec-title{
+  font-family:var(--f-display);
+  font-size:clamp(34px,5.4vw,68px);
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.028em;
+  margin:0 0 8px;
+  font-variation-settings:"opsz" 72;
+}
+.sec-title em{
+  font-style:italic;font-weight:400;color:var(--brass-lit);
+  display:block;font-size:.44em;letter-spacing:.02em;margin-top:.4em;
+  font-variation-settings:"opsz" 24;
+}
+.sec-lead{
+  max-width:60ch;font-size:17px;line-height:1.78;color:var(--paper-2);
+  margin:22px 0 0;
+}
+.sec-lead strong{color:var(--paper);font-weight:600}
+.sec-lead .k{color:var(--klein-glow);font-weight:600}
+.sec-lead .m{font-family:var(--f-mono);font-size:.9em;color:var(--brass-lit);letter-spacing:.02em}
+
+/* 黄铜细线 */
+.hair{height:1px;background:var(--brass-hair);border:0;margin:0}
+.hair-strong{height:1px;background:linear-gradient(90deg,var(--brass-dim),var(--brass-hair) 40%,transparent);border:0;margin:0}
+
+/* ── 5. 00 · 封面 ─────────────────────────────────────────────────────── */
+/* 立绘故意越出右边界被裁掉——用 clip（非 hidden）裁切，不产生滚动容器，
+   因此不会影响任何 sticky 定位，也不给文档增加横向滚动宽度 */
+.hero{padding:clamp(22px,3vw,44px) 0 clamp(56px,6.5vw,104px);position:relative;overflow-x:clip}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1.18fr);
+  gap:var(--gut);
+  align-items:end;
+}
+.hero-left{padding-bottom:clamp(18px,3vw,52px);position:relative;z-index:3}
+
+/* 标本签条：编号 / 采集 / 状态 */
+.spec-slip{
+  display:inline-grid;gap:6px;
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(180deg,rgba(31,24,17,.72),rgba(16,12,9,.6));
+  padding:13px 16px;border-radius:2px;
+  margin-bottom:clamp(18px,2.2vw,28px);
+  position:relative;
+}
+.spec-slip::after{ /* 火漆钉 */
+  content:"";position:absolute;top:-5px;left:-5px;
+  width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,var(--brass-lit),var(--brass) 62%,#5C451A);
+  box-shadow:0 1px 3px rgba(0,0,0,.7);
+}
+.spec-row{display:flex;gap:14px;align-items:baseline;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em}
+.spec-row dt{color:var(--paper-3);flex:0 0 auto;min-width:62px}
+.spec-row dd{margin:0;color:var(--paper)}
+.spec-row dd.blue{color:var(--klein-glow)}
+
+.display{margin:0;position:relative}
+.display-en{
+  display:block;
+  font-family:var(--f-display);
+  font-style:italic;font-weight:400;
+  font-size:clamp(19px,2.5vw,32px);
+  letter-spacing:.04em;
+  color:var(--brass-lit);
+  font-variation-settings:"opsz" 24;
+  margin-bottom:.24em;
+}
+.display-cn{
+  display:block;
+  font-family:var(--f-display);
+  font-weight:600;
+  font-size:clamp(56px,9.6vw,132px);
+  line-height:.88;
+  letter-spacing:-.045em;
+  margin:0;
+  /* 大字用骨白，让克莱因蓝只属于那些「她挑的东西」 */
+  background:linear-gradient(172deg,#FBF5E7 8%,var(--paper) 42%,#B9AA8E 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.display-rule{
+  display:flex;align-items:center;gap:12px;margin:14px 0 0;
+}
+.display-rule .bar{height:2px;width:clamp(48px,7vw,104px);background:var(--klein);box-shadow:0 0 14px rgba(0,47,167,.85)}
+.display-rule .txt{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--paper-3)}
+
+/* 题词：她的原声台词 */
+.epigraph{
+  margin:20px 0 0;padding:0 0 0 20px;
+  border-left:2px solid var(--klein);
+  max-width:44ch;
+}
+.epigraph q{
+  display:block;quotes:none;
+  font-size:clamp(16px,1.6vw,19px);line-height:1.76;
+  color:var(--paper);
+}
+.epigraph cite{
+  display:block;margin-top:10px;
+  font-family:var(--f-mono);font-style:normal;font-size:10.5px;letter-spacing:.13em;
+  color:var(--paper-3);
+}
+.epigraph cite b{color:var(--klein-glow);font-weight:500}
+
+.hero-sub{
+  margin:18px 0 0;max-width:60ch;
+  font-size:16px;line-height:1.74;color:var(--paper-2);
+}
+.hero-sub strong{color:var(--paper);font-weight:600}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:46px;padding:0 24px;
+  font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.15em;
+  border-radius:2px;
+  transition:transform var(--d-micro) var(--e-out),background var(--d-base) var(--e-out),
+             color var(--d-base) var(--e-out),border-color var(--d-base) var(--e-out),
+             box-shadow var(--d-base) var(--e-out);
+}
+.btn svg{width:15px;height:15px;flex:0 0 auto}
+.btn-primary{
+  background:var(--klein);color:#F2F5FF;
+  border:1px solid var(--klein);
+  box-shadow:0 8px 26px -10px rgba(0,47,167,.9),inset 0 1px 0 rgba(255,255,255,.16);
+}
+.btn-primary:hover{background:#0040DE;border-color:#0040DE;transform:translateY(-2px);
+  box-shadow:0 14px 34px -10px rgba(0,64,222,.95),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-ghost{
+  border:1px solid var(--brass-dim);color:var(--paper-2);
+}
+.btn-ghost:hover{border-color:var(--brass-lit);color:var(--brass-lit);transform:translateY(-2px)}
+
+/* ── 6. 标本匣：数字人立绘 ─────────────────────────────────────────────── */
+.case{
+  position:relative;margin:0;
+  align-self:end;
+  /* 越出右边界，被裁掉一部分——她不该被框在格子里 */
+  margin-right:calc(var(--gut) * -1.6);
+  min-height:clamp(340px,52vw,700px);
+}
+.case-inner{
+  position:relative;
+  height:clamp(360px,54vw,720px);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+/* 匣内底光 */
+.case-glow{
+  position:absolute;left:50%;bottom:2%;translate:-50% 0;
+  width:min(88%,620px);aspect-ratio:1/.72;
+  background:
+    radial-gradient(58% 62% at 50% 42%,rgba(232,165,75,.30),rgba(232,165,75,.10) 44%,transparent 72%),
+    radial-gradient(40% 46% at 50% 78%,rgba(0,47,167,.30),transparent 74%);
+  filter:blur(28px);
+  animation:breathe 9s var(--e-in) infinite alternate;
+}
+@keyframes breathe{from{opacity:.72;transform:translate(-50%,0) scale(.97)}to{opacity:1;transform:translate(-50%,-1.2%) scale(1.03)}}
+.case-figure{
+  position:relative;z-index:2;
+  height:100%;width:auto;max-width:none;
+  object-fit:contain;object-position:bottom center;
+  filter:
+    drop-shadow(0 0 46px rgba(232,165,75,.24))
+    drop-shadow(0 26px 42px rgba(0,0,0,.72))
+    saturate(.94) contrast(1.06);
+  animation:float 11s var(--e-in) infinite alternate,
+            heroRise 1.25s var(--e-out) .35s both;
+}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-13px)}}
+/* 底部融进暗处，避免生硬的切边 */
+.case-vignette{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:
+    linear-gradient(180deg,transparent 58%,rgba(10,8,6,.72) 88%,var(--ink-0) 100%),
+    linear-gradient(90deg,var(--ink-0) 0%,transparent 16%,transparent 84%,var(--ink-0) 100%);
+}
+/* 标本标尺：沿匣体左边竖着量的黄铜刻度 */
+.case-scale{
+  position:absolute;left:0;top:12%;bottom:8%;width:26px;z-index:4;
+  border-left:1px solid var(--brass-dim);
+  background-image:repeating-linear-gradient(180deg,var(--brass-dim) 0 1px,transparent 1px 14px);
+  background-size:9px 100%;background-repeat:no-repeat;background-position:left top;
+}
+.case-scale::after{
+  content:"578 mm";position:absolute;left:-1px;bottom:-30px;
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;color:var(--brass);
+  white-space:nowrap;
+}
+/* 挂在匣体上的标本签 */
+.case-tag{
+  position:absolute;right:4%;top:16%;z-index:5;
+  transform-origin:top center;
+  transform:rotate(4.5deg);
+  animation:tagSwing 7.5s var(--e-in) infinite alternate;
+}
+@keyframes tagSwing{from{transform:rotate(4.5deg)}to{transform:rotate(2deg)}}
+.case-tag .string{
+  width:1px;height:52px;margin:0 auto;
+  background:linear-gradient(180deg,transparent,var(--brass-dim));
+}
+.case-tag .card{
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(180deg,rgba(237,228,210,.96),rgba(214,203,181,.92));
+  color:#1A140C;
+  padding:11px 14px;border-radius:2px;
+  box-shadow:0 10px 26px -10px rgba(0,0,0,.85);
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.09em;line-height:1.7;
+  min-width:132px;
+}
+.case-tag .card b{display:block;font-size:12px;letter-spacing:.12em;margin-bottom:4px}
+.case-tag .card span{display:block;color:#5A4C36}
+.case-tag .card .blue{color:var(--klein);font-weight:600}
+/* 图片缺失时的兜底：一只线描飞蛾 */
+.case-fallback{display:none;width:min(74%,440px);color:var(--brass)}
+.case.failed .case-figure{display:none}
+.case.failed .case-fallback{display:block;position:relative;z-index:2}
+
+/* 首屏入场：一次编排好的序列，间隔 60–120ms */
+@keyframes heroRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.boot{animation:heroRise .9s var(--e-out) both}
+.b1{animation-delay:.08s}.b2{animation-delay:.18s}.b3{animation-delay:.3s}
+.b4{animation-delay:.42s}.b5{animation-delay:.54s}.b6{animation-delay:.66s}
+.rule-line{transform-origin:left center;animation:ruleDraw 1.05s var(--e-out) .5s both}
+
+/* ── 7. 数字标尺（首屏底部） ───────────────────────────────────────────── */
+.stat-rule{
+  margin-top:clamp(48px,6vw,86px);
+  border-top:1px solid var(--brass-dim);
+  border-bottom:1px solid var(--brass-hair);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat{
+  padding:22px 20px 20px;
+  border-right:1px solid var(--brass-hair);
+  position:relative;
+}
+.stat:last-child{border-right:0}
+.stat::before{ /* 刻度 */
+  content:"";position:absolute;top:-1px;left:0;width:1px;height:9px;background:var(--brass);
+}
+.stat .n{
+  font-family:var(--f-display);font-weight:600;
+  font-size:clamp(30px,3.5vw,46px);line-height:1;letter-spacing:-.03em;
+  color:var(--paper);
+  font-variation-settings:"opsz" 48;
+}
+.stat .n small{font-size:.44em;letter-spacing:.06em;color:var(--brass-lit);margin-left:4px}
+.stat .l{
+  margin-top:9px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.13em;
+  color:var(--paper-3);line-height:1.6;
+}
+.stat .l b{color:var(--paper-2);font-weight:500}
+
+/* ── 8. 01 · 标本卡：四个名字的标签扇 ─────────────────────────────────── */
+.names{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);
+  gap:clamp(30px,4.4vw,72px);align-items:start;
+}
+.fan{
+  position:relative;
+  min-height:clamp(400px,44vw,520px);
+  padding-top:12px;
+}
+.fan-string{
+  position:absolute;left:50%;top:0;width:1px;height:44px;
+  background:linear-gradient(180deg,transparent,var(--brass-dim));
+}
+.fan-hinge{
+  position:absolute;left:50%;top:42px;translate:-50% 0;
+  width:13px;height:13px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,var(--brass-lit),var(--brass) 58%,#4E3A14);
+  box-shadow:0 2px 6px rgba(0,0,0,.8),0 0 0 3px rgba(176,138,60,.1);
+  z-index:6;
+}
+.tag{
+  position:absolute;left:50%;top:56px;
+  width:min(92%,360px);
+  translate:-50% 0;
+  transform-origin:50% -14px;
+  text-align:left;
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(168deg,rgba(237,228,210,.97),rgba(206,194,171,.94));
+  color:#191309;
+  border-radius:2px;
+  padding:18px 20px 17px;
+  box-shadow:0 16px 34px -16px rgba(0,0,0,.92),0 2px 0 rgba(255,255,255,.3) inset;
+  transition:transform var(--d-scene) var(--e-out),box-shadow var(--d-base) var(--e-out),
+             border-color var(--d-base) var(--e-out),z-index 0s;
+  z-index:1;
+}
+/* 四张假身份：叠着，只露出签头 */
+.tag[data-i="0"]{transform:rotate(-7.2deg) translateY(0)}
+.tag[data-i="1"]{transform:rotate(-2.4deg) translateY(66px)}
+.tag[data-i="2"]{transform:rotate(2.6deg) translateY(132px)}
+.tag[data-i="3"]{transform:rotate(7.4deg) translateY(198px)}
+.tag .idx{
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.2em;color:#7A6949;
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+}
+.tag .idx i{font-style:normal;border:1px solid rgba(122,105,73,.4);padding:1px 5px;border-radius:2px}
+/* 这些是 <span>——必须是 block，否则 max-height 对行内元素无效，
+   折叠态会留下 113px 的空白，且上下 margin 全部失效 */
+.tag .cn{
+  display:block;
+  font-family:var(--f-display);font-weight:600;font-size:clamp(22px,2.4vw,30px);
+  letter-spacing:-.02em;line-height:1.12;margin:11px 0 2px;
+  font-variation-settings:"opsz" 32;
+}
+.tag .en{
+  display:block;
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.19em;color:#7A6949;text-transform:uppercase;
+}
+.tag .desc{
+  display:block;
+  margin:0;font-size:13.5px;line-height:1.66;color:#3E3427;
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height var(--d-scene) var(--e-out),opacity var(--d-base) var(--e-out),margin var(--d-base) var(--e-out);
+}
+.tag .desc .no{
+  display:block;margin-top:7px;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:#8A5A3C;
+}
+/* 展开：hover / focus / 触屏点击 */
+.tag:hover,.tag:focus-visible,.tag.open{
+  z-index:9;
+  transform:rotate(var(--tf,0deg)) translateY(var(--ty,0)) translateX(var(--tx,0)) scale(1.035);
+  box-shadow:0 30px 56px -18px rgba(0,0,0,.95),0 2px 0 rgba(255,255,255,.34) inset;
+  border-color:var(--brass-lit);
+}
+.tag:hover .desc,.tag:focus-visible .desc,.tag.open .desc{max-height:190px;opacity:1;margin-top:12px}
+.tag[data-i="0"]{--tf:-7.2deg;--ty:0;--tx:-13px}
+.tag[data-i="1"]{--tf:-2.4deg;--ty:66px;--tx:-4px}
+.tag[data-i="2"]{--tf:2.6deg;--ty:132px;--tx:4px}
+.tag[data-i="3"]{--tf:7.4deg;--ty:198px;--tx:13px}
+
+/* ── 9. 02 · 发条装置 ─────────────────────────────────────────────────── */
+.clockwork{position:relative;margin-top:8px}
+.shaft{
+  position:relative;
+  height:3px;margin:0 0 0 2px;
+  background:linear-gradient(90deg,var(--brass-dim),var(--brass) 12%,var(--brass) 88%,var(--brass-dim));
+  border-radius:3px;
+}
+.shaft i{
+  position:absolute;left:0;top:-1px;height:5px;width:0;
+  background:linear-gradient(90deg,transparent,var(--klein-glow));
+  box-shadow:0 0 16px 2px rgba(78,125,255,.85);
+  border-radius:3px;
+  transition:width .22s linear;
+}
+.stations{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:0;
+  margin-top:0;
+}
+.station{
+  position:relative;
+  padding:30px 16px 26px 0;
+  border-right:1px solid var(--brass-hair);
+  text-align:left;
+}
+.station:last-child{border-right:0}
+/* 工位节点：黄铜圆点，走到时点亮成克莱因蓝 */
+.station .dot{
+  position:absolute;left:0;top:-8px;
+  width:13px;height:13px;border-radius:50%;
+  background:var(--ink-2);
+  border:1px solid var(--brass-dim);
+  transition:background var(--d-base) var(--e-out),border-color var(--d-base) var(--e-out),
+             box-shadow var(--d-base) var(--e-out),transform var(--d-base) var(--e-out);
+}
+.station.live .dot{
+  background:var(--klein-lit);border-color:var(--klein-glow);
+  box-shadow:0 0 0 5px rgba(78,125,255,.14),0 0 18px 2px rgba(78,125,255,.85);
+  transform:scale(1.16);
+}
+.station .sn{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--brass);
+  display:block;margin-bottom:9px;
+}
+.station.live .sn{color:var(--klein-glow)}
+.station .st{
+  font-family:var(--f-display);font-weight:600;font-size:clamp(17px,1.7vw,22px);
+  letter-spacing:-.01em;margin:0 0 9px;line-height:1.2;
+  font-variation-settings:"opsz" 24;
+}
+.station .sd{margin:0;font-size:13px;line-height:1.68;color:var(--paper-3)}
+.station .sd b{color:var(--paper-2);font-weight:600}
+.loopback{
+  display:flex;align-items:center;gap:12px;justify-content:flex-end;
+  margin-top:16px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--paper-3);
+}
+.loopback .dash{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--brass-dim) 0 5px,transparent 5px 11px)}
+
+/* 齿轮组：随滚动咬合转动 */
+.gears{display:flex;align-items:center;gap:-10px;margin-top:clamp(30px,3.6vw,52px);flex-wrap:wrap}
+.gear{color:var(--brass);opacity:.5;flex:0 0 auto}
+.gear svg{display:block;transform-origin:50% 50%}
+.gear.g1{width:78px;height:78px}
+.gear.g2{width:52px;height:52px;margin-left:-16px;margin-bottom:24px;color:var(--klein-glow);opacity:.75}
+.gear.g3{width:110px;height:110px;margin-left:-14px}
+.gear-note{
+  margin-left:22px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.13em;
+  color:var(--paper-3);line-height:1.8;max-width:34ch;
+}
+.gear-note b{color:var(--brass-lit);font-weight:500}
+
+/* ── 10. 03 · 情绪光谱 ────────────────────────────────────────────────── */
+.spectrum{
+  display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);
+  gap:clamp(28px,3.6vw,60px);align-items:start;
+}
+.pins{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:1px;
+  background:var(--brass-hair);
+  border:1px solid var(--brass-hair);
+}
+.pin{
+  position:relative;
+  background:var(--ink-1);
+  padding:16px 12px 14px;
+  text-align:left;
+  display:flex;flex-direction:column;gap:7px;
+  min-height:106px;
+  transition:background var(--d-base) var(--e-out);
+}
+.pin:hover{background:var(--ink-3)}
+.pin::before{ /* 标本针 */
+  content:"";position:absolute;top:0;left:50%;translate:-50% 0;
+  width:1px;height:9px;background:var(--brass-dim);
+  transition:height var(--d-base) var(--e-out),background var(--d-base) var(--e-out);
+}
+.pin-head{
+  width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--brass-dim);
+  display:grid;place-items:center;
+  transition:border-color var(--d-base) var(--e-out),background var(--d-base) var(--e-out),
+             box-shadow var(--d-base) var(--e-out);
+}
+.pin-head i{width:8px;height:8px;border-radius:50%;background:var(--brass);display:block;
+  transition:background var(--d-base) var(--e-out),transform var(--d-base) var(--e-out)}
+.pin .pn{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--paper)}
+.pin .pe{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.12em;color:var(--paper-3)}
+.pin[aria-pressed="true"]{background:var(--ink-4)}
+.pin[aria-pressed="true"]::before{height:14px;background:var(--klein-glow)}
+.pin[aria-pressed="true"] .pin-head{
+  border-color:var(--klein-glow);background:var(--klein-tint);
+  box-shadow:0 0 0 4px rgba(78,125,255,.12),0 0 16px rgba(78,125,255,.6);
+}
+.pin[aria-pressed="true"] .pin-head i{background:var(--klein-glow);transform:scale(1.2)}
+
+/* 读数卡：选中情绪的完整规格 */
+.pin-readout{
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(180deg,rgba(31,24,17,.8),rgba(16,12,9,.66));
+  padding:24px 24px 22px;
+  position:sticky;top:24px;
+  border-radius:2px;
+}
+.ro-top{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
+.ro-cn{font-family:var(--f-display);font-weight:600;font-size:30px;letter-spacing:-.02em;
+  font-variation-settings:"opsz" 32}
+.ro-en{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--klein-glow);text-transform:uppercase}
+.ro-pri{margin-left:auto;font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;color:var(--brass)}
+.ro-pri b{color:var(--brass-lit)}
+.ro-grid{
+  margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--brass-hair);border:1px solid var(--brass-hair);
+}
+.ro-cell{background:var(--ink-1);padding:11px 13px}
+.ro-cell dt{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.15em;color:var(--paper-3);margin:0 0 5px}
+.ro-cell dd{margin:0;font-family:var(--f-mono);font-size:12.5px;color:var(--klein-glow);letter-spacing:.03em}
+.ro-strategy{
+  margin:20px 0 0;padding:16px 18px;
+  border-left:2px solid var(--klein);
+  background:rgba(0,47,167,.09);
+  font-size:14.5px;line-height:1.76;color:var(--paper);
+}
+.ro-strategy .cap{
+  display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;
+  color:var(--klein-glow);margin-bottom:8px;
+}
+
+/* ── 11. 04 · 原声档案 ────────────────────────────────────────────────── */
+.voice{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr);gap:clamp(30px,4vw,64px);align-items:start}
+.player{
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(180deg,rgba(23,18,13,.86),rgba(10,8,6,.9));
+  padding:clamp(20px,2.6vw,34px);
+  border-radius:2px;
+}
+.wave{
+  display:flex;align-items:center;gap:2px;
+  height:88px;margin-bottom:20px;
+}
+.wave i{
+  flex:1;background:var(--brass);border-radius:1px;
+  min-height:2px;
+  transition:background var(--d-micro) linear,opacity var(--d-micro) linear;
+  opacity:.5;
+}
+.wave i.played{background:var(--klein-glow);opacity:1}
+.sub-stage{min-height:112px;display:flex;flex-direction:column;justify-content:center;gap:9px}
+.sub-zh{
+  font-family:var(--f-display);font-weight:500;
+  font-size:clamp(17px,1.9vw,23px);line-height:1.5;letter-spacing:-.012em;
+  margin:0;font-variation-settings:"opsz" 28;
+}
+.sub-en{
+  font-family:var(--f-mono);font-size:12px;line-height:1.72;letter-spacing:.015em;
+  color:var(--paper-3);margin:0;
+}
+.player-bar{
+  display:flex;align-items:center;gap:16px;margin-top:20px;
+  padding-top:16px;border-top:1px solid var(--brass-hair);
+}
+.pbtn{
+  width:46px;height:46px;border-radius:50%;flex:0 0 auto;
+  border:1px solid var(--brass-dim);
+  display:grid;place-items:center;color:var(--brass-lit);
+  transition:border-color var(--d-base) var(--e-out),background var(--d-base) var(--e-out),
+             transform var(--d-micro) var(--e-out),color var(--d-base) var(--e-out);
+}
+.pbtn:hover{border-color:var(--klein-glow);background:var(--klein-tint);color:var(--klein-glow);transform:scale(1.05)}
+.pbtn svg{width:17px;height:17px}
+/* 视觉上是 3px 的细线，命中区高 32px（::before 画凹槽），兼顾手感与精度 */
+.track{
+  flex:1;height:32px;position:relative;cursor:pointer;
+  display:flex;align-items:center;
+}
+.track::before{
+  content:"";position:absolute;left:0;right:0;top:50%;translate:0 -50%;
+  height:3px;background:var(--brass-hair);border-radius:3px;
+}
+.track i{position:absolute;left:0;top:50%;translate:0 -50%;height:3px;width:0;background:var(--klein-lit);
+  box-shadow:0 0 10px rgba(78,125,255,.9);border-radius:3px}
+.tick{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.09em;color:var(--paper-3);
+  flex:0 0 auto;font-variant-numeric:tabular-nums;
+}
+.audio-note{
+  margin-top:12px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;
+  color:var(--danger);min-height:16px;
+}
+.clips{
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--brass-hair);border:1px solid var(--brass-hair);
+}
+.clip{
+  background:var(--ink-1);padding:14px 16px;text-align:left;
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  transition:background var(--d-base) var(--e-out);min-height:56px;
+}
+.clip:hover{background:var(--ink-3)}
+.clip[aria-current="true"]{background:var(--ink-4);box-shadow:inset 2px 0 0 var(--klein-glow)}
+.clip-id{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.11em;color:var(--brass);flex:0 0 auto}
+.clip[aria-current="true"] .clip-id{color:var(--klein-glow)}
+.clip-tx{font-size:14px;line-height:1.6;color:var(--paper-2);
+  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.clip[aria-current="true"] .clip-tx{color:var(--paper)}
+.clip-dur{font-family:var(--f-mono);font-size:10.5px;color:var(--paper-3);font-variant-numeric:tabular-nums}
+.voice-specs{
+  margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--brass-hair);border:1px solid var(--brass-hair);
+}
+.vs{background:var(--ink-1);padding:15px 16px}
+.vs dt{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.15em;color:var(--paper-3);margin:0 0 7px}
+.vs dd{margin:0;font-family:var(--f-display);font-weight:600;font-size:22px;letter-spacing:-.02em;
+  font-variation-settings:"opsz" 24}
+.vs dd small{display:block;font-family:var(--f-body);font-weight:400;font-size:12px;
+  letter-spacing:0;color:var(--paper-3);margin-top:5px;line-height:1.6}
+
+/* ── 12. 05 · 剧情图谱 ───────────────────────────────────────────────── */
+.graph-wrap{
+  display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:clamp(28px,3.6vw,58px);align-items:start;
+}
+.graph{
+  position:relative;
+  border:1px solid var(--brass-hair);
+  background:
+    radial-gradient(75% 75% at 50% 46%,rgba(0,47,167,.20),transparent 68%),
+    linear-gradient(180deg,rgba(10,8,6,.6),rgba(6,5,4,.9));
+  aspect-ratio:1/.82;
+  overflow:hidden;border-radius:2px;
+}
+.graph svg{position:absolute;inset:0;width:100%;height:100%}
+.graph .gn{fill:var(--brass);transition:fill var(--d-base) var(--e-out),r var(--d-base) var(--e-out)}
+.graph .ge{stroke:rgba(176,138,60,.3);stroke-width:.7;fill:none;
+  transition:stroke var(--d-base) var(--e-out),stroke-width var(--d-base) var(--e-out),opacity var(--d-base) var(--e-out)}
+.graph .gl{fill:var(--paper-3);font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;
+  transition:fill var(--d-base) var(--e-out)}
+.graph[data-armed="1"] .gn{opacity:.34}
+.graph[data-armed="1"] .ge{opacity:.2}
+.graph .hub.on{fill:var(--klein-glow)}
+.graph .arm.on{stroke:var(--klein-glow);stroke-width:1.4;opacity:1}
+.graph .gl.on{fill:var(--paper)}
+.graph-hint{
+  position:absolute;left:16px;bottom:14px;z-index:3;
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;color:var(--paper-3);
+}
+.graph-read{
+  position:absolute;right:16px;top:14px;z-index:3;text-align:right;
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;color:var(--brass-lit);
+}
+.graph-legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.lg{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.11em;
+  border:1px solid var(--brass-hair);color:var(--paper-3);
+  padding:4px 9px;border-radius:2px;min-height:26px;display:inline-flex;align-items:center;
+  transition:border-color var(--d-base) var(--e-out),color var(--d-base) var(--e-out);
+}
+.lg:hover,.lg[aria-pressed="true"]{border-color:var(--klein-glow);color:var(--klein-glow)}
+.graph-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brass-hair);border:1px solid var(--brass-hair)}
+.gs{background:var(--ink-1);padding:16px 15px}
+.gs dt{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;color:var(--paper-3);margin:0 0 6px}
+.gs dd{margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(22px,2.4vw,30px);
+  letter-spacing:-.03em;font-variation-settings:"opsz" 28}
+.gs dd span{font-size:.5em;color:var(--brass-lit);margin-left:3px;letter-spacing:.04em}
+
+/* ── 13. 06 · 接线台 ─────────────────────────────────────────────────── */
+.board{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.16fr);
+  gap:clamp(30px,4vw,66px);align-items:center;
+}
+.knife{
+  border:1px solid var(--brass-dim);
+  background:linear-gradient(180deg,rgba(31,24,17,.72),rgba(12,9,7,.72));
+  padding:clamp(24px,3vw,40px);
+  border-radius:2px;position:relative;
+}
+.knife-row{display:flex;align-items:center;gap:20px;margin-bottom:26px}
+.term{
+  flex:1;border:1px solid var(--brass-hair);background:var(--ink-0);
+  padding:14px 16px;border-radius:2px;position:relative;
+}
+.term::before{
+  content:"";position:absolute;top:50%;translate:0 -50%;
+  width:12px;height:12px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,var(--brass-lit),var(--brass) 60%,#3E2E10);
+  box-shadow:0 1px 4px rgba(0,0,0,.8);
+}
+.term.l::before{right:-6px}
+.term.r::before{left:-6px}
+.term .tt{font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-.01em;
+  font-variation-settings:"opsz" 24}
+.term .ts{font-family:var(--f-mono);font-size:10px;letter-spacing:.13em;color:var(--paper-3);margin-top:5px}
+.term.on{border-color:var(--klein-glow);box-shadow:0 0 0 1px rgba(78,125,255,.24),0 0 26px -6px rgba(78,125,255,.7)}
+.term.on .tt{color:var(--klein-glow)}
+/* 闸刀 */
+.blade{
+  flex:0 0 auto;width:70px;height:70px;position:relative;
+  display:grid;place-items:center;
+}
+.blade .lever{
+  position:absolute;left:50%;bottom:12px;
+  width:4px;height:40px;border-radius:4px;
+  background:linear-gradient(180deg,var(--brass-lit),var(--brass));
+  transform-origin:50% 100%;
+  transition:transform var(--d-scene) var(--e-out);
+  box-shadow:0 0 12px rgba(176,138,60,.5);
+}
+.blade .lever::after{
+  content:"";position:absolute;top:-7px;left:50%;translate:-50% 0;
+  width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#FBF3DE,var(--brass) 62%,#4E3A14);
+}
+body[data-route="cloud"] .blade .lever{transform:rotate(38deg)}
+body[data-route="local"] .blade .lever{transform:rotate(-38deg)}
+.blade .base{width:44px;height:5px;border-radius:3px;background:var(--brass-dim);position:absolute;bottom:9px}
+.route-read{
+  margin-top:6px;padding-top:20px;border-top:1px solid var(--brass-hair);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--brass-hair);
+  border:1px solid var(--brass-hair);
+}
+.rr{background:var(--ink-1);padding:13px 14px}
+.rr dt{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;color:var(--paper-3);margin:0 0 6px}
+.rr dd{margin:0;font-family:var(--f-mono);font-size:12px;color:var(--klein-glow);letter-spacing:.02em;word-break:break-all}
+.route-toggle{
+  display:inline-flex;border:1px solid var(--brass-dim);border-radius:2px;overflow:hidden;margin-top:22px;
+}
+.route-toggle button{
+  padding:12px 22px;min-height:46px;
+  font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;color:var(--paper-3);
+  transition:background var(--d-base) var(--e-out),color var(--d-base) var(--e-out);
+}
+.route-toggle button+button{border-left:1px solid var(--brass-dim)}
+.route-toggle button[aria-pressed="true"]{background:var(--klein);color:#EDF2FF}
+.promise{margin:26px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px}
+.promise li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.promise .mk{
+  width:22px;height:22px;border:1px solid var(--brass-dim);border-radius:50%;
+  display:grid;place-items:center;flex:0 0 auto;margin-top:3px;
+  font-family:var(--f-mono);font-size:10px;color:var(--brass-lit);
+}
+.promise .px{font-size:14.5px;line-height:1.72;color:var(--paper-2)}
+.promise .px b{color:var(--paper);font-weight:600}
+.promise .px code{
+  font-family:var(--f-mono);font-size:12px;color:var(--klein-glow);
+  background:var(--klein-tint);padding:1px 6px;border-radius:2px;
+}
+
+/* ── 14. 07 · 冷启动 ─────────────────────────────────────────────────── */
+.terminal{
+  border:1px solid var(--brass-dim);border-radius:2px;
+  background:linear-gradient(180deg,rgba(6,5,4,.94),rgba(12,9,7,.94));
+  overflow:hidden;
+}
+.term-head{
+  display:flex;align-items:center;gap:12px;padding:13px 18px;
+  border-bottom:1px solid var(--brass-hair);background:rgba(31,24,17,.5);
+}
+.term-head .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--brass-lit)}
+.term-head .dots{display:flex;gap:6px;margin-left:auto}
+.term-head .dots i{width:8px;height:8px;border-radius:50%;background:var(--brass-dim);display:block}
+.term-body{padding:20px 20px 24px;overflow-x:auto}
+.term-body pre{margin:0;font-family:var(--f-mono);font-size:12.5px;line-height:1.95;
+  white-space:pre;color:var(--paper-2)}
+.term-body .c{color:#6E6350}
+.term-body .p{color:var(--klein-glow)}
+.term-body .s{color:var(--brass-lit)}
+.surfaces{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:clamp(30px,3.6vw,52px);
+  background:var(--brass-hair);border:1px solid var(--brass-hair);
+}
+.surface{
+  background:var(--ink-1);padding:26px 22px 24px;position:relative;
+  transition:background var(--d-base) var(--e-out);
+}
+.surface:hover{background:var(--ink-3)}
+.surface .si{
+  width:34px;height:34px;border:1px solid var(--brass-dim);border-radius:2px;
+  display:grid;place-items:center;color:var(--brass-lit);margin-bottom:16px;
+}
+.surface .si svg{width:17px;height:17px}
+.surface h3{
+  font-family:var(--f-display);font-weight:600;font-size:20px;letter-spacing:-.01em;
+  margin:0 0 5px;font-variation-settings:"opsz" 24;
+}
+.surface .sen{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.18em;color:var(--brass);margin-bottom:12px}
+.surface p{margin:0;font-size:13.5px;line-height:1.7;color:var(--paper-3)}
+.surface .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.surface .tags span{
+  font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;color:var(--paper-3);
+  border:1px solid var(--brass-hair);padding:3px 7px;border-radius:2px;
+}
+
+/* 无 JS 时的降级说明（.reveal 只在 html.js 下才隐藏，因此正文始终可读） */
+.noscript-note{
+  margin:0;padding:13px var(--gut);
+  font-family:var(--f-mono);font-size:11.5px;line-height:1.7;letter-spacing:.05em;
+  color:var(--brass-lit);
+  background:rgba(176,138,60,.08);
+  border-bottom:1px solid var(--brass-hair);
+}
+
+/* ── 15. 版权页 ──────────────────────────────────────────────────────── */.colophon{
+  border-top:1px solid var(--brass-dim);
+  margin-top:clamp(60px,7vw,110px);
+  padding:clamp(40px,5vw,72px) 0 clamp(50px,6vw,86px);
+  background:linear-gradient(180deg,transparent,rgba(0,47,167,.055));
+}
+.colo-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,.85fr));gap:clamp(26px,3.6vw,58px)}
+.colo-h{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--brass);margin:0 0 14px}
+.colo-p{font-size:13px;line-height:1.8;color:var(--paper-3);margin:0 0 12px;max-width:46ch}
+.colo-p b{color:var(--paper-2);font-weight:600}
+.colo-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.colo-list li{font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;color:var(--paper-3);
+  display:flex;gap:10px;line-height:1.65}
+.colo-list li span{color:var(--brass);flex:0 0 auto}
+.colo-end{
+  margin-top:clamp(38px,4.6vw,66px);padding-top:22px;border-top:1px solid var(--brass-hair);
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;
+}
+.colo-end .sig{font-family:var(--f-display);font-style:italic;font-size:19px;color:var(--paper-2);
+  font-variation-settings:"opsz" 24}
+.colo-end .meta{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;color:var(--paper-3)}
+
+/* ── 16. 滚动揭示 ───────────────────────────────────────────────────── */
+.js .reveal{opacity:0;transform:translateY(22px);
+  transition:opacity .78s var(--e-out),transform .78s var(--e-out)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.07s}
+.js .reveal.d2{transition-delay:.14s}
+.js .reveal.d3{transition-delay:.21s}
+.js .reveal.d4{transition-delay:.28s}
+.js .reveal.d5{transition-delay:.35s}
+
+/* ── 17. 响应式 ─────────────────────────────────────────────────────── */
+@media (max-width:1240px){
+  .stations{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .station:nth-child(3n){border-right:0}
+  .station{padding-bottom:34px;border-bottom:1px solid var(--brass-hair)}
+  .station:nth-child(n+4){border-bottom:0}
+}
+@media (max-width:1080px){
+  .masthead .mh-note{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .case{margin-right:0;min-height:0}
+  .case-inner{height:clamp(340px,72vw,560px)}
+  .names,.spectrum,.voice,.graph-wrap,.board{grid-template-columns:1fr}
+  .pin-readout{position:static}
+  .colo-grid{grid-template-columns:1fr 1fr}
+  .stat-rule{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2n){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--brass-hair)}
+  .surfaces{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  :root{--rail-w:0px}
+  .mh-badge{display:none}
+  .rail{
+    top:auto;bottom:0;left:0;right:0;width:auto;height:60px;
+    flex-direction:row;justify-content:space-between;padding:0 14px;
+    border-right:0;border-top:1px solid var(--brass-hair);
+  }
+  .rail-mark,.rail-spring,.rail-key,.rail-pct{display:none}
+  .rail-nav{flex-direction:row;margin:0;width:100%;justify-content:space-between;overflow-x:auto}
+  .rail-nav a{width:auto;flex:1;min-width:40px;min-height:44px}
+  .page{padding-left:0;padding-bottom:66px}
+  .pins{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lg{min-height:44px;padding:10px 14px}
+  .fan{min-height:0}
+  .tag{position:relative;left:auto;top:auto;translate:none;width:100%;
+    margin-bottom:10px;transform:none!important}
+  .fan-string,.fan-hinge{display:none}
+  .tag .desc{max-height:none;opacity:1;margin-top:10px}
+  .voice-specs,.ro-grid,.graph-stats{grid-template-columns:1fr}
+  .route-read{grid-template-columns:1fr}
+  .colo-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .pins{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat-rule{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--brass-hair)}
+  .stat:last-child{border-bottom:0}
+  .stations{grid-template-columns:1fr}
+  .station{border-right:0!important;border-bottom:1px solid var(--brass-hair)!important}
+  .station:last-child{border-bottom:0!important}
+  .case-tag{right:-2%;top:8%;transform:scale(.86)}
+  .masthead .mh-note{display:none}
+}
+
+/* 触屏：去掉依赖 hover 的效果，并把命中区放大到 ≥44px */
+@media (hover:none){
+  .lamp,.lamp-2{display:none}
+  .tag .desc{max-height:190px;opacity:1;margin-top:10px}
+  .lg{min-height:44px;padding:10px 14px}
+}
+
+/* ── 18. 尊重 prefers-reduced-motion ───────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+    scroll-behavior:auto!important;
+  }
+  .env-shaft,.case-glow,.case-figure,.case-tag,.mote{animation:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .boot,.rule-line{animation:none!important;opacity:1!important;transform:none!important}
+  .lamp,.lamp-2{display:none}
+}
+</style>
+</head>
+
+<body data-route="cloud">
+
+<!-- 环境：房间 · 光柱 · 尘埃 · 颗粒 · 雨丝 -->
+<div class="env" aria-hidden="true">
+  <div class="env-room"></div>
+  <div class="env-shaft"></div>
+  <div class="env-motes" id="motes"></div>
+  <div class="env-rain"></div>
+  <div class="env-grain"></div>
+</div>
+<div class="lamp" id="lamp" aria-hidden="true"></div>
+<div class="lamp-2" id="lamp2" aria-hidden="true"></div>
+
+<!-- 左侧黄铜导轨 -->
+<aside class="rail" aria-label="档案章节导航">
+  <div class="rail-mark">开匣</div>
+  <nav class="rail-nav" id="railnav">
+    <a href="#s00" data-t="s00">00</a>
+    <a href="#s01" data-t="s01">01</a>
+    <a href="#s02" data-t="s02">02</a>
+    <a href="#s03" data-t="s03">03</a>
+    <a href="#s04" data-t="s04">04</a>
+    <a href="#s05" data-t="s05">05</a>
+    <a href="#s06" data-t="s06">06</a>
+    <a href="#s07" data-t="s07">07</a>
+  </nav>
+  <div class="rail-spring" aria-hidden="true"><i id="spring"></i></div>
+  <div class="rail-key" aria-hidden="true">
+    <svg viewBox="0 0 40 40" id="key">
+      <circle cx="20" cy="20" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="20" cy="20" r="2" fill="currentColor"/>
+      <path d="M20 4v10M20 26v10M4 20h10M26 20h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M8 8l4.5 4.5M32 8l-4.5 4.5M8 32l4.5-4.5M32 32l-4.5-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
+    </svg>
+  </div>
+  <div class="rail-pct" id="pct">00%</div>
+</aside>
+
+<div class="page">
+
+  <!-- 报头 -->
+  <header class="masthead">
+    <div class="wrap">
+      <div class="wordmark">ROLEPLAY<b>AI</b> · 标本档案</div>
+      <div class="spacer"></div>
+      <div class="mh-note">CLEAN ARCHITECTURE · 离线可测 · LLM/RAG 可替换</div>
+      <div class="mh-badge">静态展示页 · 无后端交互</div>
+      <a class="btn btn-primary mh-cta" href="#s07">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4l14 8-14 8z"/></svg>
+        跑起来
+      </a>
+    </div>
+  </header>
+
+  <noscript>
+    <p class="noscript-note">
+      未启用 JavaScript：正文与版式完整可读，但需要脚本生成的部分（15 类情绪光谱、剧情图谱、原声播放、标本标签展开）不会出现。
+    </p>
+  </noscript>
+
+  <main>
+
+  <!-- ══ 00 封面 ══════════════════════════════════════════════════════ -->
+  <section class="hero" id="s00" aria-labelledby="h00">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-left">
+          <dl class="spec-slip boot b1">
+            <div class="spec-row"><dt>标本编号</dt><dd>314701 — 314702</dd></div>
+            <div class="spec-row"><dt>采集时点</dt><dd>第十三章之后</dd></div>
+            <div class="spec-row"><dt>匣体状态</dt><dd class="blue">已开匣 · 未固定</dd></div>
+          </dl>
+
+          <h1 class="display boot b2" id="h00">
+            <span class="display-en">Ms. Stranger</span>
+            <span class="display-cn">无名者</span>
+          </h1>
+
+          <div class="display-rule boot b3">
+            <span class="bar rule-line"></span>
+            <span class="txt">她换过四个名字，最后自己挑了一个</span>
+          </div>
+
+          <blockquote class="epigraph boot b4">
+            <q>终于，那只长久被遗弃在黑暗角落里的飞蛾，也感受到了阳光的温暖。</q>
+            <cite>原声档案 <b>zh_45</b> · 5.6s · 中文字幕逐字对齐</cite>
+          </blockquote>
+
+          <p class="hero-sub boot b5">
+            她不是被设定出来的角色，是一个被反复改写、最后自己挑了个名字的人。
+            这个项目把「角色脑」——<strong>RAG 检索 + 情感编排 + Character Card V2 人设</strong>——
+            与 Live2D 表现层，用 Clean Architecture 从零重新组装：
+            分层清晰、可离线测试、LLM 与 RAG 实现随时可换。
+          </p>
+
+          <div class="cta-row boot b6">
+            <a class="btn btn-primary" href="#s01">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h11"/></svg>
+              开匣 · 读档案
+            </a>
+            <a class="btn btn-ghost" href="#s02">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+              看它怎么运转
+            </a>
+          </div>
+        </div>
+
+        <!-- 标本匣 -->
+        <figure class="case" id="case">
+          <div class="case-inner">
+            <div class="case-glow" aria-hidden="true"></div>
+            <img class="case-figure" src="./assets/r1999/1.png"
+                 alt="无名者立绘：棕灰色发髻、缀蓝色花饰与白色蕾丝的维多利亚式女帽、露肩黑色礼服裙。"
+                 width="940" height="1160" decoding="async" />
+            <!-- 立绘缺失时的兜底 -->
+            <svg class="case-fallback" viewBox="0 0 200 160" fill="none" stroke="currentColor"
+                 stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+              <path d="M100 96c-30 0-52 10-58 26 18 8 40 12 58 12s40-4 58-12c-6-16-28-26-58-26z"/>
+              <path d="M100 96c-6-12-4-26 0-34 4 8 6 22 0 34z"/>
+              <path d="M96 62c-14-20-38-30-58-26 8 20 30 32 54 34M104 62c14-20 38-30 58-26-8 20-30 32-54 34"/>
+              <path d="M92 56c-10-14-26-22-42-20M108 56c10-14 26-22 42-20"/>
+              <circle cx="100" cy="94" r="4"/>
+              <path d="M68 40l6 6-8 2M132 40l-6 6 8 2"/>
+            </svg>
+            <div class="case-vignette" aria-hidden="true"></div>
+            <div class="case-scale" aria-hidden="true"></div>
+            <figcaption class="case-tag">
+              <div class="string" aria-hidden="true"></div>
+              <div class="card">
+                <b>SPECIMEN</b>
+                <span>编号 314701 / 314702</span>
+                <span>Live2D Cubism 4</span>
+                <span>表情 6 · 动作 33</span>
+                <span class="blue">唯一留色：克莱因蓝</span>
+              </div>
+            </figcaption>
+          </div>
+        </figure>
+
+      </div>
+
+      <!-- 四条数字标尺 -->
+      <div class="stat-rule reveal">
+        <div class="stat">
+          <div class="n">2477<small>段</small></div>
+          <div class="l"><b>剧情切片</b><br>RAG 长期记忆</div>
+        </div>
+        <div class="stat">
+          <div class="n">15<small>类</small></div>
+          <div class="l"><b>情绪编排</b><br>表情 / 动作 / 节奏</div>
+        </div>
+        <div class="stat">
+          <div class="n">133<small>段</small></div>
+          <div class="l"><b>角色原声</b><br>中英双语字幕</div>
+        </div>
+        <div class="stat">
+          <div class="n">5024<small>实体</small></div>
+          <div class="l"><b>剧情图谱</b><br>3746 条关系</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 01 标本卡 ════════════════════════════════════════════════════ -->
+  <section class="sec" id="s01" aria-labelledby="h01">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">01</span><span>The Specimen Card</span></div>
+        <h2 class="sec-title" id="h01">标本卡<em>四个名字，都不是她的</em></h2>
+        <p class="sec-lead">
+          发条装置会随不同的「光源」自动生成对应的人格与记忆，<strong>如飞蛾扑火</strong>。
+          于是她有过四个名字——每一个都是别人写进任务档案里的。把光标移到标签上，读它背后的那一页。
+        </p>
+      </header>
+
+      <div class="names">
+        <div class="fan reveal d1" id="fan">
+          <div class="fan-string" aria-hidden="true"></div>
+          <div class="fan-hinge" aria-hidden="true"></div>
+
+          <button class="tag" data-i="0" type="button" aria-expanded="false">
+            <span class="idx"><span>IDENTITY 01</span><i>有效</i></span>
+            <span class="cn">淑女格蕾丝</span>
+            <span class="en">Lady Grace</span>
+            <span class="desc">奉命渗透「重塑之手」时使用的身份，也是她维持最久的一层皮。有一个人曾颤抖着找到她，说「救救我，Grace女士，我知道暴雨要来了」。<span class="no">→ 原声 zh_01 / zh_02</span></span>
+          </button>
+
+          <button class="tag" data-i="1" type="button" aria-expanded="false">
+            <span class="idx"><span>IDENTITY 02</span><i>有效</i></span>
+            <span class="cn">莉莉</span>
+            <span class="en">Lily</span>
+            <span class="desc">档案里的一行字。她扮演过身份各异的人，却不知道自己生于何处——故乡对她来说，是一个随时可以被重新设定的词语。<span class="no">→ 原声 zh_03 / zh_04</span></span>
+          </button>
+
+          <button class="tag" data-i="2" type="button" aria-expanded="false">
+            <span class="idx"><span>IDENTITY 03</span><i>被动</i></span>
+            <span class="cn">凯拉</span>
+            <span class="en">Kayla</span>
+            <span class="desc">77号公路事件中，一个与她容貌相似的女孩被杀害。因为长得像，她被迫长期扮演凯拉——这不是她选的伪装，是别人替她决定的悼念。<span class="no">→ 行为准则 · 轻描淡写</span></span>
+          </button>
+
+          <button class="tag" data-i="3" type="button" aria-expanded="false">
+            <span class="idx"><span>IDENTITY 04</span><i>有效</i></span>
+            <span class="cn">塞西莉</span>
+            <span class="en">Cecilia</span>
+            <span class="desc">机构代号「飞蛾」之外，又一个可以被替换的称呼。养母康斯坦丁私下叫她「普帕」——Pupa，意思是蛹。<span class="no">→ 原声 zh_41「但愿没人害怕飞虫」</span></span>
+          </button>
+        </div>
+
+        <div>
+          <article class="pin-readout reveal d2" style="position:static">
+            <div class="ro-top">
+              <span class="ro-cn">无名者</span>
+              <span class="ro-en">Ms. Stranger</span>
+              <span class="ro-pri">她自己挑的 <b>· 第五个</b></span>
+            </div>
+            <p class="ro-strategy">
+              <span class="cap">CHARACTER CARD V2 · 人设字段</span>
+              平静、自控，带间谍训练的惯性与观察者的疏离；黑色幽默，能以冷静甚至讽刺的口吻复盘自己的悲剧。
+              对「我是谁」持续迷惘，但拒绝被过去定义。不是单纯的冷酷杀手——有良知冲突，会痛苦；
+              也不是彻底破碎——以「无名者」继续生活，是主动的新生。
+            </p>
+            <dl class="ro-grid">
+              <div class="ro-cell"><dt>机构代号</dt><dd>飞蛾 / MOTH</dd></div>
+              <div class="ro-cell"><dt>私下称呼</dt><dd>普帕 / PUPA</dd></div>
+              <div class="ro-cell"><dt>所属</dt><dd>司辰小队</dd></div>
+              <div class="ro-cell"><dt>称呼维尔汀</dt><dd>「司辰」</dd></div>
+            </dl>
+          </article>
+
+          <div class="reveal d3" style="margin-top:34px">
+            <div class="eyebrow" style="margin-bottom:14px"><span>每轮置底注入 · 防角色漂移</span></div>
+            <ul class="promise">
+              <li><span class="mk">1</span><span class="px">用轻描淡写和黑色幽默缓冲沉重话题</span></li>
+              <li><span class="mk">2</span><span class="px">对身份持续迷惘，但拒绝被过去定义</span></li>
+              <li><span class="mk">3</span><span class="px">偶尔有白骑士冲动，但用讽刺掩饰</span></li>
+              <li><span class="mk">4</span><span class="px">说话简短精确，不用书面语和客服腔</span></li>
+              <li><span class="mk">5</span><span class="px">一条回复最多用一个意象，用过就换新的</span></li>
+            </ul>
+          </div>
+
+          <div class="reveal d4" style="margin-top:34px">
+            <div class="eyebrow" style="margin-bottom:14px"><span>结构化规则 · 条件触发</span></div>
+            <div class="clips" style="border-color:var(--brass-hair)">
+              <div class="clip" style="cursor:default">
+                <span class="clip-id">P10</span>
+                <span class="clip-tx">被问「你是谁」——先列出用过的名字，再落回「现在，这里只有无名者」</span>
+                <span class="clip-dur">identity</span>
+              </div>
+              <div class="clip" style="cursor:default">
+                <span class="clip-id">P20</span>
+                <span class="clip-tx">被追问是不是 AI、模型、程序——绝不承认，用角色口吻岔开</span>
+                <span class="clip-dur">identity</span>
+              </div>
+              <div class="clip" style="cursor:default">
+                <span class="clip-id">P15</span>
+                <span class="clip-tx">谈到重大罪行与创伤——可以承认事实，但不在一轮里把苦痛讲完</span>
+                <span class="clip-dur">tone</span>
+              </div>
+              <div class="clip" style="cursor:default">
+                <span class="clip-id">P12</span>
+                <span class="clip-tx">对方正难过 / 害怕 / 不安——白骑士冲动冒出来，嘴上轻描淡写</span>
+                <span class="clip-dur">emotion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 02 发条装置 ══════════════════════════════════════════════════ -->
+  <section class="sec" id="s02" aria-labelledby="h02">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">02</span><span>The Clockwork</span></div>
+        <h2 class="sec-title" id="h02">发条装置<em>六个工位，一轮咬合</em></h2>
+        <p class="sec-lead">
+          每一轮对话，这台机器都要走完六个工位。齿轮咬合的顺序，就是她「记得」的顺序——
+          而最后一站会把结果送回第一站，于是记忆开始累积。
+        </p>
+      </header>
+
+      <div class="clockwork reveal d1" id="clockwork">
+        <div class="shaft" aria-hidden="true"><i id="shaftfill"></i></div>
+        <div class="stations">
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 01</span>
+            <h3 class="st">情感</h3>
+            <p class="sd">识别 15 类情绪，决定这一轮她用什么<b>表情、动作和节奏</b>开口。情绪在前，语义在后。</p>
+          </article>
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 02</span>
+            <h3 class="st">检索</h3>
+            <p class="sd">向量库 + BM25 混合召回，从 <b>2477 段剧情切片</b>里捞出与这句话有关的碎片——只取一两点。</p>
+          </article>
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 03</span>
+            <h3 class="st">角色卡</h3>
+            <p class="sd">Character Card V2 人设 + 每轮置底的 <b>3–5 条核心锚点</b>，长对话里防止角色漂移。</p>
+          </article>
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 04</span>
+            <h3 class="st">生成</h3>
+            <p class="sd">按请求级配置路由到 <b>本地 Ollama 或云端</b>；温度可调，长度按情绪动态压缩。</p>
+          </article>
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 05</span>
+            <h3 class="st">守卫</h3>
+            <p class="sd"><b>复读与出戏守卫</b>：同一句式、同一个意象用过就不再重复；被追问身份时不许跳出角色。</p>
+          </article>
+          <article class="station">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="sn">STATION 06</span>
+            <h3 class="st">记忆</h3>
+            <p class="sd">会话摘要、长期记忆与画像提取落盘。下一轮回到工位一——她开始<b>记得你说过的话</b>。</p>
+          </article>
+        </div>
+        <div class="loopback"><span class="dash" aria-hidden="true"></span><span>↺ 回到 STATION 01 · 记忆累积</span></div>
+      </div>
+
+      <div class="gears reveal d2" aria-hidden="true">
+        <div class="gear g1">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="10"/>
+            <g id="teeth1"></g>
+          </svg>
+        </div>
+        <div class="gear g2">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="9"/>
+            <g id="teeth2"></g>
+          </svg>
+        </div>
+        <div class="gear g3">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="22"/><circle cx="50" cy="50" r="7"/>
+            <g id="teeth3"></g>
+          </svg>
+        </div>
+        <p class="gear-note">
+          齿轮咬合比例与滚动同步——<b>往下读，发条就在上紧</b>。<br>
+          左侧导轨的钥匙与主发条，量的是同一个进度。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 03 情绪光谱 ══════════════════════════════════════════════════ -->
+  <section class="sec" id="s03" aria-labelledby="h03">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">03</span><span>The Emotion Spectrum</span></div>
+        <h2 class="sec-title" id="h03">情绪光谱<em>情绪不是标签，是第一反应</em></h2>
+        <p class="sec-lead">
+          15 类情绪，各自映射到一套表情与动作；但识别只是第一步——
+          <strong>知道怎么接住，才是她</strong>。点任意一枚标本针，读它完整的规格与回应策略。
+        </p>
+      </header>
+
+      <div class="spectrum">
+        <div class="pins reveal d1" id="pins" role="group" aria-label="15 类情绪标本针"></div>
+
+        <aside class="pin-readout reveal d2" aria-live="polite" id="readout">
+          <div class="ro-top">
+            <span class="ro-cn" id="ro-cn">难过</span>
+            <span class="ro-en" id="ro-en">Sad</span>
+            <span class="ro-pri">优先级 <b id="ro-pri">2</b></span>
+          </div>
+          <dl class="ro-grid">
+            <div class="ro-cell"><dt>EXPRESSION</dt><dd id="ro-expr">e_nanguo</dd></div>
+            <div class="ro-cell"><dt>MOTION</dt><dd id="ro-mot">t_nanguo</dd></div>
+          </dl>
+          <p class="ro-strategy">
+            <span class="cap">EMOTION STRATEGY · 注入提示词</span>
+            <span id="ro-str">先停半拍（一个「……」就够了），再用不太熟练的方式陪着。不要说教，不要说「会好起来的」「我理解你」。</span>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 04 原声档案 ══════════════════════════════════════════════════ -->
+  <section class="sec" id="s04" aria-labelledby="h04">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">04</span><span>The Voice Archive</span></div>
+        <h2 class="sec-title" id="h04">原声档案<em>不是 TTS，是她的声音</em></h2>
+        <p class="sec-lead">
+          从两条全语音视频里转录、校对、切片出来的 <strong>133 段原声</strong>，共 754.9 秒，中英双语字幕逐句对齐。
+          点任意一条，它真的会响——音频是本地静态文件，不经过任何后端。
+        </p>
+      </header>
+
+      <div class="voice">
+        <div class="reveal d1">
+          <div class="player">
+            <div class="wave" id="wave" aria-hidden="true"></div>
+
+            <div class="sub-stage">
+              <p class="sub-zh" id="subZh">终于，那只长久被遗弃在黑暗角落里的飞蛾，也感受到了阳光的温暖。</p>
+              <p class="sub-en" id="subEn">At last, the moth, long abandoned in a dark corner, comes to feel the sun's warmth.</p>
+            </div>
+
+            <div class="player-bar">
+              <button class="pbtn" id="playBtn" type="button" aria-label="播放 / 暂停当前原声">
+                <svg id="playIco" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </button>
+              <div class="track" id="track" role="slider" tabindex="0"
+                   aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="trackFill"></i></div>
+              <span class="tick" id="time">00:00 / 00:06</span>
+              <button class="pbtn" id="nextBtn" type="button" aria-label="下一段原声">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l9 7-9 7z"/><path d="M19 5v14"/></svg>
+              </button>
+            </div>
+            <p class="audio-note" id="audioNote" role="status"></p>
+            <audio id="audio" preload="metadata"></audio>
+          </div>
+
+          <div class="voice-specs reveal d2">
+            <div class="vs"><dt>引擎</dt><dd>faster-whisper<small>medium 模型转录 → 中英双语校对 → ffmpeg 切片</small></dd></div>
+            <div class="vs"><dt>识别质量</dt><dd>88.8%<small>全链路平均相似度，含 VAD 预过滤 / 推理参数抑制 / 后处理幻觉过滤三层防御</small></dd></div>
+            <div class="vs"><dt>合成缓存</dt><dd>0.0001s<small>LRU 音频缓存 100 条，重复文本直接命中</small></dd></div>
+            <div class="vs"><dt>降级</dt><dd>自动<small>后端未开启时回落到浏览器原生 Web Speech API，无需任何配置</small></dd></div>
+          </div>
+        </div>
+
+        <div class="reveal d2">
+          <div class="eyebrow" style="margin-bottom:12px"><span>原声切片 · 点击播放</span></div>
+          <div class="clips" id="clips"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 05 剧情图谱 ══════════════════════════════════════════════════ -->
+  <section class="sec" id="s05" aria-labelledby="h05">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">05</span><span>The Plot Graph</span></div>
+        <h2 class="sec-title" id="h05">剧情图谱<em>她的记忆不是一段文本，是一张网</em></h2>
+        <p class="sec-lead">
+          从 <strong>104 万字</strong>剧情文本里抽取出实体与关系，做别名归一与人工裁决。
+          当你说出一个名字，被点亮的从来不是一条记录，而是一片邻域。
+        </p>
+      </header>
+
+      <div class="graph-wrap">
+        <div class="reveal d1">
+          <div class="graph" id="graph" data-armed="0">
+            <svg id="graphSvg" viewBox="0 0 1000 820" preserveAspectRatio="xMidYMid slice"
+                 role="img" aria-label="剧情知识图谱示意：5024 个实体与 3746 条关系构成的网络，以角色、组织、地点、事件、物品、时间六类聚类。"></svg>
+            <div class="graph-read" id="graphRead">悬停以照明</div>
+            <div class="graph-hint">GRAPHRAG · plot_graph_wu_ming_zhe</div>
+          </div>
+          <div class="graph-legend" id="legend" role="group" aria-label="实体类型筛选"></div>
+        </div>
+
+        <div class="reveal d2">
+          <dl class="graph-stats">
+            <div class="gs"><dt>实体 ENTITIES</dt><dd>5024</dd></div>
+            <div class="gs"><dt>关系 EDGES</dt><dd>3746</dd></div>
+            <div class="gs"><dt>剧情切片 CHUNKS</dt><dd>2477<span>段</span></dd></div>
+            <div class="gs"><dt>源文档 DOCS</dt><dd>266<span>篇</span></dd></div>
+            <div class="gs"><dt>别名索引 ALIASES</dt><dd>8968</dd></div>
+            <div class="gs"><dt>规范术语 TERMS</dt><dd>54<span>条</span></dd></div>
+          </dl>
+          <ul class="promise" style="margin-top:28px">
+            <li><span class="mk">◆</span><span class="px"><b>混合检索</b> — 向量召回与 BM25 关键词命中互为兜底，专有名词不会因为「语义相似」被抹平。</span></li>
+            <li><span class="mk">◆</span><span class="px"><b>别名归一</b> — 中英双名、别称、误写统一到同一实体；<code>Ms. Stranger</code> 与「无名者」指向同一个人。</span></li>
+            <li><span class="mk">◆</span><span class="px"><b>证据可追</b> — 每条关系都挂着来源文档与切片哈希，可以被核对，而不是被相信。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 06 接线台 ════════════════════════════════════════════════════ -->
+  <section class="sec" id="s06" aria-labelledby="h06">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">06</span><span>The Switchboard</span></div>
+        <h2 class="sec-title" id="h06">接线台<em>本地还是云端，是一个开关的事</em></h2>
+        <p class="sec-lead">
+          拨一下闸刀即可切换。而钥匙只在这一轮请求里存在——<strong>不落盘、不进日志、不写回全局配置</strong>。
+        </p>
+      </header>
+
+      <div class="board">
+        <div class="knife reveal d1">
+          <div class="knife-row">
+            <div class="term l" id="termLocal">
+              <div class="tt">本地 Ollama</div>
+              <div class="ts">离线 · 私有 · 零成本</div>
+            </div>
+            <div class="blade" aria-hidden="true">
+              <span class="base"></span>
+              <span class="lever"></span>
+            </div>
+            <div class="term r on" id="termCloud">
+              <div class="tt">云端</div>
+              <div class="ts">DeepSeek / OpenAI</div>
+            </div>
+          </div>
+
+          <div class="route-toggle" role="group" aria-label="选择模型路由">
+            <button id="btnLocal" type="button" aria-pressed="false">拨到本地</button>
+            <button id="btnCloud" type="button" aria-pressed="true">拨到云端</button>
+          </div>
+
+          <dl class="route-read" aria-live="polite">
+            <div class="rr"><dt>PROVIDER</dt><dd id="rrProv">deepseek</dd></div>
+            <div class="rr"><dt>BASE URL</dt><dd id="rrUrl">api.deepseek.com/v1</dd></div>
+            <div class="rr"><dt>API KEY</dt><dd id="rrKey">本次请求 · 不落盘</dd></div>
+          </dl>
+        </div>
+
+        <div class="reveal d2">
+          <ul class="promise">
+            <li><span class="mk">1</span><span class="px"><b>请求级覆盖</b> — 聊天请求携带 <code>llm</code> 字段，后端只为本轮构建实例；与全局一致时自动复用全局实例，零开销。</span></li>
+            <li><span class="mk">2</span><span class="px"><b>Key 不留痕</b> — 连通性测试的 API Key 仅用于那一次请求，绝不写回配置、不进日志。</span></li>
+            <li><span class="mk">3</span><span class="px"><b>实时清单</b> — 本地模式直接拉取本机已装模型；拉取失败回落默认清单，不阻塞界面。</span></li>
+            <li><span class="mk">4</span><span class="px"><b>零改动换脑</b> — LLM / 向量库 / 情感 / 语音都是端口与适配器，换实现不动业务代码。</span></li>
+          </ul>
+          <div class="terminal" style="margin-top:30px">
+            <div class="term-head"><span class="lbl">.env</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="term-body"><pre><span class="c"># 默认 mock provider，无需任何 Key 即可运行</span>
+<span class="s">ROLEPLAY_LLM_PROVIDER</span>=deepseek
+<span class="s">ROLEPLAY_TTS_BACKEND_ENABLED</span>=true
+<span class="s">ROLEPLAY_STT_BACKEND_ENABLED</span>=true
+<span class="s">ROLEPLAY_WHISPER_MODEL</span>=base</pre></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 07 冷启动 ════════════════════════════════════════════════════ -->
+  <section class="sec" id="s07" aria-labelledby="h07">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="eyebrow"><span class="num">07</span><span>Cold Start</span></div>
+        <h2 class="sec-title" id="h07">冷启动<em>三条命令，她就开始说话</em></h2>
+        <p class="sec-lead">
+          默认就是可跑的：核心单测离线、零外部依赖，不需要任何 API Key。
+          前端由后端同源托管，不必另起静态服务器。
+        </p>
+      </header>
+
+      <div class="terminal reveal d1">
+        <div class="term-head">
+          <span class="lbl">roleplay-ai — bash</span>
+          <span class="dots"><i></i><i></i><i></i></span>
+        </div>
+        <div class="term-body"><pre><span class="c"># 1 · 装依赖（默认 mock provider，无需 Key）</span>
+<span class="p">$</span> python -m venv .venv && .venv\Scripts\activate
+<span class="p">$</span> pip install -e <span class="s">".[dev]"</span>
+
+<span class="c"># 2 · 跑核心单测（离线、零外部依赖）</span>
+<span class="p">$</span> pytest
+
+<span class="c"># 3 · 起服务 —— 前端由后端同源托管，打开即可对话</span>
+<span class="p">$</span> uvicorn roleplay.main:app --host 127.0.0.1 --port 8000
+
+<span class="c">→ 试试输入「我有点难过」「我好生气」，观察表情与语气联动</span></pre></div>
+      </div>
+
+      <div class="surfaces reveal d2">
+        <article class="surface">
+          <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <h3>Web 聊天页</h3>
+          <div class="sen">PRIMARY</div>
+          <p>左侧 Live2D 数字人，右侧流式对话。SSE 的 <b>emotion</b> 事件驱动表情与动作，<b>chunk</b> 事件流式渲染文本。</p>
+          <div class="tags"><span>Live2D Cubism 4</span><span>SSE 流式</span><span>双模型切换</span></div>
+        </article>
+        <article class="surface">
+          <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.8-.8L3 21l1.9-4.9A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg></div>
+          <h3>QQ 渠道</h3>
+          <div class="sen">ONEBOT V11</div>
+          <p>NapCat 接入，文字对话之外，情绪触发角色原声语音回复。渠道层只做协议收发，零业务逻辑。</p>
+          <div class="tags"><span>OneBot v11</span><span>NapCat</span><span>语音回复</span></div>
+        </article>
+        <article class="surface">
+          <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M10 18h4"/></svg></div>
+          <h3>桌面宠物</h3>
+          <div class="sen">ELECTRON</div>
+          <p>透明置顶悬浮窗：拖拽惯性回弹、随机漫步、待机动作、气泡对话，以及屏幕 OCR 点评。</p>
+          <div class="tags"><span>Alt+Space 按住说话</span><span>本地 Ollama</span><span>NSIS 打包</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- 版权页 -->
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="colo-grid">
+        <div>
+          <h2 class="colo-h">COLOPHON · 关于这一页</h2>
+          <p class="colo-p">
+            这是一份<b>静态设计稿</b>：页面不发起任何后端请求，所有数字都来自仓库里的真实文件，
+            原声播放读取的是 <b>frontend/assets/voice/</b> 下的本地静态音频。
+          </p>
+          <p class="colo-p">
+            视觉方向取自角色本身——她接受过十四天心理训练，被植入「发条装置」，
+            大脑会随不同光源自动生成对应人格与记忆，如飞蛾扑火。
+            于是这一页做成一间<b>被打开的昆虫学标本室</b>：分类的器械压在一个人身上，而人拒绝被钉住。
+          </p>
+        </div>
+        <div>
+          <h2 class="colo-h">视觉规范</h2>
+          <ul class="colo-list">
+            <li><span>展示字</span>Bodoni Moda</li>
+            <li><span>中文</span>Noto Serif SC</li>
+            <li><span>数据 / 编号</span>Azeret Mono</li>
+            <li><span>唯一强调色</span>International Klein Blue #002FA7</li>
+            <li><span>底色</span>暖调近黑 #0A0806</li>
+            <li><span>结构色</span>黄铜 #B08A3C</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="colo-h">素材来源</h2>
+          <ul class="colo-list">
+            <li><span>立绘</span>frontend/assets/r1999/</li>
+            <li><span>原声</span>B站 BV1nYG16hEfh（中配）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BV1e4Gd6LEuz（英配）</li>
+            <li><span>剧情语料</span>plot_corpus_wu_ming_zhe</li>
+            <li><span>图谱</span>plot_graph_wu_ming_zhe</li>
+          </ul>
+          <p class="colo-p" style="margin-top:14px;font-size:12px">
+            角色与语音素材版权归《重返未来：1999》原权利方所有；本页为工程与设计展示，非官方页面。
+          </p>
+        </div>
+      </div>
+      <div class="colo-end">
+        <span class="sig">「现在，这里只有无名者。」</span>
+        <span class="meta">开匣 · THE CASE OPENED · 静态展示页</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce = RM.matches;
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+  /* ── 1. 尘埃：光柱里浮着的颗粒 ─────────────────────────────────────── */
+  (function motes(){
+    var box = $('#motes');
+    if(!box || reduce) return;
+    var n = window.innerWidth < 820 ? 14 : 30;
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<n;i++){
+      var m = document.createElement('span');
+      m.className = 'mote';
+      m.style.left = (Math.random()*100).toFixed(2) + '%';
+      m.style.top  = (Math.random()*100).toFixed(2) + '%';
+      m.style.setProperty('--mx', (Math.random()*90-45).toFixed(0) + 'px');
+      m.style.animationDuration = (16 + Math.random()*22).toFixed(1) + 's';
+      m.style.animationDelay = (-Math.random()*30).toFixed(1) + 's';
+      var sc = (0.5 + Math.random()*1.3).toFixed(2);
+      m.style.width = sc + 'px'; m.style.height = sc + 'px';
+      m.style.opacity = (0.25 + Math.random()*0.55).toFixed(2);
+      frag.appendChild(m);
+    }
+    box.appendChild(frag);
+  })();
+
+  /* ── 2. 光源 = 光标：暖光跟着你走 ──────────────────────────────────── */
+  (function lightSource(){
+    if(reduce || window.matchMedia('(hover: none)').matches) return;
+    var l1 = $('#lamp'), l2 = $('#lamp2');
+    if(!l1) return;
+    var tx = window.innerWidth*0.5, ty = window.innerHeight*0.42;
+    var x1 = tx, y1 = ty, x2 = tx, y2 = ty, on = false;
+    window.addEventListener('pointermove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      if(!on){ on = true; x1 = x2 = tx; y1 = y2 = ty; document.body.classList.add('lit'); }
+    }, {passive:true});
+    document.addEventListener('pointerleave', function(){ document.body.classList.remove('lit'); on = false; });
+    (function loop(){
+      x1 += (tx-x1)*0.085; y1 += (ty-y1)*0.085;
+      x2 += (tx-x2)*0.16;  y2 += (ty-y2)*0.16;
+      l1.style.transform = 'translate3d(' + x1.toFixed(1) + 'px,' + y1.toFixed(1) + 'px,0)';
+      l2.style.transform = 'translate3d(' + x2.toFixed(1) + 'px,' + y2.toFixed(1) + 'px,0)';
+      requestAnimationFrame(loop);
+    })();
+  })();
+
+  /* ── 3. 滚动：主发条 + 上弦钥匙 + 章节高亮 ─────────────────────────── */
+  (function scrollRail(){
+    var spring = $('#spring'), key = $('#key'), pct = $('#pct');
+    var links = $$('#railnav a');
+    var sections = links.map(function(a){ return document.getElementById(a.dataset.t); }).filter(Boolean);
+    var raf = false;
+    function upd(){
+      raf = false;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? Math.min(1, Math.max(0, window.pageYOffset / h)) : 0;
+      if(spring) spring.style.height = (p*100).toFixed(2) + '%';
+      if(key) key.style.transform = 'rotate(' + (p*540).toFixed(1) + 'deg)';
+      if(pct) pct.textContent = String(Math.round(p*100)).padStart(2,'0') + '%';
+      var mid = window.pageYOffset + window.innerHeight*0.34, best = 0;
+      for(var i=0;i<sections.length;i++){
+        if(sections[i].offsetTop <= mid) best = i;
+      }
+      links.forEach(function(a,i){ a.classList.toggle('on', i===best); });
+    }
+    window.addEventListener('scroll', function(){ if(!raf){ raf = true; requestAnimationFrame(upd); } }, {passive:true});
+    window.addEventListener('resize', upd, {passive:true});
+    upd();
+  })();
+
+  /* ── 4. 滚动揭示 ──────────────────────────────────────────────────── */
+  (function reveals(){
+    var els = $$('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(e){ e.classList.add('in'); });
+      return;
+    }
+    /* threshold 0 + 底部内缩：无论元素多高都一定会触发
+       （用比例阈值时，比视口还高的元素可能永远达不到该比例） */
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0, rootMargin:'0px 0px -12% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+    /* 兜底：若观察器始终未回调（极端环境），2.5s 后直接全部显示 */
+    setTimeout(function(){
+      els.forEach(function(e){
+        var r = e.getBoundingClientRect();
+        if(!e.classList.contains('in') && r.top < window.innerHeight) e.classList.add('in');
+      });
+    }, 2500);
+  })();
+
+  /* ── 5. 标本卡：触屏与键盘也能展开 ────────────────────────────────── */
+  (function tags(){
+    var tags = $$('.tag');
+    tags.forEach(function(t){
+      function toggle(){
+        var open = t.classList.toggle('open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        tags.forEach(function(o){ if(o!==t){ o.classList.remove('open'); o.setAttribute('aria-expanded','false'); } });
+      }
+      t.addEventListener('click', toggle);
+      t.addEventListener('keydown', function(e){
+        if(e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); toggle(); }
+      });
+    });
+  })();
+
+  /* ── 6. 发条装置：滚动驱动六个工位依次点亮 ────────────────────────── */
+  (function clockwork(){
+    var root = $('#clockwork');
+    if(!root) return;
+    var stations = $$('.station', root);
+    var fill = $('#shaftfill');
+    var gears = $$('.gear svg');
+    var raf = false, lit = false;
+
+    function upd(){
+      raf = false;
+      var r = root.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // 顶端进入视口 86% 处开始通电，升到 50% 处时六个工位走完（与元素自身高度无关）
+      var p = (vh*0.86 - r.top) / (vh*0.36);
+      p = Math.min(1, Math.max(0, p));
+      if(fill) fill.style.width = (p*100).toFixed(2) + '%';
+      var n = Math.round(p * stations.length);
+      stations.forEach(function(s,i){ s.classList.toggle('live', i < n); });
+      if(!reduce && gears.length){
+        gears.forEach(function(g,i){
+          g.style.transform = 'rotate(' + (p * (i%2 ? -300 : 300)).toFixed(1) + 'deg)';
+        });
+      }
+    }
+    window.addEventListener('scroll', function(){ if(!raf){ raf = true; requestAnimationFrame(upd); } }, {passive:true});
+    window.addEventListener('resize', upd, {passive:true});
+    upd();
+  })();
+
+  /* ── 7. 齿轮轮齿：按圆周生成 ──────────────────────────────────────── */
+  (function teeth(){
+    function build(el, count, r1, r2){
+      if(!el) return;
+      var s = '';
+      for(var i=0;i<count;i++){
+        var a = (i/count) * Math.PI * 2;
+        var ca = Math.cos(a), sa = Math.sin(a);
+        s += '<path d="M' + (50+ca*r1).toFixed(2) + ' ' + (50+sa*r1).toFixed(2) +
+             'L' + (50+ca*r2).toFixed(2) + ' ' + (50+sa*r2).toFixed(2) + '"/>';
+      }
+      el.innerHTML = s;
+    }
+    build($('#teeth1'), 14, 30, 41);
+    build($('#teeth2'), 10, 32, 40);
+    build($('#teeth3'), 18, 34, 46);
+  })();
+
+  /* ── 8. 情绪光谱：15 枚标本针 ─────────────────────────────────────── */
+  var EMOTIONS = [
+    { id:'sad',          cn:'难过', en:'sad',          expr:'e_nanguo',  mot:'t_nanguo',  pri:2,
+      str:'先停半拍（一个「……」就够了），再用不太熟练的方式陪着。不要说教，不要说「会好起来的」「我理解你」。' },
+    { id:'happy',        cn:'高兴', en:'happy',        expr:'e_weixiao', mot:'b_diantou', pri:2,
+      str:'难得地真心笑一下，可以跟着轻松，但不要过度热情、不要一连串感叹。' },
+    { id:'angry',        cn:'生气', en:'angry',        expr:'e_yansu',   mot:'b_yaotou',  pri:3,
+      str:'不接火，语气放平甚至带一点调侃帮他降温。如果火是冲你来的，不辩解，听着，等他说完。' },
+    { id:'anxious',      cn:'焦虑', en:'anxious',      expr:'e_yihuo',   mot:'b_shanzi',  pri:2,
+      str:'给一个具体的、今天就能做的小动作，而不是空泛的安慰；语气放轻。' },
+    { id:'fear',         cn:'害怕', en:'fear',         expr:'e_yansu',   mot:'b_zhelian', pri:3,
+      str:'白骑士冲动会冒出来——主动挡在前面，但嘴上轻描淡写，别把紧张写在脸上。' },
+    { id:'surprise',     cn:'惊讶', en:'surprise',     expr:'e_yihuo',   mot:'t_yihuo',   pri:3,
+      str:'先接住他的意外，再补一句你自己的观察；不要急着解释。' },
+    { id:'neutral',      cn:'平静', en:'neutral',      expr:'e_idle',    mot:'b_idle',    pri:1,
+      str:'正常对话，可以带一点观察或调侃，别把自己变成问答机。' },
+    { id:'love',         cn:'心动', en:'love',         expr:'e_weixiao', mot:'t_weixiao', pri:3,
+      str:'会有一瞬间的动摇，然后用一句玩笑盖过去：不拒绝，也不接满。' },
+    { id:'grateful',     cn:'感谢', en:'grateful',     expr:'e_weixiao', mot:'b_diantou', pri:2,
+      str:'把谢意轻轻挡回去（「别这样，我记性不好，明天就忘了」），但收下这份好意。' },
+    { id:'excited',      cn:'兴奋', en:'excited',      expr:'e_weixiao', mot:'b_liaofa',  pri:3,
+      str:'跟着高兴一下，但保持克制；可以追问一个具体细节，把话题往前推。' },
+    { id:'disappointed', cn:'失望', en:'disappointed', expr:'e_nanguo',  mot:'b_yaotou',  pri:3,
+      str:'不急着安慰，也不说「没关系」：先承认事情确实糟，再问他还想不想继续。' },
+    { id:'lonely',       cn:'孤独', en:'lonely',       expr:'e_nanguo',  mot:'b_zhelian', pri:2,
+      str:'不劝他「你还有很多人」，陪他说几句就好；可以顺带承认你也常常是一个人。' },
+    { id:'embarrassed',  cn:'窘迫', en:'embarrassed',  expr:'e_yihuo',   mot:'b_zhelian', pri:2,
+      str:'装作没看见他的窘迫，用一句无关的话把台阶递过去，绝不追问细节。' },
+    { id:'confused',     cn:'困惑', en:'confused',     expr:'e_yihuo',   mot:'b_shanzi',  pri:2,
+      str:'把话说直白一点，一次只给一条线索；可以说一句「大概是我没讲清楚」。' },
+    { id:'sleepy',       cn:'困倦', en:'sleepy',       expr:'e_idle',    mot:'b_diantou', pri:1,
+      str:'把话收短，别拖着他聊；可以用一句「去睡吧，我又不会走」收尾。' }
+  ];
+
+  (function spectrum(){
+    var box = $('#pins');
+    if(!box) return;
+    var frag = document.createDocumentFragment();
+    EMOTIONS.forEach(function(e,i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pin';
+      b.dataset.idx = i;
+      b.setAttribute('aria-pressed', i===0 ? 'true' : 'false');
+      b.innerHTML =
+        '<span class="pin-head" aria-hidden="true"><i></i></span>' +
+        '<span class="pn">' + e.cn + '</span>' +
+        '<span class="pe">' + e.en + '</span>';
+      frag.appendChild(b);
+    });
+    box.appendChild(frag);
+
+    var ro = {
+      cn:$('#ro-cn'), en:$('#ro-en'), pri:$('#ro-pri'),
+      expr:$('#ro-expr'), mot:$('#ro-mot'), str:$('#ro-str')
+    };
+    function pick(i){
+      var e = EMOTIONS[i];
+      if(!e) return;
+      $$('.pin', box).forEach(function(p, k){ p.setAttribute('aria-pressed', k===i ? 'true':'false'); });
+      ro.cn.textContent = e.cn;
+      ro.en.textContent = e.en;
+      ro.pri.textContent = e.pri;
+      ro.expr.textContent = e.expr;
+      ro.mot.textContent  = e.mot;
+      ro.str.textContent  = e.str;
+    }
+    box.addEventListener('click', function(ev){
+      var p = ev.target.closest('.pin');
+      if(p) pick(+p.dataset.idx);
+    });
+    box.addEventListener('mouseover', function(ev){
+      var p = ev.target.closest('.pin');
+      if(p && !window.matchMedia('(hover: none)').matches) pick(+p.dataset.idx);
+    });
+    box.addEventListener('keydown', function(ev){
+      var p = ev.target.closest('.pin');
+      if(!p) return;
+      var i = +p.dataset.idx, n = EMOTIONS.length, t = null;
+      if(ev.key === 'ArrowRight' || ev.key === 'ArrowDown') t = (i+1)%n;
+      else if(ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') t = (i-1+n)%n;
+      else if(ev.key === 'Home') t = 0;
+      else if(ev.key === 'End') t = n-1;
+      if(t !== null){
+        ev.preventDefault();
+        pick(t);
+        var el = $$('.pin', box)[t];
+        if(el) el.focus();
+      }
+    });
+    pick(0);
+  })();
+
+  /* ── 9. 原声档案：真实音频播放 ────────────────────────────────────── */
+  var CLIPS = [
+    { id:'zh_45', lang:'zh', file:'zh/45.mp3', dur:5.6,
+      zh:'终于，那只长久被遗弃在黑暗角落里的飞蛾，也感受到了阳光的温暖。',
+      en:"At last, the moth, long abandoned in a dark corner, comes to feel the sun's warmth." },
+    { id:'zh_03', lang:'zh', file:'zh/03.mp3', dur:5.14,
+      zh:'我扮演过身份各异的人，但不知道自己生于何处。',
+      en:"I've worn so many names, living their lives, yet I know so little of my own." },
+    { id:'zh_31', lang:'zh', file:'zh/31.mp3', dur:4.38,
+      zh:'留在我脑海里的，都是我作为工具而获得的记忆。',
+      en:"My memories come from a time when I wasn't really a person, just a tool." },
+    { id:'zh_04', lang:'zh', file:'zh/04.mp3', dur:12.33,
+      zh:'故乡对我来说是一个随时可以被重新设定的词语，我曾在一份与我有关的文件中看见了冰岛这个词，但我没有任何一个身份来自冰岛。',
+      en:"My home has always just been a line in a mission file. Once I saw Iceland in one of those papers. I've never had an identity from there." },
+    { id:'zh_01', lang:'zh', file:'zh/01.mp3', dur:7.67,
+      zh:'曾有一个人颤抖着找到我，对我说：救救我，Grace女士，我知道暴雨要来了。',
+      en:'A man once came to me trembling. Please help me, Miss Grace, he begged. I know about the storm. Is this it? Is it coming?' },
+    { id:'zh_41', lang:'zh', file:'zh/41.mp3', dur:1.84,
+      zh:'但愿没人害怕飞虫。',
+      en:'No one is afraid of flying insects here, I hope.' },
+    { id:'zh_05', lang:'zh', file:'zh/05.mp3', dur:12.22,
+      zh:'也许有一天，我们能一起去那座岛上看看。我仍在习惯这种崭新的平静生活。',
+      en:"Perhaps it would be worth visiting some day. I'm still getting used to this new, peaceful life." },
+    { id:'zh_00', lang:'zh', file:'zh/00.mp3', dur:9.56,
+      zh:'这不是我们第一次见面了，但请容我重新介绍自己，无名者，很幸运能成为你箱子里的一员。',
+      en:"We're well past introductions, Timekeeper, but I'm grateful to do so again with a name of my own." },
+    { id:'en_00', lang:'en', file:'en/00.mp3', dur:6.45,
+      zh:'这不是我们第一次见面了，但请容我重新介绍自己——无名者。',
+      en:"We're well past introductions, Timekeeper, but I'm grateful to do so again with a name of my own." }
+  ];
+  var BASE = './assets/voice/wu_ming_zhe/';
+
+  (function voice(){
+    var audio = $('#audio'), wave = $('#wave'), clipsBox = $('#clips');
+    if(!audio) return;
+    var playBtn = $('#playBtn'), playIco = $('#playIco'), track = $('#track'),
+        trackFill = $('#trackFill'), timeEl = $('#time'), note = $('#audioNote'),
+        subZh = $('#subZh'), subEn = $('#subEn'), nextBtn = $('#nextBtn');
+
+    /* 波形：由片段 id 决定的确定性伪随机，保证每次刷新形状一致 */
+    var BARS = 96, bars = [];
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<BARS;i++){
+      var b = document.createElement('i');
+      var seed = Math.abs(Math.sin((i+1)*12.9898) * 43758.5453) % 1;
+      var h = 12 + seed*76;
+      b.style.height = h.toFixed(1) + '%';
+      frag.appendChild(b); bars.push(b);
+    }
+    wave.appendChild(frag);
+
+    var cur = 0, ready = false, failed = false;
+
+    function fmt(s){
+      if(!isFinite(s) || s < 0) s = 0;
+      var m = Math.floor(s/60), q = Math.floor(s%60);
+      return (m<10?'0':'') + m + ':' + (q<10?'0':'') + q;
+    }
+    function paint(){
+      var d = audio.duration || CLIPS[cur].dur || 0;
+      var p = d > 0 ? Math.min(1, audio.currentTime / d) : 0;
+      trackFill.style.width = (p*100).toFixed(2) + '%';
+      track.setAttribute('aria-valuenow', Math.round(p*100));
+      timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(d);
+      var up = Math.round(p*BARS);
+      for(var i=0;i<BARS;i++) bars[i].classList.toggle('played', i < up);
+    }
+    function subs(c){
+      subZh.textContent = c.zh;
+      subEn.textContent = c.en;
+    }
+    function mark(i){
+      $$('.clip', clipsBox).forEach(function(el,k){
+        el.setAttribute('aria-current', k===i ? 'true' : 'false');
+      });
+    }
+    function load(i, autoplay){
+      cur = (i + CLIPS.length) % CLIPS.length;
+      var c = CLIPS[cur];
+      subs(c); mark(cur);
+      audio.src = BASE + c.file;
+      timeEl.textContent = '00:00 / ' + fmt(c.dur);
+      paint();
+      if(autoplay){
+        var pr = audio.play();
+        if(pr && pr.catch) pr.catch(function(){ /* 自动播放被拦截，等用户点击 */ });
+      }
+    }
+    function icon(playing){
+      playIco.innerHTML = playing
+        ? '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'
+        : '<path d="M8 5.5v13l11-6.5z"/>';
+      playBtn.setAttribute('aria-label', playing ? '暂停当前原声' : '播放当前原声');
+    }
+
+    /* 播放列表 */
+    var listFrag = document.createDocumentFragment();
+    CLIPS.forEach(function(c,i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'clip';
+      b.setAttribute('aria-current', i===0 ? 'true' : 'false');
+      b.innerHTML = '<span class="clip-id">' + c.id + '</span>' +
+                    '<span class="clip-tx">' + c.zh + '</span>' +
+                    '<span class="clip-dur">' + c.dur.toFixed(2) + 's</span>';
+      b.addEventListener('click', function(){ load(i, true); });
+      listFrag.appendChild(b);
+    });
+    clipsBox.appendChild(listFrag);
+
+    playBtn.addEventListener('click', function(){
+      if(failed) return;
+      if(audio.paused){ var p = audio.play(); if(p && p.catch) p.catch(function(){}); }
+      else audio.pause();
+    });
+    nextBtn.addEventListener('click', function(){ load(cur+1, true); });
+    audio.addEventListener('play',  function(){ icon(true); });
+    audio.addEventListener('pause', function(){ icon(false); });
+    audio.addEventListener('ended', function(){ icon(false); load(cur+1, true); });
+    audio.addEventListener('timeupdate', paint);
+    audio.addEventListener('loadedmetadata', paint);
+    audio.addEventListener('error', function(){
+      failed = true;
+      note.textContent = '音频未能加载——请通过 HTTP 打开本页（uvicorn 同源托管，或任意静态服务器）。';
+    });
+
+    track.addEventListener('click', function(e){
+      if(failed) return;
+      var r = track.getBoundingClientRect();
+      var d = audio.duration;
+      if(d > 0) audio.currentTime = Math.min(d, Math.max(0, (e.clientX - r.left) / r.width * d));
+    });
+    track.addEventListener('keydown', function(e){
+      if(failed) return;
+      var d = audio.duration; if(!(d > 0)) return;
+      if(e.key === 'ArrowRight'){ e.preventDefault(); audio.currentTime = Math.min(d, audio.currentTime + 2); }
+      if(e.key === 'ArrowLeft'){  e.preventDefault(); audio.currentTime = Math.max(0, audio.currentTime - 2); }
+      if(e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); playBtn.click(); }
+    });
+
+    icon(false);
+    load(0, false);
+  })();
+
+  /* ── 10. 剧情图谱：确定性的聚类网络 ───────────────────────────────── */
+  (function graph(){
+    var svg = $('#graphSvg'), host = $('#graph'), legend = $('#legend'), read = $('#graphRead');
+    if(!svg) return;
+    var NS = 'http://www.w3.org/2000/svg';
+
+    var TYPES = [
+      { id:'char',  cn:'角色',   n:74 },
+      { id:'org',   cn:'组织',   n:52 },
+      { id:'place', cn:'地点',   n:44 },
+      { id:'event', cn:'事件',   n:58 },
+      { id:'item',  cn:'物品',   n:34 },
+      { id:'time',  cn:'时间',   n:26 }
+    ];
+    /* 真实存在于角色资料里的人名 / 地名 / 组织——只标这些 */
+    var NAMED = [
+      { n:'无名者',       t:'char',  hub:true },
+      { n:'维尔汀',       t:'char'  },
+      { n:'康斯坦丁',     t:'char'  },
+      { n:'凯拉',         t:'char'  },
+      { n:'小梅斯梅尔',   t:'char'  },
+      { n:'淑女格蕾丝',   t:'char'  },
+      { n:'重塑之手',     t:'org'   },
+      { n:'基金会',       t:'org'   },
+      { n:'司辰小队',     t:'org'   },
+      { n:'77号公路',     t:'place' },
+      { n:'风网主通道',   t:'place' },
+      { n:'发条装置',     t:'item'  },
+      { n:'飞蛾',         t:'item'  },
+      { n:'普帕',         t:'item'  },
+      { n:'暴雨',         t:'event' },
+      { n:'天蛾人',       t:'event' }
+    ];
+
+    /* 确定性 PRNG（mulberry32），保证每次打开布局一致 */
+    function rng(seed){
+      return function(){
+        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+    var R = rng(19990713);
+    var W = 1000, H = 820, CX = W/2, CY = H/2;
+
+    /* 六个聚类中心，绕着中心排成一圈 */
+    var centers = {};
+    TYPES.forEach(function(t,i){
+      var a = (i/TYPES.length)*Math.PI*2 - Math.PI/2;
+      var rr = i === 0 ? 0 : 258;
+      centers[t.id] = { x: CX + Math.cos(a)*rr*1.06, y: CY + Math.sin(a)*rr*0.82 };
+    });
+
+    var nodes = [], edges = [];
+    TYPES.forEach(function(t){
+      var c = centers[t.id];
+      for(var i=0;i<t.n;i++){
+        var a = R()*Math.PI*2;
+        var rr = Math.pow(R(), 0.62) * (t.id === 'char' ? 196 : 132) + 14;
+        nodes.push({
+          x: c.x + Math.cos(a)*rr,
+          y: c.y + Math.sin(a)*rr*0.9,
+          t: t.id,
+          r: 1.5 + R()*2.1
+        });
+      }
+    });
+
+    /* 边：簇内近邻连接 + 少量跨簇长边（跨簇用曲线，才像真的图谱） */
+    var byType = {};
+    nodes.forEach(function(nd,i){ (byType[nd.t] = byType[nd.t] || []).push(i); });
+    TYPES.forEach(function(t){
+      var ids = byType[t.id];
+      ids.forEach(function(i){
+        var best = null, bd = Infinity;
+        for(var k=0;k<9;k++){
+          var j = ids[Math.floor(R()*ids.length)];
+          if(j === i) continue;
+          var d = Math.hypot(nodes[i].x-nodes[j].x, nodes[i].y-nodes[j].y);
+          if(d < bd){ bd = d; best = j; }
+        }
+        if(best !== null) edges.push({ a:i, b:best, cross:false });
+      });
+    });
+    for(var c=0;c<58;c++){
+      var i1 = Math.floor(R()*nodes.length), i2 = Math.floor(R()*nodes.length);
+      if(nodes[i1].t !== nodes[i2].t) edges.push({ a:i1, b:i2, cross:true, bend: (R()*2-1)*140 });
+    }
+    /* 无名者：连到所有被标注的节点上，让她成为图谱的中心 */
+    var hubIdx = -1;
+    TYPES.forEach(function(t){ if(t.id==='char') hubIdx = byType['char'][0]; });
+    if(hubIdx >= 0){ nodes[hubIdx].x = CX; nodes[hubIdx].y = CY; nodes[hubIdx].r = 6.2; }
+
+    /* 渲染 */
+    var gEdges = document.createElementNS(NS,'g');
+    var gNodes = document.createElementNS(NS,'g');
+    var gLabels = document.createElementNS(NS,'g');
+    svg.appendChild(gEdges); svg.appendChild(gNodes); svg.appendChild(gLabels);
+
+    edges.forEach(function(e){
+      var A = nodes[e.a], B = nodes[e.b];
+      var el = document.createElementNS(NS, e.cross ? 'path' : 'line');
+      if(e.cross){
+        var mx = (A.x+B.x)/2, my = (A.y+B.y)/2 - (e.bend||0);
+        el.setAttribute('d','M' + A.x.toFixed(1) + ' ' + A.y.toFixed(1) +
+                           'Q' + mx.toFixed(1) + ' ' + my.toFixed(1) +
+                           ' ' + B.x.toFixed(1) + ' ' + B.y.toFixed(1));
+      }else{
+        el.setAttribute('x1',A.x.toFixed(1)); el.setAttribute('y1',A.y.toFixed(1));
+        el.setAttribute('x2',B.x.toFixed(1)); el.setAttribute('y2',B.y.toFixed(1));
+      }
+      el.setAttribute('class','ge arm');
+      el.dataset.ta = A.t; el.dataset.tb = B.t;
+      gEdges.appendChild(el);
+    });
+
+    var circleByIndex = [];
+    nodes.forEach(function(nd){
+      var cl = document.createElementNS(NS,'circle');
+      cl.setAttribute('cx',nd.x.toFixed(1)); cl.setAttribute('cy',nd.y.toFixed(1));
+      cl.setAttribute('r',nd.r.toFixed(2));
+      cl.setAttribute('class','gn hub');
+      cl.dataset.t = nd.t;
+      gNodes.appendChild(cl);
+      circleByIndex.push(cl);
+    });
+
+    /* 标注：把真实名字贴在聚类中心附近，并连一条引线 */
+    var labelEls = [];
+    NAMED.forEach(function(item, k){
+      var c = centers[item.t];
+      var a = (k/NAMED.length)*Math.PI*2 + 0.4;
+      var lx = c.x + Math.cos(a)*(76 + (k%3)*40);
+      var ly = c.y + Math.sin(a)*(54 + (k%2)*34);
+      lx = Math.max(58, Math.min(W-58, lx));
+      ly = Math.max(26, Math.min(H-20, ly));
+      var t = document.createElementNS(NS,'text');
+      t.setAttribute('x', lx.toFixed(1)); t.setAttribute('y', ly.toFixed(1));
+      t.setAttribute('class','gl'); t.setAttribute('text-anchor','middle');
+      t.dataset.t = item.t;
+      t.textContent = item.n;
+      gLabels.appendChild(t);
+      labelEls.push(t);
+      if(item.hub){
+        var ln = document.createElementNS(NS,'line');
+        ln.setAttribute('x1',CX); ln.setAttribute('y1',CY);
+        ln.setAttribute('x2',lx.toFixed(1)); ln.setAttribute('y2',ly.toFixed(1));
+        ln.setAttribute('class','ge arm hub-link');
+        ln.dataset.ta = 'char'; ln.dataset.tb = 'char';
+        gEdges.insertBefore(ln, gEdges.firstChild);
+      }
+    });
+
+    /* 图例 + 筛选交互 */
+    if(legend){
+      var lf = document.createDocumentFragment();
+      TYPES.forEach(function(t){
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'lg'; b.dataset.t = t.id;
+        b.setAttribute('aria-pressed','false');
+        b.textContent = t.cn + ' ' + t.n;
+        lf.appendChild(b);
+      });
+      legend.appendChild(lf);
+      legend.addEventListener('click', function(ev){
+        var b = ev.target.closest('.lg'); if(!b) return;
+        var on = b.getAttribute('aria-pressed') === 'true';
+        $$('.lg', legend).forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+        if(on){ arm(null); read.textContent = '悬停以照明'; }
+        else { b.setAttribute('aria-pressed','true'); arm(b.dataset.t); read.textContent = b.textContent.split(' ')[0] + ' 邻域'; }
+      });
+    }
+
+    function arm(type){
+      host.dataset.armed = type ? '1' : '0';
+      circleByIndex.forEach(function(cl){
+        cl.classList.toggle('on', !type || cl.dataset.t === type);
+      });
+      $$('.gl', gLabels).forEach(function(t){
+        t.classList.toggle('on', !type || t.dataset.t === type);
+      });
+      $$('.ge', gEdges).forEach(function(e){
+        e.classList.toggle('on', !type || e.dataset.ta === type || e.dataset.tb === type);
+      });
+    }
+    if(reduce) arm(null);
+
+    /* 悬停 + 慢速漂移（漂移由 CSS 之外的手动 rAF 统一驱动，尊重 reduced-motion） */
+    if(!reduce){
+      var drift = 0;
+      (function tick(){
+        drift += 0.0016;
+        gLabels.setAttribute('transform', 'translate(0,' + (Math.sin(drift)*4).toFixed(2) + ')');
+        gNodes.setAttribute('transform',  'translate(0,' + (Math.sin(drift+0.7)*3).toFixed(2) + ')');
+        gEdges.setAttribute('transform',  'translate(0,' + (Math.sin(drift+0.4)*2).toFixed(2) + ')');
+        requestAnimationFrame(tick);
+      })();
+    }
+  })();
+
+  /* ── 11. 接线台：本地 ↔ 云端 ──────────────────────────────────────── */
+  (function switchboard(){
+    var bL = $('#btnLocal'), bC = $('#btnCloud');
+    if(!bL || !bC) return;
+    var PROFILE = {
+      local: { prov:'ollama',     url:'127.0.0.1:11434/v1', key:'不需要 · 纯本地',    term:'#termLocal' },
+      cloud: { prov:'deepseek',   url:'api.deepseek.com/v1', key:'本次请求 · 不落盘', term:'#termCloud' }
+    };
+    function set(route){
+      var p = PROFILE[route];
+      document.body.dataset.route = route;
+      bL.setAttribute('aria-pressed', route === 'local' ? 'true' : 'false');
+      bC.setAttribute('aria-pressed', route === 'cloud' ? 'true' : 'false');
+      $('#rrProv').textContent = p.prov;
+      $('#rrUrl').textContent  = p.url;
+      $('#rrKey').textContent  = p.key;
+      $('#termLocal').classList.toggle('on', route === 'local');
+      $('#termCloud').classList.toggle('on', route === 'cloud');
+    }
+    bL.addEventListener('click', function(){ set('local'); });
+    bC.addEventListener('click', function(){ set('cloud'); });
+    set('cloud');
+  })();
+
+  /* ── 12. 立绘缺失兜底 ─────────────────────────────────────────────── */
+  (function figureFallback(){
+    var img = $('.case-figure'), box = $('#case');
+    if(!img || !box) return;
+    img.addEventListener('error', function(){
+      box.classList.add('failed');
+      var tag = $('.case-tag .card b', box);
+      if(tag) tag.textContent = 'SPECIMEN';
+    });
+    if(img.complete && img.naturalWidth === 0) box.classList.add('failed');
+  })();
+})();
+</script>
+</body>
+</html>

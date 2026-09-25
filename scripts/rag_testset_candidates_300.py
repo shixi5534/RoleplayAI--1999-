@@ -16,6 +16,12 @@
                  灿烂，1.9=孤独之歌，1971=绿湖噩梦，其余含联动归"其他"）
   difficulty / depth / text_len 由 gen 脚本按确定性规则补齐（也可显式覆盖）。
 
+⚠️ 2026-09-16 字段语义修正：
+  「题干限定词」**不再写进 evidence**，改放独立的 ``scenario_hints``。
+  原因：严格评分口径要求覆盖 evidence 的**每一组**，而限定词（章节名/载具/同场景
+  人物）并非回答所必需，混入后导致 20 道题假失败（详见 docs/题集证据组复核.md）。
+  evidence 现在只承载「答案证据」；scenario_hints 保留设计意图但不参与判定。
+
 由 gen_rag_testset_300.py import 使用；本文件不产生任何副作用（只读语料表）。
 """
 from __future__ import annotations
@@ -1588,10 +1594,60 @@ SCENARIO_ADD: dict[str, list[str]] = {
     "玛蒂尔达的英文名是什么？": ["Sonnet", "十四行诗"],
 }
 
+# ── 场景锚点题的**显式 dims**（2026-09-16）────────────────────────────────
+# 背景：SCENARIO_ADD 附带出的场景组原本让 fill_dims 推出 hop=multi / depth=deep /
+# difficulty=hard（判据是「证据组 ≥2」）。移除场景组后若不固定 dims，题集配额的
+# (type × class) 结构会无解（实测生成失败）。
+# 判定：这些题**客观上确实需要两步**——先按题干限定定位场景，再找答案，所以
+# hop=multi 的难度标签是成立的；错的只是「把场景词当作必须覆盖的答案证据」。
+# 故此处显式保留原 dims，只让 evidence 回归纯答案证据。
+SCENARIO_DIMS: dict[str, dict] = {
+    "阿派朗岛上的时间停滞在哪一年？": {"type": "temporal", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.9", "text_len": "short"},
+    "维尔汀在阿派朗岛击败阿尔卡纳之后获得的、能庇护更多人的道具是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.9", "text_len": "long"},
+    "阿尔卡纳最终死于哪种轰炸武器？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.9", "text_len": "short"},
+    "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.9", "text_len": "long"},
+    "今夜星光灿烂篇里的年轻调查员马库斯的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "medium"},
+    "特奥菲尔的英文名是什么？（维也纳篇）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "medium"},
+    "格蕾塔·霍夫曼的英文名是什么？（今夜星光灿烂篇）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "medium"},
+    "多里斯医生的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+    "卡卡尼亚的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+    "绿湖噩梦篇的故事发生地是哪个营地？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "short"},
+    "绿湖噩梦中痴迷恐怖片的男孩的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "medium"},
+    "洁西卡的英文名是什么？（绿湖噩梦篇）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "medium"},
+    "迈克尔的英文名是什么？（绿湖噩梦篇）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "medium"},
+    "弗莱迪的英文名是什么？（绿湖噩梦篇）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "medium"},
+    "冷周六的英文名是什么？（绿湖噩梦篇登场角色）": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "medium"},
+    "绿湖噩梦篇的故事发生在哪一年？": {"type": "temporal", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1971", "text_len": "short"},
+    "洞穴的囚徒篇中被称作 standkeeper 的女性是谁？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.4", "text_len": "long"},
+    "洞穴的囚徒篇里海盗船上的歌手是谁？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.4", "text_len": "short"},
+    "洞穴的囚徒篇里名为 Zero 的角色对应数字几？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.4", "text_len": "medium"},
+    "诺谛卡的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "其他", "text_len": "short"},
+    "玛蒂尔达的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "其他", "text_len": "short"},
+    "星锑的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "其他", "text_len": "short"},
+    "苏芙比的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "其他", "text_len": "short"},
+    "海因里希的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+    "伊索尔德的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+    "维也纳的英文叫什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+    "施瓦茨的英文名是什么？": {"type": "factoid", "difficulty": "hard", "depth": "deep", "hop": "multi", "chapter": "1.7", "text_len": "short"},
+}
+
+for _cand in SEEDS + HAND:
+    _d = SCENARIO_DIMS.get(_cand["q"])
+    if _d:
+        _cand["dims"] = dict(_d)
+
 for _cand in SEEDS + HAND:
     _extra = SCENARIO_ADD.get(_cand["q"])
     if _extra and len(_cand["evidence"]) == 1:
-        _cand["evidence"].append(_extra)
+        # ⚠️ 2026-09-16 修正（系统性误标根因）：
+        # 这些词是**题干限定词/场景锚点**（章节名、载具、同场景人物），不是「回答该
+        # 问题所必需的证据」。把它们塞进 evidence 会让严格口径（要求覆盖全部证据组）
+        # 判出**假失败**——实例：R003「洞穴的囚徒篇里海盗船上的歌手是谁？」，追加的
+        # Sotheby 来自船上点唱机歌名《Please Please Sotheby》，源剧情里并无苏芙比在场
+        # （用户核对确认）。实测该类题共 43 道，其中 20 道纯粹因这个机制 FAIL。
+        # 故改为独立字段 scenario_hints：保留设计意图（场景锚点可供分析/可选校验），
+        # 但不再参与 PASS 判定。详见 docs/题集证据组复核.md。
+        _cand["scenario_hints"] = list(_extra)
 
 
 # ── 3. AUTO：别名表自动生成（中→英译名题）────────────────────────────────────

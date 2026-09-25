@@ -1,0 +1,18 @@
+﻿python.exe : Traceback (most recent call last):
+所在位置 行:447 字符: 1
++ & ".\.venv\Scripts\python.exe" -X utf8 scripts\diag_recall_cause.py 1 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last) 
+   ::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\diag_
+recall_cause.py", line 154, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\diag_
+recall_cause.py", line 48, in main
+    _real = print
+            ^^^^^
+UnboundLocalError: cannot access local variable 'print' where it is not associa
+ted with a value

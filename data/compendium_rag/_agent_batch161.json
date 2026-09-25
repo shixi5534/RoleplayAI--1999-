@@ -1,0 +1,1533 @@
+{
+ "a7ea1d73f6abf629b7b46c02": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以批准条据应付检查的艺术家"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求提交驾驶证明的警察"
+   },
+   {
+    "name": "看守警员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "奉命看住挖掘艺术的年轻警员"
+   },
+   {
+    "name": "消防车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被警车团团围住的消防车"
+   },
+   {
+    "name": "镭射肥皂泡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "能反射出人们美梦的肥皂泡"
+   },
+   {
+    "name": "空想肥皂泡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挖掘艺术的经典之作"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "警员们从中看到景象的镜面泡泡"
+   },
+   {
+    "name": "摄政街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挖掘艺术试图溜走的街道"
+   },
+   {
+    "name": "大本钟",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被挖掘艺术拨弄过指针的地标"
+   },
+   {
+    "name": "唐宁街10号",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被办过玻璃窗画展之处"
+   },
+   {
+    "name": "伦敦塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被用防水涂料染色之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警察",
+    "relation": "拦查",
+    "dst": "挖掘艺术",
+    "evidence": "站住！例行检查",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "要求",
+    "dst": "挖掘艺术",
+    "evidence": "请提交您的消防车驾驶证明",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "列举",
+    "dst": "挖掘艺术",
+    "evidence": "最近一个月，你已经光顾了十三次警局",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "列举",
+    "dst": "大本钟",
+    "evidence": "拨弄大本钟的指针",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "列举",
+    "dst": "唐宁街10号",
+    "evidence": "在唐宁街10号搞玻璃窗画展",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "列举",
+    "dst": "伦敦塔",
+    "evidence": "用防水涂料给伦敦塔染色",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "指控",
+    "dst": "挖掘艺术",
+    "evidence": "你现在涉嫌妨碍公共交通",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "辩解",
+    "dst": "警察",
+    "evidence": "我向警长提交了消防车使用说明，并且得到了批准",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "质疑",
+    "dst": "消防车",
+    "evidence": "警长怎么会同意这项荒唐的审批",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "追问",
+    "dst": "挖掘艺术",
+    "evidence": "那你打算怎么解释那些稀奇古怪的泡泡？",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "介绍",
+    "dst": "镭射肥皂泡",
+    "evidence": "是能反射出人们美梦的镭射肥皂泡？",
+    "confidence": 0.95
+   },
+   {
+    "src": "镭射肥皂泡",
+    "relation": "致眠",
+    "dst": "警察",
+    "evidence": "它让整个广场的人昏睡了两天",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "介绍",
+    "dst": "空想肥皂泡",
+    "evidence": "再不然是我的经典之作——空想肥皂泡？",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "坚持",
+    "dst": "镜面肥皂泡",
+    "evidence": "这一次，我们肯定能分析出里面的古怪成分",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "指出",
+    "dst": "消防车",
+    "evidence": "至少现在，你们证据不足",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "要求",
+    "dst": "挖掘艺术",
+    "evidence": "我现在要求你作为目击证人配合调查！",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "下令",
+    "dst": "看守警员",
+    "evidence": "看住他",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "佯装",
+    "dst": "看守警员",
+    "evidence": "挖掘艺术突然捂住了肚子蹲了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "致眠",
+    "dst": "看守警员",
+    "evidence": "做个好梦～",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "逃离",
+    "dst": "摄政街",
+    "evidence": "他正蹑手蹑脚地朝着摄政街的尽头走去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0e204f96e25a33e418e21227": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因相撞而错失比赛的赛车手"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被星锑撞飞的嫌疑人"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告车况并预警的苹果"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求支援并追捕二人的警察"
+   },
+   {
+    "name": "威廉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认印章被盗的警长"
+   },
+   {
+    "name": "雪地摩托",
+    "type": "物品",
+    "aliases": [
+     "摩托车"
+    ],
+    "desc": "降落在花坛与围墙缝隙里的摩托"
+   },
+   {
+    "name": "卡纳比街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人各自抵达的终点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "撞上",
+    "dst": "挖掘艺术",
+    "evidence": "车上的摇滚女孩与追求自由的嫌疑人撞成了一团",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抱怨",
+    "dst": "星锑",
+    "evidence": "到底是从哪儿来的菜鸟车手",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "指责",
+    "dst": "挖掘艺术",
+    "evidence": "你毁了我的比赛！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "认出",
+    "dst": "星锑",
+    "evidence": "星锑？！那个招摇撞骗的摇滚海盗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "误认",
+    "dst": "挖掘艺术",
+    "evidence": "我就知道要留意你们这些在赛道上埋伏的便衣警察！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抗议",
+    "dst": "星锑",
+    "evidence": "这是反对物质的象征，是崇尚自由的符号！",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "报告",
+    "dst": "星锑",
+    "evidence": "机体轻微刮花，传动系统运转正常",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "问候",
+    "dst": "星锑",
+    "evidence": "船长，你还好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "控诉",
+    "dst": "挖掘艺术",
+    "evidence": "他毁了我的比赛，毁了我登上颁奖台的阶梯",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "警告",
+    "dst": "星锑",
+    "evidence": "对个人名誉的侵犯很有可能招致我的诉讼公函",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "通报",
+    "dst": "威廉警长",
+    "evidence": "根据威廉警长传来的最新讯息，他的印章已确认被盗",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "指控",
+    "dst": "挖掘艺术",
+    "evidence": "涉嫌违规使用消防车、伪造警章、袭击警员等一系列罪名",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "追捕",
+    "dst": "星锑",
+    "evidence": "极有可能是通缉令上的摇滚海盗星锑",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "逃逸",
+    "dst": "卡纳比街",
+    "evidence": "至少，他们都抵达了各自的终点，卡纳比街",
+    "confidence": 0.95
+   },
+   {
+    "src": "雪地摩托",
+    "relation": "坠落",
+    "dst": "卡纳比街",
+    "evidence": "最后精准地降落在花坛与围墙之间的缝隙里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "03d02ba208ddc929b10443c5": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为落选者预留栏目的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转述其遗言的苹果"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被关进警车的落选者"
+   },
+   {
+    "name": "警车",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押落选者的车辆"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挖掘艺术嘱咐关注的头版新闻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "被押",
+    "dst": "警车",
+    "evidence": "有人不幸被关进了警车",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "询问",
+    "dst": "星锑",
+    "evidence": "他还好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "评价",
+    "dst": "挖掘艺术",
+    "evidence": "如果他那些信誓旦旦的发言都可信的话",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "转述",
+    "dst": "星锑",
+    "evidence": "他嘱咐我们一定要关注明天的报纸，头版新闻",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "策划",
+    "dst": "APPLe",
+    "evidence": "我打算为今晚的摇滚电台新增一期保留栏目",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "命名",
+    "dst": "挖掘艺术",
+    "evidence": "最坏的开始与最好的结局——致我们永远的邋遢小子",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "嘱托",
+    "dst": "报纸",
+    "evidence": "他嘱咐我们一定要关注明天的报纸",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6cc0129529dea470b59b4d0e": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迟到十五分钟的半路出家盗贼"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "评判答卷的老师"
+   },
+   {
+    "name": "伦敦之心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "梅兰妮手中拍照的宝石"
+   },
+   {
+    "name": "梅兰妮的相机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从艾西腹中取出的造型别致的相机"
+   },
+   {
+    "name": "黑色册子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录父亲所保护之物的黑色册子"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最后一道题所指向的奖杯"
+   },
+   {
+    "name": "消防车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "导致梅兰妮迟到的元凶"
+   },
+   {
+    "name": "墓碑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "公司破产后无力支付的安葬之所"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "把墓地当作游乐场的生物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "自责",
+    "dst": "消防车",
+    "evidence": "都怪那台可恶的消防车！",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "点评",
+    "dst": "梅兰妮",
+    "evidence": "应变能力仍有不足",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "表态",
+    "dst": "艾西",
+    "evidence": "我还在努力，艾西老师",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "指示",
+    "dst": "梅兰妮",
+    "evidence": "开始最后一步",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "说明",
+    "dst": "梅兰妮的相机",
+    "evidence": "留下合照的记录",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "取出",
+    "dst": "梅兰妮的相机",
+    "evidence": "在艾西的肚子里四处摸索，最终扯出一台造型别致的相机",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "举起",
+    "dst": "伦敦之心",
+    "evidence": "另一只手拿着“伦敦之心”，摁下了快门",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "自省",
+    "dst": "艾西",
+    "evidence": "眉头有点紧张，笑容也有些僵硬",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "评价",
+    "dst": "梅兰妮",
+    "evidence": "和他很像",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "立志",
+    "dst": "艾西",
+    "evidence": "我会做得比他更好，艾西老师",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "自述",
+    "dst": "艾西",
+    "evidence": "我只是个半路出家的盗贼",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "记录",
+    "dst": "黑色册子",
+    "evidence": "把它翻到最后一页，再郑重地把刚拍好的照片贴了上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "陈述",
+    "dst": "黑色册子",
+    "evidence": "这些都是父亲曾保护过的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "提出",
+    "dst": "雷米特杯",
+    "evidence": "雷米特杯",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "建议",
+    "dst": "梅兰妮",
+    "evidence": "或许你该去见见他",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "哀叹",
+    "dst": "墓碑",
+    "evidence": "公司破产后，我们连一块像样的墓地也支付不起",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "遭遇",
+    "dst": "魔精",
+    "evidence": "看来它们把这儿当成了自己的游乐场",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "觊觎",
+    "dst": "伦敦之心",
+    "evidence": "对方虎视眈眈地盯着梅兰妮手里的“伦敦之心”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "68167cdce433e11a4d0e5624": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在父亲墓前述说者"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行的老师"
+   },
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "电视采访中贬低想象力的负责人"
+   },
+   {
+    "name": "伦敦之心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将作为证据送往警长办公室的宝石"
+   },
+   {
+    "name": "今日足球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "摊在墓碑前的《今日足球》"
+   },
+   {
+    "name": "墓碑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮父亲的墓碑"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拉米雷斯曾保护却失窃的奖杯"
+   },
+   {
+    "name": "拉米雷斯",
+    "type": "组织",
+    "aliases": [],
+    "desc": "因造假质疑而失势的安保公司"
+   },
+   {
+    "name": "安保指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新人类重新提倡的安保指南"
+   },
+   {
+    "name": "新人类",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为雷米特杯提供安保的公司"
+   },
+   {
+    "name": "警局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "证据须准时送达之处"
+   },
+   {
+    "name": "瞌睡跳跳豆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随身携带以驱散魔精的豆子"
+   },
+   {
+    "name": "采访记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "采访艾弗森的记者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "献上",
+    "dst": "墓碑",
+    "evidence": "我为您带来了“伦敦之心”",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "讲述",
+    "dst": "伦敦之心",
+    "evidence": "那个手忙脚乱的笨贼在鼻涕虫喷剂的惊喜中搞错了方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "评价",
+    "dst": "新人类",
+    "evidence": "新的安保公司精心准备了机器人们",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "批评",
+    "dst": "安保指南",
+    "evidence": "所有的行动都与那本《安保指南》上的内容如出一辙",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "收起",
+    "dst": "伦敦之心",
+    "evidence": "她收起了那颗宝石，吹了吹上面的灰尘",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "说明",
+    "dst": "警局",
+    "evidence": "它得在明天傍晚准时地抵达威廉警长的办公室",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "摊开",
+    "dst": "今日足球",
+    "evidence": "把它小心翼翼地摊在墓碑前的空地",
+    "confidence": 0.95
+   },
+   {
+    "src": "采访记者",
+    "relation": "介绍",
+    "dst": "艾弗森",
+    "evidence": "我们请来了为即将抵达伦敦的雷米特杯提供安保的“新人类”公司负责人",
+    "confidence": 0.95
+   },
+   {
+    "src": "采访记者",
+    "relation": "回顾",
+    "dst": "拉米雷斯",
+    "evidence": "数年前的雷米特杯受到当时最知名的安保公司“拉米雷斯”的保护",
+    "confidence": 0.95
+   },
+   {
+    "src": "采访记者",
+    "relation": "回顾",
+    "dst": "雷米特杯",
+    "evidence": "却在一夜之间离奇消失",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "说明",
+    "dst": "雷米特杯",
+    "evidence": "经相关机构检测，被寻回的雷米特杯其实是一件伪造品",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "贬斥",
+    "dst": "拉米雷斯",
+    "evidence": "他们的想象力给社会带来了可怕的后果",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "主张",
+    "dst": "安保指南",
+    "evidence": "我们不得不摒弃拉米雷斯提倡的安保理论",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "断言",
+    "dst": "安保指南",
+    "evidence": "缺乏规范的安保理论是一座空中楼阁",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "评论",
+    "dst": "艾弗森",
+    "evidence": "真是辛辣的点评",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "反思",
+    "dst": "墓碑",
+    "evidence": "如果我们在接手时曾对“雷米特杯”进行过质检",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "使用",
+    "dst": "瞌睡跳跳豆",
+    "evidence": "随身携带瞌睡跳跳豆是一个相当明智的决定",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "嘲讽",
+    "dst": "艾弗森",
+    "evidence": "呵",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c9f20362b6b95c006542018f": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意证明一切并教训艾弗森者"
+   },
+   {
+    "name": "墓碑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被拍着安慰的墓碑"
+   },
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "需要得到更严厉教训的负责人"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曾未经质检的奖杯"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "反问",
+    "dst": "墓碑",
+    "evidence": "是否今日我便不会再对着沉默的石碑说话了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "安慰",
+    "dst": "墓碑",
+    "evidence": "梅兰妮拍了拍墓碑，像是在安慰一位事业受挫的老友",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "立誓",
+    "dst": "墓碑",
+    "evidence": "我会证明这一切的",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "抉择",
+    "dst": "墓碑",
+    "evidence": "即使它会令我走上与您相反的道路",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "主张",
+    "dst": "墓碑",
+    "evidence": "真正的保护将不只是防御，还包括进攻",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "针对",
+    "dst": "艾弗森",
+    "evidence": "艾弗森先生需要得到一份更严厉的教训",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "追悔",
+    "dst": "雷米特杯",
+    "evidence": "如果我们在接手时曾对“雷米特杯”进行过质检",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2ac092244ecbd3bdf4ef09d": {
+  "entities": [
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与星锑相熟的报童汤米"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误以为挖掘艺术是坏蛋头子的海盗"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "分析机器人影响的苹果"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被星锑认定的“同伙”"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "今日正式开启巡展的奖杯"
+   },
+   {
+    "name": "安保机器人",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将替代人类工作的安保机器人"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将迎来史无前例平静局面的城市"
+   },
+   {
+    "name": "新人类",
+    "type": "组织",
+    "aliases": [],
+    "desc": "宣布接手雷米特杯展览的公司"
+   },
+   {
+    "name": "警局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将全面引入安防系统的机构"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "报童塞给星锑的皱报纸"
+   },
+   {
+    "name": "翻译器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "APPLe 正在研究的新装置"
+   },
+   {
+    "name": "广播",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可能受机器人磁场影响的频道信号"
+   }
+  ],
+  "relations": [
+   {
+    "src": "报童",
+    "relation": "招呼",
+    "dst": "星锑",
+    "evidence": "星锑！你怎么来了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "问候",
+    "dst": "报童",
+    "evidence": "嘿，汤米！好久不见",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "调侃",
+    "dst": "星锑",
+    "evidence": "你最近出现得也太频繁了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "提及",
+    "dst": "挖掘艺术",
+    "evidence": "邋遢小子声称在报纸上给我们留下了遗言",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "纠正",
+    "dst": "星锑",
+    "evidence": "船长，我想他昨天说的是“惊喜留言”",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "递交",
+    "dst": "报纸",
+    "evidence": "他把一份早已翻皱的报纸塞给了星锑",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "朗读",
+    "dst": "雷米特杯",
+    "evidence": "雷米特杯巡展于今日正式开启",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "朗读",
+    "dst": "新人类",
+    "evidence": "新人类公司宣布接手雷米特杯的展览",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "朗读",
+    "dst": "安保机器人",
+    "evidence": "他们将启用更多的安保机器人以替代人类工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "朗读",
+    "dst": "警局",
+    "evidence": "警局将全面引入此套安防系统",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "说明",
+    "dst": "安保机器人",
+    "evidence": "安保机器人们拥有屏蔽信号，影响局部空间磁场的功能",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "警示",
+    "dst": "广播",
+    "evidence": "这恐怕会影响我们广播频道的信号收发功能",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "抱怨",
+    "dst": "安保机器人",
+    "evidence": "这算是什么惊喜留言！我的海盗公演计划可就泡汤了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "误解",
+    "dst": "挖掘艺术",
+    "evidence": "邋遢小子是机器人们的同伙",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "提议",
+    "dst": "星锑",
+    "evidence": "你打算把一手消息提供给报社吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "拒绝",
+    "dst": "报童",
+    "evidence": "朋友要做的是劝说他放弃这个邪恶的计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "研究",
+    "dst": "翻译器",
+    "evidence": "APPLe先生暂时中止了他的翻译器新研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "告别",
+    "dst": "报童",
+    "evidence": "回头见，汤米～",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d979a60f12a7a817659b900": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定以展厅为舞台的艺术家"
+   },
+   {
+    "name": "温迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接住被抛飞报纸的小狗"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被揉成一团又展开的报纸"
+   },
+   {
+    "name": "雷米特杯展厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "万众瞩目的雷米特杯展厅"
+   },
+   {
+    "name": "洒水车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被用以破坏交通秩序的车辆"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被挖掘艺术视为受困于黑夜的城市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "翻阅",
+    "dst": "报纸",
+    "evidence": "他把手上的报纸翻来覆去地看了几遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "失望",
+    "dst": "洒水车",
+    "evidence": "警方通告，某男子使用特殊手段控制洒水车……获拘留三日处理",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "控诉",
+    "dst": "报纸",
+    "evidence": "派对主题、演讲重点、主办人、未来的艺术方向……一句都没提及！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "悲叹",
+    "dst": "伦敦",
+    "evidence": "理想世界的上空弥漫着挥之不去的阴霾，这是伦敦的悲哀",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "呼吁",
+    "dst": "伦敦",
+    "evidence": "我们需要改变！彻底的改变！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "批判",
+    "dst": "伦敦",
+    "evidence": "人们早已习惯了盲从，他们只看得见最受注目的东西！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "决定",
+    "dst": "雷米特杯展厅",
+    "evidence": "万众瞩目的雷米特杯展厅，将会是史无前例的完美舞台！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抛洒",
+    "dst": "报纸",
+    "evidence": "他手上的报纸被洒向空中，仿佛是一份好戏将至的宣告",
+    "confidence": 0.95
+   },
+   {
+    "src": "温迪",
+    "relation": "接住",
+    "dst": "报纸",
+    "evidence": "训练有素的小狗绝不会放过任何一个接下被抛飞的玩具球的机会",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b21610bb52f83b10274abb23": {
+  "entities": [
+   {
+    "name": "温迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叼回报纸的小斗牛犬"
+   },
+   {
+    "name": "查尔顿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议参观展览的市民"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "举起爪子表示不愿的牧羊犬"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "混入人群通过安检的艺术家"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "温迪叼回的报纸"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "今日开展巡展的奖杯"
+   },
+   {
+    "name": "雷米特杯展厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "挤满游客的雷米特杯展厅"
+   },
+   {
+    "name": "序厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雷米特杯展厅的序厅"
+   },
+   {
+    "name": "泡泡装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挖掘艺术手心的泡泡装置"
+   },
+   {
+    "name": "儿童游客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现彩色光的孩子"
+   },
+   {
+    "name": "游客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告诫孩子的母亲"
+   }
+  ],
+  "relations": [
+   {
+    "src": "温迪",
+    "relation": "叼回",
+    "dst": "报纸",
+    "evidence": "小斗牛犬咬着报纸在主人面前转了一圈又一圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "训斥",
+    "dst": "温迪",
+    "evidence": "我说过很多次，不许捡路上的垃圾！",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "宣布",
+    "dst": "雷米特杯",
+    "evidence": "雷米特杯展览今日开始！",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "提议",
+    "dst": "雷米特杯",
+    "evidence": "今天下午，我们去参观雷米特杯的展览，怎么样？",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "怂恿",
+    "dst": "皮克勒斯",
+    "evidence": "我们的小皮克勒斯一定能成为那只幸运小狗",
+    "confidence": 0.95
+   },
+   {
+    "src": "温迪",
+    "relation": "兴奋",
+    "dst": "查尔顿",
+    "evidence": "小斗牛犬在一旁兴奋地打滚",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "表态",
+    "dst": "查尔顿",
+    "evidence": "皮克勒斯缓慢且坚定地抬起了他的爪子",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "表决",
+    "dst": "皮克勒斯",
+    "evidence": "现在，有人不愿意去参观雷米特杯吗？请举起你的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "儿童游客",
+    "relation": "惊呼",
+    "dst": "游客",
+    "evidence": "妈妈，你看！那位叔叔的手在发出彩色的光！",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客",
+    "relation": "告诫",
+    "dst": "儿童游客",
+    "evidence": "你答应过我出来绝对不会吵吵闹闹的",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "藏匿",
+    "dst": "泡泡装置",
+    "evidence": "他的手心里藏着一瓶气味浓郁的彩色液体",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "通过",
+    "dst": "雷米特杯展厅",
+    "evidence": "顺利通过安检",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "勘察",
+    "dst": "雷米特杯展厅",
+    "evidence": "挖掘艺术在展厅里逛了几圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "置身",
+    "dst": "序厅",
+    "evidence": "雷米特杯展厅·序厅",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "等待",
+    "dst": "雷米特杯展厅",
+    "evidence": "他们等待着一场强风",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a33a8c020639af1126a7d86f": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在展厅内吹出肥皂泡的艺术家"
+   },
+   {
+    "name": "安保机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迅速围拢的安保机器人"
+   },
+   {
+    "name": "泡泡装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被搁在通风口旁的泡泡装置"
+   },
+   {
+    "name": "通风口",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仅有微弱气流的通风口"
+   },
+   {
+    "name": "雷米特杯展厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "天窗被幕布遮蔽的展厅"
+   },
+   {
+    "name": "路人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论泡泡的参观者"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被吹向人群的彩虹肥皂泡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "抱怨",
+    "dst": "雷米特杯展厅",
+    "evidence": "外面的强风根本吹不进来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "决意",
+    "dst": "安保机器人",
+    "evidence": "真正的艺术家绝对不会缺乏抗争的勇气与决心",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "搁置",
+    "dst": "泡泡装置",
+    "evidence": "把泡泡装置随手搁在了距离他最近的通风口旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "观察",
+    "dst": "安保机器人",
+    "evidence": "注视着正在不远处巡逻的安保机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "吹出",
+    "dst": "镜面肥皂泡",
+    "evidence": "他勇敢地朝着人群吹出了一个又一个的彩虹肥皂泡",
+    "confidence": 0.95
+   },
+   {
+    "src": "路人",
+    "relation": "质疑",
+    "dst": "挖掘艺术",
+    "evidence": "怎么会有人在室内吹泡泡啊？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安保机器人",
+    "relation": "围拢",
+    "dst": "挖掘艺术",
+    "evidence": "它们朝着挖掘艺术的位置步步紧逼",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "焦急",
+    "dst": "安保机器人",
+    "evidence": "这才过去了一分钟！",
+    "confidence": 0.95
+   },
+   {
+    "src": "通风口",
+    "relation": "吹拂",
+    "dst": "泡泡装置",
+    "evidence": "里面吹出的微弱气流甚至不能让泡泡装置的风扇转上半圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "安保机器人",
+    "relation": "压制",
+    "dst": "挖掘艺术",
+    "evidence": "安保机器人们涌了上来",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

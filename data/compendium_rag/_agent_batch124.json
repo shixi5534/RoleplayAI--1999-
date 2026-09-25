@@ -1,0 +1,1611 @@
+{
+ "c555190d7aa72a06ec2acb26": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自贬其诗者"
+   },
+   {
+    "name": "游客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反问者"
+   },
+   {
+    "name": "游客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求作品者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贴身同伴"
+   },
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会队长"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨识者"
+   },
+   {
+    "name": "施术波动",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所察觉之物"
+   },
+   {
+    "name": "苔原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "诗中之喻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "游客Ⅱ",
+    "relation": "反问",
+    "dst": "冬",
+    "evidence": "您难道就写得更好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅲ",
+    "relation": "求观",
+    "dst": "冬",
+    "evidence": "请问您都有些什么作品？",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "贴合",
+    "dst": "冬",
+    "evidence": "山雀站在他肩膀上，紧紧贴着脖颈",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "指认",
+    "dst": "冬",
+    "evidence": "他就是那位到处刻字的神秘学家？",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "判定",
+    "dst": "冬",
+    "evidence": "他是位诗人",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "显现",
+    "dst": "施术波动",
+    "evidence": "淡蓝的、冰棱一样的光晕，从他脚下隐约显现了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9a54c672ba9e21ccacbd264e": {
+  "entities": [
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "依法提醒者"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出条件者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被邀者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抗辩者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "调查方"
+   },
+   {
+    "name": "公共区域安全法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所涉之法"
+   },
+   {
+    "name": "寓言诗",
+    "type": "概念",
+    "aliases": [],
+    "desc": "冬所作"
+   },
+   {
+    "name": "悬崖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "对话之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "调查员Ⅰ",
+    "relation": "识破",
+    "dst": "冬",
+    "evidence": "你是想驱散涌入此地的普通人",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "提示",
+    "dst": "冬",
+    "evidence": "你先前的举动，涉嫌违反《公共区域安全法》",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "自介",
+    "dst": "冬",
+    "evidence": "我们是圣洛夫基金会的调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "承认",
+    "dst": "调查员Ⅰ",
+    "evidence": "是……是的",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "释诗",
+    "dst": "调查员Ⅰ",
+    "evidence": "是……寓言诗。是，写给，路过的……鸟儿看的",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "许诺",
+    "dst": "冬",
+    "evidence": "圣洛夫基金会可以为你提供安静、安全的创作环境",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "申明",
+    "dst": "冬",
+    "evidence": "登记在册并不影响神秘学家来去自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "抗辩",
+    "dst": "调查员Ⅰ",
+    "evidence": "山雀啁啾，似乎在激烈地抗辩",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7b4cc72daeab7de983193bc6": {
+  "entities": [
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "释明者"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问名者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报上己名者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代呼其名者"
+   },
+   {
+    "name": "码头",
+    "type": "地点",
+    "aliases": [],
+    "desc": "日出之处"
+   },
+   {
+    "name": "针叶林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾穿行之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "调查员Ⅰ",
+    "relation": "释明",
+    "dst": "冬",
+    "evidence": "登记在册并不影响神秘学家来去自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "问名",
+    "dst": "冬",
+    "evidence": "您的名字是？",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "呼名",
+    "dst": "冬",
+    "evidence": "它欢叫着，同一个词语，同一个名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "独处",
+    "dst": "针叶林",
+    "evidence": "伴月光于幽暗的针叶下穿梭",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "眺望",
+    "dst": "码头",
+    "evidence": "冬能看到，此时空旷码头延伸的尽头，太阳，升起来了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6b119dbf24ad3dcba13659ee": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留驻岛上者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读档者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "作答的友人"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所遗诗稿"
+   },
+   {
+    "name": "玻璃瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "内有纸条"
+   },
+   {
+    "name": "基金会远东分部图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏诗稿之处"
+   },
+   {
+    "name": "阿穆尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "驳船来处"
+   },
+   {
+    "name": "天堂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "冬所比况"
+   },
+   {
+    "name": "码头",
+    "type": "地点",
+    "aliases": [],
+    "desc": "送别之处"
+   },
+   {
+    "name": "箱中走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通往图书室"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "收诗稿方"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "留驻之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "冬",
+    "relation": "登记",
+    "dst": "圣洛夫基金会",
+    "evidence": "他于次月完成登记，附加内容仅有‘继续留驻岛上’一条",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "收回",
+    "dst": "羊皮纸",
+    "evidence": "基金会从当局手中，收回了那些被展览的诗稿",
+    "confidence": 0.95
+   },
+   {
+    "src": "羊皮纸",
+    "relation": "藏于",
+    "dst": "基金会远东分部图书馆",
+    "evidence": "回收的诗稿原件，目前藏于基金会远东分部图书馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "读档",
+    "dst": "冬",
+    "evidence": "档案册被翻阅到尽头",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "远眺",
+    "dst": "码头",
+    "evidence": "冬站在码头上，如同第一次踏上这片岛屿时那样眺望",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "应问",
+    "dst": "冬",
+    "evidence": "山雀唱了一首诗，答非所问了",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "比拟",
+    "dst": "天堂",
+    "evidence": "天堂的幸福，太庞大，也太遥远",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "留驻",
+    "dst": "孤岛",
+    "evidence": "这里，永恒的太阳，永恒的月亮……我们回去吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "拾得",
+    "dst": "玻璃瓶",
+    "evidence": "还有一个……玻璃瓶？里面有张纸条，是给我的吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "展开",
+    "dst": "羊皮纸",
+    "evidence": "桌上的羊皮纸已经被“冬”衔住边角展开来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c1ad1364bf529eb992a824e8": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留诗者"
+   },
+   {
+    "name": "爪印",
+    "type": "物品",
+    "aliases": [],
+    "desc": "纸末的签名"
+   },
+   {
+    "name": "人间",
+    "type": "概念",
+    "aliases": [],
+    "desc": "诗末所答"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "留有爪印"
+   },
+   {
+    "name": "诗",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所留之作"
+   }
+  ],
+  "relations": [
+   {
+    "src": "冬",
+    "relation": "题诗",
+    "dst": "诗",
+    "evidence": "诗人当然会留下诗",
+    "confidence": 0.95
+   },
+   {
+    "src": "爪印",
+    "relation": "落于",
+    "dst": "羊皮纸",
+    "evidence": "一枚来自“冬”的，小而清晰的黑色爪印，踩在羊皮纸的末端",
+    "confidence": 0.95
+   },
+   {
+    "src": "诗",
+    "relation": "作答",
+    "dst": "人间",
+    "evidence": "“你看见了什么？”石头并不回答，只有一个年轻的声音：“人间”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "781481395f658d54ce605ed2": {
+  "entities": [
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "即将受封的捍卫者"
+   },
+   {
+    "name": "加尼隆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "队伍的副手"
+   },
+   {
+    "name": "骑士Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "料理鹿肉者"
+   },
+   {
+    "name": "骑士Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "久未食肉者"
+   },
+   {
+    "name": "查理曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "所侍之君"
+   },
+   {
+    "name": "潘蓬特森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "驻扎之处"
+   },
+   {
+    "name": "布列塔尼要塞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将赴之地"
+   },
+   {
+    "name": "无眼鹿",
+    "type": "概念",
+    "aliases": [],
+    "desc": "罗兰的笑话"
+   },
+   {
+    "name": "鹿肉",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所烤之食"
+   }
+  ],
+  "relations": [
+   {
+    "src": "加尼隆",
+    "relation": "下令",
+    "dst": "骑士Ⅰ",
+    "evidence": "所有人停下——今天我们就在这儿驻扎",
+    "confidence": 0.95
+   },
+   {
+    "src": "加尼隆",
+    "relation": "告知",
+    "dst": "罗兰",
+    "evidence": "我们预计在明天就会到达军事要塞",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "受信",
+    "dst": "查理曼",
+    "evidence": "最受查理曼陛下信任的捍卫者",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "将任",
+    "dst": "布列塔尼要塞",
+    "evidence": "即将成为布列塔尼要塞军事总督的受勋者",
+    "confidence": 0.95
+   },
+   {
+    "src": "加尼隆",
+    "relation": "提醒",
+    "dst": "罗兰",
+    "evidence": "在布列塔尼人的眼里，你的头颅比等量的黄金更贵重",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "戏问",
+    "dst": "加尼隆",
+    "evidence": "你见过没有眼睛的鹿吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑士Ⅰ",
+    "relation": "料理",
+    "dst": "鹿肉",
+    "evidence": "我把肉块腌好了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "引经",
+    "dst": "骑士Ⅱ",
+    "evidence": "这是我的身体和血，是为众人免罪而舍弃和流出的",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6a9989ab11c481b4232d6240": {
+  "entities": [
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "笑话的坚持者"
+   },
+   {
+    "name": "加尼隆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不耐者"
+   },
+   {
+    "name": "骑士Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见习骑士，中箭而亡"
+   },
+   {
+    "name": "骑士Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲讲笑话者"
+   },
+   {
+    "name": "笑话",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所论之艺"
+   },
+   {
+    "name": "无酵饼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "圣餐之喻"
+   },
+   {
+    "name": "野蜂蜜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "抹于肉上"
+   },
+   {
+    "name": "箭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "夺命之矢"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗兰",
+    "relation": "自陈",
+    "dst": "骑士Ⅱ",
+    "evidence": "我在今天已经连续讲述了十三个笑话",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "解释",
+    "dst": "骑士Ⅰ",
+    "evidence": "无酵饼在圣餐礼中代表着肉",
+    "confidence": 0.95
+   },
+   {
+    "src": "加尼隆",
+    "relation": "斥责",
+    "dst": "罗兰",
+    "evidence": "见鬼，这些笑话根本就不！好！笑！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "引谚",
+    "dst": "加尼隆",
+    "evidence": "熟能生巧。任何事情，只要足够坚持，一定能有所成就",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑士Ⅱ",
+    "relation": "请缨",
+    "dst": "加尼隆",
+    "evidence": "骑士们，有人愿意讲点正常的笑话给罗兰阁下听吗？让我来！",
+    "confidence": 0.9
+   },
+   {
+    "src": "骑士Ⅰ",
+    "relation": "讲述",
+    "dst": "罗兰",
+    "evidence": "有这样一名骑士，他有着数不清的功绩",
+    "confidence": 0.95
+   },
+   {
+    "src": "箭",
+    "relation": "射杀",
+    "dst": "骑士Ⅰ",
+    "evidence": "见习骑士喉部中箭",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "号令",
+    "dst": "骑士Ⅰ",
+    "evidence": "骑士们，拿起你们的剑！为同伴报仇！",
+    "confidence": 0.95
+   },
+   {
+    "src": "加尼隆",
+    "relation": "示警",
+    "dst": "罗兰",
+    "evidence": "敌袭！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7fcf3db162cded7979b46bdc": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻人者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [
+     "安安",
+     "安安小姐"
+    ],
+    "desc": "占卜师"
+   },
+   {
+    "name": "未锈铠",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失踪者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "司辰"
+   },
+   {
+    "name": "利齿子儿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所付酬劳"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "占卜之具"
+   },
+   {
+    "name": "地水师",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所卜之卦"
+   },
+   {
+    "name": "上六变卦",
+    "type": "概念",
+    "aliases": [],
+    "desc": "卦中之变"
+   },
+   {
+    "name": "箱内一隅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所居之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "雾行者",
+    "relation": "求助",
+    "dst": "泥鯭的士",
+    "evidence": "但也许你有什么找人的诀窍",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "付酬",
+    "dst": "泥鯭的士",
+    "evidence": "我的准备不多，但也许可以先支付定金",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "取酬",
+    "dst": "利齿子儿",
+    "evidence": "她从雾行者的手心取走了其中的两枚",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "占卜",
+    "dst": "硬币",
+    "evidence": "泥鯭的士用手拢起三个游戏厅的硬币",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "我特地询问了维尔汀小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "观察",
+    "dst": "未锈铠",
+    "evidence": "他最近好像在收集一些东西哦！像什么小彩旗、小号角",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "解卦",
+    "dst": "地水师",
+    "evidence": "地水师，说明铠sir要去打仗",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "警示",
+    "dst": "雾行者",
+    "evidence": "铠sir的军队里可能有反骨仔哦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "07740006cb0c43ad4f8f5289": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "起疑者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同疑者"
+   },
+   {
+    "name": "辉光管",
+    "type": "物品",
+    "aliases": [],
+    "desc": "闪动的灯"
+   },
+   {
+    "name": "年代",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所问之题"
+   },
+   {
+    "name": "箱内一隅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "辉光管所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "辉光管",
+    "relation": "闪烁",
+    "dst": "箱内一隅",
+    "evidence": "大厅中的辉光管正以一个微弱的频率闪烁",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "追问",
+    "dst": "泥鯭的士",
+    "evidence": "安安小姐，你知道外面现在是什么时代吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fb3970feaca1db8db11915bb": {
+  "entities": [
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护友者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [
+     "奥利弗"
+    ],
+    "desc": "罗兰的密友，追查叛徒的骑士"
+   },
+   {
+    "name": "加尼隆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被议者"
+   },
+   {
+    "name": "偷袭者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "举剑者"
+   },
+   {
+    "name": "偷袭者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被斩者"
+   },
+   {
+    "name": "恒常之剑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "罗兰所用"
+   },
+   {
+    "name": "箭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所射之矢"
+   },
+   {
+    "name": "潘蓬特森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "伏击之地"
+   },
+   {
+    "name": "笑话节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "加尼隆所提议"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗兰",
+    "relation": "相遇",
+    "dst": "雾行者",
+    "evidence": "罗兰？……奥利弗！你吓死我了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "质疑",
+    "dst": "罗兰",
+    "evidence": "加尼隆提议举办笑话节？他不是喜欢讲笑话的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "坦言",
+    "dst": "罗兰",
+    "evidence": "罗兰，你讲的笑话只在一种情况下特别好用。那就是准备撤退的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "追查",
+    "dst": "加尼隆",
+    "evidence": "我正在追查骑士中的叛徒",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "劈箭",
+    "dst": "箭",
+    "evidence": "一根箭在奥利弗的耳边被劈成两截",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷袭者Ⅰ",
+    "relation": "认出",
+    "dst": "雾行者",
+    "evidence": "是奥利弗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "挥剑",
+    "dst": "恒常之剑",
+    "evidence": "他抡起了恒常之剑，仅一个错身，就将那片阴影劈为两段",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "救援",
+    "dst": "雾行者",
+    "evidence": "快，奥利弗，抓住我的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "献策",
+    "dst": "罗兰",
+    "evidence": "不要沿着他们驱赶我们的路线走……绕过去！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "88b6a137616132b2ceca8a53": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [
+     "奥利弗"
+    ],
+    "desc": "负伤者"
+   },
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲笑话者"
+   },
+   {
+    "name": "阿拉克尼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "剧毒蛛状魔精"
+   },
+   {
+    "name": "披风",
+    "type": "物品",
+    "aliases": [],
+    "desc": "易装之策"
+   },
+   {
+    "name": "号角",
+    "type": "物品",
+    "aliases": [],
+    "desc": "远方所鸣"
+   },
+   {
+    "name": "奥德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "罗兰之妹"
+   },
+   {
+    "name": "苔藓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "林中所覆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗兰",
+    "relation": "拽上",
+    "dst": "雾行者",
+    "evidence": "罗兰握住他的手，一把将他拽上了自己的马背",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "戏指",
+    "dst": "阿拉克尼",
+    "evidence": "那里有一只阿拉克尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "斥责",
+    "dst": "罗兰",
+    "evidence": "这些笑话根本一点都不好笑！",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "陈情",
+    "dst": "罗兰",
+    "evidence": "二十多个装备精良的敌人，极有可能另有增援",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "献策",
+    "dst": "披风",
+    "evidence": "你也可以从这里逃离，只需要穿上我的披风",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "不认",
+    "dst": "雾行者",
+    "evidence": "我也不认可你刚刚的计划，这意味着我们之中只能离开一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "号角",
+    "relation": "鸣响",
+    "dst": "罗兰",
+    "evidence": "你的耳朵怎么回事，连奥德的号角声都听不出来？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "497122302cb7deb70c1673e4": {
+  "entities": [
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令留守者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [
+     "奥利弗"
+    ],
+    "desc": "受命留守者"
+   },
+   {
+    "name": "奥德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率队来援的女骑士"
+   },
+   {
+    "name": "加尼隆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指为叛徒者"
+   },
+   {
+    "name": "十二骑士",
+    "type": "组织",
+    "aliases": [],
+    "desc": "叛徒所出"
+   },
+   {
+    "name": "号角",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奥德所吹"
+   },
+   {
+    "name": "布列塔尼要塞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所忧之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗兰",
+    "relation": "命令",
+    "dst": "雾行者",
+    "evidence": "奥利弗骑士，我命令你留守此处",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "举荐",
+    "dst": "雾行者",
+    "evidence": "假如我不幸遇难，我将举荐你成为新的军事总督",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "推演",
+    "dst": "罗兰",
+    "evidence": "他们只会开始猜忌，为什么我会心血来潮地迎接你",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "指认",
+    "dst": "加尼隆",
+    "evidence": "他就是美因茨的加尼隆",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "推断",
+    "dst": "十二骑士",
+    "evidence": "我们一直以来苦苦找寻的叛徒，极有可能是十二骑士之一",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "戏谑",
+    "dst": "雾行者",
+    "evidence": "你终于学会了讲笑话",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥德",
+    "relation": "率援",
+    "dst": "雾行者",
+    "evidence": "外面的那些人已经被骑士们全部捉住了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥德",
+    "relation": "为妹",
+    "dst": "雾行者",
+    "evidence": "她还是你的亲妹妹，你一点都不了解她",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "32d27ebfa51d483d3ce20434": {
+  "entities": [
+   {
+    "name": "奥德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出谜的女骑士"
+   },
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解谜者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [
+     "奥利弗"
+    ],
+    "desc": "沉默者"
+   },
+   {
+    "name": "阿斯托尔福",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拟派演好人者"
+   },
+   {
+    "name": "雷诺德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拟派演坏人者"
+   },
+   {
+    "name": "偷袭者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无姓名的犯人"
+   },
+   {
+    "name": "未锈铠",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲故事者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闯入者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "作证者"
+   },
+   {
+    "name": "鱼肚肠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "漂至脚边"
+   },
+   {
+    "name": "布列塔尼亚要塞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雨中归来"
+   },
+   {
+    "name": "未锈铠房间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "故事会之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奥德",
+    "relation": "留活口",
+    "dst": "偷袭者",
+    "evidence": "我特意让他们留了活口",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥德",
+    "relation": "出谜",
+    "dst": "罗兰",
+    "evidence": "毯子对床说了什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "答谜",
+    "dst": "奥德",
+    "evidence": "别担心，我掩护你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥德",
+    "relation": "荐人",
+    "dst": "阿斯托尔福",
+    "evidence": "得让一个有亲和力的人前来扮演好人",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥德",
+    "relation": "指认",
+    "dst": "雷诺德",
+    "evidence": "至于那个坏人，毋庸置疑地就是雷诺德阁下了",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "回绝",
+    "dst": "奥德",
+    "evidence": "只是一个没有姓氏的偷袭者，用不上去请那两位大人",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "闯入",
+    "dst": "未锈铠房间",
+    "evidence": "因急切而推搡的二人打着滚儿进入了这个洒落着阳光的房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "作证",
+    "dst": "未锈铠",
+    "evidence": "APPLe某可以作证。阳光在未锈铠先生身上所呈现的折射角恰到好处",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "讲述",
+    "dst": "罗兰",
+    "evidence": "某人正在讲一个关于罗兰骑士的故事",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e656f9b9f7af893e469c3f91": {
+  "entities": [
+   {
+    "name": "未锈铠",
+    "type": "角色",
+    "aliases": [],
+    "desc": "笑话节的发起者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关心风水者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听众"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "评议者"
+   },
+   {
+    "name": "骑士笑话节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "所欲复兴之节"
+   },
+   {
+    "name": "绿咬鹃木雕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "内置机关"
+   },
+   {
+    "name": "彩旗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所备之饰"
+   },
+   {
+    "name": "小号角",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所备之器"
+   },
+   {
+    "name": "笑话集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "桌上的旧书"
+   },
+   {
+    "name": "火焰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "源于追忆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "未锈铠",
+    "relation": "阐明",
+    "dst": "泥鯭的士",
+    "evidence": "这丛火焰来源于某人的追忆。它恒定、温和",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "预备",
+    "dst": "骑士笑话节",
+    "evidence": "这些是某人为了“骑士笑话节”准备的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "释节",
+    "dst": "雾行者",
+    "evidence": "一个说笑话的节日——所有的人围坐在一起，按照抽签的轮次",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "拨弄",
+    "dst": "绿咬鹃木雕",
+    "evidence": "未锈铠伸出手指，轻轻地拨弄了一下尾羽",
+    "confidence": 0.95
+   },
+   {
+    "src": "绿咬鹃木雕",
+    "relation": "指向",
+    "dst": "雾行者",
+    "evidence": "淡黄色的鸟喙停在了雾行者的面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "指出",
+    "dst": "未锈铠",
+    "evidence": "但箱子里的各位都有各自的要事",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "感慨",
+    "dst": "骑士笑话节",
+    "evidence": "笑声与笑容，似乎都从大家的脸上消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "备置",
+    "dst": "彩旗",
+    "evidence": "桌子上摆满了缤纷的彩旗",
+    "confidence": 0.9
+   },
+   {
+    "src": "未锈铠",
+    "relation": "备置",
+    "dst": "小号角",
+    "evidence": "屋子的一侧，堆满了各式的小号角",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "0a1bf3f1a969a11a3d6ec52f": {
+  "entities": [
+   {
+    "name": "未锈铠",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听故事者"
+   },
+   {
+    "name": "罗兰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "故事中的骑士"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [
+     "奥利弗"
+    ],
+    "desc": "罗兰的密友"
+   },
+   {
+    "name": "布拉米蒙德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摩尔人的女王"
+   },
+   {
+    "name": "菲尔格特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与女骑士鏖战的巨人"
+   },
+   {
+    "name": "女骑士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "所敬佩的故友"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "建议改编戏剧者"
+   },
+   {
+    "name": "萨拉戈萨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "故事发生地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "未锈铠",
+    "relation": "讲述",
+    "dst": "X",
+    "evidence": "某人为X先生讲述了一个在萨拉戈萨发生的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗兰",
+    "relation": "拜谒",
+    "dst": "布拉米蒙德",
+    "evidence": "骑士罗兰与他的密友奥利弗，一起拜谒摩尔人的女王布拉米蒙德",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "从行",
+    "dst": "罗兰",
+    "evidence": "骑士罗兰与他的密友奥利弗",
+    "confidence": 0.95
+   },
+   {
+    "src": "女骑士",
+    "relation": "鏖战",
+    "dst": "菲尔格特",
+    "evidence": "她曾经与一位名叫菲尔格特的巨人鏖战不休",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "敬佩",
+    "dst": "女骑士",
+    "evidence": "某人为她深感不平",
+    "confidence": 0.95
+   },
+   {
+    "src": "未锈铠",
+    "relation": "参与",
+    "dst": "菲尔格特",
+    "evidence": "这场战役某人亦参与其中",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "建议",
+    "dst": "未锈铠",
+    "evidence": "夏利小姐曾建议某人将其改编为戏剧",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

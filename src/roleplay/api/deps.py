@@ -57,7 +57,8 @@ def build_orchestrator(
         memory_tier=services.long_term_memory,
         mapper=mapper,
         top_k=s.top_k,
-        temperature=s.llm_temperature,
+        # 本地/非本地分流：本地端点用本地温度，非本地用 cloud_llm_temperature
+        temperature=s.llm_profile().temperature,
         enable_emotion=s.enable_emotion,
         enable_web=s.enable_web,
         enable_longterm=True,

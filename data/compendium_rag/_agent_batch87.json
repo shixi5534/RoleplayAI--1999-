@@ -1,0 +1,866 @@
+{
+ "6380660aea4370edff32739f": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "熬夜的研究员"
+   },
+   {
+    "name": "老尼古拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促的组长"
+   },
+   {
+    "name": "叶莲娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护她的同僚"
+   },
+   {
+    "name": "助理研究员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推挤者"
+   },
+   {
+    "name": "特利迦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中标目的地"
+   },
+   {
+    "name": "北境科考队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "备选去处"
+   },
+   {
+    "name": "沙鼠",
+    "type": "概念",
+    "aliases": [],
+    "desc": "北方哨歌的研究对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "老尼古拉",
+    "relation": "批阅",
+    "dst": "北方哨歌",
+    "evidence": "作为第一份理线学论文来说，你做得还算合格",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "中标",
+    "dst": "特利迦",
+    "evidence": "您要去特利迦？！",
+    "confidence": 0.9
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "关切",
+    "dst": "北方哨歌",
+    "evidence": "您在老尼古拉手下过得太辛苦了",
+    "confidence": 0.85
+   },
+   {
+    "src": "老尼古拉",
+    "relation": "备选",
+    "dst": "北境科考队",
+    "evidence": "就算没有，北境科考队里也留着你的位置",
+    "confidence": 0.85
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "研究",
+    "dst": "沙鼠",
+    "evidence": "我现在研究的是沙鼠",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "7168b5ca0b709532c376c9a6": {
+  "entities": [
+   {
+    "name": "叶莲娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝世故者"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执拗的学者"
+   },
+   {
+    "name": "阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自建小组者"
+   },
+   {
+    "name": "法兰克福",
+    "type": "地点",
+    "aliases": [],
+    "desc": "叶莲娜去处"
+   },
+   {
+    "name": "科拉利亚超深钻井计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿列克谢旧属"
+   },
+   {
+    "name": "量子场理论",
+    "type": "概念",
+    "aliases": [],
+    "desc": "招标项目名"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "期刊的宠儿"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶莲娜",
+    "relation": "惊问",
+    "dst": "北方哨歌",
+    "evidence": "居然是为了去特利迦那个狗熊都下不了崽的鬼地方？！",
+    "confidence": 0.9
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "赴任",
+    "dst": "法兰克福",
+    "evidence": "是的，我要前往法兰克福",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿列克谢",
+    "relation": "脱离",
+    "dst": "科拉利亚超深钻井计划",
+    "evidence": "阿列克谢他早就离开“科拉利亚超深钻井计划”了",
+    "confidence": 0.85
+   },
+   {
+    "src": "阿列克谢",
+    "relation": "立项",
+    "dst": "量子场理论",
+    "evidence": "“理线学视角下量子场理论在能源的转换与传输中的应用”",
+    "confidence": 0.85
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "感慨",
+    "dst": "理线学",
+    "evidence": "除了“理线学”的论文，没有哪个学科能发期刊发得这么顺利",
+    "confidence": 0.9
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "回忆",
+    "dst": "北方哨歌",
+    "evidence": "要不是您去跟村长讲了实话",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "1fa13a382d11d55413c2cfa0": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻公示者"
+   },
+   {
+    "name": "叶莲娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别者"
+   },
+   {
+    "name": "老尼古拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "课题在末尾者"
+   },
+   {
+    "name": "法兰克福",
+    "type": "地点",
+    "aliases": [],
+    "desc": "温泉之地"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "历史陈列"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶莲娜",
+    "relation": "道别",
+    "dst": "北方哨歌",
+    "evidence": "看来我们有一阵时间不能相见了",
+    "confidence": 0.85
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "翻查",
+    "dst": "理线学",
+    "evidence": "这里……陈列着理线学的历史",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "感慨",
+    "dst": "理线学",
+    "evidence": "理线师们就像平地的一滩水……拢都拢不起来",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "察知",
+    "dst": "老尼古拉",
+    "evidence": "怪不得老尼古拉不喜欢这里",
+    "confidence": 0.85
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "盼礼",
+    "dst": "法兰克福",
+    "evidence": "我会给您带点小礼物回来的",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "ff6dda5c5442874cac74f5eb": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "驻特利迦者"
+   },
+   {
+    "name": "索菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通信的人类学者"
+   },
+   {
+    "name": "萨玛玛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "矿脉中的魔精"
+   },
+   {
+    "name": "多毛沃伊",
+    "type": "概念",
+    "aliases": [],
+    "desc": "萨玛玛的原型"
+   },
+   {
+    "name": "特利迦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "勘察之地"
+   },
+   {
+    "name": "雅库特斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "更冷的约定地"
+   },
+   {
+    "name": "奥维尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "索菲亚研究的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "勘察",
+    "dst": "特利迦",
+    "evidence": "经过为期32天的勘察……发现了一处新的矿藏",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "发现",
+    "dst": "萨玛玛",
+    "evidence": "在矿脉深处发现一窝当地人称作“萨玛玛”的魔精",
+    "confidence": 0.9
+   },
+   {
+    "src": "萨玛玛",
+    "relation": "溯源",
+    "dst": "多毛沃伊",
+    "evidence": "我认为“萨玛玛”就是消失已久的魔精“多毛沃伊”的变异种",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "通信",
+    "dst": "索菲亚",
+    "evidence": "与一名叫作“索菲亚”的人类学者建立起了书信往来",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "约定",
+    "dst": "雅库特斯克",
+    "evidence": "期待与你在雅库特斯克相见",
+    "confidence": 0.9
+   },
+   {
+    "src": "索菲亚",
+    "relation": "研究",
+    "dst": "奥维尼克",
+    "evidence": "索菲亚和她的“奥维尼克”在那里等着我",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "a0e9b9f8367ae85adc2d8c68": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "被擅署者"
+   },
+   {
+    "name": "叶莲娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擅署其名者"
+   },
+   {
+    "name": "阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝从者"
+   },
+   {
+    "name": "特里斯坦·莱索夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发起海洋项目者"
+   },
+   {
+    "name": "伊万诺夫教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "希望她去者"
+   },
+   {
+    "name": "法兰克福",
+    "type": "地点",
+    "aliases": [],
+    "desc": "投诉来源"
+   },
+   {
+    "name": "海洋项目",
+    "type": "概念",
+    "aliases": [],
+    "desc": "海底石油勘测"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶莲娜",
+    "relation": "擅署",
+    "dst": "北方哨歌",
+    "evidence": "为什么要把我写在招标书上？我并不是你的组员！",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶莲娜",
+    "relation": "致歉",
+    "dst": "北方哨歌",
+    "evidence": "这件事是我做错了，我会偿还您的",
+    "confidence": 0.85
+   },
+   {
+    "src": "特里斯坦·莱索夫",
+    "relation": "发起",
+    "dst": "海洋项目",
+    "evidence": "特里斯坦·莱索夫同志刚指出了海洋蕴含着无限的可能",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿列克谢",
+    "relation": "劝驾",
+    "dst": "北方哨歌",
+    "evidence": "难道你不想见莱索夫同志一面吗？",
+    "confidence": 0.85
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "辞绝",
+    "dst": "海洋项目",
+    "evidence": "去海洋项目？",
+    "confidence": 0.85
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "明志",
+    "dst": "叶莲娜",
+    "evidence": "我只想好好做项目",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "70158b80c5b29440d99ed1fe": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "拒随波者"
+   },
+   {
+    "name": "叶莲娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道破现状者"
+   },
+   {
+    "name": "阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘲讽者"
+   },
+   {
+    "name": "伊万诺夫教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召见者"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被指无新意"
+   },
+   {
+    "name": "海洋项目",
+    "type": "概念",
+    "aliases": [],
+    "desc": "1982年后最大"
+   },
+   {
+    "name": "特里斯坦·莱索夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "项目发起者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶莲娜",
+    "relation": "断言",
+    "dst": "理线学",
+    "evidence": "理线学已经不会再有新玩意蹦出来了",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿列克谢",
+    "relation": "讥讽",
+    "dst": "北方哨歌",
+    "evidence": "你就像是活在玻璃罩里",
+    "confidence": 0.85
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "拒赴",
+    "dst": "海洋项目",
+    "evidence": "这个海洋项目，我是不会去的",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "面陈",
+    "dst": "伊万诺夫教授",
+    "evidence": "我需要去和教授当面说明",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊万诺夫教授",
+    "relation": "赞赏",
+    "dst": "北方哨歌",
+    "evidence": "你做出了一份十分有价值的研究！",
+    "confidence": 0.9
+   },
+   {
+    "src": "海洋项目",
+    "relation": "始于",
+    "dst": "特里斯坦·莱索夫",
+    "evidence": "由创始人发起",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "ba7115a850d9e46a71f7446e": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "择冷门者"
+   },
+   {
+    "name": "伊万诺夫教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝留者"
+   },
+   {
+    "name": "特里斯坦·莱索夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赏识她者"
+   },
+   {
+    "name": "索菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "合作的学者"
+   },
+   {
+    "name": "奥维尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研究对象"
+   },
+   {
+    "name": "雅库特斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "极寒合作地"
+   },
+   {
+    "name": "魔精生态学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "结合的学科"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与生态学结合"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "辞绝",
+    "dst": "伊万诺夫教授",
+    "evidence": "我想我参加不了了",
+    "confidence": 0.95
+   },
+   {
+    "src": "特里斯坦·莱索夫",
+    "relation": "赏识",
+    "dst": "北方哨歌",
+    "evidence": "他很期待你能在海洋项目中发光发热",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "择往",
+    "dst": "雅库特斯克",
+    "evidence": "我已经决定启程前往另一个地方",
+    "confidence": 0.9
+   },
+   {
+    "src": "理线学",
+    "relation": "结合",
+    "dst": "魔精生态学",
+    "evidence": "理线学和魔精生态学的结合",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "批评",
+    "dst": "伊万诺夫教授",
+    "evidence": "我在这里看不到学术，只看到了名声",
+    "confidence": 0.9
+   },
+   {
+    "src": "索菲亚",
+    "relation": "研究",
+    "dst": "奥维尼克",
+    "evidence": "“奥维尼克”？",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "919e1d4b36a5af62f04056b5": {
+  "entities": [
+   {
+    "name": "伊万诺夫教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放手者"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "夺信者"
+   },
+   {
+    "name": "特里斯坦·莱索夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引荐的权威"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊万诺夫教授",
+    "relation": "说项",
+    "dst": "特里斯坦·莱索夫",
+    "evidence": "当他向别人引荐你的时候，你的份量就不止是你的研究成果了",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "夺回",
+    "dst": "北方哨歌",
+    "evidence": "北方哨歌将它从伊万诺夫教授的手里夺了回来",
+    "confidence": 0.7
+   },
+   {
+    "src": "伊万诺夫教授",
+    "relation": "放行",
+    "dst": "北方哨歌",
+    "evidence": "你去吧，瓦莲京娜，你还很自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "辞别",
+    "dst": "伊万诺夫教授",
+    "evidence": "那我先回去了，教授",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "8f56c9fa723f3e0f6943c111": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "欲驱狼者"
+   },
+   {
+    "name": "索菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制止者"
+   },
+   {
+    "name": "奥维尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被围猎的族群"
+   },
+   {
+    "name": "白狼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刨洞的头狼"
+   },
+   {
+    "name": "雪鸮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "林中的窥者"
+   },
+   {
+    "name": "锯木厂",
+    "type": "组织",
+    "aliases": [],
+    "desc": "惊起飞鸟者"
+   },
+   {
+    "name": "雅库特斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雪原考察地"
+   },
+   {
+    "name": "莱斯纳亚森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "考察之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "协同",
+    "dst": "索菲亚",
+    "evidence": "两名学者",
+    "confidence": 0.85
+   },
+   {
+    "src": "索菲亚",
+    "relation": "估算",
+    "dst": "奥维尼克",
+    "evidence": "这个“奥维尼克”族群的生物数量已经符合了你估算的最小生存种群数量",
+    "confidence": 0.9
+   },
+   {
+    "src": "白狼",
+    "relation": "围猎",
+    "dst": "奥维尼克",
+    "evidence": "白狼在洞前刨了起来，企图将洞口扩大",
+    "confidence": 0.95
+   },
+   {
+    "src": "索菲亚",
+    "relation": "制止",
+    "dst": "北方哨歌",
+    "evidence": "别去。索菲亚按住了想要驱赶狼群的北方哨歌",
+    "confidence": 0.95
+   },
+   {
+    "src": "锯木厂",
+    "relation": "惊扰",
+    "dst": "莱斯纳亚森林",
+    "evidence": "怎么会有人在这种天气里伐木",
+    "confidence": 0.8
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "驻留",
+    "dst": "雅库特斯克",
+    "evidence": "我们已经在这里待了多久了？三个月",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "99f2f92f59469541ff3e5238": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [
+     "瓦莲京娜"
+    ],
+    "desc": "施术护崽者"
+   },
+   {
+    "name": "索菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "守界限者"
+   },
+   {
+    "name": "奥维尼克幼崽",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新生的幼崽"
+   },
+   {
+    "name": "熊脂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "治冻疮的药"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "只改变表象"
+   },
+   {
+    "name": "奥维尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "能量线所绘对象"
+   },
+   {
+    "name": "雅库特斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "林中小屋"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "救护",
+    "dst": "奥维尼克幼崽",
+    "evidence": "被白狼扒得一片狼藉的洞里，探出了一个毛茸茸的脑袋",
+    "confidence": 0.9
+   },
+   {
+    "src": "索菲亚",
+    "relation": "严守",
+    "dst": "奥维尼克幼崽",
+    "evidence": "我们不能跨过那条界限",
+    "confidence": 0.95
+   },
+   {
+    "src": "索菲亚",
+    "relation": "敷药",
+    "dst": "北方哨歌",
+    "evidence": "索菲亚拿过熊脂，帮北方哨歌涂起了另一只手背上的冻疮",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "释术",
+    "dst": "理线学",
+    "evidence": "理线学不能帮你消除冻疮吗？不能。它只能改变表象",
+    "confidence": 0.9
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "绘图",
+    "dst": "奥维尼克",
+    "evidence": "这是现在代表这群“奥维尼克”的能量线图纸",
+    "confidence": 0.9
+   },
+   {
+    "src": "索菲亚",
+    "relation": "劝退",
+    "dst": "北方哨歌",
+    "evidence": "不要让这里染上太多人类的气息",
+    "confidence": 0.85
+   }
+  ]
+ }
+}

@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-09-17 15:44:33",
+  "config": {
+    "model": "deepseek-chat",
+    "variants": 3,
+    "topk": 20,
+    "testset": "rag_testset_200_new.json",
+    "cases": 12
+  },
+  "llm": {
+    "calls": 12,
+    "ok": 0,
+    "failed": 12,
+    "avg_ms": 183.4
+  },
+  "recall_at_k": {
+    "base": {
+      "n": 5,
+      "rate": 0.4167
+    },
+    "with_rewrite": {
+      "n": 5,
+      "rate": 0.4167
+    },
+    "delta": 0
+  },
+  "by_type": {
+    "factoid": {
+      "n": 9,
+      "base": 3,
+      "rew": 3,
+      "d_base": 0.3333,
+      "d_rew": 0.3333,
+      "delta": 0
+    },
+    "multi-hop": {
+      "n": 2,
+      "base": 1,
+      "rew": 1,
+      "d_base": 0.5,
+      "d_rew": 0.5,
+      "delta": 0
+    },
+    "reasoning": {
+      "n": 1,
+      "base": 1,
+      "rew": 1,
+      "d_base": 1.0,
+      "d_rew": 1.0,
+      "delta": 0
+    }
+  },
+  "per_case": [
+    {
+      "id": "N001",
+      "q": "洞穴的囚徒篇里的亚瑟的英文名是什么？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N002",
+      "q": "洞穴的囚徒篇里的洞穴隐喻出自哪位哲学家的理论？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N003",
+      "q": "阿派朗岛上那位以数字命名的少女是谁？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": true,
+      "rew_hit": true,
+      "gain": 0
+    },
+    {
+      "id": "N004",
+      "q": "今夜星光灿烂篇的故事发生在哪座城市？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N005",
+      "q": "随维尔汀乘船出行、擅长专注倾听的基金会助手是谁？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N006",
+      "q": "绿湖噩梦篇里驻扎在营地、负责孩子们健康的牙医是谁？",
+      "type": "multi-hop",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N007",
+      "q": "37 所居住的、完全不受暴雨影响的岛屿叫什么名字？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N008",
+      "q": "洞穴的囚徒篇里随行的火焰系角色是谁？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": false,
+      "rew_hit": false,
+      "gain": 0
+    },
+    {
+      "id": "N009",
+      "q": "绿湖噩梦篇里孩子们口口相传的怪物住在森林还是湖底？",
+      "type": "reasoning",
+      "variants": [],
+      "base_hit": true,
+      "rew_hit": true,
+      "gain": 0
+    },
+    {
+      "id": "N010",
+      "q": "效忠于重塑之手、最终被伊索尔德枪杀的男人是谁？",
+      "type": "multi-hop",
+      "variants": [],
+      "base_hit": true,
+      "rew_hit": true,
+      "gain": 0
+    },
+    {
+      "id": "N011",
+      "q": "孤独之歌篇里出现的露西的英文名是什么？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": true,
+      "rew_hit": true,
+      "gain": 0
+    },
+    {
+      "id": "N012",
+      "q": "洞穴的囚徒篇里的 J 先生的英文名是什么？",
+      "type": "factoid",
+      "variants": [],
+      "base_hit": true,
+      "rew_hit": true,
+      "gain": 0
+    }
+  ]
+}

@@ -34,6 +34,12 @@ TRANSCRIPT_FILE_RE = re.compile(r"^(BV[0-9A-Za-z]+?)(?:_p(\d+))?_", re.IGNORECAS
 HEADER_MARKERS = ("来源：B站", "机器提取")
 # 转写目录名（手工整理 md 在角色目录根，天然被排除）
 TRANSCRIPT_DIRNAME = "视频文案"
+# 灰机正典中文目录名（M6 新增）：官方中文剧情原文（灰机 wiki「小径」页），
+# 与 B 站英文 ASR 转写并列存在，doc_id 前缀 ``huiji_``，source_kind = canon_zh。
+# 为什么需要它：ASR 语料是**英文**的，而用户提问是**中文**且不带实体名
+# （分诊实测 188 个缺失证据组里 147 个是「中文称谓找不到通向英文实体的桥」）；
+# 正典中文原文让中文查询能与中文正文直接词法匹配，并从正文里认出实体名。
+CANON_DIRNAME = "canon_zh"
 
 # 标题解析：# 【重返未来：1999】3.8版本「世纪末尺度」全剧情流程 - Reverse: 1999｜4K（01.世纪末的忧郁）
 #
@@ -65,7 +71,11 @@ RE_META_METHOD = re.compile(r"提取方式：([^（(]+)")
 SOURCE_KIND_CANON = "canon"
 SOURCE_KIND_ANALYSIS = "analysis"
 SOURCE_KIND_OFFICIAL = "official"
-SOURCE_KINDS = (SOURCE_KIND_CANON, SOURCE_KIND_ANALYSIS, SOURCE_KIND_OFFICIAL)
+# 灰机 wiki 官方中文剧情原文（M6）：中文正典层，检索侧与 canon 同等对待，
+# 但单独成类便于「加/不加正典层」的 A/B 对照。
+SOURCE_KIND_CANON_ZH = "canon_zh"
+SOURCE_KINDS = (SOURCE_KIND_CANON, SOURCE_KIND_ANALYSIS, SOURCE_KIND_OFFICIAL,
+                SOURCE_KIND_CANON_ZH)
 
 # 主线实录 UP 主白名单（缺德的德鲁伊：257/266 文档 = 98.8%）：命中即 canon，
 # 优先级高于标题关键词——避免实录标题里出现「解析」二字被误降级。
@@ -278,7 +288,10 @@ class PlotChunk:
         meta = {
             "namespace": namespace,
             "doc_id": self.doc_id,
-            "source_type": "plot_transcript",
+            # 正典层（canon_zh）与 B 站转写层在 metadata 上可区分，便于来源标签与审计
+            "source_type": ("plot_canon" if self.source_kind == SOURCE_KIND_CANON_ZH
+                            else "plot_transcript"),
+            "source_kind": self.source_kind,
             "bv": self.bv,
             "page": self.page,
             "part": self.part,
@@ -289,8 +302,8 @@ class PlotChunk:
             "chapter": self.chapter,
             "lang": self.lang,
             "seq": self.seq,
-            "url": f"https://www.bilibili.com/video/{self.bv}"
-            + (f"?p={self.page}" if self.page else ""),
+            "url": (f"https://www.bilibili.com/video/{self.bv}"
+                    + (f"?p={self.page}" if self.page else "")) if self.bv else "",
             "via": "plot_graph",
         }
         meta.update(self.extra or {})
@@ -313,19 +326,28 @@ class PlotCorpus:
         self._by_hash: dict[str, PlotChunk] = {}
         # (doc_id, hash) → chunk：重复 hash 时按文档归位（P4 证据溯源修复）
         self._by_doc_hash: dict[tuple[str, str], PlotChunk] = {}
+        # 篇章名 → 文档集合（M7 篇章路由；随语料重建失效）
+        self._chapter_index_cache: dict[str, set[str]] | None = None
         self.load()
 
     # ── 构建 ──
     def build(self, source_dir: str | Path, *, chunk_size: int = 600) -> dict:
-        """扫描转写目录重建语料。返回统计 {files, kept, rejected, chunks, by_lang}。"""
+        """扫描转写目录重建语料。返回统计 {files, kept, rejected, chunks, by_lang}。
+
+        两路来源（互不干扰）：
+        ① ``视频文案/*.md``：B 站机器转写，文件名/头部双重白名单（防手工 md 混入）；
+        ② ``canon_zh/*.md``：灰机 wiki 官方中文剧情原文（M6），由
+           ``scripts/huiji_canon_corpus.py`` 生成，头部自带来源 URL 与抓取日期。
+        """
         src = Path(source_dir)
         files: list[Path] = []
+        canon_files: list[Path] = []
         if src.is_dir():
             for p in sorted(src.rglob("*.md")):
-                # 白名单①：路径中必须含 视频文案 目录段
-                if TRANSCRIPT_DIRNAME not in p.parts:
-                    continue
-                files.append(p)
+                if CANON_DIRNAME in p.parts:
+                    canon_files.append(p)
+                elif TRANSCRIPT_DIRNAME in p.parts:
+                    files.append(p)
         chunks: list[PlotChunk] = []
         rejected: list[str] = []
         for p in files:
@@ -334,8 +356,15 @@ class PlotCorpus:
                 rejected.append(p.name)
                 continue
             chunks.extend(parsed)
+        for p in canon_files:
+            parsed = _parse_canon_file(p, chunk_size=chunk_size)
+            if parsed is None:
+                rejected.append(p.name)
+                continue
+            chunks.extend(parsed)
         self.chunks = chunks
         self._bm25 = None
+        self._chapter_index_cache = None
         self._reindex_docs()
         langs: dict[str, int] = {}
         for c in chunks:
@@ -345,6 +374,7 @@ class PlotCorpus:
             "kept": len(files) - len(rejected),
             "rejected": len(rejected),
             "rejected_samples": rejected[:5],
+            "canon_files": len(canon_files),
             "chunks": len(chunks),
             "by_lang": langs,
             "by_source_kind": self.source_kind_counts(),
@@ -360,6 +390,7 @@ class PlotCorpus:
         if not isinstance(data, list):
             return False
         self.chunks = [PlotChunk.from_dict(c) for c in data if isinstance(c, dict)]
+        self._chapter_index_cache = None
         self._reindex_docs()
         return True
 
@@ -517,8 +548,13 @@ class PlotCorpus:
         *,
         lang: str | None = None,
         bv: str | None = None,
+        doc_ids: set[str] | None = None,
     ) -> list[tuple[PlotChunk, float]]:
-        """BM25 词法检索（剧情层兜底通道，零嵌入依赖）。"""
+        """BM25 词法检索（剧情层兜底通道，零嵌入依赖）。
+
+        ``doc_ids``：只在给定文档集合内检索（篇章路由用——用户问「洞穴的囚徒篇里
+        海盗船上的歌手是谁」时，候选池应缩到该篇的文档，而不是全语料 9000 块）。
+        """
         if not self.chunks:
             return []
         self._ensure_bm25()
@@ -540,10 +576,42 @@ class PlotCorpus:
                 continue
             if bv and c.bv != bv:
                 continue
+            if doc_ids is not None and c.doc_id not in doc_ids:
+                continue
             out.append((c, float(s)))
             if len(out) >= max(1, top_k):
                 break
         return out
+
+    # ── 篇章路由（M7）──
+    def chapter_index(self) -> dict[str, set[str]]:
+        """篇章名（arc / chapter / 正典标题）→ 文档集合。
+
+        索引源是**语料自身的元数据**（B 站标题解析出的 ``arc``/``chapter``，
+        灰机正典 md 的 ``arc``=篇名），因此不依赖任何外部文件，重建语料即自动更新。
+        只收 2–16 字、含中文的篇章名，避免把英文 arc 或碎片收进来。
+        """
+        cached = getattr(self, "_chapter_index_cache", None)
+        if cached is not None:
+            return cached
+        idx: dict[str, set[str]] = {}
+        for c in self.chunks:
+            for raw in (c.arc, c.chapter, c.title if c.source_kind == SOURCE_KIND_CANON_ZH else ""):
+                name = (raw or "").strip().strip("《》「」")
+                if not name or not CJK_RE.search(name) or not (2 <= len(name) <= 16):
+                    continue
+                idx.setdefault(name, set()).add(c.doc_id)
+        self._chapter_index_cache = idx
+        return idx
+
+    def chapters_in(self, query: str) -> list[str]:
+        """查询里点名的篇章（按名字长度降序，长名优先，避免「星」吃掉「今夜星光灿烂」）。"""
+        qn = re.sub(r"\s+", "", query or "")
+        if not qn:
+            return []
+        hits = [name for name in self.chapter_index() if name in qn]
+        hits.sort(key=len, reverse=True)
+        return hits
 
     def stats(self) -> dict:
         langs: dict[str, int] = {}
@@ -641,6 +709,73 @@ def _parse_transcript_file(path: Path, *, chunk_size: int = 600) -> list[PlotChu
                 method=(meth.group(1).strip() if meth else ""),
                 seq=i,
                 source_kind=source_kind,
+            )
+        )
+    return chunks or None
+
+
+# 正典 md 头部元数据（由 scripts/huiji_canon_corpus.py 生成）
+RE_CANON_SRC = re.compile(r"^来源：(.+)$", re.M)
+RE_CANON_VER = re.compile(r"^版本：(.+)$", re.M)
+RE_CANON_FETCHED = re.compile(r"^抓取：(.+)$", re.M)
+# 可选显式 doc_id（M8，compendium 正典）：多来源篇名同名时（如「绿湖噩梦」
+# 既有灰机小径页、又有 compendium 全本）只能靠显式声明区分。H1 必须保持
+# **干净篇名**——arc 会进 ``chapters_in`` 篇章路由，带后缀的名字永不命中查询。
+RE_CANON_DOCID = re.compile(r"^doc_id：\s*(\S+)\s*$", re.M)
+
+
+def _parse_canon_file(path: Path, *, chunk_size: int = 600) -> list[PlotChunk] | None:
+    """灰机正典中文剧情 md → chunk 列表（M6）。
+
+    与 ``_parse_transcript_file`` 的区别：**不要求 BV 命名与 B站头部**，
+    但要求头部带 ``来源：``（灰机 URL）——没有来源就不收，保证每一块都能溯源。
+    ``doc_id`` 用 ``huiji_<页名>``，与 B 站文档天然隔离。
+    """
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    head, sep, body = raw.partition("\n---\n")
+    if not sep or not body.strip():
+        return None
+    if "来源：" not in head:
+        return None
+    title_line = ""
+    for line in head.splitlines():
+        if line.startswith("# "):
+            title_line = line[2:].strip()
+            break
+    if not title_line:
+        return None
+    ver = RE_CANON_VER.search(head)
+    src = RE_CANON_SRC.search(head)
+    fetched = RE_CANON_FETCHED.search(head)
+    explicit = RE_CANON_DOCID.search(head)
+    # 显式 doc_id 优先（头部自己声明）；否则由篇名推导。
+    doc_id = (explicit.group(1).strip() if explicit
+              else "huiji_" + re.sub(r"[^\w\u4e00-\u9fff]+", "_", title_line).strip("_"))
+    chunks: list[PlotChunk] = []
+    for i, text in enumerate(split_body(body, chunk_size=chunk_size)):
+        chunks.append(
+            PlotChunk(
+                hash=chunk_hash(text),
+                text=text,
+                doc_id=doc_id,
+                bv="",
+                page=1,
+                part="",
+                title=title_line,
+                uploader="灰机wiki",
+                pubdate=(fetched.group(1).strip() if fetched else ""),
+                version=(ver.group(1).strip() if ver else ""),
+                arc=title_line,
+                chapter_no=0,
+                chapter=title_line,
+                lang=detect_lang(text),
+                method="灰机wiki 渲染文本",
+                seq=i,
+                source_kind=SOURCE_KIND_CANON_ZH,
+                extra={"url": (src.group(1).strip() if src else "")},
             )
         )
     return chunks or None

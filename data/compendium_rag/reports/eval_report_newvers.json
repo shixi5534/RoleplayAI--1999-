@@ -1,0 +1,466 @@
+{
+  "summary": {
+    "full": {
+      "cases": 10,
+      "hit@k": 1.0,
+      "MRR": 0.6117,
+      "seed_recall": 0.4,
+      "grounded": 1.0
+    },
+    "graph_only": {
+      "cases": 10,
+      "hit@k": 0.4,
+      "MRR": 0.2333,
+      "seed_recall": 0.4,
+      "grounded": 1.0
+    }
+  },
+  "rows": [
+    {
+      "qid": "n1",
+      "kind": "单跳",
+      "query": "长夜鸣笛中塞梅尔维斯一行人乘坐的列车叫什么名字？",
+      "seeds": [
+        "塞梅尔维斯",
+        "塞梅尔维斯的通讯设备",
+        "塞梅尔维斯的兴奋",
+        "塞梅尔维斯的笔记本",
+        "塞梅尔维斯的幻象",
+        "火车"
+      ],
+      "seed_hits": [
+        "塞梅尔维斯"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 0.25,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 8.542,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n2",
+      "kind": "单跳",
+      "query": "不老春里白马派的传承是由谁讲给弟子们的？",
+      "seeds": [
+        "白马派",
+        "不老泉",
+        "雷曼女士的学徒",
+        "不老镜",
+        "占卜导师",
+        "学员"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.512,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n3",
+      "kind": "多跳",
+      "query": "绿松石蛇俱乐部里蝴蝶女士向佩雷斯妈妈打听什么的下落？",
+      "seeds": [
+        "绿松石蛇俱乐部",
+        "佩雷斯妈妈",
+        "佩雷斯",
+        "绿松石",
+        "蝴蝶",
+        "《混沌能量》的作者洛伦兹蝴蝶"
+      ],
+      "seed_hits": [
+        "洛伦兹蝴蝶",
+        "佩雷斯妈妈"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.824,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n4",
+      "kind": "单跳",
+      "query": "迁流的盛宴中阿黛拉与贝丽尔在什么地方遇见走失的罗西教授？",
+      "seeds": [
+        "罗西教授",
+        "贝丽尔",
+        "阿黛拉",
+        "罗西教授订下的餐厅",
+        "罗西教授的座驾",
+        "罗西教授的研究室"
+      ],
+      "seed_hits": [
+        "阿黛拉",
+        "贝丽尔"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.07,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n5",
+      "kind": "单跳",
+      "query": "世纪末尺度里蓝图搭建穹顶模型用的主要材料是什么？",
+      "seeds": [
+        "穹顶模型",
+        "模型",
+        "蓝图",
+        "穹顶框架的浇筑",
+        "穹顶重建计划",
+        "双层穹顶"
+      ],
+      "seed_hits": [
+        "蓝图"
+      ],
+      "seed_recall": 0.5,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.948,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n6",
+      "kind": "多跳",
+      "query": "聚合浪潮中是谁找到了解除机器人限制的办法并操控它们追击？",
+      "seeds": [
+        "浪潮",
+        "限制器",
+        "巨型机器人",
+        "控制按钮",
+        "浮空机器人",
+        "人工梦游机器"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 0.5,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.624,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n7",
+      "kind": "单跳",
+      "query": "人们向何处去里格蕾塔下一次打算去爬哪座山峰？",
+      "seeds": [
+        "霍夫曼",
+        "格蕾塔的登山俱乐部",
+        "向下的爬梯",
+        "生命终会去往的地方",
+        "人群中的启程",
+        "围观的游人"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.139,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n8",
+      "kind": "单跳",
+      "query": "1.9 地牢剧情里塞梅尔维斯在中枪后呼喊谁的名字？",
+      "seeds": [
+        "塞梅尔维斯",
+        "地牢",
+        "塞梅尔维斯的兴奋",
+        "塞梅尔维斯的幻象",
+        "枪声",
+        "塞梅尔维斯的通讯设备"
+      ],
+      "seed_hits": [
+        "塞梅尔维斯"
+      ],
+      "seed_recall": 0.5,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 5.08,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n9",
+      "kind": "跨篇章",
+      "query": "1.6 赛季剧情中街市商贩叫卖的「金丹妙药」旁还有什么药？",
+      "seeds": [
+        "商贩",
+        "6",
+        "角落的商贩",
+        "金丹术",
+        "魔药",
+        "热情的商贩"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 0.2,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.815,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n10",
+      "kind": "跨篇章",
+      "query": "1.2 绿湖噩梦的故事发生在哪个营地？",
+      "seeds": [
+        "绿湖",
+        "营地",
+        "绿湖营地",
+        "绿湖噩梦附录剧情",
+        "绿湖事件",
+        "流浪者营地"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 0.5,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.742,
+      "note": "",
+      "mode": "full"
+    },
+    {
+      "qid": "n1",
+      "kind": "单跳",
+      "query": "长夜鸣笛中塞梅尔维斯一行人乘坐的列车叫什么名字？",
+      "seeds": [
+        "塞梅尔维斯"
+      ],
+      "seed_hits": [
+        "塞梅尔维斯"
+      ],
+      "seed_recall": 1.0,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 19,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.697,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n2",
+      "kind": "单跳",
+      "query": "不老春里白马派的传承是由谁讲给弟子们的？",
+      "seeds": [
+        "白马派"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 1.0,
+      "n_evidence": 14,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.575,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n3",
+      "kind": "多跳",
+      "query": "绿松石蛇俱乐部里蝴蝶女士向佩雷斯妈妈打听什么的下落？",
+      "seeds": [
+        "绿松石蛇俱乐部",
+        "佩雷斯妈妈",
+        "佩雷斯",
+        "绿松石",
+        "蝴蝶",
+        "《混沌能量》的作者洛伦兹蝴蝶"
+      ],
+      "seed_hits": [
+        "洛伦兹蝴蝶",
+        "佩雷斯妈妈"
+      ],
+      "seed_recall": 1.0,
+      "hit": true,
+      "rr": 0.5,
+      "n_evidence": 22,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.849,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n4",
+      "kind": "单跳",
+      "query": "迁流的盛宴中阿黛拉与贝丽尔在什么地方遇见走失的罗西教授？",
+      "seeds": [
+        "罗西教授",
+        "贝丽尔",
+        "阿黛拉"
+      ],
+      "seed_hits": [
+        "阿黛拉",
+        "贝丽尔"
+      ],
+      "seed_recall": 1.0,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.247,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n5",
+      "kind": "单跳",
+      "query": "世纪末尺度里蓝图搭建穹顶模型用的主要材料是什么？",
+      "seeds": [
+        "穹顶模型",
+        "模型",
+        "蓝图"
+      ],
+      "seed_hits": [
+        "蓝图"
+      ],
+      "seed_recall": 0.5,
+      "hit": true,
+      "rr": 0.5,
+      "n_evidence": 23,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.39,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n6",
+      "kind": "多跳",
+      "query": "聚合浪潮中是谁找到了解除机器人限制的办法并操控它们追击？",
+      "seeds": [
+        "浪潮"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 17,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.504,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n7",
+      "kind": "单跳",
+      "query": "人们向何处去里格蕾塔下一次打算去爬哪座山峰？",
+      "seeds": [
+        "霍夫曼"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.468,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n8",
+      "kind": "单跳",
+      "query": "1.9 地牢剧情里塞梅尔维斯在中枪后呼喊谁的名字？",
+      "seeds": [
+        "塞梅尔维斯",
+        "地牢"
+      ],
+      "seed_hits": [
+        "塞梅尔维斯"
+      ],
+      "seed_recall": 0.5,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 23,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.794,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n9",
+      "kind": "跨篇章",
+      "query": "1.6 赛季剧情中街市商贩叫卖的「金丹妙药」旁还有什么药？",
+      "seeds": [
+        "商贩",
+        "6"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": false,
+      "rr": 0.0,
+      "n_evidence": 23,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.453,
+      "note": "",
+      "mode": "graph_only"
+    },
+    {
+      "qid": "n10",
+      "kind": "跨篇章",
+      "query": "1.2 绿湖噩梦的故事发生在哪个营地？",
+      "seeds": [
+        "绿湖",
+        "营地"
+      ],
+      "seed_hits": [],
+      "seed_recall": 0.0,
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "n_evidence": 18,
+      "n_edges": 30,
+      "grounded": true,
+      "seconds": 4.172,
+      "note": "",
+      "mode": "graph_only"
+    }
+  ]
+}

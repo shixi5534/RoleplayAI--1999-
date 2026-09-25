@@ -1,0 +1,1270 @@
+{
+ "bd0dbd569804f1d73184734d": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擒获逃学者的辅员"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破隐形墨水术阵"
+   },
+   {
+    "name": "卢卡斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被缚的逃学生"
+   },
+   {
+    "name": "艾米莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被缚的逃学生"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶来处置的教员"
+   },
+   {
+    "name": "校园警卫",
+    "type": "组织",
+    "aliases": [],
+    "desc": "押送学生"
+   },
+   {
+    "name": "鸟目魔精习性与饲养指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "术阵图样出处"
+   },
+   {
+    "name": "狮鹫召唤术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无效的隐形墨水阵"
+   },
+   {
+    "name": "沙米尔虫",
+    "type": "概念",
+    "aliases": [],
+    "desc": "禁闭室的惩戒物"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "学生受罚之处"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被缚之处"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "逃学未遂之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "擒获",
+    "dst": "卢卡斯",
+    "evidence": "逃学小队不是毕业生的对手，他们很快被捕",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "擒获",
+    "dst": "艾米莉亚",
+    "evidence": "逃学小队不是毕业生的对手，他们很快被捕",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "识破",
+    "dst": "狮鹫召唤术阵",
+    "evidence": "这个术阵是没有效果的",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "绘制",
+    "dst": "狮鹫召唤术阵",
+    "evidence": "因为那是我在八年级时画上去的",
+    "confidence": 0.8
+   },
+   {
+    "src": "狮鹫召唤术阵",
+    "relation": "取材",
+    "dst": "鸟目魔精习性与饲养指南",
+    "evidence": "这是可以召唤狮鹫的术阵，而且是书里写的",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾米莉亚",
+    "relation": "询问",
+    "dst": "梅蕾尔",
+    "evidence": "所以毕业之后，我们就可以到外面去了，是这样吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "透露",
+    "dst": "艾米莉亚",
+    "evidence": "外面……外面到处都在打仗，我恨不得自己从未毕业！",
+    "confidence": 0.7
+   },
+   {
+    "src": "卢卡斯",
+    "relation": "斥责",
+    "dst": "玛蒂尔达",
+    "evidence": "坏人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "惩罚",
+    "dst": "卢卡斯",
+    "evidence": "你们要在禁闭室度过今天剩下的时间！立刻！",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "惩罚",
+    "dst": "艾米莉亚",
+    "evidence": "你们要在禁闭室度过今天剩下的时间！立刻！",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙米尔虫",
+    "relation": "威慑",
+    "dst": "卢卡斯",
+    "evidence": "那些沙米尔虫就是为了让你们这些捣蛋的学生长记性的",
+    "confidence": 0.8
+   },
+   {
+    "src": "教员",
+    "relation": "调遣",
+    "dst": "校园警卫",
+    "evidence": "在几个校园警卫的伴随下赶到现场",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b04ef695555fbd9888a82684": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "教授校验器用法"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首次实操校验"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧刻雷乌斯"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "宽解十四行诗"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "正受问询"
+   },
+   {
+    "name": "审理委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "问询刻雷乌斯"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "未再过问顿河"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "首检对象"
+   },
+   {
+    "name": "校验器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插入基座检测"
+   },
+   {
+    "name": "西北瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "首检之塔"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "审理委员会所在"
+   },
+   {
+    "name": "基金会走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通往办公室"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "教授",
+    "dst": "梅蕾尔",
+    "evidence": "过来，我教你怎么用校验器",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "操作",
+    "dst": "校验器",
+    "evidence": "把校验器插入气象鸽基座旁边的插槽",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "巡检",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "编号校验……正常，能源供应正常",
+    "confidence": 0.85
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "安装",
+    "dst": "西北瞭望塔",
+    "evidence": "我们就从这座塔顶的气象鸽开始检查",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "会同",
+    "dst": "梅蕾尔",
+    "evidence": "我们来从这座塔顶的气象鸽开始检查",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "担忧",
+    "dst": "刻雷乌斯",
+    "evidence": "刻雷乌斯先生正在接受问询。我担心……",
+    "confidence": 0.95
+   },
+   {
+    "src": "审理委员会",
+    "relation": "问询",
+    "dst": "刻雷乌斯",
+    "evidence": "刻雷乌斯先生正在接受问询",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "宽解",
+    "dst": "十四行诗",
+    "evidence": "如果基金会想在这件事上调查我，那程序早就应该开始了",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "提供",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们当时前往别列格勒正是因为他提供的琥珀屋线索",
+    "confidence": 0.8
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "冷置",
+    "dst": "维尔汀",
+    "evidence": "提交顿河地区的行动报告之后，基金会就没有再过问这件事",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "adabc9de9434f0ebcbaf69be": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忧虑的长"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "应约者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "正受问询者"
+   },
+   {
+    "name": "审理委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "问询方"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "未再过问顿河"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "办公室主人"
+   },
+   {
+    "name": "基金会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "标准办公室"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "担忧",
+    "dst": "刻雷乌斯",
+    "evidence": "我担心……",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "受审",
+    "dst": "审理委员会",
+    "evidence": "刻雷乌斯先生正在接受问询",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "研判",
+    "dst": "圣洛夫基金会",
+    "evidence": "如果基金会想在这件事上调查我，那程序早就应该开始了",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "提供",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们当时前往别列格勒正是因为他提供的琥珀屋线索",
+    "confidence": 0.8
+   },
+   {
+    "src": "无名者",
+    "relation": "会面",
+    "dst": "维尔汀",
+    "evidence": "二位，很久没见面了",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "会面",
+    "dst": "十四行诗",
+    "evidence": "二位，很久没见面了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "adf814ce7e5a8b9fb830153b": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "移交手提箱者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引见研究者"
+   },
+   {
+    "name": "技术员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "手提箱研究员"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "年度检修对象"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "技术员所属"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "安排住所"
+   },
+   {
+    "name": "琥珀屋",
+    "type": "概念",
+    "aliases": [],
+    "desc": "技术员好奇的课题"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "恰逢检修之期"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "技术员所戴"
+   }
+  ],
+  "relations": [
+   {
+    "src": "技术员",
+    "relation": "研究",
+    "dst": "箱子",
+    "evidence": "我是负责手提箱研究的技术人员",
+    "confidence": 0.95
+   },
+   {
+    "src": "技术员",
+    "relation": "收取",
+    "dst": "箱子",
+    "evidence": "技术员上前一步，取走空荡荡的箱子",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "移交",
+    "dst": "箱子",
+    "evidence": "请问箱子中的住客都已经转移了吗，司辰？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "报告",
+    "dst": "圣洛夫基金会",
+    "evidence": "这件事我也写在提交给基金会的报告中了",
+    "confidence": 0.95
+   },
+   {
+    "src": "技术员",
+    "relation": "好奇",
+    "dst": "琥珀屋",
+    "evidence": "我想问的是关于琥珀屋的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "技术员",
+    "relation": "隶属",
+    "dst": "科算中心",
+    "evidence": "科算中心总能找到这么有意思的人",
+    "confidence": 0.85
+   },
+   {
+    "src": "科算中心",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "科算中心总能找到这么有意思的人来为我们的知识添砖加瓦",
+    "confidence": 0.7
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "安置",
+    "dst": "箱子",
+    "evidence": "基金会为他们安排了临时住所",
+    "confidence": 0.7
+   },
+   {
+    "src": "无名者",
+    "relation": "引见",
+    "dst": "技术员",
+    "evidence": "我们不妨先解决这位女士的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "波及",
+    "dst": "箱子",
+    "evidence": "今年正好撞上了“暴雨”",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "9abac32998fd7d5a4b4d2841": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "受试听者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引路与说明"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "小春雀儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研究助理"
+   },
+   {
+    "name": "玛格丽特",
+    "type": "角色",
+    "aliases": [
+     "玛格丽特研究员"
+    ],
+    "desc": "项目负责人"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯"
+    ],
+    "desc": "研究主导；玛格丽特所属"
+   },
+   {
+    "name": "完全指向性虚拟监听仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "混沌系统监听仪"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "术式原理来源"
+   },
+   {
+    "name": "南翼花园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "实验场地"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "南面附属建筑"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小春雀儿",
+    "relation": "隶属",
+    "dst": "科算中心",
+    "evidence": "看样子，你已经是科算中心的一员了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "主导",
+    "dst": "科算中心",
+    "evidence": "项目的主要负责人是我的老师",
+    "confidence": 0.85
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "隶属",
+    "dst": "科算中心",
+    "evidence": "一名身着拉普拉斯制服的女子",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "调试",
+    "dst": "完全指向性虚拟监听仪",
+    "evidence": "我和小春雀儿刚将“完全指向性虚拟监听仪”调试完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "小春雀儿",
+    "relation": "协助",
+    "dst": "玛格丽特",
+    "evidence": "我只是帮各位处理一些简单的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "参与",
+    "dst": "科算中心",
+    "evidence": "于是我被派去帮了一些忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "完全指向性虚拟监听仪",
+    "relation": "解析",
+    "dst": "重塑之手",
+    "evidence": "根据重塑之手的术式原理，研究小组逆向解析了用以稳固外壳的神秘术",
+    "confidence": 0.8
+   },
+   {
+    "src": "无名者",
+    "relation": "带路",
+    "dst": "维尔汀",
+    "evidence": "跟我来吧，她们想要一个开阔的空间",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "设立",
+    "dst": "南翼花园",
+    "evidence": "她和她的助手已经带着仪器来到基金会了",
+    "confidence": 0.7
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "邀请",
+    "dst": "维尔汀",
+    "evidence": "请坐，司辰。我保证这会是一趟充满意外与未知的旅程",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c6a38d902a239ba2119a76a9": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "受试听的司辰"
+   },
+   {
+    "name": "玛格丽特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持实验"
+   },
+   {
+    "name": "小春雀儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记录助手"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放置黑盒者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关切司辰"
+   },
+   {
+    "name": "完全指向性虚拟监听仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "因超限罢工"
+   },
+   {
+    "name": "阿派朗的卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未发挥预期作用"
+   },
+   {
+    "name": "潘多拉的小盒子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "黑盒本体"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "黑盒制作者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯"
+    ],
+    "desc": "玛格丽特所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛格丽特",
+    "relation": "监听",
+    "dst": "潘多拉的小盒子",
+    "evidence": "趁着仪器调试的时候，我已经尝试过监听了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "操纵",
+    "dst": "完全指向性虚拟监听仪",
+    "evidence": "参照物参数顺利建立。可以开始观测了",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "放置",
+    "dst": "潘多拉的小盒子",
+    "evidence": "麻烦你将潘多拉的小盒子放在托盘上",
+    "confidence": 0.95
+   },
+   {
+    "src": "潘多拉的小盒子",
+    "relation": "出自",
+    "dst": "阿尔卡纳",
+    "evidence": "考虑到这个黑盒出自阿尔卡纳之手",
+    "confidence": 0.9
+   },
+   {
+    "src": "完全指向性虚拟监听仪",
+    "relation": "过载",
+    "dst": "潘多拉的小盒子",
+    "evidence": "监听仪需要承受的混沌信息比预计的上限要高出许多",
+    "confidence": 0.8
+   },
+   {
+    "src": "维尔汀",
+    "relation": "听取",
+    "dst": "潘多拉的小盒子",
+    "evidence": "所以，借助这台仪器，我能够“听见”盒中的内容",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "描述",
+    "dst": "潘多拉的小盒子",
+    "evidence": "它难以形容，就像是……流沙一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "小春雀儿",
+    "relation": "记录",
+    "dst": "完全指向性虚拟监听仪",
+    "evidence": "小助手正在一旁忠实地记录方才实验的情况",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "关切",
+    "dst": "维尔汀",
+    "evidence": "司辰，你醒了。你感觉还好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "研制",
+    "dst": "完全指向性虚拟监听仪",
+    "evidence": "在我们研制监听仪的同时",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "ca9061157f0befe7fa46164a": {
+  "entities": [
+   {
+    "name": "玛格丽特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "移交溶壳药剂"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "受托保管者"
+   },
+   {
+    "name": "小春雀儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认同风险者"
+   },
+   {
+    "name": "炼金药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "七秒溶壳胶囊"
+   },
+   {
+    "name": "网上邻居顾问",
+    "type": "角色",
+    "aliases": [],
+    "desc": "炼制药剂者"
+   },
+   {
+    "name": "潘多拉的小盒子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待溶外壳"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛格丽特",
+    "relation": "移交",
+    "dst": "炼金药剂",
+    "evidence": "玛格丽特微笑着移交了药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "炼金药剂",
+    "relation": "可溶",
+    "dst": "潘多拉的小盒子",
+    "evidence": "预计在七秒内就能将外壳溶解",
+    "confidence": 0.95
+   },
+   {
+    "src": "网上邻居顾问",
+    "relation": "炼制",
+    "dst": "炼金药剂",
+    "evidence": "我们的网上邻居顾问先生已经率先炼制出了能够摧毁外壳的炼金药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛格丽特",
+    "relation": "教授",
+    "dst": "维尔汀",
+    "evidence": "稍后我会教您如何念诵开启咒文",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "保管",
+    "dst": "炼金药剂",
+    "evidence": "谢谢，我会好好保管它",
+    "confidence": 0.95
+   },
+   {
+    "src": "小春雀儿",
+    "relation": "提醒",
+    "dst": "维尔汀",
+    "evidence": "贸然打开外壳的风险确实很高",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c03bb0f6890293fbcbfd6969": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "完成全部巡检"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同巡的主气象鸽讲解者"
+   },
+   {
+    "name": "拉文德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报信的新辅员"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽",
+     "主气象鸽",
+     "石鸽"
+    ],
+    "desc": "主鸽覆盖全校"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "依赖气象鸽"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "主鸽所在"
+   },
+   {
+    "name": "西南瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "陌生人去处"
+   },
+   {
+    "name": "校验器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插入基座检测"
+   },
+   {
+    "name": "巧克力能量棒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "分给玛蒂尔达"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学校屡次躲过"
+   }
+  ],
+  "relations": [
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "庇护",
+    "dst": "第一防线学校",
+    "evidence": "第一防线学校就是靠这些才躲过了一次次“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨气象稳定鸽",
+    "relation": "安装",
+    "dst": "中央瞭望塔",
+    "evidence": "我们面前的这个是主气象鸽",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "巡检",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "三盏绿灯亮，校验结果正常",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "使用",
+    "dst": "校验器",
+    "evidence": "插入了手中的校验器",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "分给",
+    "dst": "玛蒂尔达",
+    "evidence": "将其中一根递到玛蒂尔达面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "携自",
+    "dst": "巧克力能量棒",
+    "evidence": "这是我从90年代带过来的",
+    "confidence": 0.8
+   },
+   {
+    "src": "拉文德",
+    "relation": "报告",
+    "dst": "玛蒂尔达",
+    "evidence": "看见一些陌生人在往西南瞭望塔的方向去",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉文德",
+    "relation": "驻守",
+    "dst": "西南瞭望塔",
+    "evidence": "我在这儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "会同",
+    "dst": "梅蕾尔",
+    "evidence": "我和梅蕾尔马上过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉文德",
+    "relation": "隶属",
+    "dst": "第一防线学校",
+    "evidence": "新任纪律辅员",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "b997b5edd53353b7a56de566": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "按下警报的组长"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现讯号被屏蔽"
+   },
+   {
+    "name": "拉文德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劝离的辅员"
+   },
+   {
+    "name": "重塑·门徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "占领塔门之敌"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接踵而出的同类"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "袭击者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "玛蒂尔达所属"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "严禁外人进入"
+   },
+   {
+    "name": "西南瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "遇袭之地"
+   },
+   {
+    "name": "校园安保中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "线缆被切断"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无线讯号被屏蔽"
+   },
+   {
+    "name": "警报按钮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "按下无反应"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉文德",
+    "relation": "报告",
+    "dst": "玛蒂尔达",
+    "evidence": "我在学校入口附近巡逻的时候，看见一些陌生人",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "劝离",
+    "dst": "拉文德",
+    "evidence": "你先离开这儿。这里的情况就交给秩序协助小组吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·门徒",
+    "relation": "伏击",
+    "dst": "玛蒂尔达",
+    "evidence": "它的同类将毕业生们困在远离大厅出口的另一侧",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·门徒",
+    "relation": "伏击",
+    "dst": "梅蕾尔",
+    "evidence": "它的同类将毕业生们困在远离大厅出口的另一侧",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·信徒",
+    "relation": "封堵",
+    "dst": "西南瞭望塔",
+    "evidence": "最先抵达底层的门徒迅速占领了塔楼大门",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "切断",
+    "dst": "校园安保中心",
+    "evidence": "除非有人提前切断了线缆",
+    "confidence": 0.9
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "发现",
+    "dst": "通讯器",
+    "evidence": "无线讯号也被屏蔽了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "按下",
+    "dst": "警报按钮",
+    "evidence": "果断地按下了那颗代表着发生危险情况的红色按钮",
+    "confidence": 0.95
+   },
+   {
+    "src": "警报按钮",
+    "relation": "连接",
+    "dst": "校园安保中心",
+    "evidence": "警报系统是用预埋线缆连接安保中心的",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我是基金会最优秀的特派调查员",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "fdaa53d3dde8b019aa14c815": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掩护突围的组长"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "变形突围者"
+   },
+   {
+    "name": "变形术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "变飞禽之术"
+   },
+   {
+    "name": "西南瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被困之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "指挥",
+    "dst": "梅蕾尔",
+    "evidence": "我会把它们往一边引开，你趁机用变形术从窗户逃出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "掌握",
+    "dst": "变形术",
+    "evidence": "但我可以试着变成飞禽飞出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "突围",
+    "dst": "西南瞭望塔",
+    "evidence": "到屏蔽区之外发警报",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "断后",
+    "dst": "梅蕾尔",
+    "evidence": "我会把它们往一边引开",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

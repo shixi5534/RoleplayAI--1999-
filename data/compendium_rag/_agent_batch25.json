@@ -1,0 +1,2037 @@
+{
+ "2e9cd6502552b76e23e5f59d": {
+  "entities": [
+   {
+    "name": "研究员Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "马修"
+    ],
+    "desc": "受面具影响、头脑炸裂的研究员"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问“母亲”所指者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令终止面具研究的总负责人"
+   },
+   {
+    "name": "重塑·门徒",
+    "type": "组织",
+    "aliases": [],
+    "desc": "自研究员躯体中出现者"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "组织",
+    "aliases": [],
+    "desc": "手持三角铁、口中哀鸣的门徒"
+   },
+   {
+    "name": "拉普拉斯安全员",
+    "type": "组织",
+    "aliases": [],
+    "desc": "冲进房间清理现场的警卫"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [
+     "重塑之手面具"
+    ],
+    "desc": "危害程度超过潜在价值的研究对象"
+   },
+   {
+    "name": "催眠烟雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "安全员冒着其冲入房间"
+   },
+   {
+    "name": "暴雨研究",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被归入废弃区域的数据"
+   }
+  ],
+  "relations": [
+   {
+    "src": "研究员Ⅰ",
+    "relation": "受影于",
+    "dst": "面具",
+    "evidence": "它们注意到我了，它们朝着这儿过来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·门徒",
+    "relation": "诞生于",
+    "dst": "研究员Ⅰ",
+    "evidence": "一个新生者自他的躯体中出现",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "下令终止",
+    "dst": "面具",
+    "evidence": "立刻终止对重塑之手面具的一切研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "下令封存",
+    "dst": "面具",
+    "evidence": "永久封存所有相关用具",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "废弃",
+    "dst": "暴雨研究",
+    "evidence": "将头脑中又一堆标记着“‘暴雨’研究”的数据归入了废弃区域",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "2cfe5a27ba3a01f9c154c5e5": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断面具与咒文不相干者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告司辰采样进展者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "将再度前往地底者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未直接分发面具给伊索尔德兄妹者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未获面具者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯调查员"
+    ],
+    "desc": "传回不完整报告者"
+   },
+   {
+    "name": "非对称核素R",
+    "type": "概念",
+    "aliases": [],
+    "desc": "面具化验报告证实其存在"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已被封存"
+   }
+  ],
+  "relations": [
+   {
+    "src": "助理希曼",
+    "relation": "报告",
+    "dst": "露西",
+    "evidence": "自上次收集到一管样品后，司辰一直没能找到第二个独立行动的时机",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "推断",
+    "dst": "面具",
+    "evidence": "面具和咒文是不相干的，尽管它们都来自于重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "质疑",
+    "dst": "阿尔卡纳",
+    "evidence": "阿尔卡纳为何不直接分发面具给伊索尔德和她的兄长？",
+    "confidence": 0.95
+   },
+   {
+    "src": "面具",
+    "relation": "证实",
+    "dst": "非对称核素R",
+    "evidence": "它证实并记录了“非对称核素R”的存在",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0be67fa9c28696c42aa225dc": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "断言术式无法破译的密码专家"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "被斥为傲慢呆子的组长"
+   },
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [
+     "研究员Ⅱ"
+    ],
+    "desc": "殴哑谜并砸毁自动机者"
+   },
+   {
+    "name": "研究员Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "马修"
+    ],
+    "desc": "受面具影响的研究员"
+   },
+   {
+    "name": "康威V代自动机",
+    "type": "物品",
+    "aliases": [
+     "自动机"
+    ],
+    "desc": "暴雨后全球仅剩一台"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [
+     "重塑面具"
+    ],
+    "desc": "具潜伏期影响的研究对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "否定",
+    "dst": "术式",
+    "evidence": "这个术式是没用的。不要再白费力气了",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "殴打",
+    "dst": "哑谜",
+    "evidence": "研究员径直冲到哑谜的面前，狠狠给了他一拳",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "毁坏",
+    "dst": "康威V代自动机",
+    "evidence": "那台机器贴着它的头顶飞了过去，在墙上摔了个稀巴烂",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "受影于",
+    "dst": "面具",
+    "evidence": "是重塑面具的影响！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "呼叫",
+    "dst": "警卫",
+    "evidence": "警卫！警卫！我们需要帮助！！！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "186f2d8f6f9ee610796b6081": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释为何让哑谜加入者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "控诉哑谜者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒·霍夫曼"
+    ],
+    "desc": "被指为失败主义者与人类主义者"
+   },
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被及时制伏的失控研究员"
+   },
+   {
+    "name": "康威V代自动机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被砸毁的机器"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "其前的世界已变为一滩油污"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "哑谜八年前为之做出贡献"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "解释",
+    "dst": "乌尔里希",
+    "evidence": "正因为不理解神秘学，他才能用人类的思维去看待神秘术的效用",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "控诉",
+    "dst": "哑谜",
+    "evidence": "现在他不只是该死的失败主义者，还是个坚定的人类主义者",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "制伏",
+    "dst": "威廉姆斯",
+    "evidence": "我们及时制伏了威廉姆斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "授权",
+    "dst": "乌尔里希",
+    "evidence": "如果他不配合工作，你有权将他踢出破译组",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "强调",
+    "dst": "术式",
+    "evidence": "这个术式后续的应用不能只局限于神秘学家的范畴",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d87d960743f8ade3e3ed08c4": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒研究员"
+    ],
+    "desc": "递交逻辑证明的研究员"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反驳其在意神秘学家规则者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "先行离开的组长"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提交血统纯度与施术能力关系报告者"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其研究失败已让太多同僚发疯"
+   },
+   {
+    "name": "术式",
+    "type": "物品",
+    "aliases": [],
+    "desc": "来自重塑之手领袖的奇迹咒语"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "证明",
+    "dst": "术式",
+    "evidence": "我在逻辑上证明了当前的研究是无意义的，咒语的长度不足以支持密码学上的破译",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "归因",
+    "dst": "血统的纯度",
+    "evidence": "它取决于血统的纯度",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "论证",
+    "dst": "血统纯度",
+    "evidence": "论证了血统纯度和施术能力的线性关系",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "反问",
+    "dst": "哑谜",
+    "evidence": "但你不是神秘学家。你为什么要在意他们的规则？",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "要求",
+    "dst": "破译小组",
+    "evidence": "仅仅去构想实践该目标的可能性，作为一个小组",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "89784f9a2336cc799afe219a": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阐述知识路径多样者，实为充电"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒研究员"
+    ],
+    "desc": "喃喃自问为何偏偏是格蕾塔者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔"
+    ],
+    "desc": "哑谜之姐"
+   },
+   {
+    "name": "白色石屋",
+    "type": "组织",
+    "aliases": [],
+    "desc": "鸽子所来之处"
+   },
+   {
+    "name": "鸽子",
+    "type": "概念",
+    "aliases": [
+     "白色石屋的鸽子"
+    ],
+    "desc": "石膏质感的造物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "阐述",
+    "dst": "知识的路径",
+    "evidence": "直觉的洞悉，逻辑的觉察，经验的推演，他人的传授",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "自问",
+    "dst": "霍夫曼",
+    "evidence": "那为什么偏偏是格蕾塔？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸽子",
+    "relation": "停留",
+    "dst": "露西",
+    "evidence": "那石膏质感的造物停留在了钢铁的指尖上",
+    "confidence": 0.95
+   },
+   {
+    "src": "白色石屋",
+    "relation": "提供帮助于",
+    "dst": "露西",
+    "evidence": "更接近限度之人向我们提供了帮助",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "176b42d9b2d0fe56afacc2cf": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "监视阿尔卡纳的飞行女巫"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告芝诺部署进度者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心维尔汀能否及时返回者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "站在海角最高处的蓝黑色身影"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释无限定者概念者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "两小时内完成接应部署"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "不定和无限制的物质实在"
+   },
+   {
+    "name": "阿那克西曼德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "古希腊哲学家"
+   },
+   {
+    "name": "非对称核素R",
+    "type": "概念",
+    "aliases": [],
+    "desc": "了不起的突破"
+   },
+   {
+    "name": "米诺陶迷宫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "搜集暴雨线索的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "报告",
+    "dst": "红弩箭",
+    "evidence": "接应的步骤正有序进行，他们会在两小时内完成部署",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "监视",
+    "dst": "阿尔卡纳",
+    "evidence": "像块蓝黑色的礁石，站在海角上吹咸风",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿那克西曼德",
+    "relation": "提出",
+    "dst": "阿派朗",
+    "evidence": "无限定者是古希腊哲学家阿那克西曼德提出的一个哲学概念",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "担忧",
+    "dst": "维尔汀",
+    "evidence": "我担心的是维尔汀。两个小时足够她从地底返回吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "搜集",
+    "dst": "暴雨",
+    "evidence": "科算中心正在搜集一切和“暴雨”有关的线索",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3fb7c778411ac172eedc9449": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe先生",
+     "APPLe某"
+    ],
+    "desc": "解释交感与代价者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问代价具体内容者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "玛尔塔女士",
+     "玛尔塔"
+    ],
+    "desc": "告知知识有限度者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引导维尔汀跳幻方的少女"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参与跳房子式试炼者"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "无边界、无限制的存在"
+   },
+   {
+    "name": "数字",
+    "type": "概念",
+    "aliases": [],
+    "desc": "最接近本质者"
+   },
+   {
+    "name": "地下迷宫",
+    "type": "地点",
+    "aliases": [
+     "岛屿·地下迷宫"
+    ],
+    "desc": "试炼场地"
+   },
+   {
+    "name": "四阶幻方",
+    "type": "概念",
+    "aliases": [
+     "幻方"
+    ],
+    "desc": "每四步相加等于34"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "咨询",
+    "dst": "卡卡尼亚",
+    "evidence": "我咨询过玛尔塔女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "解释",
+    "dst": "阿派朗",
+    "evidence": "借由与伟大存在的交感，崇奉者们获取超越性的灵知指引",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿派朗",
+    "relation": "收取",
+    "dst": "代价",
+    "evidence": "祂们也会从崇奉者身上收取代价",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "引导",
+    "dst": "维尔汀",
+    "evidence": "接下来跳到7！这只是个四阶幻方",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "类比",
+    "dst": "米诺陶迷宫",
+    "evidence": "这就像克里特国王的米诺陶迷宫，我们总会抵达最深处的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "21fa544b3ad5f6d2aecdd4fb": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在迷宫门前遇6者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "守护试炼之门的领袖"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "旁听者"
+   },
+   {
+    "name": "福特圈",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37预想会出现的数学对象"
+   },
+   {
+    "name": "魔群",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37预想会出现的数学对象"
+   },
+   {
+    "name": "希尔伯特的无限旅馆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37预想会出现的数学对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "守护",
+    "dst": "试炼之门",
+    "evidence": "这道门是由每一代的6来守护的，37",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "提问",
+    "dst": "37",
+    "evidence": "假如你索求的真理，造成了你自身信仰的覆灭。即使如此，你也要前进吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "旁听",
+    "dst": "6",
+    "evidence": "至于维尔汀小姐，你不用作答，只需旁听",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "质疑",
+    "dst": "6",
+    "evidence": "你刚刚是笑了吗？好吧，现在我必须怀疑你不是真的6了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "527d21640affeb622e162f0f": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "答出问题并获赠卷轴者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自称曾名亚齐的守门人"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁听问答者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被37指说话像他者"
+   },
+   {
+    "name": "苏格拉底",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其故事被引述者"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [
+     "镶着金边的卷轴"
+    ],
+    "desc": "帮助跨越灵性鸿沟的术式"
+   },
+   {
+    "name": "德尔斐神谕",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "提问",
+    "dst": "37",
+    "evidence": "假如打开这扇门，你就能获得你索求的真理。而同时，它也将造成你熟悉世界的覆灭",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "回答",
+    "dst": "6",
+    "evidence": "当然！如果世界会因为真理而改变，就说明之前的世界错了",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "赠予",
+    "dst": "37",
+    "evidence": "作为通过问答的奖励，我将这个术式赠予你",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "告诫",
+    "dst": "37",
+    "evidence": "置身事外的智慧，与亲临其中的苦难，你只能选择一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "自称",
+    "dst": "亚齐",
+    "evidence": "这不是出于6的立场，而是我个人……一个曾经名叫“亚齐”的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引述",
+    "dst": "苏格拉底",
+    "evidence": "我们都读过苏格拉底的故事，真理与政治并不相容",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "9d6af563a18ca4de819fafb6": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "改变提问打算的少女"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其独自推门者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其话语影响37决定者"
+   },
+   {
+    "name": "本质",
+    "type": "概念",
+    "aliases": [],
+    "desc": "现象世界碎屑之外的终极对象"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "欲自其中打捞所有人的灾难"
+   },
+   {
+    "name": "教典",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无一条规定不能亲自求证"
+   },
+   {
+    "name": "地下迷宫",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通往迷宫深处之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "放弃提问",
+    "dst": "本质",
+    "evidence": "是的，我想到了一个更合适的问题！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "打算提问",
+    "dst": "流溢",
+    "evidence": "一个一劳永逸解决这儿危机的问题，一个能自“流溢”中打捞起所有人的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "受启发于",
+    "dst": "星锑",
+    "evidence": "我一直在想星锑上次说过的话",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "停步",
+    "dst": "37",
+    "evidence": "我就在这儿等你，哪也不会去。只是，你应该自己去推开那扇门",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "断言",
+    "dst": "37",
+    "evidence": "你想问的那个问题……就是我现在最想问的问题，37",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8f951b6cb83b3d70b0d86fb1": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称撑伞者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "进入最终试炼大门者"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被放下的容器"
+   },
+   {
+    "name": "咒语",
+    "type": "概念",
+    "aliases": [],
+    "desc": "维尔汀在心里温习之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "进入",
+    "dst": "试炼大门",
+    "evidence": "她不假思索地转过身去，进入了最终的试炼大门",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "评价",
+    "dst": "维尔汀",
+    "evidence": "你选择当置身事外的观察者，就像奥林匹克竞技场的第三种人",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "守候",
+    "dst": "37",
+    "evidence": "也许，我还能在这里撑起一把伞",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "3bab8a392384ce1a32d61a75": {
+  "entities": [
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "透露四年前有人通过仪式者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解说试炼规则者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被888指在这一点上说谎者"
+   },
+   {
+    "name": "教众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称三个世纪无人通过仪式者"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "其诘问是最难的一关"
+   },
+   {
+    "name": "不可超越物",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "迷宫深处",
+    "type": "地点",
+    "aliases": [
+     "岛屿·迷宫深处"
+    ],
+    "desc": "米诺陶的居所，最后的考验所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "888",
+    "relation": "透露",
+    "dst": "6",
+    "evidence": "有人在四年前通过了仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "解说",
+    "dst": "阿派朗",
+    "evidence": "在你提出问题之前，必须先回答无限定者的一个问题，这是规则",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "指出",
+    "dst": "6",
+    "evidence": "6在这一点上说谎了",
+    "confidence": 0.9
+   },
+   {
+    "src": "888",
+    "relation": "评价",
+    "dst": "她们",
+    "evidence": "她们实在是太像了。天赋、思维，连遇到不可跨越的困难时，第一时间想到的解决方案都一样",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4a4133624b746b2e1c85c88c": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认定已抵超验天国者"
+   },
+   {
+    "name": "77（幻影",
+    "type": "角色",
+    "aliases": [
+     "77？",
+     "77（幻影）"
+    ],
+    "desc": "无限定者投射的母亲幻象"
+   },
+   {
+    "name": "77",
+    "type": "角色",
+    "aliases": [],
+    "desc": "37之母，沿袭陈旧道路者"
+   },
+   {
+    "name": "超验的天国",
+    "type": "概念",
+    "aliases": [
+     "天国"
+    ],
+    "desc": "被幻梦遮蔽之物"
+   },
+   {
+    "name": "几何体",
+    "type": "物品",
+    "aliases": [
+     "碎块"
+    ],
+    "desc": "沙滩上无法分辨77数字之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "77（幻影",
+    "relation": "自述",
+    "dst": "37",
+    "evidence": "我不是你所想之人。我只是一个影子，一抹火光，一个投射于你眼前的幻象",
+    "confidence": 0.95
+   },
+   {
+    "src": "77（幻影",
+    "relation": "揭示",
+    "dst": "37",
+    "evidence": "你真的从未怀疑过吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "77（幻影",
+    "relation": "宣告",
+    "dst": "37",
+    "evidence": "我们并非错了，只是落后了。我们被名为天国的幻梦遮蔽",
+    "confidence": 0.95
+   },
+   {
+    "src": "77（幻影",
+    "relation": "邀请",
+    "dst": "37",
+    "evidence": "来吧，到妈妈这儿来，让我们回到争论和灾难之前",
+    "confidence": 0.95
+   },
+   {
+    "src": "77（幻影",
+    "relation": "承诺",
+    "dst": "37",
+    "evidence": "我将分享于你无穷无尽的奥秘，万事万物的本质，超越一切的真理",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "架设",
+    "dst": "陈旧道路",
+    "evidence": "你本该继续怀疑下去，而非沿袭我架设的陈旧道路",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5375cb57b134b86acc58df33": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自认有限并为此骄傲者"
+   },
+   {
+    "name": "77（幻影",
+    "type": "角色",
+    "aliases": [
+     "77？",
+     "77（幻影）"
+    ],
+    "desc": "逐渐破裂的幻影"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感知震动者"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "被37直接提问的对象"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "欲一劳永逸幸免的灾难"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "拒绝",
+    "dst": "77（幻影",
+    "evidence": "我的数字是37，不是无穷大。我为什么要知道无穷无尽的奥秘呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "提问",
+    "dst": "阿派朗",
+    "evidence": "我们如何才能不受现象世界的黑暗所绊，一劳永逸地自灵性的“流溢”中幸免！",
+    "confidence": 0.95
+   },
+   {
+    "src": "77（幻影",
+    "relation": "破裂",
+    "dst": "37",
+    "evidence": "母亲的幻影逐渐破裂",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d73b2b3848a6cfc43e985823": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "递出鸽子纸条者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒研究员"
+    ],
+    "desc": "擅离职守的前研究员"
+   },
+   {
+    "name": "联络员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "核实并发送咒文者"
+   },
+   {
+    "name": "纸条",
+    "type": "物品",
+    "aliases": [],
+    "desc": "鸽子带来的免疫术式读法"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "研究进入下一阶段"
+   },
+   {
+    "name": "联络员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在操作台前忙碌者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "递交",
+    "dst": "纸条",
+    "evidence": "将这个发送出去。验证通过了，这就是免疫“暴雨”术式的正确读法",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "读出",
+    "dst": "纸条",
+    "evidence": "La unua ...",
+    "confidence": 0.95
+   },
+   {
+    "src": "联络员Ⅰ",
+    "relation": "发送",
+    "dst": "纸条",
+    "evidence": "她按下了发送键，欣悦地转过身",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "坚持",
+    "dst": "术式",
+    "evidence": "不，术式没有问题。它的确是正确的",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "要求终止",
+    "dst": "传输",
+    "evidence": "快终止传输！！这个术式有问题！！！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "204999fcd4f27d1d7547be76": {
+  "entities": [
+   {
+    "name": "破译员Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "困惑仰头的研究员"
+   },
+   {
+    "name": "理查德",
+    "type": "角色",
+    "aliases": [
+     "破译员Ⅳ"
+    ],
+    "desc": "皮肤结块、几近碎裂的研究员"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒研究员"
+    ],
+    "desc": "狂奔警告同僚者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "通过扩音器发布警告者"
+   },
+   {
+    "name": "广播",
+    "type": "物品",
+    "aliases": [],
+    "desc": "反复警告不要读出咒文的系统"
+   },
+   {
+    "name": "道金斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "变成泥巴傀儡的研究员"
+   },
+   {
+    "name": "拉普拉斯安全员",
+    "type": "组织",
+    "aliases": [],
+    "desc": "带催眠弹与拘束网冲入者"
+   },
+   {
+    "name": "咒文",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其正确读法被传输"
+   },
+   {
+    "name": "科算中心走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "事故发生处"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "伤者被送往之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "理查德",
+    "relation": "读出",
+    "dst": "咒文",
+    "evidence": "有人完成了破译！他们找到了术式的正确读法",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "警告",
+    "dst": "破译员Ⅲ",
+    "evidence": "如果你们收到了任何“咒文的正确读法”，千万不要诵读！不要抄写！不要传递！",
+    "confidence": 0.95
+   },
+   {
+    "src": "广播",
+    "relation": "警告",
+    "dst": "科算中心",
+    "evidence": "不要读出咒文。不要读出咒文。不要读出咒文",
+    "confidence": 0.95
+   },
+   {
+    "src": "道金斯",
+    "relation": "变为",
+    "dst": "泥巴傀儡",
+    "evidence": "一个浑身流着泥浆的泥巴傀儡走了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯安全员",
+    "relation": "接管",
+    "dst": "科算中心走廊",
+    "evidence": "这里先交给我们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯康复中心",
+    "relation": "收治",
+    "dst": "理查德",
+    "evidence": "康复中心的员工匆匆赶来，带走了这场始料未及的传输事故里的所有伤者",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8b71f4666eeb2d706f868c18": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒先生"
+    ],
+    "desc": "控诉诅咒并精神濒崩者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "坚持研究继续的总负责人"
+   },
+   {
+    "name": "朵拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在哑谜眼前化为碎土者"
+   },
+   {
+    "name": "理查德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "全身皮肤覆盖结块者"
+   },
+   {
+    "name": "道金斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "变成不会说话的泥巴娃娃者"
+   },
+   {
+    "name": "维克托",
+    "type": "角色",
+    "aliases": [],
+    "desc": "凭空消失却仍能打字发邮件者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "虚弱跪倒流鼻血者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲以箱子隔绝异响者"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [
+     "重塑之手的面具"
+    ],
+    "desc": "被比作远不及诅咒者可怖"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "应能隔绝异响与扰动"
+   },
+   {
+    "name": "咒语",
+    "type": "物品",
+    "aliases": [],
+    "desc": "有效性与普适潜在可能性被验证"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [
+     "镶着金边的卷轴"
+    ],
+    "desc": "6所赠、缓缓升起之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "控诉",
+    "dst": "咒语",
+    "evidence": "我们招致了诅咒——比重塑之手的面具更加可怕、更加随机、完全不可抵挡的诅咒",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "下令继续",
+    "dst": "研究",
+    "evidence": "研究必须进行下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "宣告",
+    "dst": "哑谜",
+    "evidence": "我们不再需要人类研究员的援助了",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "主张",
+    "dst": "神秘学",
+    "evidence": "神秘学的诅咒只能用神秘学来消除",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "保护",
+    "dst": "37",
+    "evidence": "坚持住，我带你离开！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卷轴",
+    "relation": "升起",
+    "dst": "37",
+    "evidence": "自她的怀中，那个镶着金边的卷轴缓缓升起",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8fbe18bd80bc22882e827283": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获得数字密码者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问6告诫用意者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "其告诫被重新审视"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拦在领袖前质问者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怂恿回答的修辞学家"
+   },
+   {
+    "name": "教众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解说真言之壁者"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "完成翻译工作"
+   },
+   {
+    "name": "真言之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "不实话语会致其坍塌的岩壁"
+   },
+   {
+    "name": "缄默之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已走过的美德之壁"
+   },
+   {
+    "name": "善良之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已走过的美德之壁"
+   },
+   {
+    "name": "智慧之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已走过的美德之壁"
+   },
+   {
+    "name": "巨石滚落之刻",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "地下甬道",
+    "type": "地点",
+    "aliases": [
+     "岛屿·地下甬道"
+    ],
+    "desc": "通往净化的漫长道路"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "宣告",
+    "dst": "数字密码",
+    "evidence": "我们拿到它了，这就是那串通往真理的数字密码！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "质疑",
+    "dst": "6",
+    "evidence": "为什么他会说：“你所追求的真理，也许会摧毁你熟悉的世界……”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "拦截",
+    "dst": "6",
+    "evidence": "888突然上前一步，挡在了领袖的前面",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "质问",
+    "dst": "6",
+    "evidence": "你已在这四年里沉默了太久",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "援引",
+    "dst": "真言之壁",
+    "evidence": "请先贤所造的真言之壁为我见证！",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "逼迫",
+    "dst": "6",
+    "evidence": "你可以沉默，那样，我会说谎来使得岩壁坍塌",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅱ",
+    "relation": "解说",
+    "dst": "真言之壁",
+    "evidence": "任何不实或虚伪的话语都会导致岩壁坍塌",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ae9fe56586d5824e24f78e99": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [
+     "修辞学家"
+    ],
+    "desc": "追问研究止步原因者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以领域划分回应质疑者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问77所问问题者"
+   },
+   {
+    "name": "77",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上一任流溢研究领航人"
+   },
+   {
+    "name": "上一代6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与77驾船出海者"
+   },
+   {
+    "name": "真言之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "沉默印证其事实"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "在77与上一代6出海后降临"
+   },
+   {
+    "name": "希帕索斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被发现根号2奥秘者，导致学派覆灭"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "追问",
+    "dst": "6",
+    "evidence": "这四年里，我们的研究为何止步不前？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "推诿",
+    "dst": "210",
+    "evidence": "“流溢”研究并非6的领域，我的智慧不能为你解答本质的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "追问",
+    "dst": "6",
+    "evidence": "上一任“流溢”研究的领航人——77。她在无限定者面前问了怎样一个问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "目睹",
+    "dst": "77",
+    "evidence": "我曾目睹她步入迷宫，也见证了她无恙返回",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "出海",
+    "dst": "现象世界",
+    "evidence": "上一代6和77驾船出海，去现象世界探寻",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引例",
+    "dst": "希帕索斯",
+    "evidence": "希帕索斯发现了根号2的奥秘，于是毕达哥拉斯学派覆灭了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d0665a7da6c0abd6b9336698": {
+  "entities": [
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "揭示真理已紊乱者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听闻答案后震惊者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓住领袖衣领质问者"
+   },
+   {
+    "name": "77",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾问出流溢本质问题者"
+   },
+   {
+    "name": "希帕索斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现根号2致学派覆灭"
+   },
+   {
+    "name": "牛顿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忽略无穷小量推导者"
+   },
+   {
+    "name": "罗素",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现集合自指悖论者"
+   },
+   {
+    "name": "哥德尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下达不完备性判决者"
+   },
+   {
+    "name": "俄狄浦斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "违抗努力反助长命运悲剧者"
+   },
+   {
+    "name": "紊乱",
+    "type": "概念",
+    "aliases": [],
+    "desc": "至高存在发生之事"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [
+     "至高的秩序",
+     "超验的规律"
+    ],
+    "desc": "学派信仰之物"
+   },
+   {
+    "name": "真言之壁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "认可其诚意未坍塌"
+   },
+   {
+    "name": "地下甬道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "轰鸣声传来之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "引例",
+    "dst": "牛顿",
+    "evidence": "牛顿忽略了无穷小量的推导，令微积分的大厦险些轰塌",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引例",
+    "dst": "罗素",
+    "evidence": "罗素发现集合的自指悖论，引发了第三次数学危机",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引例",
+    "dst": "哥德尔",
+    "evidence": "最终，哥德尔下达了判决，不完备性迎来了最终的胜利",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引例",
+    "dst": "俄狄浦斯",
+    "evidence": "俄狄浦斯违抗的努力，反而助长了命运的悲剧",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "询问",
+    "dst": "至高存在",
+    "evidence": "她询问——“至高的存在究竟发生了什么，才让世界变得如此癫狂？”",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "揭示",
+    "dst": "紊乱",
+    "evidence": "答案是，“紊乱。”",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "质问",
+    "dst": "6",
+    "evidence": "知道“流溢”并不是超验规律的显现，而是超验规律的彻底紊乱？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "指控",
+    "dst": "6",
+    "evidence": "四年！你隐瞒了这件事四年！",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "隐瞒",
+    "dst": "真理",
+    "evidence": "知道再也没有永恒超越的数学天国，我们所信仰的灵性本质，已经是一个不尽变动的无理数",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6d4a225b8b91b7f2cf3aada2": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以为地震的海盗"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉大型神秘术式自行消解者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉圆消失者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "诵读经文的领袖"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感知净化仪式未顺利进行者"
+   },
+   {
+    "name": "大型神秘术式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "一直环绕全岛、正在自行消解"
+   },
+   {
+    "name": "圆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37所述消失之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "察觉",
+    "dst": "大型神秘术式",
+    "evidence": "一直环绕在岛上的那个大型神秘术式的气息。它……似乎正在自行消解？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "察觉",
+    "dst": "圆",
+    "evidence": "我们的圆……消失了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "诵读",
+    "dst": "经文",
+    "evidence": "领袖垂下眼睛，念出了本该在净化仪式上诵读的经文",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "感知",
+    "dst": "净化仪式",
+    "evidence": "净化仪式……没有顺利进行吗？",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

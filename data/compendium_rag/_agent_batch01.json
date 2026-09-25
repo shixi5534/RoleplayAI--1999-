@@ -1,0 +1,502 @@
+{
+ "56a385b873bd97ef7619bfc9": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "船长",
+     "本海盗"
+    ],
+    "desc": "APPLe号的船长，自称海盗，珍视自己的唱片收藏"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "星锑的船员，负责报告船况与威胁"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰",
+     "维尔汀小姐"
+    ],
+    "desc": "被称作司辰，与暴雨相关的关键人物"
+   },
+   {
+    "name": "转念即至",
+    "type": "概念",
+    "aliases": [],
+    "desc": "一种传送咒语，此处作为说话人名出现"
+   },
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隶属于基金会的调查员"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隶属于基金会的调查员"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被星锑称作恐怖主义暴徒的组织"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "调查员所属的组织"
+   },
+   {
+    "name": "APPLe号",
+    "type": "物品",
+    "aliases": [
+     "摇滚巨轮"
+    ],
+    "desc": "星锑的船，正遭炮击下沉"
+   },
+   {
+    "name": "唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑珍视的收藏"
+   },
+   {
+    "name": "1966英国伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "标题卡标注的场景地点"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将到来的灾难现象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "担任船长",
+    "dst": "APPLe号",
+    "evidence": "APPLe号“摇滚巨轮”迎来了最不受欢迎的乘客",
+    "confidence": 0.9
+   },
+   {
+    "src": "APPLe",
+    "relation": "隶属于",
+    "dst": "星锑",
+    "evidence": "APPLe：船长，那是重塑之手的标志",
+    "confidence": 0.9
+   },
+   {
+    "src": "APPLe",
+    "relation": "报告",
+    "dst": "星锑",
+    "evidence": "我们身后多了一只漆黑的大船。它正在向我们炮击",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "炮击",
+    "dst": "APPLe号",
+    "evidence": "我们身后多了一只漆黑的大船。它正在向我们炮击",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "持有",
+    "dst": "唱片",
+    "evidence": "这些唱片很珍贵的",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "隶属于",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们是基金会的调查员",
+    "confidence": 1.0
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "隶属于",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们是基金会的调查员",
+    "confidence": 1.0
+   },
+   {
+    "src": "星锑",
+    "relation": "敌对",
+    "dst": "重塑之手",
+    "evidence": "重塑之手？那群恐怖主义暴徒",
+    "confidence": 0.9
+   },
+   {
+    "src": "转念即至",
+    "relation": "称呼",
+    "dst": "维尔汀",
+    "evidence": "您的名字是维尔汀？",
+    "confidence": 0.9
+   },
+   {
+    "src": "转念即至",
+    "relation": "等待",
+    "dst": "维尔汀",
+    "evidence": "大家都在等着您，等着被您所用",
+    "confidence": 0.85
+   },
+   {
+    "src": "暴雨",
+    "relation": "临近",
+    "dst": "1966英国伦敦",
+    "evidence": "【标题卡】1966英国伦敦",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "80fcffab86bdf90e2439596c": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维尔汀的同窗，称呼维尔汀为司辰"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰",
+     "维尔汀小姐"
+    ],
+    "desc": "神秘学感知敏锐，被请求提供支援"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被登记信息时顽抗，捉走了队员"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "盯上了星锑的组织"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "提供转念即至软盘的人"
+   },
+   {
+    "name": "巴特锡公园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "在切尔西对岸的公园"
+   },
+   {
+    "name": "切尔西",
+    "type": "地点",
+    "aliases": [],
+    "desc": "与巴特锡公园隔岸相望的地点"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "调研中心"
+    ],
+    "desc": "十四行诗所属的机构"
+   },
+   {
+    "name": "便携式软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写有转念即至咒语的试验品"
+   },
+   {
+    "name": "转念即至",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可传送目标的咒语仪式"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将来临的灾难，需在其前完成任务"
+   },
+   {
+    "name": "外派任务避难须知",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记载求助于司辰规则的手册"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "称呼",
+    "dst": "维尔汀",
+    "evidence": "抱歉，司辰",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "传送",
+    "dst": "维尔汀",
+    "evidence": "是我擅自发送了支援请求，把您传送到了这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "位于",
+    "dst": "巴特锡公园",
+    "evidence": "这里是巴特锡公园，在切尔西对岸",
+    "confidence": 0.9
+   },
+   {
+    "src": "巴特锡公园",
+    "relation": "位于",
+    "dst": "切尔西",
+    "evidence": "这里是巴特锡公园，在切尔西对岸",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "隶属于",
+    "dst": "圣洛夫基金会",
+    "evidence": "回到调研中心",
+    "confidence": 0.9
+   },
+   {
+    "src": "星锑",
+    "relation": "捉走",
+    "dst": "十四行诗",
+    "evidence": "队友也被她趁乱捉走了",
+    "confidence": 0.85
+   },
+   {
+    "src": "重塑之手",
+    "relation": "盯上",
+    "dst": "星锑",
+    "evidence": "现在重塑之手也盯上了她",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "给予",
+    "dst": "十四行诗",
+    "evidence": "Z女士只给了我三张",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "持有",
+    "dst": "便携式软盘",
+    "evidence": "是写了“转念即至”咒语的便携式软盘",
+    "confidence": 0.95
+   },
+   {
+    "src": "便携式软盘",
+    "relation": "承载",
+    "dst": "转念即至",
+    "evidence": "写了“转念即至”咒语的便携式软盘",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "协助",
+    "dst": "十四行诗",
+    "evidence": "我会帮助你们突破重围的，别担心",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "临近",
+    "dst": "维尔汀",
+    "evidence": "“暴雨”前二十四小时内，有任何困难都可以向您求助",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "25a060455a0113e1afb22f86": {
+  "entities": [
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会的调查员，被困战场"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会的调查员，尝试突破封锁"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重塑之手的无名信徒，发出怪声"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "本海盗"
+    ],
+    "desc": "痛失APPLe号与唱片的船长"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "星锑的船员，负责示警"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "预知敌人行动并指挥突围"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施展咒语驱散偷袭者"
+   },
+   {
+    "name": "APPLe号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑攒五年钱买下的船，已沉没"
+   },
+   {
+    "name": "唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑珍视的收藏，被藏在石头后"
+   },
+   {
+    "name": "国王路",
+    "type": "地点",
+    "aliases": [],
+    "desc": "突围方向的小径通向的道路"
+   },
+   {
+    "name": "转念即至",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传送咒语，光晕消失后二人现身"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "四十五分钟后即将来临"
+   }
+  ],
+  "relations": [
+   {
+    "src": "调查员Ⅰ",
+    "relation": "隶属于",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们遇到你是不是说明",
+    "confidence": 0.6
+   },
+   {
+    "src": "重塑·信徒",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "**重塑·信徒**：ㄞ——！",
+    "confidence": 0.8
+   },
+   {
+    "src": "星锑",
+    "relation": "失去",
+    "dst": "APPLe号",
+    "evidence": "我攒了五年的钱……我心爱的APPLe号",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "持有",
+    "dst": "唱片",
+    "evidence": "她将唱片小心翼翼藏在石头后",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "示警",
+    "dst": "星锑",
+    "evidence": "船长，小心身后！",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "驱散",
+    "dst": "重塑·信徒",
+    "evidence": "辉光既出，一瞬之内，偷袭者形迹散去",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "传送",
+    "dst": "维尔汀",
+    "evidence": "“转念即至”的光晕消失后，岸上多了两个人影",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "隶属于",
+    "dst": "圣洛夫基金会",
+    "evidence": "是队长！太好了，队长来了",
+    "confidence": 0.7
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指挥",
+    "dst": "星锑",
+    "evidence": "星锑，你也一起",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "协助",
+    "dst": "十四行诗",
+    "evidence": "十四行诗，请你协助我",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指向",
+    "dst": "国王路",
+    "evidence": "突破口就在我们身后，那条通向国王路的小径",
+    "confidence": 0.85
+   },
+   {
+    "src": "暴雨",
+    "relation": "临近",
+    "dst": "维尔汀",
+    "evidence": "你们还有四十五分钟",
+    "confidence": 0.7
+   }
+  ]
+ }
+}

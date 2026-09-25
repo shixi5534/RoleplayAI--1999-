@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-09-17 20:23:22",
+  "config": {
+    "testset": "rag_testset_300.json",
+    "cases": 300,
+    "map": "t7_static_topup_map_20260917.json",
+    "map_size": 13
+  },
+  "results": [
+    {
+      "label": "基线",
+      "enable": false,
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass_n": 177,
+      "inject_pass": 0.59,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 229.2
+    },
+    {
+      "label": "补名（静态映射）",
+      "enable": true,
+      "strict_pass_n": 196,
+      "strict_pass": 0.6533,
+      "inject_pass_n": 175,
+      "inject_pass": 0.5833,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 221.2
+    }
+  ],
+  "delta": {
+    "d_strict": 1,
+    "d_inject": -2,
+    "d_neg_cases": 0
+  },
+  "mapped_effect": {
+    "mapped": 13,
+    "fixed": 1,
+    "broken": 0
+  },
+  "changes": [
+    {
+      "id": "R076",
+      "effect": "fixed",
+      "names": [
+        "troll"
+      ]
+    }
+  ]
+}

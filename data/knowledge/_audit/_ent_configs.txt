@@ -1,0 +1,49 @@
+--- base_1.json ---
+  inject=0.62 strict=0.6767 recall=0.3417
+  plot_entity_expand_enabled = '<无此键>'
+  plot_entity_expand_backend = '<无此键>'
+  plot_entity_expand_static_path = '<无此键>'
+  plot_entity_expand_top = '<无此键>'
+  plot_entity_expand_whitelist = '<无此键>'
+  plot_entity_expand_min_conf = '<无此键>'
+  argv=['C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\scripts\\eval_plot_rag.py', '--quiet', '--no-trace', '--testset', 'C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\rag_testset_300_clean.json', '--out', 'C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\repeat\\base_1.json']
+
+--- expand_1.json ---
+  inject=0.69 strict=0.7533 recall=0.3731
+  plot_entity_expand_enabled = '<无此键>'
+  plot_entity_expand_backend = '<无此键>'
+  plot_entity_expand_static_path = '<无此键>'
+  plot_entity_expand_top = '<无此键>'
+  plot_entity_expand_whitelist = '<无此键>'
+  plot_entity_expand_min_conf = '<无此键>'
+  argv=['scripts\\eval_plot_rag.py', '--quiet', '--no-trace', '--testset', 'data\\knowledge\\_audit\\rag_testset_300_expanded.json', '--out', 'data\\knowledge\\_audit\\repeat\\expand_1.json']
+
+--- entoff_1.json ---
+  inject=0.62 strict=0.6767 recall=0.3417
+  plot_entity_expand_enabled = False
+  plot_entity_expand_backend = 'static'
+  plot_entity_expand_static_path = ''
+  plot_entity_expand_top = 3
+  plot_entity_expand_whitelist = True
+  plot_entity_expand_min_conf = 0.0
+  argv=['scripts\\eval_plot_rag.py', '--quiet', '--no-trace', '--testset', 'data\\knowledge\\_audit\\rag_testset_300_clean.json', '--out', 'data\\knowledge\\_audit\\repeat\\entoff_1.json']
+
+--- enton_1.json ---
+  inject=0.6533 strict=0.7 recall=0.3659
+  plot_entity_expand_enabled = True
+  plot_entity_expand_backend = 'static'
+  plot_entity_expand_static_path = 'data\\knowledge\\_audit\\entity_expand_map.json'
+  plot_entity_expand_top = 3
+  plot_entity_expand_whitelist = True
+  plot_entity_expand_min_conf = 0.0
+  argv=['scripts\\eval_plot_rag.py', '--quiet', '--no-trace', '--testset', 'data\\knowledge\\_audit\\rag_testset_300_clean.json', '--out', 'data\\knowledge\\_audit\\repeat\\enton_1.json']
+
+--- entnolist_1.json ---
+  inject=0.6167 strict=0.6333 recall=0.3463
+  plot_entity_expand_enabled = True
+  plot_entity_expand_backend = 'static'
+  plot_entity_expand_static_path = 'data\\knowledge\\_audit\\entity_expand_map.json'
+  plot_entity_expand_top = 3
+  plot_entity_expand_whitelist = False
+  plot_entity_expand_min_conf = 0.0
+  argv=['scripts\\eval_plot_rag.py', '--quiet', '--no-trace', '--testset', 'data\\knowledge\\_audit\\rag_testset_300_clean.json', '--out', 'data\\knowledge\\_audit\\repeat\\entnolist_1.json']

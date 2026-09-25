@@ -1,0 +1,965 @@
+{
+ "33e4db842a93de073bdb173b": {
+  "entities": [],
+  "relations": []
+ },
+ "769ac0555895771eddd56607": {
+  "entities": [],
+  "relations": []
+ },
+ "343cbf21413499544b4527f5": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在至高点回味畅快的飞行员；以烈酒佐谈的空战飞行员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劝喝烈酒的司辰；被唤来共饮的箱主"
+   },
+   {
+    "name": "伏特加",
+    "type": "物品",
+    "aliases": [],
+    "desc": "戒碳酸的烈性替代品；红弩箭劝维尔汀习惯的烈酒"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "只是考飞行驾照的地方；红弩箭考取飞行驾照之地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "只能当理论教官的机构；只容红弩箭任理论教官之处"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已被化成灰确认死亡的头号敌人；被官方证实阵亡的旧敌"
+   },
+   {
+    "name": "维尔汀的箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最符合野战条件的乌合之众所在"
+   },
+   {
+    "name": "芝诺的表彰大会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "连军犬都要记三等功的大会"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惯以碳酸饮料对饮的同伴"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "呼喊",
+    "dst": "维尔汀",
+    "evidence": "嘿，维尔汀，快过来陪我一起喝",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "力荐",
+    "dst": "伏特加",
+    "evidence": "你得开始习惯伏特加",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推辞",
+    "dst": "伏特加",
+    "evidence": "我还没到那个年纪",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "隶属",
+    "dst": "芝诺",
+    "evidence": "对我来说芝诺就是考飞行驾照的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "效力",
+    "dst": "圣洛夫基金会",
+    "evidence": "在基金会又只能当理论教官",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "忌惮",
+    "dst": "芝诺",
+    "evidence": "在芝诺想飞需要命令",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "指认",
+    "dst": "维尔汀的箱子",
+    "evidence": "你的箱子",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "证实",
+    "dst": "阿尔卡纳",
+    "evidence": "官方消息已经确认阿尔卡纳死亡了",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "举办",
+    "dst": "芝诺的表彰大会",
+    "evidence": "所有人都在参加表彰大会",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "相约",
+    "dst": "维尔汀",
+    "evidence": "下次我们可以再一起去兜兜风",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "唤共饮",
+    "dst": "维尔汀",
+    "evidence": "嘿，维尔汀，快过来陪我一起喝",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "劝习惯",
+    "dst": "伏特加",
+    "evidence": "你得开始习惯伏特加",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "提及",
+    "dst": "星锑",
+    "evidence": "老是陪星锑喝碳酸饮料怎么行",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "视为驾校",
+    "dst": "芝诺",
+    "evidence": "对我来说芝诺就是考飞行驾照的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "屈任教官于",
+    "dst": "圣洛夫基金会",
+    "evidence": "在基金会又只能当理论教官",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "心仪",
+    "dst": "维尔汀",
+    "evidence": "我意识到我应该找一个麻烦不断，需要空中武力却没有军纪的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "谈及",
+    "dst": "阿尔卡纳",
+    "evidence": "把阿尔卡纳化成灰",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "转述阵亡",
+    "dst": "阿尔卡纳",
+    "evidence": "官方消息已经确认阿尔卡纳死亡了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0081832092a71f743298e748": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吹嘘个人经历的飞行员；自陈为飞而生的飞行员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被邀约兜风的司辰；再度被邀兜风的箱主"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "想飞需要命令的地方；红弩箭眼中的驾校"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "只能当理论教官的机构；只容她当理论教官之处"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已被化成灰确认死亡的头号敌人；被化成灰的旧敌"
+   },
+   {
+    "name": "维尔汀的箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最符合野战条件的乌合之众所在"
+   },
+   {
+    "name": "芝诺的表彰大会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "连军犬都要记三等功的大会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "隶属",
+    "dst": "芝诺",
+    "evidence": "对我来说芝诺就是考飞行驾照的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "效力",
+    "dst": "圣洛夫基金会",
+    "evidence": "在基金会又只能当理论教官",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "忌惮",
+    "dst": "芝诺",
+    "evidence": "在芝诺想飞需要命令",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "指认",
+    "dst": "维尔汀的箱子",
+    "evidence": "你的箱子",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "证实",
+    "dst": "阿尔卡纳",
+    "evidence": "官方消息已经确认阿尔卡纳死亡了",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "举办",
+    "dst": "芝诺的表彰大会",
+    "evidence": "所有人都在参加表彰大会",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "相约",
+    "dst": "维尔汀",
+    "evidence": "下次我们可以再一起去兜兜风",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "驾校于",
+    "dst": "芝诺",
+    "evidence": "对我来说芝诺就是考飞行驾照的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "任教官于",
+    "dst": "圣洛夫基金会",
+    "evidence": "在基金会又只能当理论教官",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "欲寻",
+    "dst": "维尔汀",
+    "evidence": "我意识到我应该找一个麻烦不断，需要空中武力却没有军纪的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "谈及",
+    "dst": "阿尔卡纳",
+    "evidence": "把阿尔卡纳化成灰",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "再度相邀",
+    "dst": "维尔汀",
+    "evidence": "下次我们可以再一起去兜兜风",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "da787cb769e5d9bc97e1ea6c": {
+  "entities": [],
+  "relations": []
+ },
+ "39392afe67105d88d28469a5": {
+  "entities": [],
+  "relations": []
+ },
+ "9963b97df1f6276c7564d1f3": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追查舞会传闻的占卜师；追查舞会的占卜师纪律辅员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当面质问的司辰；被当面质问的箱主"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "透露全部计划的小姐；透露全部计划的友好小姐"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当作比较对象的同伴；被玛蒂尔达立志超越者"
+   },
+   {
+    "name": "水晶球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "占卜师携带来去的水晶球"
+   },
+   {
+    "name": "扭扭舞会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "并不存在的传闻舞会；被怀疑背着玛蒂尔达举办的舞会"
+   },
+   {
+    "name": "玛蒂尔达的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "休息日要探望的母亲；占用玛蒂尔达休息日之人"
+   },
+   {
+    "name": "玛蒂尔达的水晶球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "占卜师随身的水晶球"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "呼喊",
+    "dst": "维尔汀",
+    "evidence": "维尔汀——！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "携带",
+    "dst": "水晶球",
+    "evidence": "天才占卜师带着她的水晶球",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "质问",
+    "dst": "维尔汀",
+    "evidence": "你觉得你们能躲过我",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "归咎",
+    "dst": "苏芙比",
+    "evidence": "友好的苏芙比小姐已经透露了你们的全部计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "否认",
+    "dst": "扭扭舞会",
+    "evidence": "根本没有什么扭扭舞会，玛蒂尔达",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "怀疑",
+    "dst": "苏芙比",
+    "evidence": "难道这只是苏芙比小姐的某种玩笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "立志",
+    "dst": "玛蒂尔达",
+    "evidence": "总有一天我会自己成为调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "胜过",
+    "dst": "十四行诗",
+    "evidence": "然后做得比十四行诗和你都好",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "索邀",
+    "dst": "维尔汀",
+    "evidence": "一定要邀请我，我作为纪律辅员有义务到场监督",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "探望",
+    "dst": "玛蒂尔达的母亲",
+    "evidence": "我的下下个休息日已经确定要用来探望我妈妈了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "携带",
+    "dst": "玛蒂尔达的水晶球",
+    "evidence": "天才占卜师带着她的水晶球",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "获悉于",
+    "dst": "苏芙比",
+    "evidence": "友好的苏芙比小姐已经透露了你们的全部计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "透露",
+    "dst": "扭扭舞会",
+    "evidence": "友好的苏芙比小姐已经透露了你们的全部计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "欲胜",
+    "dst": "十四行诗",
+    "evidence": "然后做得比十四行诗和你都好",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "监督",
+    "dst": "扭扭舞会",
+    "evidence": "我作为纪律辅员有义务到场监督",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "定于探望",
+    "dst": "玛蒂尔达的母亲",
+    "evidence": "我的下下个休息日已经确定要用来探望我妈妈了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "77505765ab23b2fcde435079": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚称无意派对的纪律辅员；嘴硬心软的占卜师纪律辅员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被宣告要受监督的司辰；被玛蒂尔达紧盯的箱主"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当作比较对象的同伴；被玛蒂尔达立志超越者"
+   },
+   {
+    "name": "玛蒂尔达的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "休息日要探望的母亲；占用玛蒂尔达休息日之人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "立志",
+    "dst": "玛蒂尔达",
+    "evidence": "总有一天我会自己成为调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "胜过",
+    "dst": "十四行诗",
+    "evidence": "然后做得比十四行诗和你都好",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "否认",
+    "dst": "维尔汀",
+    "evidence": "我，我可没有表达过想要开派对的意图",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "监督",
+    "dst": "维尔汀",
+    "evidence": "因为我会留在这关注你",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "探望",
+    "dst": "玛蒂尔达的母亲",
+    "evidence": "我的下下个休息日已经确定要用来探望我妈妈了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "叮嘱",
+    "dst": "维尔汀",
+    "evidence": "你得把时间定在我的下下个休息日之后才行",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "欲胜",
+    "dst": "十四行诗",
+    "evidence": "然后做得比十四行诗和你都好",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "盼其加入",
+    "dst": "维尔汀",
+    "evidence": "那一天你们会加入我，而不是我加入你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "关注",
+    "dst": "维尔汀",
+    "evidence": "因为我会留在这关注你",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "定于探望",
+    "dst": "玛蒂尔达的母亲",
+    "evidence": "我的下下个休息日已经确定要用来探望我妈妈了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2a9067f693d3e36ec862d39": {
+  "entities": [],
+  "relations": []
+ },
+ "56d7d1260462e0f8d40facfb": {
+  "entities": [],
+  "relations": []
+ },
+ "a8b3d9aa3463cd74db056b58": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倾听树木之声的德鲁伊；战后倾听树木的德鲁伊"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍修剪结构的司辰；为树木命名结构的对话者"
+   },
+   {
+    "name": "毕达哥拉斯树",
+    "type": "概念",
+    "aliases": [],
+    "desc": "方块与三角相生的树木结构；分形扩张的修剪样式"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "像规律一样没有目的的存在；被喻为无目的之规律者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "目的可以被理解的敌手；其目的可被理解之手"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "评估植被威胁的机构；未于修广场时刁难者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "留下魔药的小姐；留下成长魔药的小姐"
+   },
+   {
+    "name": "成长魔药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被基金会分析的魔药；苏芙比留下的催长药剂"
+   },
+   {
+    "name": "槲寄生修复的广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被占领抗议又遭修复的广场"
+   },
+   {
+    "name": "毕达哥拉斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以理念塑树的先贤数学家"
+   },
+   {
+    "name": "基金会广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被修复亦被占据抗议的广场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "首肯",
+    "dst": "维尔汀",
+    "evidence": "确实如你所说，这里有着一片值得期待的森林",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "命名",
+    "dst": "毕达哥拉斯树",
+    "evidence": "这被叫作毕达哥拉斯树",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "致敬",
+    "dst": "毕达哥拉斯树",
+    "evidence": "向先贤的智慧表示敬意",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "修复",
+    "dst": "槲寄生修复的广场",
+    "evidence": "基金会并没有在我修复广场时进行刁难",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "评估",
+    "dst": "槲寄生",
+    "evidence": "他们借机重新评估了突然生长的植被能对基金会建筑安全造成的威胁",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "分析",
+    "dst": "成长魔药",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "成长魔药",
+    "relation": "源自",
+    "dst": "苏芙比",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "击败",
+    "dst": "阿尔卡纳",
+    "evidence": "我们终于打倒了阿尔卡纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "理解",
+    "dst": "重塑之手",
+    "evidence": "我可以理解重塑之手的目的",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "譬喻",
+    "dst": "阿尔卡纳",
+    "evidence": "阿尔卡纳就像是一条规律，一条没有目的的规律",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "问候",
+    "dst": "维尔汀",
+    "evidence": "早安，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "礼敬",
+    "dst": "毕达哥拉斯",
+    "evidence": "向先贤的智慧表示敬意",
+    "confidence": 0.95
+   },
+   {
+    "src": "毕达哥拉斯",
+    "relation": "理念成",
+    "dst": "毕达哥拉斯树",
+    "evidence": "他的理念就算在树木上也会得到体现",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "免于刁难",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会并没有在我修复广场时进行刁难",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "修缮",
+    "dst": "基金会广场",
+    "evidence": "基金会并没有在我修复广场时进行刁难",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "留下",
+    "dst": "成长魔药",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "欲再占",
+    "dst": "基金会广场",
+    "evidence": "我想下一次要占领广场发起抗议的话，不会再这么轻松了",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "不解",
+    "dst": "阿尔卡纳",
+    "evidence": "但我无法了解阿尔卡纳的目的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "24ffd60ee8c9918a1637a7bf": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与树木闲聊的德鲁伊；把阿尔卡纳比作规律的德鲁伊"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来道别的司辰；被再度问好的对话者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "像规律一样没有目的的存在；被称作无目的之规律者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "目的可以被理解的敌手；目的可被理解之手"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "未行刁难的机构；评估植被威胁的机构"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "留下魔药的小姐；留下魔药待析的小姐"
+   },
+   {
+    "name": "成长魔药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被基金会分析的魔药；被机构分析的催长药剂"
+   },
+   {
+    "name": "槲寄生修复的广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被占领抗议又遭修复的广场"
+   },
+   {
+    "name": "基金会广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欲再度占领抗议的广场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "道谢",
+    "dst": "维尔汀",
+    "evidence": "多谢你的关心，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "修复",
+    "dst": "槲寄生修复的广场",
+    "evidence": "基金会并没有在我修复广场时进行刁难",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "分析",
+    "dst": "成长魔药",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "成长魔药",
+    "relation": "源自",
+    "dst": "苏芙比",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "击败",
+    "dst": "阿尔卡纳",
+    "evidence": "我们终于打倒了阿尔卡纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "理解",
+    "dst": "重塑之手",
+    "evidence": "我可以理解重塑之手的目的",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "譬喻",
+    "dst": "阿尔卡纳",
+    "evidence": "阿尔卡纳就像是一条规律，一条没有目的的规律",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "辞别",
+    "dst": "维尔汀",
+    "evidence": "再见，这些树木的话很有趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "致谢",
+    "dst": "维尔汀",
+    "evidence": "多谢你的关心，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "免于刁难",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会并没有在我修复广场时进行刁难",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "留下",
+    "dst": "成长魔药",
+    "evidence": "还分析了苏芙比小姐留下的成长魔药",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "欲再占",
+    "dst": "基金会广场",
+    "evidence": "我想下一次要占领广场发起抗议的话，不会再这么轻松了",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "不解",
+    "dst": "阿尔卡纳",
+    "evidence": "但我无法了解阿尔卡纳的目的",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

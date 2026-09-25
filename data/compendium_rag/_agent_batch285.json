@@ -1,0 +1,1966 @@
+{
+ "26432cfdccf02b8ccd1016f5": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "穷追不放的质疑记者"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "担保无害的演讲者"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被反复实验的装置"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "有待预热的新系统"
+   },
+   {
+    "name": "莫洛托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听完便离席的政敌"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "紧随博士的特殊机具"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被舞伶托住的访客"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维持秩序失败的讲解员"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求修通讯仪的访客"
+   },
+   {
+    "name": "舞台通讯仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被踩坏的联络设备"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "死者牺牲所系之灾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马克西姆",
+    "relation": "警告",
+    "dst": "谢切诺夫",
+    "evidence": "会完全毁掉如今来之不易的幸福生活",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "惋惜",
+    "dst": "苏联的瘟疫",
+    "evidence": "他们的牺牲将变得毫无意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "担保",
+    "dst": "思想控制器",
+    "evidence": "我们做过无数次实验，思想控制器是完全无害的",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "预热",
+    "dst": "大集体2.0",
+    "evidence": "请各位前往下一个展厅，在那里",
+    "confidence": 0.95
+   },
+   {
+    "src": "莫洛托夫",
+    "relation": "离席",
+    "dst": "谢切诺夫",
+    "evidence": "演讲甫一结束，莫洛托夫便离席而去",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "追赶",
+    "dst": "莫洛托夫",
+    "evidence": "莫洛托夫便离席而去，马克西姆追了出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "失职",
+    "dst": "维尔汀",
+    "evidence": "捷列什科娃没能很好地维持秩序",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "受护",
+    "dst": "双生舞伶",
+    "evidence": "双生舞伶托住了我",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "称赞",
+    "dst": "双生舞伶",
+    "evidence": "科技与艺术的极致理解，力与美的完美结合，我的最高杰作",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "特制",
+    "dst": "双生舞伶",
+    "evidence": "没办法实现批量生产，因此她们十分特殊",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "求教",
+    "dst": "谢切诺夫",
+    "evidence": "正巧，我们确实需要您的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "出示",
+    "dst": "舞台通讯仪",
+    "evidence": "X从口袋里拿出那个被踩坏的通讯仪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a65df511546d7d6dddbb339f": {
+  "entities": [
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "形似冰箱设备所在的工作间"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "指定此处修器的博士"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "导游机器人"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问异响的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把坏设备递进去的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喝止同伴的访客"
+   },
+   {
+    "name": "沃瓦",
+    "type": "角色",
+    "aliases": [
+     "小胡子",
+     "VOV-A6型实验助手"
+    ],
+    "desc": "流水线上的实验助手"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [
+     "维修小站"
+    ],
+    "desc": "会说话的维修机具"
+   },
+   {
+    "name": "舞台通讯仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待修的损坏通讯仪"
+   }
+  ],
+  "relations": [
+   {
+    "src": "谢切诺夫",
+    "relation": "安排",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "这就是谢切诺夫博士说的装配间",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "引入",
+    "dst": "X",
+    "evidence": "各位同志，请进",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "临窗",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "小梅斯梅尔走到落地窗前，看着窗外的景色",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "讲解",
+    "dst": "沃瓦",
+    "evidence": "您现在看到的是VOV-A6型实验助手的生产线",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "举荐",
+    "dst": "沃瓦",
+    "evidence": "我们的人工智能完全能够承担起一名好伴侣的责任",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "揭破",
+    "dst": "诺拉",
+    "evidence": "她怎么被移动到了这里？同志们，这就是维修小站",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "寻找",
+    "dst": "诺拉",
+    "evidence": "我们是来找维修小站的，它在哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "触碰",
+    "dst": "诺拉",
+    "evidence": "手指轻轻地触碰了冰箱上部的黑色触控屏",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "放入",
+    "dst": "诺拉",
+    "evidence": "X将损坏的通讯仪放进了维修小站的操作台上",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "吞噬",
+    "dst": "舞台通讯仪",
+    "evidence": "维修小站打开箱门，将它吞了下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "异常",
+    "dst": "捷列什科娃",
+    "evidence": "异常反应！奇怪，资料库里从未记录过这种情况",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "袭击",
+    "dst": "X",
+    "evidence": "一条条金属触手从里面刺了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "呼警",
+    "dst": "X",
+    "evidence": "X！小心！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b86867aee4a9caddaa68fe24": {
+  "entities": [
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求接管现场的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执行强制重启的舞伶"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [
+     "维修小站"
+    ],
+    "desc": "出言不逊的维修机具"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张沟通解决问题的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施上语言补丁的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张交给专业者的访客"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "检索术法的远程顾问"
+   },
+   {
+    "name": "舞台通讯仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被修复后仍杂音不断"
+   },
+   {
+    "name": "礼貌礼帽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "改写用词的通用神秘术"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对视后决断的双子"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可连接机体操控的装置"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "得以预演的未来系统"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "接管",
+    "dst": "诺拉",
+    "evidence": "检测到诺拉正进行异常战斗行为，请求接管现场",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "重启",
+    "dst": "诺拉",
+    "evidence": "将对诺拉强制重启程序……已完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "吐出",
+    "dst": "舞台通讯仪",
+    "evidence": "金属触手卷着已经修好的通讯仪，将它丢了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "嫌弃",
+    "dst": "舞台通讯仪",
+    "evidence": "这简直是我这辈子吃过的最难吃的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解决",
+    "dst": "诺拉",
+    "evidence": "我们现在首先要解决的是沟通问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "解释",
+    "dst": "诺拉",
+    "evidence": "她的语言库并不在我们规范的范围之内",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "援引",
+    "dst": "礼貌礼帽",
+    "evidence": "我之前接触过一种神秘术，可以按照施术者的意愿修改说话者的用词表达",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "求教",
+    "dst": "露西",
+    "evidence": "如果能联系上露西女士就好了",
+    "confidence": 0.95
+   },
+   {
+    "src": "舞台通讯仪",
+    "relation": "回传",
+    "dst": "礼貌礼帽",
+    "evidence": "名为礼貌礼帽",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "施术",
+    "dst": "礼貌礼帽",
+    "evidence": "X对照着通讯仪上的术法信息，开始施术",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "打补丁",
+    "dst": "诺拉",
+    "evidence": "你可以理解为，我为你打上了一个语言补丁",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "怒骂",
+    "dst": "X",
+    "evidence": "你对我做了什么？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "调查",
+    "dst": "诺拉",
+    "evidence": "我们仍需调查你行为异常的原因，诺拉，请配合",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "追查",
+    "dst": "诺拉",
+    "evidence": "准备启动强制调查程序",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "请缨",
+    "dst": "诺拉",
+    "evidence": "可以让我来尝试调查诺拉吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "预演",
+    "dst": "大集体2.0",
+    "evidence": "思想控制器能连接机体操控，这是一个预演大集体2.0的绝佳机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "劝阻",
+    "dst": "X",
+    "evidence": "现在的情况已经变得复杂了，我们最好交给专业的人来处理",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "对视",
+    "dst": "X",
+    "evidence": "双生舞伶对视了一眼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "43d77c9faa7a0c6cc2b1439f": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以卷须接入机体的实验者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应允并致歉的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默以对的另一位舞伶"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [
+     "维修小站"
+    ],
+    "desc": "拒不配合的维修机具"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑机器自主性的研究者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被卷入事故的访客"
+   },
+   {
+    "name": "大集体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "统一控制机器人的网络"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "接通控制台的头侧装置"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "装载情感模块的博士"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "走上前质问的双子"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "警铃大作的房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "应允",
+    "dst": "X",
+    "evidence": "……如果您坚持的话",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "接入",
+    "dst": "诺拉",
+    "evidence": "黑色的卷须波动着伸了出来，连接上诺拉的控制台",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "查见",
+    "dst": "诺拉",
+    "evidence": "这里有一条异常的访问记录",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "弹出",
+    "dst": "X",
+    "evidence": "诺拉把我强行弹出了，像是受到一记掌掴",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "质疑",
+    "dst": "诺拉",
+    "evidence": "她还能拥有拒绝调查的自主权？",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "申说",
+    "dst": "大集体",
+    "evidence": "机器人都受到大集体网络统一控制，并未拥有违抗人类指令的自由度",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "反问",
+    "dst": "双生舞伶",
+    "evidence": "你们难道对此毫无异议",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "装载",
+    "dst": "左伶",
+    "evidence": "谢切诺夫博士为我们装载了用于表达情感的模块",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "供认",
+    "dst": "左伶",
+    "evidence": "我只知道那条访问记录产生之后，我变得烦躁了许多",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "致歉",
+    "dst": "维尔汀",
+    "evidence": "很抱歉将你们牵扯进这样的事故",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "护送",
+    "dst": "谢切诺夫",
+    "evidence": "我会将你们护送到谢切诺夫博士的身边",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "抓住",
+    "dst": "思想控制器",
+    "evidence": "还记得我的实验课题吗？这样的机会我可不能放过",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "追问",
+    "dst": "左伶",
+    "evidence": "接下来的活动内容是什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "回避",
+    "dst": "X",
+    "evidence": "谢切诺夫博士会为你们安排好行程的",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物展览馆的装配间",
+    "relation": "报警",
+    "dst": "X",
+    "evidence": "警铃猛然响了起来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "72163a7d6d8ec788888933f9": {
+  "entities": [
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发布坐标的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告掉线的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跃出装配间的双子"
+   },
+   {
+    "name": "展览馆控制权丢失",
+    "type": "事件",
+    "aliases": [],
+    "desc": "展览馆权限旁落"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叹气的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张外出查看的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "征询同伴的访客"
+   },
+   {
+    "name": "涡轮车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "即将抵达的救援载具"
+   },
+   {
+    "name": "切洛梅飞行平台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "救援涡轮车的目的地"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被告认为安全的房间"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "下达调查指令的博士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "示警",
+    "dst": "展览馆控制权丢失",
+    "evidence": "警告，展览馆控制权已丢失",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "报告",
+    "dst": "展览馆控制权丢失",
+    "evidence": "场馆内的机器人也全部掉线，原因未知",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推测",
+    "dst": "展览馆控制权丢失",
+    "evidence": "这是被人入侵了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "领命",
+    "dst": "谢切诺夫",
+    "evidence": "收到，谢切诺夫博士，将调查展览馆控制权丢失的原因",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "待援",
+    "dst": "涡轮车",
+    "evidence": "前往切洛梅飞行平台的涡轮车将于1分43秒后到达",
+    "confidence": 0.95
+   },
+   {
+    "src": "涡轮车",
+    "relation": "通往",
+    "dst": "切洛梅飞行平台",
+    "evidence": "前往切洛梅飞行平台的涡轮车",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "留守",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "各位，请留在装配间，这里是安全的",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "主张",
+    "dst": "展览馆控制权丢失",
+    "evidence": "展览馆遭遇入侵，在这种危险的局面下，待在这里只会让我们陷入被动",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "征询",
+    "dst": "小梅斯梅尔",
+    "evidence": "和我想得一样——小梅斯梅尔，你呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "无奈",
+    "dst": "X",
+    "evidence": "唉，你们果然不是会乖乖听话的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "跃出",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "两位舞伶便脚步轻盈地跃了出去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "de64bc2604eb14c41c33a7d3": {
+  "entities": [
+   {
+    "name": "聚合物展览馆的走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "红灯闪烁的空旷通道"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被悄悄离开的房间"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问实验助手的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推测调动的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "循声接近呼救者的研究者"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "依旧热情广播的讲解员"
+   },
+   {
+    "name": "沃瓦",
+    "type": "角色",
+    "aliases": [
+     "VOV-A6型实验助手"
+    ],
+    "desc": "盘踞走廊的失控机具"
+   },
+   {
+    "name": "科学家Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "血泊中不断呼救的男人"
+   },
+   {
+    "name": "撞墙的科学家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跪在墙角撞头的科学家"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以巨球解围的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被推测调走的镇乱者"
+   },
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被破坏得与废墟无异的展厅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "溜出",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "年轻的访客们偷偷地溜出了装配间",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "沃瓦",
+    "evidence": "VOV-A6型实验助手们呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "归因",
+    "dst": "双生舞伶",
+    "evidence": "也许是被双生舞伶调去平息事态了",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "广播",
+    "dst": "聚合物展览馆的走廊",
+    "evidence": "可捷列什科娃的热情欢迎声一如既往",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃瓦",
+    "relation": "破坏",
+    "dst": "聚合物展览馆",
+    "evidence": "一向整洁的展览馆已经被它们破坏得与废墟无异",
+    "confidence": 0.95
+   },
+   {
+    "src": "撞墙的科学家",
+    "relation": "撞墙",
+    "dst": "聚合物展览馆的走廊",
+    "evidence": "一名科学家跪在墙角，不停地用头撞着墙",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "循声",
+    "dst": "科学家Ⅴ",
+    "evidence": "求救声是一名趴在血泊中的男人发出的",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅴ",
+    "relation": "呼救",
+    "dst": "小梅斯梅尔",
+    "evidence": "请救救我",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "安抚",
+    "dst": "科学家Ⅴ",
+    "evidence": "别出声，放松……放松就好，挣扎得太厉害会加重出血",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "察觉",
+    "dst": "科学家Ⅴ",
+    "evidence": "不可能，这根本不符合生理学的规律",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅴ",
+    "relation": "警示",
+    "dst": "小梅斯梅尔",
+    "evidence": "小心……机器人……",
+    "confidence": 0.95
+   },
+   {
+    "src": "沃瓦",
+    "relation": "包围",
+    "dst": "小梅斯梅尔",
+    "evidence": "被猛冲向她的机器人们团团包围住",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "解围",
+    "dst": "小梅斯梅尔",
+    "evidence": "被一闪而过的巨球拍砸在对面的墙上",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "喝令",
+    "dst": "小梅斯梅尔",
+    "evidence": "请退后",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "468c1c9111cbbed2a7bbccfd": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持查探伤者的访客"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为死者合眼的舞伶"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被诡异场景惊住的验尸者"
+   },
+   {
+    "name": "科学家Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借聚合物答话的死者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拖来活口与结论的访客"
+   },
+   {
+    "name": "撞墙的科学家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绑成蛹仍扭动的幸存者"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "充当发声器官的控制器"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "残存死者思维的物质"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被断言时日无多的系统"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "防护门被擅自打开的房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "道谢",
+    "dst": "左伶",
+    "evidence": "谢谢你，左伶",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "责备",
+    "dst": "维尔汀",
+    "evidence": "装配间是安全的，你们没有乖乖待在里面",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "查探",
+    "dst": "小梅斯梅尔",
+    "evidence": "我们必须检查小梅斯梅尔的安全状况",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅴ",
+    "relation": "自陈",
+    "dst": "小梅斯梅尔",
+    "evidence": "我确实是彻彻底底地死了！一切全完了",
+    "confidence": 0.95
+   },
+   {
+    "src": "思想控制器",
+    "relation": "发声",
+    "dst": "科学家Ⅴ",
+    "evidence": "思想控制器可以算作它的发声器官",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物",
+    "relation": "残留",
+    "dst": "科学家Ⅴ",
+    "evidence": "正在按照生前的思维模式回答你们的提问",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅴ",
+    "relation": "追述",
+    "dst": "聚合物",
+    "evidence": "先是有很多人疯了，在展厅。然后机器人失去控制，开始杀人",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅴ",
+    "relation": "断言",
+    "dst": "大集体2.0",
+    "evidence": "没几天了……我却没法再……",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "遗憾",
+    "dst": "科学家Ⅴ",
+    "evidence": "我们还不知道他的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "合眼",
+    "dst": "科学家Ⅴ",
+    "evidence": "她轻轻俯下身，为死去的男人合上了双眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "拖来",
+    "dst": "撞墙的科学家",
+    "evidence": "正艰难地拖着一个扭动的蛹挪了过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "捆绑",
+    "dst": "撞墙的科学家",
+    "evidence": "我把他绑成这个样子他还不罢休",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "申述",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "我收到了装配间防护门打开的通知",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "担责",
+    "dst": "左伶",
+    "evidence": "是我做出了外出的决定，留在原地过于被动",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "186b490d8225ee9b9656cfdf": {
+  "entities": [
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱尸引路的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已赴事故现场的舞伶"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问网络故障的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被带往避难的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无人应答的在场者"
+   },
+   {
+    "name": "大集体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被怀疑出问题的网络"
+   },
+   {
+    "name": "科学家Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抱起的逝去科学家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "追问",
+    "dst": "大集体",
+    "evidence": "是大集体网络系统出问题了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "分派",
+    "dst": "右伶",
+    "evidence": "右伶已经前往了事故现场，而我的任务是保证各位来访人员的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "抱起",
+    "dst": "科学家Ⅴ",
+    "evidence": "左伶优雅地将已经死去的科学家抱了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "保障",
+    "dst": "X",
+    "evidence": "但我接收的指令是优先保障各位的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "带领",
+    "dst": "维尔汀",
+    "evidence": "请随我来，我带各位前去避难",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "沉默",
+    "dst": "大集体",
+    "evidence": "一片沉默，暂时无人能为这个关键的问题给出解答",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "60fadb6210d3d70a591b1326": {
+  "entities": [
+   {
+    "name": "聚合物展览馆的主展厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "残骸与废墟交杂的大厅"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接管失败的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "布设防线的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "合为一体升空的机具"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听见魔精的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问失控缘由的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断来者神志的访客"
+   },
+   {
+    "name": "脉冲地雷防护线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "令机器失能的白色圆盘"
+   },
+   {
+    "name": "撞墙的科学家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被安置的扭动活口"
+   },
+   {
+    "name": "管理终端",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被反复尝试的管理设备"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "会说话持枪男子的手套"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扛枪破门的少校"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被烟尘之声误认之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "带领",
+    "dst": "维尔汀",
+    "evidence": "年轻的访客们跟着左伶来到了展览馆的主展厅",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "布设",
+    "dst": "脉冲地雷防护线",
+    "evidence": "右伶正在调试着摆在地上的几枚白色圆形物体",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "讲解",
+    "dst": "脉冲地雷防护线",
+    "evidence": "可使机器人短暂失去行动能力，对人体无害",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "安置",
+    "dst": "撞墙的科学家",
+    "evidence": "将他与幸存者们安置在一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "操作",
+    "dst": "管理终端",
+    "evidence": "尝试接管展览馆管理权限……失败，第十六次",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "通报",
+    "dst": "小梅斯梅尔",
+    "evidence": "请各位不要惊慌，我们已经派出了增援",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "护卫",
+    "dst": "小梅斯梅尔",
+    "evidence": "我有责任保证你们的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "追问",
+    "dst": "左伶",
+    "evidence": "又是失控的机器人吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "戒备",
+    "dst": "P-3",
+    "evidence": "声音越来越近了，做好战斗准备",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "联想",
+    "dst": "魔精",
+    "evidence": "我听见了……难道是什么魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "抱怨",
+    "dst": "手套查尔斯",
+    "evidence": "真该直接把门锁都炸了，焦巴脆",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "劝慰",
+    "dst": "P-3",
+    "evidence": "别这么大火气，少校，有我在，这种锁不会对你产生什么阻碍",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "观察",
+    "dst": "手套查尔斯",
+    "evidence": "可是他看上去在跟自己的手套吵架",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "判断",
+    "dst": "P-3",
+    "evidence": "他看上去并不像机器人，而且神志似乎也正常",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "联通",
+    "dst": "双生舞伶",
+    "evidence": "但我可以直接联系双生舞伶，让她们把门都打开",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "解除警戒",
+    "dst": "P-3",
+    "evidence": "双生舞伶解除了警戒状态，从空中缓缓降落",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6a9ad45c5dc8ea46c8055e49": {
+  "entities": [
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怀疑间谍的少校"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "负责核对数据的机械手套"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持任务的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判定袭击目标的舞伶"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈身份的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遮掩名牌的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被扫视的访客"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "派出增援的博士"
+   },
+   {
+    "name": "莫洛托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "合影后先走政敌"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "遭袭击的新系统"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "邀请名单上的国际集会"
+   },
+   {
+    "name": "未成年人事务委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "可能被送去的处置机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "手套查尔斯",
+    "relation": "自介",
+    "dst": "P-3",
+    "evidence": "以及他的好朋友——手套查尔斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "派遣",
+    "dst": "P-3",
+    "evidence": "谢切诺夫博士派我们来这里协助你们查出幕后黑手",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "护持",
+    "dst": "大集体2.0",
+    "evidence": "为了防止此事发展成国际外交丑闻，妨碍大集体2.0的开启",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "认定",
+    "dst": "大集体2.0",
+    "evidence": "似乎已经确认了这是一起针对大集体2.0的袭击",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "忌惮",
+    "dst": "谢切诺夫",
+    "evidence": "有很多人都看谢切诺夫博士不爽，觉得他碍了自己的路",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "指认",
+    "dst": "莫洛托夫",
+    "evidence": "比如莫洛托夫，比如那几个国家",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "忆及",
+    "dst": "莫洛托夫",
+    "evidence": "在大讲堂中跟谢切诺夫博士合影的那个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "回报",
+    "dst": "莫洛托夫",
+    "evidence": "莫洛托夫同志就乘车离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "接手",
+    "dst": "左伶",
+    "evidence": "现在你们可以去歇息了，这里我接手了",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "抗拒",
+    "dst": "P-3",
+    "evidence": "未接到任务结束指令，我们仍需要保护这些科学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "遮掩",
+    "dst": "聚合物国际峰会",
+    "evidence": "X遮住胸前的名牌，试图让仿冒的身份逃脱机械的扫视",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "自陈",
+    "dst": "聚合物国际峰会",
+    "evidence": "我们是其他国家的科学家，是受邀来参加聚合物国际峰会的",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "识破",
+    "dst": "X",
+    "evidence": "我发现，两位小姐还没有聚合过",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "查无",
+    "dst": "未成年人事务委员会",
+    "evidence": "也许是未成年人事务委员会，也许是某种可以处理间谍的机构",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "起疑",
+    "dst": "维尔汀",
+    "evidence": "在会引起国际外交丑闻的袭击事件中遇见了非法入境的外国人",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "上膛",
+    "dst": "维尔汀",
+    "evidence": "P-3将手中的枪上了膛",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ad248ad437a776f945823bc3": {
+  "entities": [
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令抓活口的少校"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "建议先跑的机械手套"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以软盘诈退的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先提议逃跑的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随同伴消失的访客"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追击最快的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一同受命的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命拦截的双子"
+   },
+   {
+    "name": "传送用软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "掌心亮起的传送软盘"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "提议",
+    "dst": "X",
+    "evidence": "先逃跑吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "附和",
+    "dst": "小梅斯梅尔",
+    "evidence": "附议",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "冷语",
+    "dst": "X",
+    "evidence": "不太好笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "追捕",
+    "dst": "X",
+    "evidence": "间谍还是抓活的要紧",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "差遣",
+    "dst": "双生舞伶",
+    "evidence": "双生舞伶！帮我抓住他们！要活的，我们三个一人一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "追击",
+    "dst": "小梅斯梅尔",
+    "evidence": "更快的左伶即将抓住小梅斯梅尔的手臂",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "佯装",
+    "dst": "左伶",
+    "evidence": "X突然回头，作势抬手，似乎想向身后的追兵们扔出某物",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "亮出",
+    "dst": "传送用软盘",
+    "evidence": "露出手心的一张传送软盘，对着正在追击的舞伶们粲然一笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "戏耍",
+    "dst": "双生舞伶",
+    "evidence": "骗你们的，其实什么也没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "传送用软盘",
+    "relation": "带走",
+    "dst": "维尔汀",
+    "evidence": "三人的身影便随着辉光一起消失不见",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "愕然",
+    "dst": "X",
+    "evidence": "……魔术？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6d5f73726807ae33b7060519": {
+  "entities": [
+   {
+    "name": "金色原野",
+    "type": "地点",
+    "aliases": [],
+    "desc": "三人坠落处的金色麦田"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出旧物的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误作地震的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "清点屋内摆设的访客"
+   },
+   {
+    "name": "巨型机器人",
+    "type": "物品",
+    "aliases": [],
+    "desc": "圆头长臂的追捕机械"
+   },
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "巨机冲出的所在"
+   },
+   {
+    "name": "俄式小楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "无人却整洁的居所"
+   },
+   {
+    "name": "啁啾表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "会开口说话的怀表状物"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "似曾相识的持有者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "落于",
+    "dst": "金色原野",
+    "evidence": "三个人影掉落在了金色的原野上",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物展览馆",
+    "relation": "涌出",
+    "dst": "巨型机器人",
+    "evidence": "一台有着圆形头部、颀长双臂的机器人从展览馆中径直冲了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨型机器人",
+    "relation": "搜寻",
+    "dst": "小梅斯梅尔",
+    "evidence": "它站在原地等待了一会儿，便开始四处搜寻",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "惊慌",
+    "dst": "巨型机器人",
+    "evidence": "那是什么？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "指向",
+    "dst": "俄式小楼",
+    "evidence": "好消息是，那边有一栋建筑物",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "决意",
+    "dst": "俄式小楼",
+    "evidence": "我们去那儿藏身",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "奔入",
+    "dst": "俄式小楼",
+    "evidence": "在愈加靠近的巨型机器人的脚步声中，悄悄进入大门",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨型机器人",
+    "relation": "撞击",
+    "dst": "俄式小楼",
+    "evidence": "门外的声音逐渐消失，那巨型机器人似乎停止了动静",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "察验",
+    "dst": "俄式小楼",
+    "evidence": "这里完全没有跟机器人相关的设施",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "推断",
+    "dst": "俄式小楼",
+    "evidence": "更像是将十几个人的生活拼凑在了一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "啁啾表",
+    "relation": "发声",
+    "dst": "维尔汀",
+    "evidence": "我开始录了，妈妈，你说吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "忆及",
+    "dst": "马克西姆",
+    "evidence": "似乎在马克西姆身上见过",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "追问",
+    "dst": "聚合物展览馆",
+    "evidence": "但这里的住户们呢？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

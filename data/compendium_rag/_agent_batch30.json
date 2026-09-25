@@ -1,0 +1,1216 @@
+{
+ "85146a8800393641781d9cca": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被罗塞塔石碑假说打动者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "乌尔里希组长",
+     "破译组长"
+    ],
+    "desc": "提出石碑假说者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "打断并直取卷轴的实用主义者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被问及卷轴作用者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "震惊于分享卷轴要求的协理人"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "能跨越灵性鸿沟、或可降低副作用"
+   },
+   {
+    "name": "罗塞塔石碑",
+    "type": "概念",
+    "aliases": [],
+    "desc": "三种语言刻同一段诏书的石碑"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "主要服务于人类的科研组织"
+   },
+   {
+    "name": "历史的回环",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乌尔里希",
+    "relation": "提出",
+    "dst": "罗塞塔石碑",
+    "evidence": "我们探寻的是同一个问题的答案，就像罗塞塔石碑上刻印的是同一段诏书",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "畅想",
+    "dst": "术式",
+    "evidence": "我们就有可能把它转译成一个无副作用的、所有人都能使用的、一劳永逸的有效版本",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "否定",
+    "dst": "乌尔里希",
+    "evidence": "你的假说里有太多的“如果”了，乌尔里希组长",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "请求",
+    "dst": "888",
+    "evidence": "如果贵方愿意将这个卷轴临时出借，研究将会有突飞猛进的进展",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "质疑",
+    "dst": "露西",
+    "evidence": "您是说，要我们将学派宝贵的遗产、不传的缄默之秘——授予你们？",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "支持",
+    "dst": "卷轴",
+    "evidence": "——为什么不能？这也是为了真理，不是吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c826f0d633b181832626e278": {
+  "entities": [
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反对分享卷轴的报丧女妖"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张分享知识者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "承诺不让卷轴被滥用者"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "由每代6保管、授予试炼者的遗产"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "每代保管卷轴者"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [],
+    "desc": "888加入前的流浪族群所属"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "曾把岛屿与外界隔开"
+   },
+   {
+    "name": "传道者之厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "穹顶有炮弹缺口"
+   }
+  ],
+  "relations": [
+   {
+    "src": "888",
+    "relation": "说明",
+    "dst": "卷轴",
+    "evidence": "你手上的卷轴是学派先贤传下的珍贵遗产，它由每一代的6保管",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "反对",
+    "dst": "37",
+    "evidence": "——但你不应将它分享给一个附属于人类的外部组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "辩解",
+    "dst": "888",
+    "evidence": "我们开设传道会，接待岛外的访客，正是为了分享知识和智慧",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "警告",
+    "dst": "37",
+    "evidence": "可它也能被反过来利用，成为手枪上的消声器、机枪上的制退器、氢弹里的反应公式",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "承诺",
+    "dst": "888",
+    "evidence": "888女士，我不会让那种事发生的。我向您保证",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "贬评",
+    "dst": "维尔汀",
+    "evidence": "您不能保证，维尔汀小姐，因为您也只是一个孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "自陈",
+    "dst": "阿派朗学派",
+    "evidence": "我经历过、劝说过、厌倦过，因此，我来到这里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3fdf1361d5edafbc82c49e04": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [
+     "修辞学家"
+    ],
+    "desc": "罕见支持分享卷轴者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [
+     "赫尔墨斯之星"
+    ],
+    "desc": "坚持分享并赢得表决者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叹息的协理人"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心红弩箭安全者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主动担纲远程配送者"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "学派奉献的核心"
+   },
+   {
+    "name": "飞行扫帚",
+    "type": "物品",
+    "aliases": [
+     "Su-01ве"
+    ],
+    "desc": "红弩箭的扫帚"
+   },
+   {
+    "name": "卵石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "表决用票"
+   },
+   {
+    "name": "飞行手册",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭欲促其修订"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "距落下7小时"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "合作解密对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "支持",
+    "dst": "卷轴",
+    "evidence": "假如借出一个卷轴，就能帮助我们触及到那不可说的隐秘——那为什么不这样做呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "主张",
+    "dst": "真理",
+    "evidence": "对真理的热爱永远是第一位的",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "宣告",
+    "dst": "科算中心",
+    "evidence": "我会分享这个卷轴，和科算中心合作，解开无限定者留下的数字密码",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "赢得",
+    "dst": "表决",
+    "evidence": "她赢下了这场政事表决，还有一声叹息",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "配送",
+    "dst": "卷轴",
+    "evidence": "红弩箭跨坐在Su-01ве上，拍了拍腰间的卷轴",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "持用",
+    "dst": "飞行扫帚",
+    "evidence": "不过是向总部配送一个包裹，甚至还没出欧洲，三个小时绰绰有余",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "飞向",
+    "dst": "总部",
+    "evidence": "这里离总部至少有768海里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "57ff0bbf523e381346aa62dc": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驾扫帚穿越暴雨者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧其坠海者"
+   },
+   {
+    "name": "奥利图欧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "重塑之手的空中单位"
+   },
+   {
+    "name": "飞艇",
+    "type": "物品",
+    "aliases": [
+     "充气式飞空艇"
+    ],
+    "desc": "浸润紫色液体、炮口可自动调转"
+   },
+   {
+    "name": "红色38",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭的扫帚"
+   },
+   {
+    "name": "APPLeⅡ号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被比较的对象"
+   },
+   {
+    "name": "地中海",
+    "type": "地点",
+    "aliases": [],
+    "desc": "飞行途经海域"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其飞艇出现"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "遭遇",
+    "dst": "奥利图欧",
+    "evidence": "这是重塑之手的奥利图欧……？看来先前的清扫工作不太彻底",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞艇",
+    "relation": "锁定",
+    "dst": "红弩箭",
+    "evidence": "它柔软的炮口自动调转，像生物的触角一样锁定了飞行女巫",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "挑战",
+    "dst": "飞艇",
+    "evidence": "来试试看吧。正好能用你的爆炸在地中海上奏响一发二十一响礼花！",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "应答",
+    "dst": "星锑",
+    "evidence": "哈，红色38可不是APPLeⅡ号！",
+    "confidence": 0.9
+   },
+   {
+    "src": "星锑",
+    "relation": "担忧",
+    "dst": "红弩箭",
+    "evidence": "老天，你可别一头栽进地中海里啊！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "641319731d18960b505f3245": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "完成转换器原型设计者"
+   },
+   {
+    "name": "约翰·提托",
+    "type": "角色",
+    "aliases": [
+     "约翰·提托小姐"
+    ],
+    "desc": "完成公式推导计算者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说明卷轴的防护潜力者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "苦恼于人类无法施术者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "批评方案丑陋且不优美者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问37想法者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认为计划很酷者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "沉寂于电波那头者"
+   },
+   {
+    "name": "转换器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "科算中心已完成原型设计"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "防护潜力非凡"
+   },
+   {
+    "name": "诅咒特性列表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已记录122种"
+   },
+   {
+    "name": "便携式咒语软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "科算中心过去生产的制品"
+   },
+   {
+    "name": "免疫护具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "类似重塑面具的实体化产物"
+   },
+   {
+    "name": "灵性的潮涌",
+    "type": "概念",
+    "aliases": [],
+    "desc": "欲借助之力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "完成",
+    "dst": "转换器",
+    "evidence": "我的小组也完成了转换器的原型设计",
+    "confidence": 0.95
+   },
+   {
+    "src": "约翰·提托",
+    "relation": "完成",
+    "dst": "公式",
+    "evidence": "约翰·提托小姐已经完成了公式的推导计算",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "评估",
+    "dst": "卷轴",
+    "evidence": "阿派朗学派的卷轴在这一点上已经表现出了非凡的潜力",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "提出",
+    "dst": "免疫护具",
+    "evidence": "最理想的结果是，将咒语实体化，制作出类似重塑面具的免疫护具",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "批评",
+    "dst": "计划",
+    "evidence": "嗯，很丑陋的计划！一点也不优美，充满了生搬硬凑和投机取巧",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "要求",
+    "dst": "乌尔里希",
+    "evidence": "科算中心的那位先生还不能把咒文发给我吗？我也想看看它",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2c73baaab3c332f814e62a1": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释传递审批需时者；搭建实验台者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "采用克拉尼共振法传递者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担任沟通内外桥梁的意识唤醒者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "记录图形者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "协助搭建者"
+   },
+   {
+    "name": "克拉尼共振法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将简单图形转换为声波的技术"
+   },
+   {
+    "name": "金属薄片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需固定在底座并撒上细沙"
+   },
+   {
+    "name": "驻波",
+    "type": "概念",
+    "aliases": [],
+    "desc": "在沙上形成图形"
+   },
+   {
+    "name": "咒文",
+    "type": "物品",
+    "aliases": [],
+    "desc": "分12段录音传递"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乌尔里希",
+    "relation": "使用",
+    "dst": "克拉尼共振法",
+    "evidence": "我们决定用克拉尼共振法来单独传递每个字母",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "担任",
+    "dst": "桥梁",
+    "evidence": "这座岛屿隔绝了除她之外的一切电波信号，因而这位意识唤醒者自登岛以来，便一直担任着沟通内外的桥梁工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "搭建",
+    "dst": "实验台",
+    "evidence": "十四行诗和星锑立刻行动了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "发送",
+    "dst": "录音",
+    "evidence": "我们总共会发送12段录音，每段录音对应着咒文的一个字母",
+    "confidence": 0.95
+   },
+   {
+    "src": "驻波",
+    "relation": "形成",
+    "dst": "图形",
+    "evidence": "驻波将在沙子上形成一个图形，那即是我们要传递的咒文",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "记录",
+    "dst": "图形",
+    "evidence": "……我记录下来了，乌尔里希先生",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "64b677907bf4b5cf4febfb0d": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出咒文语言者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心默念招致诅咒者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被告知咒文含义者"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其开启咒文亦用同种语言"
+   },
+   {
+    "name": "最初的圆",
+    "type": "概念",
+    "aliases": [
+     "La unua cirklo"
+    ],
+    "desc": "咒文的含义"
+   },
+   {
+    "name": "母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维尔汀疑为教授该语言者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "认出",
+    "dst": "咒文",
+    "evidence": "我认识这种语言",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "翻译",
+    "dst": "最初的圆",
+    "evidence": "这条咒语的意思是“最初的圆”",
+    "confidence": 0.95
+   },
+   {
+    "src": "箱子",
+    "relation": "使用",
+    "dst": "同种语言",
+    "evidence": "开启箱子的咒文也是用这种语言写就",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "怀疑",
+    "dst": "母亲",
+    "evidence": "是……母亲吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "星锑",
+    "relation": "担忧",
+    "dst": "维尔汀",
+    "evidence": "你不会要告诉我，默念也会招致诅咒吧……？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "be249563dc7052433a76f258": {
+  "entities": [
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "乌尔里希组长",
+     "破译组长"
+    ],
+    "desc": "自责忽略圆之手势者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问咒文原意对研究的意义者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [
+     "赫尔墨斯之星"
+    ],
+    "desc": "领悟咒文本质为圆者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指出圆是37最喜欢的图形者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施术时在空气中画圆者"
+   },
+   {
+    "name": "最初的圆",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "维也纳调查员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "汇报过拯救魔圈内容者"
+   },
+   {
+    "name": "罗塞塔石碑假说",
+    "type": "概念",
+    "aliases": [],
+    "desc": "咒文与数字密码本质相通"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乌尔里希",
+    "relation": "自责",
+    "dst": "圆",
+    "evidence": "我们被咒文和诅咒吸引了全部注意力……我竟然忽略了这么重要的信息！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "忆及",
+    "dst": "维也纳调查员",
+    "evidence": "维也纳调查员的确汇报过相关的内容！“一个古老的奇迹，一个拯救的魔圈。”",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "画出",
+    "dst": "圆",
+    "evidence": "阿尔卡纳当时在空气中画的正是一个圆",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "领悟",
+    "dst": "圆",
+    "evidence": "这份咒文的本质就是一个圆……！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "回归",
+    "dst": "罗塞塔石碑假说",
+    "evidence": "回到我们最开始的罗塞塔石碑假说",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "指出",
+    "dst": "37",
+    "evidence": "因为这是她最喜欢的圆",
+    "confidence": 0.9
+   },
+   {
+    "src": "露西",
+    "relation": "追问",
+    "dst": "最初的圆",
+    "evidence": "如果这条咒文的原意是“最初的圆”……那它对研究又意味着什么？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d762383496c2f1e94f11074e": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以假设法验证者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "复述验证逻辑者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打趣37偏爱圆者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "困惑数字与圆的联系者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断实体化后也是圆形者"
+   },
+   {
+    "name": "破译员Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转述司辰对语义的回答者"
+   },
+   {
+    "name": "数字密码",
+    "type": "概念",
+    "aliases": [],
+    "desc": "+1、-1、+2、-3、3、-3、+2、-1、+1"
+   },
+   {
+    "name": "意识唤醒者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已印证咒文有效"
+   },
+   {
+    "name": "象征",
+    "type": "概念",
+    "aliases": [],
+    "desc": "神秘术力量来源之一"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "提出",
+    "dst": "假设法",
+    "evidence": "我们现在就可以用假设法来验证这一点！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "复述",
+    "dst": "37",
+    "evidence": "如果实验成功，则假说成立。如果实验失败，则假说推翻",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "打趣",
+    "dst": "37",
+    "evidence": "你只是想要证明那串数字密码也是圆，因为你喜欢它！",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "推断",
+    "dst": "象征",
+    "evidence": "就思维习惯而言，神秘学家正是自动将经验转换为象征的种族",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "提问",
+    "dst": "圆",
+    "evidence": "假如我们要将它实体化，以供所有人使用……它也会是一个圆形吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "破译员Ⅴ",
+    "relation": "转述",
+    "dst": "维尔汀",
+    "evidence": "据维也纳调查员传回的情报，阿尔卡纳施术时的手势也是一个圆",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1b786500d73c0a48742eb306": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识别出琼斯多项式对应扭结者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见证扭结诞生者"
+   },
+   {
+    "name": "琼斯多项式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "扭结的数学表达"
+   },
+   {
+    "name": "扭结",
+    "type": "概念",
+    "aliases": [
+     "knot"
+    ],
+    "desc": "封闭曲线的变形"
+   },
+   {
+    "name": "三叶结",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琼斯多项式为t+t3-t4"
+   },
+   {
+    "name": "八字结",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琼斯多项式为t-2-t-1+1-t+t2"
+   },
+   {
+    "name": "梅花结",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琼斯多项式为t2+t4-t5+t6-t7"
+   },
+   {
+    "name": "平凡结",
+    "type": "概念",
+    "aliases": [
+     "unknot"
+    ],
+    "desc": "交叉点为0的圆"
+   },
+   {
+    "name": "印加人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "用绳结记录信息的民族"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "6所赠、负责转译之物"
+   },
+   {
+    "name": "数字密码",
+    "type": "概念",
+    "aliases": [],
+    "desc": "+1-1+2-3+3-3+2-1+1"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "识别",
+    "dst": "琼斯多项式",
+    "evidence": "而我在第一时间想到正是琼斯多项式！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "展开",
+    "dst": "扭结",
+    "evidence": "这串数字是琼斯多项式的缩写，它可以被展开为t-4-t-3+2t-2-3t-1+3-3t+2t2-t3+t4……一个交叉点为8的扭结！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "指出",
+    "dst": "卷轴",
+    "evidence": "6的卷轴将这个真理以我可以理解的形式转译了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "举例",
+    "dst": "三叶结",
+    "evidence": "三叶结的琼斯多项式是t+t3-t4",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "类比",
+    "dst": "印加人",
+    "evidence": "人们自古以来就用这种方式记录信息，就像印加人和中国人在绳子上打结",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "生成",
+    "dst": "绳圈",
+    "evidence": "一个金色的绳圈从她的指尖溢出",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "76f0f13d5b0b2bf3d719953c": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求验证扭结有效性者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "验证成功并从容赴死者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误调低音量的设备"
+   },
+   {
+    "name": "扭结",
+    "type": "概念",
+    "aliases": [],
+    "desc": "作为术式被验证有效"
+   },
+   {
+    "name": "盗火者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "露西的自我定位"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "露西",
+    "evidence": "能请您帮忙验证扭结作为术式的有效性吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "确认",
+    "dst": "扭结",
+    "evidence": "这个公式对应的扭结是唯一的，现在即可进行它作为术式的实验",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "宣告",
+    "dst": "维尔汀",
+    "evidence": "——我们成功了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "54dfad619fce696de7d97379": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感叹最终由司辰与学派破局者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认可扭结为实体化术式者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "其机构值得汇报者"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [
+     "学派"
+    ],
+    "desc": "其数字密码带来应用收获"
+   },
+   {
+    "name": "扭结",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即所要寻找的实体化术式"
+   },
+   {
+    "name": "银镜与纱幕",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "认可",
+    "dst": "扭结",
+    "evidence": "扭结正是我们要寻找的实体化术式",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "主张",
+    "dst": "维尔汀",
+    "evidence": "我认为有必要向司辰所属的机构汇报她们取得的这一重大突破",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿派朗学派",
+    "relation": "贡献",
+    "dst": "数字密码",
+    "evidence": "学派的数字密码带来了意想不到的应用收获",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "感叹",
+    "dst": "维尔汀",
+    "evidence": "没想到，最终是司辰和阿派朗学派的神秘学家，找到了让人类参与施术的方法",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

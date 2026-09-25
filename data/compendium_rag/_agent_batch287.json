@@ -1,0 +1,2224 @@
+{
+ "efc8a6e22aa0bb68084db4a5": {
+  "entities": [
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判定毒素性质的科学家"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "否决冒险提案的治疗师"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出以身试药的研究者"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张交给专业人士者"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议直接拆解的少校"
+   },
+   {
+    "name": "神经毒素",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏在胶囊里的致命化合物"
+   },
+   {
+    "name": "控制器内的胶囊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "脑中待溶解的缓释舱"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "暗设连锁陷阱的装置"
+   },
+   {
+    "name": "神经毒素解毒剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尚待验证的中和药剂"
+   },
+   {
+    "name": "死者血样",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被要求搜集的检材"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不在场的实验动物"
+   },
+   {
+    "name": "发明发现委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "该颁证书的新发明机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊桑·布朗",
+    "relation": "定性",
+    "dst": "神经毒素",
+    "evidence": "像是某种神经毒素，倒算是一项新发明",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "揶揄",
+    "dst": "发明发现委员会",
+    "evidence": "发明发现委员会应该给他颁证书的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "征集",
+    "dst": "死者血样",
+    "evidence": "我需要你们去搜集死者的血样",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "劝阻",
+    "dst": "P-3",
+    "evidence": "少校，这里最好交由专业人士解决",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "质疑",
+    "dst": "死者血样",
+    "evidence": "死者体内的毒素可能已经变性",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "提议",
+    "dst": "思想控制器",
+    "evidence": "不能直接趁着胶囊没溶解，先拆了剩下的“思想”控制器吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "否决",
+    "dst": "P-3",
+    "evidence": "当然不行",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "揭出",
+    "dst": "思想控制器",
+    "evidence": "控制器里还有其他“惊喜”结构",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "定性",
+    "dst": "思想控制器",
+    "evidence": "一个简单有效的连锁陷阱",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "警告",
+    "dst": "控制器内的胶囊",
+    "evidence": "会导致大家脑子里的缓释胶囊提前破开",
+    "confidence": 0.95
+   },
+   {
+    "src": "控制器内的胶囊",
+    "relation": "释放",
+    "dst": "神经毒素",
+    "evidence": "佩戴者会被直接注入神经毒素",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "主张",
+    "dst": "神经毒素解毒剂",
+    "evidence": "我们可以先注射小剂量的神经毒素与解毒剂并观察反应",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "解嘲",
+    "dst": "兔毛手袋",
+    "evidence": "很遗憾，兔毛手袋不在这儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "无奈",
+    "dst": "X",
+    "evidence": "小梅斯梅尔将无可奈何的眼神投向X",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d0023b1a8c2be7c8c0c3e7e4": {
+  "entities": [
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佩服试药者的军人"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自请做实验对象的研究者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "亲手下针的半个医生"
+   },
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈失明的醉酒科学家"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被寄予厚望的同伴"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被搬出来作比的机构"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被效仿的先例"
+   },
+   {
+    "name": "科学家Ⅵ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "绑缚实验体的科学家"
+   },
+   {
+    "name": "注射器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随身带的熟悉物件"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "当日新注射的化合物"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被问及是否中毒的装置"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "倒在废墟中的巨机"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "众人搜寻的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "P-3",
+    "relation": "质疑",
+    "dst": "X",
+    "evidence": "你真的要用自己做实验的小白鼠吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "探问",
+    "dst": "思想控制器",
+    "evidence": "你的“思想”控制器还好吗？不会已经中毒了吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自陈",
+    "dst": "聚合物",
+    "evidence": "我今天刚注射聚合物，身体仍没有习惯",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自比",
+    "dst": "露西",
+    "evidence": "这正是我效仿露西女士的好机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "援引",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯什么时候崇尚过这样的做事风格",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "否决",
+    "dst": "X",
+    "evidence": "我必须否决你的提案",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "期待",
+    "dst": "维尔汀",
+    "evidence": "也许维尔汀马上就会带回解毒剂的配方",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "赞同",
+    "dst": "X",
+    "evidence": "直接在人体上观测临床反应虽然危险，但确实是个高效的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "请缨",
+    "dst": "X",
+    "evidence": "如果你不愿意做这些，那就让我来",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅵ",
+    "relation": "报告",
+    "dst": "伊桑·布朗",
+    "evidence": "已经绑紧了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "执行",
+    "dst": "注射器",
+    "evidence": "小梅斯梅尔取出了随身携带的注射器",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "注药",
+    "dst": "伊桑·布朗",
+    "evidence": "小梅斯梅尔将针刺入伊桑·布朗的上臂肌肉中",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "现异状",
+    "dst": "小梅斯梅尔",
+    "evidence": "手脚麻木，视力模糊……我似乎出现幻觉了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "请换人",
+    "dst": "小梅斯梅尔",
+    "evidence": "给第二支试剂换个志愿者怎么样",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "嘱托",
+    "dst": "维尔汀",
+    "evidence": "维尔汀，你最好能尽快带着答案回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "倒伏",
+    "dst": "马克西姆",
+    "evidence": "寻找马克西姆的一行人终于结束了战斗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3198c316d95856f3745f3196": {
+  "entities": [
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告战斗结束的舞伶"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携同伴跃上二楼的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出现不同步的双子"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "当面陈义的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "藏身操控台的记者"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "幽暗的自毁中枢"
+   },
+   {
+    "name": "防护密闭门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缓缓开启的密闭门"
+   },
+   {
+    "name": "操控台",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包容各种坐姿的座席处"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "留下空洞的巨机残躯"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讥为偏爱机器人者"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被判定不该出现的系统"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被质问的装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "右伶",
+    "relation": "宣告",
+    "dst": "炸肉包",
+    "evidence": "战斗结束，确认无关键损伤，回到先前的任务中",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "现不同步",
+    "dst": "左伶",
+    "evidence": "双生的舞伶却在这时产生了微妙的不同步",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "关切",
+    "dst": "左伶",
+    "evidence": "你怎么了，左伶",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "自检",
+    "dst": "双生舞伶",
+    "evidence": "已经确认完毕，所有部件都在以正常功率运转",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "利用",
+    "dst": "炸肉包",
+    "evidence": "通过炸肉包制造的天花板空洞",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "抱持",
+    "dst": "维尔汀",
+    "evidence": "左伶再次将年轻的访客抱起",
+    "confidence": 0.95
+   },
+   {
+    "src": "防护密闭门",
+    "relation": "开启",
+    "dst": "能源室",
+    "evidence": "防护密闭门在闪烁的警告灯光下缓缓打开",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "护持",
+    "dst": "维尔汀",
+    "evidence": "请小心，维尔汀博士，请等待我们排除危险后再进入",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "讥评",
+    "dst": "谢切诺夫",
+    "evidence": "这就是谢切诺夫喜欢机器人的原因",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "藏身",
+    "dst": "操控台",
+    "evidence": "马克西姆蜷缩在操控台后的软椅中",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "诘问",
+    "dst": "左伶",
+    "evidence": "你们的意识形态是什么？有种族的观念吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "拒答",
+    "dst": "马克西姆",
+    "evidence": "我没有义务回答您的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "质问",
+    "dst": "思想控制器",
+    "evidence": "马克西姆，你对“思想”控制器做了什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "让步",
+    "dst": "大集体2.0",
+    "evidence": "也许你是对的，“大集体2.0”是一个不该出现的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "斥责",
+    "dst": "马克西姆",
+    "evidence": "无辜的生命不该成为你实现目的的工具",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "反诘",
+    "dst": "维尔汀",
+    "evidence": "但难道你能做到这点吗？这个国家能做到吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "47275f20390cb0a6ae6a1bc1": {
+  "entities": [
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "测出心律异常的舞伶"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍伸手接药的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谎称有药的危险人物"
+   },
+   {
+    "name": "神经毒素",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待解除的神经毒素"
+   },
+   {
+    "name": "神经毒素解毒剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "号称唯一的一支药剂"
+   },
+   {
+    "name": "自白剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拿来打趣的药物"
+   },
+   {
+    "name": "马克西姆的手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "怀中取出的手枪"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已引来关注的系统"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被其放过的一介科学家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "判定",
+    "dst": "马克西姆",
+    "evidence": "目标失去作战能力，威胁已清除",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "求解",
+    "dst": "神经毒素",
+    "evidence": "告诉我，马克西姆，怎么才能解除你的神经毒素",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "讥拒",
+    "dst": "自白剂",
+    "evidence": "我不会说的，你为什么不试试自白剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指陈",
+    "dst": "大集体2.0",
+    "evidence": "“大集体2.0”在启动前就已经引起了多余的关注",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "责其",
+    "dst": "马克西姆",
+    "evidence": "仍然选择对那些被你牵连的无辜者见死不救吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "松口",
+    "dst": "谢切诺夫",
+    "evidence": "而且谢切诺夫以外的科学家并没有做错什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "出示",
+    "dst": "神经毒素解毒剂",
+    "evidence": "我这里有一支针对神经毒素的解毒剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "预警",
+    "dst": "马克西姆",
+    "evidence": "侦测到马克西姆的心律异常，维尔汀博士，请小心",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "索药",
+    "dst": "神经毒素解毒剂",
+    "evidence": "把解毒剂给我吧，马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "自认",
+    "dst": "神经毒素解毒剂",
+    "evidence": "那你得接好了，这可是唯一的解毒剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "掏出的",
+    "dst": "马克西姆的手枪",
+    "evidence": "从怀中出现的是一把手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "扬言",
+    "dst": "马克西姆的手枪",
+    "evidence": "对任何无可救药的人或国家都管用",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "惊呼",
+    "dst": "马克西姆",
+    "evidence": "马克西姆！不要！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cf973f5f33a36d683862fb1e": {
+  "entities": [
+   {
+    "name": "科学家Ⅷ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高呼有效的科学家"
+   },
+   {
+    "name": "科学家Ⅵ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "澄清未停电的科学家"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "排列解毒方案的指挥者"
+   },
+   {
+    "name": "神经毒素解毒剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被筛出的第六类药物"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "用作临时病房之处"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自证药效的试药者"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被其感知变动的化合物"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被断言不正常之地"
+   },
+   {
+    "name": "馆内广播",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告倒计时的声音"
+   },
+   {
+    "name": "自毁程序",
+    "type": "事件",
+    "aliases": [],
+    "desc": "倒计时十五分钟的进程"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被召唤前往之处"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下看护病人的军人"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "汇报疏散前景的舞伶"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开门迎入研究员的舞伶"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发出信号的讲解员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持疏散的访客"
+   }
+  ],
+  "relations": [
+   {
+    "src": "科学家Ⅷ",
+    "relation": "欢呼",
+    "dst": "神经毒素解毒剂",
+    "evidence": "第六类是有效的……！六号患者苏醒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "排演",
+    "dst": "神经毒素解毒剂",
+    "evidence": "小梅斯梅尔在纸上排列着可能有效的解毒剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "调度",
+    "dst": "神经毒素解毒剂",
+    "evidence": "把现有的第六类都取出来，先给重症患者注射",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "感知",
+    "dst": "聚合物",
+    "evidence": "刚注射聚合物时的那种新鲜感正在回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "倚信",
+    "dst": "X",
+    "evidence": "你对聚合物的变动感知比其他长期使用者更敏感",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "道谢",
+    "dst": "小梅斯梅尔",
+    "evidence": "谢谢你，小梅斯梅尔，你救了我一命",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "告诫",
+    "dst": "X",
+    "evidence": "希望你可以吸取教训，不要随便注射药物了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自解",
+    "dst": "科算中心",
+    "evidence": "这在拉普拉斯只能算件小事，不是吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "撇清",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯并不正常，这里也不是拉普拉斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅵ",
+    "relation": "澄清",
+    "dst": "小梅斯梅尔",
+    "evidence": "不用担心，没有停电",
+    "confidence": 0.95
+   },
+   {
+    "src": "馆内广播",
+    "relation": "宣告",
+    "dst": "自毁程序",
+    "evidence": "自毁程序已启动，倒计时：15分钟",
+    "confidence": 0.95
+   },
+   {
+    "src": "馆内广播",
+    "relation": "召唤",
+    "dst": "能源室",
+    "evidence": "你们的家人在找你们，请到能源室来",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "决意",
+    "dst": "能源室",
+    "evidence": "我们得赶快去找家长了",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "留守",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "快去吧。我在这儿当安保，伊桑也醒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "转达",
+    "dst": "捷列什科娃",
+    "evidence": "捷列什科娃已经发出了信号",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "劝阻",
+    "dst": "维尔汀",
+    "evidence": "目前安全撤离人群的可能性极低，您仍要执行吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "坚持",
+    "dst": "右伶",
+    "evidence": "我们必须用尽一切办法",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "迎入",
+    "dst": "小梅斯梅尔",
+    "evidence": "两名拉普拉斯的研究员带着一身金属燃烧的味道冲了进来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e0d9c88c827cc5dcbe7ac027": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议入梦检索的治疗师"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未能阻止其自尽的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "太阳穴中弹的死者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断绑定了心跳的舞伶"
+   },
+   {
+    "name": "自毁程序",
+    "type": "事件",
+    "aliases": [],
+    "desc": "与其心跳绑定的进程"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "提取死者信息的手段"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "死者体内的未知技术"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被提议询问的体内物"
+   },
+   {
+    "name": "马克西姆的手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "躺在死者手中的凶器"
+   },
+   {
+    "name": "玻璃琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "检索所需的乐器"
+   },
+   {
+    "name": "戈德堡机械",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被许下的繁琐机械"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承接造物的研究者"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [
+     "维修小站"
+    ],
+    "desc": "愿造乐器的机巧"
+   },
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "并非艺术博物馆之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "惊见",
+    "dst": "马克西姆",
+    "evidence": "小梅斯梅尔看见了躺在地上、太阳穴开了个大洞的马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "持有",
+    "dst": "马克西姆的手枪",
+    "evidence": "作案工具正躺在死者的手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "自责",
+    "dst": "自毁程序",
+    "evidence": "我没能来得及阻止他，自毁程序也在他死时启动了",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "推断",
+    "dst": "自毁程序",
+    "evidence": "推测是马克西姆将自己的心跳与能源室的自毁程序绑定了",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "判定",
+    "dst": "马克西姆",
+    "evidence": "但停止程序的密码遭到了篡改",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "自任",
+    "dst": "人工梦游",
+    "evidence": "人工梦游治疗师看了看同伴，又看了看死去的马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "设想",
+    "dst": "人工梦游",
+    "evidence": "或许可以靠人工梦游提取一些信息",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "忧盼",
+    "dst": "马克西姆",
+    "evidence": "希望那颗子弹没有破坏关键的脑组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "补充",
+    "dst": "聚合物",
+    "evidence": "或许除了大脑之外，我们还可以询问他体内的聚合物",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "畏惧",
+    "dst": "思想控制器",
+    "evidence": "让人工梦游接触一项未知的技术？我无法预测会发生什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "差遣",
+    "dst": "X",
+    "evidence": "按我的要求制造一些临时设备",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "宽容",
+    "dst": "戈德堡机械",
+    "evidence": "只要功能达标，你想造多大的戈德堡机械都行",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "从命",
+    "dst": "X",
+    "evidence": "无相关条目，开始直接遵从X博士的指令",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "索求",
+    "dst": "玻璃琴",
+    "evidence": "然后我需要一台玻璃琴，哪里有玻璃琴",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "陈明",
+    "dst": "聚合物展览馆",
+    "evidence": "这里是聚合物展览馆，并非艺术博物馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "自荐",
+    "dst": "玻璃琴",
+    "evidence": "我可以做出玻璃琴！但你们得先用原材料满足我",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "困守",
+    "dst": "聚合物展览馆",
+    "evidence": "可兜兜转转，都只能困在这飞行平台里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4033fab4abf7ca90a3eeb8d0": {
+  "entities": [
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒入他人之梦的机具"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自请入梦的访客"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为补聚合物知识请往的舞伶"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧双遇难的操刀者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维护装置并布防者"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "被潜入记忆的死者"
+   },
+   {
+    "name": "马克西姆的梦境",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待潜入的回忆之所"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潜入者所恃的经验"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需要建议的化合物"
+   },
+   {
+    "name": "玻璃琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "占满房间的拼凑机器"
+   },
+   {
+    "name": "入梦的头盔",
+    "type": "物品",
+    "aliases": [],
+    "desc": "数据线可拆的器具"
+   },
+   {
+    "name": "临时防御工事",
+    "type": "物品",
+    "aliases": [],
+    "desc": "顺带搭起的屏障"
+   }
+  ],
+  "relations": [
+   {
+    "src": "左伶",
+    "relation": "记录",
+    "dst": "X",
+    "evidence": "我已经录下了制作的全过程留作分析，X博士",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "存疑",
+    "dst": "玻璃琴",
+    "evidence": "虽然是我给出的要求，但你确信它可靠吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "保证",
+    "dst": "玻璃琴",
+    "evidence": "它只是看上去繁琐，但原理很简单",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "发问",
+    "dst": "马克西姆的梦境",
+    "evidence": "谁要潜入到马克西姆的梦境中",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺拉",
+    "relation": "推拒",
+    "dst": "马克西姆",
+    "evidence": "我不干，那家伙丑死了，我不要去他的梦里",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "留守",
+    "dst": "X",
+    "evidence": "不是你，你得留在这儿维护装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请缨",
+    "dst": "人工梦游",
+    "evidence": "让我去吧，我对人工梦游很有经验",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "请往",
+    "dst": "聚合物",
+    "evidence": "几位可能会需要有关聚合物的建议，我提议由我去",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "串接",
+    "dst": "入梦的头盔",
+    "evidence": "头盔的数据线可以拆解下来，连接在左伶脑后的脊椎上",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "警其险",
+    "dst": "马克西姆的梦境",
+    "evidence": "如果失败了，你们两个都会在梦境中遇难",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "反驳",
+    "dst": "X",
+    "evidence": "但两个人一起也可以提高成功的可能，X是对的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "预告",
+    "dst": "入梦的头盔",
+    "evidence": "戴上头盔吧，你们可能会有酥麻的感觉",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "释明",
+    "dst": "马克西姆的梦境",
+    "evidence": "这是进入马克西姆“梦境”的必要流程",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "布防",
+    "dst": "临时防御工事",
+    "evidence": "我还顺带搭建了一些防御工事，机器人暂时不会来骚扰我们",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "94bf8c6209284354edb69d5b": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "反复拨回分针的男人"
+   },
+   {
+    "name": "幼年时的马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中等母的孩子"
+   },
+   {
+    "name": "记忆中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "答以不会太久的白大褂"
+   },
+   {
+    "name": "阿扎利亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "浮现于餐桌前的母亲"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留在外部指挥的治疗师"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "身处梦中的入访者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨认出灵薄域的舞伶"
+   },
+   {
+    "name": "潜意识世界",
+    "type": "地点",
+    "aliases": [],
+    "desc": "标题卡所示的心象之地"
+   },
+   {
+    "name": "立钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "牵动重演的老钟"
+   },
+   {
+    "name": "灵薄域",
+    "type": "概念",
+    "aliases": [],
+    "desc": "聚合者产生的意识空间"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "搭出相似场景的手段"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "扰动梦境的疑似因"
+   },
+   {
+    "name": "马卡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被托付送学的长辈"
+   },
+   {
+    "name": "呼吸防护器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "饭前必戴的器具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "幼年时的马克西姆",
+    "relation": "呼唤",
+    "dst": "阿扎利亚",
+    "evidence": "妈妈？你什么时候回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "记忆中的医生",
+    "relation": "宽慰",
+    "dst": "幼年时的马克西姆",
+    "evidence": "很快，不会太久",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "察觉",
+    "dst": "马克西姆",
+    "evidence": "有些异常数据在影响他的梦境",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "归因",
+    "dst": "聚合物",
+    "evidence": "我推测是聚合物的影响",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "置身",
+    "dst": "潜意识世界",
+    "evidence": "我现在似乎是在……那栋空建筑中",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "宣告",
+    "dst": "人工梦游",
+    "evidence": "这已经不是常规的人工梦游了",
+    "confidence": 0.95
+   },
+   {
+    "src": "立钟",
+    "relation": "唤出",
+    "dst": "阿扎利亚",
+    "evidence": "伴随着钟响，一名女人浮现于餐桌前",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "催促",
+    "dst": "马克西姆",
+    "evidence": "万尼亚，时间差不多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "托付",
+    "dst": "马卡尔",
+    "evidence": "吃完饭后跟着马卡尔去学校",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "叮嘱",
+    "dst": "呼吸防护器",
+    "evidence": "洗手、戴好呼吸防护器、回到家以后要及时用消毒剂消毒",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "告别",
+    "dst": "幼年时的马克西姆",
+    "evidence": "今晚妈妈不一定能赶回来，爸爸也是",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "拨回",
+    "dst": "立钟",
+    "evidence": "走回立钟前，将分针往回拨了拨",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "判定",
+    "dst": "灵薄域",
+    "evidence": "根据这里的表现判断，我们似乎来到了灵薄域，维尔汀博士",
+    "confidence": 0.95
+   },
+   {
+    "src": "人工梦游",
+    "relation": "仿造",
+    "dst": "灵薄域",
+    "evidence": "你们的人工梦游技术搭建了一个与灵薄域十分相似的场景",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "辨明",
+    "dst": "灵薄域",
+    "evidence": "这里只是一个投影，并不是真正的灵薄域",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "指示",
+    "dst": "马克西姆",
+    "evidence": "你们要试着诱导他的记忆，让他去回忆解除程序的密码",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5640844eb8e701c13331c9fc": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看见父子的观察者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "检索死伤数字的舞伶"
+   },
+   {
+    "name": "立钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "标出1942年的座钟"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "小万尼亚",
+     "万尼亚"
+    ],
+    "desc": "目睹葬礼的少年"
+   },
+   {
+    "name": "幼年时的马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被搂进怀里的幼子"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归来告知死讯的父亲"
+   },
+   {
+    "name": "父亲留下的小机器人",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与合影同款的玩具"
+   },
+   {
+    "name": "纪念馆的合影相框",
+    "type": "物品",
+    "aliases": [],
+    "desc": "留有同款影像的合照"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "压垮医院的疫病"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研发拯救之物的博士"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拯救苏联的发明"
+   },
+   {
+    "name": "苏联",
+    "type": "组织",
+    "aliases": [],
+    "desc": "濒于瘫痪的国度"
+   },
+   {
+    "name": "防化服工作人员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上门带走孤儿的两人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "发现",
+    "dst": "立钟",
+    "evidence": "我找到了一个立钟，上面万年历显示是1942年",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "定位",
+    "dst": "苏联的瘟疫",
+    "evidence": "此时是“瘟疫”初期，各地医院已经开始因“瘟疫”的感染者增多",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "辨音",
+    "dst": "维尔汀",
+    "evidence": "是葬礼，维尔汀博士",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "安抚",
+    "dst": "马克西姆",
+    "evidence": "小万尼亚，过来，别听这些",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "搂抱",
+    "dst": "幼年时的马克西姆",
+    "evidence": "他应该正抱着年幼时的马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "辨认",
+    "dst": "幼童之父安德烈",
+    "evidence": "我看到一个人，也许是马克西姆的父亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "解释",
+    "dst": "苏联的瘟疫",
+    "evidence": "这样大家才能从“瘟疫”中活下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "赠物",
+    "dst": "父亲留下的小机器人",
+    "evidence": "安德烈从身后拿出了一个小机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲留下的小机器人",
+    "relation": "同款",
+    "dst": "纪念馆的合影相框",
+    "evidence": "与合照上万尼亚手中拿着的那个一模一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "投身",
+    "dst": "父亲留下的小机器人",
+    "evidence": "我们需要一些不会被疾病影响到的机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "托付",
+    "dst": "马克西姆",
+    "evidence": "你会照顾好自己，答应我",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "检索",
+    "dst": "苏联的瘟疫",
+    "evidence": "此时因“瘟疫”死去的人数已超过两千万，社会处于瘫痪边缘",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "研发",
+    "dst": "聚合物",
+    "evidence": "是谢切诺夫博士研发的聚合物拯救了苏联",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物",
+    "relation": "拯救",
+    "dst": "苏联",
+    "evidence": "是谢切诺夫博士研发的聚合物拯救了苏联",
+    "confidence": 0.95
+   },
+   {
+    "src": "防化服工作人员",
+    "relation": "登门",
+    "dst": "马克西姆",
+    "evidence": "走进来两位身穿防化服的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "防化服工作人员",
+    "relation": "带走",
+    "dst": "马克西姆",
+    "evidence": "我们需要你带好你和你父母的身份证明，跟我们走",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "943d482c81aa660f3f8e5eb1": {
+  "entities": [
+   {
+    "name": "防化服工作人员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "牵走孩子的路人"
+   },
+   {
+    "name": "立钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "滴答停驻的座钟"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其向前看的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问生者的复仇者"
+   },
+   {
+    "name": "活过来的餐具",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替亡者开口的刀叉"
+   },
+   {
+    "name": "阿扎利亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被餐具称为母亲者"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被小机器人称为父亲者"
+   },
+   {
+    "name": "父亲留下的小机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怨叹勋章的旧玩具"
+   },
+   {
+    "name": "破烂勋章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仅得的两枚遗赠"
+   },
+   {
+    "name": "大集体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被讥为齐步走的系统"
+   },
+   {
+    "name": "死者纪念碑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "只余一人的名姓之处"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刻上自己名字者"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被齐声颂扬的发明"
+   },
+   {
+    "name": "苏联",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被指为无耻受益者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "防化服工作人员",
+    "relation": "牵走",
+    "dst": "马克西姆",
+    "evidence": "二人便牵着什么离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "立钟",
+    "relation": "停摆",
+    "dst": "马克西姆",
+    "evidence": "立钟的滴答声也停在了此刻",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "感知",
+    "dst": "立钟",
+    "evidence": "他的时间似乎停在这一刻了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "扑向",
+    "dst": "立钟",
+    "evidence": "随后跌跌撞撞地冲向那台立钟，想要将分针拨回去",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "劝诱",
+    "dst": "马克西姆",
+    "evidence": "现在还来得及挽回，结束这段回忆吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "活过来的餐具",
+    "relation": "苏醒",
+    "dst": "马克西姆",
+    "evidence": "餐桌上的碟子和刀叉突然活了过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "活过来的餐具",
+    "relation": "质问",
+    "dst": "马克西姆",
+    "evidence": "为什么死的是我的父母？这公平吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "活过来的餐具",
+    "relation": "念其恩",
+    "dst": "阿扎利亚",
+    "evidence": "如果没有我的母亲，那个女人不可能活着从医院里出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲留下的小机器人",
+    "relation": "念其恩",
+    "dst": "幼童之父安德烈",
+    "evidence": "如果没有我的父亲，那个女人只能自己拖着",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲留下的小机器人",
+    "relation": "怨叹",
+    "dst": "破烂勋章",
+    "evidence": "他们死了！却只收到了两枚破烂勋章",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "规劝",
+    "dst": "马克西姆",
+    "evidence": "牺牲对余下的人来说都是痛苦的，但别让牺牲者的努力白费",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "讥诮",
+    "dst": "大集体",
+    "evidence": "就因为要忙着歌颂“大集体”吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "指斥",
+    "dst": "谢切诺夫",
+    "evidence": "他把自己的名字刻在了纪念碑上",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "独留名",
+    "dst": "死者纪念碑",
+    "evidence": "碑上只剩他的名字了",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物",
+    "relation": "被颂扬",
+    "dst": "苏联",
+    "evidence": "人们齐声念：“是谢切诺夫博士研发的聚合物拯救了苏联。”",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "不平",
+    "dst": "苏联",
+    "evidence": "为何偏偏要让我们成为你们进步的垫脚石",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "开解",
+    "dst": "马克西姆",
+    "evidence": "生命总要向未来而去，向着一个不再有更多痛苦的未来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f14a661627f039f77c38b619": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍欲唤醒其理智的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒不和解的溃散者"
+   },
+   {
+    "name": "死者的人影",
+    "type": "角色",
+    "aliases": [],
+    "desc": "黑烟化成的无数亡者"
+   },
+   {
+    "name": "生者的桂冠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "生者所享的荣誉"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "点破",
+    "dst": "马克西姆",
+    "evidence": "是你将你父母的死挡在了自己面前，马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "抗拒",
+    "dst": "维尔汀",
+    "evidence": "我才不管",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "溃散",
+    "dst": "死者的人影",
+    "evidence": "黑色的烟雾化成无数的人影从他的身后走来",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "控诉",
+    "dst": "生者的桂冠",
+    "evidence": "你们戴好了桂冠，作为生者笑容满面地享受一切",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "不平",
+    "dst": "死者的人影",
+    "evidence": "那死在黎明前的人就一无所获吗？这不公平",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "370fcfbd93a2f0d8d7a4b5f7": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "小万尼亚"
+    ],
+    "desc": "在闪回中告别的亡者"
+   },
+   {
+    "name": "啁啾表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从指缝漏尽的旧物"
+   },
+   {
+    "name": "记忆中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "约他同去堆谷场的人"
+   },
+   {
+    "name": "记忆中的工程师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把玩小玩意的人"
+   },
+   {
+    "name": "记忆中的年轻女性",
+    "type": "角色",
+    "aliases": [],
+    "desc": "侥幸存活而被抛下者"
+   },
+   {
+    "name": "阿扎利亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问生活好坏的母亲"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不许儿子可怜的父亲"
+   },
+   {
+    "name": "苏联",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被问及瘟疫结局的国度"
+   },
+   {
+    "name": "太空探索",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将启程的探索"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其以回忆为道标者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲中断梦游的治疗师"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "监测数据溢出的舞伶"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看出闪回契机的冒进者"
+   },
+   {
+    "name": "类聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "淹没脚踝的透明物质"
+   }
+  ],
+  "relations": [
+   {
+    "src": "啁啾表",
+    "relation": "回响",
+    "dst": "马克西姆",
+    "evidence": "无数啁啾表的声音在回响",
+    "confidence": 0.95
+   },
+   {
+    "src": "记忆中的医生",
+    "relation": "许诺",
+    "dst": "马克西姆",
+    "evidence": "我有一个和你一样大的儿子，等你康复了",
+    "confidence": 0.95
+   },
+   {
+    "src": "记忆中的工程师",
+    "relation": "把玩",
+    "dst": "啁啾表",
+    "evidence": "这个小玩意儿还挺有意思的，把它加在哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "记忆中的年轻女性",
+    "relation": "感恩",
+    "dst": "幼童之父安德烈",
+    "evidence": "我真的很幸运……感谢……感谢你们没有抛下我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "呼唤",
+    "dst": "阿扎利亚",
+    "evidence": "父亲……母亲……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "垂询",
+    "dst": "苏联",
+    "evidence": "如今，苏联已经结束那场“瘟疫”了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "愧疚",
+    "dst": "阿扎利亚",
+    "evidence": "但最后我也没能让您带上一束花走",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "关切",
+    "dst": "太空探索",
+    "evidence": "还有，科技发展到哪步啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "禀报",
+    "dst": "幼童之父安德烈",
+    "evidence": "我们不仅解决了“瘟疫”，还准备进行太空探索",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "自陈",
+    "dst": "马克西姆",
+    "evidence": "你们是走过了我们铺过的路，才能走到今天的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿扎利亚",
+    "relation": "勉励",
+    "dst": "马克西姆",
+    "evidence": "要走得更远一些，更远一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "哀求",
+    "dst": "幼童之父安德烈",
+    "evidence": "父亲，母亲，父亲……不要走",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "开解",
+    "dst": "马克西姆",
+    "evidence": "他们应当成为前进的道标，而非路障，马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "警示",
+    "dst": "维尔汀",
+    "evidence": "警告，数据正在溢出，请立刻转移，维尔汀博士",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "判定",
+    "dst": "马克西姆",
+    "evidence": "马克西姆的数值越发不稳定了，维尔汀，你必须动作快",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "推断",
+    "dst": "马克西姆",
+    "evidence": "他应该就要开始死前闪回了，所有记忆都会涌出",
+    "confidence": 0.95
+   },
+   {
+    "src": "类聚合物",
+    "relation": "涌出",
+    "dst": "马克西姆",
+    "evidence": "类聚合物的物质源源不断地从马克西姆破碎的身体中喷涌而出",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

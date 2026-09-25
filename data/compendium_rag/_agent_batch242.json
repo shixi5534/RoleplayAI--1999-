@@ -1,0 +1,397 @@
+{
+ "82cb36355951ef9b5c3e83f1": {
+  "entities": [
+   {
+    "name": "书商",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为传说收尾的书商"
+   },
+   {
+    "name": "市民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失望的听众"
+   },
+   {
+    "name": "市民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吐槽的听众"
+   },
+   {
+    "name": "湿壁画",
+    "type": "概念",
+    "aliases": [],
+    "desc": "蜚声多年的湿壁画之谜"
+   },
+   {
+    "name": "手抄本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新手抄本"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "畅想新航路者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感慨流言者"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "观察APPLe的刺客"
+   },
+   {
+    "name": "金苹果",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被观察的异乡物"
+   },
+   {
+    "name": "东印度群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "传闻中的航路终点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "书商",
+    "relation": "讲述",
+    "dst": "湿壁画",
+    "evidence": "这，就是蜚声佛罗伦萨多年的“湿壁画之谜”始末",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "命名",
+    "dst": "手抄本",
+    "evidence": "还给我的新手抄本取了好听的名字——“翡冷翠之春”",
+    "confidence": 0.95
+   },
+   {
+    "src": "市民Ⅱ",
+    "relation": "吐槽",
+    "dst": "书商",
+    "evidence": "名字也烂得像狗屎",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "提问",
+    "dst": "东印度群岛",
+    "evidence": "等到了所谓的“印度群岛”，是不是就能摆脱这些恼人的商贩",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "感慨",
+    "dst": "湿壁画",
+    "evidence": "看来无论在什么时代，流言的传播都是个严肃的议题",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "坦白",
+    "dst": "APPLe",
+    "evidence": "你看上去很像我们多年前遗失的一个“苹果”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d597496a5b3c7f7cb9b663b4": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带路问道的少女"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指路并预告者"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认得路的刺客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的司辰"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的苹果"
+   },
+   {
+    "name": "普拉托韦基奥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "此行终点"
+   },
+   {
+    "name": "亚诺河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被暮光融入的河流"
+   },
+   {
+    "name": "赤铁矿",
+    "type": "概念",
+    "aliases": [],
+    "desc": "佛罗伦萨红的原料"
+   },
+   {
+    "name": "佛罗伦萨红",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以城市命名的红色"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "指路",
+    "dst": "普拉托韦基奥",
+    "evidence": "最后就能抵达普拉托韦基奥了",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "定调",
+    "dst": "普拉托韦基奥",
+    "evidence": "接下来只要把书信交给乌切洛先生，任务就算圆满完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "解说",
+    "dst": "佛罗伦萨红",
+    "evidence": "其中最出名的，便是一种名为“佛罗伦萨红”的红色",
+    "confidence": 0.95
+   },
+   {
+    "src": "佛罗伦萨红",
+    "relation": "源于",
+    "dst": "普拉托韦基奥",
+    "evidence": "只要将它们收集起来，然后研磨、加热",
+    "confidence": 0.95
+   },
+   {
+    "src": "赤铁矿",
+    "relation": "混合",
+    "dst": "佛罗伦萨红",
+    "evidence": "这些矿物的粉末和当地的赤铁矿、粘土混合起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "喜爱",
+    "dst": "佛罗伦萨红",
+    "evidence": "我喜欢这个名字",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b301e2579f7fb1693577d060": {
+  "entities": [
+   {
+    "name": "安东尼娅·乌切洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自曝身份的农妇"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻访者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻访者"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冒失的评论者"
+   },
+   {
+    "name": "乌切洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被借名者"
+   },
+   {
+    "name": "比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已故的寄信人"
+   },
+   {
+    "name": "普拉托韦基奥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "农舍所在之乡"
+   },
+   {
+    "name": "透视法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被讨论的技法"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾吉奥",
+    "relation": "寻访",
+    "dst": "普拉托韦基奥",
+    "evidence": "我们在寻找一位名叫保罗·乌切洛的画家",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "自陈",
+    "dst": "乌切洛",
+    "evidence": "恐怕也是你们在找的画家保罗·乌切洛",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "悼念",
+    "dst": "比安卡",
+    "evidence": "原来比安卡也死了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "自述",
+    "dst": "透视法",
+    "evidence": "画家的心应该是一个透镜",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "冒犯",
+    "dst": "安东尼娅·乌切洛",
+    "evidence": "在我看来，画家的心应该像一面镜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "反驳",
+    "dst": "莱昂纳多",
+    "evidence": "收起你们那套陈词滥调吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4aa774dd7e1e376ae5a5201e": {
+  "entities": [
+   {
+    "name": "安东尼娅·乌切洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交还画稿者"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接过画稿者"
+   },
+   {
+    "name": "奥迪托雷夫人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾资助其父的女士"
+   },
+   {
+    "name": "全家福",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被搁置的画稿"
+   },
+   {
+    "name": "费代里科",
+    "type": "角色",
+    "aliases": [],
+    "desc": "全家福中的家人"
+   },
+   {
+    "name": "克劳迪娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "全家福中的家人"
+   },
+   {
+    "name": "彼得鲁乔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "全家福中的家人"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感慨链条者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "忆及",
+    "dst": "奥迪托雷夫人",
+    "evidence": "你的母亲，玛利亚·奥迪托雷曾经资助过我的父亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥迪托雷夫人",
+    "relation": "委托",
+    "dst": "全家福",
+    "evidence": "你母亲曾委托他为你们画了一张全家福",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "赠予",
+    "dst": "全家福",
+    "evidence": "我手里只有这一张草图，但我想你可能需要它",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "辨认",
+    "dst": "费代里科",
+    "evidence": "父亲、母亲，还有费代里科、克劳迪娅、彼得鲁乔",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼娅·乌切洛",
+    "relation": "宽慰",
+    "dst": "艾吉奥",
+    "evidence": "我们不是贪心的人",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,1626 @@
+{
+ "eb2941f803c4ea3e233bb8ee": {
+  "entities": [
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被任命为总指挥者"
+   },
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受惊逃逸者"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传令者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以剪刀相助者"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促逃者"
+   },
+   {
+    "name": "红斗篷",
+    "type": "角色",
+    "aliases": [],
+    "desc": "示警者"
+   },
+   {
+    "name": "戈登堡机械",
+    "type": "物品",
+    "aliases": [],
+    "desc": "X 所造"
+   },
+   {
+    "name": "玻璃烟灰缸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所掷之器"
+   },
+   {
+    "name": "渔网",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拦住星之眼"
+   },
+   {
+    "name": "第九区特别调查组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "所派小队"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警察",
+    "relation": "宣布",
+    "dst": "威廉姆斯",
+    "evidence": "总警署任命您为本次不明飞行物调查抓捕行动总指挥！",
+    "confidence": 0.95
+   },
+   {
+    "src": "第九区特别调查组",
+    "relation": "出动",
+    "dst": "威廉姆斯",
+    "evidence": "第九区特别调查组的执行小队已经出发",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "掷出",
+    "dst": "玻璃烟灰缸",
+    "evidence": "铆足劲投出的烟灰缸砸在窗框上",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "放走",
+    "dst": "星之眼",
+    "evidence": "快逃",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "被阻",
+    "dst": "渔网",
+    "evidence": "该死！这里怎么会有渔网",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "剪断",
+    "dst": "渔网",
+    "evidence": "一把银光闪闪的剪刀从远处飞来，渔网应声而落",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "施援",
+    "dst": "星之眼",
+    "evidence": "当然是因为担心您啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "示警",
+    "dst": "星之眼",
+    "evidence": "他们想把你送上解剖台啊！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "红斗篷",
+    "relation": "指路",
+    "dst": "星之眼",
+    "evidence": "从后面离开，他们来了！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d3cf917ca6c2aa7f77931015": {
+  "entities": [
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "总指挥"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放出烟雾者"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力大无穷的兔女郎"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "体力不支者"
+   },
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逃者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "司辰"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜查者"
+   },
+   {
+    "name": "黑伞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "倾泻烟雾之具"
+   },
+   {
+    "name": "森林花园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "会合之处"
+   },
+   {
+    "name": "箱子",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏身之所"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威廉姆斯",
+    "relation": "部署",
+    "dst": "警察",
+    "evidence": "那个家伙喜欢在小巷内躲藏，现在分成三组开始搜查这些巷子",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "撑开",
+    "dst": "黑伞",
+    "evidence": "雾行者撑开那把巨大的黑伞，扭着伞把向左侧转动半圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "释放",
+    "dst": "黑伞",
+    "evidence": "流动的烟雾如同洪水一般倾泻而出",
+    "confidence": 0.9
+   },
+   {
+    "src": "雾行者",
+    "relation": "请假",
+    "dst": "维尔汀",
+    "evidence": "请记得把今天调整为我的出勤日",
+    "confidence": 0.95
+   },
+   {
+    "src": "警察",
+    "relation": "发现",
+    "dst": "星之眼",
+    "evidence": "不明飞行物在三号大道六号分支活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "擒拿",
+    "dst": "警察",
+    "evidence": "请不要把我挂在树上！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "抱起",
+    "dst": "X",
+    "evidence": "一把抱起脚步拖沓的X，加快了奔跑的速度",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "归队",
+    "dst": "芭妮芭妮",
+    "evidence": "所以你该多锻炼身体，对机械的依赖少一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "告别",
+    "dst": "芭妮芭妮",
+    "evidence": "再见！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eb869cbfdc9f5d76ff275a34": {
+  "entities": [
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引开追兵者"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引开者"
+   },
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最后一瞥者"
+   },
+   {
+    "name": "森林花园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "闪光之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威廉姆斯",
+    "relation": "误导",
+    "dst": "警察",
+    "evidence": "那群神秘学家带着不明飞行器向着南方去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "抬手",
+    "dst": "警察",
+    "evidence": "只是向着南方的天空高抬起手",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "回望",
+    "dst": "威廉姆斯",
+    "evidence": "最后留在星之眼视线中的，是威廉姆斯直直伸向上空的手臂",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "59539fae529848983d1d730b": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "好奇的少女"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述者"
+   },
+   {
+    "name": "芭妮芭妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递报者"
+   },
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怀念友人者"
+   },
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辞职者"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所载新闻"
+   },
+   {
+    "name": "第九区特派调查组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "威廉姆斯旧属"
+   },
+   {
+    "name": "莫桑女士",
+    "type": "角色",
+    "aliases": [
+     "莫桑小姐"
+    ],
+    "desc": "读爱情小说者"
+   },
+   {
+    "name": "警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "威廉姆斯旧属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "芭妮芭妮",
+    "relation": "交给",
+    "dst": "星之眼",
+    "evidence": "星之眼先生，我有东西要交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭妮芭妮",
+    "relation": "递出",
+    "dst": "报纸",
+    "evidence": "芭妮芭妮从背包中拿出了一叠报纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "报纸",
+    "relation": "报道",
+    "dst": "威廉姆斯",
+    "evidence": "负责追捕的警探威廉姆斯先生曾多次与不明飞行物近距离接触",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "辞职",
+    "dst": "警察",
+    "evidence": "在上周五下午对警署提交了辞呈",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "释因",
+    "dst": "芭妮芭妮",
+    "evidence": "因为那是他该做的事。我们约好了的",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "自认",
+    "dst": "威廉姆斯",
+    "evidence": "我们是朋友。……很好的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "不解",
+    "dst": "威廉姆斯",
+    "evidence": "他为什么会放弃这个机会？我不明白",
+    "confidence": 0.9
+   },
+   {
+    "src": "星之眼",
+    "relation": "保留",
+    "dst": "报纸",
+    "evidence": "谢谢你给我这个。我会好好留着它的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e4353c85346f0ea7d2b750de": {
+  "entities": [
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遥祝者"
+   },
+   {
+    "name": "威廉姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归乡者"
+   },
+   {
+    "name": "珍妮弗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "威廉姆斯的女儿"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "威廉姆斯的妻子"
+   },
+   {
+    "name": "明信片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "信箱所塞"
+   },
+   {
+    "name": "果酱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "家庭作坊所制"
+   },
+   {
+    "name": "腌黄瓜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "家庭作坊所制"
+   },
+   {
+    "name": "书包嘴叔叔",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所放之曲"
+   },
+   {
+    "name": "嘟嘟鸟蛋酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所饮之酒"
+   },
+   {
+    "name": "堪萨斯州",
+    "type": "地点",
+    "aliases": [],
+    "desc": "威廉姆斯的家"
+   },
+   {
+    "name": "单身公寓",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旧居"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星之眼",
+    "relation": "外访",
+    "dst": "单身公寓",
+    "evidence": "在那之后，星之眼也离开过几次行李箱",
+    "confidence": 0.9
+   },
+   {
+    "src": "明信片",
+    "relation": "记述",
+    "dst": "威廉姆斯",
+    "evidence": "明信片里说，威廉姆斯回到了自己堪萨斯州的家",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "归乡",
+    "dst": "堪萨斯州",
+    "evidence": "威廉姆斯回到了自己堪萨斯州的家",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "拥抱",
+    "dst": "珍妮弗",
+    "evidence": "他在夕阳下拥抱自己的女儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "坦承",
+    "dst": "玛丽安娜",
+    "evidence": "他对她们坦承自己的懦弱，并得到原谅",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉姆斯",
+    "relation": "制作",
+    "dst": "果酱",
+    "evidence": "再之后，他们一起制作那些果酱和腌黄瓜",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "播放",
+    "dst": "书包嘴叔叔",
+    "evidence": "“书包嘴叔叔”最经典的曲目",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "举杯",
+    "dst": "威廉姆斯",
+    "evidence": "永远的祝福你快乐而健康，敬我亲爱的人类朋友",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a100f31de1752d0bb0d521f": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [
+     "冬先生"
+    ],
+    "desc": "被称为「冬」的诗人"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求问的干员"
+   },
+   {
+    "name": "掌中之雀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所询意象"
+   },
+   {
+    "name": "空中之雁",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所询意象"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "冬所书写"
+   },
+   {
+    "name": "基金会档案室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "查阅之处"
+   },
+   {
+    "name": "箱中图书室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "阅读之处"
+   },
+   {
+    "name": "龙涎香",
+    "type": "概念",
+    "aliases": [
+     "石头"
+    ],
+    "desc": "冬所提及的旧我"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "求教",
+    "dst": "冬",
+    "evidence": "您是我认识的人当中，对诗歌意象了解最为广泛的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "询问",
+    "dst": "冬",
+    "evidence": "您是怎样看待，“掌中之雀”和“空中之雁”这两种意象的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "劝阻",
+    "dst": "冬",
+    "evidence": "这些都是司辰的藏书……而且在上面用墨水写字，可能也会影响之后其他的借阅者",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "致歉",
+    "dst": "十四行诗",
+    "evidence": "这不是……不再是……石头。我……忘记了",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "取用",
+    "dst": "羊皮纸",
+    "evidence": "我……用，用羊皮纸，写",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "消失",
+    "dst": "十四行诗",
+    "evidence": "羽毛笔同他的主人，与名为“冬”的山雀，一起消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "查阅",
+    "dst": "基金会档案室",
+    "evidence": "档案只有寥寥数页。一个人的前半生即被囊括其中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "833b3314e9646768fad80f4d": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在林中诵诗者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣读档案者"
+   },
+   {
+    "name": "棕熊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "名为梅德维奇的朋友"
+   },
+   {
+    "name": "狐狸",
+    "type": "角色",
+    "aliases": [],
+    "desc": "衔袖抗议者"
+   },
+   {
+    "name": "黑貂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "围颈私语者"
+   },
+   {
+    "name": "驯鹿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摇角异议者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冬的挚友"
+   },
+   {
+    "name": "猎人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "诗中的贪婪者"
+   },
+   {
+    "name": "鸽子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "诗中的受害者"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "流放之地"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所诵之稿"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "宣读",
+    "dst": "冬",
+    "evidence": "1912年，诗人被定以‘侮辱最高当局’罪名，押送至东西伯利亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "流放",
+    "dst": "孤岛",
+    "evidence": "随后通过转运监狱，流放孤岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "诵诗",
+    "dst": "猎人",
+    "evidence": "对不可后悔的路，请别回头",
+    "confidence": 0.95
+   },
+   {
+    "src": "棕熊",
+    "relation": "搭臂",
+    "dst": "冬",
+    "evidence": "身边，棕熊抬起厚实的手掌，搭到他举着羊皮纸的小臂上",
+    "confidence": 0.95
+   },
+   {
+    "src": "狐狸",
+    "relation": "衔袖",
+    "dst": "冬",
+    "evidence": "铅灰色的狐狸不满地衔住他的衣袖",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑貂",
+    "relation": "围颈",
+    "dst": "冬",
+    "evidence": "黑貂亲热地围着他的脖子，窃窃私语",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "论断",
+    "dst": "猎人",
+    "evidence": "是虚荣，使他拒绝空手而归，不是饥饿",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "归来",
+    "dst": "冬",
+    "evidence": "山雀从远处飞来，稳当、准确地落在他肩膀上",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "躲藏",
+    "dst": "孤岛",
+    "evidence": "冬跳下岩石，踏灭了篝火，随即往针叶林的更深处躲去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "55192762362ebdc7f3e3193e": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "躲藏者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "思索者"
+   },
+   {
+    "name": "人类记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "踏上极东土地者"
+   },
+   {
+    "name": "档案",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所载记录"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "流放之地"
+   },
+   {
+    "name": "针叶林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "躲避之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "冬",
+    "relation": "遁入",
+    "dst": "针叶林",
+    "evidence": "随即往针叶林的更深处躲去",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类记者",
+    "relation": "踏上",
+    "dst": "孤岛",
+    "evidence": "直到当局的人类记者踏上了这片极东的土地",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "查阅",
+    "dst": "档案",
+    "evidence": "女孩思索着，视线停留在档案上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c4ec8673b1c9290e40d8f70b": {
+  "entities": [
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "当局派出的调查记者"
+   },
+   {
+    "name": "船员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其归去者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诗之作者"
+   },
+   {
+    "name": "鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抢稿的鸟群"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "散落篝火旁"
+   },
+   {
+    "name": "木片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "刻诗之材"
+   },
+   {
+    "name": "监狱",
+    "type": "地点",
+    "aliases": [],
+    "desc": "岛上唯一建筑"
+   },
+   {
+    "name": "托博尔斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "作比之城"
+   },
+   {
+    "name": "边部驳船",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十五日一班"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "抵达",
+    "dst": "监狱",
+    "evidence": "这儿只有监狱，孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "船员",
+    "relation": "忠告",
+    "dst": "记者",
+    "evidence": "往南走，或者再买张票跟我们一起回去",
+    "confidence": 0.95
+   },
+   {
+    "src": "船员",
+    "relation": "告知",
+    "dst": "边部驳船",
+    "evidence": "边部驳船由区中央统一管理……可能得等上十五日",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "发现",
+    "dst": "羊皮纸",
+    "evidence": "看上去有些年头的羊皮纸，散落在篝火周围",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "寻访",
+    "dst": "冬",
+    "evidence": "决定找到作者，好将它们全数收下",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸟",
+    "relation": "抢夺",
+    "dst": "记者",
+    "evidence": "鸟儿从他手中抢走稿纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "比况",
+    "dst": "托博尔斯克",
+    "evidence": "和这里比起来，托博尔斯克简直就像西伯利亚的列宁格勒",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "bc38b59795ba356de549730d": {
+  "entities": [
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被围攻者"
+   },
+   {
+    "name": "鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "群起而攻者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出面致歉者"
+   },
+   {
+    "name": "胸针",
+    "type": "物品",
+    "aliases": [],
+    "desc": "母亲所留"
+   },
+   {
+    "name": "笔记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所护之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "哀求",
+    "dst": "鸟",
+    "evidence": "请，请放开我的衣服！",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "护持",
+    "dst": "胸针",
+    "evidence": "那是我母亲留给我的胸针！",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸟",
+    "relation": "阻挠",
+    "dst": "记者",
+    "evidence": "致力于齐心协力驱逐外来人的鸟儿，并不会回答他的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "致歉",
+    "dst": "记者",
+    "evidence": "为您……您母亲的胸针……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b58c2ba1660dda15e20c8ccf": {
+  "entities": [
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "采访者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被访者"
+   },
+   {
+    "name": "梅德维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冬的棕熊朋友"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无声反对者"
+   },
+   {
+    "name": "沙皇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冬拒为之作诗者"
+   },
+   {
+    "name": "莫斯科",
+    "type": "地点",
+    "aliases": [],
+    "desc": "记者欲带其归处"
+   },
+   {
+    "name": "林地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "目之所及"
+   },
+   {
+    "name": "绿街",
+    "type": "概念",
+    "aliases": [],
+    "desc": "政治犯所受之刑"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "流放之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "求让",
+    "dst": "冬",
+    "evidence": "您能不能先让您的熊朋友，站远些？",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "唤退",
+    "dst": "梅德维奇",
+    "evidence": "梅德维奇先生，请、您站……到我的左手边来",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "探问",
+    "dst": "冬",
+    "evidence": "您是为什么来到这里的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "自承",
+    "dst": "沙皇",
+    "evidence": "为……为沙皇……作诗。我不愿意",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "指认",
+    "dst": "冬",
+    "evidence": "您是位曾穿绿街的政治犯",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "自陈",
+    "dst": "孤岛",
+    "evidence": "我已经……属于这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "邀请",
+    "dst": "冬",
+    "evidence": "我愿意帮您将这些创作付梓出版",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "许诺",
+    "dst": "冬",
+    "evidence": "只要您肯回到莫斯科，名声、金钱、地位，简直唾手可得",
+    "confidence": 0.95
+   },
+   {
+    "src": "山雀",
+    "relation": "摇头",
+    "dst": "记者",
+    "evidence": "山雀摇着头，无声传递拒绝的信号",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7b30dc5c5f3a7d22effe5903": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒名者"
+   },
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "梅德维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "棕熊朋友"
+   },
+   {
+    "name": "诗",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仅此而已"
+   },
+   {
+    "name": "苦难",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不该被利用"
+   },
+   {
+    "name": "死去的人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "记者未见者"
+   },
+   {
+    "name": "石块铺就的路",
+    "type": "物品",
+    "aliases": [],
+    "desc": "染血之路"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "质疑",
+    "dst": "冬",
+    "evidence": "还是说，这些诗，其实不是您写的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "推让",
+    "dst": "诗",
+    "evidence": "它可以是，我写的。也可以是……“冬”写的，梅德维奇先生写的",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "主张",
+    "dst": "苦难",
+    "evidence": "只是苦难……不该被，渲染和……利用",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "指认",
+    "dst": "死去的人",
+    "evidence": "而您甚至……没有见过，那些死去的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "陈述",
+    "dst": "石块铺就的路",
+    "evidence": "因为寒冷……饥饿……伤病，和绝望。就……在您的……脚下",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "拒绝",
+    "dst": "记者",
+    "evidence": "您一个人……回去吧。请允许我拒绝……您的提议",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1c2aea2faca3fd23ef4c900b": {
+  "entities": [
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "授权者"
+   },
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "索取者"
+   },
+   {
+    "name": "山雀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警惕的同伴"
+   },
+   {
+    "name": "游客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "初至的访客"
+   },
+   {
+    "name": "游客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论者"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被带走的诗稿"
+   },
+   {
+    "name": "恶魔岛诗人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "记者所拟之名"
+   },
+   {
+    "name": "署名权",
+    "type": "概念",
+    "aliases": [],
+    "desc": "记者所许"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人潮涌入"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "跟随",
+    "dst": "冬",
+    "evidence": "请……不要再……跟着我了",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "婉拒",
+    "dst": "记者",
+    "evidence": "我请……我的朋友，请它领您去，人类……聚居的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "索求",
+    "dst": "冬",
+    "evidence": "只要您答应，让我收集一些您的诗和故事，所有问题都会迎刃而解",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "允准",
+    "dst": "记者",
+    "evidence": "那么……我……同意了。您用吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "许诺",
+    "dst": "冬",
+    "evidence": "我会保留您的署名权",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "带走",
+    "dst": "羊皮纸",
+    "evidence": "诗人给了记者许可，任他带走了那些羊皮纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "议论",
+    "dst": "冬",
+    "evidence": "“冬”先生竟然还能在这里坚持创作，了不起",
+    "confidence": 0.95
+   },
+   {
+    "src": "孤岛",
+    "relation": "涌入",
+    "dst": "游客Ⅰ",
+    "evidence": "岛上人群从未这样熙攘过",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e6cd3caa0c815d202fb40dd1": {
+  "entities": [
+   {
+    "name": "游客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑者"
+   },
+   {
+    "name": "游客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "考据者"
+   },
+   {
+    "name": "游客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转述者"
+   },
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会小队队长"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "戏言者"
+   },
+   {
+    "name": "苏沃林",
+    "type": "角色",
+    "aliases": [],
+    "desc": "《真相报》主编"
+   },
+   {
+    "name": "真相报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "首报此事者"
+   },
+   {
+    "name": "远岛旅行记",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所读之书"
+   },
+   {
+    "name": "米哈伊洛夫宫",
+    "type": "地点",
+    "aliases": [],
+    "desc": "展览之处"
+   },
+   {
+    "name": "孤岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "刻字之地"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被议论的本尊"
+   },
+   {
+    "name": "梅德维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冬的棕熊朋友"
+   }
+  ],
+  "relations": [
+   {
+    "src": "游客Ⅲ",
+    "relation": "转述",
+    "dst": "冬",
+    "evidence": "我听说“冬”在岛上滞留太久，已经能与动物沟通",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "提及",
+    "dst": "苏沃林",
+    "evidence": "第一个报道这位“恶魔岛诗人”的，是《真相报》主编苏沃林",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "复述",
+    "dst": "苏沃林",
+    "evidence": "他得了“冬”写着诗的羊皮纸，一回去就从外派调查记者升职",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "目睹",
+    "dst": "米哈伊洛夫宫",
+    "evidence": "我在米哈伊洛夫宫见过实物",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅱ",
+    "relation": "戏言",
+    "dst": "梅德维奇",
+    "evidence": "说不定这次我们要碰上的是一头修了好几个博士学位、有严重社交障碍的熊什么的",
+    "confidence": 0.9
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "责正",
+    "dst": "调查员Ⅱ",
+    "evidence": "不要随意评判，胡乱猜测",
+    "confidence": 0.95
+   },
+   {
+    "src": "调查员Ⅰ",
+    "relation": "察觉",
+    "dst": "孤岛",
+    "evidence": "这附近……还有比悬崖上更多的施术波动",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "评价",
+    "dst": "远岛旅行记",
+    "evidence": "这地方的实际环境，比书里所描写的，要恶劣太多",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a91195ebfd255545de7ef343": {
+  "entities": [
+   {
+    "name": "调查员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "队长"
+   },
+   {
+    "name": "调查员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "附议者"
+   },
+   {
+    "name": "游客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "论辩者"
+   },
+   {
+    "name": "游客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持信者"
+   },
+   {
+    "name": "游客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "褒奖者"
+   },
+   {
+    "name": "冬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自贬者"
+   },
+   {
+    "name": "诗歌",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所争论之艺"
+   },
+   {
+    "name": "石块",
+    "type": "物品",
+    "aliases": [],
+    "desc": "刻诗之石"
+   },
+   {
+    "name": "羊皮纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "多语书写的稿"
+   },
+   {
+    "name": "子虚乌有",
+    "type": "概念",
+    "aliases": [],
+    "desc": "代笔之疑"
+   }
+  ],
+  "relations": [
+   {
+    "src": "调查员Ⅱ",
+    "relation": "提议",
+    "dst": "调查员Ⅰ",
+    "evidence": "我们现在过去瞧个明白？",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅲ",
+    "relation": "怀疑",
+    "dst": "冬",
+    "evidence": "那如果这些都是假造，这位“冬”先生，又是由谁代笔呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "辩护",
+    "dst": "冬",
+    "evidence": "我还是相信我的判断，没有代笔",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "缄服",
+    "dst": "冬",
+    "evidence": "这种语言中维持的惊人一致的特殊温度，都是长期生活在城市中的人所难以仿制的",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅲ",
+    "relation": "感佩",
+    "dst": "冬",
+    "evidence": "一直在写诗，成名也没有离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "求见",
+    "dst": "冬",
+    "evidence": "真想见见作者本人",
+    "confidence": 0.95
+   },
+   {
+    "src": "冬",
+    "relation": "自贬",
+    "dst": "诗歌",
+    "evidence": "这些……句子……太过直、直白，简陋。手法……低劣",
+    "confidence": 0.95
+   },
+   {
+    "src": "游客Ⅱ",
+    "relation": "询问",
+    "dst": "冬",
+    "evidence": "请问您，认识这位诗人吗？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,1778 @@
+{
+ "3493bc62f934bfa48ad98dcc": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以粉色涂鸦造出越野车的导演"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼救并察觉牙仙歌声的助手"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警告勿戴戒指的调查员"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以歌声安抚怪群并用粉尘护身的医生"
+   },
+   {
+    "name": "鬼新娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "匍匐在金蜜儿身上的鬼新娘"
+   },
+   {
+    "name": "怪物集群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从泥土下爬出的怪物集群"
+   },
+   {
+    "name": "涂鸦越野车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "粉色涂鸦编织而成的越野车"
+   },
+   {
+    "name": "油性笔",
+    "type": "物品",
+    "aliases": [],
+    "desc": "构成金蜜儿神秘术媒介的笔"
+   },
+   {
+    "name": "婚戒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被鬼新娘强戴在金蜜儿手上的婚戒"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "金蜜儿恢复中的绘图能力"
+   },
+   {
+    "name": "木屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "金蜜儿跑向的木屋后方"
+   },
+   {
+    "name": "日记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿重新拿回的日记本"
+   },
+   {
+    "name": "手帕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿递给牙仙擦脸之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "抱怨",
+    "dst": "鬼新娘",
+    "evidence": "这地底下究竟埋了多少男人？我真是受够了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼新娘",
+    "relation": "逼近",
+    "dst": "金蜜儿",
+    "evidence": "她靠过来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "嫌恶",
+    "dst": "鬼新娘",
+    "evidence": "她闻起来像是淤泥里的臭鼬",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "求援",
+    "dst": "金蜜儿",
+    "evidence": "她被鬼新娘推倒了——我们得赶快去救她！",
+    "confidence": 0.95
+   },
+   {
+    "src": "怪物集群",
+    "relation": "围拢",
+    "dst": "十四行诗",
+    "evidence": "糟糕，魔精群又围上来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼新娘",
+    "relation": "匍匐",
+    "dst": "金蜜儿",
+    "evidence": "鬼新娘喃喃着，匍匐在倒地的金蜜儿身上",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "警告",
+    "dst": "金蜜儿",
+    "evidence": "如果你还想要命的话，就别戴那枚戒指！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "踢击",
+    "dst": "鬼新娘",
+    "evidence": "鬼新娘软烂一团的身体向后滑出半米",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "逃离",
+    "dst": "木屋",
+    "evidence": "金蜜儿迅速爬起，向着木屋后方跑去",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "示警",
+    "dst": "怪物集群",
+    "evidence": "她的眼泪能叫来更多怪物，他们要从泥土下爬出来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "安抚",
+    "dst": "怪物集群",
+    "evidence": "他们需要的只是一支歌儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "辨认",
+    "dst": "牙仙",
+    "evidence": "这是……牙仙女士的歌声！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "驾驶",
+    "dst": "涂鸦越野车",
+    "evidence": "没想到我在开车上如此有天赋！",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "辨认",
+    "dst": "油性笔",
+    "evidence": "粉色的线条……是油性笔，这是她的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "赞赏",
+    "dst": "金蜜儿",
+    "evidence": "你的能力恢复得很快，你接纳了你自己的身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自陈",
+    "dst": "日记本",
+    "evidence": "也或许是我终于又拿回了这个笔记本",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "索歌",
+    "dst": "牙仙",
+    "evidence": "你还差我一首歌儿呢，请给我一首你的歌吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "赠予",
+    "dst": "金蜜儿",
+    "evidence": "我将它作为礼物赠与你",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "递予",
+    "dst": "手帕",
+    "evidence": "这是我的手帕，你拿着它擦擦脸上的",
+    "confidence": 0.95
+   },
+   {
+    "src": "涂鸦越野车",
+    "relation": "融化",
+    "dst": "金蜜儿",
+    "evidence": "粉色涂鸦编织成的越野车鸣叫一声，在雨水中迅速融化",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "粉色的线条……是油性笔，这是她的神秘术",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aa3a49526b00d35221206c7b": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议反向召唤怪物的调查员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "补完其推论的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "评价该方案冒险但可靠者"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被冠以“恐怖通小姐”称号者"
+   },
+   {
+    "name": "鬼新娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被婚戒引来的怪物"
+   },
+   {
+    "name": "怪物体内的纸条",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏在怪物尸体中的纸条"
+   },
+   {
+    "name": "婚戒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "引路用的闪亮婚戒"
+   },
+   {
+    "name": "木屋的阁楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "陈列品来源的阁楼"
+   },
+   {
+    "name": "木屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被恐怖通盛赞的林中小屋"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "怪事所围绕的营地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "指出",
+    "dst": "怪物体内的纸条",
+    "evidence": "和屠夫的尸体一样，里面藏着纸条",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推断",
+    "dst": "怪物体内的纸条",
+    "evidence": "有人在用这种方法对我们传递信息",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推论",
+    "dst": "绿湖营地",
+    "evidence": "只要我们打败更多的怪物，就会知道更多关于绿湖营地的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "分析",
+    "dst": "怪物体内的纸条",
+    "evidence": "他运筹帷幄，猫儿玩耗子一般地玩弄我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "出示",
+    "dst": "婚戒",
+    "evidence": "恐怖通左手举起纸条，右手捏着那枚闪亮的婚戒",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "示范",
+    "dst": "鬼新娘",
+    "evidence": "一枚戒指，把一个浑身腐烂的新娘带到了我们面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "总结",
+    "dst": "木屋的阁楼",
+    "evidence": "每一样来自阁楼的展示品都指向我们曾遭遇过的怪物",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "提议",
+    "dst": "维尔汀",
+    "evidence": "如果我们反过来利用它——",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "补充",
+    "dst": "恐怖通",
+    "evidence": "不是等待怪物来，而是把它们“叫到”我们身边来",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "断言",
+    "dst": "维尔汀",
+    "evidence": "如果我们提前推演、预测到它们的弱点，胜利必将站在我们身边",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "评价",
+    "dst": "恐怖通",
+    "evidence": "这是个冒险的选择，但也有相当的收益",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "恐怖通",
+    "evidence": "你有几成把握可以猜准怪物的弱点",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "应对",
+    "dst": "维尔汀",
+    "evidence": "近乎百分之百",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "邀请",
+    "dst": "金蜜儿",
+    "evidence": "我们还有另一个创作型“恐怖通小姐”作为双重保险",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "称赞",
+    "dst": "金蜜儿",
+    "evidence": "你很博学，有着丰富的恐怖电影知识。你配得上“恐怖通”的称号",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "维护",
+    "dst": "金蜜儿",
+    "evidence": "恐怖通先生不是坏人，他只是……有些特殊",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "赞美",
+    "dst": "木屋",
+    "evidence": "由衷地赞美你！我所爱的林中小屋！",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼新娘",
+    "relation": "引来",
+    "dst": "婚戒",
+    "evidence": "一枚戒指，把一个浑身腐烂的新娘带到了我们面前",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ddea4a80ae21374aaef78d82": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被安妮询问愿望的司辰"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "收集纸条并探问众人愿望的居民"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愿望是一颗太妃糖的助手"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想要软床与浴缸的导演"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想要咖啡或口香糖的调查员"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想要各式魔精牙齿的医生"
+   },
+   {
+    "name": "怪物体内的纸条",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已收集完毕的最后一张纸条"
+   },
+   {
+    "name": "太妃糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十四行诗想再尝一次的糖果"
+   },
+   {
+    "name": "软床",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿所愿之物"
+   },
+   {
+    "name": "浴缸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿所愿之物"
+   },
+   {
+    "name": "咖啡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "恐怖通所愿之物"
+   },
+   {
+    "name": "口香糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "恐怖通所愿之物"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雨已停下的营地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "确认",
+    "dst": "怪物体内的纸条",
+    "evidence": "这应该是最后一张纸条了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "报告",
+    "dst": "维尔汀",
+    "evidence": "木屋后侧的纸条已经收集好了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "告知",
+    "dst": "维尔汀",
+    "evidence": "珍妮弗与十四行诗小姐还需要一段时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "你现在有任何想要的东西吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "回答",
+    "dst": "安妮",
+    "evidence": "我想，我现在没有想要的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "追问",
+    "dst": "维尔汀",
+    "evidence": "连很小很小的东西也没有吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "安妮",
+    "evidence": "其他人都给了你答复吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "转述",
+    "dst": "金蜜儿",
+    "evidence": "珍妮弗想要软床与浴缸",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "转述",
+    "dst": "恐怖通",
+    "evidence": "恐怖通先生想要一杯咖啡或者一块口香糖",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "转述",
+    "dst": "牙仙",
+    "evidence": "牙仙女士想要各式各样的魔精牙齿",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "转述",
+    "dst": "十四行诗",
+    "evidence": "十四行诗小姐则是想要一颗太妃糖",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "解释",
+    "dst": "安妮",
+    "evidence": "她说她过去没能好好尝这颗糖果的味道",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推测",
+    "dst": "安妮",
+    "evidence": "只要我们能够成功脱险，他们的愿望并不难实现",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "安妮",
+    "evidence": "你呢，安妮？你想要的东西是什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "保留",
+    "dst": "维尔汀",
+    "evidence": "我想要的东西是个秘密，现在还不能说",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "承诺",
+    "dst": "维尔汀",
+    "evidence": "但我会为你们准备礼物的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "通报",
+    "dst": "维尔汀",
+    "evidence": "我们的信息已经收集完成，随时可以开始核对",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "发现",
+    "dst": "绿湖营地",
+    "evidence": "这里的雨已经停了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a27bcc3c32027e3222adbf2c": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出乘舟前往灯塔的调查员"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从未见过湖心灯塔的导演"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张上船查探的医生"
+   },
+   {
+    "name": "绿湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雾气弥漫的绿湖"
+   },
+   {
+    "name": "湖心灯塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "忽然出现在湖心的灯塔"
+   },
+   {
+    "name": "湖边的独木舟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "湖边摇曳的小舟"
+   },
+   {
+    "name": "怪物体内的纸条",
+    "type": "物品",
+    "aliases": [],
+    "desc": "故事所指的线索"
+   },
+   {
+    "name": "日记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "恐怖通翻动的笔记本"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "总结",
+    "dst": "绿湖",
+    "evidence": "所有的故事都集结在这里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "梳理",
+    "dst": "绿湖",
+    "evidence": "无声无息沉入水中的杰克、在水面之下整夜哭嚎的怪物",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "推断",
+    "dst": "怪物体内的纸条",
+    "evidence": "这些蹩脚的小故事流向绿湖，努力地提醒着我们事情和此有关",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "规划",
+    "dst": "绿湖",
+    "evidence": "找到这里的线索，然后自然而然地走向下一步",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "询问",
+    "dst": "恐怖通",
+    "evidence": "湖里有那座灯塔吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "推测",
+    "dst": "湖心灯塔",
+    "evidence": "我想那是忽然出现的，就像是所有故事里身后的鬼影一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "询问",
+    "dst": "恐怖通",
+    "evidence": "湖心灯塔也是恐怖故事的标准元素吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "评价",
+    "dst": "湖心灯塔",
+    "evidence": "没有哪儿比它更适合藏匿可怖的秘密了",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "拉动",
+    "dst": "湖边的独木舟",
+    "evidence": "伸手拉住一道绳索。湖边的独木舟轻轻摇曳着",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "评价",
+    "dst": "湖边的独木舟",
+    "evidence": "独木舟在营地恐怖影片中从来都是大名鼎鼎的存在！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "忧惧",
+    "dst": "湖边的独木舟",
+    "evidence": "如果我们的船翻了呢？如果水下有水怪呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "回应",
+    "dst": "金蜜儿",
+    "evidence": "我们在草坪上，在船上，都是它的小点心，无非换个碟子",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "让步",
+    "dst": "恐怖通",
+    "evidence": "如果非要当点心，我也得当那个掌握自主权的点心",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "提议",
+    "dst": "湖心灯塔",
+    "evidence": "上船吧，我们去灯塔看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "失望",
+    "dst": "湖心灯塔",
+    "evidence": "一座普普通通的灯塔，甚至连一只血手印都没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "感慨",
+    "dst": "恐怖通",
+    "evidence": "现实总是不如故事那般波澜壮阔的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "坚称",
+    "dst": "湖心灯塔",
+    "evidence": "我每天都往绿湖营地里跑，但我从没见过这座灯塔",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "描述",
+    "dst": "湖心灯塔",
+    "evidence": "它就像是一个幽灵那样忽然出现",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "翻动",
+    "dst": "日记本",
+    "evidence": "翻动着笔记本，青年确信地点点头",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "36f458e895d9f3bf5ed93bff": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "紧跟安妮身后的导演"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现木箱的助手"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "绕着木箱分析的调查员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张按标语打开木箱的司辰"
+   },
+   {
+    "name": "木箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "灯塔上的诡异木箱"
+   },
+   {
+    "name": "渔网",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与木箱同列的渔网"
+   },
+   {
+    "name": "湖心灯塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "出现诅咒之物的灯塔"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "被金蜜儿紧跟的居民"
+   },
+   {
+    "name": "绿湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "灯塔所处的诡异湖泊"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "跟随",
+    "dst": "安妮",
+    "evidence": "金蜜儿打了个寒战，紧紧地跟在安妮身后",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "指出",
+    "dst": "维尔汀",
+    "evidence": "司辰，请看这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "评价",
+    "dst": "木箱",
+    "evidence": "这位“幕后黑手”可比我想的还头脑简单",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "推测",
+    "dst": "木箱",
+    "evidence": "又或者他只是个孩子？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "置疑",
+    "dst": "维尔汀",
+    "evidence": "我们真的可以打开这个箱子吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "主张",
+    "dst": "木箱",
+    "evidence": "按照这里的标语来看，我们非打开它不可",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "列举",
+    "dst": "湖心灯塔",
+    "evidence": "一个灯塔，一个诡异的湖泊，一条渔网，还有一个木箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "断言",
+    "dst": "木箱",
+    "evidence": "出来的东西可不会是带着三个愿望的灯灵",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "反驳",
+    "dst": "恐怖通",
+    "evidence": "我们过去两个小时中接触的诅咒，比许多人一生都多",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "判断",
+    "dst": "木箱",
+    "evidence": "如果它是一个诅咒，那它正是为我们而准备的",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "掀开",
+    "dst": "木箱",
+    "evidence": "蹲下身子，掀开了木箱的盖子",
+    "confidence": 0.95
+   },
+   {
+    "src": "木箱",
+    "relation": "置于",
+    "dst": "湖心灯塔",
+    "evidence": "一个灯塔，一个诡异的湖泊，一条渔网，还有一个木箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "渔网",
+    "relation": "陈列",
+    "dst": "湖心灯塔",
+    "evidence": "一个灯塔，一个诡异的湖泊，一条渔网，还有一个木箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "绿湖",
+    "relation": "环绕",
+    "dst": "湖心灯塔",
+    "evidence": "绿湖四周潮湿，弥漫着稀薄的雾气",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e359abb354c23fc2ec1089f5": {
+  "entities": [
+   {
+    "name": "珍妮弗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为小鹿手偶讲故事的幼年金蜜儿"
+   },
+   {
+    "name": "小鹿手偶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倾听珍妮弗故事的小鹿手偶"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "讲述这些故事真正来历的绿湖怪影"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "长大归来的珍妮弗"
+   },
+   {
+    "name": "日记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "珍妮弗扔进湖里的笔记本"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "珍妮弗幼时所在的营地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "珍妮弗",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "今天我要读的故事是《可怕的猎人》！是我昨天刚刚写的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮弗",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "猎人居住在营地的深处，杀死一切进入自己领地的活物",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮弗",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "这是一个关于洁西卡的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鹿手偶",
+    "relation": "回应",
+    "dst": "珍妮弗",
+    "evidence": "那是她讲给我的第一个故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鹿手偶",
+    "relation": "感叹",
+    "dst": "珍妮弗",
+    "evidence": "你已经一个月没有来这里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮弗",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "在湖水的深处，残留着战败后躲入地底的邪恶军队",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鹿手偶",
+    "relation": "关切",
+    "dst": "珍妮弗",
+    "evidence": "你在哭吗？珍妮弗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鹿手偶",
+    "relation": "追问",
+    "dst": "珍妮弗",
+    "evidence": "你不想要你的笔记本了吗？你为什么要把它们扔进湖里呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮弗",
+    "relation": "告别",
+    "dst": "安妮",
+    "evidence": "再见了……洁西卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "回应",
+    "dst": "珍妮弗",
+    "evidence": "再见了，珍妮弗",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "这是她给我讲的最后一个故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "自述",
+    "dst": "珍妮弗",
+    "evidence": "我并不明白她说的“再见”是什么意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "寻觅",
+    "dst": "绿湖营地",
+    "evidence": "我在营地里找到了每一件我能找到的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮弗",
+    "relation": "抛入",
+    "dst": "日记本",
+    "evidence": "我可能再也不会回来这个营地了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "叙述",
+    "dst": "绿湖营地",
+    "evidence": "从那之后，我再也没有见到珍妮弗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "125f1a67a083ed754d013334": {
+  "entities": [
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "自述编造所有故事的真凶"
+   },
+   {
+    "name": "珍妮弗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归来的珍妮弗"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跳下去的安妮令其惊呼"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警示魔精的助手"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洁西卡不认识的记录装置"
+   },
+   {
+    "name": "电影",
+    "type": "概念",
+    "aliases": [],
+    "desc": "藏在盒子里的故事"
+   },
+   {
+    "name": "小鹿手偶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "洁西卡讲故事的倾听者"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "洁西卡编造故事之处"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被洁西卡评价为有趣的男人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "安妮",
+    "relation": "讲述",
+    "dst": "小鹿手偶",
+    "evidence": "我把我的故事讲给它们听",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "教导",
+    "dst": "小鹿手偶",
+    "evidence": "告诉它们如何模仿故事里“怪物”的行为与动作",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "回忆",
+    "dst": "珍妮弗",
+    "evidence": "但我还是会怀念珍妮弗",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "惊喜",
+    "dst": "珍妮弗",
+    "evidence": "在我以为不会再遇见她的时候，她又回来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "观察",
+    "dst": "摄影机",
+    "evidence": "她带着许多我不认识的人，也带着一只我不认识的“摄像机”",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "理解",
+    "dst": "电影",
+    "evidence": "她在拍“电影”，那是一种藏在盒子里的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "欣喜",
+    "dst": "珍妮弗",
+    "evidence": "我很高兴她还是那么喜欢恐怖故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "加入",
+    "dst": "金蜜儿",
+    "evidence": "我加入了他们",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "降下",
+    "dst": "绿湖营地",
+    "evidence": "我降下雨水，将这些人也加入了我的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "评价",
+    "dst": "恐怖通",
+    "evidence": "懂得恐怖故事的男人……他们都很有趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "惊呼",
+    "dst": "安妮",
+    "evidence": "安妮！她跳下去了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "示警",
+    "dst": "金蜜儿",
+    "evidence": "金蜜儿小姐，小心那些魔精！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "444043ca4501adf9ff71d837": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令撤离沉没灯塔的司辰"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自责创造了怪物的导演"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点明一切皆属于金蜜儿者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在湖底沉没的助手"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以道具勾住岩石的调查员"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "由金蜜儿故事创造出的存在"
+   },
+   {
+    "name": "最后的女孩",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被金蜜儿亲手造就的反派"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "金蜜儿用以支撑大船的能力"
+   },
+   {
+    "name": "涂鸦越野车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沉入湖底的涂鸦之船"
+   },
+   {
+    "name": "湖心灯塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正在沉没的湖心灯塔"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "牙仙所言属于金蜜儿的身份"
+   },
+   {
+    "name": "日记本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿画满怪物的本子"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "十四行诗沉入的湖泊"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "下令",
+    "dst": "湖心灯塔",
+    "evidence": "灯塔在沉没，所有人，尽快离开这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "惊觉",
+    "dst": "最后的女孩",
+    "evidence": "她才是恐怖故事里唯一的胜利钥匙",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "悔恨",
+    "dst": "最后的女孩",
+    "evidence": "我们把最后的女孩儿变成了最大的反派",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自责",
+    "dst": "安妮",
+    "evidence": "是我，是我让绿湖多了一个这样的姑娘",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "安抚",
+    "dst": "金蜜儿",
+    "evidence": "冷静下来，金蜜儿。冷静",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "断言",
+    "dst": "金蜜儿",
+    "evidence": "现在还不算晚",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "坦白",
+    "dst": "安妮",
+    "evidence": "是我创造了那些故事，也是我创造了那个怪物",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自述",
+    "dst": "日记本",
+    "evidence": "我在本子里画了无数怪物，而后用我的故事创造了她",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "断言",
+    "dst": "金蜜儿",
+    "evidence": "这是你创作的故事。它们是属于你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "列举",
+    "dst": "金蜜儿",
+    "evidence": "你的故事，你的怪物，你的过去，你的神秘术，你的神秘学家身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "归因",
+    "dst": "安妮",
+    "evidence": "湖底诞生的怪物来自于你，屠夫来自于你",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "定位",
+    "dst": "金蜜儿",
+    "evidence": "是你教会了洁西卡如何编造故事，你是创造者中的创造者",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "鼓励",
+    "dst": "金蜜儿",
+    "evidence": "去接受它，掌控它，别畏惧它",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "下沉",
+    "dst": "绿湖营地",
+    "evidence": "十四行诗感到自己正在不断下沉",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "辨认",
+    "dst": "涂鸦越野车",
+    "evidence": "船？这是，金蜜儿小姐的",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "解释",
+    "dst": "神秘术",
+    "evidence": "是她的神秘术，现在她正在努力支撑",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "勉力",
+    "dst": "涂鸦越野车",
+    "evidence": "我根本就控制不好这么大的船！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "宣告",
+    "dst": "金蜜儿",
+    "evidence": "可靠的恐怖通会拯救你于水火之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "勾住",
+    "dst": "绿湖营地",
+    "evidence": "很好，勾住河边的岩石了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "指挥",
+    "dst": "十四行诗",
+    "evidence": "坐稳扶好，我们向着岸边进发",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "944d36310b47dab19340ba9a": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议打感情牌的调查员"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "邀请众人同住的绿湖怪影"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试图说服洁西卡放人的导演"
+   },
+   {
+    "name": "杰森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被要求放走的学生"
+   },
+   {
+    "name": "弗莱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被要求放走的学生"
+   },
+   {
+    "name": "学生迈克尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被要求放走的学生"
+   },
+   {
+    "name": "魔药苔藓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洁西卡承诺的柔软床铺"
+   },
+   {
+    "name": "清冽的泉水",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洁西卡承诺的清冽泉水"
+   },
+   {
+    "name": "太妃糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洁西卡承诺准备的糖果"
+   },
+   {
+    "name": "咖啡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洁西卡承诺准备之物"
+   },
+   {
+    "name": "电影",
+    "type": "概念",
+    "aliases": [],
+    "desc": "金蜜儿答应让洁西卡先看的新片"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "洁西卡所属的营地"
+   },
+   {
+    "name": "珍妮弗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "洁西卡口中的幼年金蜜儿"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "提议",
+    "dst": "安妮",
+    "evidence": "我们就不能打点儿感情牌吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "欢迎",
+    "dst": "金蜜儿",
+    "evidence": "和我想的一样，你们做到了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "这些故事能让你们开心吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "坦言",
+    "dst": "珍妮弗",
+    "evidence": "就像是我忘不了你一样，珍妮弗",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "邀请",
+    "dst": "金蜜儿",
+    "evidence": "和我走吧，我已经为你们准备好了新家",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "许诺",
+    "dst": "魔药苔藓",
+    "evidence": "那里有柔软的苔藓床铺和清冽的泉水",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "许诺",
+    "dst": "太妃糖",
+    "evidence": "我会为你们准备太妃糖、咖啡与数不清的漂亮的牙齿",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "请求",
+    "dst": "安妮",
+    "evidence": "洁西卡，让我们谈一谈吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "确认",
+    "dst": "安妮",
+    "evidence": "你也一直都很喜欢我，喜欢我的故事，是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "要求",
+    "dst": "杰森",
+    "evidence": "那就放所有人走。包括杰森、弗莱迪和迈克尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "规劝",
+    "dst": "安妮",
+    "evidence": "你做了不该做的事，你伤害了他人，这是不好的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自责",
+    "dst": "安妮",
+    "evidence": "是我的错，我误导了你",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "否认",
+    "dst": "安妮",
+    "evidence": "不，我很喜欢。它们像我小时候写的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "承诺",
+    "dst": "安妮",
+    "evidence": "我不会再忽视你，我会回来看你",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "允诺",
+    "dst": "电影",
+    "evidence": "如果我拍了新的电影，你会是我的第一个观众",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "拒绝",
+    "dst": "金蜜儿",
+    "evidence": "可我讨厌一个人生活，我不想再过这样的生活了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "诉说",
+    "dst": "金蜜儿",
+    "evidence": "我总是做梦。我梦到一片森林，还有草地",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "困惑",
+    "dst": "绿湖营地",
+    "evidence": "我是属于绿湖营地的吗？还是更遥远的地方？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "自陈",
+    "dst": "金蜜儿",
+    "evidence": "可我等得太久了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d9d850be7d1e49900034922a": {
+  "entities": [
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [
+     "洁西卡"
+    ],
+    "desc": "不再等待并逼近众人的绿湖怪影"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被其等待已久的珍妮弗"
+   },
+   {
+    "name": "小鹿手偶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "洁西卡所化的小鹿姑娘"
+   }
+  ],
+  "relations": [
+   {
+    "src": "安妮",
+    "relation": "宣告",
+    "dst": "金蜜儿",
+    "evidence": "我已经不想再等待你了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "失望",
+    "dst": "金蜜儿",
+    "evidence": "我还以为你们会喜欢我的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鹿手偶",
+    "relation": "逼近",
+    "dst": "金蜜儿",
+    "evidence": "小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "蜕变",
+    "dst": "小鹿手偶",
+    "evidence": "小鹿姑娘身处于漩涡中心",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

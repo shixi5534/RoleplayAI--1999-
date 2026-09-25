@@ -1,0 +1,242 @@
+{
+  "corpus": {
+    "chapters": 151,
+    "turns": 115823,
+    "chars": 2521139,
+    "by_category": {
+      "mainline": {
+        "chapters": 14,
+        "turns": 31464,
+        "chars": 657015
+      },
+      "activity": {
+        "chapters": 21,
+        "turns": 44753,
+        "chars": 987572
+      },
+      "character": {
+        "chapters": 17,
+        "turns": 14922,
+        "chars": 328614
+      },
+      "anecdote": {
+        "chapters": 25,
+        "turns": 17830,
+        "chars": 379211
+      },
+      "appendix_unbound": {
+        "chapters": 74,
+        "turns": 6854,
+        "chars": 168727
+      }
+    },
+    "turn_kinds": {
+      "quote": 1081,
+      "narration": 32322,
+      "title_card": 1978,
+      "dialogue": 80442
+    },
+    "distinct_speakers": 1685,
+    "top_speakers": [
+      [
+        "维尔汀",
+        3907
+      ],
+      [
+        "十四行诗",
+        1847
+      ],
+      [
+        "？？？",
+        1506
+      ],
+      [
+        "星锑",
+        1322
+      ],
+      [
+        "塞梅尔维斯",
+        1280
+      ],
+      [
+        "红弩箭",
+        1089
+      ],
+      [
+        "37",
+        999
+      ],
+      [
+        "卡卡尼亚",
+        998
+      ],
+      [
+        "北方哨歌",
+        973
+      ],
+      [
+        "苏芙比",
+        944
+      ],
+      [
+        "马库斯",
+        914
+      ],
+      [
+        "哑谜",
+        873
+      ],
+      [
+        "X",
+        858
+      ],
+      [
+        "露西",
+        844
+      ],
+      [
+        "玛蒂尔达",
+        823
+      ],
+      [
+        "APPLe",
+        666
+      ],
+      [
+        "小梅斯梅尔",
+        646
+      ],
+      [
+        "J",
+        622
+      ],
+      [
+        "维拉",
+        604
+      ],
+      [
+        "洛佩拉",
+        581
+      ],
+      [
+        "阿黛拉",
+        574
+      ],
+      [
+        "梅蕾尔",
+        572
+      ],
+      [
+        "乌尔里希",
+        567
+      ],
+      [
+        "Z",
+        557
+      ],
+      [
+        "虚构集",
+        531
+      ],
+      [
+        "小叶尼塞",
+        528
+      ],
+      [
+        "梁月",
+        527
+      ],
+      [
+        "奠基石",
+        525
+      ],
+      [
+        "纸信圈儿",
+        522
+      ],
+      [
+        "笃笃骨",
+        522
+      ]
+    ]
+  },
+  "chunks": {
+    "chunks": 3695,
+    "chars": 3392739,
+    "mean_chars": 918.2,
+    "p50_chars": 1101,
+    "p90_chars": 1206,
+    "max_chars": 1637,
+    "min_chars": 129,
+    "by_category": {
+      "mainline": {
+        "chunks": 944,
+        "chars": 896864
+      },
+      "activity": {
+        "chunks": 1374,
+        "chars": 1330070
+      },
+      "character": {
+        "chunks": 451,
+        "chars": 441311
+      },
+      "anecdote": {
+        "chunks": 530,
+        "chars": 511788
+      },
+      "appendix_unbound": {
+        "chunks": 396,
+        "chars": 212706
+      }
+    }
+  },
+  "extract": {
+    "chunks": 3695,
+    "extracted": 0,
+    "cache_hits": 448,
+    "failed": 3247,
+    "entities": 0,
+    "edges": 0,
+    "seconds": 3.6,
+    "usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "calls": 0,
+      "retries": 2,
+      "failures": 0,
+      "total_tokens": 0
+    },
+    "stages": {
+      "quota_exhausted": true,
+      "extract": {
+        "todo": 3247,
+        "cache_hits": 448
+      }
+    }
+  },
+  "extract_summary": {
+    "chunks": 3695,
+    "ok": 448,
+    "failed": 3247,
+    "entities_raw": 3920,
+    "relations_raw": 1913,
+    "empty": 0,
+    "avg_entities": 8.75,
+    "avg_relations": 4.27
+  },
+  "graph": {
+    "entities": 7033,
+    "edges": 29967
+  },
+  "index": {
+    "embed_model": "bge-m3",
+    "embed_dim": 1024,
+    "chunk_vectors": 3695,
+    "entity_vectors": 7033,
+    "seconds": 278.7,
+    "note": "裁决 C：由 compendium_rag_rebuild_indexes.py 零网关重建"
+  },
+  "fingerprint": "7dc29bf90681a3f7",
+  "rebuild_mode": true
+}

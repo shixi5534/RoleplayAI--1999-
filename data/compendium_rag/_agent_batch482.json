@@ -1,0 +1,644 @@
+{
+ "1634ac799a17de977aec480b": {
+  "entities": [],
+  "relations": []
+ },
+ "11274d45056215ba7a32924e": {
+  "entities": [
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "稳当地承托起铁盒的教师"
+   },
+   {
+    "name": "克努特大叔",
+    "type": "角色",
+    "aliases": [
+     "克努特"
+    ],
+    "desc": "提议捎两瓶酒的同志"
+   },
+   {
+    "name": "叶甫根尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下方案与敬礼离去的同志"
+   },
+   {
+    "name": "叶甫根尼的留言信",
+    "type": "物品",
+    "aliases": [],
+    "desc": "盒中刻名的告别信"
+   },
+   {
+    "name": "叶甫根尼的工作日志",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有详细方案的日志"
+   },
+   {
+    "name": "来亚什基会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "打开储物柜的议事之处"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正在规划未来的小镇"
+   },
+   {
+    "name": "卢恩矿石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "掺入零件可回收的矿石"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "仍列入备选的合作对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维拉",
+    "relation": "读信",
+    "dst": "叶甫根尼的留言信",
+    "evidence": "读了开头就知道这是他留下的信",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼的留言信",
+    "relation": "刻有署名",
+    "dst": "叶甫根尼",
+    "evidence": "是叶甫根尼同志的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "致敬追念",
+    "dst": "叶甫根尼",
+    "evidence": "向每位同志敬礼。叶甫根尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼的留言信",
+    "relation": "谋划未来",
+    "dst": "来亚什基",
+    "evidence": "我抓紧时间写下了一些有关来亚什基未来发展的方案",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼的留言信",
+    "relation": "提及",
+    "dst": "卢恩矿石",
+    "evidence": "曾有一批掺入少量卢恩矿石的零件",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼的留言信",
+    "relation": "留合作备选",
+    "dst": "芝诺",
+    "evidence": "与芝诺的合作也仍然列入备选",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼的留言信",
+    "relation": "指向",
+    "dst": "叶甫根尼的工作日志",
+    "evidence": "详细方案都写在了我的工作日志里",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "慨叹作风",
+    "dst": "叶甫根尼",
+    "evidence": "他还真是贯彻了自己的作风",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "评价",
+    "dst": "叶甫根尼",
+    "evidence": "叶甫根尼同志一向会把信任表现在实际行动中",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "欲携酒相慰",
+    "dst": "叶甫根尼",
+    "evidence": "我得给他捎两瓶",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "催促规划",
+    "dst": "来亚什基",
+    "evidence": "是时候开始详细考虑日后的发展规划了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3cf48245f218d712d95b6b41": {
+  "entities": [],
+  "relations": []
+ },
+ "088e3ffc8a71ee743fa3aa2d": {
+  "entities": [
+   {
+    "name": "克努特大叔",
+    "type": "角色",
+    "aliases": [
+     "克努特"
+    ],
+    "desc": "奔波张罗采买与庆祝会的男人"
+   },
+   {
+    "name": "埃琳娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "保养旧工具的爽朗工人"
+   },
+   {
+    "name": "阿德里安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自信手艺的铁匠师傅"
+   },
+   {
+    "name": "阿图尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许诺修理器具的工人"
+   },
+   {
+    "name": "叶甫根尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被频频念及的离去者"
+   },
+   {
+    "name": "乌里扬娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刚从外边回来的女士"
+   },
+   {
+    "name": "帕特里基",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掌勺炖菜的厨师"
+   },
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将挨个安排物资的教师"
+   },
+   {
+    "name": "来亚什基生产工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "赶制矿山零件的作坊"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "码头学校矿场各处念及同胞的小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "克努特大叔",
+    "relation": "催问零件",
+    "dst": "来亚什基生产工厂",
+    "evidence": "伙计们，给矿场那边儿用的零件做得咋样了",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃琳娜",
+    "relation": "唤其验看",
+    "dst": "克努特大叔",
+    "evidence": "叫克努特同志瞧几眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃琳娜",
+    "relation": "保养工具",
+    "dst": "来亚什基生产工厂",
+    "evidence": "抽空保养了送来的旧工具",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿德里安",
+    "relation": "托付零件",
+    "dst": "克努特大叔",
+    "evidence": "您得相信我们的手艺",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿图尔",
+    "relation": "承诺修理",
+    "dst": "克努特大叔",
+    "evidence": "再拿给我们修理也成",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "筹划外购",
+    "dst": "来亚什基",
+    "evidence": "我们正在想法子从外边采购资源哩",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "请教建议",
+    "dst": "乌里扬娜",
+    "evidence": "可以去问问乌里扬娜女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃琳娜",
+    "relation": "自策",
+    "dst": "叶甫根尼",
+    "evidence": "不然哪好意思提叶甫根尼同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿图尔",
+    "relation": "怅其缺席",
+    "dst": "叶甫根尼",
+    "evidence": "叶甫根尼同志，也赶上这时候就好了",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "岔开话头",
+    "dst": "埃琳娜",
+    "evidence": "忙于奔波的男人拍了拍手，巧妙地打断了话头",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "先补吃食",
+    "dst": "帕特里基",
+    "evidence": "先给帕特里基那填补了不少东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "托付物资",
+    "dst": "维拉",
+    "evidence": "过两天，维拉同志会挨个儿安排其他物资",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "吆喝开饭",
+    "dst": "帕特里基",
+    "evidence": "帕特里基今天做了炖菜",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃琳娜",
+    "relation": "盼娃儿好日子",
+    "dst": "来亚什基",
+    "evidence": "我们努力些，孩子们以后的日子就会好过些",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d3967c5907163148b907baa3": {
+  "entities": [],
+  "relations": []
+ },
+ "f0238d8bc8dbd853479eff23": {
+  "entities": [
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借琴小憩后迎来客人的教师"
+   },
+   {
+    "name": "手风琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被坚持带到镇上的乐器"
+   },
+   {
+    "name": "西蒙诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾断言手风琴难学的同志"
+   },
+   {
+    "name": "阿夫西维",
+    "type": "角色",
+    "aliases": [
+     "小阿夫西维"
+    ],
+    "desc": "抱着向日葵扎进怀里的孩子"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拟于明日离镇的来访者"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍在附近矿区忙活的理线学学者"
+   },
+   {
+    "name": "乌里扬娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被孩子引为远行先例的女士"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将接纳孩子们的大机构"
+   },
+   {
+    "name": "来亚什基劳动食堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "安静歇脚的午餐之地"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将被歌唱未来的小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维拉",
+    "relation": "忆昔购琴",
+    "dst": "手风琴",
+    "evidence": "最开始买下你的时候，西蒙诺夫同志还说手风琴可不好学",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "坚持携来",
+    "dst": "手风琴",
+    "evidence": "结果我还是偏要把你带到这儿来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "试音小憩",
+    "dst": "来亚什基劳动食堂",
+    "evidence": "食堂相当安静",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "奏唱未来",
+    "dst": "来亚什基",
+    "evidence": "现在，它将被用于歌唱小镇的未来",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "寻至食堂",
+    "dst": "维拉",
+    "evidence": "我知道你在食堂，因为你早上跟乌里扬娜说过",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "扑抱",
+    "dst": "维拉",
+    "evidence": "向日葵和一团毛绒绒的小东西就一起扎进了维拉怀里",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "代为致歉",
+    "dst": "阿夫西维",
+    "evidence": "我刚离开教室就给逮住了",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "告知行期",
+    "dst": "维拉",
+    "evidence": "我和同事预计明天离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "言其难荐",
+    "dst": "北方哨歌",
+    "evidence": "北方哨歌同志，还一直在附近的矿区忙活",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "重申约定",
+    "dst": "维拉",
+    "evidence": "说好的神秘学培训，对吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "比较机构",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会比来亚什基更大吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "言仿远行",
+    "dst": "乌里扬娜",
+    "evidence": "坐上移动的房子，去来亚什基外面",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "承诺再访",
+    "dst": "来亚什基",
+    "evidence": "我们会按协商好的时间再次造访",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "许其自选",
+    "dst": "阿夫西维",
+    "evidence": "你可以记下它们，回来之后讲给大家听",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "不舍故土",
+    "dst": "来亚什基",
+    "evidence": "来亚什基更好，这儿有我，也有维拉和妈妈，还有雪人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fbcedf54c99f8a358c695fec": {
+  "entities": [
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鳞片映光立誓重建的教师"
+   },
+   {
+    "name": "阿夫西维",
+    "type": "角色",
+    "aliases": [],
+    "desc": "得到承诺后轻快离去的孩子"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈误推门而入的青年"
+   },
+   {
+    "name": "彼得森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被孩子转往传话的对象"
+   },
+   {
+    "name": "鲁萨尔卡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "维拉手臂鳞片所出的族属"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被冻土之点命名的小镇"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将承接孩子们的远方"
+   },
+   {
+    "name": "列宁格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被误推开门扉的城市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "命名日",
+    "relation": "许诺团圆",
+    "dst": "阿夫西维",
+    "evidence": "等你们都被接到那儿，基金会就有“阿夫西维”了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "以雪人相勉",
+    "dst": "阿夫西维",
+    "evidence": "你从妈妈那儿学到了怎么堆漂亮、结实的雪人",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "承诺探看",
+    "dst": "阿夫西维",
+    "evidence": "等小镇上的事情处理完，我立刻就过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "转赴传话",
+    "dst": "彼得森",
+    "evidence": "我去找彼得森同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "赞其胜过",
+    "dst": "来亚什基",
+    "evidence": "或许来亚什基的确比基金会更好",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "不驳其言",
+    "dst": "命名日",
+    "evidence": "哈哈，我不会反驳你",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "自陈入镇",
+    "dst": "来亚什基",
+    "evidence": "我只是在路过列宁格勒的时候，错误地推开了一扇恰好开着的门",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "途经",
+    "dst": "列宁格勒",
+    "evidence": "我只是在路过列宁格勒的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "信其向好",
+    "dst": "来亚什基",
+    "evidence": "大概不会有第二个来亚什基",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "断言长存",
+    "dst": "来亚什基",
+    "evidence": "它会一直存在下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "追述建镇",
+    "dst": "来亚什基",
+    "evidence": "在冻土上打下一个小小的点",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "释送子之由",
+    "dst": "圣洛夫基金会",
+    "evidence": "这也是我们同意送孩子们去基金会的原因之一",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "立誓重建",
+    "dst": "来亚什基",
+    "evidence": "即使它被雪覆盖，被占据，被摧毁",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "鳞光微露",
+    "dst": "鲁萨尔卡",
+    "evidence": "令鲁萨尔卡手臂上的鳞片也折射出光彩",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

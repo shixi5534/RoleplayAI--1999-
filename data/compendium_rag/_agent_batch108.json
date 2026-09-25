@@ -1,0 +1,1077 @@
+{
+ "c38cbe871d22b16fe3f971dc": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "东区格罗夫家的女儿，能唤风"
+   },
+   {
+    "name": "小鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蓝羽的鸟友"
+   },
+   {
+    "name": "父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "格罗夫家的父亲"
+   },
+   {
+    "name": "同学Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘲笑她的同学"
+   },
+   {
+    "name": "同学Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘲笑她的同学"
+   },
+   {
+    "name": "叫醒工",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她的活计"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "数月后才至的传单"
+   },
+   {
+    "name": "利伯蒂的家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "救济房"
+   },
+   {
+    "name": "东区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "浓雾笼罩之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "从事",
+    "dst": "叫醒工",
+    "evidence": "她结束了叫醒工的工作，走在回家的路上",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "邀友",
+    "dst": "小鸟",
+    "evidence": "如果你想要说的是“对”，那就跟我来吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "同学Ⅰ",
+    "relation": "讥称",
+    "dst": "利伯蒂",
+    "evidence": "看那边，是“为什么小姐”！",
+    "confidence": 0.95
+   },
+   {
+    "src": "同学Ⅱ",
+    "relation": "讥嘲",
+    "dst": "利伯蒂",
+    "evidence": "她是在和鸟说话吗？天哪，真是个怪胎",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "分食",
+    "dst": "小鸟",
+    "evidence": "这是我的晚餐，我们可以一起分享",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲",
+    "relation": "诟病",
+    "dst": "利伯蒂",
+    "evidence": "为什么你不能像其他孩子那样，正常一点呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "独处",
+    "dst": "东区",
+    "evidence": "一如既往，独自一人",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "abb2d46c55ce8ec0318626f3": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "被差遣采购的孩子"
+   },
+   {
+    "name": "母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "格罗夫家的话事人"
+   },
+   {
+    "name": "父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "和事的长辈"
+   },
+   {
+    "name": "小鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊走的鸟友"
+   },
+   {
+    "name": "莎拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "利伯蒂的姐姐"
+   },
+   {
+    "name": "工人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "工会门口的把门者"
+   },
+   {
+    "name": "购物清单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写在报纸空白处"
+   },
+   {
+    "name": "面包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "分给鸟的晚餐"
+   },
+   {
+    "name": "工会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "莎拉所属"
+   },
+   {
+    "name": "利伯蒂的家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "不隔音的救济房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "母亲",
+    "relation": "斥责",
+    "dst": "利伯蒂",
+    "evidence": "但我们拼命工作可不是为了养活你的鸟！",
+    "confidence": 0.95
+   },
+   {
+    "src": "母亲",
+    "relation": "诉苦",
+    "dst": "利伯蒂",
+    "evidence": "我从一睁眼就在和那些针线布料打交道",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "喂食",
+    "dst": "小鸟",
+    "evidence": "你用面包……喂鸟？",
+    "confidence": 0.9
+   },
+   {
+    "src": "小鸟",
+    "relation": "逃逸",
+    "dst": "利伯蒂",
+    "evidence": "利伯蒂的新朋友从窗边逃走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲",
+    "relation": "差遣",
+    "dst": "利伯蒂",
+    "evidence": "你可以去把家里下个星期的食物买回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲",
+    "relation": "指引",
+    "dst": "购物清单",
+    "evidence": "要买的东西就写在报纸的空白地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "投奔",
+    "dst": "莎拉",
+    "evidence": "我要去找莎拉，也就是我姐姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人",
+    "relation": "盘问",
+    "dst": "利伯蒂",
+    "evidence": "嘿！你是干什么的？这里不是给小孩玩的地方！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "隶属",
+    "dst": "工会",
+    "evidence": "她和工会的人常来这里",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4dc0e911e72523727ab2629a": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "被训的孩子"
+   },
+   {
+    "name": "莎拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "严厉的姐姐"
+   },
+   {
+    "name": "工人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报者"
+   },
+   {
+    "name": "小鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "慰藉的鸟友"
+   },
+   {
+    "name": "奥利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地窖里的公鸡"
+   },
+   {
+    "name": "工会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "莎拉竞选会长处"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "变魔术之用"
+   }
+  ],
+  "relations": [
+   {
+    "src": "工人",
+    "relation": "通报",
+    "dst": "莎拉",
+    "evidence": "我记得你，你是她妹妹。我去叫她",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "叹服",
+    "dst": "莎拉",
+    "evidence": "莎拉是很厉害的人，我也很佩服她",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "竞选",
+    "dst": "工会",
+    "evidence": "莎拉在竞选工会的会长",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "制止",
+    "dst": "利伯蒂",
+    "evidence": "不要用“那个”！",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "诘问",
+    "dst": "利伯蒂",
+    "evidence": "你不是已经到处给别人展示过你的小绝招了吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "犟问",
+    "dst": "莎拉",
+    "evidence": "为什么不能用“那个”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小鸟",
+    "relation": "抚慰",
+    "dst": "利伯蒂",
+    "evidence": "鸟儿用翅膀碰了碰利伯蒂的脸颊",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "欲介",
+    "dst": "奥利",
+    "evidence": "我本来还打算介绍奥利给你认识的",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "682db4993a753f1f9508734a": {
+  "entities": [
+   {
+    "name": "莎拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "付钱叮嘱的姐姐"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "受嘱者"
+   },
+   {
+    "name": "购物清单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "递予姐姐"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "数好的钱"
+   },
+   {
+    "name": "劳尔斯先生的商店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "采购之处"
+   },
+   {
+    "name": "利伯蒂的家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "暂不想回之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "递呈",
+    "dst": "购物清单",
+    "evidence": "利伯蒂沉默着将口袋里的购物清单递了过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "付予",
+    "dst": "利伯蒂",
+    "evidence": "她的姐姐皱着眉从口袋里翻出硬币，一枚枚数过",
+    "confidence": 0.95
+   },
+   {
+    "src": "莎拉",
+    "relation": "叮嘱",
+    "dst": "利伯蒂",
+    "evidence": "但要是有找回的钱，你得好好拿回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "将往",
+    "dst": "劳尔斯先生的商店",
+    "evidence": "她打算一会儿再去劳尔斯先生的商店",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "回避",
+    "dst": "利伯蒂的家",
+    "evidence": "可她暂时不想回去",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "e7ea8df4b5d43c7f58e8a19c": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "折纸唤风者"
+   },
+   {
+    "name": "小鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的鸟友"
+   },
+   {
+    "name": "奥利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地窖里的公鸡"
+   },
+   {
+    "name": "珍妮·绿牙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传说中的湖中怪"
+   },
+   {
+    "name": "妖精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "偷物的小精怪"
+   },
+   {
+    "name": "购物清单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "折成小鸟"
+   },
+   {
+    "name": "湖畔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "秘密基地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "叠成",
+    "dst": "购物清单",
+    "evidence": "你看，把它这么折……做好了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "羡慕",
+    "dst": "小鸟",
+    "evidence": "真羡慕你呀，为什么我不是一只小鸟呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "珍妮·绿牙",
+    "relation": "恐吓",
+    "dst": "利伯蒂",
+    "evidence": "这里有恐怖的珍妮·绿牙出没，会把乱跑的小孩子拖进湖里淹死",
+    "confidence": 0.9
+   },
+   {
+    "src": "妖精",
+    "relation": "窃物",
+    "dst": "利伯蒂",
+    "evidence": "坏心眼的妖精游荡，会从粗心大意的小孩子身上偷走他们珍贵的东西",
+    "confidence": 0.9
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "同眠",
+    "dst": "奥利",
+    "evidence": "我和他一起睡在地窖",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥利",
+    "relation": "叫醒",
+    "dst": "利伯蒂",
+    "evidence": "奥利会叫我起床，然后我去叫别人起床",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "独处",
+    "dst": "湖畔",
+    "evidence": "每当利伯蒂想要小小地逃离一会儿时，就会跑到这里来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b69a8a5bf7e89468406c72bb": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "拾袋昏睡者"
+   },
+   {
+    "name": "灯倌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "会认妖精的女孩，提灯引路"
+   },
+   {
+    "name": "口袋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写着“不要！打开我”"
+   },
+   {
+    "name": "妖精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "偷名字的恶作剧者"
+   },
+   {
+    "name": "蓝帽子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在的精怪"
+   },
+   {
+    "name": "冰霜杰克",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在的精怪"
+   },
+   {
+    "name": "吉尔特犬",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在的精怪"
+   },
+   {
+    "name": "比斯特龙",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在的精怪"
+   },
+   {
+    "name": "黑色安尼斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在的精怪"
+   },
+   {
+    "name": "湖畔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "树梢藏袋处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "拾获",
+    "dst": "口袋",
+    "evidence": "一个口袋，是谁遗落在这里的吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "口袋",
+    "relation": "标注",
+    "dst": "利伯蒂",
+    "evidence": "“不要！打开我”",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "打开",
+    "dst": "口袋",
+    "evidence": "我就是在打开了这个东西之后，才突然感觉很困的",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "唤醒",
+    "dst": "利伯蒂",
+    "evidence": "嘿，你没事吧？你怎么睡在这里？",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "确信",
+    "dst": "妖精",
+    "evidence": "但那些都是真的呀？",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "点破",
+    "dst": "利伯蒂",
+    "evidence": "因为……你也会使用“那个”，对吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "列举",
+    "dst": "蓝帽子",
+    "evidence": "蓝帽子、冰霜杰克、吉尔特犬、比斯特龙、黑色安尼斯",
+    "confidence": 0.9
+   },
+   {
+    "src": "灯倌",
+    "relation": "列举",
+    "dst": "冰霜杰克",
+    "evidence": "蓝帽子、冰霜杰克、吉尔特犬、比斯特龙、黑色安尼斯",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "b7aaa25bfd5ed54f78a32039": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "展示唤风者"
+   },
+   {
+    "name": "灯倌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叹服的女孩"
+   },
+   {
+    "name": "折纸小鸟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "报纸所折"
+   },
+   {
+    "name": "莎拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "禁其显露者"
+   },
+   {
+    "name": "管理人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "知一切答案的老奶奶"
+   },
+   {
+    "name": "答案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "世间诸问之解"
+   },
+   {
+    "name": "湖畔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "演示之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "演示",
+    "dst": "折纸小鸟",
+    "evidence": "利伯蒂将折纸小鸟抛向天空",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "唤起",
+    "dst": "折纸小鸟",
+    "evidence": "那只小鸟飞了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "惊叹",
+    "dst": "利伯蒂",
+    "evidence": "哇哦……！你可以唤来风！",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "自陈",
+    "dst": "灯倌",
+    "evidence": "必须借助纸张或是布条，也只能让一些轻的东西飞起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "请秘",
+    "dst": "灯倌",
+    "evidence": "但请为我保密好吗？莎拉不让我在别人面前做这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "引荐",
+    "dst": "管理人",
+    "evidence": "我认识一个人，大家都叫她“管理人”",
+    "confidence": 0.95
+   },
+   {
+    "src": "管理人",
+    "relation": "通晓",
+    "dst": "答案",
+    "evidence": "她知道这个世界上所有的答案",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "18ac4eb001b39e574dde13a9": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "失名者（此后正文以「口口口」指代）"
+   },
+   {
+    "name": "灯倌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道破者"
+   },
+   {
+    "name": "妖精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "偷名之精怪"
+   },
+   {
+    "name": "利伯蒂的名字",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被窃之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "约定",
+    "dst": "灯倌",
+    "evidence": "明天下午放学后，还是在这里见如何？",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "自介",
+    "dst": "利伯蒂",
+    "evidence": "大家都叫我灯倌，我该怎么称呼你？",
+    "confidence": 0.95
+   },
+   {
+    "src": "妖精",
+    "relation": "窃取",
+    "dst": "利伯蒂的名字",
+    "evidence": "是那些妖精！它们偷走了你的名字！",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "失名",
+    "dst": "利伯蒂的名字",
+    "evidence": "那些本应从她的唇齿间悦动而出的字母消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "警醒",
+    "dst": "利伯蒂",
+    "evidence": "这可不妙……看来我担心的事还是发生了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a4d8525ac653fbea42b0933": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "失名被猎者（正文作「口口口」）"
+   },
+   {
+    "name": "灯倌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携逃者"
+   },
+   {
+    "name": "巴纳赫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "猎杀无名者的怪物"
+   },
+   {
+    "name": "利伯蒂的名字",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被窃之物"
+   },
+   {
+    "name": "森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "黑暗翻涌处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "追问",
+    "dst": "灯倌",
+    "evidence": "你说妖精偷走了我的……名字？",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "示警",
+    "dst": "利伯蒂",
+    "evidence": "是巴纳赫……！黑暗的杀手，一只可怕的怪物！",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴纳赫",
+    "relation": "狩猎",
+    "dst": "利伯蒂",
+    "evidence": "它会狩猎那些没有名字的人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "携逃",
+    "dst": "利伯蒂",
+    "evidence": "灯倌扯过女孩的手臂，带着她奔跑起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴纳赫",
+    "relation": "追逼",
+    "dst": "森林",
+    "evidence": "黑暗在她们的身后发出空洞可怖的吼叫",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4df86d8360ebe01391e362e0": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "利伯蒂·格罗夫"
+    ],
+    "desc": "初入十字街者（正文作「口口口」）"
+   },
+   {
+    "name": "灯倌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提灯引路者"
+   },
+   {
+    "name": "巴纳赫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追猎的怪物"
+   },
+   {
+    "name": "热情的商贩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叫卖康多莉者"
+   },
+   {
+    "name": "拉客的煤球",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招揽讲解者"
+   },
+   {
+    "name": "叫卖的幽魂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "售卖悲鸣者"
+   },
+   {
+    "name": "忙碌的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促孩子的野兽"
+   },
+   {
+    "name": "卖报的植物",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叫卖报纸者"
+   },
+   {
+    "name": "司康",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被逮捕的恶霸"
+   },
+   {
+    "name": "吉尔特老大",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逮捕司康者"
+   },
+   {
+    "name": "康多莉",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可收获土豆与僵尸"
+   },
+   {
+    "name": "利齿子儿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "通行货币"
+   },
+   {
+    "name": "悲鸣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可定制的叫卖品"
+   },
+   {
+    "name": "记忆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "幸未被窃之物"
+   },
+   {
+    "name": "利伯蒂的名字",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被窃之物"
+   },
+   {
+    "name": "洞穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通向街上的隧道"
+   },
+   {
+    "name": "阿卡迪亚的十字街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "魔精的住处"
+   },
+   {
+    "name": "游乐园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "敲诈发生地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "庆幸",
+    "dst": "记忆",
+    "evidence": "幸好、我没有、被偷走、关于怎么跑步的记忆",
+    "confidence": 0.9
+   },
+   {
+    "src": "灯倌",
+    "relation": "引路",
+    "dst": "利伯蒂",
+    "evidence": "加把劲，穿过那个洞穴就能回到街上了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "提灯",
+    "dst": "洞穴",
+    "evidence": "伴随着一记清脆的敲击声，黑暗被驱散了",
+    "confidence": 0.95
+   },
+   {
+    "src": "灯倌",
+    "relation": "释名",
+    "dst": "利伯蒂",
+    "evidence": "这就是为什么大家叫我“灯倌”，我用它替人指引方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "抵达",
+    "dst": "阿卡迪亚的十字街",
+    "evidence": "一条不可思议的街道出现在她的面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "热情的商贩",
+    "relation": "兜售",
+    "dst": "康多莉",
+    "evidence": "扎得顶好的康多莉，可以帮你收获地里的土豆和僵尸！",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉客的煤球",
+    "relation": "索价",
+    "dst": "利齿子儿",
+    "evidence": "空车～带讲解只需要五十个利齿子儿～",
+    "confidence": 0.95
+   },
+   {
+    "src": "叫卖的幽魂",
+    "relation": "售卖",
+    "dst": "悲鸣",
+    "evidence": "有人需要新鲜的悲鸣吗……？我们接受定制",
+    "confidence": 0.95
+   },
+   {
+    "src": "吉尔特老大",
+    "relation": "逮捕",
+    "dst": "司康",
+    "evidence": "在游乐园敲诈未成年巴格比尔零花钱的恶霸司康已被吉尔特老大逮捕",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "答问",
+    "dst": "灯倌",
+    "evidence": "这里是自古以来魔精们的住处",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

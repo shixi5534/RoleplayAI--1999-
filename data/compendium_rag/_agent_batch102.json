@@ -1,0 +1,1106 @@
+{
+ "c3df2747b2cc02e6db43be84": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求验蛋者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "店主",
+    "type": "角色",
+    "aliases": [],
+    "desc": "路边小店主人"
+   },
+   {
+    "name": "鸡蛋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "受精生长中"
+   },
+   {
+    "name": "小篓子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "衣摆线编织"
+   },
+   {
+    "name": "路边小店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "以物换物之店"
+   },
+   {
+    "name": "骨灰瓮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "店内奇货"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塔罗师比安卡",
+    "relation": "求验",
+    "dst": "店主",
+    "evidence": "请问您能不能帮我看一下它能不能孵出小鸡？",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "察验",
+    "dst": "鸡蛋",
+    "evidence": "它向蛋壳内照射着，一具还未成形的身体展现了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "嘱托",
+    "dst": "塔罗师比安卡",
+    "evidence": "快把它放到尽量温暖又安全的地方去吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "编成",
+    "dst": "小篓子",
+    "evidence": "利用衣服下摆的线编织出来的",
+    "confidence": 0.9
+   },
+   {
+    "src": "店主",
+    "relation": "经营",
+    "dst": "路边小店",
+    "evidence": "你们不是开车来的吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "店主",
+    "relation": "释名",
+    "dst": "骨灰瓮",
+    "evidence": "甚至还有骨灰瓮",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "7327db2f954cc9a06f0889b9": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现项链者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "荐裙者"
+   },
+   {
+    "name": "店主",
+    "type": "角色",
+    "aliases": [],
+    "desc": "立规矩者"
+   },
+   {
+    "name": "相片盒项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "德克斯特遗失之物"
+   },
+   {
+    "name": "晚礼服裙",
+    "type": "物品",
+    "aliases": [],
+    "desc": "鲜红露背"
+   },
+   {
+    "name": "显微镜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "店内奇货"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "失主"
+   },
+   {
+    "name": "路边小店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "以物换物之店"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "荐予",
+    "dst": "塔罗师比安卡",
+    "evidence": "比安卡，我觉得这个很适合你……一条裙子",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "自称不合",
+    "dst": "晚礼服裙",
+    "evidence": "它和我不搭",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "认出",
+    "dst": "相片盒项链",
+    "evidence": "这是德克斯特的项链！",
+    "confidence": 0.95
+   },
+   {
+    "src": "相片盒项链",
+    "relation": "归属",
+    "dst": "德克斯特",
+    "evidence": "这是德克斯特的项链！",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "立规",
+    "dst": "塔罗师比安卡",
+    "evidence": "你们必须从店里带走一件有价格标签的东西，然后才可以带走它",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "论货",
+    "dst": "显微镜",
+    "evidence": "这个世界怎么会有完全没人需要的东西？",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "释明",
+    "dst": "塔罗师比安卡",
+    "evidence": "这是你自己选的方向，比安卡，我只是跟着你走",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "98746e0e33eca774e37ba77b": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "换裙者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "静待者"
+   },
+   {
+    "name": "店主",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指路者"
+   },
+   {
+    "name": "晚礼服裙",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被买下"
+   },
+   {
+    "name": "雨靴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "漆黑新履"
+   },
+   {
+    "name": "相片盒项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所得之物"
+   },
+   {
+    "name": "弗雷斯诺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将往之城"
+   },
+   {
+    "name": "路边小店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "离店之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塔罗师比安卡",
+    "relation": "挑拣",
+    "dst": "雨靴",
+    "evidence": "正好我穿高跟鞋也走累了，可以换成雨靴",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "取来",
+    "dst": "晚礼服裙",
+    "evidence": "她将那条裙子重新拿了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "购下",
+    "dst": "晚礼服裙",
+    "evidence": "好，好，我买它",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "指路",
+    "dst": "弗雷斯诺",
+    "evidence": "你们一直沿着这条路走的话，很快就能到弗雷斯诺了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "携行",
+    "dst": "相片盒项链",
+    "evidence": "穿不了几次的衣服，德克斯特的项链，这一切都太疯狂了",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "催行",
+    "dst": "塔罗师比安卡",
+    "evidence": "现在，你要去哪里？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "f3b89c075ad18fb73bd35189": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "脚痛者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求职者"
+   },
+   {
+    "name": "店员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点单者"
+   },
+   {
+    "name": "司机Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "顺风车者"
+   },
+   {
+    "name": "经理",
+    "type": "角色",
+    "aliases": [],
+    "desc": "后厨洽谈者"
+   },
+   {
+    "name": "幸运饼干",
+    "type": "物品",
+    "aliases": [],
+    "desc": "内附字条"
+   },
+   {
+    "name": "臭鼬莎莎餐厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "落脚之处"
+   },
+   {
+    "name": "弗雷斯诺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "终于抵达"
+   },
+   {
+    "name": "相片盒项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可带回之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "司机Ⅱ",
+    "relation": "载送",
+    "dst": "塔罗师比安卡",
+    "evidence": "周末快乐，小妞们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "抵达",
+    "dst": "弗雷斯诺",
+    "evidence": "弗雷斯诺，我们终于到这里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "店员",
+    "relation": "接受点单",
+    "dst": "塔罗师比安卡",
+    "evidence": "两份牛肉塔可，一份玉米片……",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "求职",
+    "dst": "经理",
+    "evidence": "环状水星与店内的经理在后厨进行什么交流",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "受职",
+    "dst": "臭鼬莎莎餐厅",
+    "evidence": "作为服务员的工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "掰开",
+    "dst": "幸运饼干",
+    "evidence": "上面印着“你的身边永远有真正的朋友”",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "交还",
+    "dst": "相片盒项链",
+    "evidence": "你可以带回去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6ab4b8c06c926ad690a5534b": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自剖者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈无家者"
+   },
+   {
+    "name": "父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "钳制比安卡者"
+   },
+   {
+    "name": "灵占师索拉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离开的友人"
+   },
+   {
+    "name": "流浪歌者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "街头的歌者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "安抚情绪之力"
+   },
+   {
+    "name": "幸运饼干",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被捏碎"
+   },
+   {
+    "name": "弗雷斯诺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "漫步之城"
+   },
+   {
+    "name": "臭鼬莎莎餐厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "对谈之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塔罗师比安卡",
+    "relation": "拒用",
+    "dst": "神秘术",
+    "evidence": "现在别对我使用你的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "挣脱",
+    "dst": "环状水星",
+    "evidence": "比安卡挣脱了环状水星的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "父亲",
+    "relation": "钳制",
+    "dst": "塔罗师比安卡",
+    "evidence": "也是那个他狠狠地钳制住了现在的比安卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "念及",
+    "dst": "灵占师索拉亚",
+    "evidence": "索拉亚……",
+    "confidence": 0.9
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "提议",
+    "dst": "环状水星",
+    "evidence": "我还没有见过自己穿裙子跳舞时的样子",
+    "confidence": 0.95
+   },
+   {
+    "src": "流浪歌者",
+    "relation": "献唱",
+    "dst": "弗雷斯诺",
+    "evidence": "♪坐上这趟快车。♪",
+    "confidence": 0.9
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "寻觅",
+    "dst": "流浪歌者",
+    "evidence": "比安卡和环状水星便就此追寻而来",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "40b0c0a7a4a820c9bafdba6d": {
+  "entities": [
+   {
+    "name": "流浪歌者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "油亮吉他的老歌者"
+   },
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赤足而舞者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随节拍舞者"
+   },
+   {
+    "name": "吉他",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被磨得油亮"
+   },
+   {
+    "name": "雨靴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被脱下"
+   },
+   {
+    "name": "弗雷斯诺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "今夜最美之景"
+   }
+  ],
+  "relations": [
+   {
+    "src": "流浪歌者",
+    "relation": "弹奏",
+    "dst": "吉他",
+    "evidence": "他弹着那把已经被磨得油亮的吉他",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "脱置",
+    "dst": "雨靴",
+    "evidence": "比安卡脱下雨靴，赤着脚在歌者旁起舞",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "起舞",
+    "dst": "流浪歌者",
+    "evidence": "赤着脚在歌者旁起舞",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "共舞",
+    "dst": "塔罗师比安卡",
+    "evidence": "随着比安卡的节拍，环状水星也情不自禁地开始舞动",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "和唱",
+    "dst": "流浪歌者",
+    "evidence": "♪下次再见，下次再见。♪",
+    "confidence": 0.9
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "祈愿",
+    "dst": "弗雷斯诺",
+    "evidence": "不要月落，不要日出，不要完结这场自由的梦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c9b3f925ea95bfc7c9d07b6c": {
+  "entities": [
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归来者"
+   },
+   {
+    "name": "按摩师埃德加多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召集者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "失而复得者"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "灵药师菲比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "司机Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤醒者"
+   },
+   {
+    "name": "相片盒项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "归还之物"
+   },
+   {
+    "name": "鸡蛋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "临行前抚摸"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "篝火复聚"
+   },
+   {
+    "name": "旅行房车",
+    "type": "地点",
+    "aliases": [],
+    "desc": "比安卡归处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "司机Ⅲ",
+    "relation": "唤醒",
+    "dst": "塔罗师比安卡",
+    "evidence": "喂、醒醒。……到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "告知",
+    "dst": "塔罗师比安卡",
+    "evidence": "环状水星她……",
+    "confidence": 0.9
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "告知",
+    "dst": "按摩师埃德加多",
+    "evidence": "她离开了，我知道，我陪她去的",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "召集",
+    "dst": "新纪元集市",
+    "evidence": "今晚能帮我聚集一下大家吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "归还",
+    "dst": "德克斯特",
+    "evidence": "从怀中掏出了一串带相册盒的金属链，递给了德克斯特",
+    "confidence": 0.95
+   },
+   {
+    "src": "相片盒项链",
+    "relation": "失而复得",
+    "dst": "德克斯特",
+    "evidence": "它回来了！它回来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "抚摸",
+    "dst": "鸡蛋",
+    "evidence": "临走前还摸了摸那枚鸡蛋",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5af804bd5885ccfc2a4aa646": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "餐厅服务生"
+   },
+   {
+    "name": "芭芭拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "得救的顾客"
+   },
+   {
+    "name": "基金会员工",
+    "type": "角色",
+    "aliases": [],
+    "desc": "芭芭拉的男伴"
+   },
+   {
+    "name": "幸运钥匙链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "德克斯特所制"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "钥匙链制作者"
+   },
+   {
+    "name": "能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "灰白的一团"
+   },
+   {
+    "name": "失控轿车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "冲上人行道"
+   },
+   {
+    "name": "臭鼬莎莎餐厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "事发之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基金会员工",
+    "relation": "获赠",
+    "dst": "幸运钥匙链",
+    "evidence": "这是我今天刚从集市里给你买的好运钥匙链",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "察觉",
+    "dst": "能量",
+    "evidence": "环状水星看着自己的指尖，上面有一团灰白色的能量",
+    "confidence": 0.95
+   },
+   {
+    "src": "幸运钥匙链",
+    "relation": "来源",
+    "dst": "德克斯特",
+    "evidence": "德克斯特的赠品钥匙链",
+    "confidence": 0.95
+   },
+   {
+    "src": "失控轿车",
+    "relation": "冲撞",
+    "dst": "芭芭拉",
+    "evidence": "原本芭芭拉站立的地方突然冲出一辆失控的轿车",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会员工",
+    "relation": "拉开",
+    "dst": "芭芭拉",
+    "evidence": "如若不是男性因为突然想起了什么而拉她离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "拨打",
+    "dst": "臭鼬莎莎餐厅",
+    "evidence": "走到了座机旁，拨打了紧急电话",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "安抚",
+    "dst": "芭芭拉",
+    "evidence": "放轻松，你已经没事了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dad4323a235841d9558d0fd5": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受聘者"
+   },
+   {
+    "name": "基金会员工",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招募者"
+   },
+   {
+    "name": "芭芭拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受惊者"
+   },
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述者"
+   },
+   {
+    "name": "按摩师埃德加多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打趣者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "欲面谢者"
+   },
+   {
+    "name": "疗愈师库伯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "神往者"
+   },
+   {
+    "name": "名片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "招募凭证"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "招募方"
+   },
+   {
+    "name": "父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "酗酒的生父"
+   },
+   {
+    "name": "戒酒互助会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为父亲所寻"
+   },
+   {
+    "name": "臭鼬莎莎餐厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "任职之地"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "讲述之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基金会员工",
+    "relation": "递给",
+    "dst": "环状水星",
+    "evidence": "从中掏出一张名片，并向环状水星递了过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会员工",
+    "relation": "招募",
+    "dst": "环状水星",
+    "evidence": "我们现在很需要像您这样有着出色疗愈神秘术的神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会员工",
+    "relation": "提及",
+    "dst": "圣洛夫基金会",
+    "evidence": "请问您听说过圣洛夫基金会吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "讲述",
+    "dst": "新纪元集市",
+    "evidence": "听完了比安卡和环状水星的意外之旅",
+    "confidence": 0.9
+   },
+   {
+    "src": "德克斯特",
+    "relation": "欲谢",
+    "dst": "环状水星",
+    "evidence": "也许我该去当面谢谢她！",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "鼓励",
+    "dst": "德克斯特",
+    "evidence": "去吧！你现在已经不是行走的臭鸡蛋了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "安置",
+    "dst": "父亲",
+    "evidence": "我为他联系了一个戒酒互助会",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "询问",
+    "dst": "按摩师埃德加多",
+    "evidence": "索拉亚他们离开的时候，有跟你说过他们会去哪里吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6a4572bd429383f90684aff1": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒命的少尉"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传达命令者"
+   },
+   {
+    "name": "卡洛斯将军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "部署行动者"
+   },
+   {
+    "name": "莫莉德尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "洛佩拉的姐姐"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待捞之人"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被指勾结者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "行动发起方"
+   },
+   {
+    "name": "索科罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被指叛乱之地"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "行动目标城"
+   },
+   {
+    "name": "芝诺基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "出发之地"
+   },
+   {
+    "name": "街角旅馆房间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "隐蔽落脚处"
+   },
+   {
+    "name": "坩埚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "洛佩拉随身之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "拒绝",
+    "dst": "卡西扬少校",
+    "evidence": "不，这次的行动我不会参加",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "转达",
+    "dst": "洛佩拉",
+    "evidence": "但你在卡洛斯将军的部署名单里，少尉",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛斯将军",
+    "relation": "信任",
+    "dst": "天使兄弟会",
+    "evidence": "他确实相当信任他的线人提供的情报",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "质疑",
+    "dst": "卡洛斯将军",
+    "evidence": "名单上的嫌疑人只是普通的渔民和船夫",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "委派",
+    "dst": "洛佩拉",
+    "evidence": "你的任务是去圣保罗捞一个人，名叫桑德罗",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "保护",
+    "dst": "桑德罗",
+    "evidence": "芝诺要派人找到他并带回芝诺保护",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "致电",
+    "dst": "莫莉德尔",
+    "evidence": "姐姐！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "携行",
+    "dst": "坩埚",
+    "evidence": "洛佩拉在随身携带的坩埚上轻轻一拍",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "驻留",
+    "dst": "街角旅馆房间",
+    "evidence": "找到一个安全隐蔽的落脚处更是轻而易举",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

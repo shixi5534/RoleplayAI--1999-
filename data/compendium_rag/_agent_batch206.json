@@ -1,0 +1,909 @@
+{
+ "1324ab3ac904dff52bcefc6e": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为客人办入住的旅馆侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以现金付账并打听编辑的司辰"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急于取回红色38的飞行员"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被维尔汀拿着资料打听者"
+   },
+   {
+    "name": "奇索斯的军备工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "红弩箭打听到的军备工厂"
+   },
+   {
+    "name": "奇索斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地图上被命名的镇子"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "蓝手帕告知离镇还需一小时的旅店"
+   },
+   {
+    "name": "红色38",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭声称在身边便万事顺利之物"
+   },
+   {
+    "name": "UTTU",
+    "type": "组织",
+    "aliases": [],
+    "desc": "蓝手帕认出是针对神秘学家的杂志"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "询问",
+    "dst": "蓝手帕",
+    "evidence": "附近的小镇上是不是有一个军备工厂",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "递予",
+    "dst": "红弩箭",
+    "evidence": "她打开抽屉，摸出了一份地图",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "前往",
+    "dst": "奇索斯",
+    "evidence": "我现在就得走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "劝说",
+    "dst": "红弩箭",
+    "evidence": "我会建议您等到明天早晨再出发",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "打听",
+    "dst": "数羊羔",
+    "evidence": "您见过一位羊首人身的神秘学家吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "否认",
+    "dst": "数羊羔",
+    "evidence": "我没有见过她",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "认出",
+    "dst": "UTTU",
+    "evidence": "是那本针对神秘学家发行的杂志，对吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "依赖",
+    "dst": "红色38",
+    "evidence": "只要红色38在我的身边，所有的事情都会顺利起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "奇索斯的军备工厂",
+    "relation": "位于",
+    "dst": "奇索斯",
+    "evidence": "飞行员很快在地图上找到了那个被命名为“奇索斯”的镇子",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "入住",
+    "dst": "蓝手帕旅馆",
+    "evidence": "您的房间也在二楼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5dd816dd19c9d4a60c052d9f": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为客人介绍房客的侍应生"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求交换房间的雇佣兵"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被史蒂文认出并指控的司辰"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被阿尔古斯要求换房的218房客"
+   },
+   {
+    "name": "史蒂文",
+    "type": "角色",
+    "aliases": [],
+    "desc": "憔悴而呓语的芝诺军官"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人聚集的走廊所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "提议",
+    "dst": "金伯利女郎",
+    "evidence": "只是交换房间而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "介绍",
+    "dst": "金伯利女郎",
+    "evidence": "这位是218房间的客人",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "警示",
+    "dst": "维尔汀",
+    "evidence": "尤其是面对一位带着猎枪的雇佣兵",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "认出",
+    "dst": "维尔汀",
+    "evidence": "我看到过你……在那份报纸上",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "呼喊",
+    "dst": "维尔汀",
+    "evidence": "维尔汀……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "走向",
+    "dst": "史蒂文",
+    "evidence": "快步地走向了声音的发源地",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "指控",
+    "dst": "维尔汀",
+    "evidence": "你们扔下了那颗炸弹",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c035acc04495227915606ad7": {
+  "entities": [
+   {
+    "name": "史蒂文",
+    "type": "角色",
+    "aliases": [],
+    "desc": "歇斯底里指控众人的军官"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指责者"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出声警告的雇佣兵"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "史蒂文自叹困守的旅店"
+   }
+  ],
+  "relations": [
+   {
+    "src": "史蒂文",
+    "relation": "控诉",
+    "dst": "维尔汀",
+    "evidence": "人怎么能够因为杀人而被表彰呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "自叹",
+    "dst": "蓝手帕旅馆",
+    "evidence": "而我就要待在这个小小的旅馆里",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "否认",
+    "dst": "史蒂文",
+    "evidence": "可是我从来没有见过你，先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "威胁",
+    "dst": "维尔汀",
+    "evidence": "我将会把你们的罪行公之于众",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "警告",
+    "dst": "维尔汀",
+    "evidence": "嘘，他已经疯了",
+    "confidence": 0.95
+   },
+   {
+    "src": "史蒂文",
+    "relation": "扑向",
+    "dst": "维尔汀",
+    "evidence": "那精瘦的男人赫然扑向了众人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aeb6da73e2f675f494953404": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为混乱致歉的侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反谢蓝手帕并留意神秘术者"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催办换房、厌恶阿尔古斯的女郎"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一枪托打晕史蒂文的雇佣兵"
+   },
+   {
+    "name": "史蒂文",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失去理智被击晕者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔古斯眼中流转的力量"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "打晕",
+    "dst": "史蒂文",
+    "evidence": "失去理智的男人被一枪托打晕在了地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "致歉",
+    "dst": "维尔汀",
+    "evidence": "抱歉……维尔汀小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "致谢",
+    "dst": "蓝手帕",
+    "evidence": "甚至我需要感谢您",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "劝阻",
+    "dst": "维尔汀",
+    "evidence": "您真的要相信一个癔病患者的话语吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "吩咐",
+    "dst": "蓝手帕",
+    "evidence": "别光顾着聊天了！你得处理你的工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "厌恶",
+    "dst": "阿尔古斯",
+    "evidence": "你是一个彻头彻尾的讨厌鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "察觉",
+    "dst": "神秘术",
+    "evidence": "是她在使用神秘术",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fa35c6e4f1679a2820b6f068": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接到不明密电并发现术阵者"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报信号塔故障的侍应生"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通讯失败而联系不上的飞行员"
+   },
+   {
+    "name": "客房电话",
+    "type": "物品",
+    "aliases": [],
+    "desc": "以长短音传递密电的座机"
+   },
+   {
+    "name": "奇索斯的军备工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "与旅馆同用一个信号塔的工厂"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "内线电话始终接通的旅店"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被指啃噬信号塔电线的生物"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "曾教导维尔汀沟通方式者"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "联系红弩箭却只传回忙音的装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "联络",
+    "dst": "红弩箭",
+    "evidence": "她使用通讯设备联络了飞行女巫",
+    "confidence": 0.95
+   },
+   {
+    "src": "客房电话",
+    "relation": "传达",
+    "dst": "维尔汀",
+    "evidence": "一份由摩斯电码传达的密电",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解读",
+    "dst": "客房电话",
+    "evidence": "明晰的短音与长音，以一定的节奏交织着",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "通报",
+    "dst": "维尔汀",
+    "evidence": "附近信号塔的电线遭到了魔精的啃噬",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "啃噬",
+    "dst": "蓝手帕旅馆",
+    "evidence": "电线遭到了魔精的啃噬",
+    "confidence": 0.95
+   },
+   {
+    "src": "奇索斯的军备工厂",
+    "relation": "共用",
+    "dst": "蓝手帕旅馆",
+    "evidence": "毕竟附近那个军备工厂也与旅馆同用一个信号塔",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "回忆",
+    "dst": "Z",
+    "evidence": "Z女士曾经告诉过我",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "使用",
+    "dst": "通讯器",
+    "evidence": "她继续了通讯的尝试，结果并无意外",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0b5dae7b3a271bdeff7e324e": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "凭课堂记忆辨认术阵者"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲授危险术阵的教师"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒维尔汀记笔记的优等生"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "回忆中的第一防线学校教室"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "脱离固有范式而危险的法阵"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "课堂所授、需驯化的力量"
+   }
+  ],
+  "relations": [
+   {
+    "src": "教员",
+    "relation": "讲授",
+    "dst": "术阵",
+    "evidence": "这是一种极其危险的术阵，脱离了固有的范式",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "考核",
+    "dst": "术阵",
+    "evidence": "因为我会在下一次测验中考到它",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "提醒",
+    "dst": "维尔汀",
+    "evidence": "维尔汀，你在听吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "就读",
+    "dst": "第一防线学校",
+    "evidence": "在第一防线学校的课堂中",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "识别",
+    "dst": "术阵",
+    "evidence": "而是尽快地识别它，好察觉危险的来源",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "传授",
+    "dst": "神秘术",
+    "evidence": "我们学习神秘术，驯化未知的能量",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "71d82c5937f3190e89eb78a7": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以神秘术查看痕迹的雇佣兵"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被请求转过头去的司辰"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "烫伤维尔汀指尖的法阵"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔古斯用以看清一切痕迹的术法"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "敲门",
+    "dst": "维尔汀",
+    "evidence": "突如其来的敲门声打断了她的思绪",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "请求",
+    "dst": "维尔汀",
+    "evidence": "现在轮到你了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "阿尔古斯",
+    "evidence": "你是附近的受雇佣者",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "推测",
+    "dst": "术阵",
+    "evidence": "您刚刚触摸了位于某处的神秘术术阵",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "施展",
+    "dst": "神秘术",
+    "evidence": "这是我的神秘术，能够帮助我看清楚所有的痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "否认",
+    "dst": "阿尔古斯",
+    "evidence": "你的任务目标不在这个房间里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7f80e2aa1f57f2f5746ed6d6": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈履历并接受委托的雇佣兵"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以协助调查换取查探者"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被判断镌刻时间的法阵"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "自陈",
+    "dst": "维尔汀",
+    "evidence": "我叫阿尔古斯，26岁，有丰富的受雇佣经验",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "委托",
+    "dst": "阿尔古斯",
+    "evidence": "我需要您协助我的调查",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "判断",
+    "dst": "术阵",
+    "evidence": "距离现在不超过24小时",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推断",
+    "dst": "术阵",
+    "evidence": "这些都是上一个住客留下的痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "置疑",
+    "dst": "维尔汀",
+    "evidence": "未必",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d95b2ff747fafde4e5948691": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "莉莉娅"
+    ],
+    "desc": "前来取回红色38的飞行员"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称凯拉、以受苦者为信仰的挎篮少女"
+   },
+   {
+    "name": "红色38",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被重力术式封住的狭长木箱"
+   },
+   {
+    "name": "奇索斯的军备工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "空无一人、发出响动的军备工厂"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "少女口中活跃的密教组织"
+   },
+   {
+    "name": "奇索斯酒吧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "启明会做祷告、芝诺士兵常去的酒吧"
+   },
+   {
+    "name": "芝诺士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撤离后留守、嗜酒的士兵"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "寻回",
+    "dst": "红色38",
+    "evidence": "哈，老伙计",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "自称",
+    "dst": "红弩箭",
+    "evidence": "您可以叫我凯拉",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "透露",
+    "dst": "启明会",
+    "evidence": "这是一个非常活跃的密教组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "指引",
+    "dst": "奇索斯酒吧",
+    "evidence": "他们做祷告的地方，正是镇子上的酒吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "目送",
+    "dst": "红弩箭",
+    "evidence": "静静地望着她离去的背影",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺士兵",
+    "relation": "出没",
+    "dst": "奇索斯酒吧",
+    "evidence": "那些芝诺的士兵最喜欢去那儿喝酒",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "受困",
+    "dst": "奇索斯的军备工厂",
+    "evidence": "他们至少准备了一个需要特定口令才能解除的重力术式",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb9e168cfbc1ac38f27bd49d": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闯入集会索酒的飞行员"
+   },
+   {
+    "name": "酒吧老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持祷告并拔枪的酒吧老板"
+   },
+   {
+    "name": "酒吧客人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诵念受苦者意志的客人"
+   },
+   {
+    "name": "酒吧客人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愿进献一切换取福祉的客人"
+   },
+   {
+    "name": "受苦者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "启明会信仰、赐予永恒安乐者"
+   },
+   {
+    "name": "奇索斯酒吧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "肃穆聚会的奇索斯镇酒吧"
+   }
+  ],
+  "relations": [
+   {
+    "src": "酒吧老板",
+    "relation": "敬颂",
+    "dst": "受苦者",
+    "evidence": "敬颂“受苦者”",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒吧客人Ⅰ",
+    "relation": "诵念",
+    "dst": "受苦者",
+    "evidence": "我们将奉行“受苦者”的意志",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒吧客人Ⅱ",
+    "relation": "进献",
+    "dst": "受苦者",
+    "evidence": "我们将进献心灵中的一切，以信仰换取崇高的福祉",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "索酒",
+    "dst": "酒吧老板",
+    "evidence": "来一杯伏特加纯饮，我要你这儿最好的牌子",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒吧老板",
+    "relation": "拒绝",
+    "dst": "红弩箭",
+    "evidence": "现在不是开业的时间，斯拉夫人",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒吧老板",
+    "relation": "胁迫",
+    "dst": "红弩箭",
+    "evidence": "有一把枪，正在数英寸之远的地方上了膛",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "讥讽",
+    "dst": "酒吧老板",
+    "evidence": "那个“受苦者”到底给了你们多少好处",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

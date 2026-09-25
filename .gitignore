@@ -21,6 +21,9 @@ data/knowledge/lore_*.json
 data/knowledge/graph_*.json
 data/knowledge/web.json
 data/knowledge/persona.json
+#   剧情语义向量索引（M8，约 45MB）：与嵌入模型强绑定，指纹不符即自动停用，
+#   删掉等于本层不存在（可回滚），用 scripts/build_plot_index.py --build 重建即可
+data/knowledge/plot_index_*.npz
 #   抽取缓存（plot_cache*/graph_cache*，约 1.6 万个文件）与备份/归档
 data/knowledge/*cache*/
 data/knowledge/*.bak*
@@ -57,8 +60,20 @@ docs/_tmp_voicestat.txt
 
 # 第三方可下载模型与语言包（运行时按需下载，不入库）
 desktop/resources/ocr/traineddata/
+#   同上：bge-reranker 的 ONNX 权重（1.1 G + 279 M），可从 HuggingFace 重新下载
+models/**/*.onnx
+#   漂移实验的一次性嵌入缓存（73 M），派生物
+data/knowledge/_audit/_drift_embed_cache.npz
+
+# 外部剧情语料仓库（VioletWilde/Reverse1999-Story-Compendium，约 1 GB）
+# 只作为 canon_zh 清洗的**原料**，产物已落 data/lore/wu_ming_zhe/canon_zh/*.compendium.md；
+# 按「只入库不可再生种子、派生物不入库」的既有原则排除。重建方式见
+# scripts/compendium_canon_corpus.py 头部说明（git clone 即可复现）。
+vendor/
 
 # 桌面宠物壳（Electron）
 desktop/node_modules/
 desktop/dist/
 desktop/out/
+#   运行期检索埋点（M-11）：默认关；开启时按轮追加，属运行产物不入库
+data/knowledge/_audit/retrieval_trace/

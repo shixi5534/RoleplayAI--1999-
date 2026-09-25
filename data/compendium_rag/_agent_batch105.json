@@ -1,0 +1,1229 @@
+{
+ "557b91fdcfaf38b13cf5802d": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忆旧者"
+   },
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "叩问者"
+   },
+   {
+    "name": "尼迪亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夜叩窗的揭发者"
+   },
+   {
+    "name": "洛佩拉的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出卖罢工者的人"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "罗德里戈所护之人"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "洛佩拉自认的家"
+   },
+   {
+    "name": "哥伦比亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已不存在的家乡"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "混乱之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "尼迪亚",
+    "relation": "揭发",
+    "dst": "洛佩拉",
+    "evidence": "洛佩拉，我搞明白了，是你爸爸出卖了我们所有人",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的父亲",
+    "relation": "出卖",
+    "dst": "尼迪亚",
+    "evidence": "是你爸爸出卖了我们所有人",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的父亲",
+    "relation": "喝令",
+    "dst": "尼迪亚",
+    "evidence": "在窗台上，抓住她！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "欲救",
+    "dst": "尼迪亚",
+    "evidence": "拉住我的手，尼迪亚！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "提议",
+    "dst": "洛佩拉",
+    "evidence": "你想回家乡看一眼吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "归属",
+    "dst": "芝诺",
+    "evidence": "现在芝诺是我的家，对我来说这就够了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "贬议",
+    "dst": "芝诺",
+    "evidence": "芝诺的团结就是一个笑话",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "质问",
+    "dst": "罗德里戈",
+    "evidence": "这整件事又和你有什么关系？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "断言",
+    "dst": "洛佩拉",
+    "evidence": "桑德罗绝不会到芝诺去！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1c243214c14ee725208e9d8": {
+  "entities": [
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "锁门者"
+   },
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被锁者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "罗德里戈之子"
+   },
+   {
+    "name": "尼塔",
+    "type": "角色",
+    "aliases": [
+     "罗德里戈之女"
+    ],
+    "desc": "罗德里戈亡女"
+   },
+   {
+    "name": "尼迪亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被杀死者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "被引之名"
+   },
+   {
+    "name": "佩枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "子弹落空"
+   },
+   {
+    "name": "铁链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "锁门之具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗德里戈",
+    "relation": "咆哮",
+    "dst": "洛佩拉",
+    "evidence": "桑德罗绝不会到芝诺去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "揭破",
+    "dst": "洛佩拉",
+    "evidence": "他对你来说是什么——一个该死的战利品，一个他妈的勋章",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "开火",
+    "dst": "洛佩拉",
+    "evidence": "他开火，子弹却落入阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "反锁",
+    "dst": "洛佩拉",
+    "evidence": "眼睁睁看着罗德里戈倒退着离开房屋，反手将门从外面锁上",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "自陈",
+    "dst": "尼迪亚",
+    "evidence": "如果是我的话，我也会开枪杀死尼迪亚的",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "悲呼",
+    "dst": "尼塔",
+    "evidence": "可是，上帝——尼塔！现在又叫我怎么能下得了手？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "坦承",
+    "dst": "洛佩拉",
+    "evidence": "桑德罗是我唯一的孩子了",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "逼问",
+    "dst": "罗德里戈",
+    "evidence": "你——要把桑德罗带到哪里去？",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑德罗",
+    "relation": "为子",
+    "dst": "罗德里戈",
+    "evidence": "桑德罗是我唯一的孩子了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "52f686b4aa39c85dad19c3f4": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "即兴炼金者"
+   },
+   {
+    "name": "坩埚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "自热式便携坩埚"
+   },
+   {
+    "name": "烟灰色小弹丸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与烟雾弹起反应"
+   },
+   {
+    "name": "庞巴迪甲虫",
+    "type": "物品",
+    "aliases": [],
+    "desc": "炼金原料"
+   },
+   {
+    "name": "香蕉皮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "炼金原料"
+   },
+   {
+    "name": "火药残渣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "增强爆炸倾向"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自热式炼金"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "所寻之人"
+   },
+   {
+    "name": "大门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被炸开"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "撞门",
+    "dst": "大门",
+    "evidence": "即便对手是一层薄薄的木板，瘦小的身躯也无法撼动它分毫",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "添加",
+    "dst": "火药残渣",
+    "evidence": "从枪管中刮出一些火药残渣，添加进坩埚之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "投入",
+    "dst": "庞巴迪甲虫",
+    "evidence": "原料中还有庞巴迪甲虫",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "投入",
+    "dst": "香蕉皮",
+    "evidence": "呃，烂掉的香蕉皮？",
+    "confidence": 0.9
+   },
+   {
+    "src": "坩埚",
+    "relation": "炼化",
+    "dst": "烟灰色小弹丸",
+    "evidence": "自热式神秘学便携坩埚将不甚考究的杂乱材料转化为某种粘稠的过渡形态",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "踢向",
+    "dst": "坩埚",
+    "evidence": "洛佩拉一脚将坩埚踢向房门",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "忆及",
+    "dst": "桑德罗",
+    "evidence": "她又想起父亲的嘱托——找到桑德罗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "34ec6b5ef7022719aadfc26c": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被救者"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带队救援者"
+   },
+   {
+    "name": "芝诺士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜捕者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "所寻之人"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "命令来源"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "汇合方"
+   },
+   {
+    "name": "坩埚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被炸飞"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "叛军汇合处"
+   },
+   {
+    "name": "雨林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "枪声所在"
+   },
+   {
+    "name": "芝诺基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "返回之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡西扬少校",
+    "relation": "救援",
+    "dst": "洛佩拉",
+    "evidence": "我们刚在附近巡逻，听见一声爆炸就赶来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "通报",
+    "dst": "洛佩拉",
+    "evidence": "叛徒没有控制营地，他们向外四散逃走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "告知",
+    "dst": "洛佩拉",
+    "evidence": "叛军和天使兄弟会的人正在向一个庄园汇合",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "坚持",
+    "dst": "卡西扬少校",
+    "evidence": "我还要去找桑德罗",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "援引",
+    "dst": "伊戈尔",
+    "evidence": "这是伊戈尔将军要我去做的",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "循声",
+    "dst": "雨林",
+    "evidence": "跟着枪声走，就能找到他",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺士兵",
+    "relation": "搜捕",
+    "dst": "天使兄弟会",
+    "evidence": "我们正在搜捕他们",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "370818424b9b86fd92738eb1": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "探庄者"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同探者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "现身庄园的邪教徒"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与叛军攀谈者"
+   },
+   {
+    "name": "爪子女俘虏",
+    "type": "角色",
+    "aliases": [
+     "黑发女人"
+    ],
+    "desc": "长爪食火鸡的女子"
+   },
+   {
+    "name": "火鸡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被啃之物"
+   },
+   {
+    "name": "板条箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "外部运来的物资"
+   },
+   {
+    "name": "隐蔽庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "叛军据点"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "或已逃远"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡西扬少校",
+    "relation": "判定",
+    "dst": "隐蔽庄园",
+    "evidence": "要我说的话，这绝对是一个庄园",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "识别",
+    "dst": "重塑之手",
+    "evidence": "重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "警觉",
+    "dst": "爪子女俘虏",
+    "evidence": "她的爪子不像是个装饰品",
+    "confidence": 0.95
+   },
+   {
+    "src": "爪子女俘虏",
+    "relation": "啃食",
+    "dst": "火鸡",
+    "evidence": "她在啃什么？……那明明是一只火鸡",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "推测",
+    "dst": "桑德罗",
+    "evidence": "也许桑德罗逃远了，也许桑德罗被捕了",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "发现",
+    "dst": "板条箱",
+    "evidence": "还有许多板条箱……这应该是从外部运送来的物资",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "欲袭",
+    "dst": "爪子女俘虏",
+    "evidence": "我有预感，那个在吃火鸡的敌人会很难对付",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b63306d69f610b62ba94edf7": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "审问者"
+   },
+   {
+    "name": "爪子女俘虏",
+    "type": "角色",
+    "aliases": [
+     "黑发女人"
+    ],
+    "desc": "饥肠辘辘的邪教徒俘虏"
+   },
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "被囚者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逃入林中者"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开锁者"
+   },
+   {
+    "name": "芝诺士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "押解者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "俘虏所属"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "擒获罗德里戈者"
+   },
+   {
+    "name": "神秘学拘束工具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "有时效的束缚"
+   },
+   {
+    "name": "地下关押处",
+    "type": "地点",
+    "aliases": [],
+    "desc": "庄园地下"
+   },
+   {
+    "name": "芝诺基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "押返之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "审问",
+    "dst": "爪子女俘虏",
+    "evidence": "我向你问两个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "爪子女俘虏",
+    "relation": "供出",
+    "dst": "罗德里戈",
+    "evidence": "我见过他，这个大个子是从林子里冒出来的，身后还牵着小年轻",
+    "confidence": 0.95
+   },
+   {
+    "src": "爪子女俘虏",
+    "relation": "供出",
+    "dst": "桑德罗",
+    "evidence": "年纪小的钻进林子里消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "天使兄弟会",
+    "relation": "擒获",
+    "dst": "罗德里戈",
+    "evidence": "年纪大的被兄弟会抓住了，关在这座庄园的地下",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "拒释",
+    "dst": "爪子女俘虏",
+    "evidence": "不可能就这么放你走的，先去芝诺的监狱里坐一会儿吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "拘束",
+    "dst": "爪子女俘虏",
+    "evidence": "带她走吧，神秘学拘束工具是有时效的",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "扶起",
+    "dst": "罗德里戈",
+    "evidence": "打算扶起他的头，检查目标是否还有生命体征",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "寻找",
+    "dst": "罗德里戈",
+    "evidence": "她得去找罗德里戈，从他口中撬出桑德罗的下落",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b48cc047b94cacf43a9f9c57": {
+  "entities": [
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "挟持者"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被挟持者"
+   },
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "瞄准者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "罗德里戈之子"
+   },
+   {
+    "name": "洛佩拉的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闪回中的父亲"
+   },
+   {
+    "name": "尼迪亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及者"
+   },
+   {
+    "name": "碎石片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "充当匕首"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被贬之军"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗德里戈",
+    "relation": "挟持",
+    "dst": "卡西扬少校",
+    "evidence": "罗德里戈猛地跳起，钳住卡西扬少校的喉咙",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "威胁",
+    "dst": "洛佩拉",
+    "evidence": "放下枪！不然芝诺又要少一个好少校了",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "索问",
+    "dst": "罗德里戈",
+    "evidence": "桑德罗逃去哪里了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "拒答",
+    "dst": "洛佩拉",
+    "evidence": "我当然不会告诉你的，桑德罗……他会获得自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "自认",
+    "dst": "桑德罗",
+    "evidence": "只有我才是那个罪人",
+    "confidence": 0.9
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "贬斥",
+    "dst": "芝诺",
+    "evidence": "一个连自己的长官都能杀害的军队，谈什么荣誉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的父亲",
+    "relation": "强辩",
+    "dst": "洛佩拉",
+    "evidence": "我没有亲手杀死过任何无辜的人，我只是抢在了他们之前",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的父亲",
+    "relation": "提及",
+    "dst": "尼迪亚",
+    "evidence": "她叫尼迪亚，你看，我记得她的名字",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "顶撞",
+    "dst": "洛佩拉的父亲",
+    "evidence": "我再也不要到那间屋子里去了！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "31a60a0f13d2c6f2ee155122": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开枪救命者"
+   },
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获救者"
+   },
+   {
+    "name": "洛佩拉的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闪回中的父亲"
+   },
+   {
+    "name": "尼迪亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被忆者"
+   },
+   {
+    "name": "劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邻家女孩"
+   },
+   {
+    "name": "芝诺士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶到者"
+   },
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自杀者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被放跑者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "反抗",
+    "dst": "洛佩拉的父亲",
+    "evidence": "我不害怕了……什么都不怕了，我要走，你锁不住我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "辩白",
+    "dst": "洛佩拉的父亲",
+    "evidence": "做坏事的不是我！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的父亲",
+    "relation": "斥责",
+    "dst": "洛佩拉",
+    "evidence": "你以为你的命不是拿别人的血换来的吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "开枪",
+    "dst": "罗德里戈",
+    "evidence": "洛佩拉少尉开枪救了我一命",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "救护",
+    "dst": "卡西扬少校",
+    "evidence": "洛佩拉少尉开枪救了我一命",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "致谢",
+    "dst": "洛佩拉",
+    "evidence": "我欠你一条命，少尉",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺士兵",
+    "relation": "报告",
+    "dst": "卡西扬少校",
+    "evidence": "他发现了一具男性的尸体……他是开枪自杀的",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "坦白",
+    "dst": "卡西扬少校",
+    "evidence": "桑德罗被放跑了，我出去找他",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7273917fe0ab5a0fe7f18e66": {
+  "entities": [
+   {
+    "name": "卡西扬少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭底者"
+   },
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊悉者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "到场者"
+   },
+   {
+    "name": "安托沙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阵亡战友"
+   },
+   {
+    "name": "卡洛斯将军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇害者"
+   },
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "卡洛斯的线人"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "情报交换条件"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "围困者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "罗德里戈所求方"
+   },
+   {
+    "name": "阵亡士兵墓地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "林间墓地"
+   },
+   {
+    "name": "里约",
+    "type": "地点",
+    "aliases": [],
+    "desc": "线人来处"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "驻军所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡西扬少校",
+    "relation": "凭吊",
+    "dst": "安托沙",
+    "evidence": "我的好安托沙，这谁能想得到呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "斥骂",
+    "dst": "卡洛斯将军",
+    "evidence": "卡洛斯真是一个混蛋",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "指认",
+    "dst": "罗德里戈",
+    "evidence": "卡洛斯的线人是一个里约来的退伍军人，名叫罗德里戈",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "捏造",
+    "dst": "卡洛斯将军",
+    "evidence": "名单多半是他捏造的",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "索求",
+    "dst": "芝诺",
+    "evidence": "要求芝诺派人从天使兄弟会手中救下桑德罗，这也是他提出来的情报交换条件",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "图谋",
+    "dst": "桑德罗",
+    "evidence": "罗德里戈有一千种方法可以带他远走高飞",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡西扬少校",
+    "relation": "推测",
+    "dst": "洛佩拉",
+    "evidence": "我会借你的手把桑德罗从兄弟会的围困中带出来",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "抵达",
+    "dst": "阵亡士兵墓地",
+    "evidence": "卡西扬少校，洛佩拉少尉",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "评价",
+    "dst": "卡洛斯将军",
+    "evidence": "卡洛斯给我留下的烂摊子比沼泽地还可怕",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a18e9c90f636f3eb093ca136": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "宽慰的养父"
+   },
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自责者"
+   },
+   {
+    "name": "桑德罗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "罗德里戈之子"
+   },
+   {
+    "name": "罗德里戈",
+    "type": "角色",
+    "aliases": [
+     "老罗德里戈"
+    ],
+    "desc": "以名单换子者"
+   },
+   {
+    "name": "尼塔",
+    "type": "角色",
+    "aliases": [
+     "罗德里戈之女"
+    ],
+    "desc": "被撕票的女儿"
+   },
+   {
+    "name": "洛佩拉的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出卖罢工者的人"
+   },
+   {
+    "name": "近卫团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将纳入圣保罗驻军"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "驻军所在"
+   },
+   {
+    "name": "里约",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罗德里戈服役处"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "据点被捣毁"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊戈尔",
+    "relation": "改制",
+    "dst": "近卫团",
+    "evidence": "把圣保罗的驻军纳入我的近卫团",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "请罪",
+    "dst": "伊戈尔",
+    "evidence": "我没有带回桑德罗，任务失败了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "更正",
+    "dst": "洛佩拉",
+    "evidence": "我要求你优先返回基地，不要去找桑德罗",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "换子",
+    "dst": "桑德罗",
+    "evidence": "罗德里戈最后用一份名单换走了他儿子",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "丧女",
+    "dst": "尼塔",
+    "evidence": "他的女儿在前期交涉中遭到撕票",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "服役",
+    "dst": "里约",
+    "evidence": "他在里约服役时，不小心在毒贩子面前暴露了自己的身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗德里戈",
+    "relation": "隐讳",
+    "dst": "桑德罗",
+    "evidence": "再也没有公开承认过自己和桑德罗的父子关系",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "捣毁",
+    "dst": "重塑之手",
+    "evidence": "你捣毁了一个重塑之手的据点",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "肯定",
+    "dst": "洛佩拉",
+    "evidence": "你一直都是我的骄傲，洛佩拉",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "未弑父",
+    "dst": "洛佩拉的父亲",
+    "evidence": "还好，至少你当年没有因此而杀死生父",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

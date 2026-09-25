@@ -1,0 +1,2049 @@
+{
+ "c289b0d1ddad25df92066a82": {
+  "entities": [
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻名单点人的接管军官"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "看穿接管意图的列车长"
+   },
+   {
+    "name": "边防士兵Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "涌入车厢持枪的士兵"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隐蔽在枪口后的调查员"
+   },
+   {
+    "name": "重塑之手的徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "刻着组织标记的徽章"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被追问真实目的的组织"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "发作过快可疑的病症"
+   },
+   {
+    "name": "乘客名单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被翻阅点名的乘客名单"
+   },
+   {
+    "name": "被点名的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被念出名字带走的乘客"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "指控",
+    "dst": "鲍里斯",
+    "evidence": "你早就计划好这一切了——摧毁信任，再接管列车",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "质问",
+    "dst": "鲍里斯",
+    "evidence": "你到底想做什么，鲍里斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "自辩",
+    "dst": "告死鸟",
+    "evidence": "我只是在履行我的职责而已，伊格丽卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "翻阅",
+    "dst": "乘客名单",
+    "evidence": "军官小声嘱咐了几句，翻开乘客名单",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "点名",
+    "dst": "被点名的乘客",
+    "evidence": "尼科拉、亚历山大、约万……跟我走",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "恫吓",
+    "dst": "被点名的乘客",
+    "evidence": "最好别想着做什么小动作，枪口可不长眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅰ",
+    "relation": "持枪",
+    "dst": "塞梅尔维斯",
+    "evidence": "调查员环顾周围黑洞洞的枪口",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "存疑",
+    "dst": "感染种",
+    "evidence": "如果是感染种的话，他的症状似乎发作得有些过快了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "端详",
+    "dst": "重塑之手的徽章",
+    "evidence": "望着那一枚暗淡的、刻着“重塑之手”标记的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手的徽章",
+    "relation": "铭刻",
+    "dst": "重塑之手",
+    "evidence": "刻着“重塑之手”标记的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "质问",
+    "dst": "重塑之手",
+    "evidence": "这会是你们的真实目的吗？“重塑之手”",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "忧惧",
+    "dst": "感染种",
+    "evidence": "如果再放进来几个感染种，列车将变成一个可怕的囚笼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5842a1b82968e4346d5a8752": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "把家人葬进土坑的女孩"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于枪声中的母亲"
+   },
+   {
+    "name": "野树莓的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被合葬的父亲"
+   },
+   {
+    "name": "小尼古拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "只寻回一部分的弟弟"
+   },
+   {
+    "name": "故乡的墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "村庄废墟旁的合葬土坑"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "故事里饮血长存的种族"
+   },
+   {
+    "name": "血食怪的故事",
+    "type": "概念",
+    "aliases": [],
+    "desc": "母亲反复讲过的睡前故事"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "忆母",
+    "dst": "野树莓的母亲",
+    "evidence": "记忆中只剩下一张女人的脸",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "催促",
+    "dst": "野树莓",
+    "evidence": "快跑！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "哀求",
+    "dst": "野树莓的母亲",
+    "evidence": "别赶我走，妈妈",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "不肯离去",
+    "dst": "野树莓的母亲",
+    "evidence": "不。我不会抛下你们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "背负",
+    "dst": "小尼古拉",
+    "evidence": "你可真沉呀，小笨猪",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "呼唤",
+    "dst": "野树莓的父亲",
+    "evidence": "爸爸……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "合葬",
+    "dst": "故乡的墓园",
+    "evidence": "女孩再次回到这里，将家人们合葬在了一处无人的土坑里",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "安眠",
+    "dst": "故乡的墓园",
+    "evidence": "爸爸、妈妈，还有一小部分的尼古拉",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "依偎",
+    "dst": "野树莓的母亲",
+    "evidence": "小心翼翼地蜷缩在“母亲”身旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "讲述",
+    "dst": "血食怪的故事",
+    "evidence": "妈妈，给我讲睡前故事吧。血食怪的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "复诵",
+    "dst": "血食怪的故事",
+    "evidence": "只需饮下鲜血，他们便将永世长存",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪的故事",
+    "relation": "许诺",
+    "dst": "血食怪",
+    "evidence": "他们的世界是自由的，没有死亡，也没有恐惧",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "畏孤独",
+    "dst": "故乡的墓园",
+    "evidence": "我不想一个人醒着。别丢下我，我们一起沉入梦乡吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f5676fa2f2f292e1aaaba587": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "以血唤亲人的执念女孩"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唇间被抹上鲜血的母亲"
+   },
+   {
+    "name": "野树莓的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同样被抹血的父亲"
+   },
+   {
+    "name": "小尼古拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "衣着可辨的弟弟"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被信奉为生命之质的血"
+   },
+   {
+    "name": "阿诺德五世",
+    "type": "角色",
+    "aliases": [
+     "德古拉",
+     "穿刺公",
+     "阿诺德"
+    ],
+    "desc": "梦中自认的先祖"
+   },
+   {
+    "name": "故乡的墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "黄昏里对话家人的所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "复生",
+    "dst": "血食怪",
+    "evidence": "血食怪只要吸食了鲜血，就能从墓穴里复生",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "抹血",
+    "dst": "野树莓的母亲",
+    "evidence": "她咬破手指，将血液轻轻抹在母亲的嘴唇上",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "回应",
+    "dst": "野树莓",
+    "evidence": "鲜血在母亲的唇间微微溢出",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "抹血",
+    "dst": "野树莓的父亲",
+    "evidence": "我也要给爸爸、尼古拉都来上一点儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "涂抹",
+    "dst": "小尼古拉",
+    "evidence": "我也要给爸爸、尼古拉都来上一点儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "认定",
+    "dst": "血食怪",
+    "evidence": "我们本来就是血食怪一家呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "起誓",
+    "dst": "阿诺德五世",
+    "evidence": "我、我可是德古拉的末代后裔",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "立誓",
+    "dst": "血食怪",
+    "evidence": "我将保护我的亲族",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "挑战",
+    "dst": "故乡的墓园",
+    "evidence": "你们别想伤害我的家人",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "惊变",
+    "dst": "野树莓的母亲",
+    "evidence": "刚才鲜活的家人们此刻却变为了腐烂的尸体",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "哀求",
+    "dst": "野树莓的母亲",
+    "evidence": "妈妈，你抱抱我……你快醒来抱抱我呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "不肯信",
+    "dst": "血食怪",
+    "evidence": "我们是血食怪……你们是不会死的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a374b122485be29dbfad5d03": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "被按着灌血的醒来者"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以尸血肉汁相待的军官"
+   },
+   {
+    "name": "乘客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于仓库的老爷爷"
+   },
+   {
+    "name": "车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两人曾相逢的风雪车站"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被军官嘲弄的种族之名"
+   },
+   {
+    "name": "狼人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与血食怪并列的吃人传说"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "否认",
+    "dst": "血食怪",
+    "evidence": "不是……假的……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "认出",
+    "dst": "乘客Ⅰ",
+    "evidence": "她曾见过他，就在风雪纷飞的车站里",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅰ",
+    "relation": "来自",
+    "dst": "车站",
+    "evidence": "是车站的那个老爷爷",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅰ",
+    "relation": "笑谈",
+    "dst": "血食怪",
+    "evidence": "血食怪吃人、狼人吃人、野兽吃人",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅰ",
+    "relation": "戳破",
+    "dst": "狼人",
+    "evidence": "本质都是人吃人罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "质问",
+    "dst": "鲍里斯",
+    "evidence": "你是刚才的那个军官……这些都是你干的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "羞辱",
+    "dst": "野树莓",
+    "evidence": "这里没有别的食物和饮用水了，但血和肉一定管够",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "摆弄",
+    "dst": "乘客Ⅰ",
+    "evidence": "长长的、发黑的指甲情人般轻拂过尸体的手腕",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "灌血",
+    "dst": "野树莓",
+    "evidence": "血沿着野树莓的头发向下流淌，先是睫毛、眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "呕吐",
+    "dst": "血食怪",
+    "evidence": "鼻尖满是腥臭的血气，她再也支撑不住，半趴在地上疯狂呕吐",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "讥讽",
+    "dst": "血食怪",
+    "evidence": "真正的血食怪可不会这样",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f8fab80f9a8b621193028bed": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "满脸血迹的冒牌货"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "露出纯血双瞳的军官"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "军官自认的真实身份"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押女孩的车站仓库"
+   },
+   {
+    "name": "车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "仓库所属的车站"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "惊问",
+    "dst": "鲍里斯",
+    "evidence": "你也是……血食怪？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "自称",
+    "dst": "血食怪",
+    "evidence": "当然。哦，纠正一点，没有“也”",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "嘲弄",
+    "dst": "野树莓",
+    "evidence": "还没清醒过来吗？可怜的小冒牌货",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "坚持",
+    "dst": "血食怪",
+    "evidence": "我的亲族……他们不久就将从墓穴里醒来",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "自陈",
+    "dst": "血食怪",
+    "evidence": "毋庸置疑的血脉，毋庸置疑的身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "被押",
+    "dst": "车站仓库",
+    "evidence": "车站仓库",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站仓库",
+    "relation": "位于",
+    "dst": "车站",
+    "evidence": "车站仓库",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "讥笑",
+    "dst": "野树莓",
+    "evidence": "谁说疯子就不值得同情呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "许愿",
+    "dst": "野树莓",
+    "evidence": "我可以给你一个实现愿望的机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "诱以",
+    "dst": "血食怪",
+    "evidence": "成为一名真正的血食怪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f94e4f552d1083ec29d72a4e": {
+  "entities": [
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "抱住扶手尖叫的男孩"
+   },
+   {
+    "name": "边防士兵Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掰开手指挟人的士兵"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被枪口逼退的调查员"
+   },
+   {
+    "name": "隔离条令",
+    "type": "概念",
+    "aliases": [],
+    "desc": "只许隔离不许出门的条令"
+   },
+   {
+    "name": "软禁",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被揭穿的变相软禁"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱着娃娃的不安女孩"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同被带走的女士"
+   },
+   {
+    "name": "乘客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直言这是囚禁的乘客"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "只有电流声的通讯器"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "被开诚布公的列车长"
+   },
+   {
+    "name": "重塑之手的徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从巡逻队身上拾起的徽章"
+   },
+   {
+    "name": "边防巡逻队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "徽章来源的巡逻队"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "号称在预防的感染"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "设下幌子的军官"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威廉",
+    "relation": "抗拒",
+    "dst": "边防士兵Ⅰ",
+    "evidence": "不——我是不会跟你们走的……绝不！",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅰ",
+    "relation": "掰开",
+    "dst": "威廉",
+    "evidence": "士兵们上前，一根一根掰开男孩倔强的胖手指",
+    "confidence": 0.95
+   },
+   {
+    "src": "隔离条令",
+    "relation": "打乱",
+    "dst": "乘客Ⅱ",
+    "evidence": "“隔离条令”发布后不久，乘客们被打乱、分离",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "质问",
+    "dst": "隔离条令",
+    "evidence": "从所谓的“隔离”开始，你们已经从这里带走十个人了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追问",
+    "dst": "边防士兵Ⅰ",
+    "evidence": "我能问问他们会被送去什么地方吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅰ",
+    "relation": "威胁",
+    "dst": "塞梅尔维斯",
+    "evidence": "士兵抬起枪，枪口对准了调查员踩在门缝上的皮靴",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅰ",
+    "relation": "重申",
+    "dst": "隔离条令",
+    "evidence": "隔离期间不得踏出车厢门半步",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅰ",
+    "relation": "挟走",
+    "dst": "威廉",
+    "evidence": "将男孩横过来夹在腋下，大步离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "呼喊",
+    "dst": "安娜贝尔",
+    "evidence": "安娜贝尔……不！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "挂念",
+    "dst": "威廉",
+    "evidence": "小威廉和多萝西女士都被带走了，老大也一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "挂念",
+    "dst": "多萝西",
+    "evidence": "小威廉和多萝西女士都被带走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅱ",
+    "relation": "指斥",
+    "dst": "隔离条令",
+    "evidence": "这不是隔离，这是囚禁",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "自守",
+    "dst": "隔离条令",
+    "evidence": "感知到士兵目光中的警告，女孩害怕地抱紧怀中的娃娃",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "求援",
+    "dst": "通讯器",
+    "evidence": "调查员悄悄摁下通讯器，却只听到一连串麻木的电流声",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "点破",
+    "dst": "软禁",
+    "evidence": "所谓的隔离只不过是变相软禁罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "揭穿",
+    "dst": "鲍里斯",
+    "evidence": "整件事都是鲍里斯设计的一个幌子",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "反诘",
+    "dst": "塞梅尔维斯",
+    "evidence": "看样子你的调查工作有进展了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "出示",
+    "dst": "重塑之手的徽章",
+    "evidence": "拿出先前从巡逻队身上拾起的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手的徽章",
+    "relation": "缴自",
+    "dst": "边防巡逻队",
+    "evidence": "拿出先前从巡逻队身上拾起的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辨伪",
+    "dst": "血食怪",
+    "evidence": "他们口中的“隔离”可不像是在预防血食怪感染",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8c7ce7b6ff5f4f39b76665eb": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挑明底牌的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "承认故友异常的列车长"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以引发混乱为乐的极端组织"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被断言为内应的军官"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被安插在列车上的身份"
+   },
+   {
+    "name": "七十七行动小队",
+    "type": "组织",
+    "aliases": [
+     "七十七分队"
+    ],
+    "desc": "仍无下落的队友"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曾与车上人起冲突的基金会"
+   },
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以头撞窗的感染乘客"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被血手惊叫的女孩"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "车窗被血痕涂满的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "指认",
+    "dst": "重塑之手",
+    "evidence": "它是我一直在调查的组织——“重塑之手”的信物",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "惊闻",
+    "dst": "重塑之手",
+    "evidence": "重塑之手？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "剖析",
+    "dst": "重塑之手",
+    "evidence": "一个危险的极端神秘学家组织，以引发混乱为乐",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "判断",
+    "dst": "鲍里斯",
+    "evidence": "鲍里斯不会如此提防你",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "投放",
+    "dst": "血食怪",
+    "evidence": "鲍里斯很可能与重塑之手投放在列车上的血食怪有关",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "断言",
+    "dst": "鲍里斯",
+    "evidence": "他就是重塑之手安插在列车上的血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "宣读",
+    "dst": "鲍里斯",
+    "evidence": "鲍里斯是血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "并肩",
+    "dst": "鲍里斯",
+    "evidence": "我们曾经并肩作战，他为组织贡献过很多力量",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "打探",
+    "dst": "七十七行动小队",
+    "evidence": "既然彼此已经挑明，那么我想请问，我的队友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "否认",
+    "dst": "七十七行动小队",
+    "evidence": "很遗憾，我确实从未见过你的队友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "龃龉",
+    "dst": "圣洛夫基金会",
+    "evidence": "曾有基金会的成员搭乘过列车",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "致歉",
+    "dst": "圣洛夫基金会",
+    "evidence": "抱歉。很多时候，惹人不快也是我们工作的一部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "揣度",
+    "dst": "感染的乘客",
+    "evidence": "恐怕和刚才被感染的乘客有关，是吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "惊叫",
+    "dst": "感染的乘客",
+    "evidence": "一只血手猛地贴上车窗，拖出一道道蜿蜒的血痕",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的乘客",
+    "relation": "撞击",
+    "dst": "多瑙黎明号",
+    "evidence": "用头一下一下撞着车窗玻璃，直到额头鲜血淋漓",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "催促",
+    "dst": "告死鸟",
+    "evidence": "现在你觉得我们还需要耐心吗，列车长女士",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "74563f638da84033a6385b8d": {
+  "entities": [
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撞窗求入的感染乘客"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被吓坏了的女孩"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问杀局的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "掏枪护人的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "引走驻军的乘务员"
+   },
+   {
+    "name": "乘务员艾玛的眼罩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "遮住一只眼睛的眼罩"
+   },
+   {
+    "name": "边防士兵Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失控后闯入的士兵"
+   },
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押乘客的临时拘留室"
+   },
+   {
+    "name": "车站守军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被引走与看守的驻军"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "感染种涌出的仓库"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "遍布走廊车厢的病症"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "血流满地的车厢所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "感染的乘客",
+    "relation": "哀求",
+    "dst": "安娜贝尔",
+    "evidence": "让我过去让我过去让我过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "惊惧",
+    "dst": "感染的乘客",
+    "evidence": "他，他就要进来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "护住",
+    "dst": "安娜贝尔",
+    "evidence": "她将乘客们护在后方，掏出别在腰间的手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的乘客",
+    "relation": "毙命",
+    "dst": "多瑙黎明号",
+    "evidence": "被感染的乘客忽然被一股强大的外力拽离了人们的视野",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "揣测",
+    "dst": "乘务员艾玛",
+    "evidence": "外面打起来了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "现身",
+    "dst": "告死鸟",
+    "evidence": "是我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "引开",
+    "dst": "车站守军",
+    "evidence": "刚才引走驻军的人也是你，对吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "询问",
+    "dst": "乘务员艾玛",
+    "evidence": "做得好。现在外面情况如何",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "清点",
+    "dst": "感染种",
+    "evidence": "走廊上、车厢里到处都是……感染种",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染种",
+    "relation": "涌出",
+    "dst": "车站仓库",
+    "evidence": "都是从仓库里跑出来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "自陈",
+    "dst": "多瑙黎明号",
+    "evidence": "墙上、餐桌上、座椅下全是血，我一眼都不敢看",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追问",
+    "dst": "乘务员艾玛",
+    "evidence": "刚才那个被感染的乘客……是你杀的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "羞赧",
+    "dst": "乘务员艾玛的眼罩",
+    "evidence": "女孩有些害羞地拽了拽自己右侧的眼罩",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "回护",
+    "dst": "乘务员艾玛",
+    "evidence": "身为“多瑙黎明号”的乘务员，会点儿防身的技巧并不是什么稀奇事",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "转述",
+    "dst": "临时拘留室",
+    "evidence": "乘客们被带去临时拘留室“检查”",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "看守",
+    "dst": "临时拘留室",
+    "evidence": "有不少去临时拘留室看守关押的乘客了",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "请战",
+    "dst": "车站守军",
+    "evidence": "可、可以对付！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "躲入",
+    "dst": "多瑙黎明号",
+    "evidence": "乘务员迅速环顾了一圈，躲进了窗帘背后",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅱ",
+    "relation": "闯入",
+    "dst": "告死鸟",
+    "evidence": "见鬼……这下全失控了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b721af47d13aa6a52d76489c": {
+  "entities": [
+   {
+    "name": "边防士兵Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再度举枪挑人的士兵"
+   },
+   {
+    "name": "边防士兵Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掏出口哨示警的士兵"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被枪口点名的女孩"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "徒手扣住枪管的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "跃出阴影的乘务员"
+   },
+   {
+    "name": "乘务员艾玛的眼罩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被摘下的那只眼罩"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "眼罩下暴露的血色之眼"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "子弹打在顶棚的车厢"
+   }
+  ],
+  "relations": [
+   {
+    "src": "边防士兵Ⅱ",
+    "relation": "指向",
+    "dst": "安娜贝尔",
+    "evidence": "枪口漫不经心地左右晃荡着，最终落在安娜贝尔身上",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅱ",
+    "relation": "带走",
+    "dst": "安娜贝尔",
+    "evidence": "就你吧。小朋友，麻烦跟我们走一趟",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "推拒",
+    "dst": "边防士兵Ⅱ",
+    "evidence": "我……？不，我不要过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "扣住",
+    "dst": "边防士兵Ⅱ",
+    "evidence": "摇晃的枪管被死死扣住",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "斥退",
+    "dst": "边防士兵Ⅱ",
+    "evidence": "她说了，她不想过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅱ",
+    "relation": "走火",
+    "dst": "多瑙黎明号",
+    "evidence": "两发子弹不偏不倚地射在车厢的金属顶棚上",
+    "confidence": 0.95
+   },
+   {
+    "src": "边防士兵Ⅲ",
+    "relation": "喝令",
+    "dst": "告死鸟",
+    "evidence": "嘿。你们在做什么？都给我退后",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "遣出",
+    "dst": "乘务员艾玛",
+    "evidence": "去吧，艾玛",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "摘下",
+    "dst": "乘务员艾玛的眼罩",
+    "evidence": "乘务员摘下眼罩，露出另一只暗红如血的眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛的眼罩",
+    "relation": "遮掩",
+    "dst": "血食怪",
+    "evidence": "乘务员摘下眼罩，露出另一只暗红如血的眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "飞扑",
+    "dst": "边防士兵Ⅲ",
+    "evidence": "她便从阴影中一跃而出，以惊人的速度飞扑到士兵身上",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "扼住",
+    "dst": "边防士兵Ⅲ",
+    "evidence": "下一秒，她抡起胳膊，环住士兵的脖颈",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "缴械",
+    "dst": "边防士兵Ⅲ",
+    "evidence": "很抱歉，枪和口哨我都没收了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1b2d79cd68a89d55eb49c1b6": {
+  "entities": [
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "自陈非纯种的乘务员"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问眼瞳颜色的女孩"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被服务承诺掩盖的身份"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "意外于传闻的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "以己血相救的列车长"
+   },
+   {
+    "name": "围巾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "雪中飞舞的红色围巾"
+   },
+   {
+    "name": "渴血症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "迫使同族输血的旧疾"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被银色子弹比下去的术法"
+   },
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "乘客被押往的拘留室"
+   },
+   {
+    "name": "车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "拘留室所在的车站"
+   },
+   {
+    "name": "告死鸟的军火库",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏满枪械的军火柜"
+   },
+   {
+    "name": "银色子弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "克制血食怪的银色子弹"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被调侃是否开过枪的基金会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘务员艾玛",
+    "relation": "安抚",
+    "dst": "安娜贝尔",
+    "evidence": "这下没有人会被带走啦，暂时安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "惊问",
+    "dst": "乘务员艾玛",
+    "evidence": "乘务员小姐，你……你也是血食怪吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "自陈",
+    "dst": "血食怪",
+    "evidence": "血食怪的身份不会影响我为大家服务的",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "端详",
+    "dst": "乘务员艾玛",
+    "evidence": "你的另一只眼睛虽然像湖水那样美，却一点儿也不红",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "讳言",
+    "dst": "血食怪",
+    "evidence": "我……我不是纯种的血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "打趣",
+    "dst": "血食怪",
+    "evidence": "我以为它至少会高一点，或者凶一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "回护",
+    "dst": "乘务员艾玛",
+    "evidence": "部分是真的。艾玛从未伤害过任何人",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "输血",
+    "dst": "乘务员艾玛",
+    "evidence": "是渴血症犯了。我将我的血给了她",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "发作",
+    "dst": "渴血症",
+    "evidence": "是渴血症犯了",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "念旧",
+    "dst": "围巾",
+    "evidence": "以及一条在雪中飞舞的红色围巾",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "整理",
+    "dst": "围巾",
+    "evidence": "轻轻整理了一下小乘务员因战斗而稍许松开的围巾",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "批评",
+    "dst": "告死鸟",
+    "evidence": "先是加挂车厢，现在又是血食怪……你很擅长隐藏",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "结盟",
+    "dst": "塞梅尔维斯",
+    "evidence": "我们立场一致。起码在这次事件中，我们已经成为同伴",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "转述",
+    "dst": "临时拘留室",
+    "evidence": "士兵们把很多乘客押去了车站的临时拘留室",
+    "confidence": 0.95
+   },
+   {
+    "src": "临时拘留室",
+    "relation": "设于",
+    "dst": "车站",
+    "evidence": "士兵们把很多乘客押去了车站的临时拘留室",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "调侃",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会的，你开过枪吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "展示",
+    "dst": "告死鸟的军火库",
+    "evidence": "墙壁上挂满了整齐排列的各式武器",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "打趣",
+    "dst": "告死鸟的军火库",
+    "evidence": "所以你背地里还是个军火贩子？",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "授枪",
+    "dst": "银色子弹",
+    "evidence": "她将一支悉心养护过的手枪取出并丢给调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "银色子弹",
+    "relation": "克制",
+    "dst": "血食怪",
+    "evidence": "对付血食怪和感染种时，银色子弹比神秘术好用",
+    "confidence": 0.95
+   },
+   {
+    "src": "银色子弹",
+    "relation": "胜过",
+    "dst": "神秘术",
+    "evidence": "对付血食怪和感染种时，银色子弹比神秘术好用",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a097ef68a5bcef9120d6cc87": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "清点弹药的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "离座去关门的列车长"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忍不住回头的孩子"
+   },
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扒住车门的感染乘客"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "如癌细胞扩散的感染"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沦为战场的车厢"
+   },
+   {
+    "name": "加挂的车厢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "承诺不动的加挂车厢"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下承诺的军官"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "承诺出自的那个组织"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "呼喝",
+    "dst": "感染的乘客",
+    "evidence": "枪声把它们都吸引过来了。门——我们得把门关上",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "断后",
+    "dst": "塞梅尔维斯",
+    "evidence": "你们先离开，我去关门",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "冲向",
+    "dst": "感染的乘客",
+    "evidence": "径直冲向那聚集了无数鲜血与哀号的危险禁地",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "牵挂",
+    "dst": "告死鸟",
+    "evidence": "列车长……不……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "喝止",
+    "dst": "安娜贝尔",
+    "evidence": "别回头！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "回望",
+    "dst": "感染的乘客",
+    "evidence": "被凝视的感觉实在太过强烈。安娜贝尔没有忍住，缓缓转过头",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "求助",
+    "dst": "告死鸟",
+    "evidence": "我……我想回家",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的乘客",
+    "relation": "涌入",
+    "dst": "多瑙黎明号",
+    "evidence": "从列车外涌入越来越多的感染种",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染种",
+    "relation": "扩散",
+    "dst": "多瑙黎明号",
+    "evidence": "他们穿梭在各个车厢间，如同癌细胞一般增殖、扩散",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自陈",
+    "dst": "感染种",
+    "evidence": "这些家伙数量太多，我们根本对付不过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "指向",
+    "dst": "加挂的车厢",
+    "evidence": "还有一个地方……就在守车后面，鲍里斯曾答应过我不会动它",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "承诺",
+    "dst": "加挂的车厢",
+    "evidence": "就在守车后面，鲍里斯曾答应过我不会动它",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "质疑",
+    "dst": "重塑之手",
+    "evidence": "所以你相信重塑之手成员的承诺？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4e4fbaa7fe851f9ebf234afa": {
+  "entities": [
+   {
+    "name": "拉伊哈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "数听脚步声的女人"
+   },
+   {
+    "name": "雅科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥反击的难民领袖"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被疑为来人的军官"
+   },
+   {
+    "name": "偷渡乘客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝买单的偷渡客"
+   },
+   {
+    "name": "偷渡乘客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷言相和的偷渡客"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放下武器的劝解者"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "分发武器的求助者"
+   },
+   {
+    "name": "难民偷渡行动",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被指为祸源的偷渡"
+   },
+   {
+    "name": "加挂的车厢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被提议卸下的车厢"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "仍想前往的目的地"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "包围列车的感染"
+   },
+   {
+    "name": "隔离条令",
+    "type": "概念",
+    "aliases": [],
+    "desc": "另一侧的隔离"
+   },
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉不对劲的贵妇"
+   },
+   {
+    "name": "阿不思诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "四处找枪的绅士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉伊哈",
+    "relation": "数听",
+    "dst": "感染种",
+    "evidence": "一个、两个、三个……不，远不止三个",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "辨声",
+    "dst": "鲍里斯",
+    "evidence": "脚步声很杂乱，听上去不像是鲍里斯他们的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "问计",
+    "dst": "雅科夫",
+    "evidence": "怎么办，雅科夫",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "号令",
+    "dst": "拉伊哈",
+    "evidence": "大家备好武器，听我指挥",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "迎击",
+    "dst": "塞梅尔维斯",
+    "evidence": "人群一拥而上，毫不留情地将手中的武器往来客身上狠狠招呼",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "劝止",
+    "dst": "雅科夫",
+    "evidence": "请大家放下手中的武器",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "申说",
+    "dst": "雅科夫",
+    "evidence": "谨慎是好事，但我想我们没必要每次一见面就兵刃相向",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "认出",
+    "dst": "塞梅尔维斯",
+    "evidence": "是刚才的那位调查员女士，还有……列车长？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "称赞",
+    "dst": "难民偷渡行动",
+    "evidence": "看来你们已经具备了组织和武装自己的能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "告急",
+    "dst": "感染种",
+    "evidence": "这趟列车被血食怪感染种包围了，我们需要在座各位的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "武装",
+    "dst": "雅科夫",
+    "evidence": "为此我们准备了一些武器",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷渡乘客Ⅰ",
+    "relation": "质疑",
+    "dst": "告死鸟",
+    "evidence": "这一切和我们又有什么关系",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷渡乘客Ⅰ",
+    "relation": "归咎",
+    "dst": "难民偷渡行动",
+    "evidence": "都是那些有权有势的贵族、军人搞出来的祸事",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷渡乘客Ⅰ",
+    "relation": "主张卸车",
+    "dst": "加挂的车厢",
+    "evidence": "干脆把那几节车厢都卸了",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷渡乘客Ⅰ",
+    "relation": "期望",
+    "dst": "布达佩斯",
+    "evidence": "我们剩下的人还能继续前往布达佩斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "偷渡乘客Ⅱ",
+    "relation": "附和",
+    "dst": "偷渡乘客Ⅰ",
+    "evidence": "就算我们费尽心思救了他们，那些家伙会拿正眼瞧我们吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "推举",
+    "dst": "雅科夫",
+    "evidence": "你觉得呢，雅科夫",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "察觉",
+    "dst": "隔离条令",
+    "evidence": "另一侧的隔离车厢则要显得“安静”许多",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿不思诺",
+    "relation": "惊惧",
+    "dst": "隔离条令",
+    "evidence": "我的枪……该死，我该带上",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

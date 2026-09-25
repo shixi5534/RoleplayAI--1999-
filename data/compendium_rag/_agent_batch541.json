@@ -1,0 +1,377 @@
+{
+ "93c25d647c6410edafdf2bb9": {
+  "entities": [
+   {
+    "name": "露西的旁支脚本",
+    "type": "概念",
+    "aliases": [
+     "808601"
+    ],
+    "desc": "808601号未绑定候选脚本"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "本脚本的主人公"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西的旁支脚本",
+    "relation": "记载",
+    "dst": "露西",
+    "evidence": "Internal title: 【1.9】去往新世界【露西】",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西的旁支脚本",
+    "relation": "标注",
+    "dst": "露西",
+    "evidence": "Binding status: unbound story candidate",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "40737ebdf76e1df0bb7f6801": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被命令学习休息的机械女士；为学会休息而请教的钢铁化身"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被请教定义的司辰；被露西请教休息之道的对象"
+   },
+   {
+    "name": "IDM",
+    "type": "物品",
+    "aliases": [],
+    "desc": "露西端坐其旁的计算机"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "下令停职休息的机构；露西奉命暂停职务离开的机构"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "给出箱子建议的联络人；建议露西去箱中休息者"
+   },
+   {
+    "name": "维尔汀的箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被推荐为休息去处的箱子"
+   },
+   {
+    "name": "露西的休息计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未制定完整的休息计划"
+   },
+   {
+    "name": "箱中休息计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚待与维尔汀商定的休息方案"
+   },
+   {
+    "name": "悖论",
+    "type": "概念",
+    "aliases": [],
+    "desc": "休息与停止工作的自指矛盾"
+   },
+   {
+    "name": "箱中的未成年成员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "令露西择柔软材质的孩子们"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "端坐",
+    "dst": "IDM",
+    "evidence": "一位表情寡淡的女士端坐在IDM旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "问候",
+    "dst": "维尔汀",
+    "evidence": "很高兴能见到您，司辰",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "离开",
+    "dst": "科算中心",
+    "evidence": "我被命令停止目前的职务，离开拉普拉斯并休息一段时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "建言",
+    "dst": "露西",
+    "evidence": "Z女士给了我一个建议",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "常驻",
+    "dst": "维尔汀的箱子",
+    "evidence": "她说您的箱子会是个休息的好去处",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "请教",
+    "dst": "维尔汀",
+    "evidence": "我想请问您，人对休息的定义究竟是什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "赞同",
+    "dst": "维尔汀",
+    "evidence": "很高兴您与我得出了一样的结论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "拟定",
+    "dst": "露西的休息计划",
+    "evidence": "别忘了我们还没有制定好完整的休息计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "达成",
+    "dst": "露西的休息计划",
+    "evidence": "我只能通过维持充电状态来达成休息这一目的了",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "点破",
+    "dst": "维尔汀",
+    "evidence": "抱歉打断您，司辰，但您正在提出一则悖论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "致意",
+    "dst": "维尔汀",
+    "evidence": "很高兴能见到您，司辰",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "奉命暂离",
+    "dst": "科算中心",
+    "evidence": "我被命令停止目前的职务，离开拉普拉斯并休息一段时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "建议",
+    "dst": "露西",
+    "evidence": "Z女士给了我一个建议，她说您的箱子会是个休息的好去处",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "征询",
+    "dst": "维尔汀",
+    "evidence": "我想请问您，人对休息的定义究竟是什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "商定",
+    "dst": "箱中休息计划",
+    "evidence": "别忘了我们还没有制定好完整的休息计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "点出",
+    "dst": "悖论",
+    "evidence": "抱歉打断您，司辰，但您正在提出一则悖论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "择柔软为",
+    "dst": "箱中的未成年成员",
+    "evidence": "考虑到您的小队中有大量未成年成员，我选择了更为柔软的材质",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "指向",
+    "dst": "箱中休息计划",
+    "evidence": "她说您的箱子会是个休息的好去处",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9e7ef2e3ac00c88ff9a2424d": {
+  "entities": [
+   {
+    "name": "露西的旁支脚本",
+    "type": "概念",
+    "aliases": [
+     "808602"
+    ],
+    "desc": "808602号未绑定候选脚本"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "本脚本的主人公"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西的旁支脚本",
+    "relation": "记载",
+    "dst": "露西",
+    "evidence": "Script ID: 808602",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西的旁支脚本",
+    "relation": "归属",
+    "dst": "露西",
+    "evidence": "Appendix family: 【1.9】去往新世界【露西】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b848f7e7458d803bf56a2700": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问休息建议的机械女士；反复推演休息定义者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被请求重提建议的司辰；被再度请教的对象"
+   },
+   {
+    "name": "露西的休息计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未制定完整的休息计划"
+   },
+   {
+    "name": "箱中休息计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仍未定稿的休息方案"
+   },
+   {
+    "name": "悖论",
+    "type": "概念",
+    "aliases": [],
+    "desc": "休息任务自身的矛盾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "请教",
+    "dst": "维尔汀",
+    "evidence": "关于像人一样休息，还有什么建议么，司辰",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "赞同",
+    "dst": "维尔汀",
+    "evidence": "很高兴您与我得出了一样的结论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "达成",
+    "dst": "露西的休息计划",
+    "evidence": "我只能通过维持充电状态来达成休息这一目的了",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "拟定",
+    "dst": "露西的休息计划",
+    "evidence": "别忘了我们还没有制定好完整的休息计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "点破",
+    "dst": "维尔汀",
+    "evidence": "抱歉打断您，司辰，但您正在提出一则悖论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "复核",
+    "dst": "露西的休息计划",
+    "evidence": "现在我的任务就是休息，如果我为了休息不得不停止工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "再度请教",
+    "dst": "维尔汀",
+    "evidence": "关于像人一样休息，还有什么建议么，司辰",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "阐释",
+    "dst": "箱中休息计划",
+    "evidence": "根据我的观察，休息就是人类为了将来的工作而调整身体状态的行为",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "指出",
+    "dst": "悖论",
+    "evidence": "抱歉打断您，司辰，但您正在提出一则悖论",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "剖解",
+    "dst": "悖论",
+    "evidence": "现在我的任务就是休息，如果我为了休息不得不停止工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "重申未定",
+    "dst": "箱中休息计划",
+    "evidence": "别忘了我们还没有制定好完整的休息计划",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

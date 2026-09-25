@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-09-17 13:42:40",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "prod_per_entity": 5,
+    "prod_total_cap": 10
+  },
+  "results": [
+    {
+      "mention_per_entity": 5,
+      "mention_total_cap": 10,
+      "rescued": 60,
+      "strict_pass_n": 0,
+      "strict_pass": 0.0,
+      "inject_pass_n": 3,
+      "inject_pass": 0.05,
+      "gold_in_mention_pool": 0,
+      "gold_in_any_pool": 0,
+      "mention_pool_avg": 8.9,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 72.8
+    },
+    {
+      "mention_per_entity": 20,
+      "mention_total_cap": 50,
+      "rescued": 60,
+      "strict_pass_n": 1,
+      "strict_pass": 0.0167,
+      "inject_pass_n": 3,
+      "inject_pass": 0.05,
+      "gold_in_mention_pool": 19,
+      "gold_in_any_pool": 19,
+      "mention_pool_avg": 42.0,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 64.0
+    }
+  ]
+}

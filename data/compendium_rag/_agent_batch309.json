@@ -1,0 +1,1081 @@
+{
+ "db8b5dd2679404b0c4025f68": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣讲陪伴与教育的驯化者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需被引导成长的存在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "笃笃骨",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f28de3e85d858265b33d0e14": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喝令保持姿势的驯化者"
+   }
+  ],
+  "relations": []
+ },
+ "09c04b622dcd22644dcaeb19": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求重做一次动作的驯化者"
+   }
+  ],
+  "relations": []
+ },
+ "03ed6f1949421b3a7f20fc07": {
+  "entities": [],
+  "relations": []
+ },
+ "b06e38972bb34670ff42c556": {
+  "entities": [
+   {
+    "name": "瓦伦缇娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "现身招揽的老血食怪"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被追问答复的调查员"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "小罗蕾莱",
+     "莱茵河的女儿"
+    ],
+    "desc": "赴向洪水的拘束衣少女"
+   },
+   {
+    "name": "罗蕾莱的小音符",
+    "type": "概念",
+    "aliases": [],
+    "desc": "罗蕾莱对歌声与众人的爱称"
+   },
+   {
+    "name": "罗蕾莱的拘束衣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未固定皮带的拘束衣"
+   },
+   {
+    "name": "莱茵河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罗蕾莱走去的河"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "约好会合的一方"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被拿来比疑心的另一方"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "躲在阴影中现身者"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "艺术鉴赏之旅的城市"
+   },
+   {
+    "name": "维也纳的歌剧院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "重塑之手控制下的剧院"
+   },
+   {
+    "name": "血食怪的转化",
+    "type": "概念",
+    "aliases": [],
+    "desc": "完成后方可同路的仪式"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拒绝戴上的面具"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将冲散众人的洪水"
+   }
+  ],
+  "relations": [
+   {
+    "src": "瓦伦缇娜",
+    "relation": "招揽",
+    "dst": "塞梅尔维斯",
+    "evidence": "告诉我，塞梅尔维斯，是否要跟我一起走？",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "约见",
+    "dst": "重塑之手",
+    "evidence": "就快到我和重塑之手约好会合的最后时间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "同样多疑",
+    "dst": "圣洛夫基金会",
+    "evidence": "他们的疑心病可不比基金会好多少",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "藏身",
+    "dst": "维也纳",
+    "evidence": "习惯躲在阴影中的血食怪在恰当的时候现身",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "质疑",
+    "dst": "罗蕾莱",
+    "evidence": "你打算相信小罗蕾莱？把余生都押在她的歌声上",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "身着",
+    "dst": "罗蕾莱的拘束衣",
+    "evidence": "拘束衣下的少女晃动头脑，未固定的皮带也随之摇摆",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "告别",
+    "dst": "罗蕾莱的小音符",
+    "evidence": "我该和小音符说再见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "喜爱",
+    "dst": "罗蕾莱的小音符",
+    "evidence": "我喜欢小音符！每一个小音符！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "昵称",
+    "dst": "塞梅尔维斯",
+    "evidence": "没有人会把你怎么样，小音符",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "质问",
+    "dst": "罗蕾莱",
+    "evidence": "你们是在无视我的情况下谈论对我的处置么",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "无惧",
+    "dst": "暴雨",
+    "evidence": "洪水就要来了，我得把大家都聚集起来，这样才不会被冲散",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "走向",
+    "dst": "莱茵河",
+    "evidence": "莱茵河的女儿向着她的河畔走去",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "索要",
+    "dst": "血食怪的转化",
+    "evidence": "你必须先将完成转化的方法告诉我",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "拒绝",
+    "dst": "面具",
+    "evidence": "而且我不会戴上那副面具",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "带领",
+    "dst": "维也纳的歌剧院",
+    "evidence": "我一直都在等着这句话，跟我去歌剧院吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "维也纳的歌剧院",
+    "relation": "受控于",
+    "dst": "重塑之手",
+    "evidence": "那里现在应该在重塑之手的控制下",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "50c6fd926c06fd6a8321c4c1": {
+  "entities": [],
+  "relations": []
+ },
+ "8ccf31c03dba48d5fe9f093d": {
+  "entities": [
+   {
+    "name": "瓦伦缇娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "戏谑俯身察看的老血食怪"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "胸口闪过橘红光芒者"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以歌声助人转化者"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令处置抗命者的上司"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迟迟不到的招揽代表"
+   },
+   {
+    "name": "贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未曾现身的内在声音"
+   },
+   {
+    "name": "罗蕾莱的海螺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随身佩戴听取声音的海螺"
+   },
+   {
+    "name": "金色帷幕",
+    "type": "概念",
+    "aliases": [],
+    "desc": "隔绝时代癔症的帷幕"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中枪小巷所在的现状"
+   },
+   {
+    "name": "血食怪的转化",
+    "type": "概念",
+    "aliases": [],
+    "desc": "早已完成却不自知的转化"
+   },
+   {
+    "name": "灼热心脏处置",
+    "type": "事件",
+    "aliases": [],
+    "desc": "针对多次抗命的处置"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以诚意招揽成员的一方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维也纳",
+    "relation": "隔绝于",
+    "dst": "金色帷幕",
+    "evidence": "整个时代的癔症都被隔绝于那道金色帷幕后",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "等候",
+    "dst": "海因里希",
+    "evidence": "看样子海因里希出了些意外，他不该迟到的",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "祝愿",
+    "dst": "海因里希",
+    "evidence": "希望他平安无事",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "代表",
+    "dst": "重塑之手",
+    "evidence": "他可代表了重塑之手招揽成员时的诚意",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "揣测",
+    "dst": "海因里希",
+    "evidence": "也许那个海因里希已经在来的路上中枪倒在了某条小巷里",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "急于",
+    "dst": "血食怪的转化",
+    "evidence": "忘记他吧，我的时间不多了，可以开始了么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "怒斥",
+    "dst": "塞梅尔维斯",
+    "evidence": "我已经再三警告过你，可你偏偏蔑视我的命令",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "动用",
+    "dst": "灼热心脏处置",
+    "evidence": "包括你因为多次抗命而遭到灼热心脏处置的部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "挽留",
+    "dst": "塞梅尔维斯",
+    "evidence": "别担心，我还得把你带走，你不会在这退场的",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "早已完成",
+    "dst": "血食怪的转化",
+    "evidence": "你早就完成了转化",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "促成",
+    "dst": "血食怪的转化",
+    "evidence": "除我之外的某人帮助你完成了转化",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "携带",
+    "dst": "罗蕾莱的海螺",
+    "evidence": "你一直随身带着这枚海螺",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "帮助",
+    "dst": "塞梅尔维斯",
+    "evidence": "既然罗蕾莱可以用海螺听取他人的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "探问",
+    "dst": "贝拉",
+    "evidence": "恼人的影子并没有出现，仿佛不曾存在过",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "引为同路",
+    "dst": "塞梅尔维斯",
+    "evidence": "恭喜你，现在你和我是同路人了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d8dda2654e3bef48689bffd0": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈功利的叛徒"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "勉强答应的上司"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被举荐的恩人"
+   },
+   {
+    "name": "瓦伦缇娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鼓掌认输的血食怪"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被看好的归属"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被放弃的另一头"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "想做全面检查的一方"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "成功转化后的身份"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "感染种得以使用的力量"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可被歌声缓解的症候"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "留在剧院的两名"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "须赶回撤离点的期限"
+   },
+   {
+    "name": "维也纳的歌剧院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "交心与告别之处"
+   },
+   {
+    "name": "血食怪的转化",
+    "type": "概念",
+    "aliases": [],
+    "desc": "成就当下自我的转化"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "探问",
+    "dst": "琳赛女士",
+    "evidence": "琳赛，你还在听着，对不对？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "拒听",
+    "dst": "塞梅尔维斯",
+    "evidence": "我也不会有更多的话要说，更不会听叛徒说话",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "揭穿",
+    "dst": "科算中心",
+    "evidence": "你所谓的拉普拉斯的研究进展只是为了安抚我",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "衡量",
+    "dst": "圣洛夫基金会",
+    "evidence": "我也承认我为了能活下去而将基金会和重塑之手放在天平上衡量",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "衡量",
+    "dst": "重塑之手",
+    "evidence": "我也承认我为了能活下去而将基金会和重塑之手放在天平上衡量",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染种",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "知道成为感染种能够使用神秘术之后",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "揶揄",
+    "dst": "圣洛夫基金会",
+    "evidence": "所以呢？你想说你改主意了，希望能回到基金会？",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "检查",
+    "dst": "感染种",
+    "evidence": "一个成功转化的感染种，拉普拉斯会很希望给你做全面检查的",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染种",
+    "relation": "源于",
+    "dst": "血食怪的转化",
+    "evidence": "一个成功转化的感染种",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "不交出",
+    "dst": "重塑之手",
+    "evidence": "而我也不希望把一个无法控制的原下属送给重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "举荐",
+    "dst": "罗蕾莱",
+    "evidence": "我希望你能批准接收一批难民和一名有特别神秘术的神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "缓解",
+    "dst": "暴雨症候",
+    "evidence": "那名神秘学家有着缓解暴雨症候的能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "成就",
+    "dst": "血食怪的转化",
+    "evidence": "她成就了现在的我，不帮助她有损我的心情",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "责令",
+    "dst": "暴雨",
+    "evidence": "你必须在暴雨前回到撤离点，然后为这段时间的违纪行为受罚",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "偏向",
+    "dst": "圣洛夫基金会",
+    "evidence": "比起重塑之手我还是更看好基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "认输于",
+    "dst": "罗蕾莱",
+    "evidence": "总之这次是我输给了罗蕾莱",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "滞留",
+    "dst": "维也纳的歌剧院",
+    "evidence": "剧院中只留下了两名血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "离开",
+    "dst": "维也纳的歌剧院",
+    "evidence": "两团黑雾离开了歌剧院",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f319613db4295432084340e9": {
+  "entities": [],
+  "relations": []
+ },
+ "ee8d17937885fa0b67448e21": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "奔回恩人身边者"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "神志被暴雨动摇的歌者"
+   },
+   {
+    "name": "罗蕾莱的拘束衣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "高台上未脱的拘束衣"
+   },
+   {
+    "name": "罗蕾莱的追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以人力抬举高台的信徒"
+   },
+   {
+    "name": "莱茵河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "化为调色盘的河畔"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被说成洪水的暴雨"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "可申请避难的归属"
+   },
+   {
+    "name": "罗蕾莱的小音符",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被唤作小音符的众人"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "轻盈有力的新身体"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "奔走于",
+    "dst": "莱茵河",
+    "evidence": "塞梅尔维斯沿着暴雨下的莱茵河奔走",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "身为",
+    "dst": "血食怪",
+    "evidence": "血食怪的身体轻盈而有力",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "身着",
+    "dst": "罗蕾莱的拘束衣",
+    "evidence": "身穿拘束衣的身影被置于高台之上",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱的追随者",
+    "relation": "簇拥",
+    "dst": "罗蕾莱",
+    "evidence": "罗蕾莱脚下的高台被信徒簇拥",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱的追随者",
+    "relation": "抬举",
+    "dst": "罗蕾莱",
+    "evidence": "以人力为材料，将她抬升至危险的高度",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "维系",
+    "dst": "莱茵河",
+    "evidence": "她的歌声仍未停歇，维系着油彩汪洋中的一片异常空穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "劝往",
+    "dst": "圣洛夫基金会",
+    "evidence": "你和你的朋友们都可以跟我去基金会避难",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "惊呼",
+    "dst": "暴雨",
+    "evidence": "是你说的小黑马！它真的踏着洪水来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "招呼",
+    "dst": "塞梅尔维斯",
+    "evidence": "小马，小马，过来吧，加入我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "祈祷",
+    "dst": "罗蕾莱的追随者",
+    "evidence": "马上忧郁和悲伤就会填满这里，加入我们的祈祷吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "扰乱",
+    "dst": "罗蕾莱",
+    "evidence": "暴雨正在影响你的神志和判断力",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "威逼",
+    "dst": "罗蕾莱",
+    "evidence": "快点清醒过来吧，我们分秒必争，否则我不得不对你动粗",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "愿为友",
+    "dst": "塞梅尔维斯",
+    "evidence": "我们还是可以做一会儿朋友",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "157eefec6bc4abcbac35c0ac": {
+  "entities": [],
+  "relations": []
+ },
+ "eff0aa83c95729e2c3b45cda": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拽人脱身又昏厥者"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "小罗蕾莱"
+    ],
+    "desc": "歌声戛然而止的歌者"
+   },
+   {
+    "name": "瓦伦缇娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接手雾气的老血食怪"
+   },
+   {
+    "name": "罗蕾莱的追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不知所措的散落追随者"
+   },
+   {
+    "name": "罗蕾莱的小音符",
+    "type": "概念",
+    "aliases": [],
+    "desc": "指代不明的爱称"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "失联后仍要赶回之处"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "藏有安全屋的一方"
+   },
+   {
+    "name": "重塑之手的秘密安全屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "共度暴雨的秘密安全屋"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "也会呼吸急促的种族"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仍需回避的暴雨"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "重申不戴的面具"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指望包庇的上司"
+   },
+   {
+    "name": "血食怪的转化",
+    "type": "概念",
+    "aliases": [],
+    "desc": "兴奋过度的缘由"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "拽出",
+    "dst": "罗蕾莱",
+    "evidence": "终于踏上高台的塞梅尔维斯抓起罗蕾莱的手，将她从人群中拽出",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "身为",
+    "dst": "血食怪",
+    "evidence": "没时间惊讶于血食怪也会在剧烈运动后呼吸急促",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "抗议",
+    "dst": "罗蕾莱的小音符",
+    "evidence": "叫我塞梅尔维斯！否则我根本不知道你所谓的小音符是指谁",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "唤名",
+    "dst": "塞梅尔维斯",
+    "evidence": "叫我塞梅尔维斯！否则我根本不知道你所谓的小音符是指谁",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "歌声止歇",
+    "dst": "罗蕾莱的追随者",
+    "evidence": "女孩的歌声戛然而止，周遭散落的追随者和她同样不知所措",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "使清醒",
+    "dst": "罗蕾莱",
+    "evidence": "你终于清醒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "带回",
+    "dst": "罗蕾莱的追随者",
+    "evidence": "她的追随者和她就都会被带回基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "感念",
+    "dst": "罗蕾莱",
+    "evidence": "这次维也纳之旅不但保住了自己的性命，还救下了恩人的未来",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "叮嘱",
+    "dst": "塞梅尔维斯",
+    "evidence": "慢一些，你走得太快了，小心路边的小石子",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "解释",
+    "dst": "塞梅尔维斯",
+    "evidence": "她只是转化之后有些兴奋过度",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "庇护",
+    "dst": "塞梅尔维斯",
+    "evidence": "你们没法把一团雾气怎么样，把她给我吧，我有办法",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "指路",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会就在那个方向，现在还来得及靠双脚赶去",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "看护",
+    "dst": "塞梅尔维斯",
+    "evidence": "你总算醒了，睡得还好么",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "未相助",
+    "dst": "血食怪的转化",
+    "evidence": "很可惜我没有为你的转化帮上什么忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "奔向",
+    "dst": "圣洛夫基金会",
+    "evidence": "塞梅尔维斯迅速起身，朝基金会的方向奔去",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "拦阻",
+    "dst": "塞梅尔维斯",
+    "evidence": "你不可能赶得上了，现在恐怕只有我能帮你回避暴雨",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "拦阻",
+    "dst": "暴雨",
+    "evidence": "现在恐怕只有我能帮你回避暴雨",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "拒绝",
+    "dst": "面具",
+    "evidence": "不戴面具",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "自辩",
+    "dst": "面具",
+    "evidence": "放心吧，我自始至终就没有带着面具",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "清场",
+    "dst": "重塑之手的秘密安全屋",
+    "evidence": "这里的看守已经都被我请出去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "失联于",
+    "dst": "圣洛夫基金会",
+    "evidence": "我在和基金会彻底失联后",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "滞留于",
+    "dst": "重塑之手的秘密安全屋",
+    "evidence": "在重塑之手的秘密安全屋里度过了暴雨",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手的秘密安全屋",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "与一名重塑之手的血食怪一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "指望",
+    "dst": "琳赛女士",
+    "evidence": "如果恳求琳赛包庇我，她能做到哪一步",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "再次招揽",
+    "dst": "塞梅尔维斯",
+    "evidence": "我的邀请仍然有效，塞梅尔维斯",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

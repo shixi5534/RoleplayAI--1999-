@@ -1,0 +1,1143 @@
+{
+ "025ec1ca8255b7eaa8ef8834": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "越狱成功后目睹同伴消散者"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "用沙米尔开门的越狱者"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喊自由的学生"
+   },
+   {
+    "name": "学生Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先发现雨声的学生"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一起倒数的学生"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问维尔汀是否想成为司辰者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说出将死者"
+   },
+   {
+    "name": "沙米尔虫",
+    "type": "概念",
+    "aliases": [
+     "沙米尔"
+    ],
+    "desc": "开启铁门的魔精"
+   },
+   {
+    "name": "西北瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一楼空无一人的瞭望塔"
+   },
+   {
+    "name": "雨与新世界",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "沙米尔虫",
+    "relation": "开启",
+    "dst": "铁门",
+    "evidence": "沙米尔干得怎么样了？噢！完成了，这铁门已经可以推开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生众",
+    "relation": "逃出",
+    "dst": "西北瞭望塔",
+    "evidence": "我们就能钻进瞭望塔里面了",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "提议",
+    "dst": "维尔汀",
+    "evidence": "你想成为司辰吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "宣告",
+    "dst": "维尔汀",
+    "evidence": "呵，将死",
+    "confidence": 0.85
+   },
+   {
+    "src": "圈环",
+    "relation": "使用",
+    "dst": "沙米尔虫",
+    "evidence": "沙米尔干得怎么样了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6056051bf23c86d8206e49a8": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "做噩梦并守候空庭院的离群者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先离开去与Z谈编制问题者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受过良好教育的传统神秘学家庭淑女"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe先生"
+    ],
+    "desc": "性格中藏有审视锋芒的苹果"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "船长"
+    ],
+    "desc": "被迫加入基金会、未被真正接纳者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "与维尔汀谈编制归属者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "基金会持续对抗的组织"
+   },
+   {
+    "name": "人类党团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "推崇人类至上主义的新群体"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "已持续八年并使人倒退的灾难"
+   },
+   {
+    "name": "共融院",
+    "type": "组织",
+    "aliases": [],
+    "desc": "任职人数无法回到盛况的机构"
+   },
+   {
+    "name": "联合委员会",
+    "type": "组织",
+    "aliases": [
+     "委员会"
+    ],
+    "desc": "任职人数无法回到盛况的机构"
+   },
+   {
+    "name": "旧雨伞",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "交谈于",
+    "dst": "Z",
+    "evidence": "她说要去与Z女士谈谈我们的编制归属问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "出身于",
+    "dst": "神秘学家庭",
+    "evidence": "一位受过良好教育的传统神秘学家庭出身的淑女",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "不满于",
+    "dst": "星锑",
+    "evidence": "他一直对星锑船长被迫加入基金会一事感到不满",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "加入",
+    "dst": "圣洛夫基金会",
+    "evidence": "星锑船长被迫加入基金会",
+    "confidence": 0.9
+   },
+   {
+    "src": "人类党团",
+    "relation": "分裂",
+    "dst": "圣洛夫基金会",
+    "evidence": "推崇人类至上主义的团体，正在分裂着基金会的信仰",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "持续",
+    "dst": "八年",
+    "evidence": "“暴雨”持续了八年",
+    "confidence": 0.9
+   },
+   {
+    "src": "暴雨",
+    "relation": "削弱",
+    "dst": "圣洛夫基金会",
+    "evidence": "第一场猝不及防的雨，让基金会失去了大半的精英成员",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "022bf0ddc281c04e9abe6ada": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呈交背景分析报告以争取立足之地者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "答应考虑并致电代表人马克者"
+   },
+   {
+    "name": "人类党团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "要求更严苛管制神秘学家的群体"
+   },
+   {
+    "name": "代表人",
+    "type": "角色",
+    "aliases": [
+     "代表人马克",
+     "马克"
+    ],
+    "desc": "Z致电转接的代表人"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "其章程已无法掩盖矛盾的机构"
+   },
+   {
+    "name": "共融院",
+    "type": "组织",
+    "aliases": [],
+    "desc": "长廊所联结的机构之一"
+   },
+   {
+    "name": "联合委员会",
+    "type": "组织",
+    "aliases": [
+     "委员会"
+    ],
+    "desc": "长廊所联结的机构之一"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "维尔汀朋友等候之处"
+   },
+   {
+    "name": "背景分析报告",
+    "type": "物品",
+    "aliases": [],
+    "desc": "维尔汀带来的谈判佐证"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "呈交",
+    "dst": "背景分析报告",
+    "evidence": "这是我撰写的背景报告，请您过目",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "Z",
+    "evidence": "一个中立，安全，合法的立足之地",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "致电",
+    "dst": "代表人",
+    "evidence": "帮我转接代表人马克的办公室",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类党团",
+    "relation": "要求",
+    "dst": "神秘学家",
+    "evidence": "他们要求毋庸置疑的话语权，以及对神秘学家更为严苛的管制",
+    "confidence": 0.95
+   },
+   {
+    "src": "医疗职员Ⅰ",
+    "relation": "引导",
+    "dst": "维尔汀",
+    "evidence": "让我们带你过去叙叙旧吧",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "1da7aca885a2b5db88dbd7ae": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "韦耶豪瑟小姐"
+    ],
+    "desc": "最后一位被邀请的客人"
+   },
+   {
+    "name": "基金会职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等候槲寄生答复的人员"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会联合委员会副会长"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被邀请加入基金会者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被邀请加入基金会者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "联结槲寄生一行与基金会的关键人物"
+   },
+   {
+    "name": "种子",
+    "type": "物品",
+    "aliases": [
+     "树的种子"
+    ],
+    "desc": "落入砖缝的褐色小颗粒"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "权威稳固、历史悠久的庞然大物"
+   },
+   {
+    "name": "第一防线图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "康斯坦丁与槲寄生面谈之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "二九年那一场被躲过的灾难"
+   },
+   {
+    "name": "离群者",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基金会职员",
+    "relation": "等候",
+    "dst": "槲寄生",
+    "evidence": "槲寄生小姐，我们在等候您的答复",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "担任",
+    "dst": "联合委员会",
+    "evidence": "康斯坦丁，基金会联合委员会的副会长",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "拒绝",
+    "dst": "圣洛夫基金会",
+    "evidence": "我个人……尚未打算加入任何组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "救助",
+    "dst": "槲寄生",
+    "evidence": "维尔汀不但给予了我们莫大的帮助，更从“暴雨”中救回了我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "撒下",
+    "dst": "种子",
+    "evidence": "她看向掌心中褐色的小颗粒，那是树的种子",
+    "confidence": 0.9
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "施压",
+    "dst": "槲寄生",
+    "evidence": "我们，才是你该倚靠的大厦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b15035696de8ab9571931408": {
+  "entities": [
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以治疗与回收箱子施压者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被要求尽快答复者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "正在接受治疗者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "将带槲寄生熟悉环境者"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "将被收回用作研究的箱子"
+   }
+  ],
+  "relations": [
+   {
+    "src": "康斯坦丁",
+    "relation": "扣留",
+    "dst": "维尔汀",
+    "evidence": "她正在接受我们的治疗。在你下定决心之前，她都不会回来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "收回",
+    "dst": "箱子",
+    "evidence": "会谈结束后，我们将收回手提箱用作研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "带领",
+    "dst": "槲寄生",
+    "evidence": "明天Z女士会带你去熟悉基金会的环境",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "催促",
+    "dst": "槲寄生",
+    "evidence": "也别让我等得太久了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "e4b87ba009ef50278fb6f841": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "被指派安抚韦耶豪瑟小组者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求让一行人完全归其所用者"
+   },
+   {
+    "name": "莎朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未告知Z康斯坦丁到来的秘书"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "韦耶豪瑟小姐"
+    ],
+    "desc": "如应激野猫般渴望同伴安慰者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在客房调配变形药剂者"
+   },
+   {
+    "name": "守卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来送餐的基金会守卫"
+   },
+   {
+    "name": "变形药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比正在熬制的药剂"
+   },
+   {
+    "name": "乌卡亚利软黄金",
+    "type": "物品",
+    "aliases": [],
+    "desc": "药剂素材"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其收编至关重要"
+   },
+   {
+    "name": "基金会联合委员会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "康斯坦丁与Z交谈之处"
+   },
+   {
+    "name": "基金会客房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苏芙比被安置的房间"
+   },
+   {
+    "name": "衣帽架",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "康斯坦丁",
+    "relation": "指派",
+    "dst": "Z",
+    "evidence": "去做一名优秀的驯兽师",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "面谈",
+    "dst": "槲寄生",
+    "evidence": "我已经和韦耶豪瑟小姐谈过了，目前进展得非常顺利",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "要求",
+    "dst": "Z",
+    "evidence": "最重要的是，让他们完全归我们所用",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "叮嘱",
+    "dst": "Z",
+    "evidence": "记得别叫她韦耶豪瑟小姐，她不喜欢这个称呼",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏芙比",
+    "relation": "调制",
+    "dst": "变形药剂",
+    "evidence": "苏芙比伟大的变形药剂马上就要大功告成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "使用",
+    "dst": "乌卡亚利软黄金",
+    "evidence": "再来点乌卡亚利软黄金的渣滓",
+    "confidence": 0.85
+   },
+   {
+    "src": "守卫Ⅰ",
+    "relation": "送餐于",
+    "dst": "苏芙比",
+    "evidence": "苏芙比小姐，晚餐时间到了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6161a64489d925e041c87ef2": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误变身衣帽架者"
+   },
+   {
+    "name": "守卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "强行开门的守卫"
+   },
+   {
+    "name": "变形药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "因铁碗反应而失纯的药剂"
+   },
+   {
+    "name": "网球",
+    "type": "概念",
+    "aliases": [],
+    "desc": "苏芙比原本打算变成的形态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "误变为",
+    "dst": "衣帽架",
+    "evidence": "——衣帽架？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "守卫Ⅰ",
+    "relation": "阻拦",
+    "dst": "苏芙比",
+    "evidence": "苏芙比小姐。未经同意，你不能离开这个房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "控诉",
+    "dst": "守卫Ⅰ",
+    "evidence": "你们这是非法囚禁",
+    "confidence": 0.9
+   },
+   {
+    "src": "守卫Ⅰ",
+    "relation": "抓住",
+    "dst": "苏芙比",
+    "evidence": "而守卫直接抓住了她的支架",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "db463c8088d936a8f5190ae3": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称魔药炼金术师者"
+   },
+   {
+    "name": "守卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被熏得喷嚏连连的守卫"
+   },
+   {
+    "name": "魔药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比扔在地上发挥作用的药剂"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "施用",
+    "dst": "魔药",
+    "evidence": "苏芙比扔在地上的魔药发挥了作用，守卫被熏得喷嚏连连",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔药",
+    "relation": "影响",
+    "dst": "守卫Ⅰ",
+    "evidence": "守卫被熏得喷嚏连连",
+    "confidence": 0.95
+   },
+   {
+    "src": "守卫Ⅰ",
+    "relation": "申请",
+    "dst": "多人看管",
+    "evidence": "这个房间需要申请、申请多人看管",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "a5dff6ec2c8e46ff63f77757": {
+  "entities": [
+   {
+    "name": "莉拉妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替老师送交试题的女孩"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "红弩箭小姐"
+    ],
+    "desc": "评审芝诺模拟试题难度者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "招生模拟试题所属机构"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "红弩箭所在之处"
+   },
+   {
+    "name": "奥利图欧",
+    "type": "概念",
+    "aliases": [
+     "奥利图欧04种"
+    ],
+    "desc": "试题中的空中敌人"
+   },
+   {
+    "name": "林中魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "试题中的地面敌人"
+   },
+   {
+    "name": "干杯，朋友！",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莉拉妮",
+    "relation": "交付",
+    "dst": "红弩箭",
+    "evidence": "我们老师让我交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "校验",
+    "dst": "芝诺",
+    "evidence": "帮忙校验芝诺招生模拟试题的难度",
+    "confidence": 0.95
+   },
+   {
+    "src": "莉拉妮",
+    "relation": "寻找",
+    "dst": "红弩箭",
+    "evidence": "我刚才一直找不到你，听他们说你在康复中心",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "54bd8ff5f94b38978df20b81": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "饮用二九年野牛草伏特加者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "带槲寄生熟悉环境者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闻到野牛草香气者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "越狱头子"
+    ],
+    "desc": "被磁圈与头罩包裹的病床上的人"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坐在病床旁显得警惕者"
+   },
+   {
+    "name": "野牛草伏特加",
+    "type": "物品",
+    "aliases": [],
+    "desc": "二九年产的新鲜存货"
+   },
+   {
+    "name": "水壶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭挂在绑带上的壶"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "维尔汀所在的病房"
+   },
+   {
+    "name": "基金会联合委员会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "Z与槲寄生后续交谈之处"
+   },
+   {
+    "name": "美国",
+    "type": "地点",
+    "aliases": [],
+    "desc": "禁酒又禁香豆素之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "持有",
+    "dst": "野牛草伏特加",
+    "evidence": "野牛草伏特加，风味纯正，算是我在这儿为数不多的消遣",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "嗅出",
+    "dst": "野牛草伏特加",
+    "evidence": "在你的水壶里",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "带领",
+    "dst": "槲寄生",
+    "evidence": "我带她来熟悉基金会的环境，顺便来康复中心看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "陪护",
+    "dst": "维尔汀",
+    "evidence": "小梅斯梅尔坐在病床旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "应允",
+    "dst": "维尔汀",
+    "evidence": "我打算考虑一下了，关于你说的那个——“必要时刻，帮我照看她们”的想法",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "询问",
+    "dst": "Z",
+    "evidence": "我要怎么做，你们才会放维尔汀出来？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ed28e30fa2dd95652aab1de2": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指出选择权不在己方者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "提出把柄可变条件者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾咨询编制问题的司辰"
+   },
+   {
+    "name": "箱中世界",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被强制回收用于研究的居所"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "维尔汀因催眠入睡之处"
+   },
+   {
+    "name": "编制议案",
+    "type": "物品",
+    "aliases": [],
+    "desc": "由咨询转变为可行议案"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "指出",
+    "dst": "Z",
+    "evidence": "真正的选择权并不在我们手上，Z女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "转化",
+    "dst": "编制议案",
+    "evidence": "我们将它变成了一份可行的议案",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "拒绝劝诱",
+    "dst": "槲寄生",
+    "evidence": "我是来带你熟悉环境的",
+    "confidence": 0.9
+   },
+   {
+    "src": "箱中世界",
+    "relation": "被回收",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们所居住的箱中世界，被强制回收用于研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "意见一致于",
+    "dst": "维尔汀",
+    "evidence": "在这一点上，我与维尔汀意见一致",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d025ac0bb711c0d6aa9a345a": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被关在客房想念卡森教诲者"
+   },
+   {
+    "name": "守卫Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨种子卡在地缝的守卫"
+   },
+   {
+    "name": "守卫Ⅱ",
+    "type": "角色",
+    "aliases": [
+     "阿加塔"
+    ],
+    "desc": "被派去支援的守卫"
+   },
+   {
+    "name": "材料室职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告材料区出现树林者"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "长出大片树林的司辰手提箱"
+   },
+   {
+    "name": "种子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "卡在地缝里像生了根的种子"
+   },
+   {
+    "name": "火龙鳞鳞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未敢使用的火焰咒语"
+   },
+   {
+    "name": "军用油锯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "效率过低的清障工具"
+   },
+   {
+    "name": "材料区101房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "出现大片树林的房间"
+   },
+   {
+    "name": "在城堡之内",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "箱子",
+    "relation": "长出",
+    "dst": "树林",
+    "evidence": "材料区101房出现了大片树林，是从……从司辰的箱子里长出来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "材料室职员",
+    "relation": "报告",
+    "dst": "守卫Ⅰ",
+    "evidence": "请求支援，请求支援",
+    "confidence": 0.95
+   },
+   {
+    "src": "守卫Ⅰ",
+    "relation": "指派",
+    "dst": "守卫Ⅱ",
+    "evidence": "阿加塔，你先过去帮忙",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏芙比",
+    "relation": "依据",
+    "dst": "卡森先生",
+    "evidence": "卡森先生把这句话说了好几百遍了，它一定很重要",
+    "confidence": 0.9
+   },
+   {
+    "src": "种子",
+    "relation": "卡住",
+    "dst": "地缝",
+    "evidence": "卡在地缝里，用引力源真空洁尘器也吸不出来",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

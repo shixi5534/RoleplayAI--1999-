@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-09-17 14:16:37",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "budget": 8,
+    "cases": 300
+  },
+  "results": [
+    {
+      "label": "A 基线(5,10)",
+      "per_entity": 5,
+      "total_cap": 10,
+      "rerank": false,
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass_n": 177,
+      "inject_pass": 0.59,
+      "pool_avg": 20.4,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        }
+      },
+      "elapsed_s": 171.6
+    },
+    {
+      "label": "B 扩池(20,50)",
+      "per_entity": 20,
+      "total_cap": 50,
+      "rerank": false,
+      "strict_pass_n": 194,
+      "strict_pass": 0.6467,
+      "inject_pass_n": 171,
+      "inject_pass": 0.57,
+      "pool_avg": 49.7,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        }
+      },
+      "elapsed_s": 172.5
+    },
+    {
+      "label": "C 扩池+余弦重排(20,50)",
+      "per_entity": 20,
+      "total_cap": 50,
+      "rerank": true,
+      "strict_pass_n": 196,
+      "strict_pass": 0.6533,
+      "inject_pass_n": 151,
+      "inject_pass": 0.5033,
+      "pool_avg": 49.7,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        }
+      },
+      "elapsed_s": 327.6
+    }
+  ],
+  "delta_vs_baseline": [
+    {
+      "label": "A 基线(5,10)",
+      "d_strict": 0,
+      "d_inject": 0,
+      "d_neg_cases": 0
+    },
+    {
+      "label": "B 扩池(20,50)",
+      "d_strict": -1,
+      "d_inject": -6,
+      "d_neg_cases": 0
+    },
+    {
+      "label": "C 扩池+余弦重排(20,50)",
+      "d_strict": 1,
+      "d_inject": -26,
+      "d_neg_cases": 0
+    }
+  ]
+}

@@ -1,0 +1,2539 @@
+{
+ "792a7dc837dc55f88e40efaf": {
+  "entities": [
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "被请去看采光的建筑师"
+   },
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记满四十八块石的监工"
+   },
+   {
+    "name": "奥尔加",
+    "type": "角色",
+    "aliases": [
+     "和蔼的老妇人"
+    ],
+    "desc": "替居民体谅的老人"
+   },
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "说明住宅区困境的同伴"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "自告奋勇看守的男孩"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被安置在住宅区的发光少女"
+   },
+   {
+    "name": "回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从床头被运走的石块"
+   },
+   {
+    "name": "诺瓦米奇的新住宅区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "临时搭建的新住宅区"
+   },
+   {
+    "name": "无名建筑的穹顶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "居民盼望落成的穹顶"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "进入修筑阶段的重建"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "让出墙壁的居民们"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝图",
+    "relation": "短缺",
+    "dst": "回声石",
+    "evidence": "回声石的数量远比预估的要少",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "拆除",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "最后，我们不得不将居民区的墙壁也一并拆除",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "集齐",
+    "dst": "回声石",
+    "evidence": "这样应该就集齐了所需的全部回声石",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "倚仗",
+    "dst": "奠基石",
+    "evidence": "等奠基石在设计方面解决好进光量的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "推进",
+    "dst": "穹顶重建计划",
+    "evidence": "再搭好第一阶段的模型，就可以正式开始修建穹顶了",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "致歉",
+    "dst": "奥尔加",
+    "evidence": "很抱歉，奥尔加女士……拆除居民区的墙壁本不在我们的规划内",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "宽慰",
+    "dst": "蓝图",
+    "evidence": "那些石头晚上吵得人睡不着觉，拆了正好",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "反问",
+    "dst": "蓝图",
+    "evidence": "反正你们之后会提供免费的材料，给我们修好新墙，不是吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "代言",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "大伙儿虽然表面不说，但心里都盼望着能早早见到穹顶落成的那一天",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "盼望",
+    "dst": "无名建筑的穹顶",
+    "evidence": "大伙儿虽然表面不说，但心里都盼望着能早早见到穹顶落成的那一天",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "体察",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "事情做久了，慢慢就会把它当成自己的一部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "自省",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "这只是一个项目，可对你们来说……这是你们每天生活的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "自陈",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "现在看来，我对你们似乎一直缺乏了解",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "承诺",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我会给你们修一面更牢固、更安静的墙",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "同步",
+    "dst": "奠基石",
+    "evidence": "接下来，我需要和奠基石同步一下这边的进展",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥尔加",
+    "relation": "指点",
+    "dst": "诺瓦米奇的新住宅区",
+    "evidence": "建筑师在居民住宅区——我的意思是，新的住宅区",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺瓦米奇的幸存居民",
+    "relation": "延请",
+    "dst": "奠基石",
+    "evidence": "听说那里有些小小的采光问题，所以大家请她过去看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "勘验",
+    "dst": "诺瓦米奇的新住宅区",
+    "evidence": "我之前预估过这里的光照水平",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "讶异",
+    "dst": "诺瓦米奇的新住宅区",
+    "evidence": "但没想到会阴暗到这种程度——我几乎什么都看不见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "解释",
+    "dst": "诺瓦米奇的新住宅区",
+    "evidence": "临时搭建的居民区，没人敢随便在墙壁上打洞开窗",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "谈及",
+    "dst": "回声谣",
+    "evidence": "听说你们带回来的那位……会发光的小姐，也被安置在里面",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "看守",
+    "dst": "回声谣",
+    "evidence": "我知道，卢齐安甚至自告奋勇做起了她的“看守”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6002545e69d3d5e86855e137": {
+  "entities": [
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "由厨房悟到韧性的建筑师"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "顺便看电视的看守"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与男孩并排看电视的少女"
+   },
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "陪着看采光问题的同伴"
+   },
+   {
+    "name": "小洪扎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被留下未在场的同伙"
+   },
+   {
+    "name": "难民厨房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "由厨房改造的狭长居所"
+   },
+   {
+    "name": "房间里的电视机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "发出荧光的旧电视机"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挤在一起看电视的人们"
+   },
+   {
+    "name": "灰色的筒子楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "天花低垂的灰色旧居"
+   },
+   {
+    "name": "筒子楼下的秋千",
+    "type": "物品",
+    "aliases": [],
+    "desc": "楼下唯一有阳光处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奠基石",
+    "relation": "询问",
+    "dst": "房间里的电视机",
+    "evidence": "那是……电视机？",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "盯看",
+    "dst": "房间里的电视机",
+    "evidence": "两双眼睛紧盯着电视机的屏幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "盯看",
+    "dst": "房间里的电视机",
+    "evidence": "两双眼睛紧盯着电视机的屏幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "诘问",
+    "dst": "卢齐安",
+    "evidence": "卢齐安先生，请解释一下——这就是你所说的“看守”",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "自解",
+    "dst": "房间里的电视机",
+    "evidence": "我正在看守她，只是“顺便”看会儿电视",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "惦念",
+    "dst": "小洪扎",
+    "evidence": "如果小洪扎也在就好了，我们还可以一起向这些木偶学习",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "戏语",
+    "dst": "回声谣",
+    "evidence": "你们现在的表现已经足够让人夜里做噩梦了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "诘问",
+    "dst": "小洪扎",
+    "evidence": "你确定要给小洪扎来个像这样的开颅手术吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "保证",
+    "dst": "小洪扎",
+    "evidence": "你那位吵吵闹闹的同伙现在不在我身边。放心吧，它很安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "履约",
+    "dst": "回声谣",
+    "evidence": "等设计稿出来我会放它自由——就像我们之前说好的那样",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "识认",
+    "dst": "难民厨房",
+    "evidence": "原来这是经由厨房改造的",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "忆旧",
+    "dst": "难民厨房",
+    "evidence": "我记得小时候，我们一家人也是蜗居在这样的小厨房里看电视、读书",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "打趣",
+    "dst": "奠基石",
+    "evidence": "我还以为在你这样的大建筑师眼里，这恐怕是最糟糕的环境了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "感佩",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "昏暗的走道，逼仄的空间，挤在一起看电视的人们……它让我感受到了人的韧性",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "赞许",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "在极度恶劣的条件中经营着生活，这本就令人尊重",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "提议",
+    "dst": "难民厨房",
+    "evidence": "关于这里的采光，我有一个建议",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "称善",
+    "dst": "难民厨房",
+    "evidence": "喔，这样就明亮多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "忆旧",
+    "dst": "灰色的筒子楼",
+    "evidence": "小时候，我住在灰色的筒子楼里",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "寻光",
+    "dst": "筒子楼下的秋千",
+    "evidence": "每天我都会去楼下的秋千处，只有在那里，才能感受到一点稀薄的阳光",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "84b0b8b17329b92ce241e98c": {
+  "entities": [
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "抬盖引光的建筑师"
+   },
+   {
+    "name": "幼年奠基石",
+    "type": "角色",
+    "aliases": [],
+    "desc": "涂改门窗描画楼群的女孩"
+   },
+   {
+    "name": "罗莎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以大教堂作比的旧友"
+   },
+   {
+    "name": "童年玩伴安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "偏爱阴暗房子的玩伴"
+   },
+   {
+    "name": "童年玩伴埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要星星屋顶的玩伴"
+   },
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "追问她怎么了的人"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "惊叹光如瀑布的男孩"
+   },
+   {
+    "name": "圣索菲亚大教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被反复追摹的大教堂"
+   },
+   {
+    "name": "筒子楼下的秋千",
+    "type": "物品",
+    "aliases": [],
+    "desc": "童年唯一有光之处"
+   },
+   {
+    "name": "厨房的天窗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拆出天光的厨房天窗"
+   },
+   {
+    "name": "侧光天窗方案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "让光自侧边滑入的方案"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "凭空取来材料的手段"
+   },
+   {
+    "name": "无名建筑的穹顶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "待平移方案的穹顶"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奠基石",
+    "relation": "忆旧",
+    "dst": "筒子楼下的秋千",
+    "evidence": "每天我都会去楼下的秋千处，只有在那里，才能感受到一点稀薄的阳光",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "立愿",
+    "dst": "厨房的天窗",
+    "evidence": "如果有一天，我能拆掉屋顶，让天光一直留在屋里",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼年奠基石",
+    "relation": "演示",
+    "dst": "厨房的天窗",
+    "evidence": "看，这样就能让天光一直留在屋里",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗莎",
+    "relation": "譬喻",
+    "dst": "圣索菲亚大教堂",
+    "evidence": "真漂亮……就像圣索菲亚大教堂那样",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴安德烈",
+    "relation": "厌光",
+    "dst": "幼年奠基石",
+    "evidence": "我不喜欢这个！我喜欢阴暗的房子。我讨厌太阳！",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼年奠基石",
+    "relation": "从命",
+    "dst": "童年玩伴安德烈",
+    "evidence": "没问题，我来涂掉门窗",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴埃米尔",
+    "relation": "索求",
+    "dst": "幼年奠基石",
+    "evidence": "还有我，还有我！我要一个晚上可以看到星星的屋顶",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼年奠基石",
+    "relation": "许诺",
+    "dst": "童年玩伴埃米尔",
+    "evidence": "就让星星永远闪烁在埃米尔的屋顶上",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "溯源",
+    "dst": "侧光天窗方案",
+    "evidence": "原来……小时候我也曾画过类似的结构",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "更张",
+    "dst": "侧光天窗方案",
+    "evidence": "我将屋顶抬得更高，甚至还做了新的带形窗",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "探问",
+    "dst": "奠基石",
+    "evidence": "怎么了，大建筑师？",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "悟得",
+    "dst": "侧光天窗方案",
+    "evidence": "如果我们提升部分屋盖，在屋盖与墙体之间形成一条环绕的空间",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "装配",
+    "dst": "厨房的天窗",
+    "evidence": "将它们固定在墙顶与屋盖之间开好的连续窗框上",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "施术",
+    "dst": "神秘术",
+    "evidence": "手指轻轻挥舞，眼前便凭空出现了一组材料",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "验配",
+    "dst": "侧光天窗方案",
+    "evidence": "看起来没有任何偏移或不适配的情况，所有的组件都能精准嵌入",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "惊叹",
+    "dst": "侧光天窗方案",
+    "evidence": "光像瀑布一样流下来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "追摹",
+    "dst": "圣索菲亚大教堂",
+    "evidence": "光不是来自上方，而是来自侧边，就像圣索菲亚大教堂那样",
+    "confidence": 0.95
+   },
+   {
+    "src": "侧光天窗方案",
+    "relation": "平移",
+    "dst": "无名建筑的穹顶",
+    "evidence": "这个方案如果平移到穹顶的话，就应该是这样的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "abc33762e3b3d79c6c1332d4": {
+  "entities": [
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "勾勒新穹顶草图的建筑师"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在天窗下认光的少女"
+   },
+   {
+    "name": "奠基石的速写本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "笔尖飞速勾勒的本子"
+   },
+   {
+    "name": "无名建筑的穹顶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾流淌过光的穹顶"
+   },
+   {
+    "name": "厨房的天窗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "光和影子游走的窗下"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奠基石",
+    "relation": "勾勒",
+    "dst": "奠基石的速写本",
+    "evidence": "手中的笔尖在速写本上飞速勾勒",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "平移",
+    "dst": "无名建筑的穹顶",
+    "evidence": "这个方案如果平移到穹顶的话，就应该是这样的",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "求证",
+    "dst": "无名建筑的穹顶",
+    "evidence": "回声谣小姐，从中庭的穹顶流淌下来的，也是像这样的光吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "交付",
+    "dst": "回声谣",
+    "evidence": "她将新的穹顶草图交到回声谣手上",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "走近",
+    "dst": "厨房的天窗",
+    "evidence": "少女拿起手中的稿纸，一步步走到天窗下",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "认光",
+    "dst": "无名建筑的穹顶",
+    "evidence": "哦……是光",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "59fb0728a8d2fe2b78a8508e": {
+  "entities": [
+   {
+    "name": "初生回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自寂静中取出音节的存在"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追忆自身由来的少女"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "看着她添笔的建筑师"
+   },
+   {
+    "name": "幼年奠基石",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听见金纱般光带的孩子"
+   },
+   {
+    "name": "罗莎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说出寂静之声的旧友"
+   },
+   {
+    "name": "石墙边的雏菊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "石墙边摇曳的雏菊"
+   },
+   {
+    "name": "奠基石的速写本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被添上雏菊的稿纸"
+   },
+   {
+    "name": "诺瓦米奇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "天空不再灰色的城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "回声谣",
+    "relation": "溯源",
+    "dst": "初生回声谣",
+    "evidence": "直到某个清晨，她忽然醒来",
+    "confidence": 0.95
+   },
+   {
+    "src": "初生回声谣",
+    "relation": "呢喃",
+    "dst": "石墙边的雏菊",
+    "evidence": "雏菊……雏菊。",
+    "confidence": 0.95
+   },
+   {
+    "src": "初生回声谣",
+    "relation": "复诵",
+    "dst": "罗莎",
+    "evidence": "罗莎，等等我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "初生回声谣",
+    "relation": "复诵",
+    "dst": "诺瓦米奇",
+    "evidence": "天空不再是灰色，街道也拥有了色彩",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼年奠基石",
+    "relation": "察闻",
+    "dst": "初生回声谣",
+    "evidence": "嗯？谁在说话——",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗莎",
+    "relation": "静听",
+    "dst": "初生回声谣",
+    "evidence": "嘘……听到了吗，斯塔夏？",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗莎",
+    "relation": "辨识",
+    "dst": "初生回声谣",
+    "evidence": "是寂静的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗莎",
+    "relation": "释言",
+    "dst": "幼年奠基石",
+    "evidence": "只有在安静的时候，那些我们平时看不见、听不着的东西才会出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼年奠基石",
+    "relation": "惊见",
+    "dst": "初生回声谣",
+    "evidence": "噢，一条金色的光带！",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "添画",
+    "dst": "奠基石的速写本",
+    "evidence": "回声谣稍微倾斜了身子，拿过建筑师手中的笔",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "询问",
+    "dst": "回声谣",
+    "evidence": "这是……太阳？",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "追忆",
+    "dst": "石墙边的雏菊",
+    "evidence": "雏菊。还记得吗？在最初的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "指认",
+    "dst": "石墙边的雏菊",
+    "evidence": "这里，有很多雏菊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9d634f152cf6c9633a898a61": {
+  "entities": [
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记下首次突破的监工"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "反复调校重心的建筑师"
+   },
+   {
+    "name": "回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "终于集齐的石材"
+   },
+   {
+    "name": "青灰色石料",
+    "type": "物品",
+    "aliases": [],
+    "desc": "迎来用场的存料"
+   },
+   {
+    "name": "穹顶模型",
+    "type": "概念",
+    "aliases": [],
+    "desc": "只差下层的模型"
+   },
+   {
+    "name": "无名建筑的三角体",
+    "type": "物品",
+    "aliases": [],
+    "desc": "最后放入的下层构件"
+   },
+   {
+    "name": "无名建筑的穹顶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "草图已成的穹顶"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "终于像回事的重建"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "台阶上注视模型的人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝图",
+    "relation": "记日",
+    "dst": "穹顶重建计划",
+    "evidence": "今天是穹顶项目施工的第42天",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "集齐",
+    "dst": "回声石",
+    "evidence": "我们终于收集了足够的回声石，穹顶的草图也完成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "绘就",
+    "dst": "无名建筑的穹顶",
+    "evidence": "我们终于收集了足够的回声石，穹顶的草图也完成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "推进",
+    "dst": "穹顶模型",
+    "evidence": "接下来，便是最关键的模型搭建工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "庆贺",
+    "dst": "穹顶模型",
+    "evidence": "这是项目开始以来的首次真正突破",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "调校",
+    "dst": "穹顶模型",
+    "evidence": "重心太分散，结构不稳定",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "加固",
+    "dst": "穹顶模型",
+    "evidence": "这里的支撑也不够，得再加一块",
+    "confidence": 0.95
+   },
+   {
+    "src": "青灰色石料",
+    "relation": "效力",
+    "dst": "穹顶模型",
+    "evidence": "那些之前收集来的石料，如今终于迎来了它们发挥作用的时刻",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺瓦米奇的幸存居民",
+    "relation": "注视",
+    "dst": "穹顶模型",
+    "evidence": "但他们的目光都被建筑师手中的模型吸引",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "未完",
+    "dst": "无名建筑的三角体",
+    "evidence": "只差下层的三角体，模型就全部完成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "求教",
+    "dst": "奠基石",
+    "evidence": "你可以再阐述一下你的思路。我承认我有些没跟上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "19e7167dbdc23f32cce47ebd": {
+  "entities": [
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "眼看模型倒塌的监工"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "最先察觉异响的建筑师"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "为她欢呼的男孩"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被提议寄样核验的机构"
+   },
+   {
+    "name": "无名建筑的三角体",
+    "type": "物品",
+    "aliases": [],
+    "desc": "咔哒归位的构件"
+   },
+   {
+    "name": "回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奏响不谐音律的石材"
+   },
+   {
+    "name": "异变回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "由残骸胀大的阴影"
+   },
+   {
+    "name": "穹顶模型",
+    "type": "概念",
+    "aliases": [],
+    "desc": "轰然倒塌的模型"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被短暂看好的重建"
+   },
+   {
+    "name": "无名建筑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被噪音填满的空间"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被阴影笼罩的人群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名建筑的三角体",
+    "relation": "嵌合",
+    "dst": "穹顶模型",
+    "evidence": "三角体被放置在了它应在的位置上",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "送检",
+    "dst": "科算中心",
+    "evidence": "或许我们应该先把它打包寄回拉普拉斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "止声",
+    "dst": "回声石",
+    "evidence": "嘘……里面似乎有声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声石",
+    "relation": "异动",
+    "dst": "蓝图",
+    "evidence": "轻微的嗡鸣声自石料内部隐约传出",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "振奋",
+    "dst": "回声石",
+    "evidence": "蓝图的眼睛亮了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "抛却",
+    "dst": "穹顶重建计划",
+    "evidence": "此刻，她短暂抛开了对这个重建项目的谨慎与审视",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "先闻",
+    "dst": "回声石",
+    "evidence": "我也听到声音了，和之前的都不一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "信服",
+    "dst": "奠基石",
+    "evidence": "大建筑师，你真的办到了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺瓦米奇的幸存居民",
+    "relation": "张望",
+    "dst": "奠基石",
+    "evidence": "不远处的居民们也紧张地站起身，一双双眼睛望了过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声石",
+    "relation": "颤起",
+    "dst": "异变回声石",
+    "evidence": "回声石隐隐颤抖，奏响不谐的音律",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "示警",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "快离开！这里有些不对劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "异变回声石",
+    "relation": "撑破",
+    "dst": "穹顶模型",
+    "evidence": "它的残骸以一种诡异的姿态组合起来，不断膨胀，再膨胀",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "愕然",
+    "dst": "异变回声石",
+    "evidence": "怎么……回事",
+    "confidence": 0.95
+   },
+   {
+    "src": "异变回声石",
+    "relation": "笼罩",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "直到最后，庞然的阴影终于笼罩了所有人",
+    "confidence": 0.95
+   },
+   {
+    "src": "异变回声石",
+    "relation": "喧占",
+    "dst": "无名建筑",
+    "evidence": "声音越来越大，直到整个空间都被噪音填满",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "231e02a1537b8d1e4073b36c": {
+  "entities": [
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问为何坚持的监工"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "带伤排查碎石的建筑师"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "用手绢按伤的男孩"
+   },
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "被派带走回声石的人"
+   },
+   {
+    "name": "柏林以东",
+    "type": "角色",
+    "aliases": [],
+    "desc": "久未现身的先遣人"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给定期限的委员"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "要求直接通话的机构"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被晃起的通讯器"
+   },
+   {
+    "name": "六个月期限",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仅余四个月的期限"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待修正的重建"
+   },
+   {
+    "name": "白色的手绢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "按住伤口的白色手绢"
+   },
+   {
+    "name": "塔特林项目",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被追念的旧项目"
+   },
+   {
+    "name": "回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "散落待移走的石块"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "面带失望的旁观者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝图",
+    "relation": "惊见",
+    "dst": "奠基石",
+    "evidence": "真见鬼，你流血了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "自解",
+    "dst": "卢齐安",
+    "evidence": "这只是个浅表性伤口，只需要简单处理一下",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "护惜",
+    "dst": "奠基石",
+    "evidence": "你是建筑师，手可不能受伤",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "敷伤",
+    "dst": "白色的手绢",
+    "evidence": "男孩将一张白色的手绢轻轻按在建筑师的伤口上",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "期冀",
+    "dst": "奠基石",
+    "evidence": "你以后还要为我们大家修好多的房子呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "纠正",
+    "dst": "卢齐安",
+    "evidence": "现在还远没到说“穹顶没了”这种丧气话的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "遣派",
+    "dst": "亚肖",
+    "evidence": "我需要你带大家把所有掉落的回声石都移到安全区",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "移走",
+    "dst": "回声石",
+    "evidence": "我需要你带大家把所有掉落的回声石都移到安全区",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "指派",
+    "dst": "蓝图",
+    "evidence": "回收剩余的模型，记录下我们需要重新评估的部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "遣散",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "其余的人可以回去休息了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "重估",
+    "dst": "穹顶重建计划",
+    "evidence": "我会重新评估草图，并在原有的基础上修正它",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "给定",
+    "dst": "六个月期限",
+    "evidence": "距离伊里内伊先生给定的期限，仅剩4个月左右",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "计余",
+    "dst": "六个月期限",
+    "evidence": "距离伊里内伊先生给定的期限，仅剩4个月左右",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "质疑",
+    "dst": "穹顶重建计划",
+    "evidence": "我们是否真的有必要，继续对它进行所谓的“修正”",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "坚持",
+    "dst": "穹顶重建计划",
+    "evidence": "在我看来，只是单纯因为它可以被修正",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "敬畏",
+    "dst": "奠基石",
+    "evidence": "你的坚持足以令任何甲方感到敬畏",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "追念",
+    "dst": "塔特林项目",
+    "evidence": "当初“塔特林”项目若是交给你，恐怕它早就高高竖立起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "致意",
+    "dst": "奠基石",
+    "evidence": "很抱歉在这个时候打扰大家",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "转达",
+    "dst": "科算中心",
+    "evidence": "科算中心希望与施工现场负责人直接通话",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "晃示",
+    "dst": "通讯器",
+    "evidence": "久未现身的先遣调查员站在角落里，晃了晃手中的通讯器",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "预感",
+    "dst": "穹顶重建计划",
+    "evidence": "我有一种预感，这可能不是什么好消息",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "自嘲",
+    "dst": "蓝图",
+    "evidence": "坏消息就像咖啡一样，喝多了就习惯了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "53519fe112f84a3a10de9fba": {
+  "entities": [
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "主张管理能量的建筑师"
+   },
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抢过通讯器汇报的监工"
+   },
+   {
+    "name": "科算中心的希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣读结论的研究者"
+   },
+   {
+    "name": "拉普拉斯实验室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "来电那端的实验室"
+   },
+   {
+    "name": "洛伦兹研究所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "来信不断的研究机构"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "提出正式建议的机构"
+   },
+   {
+    "name": "混沌能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与回声石一致的能量形态"
+   },
+   {
+    "name": "回声石耦合假设",
+    "type": "概念",
+    "aliases": [],
+    "desc": "移位即破坏的耦合假设"
+   },
+   {
+    "name": "能量调节方案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以精确调节带回平衡的方案"
+   },
+   {
+    "name": "异变回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "发起攻击的异变石"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被举开的通讯器"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被要求中止的重建"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奠基石",
+    "relation": "初闻",
+    "dst": "混沌能量",
+    "evidence": "建筑师总算从中捕捉到了一个关键字眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "证实",
+    "dst": "混沌能量",
+    "evidence": "这种能量形态与“混沌能量”几乎完全一致",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "引述",
+    "dst": "洛伦兹研究所",
+    "evidence": "根据洛伦兹研究所的来信，这种能量形态与“混沌能量”几乎完全一致",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "戏评",
+    "dst": "洛伦兹研究所",
+    "evidence": "听上去确实是那帮家伙一直在研究的、我从来都搞不明白的方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "身处",
+    "dst": "拉普拉斯实验室",
+    "evidence": "【标题卡】拉普拉斯实验室",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "陈述",
+    "dst": "回声石耦合假设",
+    "evidence": "回声石与其所属的建筑结构之间有着高度的耦合性",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声石耦合假设",
+    "relation": "解释",
+    "dst": "异变回声石",
+    "evidence": "或许这正是它们会持续发出“回声”的原因",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "警告",
+    "dst": "穹顶重建计划",
+    "evidence": "也无法重新激活建筑抵御回溯的能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "求教",
+    "dst": "科算中心的希曼",
+    "evidence": "请继续，希曼女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "延伸",
+    "dst": "回声石耦合假设",
+    "evidence": "对回声石布局进行大规模异位调整，很可能将触发一系列连锁反应",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "汇报",
+    "dst": "科算中心的希曼",
+    "evidence": "刚才在搭建模型时，回声石发生不明扰动、聚合现象",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "陈说",
+    "dst": "异变回声石",
+    "evidence": "回声石发生不明扰动、聚合现象，并向我们发起了攻击",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "印证",
+    "dst": "回声石耦合假设",
+    "evidence": "这完全说明了耦合假设的科学性",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "争夺",
+    "dst": "通讯器",
+    "evidence": "嘿，你不许抢走我的通讯器",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "移远",
+    "dst": "通讯器",
+    "evidence": "希曼默默将通讯器举起，移开了两英尺",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "乐观",
+    "dst": "异变回声石",
+    "evidence": "回声石史无前例的反抗也许说明我们走在正确的道路上",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "提出",
+    "dst": "能量调节方案",
+    "evidence": "通过精确的能量调节，我们就能把它带回平衡状态",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "驳回",
+    "dst": "能量调节方案",
+    "evidence": "评估结论是：实验风险极高，研究耗时也不可控",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "警诫",
+    "dst": "能量调节方案",
+    "evidence": "若将其扩展至模型的几十倍、上百倍——后果或将呈指数级扩大",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "比照",
+    "dst": "洛伦兹研究所",
+    "evidence": "洛伦兹研究所的来信中，并未就安全因素做出任何定论",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "中止",
+    "dst": "穹顶重建计划",
+    "evidence": "请中止重建工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心的希曼",
+    "relation": "转达",
+    "dst": "穹顶重建计划",
+    "evidence": "请中止重建工作",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fc210a66404e45e4923580fd": {
+  "entities": [
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣读前线报告的委员"
+   },
+   {
+    "name": "肯纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收拾报告的对接委员"
+   },
+   {
+    "name": "远在前线的伊戈尔将军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "七日内遭三场伏击的将领"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "在中亚伏击基金会的对手"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "联合派遣部队的一方"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "陷入混乱失序的机构"
+   },
+   {
+    "name": "时空灾害",
+    "type": "概念",
+    "aliases": [],
+    "desc": "追击行动的起因"
+   },
+   {
+    "name": "中亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "部队追击作战的地区"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "唯一幸存的建筑师"
+   },
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为居民发声的监工"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未通过验证的重建"
+   },
+   {
+    "name": "实验性修复方案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被称作冒进的实验"
+   },
+   {
+    "name": "新办事处建设项目",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不被废止的建设项目"
+   },
+   {
+    "name": "无名建筑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将被接管的巨构"
+   },
+   {
+    "name": "全盘接管",
+    "type": "事件",
+    "aliases": [],
+    "desc": "对建筑实施的全盘接管"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将被迁出的住户"
+   },
+   {
+    "name": "居民安置政策",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仍在拟订的安置政策"
+   },
+   {
+    "name": "诺瓦米奇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "仍有机会重返的小城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊里内伊",
+    "relation": "宣读",
+    "dst": "远在前线的伊戈尔将军",
+    "evidence": "这是伊戈尔将军近日呈递的报告书",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "派遣",
+    "dst": "远在前线的伊戈尔将军",
+    "evidence": "受芝诺与基金会联合派遣",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "同派",
+    "dst": "远在前线的伊戈尔将军",
+    "evidence": "受芝诺与基金会联合派遣",
+    "confidence": 0.95
+   },
+   {
+    "src": "时空灾害",
+    "relation": "触发",
+    "dst": "远在前线的伊戈尔将军",
+    "evidence": "“时空灾害”发生后，受芝诺与基金会联合派遣",
+    "confidence": 0.95
+   },
+   {
+    "src": "远在前线的伊戈尔将军",
+    "relation": "转战",
+    "dst": "中亚",
+    "evidence": "我继续率领部队于中亚追击重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "远在前线的伊戈尔将军",
+    "relation": "追击",
+    "dst": "重塑之手",
+    "evidence": "我继续率领部队于中亚追击重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "远在前线的伊戈尔将军",
+    "relation": "受伏",
+    "dst": "重塑之手",
+    "evidence": "截至目前，部队已于七日内遭受三场伏击",
+    "confidence": 0.95
+   },
+   {
+    "src": "远在前线的伊戈尔将军",
+    "relation": "折损",
+    "dst": "重塑之手",
+    "evidence": "三名士兵不幸牺牲，另有十三人需要长期医疗援助",
+    "confidence": 0.95
+   },
+   {
+    "src": "远在前线的伊戈尔将军",
+    "relation": "失判",
+    "dst": "重塑之手",
+    "evidence": "我们无法判断敌人数量、位置，甚至无法确认是否仍在交战状态",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "陈情",
+    "dst": "圣洛夫基金会",
+    "evidence": "这就是基金会面临的现状",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "示警",
+    "dst": "肯纳",
+    "evidence": "从近期收到的各类报告来看，这已经成为了某种常态",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "否决",
+    "dst": "穹顶重建计划",
+    "evidence": "你们的小小奇迹并未通过第一阶段的验证",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "搁置",
+    "dst": "穹顶重建计划",
+    "evidence": "一个无法落地的重建方案，我们没有理由再对它进行投入",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "削减",
+    "dst": "穹顶重建计划",
+    "evidence": "接下来，委员会将削减项目预算",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "转投",
+    "dst": "重塑之手",
+    "evidence": "将其投入对重塑之手的防御与监控中",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "点名",
+    "dst": "奠基石",
+    "evidence": "奠基石是基金会唯一幸存的建筑师",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "转战",
+    "dst": "重塑之手",
+    "evidence": "很快，她和蓝图都将直接参与这些关键工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "肯纳",
+    "relation": "惋惜",
+    "dst": "奠基石",
+    "evidence": "她们都竭尽了全力，离成功或许只有一步之遥",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "保留",
+    "dst": "新办事处建设项目",
+    "evidence": "“新办事处建设”项目不会被废止",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "许诺",
+    "dst": "诺瓦米奇",
+    "evidence": "未来，你们仍有机会重返诺瓦米奇",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "定策",
+    "dst": "全盘接管",
+    "evidence": "我们将按照流程，对它实施全盘接管",
+    "confidence": 0.95
+   },
+   {
+    "src": "全盘接管",
+    "relation": "针对",
+    "dst": "无名建筑",
+    "evidence": "为了防止它落入重塑之手的控制，我们将按照流程，对它实施全盘接管",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "抗议",
+    "dst": "伊里内伊",
+    "evidence": "这和我们的修复实验相比，更像是另一种意义上的“冒进”",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "援引",
+    "dst": "实验性修复方案",
+    "evidence": "这和我们的修复实验相比，更像是另一种意义上的“冒进”",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "忧民",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "全盘接管我理解，但……直接驱赶居民",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "自辩",
+    "dst": "重塑之手",
+    "evidence": "重塑之手在世界范围内掀起的波澜，也是相当“冒进”的自杀式袭击",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "谨慎",
+    "dst": "重塑之手",
+    "evidence": "在当前局势下，谨慎并不代表安全，我只是在为最坏的局面作打算",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "驱离",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "这些居民待在那里既不合法，又很危险",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "商议",
+    "dst": "居民安置政策",
+    "evidence": "基金会正与当地政府商议安置政策",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "乐观",
+    "dst": "居民安置政策",
+    "evidence": "详细的方案还在拟订中，但进展乐观",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cb81cf3a01e6184e0ed9e39a": {
+  "entities": [
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不知如何开口的监工"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "切断通讯的上司"
+   },
+   {
+    "name": "卢齐安",
+    "type": "角色",
+    "aliases": [
+     "苍白的男孩"
+    ],
+    "desc": "踢开石子的男孩"
+   },
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "自陈流浪惯了的同伴"
+   },
+   {
+    "name": "小洪扎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首次当众现身的老大"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱住电视机的少女"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "面壁倾听的建筑师"
+   },
+   {
+    "name": "奥尔加",
+    "type": "角色",
+    "aliases": [
+     "和蔼的老妇人"
+    ],
+    "desc": "许下喝茶之约的老人"
+   },
+   {
+    "name": "房间里的电视机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "请求留下的电视机"
+   },
+   {
+    "name": "荒唐童话",
+    "type": "概念",
+    "aliases": [],
+    "desc": "只看了一半的节目"
+   },
+   {
+    "name": "时空灾害",
+    "type": "概念",
+    "aliases": [],
+    "desc": "再临也无防的灾害"
+   },
+   {
+    "name": "卢齐安的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被比作会消失的父母"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚拢听宣告的人们"
+   },
+   {
+    "name": "无名建筑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "注定只是破屋顶的建筑"
+   },
+   {
+    "name": "青灰色石料",
+    "type": "物品",
+    "aliases": [],
+    "desc": "裸露在角落的混凝土"
+   },
+   {
+    "name": "罗莎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旧话在耳边重现的故友"
+   },
+   {
+    "name": "无名建筑的鬼魂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "等了很久的存在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝图",
+    "relation": "难言",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我不知道该怎么和他们开口",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "感念",
+    "dst": "奥尔加",
+    "evidence": "昨天奥尔加奶奶笑着和我说，等穹顶修好了，会邀请我们一起在下面喝茶",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "责难",
+    "dst": "蓝图",
+    "evidence": "但有些工作是我们必须做的。成熟一点，想想那些离开的同伴们",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "戳破",
+    "dst": "蓝图",
+    "evidence": "他们要赶走我们，是吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "揭破",
+    "dst": "蓝图",
+    "evidence": "我们都听见了——你和你那位冷酷无情的老板",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "致歉",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我很抱歉，各位",
+    "confidence": 0.95
+   },
+   {
+    "src": "卢齐安",
+    "relation": "断言",
+    "dst": "无名建筑",
+    "evidence": "所以……这里现在是，未来也永远只能是个破屋顶",
+    "confidence": 0.95
+   },
+   {
+    "src": "时空灾害",
+    "relation": "不护",
+    "dst": "无名建筑",
+    "evidence": "要是再来一次“时空灾害”，它什么用也顶不上",
+    "confidence": 0.95
+   },
+   {
+    "src": "时空灾害",
+    "relation": "吞噬",
+    "dst": "卢齐安的母亲",
+    "evidence": "所有人都会消失，就像爸爸妈妈一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "小洪扎",
+    "relation": "质问",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我才是这里真正的老大，为什么没有事先通报我",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "忧心",
+    "dst": "房间里的电视机",
+    "evidence": "那……这里的东西也会全部拆掉吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "凝视",
+    "dst": "房间里的电视机",
+    "evidence": "回声谣有些茫然地望着眼前的电视机、碎花的墙纸和阳光洒落的中庭",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "留恋",
+    "dst": "卢齐安",
+    "evidence": "我喜欢这里。我喜欢和卢齐安，和大家一起看电视",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "追看",
+    "dst": "荒唐童话",
+    "evidence": "《荒唐童话》才只看了一半呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "环抱",
+    "dst": "房间里的电视机",
+    "evidence": "她飞奔到电视机前，笨拙地环抱住憨态可掬的方形屏幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "恳求",
+    "dst": "奠基石",
+    "evidence": "可不可以把电视机留给我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "推诿",
+    "dst": "奠基石",
+    "evidence": "奠基石，这种时候不应该由你来——嗯？你这是在……",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "面壁",
+    "dst": "无名建筑",
+    "evidence": "建筑师背朝众人站在墙角，仿佛面壁思过的罪人",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "审视",
+    "dst": "青灰色石料",
+    "evidence": "这些角落里裸露的混凝土，和建筑内其他地方的完美主义风格似乎有所出入",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "忆言",
+    "dst": "罗莎",
+    "evidence": "嘘……听到了吗，斯塔夏？",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗莎",
+    "relation": "预告",
+    "dst": "无名建筑的鬼魂",
+    "evidence": "就好像……它们已经等了我们很久很久了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "自问",
+    "dst": "无名建筑的鬼魂",
+    "evidence": "……你们也在等我吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "宽解",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "好了，你们也别哭丧着脸。这不是你们的错",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "述苦",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我们早就习惯四处流浪了。从空无一人的故乡，到工厂宿舍、仓库，再到这里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ee86e351904d140f1679c2c8": {
+  "entities": [
+   {
+    "name": "亚肖",
+    "type": "角色",
+    "aliases": [
+     "醉酒的男人",
+     "流浪汉？"
+    ],
+    "desc": "被一巴掌拍醒的人"
+   },
+   {
+    "name": "奠基石",
+    "type": "角色",
+    "aliases": [
+     "斯塔夏"
+    ],
+    "desc": "以碎石的代价求证的人"
+   },
+   {
+    "name": "蓝图",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警惕质问的监工"
+   },
+   {
+    "name": "回声谣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不忍砸石的少女"
+   },
+   {
+    "name": "小洪扎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "早有预感的手偶"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安置计划的核定方"
+   },
+   {
+    "name": "居民安置政策",
+    "type": "概念",
+    "aliases": [],
+    "desc": "至多一个月的安置窗口"
+   },
+   {
+    "name": "施工锤",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挥向回声石的施工锤"
+   },
+   {
+    "name": "回声石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "碎成渣滓仍发声的石头"
+   },
+   {
+    "name": "青灰色石料",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被血珠染红的砖石"
+   },
+   {
+    "name": "建筑本身的秩序",
+    "type": "概念",
+    "aliases": [],
+    "desc": "流淌于建筑本身的规律"
+   },
+   {
+    "name": "穹顶重建计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "末日也难阻挡的重建"
+   },
+   {
+    "name": "诺瓦米奇的幸存居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默注视的人群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "亚肖",
+    "relation": "自弃",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "在这片土地上，我们学会的第一件事就是：没有什么是真正属于我们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "掌击",
+    "dst": "亚肖",
+    "evidence": "建筑师一巴掌拍在了他的头上",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "呵斥",
+    "dst": "亚肖",
+    "evidence": "你这副要死不活的模样，我早就看不顺眼了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "核定",
+    "dst": "居民安置政策",
+    "evidence": "伊里内伊先生的政府安置计划从确定到落地实施",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "探问",
+    "dst": "居民安置政策",
+    "evidence": "伊里内伊先生的政府安置计划从确定到落地实施，有预估的时间吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "答复",
+    "dst": "居民安置政策",
+    "evidence": "……最多一个月。你想干什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "请暇",
+    "dst": "居民安置政策",
+    "evidence": "这一个月的时间里，我想我应该拥有一定程度的自由",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "自陈",
+    "dst": "诺瓦米奇的幸存居民",
+    "evidence": "我对安置工作完全是外行，只会帮倒忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "察觉",
+    "dst": "奠基石",
+    "evidence": "你还没有放弃……还是说，你已经有思路了",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "按验",
+    "dst": "回声石",
+    "evidence": "建筑师走过去，双手按在石面上——冰凉、坚硬、纹丝不动",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝图",
+    "relation": "喝止",
+    "dst": "奠基石",
+    "evidence": "你要干嘛？",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "抄起",
+    "dst": "施工锤",
+    "evidence": "她抄起一旁的施工锤",
+    "confidence": 0.95
+   },
+   {
+    "src": "回声谣",
+    "relation": "劝阻",
+    "dst": "奠基石",
+    "evidence": "不……不要这样！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小洪扎",
+    "relation": "讥评",
+    "dst": "奠基石",
+    "evidence": "黑眼圈这么重，肯定不对劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "砸碎",
+    "dst": "回声石",
+    "evidence": "回声石顺着自身的裂隙断裂、解体，直到彻底化为一地碎屑",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "溅红",
+    "dst": "青灰色石料",
+    "evidence": "手背伤口迸裂，血珠在空中划出几道凌乱的弧线，染红青灰色的砖石",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "证得",
+    "dst": "建筑本身的秩序",
+    "evidence": "即使回声石碎成渣滓，声音依旧存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "悟理",
+    "dst": "建筑本身的秩序",
+    "evidence": "是这栋建筑本身，甚至更深的……“能量”，或是“秩序”流淌的规律",
+    "confidence": 0.95
+   },
+   {
+    "src": "奠基石",
+    "relation": "趋近",
+    "dst": "建筑本身的秩序",
+    "evidence": "她无法聆听更多——但很近了，她正在一步一步接近它",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "叹服",
+    "dst": "奠基石",
+    "evidence": "现在我相信即使世界末日也无法阻挡你想要重建的决心了",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚肖",
+    "relation": "印证",
+    "dst": "穹顶重建计划",
+    "evidence": "即使世界末日也无法阻挡你想要重建的决心",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

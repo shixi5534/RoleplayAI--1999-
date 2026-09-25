@@ -1,0 +1,1366 @@
+{
+ "2b9de40328c760c83035199c": {
+  "entities": [
+   {
+    "name": "幻觉中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告病程的幻象医生"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "得知只剩三个月的队长"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "组织会诊的康复机构"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "暂停其调查员职务"
+   },
+   {
+    "name": "委外合约人才管理组织",
+    "type": "组织",
+    "aliases": [],
+    "desc": "她请缨前往的凶险小队"
+   },
+   {
+    "name": "委外合约小队队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死亡率更高的队伍"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "遗失病症记录的灾变"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "血统并不占优的身份"
+   }
+  ],
+  "relations": [
+   {
+    "src": "幻觉中的医生",
+    "relation": "宣告",
+    "dst": "塞梅尔维斯",
+    "evidence": "三个月到半年不等，在此期间，你的精神与肉体都会受到病症的袭扰",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "安排",
+    "dst": "塞梅尔维斯",
+    "evidence": "基金会暂时停止了你的调查员工作，并安排你在康复中心进行休养诊疗",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "提及",
+    "dst": "暴雨",
+    "evidence": "与这种病症相关的记录大多在“暴雨”之中遗失",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "劝阻",
+    "dst": "塞梅尔维斯",
+    "evidence": "作为一名调查员，你没有必要去担任如此危险的职务",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "警告",
+    "dst": "委外合约人才管理组织",
+    "evidence": "委外合约小队与调查员的性质截然不同",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "请缨",
+    "dst": "委外合约人才管理组织",
+    "evidence": "但……假如是委外合约人才管理组织呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "回报",
+    "dst": "圣洛夫基金会",
+    "evidence": "我希望能够通过这种方式，回报基金会的信任",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自认",
+    "dst": "神秘学家",
+    "evidence": "相较于其他神秘学家，我的血统与能力并无优势",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯康复中心",
+    "relation": "诊疗",
+    "dst": "塞梅尔维斯",
+    "evidence": "康复中心将会组织会诊，全力为你寻求治疗方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约小队队员",
+    "relation": "奔赴",
+    "dst": "塞梅尔维斯",
+    "evidence": "但我比您更清楚委外合约小队的性质",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9ac94433ff524b3ad5f56f72": {
+  "entities": [
+   {
+    "name": "幻觉中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "狞笑讥世的幻象"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破幻觉的队长"
+   },
+   {
+    "name": "烂术杖",
+    "type": "概念",
+    "aliases": [],
+    "desc": "讥讽失败者的旧称"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她无法施展的力量"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "同样不在乎她的势力"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "她一心报效的机构"
+   },
+   {
+    "name": "山麓草甸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "幻象散去后的战场"
+   },
+   {
+    "name": "萦绕不去的歌声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "重新萦绕耳畔的异响"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤回队长的队员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "幻觉中的医生",
+    "relation": "质问",
+    "dst": "塞梅尔维斯",
+    "evidence": "一个无法使用神秘术的神秘学家，真的能够被称之为神秘学家吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "蔑称",
+    "dst": "烂术杖",
+    "evidence": "都不会在乎一个无法使用神秘术的“烂术杖”",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "提及",
+    "dst": "重塑之手",
+    "evidence": "不管是基金会还是重塑之手，都不会在乎",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "讥讽",
+    "dst": "神秘术",
+    "evidence": "即便你无法使用神秘术，但那种骨子里的愚蠢",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "断言",
+    "dst": "塞梅尔维斯",
+    "evidence": "这便是你的命运，不可逆转的命运",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "自陈",
+    "dst": "塞梅尔维斯",
+    "evidence": "你从什么时候意识到这是你的幻觉的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追忆",
+    "dst": "烂术杖",
+    "evidence": "自从我成为调查员后，我便很少听到过这个称呼了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "报效",
+    "dst": "圣洛夫基金会",
+    "evidence": "能够为基金会做出贡献，是我的荣幸",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "呼喊",
+    "dst": "塞梅尔维斯",
+    "evidence": "太好了，队长！你总算有回应了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "报告",
+    "dst": "塞梅尔维斯",
+    "evidence": "刚刚在战斗结束之后，你突然就愣在了原地",
+    "confidence": 0.95
+   },
+   {
+    "src": "萦绕不去的歌声",
+    "relation": "萦绕",
+    "dst": "塞梅尔维斯",
+    "evidence": "耳旁重新萦绕起了不曾消散的歌声",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "抵达",
+    "dst": "山麓草甸",
+    "evidence": "【标题卡】山麓草甸",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "隐瞒",
+    "dst": "小队队员埃米尔",
+    "evidence": "我刚刚只是有些出神，不用担心我",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "84647f7205ea1096a7d942e2": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝被幻影动摇的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心升职泡汤的队员"
+   },
+   {
+    "name": "委外合约小队队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命清理战场的众人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "仍被追踪的行踪"
+   },
+   {
+    "name": "山麓草甸",
+    "type": "地点",
+    "aliases": [],
+    "desc": "落日下的山地战场"
+   },
+   {
+    "name": "塞梅尔维斯的幻觉",
+    "type": "概念",
+    "aliases": [],
+    "desc": "袭扰精神的幻影"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小队队员埃米尔",
+    "relation": "担忧",
+    "dst": "塞梅尔维斯",
+    "evidence": "您可千万不要有事啊，要是您有事了，我的升职可就没有希望了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "听令",
+    "dst": "塞梅尔维斯",
+    "evidence": "是，队长！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "下令",
+    "dst": "委外合约小队队员",
+    "evidence": "所有人注意，清理战场，寻找有用的线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追查",
+    "dst": "重塑之手",
+    "evidence": "继续追查重塑之手的行踪",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "抵御",
+    "dst": "塞梅尔维斯的幻觉",
+    "evidence": "这种程度的幻影，还不足以动摇我的意志",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "远眺",
+    "dst": "山麓草甸",
+    "evidence": "塞梅尔维斯望向远处的雪山与落日，轻笑了一声",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "55bf84b3d720f2c4f18e936b": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8448a2853c88806f2faa42f9": {
+  "entities": [
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听取汇报的上司"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断绑匪意图的队长"
+   },
+   {
+    "name": "山麓林地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通讯汇报所在的山林"
+   },
+   {
+    "name": "佩希塔",
+    "type": "组织",
+    "aliases": [],
+    "desc": "倾向软禁的激进组织"
+   },
+   {
+    "name": "神秘学家难民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被煽动的流浪同族"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "急于渗透的幕后"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "调查与迁移的目的地"
+   },
+   {
+    "name": "巴尔干半岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "难民迁徙的出发地"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "得出临界点结论的机构"
+   },
+   {
+    "name": "时代的临界点",
+    "type": "概念",
+    "aliases": [],
+    "desc": "就在此刻生成的关口"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "双重管控的一方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琳赛女士",
+    "relation": "问询",
+    "dst": "塞梅尔维斯",
+    "evidence": "汇报一下进度，塞梅尔维斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "汇报",
+    "dst": "琳赛女士",
+    "evidence": "一切顺利，琳赛女士。我们已经确定了“佩希塔”撤离的方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "推断",
+    "dst": "神秘学家难民",
+    "evidence": "我推测，这个被囚禁起来的人与神秘学家难民群体有关",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "煽动",
+    "dst": "神秘学家难民",
+    "evidence": "重塑之手正在试图煽动数量庞大的神秘学家难民群体",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "渗透",
+    "dst": "神秘学家难民",
+    "evidence": "他们必然要寻找到某些能够更快渗透难民群体的方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民",
+    "relation": "迁徙",
+    "dst": "巴尔干半岛",
+    "evidence": "数量如此之多的神秘学家难民能够从巴尔干半岛前往维也纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民",
+    "relation": "抵达",
+    "dst": "维也纳",
+    "evidence": "数量如此之多的神秘学家难民能够从巴尔干半岛前往维也纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "管控",
+    "dst": "神秘学家难民",
+    "evidence": "在基金会与奥匈帝国的双重管控之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "佩希塔",
+    "relation": "倾向",
+    "dst": "塞梅尔维斯",
+    "evidence": "考虑到“佩希塔”更加倾向于软禁",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "认可",
+    "dst": "塞梅尔维斯",
+    "evidence": "你的推断有一定道理，也与基金会先前获得的信息一致",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "催促",
+    "dst": "塞梅尔维斯",
+    "evidence": "尽快完成任务，并查清楚他们的目的",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "告知",
+    "dst": "塞梅尔维斯",
+    "evidence": "在完成这次的外出回到基金会后，康复中心会提出一套新的治疗方案",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "判定",
+    "dst": "时代的临界点",
+    "evidence": "拉普拉斯科算中心刚刚已经得出了结论",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "同步",
+    "dst": "时代的临界点",
+    "evidence": "时代的临界点已经生成——就在维也纳",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "096ba7324d000c0e8115f172": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闻讯紧绷的队长"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "准其行动的上司"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔·霍夫曼"
+    ],
+    "desc": "维也纳的求援调查员"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "抢先研究临界点者"
+   },
+   {
+    "name": "时代的临界点",
+    "type": "概念",
+    "aliases": [],
+    "desc": "双方争夺的关口"
+   },
+   {
+    "name": "重塑追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "可能行险的信徒"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "通报",
+    "dst": "霍夫曼",
+    "evidence": "我需要与霍夫曼同步这个情报",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "允许",
+    "dst": "塞梅尔维斯",
+    "evidence": "这是理所当然的",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "领先",
+    "dst": "时代的临界点",
+    "evidence": "重塑之手对于临界点的研究都走在了我们的前面",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "获知",
+    "dst": "时代的临界点",
+    "evidence": "重塑之手也一定获得了这一情报",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "担忧",
+    "dst": "重塑追随者",
+    "evidence": "我担心追随者们会在此情况之下做出什么极端行为",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "致歉",
+    "dst": "琳赛女士",
+    "evidence": "抱歉，琳赛女士",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cb66e09fbb8ad120d73b2462": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0a844ee0d2b97b4dd3b2a45c": {
+  "entities": [
+   {
+    "name": "遗弃村落",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押被囚者的空村"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读信失神的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现密室的队员"
+   },
+   {
+    "name": "重塑追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "及时撤退的敌人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "留下痕迹的势力"
+   },
+   {
+    "name": "萦绕不去的歌声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "悄然消失的幻听"
+   },
+   {
+    "name": "莱茵河的罗蕾莱的信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "墨迹未干的信件"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "莱茵河的罗蕾莱"
+    ],
+    "desc": "自称能赐救赎的歌者"
+   },
+   {
+    "name": "神秘学家感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "幸存者寥寥的称呼"
+   },
+   {
+    "name": "神秘学家难民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借力脱身的一群人"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "留下痕迹的力量"
+   }
+  ],
+  "relations": [
+   {
+    "src": "重塑追随者",
+    "relation": "撤离",
+    "dst": "遗弃村落",
+    "evidence": "重塑追随者撤退得相当及时",
+    "confidence": 0.95
+   },
+   {
+    "src": "萦绕不去的歌声",
+    "relation": "消失",
+    "dst": "塞梅尔维斯",
+    "evidence": "萦绕在耳旁的歌声已经消失不见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "报告",
+    "dst": "塞梅尔维斯",
+    "evidence": "根据你的指示，我们在不远处发现了一处密室",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "到访",
+    "dst": "遗弃村落",
+    "evidence": "密室内有着旅行者短暂停留的痕迹，重塑之手显然来过这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "依据",
+    "dst": "神秘术",
+    "evidence": "根据神秘术的痕迹遗留，我们判断对方是在刚刚的战斗中被趁乱救走的",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民",
+    "relation": "利用",
+    "dst": "塞梅尔维斯",
+    "evidence": "原来如此……我们被那些难民利用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "发现",
+    "dst": "莱茵河的罗蕾莱的信件",
+    "evidence": "塞梅尔维斯很快注意到桌子上面的信封",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱茵河的罗蕾莱的信件",
+    "relation": "署名",
+    "dst": "罗蕾莱",
+    "evidence": "——莱茵河的罗蕾莱",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "允诺",
+    "dst": "塞梅尔维斯",
+    "evidence": "我有办法治愈你的疾病，让你活下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱茵河的罗蕾莱的信件",
+    "relation": "提及",
+    "dst": "神秘学家感染种",
+    "evidence": "我有能够让你在神秘学家感染种的感染过程中存活的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "知晓",
+    "dst": "塞梅尔维斯",
+    "evidence": "她是从何得知自己的真实身份的",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "留言",
+    "dst": "塞梅尔维斯",
+    "evidence": "是重塑之手留给我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "压抑",
+    "dst": "小队队员埃米尔",
+    "evidence": "将自己内心中的激动之情压抑住，以防止身旁的埃米尔看出端倪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8eba5b9a933e5d0fe9353cbc": {
+  "entities": [
+   {
+    "name": "超自然者感染症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "直指本质的病名"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶赴维也纳的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自觉退出的队员"
+   },
+   {
+    "name": "莱茵河的罗蕾莱的信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "涉及机密的信件"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "收信与许诺的机构"
+   },
+   {
+    "name": "塞梅尔维斯的通讯设备",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随身摘下的联络器"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下达急令的上司"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔·霍夫曼"
+    ],
+    "desc": "提出援助需求的同僚"
+   },
+   {
+    "name": "委外合约人才管理组织",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被求援的合约机关"
+   },
+   {
+    "name": "转念即至神秘术软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "两张即刻抵达的术式"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "莱茵河的罗蕾莱"
+    ],
+    "desc": "被反复念出的歌者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "染上",
+    "dst": "超自然者感染症",
+    "evidence": "这便是塞梅尔维斯所染上的疾病的真正名称",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "询问",
+    "dst": "塞梅尔维斯",
+    "evidence": "队长，你怎么了吗？你似乎盯着这封信件看了很久",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "上报",
+    "dst": "圣洛夫基金会",
+    "evidence": "这封信内涉及到了某些机密信息，我准备将它转交给基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "取出",
+    "dst": "塞梅尔维斯的通讯设备",
+    "evidence": "塞梅尔维斯平静地从背带上摘下了通讯设备",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "联络",
+    "dst": "琳赛女士",
+    "evidence": "打开了与琳赛女士的通讯",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "求援",
+    "dst": "委外合约人才管理组织",
+    "evidence": "维也纳的霍夫曼调查员向委外合约人才管理组织提出了援助需求",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "派遣",
+    "dst": "塞梅尔维斯",
+    "evidence": "现在有一项更为重要的紧急任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "持有",
+    "dst": "转念即至神秘术软盘",
+    "evidence": "我手头上还有两张“转念即至”的神秘术软盘",
+    "confidence": 0.95
+   },
+   {
+    "src": "转念即至神秘术软盘",
+    "relation": "助行",
+    "dst": "委外合约人才管理组织",
+    "evidence": "它们能够帮助我快速抵达维也纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "许诺",
+    "dst": "塞梅尔维斯",
+    "evidence": "我向你许诺，这是你在这个时代的最后一个任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "转告",
+    "dst": "圣洛夫基金会",
+    "evidence": "等你回归时，医疗部门将会与你重新谈论你的病症",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "念及",
+    "dst": "罗蕾莱",
+    "evidence": "莱茵河的罗蕾莱",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "感叹",
+    "dst": "莱茵河的罗蕾莱的信件",
+    "evidence": "这也是……命运吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "68884f02af8b4d075003a3e1": {
+  "entities": [
+   {
+    "name": "地牢剧情附录剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尚无正式章节绑定的旁支脚本"
+   },
+   {
+    "name": "未绑定剧情候选",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未绑定剧情的归档候选状态"
+   }
+  ],
+  "relations": [
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "尚无绑定",
+    "dst": "未绑定剧情候选",
+    "evidence": "此脚本含可读剧情文本，但尚无经验证的正式章节/关卡绑定",
+    "confidence": 0.95
+   },
+   {
+    "src": "地牢剧情附录剧情",
+    "relation": "归档为",
+    "dst": "未绑定剧情候选",
+    "evidence": "仅作为旁支候选保存",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "63f03a718f5bfab94f1974df": {
+  "entities": [
+   {
+    "name": "基金会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "幻象重演的场所"
+   },
+   {
+    "name": "幻觉中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再度现身劝降"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "背诵数据的病人"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "她坚信会帮忙者"
+   },
+   {
+    "name": "神秘学家巫医",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讥为无策的人"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她可能死去的时刻"
+   },
+   {
+    "name": "神秘学家感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "熬过崩溃之称"
+   },
+   {
+    "name": "超自然者感染症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "摧毁身心的疫病"
+   },
+   {
+    "name": "烂术杖",
+    "type": "概念",
+    "aliases": [],
+    "desc": "庸碌者的蔑称"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她始终无缘的力量"
+   },
+   {
+    "name": "白色牡鹿",
+    "type": "概念",
+    "aliases": [],
+    "desc": "猎人追猎的幻象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "幻觉中的医生",
+    "relation": "现身",
+    "dst": "基金会办公室",
+    "evidence": "我们又见面了",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "劝退",
+    "dst": "塞梅尔维斯",
+    "evidence": "你应当清楚，你的挣扎毫无意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家巫医",
+    "relation": "束手",
+    "dst": "超自然者感染症",
+    "evidence": "还是那些神秘学家巫医，都对你的病症束手无策",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "无力",
+    "dst": "超自然者感染症",
+    "evidence": "基金会对于这种疾病的应对手段也寥寥无几",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "陈述",
+    "dst": "超自然者感染症",
+    "evidence": "感染了超自然者感染症的神秘学家，将会面临肉体与精神的崩溃",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "界定",
+    "dst": "神秘学家感染种",
+    "evidence": "只有侥幸度过了这个阶段的神秘学家，才能够被称之为神秘学家感染种",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "蔑称",
+    "dst": "烂术杖",
+    "evidence": "看来你还是清楚状况的，“烂术杖”",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "嘲讽",
+    "dst": "神秘术",
+    "evidence": "你只是一个庸碌之徒，连神秘术都无法使用的庸碌之徒",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "比作",
+    "dst": "白色牡鹿",
+    "evidence": "你就像一个无知的猎人，贪婪地追猎着白色牡鹿",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "恐吓",
+    "dst": "暴雨",
+    "evidence": "你还是更加倾向于像野狗一样死在“暴雨”之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "回报",
+    "dst": "圣洛夫基金会",
+    "evidence": "利用这最后的时间，为基金会做出贡献",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "驳斥",
+    "dst": "幻觉中的医生",
+    "evidence": "但你是无法动摇我的意志的，你终究只是一道幻觉而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "终结",
+    "dst": "塞梅尔维斯",
+    "evidence": "好了，你可以走了，这次的诊疗结束了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "242259c2c3c904a38ea5803f": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以撕信试探队伍的队长"
+   },
+   {
+    "name": "小队队员埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被疑通风的队员"
+   },
+   {
+    "name": "莱茵河的罗蕾莱的信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "化为碎屑的信件"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "莱茵河的罗蕾莱"
+    ],
+    "desc": "被怀疑的内应对象"
+   },
+   {
+    "name": "萦绕不去的歌声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "加剧崩溃的幻听"
+   },
+   {
+    "name": "超自然者感染症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "愈发强烈的病症"
+   },
+   {
+    "name": "委外合约小队队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "须防背叛的队伍"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "混战离去的对手"
+   },
+   {
+    "name": "塞尔维亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "队员的祖国"
+   },
+   {
+    "name": "神秘学家难民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "多来自祖国的群体"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被表忠的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "察觉",
+    "dst": "萦绕不去的歌声",
+    "evidence": "是歌声的影响吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "萦绕不去的歌声",
+    "relation": "加剧",
+    "dst": "超自然者感染症",
+    "evidence": "自从歌声出现后，超自然者感染症的表现便越发强烈和迅速",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "关切",
+    "dst": "塞梅尔维斯",
+    "evidence": "队长，你、你还好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "撕碎",
+    "dst": "莱茵河的罗蕾莱的信件",
+    "evidence": "她顺着这条中轴线将信件撕成了两半",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱茵河的罗蕾莱的信件",
+    "relation": "署名",
+    "dst": "罗蕾莱",
+    "evidence": "——莱茵河的罗蕾莱",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "允诺",
+    "dst": "塞梅尔维斯",
+    "evidence": "我有办法治愈你的疾病，让你活下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "脱身",
+    "dst": "重塑之手",
+    "evidence": "这位被囚禁的“莱茵河的罗蕾莱”是在重塑之手战斗的过程中离开的",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "试探",
+    "dst": "小队队员埃米尔",
+    "evidence": "我并不在乎你的背叛，埃米尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "戒备",
+    "dst": "委外合约小队队员",
+    "evidence": "对于委外合约小队的队长来说，防范组员的背叛是一件必修课",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "表忠",
+    "dst": "圣洛夫基金会",
+    "evidence": "队长，我对基金会忠心耿耿，怎么会做出这种事情！",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民",
+    "relation": "出身",
+    "dst": "塞尔维亚",
+    "evidence": "这次追踪的难民大多来自于你的祖国——塞尔维亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "小队队员埃米尔",
+    "relation": "哀求",
+    "dst": "塞梅尔维斯",
+    "evidence": "请你相信我，队长！我对你真的没有恶意",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

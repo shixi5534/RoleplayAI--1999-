@@ -1,0 +1,1351 @@
+{
+ "61a1b328f7850ad32e7d75a9": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托送信的优等生"
+   },
+   {
+    "name": "空脑袋",
+    "type": "角色",
+    "aliases": [
+     "莱瑟姆"
+    ],
+    "desc": "介绍藏品而浑然不觉访客者"
+   },
+   {
+    "name": "神秘学藏品管理部",
+    "type": "地点",
+    "aliases": [],
+    "desc": "空无一人的神秘学藏品管理部"
+   },
+   {
+    "name": "神秘学藏品管理室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "档案柜所在的藏品管理室"
+   },
+   {
+    "name": "AN-003",
+    "type": "物品",
+    "aliases": [],
+    "desc": "神秘学管理品编号 AN-003"
+   },
+   {
+    "name": "沛霖川",
+    "type": "地点",
+    "aliases": [],
+    "desc": "AN-003 的来源河流"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "沛霖川蕴藏的神秘术"
+   },
+   {
+    "name": "神秘学管理品",
+    "type": "概念",
+    "aliases": [],
+    "desc": "藏品部收藏的神秘学物件"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "藏品管理部所属机构"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令各部门转向的浩劫"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借乌卢鲁运动会之名度假者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "穿行",
+    "dst": "神秘学藏品管理室",
+    "evidence": "穿过一排又一排的档案柜",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "提及",
+    "dst": "维尔汀",
+    "evidence": "打着什么“复兴乌卢鲁运动会”的名号度假",
+    "confidence": 0.95
+   },
+   {
+    "src": "空脑袋",
+    "relation": "介绍",
+    "dst": "AN-003",
+    "evidence": "神秘学管理品编号AN-003，沛霖川的河水",
+    "confidence": 0.95
+   },
+   {
+    "src": "AN-003",
+    "relation": "采自",
+    "dst": "沛霖川",
+    "evidence": "它来自中国内陆一个与世隔绝的古城",
+    "confidence": 0.95
+   },
+   {
+    "src": "沛霖川",
+    "relation": "蕴藏",
+    "dst": "神秘术",
+    "evidence": "那条河里蕴藏着不可思议的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "空脑袋",
+    "relation": "供职",
+    "dst": "神秘学藏品管理部",
+    "evidence": "供职于圣洛夫基金会神秘学藏品管理部",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "波及",
+    "dst": "圣洛夫基金会",
+    "evidence": "几乎所有部门的工作重心都转向破解这个最大的神秘学谜团",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "083aef07989971848095af59": {
+  "entities": [
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "藏品部仓库管理员"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送信的优等生"
+   },
+   {
+    "name": "神秘学藏品管理部",
+    "type": "地点",
+    "aliases": [],
+    "desc": "斯考特供职的部门"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "组织",
+    "aliases": [],
+    "desc": "二人共同的母校"
+   },
+   {
+    "name": "旧金山",
+    "type": "地点",
+    "aliases": [],
+    "desc": "玛蒂尔达数月前遇事之地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "去信下令回收管理品的机构"
+   },
+   {
+    "name": "唐人街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "嫌疑人最后出现之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "斯考特",
+    "relation": "供职",
+    "dst": "神秘学藏品管理部",
+    "evidence": "我毕业后只不过是个小小的神秘学藏品管理部的仓库管理员罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "送信",
+    "dst": "斯考特",
+    "evidence": "佩德拉委员让我将这个交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "提及",
+    "dst": "旧金山",
+    "evidence": "让我把几个月前在旧金山遇到的事又讲了一遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "毕业",
+    "dst": "第一防线学校",
+    "evidence": "和您一样，也是第一防线学校毕业的",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "去信",
+    "dst": "斯考特",
+    "evidence": "我们必须尽快逮住她",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "锁定",
+    "dst": "唐人街",
+    "evidence": "地点是洛杉矶，唐人街",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "下令",
+    "dst": "斯考特",
+    "evidence": "回收那些流出基金会的神秘学管理品",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "566817d152d2356f958a108d": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "初访唐人街的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述旧案轶事的教官"
+   },
+   {
+    "name": "商贩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叫卖橘子的商贩"
+   },
+   {
+    "name": "游客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问纸马舞的游客"
+   },
+   {
+    "name": "唐人街居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "买烧肉的居民"
+   },
+   {
+    "name": "孩童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指着屋顶惊呼的孩子"
+   },
+   {
+    "name": "大白鸟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "中药铺店主，一人高的大白鸟"
+   },
+   {
+    "name": "中药铺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "遭过贼的中药铺"
+   },
+   {
+    "name": "傀儡师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "让洋娃娃走丢的三流傀儡师"
+   },
+   {
+    "name": "洋娃娃",
+    "type": "物品",
+    "aliases": [],
+    "desc": "走丢的洋娃娃"
+   },
+   {
+    "name": "唐人街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人此行目的地"
+   },
+   {
+    "name": "民间侦探",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警局与唐人街关系的缩影"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "感慨",
+    "dst": "唐人街",
+    "evidence": "这里的确让我感到十分亲切",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "讲述",
+    "dst": "中药铺",
+    "evidence": "那边的一家中药铺子遭了贼",
+    "confidence": 0.95
+   },
+   {
+    "src": "大白鸟",
+    "relation": "经营",
+    "dst": "中药铺",
+    "evidence": "过去一看，店主居然是只一人高的大白鸟",
+    "confidence": 0.95
+   },
+   {
+    "src": "傀儡师",
+    "relation": "丢失",
+    "dst": "洋娃娃",
+    "evidence": "有个三流傀儡师让他的洋娃娃走丢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "追至",
+    "dst": "唐人街",
+    "evidence": "我一路追到了这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "评价",
+    "dst": "民间侦探",
+    "evidence": "他就是警局与唐人街之间关系的缩影",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "提议",
+    "dst": "唐人街",
+    "evidence": "那么就让我们从现在开始试着了解这里吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "26b86f6156f89a2d62a35068": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求情报科整理资料的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释案源真相的教官"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被报称遭跟踪威胁的导演"
+   },
+   {
+    "name": "王琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报警的助理"
+   },
+   {
+    "name": "唐人街小巷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通往片场的小巷"
+   },
+   {
+    "name": "牌坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "唐人街入口的牌坊"
+   },
+   {
+    "name": "警长办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人汇报的警长办公室"
+   },
+   {
+    "name": "夜巡特遣",
+    "type": "组织",
+    "aliases": [],
+    "desc": "梁月申请调阅情报的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "示意",
+    "dst": "牌坊",
+    "evidence": "用目光向波蒂埃示意道路尽头的那座牌坊",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "揶揄",
+    "dst": "梁月",
+    "evidence": "我们马上就要去见你最喜欢的菲林士多导演了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "申请",
+    "dst": "夜巡特遣",
+    "evidence": "我已经联系夜巡特遣的情报部门",
+    "confidence": 0.95
+   },
+   {
+    "src": "王琳",
+    "relation": "报警",
+    "dst": "菲林士多",
+    "evidence": "我们之前接到了来自琳·王女士的电话",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "澄清",
+    "dst": "波蒂埃",
+    "evidence": "说一切都是误会",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "汇报",
+    "dst": "警长办公室",
+    "evidence": "离开医院后，二人立刻返回神秘学犯罪科汇报",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "穿行",
+    "dst": "唐人街小巷",
+    "evidence": "二人穿过大街，拐入一条唐人街内的小巷",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5fee5be1d1f9f376c8829892": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拆阅邮件脸色凝重的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "凑近同观的教官"
+   },
+   {
+    "name": "金属变色龙通信器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "趴在梁月胸口的通信器"
+   },
+   {
+    "name": "SPF-I型便携联络装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "SPF-I型便携联络装置"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "情报附件的主角"
+   },
+   {
+    "name": "映像事件",
+    "type": "事件",
+    "aliases": [],
+    "desc": "八年前发生在香港的映像事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "拆阅",
+    "dst": "SPF-I型便携联络装置",
+    "evidence": "梁月将那个总被基金会内部人士诟病过于笨重的通信器拿了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "SPF-I型便携联络装置",
+    "relation": "下载",
+    "dst": "波蒂埃",
+    "evidence": "检测到您有一封新的邮件，正在为您下载附件",
+    "confidence": 0.95
+   },
+   {
+    "src": "金属变色龙通信器",
+    "relation": "好奇",
+    "dst": "SPF-I型便携联络装置",
+    "evidence": "趴在她胸口的变色龙通信器也好奇地伸长了脑袋",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "申请",
+    "dst": "菲林士多",
+    "evidence": "应该是我申请调阅的与菲林士多导演有关的情报",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "发现",
+    "dst": "映像事件",
+    "evidence": "这是……八年前发生在香港的……“映像事件”？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "11d6d352a9b41a931f2f4383": {
+  "entities": [
+   {
+    "name": "工作人员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呵斥挡路杂物的剧组人员"
+   },
+   {
+    "name": "龙套演员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等待上场的龙套演员"
+   },
+   {
+    "name": "围观群众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驻足观望的路人"
+   },
+   {
+    "name": "空脑袋",
+    "type": "角色",
+    "aliases": [
+     "莱瑟姆"
+    ],
+    "desc": "被梁月识出形迹可疑者"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出其身份的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问可疑与否的教官"
+   },
+   {
+    "name": "助理",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迎上来的入时女子"
+   },
+   {
+    "name": "王琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "菲林士多的助理"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坐镇片场的导演"
+   },
+   {
+    "name": "演员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夸赞伙计们的演员"
+   },
+   {
+    "name": "演员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被点名的年轻演员"
+   },
+   {
+    "name": "片场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "空置旧屋改成的片场"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "莱瑟姆供职机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "工作人员",
+    "relation": "整理",
+    "dst": "片场",
+    "evidence": "别放在这里，挡路了，一会儿摄像机要从这里过",
+    "confidence": 0.95
+   },
+   {
+    "src": "空脑袋",
+    "relation": "游荡",
+    "dst": "片场",
+    "evidence": "医院里那个形迹可疑的基金会职员",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "识出",
+    "dst": "空脑袋",
+    "evidence": "那是……医院里那个形迹可疑的基金会职员",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "查明",
+    "dst": "空脑袋",
+    "evidence": "她名叫莱瑟姆，是一名意识唤醒者",
+    "confidence": 0.95
+   },
+   {
+    "src": "空脑袋",
+    "relation": "供职",
+    "dst": "圣洛夫基金会",
+    "evidence": "供职于圣洛夫基金会神秘学藏品管理部",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理",
+    "relation": "相迎",
+    "dst": "梁月",
+    "evidence": "两位警官，请问有什么事吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "王琳",
+    "relation": "自陈",
+    "dst": "助理",
+    "evidence": "我就是王琳",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "叫停",
+    "dst": "演员Ⅱ",
+    "evidence": "刚才你的情绪不对",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "指导",
+    "dst": "演员Ⅱ",
+    "evidence": "还需要带上一些担忧、一些心虚",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "坐镇",
+    "dst": "片场",
+    "evidence": "端坐于她的专属王座之上，纵览全局",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "10dc01d8fe3e0d00f777645d": {
+  "entities": [
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "婉拒警方介入的导演"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问威胁信的教官"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为邮件之事愁眉不展的学员"
+   },
+   {
+    "name": "助理",
+    "type": "角色",
+    "aliases": [],
+    "desc": "耳语提醒的助理"
+   },
+   {
+    "name": "王琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反应过度、关心导演的助理"
+   },
+   {
+    "name": "威胁信",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已被丢弃的威胁信"
+   },
+   {
+    "name": "轮椅",
+    "type": "物品",
+    "aliases": [],
+    "desc": "菲林士多的代步工具"
+   },
+   {
+    "name": "荷里活",
+    "type": "地点",
+    "aliases": [],
+    "desc": "制片人所在之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "菲林士多",
+    "relation": "自嘲",
+    "dst": "轮椅",
+    "evidence": "除了这老毛病之外",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理",
+    "relation": "耳语",
+    "dst": "菲林士多",
+    "evidence": "助理看准机会，在菲林士多的身边耳语了一番",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "追问",
+    "dst": "菲林士多",
+    "evidence": "但那封信的确存在，对吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "婉拒",
+    "dst": "波蒂埃",
+    "evidence": "对于剧组来说，二位的存在可能会让大家产生一些不必要的忧虑",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "淡化",
+    "dst": "威胁信",
+    "evidence": "您所提到的那一封就来自后者，我没有特意保留它们的习惯",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "提及",
+    "dst": "荷里活",
+    "evidence": "我在荷里活这边的制片人许可了不少我就拍摄提出的任性请求",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "归咎",
+    "dst": "王琳",
+    "evidence": "阿琳跟了我有段时间了，她很关心我，有的时候会有些反应过度",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "53081b80cb20bba43da1d275": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "俯身耳语点破隐情的学员"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "强自镇定的导演"
+   },
+   {
+    "name": "唐人街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "频发怪事之地"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令患者精神异常的根源"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "质疑",
+    "dst": "菲林士多",
+    "evidence": "只是因为电影吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "详述",
+    "dst": "唐人街",
+    "evidence": "唐人街附近的医院就不断收到因不明原因导致精神状态异常的患者",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "归因",
+    "dst": "神秘术",
+    "evidence": "暴躁易怒、颓废嗜睡、思维混乱、记忆缺失",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "点破",
+    "dst": "菲林士多",
+    "evidence": "八年前，在您的身边应当也发生过极其类似的事件",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "佯装",
+    "dst": "梁月",
+    "evidence": "平静的表情中带着少许恰到好处的茫然",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a0b66fdf5ec42ae37c8ac9ee": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陈述映像事件的学员"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闻胶片而色变的导演"
+   },
+   {
+    "name": "何日君",
+    "type": "角色",
+    "aliases": [],
+    "desc": "八年前葬身火海的编剧"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "何日君留下的超8毫米胶片"
+   },
+   {
+    "name": "超8毫米胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "火灾现场完好无缺的胶片"
+   },
+   {
+    "name": "映像事件",
+    "type": "事件",
+    "aliases": [],
+    "desc": "胶片引致的恶性神秘学事件"
+   },
+   {
+    "name": "神秘学警探C07",
+    "type": "物品",
+    "aliases": [],
+    "desc": "二人共同缔造的成名作系列"
+   },
+   {
+    "name": "夜巡特遣",
+    "type": "组织",
+    "aliases": [],
+    "desc": "当年调查该事件的机构"
+   },
+   {
+    "name": "诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "怨恨以诅咒形式留存之物"
+   },
+   {
+    "name": "被诅咒的胶片",
+    "type": "概念",
+    "aliases": [],
+    "desc": "“被诅咒的胶片”这一类物件"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "胶片侵蚀精神的原因"
+   },
+   {
+    "name": "群众演员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "窃窃私语的群众演员"
+   },
+   {
+    "name": "工作人员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨有人来找麻烦者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "陈述",
+    "dst": "何日君",
+    "evidence": "与您一起打造了您的成名作《神秘警探C07》系列电影的编剧何日君",
+    "confidence": 0.95
+   },
+   {
+    "src": "何日君",
+    "relation": "合作",
+    "dst": "菲林士多",
+    "evidence": "与您一起打造了您的成名作",
+    "confidence": 0.95
+   },
+   {
+    "src": "何日君",
+    "relation": "创作",
+    "dst": "神秘学警探C07",
+    "evidence": "共同缔造了《神秘警探C07》系列电影",
+    "confidence": 0.95
+   },
+   {
+    "src": "何日君",
+    "relation": "身亡",
+    "dst": "映像事件",
+    "evidence": "在八年前于自家燃起的熊熊大火中身亡",
+    "confidence": 0.95
+   },
+   {
+    "src": "超8毫米胶片",
+    "relation": "幸存",
+    "dst": "映像事件",
+    "evidence": "发现了一盘完好无缺的胶片",
+    "confidence": 0.95
+   },
+   {
+    "src": "三燕归巢",
+    "relation": "留作",
+    "dst": "超8毫米胶片",
+    "evidence": "罪魁祸首就是编剧何日君留下的那盘胶片——《三燕归巢》",
+    "confidence": 0.95
+   },
+   {
+    "src": "三燕归巢",
+    "relation": "致灾",
+    "dst": "映像事件",
+    "evidence": "五个人中三人被送进了精神病院，一人坠楼身亡",
+    "confidence": 0.95
+   },
+   {
+    "src": "夜巡特遣",
+    "relation": "调查",
+    "dst": "映像事件",
+    "evidence": "八年前的事件经夜巡特遣的调查，被正式认定为恶性神秘学事件",
+    "confidence": 0.95
+   },
+   {
+    "src": "诅咒",
+    "relation": "成因",
+    "dst": "神秘术",
+    "evidence": "它们仍然能够以“诅咒”的形式留存在世间",
+    "confidence": 0.95
+   },
+   {
+    "src": "三燕归巢",
+    "relation": "属于",
+    "dst": "被诅咒的胶片",
+    "evidence": "毫无疑问，它是一张“被诅咒的胶片”",
+    "confidence": 0.95
+   },
+   {
+    "src": "群众演员",
+    "relation": "议论",
+    "dst": "菲林士多",
+    "evidence": "那两个警察找菲林士多导演做什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "工作人员",
+    "relation": "抱怨",
+    "dst": "菲林士多",
+    "evidence": "怎么总是有人来找麻烦？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "20828585892b4c22479f5d4d": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直指其为可能目标的学员"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被追问嫌隙传闻的导演"
+   },
+   {
+    "name": "何日君",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与其有嫌隙传闻的编剧"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可能瞄准菲林士多的诅咒胶片"
+   },
+   {
+    "name": "唐人街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "怪事频发之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "指控",
+    "dst": "菲林士多",
+    "evidence": "您与编剧何日君在背地里却存在着许多嫌隙",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "指涉",
+    "dst": "何日君",
+    "evidence": "在何日君葬身火海的当天，您与她曾经爆发过激烈的冲突",
+    "confidence": 0.95
+   },
+   {
+    "src": "三燕归巢",
+    "relation": "瞄准",
+    "dst": "菲林士多",
+    "evidence": "它最有可能瞄准的目标，就是您",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "关联",
+    "dst": "唐人街",
+    "evidence": "如果造成眼下唐人街怪事频发的罪魁祸首",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "407c59e630339a9307ea0e87": {
+  "entities": [
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "化愤怒为食欲的教官"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与老板娘攀谈的学员"
+   },
+   {
+    "name": "老板娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "乐于道出街坊见闻的老板娘"
+   },
+   {
+    "name": "广府饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人用餐的广府饭店"
+   },
+   {
+    "name": "新科学除灵驱鬼事务所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曾在唐人街打听怪事的事务所"
+   },
+   {
+    "name": "何日君",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被论及其怨恨的编剧"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被疑为目标的导演"
+   },
+   {
+    "name": "被诅咒的胶片",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被诅咒的胶片"
+   },
+   {
+    "name": "唐人街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "怪事频发的街区"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "年关临近的时节"
+   }
+  ],
+  "relations": [
+   {
+    "src": "波蒂埃",
+    "relation": "抱怨",
+    "dst": "菲林士多",
+    "evidence": "可她本人就完全不同了",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "用餐",
+    "dst": "广府饭店",
+    "evidence": "波蒂埃化愤怒为食欲",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "询问",
+    "dst": "老板娘",
+    "evidence": "您说还有人打听过这件事，那是什么人？",
+    "confidence": 0.95
+   },
+   {
+    "src": "老板娘",
+    "relation": "道出",
+    "dst": "新科学除灵驱鬼事务所",
+    "evidence": "她说自己是什么新科学……新科学什么鬼事务所的",
+    "confidence": 0.95
+   },
+   {
+    "src": "老板娘",
+    "relation": "叹惋",
+    "dst": "唐人街",
+    "evidence": "最近都不知道搞什么，好多街坊家里都出了事",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "推测",
+    "dst": "何日君",
+    "evidence": "她的怨恨被自己的作品吸收",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "推测",
+    "dst": "被诅咒的胶片",
+    "evidence": "搞不好就是追着菲林士多来了唐人街",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "否认",
+    "dst": "菲林士多",
+    "evidence": "“菲林士多导演与何日君之死有关”只是一个传闻而已",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb89eda44a8fb1b1fe865f53": {
+  "entities": [
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "强调巧合忌讳的教官"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "低落后重新振作的学员"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "车祸致残的当事人"
+   },
+   {
+    "name": "何日君",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坠楼身亡案的编剧"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "早被基金会回收的胶片"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "回收并监管三燕归巢的机构"
+   },
+   {
+    "name": "神秘学藏品管理部",
+    "type": "地点",
+    "aliases": [],
+    "desc": "三燕归巢现处监管部门"
+   },
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打翻餐盘的基金会职员"
+   },
+   {
+    "name": "空脑袋",
+    "type": "角色",
+    "aliases": [
+     "莱瑟姆"
+    ],
+    "desc": "梁月昨日遇见的可疑职员"
+   },
+   {
+    "name": "徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "令人眼熟的职员徽章"
+   },
+   {
+    "name": "夜巡特遣管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被指把传闻写进情报的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "波蒂埃",
+    "relation": "论断",
+    "dst": "菲林士多",
+    "evidence": "菲林士多遭遇车祸，双腿残疾",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "并提",
+    "dst": "何日君",
+    "evidence": "最终跑到建设中的高楼一跃而下的家伙",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "忌讳",
+    "dst": "梁月",
+    "evidence": "做神秘学警察最忌讳的一个词，就是“巧合”",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "陈述",
+    "dst": "三燕归巢",
+    "evidence": "其实早在事件过后约半年就被圣洛夫基金会回收了",
+    "confidence": 0.95
+   },
+   {
+    "src": "三燕归巢",
+    "relation": "处于",
+    "dst": "神秘学藏品管理部",
+    "evidence": "现在它应该处在神秘学藏品管理部的监管之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "失手",
+    "dst": "波蒂埃",
+    "evidence": "一个戴眼镜的少女正手忙脚乱地捏起桌上的纸巾",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "佩戴",
+    "dst": "徽章",
+    "evidence": "胸前令人眼熟的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "联想",
+    "dst": "空脑袋",
+    "evidence": "根据资料，那个人正好是供职于神秘学藏品管理部的",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "指向",
+    "dst": "斯考特",
+    "evidence": "看起来我们有必要找这位小姐聊聊",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "引证",
+    "dst": "夜巡特遣管理局",
+    "evidence": "就连你们夜巡特遣管理局都把这件事写进了情报里",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,381 @@
+{
+  "sample_size": 240,
+  "calls": {
+    "ok_calls": 6,
+    "bad_calls": 0
+  },
+  "by_kind": {
+    "gameplay": 3,
+    "metadata": 10,
+    "production": 9,
+    "scaffolding": 19,
+    "garbled": 1
+  },
+  "patterns": [
+    "^##\\s 开头的 Markdown 标题行",
+    "^##\\s*\\S+\\s*·\\s*.+$ 形式的 Markdown 章节标题行",
+    "^##\\s*\\d{6,}\\s*·",
+    "^##\\s.*",
+    "^#+\\s*Part\\s*\\d+\\s*·",
+    "^(渐入|黑幕|淡入|淡出|切至)$",
+    "^[A-Za-z]+旁边的.{1,10}$",
+    "^【\\d+\\.\\d+】.*-\\d+\\.\\d+$",
+    "^【\\d+\\.\\d+】.*角色故事.*",
+    "^【\\d+\\.\\d+】\\S+ 形式的版本号/章节编号行",
+    "^【\\d\\.\\d+】.+\\d+\\.\\d+$ 剧本编号标识",
+    "^副标题[:：].*$ 数据字段标签行",
+    "^第[一二三四五六七八九十]+章\\d+-\\d+\\.\\d+$ 章节编号行",
+    "^第[一二三四五六七八九十]+章\\d+[-.]\\d+",
+    "^被.{1,10}的家伙$",
+    "【\\d+\\.\\d+】[^\\n]*?\\d+(\\.\\d+)?",
+    "制作现场短词备注单独成行：转场、供能、鼓捣等",
+    "含「氛围图」「差分」「放大」「复用场景」等美术/演出备注关键词的行",
+    "含内部ID的Markdown标题：^## \\d{6,} · .+$",
+    "独立成行的关卡编号：^第[一二三四五六七八九十]+章\\d+-\\d+\\.\\d+$",
+    "独立成行的分镜提示短词（如岸边、中箭、波纹、上岸）",
+    "独立成行的单个英文单词",
+    "独立行的演出/特效指令：^(特效|渐白|黑幕)$",
+    "独立行的玩法指令：^(攻击|移动|消人|消回忆)$",
+    "章节/版本编号行：^(第十二章\\d+-\\d+\\.\\d+|【\\d+\\.\\d+】[^\\n]+)$",
+    "第[一二三四五六七八九十]+章\\s*\\d+-\\d+(\\.\\d+)?",
+    "美术资源备注：^场景图-|^氛围图差分-|^剧情场景-"
+  ],
+  "issues": [
+    {
+      "id": 2,
+      "kind": "gameplay",
+      "excerpt": "消回忆",
+      "why": "非剧情玩法/技能指令",
+      "doc_id": "huiji_cmp_忧郁的热带",
+      "chunk_hash": "d88016a4b381c3a5"
+    },
+    {
+      "id": 9,
+      "kind": "metadata",
+      "excerpt": "第十二章12-22.1",
+      "why": "章节编号非剧情正文",
+      "doc_id": "huiji_cmp_远征记",
+      "chunk_hash": "71513507b968d0cb"
+    },
+    {
+      "id": 20,
+      "kind": "metadata",
+      "excerpt": "【2.5】唐人街影话18.1",
+      "why": "版本/章节编号非剧情正文",
+      "doc_id": "huiji_cmp_唐人街影话",
+      "chunk_hash": "7949e9e37f9f80c5"
+    },
+    {
+      "id": 31,
+      "kind": "metadata",
+      "excerpt": "## 2010104 · 新客人",
+      "why": "含内部编号的标题行",
+      "doc_id": "huiji_cmp_飞驰_明日之城",
+      "chunk_hash": "b7892a6955fafc1b"
+    },
+    {
+      "id": 34,
+      "kind": "gameplay",
+      "excerpt": "消人\n\n攻击",
+      "why": "玩法指令混入",
+      "doc_id": "huiji_cmp_复乐园",
+      "chunk_hash": "9fb1fa7d8c766143"
+    },
+    {
+      "id": 35,
+      "kind": "gameplay",
+      "excerpt": "移动",
+      "why": "玩法操作指令混入",
+      "doc_id": "huiji_cmp_塞梅尔维斯",
+      "chunk_hash": "d9c7d883df6800c5"
+    },
+    {
+      "id": 39,
+      "kind": "production",
+      "excerpt": "特效\n\n渐白",
+      "why": "演出特效指令混入",
+      "doc_id": "huiji_cmp_不老春",
+      "chunk_hash": "157dfc91902f19a8"
+    },
+    {
+      "id": 41,
+      "kind": "scaffolding",
+      "excerpt": "第十一章11-18.2",
+      "why": "章节编号混入正文",
+      "doc_id": "huiji_cmp_行于漫漫长路上",
+      "chunk_hash": "c0761adab0817ea8"
+    },
+    {
+      "id": 46,
+      "kind": "production",
+      "excerpt": "氛围图",
+      "why": "美术备注混入正文",
+      "doc_id": "huiji_cmp_忧郁的热带",
+      "chunk_hash": "a044c8047099d8bb"
+    },
+    {
+      "id": 47,
+      "kind": "scaffolding",
+      "excerpt": "## Part 20 · 命运的一截",
+      "why": "Markdown标题行混入正文",
+      "doc_id": "huiji_cmp_他者的悲哀",
+      "chunk_hash": "9d755403e71b8bc1"
+    },
+    {
+      "id": 64,
+      "kind": "scaffolding",
+      "excerpt": "## 2710108 · 当日子往前",
+      "why": "Markdown标题与编号行混入",
+      "doc_id": "huiji_cmp_1987宇宙组曲",
+      "chunk_hash": "43a2aa69b44dce7a"
+    },
+    {
+      "id": 65,
+      "kind": "production",
+      "excerpt": "蛇靠近",
+      "why": "分镜演出提示，非剧情正文",
+      "doc_id": "huiji_cmp_忧郁的热带",
+      "chunk_hash": "1ee71d58008273fa"
+    },
+    {
+      "id": 66,
+      "kind": "scaffolding",
+      "excerpt": "## 190905 · 理想救护车",
+      "why": "Markdown标题行混入正文",
+      "doc_id": "huiji_cmp_致温妮弗雷德",
+      "chunk_hash": "f71ddbb3e44079bb"
+    },
+    {
+      "id": 89,
+      "kind": "scaffolding",
+      "excerpt": "【2.0】苏芙比角色故事04.2",
+      "why": "脚本编号行混入正文",
+      "doc_id": "huiji_cmp_淑女的守则",
+      "chunk_hash": "b940bf3989a8994e"
+    },
+    {
+      "id": 93,
+      "kind": "scaffolding",
+      "excerpt": "第七章7-26.2",
+      "why": "章节脚本编号混入正文",
+      "doc_id": "huiji_cmp_孤独之歌",
+      "chunk_hash": "8e47543d5ae1112a"
+    },
+    {
+      "id": 94,
+      "kind": "garbled",
+      "excerpt": "light",
+      "why": "孤立英文词，非剧情正文",
+      "doc_id": "huiji_cmp_只有泉水知道",
+      "chunk_hash": "7cda9fe95c44e304"
+    },
+    {
+      "id": 106,
+      "kind": "scaffolding",
+      "excerpt": "## Part 18 ·",
+      "why": "Markdown 章节标题残留",
+      "doc_id": "huiji_cmp_忧郁的热带",
+      "chunk_hash": "fbba13dcb3eb0b61"
+    },
+    {
+      "id": 107,
+      "kind": "scaffolding",
+      "excerpt": "## 3110107 · 多瑙黎明号",
+      "why": "Markdown 加脚本编号残留行",
+      "doc_id": "huiji_cmp_长夜鸣笛",
+      "chunk_hash": "8c2a0a4277d1817b"
+    },
+    {
+      "id": 112,
+      "kind": "scaffolding",
+      "excerpt": "## Part 8 · 镜面与提灯",
+      "why": "Markdown 章节标题残留",
+      "doc_id": "huiji_cmp_今夜星光灿烂",
+      "chunk_hash": "44b0e530940fce1a"
+    },
+    {
+      "id": 113,
+      "kind": "scaffolding",
+      "excerpt": "第十三章13-11.2",
+      "why": "章节脚本编号混入正文",
+      "doc_id": "huiji_cmp_他者的悲哀",
+      "chunk_hash": "5904b7f4f7e60b4f"
+    },
+    {
+      "id": 118,
+      "kind": "scaffolding",
+      "excerpt": "【3.1】长夜鸣笛10.1",
+      "why": "版本号加章节名残留行",
+      "doc_id": "huiji_cmp_长夜鸣笛",
+      "chunk_hash": "f158c2fae981f424"
+    },
+    {
+      "id": 120,
+      "kind": "production",
+      "excerpt": "J旁边的摩托",
+      "why": "疑似场景/美术备注",
+      "doc_id": "huiji_cmp_飞驰_明日之城",
+      "chunk_hash": "1ceda5f1cfe175cb"
+    },
+    {
+      "id": 121,
+      "kind": "scaffolding",
+      "excerpt": "## 192404 · 篝火夜",
+      "why": "Markdown标题残留",
+      "doc_id": "huiji_cmp_在路上",
+      "chunk_hash": "ed672dc31dce3c76"
+    },
+    {
+      "id": 122,
+      "kind": "production",
+      "excerpt": "被踢出小组的家伙",
+      "why": "疑似角色场景备注",
+      "doc_id": "huiji_cmp_孤独之歌",
+      "chunk_hash": "e9d6e19c223d80d6"
+    },
+    {
+      "id": 132,
+      "kind": "metadata",
+      "excerpt": "【1.5】乌卢鲁运动会-13.1",
+      "why": "活动关卡编号元信息",
+      "doc_id": "huiji_cmp_复兴_乌卢鲁运动会",
+      "chunk_hash": "6b0cd8dd607cece3"
+    },
+    {
+      "id": 137,
+      "kind": "production",
+      "excerpt": "渐入",
+      "why": "演出转场指示",
+      "doc_id": "huiji_cmp_塞梅尔维斯",
+      "chunk_hash": "9495d6f5b8c17486"
+    },
+    {
+      "id": 139,
+      "kind": "metadata",
+      "excerpt": "第九章9-11.1",
+      "why": "章节编号元信息",
+      "doc_id": "huiji_cmp_疯癫与文明",
+      "chunk_hash": "9ed19db7430331d4"
+    },
+    {
+      "id": 144,
+      "kind": "production",
+      "excerpt": "黑幕",
+      "why": "演出转场指示",
+      "doc_id": "huiji_cmp_忧郁的热带",
+      "chunk_hash": "a58ef0f33af6ecc1"
+    },
+    {
+      "id": 148,
+      "kind": "metadata",
+      "excerpt": "【2.2】小梅斯梅尔角色故事04.1",
+      "why": "角色故事编号元信息",
+      "doc_id": "huiji_cmp_长夜未逝",
+      "chunk_hash": "1896d7475772f14b"
+    },
+    {
+      "id": 149,
+      "kind": "metadata",
+      "excerpt": "【1.5】乌卢鲁运动会-5.1",
+      "why": "活动关卡编号元信息",
+      "doc_id": "huiji_cmp_复兴_乌卢鲁运动会",
+      "chunk_hash": "e38f49f4318dac0d"
+    },
+    {
+      "id": 150,
+      "kind": "scaffolding",
+      "excerpt": "## 1210110 · 白苔藓",
+      "why": "Markdown标题残留",
+      "doc_id": "huiji_cmp_绿湖噩梦",
+      "chunk_hash": "a4b2f47ae8cefd41"
+    },
+    {
+      "id": 151,
+      "kind": "metadata",
+      "excerpt": "第十二章12-01.1",
+      "why": "章节编号元信息",
+      "doc_id": "huiji_cmp_远征记",
+      "chunk_hash": "9cc972a34f7c4746"
+    },
+    {
+      "id": 155,
+      "kind": "scaffolding",
+      "excerpt": "## 1610122 · “所求必应”",
+      "why": "Markdown标题残留",
+      "doc_id": "huiji_cmp_朔日手记",
+      "chunk_hash": "61b9273726c56db1"
+    },
+    {
+      "id": 163,
+      "kind": "metadata",
+      "excerpt": "【2.7】1987宇宙组曲04.1",
+      "why": "版本号与章节编号标记",
+      "doc_id": "huiji_cmp_1987宇宙组曲",
+      "chunk_hash": "8775dac0098570c6"
+    },
+    {
+      "id": 179,
+      "kind": "scaffolding",
+      "excerpt": "## 191008 · 述职报告",
+      "why": "Markdown标题与编号残留",
+      "doc_id": "huiji_cmp_风吹乌哈拉",
+      "chunk_hash": "693c5ec0f8cc8ea3"
+    },
+    {
+      "id": 180,
+      "kind": "scaffolding",
+      "excerpt": "## 3510118 · 世上无永恒",
+      "why": "Markdown标题行残留",
+      "doc_id": "huiji_cmp_绿松石蛇俱乐部",
+      "chunk_hash": "505d10b000436b5c"
+    },
+    {
+      "id": 180,
+      "kind": "metadata",
+      "excerpt": "【3.5】绿松石蛇俱乐部18.1",
+      "why": "版本号与章节编号标记",
+      "doc_id": "huiji_cmp_绿松石蛇俱乐部",
+      "chunk_hash": "505d10b000436b5c"
+    },
+    {
+      "id": 181,
+      "kind": "scaffolding",
+      "excerpt": "## 2410110 · 一面又一面",
+      "why": "Markdown标题与编号残留",
+      "doc_id": "huiji_cmp_地球上最后的夜晚",
+      "chunk_hash": "31833a65ca8b9d0f"
+    },
+    {
+      "id": 187,
+      "kind": "scaffolding",
+      "excerpt": "## Part 2 · 实质与环",
+      "why": "Markdown标题行残留",
+      "doc_id": "huiji_cmp_疯癫与文明",
+      "chunk_hash": "af966203ac2d3e35"
+    },
+    {
+      "id": 191,
+      "kind": "scaffolding",
+      "excerpt": "## 3810118 · 未来主义宣言",
+      "why": "Markdown标题与编号残留",
+      "doc_id": "huiji_cmp_世纪末尺度",
+      "chunk_hash": "bf67cea6f002bfeb"
+    },
+    {
+      "id": 220,
+      "kind": "production",
+      "excerpt": "转场",
+      "why": "转场、供能等制作备注单独成行",
+      "doc_id": "huiji_cmp_复乐园",
+      "chunk_hash": "e7934842bc134842"
+    },
+    {
+      "id": 230,
+      "kind": "production",
+      "excerpt": "场景图-环形广场",
+      "why": "美术场景图备注混入正文",
+      "doc_id": "huiji_cmp_复乐园",
+      "chunk_hash": "63fe130e3ac524e3"
+    }
+  ]
+}

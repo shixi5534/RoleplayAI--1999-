@@ -1,0 +1,1728 @@
+{
+ "f0b90436313438c8d7cb220d": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "缺席姐姐葬礼的研究员"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔·霍夫曼"
+    ],
+    "desc": "长眠于墓园的资深调查员"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "攥着致辞稿纸的新人调查员"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "到场悼念并宽慰后辈的同僚"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因受调查缺席的同僚"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "统一举办纪念仪式的机构"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "传来哑谜失联消息的机构"
+   },
+   {
+    "name": "纪念墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "长期开放供人悼念的墓园"
+   },
+   {
+    "name": "术式核心",
+    "type": "物品",
+    "aliases": [
+     "霍夫曼结"
+    ],
+    "desc": "助人越过暴雨的绳结"
+   },
+   {
+    "name": "鲁格P08",
+    "type": "物品",
+    "aliases": [],
+    "desc": "抽屉里的鲁格手枪"
+   },
+   {
+    "name": "霍夫曼追悼仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "墓园中为霍夫曼举行的葬礼"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "念出",
+    "dst": "霍夫曼",
+    "evidence": "他平静地念出这个名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "私藏",
+    "dst": "鲁格P08",
+    "evidence": "一把鲁格P08。一把合适的防身之物",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "悼念",
+    "dst": "霍夫曼",
+    "evidence": "只是将要悼念同一个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "出席",
+    "dst": "纪念墓园",
+    "evidence": "好在这片纪念墓园长期开放",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "举办",
+    "dst": "霍夫曼追悼仪式",
+    "evidence": "基金会统一举办的纪念仪式已经结束了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "致祭",
+    "dst": "霍夫曼",
+    "evidence": "她还需要接受一些调查，脱不开身，但想办法送来了一束花",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "命名",
+    "dst": "术式核心",
+    "evidence": "他坚持提出了“霍夫曼结”的命名方案",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "探访",
+    "dst": "哑谜",
+    "evidence": "没有人能敲开他办公室的门",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "缺席",
+    "dst": "霍夫曼追悼仪式",
+    "evidence": "却连半点影子也找不到",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "宽慰",
+    "dst": "马库斯",
+    "evidence": "别太紧张，会顺利的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "71dda3d49c19df963ea2268c": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倾吐悔恨的新人调查员"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问死后去向的失踪者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被祈愿去往无暴雨之地的导师"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默陪伴的临时同伴"
+   },
+   {
+    "name": "霍夫曼的遗物盒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "装着霍夫曼一生的小盒子"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "神秘术未能奏效的旧地"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "冲毁天堂地狱的疑问所在"
+   },
+   {
+    "name": "霍夫曼追悼仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "马库斯开口致辞的时刻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "收存",
+    "dst": "霍夫曼的遗物盒",
+    "evidence": "哑谜先生把那张清单和档案、职员证还有日记本一起收进盒子",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "探问",
+    "dst": "马库斯",
+    "evidence": "你觉得格蕾塔会去哪里？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "忧惧",
+    "dst": "暴雨",
+    "evidence": "“暴雨”会把天堂和地狱冲毁吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "祈愿",
+    "dst": "霍夫曼",
+    "evidence": "我希望霍夫曼女士去没有“暴雨”的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "痛惜",
+    "dst": "维也纳",
+    "evidence": "如果在维也纳我的神秘术能更有用",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "宽慰",
+    "dst": "马库斯",
+    "evidence": "完全不用担心致辞的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "致辞",
+    "dst": "霍夫曼追悼仪式",
+    "evidence": "霍夫曼女士是一位优秀可靠的基金会调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "倾听",
+    "dst": "马库斯",
+    "evidence": "塞梅尔维斯始终没有打断她",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼的遗物盒",
+    "relation": "葬入",
+    "dst": "霍夫曼追悼仪式",
+    "evidence": "注视着土坑中的小盒子",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "关照",
+    "dst": "马库斯",
+    "evidence": "霍夫曼女士为了关照刚加入基金会的我",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d23129381311334421267bd5": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "立誓继承遗志的致辞者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被铭记牺牲的导师"
+   },
+   {
+    "name": "术式核心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "帮助众人越过暴雨的绳结"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所要逾越的天灾"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她激励马库斯走出的群岛"
+   },
+   {
+    "name": "霍夫曼追悼仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "寄托哀思的致辞现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "铭记",
+    "dst": "霍夫曼",
+    "evidence": "永远不会忘记您的牺牲",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "继承",
+    "dst": "霍夫曼",
+    "evidence": "我会继承这份坚持，我会继续阅读下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "激励",
+    "dst": "马库斯",
+    "evidence": "她激起了我走出弗兰南群岛的勇气",
+    "confidence": 0.95
+   },
+   {
+    "src": "术式核心",
+    "relation": "帮助越过",
+    "dst": "暴雨",
+    "evidence": "带来了帮助我们越过“暴雨”的绳结",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "致辞",
+    "dst": "霍夫曼追悼仪式",
+    "evidence": "为了她所追求的，我们所追求的",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼追悼仪式",
+    "relation": "悼念",
+    "dst": "霍夫曼",
+    "evidence": "永远不会忘记您的牺牲",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e417b0b23c5ba294f8378221": {
+  "entities": [
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把工牌当牙板的暴躁研究员"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷面代批文件的研究员"
+   },
+   {
+    "name": "传话职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "捎送资料的基金会职员"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "总负责人空置的机构"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "名号已响彻的机构"
+   },
+   {
+    "name": "苦目素",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被重新兜售的食用研究对象"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绕开去找的研究员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "兔毛手袋",
+    "relation": "扬名",
+    "dst": "圣洛夫基金会",
+    "evidence": "听上去我的名字已经响彻整个基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "敷衍",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "我急着去取样本，找乌尔里希去那边的研究室",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "推销",
+    "dst": "苦目素",
+    "evidence": "重启苦目素的食用研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "传话职员",
+    "relation": "推脱",
+    "dst": "苦目素",
+    "evidence": "按照规定，那是需要严格审批和管控的项目",
+    "confidence": 0.95
+   },
+   {
+    "src": "传话职员",
+    "relation": "转交",
+    "dst": "哑谜",
+    "evidence": "我得立刻把资料送给哑谜先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "叮嘱",
+    "dst": "传话职员",
+    "evidence": "把这个捎给他，盯着他吃下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "催办",
+    "dst": "科算中心",
+    "evidence": "我的审批单已经等了30个小时",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "自嘲",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯科算中心也从来不是一台基金会专属的计算装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "戏弄",
+    "dst": "传话职员",
+    "evidence": "一枚纸团精准降落在职员脚边的废纸篓里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eff8ea12d0b9490ba93461a4": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "讥讽旧体制的研究员"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "探望旧识的基金会联络人"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被点名的取走报告者"
+   },
+   {
+    "name": "传话职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "领命赴会的马克"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将与会谈的研究组长"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被认为是露西专属助理者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在箱外休养的机械女士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "箱子的休养之主"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与拉普拉斯同受关注的对象"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "研究结果被洪水冲毁的机构"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "误差超出模型的灾害"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "到访",
+    "dst": "哑谜",
+    "evidence": "很高兴看到你还保持着活力，阿德勒",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "提及",
+    "dst": "康斯坦丁",
+    "evidence": "这次你又打算替康斯坦丁取走什么东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "吩咐",
+    "dst": "传话职员",
+    "evidence": "关于外勤人员配给品的调整方案",
+    "confidence": 0.95
+   },
+   {
+    "src": "传话职员",
+    "relation": "赴会",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "乌尔里希先生和希曼女士会抽出十五分钟左右时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "辅佐",
+    "dst": "露西",
+    "evidence": "大部分人都认为她是露西女士的专门助理",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "随行",
+    "dst": "维尔汀",
+    "evidence": "应当一同到司辰的箱子里休养",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "讥讽",
+    "dst": "重塑之手",
+    "evidence": "基金会对拉普拉斯的关注不比对重塑之手少",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "关切",
+    "dst": "助理希曼",
+    "evidence": "你知道希曼女士今天会回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "报信",
+    "dst": "哑谜",
+    "evidence": "也带来了一场不该存在的战争",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "痛惜",
+    "dst": "科算中心",
+    "evidence": "那场洪水冲毁了过去至少三分之二的研究结果",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "惊讶",
+    "dst": "暴雨",
+    "evidence": "这样的误差规模，不符合此前已有的任何模型",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "97a733a7ff0f647437976740": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传达备战讨论的旧同僚"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咽下愤怒的辩护者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将被纳入管辖的机构"
+   },
+   {
+    "name": "洛伦兹研究所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "未被合理管控的团体"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缪斯三世送来的研究对象"
+   },
+   {
+    "name": "缪斯三世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送来玩具箱的来客"
+   },
+   {
+    "name": "《雨前漫游指南》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可反驳指责的避险报告"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "盼知外部时代者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "欲派遣负责人的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "辩护",
+    "dst": "科算中心",
+    "evidence": "科算中心并不是一个军火库",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "点破",
+    "dst": "洛伦兹研究所",
+    "evidence": "“洛伦兹研究所”也从未被合理管控",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "派驻",
+    "dst": "科算中心",
+    "evidence": "应该由基金会派遣一位受认可的负责人",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "维护",
+    "dst": "科算中心",
+    "evidence": "不赞同科算中心应该被完全纳入基金会的管辖之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "缪斯三世",
+    "relation": "送来",
+    "dst": "玩具箱",
+    "evidence": "缪斯三世送来的“玩具箱”",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "嘱托",
+    "dst": "哑谜",
+    "evidence": "查明它模拟能力的来源",
+    "confidence": 0.95
+   },
+   {
+    "src": "《雨前漫游指南》",
+    "relation": "回应",
+    "dst": "科算中心",
+    "evidence": "能反驳那些关于科算中心缺少避险规划的指责",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "催询",
+    "dst": "哑谜",
+    "evidence": "司辰希望能尽快得知外部时代的情况",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "质询",
+    "dst": "Z",
+    "evidence": "你指望一群科学家将时间花在大谈局势和规划上",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "建言",
+    "dst": "哑谜",
+    "evidence": "由一位人类就任管理者，的确更有利于说服所有人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6dc61af676e3102e800de0d1": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吞下副作用赶场的研究员"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力主修箱的研究组长"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鼓吹少管闲事的研究员"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言箱子毁不掉的旁观者"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已被暂时修理完毕的箱子"
+   },
+   {
+    "name": "语言异化症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被归咎阻碍工作的符号症"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "提出请求的箱主"
+   },
+   {
+    "name": "洛伦兹研究所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被顺口念及的团体"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "揽责",
+    "dst": "玩具箱",
+    "evidence": "“玩具箱”的研究，司辰的请求",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "念叨",
+    "dst": "洛伦兹研究所",
+    "evidence": "还有洛伦兹，行吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "喝止",
+    "dst": "兔毛手袋",
+    "evidence": "我们不能再制造更多麻烦了",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "提醒",
+    "dst": "兔毛手袋",
+    "evidence": "正视现在的情况，兔毛手袋研究员",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "抱怨",
+    "dst": "哑谜",
+    "evidence": "那家伙在房间里关上几年也处理不完所有报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "修复",
+    "dst": "玩具箱",
+    "evidence": "“玩具箱”已经暂时修理完毕",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱",
+    "relation": "引发",
+    "dst": "语言异化症",
+    "evidence": "让几乎整个拉普拉斯都用奇怪的符号系统讲话",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "模仿",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "你又要说是那场“语言异化症”阻碍了工作进度",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "打趣",
+    "dst": "兔毛手袋",
+    "evidence": "在食堂点餐买到魔精饲料的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "断言",
+    "dst": "玩具箱",
+    "evidence": "这个箱子无法被常规的神秘学攻击毁掉",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "72959ba275225cf6f5297415": {
+  "entities": [
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持讨论磁流体组长"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "推门而入的访客"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呈交数据分析的组长"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出两种猜想的研究员"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "波动远超正常水平的箱子"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "性质已被洪水改变的灾害"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "催促成果的机构"
+   },
+   {
+    "name": "路德维希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "波动被比对的对象"
+   },
+   {
+    "name": "科算中心会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "大门被猛推开的会场"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被叫停试药的研究员"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试药项目的所有者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被否决的试药人选"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "总结呈阅的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "护住",
+    "dst": "玩具箱",
+    "evidence": "毁掉？绝对不行",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "询问",
+    "dst": "指针",
+    "evidence": "指针研究员。X研究员。你们的数据分析成果如何",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "提交",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "我的部分在这里。附有总结方便司辰查阅",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "呈报",
+    "dst": "维尔汀",
+    "evidence": "附有总结方便司辰查阅",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "断言",
+    "dst": "暴雨",
+    "evidence": "“洪水”改变了“暴雨”的性质",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "追问",
+    "dst": "X",
+    "evidence": "关于“玩具箱”外泄的神秘术波动，有什么发现",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "分析",
+    "dst": "玩具箱",
+    "evidence": "仅从数据看，神秘术波动的量级远超正常水平",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "比对",
+    "dst": "路德维希",
+    "evidence": "路德维希先生的神秘术波动",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "闯入",
+    "dst": "科算中心会议室",
+    "evidence": "会议室的大门被猛地推开，重重摔在墙面",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "点破",
+    "dst": "X",
+    "evidence": "你最后一次提交的审批单我已经在上周三处理过了，X",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "叫停",
+    "dst": "冷周六",
+    "evidence": "你和冷周六都可以停止提交兔毛手袋那个项目的试药申请了",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "否决",
+    "dst": "星锑",
+    "evidence": "星锑更加不行",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "引用",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会正在催我们拿出一份有说服力的研究成果",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "518841339ab07541fbc20994": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "背好台词递文件的研究员"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以血统自试的研究员"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搁置报告被当面点破者"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "项目可行性的被询者"
+   },
+   {
+    "name": "苦目素",
+    "type": "物品",
+    "aliases": [],
+    "desc": "对外保密的食用提取物研究"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "损坏酿症并演化情景的箱子"
+   },
+   {
+    "name": "语言异化症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "箱损引发的语言症状"
+   },
+   {
+    "name": "路德维希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "波形相似的渡鸦先生"
+   },
+   {
+    "name": "《雨前漫游指南》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "详尽完备却未提交的文件"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "等待交差的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "商量",
+    "dst": "兔毛手袋",
+    "evidence": "毕竟是我先向兔毛手袋询问了重启那个项目的可行性",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "进言",
+    "dst": "苦目素",
+    "evidence": "那是个很好的研究方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "保密",
+    "dst": "苦目素",
+    "evidence": "在有结果之前，就当这项研究不存在吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "以身试",
+    "dst": "苦目素",
+    "evidence": "也该让我四分之一的神秘学家血统起到点作用",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱",
+    "relation": "造成",
+    "dst": "语言异化症",
+    "evidence": "“玩具箱”损坏造成的“语言异化症”",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "描述",
+    "dst": "玩具箱",
+    "evidence": "但箱子里出现了很多有趣的情景",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "转述",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "这是乌尔里希先生的描述，并非我亲眼所见",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "搁置",
+    "dst": "《雨前漫游指南》",
+    "evidence": "乌尔里希先生认为它还没有足够的说服力，因此一直没有提交它",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "呈报",
+    "dst": "圣洛夫基金会",
+    "evidence": "应该足以拿给基金会交差",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "比对",
+    "dst": "路德维希",
+    "evidence": "掺杂有与那位渡鸦先生极其相似的波形",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "质问",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "你“忘掉”的这份报告，我帮你拿来了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "402b2e7f14d0b0d4b9f4cbc0": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主动请缨收集情报的调查员"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "箱内同行的研究员"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被戏称为享受扮演的组长"
+   },
+   {
+    "name": "玩具箱森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "箱内模拟出的森林地带"
+   },
+   {
+    "name": "草丛动画",
+    "type": "概念",
+    "aliases": [],
+    "desc": "播报探索队伍进度的旁白"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "深处愈发频繁的箱内生物"
+   },
+   {
+    "name": "语言异化症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "蔓延出箱的语言症状"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被比较事理的机构"
+   },
+   {
+    "name": "狐狸先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提供推进地图的向导"
+   }
+  ],
+  "relations": [
+   {
+    "src": "草丛动画",
+    "relation": "旁白",
+    "dst": "马库斯",
+    "evidence": "一名调查员与两名研究员组成的“专业”探索队伍在树林里艰难地行进",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "跋涉",
+    "dst": "玩具箱森林",
+    "evidence": "自从进入树林深处，遇到的魔精也变得多了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "潜伏",
+    "dst": "玩具箱森林",
+    "evidence": "遇到的魔精也变得多了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "吩咐",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "喂，乌尔里希，别忘了带上战利品",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "打趣",
+    "dst": "哑谜",
+    "evidence": "没想到你真的在这个箱子里享受起了模拟扮演游戏",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "排解",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "眼见一番新的辩论马上要爆发，小调查员连忙出声打断",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "进言",
+    "dst": "哑谜",
+    "evidence": "也许我们抓紧时间赶路会比较好",
+    "confidence": 0.95
+   },
+   {
+    "src": "语言异化症",
+    "relation": "蔓延",
+    "dst": "科算中心",
+    "evidence": "趁“语言异化症”蔓延到整个拉普拉斯之前",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "赞许",
+    "dst": "马库斯",
+    "evidence": "很高兴看到你比拉普拉斯科算中心的研究员更明白拉普拉斯的事理，马库斯小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "依仗",
+    "dst": "狐狸先生",
+    "evidence": "根据狐狸先生提供的地图，我们还需要再推进7公里路程",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "抄近",
+    "dst": "魔精",
+    "evidence": "从这只魔精的地盘穿过去会比绕路更快",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "辨识",
+    "dst": "语言异化症",
+    "evidence": "看起来又是受到“语言异化症”影响的棋子",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "请缨",
+    "dst": "哑谜",
+    "evidence": "我来使用“阅读”收集情报",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f7ec88552a6642a5d9daf3cf": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被证实效率的捷径发现者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "揭破搁置内情的代理负责人"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指耍弄同僚的磁流体"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替众人喊冤的研究员"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为政策走向辩护的研究员"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "不持敌视态度的对象"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "政策趋于极端的机构"
+   },
+   {
+    "name": "《雨前漫游指南》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被扣下的漫游指南"
+   },
+   {
+    "name": "玩具箱森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "尽头现出建筑的模拟树林"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被引以为戒的可重来之物"
+   },
+   {
+    "name": "暴雨人事改革",
+    "type": "概念",
+    "aliases": [],
+    "desc": "或使机构沦为下属的改革"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "抵达",
+    "dst": "玩具箱森林",
+    "evidence": "漫长的跋涉结束了，树林的尽头隐约可见高大的建筑轮廓",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "侧目",
+    "dst": "马库斯",
+    "evidence": "哑谜看了她一眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "致谢",
+    "dst": "马库斯",
+    "evidence": "非常感谢你的协助，马库斯小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "期许",
+    "dst": "《雨前漫游指南》",
+    "evidence": "拉普拉斯很快就能交出让人满意的《雨前漫游指南》了",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "质问",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "为什么你不提交这份《雨前漫游指南》",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "推却",
+    "dst": "《雨前漫游指南》",
+    "evidence": "半成品不适合出现在这个会议上",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "讥嘲",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "他的意思是你早就完成了任务，但一直把我们当猴耍",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "告诫",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "警惕自己的“造物主”心理",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "反驳",
+    "dst": "哑谜",
+    "evidence": "他们和我们所熟悉的人，并没有什么客观意义上的区别",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "警示",
+    "dst": "玩具箱",
+    "evidence": "我们的世界不是失败了可以重来的玩具箱",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "剖析",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会的政策的确在不断地紧缩，甚至趋于极端",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "进言",
+    "dst": "科算中心",
+    "evidence": "基金会对科算中心并不持敌视态度",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "抛出",
+    "dst": "暴雨人事改革",
+    "evidence": "如果基金会的“暴雨”人事改革通过",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "18fcf7ada7b7d1683a93cf40": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒",
+     "阿德勒·霍夫曼"
+    ],
+    "desc": "被延揽却识破来意的密码学家"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承诺不干涉运作的副会长"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "负责人人选被议定的机构"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "寻求拉普拉斯方案的机构"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被举荐的专项组长"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因软盘研究被举荐者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "休养着最佳人选者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "正在舒适度假者"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "改革方案的推行委员"
+   },
+   {
+    "name": "暴雨人事改革",
+    "type": "概念",
+    "aliases": [],
+    "desc": "由委员推行的暴雨人事改革"
+   },
+   {
+    "name": "记忆灌入实验",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以记忆灌回躯体的未公开研究"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "带走人影的灾害"
+   },
+   {
+    "name": "基金会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "密谈发生的办公室"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基金会办公室",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "【标题卡】基金会办公室",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "会晤",
+    "dst": "哑谜",
+    "evidence": "你来了，阿德勒·霍夫曼先生。请坐",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "催询",
+    "dst": "科算中心",
+    "evidence": "基金会希望拉普拉斯完成的“暴雨”避险方案，现在进度如何",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "延揽",
+    "dst": "哑谜",
+    "evidence": "如果你愿意承接科算中心负责人的工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "许诺",
+    "dst": "科算中心",
+    "evidence": "基金会并不会大量干涉科算中心原本的运作",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "回绝",
+    "dst": "康斯坦丁",
+    "evidence": "那么我选原来的方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "举荐",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "比如担任“暴雨”专项研究小组负责人的乌尔里希",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "举荐",
+    "dst": "指针",
+    "evidence": "亦或是协助完成了传送软盘研究的指针",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "推行",
+    "dst": "暴雨人事改革",
+    "evidence": "人事改革是由伊里内伊委员推行的",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "识破",
+    "dst": "康斯坦丁",
+    "evidence": "当然是您的意思，康斯坦丁女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "器重",
+    "dst": "哑谜",
+    "evidence": "你是最佳选择，阿德勒先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "点破",
+    "dst": "维尔汀",
+    "evidence": "你明知最佳人选仍在司辰那儿休养",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "打岔",
+    "dst": "露西",
+    "evidence": "露西女士的度假时光很舒适",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "定议",
+    "dst": "哑谜",
+    "evidence": "我们需要一个“人类”担任这个职位",
+    "confidence": 0.95
+   },
+   {
+    "src": "记忆灌入实验",
+    "relation": "瞒蔽",
+    "dst": "科算中心",
+    "evidence": "这是一项未向科算中心公开的研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "研试",
+    "dst": "记忆灌入实验",
+    "evidence": "只要将过去的记忆灌入合适的躯体",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "对抗",
+    "dst": "暴雨",
+    "evidence": "一直在寻找方法带回消失在“暴雨”里的人",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

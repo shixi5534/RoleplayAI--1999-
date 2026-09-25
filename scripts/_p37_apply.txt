@@ -1,0 +1,34 @@
+WRITTEN=50 MATCH=50 MISMATCH=0
+
+SAMPLE c72:
+{
+  "entities": [
+    {
+      "name": "黑天鹅",
+      "type": "角色",
+      "aliases": [
+        "black swan"
+      ]
+    },
+    {
+      "name": "Caroline Bartley",
+      "type": "角色",
+      "aliases": [
+        "caroline bardley"
+      ]
+    },
+    {
+      "name": "floor ritualist",
+      "type": "概念",
+      "aliases": []
+    }
+  ],
+  "relations": [
+    {
+      "src": "黑天鹅",
+      "dst": "floor ritualist",
+      "relation": "启发",
+      "confidence": 0.8
+    }
+  ]
+}

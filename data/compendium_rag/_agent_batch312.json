@@ -1,0 +1,1462 @@
+{
+ "1bcb34205b0c11a48625bb42": {
+  "entities": [
+   {
+    "name": "小蛇Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "缩回发丝间的特邀自居者"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追查报告外泄的组长"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "共享思维的蛇发女妖"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "顺手取走报告的家伙"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈浏览过报告"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "拍板再进箱子的代理负责人"
+   },
+   {
+    "name": "缪斯三世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带来稳固装置的双头狐狸"
+   },
+   {
+    "name": "普罗透斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "善变的多变之神"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被反复进入的演练装置"
+   },
+   {
+    "name": "玩具箱的核心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "会变换形态的核心"
+   },
+   {
+    "name": "海豹皮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "收纳固定核心的稳固装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "追问",
+    "dst": "小蛇Ⅰ",
+    "evidence": "你看过报告？什么时候？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小蛇Ⅰ",
+    "relation": "藏身于",
+    "dst": "冷周六",
+    "evidence": "刚插了一句嘴就惹出麻烦的小蛇迅速缩回青蓝色发丝间",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "转指",
+    "dst": "兔毛手袋",
+    "evidence": "兔毛手袋也看过报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "追责",
+    "dst": "兔毛手袋",
+    "evidence": "是谁把我的报告拿给阿德勒研究员的？我明明还没提交",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "取用数据",
+    "dst": "玩具箱",
+    "evidence": "我需要最新数据去调试玩具箱的交互系统",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "批阅其报告",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "所以你看完就提交给了阿德勒？",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "自辩未传",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "你知道我们蛇发女妖是共享思维的对吧？除此之外我保证我没有外传",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自陈浏览",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "而我是在上次去找你时浏览的，乌尔里希先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "打断指控",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "代理负责人皱着眉打断了这场牵扯进越来越多人的指控",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "不赞同",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "总而言之，我看到了报告，并且不赞同乌尔里希的看法",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "承诺再入",
+    "dst": "玩具箱",
+    "evidence": "我们会再进一次箱子，分别提交报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "承诺解决",
+    "dst": "缪斯三世",
+    "evidence": "并想办法解决你那个核心的问题，狐狸",
+    "confidence": 0.95
+   },
+   {
+    "src": "缪斯三世",
+    "relation": "带来",
+    "dst": "海豹皮",
+    "evidence": "我带来了你们需要的海豹皮",
+    "confidence": 0.95
+   },
+   {
+    "src": "海豹皮",
+    "relation": "用于擒拿",
+    "dst": "普罗透斯",
+    "evidence": "抓住多变之神普罗透斯的关键",
+    "confidence": 0.95
+   },
+   {
+    "src": "海豹皮",
+    "relation": "收纳固定",
+    "dst": "玩具箱的核心",
+    "evidence": "这件稳固装置会自动把核心收纳并固定为单一稳定形态",
+    "confidence": 0.95
+   },
+   {
+    "src": "缪斯三世",
+    "relation": "调试",
+    "dst": "玩具箱",
+    "evidence": "狐狸玩偶笑眯眯地调试好玩具箱",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a4952769098eaeab1ed02d59": {
+  "entities": [],
+  "relations": []
+ },
+ "2af9a76af97ed84fbc318480": {
+  "entities": [
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叠在棋子身上的圆筒"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒"
+    ],
+    "desc": "扑住乌鸦的鸟形棋子"
+   },
+   {
+    "name": "乌鸦棋子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被砸回原形的棋子"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "远程监测波动的少年"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "正在崩毁巨塔的箱子"
+   },
+   {
+    "name": "玩具箱的核心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不断融化重组的核心"
+   },
+   {
+    "name": "万花筒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "核心的万花筒外形"
+   },
+   {
+    "name": "路德维希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与核心相关的语言学者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "曾被指为送装置之人"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被模拟演练之雨"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "箱子所模拟的机构"
+   },
+   {
+    "name": "示波器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曾被怀疑藏密文的旧物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玩具箱",
+    "relation": "仿自",
+    "dst": "科算中心",
+    "evidence": "受统治的员工们开始发出在正常拉普拉斯环境中常能听见的大呼小叫",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌鸦棋子",
+    "relation": "坠落于",
+    "dst": "玩具箱",
+    "evidence": "乌鸦跌落在地面上，深一脚浅一脚地绕了两圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "截住",
+    "dst": "乌鸦棋子",
+    "evidence": "他飞身一扑，成功将乌鸦在飞走前截住",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "呼救于",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "乌尔里希——过来——帮忙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "转述其言",
+    "dst": "X",
+    "evidence": "X说——他有异常的——数据——波动——",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "惊见其晕",
+    "dst": "乌鸦棋子",
+    "evidence": "没有。大概被砸晕了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "察觉异变",
+    "dst": "乌鸦棋子",
+    "evidence": "哑谜从地上起身，另一枚棋子的模样显露出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "监测波动",
+    "dst": "玩具箱",
+    "evidence": "箱子中的异常神秘术波动消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "疑为数据出错",
+    "dst": "玩具箱",
+    "evidence": "数据错误？箱子里的棋子从来没有这种形态",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱的核心",
+    "relation": "变形为",
+    "dst": "玩具箱",
+    "evidence": "倒塌的塔身连带着那根金属棍一齐变形，转变为一沓实验报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "贴附固定",
+    "dst": "玩具箱的核心",
+    "evidence": "强忍着太阳穴的阵阵胀痛，哑谜迅速掏出固定装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱的核心",
+    "relation": "支撑",
+    "dst": "玩具箱",
+    "evidence": "作为支撑整个玩具箱运转的核心",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱的核心",
+    "relation": "貌似",
+    "dst": "万花筒",
+    "evidence": "它总不能只是一架摆着好看的万花筒",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "移出",
+    "dst": "玩具箱的核心",
+    "evidence": "走了，把它拿出去看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "排除旧事",
+    "dst": "示波器",
+    "evidence": "不会再有上次示波器那事儿了，我百分百确定",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "疑其存密文",
+    "dst": "示波器",
+    "evidence": "也许它和示波器一样保存着某种加密数据",
+    "confidence": 0.95
+   },
+   {
+    "src": "路德维希",
+    "relation": "关联",
+    "dst": "万花筒",
+    "evidence": "我以为这只是一架和路德维希先生有点儿关系的万花筒",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "曾被指送来",
+    "dst": "玩具箱",
+    "evidence": "你上次还报告说它是Z女士送来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "关注",
+    "dst": "暴雨",
+    "evidence": "Z女士一向关注暴雨相关的研究选题",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e2c23be49bfa1661f0344ecf": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向总部直言的少年"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "关注暴雨选题的联络人"
+   },
+   {
+    "name": "玩具箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仅有两处异常的装置"
+   },
+   {
+    "name": "路德维希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被建议作切入口的学者"
+   },
+   {
+    "name": "语言异化症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "装置损坏后的症候"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未到来的风暴"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "听取汇报的总部"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "执行休息任务的机械女士"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "文件积压的代理负责人"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同期提交指南的组长"
+   },
+   {
+    "name": "雨前紧急状况应对指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "两人分别提交的应对指南"
+   },
+   {
+    "name": "玩具箱的核心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尚无头绪的研究对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "陈述其关注",
+    "dst": "Z",
+    "evidence": "Z女士一向关注暴雨相关的研究选题",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "指出异常",
+    "dst": "玩具箱",
+    "evidence": "玩具箱只有两处异常——路德维希先生的波动",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩具箱",
+    "relation": "曾现",
+    "dst": "语言异化症",
+    "evidence": "装置损坏后出现的类似暴雨症候的语言异化症",
+    "confidence": 0.95
+   },
+   {
+    "src": "路德维希",
+    "relation": "涉语言学",
+    "dst": "语言异化症",
+    "evidence": "由于路德维希先生本就与语言学研究有关",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "建议切入",
+    "dst": "路德维希",
+    "evidence": "我建议总部以他为切入口跟进",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "寻其线索",
+    "dst": "路德维希",
+    "evidence": "当务之急应该是继续寻找路德维希先生的相关线索",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "直言无隐",
+    "dst": "科算中心",
+    "evidence": "我向总部汇报时可没有任何隐瞒",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "挂断通讯",
+    "dst": "科算中心",
+    "evidence": "少年挂断通讯，房间里重归安静",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "尚未到来",
+    "dst": "X",
+    "evidence": "风暴尚未到来……何况远方的飓风很难牵扯到停于此处的蝴蝶",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "祝贺",
+    "dst": "哑谜",
+    "evidence": "听说你与乌尔里希先生已分别提交《雨前紧急状况应对指南》，祝贺你们取得成果",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "提交",
+    "dst": "雨前紧急状况应对指南",
+    "evidence": "听说你与乌尔里希先生已分别提交《雨前紧急状况应对指南》",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "提交",
+    "dst": "雨前紧急状况应对指南",
+    "evidence": "听说你与乌尔里希先生已分别提交《雨前紧急状况应对指南》",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "执行其任务",
+    "dst": "哑谜",
+    "evidence": "我仍在执行休息这一任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "收集行为数据",
+    "dst": "哑谜",
+    "evidence": "并已通过多种渠道收集到与该词条相关的38742条行为数据",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "致电旧下属",
+    "dst": "哑谜",
+    "evidence": "于度假期间致电以往同事，炫耀自己假期行程",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "索要抱怨",
+    "dst": "哑谜",
+    "evidence": "现在，希望你能配合我完成这一任务，开始你的抱怨",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "感佩其风范",
+    "dst": "露西",
+    "evidence": "您还是这么……具有您的风范。真好。",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "抱怨无头绪",
+    "dst": "玩具箱的核心",
+    "evidence": "我对玩具箱核心的研究还没有丝毫头绪",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "抱怨积压",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "等待审批的文件比乌尔里希的假期余额还多",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "讳言不舒",
+    "dst": "科算中心",
+    "evidence": "等待审批的文件比乌尔里希的假期余额还多，而拉普拉斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "劝其疗养",
+    "dst": "哑谜",
+    "evidence": "如果你感到疲惫，可以考虑申请休假，进行适当疗养",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "预告恶作剧",
+    "dst": "哑谜",
+    "evidence": "溜进休假前工作场所，进行随机恶作剧并等待惊喜一刻",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "惊闻其言",
+    "dst": "露西",
+    "evidence": "等等，嘿，别挂，您刚刚说什么？！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bf39d7adb2baf0f53e7efbd9": {
+  "entities": [],
+  "relations": []
+ },
+ "7ee6efb7c0f1ba4f7d1b27b2": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "调往学校赠礼的旧识"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被道谢的司辰"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被协助的对象"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "新的派驻学校"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两人旧日相见之河"
+   },
+   {
+    "name": "南极",
+    "type": "地点",
+    "aliases": [],
+    "desc": "共同参加行动之地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "走廊所在的机构"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "众人所受之暴雨"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "相认于",
+    "dst": "顿河",
+    "evidence": "梅蕾尔，我们之前在顿河见过",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "同役于",
+    "dst": "南极",
+    "evidence": "我也参加了之前南极的行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "遗憾未遇",
+    "dst": "维尔汀",
+    "evidence": "听说之前你也在南极，非常可惜我们没有遇到",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "自谦无功",
+    "dst": "维尔汀",
+    "evidence": "只是我觉得我没有帮上什么忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "调任于",
+    "dst": "第一防线学校",
+    "evidence": "我现在被调去了第一防线学校，协助玛蒂尔达",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "协助",
+    "dst": "玛蒂尔达",
+    "evidence": "我现在被调去了第一防线学校，协助玛蒂尔达",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "临别赠礼",
+    "dst": "维尔汀",
+    "evidence": "总之，这些给你，希望你工作顺利！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "自惭其拙",
+    "dst": "维尔汀",
+    "evidence": "维尔汀一定觉得古怪极了，要是我刚刚再努力一些就不会这么尴尬了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "感念",
+    "dst": "暴雨",
+    "evidence": "但还是谢谢你，维尔汀，谢谢你在这暴雨下为我们所做的一切",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "相遇于",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会走廊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9cfc52ea3cd2fbf066635a26": {
+  "entities": [],
+  "relations": []
+ },
+ "d7eee17b502034c144c1fe35": {
+  "entities": [
+   {
+    "name": "珐琅眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仪式之后失去声音的孩子"
+   },
+   {
+    "name": "火渡船",
+    "type": "角色",
+    "aliases": [
+     "提灯大人"
+    ],
+    "desc": "揣度活人情感的提灯者"
+   },
+   {
+    "name": "平",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恼怒转身的蟹脸同胞"
+   },
+   {
+    "name": "大帽子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "光芒渐熄的亡者"
+   },
+   {
+    "name": "无头社的仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "已经结束的一场仪式"
+   },
+   {
+    "name": "塞纳河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两岸游行的河道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "珐琅眼",
+    "relation": "来迟于",
+    "dst": "无头社的仪式",
+    "evidence": "珐琅眼终于摆脱了提灯大人的控制，然而仪式已经结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "扑向",
+    "dst": "大帽子",
+    "evidence": "她踉踉跄跄地扑到了一个躺倒的大帽子旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "大帽子",
+    "relation": "渐熄于",
+    "dst": "珐琅眼",
+    "evidence": "他的头仍在发出微弱的闪烁，却也在慢慢熄灭了",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "揣度其动机",
+    "dst": "珐琅眼",
+    "evidence": "你不惜与我们对抗，是想救他们？",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "归因于财",
+    "dst": "珐琅眼",
+    "evidence": "还是说因为仪式失败了，你拿不到报酬而生气",
+    "confidence": 0.95
+   },
+   {
+    "src": "平",
+    "relation": "质问",
+    "dst": "火渡船",
+    "evidence": "你在说些什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "自陈短板",
+    "dst": "珐琅眼",
+    "evidence": "我不擅长分析活人的情感",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "求助于",
+    "dst": "火渡船",
+    "evidence": "还能做什么，能不能告诉我",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "扶持",
+    "dst": "珐琅眼",
+    "evidence": "她蹲下身，扶住了珐琅眼的肩膀，强迫后者抬起头",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "验证推断",
+    "dst": "珐琅眼",
+    "evidence": "珐琅眼，是他们给你许诺的死亡，让你获得了这些情感的养料，对吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "拽落",
+    "dst": "大帽子",
+    "evidence": "珐琅眼呆呆地注视着火焰，僵直的手指拽落了那顶帽子",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "邀往大典",
+    "dst": "无头社的仪式",
+    "evidence": "接近死亡的途径不止一种。跟我来，我们可以去一场更伟大的仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "平",
+    "relation": "斥其亦疯",
+    "dst": "火渡船",
+    "evidence": "你是想……！你也疯了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "渡于",
+    "dst": "塞纳河",
+    "evidence": "人们在塞纳河的两岸游行，怪异的欢庆场景和雨幕连成模糊的一片",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "评说人群",
+    "dst": "塞纳河",
+    "evidence": "他们一直这样。为明天的口号而高兴，为今天的工钱而愤怒",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "自陈旧身",
+    "dst": "珐琅眼",
+    "evidence": "当我还是一盏灯时，我就对这些习以为常了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e97de3583485336fcd765298": {
+  "entities": [
+   {
+    "name": "火渡船",
+    "type": "角色",
+    "aliases": [
+     "提灯大人"
+    ],
+    "desc": "愿熄灭于雨中的灯"
+   },
+   {
+    "name": "珐琅眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "复述死亡教义的孩子"
+   },
+   {
+    "name": "大帽子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "泪水逆流的怀中帽子"
+   },
+   {
+    "name": "无头社的仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "他们那一套死亡仪式"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "来临前的那场雨"
+   },
+   {
+    "name": "平",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说不出所以然的归者"
+   },
+   {
+    "name": "苦蜜井",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失去种子的花匠"
+   },
+   {
+    "name": "研究员蜂鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研究起死回生来客"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研究迷思海的教授"
+   },
+   {
+    "name": "迷思海",
+    "type": "地点",
+    "aliases": [],
+    "desc": "潜意识的宝库"
+   },
+   {
+    "name": "起死回生的知识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未掌握完全的知识"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "倒置之城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "珐琅眼",
+    "relation": "复述其义",
+    "dst": "无头社的仪式",
+    "evidence": "死亡是，超脱秩序。死亡是，体验，新启发，为了我们的主权",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "笑其轻信",
+    "dst": "无头社的仪式",
+    "evidence": "哈哈。你还真的信他们那一套",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "引其多言",
+    "dst": "珐琅眼",
+    "evidence": "你再多说几句吧，我的确有了一些新的冲动",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "茫然于其言",
+    "dst": "火渡船",
+    "evidence": "提灯大人的火焰点亮了周围的河水，珐琅眼感觉自己似乎正坐在一只漂荡的灯盏上",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "攥紧",
+    "dst": "大帽子",
+    "evidence": "珐琅眼紧紧攥住手里的帽子，余光里只剩下火焰湛蓝的光泽",
+    "confidence": 0.95
+   },
+   {
+    "src": "大帽子",
+    "relation": "逆流其泪",
+    "dst": "珐琅眼",
+    "evidence": "怀中的帽子似乎也是一朵乌云，它的泪水正在向上逆流",
+    "confidence": 0.95
+   },
+   {
+    "src": "火渡船",
+    "relation": "愿熄灭于",
+    "dst": "暴雨",
+    "evidence": "火的愿望就是熄灭在雨中",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "惧怕熄灭",
+    "dst": "火渡船",
+    "evidence": "也要……熄灭了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "嘱托过",
+    "dst": "火渡船",
+    "evidence": "暴雨来临前，我明明已经嘱托了火渡船，让她带着珐琅眼一起返回",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "憾其不归",
+    "dst": "平",
+    "evidence": "可终究……回来的平也说不出个所以然",
+    "confidence": 0.95
+   },
+   {
+    "src": "研究员蜂鸟",
+    "relation": "致哀",
+    "dst": "苦蜜井",
+    "evidence": "相信不久的将来，她可以跨越死亡与你重逢",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "察其真心",
+    "dst": "研究员蜂鸟",
+    "evidence": "你尾调中的悲伤告诉我，这份缥缈的祝福必定发自真心",
+    "confidence": 0.95
+   },
+   {
+    "src": "研究员蜂鸟",
+    "relation": "受启于",
+    "dst": "罗西教授",
+    "evidence": "罗西教授关于迷思海的研究给了我一些启发",
+    "confidence": 0.95
+   },
+   {
+    "src": "研究员蜂鸟",
+    "relation": "为其赴巴",
+    "dst": "迷思海",
+    "evidence": "坦白说，我来巴黎，就是为了迷思海",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "蕴有",
+    "dst": "起死回生的知识",
+    "evidence": "在你完全掌握起死回生的知识前",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "告诫勿冒",
+    "dst": "研究员蜂鸟",
+    "evidence": "不要贸然去尝试，因为那里远比倒置的巴黎更加美丽和危险",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "警其深不可测",
+    "dst": "迷思海",
+    "evidence": "其上还有古老未知的存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "自比失种花匠",
+    "dst": "研究员蜂鸟",
+    "evidence": "就当这是一个刚刚失去珍贵种子的花匠在絮聒吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "愿为引荐",
+    "dst": "研究员蜂鸟",
+    "evidence": "我的一位故友经常在梦中与我讨论迷思海的点滴，我可以为你引荐她",
+    "confidence": 0.95
+   },
+   {
+    "src": "研究员蜂鸟",
+    "relation": "邀其同行",
+    "dst": "苦蜜井",
+    "evidence": "介意和我一起到河边走走吗？天色尚好，我们可以详聊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8d96d11eab7f495ea76530d4": {
+  "entities": [],
+  "relations": []
+ },
+ "f210028327c952947b04da2d": {
+  "entities": [
+   {
+    "name": "珐琅眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蜷在墙角的少女"
+   },
+   {
+    "name": "歌唱家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以风调试乐器的乐团主事"
+   },
+   {
+    "name": "苦蜜井",
+    "type": "角色",
+    "aliases": [],
+    "desc": "循香而来的花蜜大人"
+   },
+   {
+    "name": "乐团演奏厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "怪兽倒下的演奏厅"
+   },
+   {
+    "name": "歌唱家的管风琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "乐团倾力求美的管风琴"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琴所属的庞大网络"
+   },
+   {
+    "name": "歌唱家的风",
+    "type": "概念",
+    "aliases": [],
+    "desc": "替主事洞察一切的箭风"
+   },
+   {
+    "name": "珐琅眼的花蜜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "泄露行踪的那支花蜜"
+   },
+   {
+    "name": "神秘学家乐团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "塑造乐器的乐团"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "自称一视同仁的组织"
+   }
+  ],
+  "relations": [
+   {
+    "src": "珐琅眼",
+    "relation": "躲藏于",
+    "dst": "乐团演奏厅",
+    "evidence": "还好，演奏厅里有很多可供珐琅眼躲藏的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "搜寻",
+    "dst": "珐琅眼",
+    "evidence": "躲着做什么，珐琅眼，生完气又感到害怕了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "斥其愚蠢",
+    "dst": "珐琅眼",
+    "evidence": "没想到你愚蠢到这个程度。还要让我亲自来找你吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "到场质问",
+    "dst": "歌唱家",
+    "evidence": "看大家慌得像无头的苍蝇一样，我以为他们都找到了自己的费利西安呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "讥其良知",
+    "dst": "苦蜜井",
+    "evidence": "又在泼洒你泛滥的良知吗？你不会真的当保姆当上瘾了吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "申称其义",
+    "dst": "重塑之手",
+    "evidence": "重塑之手对神秘学家的孩子一视同仁，希望你不要忘了这个古老的初衷",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "主张天赋不均",
+    "dst": "重塑之手",
+    "evidence": "但神秘学天赋的分配向来厚此薄彼",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "倾力创造",
+    "dst": "歌唱家的管风琴",
+    "evidence": "我倾尽乐团之力，才得以创造它、喂养它、塑造它",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家乐团",
+    "relation": "成就",
+    "dst": "歌唱家的管风琴",
+    "evidence": "我倾尽乐团之力，才得以创造它、喂养它、塑造它",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家的管风琴",
+    "relation": "组件于",
+    "dst": "风网",
+    "evidence": "它不仅仅是个风网的组件，还是无数天赋最后的和鸣",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "几触及美",
+    "dst": "歌唱家的管风琴",
+    "evidence": "还是无数天赋最后的和鸣，它几乎已触及美的边界！",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "视如乐器",
+    "dst": "珐琅眼",
+    "evidence": "你一直都把珐琅眼当作一架好乐器",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "施以惩罚",
+    "dst": "珐琅眼",
+    "evidence": "这次她也必须接受惩罚，从而明白行为的边界",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家的风",
+    "relation": "察其动静",
+    "dst": "珐琅眼",
+    "evidence": "风会帮小个子大人得悉一切",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家的风",
+    "relation": "嗅其微香",
+    "dst": "珐琅眼",
+    "evidence": "只比以往多了一点细微的芳香",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "蜷缩躲避",
+    "dst": "歌唱家",
+    "evidence": "角落的少女闭紧双眼，努力把自己蜷缩得更小",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "循香寻至",
+    "dst": "珐琅眼",
+    "evidence": "还好你一直带着那支花蜜，我凭此才很快找到了你",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "随身携带",
+    "dst": "珐琅眼的花蜜",
+    "evidence": "还好你一直带着那支花蜜",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ca68fe765766de934e9b47c0": {
+  "entities": [
+   {
+    "name": "苦蜜井",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带走孩子的温和大人"
+   },
+   {
+    "name": "珐琅眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被许以新屋檐的少女"
+   },
+   {
+    "name": "歌唱家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被保证寻不到的追捕者"
+   },
+   {
+    "name": "珐琅眼的花蜜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "令其安心的香气来源"
+   },
+   {
+    "name": "神秘学家乐团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被劝离的旧乐团"
+   }
+  ],
+  "relations": [
+   {
+    "src": "珐琅眼",
+    "relation": "嗅其安心",
+    "dst": "珐琅眼的花蜜",
+    "evidence": "珐琅眼仔细嗅着让她安心的气味",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "警其勿迷",
+    "dst": "珐琅眼",
+    "evidence": "别被香气迷惑住，它不是为你准备的",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "劝往阳光",
+    "dst": "珐琅眼",
+    "evidence": "走吧，花种一旦长出新芽就不该再流连于暗室中。去阳光下吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "许以庇护",
+    "dst": "珐琅眼",
+    "evidence": "另一个能为你提供庇护的屋檐，你不必再担心被歌唱家找到",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "护其免于",
+    "dst": "歌唱家",
+    "evidence": "你不必再担心被歌唱家找到",
+    "confidence": 0.95
+   },
+   {
+    "src": "珐琅眼",
+    "relation": "忆及口号",
+    "dst": "神秘学家乐团",
+    "evidence": "自由归于我们！休假和福利！",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "按止其手",
+    "dst": "珐琅眼",
+    "evidence": "珐琅眼想要挥舞手臂，这是与这句口号配套的节奏，但苦蜜井先一步轻柔地按住了她的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "戒其慎言",
+    "dst": "珐琅眼",
+    "evidence": "嘘，可不要被风听到",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "携其远走",
+    "dst": "神秘学家乐团",
+    "evidence": "我们现在就动身，离乐团越远越好",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦蜜井",
+    "relation": "询其过敏",
+    "dst": "珐琅眼",
+    "evidence": "对了，你对蜡过敏吗？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

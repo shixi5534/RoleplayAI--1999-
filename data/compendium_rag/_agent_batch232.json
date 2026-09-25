@@ -1,0 +1,968 @@
+{
+ "41d1fac9462981678a113a0d": {
+  "entities": [
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怒斥其自弃者"
+   },
+   {
+    "name": "奇星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执意求死的嫌犯"
+   },
+   {
+    "name": "埃尔登警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲持枪的警长"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夺下胶片者"
+   },
+   {
+    "name": "梁父",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其训诲被忆起者"
+   },
+   {
+    "name": "强梁",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被恳请回应的神兽"
+   },
+   {
+    "name": "险道兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "必将现身的险道兽"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被夺下的胶片"
+   },
+   {
+    "name": "何日君",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指不曾放弃者"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问梁月者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "菲林士多",
+    "relation": "追忆",
+    "dst": "何日君",
+    "evidence": "她都会重新振作起来，对我说又修改了一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "怒斥",
+    "dst": "奇星",
+    "evidence": "我可不会选择那样的胆小鬼做搭档",
+    "confidence": 0.95
+   },
+   {
+    "src": "奇星",
+    "relation": "求死",
+    "dst": "埃尔登警长",
+    "evidence": "只要杀死我，一切都会结束了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "劝阻",
+    "dst": "埃尔登警长",
+    "evidence": "请让我试试吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "夺取",
+    "dst": "三燕归巢",
+    "evidence": "那盘胶片已经被梁月抓在了手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "自陈",
+    "dst": "强梁",
+    "evidence": "而是因为我想要这么做",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "恳请",
+    "dst": "强梁",
+    "evidence": "请回应我吧，强梁",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁父",
+    "relation": "训诲",
+    "dst": "梁月",
+    "evidence": "只要心怀希望与斗志到最后一刻",
+    "confidence": 0.95
+   },
+   {
+    "src": "险道兽",
+    "relation": "必将",
+    "dst": "梁父",
+    "evidence": "险道兽必将现身，逐除恶鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "追问",
+    "dst": "梁月",
+    "evidence": "你在做什么",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "296d7dad80f0c89c583f9f1d": {
+  "entities": [
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报尾声的记者"
+   },
+   {
+    "name": "埃尔登警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "面对采访的警长"
+   },
+   {
+    "name": "社火游行",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被报道的盛会"
+   },
+   {
+    "name": "强梁逐疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被报道的强梁逐疫表演"
+   },
+   {
+    "name": "神秘学犯罪科",
+    "type": "地点",
+    "aliases": [],
+    "desc": "发布公告的警署"
+   },
+   {
+    "name": "夜巡特遣管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将参与培训的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "记者",
+    "relation": "报道",
+    "dst": "社火游行",
+    "evidence": "吸引了众多游客前来观看，场面热闹非凡",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "报道",
+    "dst": "强梁逐疫",
+    "evidence": "上演了极其震撼的“强梁逐疫”的表演",
+    "confidence": 0.95
+   },
+   {
+    "src": "记者",
+    "relation": "报道",
+    "dst": "神秘学犯罪科",
+    "evidence": "已被洛杉矶神秘学犯罪科逮捕归案",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃尔登警长",
+    "relation": "表态",
+    "dst": "神秘学犯罪科",
+    "evidence": "我代表神秘学犯罪科，期待着来自你们的意见与帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "夜巡特遣管理局",
+    "relation": "参与",
+    "dst": "神秘学犯罪科",
+    "evidence": "圣洛夫基金会夜巡特遣管理局也将参与到培训计划当中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0f594afb14d0f95bb5d88d5b": {
+  "entities": [
+   {
+    "name": "艾瑞克·黄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "康复出院前的蔬菜店店主"
+   },
+   {
+    "name": "丽莲·刘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欣喜的 wife"
+   },
+   {
+    "name": "民间侦探",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鼓励其报考的侦探"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "鼓励黄先生者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "丽莲·刘",
+    "relation": "鼓励",
+    "dst": "艾瑞克·黄",
+    "evidence": "你年轻的时候，不是就想要当警察吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "民间侦探",
+    "relation": "鼓励",
+    "dst": "艾瑞克·黄",
+    "evidence": "想做就试试呗",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "鼓励",
+    "dst": "艾瑞克·黄",
+    "evidence": "我看您的身体很好，在神秘术方面也很有天赋",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a613090091c74440ed912d43": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被致谢的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报善后者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纠正术语者"
+   },
+   {
+    "name": "艾瑞克·黄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恢复如初者"
+   },
+   {
+    "name": "丽莲·刘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欣喜的妻子"
+   },
+   {
+    "name": "三魂七魄",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被归还的神智"
+   }
+  ],
+  "relations": [
+   {
+    "src": "丽莲·刘",
+    "relation": "致谢",
+    "dst": "梁月",
+    "evidence": "听说是你让大家伙都恢复了原样",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "谦辞",
+    "dst": "丽莲·刘",
+    "evidence": "而且这也不是我一个人的功劳——是大家的",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "通报",
+    "dst": "梁月",
+    "evidence": "那些被卷入神秘学现象的受害者们，都恢复了原样",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "纠正",
+    "dst": "波蒂埃",
+    "evidence": "是“三魂七魄”啦，madam",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "补述",
+    "dst": "三魂七魄",
+    "evidence": "他们丢失的精神能量也都物归原主",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "61b0aae14a09e78e5c1aa224": {
+  "entities": [
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为失联而消沉者"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安慰的教官"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释缘由的捉鬼人"
+   },
+   {
+    "name": "大哥大",
+    "type": "物品",
+    "aliases": [],
+    "desc": "再无回应的大哥大"
+   },
+   {
+    "name": "强梁",
+    "type": "概念",
+    "aliases": [],
+    "desc": "吞噬邪祟后下落不明者"
+   },
+   {
+    "name": "邪祟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被吞尽的各路妖魔鬼怪"
+   },
+   {
+    "name": "三魂七魄",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被裹挟的神智"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梁月",
+    "relation": "呼唤",
+    "dst": "大哥大",
+    "evidence": "无论梁月再如何呼唤寄宿在其中的兽魂",
+    "confidence": 0.95
+   },
+   {
+    "src": "大哥大",
+    "relation": "失联",
+    "dst": "梁月",
+    "evidence": "听筒中只有死寂",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "关切",
+    "dst": "梁月",
+    "evidence": "你的强梁，还是没有回应吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "解释",
+    "dst": "强梁",
+    "evidence": "那天的那个大家伙可不好对付",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "罗列",
+    "dst": "邪祟",
+    "evidence": "什么孤魂野鬼、魑魅魍魉……各路妖魔鬼怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "邪祟",
+    "relation": "裹挟",
+    "dst": "三魂七魄",
+    "evidence": "偏偏它们又裹挟了那些受害者们丢失了的三魂七魄",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "悔恨",
+    "dst": "强梁",
+    "evidence": "我从来没有尝试去了解它",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dbe0bad0cb0b59945487cbfc": {
+  "entities": [
+   {
+    "name": "神秘学警察",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传令的珍妮·卡特"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获认可的学员"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同被召唤的教官"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同被召唤的捉鬼人"
+   },
+   {
+    "name": "埃尔登警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "委婉安排放映的警长"
+   },
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "争取遗作放映的导演"
+   },
+   {
+    "name": "基金会职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布检测结果者"
+   },
+   {
+    "name": "民间侦探",
+    "type": "角色",
+    "aliases": [],
+    "desc": "援引舆论的名侦探"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已无害化的胶片"
+   },
+   {
+    "name": "神秘学犯罪科",
+    "type": "地点",
+    "aliases": [],
+    "desc": "临时放映场所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "神秘学警察",
+    "relation": "召唤",
+    "dst": "梁月",
+    "evidence": "埃尔登警长让我来喊你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学警察",
+    "relation": "称赞",
+    "dst": "梁月",
+    "evidence": "你做得漂亮。很高兴能有你这样的人加入我们科",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学警察",
+    "relation": "告知",
+    "dst": "波蒂埃",
+    "evidence": "基金会的增援已经赶到",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "争取",
+    "dst": "三燕归巢",
+    "evidence": "泰瑞莎最后的作品在短时间内，恐怕只有这么一次机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会职员",
+    "relation": "检测",
+    "dst": "三燕归巢",
+    "evidence": "经由执夜人见习生梁小姐的术式处理后，如今已经不具备干扰现实的能力",
+    "confidence": 0.95
+   },
+   {
+    "src": "民间侦探",
+    "relation": "援引",
+    "dst": "埃尔登警长",
+    "evidence": "难道说现在心怀正义与热情的市民，连点知情权都没有了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d7f825d37f2440d6ab2adf89": {
+  "entities": [
+   {
+    "name": "菲林士多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忧心幕后黑手者"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "允诺关注者"
+   },
+   {
+    "name": "波蒂埃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招呼开场者"
+   },
+   {
+    "name": "幕后黑手",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仍未现身的执棋人"
+   },
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被比作“兵”者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "菲林士多",
+    "relation": "怀疑",
+    "dst": "幕后黑手",
+    "evidence": "我们还是没能看到在这盘棋上对弈的执棋人",
+    "confidence": 0.95
+   },
+   {
+    "src": "菲林士多",
+    "relation": "比喻",
+    "dst": "斯考特",
+    "evidence": "我们就像是“兵”，巧攻渡河",
+    "confidence": 0.95
+   },
+   {
+    "src": "梁月",
+    "relation": "允诺",
+    "dst": "菲林士多",
+    "evidence": "我会持续关注这件事的",
+    "confidence": 0.95
+   },
+   {
+    "src": "波蒂埃",
+    "relation": "招呼",
+    "dst": "梁月",
+    "evidence": "大家都已经搞定了，就等你们就位后开场了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e4fe30e3685c8322de283599": {
+  "entities": [
+   {
+    "name": "空脑袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "探望斯考特却迷路者"
+   },
+   {
+    "name": "问路的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为其指路者"
+   },
+   {
+    "name": "神秘学警察Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "起疑的警员"
+   },
+   {
+    "name": "假扮医生者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持花瓶的冒牌医生"
+   },
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被铐在病床上的患者"
+   },
+   {
+    "name": "洛杉矶的医院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "斯考特所住的医院"
+   }
+  ],
+  "relations": [
+   {
+    "src": "空脑袋",
+    "relation": "问路",
+    "dst": "问路的医生",
+    "evidence": "请问康斯坦丝·斯考特的病房是在哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "问路的医生",
+    "relation": "指引",
+    "dst": "空脑袋",
+    "evidence": "您需要从这里向前走，在拐角处左拐",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学警察Ⅱ",
+    "relation": "盘问",
+    "dst": "假扮医生者",
+    "evidence": "现在还不到要例行检查的时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "假扮医生者",
+    "relation": "搪塞",
+    "dst": "神秘学警察Ⅱ",
+    "evidence": "昨天的体检报告出来了，数据上有一些波动",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "起疑",
+    "dst": "假扮医生者",
+    "evidence": "有什么地方不对劲",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5d047d371cf74d9a6e78e50b": {
+  "entities": [
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记忆被抹除的联络人"
+   },
+   {
+    "name": "假扮医生者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送来花瓶的传讯者"
+   },
+   {
+    "name": "水晶花瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传信术的载体"
+   },
+   {
+    "name": "传信术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仅被允许单方面发起的通讯"
+   },
+   {
+    "name": "幕后黑手",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传讯另一端的神秘人"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被斯考特提及者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "假扮医生者",
+    "relation": "送来",
+    "dst": "水晶花瓶",
+    "evidence": "有人让我给您送来这束花",
+    "confidence": 0.95
+   },
+   {
+    "src": "水晶花瓶",
+    "relation": "承载",
+    "dst": "传信术",
+    "evidence": "自花瓶中仍折射出令她隐隐头晕目眩的光",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "汇报",
+    "dst": "幕后黑手",
+    "evidence": "我失手了，被夜巡特遣的人抓住了",
+    "confidence": 0.95
+   },
+   {
+    "src": "幕后黑手",
+    "relation": "抹除",
+    "dst": "斯考特",
+    "evidence": "视野中的色彩扭曲了，意识开始旋转",
+    "confidence": 0.95
+   },
+   {
+    "src": "幕后黑手",
+    "relation": "致谢",
+    "dst": "斯考特",
+    "evidence": "谢谢你，斯考特小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯考特",
+    "relation": "提及",
+    "dst": "玛蒂尔达",
+    "evidence": "前些天，我还遇到了玛蒂尔达小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "挂念",
+    "dst": "幕后黑手",
+    "evidence": "她……很担心您",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "df3ea2c63fac6e55615aa1d1": {
+  "entities": [
+   {
+    "name": "黑鹮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶到病房的导师"
+   },
+   {
+    "name": "黑鹮的副手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扶起晕厥者的副手"
+   },
+   {
+    "name": "斯考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "昏厥在床的联络人"
+   },
+   {
+    "name": "假扮医生者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施术后撤离者"
+   },
+   {
+    "name": "催眠术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令众人昏睡的术式"
+   },
+   {
+    "name": "梁月",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被瞒着的学徒"
+   }
+  ],
+  "relations": [
+   {
+    "src": "黑鹮",
+    "relation": "赶到",
+    "dst": "斯考特",
+    "evidence": "一双黑色的皮靴踏着碎片来到昏厥的斯考特病床前",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "评价",
+    "dst": "假扮医生者",
+    "evidence": "施术者水平相当高",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮的副手",
+    "relation": "检查",
+    "dst": "假扮医生者",
+    "evidence": "正将方才造访这间病房的医生扶到一旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "假扮医生者",
+    "relation": "施展",
+    "dst": "催眠术",
+    "evidence": "中了某种催眠术",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮的副手",
+    "relation": "抱怨",
+    "dst": "黑鹮",
+    "evidence": "没有必要特意瞒着梁",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "辩解",
+    "dst": "梁月",
+    "evidence": "这些都是对她的考验呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "肯定",
+    "dst": "梁月",
+    "evidence": "而她也通过这次的事情证明了，她可以",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "16cb8f4012946031375acbc6": {
+  "entities": [
+   {
+    "name": "黑鹮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点破真正目标者"
+   },
+   {
+    "name": "黑鹮的副手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推理并提出质问者"
+   },
+   {
+    "name": "神秘学管理品",
+    "type": "概念",
+    "aliases": [],
+    "desc": "共五件的失窃品"
+   },
+   {
+    "name": "发条玩具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已报废的其中一件"
+   },
+   {
+    "name": "三燕归巢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被回收的其中一件"
+   },
+   {
+    "name": "幕后黑手",
+    "type": "概念",
+    "aliases": [],
+    "desc": "真正觊觎另一件者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "疑似渗透基金会高层的势力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "黑鹮",
+    "relation": "清点",
+    "dst": "神秘学管理品",
+    "evidence": "一共有五件神秘学管理品失窃",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮的副手",
+    "relation": "排除",
+    "dst": "发条玩具",
+    "evidence": "那个发条玩具已经报废",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮的副手",
+    "relation": "排除",
+    "dst": "三燕归巢",
+    "evidence": "这次的胶片也成功被回收",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "断定",
+    "dst": "幕后黑手",
+    "evidence": "我们的幕后黑手在那五件东西之中，真正想要的恐怕也只有一件",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮的副手",
+    "relation": "指认",
+    "dst": "重塑之手",
+    "evidence": "至少是能够查阅到神秘学藏品管理部档案的基金会高层中有重塑之手的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "存疑",
+    "dst": "重塑之手",
+    "evidence": "他，或是她却不一定完全和重塑之手站在同一阵线",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑鹮",
+    "relation": "预言",
+    "dst": "幕后黑手",
+    "evidence": "事情开始有趣起来了，不是吗",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

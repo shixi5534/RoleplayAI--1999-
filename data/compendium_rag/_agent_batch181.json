@@ -1,0 +1,1033 @@
+{
+ "1d460296f42dd8be91d7e688": {
+  "entities": [
+   {
+    "name": "贵族女性",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论远行者是非的贵妇"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "整理行装、发现旧稿的盲眼学者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为别斯米尔做记录的年轻人"
+   },
+   {
+    "name": "彼得堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "别斯米尔启程之地"
+   },
+   {
+    "name": "听写稿件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "页边磨损的野外速记稿"
+   },
+   {
+    "name": "游记手记",
+    "type": "物品",
+    "aliases": [],
+    "desc": "别斯米尔委托记录的游记"
+   },
+   {
+    "name": "地质锤",
+    "type": "物品",
+    "aliases": [],
+    "desc": "远行必带的地质器具"
+   },
+   {
+    "name": "亚麻布",
+    "type": "物品",
+    "aliases": [],
+    "desc": "裁切包裹纸张的布料"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贵族女性",
+    "relation": "非议",
+    "dst": "探险家别斯米尔",
+    "evidence": "上次出去转头就是一整年，中间半点消息也没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "贵族女性",
+    "relation": "讥讽",
+    "dst": "探险家别斯米尔",
+    "evidence": "可铜打的奖章能值多少个卢布？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "置身",
+    "dst": "彼得堡",
+    "evidence": "【标题卡】彼得堡卧室内",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "整理",
+    "dst": "地质锤",
+    "evidence": "衣物、地图。车马券、介绍信、玻璃瓶、地质锤",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "使用",
+    "dst": "亚麻布",
+    "evidence": "上次旅行前裁切的布料",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "发现",
+    "dst": "听写稿件",
+    "evidence": "这是……我的听写稿件",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "委托",
+    "dst": "游记手记",
+    "evidence": "这是别斯米尔女士曾委托我记录的游记",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "记录",
+    "dst": "游记手记",
+    "evidence": "这是别斯米尔女士曾委托我记录的游记",
+    "confidence": 0.95
+   },
+   {
+    "src": "听写稿件",
+    "relation": "注明",
+    "dst": "探险家别斯米尔",
+    "evidence": "这是……我的听写稿件",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b6ad016613ed7407a230ed56": {
+  "entities": [
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "口述计划的探险家"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同步速记的年轻人"
+   },
+   {
+    "name": "鄂木河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "队伍改租船只渡过之河"
+   },
+   {
+    "name": "鄂木斯克",
+    "type": "地点",
+    "aliases": [],
+    "desc": "防备森严的北门之城"
+   },
+   {
+    "name": "度朔节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "东方传说中与土地崇拜相关的节日"
+   },
+   {
+    "name": "摄提神",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被苦行僧企望怜悯的神"
+   },
+   {
+    "name": "所求必应",
+    "type": "概念",
+    "aliases": [],
+    "desc": "古老而确实施行起效的神秘术"
+   },
+   {
+    "name": "土地崇拜",
+    "type": "概念",
+    "aliases": [],
+    "desc": "随保护神更替的崇拜"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "佚散而待考察的力量"
+   },
+   {
+    "name": "拼凑的证明文书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "经不起严格检验的证明"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "记述",
+    "dst": "鄂木河",
+    "evidence": "我们卖掉马车，改租当地农民的船只",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "记述",
+    "dst": "鄂木斯克",
+    "evidence": "那里防备森严，如同堡垒",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "记述",
+    "dst": "拼凑的证明文书",
+    "evidence": "我们临时拼凑起的证明文书",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "断言",
+    "dst": "拼凑的证明文书",
+    "evidence": "根本经不起那样严格的检验",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "讲述",
+    "dst": "度朔节",
+    "evidence": "所用论据中，就包含着部分我所了解的东方“度朔节”传说",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "讲述",
+    "dst": "土地崇拜",
+    "evidence": "土地崇拜会随“保护神”的更替有所不同",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "讲述",
+    "dst": "所求必应",
+    "evidence": "类似“所求必应”的东方神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "讲述",
+    "dst": "摄提神",
+    "evidence": "企望着摄提神的怜悯",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "论述",
+    "dst": "神秘术",
+    "evidence": "从枯寂中复现丰润的大地上，我们仍能窥见",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2b6726fcd34c65ab9043a460": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑类比的记录者"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持亲自寻找的学者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张原路返回的青年"
+   },
+   {
+    "name": "草原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "风暴肆虐后的温带大地"
+   },
+   {
+    "name": "石林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾遮蔽风雨之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "克罗利克眼中的把戏"
+   },
+   {
+    "name": "度朔节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被斥为无益的传说"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "质疑",
+    "dst": "探险家别斯米尔",
+    "evidence": "低地沉积岩是可以被验证的，“失落的神秘术”似乎并不是",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "自陈",
+    "dst": "神秘术",
+    "evidence": "所以我才更应该亲自找到它",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "催促",
+    "dst": "探险家别斯米尔",
+    "evidence": "我们究竟还要等多久？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "安抚",
+    "dst": "克罗利克",
+    "evidence": "您的担忧是没有必要的",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "断言",
+    "dst": "克罗利克",
+    "evidence": "秃鹫食腐……而不会来招惹我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "提议",
+    "dst": "草原",
+    "evidence": "因为我们会往回走，而不是向前",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "担忧",
+    "dst": "石林",
+    "evidence": "如果下次我们找不到这样能遮蔽风雨的石林呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "贬斥",
+    "dst": "度朔节",
+    "evidence": "那些东方的传说，度朔节的狂欢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "贬斥",
+    "dst": "神秘术",
+    "evidence": "或者“所求必应”的神秘学把戏",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "180c5b98c930c3e64107b654": {
+  "entities": [
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承认诉求合理的队长"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默的追随者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诉求折返的青年"
+   },
+   {
+    "name": "补给站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "原计划中该抵达之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "认可",
+    "dst": "克罗利克",
+    "evidence": "鉴于我们先前的遭遇，您的诉求是合理的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "沉默",
+    "dst": "探险家别斯米尔",
+    "evidence": "……",
+    "confidence": 0.95
+   },
+   {
+    "src": "补给站",
+    "relation": "成为",
+    "dst": "克罗利克",
+    "evidence": "所有人都应该已经坐在补给站的房屋内喝着热茶",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "预判",
+    "dst": "克罗利克",
+    "evidence": "这种标志半途而废的分歧时刻",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1780804ab39fe80269894262": {
+  "entities": [
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求跳过发言表决的青年"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持投票程序的队长"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拦阻不及的记录者"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "态度强硬、要带走物资者"
+   },
+   {
+    "name": "彼得洛夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未到场投票的成员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "克罗利克",
+    "relation": "提议",
+    "dst": "探险家别斯米尔",
+    "evidence": "我要求——跳过发言环节",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "坚持",
+    "dst": "克罗利克",
+    "evidence": "但我们依然需要投票表决",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "劝阻",
+    "dst": "探险家别斯米尔",
+    "evidence": "女士！",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "号召",
+    "dst": "考察队员Ⅰ",
+    "evidence": "选择原路返回的，请举手表决",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "评价",
+    "dst": "克罗利克",
+    "evidence": "四对二。您看，这样不就很快有结果了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "质疑",
+    "dst": "克罗利克",
+    "evidence": "他们早就商量好了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "威胁",
+    "dst": "小叶尼塞",
+    "evidence": "我将认为这是你要求决斗的信号",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "追问",
+    "dst": "彼得洛夫",
+    "evidence": "尤利恩先生呢？他还没有投票",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "代断",
+    "dst": "彼得洛夫",
+    "evidence": "我们都是人类。他当然会站在我们这边",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "宣布",
+    "dst": "克罗利克",
+    "evidence": "收拾物资，我们往回走",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "拒绝",
+    "dst": "小叶尼塞",
+    "evidence": "我们会带走剩下的所有物资，这没得商量",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "要挟",
+    "dst": "考察队员Ⅰ",
+    "evidence": "指南针失效，你们需要我来指出回去的方向",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "86f910bd6f6dfe01778b6ca0": {
+  "entities": [
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以威信介入争执的年长者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "假意沟通被点破者"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被推举定夺期限者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求清点物资的人"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出保障条件的成员"
+   },
+   {
+    "name": "彼得洛夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被尤利恩点名的队员"
+   },
+   {
+    "name": "所求必应",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需付出代价的神秘术"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尤利恩所研究的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "尤利恩",
+    "relation": "制止",
+    "dst": "克罗利克",
+    "evidence": "这样太野蛮了，朋友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "点破",
+    "dst": "克罗利克",
+    "evidence": "我还以为您要与别斯米尔女士谈重新分配每日物资的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "质问",
+    "dst": "克罗利克",
+    "evidence": "为什么又在半途中放弃完成任务的信念？",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "责备",
+    "dst": "彼得洛夫",
+    "evidence": "竟然连你也不愿继续前进了，彼得洛夫",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "退让",
+    "dst": "尤利恩",
+    "evidence": "如果您能让别斯米尔定下一个足够往返的期限",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "提出",
+    "dst": "探险家别斯米尔",
+    "evidence": "且在期限内找到活水，我们也能按原计划不变",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "限期",
+    "dst": "小叶尼塞",
+    "evidence": "……给你三十分钟",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "应承",
+    "dst": "考察队员Ⅰ",
+    "evidence": "足够了",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "讲述",
+    "dst": "尤利恩",
+    "evidence": "尤利恩先生对神秘学家和神秘术很感兴趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "论述",
+    "dst": "所求必应",
+    "evidence": "“所求必应”的实现需要付出代价",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "主张",
+    "dst": "神秘术",
+    "evidence": "认为这是神秘学家与自然进行的某种交换仪式",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c987ce7d76405d42dcad5352": {
+  "entities": [
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断有地下水的学者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盘点物资的年轻人"
+   },
+   {
+    "name": "纯酒精",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被当应急物资喝掉的纯酒精"
+   },
+   {
+    "name": "鄂木河水的玻璃瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "盛鄂木河水、可指方向之物"
+   },
+   {
+    "name": "水袋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "队伍的饮水所储"
+   },
+   {
+    "name": "草原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "土质过于黏稠的旷野"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小叶尼塞用于指方向的术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "发现",
+    "dst": "纯酒精",
+    "evidence": "为测量沸点所准备的纯酒精，已经在气温骤降的夜里被当作“应急物资”使用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "报告",
+    "dst": "探险家别斯米尔",
+    "evidence": "刨去饮用水，所有人常量使用大概最少八天",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "报告",
+    "dst": "水袋",
+    "evidence": "饮用水和酒精还有多少？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "草原",
+    "evidence": "这里的土质过于黏稠了",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "草原",
+    "evidence": "这是有地下水的标志。有地下水，就会有活水",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "询问",
+    "dst": "神秘术",
+    "evidence": "你的神秘术不能用吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "解释",
+    "dst": "鄂木河水的玻璃瓶",
+    "evidence": "这是鄂木河下游的水。里面可用于占卜方向的活跃气息已经很淡了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "自陈",
+    "dst": "探险家别斯米尔",
+    "evidence": "可我离开不是为了回去，女士",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9015f64e72be38fc316d1151": {
+  "entities": [
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断风暴成因的学者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "领会关窍的年轻人"
+   },
+   {
+    "name": "鄂木河水的玻璃瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "带路的最后保障"
+   },
+   {
+    "name": "草原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "强对流翻山而成雨之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推断",
+    "dst": "草原",
+    "evidence": "我们遇上的风暴，正是强对流翻山而来的结果",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "领悟",
+    "dst": "探险家别斯米尔",
+    "evidence": "而活水的来源可能就在那个方向！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "承诺",
+    "dst": "鄂木河水的玻璃瓶",
+    "evidence": "你的神秘术也能带我们回来。只要玻璃瓶还在",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "定夺",
+    "dst": "小叶尼塞",
+    "evidence": "然后，我们定下五天的期限",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "自陈",
+    "dst": "小叶尼塞",
+    "evidence": "就算不行，我也会像游说时那样，再次说服他们",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8e47fbd669a3e87a134a15ed": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对活水起疑的记录者"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "否认施术、察觉异常的学者"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称许印象深刻的年长者"
+   },
+   {
+    "name": "克罗利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "焦躁奔向溪流的人"
+   },
+   {
+    "name": "草原",
+    "type": "地点",
+    "aliases": [],
+    "desc": "草色如四五月之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被疑制造幻觉之力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "惊疑",
+    "dst": "草原",
+    "evidence": "难以置信地望着不远处几乎凭空出现的活水溪流",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "称赞",
+    "dst": "探险家别斯米尔",
+    "evidence": "这可真是令人印象深刻，不是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "克罗利克",
+    "relation": "奔向",
+    "dst": "草原",
+    "evidence": "他并不打算等待一个回答，便焦躁地奔向溪流",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "否认",
+    "dst": "小叶尼塞",
+    "evidence": "很遗憾，我什么也没做。我的神秘术也做不到这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "察觉",
+    "dst": "草原",
+    "evidence": "这里的草地也很湿润，却是春季经常落雨才会有的那种短暂情况",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "观察",
+    "dst": "草原",
+    "evidence": "而是四月、五月，那样的绿色",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推测",
+    "dst": "神秘术",
+    "evidence": "这难道是某种神秘术制造的幻觉？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "警觉",
+    "dst": "神秘术",
+    "evidence": "那他们喝下的那些水就会有问题",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eb1968c823d3773639758ff4": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝阻并欲独自查看的人"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自责指错方向者"
+   },
+   {
+    "name": "考察队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称水清有鳟鱼的队员"
+   },
+   {
+    "name": "尤利恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问神秘术运作的年长者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被误认作降灵的力量"
+   },
+   {
+    "name": "降灵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小叶尼塞否认施行之术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "探险家别斯米尔",
+    "relation": "自责",
+    "dst": "小叶尼塞",
+    "evidence": "这可能是因为我指出的方向有问题，我必须去啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "拦阻",
+    "dst": "探险家别斯米尔",
+    "evidence": "女士！他们已经跑得太远了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "考察队员Ⅰ",
+    "relation": "告知",
+    "dst": "探险家别斯米尔",
+    "evidence": "这水很清澈，里面甚至有鳟鱼",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "称许",
+    "dst": "探险家别斯米尔",
+    "evidence": "你用能力赢回了大家的信任",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "追问",
+    "dst": "神秘术",
+    "evidence": "她怎样通过这样的流水获取指引，需不需要请灵上身？",
+    "confidence": 0.95
+   },
+   {
+    "src": "尤利恩",
+    "relation": "类比",
+    "dst": "降灵",
+    "evidence": "是否就像皇宫里的那些法师一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "否认",
+    "dst": "降灵",
+    "evidence": "我的神秘术并非精准预言，也不通过“降灵”施行",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "告诫",
+    "dst": "尤利恩",
+    "evidence": "您不能把全部的希望都寄托在自己无法理解的事物之上",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

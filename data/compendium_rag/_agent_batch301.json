@@ -1,0 +1,730 @@
+{
+ "ab73d9b1235f64dcc4783612": {
+  "entities": [
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "节选指南条数的培育者"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "新巴别塔",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精培训指南",
+    "relation": "面向",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【新巴别塔】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "78664c14ecd686e321ef1180": {
+  "entities": [
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "连声哄劝受训者的培育者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被唤作乖孩子的受训魔精"
+   },
+   {
+    "name": "乖孩子的安抚",
+    "type": "概念",
+    "aliases": [],
+    "desc": "一声声乖孩子的安抚"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "安抚施用的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "新巴别塔",
+    "relation": "安抚",
+    "dst": "魔精",
+    "evidence": "乖孩子，乖孩子……",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "施以",
+    "dst": "乖孩子的安抚",
+    "evidence": "乖孩子，乖孩子……",
+    "confidence": 0.95
+   },
+   {
+    "src": "乖孩子的安抚",
+    "relation": "针对",
+    "dst": "魔精",
+    "evidence": "乖孩子，乖孩子……",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【新巴别塔】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "99f1e950c26223af9ef658fb": {
+  "entities": [
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直言教育痛苦的培育者"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被她补全的陪伴与教育之说"
+   },
+   {
+    "name": "教育的痛苦",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她断言教育总伴随的痛苦"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "承受痛苦的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "以痛苦推进的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "新巴别塔",
+    "relation": "断言",
+    "dst": "教育的痛苦",
+    "evidence": "教育总是伴随着一些痛苦……",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "伴随",
+    "dst": "教育的痛苦",
+    "evidence": "教育总是伴随着一些痛苦……",
+    "confidence": 0.95
+   },
+   {
+    "src": "教育的痛苦",
+    "relation": "施加于",
+    "dst": "魔精",
+    "evidence": "教育总是伴随着一些痛苦……",
+    "confidence": 0.95
+   },
+   {
+    "src": "教育的痛苦",
+    "relation": "服务于",
+    "dst": "荒原经营驯化",
+    "evidence": "教育总是伴随着一些痛苦……",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【新巴别塔】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "56acf8576767bb1935b44364": {
+  "entities": [
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报指南条文的无线电小姐"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无线电小姐",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精培训指南",
+    "relation": "面向",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【无线电小姐】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f80cac498ecc6eadfea2e525": {
+  "entities": [
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为受训者喝彩的无线电小姐"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被认可表现的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她主持其间的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无线电小姐",
+    "relation": "赞许",
+    "dst": "魔精",
+    "evidence": "哈，干得不错。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "哈，干得不错。",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【无线电小姐】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3752f3ad7352ca1bfeae2daa": {
+  "entities": [
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告时间已尽的无线电小姐"
+   },
+   {
+    "name": "驯化时限",
+    "type": "概念",
+    "aliases": [],
+    "desc": "到点即止的驯化时限"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被中断的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "受时限约束的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无线电小姐",
+    "relation": "宣告",
+    "dst": "驯化时限",
+    "evidence": "到时间了，无论你想不想继续。",
+    "confidence": 0.95
+   },
+   {
+    "src": "驯化时限",
+    "relation": "中断",
+    "dst": "魔精",
+    "evidence": "到时间了，无论你想不想继续。",
+    "confidence": 0.95
+   },
+   {
+    "src": "驯化时限",
+    "relation": "约束",
+    "dst": "荒原经营驯化",
+    "evidence": "到时间了，无论你想不想继续。",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【无线电小姐】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a5bf2b8e0a24654d30bc099": {
+  "entities": [
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以检索裁断真伪的星之眼"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被检索检验的训示"
+   },
+   {
+    "name": "星之眼的检索结论",
+    "type": "概念",
+    "aliases": [],
+    "desc": "判定训示真实性极高的检索结论"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "训示所要引导的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "理论接受的驯化检验"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星之眼",
+    "relation": "作出",
+    "dst": "星之眼的检索结论",
+    "evidence": "经检索，这一理论的真实性极高。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的检索结论",
+    "relation": "肯定",
+    "dst": "陪伴与教育的训示",
+    "evidence": "这一理论的真实性极高",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的检索结论",
+    "relation": "适用于",
+    "dst": "荒原经营驯化",
+    "evidence": "经检索，这一理论的真实性极高。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星之眼】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d2f0a0f5e909aae3db8320f4": {
+  "entities": [
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直言感兴趣的星之眼"
+   },
+   {
+    "name": "星之眼的兴趣",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她坦承的浓厚兴趣"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "兴趣所指的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "兴趣所起的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星之眼",
+    "relation": "坦陈",
+    "dst": "星之眼的兴趣",
+    "evidence": "太好了，我很感兴趣。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的兴趣",
+    "relation": "指向",
+    "dst": "魔精",
+    "evidence": "太好了，我很感兴趣。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的兴趣",
+    "relation": "发生于",
+    "dst": "荒原经营驯化",
+    "evidence": "太好了，我很感兴趣。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星之眼】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f540f34a96b6831c2a9bfc7f": {
+  "entities": [
+   {
+    "name": "星之眼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张从长计议的星之眼"
+   },
+   {
+    "name": "星之眼的长远筹议",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她提议的长远筹议"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被留待下回的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "筹议所辖的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星之眼",
+    "relation": "提议",
+    "dst": "星之眼的长远筹议",
+    "evidence": "让我们从长计议。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的长远筹议",
+    "relation": "延后",
+    "dst": "魔精",
+    "evidence": "让我们从长计议。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼的长远筹议",
+    "relation": "规划",
+    "dst": "荒原经营驯化",
+    "evidence": "让我们从长计议。",
+    "confidence": 0.95
+   },
+   {
+    "src": "星之眼",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星之眼】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c812deb6a64c9049395120ad": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "弃读训示转谈摇滚的船长"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被她指为训示作者的苹果"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被她念半句就丢开的训示"
+   },
+   {
+    "name": "星锑的摇滚",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她急于献演的摇滚"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她敷衍了事的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "中断引用",
+    "dst": "陪伴与教育的训示",
+    "evidence": "“陪伴与教育，这是引导……”",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "推测撰写",
+    "dst": "APPLe",
+    "evidence": "听起来像APPLe会写出来的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "貌似出自",
+    "dst": "APPLe",
+    "evidence": "听起来像APPLe会写出来的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "献演",
+    "dst": "星锑的摇滚",
+    "evidence": "哦，你们想听摇滚吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星锑】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7fb4eed77bcbab8fcec8eca3": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哼唱着吆喝摇滚的船长"
+   },
+   {
+    "name": "星锑的摇滚",
+    "type": "概念",
+    "aliases": [],
+    "desc": "连喊三声的摇滚"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被迫听摇滚的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被摇滚接管现场的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "高歌",
+    "dst": "星锑的摇滚",
+    "evidence": "哼哼～♪摇滚！摇滚！摇滚！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑的摇滚",
+    "relation": "取代",
+    "dst": "荒原经营驯化",
+    "evidence": "哼哼～♪摇滚！摇滚！摇滚！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星锑】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "760669e16c98582e35571009": {
+  "entities": [
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "大笑说有意思的船长"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被夸有意思的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "笑声所在的驯化现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "星锑",
+    "relation": "打趣",
+    "dst": "魔精",
+    "evidence": "哈哈，你真有意思！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "哈哈，你真有意思！",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【星锑】",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,1918 @@
+{
+ "64ef18c863ee66a455e7a455": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研究人工梦游的受邀者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "雨幕舞台实验的主导者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参加过上次实验的同行者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "迟到的意识觉醒者来宾"
+   },
+   {
+    "name": "洛伦兹实验室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "银白色的实验建筑"
+   },
+   {
+    "name": "雨幕舞台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "全景观测空间"
+   },
+   {
+    "name": "干涉仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "房间中央的环形机器"
+   },
+   {
+    "name": "观测指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "介绍仪器的册子"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被质疑资产归属的机构"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "受邀者常年研究的课题"
+   },
+   {
+    "name": "混沌粒子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与意识交互成真的介质"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "邀请",
+    "dst": "小梅斯梅尔",
+    "evidence": "你邀请我前来实验的原因",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "拒绝",
+    "dst": "X",
+    "evidence": "我想我该拒绝你",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "研究",
+    "dst": "人工梦游",
+    "evidence": "毕竟我常年研究人工梦游",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "展示",
+    "dst": "雨幕舞台",
+    "evidence": "我们能体验到全然不同的全景观测空间",
+    "confidence": 0.95
+   },
+   {
+    "src": "干涉仪",
+    "relation": "通称",
+    "dst": "雨幕舞台",
+    "evidence": "这就是惠更斯-菲涅尔干涉仪",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "递出",
+    "dst": "观测指南",
+    "evidence": "这里有一本《观测指南》",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛伦兹实验室",
+    "relation": "隶属",
+    "dst": "科算中心",
+    "evidence": "这是属于拉普拉斯的资产吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "质问",
+    "dst": "X",
+    "evidence": "这间实验室、这台仪器，此前我从未接触",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "引荐",
+    "dst": "露西",
+    "evidence": "是我邀请露西女士前来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "提出",
+    "dst": "混沌粒子",
+    "evidence": "意识与混沌粒子的交互将产生一个足够逼真的现实空间",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "迎接",
+    "dst": "露西",
+    "evidence": "露西女士，您来了？！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bc1d98759215540181fdf555": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "主动接手操作仪器的来客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定亲身入场的研究者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "心生好奇的旁观者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力挺露西的同行者"
+   },
+   {
+    "name": "干涉仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被演示投影的仪器"
+   },
+   {
+    "name": "雨幕舞台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "展现另一种苏联的舞台"
+   },
+   {
+    "name": "苏联",
+    "type": "地点",
+    "aliases": [],
+    "desc": "科技急速发展的模拟国度"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将获知操作记录的研究员"
+   },
+   {
+    "name": "混沌粒子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "投影舞台未来的介质"
+   },
+   {
+    "name": "洛伦兹实验室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "秘密难以再保守之处"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将获助益的研究机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "接手",
+    "dst": "干涉仪",
+    "evidence": "我可以代替你操作干涉仪",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "传达",
+    "dst": "哑谜",
+    "evidence": "下次再见到阿德勒研究员时，就可以向他传达了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "预测",
+    "dst": "雨幕舞台",
+    "evidence": "通过混沌粒子的投影对舞台内的情况做一些模糊的预测",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "辨认",
+    "dst": "苏联",
+    "evidence": "这是苏联……？但看上去与资料记载的并不一致",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "界定",
+    "dst": "苏联",
+    "evidence": "将它称呼为苏联的某种可能性会更为准确些",
+    "confidence": 0.95
+   },
+   {
+    "src": "雨幕舞台",
+    "relation": "展现",
+    "dst": "苏联",
+    "evidence": "它向我们展现了一个科技急速发展的苏联",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "保守",
+    "dst": "洛伦兹实验室",
+    "evidence": "试图保守洛伦兹的秘密已极难做到",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "赞许",
+    "dst": "露西",
+    "evidence": "以露西女士的算力能更快解决干涉仪出现的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "助益",
+    "dst": "科算中心",
+    "evidence": "这会对拉普拉斯的其他研究起到帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "亲身",
+    "dst": "雨幕舞台",
+    "evidence": "他熟知这台仪器的操作，却从未成为实验对象",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "47d968a6416388668d2141a8": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "启动仪器的操作者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交付通讯设备的东道主"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "静待开场的受邀者"
+   },
+   {
+    "name": "舞台通讯仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "联系外界的新式设备"
+   },
+   {
+    "name": "干涉仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "落下细雨的仪器"
+   },
+   {
+    "name": "雨幕舞台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "即将拉开帷幕的空间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "启动",
+    "dst": "干涉仪",
+    "evidence": "干涉仪启动成功",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "递出",
+    "dst": "舞台通讯仪",
+    "evidence": "这个通讯仪可供雨幕舞台内的成员跟外界沟通",
+    "confidence": 0.95
+   },
+   {
+    "src": "舞台通讯仪",
+    "relation": "联络",
+    "dst": "露西",
+    "evidence": "我们都会用这个通讯仪与您联系",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "开场",
+    "dst": "雨幕舞台",
+    "evidence": "请各位做好准备，舞台即将拉开帷幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "致谢",
+    "dst": "露西",
+    "evidence": "辛苦了，露西女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "许诺",
+    "dst": "露西",
+    "evidence": "我会给您带点小礼物回来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "祝愿",
+    "dst": "X",
+    "evidence": "预祝各位一切顺利",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "baac40b12f4225e769d94d62": {
+  "entities": [
+   {
+    "name": "旋风号列车",
+    "type": "物品",
+    "aliases": [
+     "旋风号"
+    ],
+    "desc": "高空穿梭的磁浮列车"
+   },
+   {
+    "name": "科学家Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谈论蚁群渡水的科学家"
+   },
+   {
+    "name": "科学家Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "估算离地高度的科学家"
+   },
+   {
+    "name": "帕乌科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被同伴点名的科学家"
+   },
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "爱开玩笑的科学家"
+   },
+   {
+    "name": "科学家阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替同伴圆场的年轻科学家"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讶异打量车厢的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被干涉仪匹配服饰的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "评点伪装的访客"
+   },
+   {
+    "name": "浮空机器人",
+    "type": "物品",
+    "aliases": [],
+    "desc": "送酒返回的浮空机械"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自报家门的记者"
+   },
+   {
+    "name": "苏联",
+    "type": "地点",
+    "aliases": [],
+    "desc": "列车穿行的模拟国度"
+   }
+  ],
+  "relations": [
+   {
+    "src": "科学家Ⅰ",
+    "relation": "讨论",
+    "dst": "科学家Ⅱ",
+    "evidence": "我们可以让材料具备自我修复机制",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "打量",
+    "dst": "科学家Ⅰ",
+    "evidence": "小梅斯梅尔讶异地打量对面的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "也是那台仪器的作用吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解释",
+    "dst": "小梅斯梅尔",
+    "evidence": "有时，干涉仪也会自动为我们匹配服饰",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅱ",
+    "relation": "估算",
+    "dst": "旋风号列车",
+    "evidence": "我们现在距离地面至少有40米",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅱ",
+    "relation": "点名",
+    "dst": "帕乌科夫",
+    "evidence": "保守估计，帕乌科夫同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家阿列克谢",
+    "relation": "调侃",
+    "dst": "伊桑·布朗",
+    "evidence": "您还是一如既往地爱开玩笑，布朗同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "评点",
+    "dst": "浮空机器人",
+    "evidence": "以本职工作进行身份伪装，相当巧妙的耦合",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "望见",
+    "dst": "浮空机器人",
+    "evidence": "还有进行农作的机器人？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "纠正",
+    "dst": "X",
+    "evidence": "那些站在机器人旁边的白大褂们就是农民",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "认出来客",
+    "dst": "维尔汀",
+    "evidence": "想必三位就是维尔汀博士、X博士和小梅斯梅尔博士了吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "旋风号列车",
+    "relation": "穿行",
+    "dst": "苏联",
+    "evidence": "磁浮列车滑过坚实可靠的轨道，于高空中穿梭",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "efa40c1710fc929fbbdec80a": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愤懑难掩的采访记者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反问机器人定义的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被追问的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默对视的访客"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "被暗指的金属铁块"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将举行的国际集会"
+   },
+   {
+    "name": "大集体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "统一调配机器人的机制"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "被众人称赞的博士"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可编程的液体模块"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被举国遗忘的灾祸"
+   },
+   {
+    "name": "苏联",
+    "type": "地点",
+    "aliases": [],
+    "desc": "以机器人为基底的社会"
+   },
+   {
+    "name": "充电桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "此界看不到的装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马克西姆",
+    "relation": "采访",
+    "dst": "X",
+    "evidence": "我可以采访一下你们吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "出席",
+    "dst": "聚合物国际峰会",
+    "evidence": "这次参与聚合物国际峰会的科学家中",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "介绍",
+    "dst": "大集体",
+    "evidence": "所有的机器人都受大集体的统一调配",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "不平",
+    "dst": "苏联的瘟疫",
+    "evidence": "反而无法享受这一切——这公平吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "追念",
+    "dst": "苏联",
+    "evidence": "不久之前，这个国家处在怎样的水深火热之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏联",
+    "relation": "遗忘",
+    "dst": "苏联的瘟疫",
+    "evidence": "人们太沉浸在如今的幸福生活中了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "暗指",
+    "dst": "露西",
+    "evidence": "我所结识的那位机器人曾负责整个机构的运转",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "执拗",
+    "dst": "充电桩",
+    "evidence": "四处都配备了可及时使用的充电桩",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏联",
+    "relation": "缺少",
+    "dst": "充电桩",
+    "evidence": "这里，似乎看不到这样的装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "发明",
+    "dst": "聚合物",
+    "evidence": "看来还得提到谢切诺夫博士发明的聚合物了",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "拯救",
+    "dst": "苏联",
+    "evidence": "是他的这项发明拯救了我们的国家",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物国际峰会",
+    "relation": "聚焦",
+    "dst": "聚合物",
+    "evidence": "在本次聚合物国际峰会上，你们会彻底了解何为聚合物",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c6788840bb2c2e28732cf93e": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引路的记者"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "被称赞的发明者"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行的双生机具"
+   },
+   {
+    "name": "氢电池",
+    "type": "物品",
+    "aliases": [],
+    "desc": "免除充电之苦的电池"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "氢电池的研究基础"
+   },
+   {
+    "name": "旋风号列车",
+    "type": "物品",
+    "aliases": [
+     "旋风号"
+    ],
+    "desc": "抵达终点的列车"
+   },
+   {
+    "name": "拉菲克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发放激活码的酒保机器人"
+   },
+   {
+    "name": "座驾激活码",
+    "type": "物品",
+    "aliases": [],
+    "desc": "召唤座驾的凭证"
+   },
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "会议前醉倒的科学家"
+   },
+   {
+    "name": "科学家阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搀扶同伴的年轻科学家"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出言回敬的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "顺手牵走激活码的访客"
+   },
+   {
+    "name": "3826号设施",
+    "type": "地点",
+    "aliases": [],
+    "desc": "峰会所在的展馆区"
+   }
+  ],
+  "relations": [
+   {
+    "src": "谢切诺夫",
+    "relation": "发明",
+    "dst": "双生舞伶",
+    "evidence": "也能亲眼见证谢切诺夫博士为众人称赞的另一杰出发明",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "研制",
+    "dst": "氢电池",
+    "evidence": "谢切诺夫博士的团队研制出了氢电池",
+    "confidence": 0.95
+   },
+   {
+    "src": "氢电池",
+    "relation": "立足",
+    "dst": "聚合物",
+    "evidence": "基于对聚合物的研究",
+    "confidence": 0.95
+   },
+   {
+    "src": "旋风号列车",
+    "relation": "播报",
+    "dst": "拉菲克",
+    "evidence": "请于拉菲克处领取座驾激活码",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "引介",
+    "dst": "拉菲克",
+    "evidence": "就是在列车上忙碌的机器人酒保",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉菲克",
+    "relation": "发放",
+    "dst": "座驾激活码",
+    "evidence": "这是您的座驾激活码，祝您旅途愉快",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "察觉",
+    "dst": "伊桑·布朗",
+    "evidence": "那位科学家……喝醉了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "讥讽",
+    "dst": "小梅斯梅尔",
+    "evidence": "我没听说哪个科学家代表团可以携带家属参会",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "回敬",
+    "dst": "伊桑·布朗",
+    "evidence": "至少我们不会在重要的会议前喝得酩酊大醉",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家阿列克谢",
+    "relation": "斥止",
+    "dst": "伊桑·布朗",
+    "evidence": "您有些失礼了，布朗同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "递果",
+    "dst": "伊桑·布朗",
+    "evidence": "请等一下，吃点水果吧，对他的健康有好处",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "欢迎",
+    "dst": "3826号设施",
+    "evidence": "再次欢迎你们来到3826号设施",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "查问",
+    "dst": "拉菲克",
+    "evidence": "等等，我们的身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "出示",
+    "dst": "座驾激活码",
+    "evidence": "我们已经领取过了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8d270fd73cb7f3f13f67da44": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掏出借来的激活码"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破小动作的研究者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自嘲身份变动的访客"
+   },
+   {
+    "name": "拉菲克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别的酒保机器人"
+   },
+   {
+    "name": "座驾激活码",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被顺走的座驾凭证"
+   },
+   {
+    "name": "涡轮车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被钢索吊起的载具"
+   },
+   {
+    "name": "熊蜂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "吊运涡轮车的机械"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "建在空中的会场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "掏出",
+    "dst": "座驾激活码",
+    "evidence": "如同变魔法般从口袋里掏出了一个座驾激活码",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "辩解",
+    "dst": "聚合物国际峰会",
+    "evidence": "我们可是要去参加聚合物国际峰会，我当然要准备万全",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "猜疑",
+    "dst": "X",
+    "evidence": "难道是刚才递水果的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "惩戒",
+    "dst": "座驾激活码",
+    "evidence": "这只是对他出言不逊的一点小教训",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉菲克",
+    "relation": "道别",
+    "dst": "X",
+    "evidence": "好的，再见。祝您旅途愉快",
+    "confidence": 0.95
+   },
+   {
+    "src": "熊蜂",
+    "relation": "吊运",
+    "dst": "涡轮车",
+    "evidence": "熊蜂射出六条钢索，将涡轮车吊了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "涡轮车",
+    "relation": "载送",
+    "dst": "X",
+    "evidence": "请系好安全带，祝您一路顺风",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "惊叹",
+    "dst": "聚合物国际峰会",
+    "evidence": "原来我们要去的场馆建在空中",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "打趣",
+    "dst": "小梅斯梅尔",
+    "evidence": "你应该会喜欢这里，你大可把这次当作一场公费旅游",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "定性",
+    "dst": "X",
+    "evidence": "应该叫作出差",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "无奈",
+    "dst": "X",
+    "evidence": "总觉得只有我的身份发生了改变",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8523073ac7983ff8b40854b1": {
+  "entities": [
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "峰会前的陈列大厅"
+   },
+   {
+    "name": "科学家Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊呼博士到来的科学家"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "被人群簇拥的博士"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护送博士的两具机具"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被人潮推搡的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "弄丢通讯仪的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行的访客"
+   },
+   {
+    "name": "舞台通讯仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被撞出口袋而损毁的设备"
+   },
+   {
+    "name": "菲利蒙延科",
+    "type": "角色",
+    "aliases": [],
+    "desc": "氢电池的共同发明者"
+   },
+   {
+    "name": "氢电池",
+    "type": "物品",
+    "aliases": [],
+    "desc": "1939年的新型电池"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "展览馆的讲解员"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "重水与硅元素结合的产物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "谢切诺夫",
+    "relation": "抵达",
+    "dst": "聚合物展览馆",
+    "evidence": "谢切诺夫博士即将抵达",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅲ",
+    "relation": "惊呼",
+    "dst": "谢切诺夫",
+    "evidence": "是谢切诺夫博士！",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "接住",
+    "dst": "维尔汀",
+    "evidence": "所幸一双冷硬有力的手接住了躯体，带回了平衡",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "护送",
+    "dst": "谢切诺夫",
+    "evidence": "护着他穿越人群",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "弄丢",
+    "dst": "舞台通讯仪",
+    "evidence": "当我再找到它时，它就成这样了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "损毁",
+    "dst": "舞台通讯仪",
+    "evidence": "我们失去了唯一能跟露西女士取得联络的手段",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "先进",
+    "dst": "聚合物展览馆",
+    "evidence": "先进展览馆吧，这个之后再想办法修",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "自介",
+    "dst": "聚合物展览馆",
+    "evidence": "欢迎来到聚合物展览馆！我是你们的讲解员",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "讲解",
+    "dst": "聚合物",
+    "evidence": "请让我来为大家介绍聚合物的历史",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "创造",
+    "dst": "聚合物",
+    "evidence": "谢切诺夫博士将重水与硅元素的特性相结合",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "联手",
+    "dst": "菲利蒙延科",
+    "evidence": "谢切诺夫博士和菲利蒙延科同志于1939年联手发明了一种新型氢电池",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物",
+    "relation": "助力",
+    "dst": "氢电池",
+    "evidence": "借助聚合物的电化学特性",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "追问",
+    "dst": "舞台通讯仪",
+    "evidence": "那就是谢切诺夫和双生舞伶？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a4b80847902c69054b9166ff": {
+  "entities": [
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述灾难史的讲解员"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "站出来的拯救者"
+   },
+   {
+    "name": "救赎药物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "终结瘟疫的药物"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "夺去一亿五千万人的灾难"
+   },
+   {
+    "name": "大集体1.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "整合机器人的受控网络"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将人类纳入的共享系统"
+   },
+   {
+    "name": "聚合物同化适应",
+    "type": "概念",
+    "aliases": [],
+    "desc": "聚合物融入人体的现象"
+   },
+   {
+    "name": "共享数据库",
+    "type": "概念",
+    "aliases": [],
+    "desc": "瞬间供给知识的储备"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧副作用的听者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被质问的实验者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被拿来类比的实验对象"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "印证伤心往事的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下伤心往事的记者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "捷列什科娃",
+    "relation": "陈述",
+    "dst": "苏联的瘟疫",
+    "evidence": "在这场灾难中，我们失去了1.5亿的同胞",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "震惊",
+    "dst": "苏联的瘟疫",
+    "evidence": "1.5亿？竟死去了这么多人",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "追念",
+    "dst": "苏联的瘟疫",
+    "evidence": "无数的科学家和医护人员前赴后继",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "印证",
+    "dst": "马克西姆",
+    "evidence": "看来这就是马克西姆口中那件伤心的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "研制",
+    "dst": "救赎药物",
+    "evidence": "他利用聚合物研制出的一种名为救赎的药物",
+    "confidence": 0.95
+   },
+   {
+    "src": "救赎药物",
+    "relation": "终结",
+    "dst": "苏联的瘟疫",
+    "evidence": "彻底终结了瘟疫的传播",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "启动",
+    "dst": "大集体1.0",
+    "evidence": "谢切诺夫博士带领着科学家们研发并启动了大集体1.0",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "发现",
+    "dst": "聚合物同化适应",
+    "evidence": "谢切诺夫博士发现聚合物能够融入人体",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物同化适应",
+    "relation": "建立",
+    "dst": "共享数据库",
+    "evidence": "甚至还可以建立一个共享的数据库",
+    "confidence": 0.95
+   },
+   {
+    "src": "共享数据库",
+    "relation": "成就",
+    "dst": "大集体2.0",
+    "evidence": "而这就是……即将启动的大集体2.0",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "评述",
+    "dst": "大集体2.0",
+    "evidence": "还真是相当大胆的设想",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "担忧",
+    "dst": "大集体2.0",
+    "evidence": "这样获取知识，对大脑不会产生副作用吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "质问",
+    "dst": "X",
+    "evidence": "这就是你的魔精实验想要达到的效果吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b32726494371feeb47caaa8a": {
+  "entities": [
+   {
+    "name": "聚合物展览馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有互动设施的展厅"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挑选起点展厅的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "就近选择的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "计较死亡人数的访客"
+   },
+   {
+    "name": "捷列什科娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲解国史的讲解员"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "聚合物与救赎之父"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "液态的信息载体"
+   },
+   {
+    "name": "重水",
+    "type": "物品",
+    "aliases": [],
+    "desc": "聚合物的原料之一"
+   },
+   {
+    "name": "氢电池",
+    "type": "物品",
+    "aliases": [],
+    "desc": "打开机器人学大门的电池"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "席卷欧洲大陆的灾难"
+   },
+   {
+    "name": "救赎药物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "隔离死亡帷幕的药物"
+   },
+   {
+    "name": "大集体1.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不浪费资源的系统"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将启动的共享系统"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "浏览",
+    "dst": "聚合物展览馆",
+    "evidence": "聚合物的发明与应用……聚合物的特性",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "征询",
+    "dst": "X",
+    "evidence": "我们从哪个展厅开始",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "决定",
+    "dst": "聚合物展览馆",
+    "evidence": "最近的这个吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "介绍",
+    "dst": "聚合物",
+    "evidence": "1936年，为了创造液态的信息载体",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "结合",
+    "dst": "重水",
+    "evidence": "谢切诺夫博士将重水与硅元素的特性相结合",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "发明",
+    "dst": "氢电池",
+    "evidence": "联手发明了一种新型氢电池",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "宣布",
+    "dst": "苏联的瘟疫",
+    "evidence": "一场恐怖的灾难席卷了苏联和整个欧洲大陆",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "震惊",
+    "dst": "苏联的瘟疫",
+    "evidence": "1.5亿？竟死去了这么多人",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "拯救",
+    "dst": "苏联的瘟疫",
+    "evidence": "将苏联从瘟疫中拯救了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "救赎药物",
+    "relation": "平息",
+    "dst": "苏联的瘟疫",
+    "evidence": "彻底终结了瘟疫的传播",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "讲解",
+    "dst": "大集体1.0",
+    "evidence": "这个系统将所有的机器人助手都整合进了同一个受控网络中",
+    "confidence": 0.95
+   },
+   {
+    "src": "捷列什科娃",
+    "relation": "预告",
+    "dst": "大集体2.0",
+    "evidence": "而这就是……即将启动的大集体2.0",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "称奇",
+    "dst": "大集体2.0",
+    "evidence": "还真是相当大胆的设想",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "26b79b0b66ac7918c3ba049b": {
+  "entities": [
+   {
+    "name": "聚合物展览馆的大讲堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "峰会宣讲的大厅"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "登台演说的博士"
+   },
+   {
+    "name": "莫洛托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "博士的政敌来客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "频频按快门的记者"
+   },
+   {
+    "name": "科学家Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "低声议论的科学家"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "检视装置构造的研究者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出控制器的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "后排落座的访客"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "半球形的头戴装置"
+   },
+   {
+    "name": "卷须感知器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "控制器上的黑色感知器"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被前瞻应用的新系统"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被追溯为十九年前的发明"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "步入",
+    "dst": "聚合物展览馆的大讲堂",
+    "evidence": "步入讲堂，年轻的访客们像是小溪汇入了汹涌的洋流",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "迎候",
+    "dst": "莫洛托夫",
+    "evidence": "谢切诺夫博士眼见来人，和善自信地迎了上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "致谢",
+    "dst": "莫洛托夫",
+    "evidence": "感谢您的到来，莫洛托夫同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "拍摄",
+    "dst": "莫洛托夫",
+    "evidence": "在二人身后，马克西姆举起了相机，频频按下快门键",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家Ⅲ",
+    "relation": "指认",
+    "dst": "莫洛托夫",
+    "evidence": "莫洛托夫怎么来了……他可是谢切诺夫博士的政敌",
+    "confidence": 0.95
+   },
+   {
+    "src": "莫洛托夫",
+    "relation": "站台",
+    "dst": "大集体2.0",
+    "evidence": "今天对苏联来说是个重要的日子，我不会缺席",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "自谦",
+    "dst": "聚合物",
+    "evidence": "我的成就从来不是我个人的，我只是站在前辈们的肩上",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "回望",
+    "dst": "聚合物",
+    "evidence": "当我与我的团队发明聚合物时",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "演说",
+    "dst": "大集体2.0",
+    "evidence": "我真诚地邀请各位同仁共同参与大集体2.0的应用前瞻",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "识认",
+    "dst": "思想控制器",
+    "evidence": "思想控制器",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "检视",
+    "dst": "思想控制器",
+    "evidence": "壳部为金属材质，硅质底板外连无序扭动的黑色卷须感知器",
+    "confidence": 0.95
+   },
+   {
+    "src": "卷须感知器",
+    "relation": "附着",
+    "dst": "思想控制器",
+    "evidence": "那卷须感知器便横在了他们的额头上",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "认出",
+    "dst": "马克西姆",
+    "evidence": "嗯？马克西姆？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f35874f4b081884a1bb0ae4f": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擅自注射聚合物的实验者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "没收针剂的同僚"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张谨慎的同行者"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "只对聚合过者生效的装置"
+   },
+   {
+    "name": "救赎药物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拿来注射的药物"
+   },
+   {
+    "name": "聚合物针剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "两支可疑的聚合物药剂"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "当众质问安全性的记者"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [
+     "谢切诺夫博士"
+    ],
+    "desc": "开启新系统的博士"
+   },
+   {
+    "name": "聚合物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被注入人体的物质"
+   },
+   {
+    "name": "大集体1.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "救出泥沼的旧系统"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被激进开启的新系统"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "幸存者已聚合过的缘由"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "贴上",
+    "dst": "思想控制器",
+    "evidence": "X已将这枚装置贴上了太阳穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "试戴",
+    "dst": "思想控制器",
+    "evidence": "这样是无法启动思想控制器的",
+    "confidence": 0.95
+   },
+   {
+    "src": "思想控制器",
+    "relation": "限于",
+    "dst": "聚合物",
+    "evidence": "它只会作用在已经聚合过的人身上",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "注射",
+    "dst": "聚合物针剂",
+    "evidence": "X正将一管透明的药剂推进自己的体内",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "获取",
+    "dst": "救赎药物",
+    "evidence": "展览馆里什么都有，我只是比较善于发现与收集",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "质问",
+    "dst": "X",
+    "evidence": "所以你……给自己注射了救赎？你从哪里得到的？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "收走",
+    "dst": "聚合物针剂",
+    "evidence": "这两支危险的可疑试剂先由我保管了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "解释",
+    "dst": "苏联的瘟疫",
+    "evidence": "从瘟疫中活下来的人几乎都已经聚合过了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "劝阻",
+    "dst": "X",
+    "evidence": "我认为我们应该更加谨慎些",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "体验",
+    "dst": "思想控制器",
+    "evidence": "这真神奇，就像有了另一个视野",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "号召",
+    "dst": "思想控制器",
+    "evidence": "尝试使用思想控制器，开始前瞻性地体验大集体2.0的应用吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "抨击",
+    "dst": "谢切诺夫",
+    "evidence": "已经将民众救出了泥沼，而您却再次激进地",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "质疑",
+    "dst": "大集体2.0",
+    "evidence": "他们担心如果您的大集体2.0失败了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "质问",
+    "dst": "思想控制器",
+    "evidence": "请问您该如何保证它的安全性呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢切诺夫",
+    "relation": "开启",
+    "dst": "大集体2.0",
+    "evidence": "开启了大集体2.0",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

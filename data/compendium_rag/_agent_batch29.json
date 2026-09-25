@@ -1,0 +1,673 @@
+{
+ "675f7ebe561c076bcea50656": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "悟出石环隐藏规则者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑石环未失效的海盗"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问何为攻击的飞行女巫"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "阿尔卡纳小姐"
+    ],
+    "desc": "嘲讽钻空子尝试者"
+   },
+   {
+    "name": "石环",
+    "type": "物品",
+    "aliases": [],
+    "desc": "固守职责、不可交战协定仍有效"
+   },
+   {
+    "name": "教典",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十四行诗据以理解规则"
+   },
+   {
+    "name": "玻璃笔",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十四行诗所持"
+   },
+   {
+    "name": "术杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "辉光流出之处"
+   },
+   {
+    "name": "混沌不明的造物",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔卡纳身后的影像"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "领悟",
+    "dst": "石环",
+    "evidence": "没有攻击意图，就不会被判定为攻击。这就是石环隐藏的规则",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "学习",
+    "dst": "教典",
+    "evidence": "在教典的学习中，我逐渐理解了",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "质疑",
+    "dst": "石环",
+    "evidence": "不可主动攻击——但什么是攻击？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "嘲讽",
+    "dst": "十四行诗",
+    "evidence": "呵呵，很有趣的钻空子尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "宣告",
+    "dst": "阿尔卡纳",
+    "evidence": "为了所有人的和平……我会阻止你",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "施放",
+    "dst": "神秘术",
+    "evidence": "Regna sereno intenso ed infinito！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c85eb35d66b3fae700dd2166": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为伤员提供酒者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "背回伤员并走遍全岛者"
+   },
+   {
+    "name": "29",
+    "type": "角色",
+    "aliases": [],
+    "desc": "丧失行动能力的伤员"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "玛尔塔女士",
+     "玛尔塔"
+    ],
+    "desc": "盲眼信众、照料6者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仍未醒来的领袖"
+   },
+   {
+    "name": "教众Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带领祈祷的教众"
+   },
+   {
+    "name": "阿尔弗雷德·豪斯曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诗作作者"
+   },
+   {
+    "name": "致传道者",
+    "type": "物品",
+    "aliases": [],
+    "desc": "豪斯曼的诗作"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其他人都加入了"
+   },
+   {
+    "name": "传道者之厅",
+    "type": "地点",
+    "aliases": [
+     "真理的殿堂"
+    ],
+    "desc": "已成废墟"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "施予",
+    "dst": "29",
+    "evidence": "把这个喝了，能让你忘掉腿部的疼痛",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "背负",
+    "dst": "29",
+    "evidence": "888背着丧失了行动能力的同胞",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "陈述",
+    "dst": "重塑之手",
+    "evidence": "所以，其他人都加入了重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众Ⅴ",
+    "relation": "祈祷",
+    "dst": "阿派朗",
+    "evidence": "唯一的无限，唯一的自在者，伟大的不可言喻者",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "询问",
+    "dst": "卡卡尼亚",
+    "evidence": "玛尔塔女士，6仍未醒来吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔弗雷德·豪斯曼",
+    "relation": "著作",
+    "dst": "致传道者",
+    "evidence": "——阿尔弗雷德·豪斯曼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d7bdd560bd9f7b18ef6087c": {
+  "entities": [
+   {
+    "name": "教众Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "腿被炸断却质问祈祷意义者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告真理仍存在者"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [
+     "协理人"
+    ],
+    "desc": "承诺全力协助37者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出共享真理加速破译者"
+   },
+   {
+    "name": "教众Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "祈祷者"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "教众Ⅳ称已不存在"
+   },
+   {
+    "name": "生之巨轮",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37称已找到免于其流转的方法"
+   }
+  ],
+  "relations": [
+   {
+    "src": "教众Ⅳ",
+    "relation": "质问",
+    "dst": "教众Ⅴ",
+    "evidence": "事到如今，祈祷又有什么用？！真理已经不存在了！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "宣告",
+    "dst": "教众Ⅳ",
+    "evidence": "不，真理还存在着！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "陈述",
+    "dst": "888",
+    "evidence": "我通过了无限定者的试炼，我拿到了它",
+    "confidence": 0.95
+   },
+   {
+    "src": "888",
+    "relation": "承诺",
+    "dst": "37",
+    "evidence": "我们会全力协助你，37",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "提议",
+    "dst": "37",
+    "evidence": "有一个办法可以提高破译密码的速度",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "征求",
+    "dst": "37",
+    "evidence": "你愿意我将你得到的真理分享出去吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1fa618f49e331507017da322": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "统计副作用并发现异常条数者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [
+     "希曼"
+    ],
+    "desc": "通报作战成功与通话请求者；通报者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "请求通话以协助解密者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传回术式的维也纳神秘学家"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯调查员"
+    ],
+    "desc": "传回术式者"
+   },
+   {
+    "name": "重塑之手的领袖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被燃料空气弹击中者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [
+     "芝诺军备学院"
+    ],
+    "desc": "实施传送与轰炸计划"
+   },
+   {
+    "name": "司辰小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "联合执行传送者"
+   },
+   {
+    "name": "燃料空气弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "击中目标的炸弹"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [],
+    "desc": "需解开数字密码的学派"
+   },
+   {
+    "name": "诅咒",
+    "type": "概念",
+    "aliases": [
+     "副作用"
+    ],
+    "desc": "已登记86种，90%以上与泥土尘埃有关"
+   }
+  ],
+  "relations": [
+   {
+    "src": "芝诺",
+    "relation": "实施",
+    "dst": "计划",
+    "evidence": "芝诺军备学院的计划成功了",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "通报",
+    "dst": "露西",
+    "evidence": "他们联合司辰小队，将重塑之手的领袖传送到了一处废弃的军事基地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "燃料空气弹",
+    "relation": "击中",
+    "dst": "重塑之手的领袖",
+    "evidence": "炸弹击中了目标，生命反应切实消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "科算中心",
+    "evidence": "她希望我们能远程协助阿派朗学派的成员解开一串数字密码",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "要求",
+    "dst": "术式",
+    "evidence": "她仍然希望获得术式的正确读法",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "统计",
+    "dst": "诅咒",
+    "evidence": "这里登记的副作用共有86种，不是81种",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1036069f7d0be840c99a3154": {
+  "entities": [
+   {
+    "name": "无线电小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "捕捉飘忽信号的设备"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求露西再次说明情况者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "解释研究现状者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指导架设通讯设备者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [
+     "唱片骑师"
+    ],
+    "desc": "回收感声元件者"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在科算中心制造混乱者"
+   },
+   {
+    "name": "教众Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误以为轰炸机来袭者"
+   },
+   {
+    "name": "IDM",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被庄重放置的计算机"
+   },
+   {
+    "name": "感声元件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "星锑安装至IDM之物"
+   },
+   {
+    "name": "APPLeⅡ号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "电台设备来源"
+   },
+   {
+    "name": "免疫区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "衰减已停止"
+   },
+   {
+    "name": "传道者之厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "症候未侵入其内"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [
+     "学派"
+    ],
+    "desc": "参与研究室整理"
+   },
+   {
+    "name": "碑文辞书",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "指导",
+    "dst": "星锑",
+    "evidence": "那么接下来你们需要装置感声元件",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "安装",
+    "dst": "感声元件",
+    "evidence": "将感声元件装到了IDM上",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "报告",
+    "dst": "X",
+    "evidence": "免疫区的衰减已经停止了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "露西",
+    "evidence": "可否等我们架设通讯设备后，请您再次为她们说明这些情况？",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "推断",
+    "dst": "巨大术式",
+    "evidence": "难道岛民信仰所构成的巨大术式，仅仅是对岛屿免疫“暴雨”范围的增幅？",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "离开",
+    "dst": "岛屿",
+    "evidence": "重塑之手和人类都已经离开",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a4965d0036c6170a26e46916": {
+  "entities": [
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "确认问题等价性的组长"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [
+     "X研究员"
+    ],
+    "desc": "被打断侃侃而谈者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "复述37问题者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [
+     "37小姐"
+    ],
+    "desc": "在洞穴提问者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "给予转译卷轴者"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将异响转译为一串数字"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "回答一串异响者"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "欲一劳永逸幸免的对象"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "免疫办法"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乌尔里希",
+    "relation": "确认",
+    "dst": "维尔汀",
+    "evidence": "这个问题几乎等价于询问免疫“暴雨”的办法",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "复述",
+    "dst": "37",
+    "evidence": "据37所说，她有限的躯体无法承受这个真理",
+    "confidence": 0.95
+   },
+   {
+    "src": "卷轴",
+    "relation": "转译",
+    "dst": "数字",
+    "evidence": "6给予的卷轴摊开，将其转译为一串数字",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "指出",
+    "dst": "维尔汀",
+    "evidence": "我们双方在同一时间，获得了同一个问题的答案，免疫“暴雨”",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

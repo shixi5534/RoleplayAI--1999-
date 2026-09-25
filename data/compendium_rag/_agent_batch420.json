@@ -1,0 +1,739 @@
+{
+ "3c724fc5f691808ef2a60701": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诵出训示并生疑的37"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精的教典",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37所疑的魔精专属教典"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "教典所归属的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "37受训其中的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "引用",
+    "dst": "陪伴与教育的训示",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "发问",
+    "dst": "魔精的教典",
+    "evidence": "这是属于魔精的教典吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精的教典",
+    "relation": "归属",
+    "dst": "魔精",
+    "evidence": "这是属于魔精的教典吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【37】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "94fe1a6743291e5f047be251": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为计算获证而喝彩的37"
+   },
+   {
+    "name": "37的计算",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被证明正确的37的计算"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "证明计算正确的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "计算所服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "赞许",
+    "dst": "魔精",
+    "evidence": "棒极了！你证明了我的计算是正确的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "验证",
+    "dst": "37的计算",
+    "evidence": "你证明了我的计算是正确的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37的计算",
+    "relation": "服务于",
+    "dst": "荒原经营驯化",
+    "evidence": "你证明了我的计算是正确的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【37】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b154734b4354d230cc67b1d6": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言不合理并要求重算的37"
+   },
+   {
+    "name": "37的计算",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被判定不合理的计算"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被拉去重算的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "重算推进中的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "质疑",
+    "dst": "37的计算",
+    "evidence": "不，这不合理。",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "复算",
+    "dst": "37的计算",
+    "evidence": "我们再算一次。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "我们再算一次。",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【37】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "33de8bf05a3cd4dbc094e6ea": {
+  "entities": [
+   {
+    "name": "6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "节选指南条数的6"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【6】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "be296d14b1f5611336491ca1": {
+  "entities": [
+   {
+    "name": "6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以海岛鸟儿作比的6"
+   },
+   {
+    "name": "金属光泽的吸引",
+    "type": "概念",
+    "aliases": [],
+    "desc": "金属光泽施加的吸引"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被比作海岛鸟儿的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被光泽分神的驯化现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "讶赞",
+    "dst": "金属光泽的吸引",
+    "evidence": "哦……你们也被金属光泽所吸引吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金属光泽的吸引",
+    "relation": "指向",
+    "dst": "魔精",
+    "evidence": "你们也被金属光泽所吸引吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "比喻",
+    "dst": "魔精",
+    "evidence": "就像海岛的鸟儿。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "就像海岛的鸟儿。",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【6】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1e1723052985174f7318065": {
+  "entities": [
+   {
+    "name": "6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吟出缰绳之喻的6"
+   },
+   {
+    "name": "命运的缰绳",
+    "type": "概念",
+    "aliases": [],
+    "desc": "牵引众人命运的一根缰绳"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "同被缰绳牵引的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "缰绳所系的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "引申",
+    "dst": "命运的缰绳",
+    "evidence": "一根缰绳，同命运牵引我们每个人的并无不同。",
+    "confidence": 0.95
+   },
+   {
+    "src": "命运的缰绳",
+    "relation": "牵引",
+    "dst": "魔精",
+    "evidence": "同命运牵引我们每个人的并无不同。",
+    "confidence": 0.95
+   },
+   {
+    "src": "命运的缰绳",
+    "relation": "系于",
+    "dst": "荒原经营驯化",
+    "evidence": "一根缰绳，同命运牵引我们每个人的并无不同。",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【6】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9b9ac895d49832dec31db0d5": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对训示持保留态度的APPLe"
+   },
+   {
+    "name": "理论与实践的偏差",
+    "type": "概念",
+    "aliases": [],
+    "desc": "实践与理论间必存的偏差"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "训示落地的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "引用",
+    "dst": "陪伴与教育的训示",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "断言",
+    "dst": "理论与实践的偏差",
+    "evidence": "实践与理论总是会存在偏差。",
+    "confidence": 0.95
+   },
+   {
+    "src": "理论与实践的偏差",
+    "relation": "存疑",
+    "dst": "陪伴与教育的训示",
+    "evidence": "……呃，我不确定。",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【APPLe】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2f6f15666731856c44eb77e": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊叹体重悬殊的苹果"
+   },
+   {
+    "name": "魔精的体重",
+    "type": "概念",
+    "aliases": [],
+    "desc": "重出数十倍的魔精体重"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "体重远超自己的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "体量失控的驯化现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "对比",
+    "dst": "魔精的体重",
+    "evidence": "噢，你的体重已经比我重好几十倍了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精的体重",
+    "relation": "属于",
+    "dst": "魔精",
+    "evidence": "你的体重已经比我重好几十倍了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "你的体重已经比我重好几十倍了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【APPLe】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "081258f05c8b9d1dc2790086": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "宽慰对方并设法的苹果"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被宽慰的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "设法应对的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "宽慰",
+    "dst": "魔精",
+    "evidence": "别担心，APPLe某正在想办法。",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "筹划",
+    "dst": "荒原经营驯化",
+    "evidence": "APPLe某正在想办法。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "别担心，APPLe某正在想办法。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6f00d38d364a2c73a026faef": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嫌训示不足并提出尝试的X"
+   },
+   {
+    "name": "更多尝试的需要",
+    "type": "概念",
+    "aliases": [],
+    "desc": "X所要求的更多尝试"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "试验推进中的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "引用",
+    "dst": "陪伴与教育的训示",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "索求",
+    "dst": "更多尝试的需要",
+    "evidence": "有趣的想法，但还不够。我们需要更多的尝试。",
+    "confidence": 0.95
+   },
+   {
+    "src": "更多尝试的需要",
+    "relation": "推进",
+    "dst": "荒原经营驯化",
+    "evidence": "我们需要更多的尝试。",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【X】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eec5c96ec199820eb84ec71f": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讥评成功毫无意外的X"
+   },
+   {
+    "name": "无趣的成功",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被X判为无趣的成功"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "达成成功的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被评点的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "评判",
+    "dst": "无趣的成功",
+    "evidence": "无趣的成功，没有任何意外。",
+    "confidence": 0.95
+   },
+   {
+    "src": "无趣的成功",
+    "relation": "发生于",
+    "dst": "荒原经营驯化",
+    "evidence": "无趣的成功，没有任何意外。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "无趣的成功，没有任何意外。",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【X】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7d3b984d2ec02ab6c156263e": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布启用后备方案的X"
+   },
+   {
+    "name": "B计划",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待准备的B计划"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "随X转入B计划的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "B计划所辖的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "筹备",
+    "dst": "B计划",
+    "evidence": "看来我们要准备B计划了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "B计划",
+    "relation": "服务于",
+    "dst": "荒原经营驯化",
+    "evidence": "看来我们要准备B计划了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "看来我们要准备B计划了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【X】",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

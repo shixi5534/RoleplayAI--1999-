@@ -1,0 +1,9 @@
+代理相关环境变量：
+  HTTP_PROXY = http://127.0.0.1:59678
+  HTTPS_PROXY = http://127.0.0.1:59678
+  http_proxy = http://127.0.0.1:59678
+  https_proxy = http://127.0.0.1:59678
+
+默认（走代理） → 200，模型 4 个 ['bge-m3:latest', 'qwen2.5:7b', 'nomic-embed-text:latest', 'qwen2.5:1.5b']
+禁用代理直连 → 200，模型 4 个 ['bge-m3:latest', 'qwen2.5:7b', 'nomic-embed-text:latest', 'qwen2.5:1.5b']
+嵌入（禁代理）→ 200，维度 1024，前4维 [-0.010694, 0.017842, -0.030016, 0.01255]

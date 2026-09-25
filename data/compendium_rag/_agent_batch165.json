@@ -1,0 +1,1732 @@
+{
+ "bd1c5abe20f65f0c168ceda9": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "藏品被抢并需给金蜜儿解释的女士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断魔精异常的司辰"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被推来道歉的调查员"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摄影机报废而暴怒的导演"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试图安慰金蜜儿的演员"
+   },
+   {
+    "name": "巨大魔精",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推倒树木逃走的巨大魔精"
+   },
+   {
+    "name": "记录者CCD-TR57",
+    "type": "物品",
+    "aliases": [],
+    "desc": "全球限量三台的记录者CCD-TR57"
+   },
+   {
+    "name": "Lugus",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与记录者联名的品牌"
+   },
+   {
+    "name": "麂皮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录者镶边所用材质"
+   },
+   {
+    "name": "摄影机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被毁的记录者相机"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随摄影机一并毁掉的胶卷"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "陈述",
+    "dst": "巨大魔精",
+    "evidence": "它逃走了，带着我的……重要的藏品",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "说明",
+    "dst": "巨大魔精",
+    "evidence": "它推倒的树堵死了路口",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "牙仙",
+    "evidence": "您看到的魔精活动痕迹是什么样的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "判断",
+    "dst": "巨大魔精",
+    "evidence": "体型如此巨大的魔精大概率仅此一只",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "提醒",
+    "dst": "维尔汀",
+    "evidence": "我们得给那位小姐一个解释",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "痛惜",
+    "dst": "摄影机",
+    "evidence": "我的摄影机，天啊……胶卷也全都毁了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "宽慰",
+    "dst": "金蜜儿",
+    "evidence": "别太难过了……珍妮弗",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "否定",
+    "dst": "安妮",
+    "evidence": "没有用的，里面的东西都没了",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "安慰",
+    "dst": "金蜜儿",
+    "evidence": "我们能免于人员伤亡可多亏了你的慷慨奉献",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "质问",
+    "dst": "恐怖通",
+    "evidence": "你知道你毁了什么吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "致歉",
+    "dst": "金蜜儿",
+    "evidence": "如果你是为了你的电影生气，我真的很抱歉",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "辩解",
+    "dst": "金蜜儿",
+    "evidence": "我们所有人的安全更重要，所以我那么做了",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "贬评",
+    "dst": "记录者CCD-TR57",
+    "evidence": "这款记录者更多针对家庭录像研发",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "推诿",
+    "dst": "金蜜儿",
+    "evidence": "如果你需要财务赔偿的话，请找后面那位戴帽子的小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "更正",
+    "dst": "恐怖通",
+    "evidence": "我才不是因为电影生气",
+    "confidence": 0.95
+   },
+   {
+    "src": "记录者CCD-TR57",
+    "relation": "联名",
+    "dst": "Lugus",
+    "evidence": "那是记录者和Lugus的限量联名款，全球限量三台",
+    "confidence": 0.95
+   },
+   {
+    "src": "记录者CCD-TR57",
+    "relation": "镶边",
+    "dst": "麂皮",
+    "evidence": "上头镶边的麂皮就够把你的脑袋买下来二百次了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "痛陈",
+    "dst": "胶片",
+    "evidence": "里面的东西都没了，所有记录都没了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "198d2fb140c3e6ed36577431": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝离开拍摄地的导演"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝众人返回小镇的女士"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被训斥的演员"
+   },
+   {
+    "name": "弗莱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被支使去找斧头的同伴"
+   },
+   {
+    "name": "绿湖营地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "不适合郊游的营地"
+   },
+   {
+    "name": "森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通往边际公路的森林"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "催促",
+    "dst": "弗莱迪",
+    "evidence": "弄走那块儿木头。我们得立刻回小屋去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "建议",
+    "dst": "金蜜儿",
+    "evidence": "你们应当尽快返回附近的小镇，前往旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "承诺",
+    "dst": "金蜜儿",
+    "evidence": "我和我的学生会护送你们到达森林边际的公路上",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "叮嘱",
+    "dst": "金蜜儿",
+    "evidence": "如果出现喉咙发痒、体温升高的症状，请到药店购买惠霏芬类药物",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拒绝",
+    "dst": "牙仙",
+    "evidence": "不，我才不走！我的电影还没拍完",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "迁怒",
+    "dst": "安妮",
+    "evidence": "你根本什么都不懂",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "告诫",
+    "dst": "金蜜儿",
+    "evidence": "留下对你们来说，不是一个明智的选择",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "警告",
+    "dst": "绿湖营地",
+    "evidence": "绿湖营地并不是一个适合郊游的好地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "劝告",
+    "dst": "金蜜儿",
+    "evidence": "你们应当跟在我们身边，以保证自己的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "支使",
+    "dst": "弗莱迪",
+    "evidence": "去营地里找找看，还有没有能用的斧头",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "请求",
+    "dst": "金蜜儿",
+    "evidence": "如果发现了散落在地的牙齿，请捡起来交给我",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "置身",
+    "dst": "森林",
+    "evidence": "我和我的学生会护送你们到达森林边际的公路上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1c4c86fb023aede76029684": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现门锁被啃咬痕迹的助手"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑木屋仍通电者"
+   },
+   {
+    "name": "魔精群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盘踞在楼梯拐角的魔精"
+   },
+   {
+    "name": "木屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "门锁被啃咬的林中木屋"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被喝令后退的导演"
+   },
+   {
+    "name": "木屋大厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "木屋大厅"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [
+     "芝诺军备学院"
+    ],
+    "desc": "可能留下发电设施的一方"
+   },
+   {
+    "name": "电箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "为木屋供电的设施"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "判断",
+    "dst": "木屋",
+    "evidence": "门锁被破坏了……是小型魔精啃咬的痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "推断",
+    "dst": "木屋",
+    "evidence": "里面可能有它们的巢穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "置疑",
+    "dst": "电箱",
+    "evidence": "这地方居然还通着电？谁会给这儿缴电费啊？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "推测",
+    "dst": "芝诺",
+    "evidence": "也许是地下电源，或是芝诺留下的发电设施",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "示警",
+    "dst": "恐怖通",
+    "evidence": "三点钟方向，楼梯拐角有三只",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "呼喊",
+    "dst": "金蜜儿",
+    "evidence": "它们要扑上来了，金发妞，带着你的朋友后退！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精群",
+    "relation": "扑袭",
+    "dst": "十四行诗",
+    "evidence": "唧唧咕——！",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "置身",
+    "dst": "木屋大厅",
+    "evidence": "木屋大厅",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3e0905dc13f4798a31bf399c": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称读导演系的学生"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "帮忙打扫的小镇居民"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自我介绍并分发的调查员"
+   },
+   {
+    "name": "学生迈克尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问基金会传闻的学生"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "批评剧本老套的调查员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问学生身份的司辰"
+   },
+   {
+    "name": "州立青藤大学",
+    "type": "组织",
+    "aliases": [],
+    "desc": "众人就读的州立青藤大学"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被恐怖通评为老套的剧本"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿找不到的相机"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "寻找",
+    "dst": "摄影机",
+    "evidence": "奇怪……明明是放在这儿了，我的摄影机呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "拒绝",
+    "dst": "安妮",
+    "evidence": "我不需要你帮忙，走开",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "支使",
+    "dst": "安妮",
+    "evidence": "你如果闲着没事做，就把这里打扫打扫",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "协助",
+    "dst": "安妮",
+    "evidence": "我来帮你，安妮小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "追问",
+    "dst": "十四行诗",
+    "evidence": "你们真的是那个“圣洛夫基金会”的调查员？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "询问",
+    "dst": "学生迈克尔",
+    "evidence": "什么是圣洛夫基金会？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "介绍",
+    "dst": "学生迈克尔",
+    "evidence": "圣洛夫基金会是负责收容与管理神秘学家力量的官方组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "承诺",
+    "dst": "学生迈克尔",
+    "evidence": "我们会尽全力保障各位的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "臆测",
+    "dst": "十四行诗",
+    "evidence": "你们平时都在干什么？捉人去做人体试验？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "否认",
+    "dst": "学生迈克尔",
+    "evidence": "我们不会伤害人类，我们有着明确的规定",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "纠缠",
+    "dst": "十四行诗",
+    "evidence": "我看过那些书，我知道你们肯定有些肮脏事儿的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "斥责",
+    "dst": "学生迈克尔",
+    "evidence": "闭嘴，迈克尔。我是叫你来演“蠢货”的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "说明",
+    "dst": "州立青藤大学",
+    "evidence": "别让州立青藤大学蒙羞！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "你们是州立青藤大学的学生吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自述",
+    "dst": "州立青藤大学",
+    "evidence": "是，我读导演系。这个蠢驴读化学系",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "坦白",
+    "dst": "剧本",
+    "evidence": "我的教授让我下次开学无论如何也要带一部片子去学校",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "承认",
+    "dst": "恐怖通",
+    "evidence": "它们简单，恶俗，没有任何意义！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "点评",
+    "dst": "剧本",
+    "evidence": "它缺少逻辑和新意，冲突场面也不够精彩",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "193074edd0d2cc56de675ace": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讥为基金会打手的调查员"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被揭穿身份而暴怒的导演"
+   },
+   {
+    "name": "杰森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭穿金蜜儿入学内情的学生"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝架未果的小镇居民"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以玻璃罐镇住众人的女士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问安妮来历的司辰"
+   },
+   {
+    "name": "州立青藤大学",
+    "type": "组织",
+    "aliases": [],
+    "desc": "金蜜儿父亲捐建两栋图书馆的学校"
+   },
+   {
+    "name": "玻璃罐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "盛着金色小精灵的罐子"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "金蜜儿极力否认的身份"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "点评",
+    "dst": "州立青藤大学",
+    "evidence": "州立青藤本应是一所不错的大学",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "反唇",
+    "dst": "恐怖通",
+    "evidence": "你也不过是基金会养的打手",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "搭肩",
+    "dst": "金蜜儿",
+    "evidence": "放松点嘛，金蜜儿～",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "揭穿",
+    "dst": "金蜜儿",
+    "evidence": "如果不是你爸爸给学校捐了两栋图书馆，你也不会在导演系坐上那把属于自己的椅子",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "讥讽",
+    "dst": "金蜜儿",
+    "evidence": "你发疯的样子看起来像个神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "维护",
+    "dst": "杰森",
+    "evidence": "珍妮弗小姐正在努力地完成自己的电影，你不应该这样说她！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "困惑",
+    "dst": "杰森",
+    "evidence": "我以为朋友是不应该互相谩骂的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "扑打",
+    "dst": "杰森",
+    "evidence": "她用力地撕扯着杰森的头发与耳朵",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "威胁",
+    "dst": "杰森",
+    "evidence": "我会把你嘴里的每颗牙都打下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "断言",
+    "dst": "金蜜儿",
+    "evidence": "可你从来都是神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "声援",
+    "dst": "金蜜儿",
+    "evidence": "受你鄙夷的神秘学家中多的是优秀剧本作家",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "制止",
+    "dst": "杰森",
+    "evidence": "如果你们继续胡闹，我会让你们全都变成哑巴",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "重申",
+    "dst": "安妮",
+    "evidence": "朋友是不应当互相谩骂的",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "勒令",
+    "dst": "金蜜儿",
+    "evidence": "所有人都坐回沙发上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "安妮也是你雇来的演员吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "回答",
+    "dst": "维尔汀",
+    "evidence": "她是这里的小镇居民。我在靠近森林的地方找到了她",
+    "confidence": 0.95
+   },
+   {
+    "src": "玻璃罐",
+    "relation": "盛装",
+    "dst": "牙仙",
+    "evidence": "里头闪着鳞粉的小东西受了惊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "694118ed3752e79ae90bd956": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "意识到屠夫无人指派的导演"
+   },
+   {
+    "name": "弗莱迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道出罗德缺席的学生"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自请保护金蜜儿的居民"
+   },
+   {
+    "name": "杰森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独自外出检查电箱的学生"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以恐怖片桥段预警的调查员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问恐怖通判断的司辰"
+   },
+   {
+    "name": "罗德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扮演屠夫却住院的演员"
+   },
+   {
+    "name": "屠夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无人知晓来历的屠夫扮演者"
+   },
+   {
+    "name": "电箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "杰森外出检修的设施"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金蜜儿",
+    "relation": "说明",
+    "dst": "弗莱迪",
+    "evidence": "还有罗德——扮演屠夫的罗德",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗莱迪",
+    "relation": "告知",
+    "dst": "金蜜儿",
+    "evidence": "罗德没来，他住院了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "惊疑",
+    "dst": "弗莱迪",
+    "evidence": "那扮演屠夫的那个是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗莱迪",
+    "relation": "说明",
+    "dst": "金蜜儿",
+    "evidence": "那不是你找的演员吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "否认",
+    "dst": "弗莱迪",
+    "evidence": "我从头到尾只找过一个演员，就是安妮",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "透露",
+    "dst": "安妮",
+    "evidence": "因为她长得和安娜几乎一模一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "推断",
+    "dst": "屠夫",
+    "evidence": "我们和一个忽然混进我们之中的，没人知道是谁的“屠夫”",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "承诺",
+    "dst": "金蜜儿",
+    "evidence": "珍妮弗，别怕，我会保护你的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "安抚",
+    "dst": "弗莱迪",
+    "evidence": "杀手哪儿有那么好碰见，你当这儿是在拍恐怖电影吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "点破",
+    "dst": "杰森",
+    "evidence": "实际上——你们就是在拍恐怖电影",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "列举",
+    "dst": "杰森",
+    "evidence": "巨大的怪物，隐藏在身边的假朋友，一眨眼就从白日变成黑夜",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "宣告",
+    "dst": "电箱",
+    "evidence": "我出去检查电箱，修好它",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "劝阻",
+    "dst": "杰森",
+    "evidence": "在恐怖电影里落单的人通常没有好下场",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰森",
+    "relation": "拒绝",
+    "dst": "恐怖通",
+    "evidence": "滚开，蛤蟆皮！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "断言",
+    "dst": "维尔汀",
+    "evidence": "这儿正在变成一部恐怖电影",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "恐怖通",
+    "evidence": "故意的什么？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4ee8da61c8c69da11b14b0dd": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "计时并主张集体行动者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以人类社会经验判断的女士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定外出寻找杰森的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留守确保安全的助手"
+   },
+   {
+    "name": "学生迈克尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "崩溃欲逃的学生"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "知道芝诺旧事的居民"
+   },
+   {
+    "name": "杰森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "落单未归的学生"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [
+     "芝诺军备学院"
+    ],
+    "desc": "曾在此木屋生活的少年军"
+   },
+   {
+    "name": "木屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "芝诺少年军曾居住之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "计时",
+    "dst": "杰森",
+    "evidence": "距“勇敢老哥”落单已经过去了七分钟零二十五秒",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "分析",
+    "dst": "恐怖通",
+    "evidence": "如果电子设备损坏严重，维修的时间便会被延长",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "决定",
+    "dst": "恐怖通",
+    "evidence": "我们得出去找他",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指派",
+    "dst": "十四行诗",
+    "evidence": "你与牙仙女士留在房间里确保安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "说明",
+    "dst": "恐怖通",
+    "evidence": "我和恐怖通出去寻找杰森",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "约定",
+    "dst": "牙仙",
+    "evidence": "无论我们是否发现了杰森，都会在五分钟内返回",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "追问",
+    "dst": "维尔汀",
+    "evidence": "如果五分钟后，你们并未返回呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "嘱托",
+    "dst": "牙仙",
+    "evidence": "请尽快带着所有人撤离营地，并联系救援",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "惊呼",
+    "dst": "杰森",
+    "evidence": "是杰森！他修好了这里的灯！",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "崩溃",
+    "dst": "木屋",
+    "evidence": "这个鬼地方我一秒钟也待不下去了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "分析",
+    "dst": "学生迈克尔",
+    "evidence": "先消失的是“落单的人”，第二则是“失败的逃亡者”",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "劝阻",
+    "dst": "学生迈克尔",
+    "evidence": "一切奇怪的事情都是从这场雨开始的",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指出",
+    "dst": "学生迈克尔",
+    "evidence": "我记得天气预报说，今日本地区并无降雨",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "判断",
+    "dst": "芝诺",
+    "evidence": "和芝诺少年军的故事一样，我们遇上真家伙了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安妮",
+    "relation": "确认",
+    "dst": "芝诺",
+    "evidence": "他们以前在这儿生活过，那时候他们就住在这个木屋里",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "叫喊",
+    "dst": "安妮",
+    "evidence": "安妮，远离那些人，我们要走了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "疑心",
+    "dst": "维尔汀",
+    "evidence": "你们为什么不可能是这个营地弄出来的幻觉呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "安抚",
+    "dst": "学生迈克尔",
+    "evidence": "请冷静下来。回想一下，我们一路上都在提供帮助",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ea120e53d7bceffbce110e2f": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被迈克尔持枪威胁的司辰"
+   },
+   {
+    "name": "学生迈克尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持枪挟持安妮逃走的学生"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被挟制带走的小镇居民"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抛下的导演"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在雨中追查的助手"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断追踪方向的女士"
+   },
+   {
+    "name": "巨大魔精",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓走金蜜儿的巨大魔精"
+   }
+  ],
+  "relations": [
+   {
+    "src": "学生迈克尔",
+    "relation": "威胁",
+    "dst": "维尔汀",
+    "evidence": "我会开枪的，别靠过来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "挟持",
+    "dst": "安妮",
+    "evidence": "一手举枪，一手挟制着安妮",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生迈克尔",
+    "relation": "斥骂",
+    "dst": "维尔汀",
+    "evidence": "神秘学家都是疯子！我不会让你们上我的车",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "控诉",
+    "dst": "学生迈克尔",
+    "evidence": "你们怎么可以抛下我！",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "呼唤",
+    "dst": "金蜜儿",
+    "evidence": "金蜜儿小姐！等等！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "下令",
+    "dst": "十四行诗",
+    "evidence": "不能让他们就这样出去，快追",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "搜索",
+    "dst": "安妮",
+    "evidence": "外面太黑了，什么都看不清",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "指示",
+    "dst": "十四行诗",
+    "evidence": "南方。车辙和脚印都向着南方去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "示警",
+    "dst": "十四行诗",
+    "evidence": "这里还有魔精的抓痕，他们很可能已经遇到了危险",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "发现",
+    "dst": "金蜜儿",
+    "evidence": "在这边，我找到她了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "巨大魔精",
+    "relation": "抓住",
+    "dst": "金蜜儿",
+    "evidence": "救……救命……",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "安慰",
+    "dst": "金蜜儿",
+    "evidence": "不要挣扎，我们立刻就来救你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指派",
+    "dst": "牙仙",
+    "evidence": "牙仙女士、恐怖通，跟上他们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "叮嘱",
+    "dst": "维尔汀",
+    "evidence": "你们要小心，它并不好对付",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "赠予",
+    "dst": "维尔汀",
+    "evidence": "将散发着金色闪光的玻璃罐抛向友方",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "判断",
+    "dst": "巨大魔精",
+    "evidence": "这场雨治好了它的伤，让它变得更加强壮难以对付",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "16c55cd382c02e32cb8ec118": {
+  "entities": [
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "苏醒并回忆屠夫带人的伤者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为金蜜儿做应急处理的助手"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安抚金蜜儿并追问安妮下落的司辰"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从车上带回钥匙的女士"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重申恐怖片桥段的调查员"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跳车后被屠夫带走的小镇居民"
+   },
+   {
+    "name": "杰森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撞上森林边界的汽车乘客"
+   },
+   {
+    "name": "学生迈克尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撞上森林边界的汽车驾驶员"
+   },
+   {
+    "name": "屠夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带走安妮者"
+   },
+   {
+    "name": "无主的钥匙",
+    "type": "物品",
+    "aliases": [],
+    "desc": "车内发现的无主钥匙"
+   },
+   {
+    "name": "森林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "汽车撞上的无形边界所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "告知",
+    "dst": "金蜜儿",
+    "evidence": "我为你的伤口做了应急处理",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "安抚",
+    "dst": "金蜜儿",
+    "evidence": "你很安全，那只魔精不在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "致谢",
+    "dst": "维尔汀",
+    "evidence": "谢谢你，我感觉……好多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "安妮醒了吗？她受伤了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "告知",
+    "dst": "金蜜儿",
+    "evidence": "我们没有在森林里找到安妮",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "回忆",
+    "dst": "安妮",
+    "evidence": "她跳车了……她看见我被魔精袭击，从车窗里跳了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "推断",
+    "dst": "屠夫",
+    "evidence": "是屠夫，他带走了安妮！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "惊惧",
+    "dst": "屠夫",
+    "evidence": "就像恐怖电影里，那样……",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "承诺",
+    "dst": "金蜜儿",
+    "evidence": "我们知道了安妮的下落，我们会去救她",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "询问",
+    "dst": "牙仙",
+    "evidence": "迈克尔先生他们……在哪？",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "告知",
+    "dst": "十四行诗",
+    "evidence": "他们不见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "交出",
+    "dst": "无主的钥匙",
+    "evidence": "牙仙从口袋中掏出一枚钥匙，放在桌面上",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "描述",
+    "dst": "森林",
+    "evidence": "那辆车冲向森林边缘，紧接着它发出巨大的声响",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "陈述",
+    "dst": "森林",
+    "evidence": "它像是……撞在了一面透明的墙上",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "金蜜儿",
+    "evidence": "这是你的钥匙吗，金蜜儿小姐？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "否认",
+    "dst": "无主的钥匙",
+    "evidence": "这不是我的钥匙。我从没有见过这把钥匙",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "无主的钥匙",
+    "evidence": "这把钥匙上有什么特殊的信息吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "说明",
+    "dst": "无主的钥匙",
+    "evidence": "没有痕迹，没有标注，在车上也没有找到与其对应的孔",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "判定",
+    "dst": "维尔汀",
+    "evidence": "我们正深陷于一个充满经典桥段与危险遭遇的恐怖电影之夜",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cfe44ac792fcfa60f65858fc": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持诊疗规则的女士"
+   },
+   {
+    "name": "安妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为救人跳车而失踪的居民"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "部署营救与据点的司辰"
+   },
+   {
+    "name": "金蜜儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝承认神秘学家身份的伤者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释牙仙疗法的助手"
+   },
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随同营救的调查员"
+   },
+   {
+    "name": "木屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将布置为据点的木屋"
+   },
+   {
+    "name": "医疗箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "没有止痛药的医疗箱"
+   },
+   {
+    "name": "止痛药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "金蜜儿索要的药品"
+   },
+   {
+    "name": "玻璃罐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "盛着金色小精灵的罐子"
+   },
+   {
+    "name": "牙仙小精灵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被食用以疗伤的牙仙小精灵"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "牙仙据以选择疗法的人种身份"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "复述",
+    "dst": "安妮",
+    "evidence": "安妮为了帮助被魔精袭击的金蜜儿小姐主动跳车",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "判断",
+    "dst": "安妮",
+    "evidence": "她的处境很危险，我们必须尽快施以救援",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "部署",
+    "dst": "木屋",
+    "evidence": "我们需要将这个木屋布置成一个提供安全保障的据点",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "说明",
+    "dst": "恐怖通",
+    "evidence": "我与恐怖通外出营救安妮",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "安排",
+    "dst": "牙仙",
+    "evidence": "而您与十四行诗留在这里，照顾金蜜儿小姐的伤势",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "承诺",
+    "dst": "维尔汀",
+    "evidence": "我会照顾好她的",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "说明",
+    "dst": "金蜜儿",
+    "evidence": "魔精的撕咬伤很容易引起破伤风，我必须为你彻底消毒",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "索要",
+    "dst": "止痛药",
+    "evidence": "止痛药呢？给我止痛药！",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "拒绝",
+    "dst": "金蜜儿",
+    "evidence": "非常抱歉，我的医疗箱里没有止痛药",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "质问",
+    "dst": "牙仙",
+    "evidence": "你不是说她的治疗一点也不疼吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "解释",
+    "dst": "金蜜儿",
+    "evidence": "牙仙女士会给我们吃“牙仙”，就是那些玻璃罐子里的金色小精灵",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙小精灵",
+    "relation": "疗愈",
+    "dst": "十四行诗",
+    "evidence": "它们最大的功效是治疗牙疼与口腔病",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "说明",
+    "dst": "玻璃罐",
+    "evidence": "就是那些玻璃罐子里的金色小精灵",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "拒绝",
+    "dst": "金蜜儿",
+    "evidence": "你不能通过食用“牙仙”来治疗伤口",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "陈述",
+    "dst": "神秘学家",
+    "evidence": "对“人类”使用人类的治疗手法，对“神秘学家”则使用神秘学家的治疗方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "致歉",
+    "dst": "牙仙",
+    "evidence": "我不该在你们面前说那种话",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "自述",
+    "dst": "神秘学家",
+    "evidence": "我以为这样就能被人类的社会接纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "金蜜儿",
+    "relation": "苦笑",
+    "dst": "维尔汀",
+    "evidence": "他们开着我的车，叫我这个“怪胎”留在这儿等死",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

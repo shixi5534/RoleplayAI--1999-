@@ -1,0 +1,814 @@
+{
+ "778cea35d54bdf839fc07892": {
+  "entities": [],
+  "relations": []
+ },
+ "711c016d93ec8e3d03ea26a1": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安抚魔精的派对淑女"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讨要数据的实验员"
+   },
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "操办庆祝派对的商人"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "蹭羽毛讨喜的魔精"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "兜售唇膏的发明家"
+   },
+   {
+    "name": "仙境渡渡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叼信赴会的渡渡鸟"
+   },
+   {
+    "name": "缪斯三世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来信索要柜台的老师"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留意渡渡叼信的箱主"
+   },
+   {
+    "name": "全自动挑逗唇膏",
+    "type": "物品",
+    "aliases": [],
+    "desc": "X发明的全自动挑逗唇膏"
+   },
+   {
+    "name": "《提丰与它的飞行天马》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "渡渡听完二十三章的故事"
+   },
+   {
+    "name": "荒原经营引导剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "奖品奏效的庆祝派对"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "安抚",
+    "dst": "魔精",
+    "evidence": "苏芙比小姐一直都很清楚该如何安抚这些小家伙们",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "报送",
+    "dst": "荒原经营引导剧情",
+    "evidence": "你答应了我可以把这些小混球的数据放进实验报告里",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "兜售",
+    "dst": "全自动挑逗唇膏",
+    "evidence": "你还可以给它涂上“全自动挑逗唇膏”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "喝止",
+    "dst": "X",
+    "evidence": "别再兜售你那些乱七八糟的东西了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "亲近",
+    "dst": "苏芙比",
+    "evidence": "卡邦克鲁一直在蹭苏芙比帽子上的羽毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "仙境渡渡",
+    "relation": "赴会",
+    "dst": "荒原经营引导剧情",
+    "evidence": "咦？仙境渡渡怎么也来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "仙境渡渡",
+    "relation": "听毕",
+    "dst": "《提丰与它的飞行天马》",
+    "evidence": "听完了二十三章《提丰与它的飞行天马》",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "转告",
+    "dst": "新巴别塔",
+    "evidence": "新巴别塔女士，仙境渡渡好像叼着一封给你的信",
+    "confidence": 0.95
+   },
+   {
+    "src": "缪斯三世",
+    "relation": "嘉许",
+    "dst": "新巴别塔",
+    "evidence": "作为老师，我亦深深为你感到骄傲",
+    "confidence": 0.95
+   },
+   {
+    "src": "缪斯三世",
+    "relation": "嘱托",
+    "dst": "新巴别塔",
+    "evidence": "千万别忘了在公司的一角，帮老师留一个小小的柜台",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "应诺",
+    "dst": "缪斯三世",
+    "evidence": "当然了，老师，我一定会的。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "578a5fb64ae39da2bcdf9afc": {
+  "entities": [],
+  "relations": []
+ },
+ "30f5591df8dbf92af987524c": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被魔精咬中的疲惫男子"
+   },
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借研讨会推销机器的商人"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发明频出的X先生"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "喷烟中现身的稀有魔精"
+   },
+   {
+    "name": "拉普拉斯职员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盼魔精破译密码的职员"
+   },
+   {
+    "name": "拉普拉斯职员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被橙汁喷中眼部的职员"
+   },
+   {
+    "name": "连环杀手除虫剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "X去年发明的连环杀手除虫剂"
+   },
+   {
+    "name": "随机果实喷射闹钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "遭哑谜拒绝的果实喷射闹钟"
+   },
+   {
+    "name": "害虫实体恐吓机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可捕获魔精的恐吓机原型"
+   },
+   {
+    "name": "阿尔杰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "论文预言存在类魔精的学者"
+   },
+   {
+    "name": "荒原经营引导剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "机器试喷的引导剧情"
+   }
+  ],
+  "relations": [
+   {
+    "src": "魔精",
+    "relation": "咬啮",
+    "dst": "哑谜",
+    "evidence": "是我被魔精咬了",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "致歉",
+    "dst": "哑谜",
+    "evidence": "这些小家伙儿绝没有伤害您的意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "担保",
+    "dst": "荒原经营引导剧情",
+    "evidence": "当“新巴别塔”魔精公司研讨会结束后",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "炫示",
+    "dst": "连环杀手除虫剂",
+    "evidence": "正是我去年发明的“连环杀手除虫剂”",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "回绝",
+    "dst": "随机果实喷射闹钟",
+    "evidence": "研发计划，我拒绝加入",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "荐售",
+    "dst": "害虫实体恐吓机",
+    "evidence": "那你对“害虫实体恐吓机”有兴趣吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "害虫实体恐吓机",
+    "relation": "捕获",
+    "dst": "魔精",
+    "evidence": "根据您的需求捕获任何您想要的魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅰ",
+    "relation": "问询",
+    "dst": "魔精",
+    "evidence": "帮我们自动破译密码的魔精呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "讥评",
+    "dst": "X",
+    "evidence": "一台糖球机，能吐出什么来",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "发现",
+    "dst": "魔精",
+    "evidence": "这似乎是不常见的品种",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔杰",
+    "relation": "论文提及",
+    "dst": "魔精",
+    "evidence": "阿尔杰先生论文里提到的“可能存在”类魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "投身",
+    "dst": "荒原经营引导剧情",
+    "evidence": "我早就想投身魔精研究事业了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "打趣",
+    "dst": "哑谜",
+    "evidence": "一切的发生都有意义",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d4eef68dd52c731fcb9a1e8f": {
+  "entities": [],
+  "relations": []
+ },
+ "82a755c933185a9d5a56d5be": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "筹划续集与舞会的淑女"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘴上拒绝却监督纪律的辅员"
+   },
+   {
+    "name": "新巴别塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "另择拍摄地的操盘商人"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "成果抢手的发明家"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "促成巡展首站的箱主"
+   },
+   {
+    "name": "提科特勒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "胜任引领员的图书馆成员"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "巡展首站所在学校"
+   },
+   {
+    "name": "《庭院中的卡邦克鲁》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比钟爱的卡邦克鲁电影"
+   },
+   {
+    "name": "扭扭舞会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "筹划中的最棒扭扭舞会"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "愿供场地的拉普拉斯"
+   },
+   {
+    "name": "《混沌能量》的作者洛伦兹蝴蝶",
+    "type": "角色",
+    "aliases": [
+     "蝴蝶女士"
+    ],
+    "desc": "拟增资研究的蝴蝶女士"
+   },
+   {
+    "name": "荒原经营引导剧情",
+    "type": "事件",
+    "aliases": [],
+    "desc": "步入千家万户的引导剧情"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "赏映",
+    "dst": "《庭院中的卡邦克鲁》",
+    "evidence": "我很喜欢《庭院中的卡邦克鲁》",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "企盼",
+    "dst": "《庭院中的卡邦克鲁》",
+    "evidence": "电影续集能在自动小岛上拍吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "憧憬",
+    "dst": "扭扭舞会",
+    "evidence": "然后一起在自动小岛上开扭扭舞会",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "回绝",
+    "dst": "扭扭舞会",
+    "evidence": "我、我才不会参加呢！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "监督",
+    "dst": "扭扭舞会",
+    "evidence": "我有必要到场监督舞会的纪律",
+    "confidence": 0.95
+   },
+   {
+    "src": "扭扭舞会",
+    "relation": "助推",
+    "dst": "荒原经营引导剧情",
+    "evidence": "大家肯定能举办一场最棒的扭扭舞会",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "接洽",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯似乎对魔精研究产生了新的兴趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "《混沌能量》的作者洛伦兹蝴蝶",
+    "relation": "增资",
+    "dst": "X",
+    "evidence": "同样打算加大研究经费的投入",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "游说",
+    "dst": "第一防线学校",
+    "evidence": "为说服第一防线学校",
+    "confidence": 0.95
+   },
+   {
+    "src": "提科特勒",
+    "relation": "引领",
+    "dst": "第一防线学校",
+    "evidence": "提科特勒能胜任图书馆引领员一职",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "敲定",
+    "dst": "荒原经营引导剧情",
+    "evidence": "我们已经将“新巴别塔”巡展首站敲定在了那里",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "寄函",
+    "dst": "《庭院中的卡邦克鲁》",
+    "evidence": "我会把续集首映日的邀请函寄给大家",
+    "confidence": 0.95
+   },
+   {
+    "src": "新巴别塔",
+    "relation": "推进",
+    "dst": "荒原经营引导剧情",
+    "evidence": "直到“新巴别塔”真正步入千家万户的那天",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "75d32aaeafd8ea43c101cc9c": {
+  "entities": [],
+  "relations": []
+ },
+ "d148d1caa07e3d7ee6f30c6c": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转赠纪念音带的露西"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "视之为胜利纪念的诗人"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要录摇滚乐的海盗船长"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "担心酒后失言的苹果"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嫌音响不便携带的骑士"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被隔空问候的箱主"
+   },
+   {
+    "name": "达泊一号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "出厂调试完毕的达泊一号音带"
+   },
+   {
+    "name": "银色大耳朵音响",
+    "type": "物品",
+    "aliases": [],
+    "desc": "银色大耳朵音响"
+   },
+   {
+    "name": "电台复活节",
+    "type": "概念",
+    "aliases": [],
+    "desc": "星锑拟命名的电台复活节"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "赠品的科算中心出品方"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "众人共同跨越的暴雨"
+   },
+   {
+    "name": "强尼·卡什",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被星锑推崇的摇滚歌手"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "庆贺",
+    "dst": "暴雨",
+    "evidence": "很高兴我们一同跨越了“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "赠出",
+    "dst": "达泊一号",
+    "evidence": "请收下科算中心的特别赠品",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "转交",
+    "dst": "达泊一号",
+    "evidence": "请放心使用本音带",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "致意",
+    "dst": "维尔汀",
+    "evidence": "司辰，您好。",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "庆祝",
+    "dst": "暴雨",
+    "evidence": "这是一场值得庆祝的胜利",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "冠名",
+    "dst": "电台复活节",
+    "evidence": "就叫它“电台复活节”",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "获取",
+    "dst": "银色大耳朵音响",
+    "evidence": "瞧瞧它——这台银色大耳朵音响",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "录备",
+    "dst": "强尼·卡什",
+    "evidence": "我非得在里头录下整套强尼·卡什的摇滚乐不可",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "自省",
+    "dst": "达泊一号",
+    "evidence": "我衷心期望这份慷慨的礼物不会录下APPLe某的酒后失言",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "赞许",
+    "dst": "银色大耳朵音响",
+    "evidence": "可比芝诺那老掉牙的“抗、干、扰”通讯清晰多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "呼唤",
+    "dst": "维尔汀",
+    "evidence": "喂……维尔汀？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "abc7750695b7d0ba7aeda9c2": {
+  "entities": [],
+  "relations": []
+ },
+ "2717bcb05634727d21edbdbf": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "憧憬热带冒险的小淑女"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敲桌讲南美的飞行女巫"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "布景落成又奉新命的箱主"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "槲寄生小姐"
+    ],
+    "desc": "种下散尾葵的德鲁伊"
+   },
+   {
+    "name": "散尾葵",
+    "type": "物品",
+    "aliases": [],
+    "desc": "一夜长到屋顶的散尾葵"
+   },
+   {
+    "name": "南美洲故事画册",
+    "type": "物品",
+    "aliases": [],
+    "desc": "讲述南美洲故事的厚重画册"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "苏芙比的管家"
+    ],
+    "desc": "讲神秘大陆故事的卡森先生"
+   },
+   {
+    "name": "南美洲",
+    "type": "地点",
+    "aliases": [],
+    "desc": "又湿又热出朗姆酒的南美洲"
+   },
+   {
+    "name": "亚马逊河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "传说可兜风的亚马逊河"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "新任务目的地的圣保罗"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "下达新任务的基金会"
+   },
+   {
+    "name": "维尔汀的布景计划",
+    "type": "事件",
+    "aliases": [],
+    "desc": "大功告成的箱中布景计划"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "庆贺",
+    "dst": "维尔汀的布景计划",
+    "evidence": "好耶～维尔汀的布景计划终于大功告成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "手植",
+    "dst": "散尾葵",
+    "evidence": "那株散尾葵就是槲寄生小姐亲手种下",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "诵读",
+    "dst": "南美洲故事画册",
+    "evidence": "热带地方的城镇，与其说是深具异域的风味",
+    "confidence": 0.95
+   },
+   {
+    "src": "南美洲故事画册",
+    "relation": "讲述",
+    "dst": "南美洲",
+    "evidence": "这是一本讲述南美洲故事的书",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡森先生",
+    "relation": "说书",
+    "dst": "苏芙比",
+    "evidence": "卡森先生就讲过许多“神秘大陆”的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "谈及",
+    "dst": "南美洲",
+    "evidence": "南美洲？最近怎么老听到这个词？",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "邀约",
+    "dst": "苏芙比",
+    "evidence": "但说不准真能捎上你",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "兜风",
+    "dst": "亚马逊河",
+    "evidence": "一块儿去亚马逊河上兜兜风",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "委命",
+    "dst": "维尔汀",
+    "evidence": "基金会下达了新的任务，我们很快就要动身",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "奔赴",
+    "dst": "圣保罗",
+    "evidence": "出发去圣保罗",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

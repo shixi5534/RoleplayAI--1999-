@@ -1,0 +1,1196 @@
+{
+ "dc5c0d9e2392bec6acc05d44": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "第一防线学校的学生，自称领主"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "务实的同学"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [
+     "丧气鬼埃菲"
+    ],
+    "desc": "悲观的同学"
+   },
+   {
+    "name": "学生Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚集的孩子"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚集的孩子"
+   },
+   {
+    "name": "学生Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维持安静者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯科算中心"
+    ],
+    "desc": "桑丘所慕"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "入学一月之后"
+   },
+   {
+    "name": "零食配给",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所许之酬"
+   }
+  ],
+  "relations": [
+   {
+    "src": "埃里克",
+    "relation": "许诺",
+    "dst": "学生Ⅰ",
+    "evidence": "作为领主，我保证你们会获得应有的名利与……额外的零食配给！",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "召集",
+    "dst": "学生Ⅱ",
+    "evidence": "去把桨划得冒烟，水手们！",
+    "confidence": 0.9
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "警告",
+    "dst": "埃里克",
+    "evidence": "你们会被教员抓起来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "劝诫",
+    "dst": "埃里克",
+    "evidence": "最后几名可是要进行强制补习的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "志向",
+    "dst": "科算中心",
+    "evidence": "而我则会成为拉普拉斯科算中心最闪耀的明日之星",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "否定",
+    "dst": "埃里克",
+    "evidence": "你们在做的事全没有任何意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "断言",
+    "dst": "埃里克",
+    "evidence": "最后，你都只会迎来惶惶不可终日或者永远填不满的空虚",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "喝止",
+    "dst": "埃菲",
+    "evidence": "啊——烦死了！你们两个快给我闭嘴！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6a26df57c82dae995fa645ab": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "答问的学生"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "任课教师"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同学"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同学"
+   },
+   {
+    "name": "众学生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "齐声应答"
+   },
+   {
+    "name": "格拉瓦库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "课文中的魔精"
+   },
+   {
+    "name": "虚荣",
+    "type": "概念",
+    "aliases": [],
+    "desc": "埃里克所喻的巨蛇"
+   },
+   {
+    "name": "虚无",
+    "type": "概念",
+    "aliases": [],
+    "desc": "埃里克所喻的怪物"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "埃里克的外祖父"
+   },
+   {
+    "name": "魔精通识",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所用课本"
+   },
+   {
+    "name": "教室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "授课之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "教员",
+    "relation": "讲授",
+    "dst": "格拉瓦库斯",
+    "evidence": "它是栖息于北美洲热带雨林中的一种魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "提问",
+    "dst": "众学生",
+    "evidence": "如果遇到这种危险生物应该怎么办？",
+    "confidence": 0.95
+   },
+   {
+    "src": "众学生",
+    "relation": "齐答",
+    "dst": "教员",
+    "evidence": "不跑不跳，轻声走！",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "挑战",
+    "dst": "金钥匙桑丘",
+    "evidence": "我要对你们发起征服决斗",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "引述",
+    "dst": "哈拉尔",
+    "evidence": "我的外公哈拉尔说过……",
+    "confidence": 0.95
+   },
+   {
+    "src": "哈拉尔",
+    "relation": "警示",
+    "dst": "埃里克",
+    "evidence": "其中最最最危险的——是无止境的虚荣，以及一望无际的虚无",
+    "confidence": 0.95
+   },
+   {
+    "src": "虚荣",
+    "relation": "拟形",
+    "dst": "埃里克",
+    "evidence": "名为“虚荣”的怪物，是一只山脉般巨大、蜿蜒的巨蛇",
+    "confidence": 0.95
+   },
+   {
+    "src": "虚无",
+    "relation": "潜藏",
+    "dst": "埃里克",
+    "evidence": "它躲在阴影底下。夜晚，床底下的响动……全都可能是它",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "翻书",
+    "dst": "魔精通识",
+    "evidence": "请翻至《魔精通识》126页",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "2b661a065d02c4e2007164bc": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "写信者"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留堂者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉思的对手"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉思的对手"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收信的外祖父"
+   },
+   {
+    "name": "虚无",
+    "type": "概念",
+    "aliases": [],
+    "desc": "课上所讲"
+   },
+   {
+    "name": "虚荣",
+    "type": "概念",
+    "aliases": [],
+    "desc": "课上所讲"
+   },
+   {
+    "name": "信纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所写之信"
+   },
+   {
+    "name": "学生Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "簇拥的少年"
+   },
+   {
+    "name": "魔药历史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "垫床之书"
+   },
+   {
+    "name": "学校宿舍",
+    "type": "地点",
+    "aliases": [],
+    "desc": "写信之处"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所惧之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "埃里克",
+    "relation": "断言",
+    "dst": "虚无",
+    "evidence": "它们就是最庞大，也是最致命的魔精生物",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "立志",
+    "dst": "虚荣",
+    "evidence": "总有一天，我会遇到它们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生Ⅰ",
+    "relation": "簇拥",
+    "dst": "埃里克",
+    "evidence": "学生们前赴后继，朝着埃里克簇拥而上",
+    "confidence": 0.9
+   },
+   {
+    "src": "教员",
+    "relation": "留堂",
+    "dst": "埃里克",
+    "evidence": "埃里克，稍后来办公室一趟……",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "致信",
+    "dst": "哈拉尔",
+    "evidence": "致亲爱的哈拉尔——",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "陈述",
+    "dst": "哈拉尔",
+    "evidence": "这是我在第一防线学校呆的第一个冬季",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "抱怨",
+    "dst": "教员",
+    "evidence": "但这里的老师可不好说话，他们凶巴巴的",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "记述",
+    "dst": "教员",
+    "evidence": "今天，我在课上说了‘贪婪’和‘虚无’那两头怪物",
+    "confidence": 0.9
+   },
+   {
+    "src": "埃里克",
+    "relation": "垫枕",
+    "dst": "魔药历史",
+    "evidence": "底下垫着《魔药历史》，手上的笔不停打转",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "9d9e71cb8d52a5f6c80acae3": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被擒的领主"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "并肩者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "并肩者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "学校的纪律辅员"
+   },
+   {
+    "name": "伟大讲述者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "故事的旁白声"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "信中所念"
+   },
+   {
+    "name": "老约翰",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哈拉尔的旧车主人"
+   },
+   {
+    "name": "臂环",
+    "type": "物品",
+    "aliases": [],
+    "desc": "封术之环"
+   },
+   {
+    "name": "信纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "枕下所藏"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "决斗之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "埃里克",
+    "relation": "致信",
+    "dst": "哈拉尔",
+    "evidence": "可我真想念你，哈拉尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "托付",
+    "dst": "哈拉尔",
+    "evidence": "请替我向老约翰和他那辆破车问好",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "藏匿",
+    "dst": "信纸",
+    "evidence": "宛若宝物一般藏到了枕头下",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "讥评",
+    "dst": "埃里克",
+    "evidence": "连个像样的神秘术都不会，你的测验成绩肯定很差劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "劝止",
+    "dst": "金钥匙桑丘",
+    "evidence": "回去睡觉吧，跟她决斗没有任何意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "自陈",
+    "dst": "臂环",
+    "evidence": "要是我的臂环能摘下来，你们两个都得屁滚尿流！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "擒获",
+    "dst": "埃里克",
+    "evidence": "埃里克被一把摁倒在地，身上如负重石",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "催促",
+    "dst": "金钥匙桑丘",
+    "evidence": "趁现在，快跑，你们两个笨家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "伟大讲述者",
+    "relation": "旁述",
+    "dst": "埃里克",
+    "evidence": "我们的英雄此时又扑向另一只手臂……",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "9fe5e3a62ca4ba7106e3d7be": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受食的领主"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "藏食者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发问者"
+   },
+   {
+    "name": "炸鳕鱼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所赠之食"
+   },
+   {
+    "name": "走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罚站之处"
+   },
+   {
+    "name": "远古君主",
+    "type": "概念",
+    "aliases": [],
+    "desc": "故事中的君王"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金钥匙桑丘",
+    "relation": "馈食",
+    "dst": "埃里克",
+    "evidence": "我兜里偷偷藏了些炸鳕鱼……你肯定饿坏了",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "询问",
+    "dst": "埃里克",
+    "evidence": "你为什么要帮我们？",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "释因",
+    "dst": "埃菲",
+    "evidence": "因为我可不能让未来的船员栽在别人手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "阐述",
+    "dst": "埃菲",
+    "evidence": "如果只知道使唤别人和逃避责任，最后也都会毁于一旦",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "讲述",
+    "dst": "远古君主",
+    "evidence": "我听说远古时期，曾经有一个君主占领着全世界最大的森林……",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "吞咽",
+    "dst": "炸鳕鱼",
+    "evidence": "狼吞虎咽起来，像是饿了一整个冬季的熊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "86ddcbd4a4b29561f87ecbe5": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纪律辅员"
+   },
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被摁倒者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被放开者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携食者"
+   },
+   {
+    "name": "伟大讲述者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁白声"
+   },
+   {
+    "name": "炸鳕鱼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所藏之食"
+   },
+   {
+    "name": "远古君主",
+    "type": "概念",
+    "aliases": [],
+    "desc": "故事中的君王"
+   },
+   {
+    "name": "走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罚站之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛蒂尔达",
+    "relation": "擒获",
+    "dst": "埃里克",
+    "evidence": "哼哼！抓住你了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "释放",
+    "dst": "埃菲",
+    "evidence": "这位纪律辅员迅速甩开手臂，放开了埃菲",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "催促",
+    "dst": "埃菲",
+    "evidence": "趁现在，快跑，你们两个笨家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "馈食",
+    "dst": "埃里克",
+    "evidence": "我兜里偷偷藏了些炸鳕鱼……你肯定饿坏了",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "释因",
+    "dst": "埃菲",
+    "evidence": "作为领主，除了发号施令，还有很多要承担的责任",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "讲述",
+    "dst": "远古君主",
+    "evidence": "曾经有一个君主占领着全世界最大的森林",
+    "confidence": 0.95
+   },
+   {
+    "src": "伟大讲述者",
+    "relation": "旁述",
+    "dst": "埃里克",
+    "evidence": "望见我们的英雄不卑不亢地抗争",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d3f076d1d233f381f0f68455": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召集船员者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愿许愿者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻书者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追寻的纪律辅员"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放魔精授课者"
+   },
+   {
+    "name": "呼玛鸟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传说中的鸟"
+   },
+   {
+    "name": "格拉瓦库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "课堂放出的魔精"
+   },
+   {
+    "name": "信纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写给哈拉尔"
+   },
+   {
+    "name": "占卜水晶球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "玛蒂尔达所持"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收信的外祖父"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "冒险之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "信纸",
+    "relation": "记述",
+    "dst": "哈拉尔",
+    "evidence": "别爬太高。别想太多。别跑太快……",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "喝止",
+    "dst": "埃里克",
+    "evidence": "你们这些家伙，快给我从树上下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "拒绝",
+    "dst": "玛蒂尔达",
+    "evidence": "在抓住那个“呼玛鸟”之前，我们绝不会下来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "期许",
+    "dst": "呼玛鸟",
+    "evidence": "就能获得一个愿望。我要让它们吃掉所有的试卷",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "期许",
+    "dst": "呼玛鸟",
+    "evidence": "我要让它找到被教员丢掉的书",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "取出",
+    "dst": "占卜水晶球",
+    "evidence": "接下来拿出我的占卜水晶球",
+    "confidence": 0.95
+   },
+   {
+    "src": "教员",
+    "relation": "放出",
+    "dst": "格拉瓦库斯",
+    "evidence": "接下来我将放出人工圈养的……",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "示警",
+    "dst": "埃里克",
+    "evidence": "它喜欢响声大，跑得快的——东西！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b2bb4d951b3af7dcba125375": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "写信者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掩护者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转移注意力者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引开者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及者"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收信人"
+   },
+   {
+    "name": "密米尔",
+    "type": "概念",
+    "aliases": [],
+    "desc": "神话中的智者"
+   },
+   {
+    "name": "索尔",
+    "type": "概念",
+    "aliases": [],
+    "desc": "神话中的雷神"
+   },
+   {
+    "name": "信纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "写给哈拉尔"
+   },
+   {
+    "name": "嚼嚼糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "哈拉尔所寄"
+   },
+   {
+    "name": "静水湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旧日船员所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "信纸",
+    "relation": "引喻",
+    "dst": "密米尔",
+    "evidence": "他们拥有密米尔的智慧、索尔的机敏",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "掩护",
+    "dst": "埃里克",
+    "evidence": "是我送给她的熏臭嚼嚼块！",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "引开",
+    "dst": "玛蒂尔达",
+    "evidence": "嘿——嘿！那不是十四行诗女士吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "哈拉尔",
+    "relation": "寄赠",
+    "dst": "埃里克",
+    "evidence": "我收到了你送来的嚼嚼糖",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "问及",
+    "dst": "静水湖",
+    "evidence": "我在静水湖的船员们都还好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "猜疑",
+    "dst": "哈拉尔",
+    "evidence": "你的字怎么比之前看起来好了那么多？是邻居的西格莉德阿姨在替你写信吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "埃里克",
+    "relation": "修书",
+    "dst": "哈拉尔",
+    "evidence": "想你的埃里克",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d84932e5e99ee7f46e7e7eb6": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲驯魔精者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疑虑者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纠正者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "饲养员"
+   },
+   {
+    "name": "格拉瓦库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被偷喂的 15 号"
+   },
+   {
+    "name": "午餐罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所埋之物"
+   },
+   {
+    "name": "魔精饲养指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "玛蒂尔达所依"
+   },
+   {
+    "name": "宿舍",
+    "type": "地点",
+    "aliases": [],
+    "desc": "夜归之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金钥匙桑丘",
+    "relation": "疑虑",
+    "dst": "格拉瓦库斯",
+    "evidence": "那只魔精真的会把我们当主人吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "描述",
+    "dst": "午餐罐头",
+    "evidence": "它把我们好不容易省下来的午餐罐头都挖坑埋在屁股底下",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "纠正",
+    "dst": "金钥匙桑丘",
+    "evidence": "那是格拉瓦库斯的生存习惯，它们用唾沫区分食物与垃圾",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "立志",
+    "dst": "格拉瓦库斯",
+    "evidence": "总有一天，这个大家伙会对我们心悦诚服，乖乖做我们的坐骑！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "投喂",
+    "dst": "格拉瓦库斯",
+    "evidence": "我明明好好按照着《魔精饲养指南》喂食",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "怀疑",
+    "dst": "格拉瓦库斯",
+    "evidence": "看来，一定是有谁在偷偷给你喂食",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "诅咒",
+    "dst": "金钥匙桑丘",
+    "evidence": "我回去就马上诅咒你被丢到学校外边儿去！",
+    "confidence": 0.9
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "制止",
+    "dst": "埃菲",
+    "evidence": "桑丘的脸忽然冷下来，他摇了摇头，示意她别再说了",
+    "confidence": 0.95
+   },
+   {
+    "src": "金钥匙桑丘",
+    "relation": "提及",
+    "dst": "埃里克",
+    "evidence": "……头儿的家人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7ddbeb2c1fb97322989a632f": {
+  "entities": [
+   {
+    "name": "埃里克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "起疑者"
+   },
+   {
+    "name": "埃菲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致歉者"
+   },
+   {
+    "name": "金钥匙桑丘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉异常者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "投信者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "保证者"
+   },
+   {
+    "name": "哈拉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "署名之人"
+   },
+   {
+    "name": "信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被投入邮筒"
+   },
+   {
+    "name": "红色邮筒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "非学员所用"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "毕业生出没处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "埃菲",
+    "relation": "致歉",
+    "dst": "埃里克",
+    "evidence": "抱歉，埃里克，我只是就那么一说",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "察觉",
+    "dst": "十四行诗",
+    "evidence": "有家伙在打我们邮筒的坏主意",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃菲",
+    "relation": "认出",
+    "dst": "十四行诗",
+    "evidence": "那不是我们的优秀毕业生，十四行诗小姐吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "投信",
+    "dst": "信件",
+    "evidence": "她把一封信塞进去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "信件",
+    "relation": "署假名",
+    "dst": "哈拉尔",
+    "evidence": "寄信人处假模假式地写着——“哈拉尔”",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "承诺",
+    "dst": "埃里克",
+    "evidence": "在校期间，哈拉尔每个月……仍会寄信给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "保证",
+    "dst": "埃里克",
+    "evidence": "我们跟他保证过，要让你在学校安然无恙地生活",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里克",
+    "relation": "动摇",
+    "dst": "哈拉尔",
+    "evidence": "可如果，她们在撒谎呢？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

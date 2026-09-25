@@ -1,0 +1,1747 @@
+{
+ "7ff8a0a86abe9d4f5c37ae6b": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被点破谎言的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看穿一切的女列车长"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当作同伴的女孩"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "列车长挂心的乘务员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "调查员出示证件的机构"
+   },
+   {
+    "name": "塞梅尔维斯的徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "黑白格纹的徽章"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潜藏列车上的嫌疑"
+   },
+   {
+    "name": "围巾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "列车长编织的围巾"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "列车长服役多年的车"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "调查员自称的目的地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "点破",
+    "dst": "塞梅尔维斯",
+    "evidence": "你们没什么默契，你和那小姑娘认识的时间不会超过半个钟头",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "回避",
+    "dst": "告死鸟",
+    "evidence": "我认为这属于乘客隐私",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "认出",
+    "dst": "塞梅尔维斯的徽章",
+    "evidence": "我见过你的徽章和黑白格纹",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "出示",
+    "dst": "圣洛夫基金会",
+    "evidence": "圣洛夫基金会，这是我的证件",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "调查",
+    "dst": "血食怪",
+    "evidence": "一名危险的血食怪极有可能潜藏在您的列车上",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "质疑",
+    "dst": "血食怪",
+    "evidence": "它只是民间传闻，从来没人真的见过血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "追问",
+    "dst": "野树莓",
+    "evidence": "她不是你的同伴",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "编织",
+    "dst": "围巾",
+    "evidence": "围巾，给艾玛的",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "效力",
+    "dst": "多瑙黎明号",
+    "evidence": "我在多瑙黎明号上已经很多年了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "搪塞",
+    "dst": "维也纳",
+    "evidence": "也许我只是去维也纳休假呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "揣度",
+    "dst": "塞梅尔维斯",
+    "evidence": "能让你冒险穿过战区，花费重金购买车票",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d568005f79876e94783f629b": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陈说利害的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被说服却不动声色的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "传递车站讯息的乘务员"
+   },
+   {
+    "name": "车站守军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借事故刁难列车的守军"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "车上可能的隐患"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被咬后随时失控的不幸者"
+   },
+   {
+    "name": "列车长的徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "递给守军的徽章"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "准备发车的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "释疑",
+    "dst": "血食怪",
+    "evidence": "不论人类，抑或神秘学家，有极大概率会在短时间内毙命",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "造出",
+    "dst": "感染种",
+    "evidence": "这些不幸的产物，通常被称为感染种",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "警示",
+    "dst": "告死鸟",
+    "evidence": "一趟封闭的列车上，有可能隐藏着一名血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "传讯",
+    "dst": "告死鸟",
+    "evidence": "我接到车站的讯息，他们希望能和您当面确认",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "离席",
+    "dst": "塞梅尔维斯",
+    "evidence": "一个行政流程，为了刚才掉下铁轨的旅客",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "勒索",
+    "dst": "告死鸟",
+    "evidence": "出了这样的事故，我们必须向上头交代",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "滞留",
+    "dst": "多瑙黎明号",
+    "evidence": "必须暂停发车，除非",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "出示",
+    "dst": "列车长的徽章",
+    "evidence": "只是从怀中掏出一枚徽章交给了对方",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "退让",
+    "dst": "告死鸟",
+    "evidence": "哈哈，原来是自己人",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "起疑",
+    "dst": "列车长的徽章",
+    "evidence": "还有她交出去的东西，似乎是一枚徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "下令",
+    "dst": "乘务员艾玛",
+    "evidence": "通知车站，去轨道上撒砂。准备发车了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1b9a1d0a86b2c8c97dbe274": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盘算生计的偷渡女孩"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "女孩此行的目的地"
+   },
+   {
+    "name": "卡帕玛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "心心念念的布达佩斯食物"
+   },
+   {
+    "name": "卡瓦尔长笛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "带有细裂的木笛"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记忆里讲故事的母亲"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哭寻同伴的小女孩"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "令她不安的调查员"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "用来吓唬人的身份"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "终于发动的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "松心",
+    "dst": "多瑙黎明号",
+    "evidence": "呼……终于发车了",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "盘算",
+    "dst": "布达佩斯",
+    "evidence": "等到了布达佩斯，我得想想该做些什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "想吃",
+    "dst": "卡帕玛",
+    "evidence": "先吃一大份卡帕玛",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "摩挲",
+    "dst": "卡瓦尔长笛",
+    "evidence": "手指在细小的裂纹上轻轻摩挲着",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "思念",
+    "dst": "野树莓的母亲",
+    "evidence": "布达佩斯的卡帕玛，会和你做的味道一样好吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "忌惮",
+    "dst": "塞梅尔维斯",
+    "evidence": "她似乎对血食怪很感兴趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "留钱",
+    "dst": "塞梅尔维斯",
+    "evidence": "从口袋里数出两枚硬币放在桌子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "求助",
+    "dst": "野树莓",
+    "evidence": "帮帮安娜贝尔……安娜贝尔现在不知道自己在哪个车厢",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "恐吓",
+    "dst": "安娜贝尔",
+    "evidence": "我可是血食怪喔，再哭我就咬断你的脖子",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "赞叹",
+    "dst": "野树莓",
+    "evidence": "哇……好漂亮的眼睛！像红红的宝石",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3a221c978486c38c016821ff": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "炫耀血统的血食怪少女"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听得入迷的小女孩"
+   },
+   {
+    "name": "阿诺德五世",
+    "type": "角色",
+    "aliases": [
+     "穿刺公",
+     "德古拉",
+     "阿诺德"
+    ],
+    "desc": "自称的荣耀先祖"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "不屑一顾的男孩"
+   },
+   {
+    "name": "孩童Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊叹的孩童"
+   },
+   {
+    "name": "孩童Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随声附和的孩童"
+   },
+   {
+    "name": "亨利叔叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "病中红瞳的叔叔"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "管束孩童的家庭教师"
+   },
+   {
+    "name": "血食怪的故事",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被禁止阅读的传说"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "纯种传说里的强大一族"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "讲述",
+    "dst": "阿诺德五世",
+    "evidence": "他就是大名鼎鼎的穿刺公",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿诺德五世",
+    "relation": "相传",
+    "dst": "血食怪",
+    "evidence": "我最最了不起的祖先，把那些从东边来的人狠狠地揍了一顿",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "追问",
+    "dst": "野树莓",
+    "evidence": "咦，那你今年多少大了呀，姐姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自居",
+    "dst": "血食怪",
+    "evidence": "噢不，是二百一十四岁",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "引伴",
+    "dst": "威廉",
+    "evidence": "终于找到你们了！我来介绍一下，她叫野树莓",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩童Ⅰ",
+    "relation": "惊叹",
+    "dst": "血食怪",
+    "evidence": "哇，是活着的血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "质疑",
+    "dst": "野树莓",
+    "evidence": "你说你是血食怪，可你只会讲故事，什么证据都没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩童Ⅱ",
+    "relation": "附和",
+    "dst": "威廉",
+    "evidence": "对、对哦，这些故事我们也听过呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "举例",
+    "dst": "亨利叔叔",
+    "evidence": "亨利叔叔生病的时候，眼睛也是红的呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "记得",
+    "dst": "亨利叔叔",
+    "evidence": "当时你还悄悄和我说，亨利叔叔也是血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "禁止",
+    "dst": "血食怪的故事",
+    "evidence": "多萝西老师不让我们读血食怪的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "维护",
+    "dst": "野树莓",
+    "evidence": "她不一样！她有一双红色的眼睛哦",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自诩",
+    "dst": "血食怪",
+    "evidence": "我知道纯种的血食怪是最厉害的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "faa56bfdb8b10bd2814b67c4": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被孩童拥戴的老大"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "差点说漏嘴的女孩"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "宣布证据确凿的男孩"
+   },
+   {
+    "name": "孩童Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出考验的孩童"
+   },
+   {
+    "name": "孩童Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看见无影子的孩童"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阴沉着脸出现的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "替女孩打圆场的乘务员"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以无影子为凭的种族"
+   }
+  ],
+  "relations": [
+   {
+    "src": "孩童Ⅰ",
+    "relation": "考验",
+    "dst": "野树莓",
+    "evidence": "你敢和那个很吓人的列车长说话吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "演示",
+    "dst": "血食怪",
+    "evidence": "我们血食怪，是不会被照出影子的喔",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩童Ⅱ",
+    "relation": "信服",
+    "dst": "野树莓",
+    "evidence": "哇……真的没有影子",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "宣布",
+    "dst": "血食怪",
+    "evidence": "现在我宣布，这是确凿的、无疑的血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "推举",
+    "dst": "野树莓",
+    "evidence": "以后你就是我们的老大",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "撞见",
+    "dst": "野树莓",
+    "evidence": "看来你玩得很开心啊，朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "吹嘘",
+    "dst": "告死鸟",
+    "evidence": "别看她块头那么大，其实反应很迟钝",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "打圆场",
+    "dst": "野树莓",
+    "evidence": "我们刚进车厢，就听见你聊起列车长",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "警告",
+    "dst": "野树莓",
+    "evidence": "玩游戏可以，但不能阻碍车厢的过道",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "询问",
+    "dst": "野树莓",
+    "evidence": "这些是你的新朋友们吗，野树莓小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "收服",
+    "dst": "孩童Ⅰ",
+    "evidence": "准确来说，他们是我的……嗯……应该是跟班",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "拥戴",
+    "dst": "野树莓",
+    "evidence": "我们是尊贵的血食……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "打断",
+    "dst": "安娜贝尔",
+    "evidence": "身为老大，我需要一个更加宽敞的城堡",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "57b71c345352616125552f2b": {
+  "entities": [
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "欲言又止的乘务员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直白反问的列车长"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交到新朋友的女孩"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍在等候的调查员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘务员艾玛",
+    "relation": "羡慕",
+    "dst": "野树莓",
+    "evidence": "真叫人羡慕呀，野树莓小姐能交到这么多朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "反问",
+    "dst": "乘务员艾玛",
+    "evidence": "为什么，你没有朋友吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "回避",
+    "dst": "告死鸟",
+    "evidence": "我想我们还是先回去吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "惦念",
+    "dst": "塞梅尔维斯",
+    "evidence": "塞梅尔维斯小姐还在等着呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "忌惮",
+    "dst": "野树莓",
+    "evidence": "想起她帽檐阴影下的笑容",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "回味",
+    "dst": "野树莓",
+    "evidence": "那双漂亮得不似真实的血色双瞳",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "841ac430027c523ea65a715c": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以权利施压的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲究程序的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "担心乘客的乘务员"
+   },
+   {
+    "name": "列车长的徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "雪中递出的徽章"
+   },
+   {
+    "name": "驾驶日志",
+    "type": "物品",
+    "aliases": [],
+    "desc": "触手可及的驾驶日志"
+   },
+   {
+    "name": "官方同意书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "采集乘客信息的官方同意书"
+   },
+   {
+    "name": "紧急截停",
+    "type": "概念",
+    "aliases": [],
+    "desc": "合乎规定的标准操作"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可被截停的列车"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "调查员所代表的机关"
+   },
+   {
+    "name": "疯狂的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "白天坠轨的旅客"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "探究",
+    "dst": "列车长的徽章",
+    "evidence": "脑中依然探究着那个在大雪中被递交出去的徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "推断",
+    "dst": "告死鸟",
+    "evidence": "她的动作很自然，显然不是第一次",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "克制",
+    "dst": "驾驶日志",
+    "evidence": "太容易得到的线索往往是陷阱，还是谨慎为好",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "安置",
+    "dst": "塞梅尔维斯",
+    "evidence": "艾玛把你的行李放到了对应的座位上",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "要求",
+    "dst": "告死鸟",
+    "evidence": "我需要对所有登车乘客的身份进行一次普查登记",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "代表",
+    "dst": "圣洛夫基金会",
+    "evidence": "我谨代表基金会前来与你进行交涉",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "拒绝",
+    "dst": "塞梅尔维斯",
+    "evidence": "突如其来的普查登记很容易让人产生不好的联想",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "援引",
+    "dst": "疯狂的乘客",
+    "evidence": "我们都不愿意再见到白天车站发生的那一幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "索要",
+    "dst": "官方同意书",
+    "evidence": "麻烦出示一下允许采集乘客信息的官方同意书",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "威胁",
+    "dst": "紧急截停",
+    "evidence": "我将会行使身为基金会调查员的权利",
+    "confidence": 0.95
+   },
+   {
+    "src": "紧急截停",
+    "relation": "针对",
+    "dst": "多瑙黎明号",
+    "evidence": "紧急截停多瑙黎明号",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "担忧",
+    "dst": "多瑙黎明号",
+    "evidence": "这样可能会给其他乘客造成不便",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d1b0306730637b25e9bc3e3": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "答应陪同条件的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出条件的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "记录样貌特征的乘务员"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "焦急体面的家庭教师"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "走丢的学生之一"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "走丢的学生之一"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给孩子们讲古的女孩"
+   },
+   {
+    "name": "萨瓦诺维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称的祖父"
+   },
+   {
+    "name": "埃杰什城堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "祖先居住的城堡"
+   },
+   {
+    "name": "埃杰什",
+    "type": "地点",
+    "aliases": [],
+    "desc": "多瑙河北边的所在"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "登记中的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "应允",
+    "dst": "塞梅尔维斯",
+    "evidence": "我们接受你的提议，调查员。但有个条件",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "限定",
+    "dst": "乘务员艾玛",
+    "evidence": "你的登记工作必须由乘务组亲自陪同",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "应下",
+    "dst": "告死鸟",
+    "evidence": "当然可以，登记工作本就应该公开透明",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "清点",
+    "dst": "多瑙黎明号",
+    "evidence": "还有六节车厢",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "求助",
+    "dst": "告死鸟",
+    "evidence": "我的两个学生在车厢里走丢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "寻找",
+    "dst": "安娜贝尔",
+    "evidence": "大概这么高，一个怀里抱着玩偶",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "认出",
+    "dst": "野树莓",
+    "evidence": "似乎是我们刚才见过的孩子们",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "指认",
+    "dst": "威廉",
+    "evidence": "请您回过身看看，那是不是您的两位学生",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "讲述",
+    "dst": "萨瓦诺维奇",
+    "evidence": "是我了不起的祖父萨瓦诺维奇",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨瓦诺维奇",
+    "relation": "修建",
+    "dst": "埃杰什城堡",
+    "evidence": "带我们去了多瑙河北边的埃杰什，修建了埃杰什磨坊",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃杰什城堡",
+    "relation": "坐落于",
+    "dst": "埃杰什",
+    "evidence": "多瑙河北边的埃杰什",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨瓦诺维奇",
+    "relation": "寿长",
+    "dst": "埃杰什城堡",
+    "evidence": "在埃杰什城堡，他活了一百六十五岁",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "呵斥",
+    "dst": "安娜贝尔",
+    "evidence": "你们怎么可以没有经过我的同意就到处乱跑",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "惊呼",
+    "dst": "多萝西",
+    "evidence": "多、多萝西女士！真要命……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "48ecc0c3735be24c4ab630df": {
+  "entities": [
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厉言质疑的家庭教师"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "步步紧逼的登记官"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "缓和气氛的乘务员"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被查问的女孩"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "脱口而出的男孩"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挺身作证的女孩"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默在旁的调查员"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被孩童说破的身份"
+   },
+   {
+    "name": "瑟尔玛尼奇人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "女孩自称的族群"
+   },
+   {
+    "name": "鲁萨尔卡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "过家家扮演的族群"
+   },
+   {
+    "name": "狼人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "过家家扮演的种族"
+   },
+   {
+    "name": "过家家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "儿时的角色扮演游戏"
+   }
+  ],
+  "relations": [
+   {
+    "src": "多萝西",
+    "relation": "指控",
+    "dst": "野树莓",
+    "evidence": "她很有可能拐带了我的学生们",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "辩白",
+    "dst": "多萝西",
+    "evidence": "是我迷路了……还是野树莓姐姐帮了我",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "训诫",
+    "dst": "安娜贝尔",
+    "evidence": "在外要时刻注意身份，不管是自己的，还是别人的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "澄清",
+    "dst": "多萝西",
+    "evidence": "这只是一次临时的乘客信息登记",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "登记",
+    "dst": "野树莓",
+    "evidence": "方便做个信息登记吗？这位小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自称",
+    "dst": "瑟尔玛尼奇人",
+    "evidence": "我……我是瑟尔玛尼奇人",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "追问",
+    "dst": "野树莓",
+    "evidence": "神秘学家还是人类",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "揭破",
+    "dst": "血食怪",
+    "evidence": "她是我们的血食怪老大，当然是神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "喝止",
+    "dst": "威廉",
+    "evidence": "住口！威廉！谁教你这么说话的",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "掩饰",
+    "dst": "血食怪",
+    "evidence": "我刚才和孩子们开玩笑瞎编的，这可作不得数",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "托词",
+    "dst": "过家家",
+    "evidence": "难道你们小时候没玩过过家家游戏吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "扮演",
+    "dst": "鲁萨尔卡",
+    "evidence": "我不仅扮演过血食怪，还扮演过狼人、鲁萨尔卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "扮演",
+    "dst": "狼人",
+    "evidence": "我不仅扮演过血食怪，还扮演过狼人、鲁萨尔卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "冷淡",
+    "dst": "过家家",
+    "evidence": "我从没有过这种经历",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "告诫",
+    "dst": "野树莓",
+    "evidence": "现在是非常时期，以后别在列车上开这种玩笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "作证",
+    "dst": "血食怪",
+    "evidence": "可是姐姐，你确实是血食怪呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "维护",
+    "dst": "血食怪",
+    "evidence": "而且姐姐是善良的血食怪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d84c0f040c003f0e407eaeed": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当场拿住的女孩"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出手擒人的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "惊呼的乘务员"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "望向脚下的女孩"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "神情可怕的教师"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被证实的种族"
+   },
+   {
+    "name": "封闭审讯",
+    "type": "事件",
+    "aliases": [],
+    "desc": "依手册进行的封闭审讯"
+   },
+   {
+    "name": "列车安全手册",
+    "type": "物品",
+    "aliases": [],
+    "desc": "多瑙黎明号列车安全手册"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘务员艾玛",
+    "relation": "证实",
+    "dst": "血食怪",
+    "evidence": "呀，真的没有影子",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "失措",
+    "dst": "告死鸟",
+    "evidence": "呃……糟了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "质问",
+    "dst": "野树莓",
+    "evidence": "这就是你所谓的……玩笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "擒住",
+    "dst": "野树莓",
+    "evidence": "她的手再次搭上女孩的肩膀",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "援引",
+    "dst": "列车安全手册",
+    "evidence": "根据多瑙黎明号列车安全手册",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "启动",
+    "dst": "封闭审讯",
+    "evidence": "我将依照规章制度，对你进行封闭审讯",
+    "confidence": 0.95
+   },
+   {
+    "src": "封闭审讯",
+    "relation": "针对",
+    "dst": "野树莓",
+    "evidence": "接下来你需要跟我们走一趟",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c4b1a2e31617a63bf6e55cde": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受审却嘴硬的女孩"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持审讯的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在一旁记录的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "忍不住惊呼的乘务员"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "上车的目的之地"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被排查痕迹的敌对组织"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被认定危险的物种"
+   },
+   {
+    "name": "种族分类",
+    "type": "概念",
+    "aliases": [],
+    "desc": "把人分门别类的帽子逻辑"
+   },
+   {
+    "name": "收容监禁",
+    "type": "概念",
+    "aliases": [],
+    "desc": "危险生物应有的收容监禁"
+   },
+   {
+    "name": "木桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "钉杀血食怪的木桩"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "审问",
+    "dst": "野树莓",
+    "evidence": "你是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "盘算",
+    "dst": "布达佩斯",
+    "evidence": "去布达佩斯，找工作，讨生活",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "孤立",
+    "dst": "血食怪",
+    "evidence": "你见过成群结队的血食怪吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "排除",
+    "dst": "重塑之手",
+    "evidence": "她身上没有重塑之手术式的痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "告知",
+    "dst": "告死鸟",
+    "evidence": "我已经检查过了。她没有危险，不是我要找的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "追问",
+    "dst": "塞梅尔维斯",
+    "evidence": "所以你要找的，并非普通的血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "依例",
+    "dst": "收容监禁",
+    "evidence": "血食怪属于危险生物，理应被收容监禁",
+    "confidence": 0.95
+   },
+   {
+    "src": "收容监禁",
+    "relation": "针对",
+    "dst": "血食怪",
+    "evidence": "既然你承认自己是血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "反抗",
+    "dst": "收容监禁",
+    "evidence": "我不接受监禁。我现在也不饿",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "控诉",
+    "dst": "种族分类",
+    "evidence": "你们老爱把人分门别类，戴上不同的帽子",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "归咎",
+    "dst": "种族分类",
+    "evidence": "就因为这些愚蠢的帽子，到处都在打仗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "讥讽",
+    "dst": "木桩",
+    "evidence": "快快服从帽子的神圣意志，将我钉死在木桩上吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "松缚",
+    "dst": "野树莓",
+    "evidence": "列车长默默将缠绕在女孩身上的毛线圈松开少许",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "反扑",
+    "dst": "告死鸟",
+    "evidence": "终于露出破绽了",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "惊呼",
+    "dst": "野树莓",
+    "evidence": "哇！野树莓，你……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "39102022ec206388ca294dc6": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被软禁的囚犯"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "轻松制住的列车长"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接手看管的调查员"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "主动请命的乘务员"
+   },
+   {
+    "name": "七十七行动小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "失联令调查员分心的队友"
+   },
+   {
+    "name": "边境检查站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "列车即将抵达的边境检查站"
+   },
+   {
+    "name": "鹅毛沙发",
+    "type": "物品",
+    "aliases": [],
+    "desc": "填充鹅毛的柔软沙发"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "驶向检查站的列车"
+   },
+   {
+    "name": "软禁",
+    "type": "事件",
+    "aliases": [],
+    "desc": "列车长定性的软禁"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "制住",
+    "dst": "野树莓",
+    "evidence": "列车长握住她的肩膀，使她动弹不得",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "赞许",
+    "dst": "野树莓",
+    "evidence": "你很勇敢",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "移交",
+    "dst": "塞梅尔维斯",
+    "evidence": "交给你了，调查员",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "挂念",
+    "dst": "七十七行动小队",
+    "evidence": "如果不是那几个失踪的队友",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "请命",
+    "dst": "告死鸟",
+    "evidence": "我们可以代为看管她的，对吗，列车长",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "照看",
+    "dst": "野树莓",
+    "evidence": "我会负责照顾——不对，看管小树莓的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "安抚",
+    "dst": "野树莓",
+    "evidence": "乘务员轻轻握住了她的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "相邀",
+    "dst": "鹅毛沙发",
+    "evidence": "我的房间里还有一张沙发，里面填充了最柔软的鹅毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "定性",
+    "dst": "软禁",
+    "evidence": "这叫软禁",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "驶向",
+    "dst": "边境检查站",
+    "evidence": "今天晚些时候列车会抵达边境检查站",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "挣扎",
+    "dst": "告死鸟",
+    "evidence": "我要把你们全都咬一遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "软禁",
+    "relation": "针对",
+    "dst": "野树莓",
+    "evidence": "在此之前，由我们来看护她",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

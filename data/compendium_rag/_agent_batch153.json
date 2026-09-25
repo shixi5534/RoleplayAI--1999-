@@ -1,0 +1,1581 @@
+{
+ "01a1580539f4254390e0d78b": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打开空礼盒并发现胶片的探视者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送出礼盒并已知晓真相的病人"
+   },
+   {
+    "name": "护士劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推车进来宣布治疗时间的护士"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "琼斯接受治疗的病房"
+   },
+   {
+    "name": "礼盒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "看似空无一物实则绑着胶片的盒子"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂所剪辑的那盘胶片"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "劳拉顺胶管注射药剂的仪器"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "琼斯已经知晓的真相"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "抗拒",
+    "dst": "琼斯",
+    "evidence": "因为如果琼斯和她一样，有着近似的人生经历",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "琼斯",
+    "evidence": "为什么要送给我这个？这个盒子里有东西吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "宣布",
+    "dst": "贝蒂",
+    "evidence": "时间到了。琼斯小姐需要接受治疗了",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "推出",
+    "dst": "贝蒂",
+    "evidence": "劳拉推着贝蒂的肩，将她推出了病房",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "掂量",
+    "dst": "礼盒",
+    "evidence": "她晃了晃盒子，然后将耳朵贴上去，但盒子里没有发出任何声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "担忧",
+    "dst": "礼盒",
+    "evidence": "空盒子……虚假的希望？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "拆开",
+    "dst": "礼盒",
+    "evidence": "她猛地扯开了丝带，将盒子打开",
+    "confidence": 0.95
+   },
+   {
+    "src": "礼盒",
+    "relation": "藏有",
+    "dst": "胶片",
+    "evidence": "用特殊的手法绑着一盒胶片",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "认出",
+    "dst": "胶片",
+    "evidence": "这就是贝蒂剪辑的那盘胶片",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "质问",
+    "dst": "琼斯",
+    "evidence": "是谁帮她把胶片拿了出来？",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "注射",
+    "dst": "琼斯",
+    "evidence": "劳拉正顺着玻璃仪器的胶管为琼斯注射着某种药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "承认",
+    "dst": "贝蒂",
+    "evidence": "你打开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "确认",
+    "dst": "琼斯",
+    "evidence": "你知道了？“暴雨”……",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "辩解",
+    "dst": "贝蒂",
+    "evidence": "别这么恶狠狠地看着我，是她先问我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "置身",
+    "dst": "病房",
+    "evidence": "这丝危险的想法驱使她尽全力向病房跑去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "957c5bb441b1846ea29bade4": {
+  "entities": [
+   {
+    "name": "护士劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "完成交易并拎走摄影机的护士"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "祈求琼斯复活的探视者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选择永恒之梦的病人"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被劳拉拎走的机器"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯特意留下的那盘"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂已默写完成的剧本"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯自陈将困守一生的仪器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "护士劳拉",
+    "relation": "声明",
+    "dst": "贝蒂",
+    "evidence": "我的交易已经完成了，我先走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "拎走",
+    "dst": "摄影机",
+    "evidence": "拎起了门口瘫坐着的摄影机，快步离开了病房",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "劝慰",
+    "dst": "琼斯",
+    "evidence": "没有摄影机也没有关系，我可以再买一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "承诺",
+    "dst": "琼斯",
+    "evidence": "我们也已经把剧本默写下来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "嘱咐",
+    "dst": "贝蒂",
+    "evidence": "电影会拍完……但不是“我们”的电影",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "赠予",
+    "dst": "胶片",
+    "evidence": "所以我把胶片留了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "自陈",
+    "dst": "玻璃棺",
+    "evidence": "我只能躺在这幅玻璃棺材里……一辈子出不来",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "辩解",
+    "dst": "琼斯",
+    "evidence": "医生说你的身体恢复得很好，很快就能下床",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "点破",
+    "dst": "贝蒂",
+    "evidence": "我左脸有一颗痣，平时，我都是盖住它的",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "类比",
+    "dst": "贝蒂",
+    "evidence": "很像小时候不敢打开礼盒的我",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "托付",
+    "dst": "贝蒂",
+    "evidence": "现在它就是你的电影，所以，拍完它吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "护士劳拉",
+    "evidence": "她给你注射了什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "敲打",
+    "dst": "玻璃棺",
+    "evidence": "她只好敲打着仪器，祈求引起琼斯的注意",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "自陈",
+    "dst": "贝蒂",
+    "evidence": "这是我自己要求的……我将会拥有一个甜美又永恒的梦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f36d260dae4158655b0bc482": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "成为基金会普通职员者"
+   },
+   {
+    "name": "女性职员I",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与贝蒂共事的女性职员梅根"
+   },
+   {
+    "name": "琼斯的墓地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "琼斯独自躺在别的年代之处"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "葬在基金会外的逝者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "贝蒂任职并旁观时代的机构"
+   },
+   {
+    "name": "储藏室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "存放时代藏品的储藏室"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂用薪水买到的机器"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "架子上整齐存放的一盒盒胶片"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "24小时后将出现的现象"
+   },
+   {
+    "name": "《月夜之舞》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "上映于2月23日的影片"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "安葬",
+    "dst": "琼斯的墓地",
+    "evidence": "琼斯葬在了基金会外，她独自躺在别的年代",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "任职",
+    "dst": "圣洛夫基金会",
+    "evidence": "作为基金会的普通职员，她总有着处理不完的杂事",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "招呼",
+    "dst": "贝蒂",
+    "evidence": "贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "称呼",
+    "dst": "女性职员I",
+    "evidence": "怎么了，梅根？",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "询问",
+    "dst": "贝蒂",
+    "evidence": "你在拍什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "持握",
+    "dst": "摄影机",
+    "evidence": "梅根好奇地看着贝蒂怀中的摄影机",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "坦言",
+    "dst": "女性职员I",
+    "evidence": "就只是带着它……她想用完那盘胶片",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "告知",
+    "dst": "贝蒂",
+    "evidence": "“暴雨”倒计时，也就是说24小时之后会出现“暴雨”现象",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "清点",
+    "dst": "储藏室",
+    "evidence": "贝蒂坐在如山般杂乱的储藏室，检查着编号与物品",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "发现",
+    "dst": "胶片",
+    "evidence": "上面摆满了胶片",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "回避",
+    "dst": "胶片",
+    "evidence": "出于对琼斯死去的抵触，在仓库工作后，她还从未靠近过这个架子",
+    "confidence": 0.95
+   },
+   {
+    "src": "《月夜之舞》",
+    "relation": "上映",
+    "dst": "胶片",
+    "evidence": "《月夜之舞》……上映于2月23日",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "忧虑",
+    "dst": "琼斯的墓地",
+    "evidence": "这其中也包括——琼斯的墓",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "置身",
+    "dst": "圣洛夫基金会",
+    "evidence": "作为基金会的普通职员，她总有着处理不完的杂事",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7927efd88eaed11b2d9a5b14": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "终于拍完电影并献于墓前者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其遗言促使贝蒂开拍者"
+   },
+   {
+    "name": "琼斯的墓地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "空无一人的墓地"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从床缝中找到的手写剧本"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被架好并检查过胶片光线的机器"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂留给自己的一段空白胶片"
+   },
+   {
+    "name": "礼盒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "系上歪歪扭扭蝴蝶结的精美盒子"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "墓碑平静接受其到来的灾害"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "扫视",
+    "dst": "胶片",
+    "evidence": "盒盒都在提醒她岁月已逝",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "忧虑",
+    "dst": "琼斯",
+    "evidence": "可琼斯马上就要消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "回忆",
+    "dst": "琼斯",
+    "evidence": "镜头下的你多可爱啊，贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "承诺",
+    "dst": "琼斯",
+    "evidence": "琼斯，我不会把你一个人丢在陌生的时代里",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "寻找",
+    "dst": "剧本",
+    "evidence": "最后终于在床的夹缝中找到了那本她手写出来的剧本",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "架设",
+    "dst": "摄影机",
+    "evidence": "贝蒂将摄影机架好，检查完胶片和光线后",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "表演",
+    "dst": "剧本",
+    "evidence": "贝蒂终于不再在脑中演练，而是真正将它表演了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "前往",
+    "dst": "琼斯的墓地",
+    "evidence": "墓地空无一人",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "奉上",
+    "dst": "礼盒",
+    "evidence": "贝蒂抱着一个精美的盒子，上面特意系上了歪歪扭扭的蝴蝶结丝带",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "交付",
+    "dst": "琼斯",
+    "evidence": "送给你，琼斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "宣告",
+    "dst": "琼斯",
+    "evidence": "这就是我们的电影，我拍完它了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "保留",
+    "dst": "胶片",
+    "evidence": "我给自己留了一些，因为，我还没想好我到底应该拍什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "接受",
+    "dst": "暴雨",
+    "evidence": "世界不会等我喊“准备好了”之后才开幕",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "许诺",
+    "dst": "琼斯",
+    "evidence": "我向你保证，它一定会很精彩",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9c199afff9662f1a6635d4a3": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在梦魇中失去家乡的女孩"
+   },
+   {
+    "name": "卡穆塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承诺为妹妹造新船的哥哥"
+   },
+   {
+    "name": "托阿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独木舟比赛的好手"
+   },
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤醒图图石子的友人"
+   },
+   {
+    "name": "努库泰澳岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "沉没的努库泰澳岛"
+   },
+   {
+    "name": "以提提",
+    "type": "地点",
+    "aliases": [],
+    "desc": "独木舟环岛赛途经之地"
+   },
+   {
+    "name": "米缇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "独木舟环岛赛途经之地"
+   },
+   {
+    "name": "维布那",
+    "type": "地点",
+    "aliases": [],
+    "desc": "独木舟环岛赛途经之地"
+   },
+   {
+    "name": "麦黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "独木舟环岛赛的终点"
+   },
+   {
+    "name": "独木舟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "如沉默墓碑般排列的旧舟"
+   },
+   {
+    "name": "罗盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "挂在高处指引归处方向之物"
+   },
+   {
+    "name": "梦魇",
+    "type": "概念",
+    "aliases": [],
+    "desc": "图图石子所深陷的噩梦"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡穆塔",
+    "relation": "吩咐",
+    "dst": "图图石子",
+    "evidence": "和我再最后检查一遍那些独木舟",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "打趣",
+    "dst": "卡穆塔",
+    "evidence": "就算他掉到海里去，我想也不是独木舟的问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "提及",
+    "dst": "托阿",
+    "evidence": "托阿兴奋了好多天",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡穆塔",
+    "relation": "评价",
+    "dst": "托阿",
+    "evidence": "那小子游得可比你哥哥要快",
+    "confidence": 0.95
+   },
+   {
+    "src": "独木舟",
+    "relation": "排列",
+    "dst": "努库泰澳岛",
+    "evidence": "独木舟整齐地排列在沙滩上",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "感叹",
+    "dst": "独木舟",
+    "evidence": "我们很久没有做新的独木舟了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡穆塔",
+    "relation": "规划",
+    "dst": "以提提",
+    "evidence": "先划到以提提，再绕到米缇和维布那，最后回到麦黎",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "请求",
+    "dst": "卡穆塔",
+    "evidence": "等到明年，我也可以划独木舟了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡穆塔",
+    "relation": "承诺",
+    "dst": "图图石子",
+    "evidence": "明年的独木舟环岛比赛，我给你打一艘新船",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "惊醒",
+    "dst": "塞洛尼",
+    "evidence": "醒醒，醒醒！图图石子！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "寻找",
+    "dst": "卡穆塔",
+    "evidence": "哥哥……托阿……你们在哪儿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "目睹",
+    "dst": "努库泰澳岛",
+    "evidence": "小岛沉没了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗盘",
+    "relation": "指引",
+    "dst": "努库泰澳岛",
+    "evidence": "连同挂在高处的罗盘灼灼，一齐指引着归处方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "深陷",
+    "dst": "梦魇",
+    "evidence": "海水的包裹一如既往的熟悉",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4d2f9718314a0db7d5613aaa": {
+  "entities": [
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与图图石子互换贝壳项链者"
+   },
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安慰友人的幸存者"
+   },
+   {
+    "name": "卡穆塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "塞洛尼与图图石子共同怀念的哥哥"
+   },
+   {
+    "name": "托阿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "暴风雨中拼命划桨者"
+   },
+   {
+    "name": "努库泰澳岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人共同离开的家乡"
+   },
+   {
+    "name": "以提提",
+    "type": "地点",
+    "aliases": [],
+    "desc": "塞洛尼想去采罗盘草之处"
+   },
+   {
+    "name": "贝壳项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "互换按额以相慰的项链"
+   },
+   {
+    "name": "罗盘草",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塞洛尼罗盘灼灼所缺的最后一株"
+   },
+   {
+    "name": "罗盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塞洛尼差最后一株罗盘草的器物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞洛尼",
+    "relation": "探问",
+    "dst": "图图石子",
+    "evidence": "一个不太好的梦，对吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "按额",
+    "dst": "图图石子",
+    "evidence": "将其中一颗贝壳放在图图石子的额前",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "回应",
+    "dst": "塞洛尼",
+    "evidence": "我将归来，我已归来",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "自述",
+    "dst": "图图石子",
+    "evidence": "这首歌还是你教我唱的呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "回忆",
+    "dst": "塞洛尼",
+    "evidence": "你和托阿偷偷出海，遇到暴风雨的那一天",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "坦白",
+    "dst": "图图石子",
+    "evidence": "我没有听从贝壳的指引，怂恿托阿带我去",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "前往",
+    "dst": "以提提",
+    "evidence": "那一天我想去以提提采罗盘草",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "采集",
+    "dst": "罗盘草",
+    "evidence": "我的罗盘灼灼就差最后一株了",
+    "confidence": 0.95
+   },
+   {
+    "src": "托阿",
+    "relation": "划桨",
+    "dst": "塞洛尼",
+    "evidence": "托阿拼命地划桨，手里还紧紧地攥着罗盘草",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "宽慰",
+    "dst": "塞洛尼",
+    "evidence": "你还有我，塞洛尼",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "断言",
+    "dst": "努库泰澳岛",
+    "evidence": "只要我们在，我们的家、我们的岛永远都在",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "怀念",
+    "dst": "卡穆塔",
+    "evidence": "我很想念托阿，想念卡穆塔，想念我们的岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝壳项链",
+    "relation": "碰撞",
+    "dst": "图图石子",
+    "evidence": "她们的贝壳项链碰撞着，发出轻微声响",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "离开",
+    "dst": "努库泰澳岛",
+    "evidence": "两个一同离开了家乡的朋友",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d09666d7493b05a26e6a1e7b": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递上申请书的助手"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "司辰,决定另寻他法者"
+   },
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为梦魇所扰的申请人"
+   },
+   {
+    "name": "箱中客厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "箱内客厅"
+   },
+   {
+    "name": "申请书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "笔迹稚拙却写得很规整的申请书"
+   },
+   {
+    "name": "安眠",
+    "type": "概念",
+    "aliases": [],
+    "desc": "图图石子所求的赐予安眠之术或药物"
+   },
+   {
+    "name": "梦魇",
+    "type": "概念",
+    "aliases": [],
+    "desc": "申请书上未写明的具体梦境"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "禀报",
+    "dst": "维尔汀",
+    "evidence": "图图石子小姐提出申请",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "申请",
+    "dst": "安眠",
+    "evidence": "她想要能够赐予安眠的神秘术——或是一份药物",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追问",
+    "dst": "十四行诗",
+    "evidence": "药物？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "说明",
+    "dst": "图图石子",
+    "evidence": "她为梦魇所扰，但申请书上并没有写上具体的梦境",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "询问",
+    "dst": "十四行诗",
+    "evidence": "除了申请书，图图石子还说了什么吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "评价",
+    "dst": "申请书",
+    "evidence": "图图石子小姐的申请书写得很规整，非常符合规范",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "承诺",
+    "dst": "十四行诗",
+    "evidence": "我会尽快为箱内成员的表格与手续申请调整",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "另谋",
+    "dst": "图图石子",
+    "evidence": "比起神秘术或药物，我想会有更好的办法",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "递交",
+    "dst": "申请书",
+    "evidence": "手中的纸质申请书有着笔迹稚拙的签名",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "置身",
+    "dst": "箱中客厅",
+    "evidence": "助手的脚步轻轻停住",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9916b0405e7b9e3a18129b0e": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在诊疗床上挣扎的病人"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为图图石子担忧的助手"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张给她更多时间的司辰"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布图图石子并非病人的治疗师"
+   },
+   {
+    "name": "拉普拉斯康复中心病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "图图石子所在的康复中心病房"
+   },
+   {
+    "name": "拉普拉斯康复中心走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人隔着窗户观察的走廊"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "图图石子接受诊断之处"
+   },
+   {
+    "name": "人工梦游疗法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被寄予不切实际预想的疗法"
+   },
+   {
+    "name": "梦魇",
+    "type": "概念",
+    "aliases": [],
+    "desc": "图图石子所陷入的纯粹痛苦"
+   },
+   {
+    "name": "努库泰澳岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "图图石子梦中呼喊的家乡"
+   },
+   {
+    "name": "卡穆塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "图图石子梦中呼喊的哥哥"
+   },
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "图图石子梦中的另一份牵挂"
+   }
+  ],
+  "relations": [
+   {
+    "src": "图图石子",
+    "relation": "呓语",
+    "dst": "卡穆塔",
+    "evidence": "托阿……哥哥！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "挣扎",
+    "dst": "拉普拉斯康复中心病房",
+    "evidence": "图图石子躺在诊疗床上，双眼紧闭，眉头皱起",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "观察",
+    "dst": "图图石子",
+    "evidence": "图图石子小姐只有睡着的时候才会变成这样",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "困惑",
+    "dst": "维尔汀",
+    "evidence": "她从来没有表露过悲伤的情绪",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "怀疑",
+    "dst": "图图石子",
+    "evidence": "难道……她不信任我们吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解释",
+    "dst": "十四行诗",
+    "evidence": "寻求我们的帮助不是她现在的首选",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "期待",
+    "dst": "小梅斯梅尔",
+    "evidence": "希望小梅斯梅尔的人工梦游疗法能让图图石子小姐好起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "纠正",
+    "dst": "十四行诗",
+    "evidence": "你们对人工梦游疗法又有一些不切实际的预想",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "诊断",
+    "dst": "图图石子",
+    "evidence": "我之前诊断了这位“患者”，准备引导她进入梦境",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "断言",
+    "dst": "图图石子",
+    "evidence": "“患者”只是陷入了一种纯粹的痛苦",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "求教",
+    "dst": "小梅斯梅尔",
+    "evidence": "我们是否有别的方法来缓解图图石子小姐的痛苦？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "批评",
+    "dst": "人工梦游疗法",
+    "evidence": "人工梦游疗法无法消除痛苦，就连缓解效果都微乎其微",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "置疑",
+    "dst": "十四行诗",
+    "evidence": "你们太依赖人工梦游了，这不是件好事",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "呼喊",
+    "dst": "努库泰澳岛",
+    "evidence": "暴风雨来了……贝壳……我们的岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "呼喊",
+    "dst": "塞洛尼",
+    "evidence": "暴风雨来了……贝壳……我们的岛",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "置身",
+    "dst": "拉普拉斯康复中心走廊",
+    "evidence": "透过窗户，她关切地看着图图石子的情况",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "接受",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "图图石子躺在诊疗床上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "35e057b019e71a61ea9e15f4": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布图图石子无需再住院者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定静观其变的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想为图图石子做点什么的助手"
+   },
+   {
+    "name": "芭卡洛儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼唤图图石子并告知节日的乐手"
+   },
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被唤醒的沉睡者"
+   },
+   {
+    "name": "船商贸易节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将开幕的贸易节"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "断言",
+    "dst": "图图石子",
+    "evidence": "她不是病人",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "提供",
+    "dst": "图图石子",
+    "evidence": "我能够提供的，仅仅是一些辅助安眠的手段",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "判断",
+    "dst": "图图石子",
+    "evidence": "我认为她具有完整健全的恢复能力，无需再待在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "决心",
+    "dst": "图图石子",
+    "evidence": "我还是想为她……做点什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "思索",
+    "dst": "十四行诗",
+    "evidence": "让我想想",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "呼唤",
+    "dst": "图图石子",
+    "evidence": "图图石子！图图石子呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "拍窗",
+    "dst": "图图石子",
+    "evidence": "她趴到窗上，轻轻拍打，呼唤着对方的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "制止",
+    "dst": "十四行诗",
+    "evidence": "一只手伸出来拦下了她，她的上司向她轻微摇头",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "唤醒",
+    "dst": "图图石子",
+    "evidence": "你醒了，图图石子！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "告知",
+    "dst": "图图石子",
+    "evidence": "是船商贸易节！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "宣布",
+    "dst": "船商贸易节",
+    "evidence": "船商贸易节，马上就要开幕了！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7ed403cb438301827a9142da": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被外面世界冲击的海岛女孩"
+   },
+   {
+    "name": "芭卡洛儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "筹划盛大贸易节的天才乐手"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为节日命名的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听到计划倒吸凉气的助手"
+   },
+   {
+    "name": "箱庭贸易节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "箱内即将举办的盛大贸易节"
+   },
+   {
+    "name": "船商贸易节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "努库泰澳人数月一次的贸易节"
+   },
+   {
+    "name": "箱中一隅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "箱中一隅"
+   },
+   {
+    "name": "努库泰澳岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "图图石子思念的家乡"
+   },
+   {
+    "name": "独木舟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "赛后需保养的船只"
+   },
+   {
+    "name": "罗盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "岛民生活的一部分"
+   },
+   {
+    "name": "药品",
+    "type": "物品",
+    "aliases": [],
+    "desc": "船商贸易节上所换之物"
+   },
+   {
+    "name": "颜料",
+    "type": "物品",
+    "aliases": [],
+    "desc": "船商贸易节上所换之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "图图石子",
+    "relation": "疑问",
+    "dst": "芭卡洛儿",
+    "evidence": "这里也有船商贸易节吗？我从来没有听说过",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "解释",
+    "dst": "船商贸易节",
+    "evidence": "你们在船商贸易节换出去的产品，当然也会通过贸易再流转到更远的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "说明",
+    "dst": "箱庭贸易节",
+    "evidence": "我们这里的贸易节就叫做箱庭贸易节",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "命名",
+    "dst": "箱庭贸易节",
+    "evidence": "叫“箱庭贸易节”",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "列举",
+    "dst": "图图石子",
+    "evidence": "还有宝石闪闪节、水果秀场、湖畔市场、二手沙滩",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "震撼",
+    "dst": "芭卡洛儿",
+    "evidence": "一年四季，都在贸易！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "回忆",
+    "dst": "努库泰澳岛",
+    "evidence": "在岛上的时候，船商贸易节结束后，等那些轮船离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "回忆",
+    "dst": "独木舟",
+    "evidence": "做好比赛要用的独木舟，挑选、打磨贝壳",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "换取",
+    "dst": "药品",
+    "evidence": "我们在船商贸易节换到药品、烟草",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "换取",
+    "dst": "颜料",
+    "evidence": "还有颜料、陶瓷小花，我和塞洛尼一人一朵",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "认同",
+    "dst": "船商贸易节",
+    "evidence": "你说得没错，船商贸易节对努库泰澳人很重要",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "主张",
+    "dst": "箱庭贸易节",
+    "evidence": "箱庭贸易节也很重要！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "描述",
+    "dst": "箱庭贸易节",
+    "evidence": "我们会有一场盛大的贸易节，两天一夜",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "请求",
+    "dst": "图图石子",
+    "evidence": "图图石子，我们非常需要你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "应允",
+    "dst": "芭卡洛儿",
+    "evidence": "有什么需要我做的事情，我、我会尽力帮忙的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "惊讶",
+    "dst": "箱庭贸易节",
+    "evidence": "一旁多数时间都很冷静的助手小姐轻轻地倒吸了口凉气",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,2090 @@
+{
+ "b10e631d3fb3521082b80aa6": {
+  "entities": [
+   {
+    "name": "啁啾表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "反复播放遗言的怀表"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问住户下落的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被枪口对住的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坦然交底的访客"
+   },
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持猎枪守护遗物的老妇"
+   },
+   {
+    "name": "季娜婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "预告变数的故人"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被反复追忆的旧灾"
+   },
+   {
+    "name": "俄式小楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "充作纪念馆的故居"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在外围堵截的巨机"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被怀表勾连起的人"
+   },
+   {
+    "name": "苏联",
+    "type": "地点",
+    "aliases": [],
+    "desc": "连孩子都成了恐怖分子的国家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "啁啾表",
+    "relation": "留言",
+    "dst": "维尔汀",
+    "evidence": "不要担心，我在这里恢复得很好，病房里的同志们都会相互帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "啁啾表",
+    "relation": "念及",
+    "dst": "小梅斯梅尔",
+    "evidence": "我很想你……爸爸……已经一个月了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "探问",
+    "dst": "俄式小楼",
+    "evidence": "他们是这栋房子的主人吗？……这家人去哪里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "忆及",
+    "dst": "马克西姆",
+    "evidence": "似乎在马克西姆身上见过",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "警觉",
+    "dst": "俄式小楼",
+    "evidence": "X想回头确认一下情况，却随即被喝止",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "喝止",
+    "dst": "X",
+    "evidence": "别动！举起手，然后转过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "自介",
+    "dst": "维尔汀",
+    "evidence": "叫我塔玛拉",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "追述",
+    "dst": "苏联的瘟疫",
+    "evidence": "上次我见到做坏事的小孩还是在瘟疫之前",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "视为变数",
+    "dst": "季娜婆婆",
+    "evidence": "你们就是季娜说的那几个变数",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "交底",
+    "dst": "塔玛拉",
+    "evidence": "我保证我说的话绝无半句虚假",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "愤世",
+    "dst": "苏联",
+    "evidence": "把三个小孩当作恐怖分子，炸肉包这类的机器人还发了狂似的来堵截你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "称作纪念馆",
+    "dst": "俄式小楼",
+    "evidence": "是我们的纪念馆，你们可别乱碰",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "许诺",
+    "dst": "炸肉包",
+    "evidence": "等我把事都做完了，可以找人帮你们处理外面那个圆脑袋",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "领情",
+    "dst": "塔玛拉",
+    "evidence": "我们很乐意接受您的好意，塔玛拉女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "打断",
+    "dst": "小梅斯梅尔",
+    "evidence": "小梅斯梅尔还未说完，X便打断了她",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cfbd59d96b1f32688b0c9b9b": {
+  "entities": [
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擦拭遗物的守墓长者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "细看工具的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拿起最旧闹钟的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下来搭手的访客"
+   },
+   {
+    "name": "奥莉加·索科洛娃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下满屋闹钟的护士"
+   },
+   {
+    "name": "奥莉加的闹钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "提醒换药的数十只闹钟"
+   },
+   {
+    "name": "儿童闹钟",
+    "type": "物品",
+    "aliases": [],
+    "desc": "庆生的陈旧儿童闹钟"
+   },
+   {
+    "name": "死于瘟疫的萨沙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "殁于瘟疫的二十岁女儿"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "工具墙旧主的儿子"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喜好手工的早逝父亲"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "带走萨沙的灾疫"
+   },
+   {
+    "name": "俄式小楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "堆满闹钟与工具的纪念馆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "留帮",
+    "dst": "塔玛拉",
+    "evidence": "我们留下来帮你，塔玛拉女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "按停",
+    "dst": "奥莉加的闹钟",
+    "evidence": "伸手往下一按，闹钟便立马闭上了嘴",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥莉加·索科洛娃",
+    "relation": "拥有",
+    "dst": "奥莉加的闹钟",
+    "evidence": "这些闹钟的拥有者是奥莉加·索科洛娃",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "追忆",
+    "dst": "奥莉加·索科洛娃",
+    "evidence": "虽然她每天神经兮兮的，但人还算实诚",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥莉加·索科洛娃",
+    "relation": "依赖",
+    "dst": "奥莉加的闹钟",
+    "evidence": "总是害怕自己忘记各种事，所有的闹钟都用来提醒自己给病人换药",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "发问",
+    "dst": "奥莉加的闹钟",
+    "evidence": "为什么……她需要这么多闹钟",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥莉加·索科洛娃",
+    "relation": "遗留",
+    "dst": "塔玛拉",
+    "evidence": "给我留下这么个烂摊子",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "拿起",
+    "dst": "儿童闹钟",
+    "evidence": "X拿起一个最老旧的儿童闹钟",
+    "confidence": 0.95
+   },
+   {
+    "src": "儿童闹钟",
+    "relation": "庆生",
+    "dst": "死于瘟疫的萨沙",
+    "evidence": "生日快乐，萨沙，第20次",
+    "confidence": 0.95
+   },
+   {
+    "src": "死于瘟疫的萨沙",
+    "relation": "罹难",
+    "dst": "苏联的瘟疫",
+    "evidence": "早就死在那场瘟疫里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "守候",
+    "dst": "儿童闹钟",
+    "evidence": "一会儿它就要响了，这也是今天我会来的原因",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "同好",
+    "dst": "马克西姆",
+    "evidence": "安德烈和万尼亚就喜欢这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "端相",
+    "dst": "俄式小楼",
+    "evidence": "一整面的工具墙，看来这家人很喜欢自己做手工",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "清扫",
+    "dst": "俄式小楼",
+    "evidence": "早点打扫完，就能早点去处理外面那个铁疙瘩",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "询问",
+    "dst": "塔玛拉",
+    "evidence": "这也是您一直维持着……这些遗物原貌的原因吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aaf71731a38f0f61c53fd008": {
+  "entities": [
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻看挂历的讲述者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "举起相框的研究者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其节哀的访客"
+   },
+   {
+    "name": "季娜婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "骂她傻的旧友"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "留在冬天的岁月"
+   },
+   {
+    "name": "苏联",
+    "type": "地点",
+    "aliases": [],
+    "desc": "自诩最能挺过寒冬的国度"
+   },
+   {
+    "name": "纪念馆的合影相框",
+    "type": "物品",
+    "aliases": [],
+    "desc": "满是油污的一家合影"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱着男孩的父亲"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "小万尼亚"
+    ],
+    "desc": "相框中举玩具的男孩"
+   },
+   {
+    "name": "阿扎利亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "夭折孩子的母亲"
+   },
+   {
+    "name": "俄式小楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被擦得光洁如新的居所"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "重逢熟面孔的场合"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塔玛拉",
+    "relation": "自陈",
+    "dst": "俄式小楼",
+    "evidence": "我一样东西都扔不掉，就只好拿到这里了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "嗔念",
+    "dst": "季娜婆婆",
+    "evidence": "季娜骂我傻，呵呵……但她也没反对啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "忆苦",
+    "dst": "苏联的瘟疫",
+    "evidence": "瘟疫盛行的时候，我们嘴上不说，可心里真觉得人类是不是要因此完蛋了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "坚忍",
+    "dst": "苏联",
+    "evidence": "谁比我们苏联人更能挺过寒冬",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏联的瘟疫",
+    "relation": "夺命",
+    "dst": "塔玛拉",
+    "evidence": "可有些人就是永远留在了那个冬天",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "劝慰",
+    "dst": "塔玛拉",
+    "evidence": "塔玛拉女士，节哀",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "怅惘",
+    "dst": "苏联的瘟疫",
+    "evidence": "如今的生活这么幸福，他们却永远都看不到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "幼童之父安德烈",
+    "relation": "入镜",
+    "dst": "纪念馆的合影相框",
+    "evidence": "一名身穿背带裤、满身油污的男子抱着一个小男孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "祝愿",
+    "dst": "幼童之父安德烈",
+    "evidence": "安德烈和小万尼亚要是活着，看到这个铁块满地走的世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "惦念",
+    "dst": "阿扎利亚",
+    "evidence": "孩子的妈妈……阿扎利亚也会开心的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "举框",
+    "dst": "马克西姆",
+    "evidence": "我们在聚合物国际峰会上见过这个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "拭雾",
+    "dst": "俄式小楼",
+    "evidence": "雾气弥漫在透明的玻璃上，小梅斯梅尔若无其事地将它抹去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "67f77e49c0639925ec68bfa0": {
+  "entities": [
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出字迹的长者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指认记者的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "小万尼亚"
+    ],
+    "desc": "被字迹揭穿的少年"
+   },
+   {
+    "name": "阿扎利亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讣告带走的一家之主"
+   },
+   {
+    "name": "幼童之父安德烈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讣告里的父亲"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻出图纸的访客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问缘由的访客"
+   },
+   {
+    "name": "季娜婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驾鸡脚小屋而来的婆婆"
+   },
+   {
+    "name": "鸡脚小屋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "会飞的老屋"
+   },
+   {
+    "name": "量子计算机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "为季娜预判归期的机器"
+   },
+   {
+    "name": "机器人设计图纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "巨机的逆向破解图"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被追击的巨型机器人"
+   },
+   {
+    "name": "苏联的瘟疫",
+    "type": "事件",
+    "aliases": [],
+    "desc": "吞没一家三口的灾疫"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被断言头大的博士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "指认",
+    "dst": "马克西姆",
+    "evidence": "我们见到的那个人自称马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "寻找",
+    "dst": "阿扎利亚",
+    "evidence": "当我们挺过瘟疫后，我找过阿扎利亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "误信",
+    "dst": "苏联的瘟疫",
+    "evidence": "这一家三口都在瘟疫中去世了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "欣喜",
+    "dst": "马克西姆",
+    "evidence": "这么看来，他还活着？并且长大成人了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "拾得",
+    "dst": "机器人设计图纸",
+    "evidence": "看上去像是与机器人相关的资料",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "比对",
+    "dst": "炸肉包",
+    "evidence": "也就是追击我们的那个大机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "认字迹",
+    "dst": "马克西姆",
+    "evidence": "这个字迹我认得，尤其是这个я的写法",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "交托",
+    "dst": "季娜婆婆",
+    "evidence": "我的老朋友能看懂",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "乘来",
+    "dst": "鸡脚小屋",
+    "evidence": "看起来……像一座会飞的鸡脚小屋",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "称许",
+    "dst": "量子计算机",
+    "evidence": "哈哈，看来量子计算机说得不错，来了一群外国的小科学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "研读",
+    "dst": "机器人设计图纸",
+    "evidence": "这份图纸是对炸肉包的逆向破解",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "图谋",
+    "dst": "炸肉包",
+    "evidence": "他就能接管炸肉包的控制权，甚至将它投放于军事用途",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "讥评",
+    "dst": "谢切诺夫",
+    "evidence": "不然谢切诺夫的头可就大喽",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "慰藉",
+    "dst": "塔玛拉",
+    "evidence": "小梅斯梅尔刚想安慰失落的婆婆",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "06cd13ea8d215a056460e513": {
+  "entities": [
+   {
+    "name": "季娜婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言没有退路的婆婆"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试枪的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜罗杂物改装的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在枪口装电磁设备的研究者"
+   },
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "分发老枪的主人"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "小万尼亚"
+    ],
+    "desc": "解除限制的策划者"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被手榴弹引来的巨机"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被研究透的控制器"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被密谋阻碍的系统"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被痛斥的发明者"
+   },
+   {
+    "name": "旧八音盒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "嵌进枪身的旧物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "季娜婆婆",
+    "relation": "点破",
+    "dst": "马克西姆",
+    "evidence": "但小万尼亚，哦，马克西姆，找到了解除限制的办法",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "质疑",
+    "dst": "马克西姆",
+    "evidence": "是他策划了整个事件",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "操控",
+    "dst": "炸肉包",
+    "evidence": "追击我们的那架炸肉包就是他控制的",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "吃透",
+    "dst": "思想控制器",
+    "evidence": "他还把思想控制器给研究透了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "妨碍",
+    "dst": "大集体2.0",
+    "evidence": "如果大集体2.0被马克西姆操控，后果是什么呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "判定",
+    "dst": "马克西姆",
+    "evidence": "那个叫马克西姆的记者似乎在密谋更危险的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "痛斥",
+    "dst": "谢切诺夫",
+    "evidence": "我就知道谢切诺夫搞出来的这套玩意不仅会让人变傻",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "揭出",
+    "dst": "马克西姆",
+    "evidence": "并不是P-3和双生舞伶，而是马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "取材",
+    "dst": "旧八音盒",
+    "evidence": "我只是在门口找到了这个旧八音盒",
+    "confidence": 0.95
+   },
+   {
+    "src": "旧八音盒",
+    "relation": "勾忆",
+    "dst": "季娜婆婆",
+    "evidence": "这个旋律真令人怀念啊……令我想起了我的女儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "惊呼",
+    "dst": "X",
+    "evidence": "天呐，你们从哪里搜罗来这些东西的",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "嗔怪",
+    "dst": "X",
+    "evidence": "小蝗虫……一群小蝗虫……那些房间一定都乱得不成样子了",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "调试",
+    "dst": "X",
+    "evidence": "枪械调试好了，小维尔汀，你试试",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "加装",
+    "dst": "思想控制器",
+    "evidence": "在枪口装好了电磁设备",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "引爆",
+    "dst": "炸肉包",
+    "evidence": "一颗手榴弹在原野中炸出一团黑色的烟雾，远处的炸肉包被这个声音吸引",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "提醒",
+    "dst": "季娜婆婆",
+    "evidence": "等一下，我们并没有商量好战术",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fbe140e22240253547dc70b7": {
+  "entities": [
+   {
+    "name": "季娜婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "踏上巨机头颅的婆婆"
+   },
+   {
+    "name": "塔玛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "调侃老友的看守"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意阻止记者的访客"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为巨机接上扬声器的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "由算力想到心灵的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下后门的操纵者"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被重新启动的巨机"
+   },
+   {
+    "name": "鸡脚小屋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "停在远处的飞行老屋"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "波动卷须的控制器"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拿来作比的机具"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "装有情感模块的双子"
+   }
+  ],
+  "relations": [
+   {
+    "src": "季娜婆婆",
+    "relation": "踏服",
+    "dst": "炸肉包",
+    "evidence": "季娜婆婆踩在炸肉包熄灭的头上",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "调侃",
+    "dst": "季娜婆婆",
+    "evidence": "老朋友，你闹出来的动静永远都这么大",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "决意",
+    "dst": "马克西姆",
+    "evidence": "我们要阻止马克西姆，不能再让他伤害更多的人了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "申说",
+    "dst": "马克西姆",
+    "evidence": "我们得回去洗清自己的嫌疑",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "泄愤",
+    "dst": "炸肉包",
+    "evidence": "还要让他也尝尝炸肉包的滋味",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "接入",
+    "dst": "炸肉包",
+    "evidence": "思想控制器的卷须再次波动起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "借用",
+    "dst": "马克西姆",
+    "evidence": "让我来借用一下马克西姆已经留好的后门",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "改造",
+    "dst": "炸肉包",
+    "evidence": "再加上一个扬声器……这样，它就能发出我们的声音了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "担忧",
+    "dst": "诺拉",
+    "evidence": "它不会成为第二个诺拉或双生舞伶吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "比照",
+    "dst": "双生舞伶",
+    "evidence": "论算力，双生舞伶应该会比诺拉要高得多",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "诘问",
+    "dst": "双生舞伶",
+    "evidence": "但她们从来都没有表达过自己的情感",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "服从",
+    "dst": "X",
+    "evidence": "炸肉包蹒跚着走向X，在他面前蹲下了",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "取证",
+    "dst": "马克西姆",
+    "evidence": "把它带回展览馆，你们就有铁证了",
+    "confidence": 0.95
+   },
+   {
+    "src": "季娜婆婆",
+    "relation": "辞别",
+    "dst": "鸡脚小屋",
+    "evidence": "季娜婆婆收拾好自己的枪，走向停在远处的鸡脚小屋",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔玛拉",
+    "relation": "道破",
+    "dst": "季娜婆婆",
+    "evidence": "她要继续去寻找自己女儿的下落啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "目送",
+    "dst": "塔玛拉",
+    "evidence": "目送着两位女士的远去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5e64849dfd10175f86c49950": {
+  "entities": [
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "绑住发狂者的少校"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "细检巨机的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解析修改痕迹的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "配合镇压的双子"
+   },
+   {
+    "name": "科学家Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "第七位发狂的科学家"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻阅资料的手套"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带回铁证的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被锁定的幕后黑手"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [
+     "MA-9"
+    ],
+    "desc": "自述求饶的机型"
+   },
+   {
+    "name": "诺拉",
+    "type": "角色",
+    "aliases": [
+     "维修小站"
+    ],
+    "desc": "闹情绪问题的维修站"
+   },
+   {
+    "name": "聚合物展览馆的装配间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "再度戒备的工作间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "P-3",
+    "relation": "缚制",
+    "dst": "科学家Ⅲ",
+    "evidence": "可算把他绑好了，谢了，双生舞伶",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "差遣",
+    "dst": "双生舞伶",
+    "evidence": "分别抱住他的腿，双生舞伶",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "计数",
+    "dst": "科学家Ⅲ",
+    "evidence": "这是第七位精神陷入异常情况的科学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "自嘲",
+    "dst": "诺拉",
+    "evidence": "我们的维修小站出了点问题……情绪问题，P-3少校",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "冷语",
+    "dst": "P-3",
+    "evidence": "如果没人知道这件事，那也算一种完成任务了",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "纠偏",
+    "dst": "P-3",
+    "evidence": "你这次的任务是阻止事态发展成国际外交丑闻",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "筛查",
+    "dst": "马克西姆",
+    "evidence": "除了已知的三名未成年人外，还有一名记者身份存疑",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "识别",
+    "dst": "炸肉包",
+    "evidence": "识别机型代码为——MA-9炸肉包",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "告饶",
+    "dst": "P-3",
+    "evidence": "啊，请不要伤害我",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "举证",
+    "dst": "马克西姆",
+    "evidence": "我们带回来的资料和炸肉包数据库的篡改痕迹可以证明这件事",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "解析",
+    "dst": "炸肉包",
+    "evidence": "此台MA-9，也就是炸肉包的数据库确实存在两次修改痕迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "关联",
+    "dst": "诺拉",
+    "evidence": "这个人与我们在诺拉的记录中发现的那个异常访客相同",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "现身",
+    "dst": "聚合物展览馆的装配间",
+    "evidence": "装配间的透明玻璃映出模糊的巨大身影",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "57ee141b5ae89f83689a6dbc": {
+  "entities": [
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给出结论的舞伶"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认下私改的访客"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要揪人出来的少校"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接入能源室通讯的舞伶"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读懂图纸的手套"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [
+     "万尼亚"
+    ],
+    "desc": "被喊话的记者"
+   },
+   {
+    "name": "沃瓦",
+    "type": "角色",
+    "aliases": [
+     "VOV-A6型实验助手"
+    ],
+    "desc": "涉入命案的实验助手"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [
+     "MA-9"
+    ],
+    "desc": "被启动的巨机"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被改装的控制器"
+   },
+   {
+    "name": "大集体2.0",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被图谋阻止的系统"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤其本名的访客"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "唯一掌握全馆之处"
+   },
+   {
+    "name": "涡轮车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无起飞记录的载具"
+   },
+   {
+    "name": "谢切诺夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被咒为拥趸之源的博士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马克西姆",
+    "relation": "操纵",
+    "dst": "沃瓦",
+    "evidence": "操控VOV-A6型实验助手杀人",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "归责",
+    "dst": "马克西姆",
+    "evidence": "这三件事背后的操纵者均为马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "认定",
+    "dst": "马克西姆",
+    "evidence": "夺取展览馆控制权一事极大概率为马克西姆所为",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "掩饰",
+    "dst": "炸肉包",
+    "evidence": "那是我的……专利技术，国家级机密",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "发现",
+    "dst": "思想控制器",
+    "evidence": "这里还有思想控制器的结构图纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "改装",
+    "dst": "思想控制器",
+    "evidence": "也许是方便他远程控制那些被他修改过的机器人",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "图谋",
+    "dst": "大集体2.0",
+    "evidence": "甚至是阻止大集体2.0开启的国际丑闻",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推想",
+    "dst": "马克西姆",
+    "evidence": "科学家们的发狂和死亡，也有可能是因为马克西姆",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "搜捕",
+    "dst": "马克西姆",
+    "evidence": "帮我找找马克西姆在哪儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "推定",
+    "dst": "涡轮车",
+    "evidence": "无涡轮车起飞记录，推测马克西姆仍留在此飞行平台内",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "定位",
+    "dst": "能源室",
+    "evidence": "综合各方面情报，排除已掉线区域……得出结论，能源室",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "呼叫",
+    "dst": "马克西姆",
+    "evidence": "马克西姆先生，您好",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "质询",
+    "dst": "大集体2.0",
+    "evidence": "试图妨碍大集体2.0的展开，你的诉求是什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "喊话",
+    "dst": "马克西姆",
+    "evidence": "我们知道你最近回过那栋小楼，我们也去过了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "点破",
+    "dst": "马克西姆",
+    "evidence": "你的本名叫万尼亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "威胁",
+    "dst": "维尔汀",
+    "evidence": "多想想自己吧，估计你们离死亡并不远了",
+    "confidence": 0.95
+   },
+   {
+    "src": "马克西姆",
+    "relation": "仇视",
+    "dst": "谢切诺夫",
+    "evidence": "这就是成为谢切诺夫拥趸的下场",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d1082e9e86f9d55d17acfadc": {
+  "entities": [
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒不改邪的罪犯"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怒而欲行的少校"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "印证猜测的访客"
+   },
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "按住同伴的醉汉科学家"
+   },
+   {
+    "name": "科学家阿列克谢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绑住的发狂者"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝贸然行动的双子"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陈明机制未知的舞伶"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坦然承认启动的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "克制责难的治疗师"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被疑装计时器的装置"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罪犯藏身之所"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "印证",
+    "dst": "能源室",
+    "evidence": "至少我们的猜测得到了印证——他就在能源室",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "呼救",
+    "dst": "P-3",
+    "evidence": "快来个人看看！他情况不对……！阿列克谢",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学家阿列克谢",
+    "relation": "失控",
+    "dst": "伊桑·布朗",
+    "evidence": "……绑住我……别让我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "目睹",
+    "dst": "科学家阿列克谢",
+    "evidence": "就听到了阿列克谢癫狂的喊叫",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "决意",
+    "dst": "马克西姆",
+    "evidence": "得把马克西姆从能源室揪出来才行",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "嘱托",
+    "dst": "双生舞伶",
+    "evidence": "双生舞伶，保护好他们，我去解决了那家伙",
+    "confidence": 0.95
+   },
+   {
+    "src": "双生舞伶",
+    "relation": "劝阻",
+    "dst": "P-3",
+    "evidence": "我们并不建议贸然行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "存疑",
+    "dst": "思想控制器",
+    "evidence": "科学家们的发狂原因仍旧未知，若不知晓其机制，仍然无法阻止事态的恶化",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "推断",
+    "dst": "思想控制器",
+    "evidence": "这里面也许有个计时器之类的",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "察觉",
+    "dst": "思想控制器",
+    "evidence": "现在发狂的顺序是按照思想控制器启动的先后顺序来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自认",
+    "dst": "思想控制器",
+    "evidence": "我也启动思想控制器了呀，这不是意料之中的事吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "责备",
+    "dst": "X",
+    "evidence": "这可并不是我们期待的影响与变动",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "拆解",
+    "dst": "思想控制器",
+    "evidence": "让我们来拆解出思想控制器的运行机制，阻止疯狂的蔓延",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "be33f7589e10c06d694f4292": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张科学破解的访客"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无奈上手的操作者"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被留下的保卫者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "调度人手与谈判的访客"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谈判的对手方"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待破解的改造装置"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最懂控制器的留守者"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承诺护法的舞伶"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "X 供职多年的机构"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本应举办的学术集会"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "谈判要去之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "赞同",
+    "dst": "X",
+    "evidence": "没想到我会赞同你……的确，再说早该如此也没有任何用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "焦躁",
+    "dst": "马克西姆",
+    "evidence": "让我直接问问马克西姆不就行了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "挽留",
+    "dst": "P-3",
+    "evidence": "我们需要有人留下来保护这里的科学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "倚重",
+    "dst": "手套查尔斯",
+    "evidence": "查尔斯算是这里比较了解思想控制器的，我们非常需要你留在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "谈判",
+    "dst": "马克西姆",
+    "evidence": "我、双生舞伶和炸肉包去能源室与马克西姆谈判",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "斥止",
+    "dst": "维尔汀",
+    "evidence": "一个不小心那些机器人真会把你的头拽下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "担保",
+    "dst": "P-3",
+    "evidence": "我们不会让这种事情发生的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "自陈",
+    "dst": "P-3",
+    "evidence": "我还是幼童的时候就在手术台旁打下手了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "供职",
+    "dst": "科算中心",
+    "evidence": "而我在拉普拉斯也工作不少年了",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "自许",
+    "dst": "小梅斯梅尔",
+    "evidence": "我们确实可以称得上是科学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "打趣",
+    "dst": "聚合物国际峰会",
+    "evidence": "这里原来是要举办聚合物国际峰会的",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "求解",
+    "dst": "能源室",
+    "evidence": "想要解决这次的危机，确实需要有人破解马克西姆改造的思想控制器",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "738e193b53b1dcb4a4c55da2": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抱行的访客"
+   },
+   {
+    "name": "左伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报路与扫描的舞伶"
+   },
+   {
+    "name": "右伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挡下碎片的舞伶"
+   },
+   {
+    "name": "双生舞伶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率队奔行的双子"
+   },
+   {
+    "name": "炸肉包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "自天花板坠落的改装机体"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被推断为入侵者"
+   },
+   {
+    "name": "聚合物展览馆的走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "狼藉而漫长的通路"
+   },
+   {
+    "name": "能源室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "走廊尽头的目的地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "双生舞伶",
+    "relation": "引路",
+    "dst": "维尔汀",
+    "evidence": "双生舞伶带领着访客在狼藉的走廊中奔跑",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "指路",
+    "dst": "能源室",
+    "evidence": "能源室就在走廊尽头",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "抱起",
+    "dst": "维尔汀",
+    "evidence": "由于时间有限，我们需要加快速度，请允许我将您抱起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "推断",
+    "dst": "马克西姆",
+    "evidence": "展览馆的防护门异常启动，推断为马克西姆所为",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "致歉",
+    "dst": "维尔汀",
+    "evidence": "下次我会提醒您在贴地滑行时屏住呼吸",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "警戒",
+    "dst": "炸肉包",
+    "evidence": "警告，有巨大热源从上方靠近",
+    "confidence": 0.95
+   },
+   {
+    "src": "炸肉包",
+    "relation": "坠落",
+    "dst": "聚合物展览馆的走廊",
+    "evidence": "一台炸肉包从天花板上落了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "右伶",
+    "relation": "遮挡",
+    "dst": "维尔汀",
+    "evidence": "所幸右伶挡住了所有袭来的尘埃和碎片",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "检测",
+    "dst": "马克西姆",
+    "evidence": "检测到重火力武器，这似乎是经马克西姆改装后的型号",
+    "confidence": 0.95
+   },
+   {
+    "src": "左伶",
+    "relation": "备战",
+    "dst": "炸肉包",
+    "evidence": "准备战斗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "56cd7452c606142c58eb9b6b": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搭起实验台的研究者"
+   },
+   {
+    "name": "手套查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拆解外壳的机械手套"
+   },
+   {
+    "name": "P-3",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沦为支架的少校"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指认杂质的访客"
+   },
+   {
+    "name": "思想控制器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拆出空腔的控制器"
+   },
+   {
+    "name": "聚合物溶性材料",
+    "type": "概念",
+    "aliases": [],
+    "desc": "会与聚合物反应的材质"
+   },
+   {
+    "name": "控制器内的胶囊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏于空腔的溶解容器"
+   },
+   {
+    "name": "伊桑·布朗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "有医学化学双学位的酒鬼"
+   },
+   {
+    "name": "聚合物",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被混入成分的介质"
+   },
+   {
+    "name": "马克西姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讥为发明者"
+   },
+   {
+    "name": "聚合物国际峰会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "酒鬼引以为傲的集会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "寻得",
+    "dst": "思想控制器",
+    "evidence": "我找到了两枚没有启动过的思想控制器",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "称量",
+    "dst": "思想控制器",
+    "evidence": "比标准规格的思想控制器重上三克",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "分离",
+    "dst": "思想控制器",
+    "evidence": "随着清脆的咔嗒一声，外壳就与底盘分离了",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "惊疑",
+    "dst": "思想控制器",
+    "evidence": "思想控制器里不该有这样的空腔结构",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "指认",
+    "dst": "聚合物溶性材料",
+    "evidence": "你是指这块聚合物溶性材料与聚合物产生反应后留下的化合物",
+    "confidence": 0.95
+   },
+   {
+    "src": "聚合物溶性材料",
+    "relation": "反应",
+    "dst": "聚合物",
+    "evidence": "里面的成分就会混入聚合物中，与聚合物产生反应",
+    "confidence": 0.95
+   },
+   {
+    "src": "控制器内的胶囊",
+    "relation": "藏于",
+    "dst": "思想控制器",
+    "evidence": "有人在思想控制器里装了个聚合物溶性材料制成的容器",
+    "confidence": 0.95
+   },
+   {
+    "src": "P-3",
+    "relation": "追问",
+    "dst": "控制器内的胶囊",
+    "evidence": "就是这胶囊害那些科学家发了疯",
+    "confidence": 0.95
+   },
+   {
+    "src": "手套查尔斯",
+    "relation": "化验",
+    "dst": "控制器内的胶囊",
+    "evidence": "是疯还是死，我们得化验了才知道",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "求教",
+    "dst": "X",
+    "evidence": "我检测出了几样未知物质，你认识这个分子结构吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "自荐",
+    "dst": "小梅斯梅尔",
+    "evidence": "我！我有医学和化学的双学位！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "调侃",
+    "dst": "伊桑·布朗",
+    "evidence": "很高兴你不只是一个酒鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "自诩",
+    "dst": "聚合物国际峰会",
+    "evidence": "我可是能参加聚合物国际峰会的酒鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "辨识",
+    "dst": "控制器内的胶囊",
+    "evidence": "像是某种神经毒素，倒算是一项新发明",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊桑·布朗",
+    "relation": "讥讽",
+    "dst": "马克西姆",
+    "evidence": "发明发现委员会应该给他颁证书的",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

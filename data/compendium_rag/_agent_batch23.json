@@ -1,0 +1,1110 @@
+{
+ "fa44141ce13379379d7a8dc7": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "被贯穿并交出福利院号码者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被同时贯穿而死者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一枪贯穿两人的射击者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尝试紧急治疗并阅读毒理者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最后撤离时限的联络者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研制苦目树配方者"
+   },
+   {
+    "name": "苦目树",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其树根与果实在药剂中超过百分之五十"
+   },
+   {
+    "name": "颠茄",
+    "type": "物品",
+    "aliases": [],
+    "desc": "药剂成分"
+   },
+   {
+    "name": "水仙根",
+    "type": "物品",
+    "aliases": [],
+    "desc": "药剂成分"
+   },
+   {
+    "name": "魔鬼鞋带",
+    "type": "物品",
+    "aliases": [],
+    "desc": "药剂成分"
+   },
+   {
+    "name": "罗马尼亚福利院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "收养马库斯长大之处"
+   },
+   {
+    "name": "维也纳火车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有更精良设备的避难处"
+   },
+   {
+    "name": "避难名额",
+    "type": "概念",
+    "aliases": [],
+    "desc": "霍夫曼欲让给卡卡尼亚的资格"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "贯穿",
+    "dst": "霍夫曼",
+    "evidence": "伊索尔德的子弹同时贯穿了霍夫曼和海因里希",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "贯穿",
+    "dst": "海因里希",
+    "evidence": "一条弹道，两条人命",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "托付",
+    "dst": "罗马尼亚福利院",
+    "evidence": "这个号码可以联系上那所收养你长大的罗马尼亚福利院",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "转让",
+    "dst": "避难名额",
+    "evidence": "把我的避难名额给她",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "阅读",
+    "dst": "苦目树",
+    "evidence": "是勿忘我研制的配方，苦目树的比例在药剂中超过了百分之五十",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "遗言",
+    "dst": "马库斯",
+    "evidence": "未来是……你们的时代",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "求助",
+    "dst": "卡卡尼亚",
+    "evidence": "您能做一个紧急治疗，把霍夫曼女士送去维也纳火车站吗",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "1fc2ea196516cadf3c4f8dfc": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无法读完这一页的阅读者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逝去的导师"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生"
+    ],
+    "desc": "失神站立并被告知死讯者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称霍夫曼是了不起的女士者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "中止阅读",
+    "dst": "霍夫曼",
+    "evidence": "我，我无法再读下去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "宣告",
+    "dst": "马库斯",
+    "evidence": "她死了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "致敬",
+    "dst": "霍夫曼",
+    "evidence": "她是一位了不起的女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "离场",
+    "dst": "卡卡尼亚",
+    "evidence": "我会一直等待您的答复",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5d5fd12f406c1e87aeb8a2d8": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐"
+    ],
+    "desc": "握着导师手的学徒"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "被忆及其指尖战栗者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生"
+    ],
+    "desc": "朗诵西勒诺斯对话并拒绝避难者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报撤离时限者"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "播报倒计时与联络的设备"
+   },
+   {
+    "name": "西勒诺斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "酒神伴护、最智慧的精灵"
+   },
+   {
+    "name": "弥达斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "林间寻觅西勒诺斯的国王"
+   },
+   {
+    "name": "拯救",
+    "type": "物品",
+    "aliases": [],
+    "desc": "西奥菲尔的遗作"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "倒计时24小时"
+   },
+   {
+    "name": "汉赛尔与格蕾特",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "通报",
+    "dst": "马库斯",
+    "evidence": "已经到最后预定的撤离时间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "朗诵",
+    "dst": "西勒诺斯",
+    "evidence": "国王弥达斯在林间苦苦寻觅酒神的伴护，最智慧的精灵，聪明的西勒诺斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "弥达斯",
+    "relation": "询问",
+    "dst": "西勒诺斯",
+    "evidence": "对我们来说，什么样的东西好而美妙？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "拒绝",
+    "dst": "马库斯",
+    "evidence": "您去避难吧，马库斯小姐，我还有想做的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "思考",
+    "dst": "拯救",
+    "evidence": "那他又为何把遗作命名为《拯救》？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "自陈",
+    "dst": "末日",
+    "evidence": "我的末日……已经提前到来过了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6e739533262662c7d770f7e6": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想出补救方法并叫住卡卡尼亚者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生"
+    ],
+    "desc": "被喝止勿步入幽微者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "其理性指引被引述者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "马库斯忆起其话语者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "宣判时代消逝者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独自伫立街头等待天空沉坠者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "引导之人"
+    ],
+    "desc": "勿忘我将通报的对象"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被按止的撤离警告设备"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "叫住",
+    "dst": "卡卡尼亚",
+    "evidence": "等一下，医生！我想到了一个可能性！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "喝止",
+    "dst": "卡卡尼亚",
+    "evidence": "不要步入幽微！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "按止",
+    "dst": "通讯器",
+    "evidence": "彻底按止本在疯狂响动，通知最后撤离警告的小小机器",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "宣判",
+    "dst": "时代",
+    "evidence": "这个时代能在1914年的夏天之前消逝，已是引导之人最大的慈悲",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "警告",
+    "dst": "伊索尔德",
+    "evidence": "即使您做出了杰出的功绩，杀害同伴也是逾越的",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "等待",
+    "dst": "天空沉坠",
+    "evidence": "她只是在等待。等待天空沉坠",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "宣告加入",
+    "dst": "伊索尔德",
+    "evidence": "您的想法是正确的，我加入你们",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7045f55cb8f6e834fa58b948": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递手帕并邀其前往诊所者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等来这句话的歌剧演员"
+   },
+   {
+    "name": "诊所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "卡卡尼亚欲最后缅怀旧世界之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "等待",
+    "dst": "卡卡尼亚",
+    "evidence": "我一直，一直在等您说出这句话",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "递予",
+    "dst": "手帕",
+    "evidence": "卡卡尼亚递出手帕",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "邀约",
+    "dst": "伊索尔德",
+    "evidence": "您能和我一起去一趟我的诊所吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "39873258c139de2eb0be9769": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭开幕布并揭穿画作真相者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "伊索尔德小姐"
+    ],
+    "desc": "畏光并恳求拉上窗帘者"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "创造《拯救》并将其留给自己的画家"
+   },
+   {
+    "name": "拯救",
+    "type": "物品",
+    "aliases": [],
+    "desc": "西奥菲尔遗作，兄妹共同创作"
+   },
+   {
+    "name": "迪塔斯多夫家",
+    "type": "组织",
+    "aliases": [
+     "迪塔斯多夫家的通灵术"
+    ],
+    "desc": "通灵术多传于女性"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其领袖被兄妹面见"
+   },
+   {
+    "name": "诊所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被包起来、不再有镜子闪光的房间"
+   },
+   {
+    "name": "今夜星光灿烂",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "揭露",
+    "dst": "伊索尔德",
+    "evidence": "这是您哥哥的遗作，《拯救》",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "参与创作",
+    "dst": "拯救",
+    "evidence": "你将那层绝望的底色剜去，放上了自己的怜悯",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "创造",
+    "dst": "拯救",
+    "evidence": "他将它创造，而你令其惊艳",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "面见",
+    "dst": "阿尔卡纳",
+    "evidence": "你们二人在海因里希的引荐下，面见了重塑之手的领袖",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "开枪",
+    "dst": "西奥菲尔",
+    "evidence": "所以你开了那一枪，出于对他的怜悯",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "畏光",
+    "dst": "诊所",
+    "evidence": "我看不清，医生……这里太亮了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "cec498dc1ebe38c4afb28d8d": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逼问拯救之道内容者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "头痛且看不清者"
+   },
+   {
+    "name": "拯救之道",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔卡纳展示的术式"
+   },
+   {
+    "name": "重塑之手的领袖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给伊索尔德展示拯救之道者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "逼问",
+    "dst": "伊索尔德",
+    "evidence": "重塑之手的领袖给你看了什么？！“拯救之道”具体是什么？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "唯一知情",
+    "dst": "拯救之道",
+    "evidence": "你是唯一知道这些事的人！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "强迫",
+    "dst": "伊索尔德",
+    "evidence": "看着这幅画！看看这些镜子，伊索尔德！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3b7e9e2c530ed63c0f9a9302": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉小姐"
+    ],
+    "desc": "对伊索尔德使用催眠者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "伊索尔德小姐"
+    ],
+    "desc": "唱起歌谣并称今夜星光灿烂者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警告不可过度使用神秘术者"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阐述魔圈理念者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "展示拯救魔圈者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布传回免疫术式并开工者"
+   },
+   {
+    "name": "怀表",
+    "type": "物品",
+    "aliases": [
+     "催眠灵摆"
+    ],
+    "desc": "卡卡尼亚用于催眠的器具"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "阿尔卡纳喜欢其名字的小团体"
+   },
+   {
+    "name": "拯救的魔圈",
+    "type": "概念",
+    "aliases": [
+     "免疫暴雨的术式"
+    ],
+    "desc": "庇佑被拣选者越过雨幕的奇迹"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "22小时后落下"
+   },
+   {
+    "name": "应许之地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被拣选者所抵之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "使用",
+    "dst": "催眠",
+    "evidence": "我要对她使用催眠",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "持用",
+    "dst": "怀表",
+    "evidence": "请看这块怀表",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "唱起",
+    "dst": "歌谣",
+    "evidence": "她轻轻唱起了熟悉的歌谣",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "阐述",
+    "dst": "魔圈",
+    "evidence": "为了敬畏这股非凡，原始人便在自己的周围画了一个魔圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "展示",
+    "dst": "拯救的魔圈",
+    "evidence": "恰好，我这里也有一个圆。这也是一个古老的奇迹，一个拯救的魔圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "读到",
+    "dst": "拯救的魔圈",
+    "evidence": "我“阅读”到了免疫“暴雨”的术式，我们成功了！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "下令开工",
+    "dst": "科算中心",
+    "evidence": "从现在开始，到“暴雨”落下的22个小时里。整个世界都是我们的试验场",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "024311bf9dcbf09ec2c14253": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "幼时讨厌无理数的女孩"
+   },
+   {
+    "name": "77",
+    "type": "角色",
+    "aliases": [],
+    "desc": "37之母，以树枝讲解无理数者"
+   },
+   {
+    "name": "癸干忒斯",
+    "type": "概念",
+    "aliases": [
+     "蛇足巨人"
+    ],
+    "desc": "神话中不可被神杀死的巨人"
+   },
+   {
+    "name": "√2",
+    "type": "概念",
+    "aliases": [],
+    "desc": "等价于2不可表达为(a/b)²的纯粹算术结论"
+   },
+   {
+    "name": "毕达哥拉斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以整数比为基石构建数论者"
+   },
+   {
+    "name": "树枝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被海潮泡软、划过沙子的教具"
+   },
+   {
+    "name": "π",
+    "type": "概念",
+    "aliases": [],
+    "desc": "圆周与直径之比的无理数"
+   },
+   {
+    "name": "对角线中",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "询问",
+    "dst": "77",
+    "evidence": "为什么大家都讨厌“无理数”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "讲解",
+    "dst": "√2",
+    "evidence": "√2，一个无理数，是纯粹算术上可得的结论",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "使用",
+    "dst": "树枝",
+    "evidence": "那位修长的女性俯下身，拾起沙滩上的一根被海潮泡软的树枝",
+    "confidence": 0.95
+   },
+   {
+    "src": "√2",
+    "relation": "摧毁",
+    "dst": "毕达哥拉斯",
+    "evidence": "毕达哥拉斯以整数比为基石构建的数论是不牢靠的",
+    "confidence": 0.95
+   },
+   {
+    "src": "77",
+    "relation": "提出",
+    "dst": "无理数的王国",
+    "evidence": "还有一个捉摸不透的神秘王国。它不可度量，不可通约，不可穷尽",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "类比",
+    "dst": "癸干忒斯",
+    "evidence": "像神话里不可被神杀死的蛇足巨人癸干忒斯",
+    "confidence": 0.9
+   },
+   {
+    "src": "77",
+    "relation": "指出",
+    "dst": "对角线",
+    "evidence": "开启这个王国的钥匙，就光明正大地潜藏在正方形的对角线中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5e037cc72529968ace9a96f1": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "昏迷一周后醒来的女孩"
+   },
+   {
+    "name": "77",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回忆中神情近乎怜悯者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知37昏迷一周者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37急于寻找之人"
+   },
+   {
+    "name": "圆",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37宣称已破碎之物"
+   },
+   {
+    "name": "无理数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "超出认知之外的数字"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏菲亚",
+    "relation": "告知",
+    "dst": "37",
+    "evidence": "你昏迷了一个星期",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "寻找",
+    "dst": "6",
+    "evidence": "我得去找6",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "宣告",
+    "dst": "圆",
+    "evidence": "我们的“圆”破碎了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "理解",
+    "dst": "无理数",
+    "evidence": "永远都有超出我们认知之外的数字……这就是无理数的意义",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "636fde6b74ef015e984262e6": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "被集体表决问询的访客"
+   },
+   {
+    "name": "888",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持问询的教众"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [
+     "辩论家",
+     "报幕者"
+    ],
+    "desc": "质疑双方说辞的修辞学家"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "阿尔卡纳小姐"
+    ],
+    "desc": "蓝黑相间的岛外来客"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "亲近人类的组织"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "门徒成批暴毙于圣地入口者"
+   },
+   {
+    "name": "真理之石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "立誓所用之石"
+   },
+   {
+    "name": "传道者之厅",
+    "type": "地点",
+    "aliases": [
+     "真理的殿堂"
+    ],
+    "desc": "集体表决举办之处"
+   },
+   {
+    "name": "圣地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "重塑门徒暴毙之处"
+   },
+   {
+    "name": "流溢",
+    "type": "事件",
+    "aliases": [],
+    "desc": "基金会落后学派7年认知"
+   },
+   {
+    "name": "蓝与灰",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "888",
+    "relation": "主持",
+    "dst": "集体表决",
+    "evidence": "我们将就一周前的坐标泄露事件，对贵方及重塑之手所造成的危害予以集体表决",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "立誓于",
+    "dst": "真理之石",
+    "evidence": "我愿在真理之石前立誓，我对这一次的泄露事件毫不知情",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "汇报",
+    "dst": "圣洛夫基金会",
+    "evidence": "但你将这里的情况如实汇报给了基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "质疑",
+    "dst": "阿尔卡纳",
+    "evidence": "您要如何解释，您的门徒成批暴毙于我们的圣地入口？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "承认",
+    "dst": "门徒暴毙",
+    "evidence": "——正是如此",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "贬抑",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们为什么要向一个落后于我们7年的组织，寻求对抗“流溢”的知识与经验呢？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "da5f0bc82bd3200d7a8bf11b": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问门徒暴毙原因者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "阿尔卡纳小姐"
+    ],
+    "desc": "干脆承认并欲讲故事者"
+   },
+   {
+    "name": "教众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因断言干脆而诧异者"
+   },
+   {
+    "name": "阿派朗学派",
+    "type": "组织",
+    "aliases": [
+     "贵学派",
+     "学派"
+    ],
+    "desc": "与重塑合作的一方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔卡纳",
+    "relation": "承认",
+    "dst": "210",
+    "evidence": "——正是如此",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "申明",
+    "dst": "阿派朗学派",
+    "evidence": "我们与贵学派合作的诚意是毋庸置疑的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "资助",
+    "dst": "现象世界",
+    "evidence": "对诸位所鄙夷但仍需依存的现象世界领域，我们也予以了不吝的物质资助",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "讲述",
+    "dst": "故事",
+    "evidence": "我恰好听过一个应景的故事，也许能与诸位分享",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

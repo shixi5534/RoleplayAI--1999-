@@ -1,0 +1,1134 @@
+{
+ "8a232e19b351bc2c3ae03d07": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前往现象世界并挥别领袖者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "允诺为37留一扇小门者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知芝诺船只来接者"
+   },
+   {
+    "name": "德尔斐神庙",
+    "type": "地点",
+    "aliases": [],
+    "desc": "石柱上刻三句箴言"
+   },
+   {
+    "name": "认识你自己",
+    "type": "概念",
+    "aliases": [],
+    "desc": "德尔斐箴言之一"
+   },
+   {
+    "name": "凡事勿过度",
+    "type": "概念",
+    "aliases": [],
+    "desc": "德尔斐箴言之一"
+   },
+   {
+    "name": "妄立誓则祸近",
+    "type": "概念",
+    "aliases": [],
+    "desc": "德尔斐箴言之一"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "派船接应者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯"
+    ],
+    "desc": "其研究员想见37"
+   },
+   {
+    "name": "现象世界",
+    "type": "地点",
+    "aliases": [],
+    "desc": "37将前往之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "询问",
+    "dst": "6",
+    "evidence": "我还能像以前那样，去找你讨论问题、探究真理吗……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "允诺",
+    "dst": "37",
+    "evidence": "我会为你留一扇小门，37",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "告知",
+    "dst": "37",
+    "evidence": "芝诺的船只来接我们了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "前往",
+    "dst": "现象世界",
+    "evidence": "我会前往现象世界一探究竟",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "宣告",
+    "dst": "6",
+    "evidence": "——因为宇宙在任何地方都是齐一的，我知道",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引述",
+    "dst": "德尔斐神庙",
+    "evidence": "在德尔斐神庙的石柱上刻着三句箴言",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f99fda849ea711cf4e0f02b1": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交付平衡伞者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "领取平衡伞并提出需求者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐"
+    ],
+    "desc": "获赠以霍夫曼命名的伞者"
+   },
+   {
+    "name": "基金会职员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交付并说明冠名由来者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼老师",
+     "格蕾塔·霍夫曼"
+    ],
+    "desc": "其姓氏被用于冠名术式核心"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒研究员",
+     "阿德勒·霍夫曼"
+    ],
+    "desc": "提出以姓氏冠名者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反对以人名冠名者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "对术式核心冠名毫无兴趣者"
+   },
+   {
+    "name": "平衡伞",
+    "type": "物品",
+    "aliases": [
+     "第一代平衡伞"
+    ],
+    "desc": "免疫暴雨的护具"
+   },
+   {
+    "name": "转换器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "架设平衡场"
+   },
+   {
+    "name": "调和仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "图案来自阿派朗学派卷轴"
+   },
+   {
+    "name": "术式核心",
+    "type": "物品",
+    "aliases": [
+     "霍夫曼结"
+    ],
+    "desc": "以霍夫曼姓氏命名"
+   },
+   {
+    "name": "卷轴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "原件已归还学派"
+   },
+   {
+    "name": "非对称核素R",
+    "type": "概念",
+    "aliases": [],
+    "desc": "注入伞柄可免于暴雨症候"
+   },
+   {
+    "name": "伞与结",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "交付",
+    "dst": "维尔汀",
+    "evidence": "这次研究的最后成果，所有人智慧的结晶，免疫“暴雨”的护具",
+    "confidence": 0.95
+   },
+   {
+    "src": "平衡伞",
+    "relation": "组成于",
+    "dst": "转换器",
+    "evidence": "它由一个转换器、一个调和仪和一个术式核心组成",
+    "confidence": 0.95
+   },
+   {
+    "src": "调和仪",
+    "relation": "源自",
+    "dst": "卷轴",
+    "evidence": "调和仪的图案则来自阿派朗学派的卷轴",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "模拟",
+    "dst": "诅咒",
+    "evidence": "露西女士模拟了它适配已知的162种副作用的情形",
+    "confidence": 0.95
+   },
+   {
+    "src": "术式核心",
+    "relation": "命名于",
+    "dst": "霍夫曼",
+    "evidence": "在确认可以使用姓氏来冠名后，他的想法就改变了",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "意愿",
+    "dst": "霍夫曼",
+    "evidence": "他希望大家能记住格蕾塔·霍夫曼调查员为此做出的牺牲",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "拒绝冠名",
+    "dst": "真理",
+    "evidence": "数字不是名字，我们也不需要用任何人的名义去给真理冠名",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "120ff90fac7d35c6a2c2c331": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "四级调查员马库斯小姐"
+    ],
+    "desc": "申请外出者"
+   },
+   {
+    "name": "基金会职员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "交付伞并告知可休假者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说明伞柄注入物者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "请求更多把伞者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求补偿新船者"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从表彰仪式归来者"
+   },
+   {
+    "name": "平衡伞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "伞柄注入非对称核素R"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "手提箱"
+    ],
+    "desc": "无法保护人类"
+   },
+   {
+    "name": "萨赫蛋糕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "马库斯惦记的味道"
+   },
+   {
+    "name": "勋章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭获颁之物"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [
+     "康复中心"
+    ],
+    "desc": "塞满因公受损研究员"
+   },
+   {
+    "name": "基金会大堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "平衡伞领用申请表格所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基金会职员Ⅱ",
+    "relation": "交付",
+    "dst": "马库斯",
+    "evidence": "请收好，四级调查员马库斯小姐，这是属于你的那把伞",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "申请",
+    "dst": "外出",
+    "evidence": "不，我要申请外出",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "说明",
+    "dst": "非对称核素R",
+    "evidence": "伞柄里注入的非对称核素R能使携带者免于暴雨症候的感染",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "平衡伞",
+    "evidence": "我想五把——不，十五把，也许会更合适我",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "索求",
+    "dst": "APPLeⅡ号",
+    "evidence": "难道基金会不应该给我补偿一艘新的船吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "获颁",
+    "dst": "勋章",
+    "evidence": "他们非得把这个给我，为了表彰我在“暴雨”中护送重要文件的卓越贡献",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d5b86e2a982b73a09568c69d": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转赠勋章者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咬验勋章成色者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "槲寄生小姐"
+    ],
+    "desc": "赠出另一枚勋章并错过海岛冒险者"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe某"
+    ],
+    "desc": "计算凑船所需勋章数者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "赠出珠宝的富家小姐"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带来获批文件者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "介绍海角者"
+   },
+   {
+    "name": "勋章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "表彰护送卷轴者"
+   },
+   {
+    "name": "珠宝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比所赠大而圆的金属"
+   },
+   {
+    "name": "海盗公国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "星锑自称代表"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其作战表彰仪式待召开"
+   },
+   {
+    "name": "海角",
+    "type": "地点",
+    "aliases": [],
+    "desc": "草木丰茂、需德鲁伊之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "赠予",
+    "dst": "星锑",
+    "evidence": "拿去吧，没准能成为炼金术的原料",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "咬验",
+    "dst": "勋章",
+    "evidence": "星锑把勋章放到嘴边，不假思索地咬了一口",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "赠予",
+    "dst": "星锑",
+    "evidence": "我这里也有一枚",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "赠予",
+    "dst": "星锑",
+    "evidence": "一串沉甸甸的珠宝放在了星锑手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "计算",
+    "dst": "勋章",
+    "evidence": "只要再来三百块勋章，我们就能凑齐一艘船了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "介绍",
+    "dst": "槲寄生",
+    "evidence": "我也正想为你介绍一处海角",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "递交",
+    "dst": "维尔汀",
+    "evidence": "司辰委托我将你的请求递交了上去，他们批准了！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ef785fcc64d000fbd720befd": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带来APPLeⅡ重建批文者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告有两艘新船者"
+   },
+   {
+    "name": "APPLeⅡ",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将获重建并由基金会付费保养"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "支付保养费用者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "通报",
+    "dst": "APPLeⅡ",
+    "evidence": "APPLeⅡ将获得重建，基金会将支付它的日常保养费用",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "支付",
+    "dst": "APPLeⅡ",
+    "evidence": "基金会将支付它的日常保养费用",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "宣告",
+    "dst": "十四行诗",
+    "evidence": "现在我们有两艘新船了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "30569bdf8150452cff16822e": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "将被停职的总负责人"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "阿德勒·霍夫曼研究员"
+    ],
+    "desc": "抗议停职决定者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "协助交接者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯科算中心"
+    ],
+    "desc": "露西将离开的机构"
+   },
+   {
+    "name": "插头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "涵盖目的地电源形制的十五个"
+   },
+   {
+    "name": "实验记录",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被最后清点的资料"
+   },
+   {
+    "name": "问询会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "已结束并作出决定"
+   },
+   {
+    "name": "谢幕词",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "质问",
+    "dst": "露西",
+    "evidence": "这是真的吗，露西女士？！您要离开拉普拉斯科算中心——？",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "抗议",
+    "dst": "问询会",
+    "evidence": "您做出了如此卓越的贡献，他们——却要停您的职？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "承认",
+    "dst": "事故",
+    "evidence": "因为我低估了咒文的危害，造成了不可控的传播事故",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "协助",
+    "dst": "露西",
+    "evidence": "助理希曼走到露西女士旁边，接过了她手里沉重的实验仪器",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "清点",
+    "dst": "实验记录",
+    "evidence": "请把之前的实验记录也递给我",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "132763e718106f530b46a4de": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斥处分为不公者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其接受职位者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒受勋章并在委员会大楼前绝食者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将成立新部门"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "乌尔里希绝食抗议之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "指控",
+    "dst": "露西",
+    "evidence": "他们从来没有和你共事过一天，甚至不曾听过你的一句发言。他们享用你的成果，却蔑视你的存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "劝诫",
+    "dst": "哑谜",
+    "evidence": "在我看来，你和乌尔里希中应该有一个去接受这个职位",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "说明",
+    "dst": "哑谜",
+    "evidence": "这既是为了保障研究的进展，更是为了确保它不被滥用",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "绝食于",
+    "dst": "委员会大楼",
+    "evidence": "此刻它正在委员会大楼前绝食抗议",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "自陈",
+    "dst": "权力",
+    "evidence": "我并不介意这一处分，霍夫曼研究员。我从不奢求权力，那是你们生物的概念",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9af24d6b68d17a9d01aee745": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "装上类人身躯以交流者"
+   },
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼研究员"
+    ],
+    "desc": "发现露西数据丢失者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促出发者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [
+     "X研究员"
+    ],
+    "desc": "研发超级钛合金除锈机者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "介绍疗养处者"
+   },
+   {
+    "name": "超级钛合金除锈机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "露西欲借用之物"
+   },
+   {
+    "name": "诅咒",
+    "type": "概念",
+    "aliases": [
+     "副作用"
+    ],
+    "desc": "登记实际为162种"
+   },
+   {
+    "name": "湖景庭院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "弥漫神秘学气息的疗养处"
+   },
+   {
+    "name": "报告",
+    "type": "物品",
+    "aliases": [],
+    "desc": "126种副作用与卷轴拟合情况"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "解释",
+    "dst": "哑谜",
+    "evidence": "因此我装上类人的身躯，佩戴上仿制的面孔，不断调整发声的语调和质感，为了便于与你们交流",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "引荐",
+    "dst": "露西",
+    "evidence": "Z女士为我介绍了一个很好的疗养处",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "欲借用",
+    "dst": "超级钛合金除锈机",
+    "evidence": "也许出发前我应当找X研究员借用他最近研发的“超级钛合金除锈机”",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "发现",
+    "dst": "露西",
+    "evidence": "您登记的副作用一共是162种，不是126种",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "推断",
+    "dst": "露西",
+    "evidence": "您……丢失了多少数据？甚至损伤到了您的科研能力……？这才是您必须离开的真正原因吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "主张",
+    "dst": "进步",
+    "evidence": "不论是生物还是机器，人类还是神秘学家，多数的有形之物总是希冀着更好的生活。这股原初的热情，正是所谓的“进步”",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "解释",
+    "dst": "哑谜",
+    "evidence": "我们的相交点只是在于进步，从来如此",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "09f8d5648fbc9c60481fd10b": {
+  "entities": [
+   {
+    "name": "哑谜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最终接受职务者"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [
+     "露西女士"
+    ],
+    "desc": "被全中心致敬送别者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "破译组长"
+    ],
+    "desc": "带头高呼致敬者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释投掷文件含义者"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "全员站到走廊送别"
+   },
+   {
+    "name": "演算纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "因暴雨研究诞生并被抛下"
+   },
+   {
+    "name": "充电桩",
+    "type": "物品",
+    "aliases": [
+     "230伏特的充电口"
+    ],
+    "desc": "露西所怀念之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哑谜",
+    "relation": "接受",
+    "dst": "职务",
+    "evidence": "我会去接受那个职务！",
+    "confidence": 0.95
+   },
+   {
+    "src": "哑谜",
+    "relation": "声明",
+    "dst": "露西",
+    "evidence": "不是为了楼宇顶层的那些俯瞰我们的大人物们——而是为了那些在外面仰慕这座大厦的人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌尔里希",
+    "relation": "高呼",
+    "dst": "露西",
+    "evidence": "向露西女士——致敬！",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "致敬",
+    "dst": "露西",
+    "evidence": "科算中心的每个岗位的职员都站到了走廊上，从第一层到最高层",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "解释",
+    "dst": "露西",
+    "evidence": "不，我想他们是在表达尊敬",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "怀念",
+    "dst": "充电桩",
+    "evidence": "我想念拉普拉斯的充电桩了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5a4eedffc361a942ae363dd6": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "枪法很准的行刑者，伊戈尔养女"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "芝诺将军，洛佩拉养父"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "红弩箭中尉"
+    ],
+    "desc": "观刑并拒绝入会者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "询问重塑之手动向者"
+   },
+   {
+    "name": "莫莉德尔",
+    "type": "角色",
+    "aliases": [
+     "莫莉德尔副官"
+    ],
+    "desc": "调查基地潜在叛乱分子者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已在真空弹中灰飞烟灭"
+   },
+   {
+    "name": "行刑队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "执行枪决者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "不容忍叛徒的军事组织"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "严重渗透基地的组织"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "有证据在圣保罗活动"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "重塑之手的伪装身份"
+   },
+   {
+    "name": "真空弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "使阿尔卡纳灰飞烟灭的武器"
+   },
+   {
+    "name": "生命之水",
+    "type": "物品",
+    "aliases": [],
+    "desc": "红弩箭爱喝的酒"
+   },
+   {
+    "name": "圣保罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "芝诺基地所在地，烈日灼目"
+   },
+   {
+    "name": "此即正义",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "忧郁的热带",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "执行",
+    "dst": "行刑队",
+    "evidence": "行刑队！抬枪！预备——射击！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "养女于",
+    "dst": "伊戈尔",
+    "evidence": "那双鹰一样的眼中，流露出对养女的赞许",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "透露",
+    "dst": "维尔汀",
+    "evidence": "有证据显示重塑之手也在圣保罗活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指出",
+    "dst": "重塑之手",
+    "evidence": "重塑之手一直与天使兄弟会纠缠不清。我以为他们只会以“启明会”的身份活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "真空弹",
+    "relation": "消灭",
+    "dst": "阿尔卡纳",
+    "evidence": "是的，在真空弹中灰飞烟灭",
+    "confidence": 0.95
+   },
+   {
+    "src": "天使兄弟会",
+    "relation": "渗透",
+    "dst": "芝诺基地",
+    "evidence": "这里被天使兄弟会渗透得很严重",
+    "confidence": 0.95
+   },
+   {
+    "src": "莫莉德尔",
+    "relation": "调查",
+    "dst": "叛乱分子",
+    "evidence": "莫莉德尔副官正在竭力调查基地中的潜在叛乱分子",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "拒绝",
+    "dst": "会议",
+    "evidence": "会议让头儿去就行，我没兴趣",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

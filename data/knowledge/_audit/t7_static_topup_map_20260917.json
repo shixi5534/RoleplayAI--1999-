@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "task": "T7 真实补名（非上界）：映射仅依据【语料块内的描述↔实体名共现】构造",
+    "honesty_note": "构造时不使用题集 ref/evidence；每条附 basis 指向支撑它的语料块行文（英文/中文原文片段）",
+    "confidence": "high=块内直接共现；medium=块内间接线索（同类实体/相邻陈述）",
+    "generated_by": "云端模型（本会话），2026-09-17"
+  },
+  "map": {
+    "R038": {"names": ["Isolde", "伊索尔德"], "confidence": "high",
+             "basis": "块1《曾令人惊艳的七重纱》'她的女儿伊索尔德·迪塔斯多夫'；块3 'She and Isolde... Heinrich has enchanted all the props'"},
+    "R039": {"names": ["Kakania", "卡卡尼亚"], "confidence": "high",
+             "basis": "块1 广告'敬请垂询卡卡尼亚，分离派之家'；块3 'Ms.Kakania ran up to the stage'"},
+    "R053": {"names": ["Apeiron", "阿派朗"], "confidence": "high",
+             "basis": "块1/块3 '数字学派的神秘小岛'；语料另有 'the school of Eperon' 与之对应"},
+    "R054": {"names": ["Zeno"], "confidence": "high",
+             "basis": "块3 'Xeno would arm their Youth Force and the trainers with drill weapons'"},
+    "R056": {"names": ["Six"], "confidence": "high",
+             "basis": "块1 'Take 6 to safety 37'；块3 'Not as six, but myself, who used to live under the name Atticus'"},
+    "R075": {"names": ["Green Lake", "绿湖"], "confidence": "high",
+             "basis": "块3 'It proves that Green Lake Campsite is out of this world'"},
+    "R230": {"names": ["ronium"], "confidence": "high",
+             "basis": "块2 'the remaining ronium reserves in rayashki are around 0.0173 kilotons'"},
+    "R237": {"names": ["Manus Vindictae", "重塑之手"], "confidence": "high",
+             "basis": "块1 '启明会就是重塑之手'（问话记录）"},
+    "R235": {"names": ["Kakania", "卡卡尼亚"], "confidence": "medium",
+             "basis": "块2 'A doctor like Sigmund Freud lures out forgotten memories'（精神分析医生）+ 语料他处卡卡尼亚即分离派心理医生"},
+    "R233": {"names": ["Constantine", "康斯坦丁"], "confidence": "medium",
+             "basis": "语料块 'The name is Constantine. I'm the vice president of the joint committee of the Foundation'"},
+    "R228": {"names": ["Melania"], "confidence": "medium",
+             "basis": "块3 'my real name, of course, Melania Ramirez'（保安公司同名家族）"},
+    "R229": {"names": ["Rimmick"], "confidence": "medium",
+             "basis": "块1 'the Rimmick Cup was under the protection of the most well-known security company, Ramirez'"},
+    "R076": {"names": ["troll"], "confidence": "medium",
+             "basis": "块1/块3 'The creatures are multiplying' + 'Zeno found a bunch of critters... near the Green Lake'（绿湖林地怪物传说）"}
+  }
+}

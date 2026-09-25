@@ -1,0 +1,847 @@
+{
+ "94d4bc6b648c7e036b7a4948": {
+  "entities": [],
+  "relations": []
+ },
+ "1fe243e09dcd73fb71a8e53e": {
+  "entities": [
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向圆球走去的绅士小狗"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自诩新潮的艺术追寻者"
+   },
+   {
+    "name": "Doggie",
+    "type": "物品",
+    "aliases": [],
+    "desc": "替小狗传话的翻译装置"
+   },
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "派发侧刊的报童"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追赶报童的怪盗少女"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为梅兰妮评分的老师"
+   },
+   {
+    "name": "UTTU闪烁集会",
+    "type": "事件",
+    "aliases": [
+     "闪烁集会"
+    ],
+    "desc": "UTTU杂志社发起的读书会活动"
+   },
+   {
+    "name": "UTTU杂志社",
+    "type": "组织",
+    "aliases": [],
+    "desc": "发起闪烁集会的杂志社"
+   },
+   {
+    "name": "UTTU零售",
+    "type": "组织",
+    "aliases": [],
+    "desc": "神出鬼没的UTTU售卖"
+   },
+   {
+    "name": "UTTU超级市场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "凭侧刊才能寻获的场地"
+   },
+   {
+    "name": "闪烁侧刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "报童派发的集会刊物"
+   },
+   {
+    "name": "昨日金杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "本期集会主题的刊物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "重逢",
+    "dst": "皮克勒斯",
+    "evidence": "多巧啊，小狗，我们又遇见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "Doggie",
+    "relation": "旁述",
+    "dst": "皮克勒斯",
+    "evidence": "小狗希望保持距离",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "攀谈",
+    "dst": "皮克勒斯",
+    "evidence": "别这样，冷酷的小狗，我们已经是朋友了",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "现身",
+    "dst": "UTTU零售",
+    "evidence": "欢迎来到UTTU零售，神秘的访问者",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "派发",
+    "dst": "闪烁侧刊",
+    "evidence": "请收下这本闪烁侧刊吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "推介",
+    "dst": "UTTU闪烁集会",
+    "evidence": "您看起来并不了解闪烁集会，这相遇是一场美丽的巧合",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "称呼",
+    "dst": "皮克勒斯",
+    "evidence": "一本杂志，热爱阅读的小狗先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "寻找",
+    "dst": "UTTU超级市场",
+    "evidence": "只差一本就能找到UTTU超级市场了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "央求",
+    "dst": "艾西",
+    "evidence": "艾西老师，虽然和计划的结果不一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "评分",
+    "dst": "梅兰妮",
+    "evidence": "60分。",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "认出",
+    "dst": "挖掘艺术",
+    "evidence": "是——是你，挖掘艺术先生？还有小狗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "UTTU杂志社",
+    "relation": "发起",
+    "dst": "UTTU闪烁集会",
+    "evidence": "闪烁集会是由UTTU杂志社发起的读书会活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "UTTU闪烁集会",
+    "relation": "论及",
+    "dst": "昨日金杯",
+    "evidence": "这场集会的主题是昨日金杯",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "反驳",
+    "dst": "梅兰妮",
+    "evidence": "我要反对你赋予的标签",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "93413763a4831d7c12af9e47": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲解集会玩法的少女"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抖落侧刊的小狗"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替小狗代言的画者"
+   },
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忽隐忽现的报童"
+   },
+   {
+    "name": "UTTU闪烁集会",
+    "type": "事件",
+    "aliases": [
+     "闪烁集会"
+    ],
+    "desc": "阅读者与之相交的集会"
+   },
+   {
+    "name": "UTTU超级市场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可阅读总刊的市场"
+   },
+   {
+    "name": "闪烁侧刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可换得市场的侧刊"
+   },
+   {
+    "name": "闪烁总刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏于超级市场的总刊"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "抚摸",
+    "dst": "皮克勒斯",
+    "evidence": "姑娘低头，微微弯下腰，摸了摸小狗的背脊",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "携带",
+    "dst": "闪烁侧刊",
+    "evidence": "带着闪烁侧刊的报童就像家中的小虫一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "找到",
+    "dst": "UTTU超级市场",
+    "evidence": "就可以找到UTTU超级市场，在其中阅读闪烁总刊",
+    "confidence": 0.95
+   },
+   {
+    "src": "UTTU超级市场",
+    "relation": "提供",
+    "dst": "闪烁总刊",
+    "evidence": "在其中阅读闪烁总刊",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "追赶",
+    "dst": "报童",
+    "evidence": "所以我还得追着那些神出鬼没的报童跑一段时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "抖落",
+    "dst": "闪烁侧刊",
+    "evidence": "不久前由报童别在项圈后侧的杂志掉落在地面上",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "代言",
+    "dst": "皮克勒斯",
+    "evidence": "我想，他的意思是——我这里还有一本儿！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "交集",
+    "dst": "UTTU闪烁集会",
+    "evidence": "这就是，阅读者们与闪烁集会的交集之始",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "11042a6d534c4be7aed7d37f": {
+  "entities": [],
+  "relations": []
+ },
+ "75fb2865e541fa60cd89b52f": {
+  "entities": [
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嗅到零售气味便狂奔的小狗"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "口袋寻宝失败的画者"
+   },
+   {
+    "name": "Doggie",
+    "type": "物品",
+    "aliases": [],
+    "desc": "代小狗致谢的装置"
+   },
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "计数第29位访问者的报童"
+   },
+   {
+    "name": "UTTU零售",
+    "type": "组织",
+    "aliases": [],
+    "desc": "从不等人的UTTU零售"
+   },
+   {
+    "name": "闪烁侧刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "第29位访问者所得侧刊"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嫌大艺术家动作太慢者"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以名人卡换侧刊者"
+   },
+   {
+    "name": "名人卡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被用来交换侧刊的卡片"
+   },
+   {
+    "name": "UTTU闪烁集会",
+    "type": "事件",
+    "aliases": [
+     "闪烁集会"
+    ],
+    "desc": "众人初次参加的集会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "皮克勒斯",
+    "relation": "奔向",
+    "dst": "UTTU零售",
+    "evidence": "你是闻到了UTTU零售的气味才开始狂奔的",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "追赶",
+    "dst": "皮克勒斯",
+    "evidence": "皮克勒斯迅速朝着某个方向奔跑，挖掘艺术苦苦跟在后面",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "派发",
+    "dst": "闪烁侧刊",
+    "evidence": "您是第29位访问者，请收下这本闪烁侧刊",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "衔取",
+    "dst": "闪烁侧刊",
+    "evidence": "轻而缓的衔住杂志一角",
+    "confidence": 0.95
+   },
+   {
+    "src": "Doggie",
+    "relation": "旁述",
+    "dst": "皮克勒斯",
+    "evidence": "小狗向你表达了谢意",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "催促",
+    "dst": "挖掘艺术",
+    "evidence": "你的动作太慢了，大艺术家",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "认出",
+    "dst": "艾西",
+    "evidence": "是你？！那个把所有人耍得团团转的怪盗",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "附和",
+    "dst": "艾西",
+    "evidence": "没错，艾西老师。我们的目标比名人卡更有价值",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "清点",
+    "dst": "名人卡",
+    "evidence": "抽出一叠名人卡，梅兰妮将几本闪烁侧刊摆在了草地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "清点",
+    "dst": "闪烁侧刊",
+    "evidence": "一本、两本、三本",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "索取",
+    "dst": "名人卡",
+    "evidence": "如果你对这些卡片不感兴趣，你能把它们给我吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "获得",
+    "dst": "名人卡",
+    "evidence": "现在，我有了火柴和足够的名人卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "询问",
+    "dst": "UTTU闪烁集会",
+    "evidence": "你们……都是第一次参加闪烁集会吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "Doggie",
+    "relation": "旁述",
+    "dst": "皮克勒斯",
+    "evidence": "小狗很少有独自外出的机会",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2dbfa93813d78128ba184ce1": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [
+     "怪盗艾西"
+    ],
+    "desc": "揭开市场之门的女子"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读完侧刊的小狗"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告侧刊收集足够者"
+   },
+   {
+    "name": "UTTU闪烁集会",
+    "type": "事件",
+    "aliases": [
+     "闪烁集会"
+    ],
+    "desc": "老手带路的真正玩法"
+   },
+   {
+    "name": "闪烁侧刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "摆在草坪中央的侧刊"
+   },
+   {
+    "name": "UTTU超级市场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "就此开启大门的市场"
+   },
+   {
+    "name": "闪烁总刊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "众人寻找的闪烁总刊"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "自称",
+    "dst": "艾西",
+    "evidence": "我作为怪盗艾西的时候，去过不少地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "参与",
+    "dst": "UTTU闪烁集会",
+    "evidence": "我有幸参与过一次闪烁集会",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "询问",
+    "dst": "皮克勒斯",
+    "evidence": "这本杂志，你看完了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "翻开",
+    "dst": "闪烁侧刊",
+    "evidence": "梅兰妮拿起杂志，打开至扉页",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "宣告",
+    "dst": "闪烁侧刊",
+    "evidence": "很好，我们已经收集了足够的闪烁侧刊",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "找到",
+    "dst": "UTTU超级市场",
+    "evidence": "我们找到它，就意味着我们找到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "揭示",
+    "dst": "闪烁总刊",
+    "evidence": "闪烁总刊。",
+    "confidence": 0.95
+   },
+   {
+    "src": "闪烁总刊",
+    "relation": "藏于",
+    "dst": "UTTU超级市场",
+    "evidence": "闪烁着UTTU超级市场的大门就这样开启了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "064fd8f27b9ae04ac40f1f37": {
+  "entities": [],
+  "relations": []
+ },
+ "dec24d590c82d5a990f88a84": {
+  "entities": [
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敬佩艺术家的狗儿"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为纸上球赛振奋的画者"
+   },
+   {
+    "name": "Doggie",
+    "type": "物品",
+    "aliases": [],
+    "desc": "述说敬佩的装置"
+   },
+   {
+    "name": "足球精神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未被战争消磨的热爱"
+   }
+  ],
+  "relations": [
+   {
+    "src": "挖掘艺术",
+    "relation": "赞叹",
+    "dst": "足球精神",
+    "evidence": "哦，战争没能消磨他们对足球的热爱",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "共鸣",
+    "dst": "足球精神",
+    "evidence": "但我的灵魂与他们同在",
+    "confidence": 0.95
+   },
+   {
+    "src": "Doggie",
+    "relation": "旁述",
+    "dst": "皮克勒斯",
+    "evidence": "小狗感到了敬佩",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "称赞",
+    "dst": "皮克勒斯",
+    "evidence": "真是条有眼光的小狗",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "体谅",
+    "dst": "挖掘艺术",
+    "evidence": "小狗无意打扰艺术家的自赏时刻",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c599d9c5a0de63b6f90bedfc": {
+  "entities": [],
+  "relations": []
+ },
+ "0d6fab6edc3e8b5079d7564d": {
+  "entities": [
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纸上谈兵亦振奋的辩者"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "由形式悟及旧人者"
+   },
+   {
+    "name": "足球精神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "寄托于形式的活的热爱"
+   },
+   {
+    "name": "昨日金杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "杂志上耀眼的金杯"
+   },
+   {
+    "name": "拉米雷斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梅兰妮念念不忘之人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "惊讶",
+    "dst": "挖掘艺术",
+    "evidence": "我只是没想到你这么快便在其中找到了乐趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "定义",
+    "dst": "足球精神",
+    "evidence": "艺术，应是寄托于形式之上的精神",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "宣扬",
+    "dst": "足球精神",
+    "evidence": "在我眼里，是热爱，是团结，是不屈的精神以及对竞技体育的忠诚",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "高呼",
+    "dst": "足球精神",
+    "evidence": "足球精神永存！艺术永存",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "抚摸",
+    "dst": "昨日金杯",
+    "evidence": "女孩出神地抚摸着杂志上耀眼的金杯",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "领悟",
+    "dst": "足球精神",
+    "evidence": "过去的只有形式",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "念及",
+    "dst": "拉米雷斯",
+    "evidence": "或许——拉米雷斯从未离开过我",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8dbaf65108488e743dbb0e69": {
+  "entities": [],
+  "relations": []
+ },
+ "45ce06284ee3a6d1bf47e134": {
+  "entities": [
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "改变评价的小狗"
+   },
+   {
+    "name": "Doggie",
+    "type": "物品",
+    "aliases": [],
+    "desc": "转述担忧的装置"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拉下帽檐期许未来的少女"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "加入庆祝人流的异乡人"
+   },
+   {
+    "name": "足球精神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "从未离开众人的精神"
+   },
+   {
+    "name": "乌卢鲁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "圣火曾燃起之地"
+   },
+   {
+    "name": "圣火",
+    "type": "概念",
+    "aliases": [],
+    "desc": "有望重燃的圣火"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Doggie",
+    "relation": "旁述",
+    "dst": "皮克勒斯",
+    "evidence": "小狗改变了自己的评价",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "谈及",
+    "dst": "挖掘艺术",
+    "evidence": "挖掘艺术先生已经加入到庆祝的人流中",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "担忧",
+    "dst": "挖掘艺术",
+    "evidence": "希望那些狂热分子不会介意他反对标签的精神",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "挂念",
+    "dst": "挖掘艺术",
+    "evidence": "小狗担心他的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "称赞",
+    "dst": "皮克勒斯",
+    "evidence": "呵呵，体贴的小狗儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "祝愿",
+    "dst": "挖掘艺术",
+    "evidence": "希望挖掘艺术先生在四年之后能见证新的奇迹诞生",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "坚信",
+    "dst": "足球精神",
+    "evidence": "精神只是离开了形式——它从未离开我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "期盼",
+    "dst": "乌卢鲁",
+    "evidence": "没准再过一段时日，连乌卢鲁的圣火都能重新燃起呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌卢鲁",
+    "relation": "重燃",
+    "dst": "圣火",
+    "evidence": "连乌卢鲁的圣火都能重新燃起",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

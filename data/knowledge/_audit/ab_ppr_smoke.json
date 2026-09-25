@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-09-17 19:56:45",
+  "config": {
+    "cases": 20,
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "pool": 30,
+    "ppr_top_m": 50
+  },
+  "results": [
+    {
+      "label": "基线（无 PPR 引导）",
+      "beta": 0.0,
+      "strict_pass_n": 7,
+      "strict_pass": 0.35,
+      "inject_pass_n": 7,
+      "inject_pass": 0.35,
+      "by_type": {
+        "factoid": {
+          "n": 11,
+          "pass": 4,
+          "rate": 0.3636
+        },
+        "multi-hop": {
+          "n": 5,
+          "pass": 1,
+          "rate": 0.2
+        },
+        "reasoning": {
+          "n": 4,
+          "pass": 2,
+          "rate": 0.5
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 30.1
+    },
+    {
+      "label": "PPR引导 β=0.1",
+      "beta": 0.1,
+      "strict_pass_n": 8,
+      "strict_pass": 0.4,
+      "inject_pass_n": 6,
+      "inject_pass": 0.3,
+      "by_type": {
+        "factoid": {
+          "n": 11,
+          "pass": 5,
+          "rate": 0.4545
+        },
+        "multi-hop": {
+          "n": 5,
+          "pass": 1,
+          "rate": 0.2
+        },
+        "reasoning": {
+          "n": 4,
+          "pass": 2,
+          "rate": 0.5
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 28.7
+    }
+  ],
+  "delta": [
+    {
+      "beta": 0.0,
+      "d_strict": 0,
+      "d_inject": 0,
+      "d_neg_cases": 0
+    },
+    {
+      "beta": 0.1,
+      "d_strict": 1,
+      "d_inject": -1,
+      "d_neg_cases": 0
+    }
+  ],
+  "fail_ids_baseline": []
+}

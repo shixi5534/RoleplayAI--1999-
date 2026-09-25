@@ -1,0 +1,2123 @@
+{
+ "7f4f7ce89284957bc5b2bea4": {
+  "entities": [
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣扬重返过去的重塑成员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "得知暴雨细节的司辰"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "筛选留下者以重返过去的组织"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "清理时代的倒计时已经开始"
+   }
+  ],
+  "relations": [
+   {
+    "src": "勿忘我",
+    "relation": "隶属",
+    "dst": "重塑之手",
+    "evidence": "才能和我们一起——“重返过去”",
+    "confidence": 0.75
+   },
+   {
+    "src": "维尔汀",
+    "relation": "获知",
+    "dst": "暴雨",
+    "evidence": "你比谁都清楚——清理时代的倒计时，已经开始了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "fcf11e380f65130dcc3c814e": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍混沌能量与最初蝴蝶的研究者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参观洛伦兹研究所分区者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "当面揭穿重塑利用历史者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝诱宾客加入重塑的成员"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "揭穿密室扣押平民的调查员"
+   },
+   {
+    "name": "雅座客人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "动摇并考虑戴面具的宾客"
+   },
+   {
+    "name": "洛伦兹研究所",
+    "type": "组织",
+    "aliases": [
+     "我们研究所"
+    ],
+    "desc": "提前捕捉可能引发暴雨的时地场所"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "勿忘我代表的组织"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "由最初蝴蝶扇动翅膀造成的倒退现象"
+   },
+   {
+    "name": "混沌能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "研究所对可能引发暴雨因素的内称"
+   },
+   {
+    "name": "蝴蝶",
+    "type": "概念",
+    "aliases": [
+     "最初的蝴蝶"
+    ],
+    "desc": "远古时期创造史前混沌能量雏形者"
+   },
+   {
+    "name": "瓦尔登湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正处于这场暴雨正中央"
+   },
+   {
+    "name": "暴雨眼",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "隶属于",
+    "dst": "洛伦兹研究所",
+    "evidence": "而我们研究所做的事情，就是提前捕捉任何一个可能会引发“暴雨”的时间、事件及场所",
+    "confidence": 0.9
+   },
+   {
+    "src": "洛伦兹研究所",
+    "relation": "预测",
+    "dst": "暴雨",
+    "evidence": "提前捕捉任何一个可能会引发“暴雨”的时间、事件及场所",
+    "confidence": 0.9
+   },
+   {
+    "src": "蝴蝶",
+    "relation": "创造",
+    "dst": "混沌能量",
+    "evidence": "“蝴蝶”创造了史前混沌能量的雏形",
+    "confidence": 0.9
+   },
+   {
+    "src": "蝴蝶",
+    "relation": "导致",
+    "dst": "暴雨",
+    "evidence": "使世界倒退的“暴雨”现象是由远古时期“最初的蝴蝶”扇动翅膀造成",
+    "confidence": 0.9
+   },
+   {
+    "src": "勿忘我",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "除了我们重塑之手，又有谁会告诉你们，世界将要消亡的真相",
+    "confidence": 0.9
+   },
+   {
+    "src": "勿忘我",
+    "relation": "下令清理",
+    "dst": "十四行诗",
+    "evidence": "清理掉这些隐瞒“暴雨”真相的，高高在上的政府走狗",
+    "confidence": 0.9
+   },
+   {
+    "src": "瓦尔登湖",
+    "relation": "位于",
+    "dst": "暴雨",
+    "evidence": "因为它正处于这场“暴雨”的正中央",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "揭穿",
+    "dst": "重塑之手",
+    "evidence": "你们在利用历史加速“暴雨”的进程",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "指控",
+    "dst": "勿忘我",
+    "evidence": "你明明在密室里扣押了一个普通人",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "6b4f40571df2d5c57f371141": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "质问宾客的调查员"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称恐惧但自由的成员"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警告叛乱者来袭的苹果"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召唤保镖参战的闺秀"
+   },
+   {
+    "name": "保镖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护卫苏芙比的庄园保镖"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被苏芙比认为在欺骗她的管家"
+   },
+   {
+    "name": "行动队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率队突破重围的队长"
+   },
+   {
+    "name": "行动队员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等待开战时机的队员"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "被指为叛乱者的组织"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苏芙比家的宅邸"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "质问",
+    "dst": "雅座客人",
+    "evidence": "你们真的要加入这个反叛组织吗",
+    "confidence": 0.85
+   },
+   {
+    "src": "保镖",
+    "relation": "保护",
+    "dst": "苏芙比",
+    "evidence": "大小姐，我们在这里！请站在我们的包围圈中心",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "协助",
+    "dst": "十四行诗",
+    "evidence": "十四行诗小姐，我们来帮助你了",
+    "confidence": 0.9
+   },
+   {
+    "src": "行动队长",
+    "relation": "进攻",
+    "dst": "重塑之手",
+    "evidence": "其他人和我一起上！突破重围",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "5b2232db5b6b57d61e90c93b": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断距外墙渐近的苹果"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听到街道车流声的司辰"
+   },
+   {
+    "name": "保镖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关心苏芙比伤势者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "吩咐清理弗迪嘴边魔药痕迹者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持救出求救者的调查员"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来救姐姐玛丽安的枪手"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被灌吐真剂的受害者"
+   },
+   {
+    "name": "弗迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "需被背走的昏迷司机"
+   },
+   {
+    "name": "吐真剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被逼玛丽安服用的魔药"
+   },
+   {
+    "name": "西西里的橘子园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "斯奈德要带玛丽安回的地方"
+   },
+   {
+    "name": "天堂使徒",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "斯奈德",
+    "relation": "营救",
+    "dst": "玛丽安",
+    "evidence": "我现在就带你出去……回到我们西西里的橘子园",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯奈德",
+    "relation": "姐妹于",
+    "dst": "玛丽安",
+    "evidence": "姐姐……我是斯奈德",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "攻击",
+    "dst": "斯奈德",
+    "evidence": "十四行诗的术法刺向斯奈德",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安",
+    "relation": "被灌服",
+    "dst": "吐真剂",
+    "evidence": "她吃的是吐真剂",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "急救",
+    "dst": "玛丽安",
+    "evidence": "我来给她做魔药催吐急救",
+    "confidence": 0.9
+   },
+   {
+    "src": "斯奈德",
+    "relation": "掩护",
+    "dst": "十四行诗",
+    "evidence": "安心给她做急救，别管其他的",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "562c3054f371b529f874a250": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe先生"
+    ],
+    "desc": "操纵天堂使徒炸开墙壁的苹果"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "找到出口的闺秀"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥黑衣人推车者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推走同伴留下应战的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "背着玛丽安站在洞口的调查员"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认自己逃出的人"
+   },
+   {
+    "name": "黑衣人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斯奈德的手下"
+   },
+   {
+    "name": "行动队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撑住墙体的队长"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挡在维尔汀面前者"
+   },
+   {
+    "name": "自动小岛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被推出去堵洞口的车"
+   },
+   {
+    "name": "天堂使徒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "炸开墙壁的武器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "使用",
+    "dst": "天堂使徒",
+    "evidence": "APPLe先生——用“天堂使徒”！！",
+    "confidence": 0.9
+   },
+   {
+    "src": "黑衣人",
+    "relation": "隶属于",
+    "dst": "斯奈德",
+    "evidence": "老大……我们应该怎么办",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推走",
+    "dst": "十四行诗",
+    "evidence": "两只手轻轻地往外一推",
+    "confidence": 0.85
+   },
+   {
+    "src": "斯奈德",
+    "relation": "并肩作战",
+    "dst": "维尔汀",
+    "evidence": "真没想到、还会有和政府老爷一起……并肩作战的一天啊",
+    "confidence": 0.9
+   },
+   {
+    "src": "槲寄生",
+    "relation": "阻拦",
+    "dst": "维尔汀",
+    "evidence": "……抱歉。请不要逃跑",
+    "confidence": 0.75
+   }
+  ]
+ },
+ "cbcc81100405d11acaa54f84": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "组织撤退与断后的司辰"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "绘制方位图的调查员"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现出口的闺秀"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以光束引路并寻找玛丽安者"
+   },
+   {
+    "name": "行动队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告平民受伤的队长"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斯奈德要寻找的人"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断定密道无窗的酒吧老板"
+   },
+   {
+    "name": "保镖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在队伍两边保护平民者"
+   },
+   {
+    "name": "吧台宾客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被面具之说困住的宾客"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "会清理未戴面具者的灾难"
+   },
+   {
+    "name": "瓦尔登湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被改造出密道的酒吧"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "免于被暴雨清理的凭证"
+   },
+   {
+    "name": "地下密道",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "发现",
+    "dst": "瓦尔登湖",
+    "evidence": "出口就在那个舞台聚光灯的后面",
+    "confidence": 0.8
+   },
+   {
+    "src": "勿忘我",
+    "relation": "改造",
+    "dst": "瓦尔登湖",
+    "evidence": "这个建筑物被他们改造过。所有的出口都被他们封死了",
+    "confidence": 0.85
+   },
+   {
+    "src": "斯奈德",
+    "relation": "寻找",
+    "dst": "玛丽安",
+    "evidence": "我要去找玛丽安",
+    "confidence": 0.95
+   },
+   {
+    "src": "面具",
+    "relation": "防护",
+    "dst": "暴雨",
+    "evidence": "不戴上我们的面具，你很快就会感染上时代的“恶习”，被“暴雨”清理掉",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "绘制",
+    "dst": "方位图",
+    "evidence": "我当时画了一个方位图",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "a10d152f3df1e03fb8146408": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为APPLe剪叶释放毒液的调查员"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe先生",
+     "苹果先生"
+    ],
+    "desc": "中毒发霉的苹果"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "列出解毒剂素材的闺秀"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出代森锰锌的康复者"
+   },
+   {
+    "name": "行动队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问素材名称的队长"
+   },
+   {
+    "name": "安静的雷文哈特",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比家中活着的独角兽"
+   },
+   {
+    "name": "莎莎娜",
+    "type": "概念",
+    "aliases": [
+     "迷你斯其内尔杰斯特"
+    ],
+    "desc": "苏芙比的宠物，其父在蓝脊山发现"
+   },
+   {
+    "name": "代森锰锌",
+    "type": "物品",
+    "aliases": [
+     "袋深檬新",
+     "口袋柠檬"
+    ],
+    "desc": "人类给植物用的保护性杀菌剂"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苏芙比家，穿过近十座园林"
+   },
+   {
+    "name": "布拉多克高地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "莎莎娜被发现之地"
+   },
+   {
+    "name": "解毒剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需蚂蟥、玻璃蛇蜥蜴血等制成的药"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "中毒",
+    "dst": "重塑之手",
+    "evidence": "刚才不慎被他们的毒液溅射到了",
+    "confidence": 0.85
+   },
+   {
+    "src": "苏芙比",
+    "relation": "持有",
+    "dst": "莎莎娜",
+    "evidence": "是我最亲爱的莎莎娜！你来欢迎我了",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安",
+    "relation": "识别",
+    "dst": "代森锰锌",
+    "evidence": "他说的可能是代森锰锌，一种人类给植物用的保护性杀菌剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "处理",
+    "dst": "APPLe",
+    "evidence": "我将他的叶子剪了一个小口，释放了一些毒液出来",
+    "confidence": 0.9
+   },
+   {
+    "src": "莎莎娜",
+    "relation": "被发觉于",
+    "dst": "布拉多克高地",
+    "evidence": "是我父亲在布拉多克高地的蓝脊山附近发现的",
+    "confidence": 0.9
+   },
+   {
+    "src": "APPLe",
+    "relation": "需求",
+    "dst": "代森锰锌",
+    "evidence": "但APPLe某恐怕还需要一丁点……代森锰锌",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e33cdf9e7f23e210c8b85618": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "在库藏区撞见管家的闺秀"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "站在18号金库前的管家"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "苹果先生"
+    ],
+    "desc": "等待救治的苹果"
+   },
+   {
+    "name": "18号金库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "严禁佣人涉足的私人库藏区域"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "发现",
+    "dst": "卡森先生",
+    "evidence": "卡、卡森先生——？！",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "位于",
+    "dst": "18号金库",
+    "evidence": "为什么会站在我们家的18号金库前",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "服务",
+    "dst": "苏芙比",
+    "evidence": "苏芙比小姐？您回来了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "9d4c3589e2db0e02e8a877f0": {
+  "entities": [
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "做例行库存盘点并料理晚餐者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "寻找口袋柠檬的闺秀"
+   },
+   {
+    "name": "尼克",
+    "type": "角色",
+    "aliases": [
+     "园丁大叔尼克"
+    ],
+    "desc": "被送进医院的园丁"
+   },
+   {
+    "name": "安娜",
+    "type": "角色",
+    "aliases": [
+     "安娜姐姐"
+    ],
+    "desc": "生病的仙人掌猫照料者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "被苏芙比怀疑来捣乱的组织"
+   },
+   {
+    "name": "仙人掌猫",
+    "type": "概念",
+    "aliases": [
+     "Cactus Cat"
+    ],
+    "desc": "溜出来偷仙人掌汁的生物"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "佣人患急性肠胃炎症的宅邸"
+   },
+   {
+    "name": "城市的胃病",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "代森锰锌",
+    "type": "物品",
+    "aliases": [
+     "口袋香蕉派",
+     "口袋柠檬"
+    ],
+    "desc": "苏芙比以为的救命良药"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡森先生",
+    "relation": "管理",
+    "dst": "庄园",
+    "evidence": "我正在做每周例行的库存盘点",
+    "confidence": 0.9
+   },
+   {
+    "src": "尼克",
+    "relation": "任职于",
+    "dst": "庄园",
+    "evidence": "你最爱的园丁大叔尼克还被送进了医院",
+    "confidence": 0.9
+   },
+   {
+    "src": "安娜",
+    "relation": "照看",
+    "dst": "仙人掌猫",
+    "evidence": "你们居然趁着安娜姐姐生病就偷偷溜出来了",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏芙比",
+    "relation": "寻找",
+    "dst": "代森锰锌",
+    "evidence": "我要赶紧去找“口袋柠檬”了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "99e01b97e77b83af2efa495e": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比术士"
+    ],
+    "desc": "制伏仙人掌猫并找到药剂的闺秀"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "告知重塑行动的调查员"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [
+     "APPLe先生",
+     "APPLe某"
+    ],
+    "desc": "已施药并质疑毒灰的苹果"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [
+     "玛丽安小姐"
+    ],
+    "desc": "在花园库房外找到药剂者"
+   },
+   {
+    "name": "电台主播",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报疾病受灾情况的播音员"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "照看树林等待救助计划者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "发动大范围疾病受灾事件的组织"
+   },
+   {
+    "name": "代森锰锌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "能治百病的魔药"
+   },
+   {
+    "name": "佩里德许树",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其毒灰也不足以造成如此规模伤亡"
+   },
+   {
+    "name": "公共卫生局",
+    "type": "组织",
+    "aliases": [
+     "PHS"
+    ],
+    "desc": "通报死亡病例的机构"
+   },
+   {
+    "name": "公共卫生服务军官团",
+    "type": "组织",
+    "aliases": [
+     "军官团"
+    ],
+    "desc": "介入食物供应管制的军方机构"
+   },
+   {
+    "name": "急性呼吸窘迫综合征",
+    "type": "概念",
+    "aliases": [],
+    "desc": "新增确诊2283例的病症"
+   },
+   {
+    "name": "救助难民计划",
+    "type": "事件",
+    "aliases": [
+     "救助难民"
+    ],
+    "desc": "槲寄生等待开始时机的事件"
+   },
+   {
+    "name": "密歇根大道东侧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "疾病受灾最重区域之一"
+   },
+   {
+    "name": "黄金海岸街区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "疾病受灾最重区域之一"
+   },
+   {
+    "name": "河北街区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "疾病受灾最重区域之一"
+   },
+   {
+    "name": "埃文斯顿市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有受灾报告的城市"
+   },
+   {
+    "name": "奥克帕克镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有受灾报告的城镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "报告",
+    "dst": "重塑之手",
+    "evidence": "重塑开始行动了",
+    "confidence": 0.85
+   },
+   {
+    "src": "电台主播",
+    "relation": "隶属于",
+    "dst": "公共卫生局",
+    "evidence": "公共卫生局（PHS）今天通报",
+    "confidence": 0.85
+   },
+   {
+    "src": "公共卫生服务军官团",
+    "relation": "管制",
+    "dst": "食物供应",
+    "evidence": "公共卫生服务军官团已介入食物供应管制",
+    "confidence": 0.9
+   },
+   {
+    "src": "重塑之手",
+    "relation": "引发",
+    "dst": "急性呼吸窘迫综合征",
+    "evidence": "重塑他们是怎么做到的？这些明显都是外源性疾病",
+    "confidence": 0.75
+   },
+   {
+    "src": "玛丽安",
+    "relation": "发现",
+    "dst": "代森锰锌",
+    "evidence": "玛丽安小姐在花园库房外找到了药剂",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏芙比",
+    "relation": "制伏",
+    "dst": "仙人掌猫",
+    "evidence": "成功制伏小坏蛋们啦",
+    "confidence": 0.9
+   },
+   {
+    "src": "槲寄生",
+    "relation": "照看",
+    "dst": "树林",
+    "evidence": "你照看树林，直至开始“救助难民”计划的最后一刻",
+    "confidence": 0.85
+   },
+   {
+    "src": "密歇根大道东侧",
+    "relation": "受灾于",
+    "dst": "重塑之手",
+    "evidence": "为疾病受灾最重区域",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "ec24211e2e904af7bfc4b8a8": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "老爷"
+    ],
+    "desc": "不擅长神秘术的司辰"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求维尔汀杀死自己的枪手"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听到全部计划的森林主人"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重塑要将二人送到其面前之人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "喜欢自相残杀戏码的组织"
+   },
+   {
+    "name": "纯血",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与蹩脚神秘术者存在天壤之别的血统"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "不敌",
+    "dst": "槲寄生",
+    "evidence": "我们不可能战胜槲寄生",
+    "confidence": 0.85
+   },
+   {
+    "src": "斯奈德",
+    "relation": "请求",
+    "dst": "维尔汀",
+    "evidence": "到时候，请杀了我",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "送往",
+    "dst": "阿尔卡纳",
+    "evidence": "我们都将束手待毙，被送到阿尔卡纳面前",
+    "confidence": 0.9
+   },
+   {
+    "src": "槲寄生",
+    "relation": "听见",
+    "dst": "斯奈德",
+    "evidence": "她全都听到了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "7fa08332ca9d816d5141cf1e": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带花楸枝潜入密室寻找斯奈德者"
+   },
+   {
+    "name": "追随者Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "托马斯先生"
+    ],
+    "desc": "在医院门口见到祖母的追随者"
+   },
+   {
+    "name": "追随者Ⅱ",
+    "type": "角色",
+    "aliases": [
+     "罗伯特先生"
+    ],
+    "desc": "儿子已死后身体异变的追随者"
+   },
+   {
+    "name": "罗伯特·穆齐尔",
+    "type": "角色",
+    "aliases": [
+     "罗伯特"
+    ],
+    "desc": "追随者Ⅱ已死的儿子"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "告知需运物资回所居之地者"
+   },
+   {
+    "name": "花楸枝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "象征护佑与祝福、能指引方向的新芽"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [
+     "重塑面具"
+    ],
+    "desc": "带来庇护亦伴随盲目的凭证"
+   },
+   {
+    "name": "所居之地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可躲避暴雨伤害的重塑据点"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "以筛选方式淘汰者的灾难"
+   },
+   {
+    "name": "通俗文学",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "瓦尔登湖",
+    "type": "地点",
+    "aliases": [],
+    "desc": "共有三层密室的酒馆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "持有",
+    "dst": "花楸枝",
+    "evidence": "花楸枝已经发芽了啊",
+    "confidence": 0.9
+   },
+   {
+    "src": "花楸枝",
+    "relation": "指引",
+    "dst": "维尔汀",
+    "evidence": "怎么……花楸枝似乎在拉扯着我",
+    "confidence": 0.85
+   },
+   {
+    "src": "追随者Ⅱ",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "我们必须要接受这一切",
+    "confidence": 0.75
+   },
+   {
+    "src": "追随者Ⅱ",
+    "relation": "运送物资至",
+    "dst": "所居之地",
+    "evidence": "我们要运送大量的物资回重塑真正的“所居之地”里",
+    "confidence": 0.9
+   },
+   {
+    "src": "勿忘我",
+    "relation": "告知",
+    "dst": "追随者Ⅱ",
+    "evidence": "是勿忘我先生告诉我的",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "击晕",
+    "dst": "追随者Ⅱ",
+    "evidence": "那只能先击晕你了！抱歉……罗伯特先生",
+    "confidence": 0.9
+   },
+   {
+    "src": "罗伯特·穆齐尔",
+    "relation": "亲子于",
+    "dst": "追随者Ⅱ",
+    "evidence": "我的儿子罗伯特已经死了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "718f556e87eb72edb332bcae": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "老爷"
+    ],
+    "desc": "找到斯奈德并送药者"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼吸凝滞、脉搏微弱的伤者；被要求保存体力者"
+   },
+   {
+    "name": "花楸枝",
+    "type": "物品",
+    "aliases": [
+     "新芽"
+    ],
+    "desc": "长出一指长新芽并为维尔汀指路"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其最后的选择决定斯奈德命运"
+   },
+   {
+    "name": "藏酒室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地下一层被搜查的房间"
+   },
+   {
+    "name": "救治所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "明早10点大雾中的会合地点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "花楸枝",
+    "relation": "指引",
+    "dst": "维尔汀",
+    "evidence": "你真的是在为我指路吗？那么……我也选左边吧",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "救助",
+    "dst": "斯奈德",
+    "evidence": "太好了，你没事。快把这些喝了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "喂食",
+    "dst": "斯奈德",
+    "evidence": "是晚餐剩余的蛋糕",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "会合于",
+    "dst": "救治所",
+    "evidence": "我们在救治所见",
+    "confidence": 0.9
+   },
+   {
+    "src": "槲寄生",
+    "relation": "抉择",
+    "dst": "斯奈德",
+    "evidence": "我只想知道……槲寄生最后的选择",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "37ce26e213bdd781e6776028": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反复试验幻剂的闺秀"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "以石化咒制服失控者并参战的调查员"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指出暴雨症候扭曲食物知觉的苹果"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出斯奈德遗体羽毛装饰者"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "尝到爱犬遗体的参与者"
+   },
+   {
+    "name": "黑衣人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参与幻剂试验者；苏芙比的手下"
+   },
+   {
+    "name": "安娜",
+    "type": "角色",
+    "aliases": [
+     "安娜姐姐"
+    ],
+    "desc": "被石化咒制住的失控者"
+   },
+   {
+    "name": "追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抬着斯奈德遗体前来者"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被盖上白布送回的死者"
+   },
+   {
+    "name": "美味嚼嚼幻剂Ⅲ",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比第42次试验的幻剂"
+   },
+   {
+    "name": "瞬时石化咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "十四行诗用于制服失控者的术法"
+   },
+   {
+    "name": "格伦·米勒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其长号作品集被尝到的音乐家"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "能扭曲与食物相关知觉的症候"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "外围出现重塑追随者的宅邸"
+   },
+   {
+    "name": "珠光与弹痕",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "施放",
+    "dst": "瞬时石化咒",
+    "evidence": "瞬时石化咒——！",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "制服",
+    "dst": "安娜",
+    "evidence": "对于暂时失去理智的人类，只能出此下策",
+    "confidence": 0.85
+   },
+   {
+    "src": "追随者",
+    "relation": "抬送",
+    "dst": "斯奈德",
+    "evidence": "是抬着担架的一行人",
+    "confidence": 0.9
+   },
+   {
+    "src": "追随者",
+    "relation": "隶属于",
+    "dst": "重塑之手",
+    "evidence": "庄园外出现了重塑的追随者",
+    "confidence": 0.85
+   },
+   {
+    "src": "玛丽安",
+    "relation": "姐妹于",
+    "dst": "斯奈德",
+    "evidence": "斯奈德？！是我的妹妹斯奈德",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "研制",
+    "dst": "美味嚼嚼幻剂Ⅲ",
+    "evidence": "美味嚼嚼幻剂Ⅲ第42次试验结果发表时间到了",
+    "confidence": 0.9
+   },
+   {
+    "src": "APPLe",
+    "relation": "解释",
+    "dst": "暴雨症候",
+    "evidence": "没想到“暴雨症候”竟能扭曲与食物相关的一切知觉",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "营救",
+    "dst": "维尔汀",
+    "evidence": "一切都将以营救司辰为首要目标",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "917bba251a10a29d3edfbae8": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "清除敌人并为斯奈德复仇者"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重伤但未死的枪手"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见到妹妹复活的姐姐"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促将斯奈德抬进屋内者"
+   },
+   {
+    "name": "花",
+    "type": "物品",
+    "aliases": [],
+    "desc": "斯奈德与维尔汀用生命换来的东西"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "复仇于",
+    "dst": "斯奈德",
+    "evidence": "你这样拼命地为人家复仇",
+    "confidence": 0.85
+   },
+   {
+    "src": "玛丽安",
+    "relation": "姐妹于",
+    "dst": "斯奈德",
+    "evidence": "妹妹？！你还活着",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯奈德",
+    "relation": "持有",
+    "dst": "花",
+    "evidence": "看看这朵花吧。这上面的每一个字——可都是、人家与老爷用生命……换来的东西",
+    "confidence": 0.9
+   },
+   {
+    "src": "APPLe",
+    "relation": "救治",
+    "dst": "斯奈德",
+    "evidence": "她昏过去了！快把她抬进屋内紧急救治",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5d727508f645aa0a196e25c2": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "研制美味嚼嚼幻剂Ⅸ的闺秀"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "提醒淑女礼仪的管家"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "十四行诗小姐"
+    ],
+    "desc": "接到Z回信并前往救治所者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下达阻止抢夺物资命令的联络人"
+   },
+   {
+    "name": "追随者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "封锁树林的运输人员检查者"
+   },
+   {
+    "name": "门徒",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与追随者同行的敌人"
+   },
+   {
+    "name": "基金会信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被冷箭射穿的信纸"
+   },
+   {
+    "name": "美味嚼嚼剂",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   },
+   {
+    "name": "华盛顿",
+    "type": "地点",
+    "aliases": [],
+    "desc": "观测员发来报告之地"
+   },
+   {
+    "name": "芝加哥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "相近州物资向此调动"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "下达命令",
+    "dst": "十四行诗",
+    "evidence": "第一要务是阻止他们抢夺物资，解救难民人质",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "隶属",
+    "dst": "Z",
+    "evidence": "是的，十四行诗已收到回信",
+    "confidence": 0.75
+   },
+   {
+    "src": "重塑之手",
+    "relation": "目标",
+    "dst": "救援物资",
+    "evidence": "重塑盯上的是这批救援物资",
+    "confidence": 0.9
+   },
+   {
+    "src": "华盛顿",
+    "relation": "调运物资至",
+    "dst": "芝加哥",
+    "evidence": "相近州的物资都在向芝加哥调动",
+    "confidence": 0.9
+   },
+   {
+    "src": "追随者",
+    "relation": "封锁",
+    "dst": "树林",
+    "evidence": "这片树林已经被封锁了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "430b96785c2b0cd486e5e50b": {
+  "entities": [
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "受邀前来熬制魔药的神秘学家"
+   },
+   {
+    "name": "服务军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑勿忘我资质并检查的军人"
+   },
+   {
+    "name": "杜兰特夫人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求优先为白帐篷区诊治的贵妇"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提问白帐篷区外住客身份者"
+   },
+   {
+    "name": "斯坦威钢琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "救治所中央高台旁的钢琴"
+   },
+   {
+    "name": "坩埚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "勿忘我所需的熬制器具"
+   },
+   {
+    "name": "白帐篷区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "杜兰特夫人请求优先诊治的区域"
+   },
+   {
+    "name": "救治所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "上千号人等待救治之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "勿忘我让槲寄生享受其前的宁静"
+   }
+  ],
+  "relations": [
+   {
+    "src": "服务军",
+    "relation": "质疑",
+    "dst": "勿忘我",
+    "evidence": "像这样的怪胎能做点什么",
+    "confidence": 0.9
+   },
+   {
+    "src": "勿忘我",
+    "relation": "合作",
+    "dst": "服务军",
+    "evidence": "就是你要与我们合作？",
+    "confidence": 0.85
+   },
+   {
+    "src": "杜兰特夫人",
+    "relation": "请求",
+    "dst": "勿忘我",
+    "evidence": "你一定能优先为白帐篷区诊治，对吧",
+    "confidence": 0.9
+   },
+   {
+    "src": "槲寄生",
+    "relation": "随行",
+    "dst": "勿忘我",
+    "evidence": "原来这里还有其他的区域",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "894bd07862f6ec183f2aecb1": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "检验汤药并识破物资转移者"
+   },
+   {
+    "name": "流浪汉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抢夺药品与物资的流民"
+   },
+   {
+    "name": "病人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阻止流浪汉动救灾物资者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "转移救灾物资的组织"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "其前的宁静是为掩盖物资转移"
+   },
+   {
+    "name": "公共卫生服务军官团",
+    "type": "组织",
+    "aliases": [
+     "军官团"
+    ],
+    "desc": "救灾物资的所属机构"
+   },
+   {
+    "name": "复方汤药",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "查验",
+    "dst": "汤药",
+    "evidence": "这些药粉没有毒性",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "识破",
+    "dst": "重塑之手",
+    "evidence": "所谓“暴雨”前的宁静，都是为了掩盖物资的转移",
+    "confidence": 0.9
+   },
+   {
+    "src": "流浪汉",
+    "relation": "抢夺",
+    "dst": "公共卫生服务军官团",
+    "evidence": "这是军官团的救灾物资",
+    "confidence": 0.8
+   },
+   {
+    "src": "重塑之手",
+    "relation": "转移",
+    "dst": "物资",
+    "evidence": "大量的储备粮油、医疗用品、应急物资和临时基建工具",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "提前会合于",
+    "dst": "十四行诗",
+    "evidence": "必须提前跟十四行诗他们见上面",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6856115a9c1695befb09b6d1": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀请槲寄生同行者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "槲寄生小姐"
+    ],
+    "desc": "接受邀请并告别森林者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥护送缴获货车者"
+   },
+   {
+    "name": "行动队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命护送货车回庄园者"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愿为苏芙比试毒的实验体"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "研制幻剂的闺秀"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "讲述韦耶豪瑟家族往事者"
+   },
+   {
+    "name": "韦耶豪瑟家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "华盛顿州林业大亨家族，槲寄生继父家"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "削减运输守卫而被偷袭的组织"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将到来的灾难"
+   },
+   {
+    "name": "森林",
+    "type": "地点",
+    "aliases": [
+     "焦木林"
+    ],
+    "desc": "槲寄生要铭记其最后模样的森林"
+   },
+   {
+    "name": "救治所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "十四行诗一行前进的目标"
+   },
+   {
+    "name": "运输货车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被缴获的第三辆重塑物资车"
+   },
+   {
+    "name": "救助难民计划",
+    "type": "事件",
+    "aliases": [],
+    "desc": "与此相关的事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "继女于",
+    "dst": "韦耶豪瑟家族",
+    "evidence": "她是华盛顿州林业大亨的继女",
+    "confidence": 0.9
+   },
+   {
+    "src": "韦耶豪瑟家族",
+    "relation": "破产于",
+    "dst": "苏联木材",
+    "evidence": "苏联木材的压价导致了他们家族破产",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "往来于",
+    "dst": "韦耶豪瑟家族",
+    "evidence": "我们的老爷曾与他们有过来往",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "偷袭",
+    "dst": "重塑之手",
+    "evidence": "重塑为了避人耳目，特意削减了运输物资的守卫人数——他们一定没想到会遭到偷袭",
+    "confidence": 0.9
+   },
+   {
+    "src": "行动队长",
+    "relation": "护送",
+    "dst": "运输货车",
+    "evidence": "现在由你带领分队成员护送这三辆车回到庄园",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "邀请",
+    "dst": "槲寄生",
+    "evidence": "槲寄生，你要不要跟我一起走？",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "接受",
+    "dst": "维尔汀",
+    "evidence": "我接受你的邀请",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯奈德",
+    "relation": "试毒于",
+    "dst": "苏芙比",
+    "evidence": "人家愿意替自己的家人先试试毒",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "ef46260ce22094467cf5c5ff": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受浓雾影响头晕的闺秀"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒屏住呼吸并下令行动者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "将在10点与之相见者"
+   },
+   {
+    "name": "白雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "为隐藏救治所的保护咒语"
+   },
+   {
+    "name": "救治所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被浓雾保护的设施"
+   }
+  ],
+  "relations": [
+   {
+    "src": "白雾",
+    "relation": "保护",
+    "dst": "救治所",
+    "evidence": "这层白雾应该是为了隐藏救治所的保护咒语",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "下令",
+    "dst": "苏芙比",
+    "evidence": "接下来的行动，请各位谨慎行事，确保不受浓雾的干扰",
+    "confidence": 0.85
+   },
+   {
+    "src": "苏芙比",
+    "relation": "协助",
+    "dst": "十四行诗",
+    "evidence": "在见到维尔汀小姐前，我们能搬多少是多少",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

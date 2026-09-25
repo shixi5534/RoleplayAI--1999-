@@ -1,0 +1,1666 @@
+{
+ "af317c306f259e442d59860e": {
+  "entities": [
+   {
+    "name": "店主",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定转让铺子收回成本的店主"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因不能再吃冰淇淋而伤心的少女"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以可可豆揭穿37矛盾的闺蜜"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "支持店主理智判断的研究员"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒店主可联系馆长的治疗师"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝滥用职权干预转让的馆长"
+   },
+   {
+    "name": "冰淇淋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "即将随店铺转让而消失的甜品"
+   },
+   {
+    "name": "十二角星",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37再也见不到的美丽十二角星"
+   },
+   {
+    "name": "怪味豆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "接手者打算在此售卖的零食"
+   },
+   {
+    "name": "阿其翁",
+    "type": "概念",
+    "aliases": [],
+    "desc": "抓走触犯禁忌者的生物"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学派所信奉的至高规律"
+   },
+   {
+    "name": "手帕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "爱兹拉随身携带之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "店主",
+    "relation": "转让",
+    "dst": "冰淇淋",
+    "evidence": "为什么不把这个铺子转出去呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "计算",
+    "dst": "冰淇淋",
+    "evidence": "即使每天入账一个不错的数字，收回成本也需要两年多",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "评价",
+    "dst": "店主",
+    "evidence": "你改变了自己的思考方式，提升了自己的序列",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "惋惜",
+    "dst": "十二角星",
+    "evidence": "我再也见不到那些美丽的十二角星了",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "质问",
+    "dst": "店主",
+    "evidence": "你不要你的梦想了吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "支持",
+    "dst": "店主",
+    "evidence": "这是一个非常理智的判断",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "维护",
+    "dst": "店主",
+    "evidence": "如果那边那位蛮不讲理的客人对您进行了任何人身威胁",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "求助",
+    "dst": "爱兹拉",
+    "evidence": "嘿爱兹拉！这符合规定吗？做点什么！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "拒绝",
+    "dst": "兔毛手袋",
+    "evidence": "转让店铺并不违反合约，我不能在这种地方滥用职权",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "告知",
+    "dst": "兔毛手袋",
+    "evidence": "我听说他要在这里卖怪味豆",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "厌恶",
+    "dst": "怪味豆",
+    "evidence": "谁会想吃蜗牛眼珠味的怪味豆！",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "戒律",
+    "dst": "阿其翁",
+    "evidence": "如果有人吃了豆子，他是要被处以极刑的",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "置疑",
+    "dst": "37",
+    "evidence": "这听起来似乎有些过于严苛了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "让步",
+    "dst": "爱兹拉",
+    "evidence": "考虑到你们并非学派中人……我不会要求你们吃了豆子就要去死的",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "信奉",
+    "dst": "真理",
+    "evidence": "如果有人吃了豆子，他是要被处以极刑的",
+    "confidence": 0.8
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "揭穿",
+    "dst": "37",
+    "evidence": "巧克力是用可可豆做的。可可豆是豆子",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "否认",
+    "dst": "兔毛手袋",
+    "evidence": "这不可能！如果我真的吃了豆子，那……那我就应该已经被阿其翁叼走了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "提醒",
+    "dst": "37",
+    "evidence": "你的冰淇淋流下来了！先擦一下，我带了手帕",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱兹拉",
+    "relation": "递予",
+    "dst": "手帕",
+    "evidence": "我带了手帕",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4781fe64096ebf9837627b73": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "论证巧克力冰淇淋并非豆子的少女"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指在骗人的研究员"
+   },
+   {
+    "name": "爱兹拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抢救融化冰淇淋的馆长"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "附和说明冰淇淋不是豆子者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求众人安静的治疗师"
+   },
+   {
+    "name": "店主",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接受记者采访的店主"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "读信后首次露出表情的收信人"
+   },
+   {
+    "name": "一封远渡重洋的回信",
+    "type": "物品",
+    "aliases": [],
+    "desc": "37远渡重洋写给6的长信"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发现6笑了的摇滚海盗"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出言制止星锑的同行者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "37信中期待归来的旧友"
+   },
+   {
+    "name": "冰淇淋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "37委托星锑带回的礼物"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "信中论及的外界变故"
+   },
+   {
+    "name": "报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "随信寄出以供观测37状态的报道"
+   },
+   {
+    "name": "回文数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "这封信总字数所构成的数字"
+   }
+  ],
+  "relations": [
+   {
+    "src": "爱兹拉",
+    "relation": "抢救",
+    "dst": "冰淇淋",
+    "evidence": "快救救可怜的冰淇淋，放心，它们不是豆子",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "坚持",
+    "dst": "37",
+    "evidence": "也许你的阿其翁只是在赶来的路上",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "制止",
+    "dst": "兔毛手袋",
+    "evidence": "我们可以安静一会儿吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "店主",
+    "relation": "告知",
+    "dst": "星锑",
+    "evidence": "说要在店铺转让前采访我的记者来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "断言",
+    "dst": "兔毛手袋",
+    "evidence": "我的假设是对的，兔毛手袋在骗人。巧克力冰淇淋不是豆子",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "论证",
+    "dst": "冰淇淋",
+    "evidence": "可可豆里面带有一个“豆”字，但它其实是梧桐科，而不是豆科",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "寄送",
+    "dst": "冰淇淋",
+    "evidence": "我委托星锑帮我带了一份给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "寄给",
+    "dst": "6",
+    "evidence": "我希望你也能尝尝",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "提及",
+    "dst": "小梅斯梅尔",
+    "evidence": "小梅斯梅尔发现了这则报道",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "附上",
+    "dst": "报纸",
+    "evidence": "建议我可以一起寄给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "承诺",
+    "dst": "苏菲亚",
+    "evidence": "然后我会回到岛上，苏菲亚也会回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "说明",
+    "dst": "回文数",
+    "evidence": "这封信的总字数是一个回文数",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "阅读",
+    "dst": "一封远渡重洋的回信",
+    "evidence": "青年露出了展开信纸后第一个明显的表情",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "调侃",
+    "dst": "6",
+    "evidence": "你刚才这是笑了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "制止",
+    "dst": "星锑",
+    "evidence": "星锑并没有冒犯您的意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "送信",
+    "dst": "一封远渡重洋的回信",
+    "evidence": "我们有点赶时间，得赶紧回基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "一封远渡重洋的回信",
+    "relation": "论及",
+    "dst": "暴雨",
+    "evidence": "我过得很好，课题也在推进中",
+    "confidence": 0.75
+   }
+  ]
+ },
+ "ff146de80598dd10476036b9": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为星锑失礼致歉的同行者"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "偷吃37所赠冰淇淋的摇滚海盗"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "暂不急着回信的收信人"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "礼物被偷吃、被众人牵挂的少女"
+   },
+   {
+    "name": "冰淇淋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被星锑替6吃掉的礼物"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选择了另一条路的旧友"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "星锑与十四行诗急着赶回之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "学派所给答案曾被用以躲避的灾难"
+   },
+   {
+    "name": "阿派朗",
+    "type": "概念",
+    "aliases": [
+     "无限定者"
+    ],
+    "desc": "为学派给出答案的存在"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37相信能解决一切的答案"
+   },
+   {
+    "name": "本质",
+    "type": "概念",
+    "aliases": [],
+    "desc": "同胞们所回归之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "致歉",
+    "dst": "6",
+    "evidence": "星锑并没有冒犯您的意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "提及",
+    "dst": "37",
+    "evidence": "37提到给我准备了礼物",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "吃掉",
+    "dst": "冰淇淋",
+    "evidence": "所以我替你吃了",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "致谢",
+    "dst": "星锑",
+    "evidence": "有劳了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "催促",
+    "dst": "6",
+    "evidence": "麻烦你赶快写了回信，我们现在就一起带回去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "拒绝",
+    "dst": "星锑",
+    "evidence": "暂时不必着急了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "担忧",
+    "dst": "37",
+    "evidence": "你就不担心她吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "解释",
+    "dst": "37",
+    "evidence": "37寄来了一些谜题，我需要时间思考它们的答案",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "担忧",
+    "dst": "37",
+    "evidence": "我不确定……就这样保持现状是否是对的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "敬佩",
+    "dst": "37",
+    "evidence": "孤身一人离开生养自己的家乡，去到外面的世界寻找新的答案",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "提及",
+    "dst": "阿派朗",
+    "evidence": "你们的“无限定者”给出的答案的确为我们带来了躲避“暴雨”的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿派朗",
+    "relation": "给出",
+    "dst": "暴雨",
+    "evidence": "给出的答案的确为我们带来了躲避“暴雨”的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "质疑",
+    "dst": "真理",
+    "evidence": "但是那份“真理”真的能解决一切吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "陈述",
+    "dst": "苏菲亚",
+    "evidence": "包括苏菲亚小姐，也包括你们永远离去了的同胞们",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "提及",
+    "dst": "本质",
+    "evidence": "告诉她那些“回归了本质”的同胞再也回不来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "准备",
+    "dst": "圣洛夫基金会",
+    "evidence": "我就先去准备开船了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c6cf356ace44d7e97f0f81f8": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向6坦陈忧虑的同行者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "以数沙之喻开解十四行诗的收信人"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被6确信并不盲目的少女"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选择了另一条路的旧友"
+   },
+   {
+    "name": "沙粒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "沙滩上难以计数的沙"
+   },
+   {
+    "name": "费米估算法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可估得大致答案的估算方法"
+   },
+   {
+    "name": "阿基米德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "两千余年前指出沙数有限的学者"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37所寻找的东西"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "十四行诗的母校"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "劝告",
+    "dst": "6",
+    "evidence": "总得有人告诉37",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "担忧",
+    "dst": "37",
+    "evidence": "我们不该放任她耗费巨大的时间和精力，但到最后发现一切都是一场空",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "纠正",
+    "dst": "十四行诗",
+    "evidence": "没有这个必要。你想要说的事，37都知道",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "断言",
+    "dst": "十四行诗",
+    "evidence": "37并不盲目——只是，她的信仰也同样如此",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "提问",
+    "dst": "十四行诗",
+    "evidence": "你认为这片沙滩上有多少沙子？",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "回答",
+    "dst": "6",
+    "evidence": "也许十万？百万……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "提出",
+    "dst": "费米估算法",
+    "evidence": "费米估算法是其中之一",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "认同",
+    "dst": "6",
+    "evidence": "我学到过这个……您是对的",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "提问",
+    "dst": "十四行诗",
+    "evidence": "你认为这颗星球上一共有多少粒沙子？",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "引证",
+    "dst": "阿基米德",
+    "evidence": "阿基米德早在两千余年前就为我们指出了这一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿基米德",
+    "relation": "论证",
+    "dst": "沙粒",
+    "evidence": "他宣称即使用沙粒填满整个地球，这个数字也不会超过",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "断言",
+    "dst": "沙粒",
+    "evidence": "答案是“非常多”，但不是“无穷多”。它是有限的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "推断",
+    "dst": "真理",
+    "evidence": "您认为37所寻找的东西是存在的",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "毕业于",
+    "dst": "第一防线学校",
+    "evidence": "第一防线学校的优秀毕业生理解了青年希望表达的意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "提及",
+    "dst": "苏菲亚",
+    "evidence": "也许没有什么真理可以让选择了另一条路的苏菲亚小姐回心转意",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ca6f115d1987e5454fb025e1": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "望向大海另一端者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "断言假设被证伪前无人能否认者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "立志算出那个大数字的少女"
+   },
+   {
+    "name": "真理",
+    "type": "概念",
+    "aliases": [],
+    "desc": "存在于世界某处之物"
+   },
+   {
+    "name": "沙粒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "十四行诗移开目光之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "推断",
+    "dst": "真理",
+    "evidence": "它存在于这个世界的某个角落，或者世界之外的什么地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "注视",
+    "dst": "沙粒",
+    "evidence": "十四行诗从数不清的沙子上移开目光",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "望向",
+    "dst": "37",
+    "evidence": "浩瀚大海的遥远另一端，有一个年轻的女孩立志计算出那个“非常非常非常大”的数字",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "断言",
+    "dst": "37",
+    "evidence": "37做了这个假设，并试图证明这个定理",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "维护",
+    "dst": "37",
+    "evidence": "在这个假设被她亲自证伪之前……没有人能断言它是错误的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "96f2e27f98695b1e97541b19": {
+  "entities": [
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在走廊搬运回收器械的研究员"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被事故遗留文书淹没的治疗师"
+   },
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等待诊疗的患病女孩"
+   },
+   {
+    "name": "陌生病患",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隔着封闭门与铅玻璃攀谈的病人"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "每隔三周带铅玻璃检查身体者"
+   },
+   {
+    "name": "康复中心职员丹尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拉普拉斯科算中心职员"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正经历风暴般忙乱的康复机构"
+   },
+   {
+    "name": "康复中心走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人们焦躁走动的走廊"
+   },
+   {
+    "name": "小梅斯梅尔的办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "堆满仪器报损单与申请表的办公室"
+   },
+   {
+    "name": "阿纳瓦水提纯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "1920年因高致死率永久停产的提纯器"
+   },
+   {
+    "name": "循环机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可顶上数月报酬的循环机"
+   },
+   {
+    "name": "事故报告",
+    "type": "物品",
+    "aliases": [],
+    "desc": "意外留给小梅斯梅尔的遗产"
+   },
+   {
+    "name": "同意书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被孤立于外、只属于她的难题"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已至规定评估年限的病患"
+   },
+   {
+    "name": "铁门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "诊疗室前被驻停的铁门"
+   },
+   {
+    "name": "封闭门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "隔开铅玻璃与陌生病患的门"
+   }
+  ],
+  "relations": [
+   {
+    "src": "兔毛手袋",
+    "relation": "呵斥",
+    "dst": "康复中心职员丹尼",
+    "evidence": "小心点儿，毛手毛脚的家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "惋惜",
+    "dst": "阿纳瓦水提纯器",
+    "evidence": "这款经典的机器可早在1920年就因为高致死率永久停产了",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "索要",
+    "dst": "循环机",
+    "evidence": "就让它在我的实验室里寿终正寝吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "搬走",
+    "dst": "循环机",
+    "evidence": "把这个大家伙跟我一起搬回去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "处理",
+    "dst": "事故报告",
+    "evidence": "这就是你留给我的最后一个烂摊子了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "归档",
+    "dst": "小梅斯梅尔的办公室",
+    "evidence": "她把文件叠放进纸箱，一座高山被搬得一干二净",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "保留",
+    "dst": "同意书",
+    "evidence": "她还是把同意书收进了抽屉",
+    "confidence": 0.95
+   },
+   {
+    "src": "同意书",
+    "relation": "涉及",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "病患‘杰瑞·威尔逊’已至规定评估年限",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "就诊",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "每隔三周，牙仙女士都会带我来这里检查身体",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "提及",
+    "dst": "牙仙",
+    "evidence": "每隔三周，牙仙女士都会带我来这里检查身体",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "攀谈",
+    "dst": "陌生病患",
+    "evidence": "呵呵，她们说，我身体里的坏细胞",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "驻停",
+    "dst": "铁门",
+    "evidence": "等待诊疗的女孩驻停在一扇铁门前",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "交谈",
+    "dst": "铅玻璃",
+    "evidence": "孩子，不，当然不会！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "置身",
+    "dst": "封闭门",
+    "evidence": "封闭门内的人恍然停住话",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "工作于",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "破损机器报备，✓。特殊病人转移，✓",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8d0eb980d84f9e449ccfd195": {
+  "entities": [
+   {
+    "name": "陌生病患",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述小狗往事并收下糖块的病人"
+   },
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠出受潮太妃糖的女孩"
+   },
+   {
+    "name": "逃脱的病人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱着枕头狂呼黄金的失控者"
+   },
+   {
+    "name": "康复中心职员丹尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斥责亚当剂量算错的职员"
+   },
+   {
+    "name": "实习职员亚当",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持剂量适用于柯布先生的实习职员"
+   },
+   {
+    "name": "太妃糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "铅玻璃口袋里唯一受潮的糖块"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "以怪家伙著称的康复机构"
+   },
+   {
+    "name": "格拉斯哥昏迷表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用于判定昏迷症状的量表"
+   },
+   {
+    "name": "封闭门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "陌生病患伸手接糖的门"
+   }
+  ],
+  "relations": [
+   {
+    "src": "陌生病患",
+    "relation": "回忆",
+    "dst": "铅玻璃",
+    "evidence": "它跟在我屁股后面，像块鞋底的口香糖",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "劝慰",
+    "dst": "铅玻璃",
+    "evidence": "相信拉普拉斯科算中心的这群怪家伙，他们会让你康复的",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "承诺",
+    "dst": "铅玻璃",
+    "evidence": "你或许就可以拥有一条真正的小狗",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "感谢",
+    "dst": "陌生病患",
+    "evidence": "我从没有想过自己也能有机会照顾一个生命",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "赠予",
+    "dst": "陌生病患",
+    "evidence": "您喜欢吃糖吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "递出",
+    "dst": "太妃糖",
+    "evidence": "这块太妃糖已经有些受潮了",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "收下",
+    "dst": "太妃糖",
+    "evidence": "他的手从封锁的栏窗伸出，小心翼翼地接过了孩子的礼物",
+    "confidence": 0.95
+   },
+   {
+    "src": "逃脱的病人",
+    "relation": "叫喊",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "这些加利福尼亚的黄金是我从流血的河里淘出来的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "逃脱的病人",
+    "relation": "冲撞",
+    "dst": "铅玻璃",
+    "evidence": "朝着一名女孩横冲直撞而去",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "斥责",
+    "dst": "实习职员亚当",
+    "evidence": "我早就说你的剂量算错了",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "辩解",
+    "dst": "康复中心职员丹尼",
+    "evidence": "可根据柯布先生的病史和年龄，这个剂量完全适用于他",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "引用",
+    "dst": "格拉斯哥昏迷表",
+    "evidence": "根据格拉斯哥昏迷表，当时他的昏迷症状已经处于——",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "打算",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "正打算按下胸口的紧急安保按钮",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "交谈",
+    "dst": "铅玻璃",
+    "evidence": "封闭门内的人恍然停住话",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3a8e0bd3996da2298b780fcf": {
+  "entities": [
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被一只手搭上肩膀的女孩"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "按时赴约并召来安保的治疗师"
+   },
+   {
+    "name": "逃脱的病人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被安保摁住的疯癫家伙"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "烂摊子已够多的康复机构"
+   },
+   {
+    "name": "事故报告",
+    "type": "物品",
+    "aliases": [],
+    "desc": "小梅斯梅尔所忧心的累积负担"
+   }
+  ],
+  "relations": [
+   {
+    "src": "铅玻璃",
+    "relation": "认出",
+    "dst": "小梅斯梅尔",
+    "evidence": "小梅斯梅尔女士……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "告知",
+    "dst": "铅玻璃",
+    "evidence": "轮到你的诊疗时间了，铅玻璃小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "召唤",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "她面无表情地招了招手，后面紧随而来的安保人员迅速上前",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "下令",
+    "dst": "逃脱的病人",
+    "evidence": "把那位疯癫的家伙摁住",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "顾虑",
+    "dst": "事故报告",
+    "evidence": "我们的烂摊子已经够多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "等待",
+    "dst": "小梅斯梅尔",
+    "evidence": "不过……请稍等一阵",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bae588b9a7b8861448c37cff": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以咪达唑仑制服失控者的治疗师"
+   },
+   {
+    "name": "逃脱的病人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怀抱枕头称其为黄金的病人"
+   },
+   {
+    "name": "康复中心职员丹尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推责于新人的康复中心职员"
+   },
+   {
+    "name": "实习职员亚当",
+    "type": "角色",
+    "aliases": [],
+    "desc": "本名亚当·汤普思的实习职员"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "装疯卖傻的二级病区病人"
+   },
+   {
+    "name": "陌生病患",
+    "type": "角色",
+    "aliases": [],
+    "desc": "猛撞铁门喊出鹰钩鼻女巫的病人"
+   },
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被察觉正在与病人攀谈的女孩"
+   },
+   {
+    "name": "咪达唑仑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "使失控病人躺下的镇静剂"
+   },
+   {
+    "name": "拉普拉斯康复中心主任室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "小梅斯梅尔要递交事故报告之处"
+   },
+   {
+    "name": "二级管理区域",
+    "type": "地点",
+    "aliases": [],
+    "desc": "不许病人与外人交流的管理区域"
+   },
+   {
+    "name": "事故报告",
+    "type": "物品",
+    "aliases": [],
+    "desc": "小梅斯梅尔拟递交的报告"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "司辰事件与露西新计划后人手紧张的机构"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推行新计划者"
+   },
+   {
+    "name": "铁门",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被病人用头颅猛撞的门"
+   },
+   {
+    "name": "废弃病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已沦为旧物堆砌处的废弃病房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "注射",
+    "dst": "逃脱的病人",
+    "evidence": "冰冷的液体灌入他的身体，令他意识恍惚起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "使用",
+    "dst": "咪达唑仑",
+    "evidence": "拉普拉斯最不缺的就是让这帮神志不清的疯子好好躺下来的“咪达唑仑”",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "递交",
+    "dst": "拉普拉斯康复中心主任室",
+    "evidence": "我会向拉普拉斯康复中心主任室递交这次的事故报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "撰写",
+    "dst": "事故报告",
+    "evidence": "我会向拉普拉斯康复中心主任室递交这次的事故报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "训斥",
+    "dst": "实习职员亚当",
+    "evidence": "这都是你那伟大的悲天悯人害的，长长记性吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "盘问",
+    "dst": "实习职员亚当",
+    "evidence": "“亚当·汤普思”……这是你的名字对吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "指出",
+    "dst": "铅玻璃",
+    "evidence": "我察觉到刚才铅玻璃小姐正在与他攀谈",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "援引",
+    "dst": "二级管理区域",
+    "evidence": "这里是二级管理区域",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "撞门",
+    "dst": "铁门",
+    "evidence": "猛地用头颅猛烈撞击着铁门",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生病患",
+    "relation": "谩骂",
+    "dst": "小梅斯梅尔",
+    "evidence": "该死的鹰钩鼻女巫，快把它从我的脑子里揪出去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "打圆场",
+    "dst": "小梅斯梅尔",
+    "evidence": "他只是在发疯地自言自语罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "提及",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "拉普拉斯康复中心人手紧张",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "提及",
+    "dst": "露西",
+    "evidence": "在司辰的事件以及露西女士的新计划之后",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "带离",
+    "dst": "铅玻璃",
+    "evidence": "该走了，铅玻璃小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "道谢",
+    "dst": "康复中心职员丹尼",
+    "evidence": "谢谢你……丹尼先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "道谢",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "杰瑞·威尔逊先生，也谢谢您的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "回应",
+    "dst": "实习职员亚当",
+    "evidence": "乐意为您服务，“长官”",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "置身",
+    "dst": "二级管理区域",
+    "evidence": "这里是二级管理区域，根据管理条例",
+    "confidence": 0.95
+   },
+   {
+    "src": "废弃病房",
+    "relation": "充当",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "废弃病房如今已成了旧物的堆砌处",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9a62e6106f20b4e8555715b4": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安排铅玻璃在废弃病房等候的治疗师"
+   },
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抽出第一本读物的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将来接走铅玻璃者"
+   },
+   {
+    "name": "助理希曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促小梅斯梅尔的助理"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在办公室等候的女士"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扉页上的陌生名字"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "书中第一位被治疗的病人"
+   },
+   {
+    "name": "废弃病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "铅玻璃被安置等候的临时安全屋"
+   },
+   {
+    "name": "小梅斯梅尔的办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "露西等候小梅斯梅尔之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "安置",
+    "dst": "铅玻璃",
+    "evidence": "请在这个房间等候，这次不要再随意走动",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "告知",
+    "dst": "铅玻璃",
+    "evidence": "届时牙仙女士会到这里来接你",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "询问",
+    "dst": "小梅斯梅尔",
+    "evidence": "请问，在此期间，我能翻阅这些书本吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "许可",
+    "dst": "铅玻璃",
+    "evidence": "随意",
+    "confidence": 0.95
+   },
+   {
+    "src": "助理希曼",
+    "relation": "催促",
+    "dst": "小梅斯梅尔",
+    "evidence": "露西女士已经在办公室等候了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "离开",
+    "dst": "废弃病房",
+    "evidence": "没有任何停留，她沉沉合上了门",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "取出",
+    "dst": "废弃病房",
+    "evidence": "于是她从书箱中，抽出了第一本读物",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "发现",
+    "dst": "多萝西娅",
+    "evidence": "在那扉页上，是一个陌生的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "记录",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "那是我第一次尝试治疗重塑之手的病人。他名叫杰瑞·威尔逊",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "阅读",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "空白之下，第一行句子露出了生面孔",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "等候",
+    "dst": "小梅斯梅尔的办公室",
+    "evidence": "露西女士已经在办公室等候了",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "置身",
+    "dst": "废弃病房",
+    "evidence": "废弃病房如今已成了旧物的堆砌处",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,826 @@
+{
+ "02933b47615a4e3d52c19c9a": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自责的作者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "荐七圣岛者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斥吹嘘者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自夸完整者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "受连累的编辑"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被闯入的出版社"
+   },
+   {
+    "name": "七圣岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欲荐之题"
+   },
+   {
+    "name": "矮人岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欲荐之题"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "事故之源"
+   }
+  ],
+  "relations": [
+   {
+    "src": "唐纳德",
+    "relation": "归责",
+    "dst": "马库斯",
+    "evidence": "您没能发现他们存在的纰漏",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "荐题",
+    "dst": "马库斯",
+    "evidence": "讲述七圣岛的历史和矮人们的传说",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "斥责",
+    "dst": "唐纳德",
+    "evidence": "里面到处都是乱糟糟的漏洞和不切实际的幻想",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "愧疚",
+    "dst": "丹尼希",
+    "evidence": "可怜的丹尼希编辑，她一定没法通过优秀编辑的评选了……",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "7a33da131927bdb4a9545905": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恍惚者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤醒者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再访者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马歇尔",
+    "relation": "唤醒",
+    "dst": "马库斯",
+    "evidence": "嘿，快醒醒，马库斯——！有人来找你了",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "再访",
+    "dst": "马库斯",
+    "evidence": "我是霍夫曼。很高兴见到你，马库斯小姐",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "7782e64ab5226033fb7b7da2": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "项目考察者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惶恐的作者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "联合运行方"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [
+     "拉普拉斯科算中心"
+    ],
+    "desc": "联合运行方"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "新兴神秘学理论"
+   },
+   {
+    "name": "时代前沿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "刊登期刊"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "备用试验点"
+   },
+   {
+    "name": "埃利安锡尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "办事处所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "圣洛夫基金会",
+    "relation": "征用",
+    "dst": "弗兰南群岛",
+    "evidence": "基金会将征用弗兰南群岛的一小块区域，作为我们的备用试验点",
+    "confidence": 0.9
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "联营",
+    "dst": "科算中心",
+    "evidence": "由圣洛夫基金会与拉普拉斯科算中心联合运行",
+    "confidence": 0.9
+   },
+   {
+    "src": "科算中心",
+    "relation": "刊载",
+    "dst": "理线学",
+    "evidence": "科算中心将它刊登在《时代前沿》期刊的第二版",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "读过",
+    "dst": "理线学",
+    "evidence": "我似乎阅读过……它的名字是——理线学？",
+    "confidence": 0.85
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "申明",
+    "dst": "马库斯",
+    "evidence": "我当前的工作是考察弗兰南群岛，而非调查在外的神秘学家",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "自陈",
+    "dst": "马库斯",
+    "evidence": "这出于我作为普通读者的个人意愿",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "e34a5d7037c0554b713de62a": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "剖白心志"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点出症结者"
+   },
+   {
+    "name": "神秘学与灯塔透镜维修指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "成名随笔"
+   },
+   {
+    "name": "罗马尼亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "离开之地"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新专栏"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "刊载之报"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "重温",
+    "dst": "神秘学与灯塔透镜维修指南",
+    "evidence": "你还记得这篇文章吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "回首",
+    "dst": "罗马尼亚",
+    "evidence": "那是离开罗马尼亚、登上弗兰南群岛后，我写下的第一篇故事",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "提问",
+    "dst": "马库斯",
+    "evidence": "可你为什么仍然努力着将神秘学的知识置入自己并不熟稔的人类世界？",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "研判",
+    "dst": "马库斯",
+    "evidence": "它们很难在一朝一夕中改变",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "7e40d1ab144fb9a3d4f2a979": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诊断病症者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受教的作者"
+   },
+   {
+    "name": "布朗克尔公爵夫人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "流传很广的幽灵"
+   },
+   {
+    "name": "格拉姆夫庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "小众故事"
+   },
+   {
+    "name": "白女士",
+    "type": "概念",
+    "aliases": [],
+    "desc": "德国有名幽灵"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "思维隔阂"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "历史版面"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "读者陌生的岛"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "诊断",
+    "dst": "弗兰南群岛史",
+    "evidence": "你采用了三位幽灵的故事，却从未向读者们解释过它们",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "列举",
+    "dst": "布朗克尔公爵夫人",
+    "evidence": "布朗克尔公爵夫人的故事流传很广",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "列举",
+    "dst": "格拉姆夫庄园",
+    "evidence": "格拉姆夫庄园的故事就要小众一些了",
+    "confidence": 0.8
+   },
+   {
+    "src": "马库斯",
+    "relation": "列举",
+    "dst": "白女士",
+    "evidence": "白女士的故事在德国相当有名",
+    "confidence": 0.8
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "肯定",
+    "dst": "马库斯",
+    "evidence": "很好，马库斯小姐。你理解了这一点",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "1d9a5a237eaaf169c1057dc0": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "授业解惑"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重获勇气"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "未解之谜"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "宽解",
+    "dst": "马库斯",
+    "evidence": "这并非你个人的缺陷",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "提问",
+    "dst": "马库斯",
+    "evidence": "你是否全然理解了弗兰南群岛的一切？",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "坦承",
+    "dst": "霍夫曼",
+    "evidence": "我……我做不到……",
+    "confidence": 0.85
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "教诲",
+    "dst": "马库斯",
+    "evidence": "理性推动着我们记录所见的真实，好奇心则帮助我们写下尚未了然的谜团",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "启示",
+    "dst": "马库斯",
+    "evidence": "坦然承认“一段缺乏真相的现实”，本就是一种可敬的真相",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "留址",
+    "dst": "马库斯",
+    "evidence": "她留下了那张写满了批注与建议的报纸",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "8e3ff8300307218ada2c21b3": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重写者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "批注赠勇者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抗议删改者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抗议删改者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抗议删改者"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被重写"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "赠勇",
+    "dst": "马库斯",
+    "evidence": "霍夫曼女士的批注给予了我巨大的勇气",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "致歉",
+    "dst": "杜卡特",
+    "evidence": "我的删改仍然遭到了他们的不满与严正抗议",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "致歉",
+    "dst": "马歇尔",
+    "evidence": "我的删改仍然遭到了他们的不满与严正抗议",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "致歉",
+    "dst": "唐纳德",
+    "evidence": "我的删改仍然遭到了他们的不满与严正抗议",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "完成",
+    "dst": "弗兰南群岛史",
+    "evidence": "我完成了它",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "bf1af50bdda934009737c431": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赢回读者者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盛赞者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "作证者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "念信者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "收稿人"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "设新版面"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "更名到岛上来"
+   },
+   {
+    "name": "灯塔故事集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新版面之名"
+   },
+   {
+    "name": "蒙特卡罗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一掷千金之喻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杜卡特",
+    "relation": "盛赞",
+    "dst": "马库斯",
+    "evidence": "你取得了巨大的成功——！",
+    "confidence": 0.9
+   },
+   {
+    "src": "杜卡特",
+    "relation": "取譬",
+    "dst": "蒙特卡罗",
+    "evidence": "这可比在蒙特卡罗一掷千金要有勇气得多！",
+    "confidence": 0.8
+   },
+   {
+    "src": "马库斯",
+    "relation": "致稿",
+    "dst": "丹尼希",
+    "evidence": "我总算将这几期稿件都寄给了丹尼希女士",
+    "confidence": 0.9
+   },
+   {
+    "src": "白日梦邮报",
+    "relation": "设立",
+    "dst": "灯塔故事集",
+    "evidence": "为您的作品设立新的版面——《灯塔故事集》！",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗兰南群岛史",
+    "relation": "更名",
+    "dst": "灯塔故事集",
+    "evidence": "《弗兰南群岛史》、噢现在应该说是《到岛上来》",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "读信",
+    "dst": "马库斯",
+    "evidence": "一封封眼熟的信件又一次被递到了马库斯的手中",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "9cf5940616328795f3350eed": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惶恐的作家"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护短者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关切者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "每周两节"
+   },
+   {
+    "name": "灯塔故事集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "读者的消遣"
+   }
+  ],
+  "relations": [
+   {
+    "src": "白日梦邮报",
+    "relation": "加更",
+    "dst": "灯塔故事集",
+    "evidence": "他们希望能修改《到岛上来》的连载计划，建议我们每周出版两节以上的新内容",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "惶惑",
+    "dst": "灯塔故事集",
+    "evidence": "它们百般溢美，却又千篇一律",
+    "confidence": 0.9
+   },
+   {
+    "src": "杜卡特",
+    "relation": "护短",
+    "dst": "马歇尔",
+    "evidence": "别胡说八道，臭小子——！",
+    "confidence": 0.8
+   },
+   {
+    "src": "马歇尔",
+    "relation": "打趣",
+    "dst": "马库斯",
+    "evidence": "难道你也要变成像我们这样的幽灵了吗？",
+    "confidence": 0.8
+   },
+   {
+    "src": "唐纳德",
+    "relation": "追问",
+    "dst": "马库斯",
+    "evidence": "你会一直写下去吗？……写这座岛、写我们……",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d7f13edc72628de77bbc1fa4": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "弃稿追船者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "船上的灰白身影"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托寄稿者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送别者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送别者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "收终稿者"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "渺小的岛"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "加入对象"
+   },
+   {
+    "name": "灯塔故事集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "虚构的谜题"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "自省",
+    "dst": "灯塔故事集",
+    "evidence": "《到岛上来》成了一个构思精巧的虚构故事，成了一个虚无的谜题",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "托付",
+    "dst": "杜卡特",
+    "evidence": "请帮我把它寄给丹尼希女士。拜托您了",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "告别",
+    "dst": "杜卡特",
+    "evidence": "再见，杜卡特先生……",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "告别",
+    "dst": "马歇尔",
+    "evidence": "再见，马歇尔先生！",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "告别",
+    "dst": "唐纳德",
+    "evidence": "再见，唐纳德先生……",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "宣布",
+    "dst": "圣洛夫基金会",
+    "evidence": "霍夫曼女士，我要加入基金会！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "追随",
+    "dst": "霍夫曼",
+    "evidence": "请、请等等我，霍夫曼女士——！",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

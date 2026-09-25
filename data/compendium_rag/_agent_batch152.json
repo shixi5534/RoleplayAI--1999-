@@ -1,0 +1,1294 @@
+{
+ "1eeb0c8c1817f6c3a4a3fddd": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失眠后回忆起童年玩伴的替身演员"
+   },
+   {
+    "name": "童年玩伴汤姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带贝蒂偷溜进电影院的童年玩伴"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂所住的安静房间"
+   },
+   {
+    "name": "电视机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂打开以制造噪音的方形银壳"
+   },
+   {
+    "name": "电影院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂与汤姆童年偷溜进入之处"
+   },
+   {
+    "name": "储物室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "需踩着垃圾箱翻窗进入的储物室"
+   },
+   {
+    "name": "第三放映厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "供工作人员进出的小门从不上锁"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "在贝蒂脑中循环的记忆"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "失眠",
+    "dst": "病房",
+    "evidence": "太安静了。没有鼾声，没有哭声",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "打开",
+    "dst": "电视机",
+    "evidence": "起身打开了放在房间一角的电视机",
+    "confidence": 0.95
+   },
+   {
+    "src": "电视机",
+    "relation": "播放",
+    "dst": "贝蒂",
+    "evidence": "一名牛仔正驰骋在美国西部的原野上",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "呼唤",
+    "dst": "贝蒂",
+    "evidence": "贝蒂，贝蒂！来这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "引路",
+    "dst": "电影院",
+    "evidence": "你忘记了偷溜进电影院的路了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "回忆",
+    "dst": "储物室",
+    "evidence": "踩着垃圾箱翻进储物室的那扇小窗",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "回忆",
+    "dst": "第三放映厅",
+    "evidence": "然后去第三放映厅",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "置身",
+    "dst": "电影院",
+    "evidence": "不知何时，自己就来到了幕布之下",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "困扰",
+    "dst": "暴雨",
+    "evidence": "“暴雨”……白天的记忆不受控制的在贝蒂的脑中循环",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "抱怨",
+    "dst": "贝蒂",
+    "evidence": "脖子好疼，为什么检票员今天要在最后面睡觉？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1a49cc944fcf8ffd729cafc2": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "立志创造方形世界的女孩"
+   },
+   {
+    "name": "童年玩伴汤姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭穿溪木镇为虚构的玩伴"
+   },
+   {
+    "name": "电影院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人仰头观影的影院"
+   },
+   {
+    "name": "溪木镇",
+    "type": "地点",
+    "aliases": [],
+    "desc": "电影中虚构的牛仔小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "捂眼",
+    "dst": "电影院",
+    "evidence": "看着荧幕上的女主角陷入危难，贝蒂捂住了自己的眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "提醒",
+    "dst": "贝蒂",
+    "evidence": "小声点，检票员清楚这里不该有小女孩的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "憧憬",
+    "dst": "贝蒂",
+    "evidence": "如果我是牛仔，我会保证一整个小镇的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "点破",
+    "dst": "溪木镇",
+    "evidence": "世界上没有溪木镇，也没有那个叫威廉的牛仔",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "领悟",
+    "dst": "溪木镇",
+    "evidence": "原来那并不是我没办法去的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "立志",
+    "dst": "电影院",
+    "evidence": "我也可以创造出一个这样的世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "憧憬",
+    "dst": "电影院",
+    "evidence": "一个能够保护人们的方形世界，为他们描绘出世间的美好与希冀",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "渴望",
+    "dst": "电影院",
+    "evidence": "我渴望着这样的世界，也渴望为他人带去这样的世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "否认",
+    "dst": "溪木镇",
+    "evidence": "那是有人把所有人都聚集在一个地方拍出来的假故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "提问",
+    "dst": "童年玩伴汤姆",
+    "evidence": "但这部电影就是……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "32c621f9ba66021b1ae7ea60": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来领取摄影机者"
+   },
+   {
+    "name": "童年玩伴汤姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死于煤炉旁的童年玩伴"
+   },
+   {
+    "name": "女性职员II",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊呼贝蒂活下来的职员"
+   },
+   {
+    "name": "护士劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指引代领失物的护士"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拖出贝蒂并抱着摄影机者"
+   },
+   {
+    "name": "失物保管处",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂领取摄影机之处"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沾有干透血渍的机器"
+   },
+   {
+    "name": "时代",
+    "type": "概念",
+    "aliases": [],
+    "desc": "劳拉已不再属于的东西"
+   }
+  ],
+  "relations": [
+   {
+    "src": "童年玩伴汤姆",
+    "relation": "死于",
+    "dst": "贝蒂",
+    "evidence": "他的父亲抱着他死在了煤炉旁边",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "遗忘",
+    "dst": "童年玩伴汤姆",
+    "evidence": "贝蒂已经忘记了他的样子",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "前往",
+    "dst": "失物保管处",
+    "evidence": "贝蒂还是来到了失物保管处前",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "出示",
+    "dst": "护士劳拉",
+    "evidence": "按照劳拉的指引，贝蒂将自己的证明文件放在台面上",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "惊呼",
+    "dst": "贝蒂",
+    "evidence": "哎呀，你活下来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "描述",
+    "dst": "琼斯",
+    "evidence": "那名女士半张脸都是血，一手拖着你，另一只手抱着这台摄影机",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "得知",
+    "dst": "琼斯",
+    "evidence": "是琼斯救了我？",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "评价",
+    "dst": "摄影机",
+    "evidence": "我们还以为这是一名意识唤醒者呢，结果就是一台普通的摄影机",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "递交",
+    "dst": "摄影机",
+    "evidence": "然后将它递给贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "抱持",
+    "dst": "摄影机",
+    "evidence": "上面沾染了干透的血渍，但贝蒂还是将它抱在了怀里",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "评价",
+    "dst": "护士劳拉",
+    "evidence": "劳拉已经不属于任何时代了，她只是一个不在乎情感的混蛋",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "承诺",
+    "dst": "琼斯",
+    "evidence": "在那方形盒子之外，我也可以保护你的希望",
+    "confidence": 0.95
+   },
+   {
+    "src": "摄影机",
+    "relation": "存有",
+    "dst": "贝蒂",
+    "evidence": "这里面有30年代最后的电影",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d4196212180f1216fd1e188b": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "默写剧本并假扮导演拍照者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求贝蒂拍外界景色的病人"
+   },
+   {
+    "name": "年轻的女子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在草地上画风景并替贝蒂拍照的法国女子"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂默写剧本之处"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所躺的玻璃仪器"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂按记忆重写的剧本"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待琼斯康复后续拍的机器"
+   },
+   {
+    "name": "盒子相机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂用以取景拍摄的盒子相机"
+   },
+   {
+    "name": "贝雷帽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂穿戴以假扮导演的帽子"
+   },
+   {
+    "name": "钓鱼马甲",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂用以假扮导演的钓鱼马甲"
+   },
+   {
+    "name": "贝蒂的男装形象",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贝蒂变换身形成男主角后的样子"
+   },
+   {
+    "name": "剧组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "贝蒂与琼斯所属的拍摄团队"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "剧本遗失其中的灾害"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂变换体型的依据"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "默写",
+    "dst": "剧本",
+    "evidence": "按照记忆将遗失在“暴雨”中的剧本重新写一份出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "询问",
+    "dst": "贝蒂",
+    "evidence": "贝蒂，现在是几点了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "询问",
+    "dst": "剧组",
+    "evidence": "没有我，他们在拍什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "搪塞",
+    "dst": "琼斯",
+    "evidence": "他们先拍了别的镜头，然后等你出院再补拍",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "请求",
+    "dst": "贝蒂",
+    "evidence": "你可以帮我拍一点外面的景色回来吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "请求",
+    "dst": "贝蒂",
+    "evidence": "还有剧组的照片……我很想他们",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "应允",
+    "dst": "琼斯",
+    "evidence": "好吧，我去试试",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "取景",
+    "dst": "盒子相机",
+    "evidence": "贝蒂拿出了相机",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "穿戴",
+    "dst": "钓鱼马甲",
+    "evidence": "从那堆衣服中找出了钓鱼马甲和贝雷帽穿戴好",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "穿戴",
+    "dst": "贝雷帽",
+    "evidence": "从那堆衣服中找出了钓鱼马甲和贝雷帽穿戴好",
+    "confidence": 0.95
+   },
+   {
+    "src": "年轻的女子",
+    "relation": "回应",
+    "dst": "贝蒂",
+    "evidence": "Oui, que voulez-vous ?",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "求助",
+    "dst": "年轻的女子",
+    "evidence": "我……能不能请你……",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "变换",
+    "dst": "贝蒂的男装形象",
+    "evidence": "变换身形，然后躺在草地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "假扮",
+    "dst": "剧本",
+    "evidence": "这个跟之前导演穿的差不多",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "躺卧",
+    "dst": "玻璃棺",
+    "evidence": "琼斯躺在玻璃仪器里没有说话",
+    "confidence": 0.95
+   },
+   {
+    "src": "剧本",
+    "relation": "遗失于",
+    "dst": "暴雨",
+    "evidence": "将遗失在“暴雨”中的剧本重新写一份出来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "913f42d95b6d6093155dc031": {
+  "entities": [
+   {
+    "name": "年轻的女子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以法语回应并替贝蒂拍照者"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以神秘术变换成导演者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "凝视照片落泪的病人"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂送去照片之处"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被留在基金会的机器"
+   },
+   {
+    "name": "盒子相机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "女子用以摁下快门的盒子相机"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂变换成导演体型的依据"
+   },
+   {
+    "name": "贝蒂的男装形象",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贝蒂变换成的男主角形象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "年轻的女子",
+    "relation": "回应",
+    "dst": "贝蒂",
+    "evidence": "tu vas bien？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "比划",
+    "dst": "盒子相机",
+    "evidence": "贝蒂指指自己的盒子相机",
+    "confidence": 0.95
+   },
+   {
+    "src": "年轻的女子",
+    "relation": "应允",
+    "dst": "贝蒂",
+    "evidence": "你想让我帮你拍照？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "她便使用神秘术变成了导演的体型",
+    "confidence": 0.95
+   },
+   {
+    "src": "年轻的女子",
+    "relation": "拍照",
+    "dst": "贝蒂",
+    "evidence": "女子摁下了快门，一张以假乱真的照片便拍成了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "更换",
+    "dst": "贝蒂的男装形象",
+    "evidence": "贝蒂从包裹里找出男主角的衣服，变换身形",
+    "confidence": 0.95
+   },
+   {
+    "src": "年轻的女子",
+    "relation": "惊叹",
+    "dst": "贝蒂",
+    "evidence": "C'est incroyable!",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "返回",
+    "dst": "病房",
+    "evidence": "拿着刚洗好的照片，贝蒂跑到了琼斯的病房",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "贴示",
+    "dst": "琼斯",
+    "evidence": "将照片向内，贴到了琼斯的玻璃仪器之上",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "凝视",
+    "dst": "贝蒂",
+    "evidence": "琼斯惊喜地凝视着，照片上是许久未见的身影",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "赞叹",
+    "dst": "贝蒂",
+    "evidence": "真好……",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "致谢",
+    "dst": "年轻的女子",
+    "evidence": "谢谢你！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "65c90b3fbf284a062d281647": {
+  "entities": [
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求以神秘术看见自己面容者"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以神秘术复现琼斯容貌者"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯手指所贴的玻璃仪器"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无法变得一模一样的变换能力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "致谢",
+    "dst": "贝蒂",
+    "evidence": "谢谢你，贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "请求",
+    "dst": "贝蒂",
+    "evidence": "能给我看看我的脸现在是什么样子吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "推脱",
+    "dst": "琼斯",
+    "evidence": "可是这里也没有镜子……",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "追问",
+    "dst": "贝蒂",
+    "evidence": "换药的时候，你已经看过了吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "恳求",
+    "dst": "贝蒂",
+    "evidence": "用你的神秘术，让我看看，好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "贴手",
+    "dst": "玻璃棺",
+    "evidence": "琼斯干瘦的手指贴在玻璃仪器的内侧",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "说明",
+    "dst": "神秘术",
+    "evidence": "我的神秘术不能让我变得跟你一模一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "复现",
+    "dst": "琼斯",
+    "evidence": "贝蒂缓缓地靠了过去，脑中压抑着琼斯毁容后的样子",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "指正",
+    "dst": "贝蒂",
+    "evidence": "我的眉毛才不是这样子的，明明要更细一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "指正",
+    "dst": "贝蒂",
+    "evidence": "但是鼻型也不太对，鼻梁应该再高一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "调整",
+    "dst": "琼斯",
+    "evidence": "贝蒂用手捏了捏鼻子，马上它就看上去挺拔了一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "取笑",
+    "dst": "贝蒂",
+    "evidence": "像个演滑稽剧一样",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e7404871b175bd35ca063111": {
+  "entities": [
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与贝蒂十指相对者"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感到琼斯体温的探视者"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "二人十指相对的玻璃仪器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "推迟",
+    "dst": "贝蒂",
+    "evidence": "好累，以后有机会再跟你说吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "告辞",
+    "dst": "琼斯",
+    "evidence": "那我今天先回去了，你好好休息",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "贴手",
+    "dst": "玻璃棺",
+    "evidence": "贝蒂将手指贴到了玻璃仪器之上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "感知",
+    "dst": "琼斯",
+    "evidence": "贝蒂似乎感到了琼斯的体温",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "致谢",
+    "dst": "贝蒂",
+    "evidence": "谢谢你",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "离开",
+    "dst": "琼斯",
+    "evidence": "贝蒂摇了摇头，然后便离开了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "57b989e67427c76e2eec279f": {
+  "entities": [
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以语言指令掌镜的病人"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被摄像机拍摄的替身演员"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "由虫形底座驮着的机器"
+   },
+   {
+    "name": "虫形底座",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可听懂指令的虫形底座"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所处的玻璃仪器"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被贝蒂默写完成的剧本"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被贝蒂剪下的一节胶片"
+   },
+   {
+    "name": "电影院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂童年偷溜进入之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "恳请",
+    "dst": "贝蒂",
+    "evidence": "她会请贝蒂为她读报，拍些公园的景色",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "回忆",
+    "dst": "贝蒂",
+    "evidence": "冬天的时候，我们会把雪分成好几份",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "自述",
+    "dst": "琼斯",
+    "evidence": "我小时候经常偷溜进电影院",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "景仰",
+    "dst": "电影院",
+    "evidence": "我很景仰从事电影行业的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "提议",
+    "dst": "贝蒂",
+    "evidence": "我们来拍电影吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "指示",
+    "dst": "摄影机",
+    "evidence": "跟随贝蒂，中景，上半身",
+    "confidence": 0.95
+   },
+   {
+    "src": "虫形底座",
+    "relation": "驮载",
+    "dst": "摄影机",
+    "evidence": "虫形底座便驮着摄影机走到了贝蒂的身边",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "定制",
+    "dst": "虫形底座",
+    "evidence": "贝蒂为她定制了一个可以听懂指令的底座",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "指导",
+    "dst": "贝蒂",
+    "evidence": "好演员应该是忘记镜头的",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "朗读",
+    "dst": "琼斯",
+    "evidence": "为我读读今天的报纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "剪辑",
+    "dst": "胶片",
+    "evidence": "每晚，贝蒂都会剪一些片段",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "置身",
+    "dst": "玻璃棺",
+    "evidence": "这样即使琼斯身在玻璃仪器中",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "完成",
+    "dst": "剧本",
+    "evidence": "它已经被默写完成",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "19df0c72f4cac64607fac82a": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "剪辑短片并命名者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "取笑贝蒂刀工并出演短片者"
+   },
+   {
+    "name": "护士劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "深夜与琼斯谈交易的护士"
+   },
+   {
+    "name": "胶片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被分割并分类放好的胶片"
+   },
+   {
+    "name": "假胡子道具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "粘在琼斯鼻子下面的假胡子"
+   },
+   {
+    "name": "剧本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "因双腿垫写而弯曲的剧本"
+   },
+   {
+    "name": "苹果核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂为削苹果所命名的短片"
+   },
+   {
+    "name": "法老之夜",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琼斯要求拍摄的恐怖风格短片"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "剪下",
+    "dst": "胶片",
+    "evidence": "随着剪刀的闭合，一节胶片被贝蒂剪了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "标记",
+    "dst": "胶片",
+    "evidence": "用铅笔在胶片的背面画上一道线",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "命名",
+    "dst": "苹果核",
+    "evidence": "- 苹果核 -",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "取笑",
+    "dst": "贝蒂",
+    "evidence": "琼斯毫不留情地取笑了贝蒂的刀工",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "拍摄",
+    "dst": "法老之夜",
+    "evidence": "琼斯要求贝蒂为自己拍的一段恐怖风格的短片",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "佩戴",
+    "dst": "假胡子道具",
+    "evidence": "鼻子下面却粘着贝蒂的假胡子",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "珍藏",
+    "dst": "胶片",
+    "evidence": "这就是电影……能够永远留下足够美好之物的神奇容器",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "默写",
+    "dst": "剧本",
+    "evidence": "剧本，它已经被默写完成",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "询问",
+    "dst": "琼斯",
+    "evidence": "你想好了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "答复",
+    "dst": "护士劳拉",
+    "evidence": "我不需要钱，我只需要你给我一个东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "提议",
+    "dst": "琼斯",
+    "evidence": "这里有更好的替代品",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "期待",
+    "dst": "琼斯",
+    "evidence": "不久以后，琼斯肯定就能够痊愈出院了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5403378f2872a99374e36adc": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收到空礼盒的探视者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述第一个礼物的病人"
+   },
+   {
+    "name": "礼盒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用丝带扎好、异常轻的盒子"
+   },
+   {
+    "name": "手链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯预备放入盒中的贵价手链"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所躺的玻璃仪器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "发现",
+    "dst": "礼盒",
+    "evidence": "贝蒂的椅子上放着一个用丝带扎好的礼盒",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "赠予",
+    "dst": "贝蒂",
+    "evidence": "不，这是我送给你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "制止",
+    "dst": "贝蒂",
+    "evidence": "先别拆",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "讲述",
+    "dst": "礼盒",
+    "evidence": "这是我收到过的第一个礼物，是妈妈送给我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "畏惧",
+    "dst": "礼盒",
+    "evidence": "我很怕打开之后发现它里面是空的",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "自述",
+    "dst": "贝蒂",
+    "evidence": "我将它放在床头，一直忍着没有打开，就这么过了十多年",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "预备",
+    "dst": "手链",
+    "evidence": "我提前买了一条很贵的手链",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "琼斯",
+    "evidence": "所以那个盒子里有东西吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "回避",
+    "dst": "贝蒂",
+    "evidence": "这不重要",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "琼斯",
+    "evidence": "你有猜想过我小时候过的是什么生活吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "躺卧",
+    "dst": "玻璃棺",
+    "evidence": "琼斯躺在玻璃仪器中，看着贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "还原",
+    "dst": "琼斯",
+    "evidence": "试着将它还原成一名幼童的脸",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

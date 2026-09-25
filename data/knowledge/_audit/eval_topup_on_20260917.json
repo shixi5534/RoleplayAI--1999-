@@ -1,0 +1,5802 @@
+{
+ "event": "eval_run_complete",
+ "meta": {
+  "tool": "scripts/eval_plot_rag.py",
+  "standard": "rag_testset_300.json（证据组并集子串覆盖）+ 负样本零注入",
+  "character": "wu_ming_zhe",
+  "argv": [
+   "scripts/eval_plot_rag.py",
+   "--sample",
+   "120",
+   "--seed",
+   "7",
+   "--no-trace",
+   "--quiet",
+   "--out",
+   "data\\knowledge\\_audit\\eval_topup_on_20260917.json"
+  ],
+  "top": 6,
+  "lexical_fallback": 2,
+  "sample": 120,
+  "seed": 7,
+  "limit": 0,
+  "trace_enabled": false,
+  "config": {
+   "plot_alias_authoritative": true,
+   "plot_alias_trust_chained_min_df": 3,
+   "plot_alias_trust_ratio": 0.25,
+   "plot_cache_dir": "./data/knowledge/plot_cache",
+   "plot_chapter_max_names": 2,
+   "plot_chapter_routing": true,
+   "plot_chapter_top": 3,
+   "plot_context_max_chars": 2400,
+   "plot_cooccurrence_bonus": true,
+   "plot_corpus_dir": "./data/knowledge",
+   "plot_diversity_per_doc": 1,
+   "plot_edge_min_confidence": 0.6,
+   "plot_embed_model": "bge-m3",
+   "plot_entity_expand_backend": "static",
+   "plot_entity_expand_enabled": false,
+   "plot_entity_expand_llm_api_key": "",
+   "plot_entity_expand_llm_base_url": "",
+   "plot_entity_expand_llm_model": "",
+   "plot_entity_expand_max_append": 4,
+   "plot_entity_expand_min_conf": 0.0,
+   "plot_entity_expand_static_path": "",
+   "plot_entity_expand_top": 3,
+   "plot_entity_expand_whitelist": true,
+   "plot_entity_query_max_len": 14,
+   "plot_extract_concurrency": 4,
+   "plot_extract_max_tokens": 800,
+   "plot_extract_timeout": 60.0,
+   "plot_filter_generic_seeds": true,
+   "plot_fuse_k": 3,
+   "plot_graph_dir": "./data/knowledge",
+   "plot_graph_enabled": true,
+   "plot_include_weak": true,
+   "plot_lexical_always": false,
+   "plot_lexical_fallback": 2,
+   "plot_lexical_topup": false,
+   "plot_link_threshold": 0.5,
+   "plot_lore_dir": "./data/lore",
+   "plot_max_chunks": 6,
+   "plot_max_edges": 10,
+   "plot_max_hops": 2,
+   "plot_mention_cache_size": 512,
+   "plot_mention_group_by_entity": true,
+   "plot_mention_per_entity": 5,
+   "plot_mention_scoring": "count",
+   "plot_mention_total_cap": 10,
+   "plot_min_chapter_kept": 0,
+   "plot_min_semantic_kept": 0,
+   "plot_name_salience": false,
+   "plot_ppr_damping": 0.85,
+   "plot_ppr_max_iter": 20,
+   "plot_ppr_node_specificity": false,
+   "plot_require_anchored_token_seeds": true,
+   "plot_rerank_topup_enabled": true,
+   "plot_rerank_topup_keep": 3,
+   "plot_semantic_enabled": true,
+   "plot_semantic_langs": "",
+   "plot_semantic_link_min": 0.0,
+   "plot_semantic_link_top": 3,
+   "plot_semantic_min_score": 0.0,
+   "plot_semantic_rerank_enabled": false,
+   "plot_semantic_rerank_min": 0.5,
+   "plot_semantic_rerank_top": 10,
+   "plot_semantic_top": 5,
+   "plot_semantic_zh_enabled": false,
+   "plot_trace_enabled": false,
+   "plot_untrusted_extra_per_entity": 1,
+   "plot_weak_exempt_sources": "manual",
+   "plot_weight_chapter": 1.0,
+   "plot_weight_edge": 1.0,
+   "plot_weight_lexical": 0.6,
+   "plot_weight_mention": 1.0,
+   "plot_weight_mention_entity": 1.0,
+   "plot_weight_semantic": 1.0
+  },
+  "assets_sha256_head16": {
+   "plot_graph": "a28213c15d2fb931",
+   "plot_corpus": "7eab3ef671d19070",
+   "testset": "2acbe40494d0c0b1"
+  },
+  "started_at": "2026-09-17 15:04:46",
+  "elapsed_s": 93.7
+ },
+ "summary": {
+  "cases": 120,
+  "ceiling_cases": 114,
+  "strict_pass": 0.7083,
+  "strict_pass_n": 85,
+  "primary_pass": 0.75,
+  "primary_pass_n": 90,
+  "ceiling_pass": 0.7368,
+  "chunk_precision": 0.3404,
+  "answer_chunk_rate": 0.2199,
+  "mrr": 0.3739,
+  "recall": 0.2946,
+  "avg_returned_chunks": 7.81,
+  "latency_p50_ms": 740.5,
+  "latency_p90_ms": 858.7,
+  "latency_p95_ms": 896.2,
+  "latency_max_ms": 4202.5,
+  "path_counts": {
+   "mention": 224,
+   "edge": 230,
+   "semantic": 455,
+   "chapter": 28
+  },
+  "empty_rate": 0.0083,
+  "inject_pass": 0.5833,
+  "inject_pass_n": 70,
+  "injected_chars_avg": 2474.5
+ },
+ "by_dims": {
+  "type": {
+   "factoid": {
+    "cases": 80,
+    "strict_pass": 0.7375,
+    "chunk_precision": 0.4048,
+    "latency_p50_ms": 740.5
+   },
+   "multi-hop": {
+    "cases": 24,
+    "strict_pass": 0.5833,
+    "chunk_precision": 0.1458,
+    "latency_p50_ms": 744.4
+   },
+   "reasoning": {
+    "cases": 12,
+    "strict_pass": 0.6667,
+    "chunk_precision": 0.3409,
+    "latency_p50_ms": 736.9
+   },
+   "temporal": {
+    "cases": 4,
+    "strict_pass": 1.0,
+    "chunk_precision": 0.25,
+    "latency_p50_ms": 732.4
+   }
+  },
+  "difficulty": {
+   "easy": {
+    "cases": 58,
+    "strict_pass": 0.7759,
+    "chunk_precision": 0.3252,
+    "latency_p50_ms": 740.5
+   },
+   "hard": {
+    "cases": 18,
+    "strict_pass": 0.6111,
+    "chunk_precision": 0.5069,
+    "latency_p50_ms": 726.1
+   },
+   "medium": {
+    "cases": 44,
+    "strict_pass": 0.6591,
+    "chunk_precision": 0.2907,
+    "latency_p50_ms": 746.1
+   }
+  },
+  "depth": {
+   "deep": {
+    "cases": 18,
+    "strict_pass": 0.6111,
+    "chunk_precision": 0.5069,
+    "latency_p50_ms": 726.1
+   },
+   "medium": {
+    "cases": 33,
+    "strict_pass": 0.6667,
+    "chunk_precision": 0.3333,
+    "latency_p50_ms": 744.0
+   },
+   "shallow": {
+    "cases": 69,
+    "strict_pass": 0.7536,
+    "chunk_precision": 0.2987,
+    "latency_p50_ms": 742.4
+   }
+  },
+  "hop": {
+   "multi": {
+    "cases": 38,
+    "strict_pass": 0.6053,
+    "chunk_precision": 0.3092,
+    "latency_p50_ms": 735.5
+   },
+   "single": {
+    "cases": 82,
+    "strict_pass": 0.7561,
+    "chunk_precision": 0.3555,
+    "latency_p50_ms": 743.2
+   }
+  },
+  "chapter": {
+   "1.4": {
+    "cases": 5,
+    "strict_pass": 0.2,
+    "chunk_precision": 0.1562,
+    "latency_p50_ms": 902.2
+   },
+   "1.7": {
+    "cases": 13,
+    "strict_pass": 0.7692,
+    "chunk_precision": 0.5385,
+    "latency_p50_ms": 759.8
+   },
+   "1.9": {
+    "cases": 8,
+    "strict_pass": 0.625,
+    "chunk_precision": 0.4375,
+    "latency_p50_ms": 749.7
+   },
+   "1971": {
+    "cases": 4,
+    "strict_pass": 0.75,
+    "chunk_precision": 0.5,
+    "latency_p50_ms": 712.0
+   },
+   "其他": {
+    "cases": 90,
+    "strict_pass": 0.7333,
+    "chunk_precision": 0.3035,
+    "latency_p50_ms": 736.8
+   }
+  },
+  "text_len": {
+   "long": {
+    "cases": 27,
+    "strict_pass": 0.5926,
+    "chunk_precision": 0.2788,
+    "latency_p50_ms": 744.1
+   },
+   "medium": {
+    "cases": 50,
+    "strict_pass": 0.78,
+    "chunk_precision": 0.3392,
+    "latency_p50_ms": 740.9
+   },
+   "short": {
+    "cases": 43,
+    "strict_pass": 0.6977,
+    "chunk_precision": 0.3802,
+    "latency_p50_ms": 736.8
+   }
+  }
+ },
+ "negatives": {
+  "cases": 53,
+  "negative_injection_total": 54,
+  "negative_clean": false,
+  "violations": [
+   "解释一下相对论",
+   "哈利波特是谁",
+   "红楼梦的作者是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "known_residual": [
+   "哈利波特是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "new_leaks": [
+   "解释一下相对论",
+   "红楼梦的作者是谁"
+  ],
+  "clear": false,
+  "by_category": {
+   "泛词实体": {
+    "cases": 10,
+    "injected": 8,
+    "cases_with_injection": 1
+   },
+   "闲聊": {
+    "cases": 8,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "工具型": {
+    "cases": 9,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "生活服务": {
+    "cases": 7,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "元问题": {
+    "cases": 5,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "跨域专名": {
+    "cases": 6,
+    "injected": 38,
+    "cases_with_injection": 5
+   },
+   "英文闲聊": {
+    "cases": 4,
+    "injected": 8,
+    "cases_with_injection": 1
+   },
+   "退化输入": {
+    "cases": 4,
+    "injected": 0,
+    "cases_with_injection": 0
+   }
+  },
+  "elapsed_s": 26.1,
+  "rows": [
+   {
+    "q": "今天天气怎么样",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 445.55
+   },
+   {
+    "q": "明天的天气预报是什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 503.85
+   },
+   {
+    "q": "最近经济形势如何",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 504.97
+   },
+   {
+    "q": "股市今天涨了吗",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 454.29
+   },
+   {
+    "q": "给我讲个故事",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 470.3
+   },
+   {
+    "q": "这个故事讲了什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 498.52
+   },
+   {
+    "q": "时间是什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 437.32
+   },
+   {
+    "q": "介绍几个历史事件",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 468.49
+   },
+   {
+    "q": "什么是哲学",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 471.38
+   },
+   {
+    "q": "解释一下相对论",
+    "category": "泛词实体",
+    "injected": 8,
+    "paths": {
+     "mention": 3,
+     "semantic": 5
+    },
+    "samples": [
+     "周围这些岩石吗这些奇怪的颜色我从没见过也不在任何的资料记录里那些石头上的水石洞也绝对不是这个气候应该出现的先生请冷静也许",
+     "One is thought, two is opinion, three is wisdom, four is str"
+    ],
+    "latency_ms": 462.97
+   },
+   {
+    "q": "你好呀，在吗",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 527.77
+   },
+   {
+    "q": "在干嘛呢",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 485.39
+   },
+   {
+    "q": "陪我聊聊天吧",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 469.2
+   },
+   {
+    "q": "我今天心情不太好",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 467.58
+   },
+   {
+    "q": "你觉得我这个人怎么样",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 454.39
+   },
+   {
+    "q": "晚安，早点休息",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 519.27
+   },
+   {
+    "q": "谢谢你",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 437.35
+   },
+   {
+    "q": "哈哈哈",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 452.19
+   },
+   {
+    "q": "1+1 等于几",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 452.36
+   },
+   {
+    "q": "123 乘以 456 是多少",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 450.8
+   },
+   {
+    "q": "用 Python 写一个快速排序",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 521.33
+   },
+   {
+    "q": "帮我写一个 SQL 查询",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 501.07
+   },
+   {
+    "q": "帮我把这段话翻译成英文",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 427.55
+   },
+   {
+    "q": "帮我写一首关于春天的诗",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 480.06
+   },
+   {
+    "q": "总结一下这篇文章的要点",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 538.6
+   },
+   {
+    "q": "正则表达式怎么匹配邮箱",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 492.8
+   },
+   {
+    "q": "Excel 怎么做透视表",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 427.22
+   },
+   {
+    "q": "推荐几家附近的餐厅",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 434.67
+   },
+   {
+    "q": "明天几点开会",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 495.05
+   },
+   {
+    "q": "这个软件怎么安装",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 547.0
+   },
+   {
+    "q": "帮我订一张去北京的机票",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 439.32
+   },
+   {
+    "q": "附近有充电桩吗",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 499.66
+   },
+   {
+    "q": "快递什么时候到",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 476.18
+   },
+   {
+    "q": "外卖有什么优惠",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 441.15
+   },
+   {
+    "q": "你是谁",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 546.0
+   },
+   {
+    "q": "你是什么模型",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 440.35
+   },
+   {
+    "q": "你和 ChatGPT 有什么区别",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 487.5
+   },
+   {
+    "q": "你有意识吗",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 434.65
+   },
+   {
+    "q": "你能帮我做什么",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 473.27
+   },
+   {
+    "q": "哈利波特是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 1,
+     "mention": 2,
+     "semantic": 5
+    },
+    "samples": [
+     "3. ……\n…………\n亲爱的同窗：\n愿早日康复。\n逃跑路线规划\n逃跑路线规划\n这或许是你们的孤注一掷，需要慎重对待。\n2",
+     "Those who invited this chaos did not comprehend that the fla"
+    ],
+    "latency_ms": 678.81
+   },
+   {
+    "q": "红楼梦的作者是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 1,
+     "mention": 2,
+     "semantic": 5
+    },
+    "samples": [
+     "which has started a new round of craze for traveling in the ",
+     "魔精观赏会——本农场的最新明星，由德克萨斯最勇敢的猎手捕捉。从那些扰乱你农场却无形无影的小恶魔，到荒原上真正的传说，如今"
+    ],
+    "latency_ms": 549.55
+   },
+   {
+    "q": "复仇者联盟有几部电影",
+    "category": "跨域专名",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 459.42
+   },
+   {
+    "q": "苹果公司的 CEO 是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 2,
+     "mention": 1,
+     "semantic": 5
+    },
+    "samples": [
+     "四处贩卖的入场券换来的金钱又入了谁的口袋？\n——是啦，我们早已有了答案！\n撰稿人：马科尔\n——《叮咚快报》136期周末特",
+     "We still have ways to go before we can truly understand it.W"
+    ],
+    "latency_ms": 648.89
+   },
+   {
+    "q": "巴黎在哪个国家",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 4,
+     "semantic": 3,
+     "mention": 1
+    },
+    "samples": [
+     "有关“好”与“坏”……你很快就会明白。\n说到生意\n说到生意\n？？？：\n当时我正在巴黎经营我的水晶生意。\n？？？：\n从简单",
+     "You can throw yourself into evil, or create a new one yourse"
+    ],
+    "latency_ms": 790.57
+   },
+   {
+    "q": "泰坦尼克号是哪一年沉没的",
+    "category": "跨域专名",
+    "injected": 6,
+    "paths": {
+     "mention": 1,
+     "semantic": 5
+    },
+    "samples": [
+     "In situations like these, those who blindly follow orders of",
+     "The world didn't end that night.It only rained, but almost e"
+    ],
+    "latency_ms": 492.94
+   },
+   {
+    "q": "what is the weather like today",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 488.92
+   },
+   {
+    "q": "tell me a joke",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 482.48
+   },
+   {
+    "q": "how do i install this software",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 515.05
+   },
+   {
+    "q": "who is the president of the united states",
+    "category": "英文闲聊",
+    "injected": 8,
+    "paths": {
+     "edge": 3,
+     "mention": 3,
+     "semantic": 2
+    },
+    "samples": [
+     "In the meantime, we will continue to deploy field agents to ",
+     "It is either one of the parties wins over two thirdsof suppo"
+    ],
+    "latency_ms": 740.92
+   },
+   {
+    "q": "。。。",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 399.15
+   },
+   {
+    "q": "？？？",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 385.04
+   },
+   {
+    "q": "asdfghjkl",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 429.56
+   },
+   {
+    "q": "1234567890",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 472.17
+   }
+  ]
+ },
+ "trace_agg": null,
+ "ablation": null,
+ "diff_vs_baseline": {
+  "newly_passed": [],
+  "newly_failed": [],
+  "source": null,
+  "cases_paired": 0,
+  "note": "未提供基线/消融参照：空 diff 必须与配对题数 = 0 同时呈现"
+ },
+ "bucket_attribution": null,
+ "semantic_status": {
+  "wu_ming_zhe": "ok（9021 块 / ollama:bge-m3）"
+ },
+ "semantic_loaded": true,
+ "assets_sha256_head16": {
+  "plot_graph": "a28213c15d2fb931",
+  "plot_corpus": "7eab3ef671d19070",
+  "testset": "2acbe40494d0c0b1"
+ },
+ "items": [
+  {
+   "id": "R010",
+   "q": "洞穴的囚徒篇里的努玛是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2640,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 4202.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R014",
+   "q": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2498,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 930.46,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R016",
+   "q": "在洞穴的囚徒篇的开场里，向维尔汀递交钥匙、请她整理档案的管家是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2639,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 4,
+    "edge": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 902.21,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R018",
+   "q": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 0,
+   "ceiling": true,
+   "n_chunks": 0,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {},
+   "zh_ratio": 0.0,
+   "latency_ms": 767.04,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 0,
+    "seeds_total": 0
+   }
+  },
+  {
+   "id": "R019",
+   "q": "既管理灯塔又保管档案钥匙的女性是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.4",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2300,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 733.98,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R021",
+   "q": "卡卡尼亚的本名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2582,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 895.88,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R022",
+   "q": "维也纳篇与卡卡尼亚对峙决斗的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2810,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 709.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R024",
+   "q": "今夜星光灿烂篇中红极一时的维也纳女演员是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2391,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "semantic": 5,
+    "edge": 1,
+    "mention": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 915.82,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R025",
+   "q": "今夜星光灿烂篇里的年轻调查员马库斯的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2512,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 908.88,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R026",
+   "q": "特奥菲尔的英文名是什么？（维也纳篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2713,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 867.5,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R027",
+   "q": "以电击治疗骗财、与卡卡尼亚对峙的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2707,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 759.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R028",
+   "q": "格蕾塔·霍夫曼的英文名是什么？（今夜星光灿烂篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2625,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.1429,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 2,
+    "chapter": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 700.41,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R030",
+   "q": "多里斯医生的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2466,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 761.13,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R032",
+   "q": "血痛概念出现在哪个维也纳篇章里？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2740,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 669.53,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R033",
+   "q": "海因里希的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2370,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 687.34,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R034",
+   "q": "伊索尔德的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2669,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 782.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R036",
+   "q": "施瓦茨的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2376,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 713.03,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R038",
+   "q": "在今夜星光灿烂篇的维也纳舞台上红极一时、最终枪杀海因里希的女演员是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "1.7",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2519,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "semantic": 5,
+    "edge": 2,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 757.87,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R043",
+   "q": "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2147,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 5,
+    "semantic": 2,
+    "chapter": 1
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 801.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R044",
+   "q": "阿派朗岛与下面哪个英文名对应？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2594,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 765.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R047",
+   "q": "露西是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2486,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 726.98,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R049",
+   "q": "苏菲亚与 37 同属哪个篇章？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2369,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "semantic": 2,
+    "mention": 2
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 754.67,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R051",
+   "q": "Six 与 37 同属哪座岛屿的故事？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2574,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 701.88,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R054",
+   "q": "杀死阿尔卡纳的行动中，与基金会配合作战的军备学院是哪家？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2638,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 744.7,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R055",
+   "q": "孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1.9",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2450,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 4,
+    "mention": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 837.21,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R060",
+   "q": "阿派朗岛上的时间停滞在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1.9",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2561,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 716.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R068",
+   "q": "巨怪传说与失踪案发生在哪一年的绿湖？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2527,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 680.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R070",
+   "q": "绿湖噩梦篇里的灯塔传说与哪个营地相关？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2592,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 801.29,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R074",
+   "q": "在 1971 年的绿湖营地，负责孩子们医疗健康的医生英文名叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2444,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 687.31,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R079",
+   "q": "绿湖营地的孩子们不敢进入的是哪里？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1971",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2632,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 736.76,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R082",
+   "q": "旧金山海特街的疗愈师是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2388,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "semantic": 3,
+    "edge": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 747.44,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R084",
+   "q": "雷米特杯失窃案里 Melania 的保安公司叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2673,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 541.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R085",
+   "q": "《神秘警探C07》三部曲的导演是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2364,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 735.65,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R089",
+   "q": "努库泰澳的岛民都有谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "2/3",
+   "missing_groups": [
+    2
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    2
+   ],
+   "injected_chars": 2724,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 651.62,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R090",
+   "q": "在中央塔里自囚的医生是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2803,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 679.87,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 1,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R091",
+   "q": "雷米特杯失窃案里出现的机器人保安英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2430,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 614.45,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R093",
+   "q": "《神秘警探C07》系列的故事出自哪个篇章？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2368,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 666.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R102",
+   "q": "基克尔恩的英文名是什么？（再见，来亚什基篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2421,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.5,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 817.78,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R104",
+   "q": "忧郁的热带篇里的女军官是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2531,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 751.45,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R105",
+   "q": "卡森的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2589,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 724.31,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R106",
+   "q": "邓肯的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2412,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 4,
+    "semantic": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 857.99,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R108",
+   "q": "佩拉的英文名是什么？（忧郁的热带篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2406,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 5,
+    "semantic": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 746.91,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R110",
+   "q": "金伯利女郎指的是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2497,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 770.5,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R115",
+   "q": "自由海风号邮轮的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2790,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 3,
+    "mention": 1
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 864.77,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R120",
+   "q": "塞洛尼的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2728,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "semantic": 5,
+    "chapter": 1,
+    "mention": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 574.99,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R121",
+   "q": "梅莉的英文名是什么？（地球上最后的夜晚篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2250,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 721.91,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R123",
+   "q": "乌卢鲁运动会的主会场叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2466,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 865.47,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R129",
+   "q": "布里姆利的英文名是什么？（圣火纪行篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2601,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 847.43,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R135",
+   "q": "复乐园篇的故事发生在哪块大陆？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2107,
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "chapter": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 428.35,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 0,
+    "seeds_total": 0
+   }
+  },
+  {
+   "id": "R136",
+   "q": "阿黛尔的全名是什么？（迁流的盛宴篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2608,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 693.52,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R137",
+   "q": "塞莉亚的英文名是什么？（迁流的盛宴篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2739,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 3,
+    "mention": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 787.2,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R139",
+   "q": "迁流的盛宴篇的故事发生在哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1614,
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "chapter": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 463.14,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 0,
+    "seeds_total": 0
+   }
+  },
+  {
+   "id": "R144",
+   "q": "特蕾西塔的英文名是什么？（绿松石蛇俱乐部篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2549,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 668.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R147",
+   "q": "克鲁托夫的英文名是什么？（远征记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2174,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 3,
+    "chapter": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 661.98,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R154",
+   "q": "皮罗斯大叔的英文名是什么？（长夜鸣笛篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2003,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 721.62,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R155",
+   "q": "长夜鸣笛篇里列车上的女售票员英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2682,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "semantic": 4,
+    "mention": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 760.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R157",
+   "q": "酒神节的英文名是什么？（入雅典记篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2512,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 744.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R162",
+   "q": "不老春篇里的教派叫什么名字？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2588,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 1,
+    "semantic": 5,
+    "chapter": 1
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 615.31,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R164",
+   "q": "朔日手记篇里酿得好酒的酒馆娘是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2690,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "semantic": 4,
+    "edge": 1,
+    "chapter": 1,
+    "mention": 2
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 742.39,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R165",
+   "q": "朔日手记篇里九方之地举办的节日叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2544,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 1,
+    "semantic": 4,
+    "chapter": 2,
+    "mention": 1
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 682.86,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R166",
+   "q": "九方是朔日手记篇里的什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2414,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "semantic": 3,
+    "edge": 1,
+    "chapter": 2,
+    "mention": 2
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 661.73,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R168",
+   "q": "马克西姆的英文名是什么？（聚合浪潮篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2465,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "semantic": 4,
+    "chapter": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 767.44,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R169",
+   "q": "瓦尼亚的英文名是什么？（聚合浪潮篇）",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2753,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 705.45,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R170",
+   "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2493,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 696.13,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R171",
+   "q": "他者的悲哀篇里出现的学园缩写是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2158,
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "chapter": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 516.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 0,
+    "seeds_total": 0
+   }
+  },
+  {
+   "id": "R172",
+   "q": "重燃！流金之海篇里的海上神祇纳西索斯的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2531,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 744.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R174",
+   "q": "重燃！流金之海篇里举办的水上竞技会英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2742,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "semantic": 2,
+    "mention": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 736.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R175",
+   "q": "世纪末尺度篇里出现的时间异常现象英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2437,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 745.18,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R176",
+   "q": "在暴雨中唯一能自由行动的司辰是谁？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2389,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 803.8,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R177",
+   "q": "维尔汀随身携带的、能庇护神秘学家的道具是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2377,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 764.64,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R181",
+   "q": "无名者在基金会内务档案中的机构代号是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2430,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 879.15,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R182",
+   "q": "十四行诗的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2415,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 774.43,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R184",
+   "q": "星锑的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2566,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 653.5,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R187",
+   "q": "神秘学家的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2411,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 789.74,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R188",
+   "q": "重塑之手的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2391,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 699.99,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R189",
+   "q": "圣洛夫基金会的英文全称是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2734,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 738.52,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R194",
+   "q": "司辰的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2607,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 3,
+    "mention": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 747.46,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R198",
+   "q": "雅典的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2446,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 667.22,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R199",
+   "q": "LSCC 是什么机构？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2581,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 734.61,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R202",
+   "q": "芝加哥的英文叫什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2484,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 667.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R204",
+   "q": "苏菲亚接手的重塑之手与阿尔卡纳的关系是？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2241,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 770.34,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R205",
+   "q": "勿忘我与斯奈德同属哪一年的芝加哥故事？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2348,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 851.81,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R211",
+   "q": "「拉普拉斯」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2468,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 837.14,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R214",
+   "q": "「伊戈尔」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2614,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 722.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R218",
+   "q": "「赫多涅」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2722,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 680.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R219",
+   "q": "《重返未来：1999》剧情转写里「哑谜」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2368,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 751.59,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R220",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「远旅」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2586,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 777.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R223",
+   "q": "《重返未来：1999》剧情转写里「谢尔盖」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2443,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 707.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R225",
+   "q": "《重返未来：1999》剧情转写里「芦草结」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2346,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 4,
+    "mention": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 837.35,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R230",
+   "q": "来亚什基矿区出产的特殊矿物在英文里叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2497,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 737.58,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R233",
+   "q": "圣洛夫基金会的副会长、无名者的养母是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2735,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 760.24,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R234",
+   "q": "康斯坦丁给无名者的第一个名字是什么？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2687,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 726.09,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R235",
+   "q": "在康复中心为无名者做人工梦游诊察的医生是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2739,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 686.93,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R239",
+   "q": "康斯坦丁的养女最终以什么身份加入司辰小队？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2653,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 733.35,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R242",
+   "q": "乔·布朗的义妹、原基金会调查员是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2493,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 797.44,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R244",
+   "q": "救走斯奈德姐姐的行动发生在哪座城市？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2423,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
+   "paths": {
+    "mention": 1,
+    "edge": 4,
+    "semantic": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 773.87,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R248",
+   "q": "海因里希效忠的重塑之手首领是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2655,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 727.44,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R249",
+   "q": "拉莫纳的俱乐部坐落在哪个国家？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2797,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 765.01,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R250",
+   "q": "杜硕节在朔日手记篇的哪个地点举办？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2676,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "semantic": 3,
+    "edge": 1,
+    "chapter": 2,
+    "mention": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 850.8,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R251",
+   "q": "温松的歌声回荡在哪座矿业村庄？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2514,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 703.81,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R255",
+   "q": "阿尔卡纳盯上的非对称核素 R 可以让人免疫什么灾难？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2706,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 748.32,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R257",
+   "q": "在 1990 年德克萨斯 77 号公路的往事里，被重塑之手追随者误认成格蕾丝的农场女孩是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2379,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 943.29,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 4
+   }
+  },
+  {
+   "id": "R261",
+   "q": "在入雅典记的雅典城邦故事里，主持酒神节、执掌城邦的领袖人物是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2718,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 605.85,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R263",
+   "q": "在 1987 宇宙组曲篇的太空任务里，跨越星海、远赴外层空间的旅人是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2604,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
+   "paths": {
+    "mention": 2,
+    "semantic": 4,
+    "chapter": 2
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 458.77,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R267",
+   "q": "在复兴乌卢鲁运动会篇的赛场上，操控火焰参赛、守护和平乌鲁圣火的选手是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2359,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 679.83,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R269",
+   "q": "在朔日手记篇的大唐九方之地，于杜硕节期间酿出令人称奇的好酒的娘子是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2573,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "semantic": 4,
+    "edge": 1,
+    "chapter": 1,
+    "mention": 2
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 735.29,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R270",
+   "q": "在唐人街影话篇的香港取景故事里，执导《神秘警探C07》三部曲的导演是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2382,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 649.83,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R272",
+   "q": "在聚合浪潮篇的苏联背景故事里，与集体 2.0 的机器人群体打交道的研究者是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2617,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "semantic": 5,
+    "edge": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 744.03,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R277",
+   "q": "一列夜行列车上流传着吸血鬼的传闻，这条列车行驶在哪条河沿岸？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2768,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 723.81,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R278",
+   "q": "圣洛夫基金会的英文名与哪位条件反射理论家同名？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2432,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 808.18,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R281",
+   "q": "有人把两位好友的消失归咎于一场暴雨，这位幸存的司辰是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2542,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 800.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R283",
+   "q": "一位基金会副会长常以棋局比喻事件，她也是无名者的养母，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2677,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 1,
+    "mention": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 877.38,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "R284",
+   "q": "一个组织的首领别名“受苦者”，是芝加哥与维也纳事件的罪魁祸首，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2397,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
+   "paths": {
+    "edge": 1,
+    "semantic": 5,
+    "mention": 2
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 668.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R285",
+   "q": "一个组织试图回溯至“秩序正确”的时代并人为加速暴雨的到来，它是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2168,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 710.76,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R286",
+   "q": "由鸽子意象命名、与基金会收容事务相关的场所有个绰号，它叫什么？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2171,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 734.78,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R287",
+   "q": "一位特工能把记忆化作飞蛾循光传递情报，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 1549,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 801.42,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R291",
+   "q": "被阿尔卡纳称作“我的无名者”、以蛹为喻的角色是谁？",
+   "dims": {
+    "type": "reasoning",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2546,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 737.07,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R294",
+   "q": "第一次暴雨发生于哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2496,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 687.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "R296",
+   "q": "芝加哥情人节大屠杀发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1586,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 781.2,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "R297",
+   "q": "维尔汀在第一防线学校时是多少岁策划学生出逃的？",
+   "dims": {
+    "type": "temporal",
+    "difficulty": "medium",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "其他",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2624,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 748.12,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  }
+ ]
+}

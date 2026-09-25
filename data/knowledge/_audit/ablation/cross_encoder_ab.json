@@ -1,0 +1,57 @@
+{
+ "cases": 300,
+ "params": {
+  "budget": 2400,
+  "keep": 8
+ },
+ "results": [
+  {
+   "combo": "int8:20:0.3",
+   "pool": 20,
+   "keep": 8,
+   "model": "onnx/model_int8.onnx",
+   "alpha": 0.3,
+   "base_strict": 0.6766666666666666,
+   "ce_strict": 0.6833333333333333,
+   "base_inject": 0.62,
+   "ce_inject": 0.6066666666666667,
+   "base_top2": 0.41333333333333333,
+   "ce_top2": 0.43,
+   "lat_ms_median": 1151.4416499994695,
+   "lat_ms_mean": 1133.0642809997273,
+   "elapsed_s": 459.4950087070465
+  },
+  {
+   "combo": "int8:20:0.5",
+   "pool": 20,
+   "keep": 8,
+   "model": "onnx/model_int8.onnx",
+   "alpha": 0.5,
+   "base_strict": 0.6766666666666666,
+   "ce_strict": 0.7066666666666667,
+   "base_inject": 0.62,
+   "ce_inject": 0.5966666666666667,
+   "base_top2": 0.41333333333333333,
+   "ce_top2": 0.43,
+   "lat_ms_median": 1151.7025499997544,
+   "lat_ms_mean": 1129.8696049997914,
+   "elapsed_s": 456.4516441822052
+  },
+  {
+   "combo": "int8:20:0.7",
+   "pool": 20,
+   "keep": 8,
+   "model": "onnx/model_int8.onnx",
+   "alpha": 0.7,
+   "base_strict": 0.6766666666666666,
+   "ce_strict": 0.7,
+   "base_inject": 0.62,
+   "ce_inject": 0.6033333333333334,
+   "base_top2": 0.41333333333333333,
+   "ce_top2": 0.45,
+   "lat_ms_median": 1137.980850005988,
+   "lat_ms_mean": 1129.2057999999572,
+   "elapsed_s": 456.5223777294159
+  }
+ ]
+}

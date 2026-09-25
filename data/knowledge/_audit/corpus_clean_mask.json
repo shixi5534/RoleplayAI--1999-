@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-09-17 21:57:16",
+  "labels": {
+    "foreign": 170,
+    "no_punct_zh": 182,
+    "commentary": 53,
+    "duplicate": 208,
+    "total": 9021
+  },
+  "masked_rows": 567,
+  "config": {
+    "testset": "rag_testset_300_clean.json",
+    "cases": 300
+  },
+  "results": [
+    {
+      "label": "基线",
+      "strict_pass_n": 203,
+      "strict_pass": 0.6767,
+      "inject_pass_n": 186,
+      "inject_pass": 0.62,
+      "elapsed_s": 132.4
+    },
+    {
+      "label": "A 语义掩码（屏蔽低质块）",
+      "strict_pass_n": 197,
+      "strict_pass": 0.6567,
+      "inject_pass_n": 184,
+      "inject_pass": 0.6133,
+      "elapsed_s": 131.8
+    },
+    {
+      "label": "B 后置过滤（剔除低质块）",
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass_n": 182,
+      "inject_pass": 0.6067,
+      "elapsed_s": 128.5
+    }
+  ],
+  "delta": [
+    {
+      "label": "基线",
+      "d_strict": 0,
+      "d_inject": 0
+    },
+    {
+      "label": "A 语义掩码（屏蔽低质块）",
+      "d_strict": -6,
+      "d_inject": -2
+    },
+    {
+      "label": "B 后置过滤（剔除低质块）",
+      "d_strict": -8,
+      "d_inject": -4
+    }
+  ]
+}

@@ -1,0 +1,2096 @@
+{
+ "cdff805e55e3ded70feaa56b": {
+  "entities": [
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "将金子看作菜肴的管家"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [
+     "苏芙比小姐"
+    ],
+    "desc": "识破晚餐是金子和钱的闺秀"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问盘中为何物的调查员"
+   },
+   {
+    "name": "贵腐甜白1919",
+    "type": "物品",
+    "aliases": [],
+    "desc": "管家报出的前菜酒名"
+   },
+   {
+    "name": "泡泡豆荚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "鲱鱼浓汤所用素材"
+   },
+   {
+    "name": "莳萝素羊羔",
+    "type": "物品",
+    "aliases": [],
+    "desc": "管家报出的菜肴"
+   },
+   {
+    "name": "梅子酱哈基斯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比喜爱的肉食"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡森先生",
+    "relation": "服侍",
+    "dst": "苏芙比",
+    "evidence": "当然了，小姐。我们稍后就会送上你喜爱的梅子酱哈基斯肉",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "误认",
+    "dst": "金子",
+    "evidence": "这些不是吃的，根本连食物都算不上——这些、这些……是金子和钱呀",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "b3ee079f1f9c0249539e6232": {
+  "entities": [
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谈论暴雨症候与金钱的成员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "维尔汀小姐"
+    ],
+    "desc": "为人们辩护并讲述花楸的司辰"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [
+     "槲寄生小姐"
+    ],
+    "desc": "提问金条如何食用的森林主人"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将金钱变成人们眼中食物的症候"
+   },
+   {
+    "name": "花楸",
+    "type": "概念",
+    "aliases": [
+     "Quickbeam"
+    ],
+    "desc": "源自古老德语意为活着的树"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "使社会原有运转方式改变的灾难"
+   },
+   {
+    "name": "不朽的尽头",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "暴雨症候",
+    "relation": "转化",
+    "dst": "金钱",
+    "evidence": "暴雨症候竟把金钱变成了人们眼中的食物",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解释",
+    "dst": "花楸",
+    "evidence": "它常被称为“Quickbeam”，源自古老德语，意思是“活着”",
+    "confidence": 0.9
+   },
+   {
+    "src": "花楸",
+    "relation": "生长于",
+    "dst": "北美",
+    "evidence": "即使从远欧移种到北美这里，也能茁壮生长",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "类比",
+    "dst": "暴雨",
+    "evidence": "就像这场没有理由的“暴雨”一样",
+    "confidence": 0.8
+   },
+   {
+    "src": "勿忘我",
+    "relation": "隶属",
+    "dst": "重塑之手",
+    "evidence": "我们什么都没做，唯一做的仅是等待时间的流逝",
+    "confidence": 0.6
+   }
+  ]
+ },
+ "cf7df60fa92a9784feacc9a6": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "感慨民众将不复存在的司辰"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布打倒重塑的闺秀"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自认不适合出外勤者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "负责物资清点与难民安顿者"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议听取大家愿望者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从华盛顿州掠走大量物资者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "其主阵地并不在此的组织"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "范围将进一步扩大的症候"
+   },
+   {
+    "name": "华盛顿州",
+    "type": "地点",
+    "aliases": [],
+    "desc": "阿尔卡纳掠走物资之地"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "预计6小时后到来的灾难"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔卡纳",
+    "relation": "掠走",
+    "dst": "物资",
+    "evidence": "阿尔卡纳带领其他成员，从华盛顿州掠走了大量物资",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "清点",
+    "dst": "物资",
+    "evidence": "物资已经清点好了，正在运往总部",
+    "confidence": 0.9
+   },
+   {
+    "src": "斯奈德",
+    "relation": "提议",
+    "dst": "维尔汀",
+    "evidence": "那来听听大家的愿望，怎么样",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "记录",
+    "dst": "愿望",
+    "evidence": "这一次，我想听听大家的愿望",
+    "confidence": 0.9
+   },
+   {
+    "src": "重塑之手",
+    "relation": "转移阵地",
+    "dst": "华盛顿州",
+    "evidence": "原来重塑的行动主阵地并不在这里",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "a6844c4c4e842f8b5e9cbec9": {
+  "entities": [
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解析酒精幻剂配方的闺秀"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招揽苏芙比登记愿望的海盗"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍苏芙比出身的调查员"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为众人记录愿望的司辰"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想与家人共进晚餐的意大利人"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想喝意式特浓者"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "自责未能备得体一餐的管家"
+   },
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许愿别忘记我者"
+   },
+   {
+    "name": "坩埚",
+    "type": "物品",
+    "aliases": [],
+    "desc": "救治所中巨大的熬制器具"
+   },
+   {
+    "name": "酒精幻剂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "苏芙比解析出的配方"
+   },
+   {
+    "name": "美味嚼嚼幻剂Ⅻ",
+    "type": "物品",
+    "aliases": [],
+    "desc": "成功的第十二号幻剂"
+   },
+   {
+    "name": "拍卖行",
+    "type": "组织",
+    "aliases": [],
+    "desc": "苏芙比家经营的伦敦拍卖行"
+   },
+   {
+    "name": "空衣橱",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "解析",
+    "dst": "酒精幻剂",
+    "evidence": "这些配方与我的幻剂非常相像！这是酒精幻剂",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏芙比",
+    "relation": "继承",
+    "dst": "拍卖行",
+    "evidence": "她是英国伦敦一家拍卖行的继承人",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "记录",
+    "dst": "玛丽安",
+    "evidence": "如果这就是生命中最后的时刻……你想要许下一个什么愿望呢",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安",
+    "relation": "愿望为",
+    "dst": "共进晚餐",
+    "evidence": "我想和家人共进晚餐",
+    "confidence": 0.9
+   },
+   {
+    "src": "星锑",
+    "relation": "引荐",
+    "dst": "苏芙比",
+    "evidence": "在维尔汀这里登记就好啦",
+    "confidence": 0.85
+   },
+   {
+    "src": "斯奈德",
+    "relation": "许愿",
+    "dst": "维尔汀",
+    "evidence": "那么我的愿望就是……别忘记我",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡森先生",
+    "relation": "负责",
+    "dst": "苏芙比",
+    "evidence": "没能为苏芙比小姐准备得体的一餐，是我管家生涯上的污点",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "f064d74402e01ea990d018bb": {
+  "entities": [
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭示关键素材象征为欲望者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制成美味嚼嚼幻剂Ⅻ者"
+   },
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尝到芭菲的参与者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尝到蛋奶酥者"
+   },
+   {
+    "name": "黑衣人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尝到异味并呕吐者"
+   },
+   {
+    "name": "卡森先生",
+    "type": "角色",
+    "aliases": [
+     "庄园管家"
+    ],
+    "desc": "尝到烧焦威尔士兔子者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告暴雨到来的司辰"
+   },
+   {
+    "name": "玛丽安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "祈祷生命被怜视者"
+   },
+   {
+    "name": "美味嚼嚼幻剂Ⅻ",
+    "type": "物品",
+    "aliases": [],
+    "desc": "让人吃下真正食物的幻剂"
+   },
+   {
+    "name": "欲望",
+    "type": "概念",
+    "aliases": [],
+    "desc": "幻剂最关键素材的象征"
+   },
+   {
+    "name": "切尔西花展",
+    "type": "事件",
+    "aliases": [],
+    "desc": "苏芙比8岁时烧着郁金香的花展"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "已经到来的灾难"
+   },
+   {
+    "name": "莫桑女士",
+    "type": "角色",
+    "aliases": [
+     "莫桑老师"
+    ],
+    "desc": "管家建议事后联系的老师"
+   },
+   {
+    "name": "威尔士兔子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "管家尝到的烧焦菜肴"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "制成",
+    "dst": "美味嚼嚼幻剂Ⅻ",
+    "evidence": "苏芙比的“美味嚼嚼幻剂Ⅻ”成功了",
+    "confidence": 0.95
+   },
+   {
+    "src": "美味嚼嚼幻剂Ⅻ",
+    "relation": "关键素材为",
+    "dst": "欲望",
+    "evidence": "她说那个最关键素材的象征——是“欲望”",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "赠予",
+    "dst": "苏芙比",
+    "evidence": "请收下这个",
+    "confidence": 0.9
+   },
+   {
+    "src": "卡森先生",
+    "relation": "离开",
+    "dst": "苏芙比",
+    "evidence": "卡森先生……去哪里了？",
+    "confidence": 0.7
+   },
+   {
+    "src": "苏芙比",
+    "relation": "烧着",
+    "dst": "切尔西花展",
+    "evidence": "为此还把切尔西花展里的郁金香给烧着了",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "宣告",
+    "dst": "暴雨",
+    "evidence": "“暴雨”来了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡森先生",
+    "relation": "建议联系",
+    "dst": "莫桑女士",
+    "evidence": "再试着去联系老爷与莫桑老师",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "0b783cb14f12a26a9d6a5194": {
+  "entities": [
+   {
+    "name": "斯奈德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈不是真正神秘学家者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "老爷"
+    ],
+    "desc": "被斯奈德抱住告别者"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "会将斯奈德带走或抹去的灾难"
+   }
+  ],
+  "relations": [
+   {
+    "src": "斯奈德",
+    "relation": "抱拥",
+    "dst": "维尔汀",
+    "evidence": "抱住我",
+    "confidence": 0.9
+   },
+   {
+    "src": "斯奈德",
+    "relation": "告别",
+    "dst": "维尔汀",
+    "evidence": "我该向你告别了",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯奈德",
+    "relation": "秘密身份为",
+    "dst": "人类",
+    "evidence": "对不起，我不是真正的神秘学家",
+    "confidence": 0.9
+   },
+   {
+    "src": "暴雨",
+    "relation": "带走",
+    "dst": "斯奈德",
+    "evidence": "你是说……你也会被“暴雨”……！",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "ec67224b316e371efeaa11ae": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "准确回答灵知特征的优等生"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲授灵知与历史的教师"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "依据爷爷童谣反驳的新转校生"
+   },
+   {
+    "name": "学生众",
+    "type": "概念",
+    "aliases": [],
+    "desc": "齐声应和的学生"
+   },
+   {
+    "name": "灵知",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不能被独立验证、不具备理性交流可能的知识"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "曾被称作哲学家、占卜师、医生并被驱逐者"
+   },
+   {
+    "name": "君士坦丁堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被西欧领主攻占的城市"
+   },
+   {
+    "name": "迦勒底神谕",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "回答",
+    "dst": "教员",
+    "evidence": "报告教员，灵知的特征是：一不能被独立验证；二不具备理性交流的可能",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "反驳",
+    "dst": "十四行诗",
+    "evidence": "教员！她说的不对，我知道——我知道正确答案",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "承袭",
+    "dst": "童谣",
+    "evidence": "我爷爷唱给我的童谣里记录了这一切的真相",
+    "confidence": 0.9
+   },
+   {
+    "src": "西欧各领主",
+    "relation": "攻占",
+    "dst": "君士坦丁堡",
+    "evidence": "当时的西欧各领主是为了争夺资源、神秘学研究文献才去攻占君士坦丁堡的",
+    "confidence": 0.9
+   },
+   {
+    "src": "神秘学家",
+    "relation": "前身为",
+    "dst": "哲学家",
+    "evidence": "他们曾经是很有天赋的哲学家、占卜师、医生",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "0d0f74382997b3cb9bf35cbb": {
+  "entities": [
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忘词的新转校生"
+   },
+   {
+    "name": "同学Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘲讽玛蒂尔达的学生"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判定十四行诗回答正确者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回答正确者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再次缺席的学生"
+   },
+   {
+    "name": "乔治",
+    "type": "角色",
+    "aliases": [
+     "乔治·盖弥斯托斯"
+    ],
+    "desc": "罗马帝国神秘学家、哲学家"
+   },
+   {
+    "name": "沙兰公社",
+    "type": "组织",
+    "aliases": [],
+    "desc": "乔治·盖弥斯托斯所属"
+   },
+   {
+    "name": "奥斯曼帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "攻克君士坦丁堡的帝国"
+   },
+   {
+    "name": "迦勒底会议",
+    "type": "事件",
+    "aliases": [],
+    "desc": "佛罗伦萨人文学者每年一聚探讨神秘学运用"
+   },
+   {
+    "name": "迦勒底神谕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "古代通神术经典著作"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奥斯曼帝国",
+    "relation": "攻克",
+    "dst": "君士坦丁堡",
+    "evidence": "君士坦丁堡被奥斯曼帝国攻克后",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治",
+    "relation": "隶属于",
+    "dst": "沙兰公社",
+    "evidence": "我们的沙兰公社成员，罗马帝国神秘学家、哲学家乔治·盖弥斯托斯",
+    "confidence": 0.9
+   },
+   {
+    "src": "乔治",
+    "relation": "携来",
+    "dst": "迦勒底神谕",
+    "evidence": "他带来了古代通神术的经典著作",
+    "confidence": 0.85
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "回答",
+    "dst": "迦勒底神谕",
+    "evidence": "是《迦勒底神谕》！",
+    "confidence": 0.9
+   },
+   {
+    "src": "教员",
+    "relation": "判定",
+    "dst": "十四行诗",
+    "evidence": "十四行诗的回答是正确的",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "15b60962e3844bf29a5462e8": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以观察推理驱赶沙米尔虫者"
+   },
+   {
+    "name": "沙米尔虫",
+    "type": "概念",
+    "aliases": [
+     "沙米尔蠕虫",
+     "沙米尔"
+    ],
+    "desc": "能雕琢万物的高等魔精，被用作惩罚道具"
+   },
+   {
+    "name": "所罗门王",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻找沙米尔多年的君王"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "教过两个驱虫咒语者"
+   },
+   {
+    "name": "矮谷堆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沙米尔的食物来源"
+   },
+   {
+    "name": "羊毛毡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沙米尔无法攀登的黄色毡垫"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "潮湿泥泞、爬满沙米尔的房间"
+   },
+   {
+    "name": "黑羊之墙",
+    "type": "事件",
+    "aliases": [],
+    "desc": "与此相关的事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "所罗门王",
+    "relation": "寻找",
+    "dst": "沙米尔虫",
+    "evidence": "沙米尔蠕虫是所罗门王寻找了多年的奇迹之物",
+    "confidence": 0.95
+   },
+   {
+    "src": "沙米尔虫",
+    "relation": "食用",
+    "dst": "矮谷堆",
+    "evidence": "脚下所踩的，并非泥土。而是铺了约一平方英尺的矮谷堆",
+    "confidence": 0.9
+   },
+   {
+    "src": "沙米尔虫",
+    "relation": "无法攀爬",
+    "dst": "羊毛毡",
+    "evidence": "它们似乎拿这个羊毛毡没有办法",
+    "confidence": 0.9
+   },
+   {
+    "src": "沙米尔虫",
+    "relation": "攻向",
+    "dst": "维尔汀",
+    "evidence": "这里少说也有几百只沙米尔……而且都在向我这里移动",
+    "confidence": 0.9
+   },
+   {
+    "src": "教员",
+    "relation": "教授",
+    "dst": "驱虫咒语",
+    "evidence": "教员确实教过两个驱虫的咒语",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "fd251e2cd486d66170b82b14": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破碳酸铅并驱赶沙米尔者"
+   },
+   {
+    "name": "沙米尔虫",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被驱赶到角落的魔精"
+   },
+   {
+    "name": "羊毛毡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "擦拭墙壁留下灰白痕迹的毡垫"
+   },
+   {
+    "name": "碳酸铅",
+    "type": "概念",
+    "aliases": [],
+    "desc": "墙壁合金表面形成的生成膜，对沙米尔是毒物"
+   },
+   {
+    "name": "手帕",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被用作临时面罩与手套"
+   },
+   {
+    "name": "禁闭室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "条件充足的房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "沙米尔虫",
+    "relation": "畏惧",
+    "dst": "碳酸铅",
+    "evidence": "这对它们来说可是毒物",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "驱赶",
+    "dst": "沙米尔虫",
+    "evidence": "很好。行动起来！把它们驱赶到角落去吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "手帕",
+    "relation": "用于防护",
+    "dst": "碳酸铅",
+    "evidence": "手帕派上了用场，成了临时的面罩与手套",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "f698a23783f7b31110b16ff4": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被殴打的不会神秘术者"
+   },
+   {
+    "name": "约瑟夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "领头辱骂并殴打维尔汀的学生"
+   },
+   {
+    "name": "苏格兰",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指地点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "约瑟夫",
+    "relation": "辱骂",
+    "dst": "维尔汀",
+    "evidence": "你这个怪胎，不会神秘术的劣种",
+    "confidence": 0.95
+   },
+   {
+    "src": "约瑟夫",
+    "relation": "殴打",
+    "dst": "维尔汀",
+    "evidence": "都给我上，敲断她的大腿",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "34070f9781460a4bee171f33": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "躲进无人教室者"
+   },
+   {
+    "name": "学生众",
+    "type": "概念",
+    "aliases": [],
+    "desc": "因教员到来四散的孩子们"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制止斗殴者"
+   },
+   {
+    "name": "无人教室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "维尔汀躲藏之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "学生众",
+    "relation": "散开于",
+    "dst": "教员",
+    "evidence": "教员来了！教员来了！快别打了",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "躲藏于",
+    "dst": "无人教室",
+    "evidence": "旁侧是一间无人的教室，正适用于躲藏",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "6aeb3ddbce877e741f24ea16": {
+  "entities": [
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "踢橡果并记录回忆的组织者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召集半个班学生集会者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先发问是否反抗校长者"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "4岁被接进学校的学生"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "年龄最大的转校生"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [
+     "“便士”"
+    ],
+    "desc": "到场的学生"
+   },
+   {
+    "name": "学生众",
+    "type": "概念",
+    "aliases": [],
+    "desc": "钻进树洞的半个班学生"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "生长七百年的橡树，树洞是天然堡垒"
+   },
+   {
+    "name": "巡礼演出",
+    "type": "事件",
+    "aliases": [],
+    "desc": "乔治橡树每年迎送的演出"
+   },
+   {
+    "name": "啊，船长",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "召集",
+    "dst": "学生众",
+    "evidence": "维尔汀……你把我们都喊到这里来，是想要反抗校长吗",
+    "confidence": 0.9
+   },
+   {
+    "src": "乔治橡树",
+    "relation": "生长于",
+    "dst": "学校",
+    "evidence": "乔治橡树生长于七百年前，它以一个长辈的身份，迎送了每一年学校的巡礼演出",
+    "confidence": 0.9
+   },
+   {
+    "src": "圈环",
+    "relation": "记录",
+    "dst": "回忆",
+    "evidence": "“圈环”在记录着这些回忆",
+    "confidence": 0.85
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "到场",
+    "dst": "维尔汀",
+    "evidence": "小梅斯梅尔、伊莎贝拉、“便士”、玛蒂尔达……你们都来了",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊莎贝拉",
+    "relation": "就读于",
+    "dst": "第一防线学校",
+    "evidence": "我4岁就被接进来了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "2f6747179ad0cbe1fe8d21be": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议复原外部世界模样者"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "捡到宣传单并记录回忆者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来自神秘学界心理学世家者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈比所有人更清楚外面的事"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记得院长妈妈与家乡天空者"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "藏着传单与彩色玻璃球的学生"
+   },
+   {
+    "name": "第一防线学生守则",
+    "type": "物品",
+    "aliases": [
+     "学生手册",
+     "学生守则"
+    ],
+    "desc": "要求磨平棱角的守则"
+   },
+   {
+    "name": "动物磁性",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小梅斯梅尔的祖父的祖父发明"
+   },
+   {
+    "name": "宣传单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录外面诗歌的单页"
+   },
+   {
+    "name": "彩色玻璃球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "离开教员所赠的玻璃球"
+   },
+   {
+    "name": "足球训练场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "小梅斯梅尔家乡的场地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "提议",
+    "dst": "学生众",
+    "evidence": "通过这些来自世界各地的回忆，我们一定能在这里“复原”出外面世界真实的模样",
+    "confidence": 0.95
+   },
+   {
+    "src": "圈环",
+    "relation": "拾获",
+    "dst": "宣传单",
+    "evidence": "我们捡到了一些宣传单，上面记录了很多外面的诗",
+    "confidence": 0.9
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "出身于",
+    "dst": "心理学世家",
+    "evidence": "我们家是神秘学界的心理学世家",
+    "confidence": 0.9
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "发明于",
+    "dst": "动物磁性",
+    "evidence": "“动物磁性”是我的祖父的祖父的……发明的",
+    "confidence": 0.85
+   },
+   {
+    "src": "学生Ⅱ",
+    "relation": "藏有",
+    "dst": "宣传单",
+    "evidence": "我这里藏了一些捡到的传单",
+    "confidence": 0.9
+   },
+   {
+    "src": "第一防线学生守则",
+    "relation": "要求",
+    "dst": "学生众",
+    "evidence": "但《学生守则》却要求我们忘记这一切，要我们磨平棱角",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊莎贝拉",
+    "relation": "记得",
+    "dst": "院长妈妈",
+    "evidence": "我记得院长妈妈喜欢穿灰蓝色的花裙子",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "e39794cc7c82285de99d378b": {
+  "entities": [
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议用校歌旋律唱宣传单诗歌者"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "发现节拍对上的学生"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跟着合唱的学生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同意在巡礼演出上演唱者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担心一定被抓的学生"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊觉歌词一字不落对上者"
+   },
+   {
+    "name": "让和平永存",
+    "type": "物品",
+    "aliases": [
+     "校歌"
+    ],
+    "desc": "学校校歌的旋律"
+   },
+   {
+    "name": "巡礼演出",
+    "type": "事件",
+    "aliases": [],
+    "desc": "他们决定唱出心声的场合"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊莎贝拉",
+    "relation": "提议",
+    "dst": "让和平永存",
+    "evidence": "用我们校歌的旋律！",
+    "confidence": 0.95
+   },
+   {
+    "src": "学生众",
+    "relation": "合唱",
+    "dst": "宣传单",
+    "evidence": "都不关照顺意而又盲从的牧群",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊莎贝拉",
+    "relation": "主张于",
+    "dst": "巡礼演出",
+    "evidence": "它是要我们在巡礼演出上唱出来",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "支持",
+    "dst": "伊莎贝拉",
+    "evidence": "但是，让我们试试吧",
+    "confidence": 0.9
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "担忧",
+    "dst": "学生众",
+    "evidence": "怎么可能，我们一定会被抓的",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "71dbb313081d69b5b58a2dbb": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "值日纪律委员，警告不得违背章程"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求倾听心声的学生"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "负责第一句歌词、喉咙打颤者"
+   },
+   {
+    "name": "校长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀请来宾并下令停止歌唱者"
+   },
+   {
+    "name": "音乐教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因惊吓失去优美嗓音者"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "命令十四行诗阻止者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "圣洛夫基金委年轻的代表"
+   },
+   {
+    "name": "克劳德·史密斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "芝诺学院校长"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "确认准备就绪者"
+   },
+   {
+    "name": "学生Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "互相鼓励的学生"
+   },
+   {
+    "name": "让和平永存",
+    "type": "物品",
+    "aliases": [
+     "校歌"
+    ],
+    "desc": "巡礼演出第一个仪式所唱"
+   },
+   {
+    "name": "第一防线学生守则",
+    "type": "物品",
+    "aliases": [
+     "学生手册"
+    ],
+    "desc": "十四行诗据以警告的章程"
+   },
+   {
+    "name": "巡礼演出大会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "一年一度最能代表学校精神的活动"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "圣洛夫基金委"
+    ],
+    "desc": "Z女士所代表的机构"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [
+     "芝诺学院"
+    ],
+    "desc": "与学校紧密合作的学院"
+   },
+   {
+    "name": "哑巴的自由",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "担任",
+    "dst": "纪律委员",
+    "evidence": "作为值日的纪律委员，我有责任将情况上报给教员",
+    "confidence": 0.95
+   },
+   {
+    "src": "校长",
+    "relation": "邀请",
+    "dst": "Z",
+    "evidence": "今天，我很荣幸能邀请到圣洛夫基金委年轻的代表Z女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "克劳德·史密斯",
+    "relation": "担任校长于",
+    "dst": "芝诺",
+    "evidence": "与我们紧密合作的芝诺学院的校长克劳德·史密斯先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊莎贝拉",
+    "relation": "领唱",
+    "dst": "让和平永存",
+    "evidence": "负责第一句歌词的伊莎贝拉开口了",
+    "confidence": 0.9
+   },
+   {
+    "src": "音乐教员",
+    "relation": "报告",
+    "dst": "校长",
+    "evidence": "校长、校长——！他们在唱那首诗",
+    "confidence": 0.9
+   },
+   {
+    "src": "校长",
+    "relation": "下令停止",
+    "dst": "让和平永存",
+    "evidence": "停下——！全部给我停下",
+    "confidence": 0.9
+   },
+   {
+    "src": "教员",
+    "relation": "命令",
+    "dst": "十四行诗",
+    "evidence": "十四行诗——！阻止他们",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "请求",
+    "dst": "校长",
+    "evidence": "请听听我们的心声",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c6dbd9f1d57f9c87739ce566": {
+  "entities": [
+   {
+    "name": "校长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令拉下女孩的校长"
+   },
+   {
+    "name": "警卫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "按倒伊莎贝拉的警卫"
+   },
+   {
+    "name": "安监主任",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令喷射苦哑巴药剂者"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被按倒仍挤出笑容的女孩"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喊保护伊莎贝拉者"
+   },
+   {
+    "name": "苦哑巴药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用于喷射镇压的药水"
+   },
+   {
+    "name": "警卫棍",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用于制住学生的器械"
+   }
+  ],
+  "relations": [
+   {
+    "src": "校长",
+    "relation": "下令",
+    "dst": "警卫",
+    "evidence": "去把第一排最右边的那个女孩给我拉下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "安监主任",
+    "relation": "下令喷射",
+    "dst": "苦哑巴药剂",
+    "evidence": "快！把水管接上，准备喷射苦哑巴药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "警卫",
+    "relation": "按倒",
+    "dst": "伊莎贝拉",
+    "evidence": "在边缘的伊莎贝拉被他们用警卫棍摁倒了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "保护",
+    "dst": "伊莎贝拉",
+    "evidence": "保护伊莎贝拉……！！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e59b619b84a901144668bf84": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥围成圆圈自保者"
+   },
+   {
+    "name": "校长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "索要防暴枪者"
+   },
+   {
+    "name": "安监主任",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失手对人射击者"
+   },
+   {
+    "name": "学生众",
+    "type": "概念",
+    "aliases": [],
+    "desc": "在苦水中继续歌唱的孩子们"
+   },
+   {
+    "name": "防暴枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "本应在头顶施放的武器"
+   },
+   {
+    "name": "苦哑巴药剂",
+    "type": "物品",
+    "aliases": [
+     "苦水"
+    ],
+    "desc": "喷洒使眼睛发苦的药水"
+   },
+   {
+    "name": "催泪弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "因手未拿稳而击中人的弹药"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "指挥",
+    "dst": "学生众",
+    "evidence": "手拉着手聚成一个圆圈，高个子站外面，小个子在里面",
+    "confidence": 0.95
+   },
+   {
+    "src": "校长",
+    "relation": "索要",
+    "dst": "防暴枪",
+    "evidence": "防暴枪带来了吗",
+    "confidence": 0.9
+   },
+   {
+    "src": "安监主任",
+    "relation": "误击",
+    "dst": "维尔汀",
+    "evidence": "我要你对天空射点催泪弹！你对着人干什么？！手、手没拿稳",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c8776898807a16581e46b566": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "调查并汇报学校事件者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定接管学校并要求维尔汀成长者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "组织约二十名学生唱歌者"
+   },
+   {
+    "name": "理查德",
+    "type": "角色",
+    "aliases": [
+     "校长理查德"
+    ],
+    "desc": "第一防线学校校长"
+   },
+   {
+    "name": "安监主任",
+    "type": "角色",
+    "aliases": [],
+    "desc": "动用特勤警卫与防暴枪者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传递课堂笔记并道歉者"
+   },
+   {
+    "name": "教员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲授奥利图欧应对方式者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "其宣传单影响学生，并很快会行动"
+   },
+   {
+    "name": "联合委员会",
+    "type": "组织",
+    "aliases": [
+     "基金委",
+     "基金会联合委员会"
+    ],
+    "desc": "将全面接管学校"
+   },
+   {
+    "name": "苦哑巴药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "镇压中动用的药水"
+   },
+   {
+    "name": "防暴枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "不慎击中维尔汀大腿的武器"
+   },
+   {
+    "name": "奥利图欧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "紧张时会主动攻击人的生物"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [
+     "学校"
+    ],
+    "desc": "进入特殊监察时期的学校"
+   },
+   {
+    "name": "基金会联合委员会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "Z向康斯坦丁汇报之处"
+   },
+   {
+    "name": "滚烫的泪水",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "汇报",
+    "dst": "康斯坦丁",
+    "evidence": "第一防线学校的事情已经调查清楚了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "组织",
+    "dst": "学生众",
+    "evidence": "一名叫维尔汀的女孩组织了约二十名学生，在巡礼演出上唱了改编的校歌",
+    "confidence": 0.95
+   },
+   {
+    "src": "理查德",
+    "relation": "担任校长于",
+    "dst": "第一防线学校",
+    "evidence": "校长理查德和安监主任口头劝阻失败",
+    "confidence": 0.95
+   },
+   {
+    "src": "防暴枪",
+    "relation": "击中",
+    "dst": "维尔汀",
+    "evidence": "冲突中防暴枪不慎击中维尔汀大腿，她因此陷入昏迷",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "接管",
+    "dst": "第一防线学校",
+    "evidence": "学校现进入特殊监察时期。接下来将由基金委全面接管",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "期望成长于",
+    "dst": "维尔汀",
+    "evidence": "我需要维尔汀成长。以我喜欢的方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "忆及",
+    "dst": "维尔汀之母",
+    "evidence": "她很特别。让我想起了她的母亲",
+    "confidence": 0.9
+   },
+   {
+    "src": "重塑之手",
+    "relation": "行动于",
+    "dst": "第一防线学校",
+    "evidence": "重塑很快就会开始行动",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "借予",
+    "dst": "维尔汀",
+    "evidence": "这是这一周的课堂笔记。我……我想你可能需要这个",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "df8a959011cf0dd83e8a1841": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归还书籍并召集新集会者"
+   },
+   {
+    "name": "管理员",
+    "type": "角色",
+    "aliases": [
+     "图书管理员"
+    ],
+    "desc": "误以为维尔汀在反思的管理员"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传递纸条的学生"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "提供地下防空通道情报者"
+   },
+   {
+    "name": "玛蒂尔达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未找到小梅斯梅尔独自前来者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "缺席新集会的学生"
+   },
+   {
+    "name": "历代校长演讲精选",
+    "type": "物品",
+    "aliases": [
+     "演讲精选"
+    ],
+    "desc": "用于传递纸条的书籍"
+   },
+   {
+    "name": "校史研究：不变的秩序",
+    "type": "物品",
+    "aliases": [],
+    "desc": "“圈环”用来传递纸条的书籍"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已被划入警戒区"
+   },
+   {
+    "name": "第一防线图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "传递情报的图书馆"
+   },
+   {
+    "name": "地下防空区",
+    "type": "地点",
+    "aliases": [
+     "地下防空通道"
+    ],
+    "desc": "由军事设施改建的集会地点"
+   },
+   {
+    "name": "一处庭院",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "归还",
+    "dst": "历代校长演讲精选",
+    "evidence": "你好，我来归还这本书",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊莎贝拉",
+    "relation": "传递",
+    "dst": "维尔汀",
+    "evidence": "我有非常重要的事情要和你们商量",
+    "confidence": 0.85
+   },
+   {
+    "src": "圈环",
+    "relation": "提议",
+    "dst": "地下防空区",
+    "evidence": "我知道一个合适的地点，就在这栋楼的下面",
+    "confidence": 0.95
+   },
+   {
+    "src": "乔治橡树",
+    "relation": "划入",
+    "dst": "警戒区",
+    "evidence": "乔治橡树也被划入了警戒区",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛蒂尔达",
+    "relation": "寻找",
+    "dst": "小梅斯梅尔",
+    "evidence": "我去了一趟宿舍和教学楼，都没有找到小梅斯梅尔",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "cb85bc2f88f0f8a4a11fc5e3": {
+  "entities": [
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "提供时间情报的学生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "规划越狱路线者"
+   },
+   {
+    "name": "学生Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下决心前来的学生"
+   },
+   {
+    "name": "学生Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不愿再做木偶的学生"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在禁闭室呕吐后祈祷的学生"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "疑似一直帮助他们的团体"
+   },
+   {
+    "name": "沙米尔虫",
+    "type": "概念",
+    "aliases": [
+     "沙米尔"
+    ],
+    "desc": "可用于开启门锁的魔精"
+   },
+   {
+    "name": "奥利图欧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "投掷地图与传单的生物"
+   },
+   {
+    "name": "东南瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一楼装有通往校外铁门的瞭望塔"
+   },
+   {
+    "name": "西北瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地下防空工程连接的另一座塔"
+   },
+   {
+    "name": "医务室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "与东南瞭望塔只隔一扇门"
+   },
+   {
+    "name": "基金会黑幕新闻",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奥利图欧投下的材料"
+   },
+   {
+    "name": "生存须知",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奥利图欧投下的材料"
+   },
+   {
+    "name": "女生宿舍",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可通往地下一层与防空通道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "学生Ⅱ",
+    "relation": "表态",
+    "dst": "校长",
+    "evidence": "校长他们，惧怕着我们",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "规划",
+    "dst": "东南瞭望塔",
+    "evidence": "目前最保险的方案是从女生宿舍地下一楼通往医务室",
+    "confidence": 0.95
+   },
+   {
+    "src": "地下防空区",
+    "relation": "连接",
+    "dst": "东南瞭望塔",
+    "evidence": "地下防空工程连接着西北瞭望塔和东南瞭望塔",
+    "confidence": 0.95
+   },
+   {
+    "src": "奥利图欧",
+    "relation": "投掷",
+    "dst": "手绘地图",
+    "evidence": "都是天上的奥利图欧投掷下来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "帮助",
+    "dst": "维尔汀",
+    "evidence": "这个叫“重塑之手”的团体，似乎一直在帮助我们",
+    "confidence": 0.85
+   },
+   {
+    "src": "沙米尔虫",
+    "relation": "开启",
+    "dst": "门锁",
+    "evidence": "只要带着沙米尔，我们就不用担心门锁的问题",
+    "confidence": 0.9
+   },
+   {
+    "src": "圈环",
+    "relation": "提供情报",
+    "dst": "维尔汀",
+    "evidence": "我也带来了时间方面的重要情报，五天后，基金会总部会派人来我们学校",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

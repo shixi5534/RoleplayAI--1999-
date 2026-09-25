@@ -1,0 +1,1172 @@
+{
+ "be848319bf47e9c79a02e8bd": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓",
+     "小树莓"
+    ],
+    "desc": "自愿作诱饵的笛手"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认方案的调查员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "记载感染种的组织"
+   },
+   {
+    "name": "卡瓦尔长笛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "声音响亮的木笛"
+   },
+   {
+    "name": "拉伊哈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出言回护的妇人"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不舍送行的女孩"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被致歉的故人"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "布置陷阱的列车长"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她自称的身份"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被笛声引开的怪物"
+   },
+   {
+    "name": "边境检查站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "风雪中的检查站"
+   },
+   {
+    "name": "感染的士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "雪夜里游荡的感染者"
+   },
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "循声而来的乘客"
+   },
+   {
+    "name": "血食怪的故事",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她编给自己的故事"
+   },
+   {
+    "name": "阿诺德五世",
+    "type": "角色",
+    "aliases": [
+     "德古拉",
+     "穿刺公",
+     "阿诺德"
+    ],
+    "desc": "族谱上的祖先"
+   },
+   {
+    "name": "萨瓦诺维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "族谱上的祖父"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "参证",
+    "dst": "圣洛夫基金会",
+    "evidence": "……确实符合基金会内部记载的资料，是个可行的方案。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "试探",
+    "dst": "野树莓",
+    "evidence": "所以，你决定好了吗？成为吸引感染种的诱饵。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "吹奏",
+    "dst": "卡瓦尔长笛",
+    "evidence": "先是几个笨拙的音符，紧接着一连串错落的和弦。",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "反对",
+    "dst": "野树莓",
+    "evidence": "不，她还只是个孩子……",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "反对",
+    "dst": "野树莓",
+    "evidence": "我们也不同意！之前我们已经差点失去过你一次了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "夸口",
+    "dst": "感染种",
+    "evidence": "我跑得很快，那些慢吞吞的感染种根本追不上我",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自称",
+    "dst": "血食怪",
+    "evidence": "可谁叫我是最强大的血食怪野树莓呢？大伙儿可都靠着我呢！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "告罪",
+    "dst": "野树莓的母亲",
+    "evidence": "对不起，妈妈。我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "托付",
+    "dst": "野树莓",
+    "evidence": "去吧，我相信你，“朋友”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "设伏",
+    "dst": "感染种",
+    "evidence": "剩下的人都跟我走，我们去布置“陷阱”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "游荡",
+    "dst": "边境检查站",
+    "evidence": "感染者穿行在大雪纷飞的夜里，步履沉重，仿佛在无尽寒冬中迷失的旅人。",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡瓦尔长笛",
+    "relation": "吸引",
+    "dst": "感染的乘客",
+    "evidence": "渐渐地，和弦被编织起来，旋律在雪中流淌。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "追忆",
+    "dst": "血食怪的故事",
+    "evidence": "于是，她幻想出一个又一个血食怪的故事……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿诺德五世",
+    "relation": "虚构先祖",
+    "dst": "野树莓",
+    "evidence": "没错，我就是野树莓的祖先，穿刺公德古拉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨瓦诺维奇",
+    "relation": "虚构先祖",
+    "dst": "野树莓",
+    "evidence": "我是野树莓的爷爷，荣耀而强大的初代埃杰什公爵！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "杜撰",
+    "dst": "血食怪的故事",
+    "evidence": "长长的族谱在少女的编织下日渐复杂，成为她旅途中最亲密的伙伴。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a8693928bca3fe8c651acd0e": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓",
+     "小树莓"
+    ],
+    "desc": "坦白心事的女孩"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "笛声里现身的母亲"
+   },
+   {
+    "name": "里拉山脉",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她穿过的一座山脉"
+   },
+   {
+    "name": "斯特鲁玛河谷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她渡过的一条河谷"
+   },
+   {
+    "name": "多瑙河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一路同行的河流"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "观察战局的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "倒数引火的列车长"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被笛声聚拢的感染"
+   },
+   {
+    "name": "仓库里的炸药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已经就位的炸药"
+   },
+   {
+    "name": "卡瓦尔长笛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "召来怪物的笛声"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "呼唤",
+    "dst": "野树莓的母亲",
+    "evidence": "妈妈……！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "欣慰",
+    "dst": "野树莓",
+    "evidence": "你已经走了这么远啊，我的孩子。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "历数",
+    "dst": "里拉山脉",
+    "evidence": "我穿过了里拉山脉，渡过了斯特鲁玛河谷，沿着多瑙河一路走，一路看……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "渡过",
+    "dst": "斯特鲁玛河谷",
+    "evidence": "我穿过了里拉山脉，渡过了斯特鲁玛河谷，沿着多瑙河一路走，一路看……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "沿行",
+    "dst": "多瑙河",
+    "evidence": "沿着多瑙河一路走，一路看……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "点破",
+    "dst": "野树莓",
+    "evidence": "风景、朋友，还有列车的鸣笛声……你说得那么认真，那么快乐。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "告白",
+    "dst": "野树莓的母亲",
+    "evidence": "我从未感到如此幸福过，妈妈。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "察知",
+    "dst": "感染种",
+    "evidence": "很好。那些感染种都被笛声吸引过来了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡瓦尔长笛",
+    "relation": "诱集",
+    "dst": "感染种",
+    "evidence": "很好。那些感染种都被笛声吸引过来了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "备妥",
+    "dst": "仓库里的炸药",
+    "evidence": "准备工作完成，炸药已就位。接下来……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "示意",
+    "dst": "野树莓",
+    "evidence": "列车长朝着野树莓的方向挥了挥手。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "撤离",
+    "dst": "感染种",
+    "evidence": "悄无声息地拉远与影子的距离，直到彻底远离感染种的包围。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "df1dcfab9ad55fcff3aa94f1": {
+  "entities": [
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "维持秩序的乘务员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "凭吊旧友的列车长"
+   },
+   {
+    "name": "边境检查站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "覆满大雪的车站"
+   },
+   {
+    "name": "车站广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "晨曦落下的广场"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抬来的尸首"
+   },
+   {
+    "name": "斯特兰贾",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她躲避过的雪山"
+   },
+   {
+    "name": "空心木",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称搭档的撰稿人"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "即将启程的列车"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被掩盖的身份"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘务员艾玛",
+    "relation": "引导",
+    "dst": "边境检查站",
+    "evidence": "请大家排队进行登记……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "凭吊",
+    "dst": "鲍里斯",
+    "evidence": "鲍里斯的尸首也被抬了过来。他被放置在花蕊的中心，空洞的眼珠注视着眼前的虚空。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "感怀",
+    "dst": "斯特兰贾",
+    "evidence": "在斯特兰贾，我以为自己会死在一个和今天一样冷的地方。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "庇护",
+    "dst": "乘务员艾玛",
+    "evidence": "艾玛会继续留在“多瑙黎明号”上。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "隐瞒身份",
+    "dst": "血食怪",
+    "evidence": "一个人畜无害的血食怪，没人会知道她的身份。她会像普通人那样活着。",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "搭话",
+    "dst": "告死鸟",
+    "evidence": "你还是和那时候一样敏锐。什么都逃不过你的眼睛。",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "自称旧友",
+    "dst": "告死鸟",
+    "evidence": "不仅见过……我们曾是最好的搭档。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "推拒",
+    "dst": "空心木",
+    "evidence": "不好意思，我们之前见过吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "焚化",
+    "dst": "鲍里斯",
+    "evidence": "她笑着拿过列车长手中的火把，将其点燃，然后扔在了眼前的残肢肉块上。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "行于",
+    "dst": "车站广场",
+    "evidence": "列车长转过身，大步走向不远处静静停驻的列车。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "宣告启程",
+    "dst": "多瑙黎明号",
+    "evidence": "“多瑙黎明号”……即将再度启程。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0a3b4efa66fc860036468d84": {
+  "entities": [
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旅途终点之城"
+   },
+   {
+    "name": "布达佩斯车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "列车抵达的车站"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "月台维持秩序的乘务员"
+   },
+   {
+    "name": "空心木",
+    "type": "角色",
+    "aliases": [],
+    "desc": "索要稿件的编辑"
+   },
+   {
+    "name": "白雪松",
+    "type": "角色",
+    "aliases": [],
+    "desc": "杂志的主编"
+   },
+   {
+    "name": "UTTU",
+    "type": "物品",
+    "aliases": [
+     "《UTTU》杂志"
+    ],
+    "desc": "登恐怖小说的杂志"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓",
+     "小树莓"
+    ],
+    "desc": "答应寄礼物的告别者"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "列出心愿的孩子"
+   },
+   {
+    "name": "红宝石眼球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被许愿索要的眼球"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "跟着起哄的孩子"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制止孩子的家庭教师"
+   },
+   {
+    "name": "小伊凡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哭着嘱托的孩子"
+   },
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被道别的贵妇"
+   },
+   {
+    "name": "雅科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被道别的难民"
+   },
+   {
+    "name": "阿不思诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被道别的绅士"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引荐工作的调查员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "做过登记的基金会"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "追问流程的列车长"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "同行的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "布达佩斯",
+    "relation": "设有",
+    "dst": "布达佩斯车站",
+    "evidence": "【标题卡】布达佩斯车站",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "送客",
+    "dst": "布达佩斯车站",
+    "evidence": "列车到站啦！请大家排队离开，不要拥挤……",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "道谢",
+    "dst": "多瑙黎明号",
+    "evidence": "谢谢你们，这是一次令人难忘的旅途。",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "约稿",
+    "dst": "乘务员艾玛",
+    "evidence": "有兴趣的话，欢迎以后为我们的杂志供稿。稿酬丰厚，按字结算并且绝不拖欠。",
+    "confidence": 0.95
+   },
+   {
+    "src": "白雪松",
+    "relation": "主编",
+    "dst": "UTTU",
+    "evidence": "《UTTU》杂志，主编“白雪松”……UTTU？好奇怪的名字。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "念名",
+    "dst": "UTTU",
+    "evidence": "《UTTU》杂志，主编“白雪松”……UTTU？好奇怪的名字。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "道别",
+    "dst": "索尼娅",
+    "evidence": "再见，索尼娅女士！再见，雅科夫先生！再见，阿不思诺先生！再见……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "道别",
+    "dst": "雅科夫",
+    "evidence": "再见，索尼娅女士！再见，雅科夫先生！再见，阿不思诺先生！再见……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "道别",
+    "dst": "阿不思诺",
+    "evidence": "再见，雅科夫先生！再见，阿不思诺先生！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "不舍",
+    "dst": "野树莓",
+    "evidence": "不……我们不要“再见”！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小伊凡",
+    "relation": "叮咛",
+    "dst": "野树莓",
+    "evidence": "呜呜呜……你一定要记得、记得给我们写信……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "许诺",
+    "dst": "小伊凡",
+    "evidence": "放心吧，我会给你们写信的！还会给你们寄去小礼物！",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "索要",
+    "dst": "红宝石眼球",
+    "evidence": "我感恩节想要一只红宝石眼球，万圣节想要血食怪的尖牙……",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "附和",
+    "dst": "安娜贝尔",
+    "evidence": "我也要！我也要！",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "管教",
+    "dst": "威廉",
+    "evidence": "随意向他人索要礼物，这实在太失礼了……都给我回来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "致歉",
+    "dst": "野树莓",
+    "evidence": "实在抱歉。是我没有教导好他们……",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "引荐",
+    "dst": "圣洛夫基金会",
+    "evidence": "如果你有兴趣，我可以介绍基金会的派遣工作给你。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "担保",
+    "dst": "野树莓",
+    "evidence": "三位都已经在基金会做过登记了，按照条约，我不会限制你们的行动自由。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "询问",
+    "dst": "塞梅尔维斯",
+    "evidence": "就这么简单？没有别的流程了？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fc94ff4e3c261cf1133f953f": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布情报有误的人"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被还清白名声的列车"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被说成传言的族类"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓",
+     "小树莓"
+    ],
+    "desc": "自认可怕的清洁工"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "定下新目的地的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "追问心意的乘务员"
+   },
+   {
+    "name": "《员工手册》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "要求背诵的手册"
+   },
+   {
+    "name": "伊斯坦布尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被戏言的下一站"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "真正要回去的城市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辟谣",
+    "dst": "血食怪",
+    "evidence": "“多瑙黎明号”上不存在血食怪，那只是一个传言，以讹传讹的传言。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "澄清",
+    "dst": "多瑙黎明号",
+    "evidence": "“多瑙黎明号”上不存在血食怪，那只是一个传言",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "嗔称",
+    "dst": "塞梅尔维斯",
+    "evidence": "“头儿”，你可差点儿又吓坏我们啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "戏言",
+    "dst": "伊斯坦布尔",
+    "evidence": "进城去。我们进城去，去伊斯坦布尔。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "诧异",
+    "dst": "告死鸟",
+    "evidence": "你说的是……伊斯坦布尔？你们还要折返回去吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "改口",
+    "dst": "维也纳",
+    "evidence": "准确的说法是，“回”维也纳。有些乘客在维也纳下车。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "许诺",
+    "dst": "伊斯坦布尔",
+    "evidence": "在战争结束之前都会的，还有很多人需要我们的帮助。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "道别",
+    "dst": "告死鸟",
+    "evidence": "愿你一切顺利，列车长。不管是你们的“秘密行动”，还是未完的理想。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "追问",
+    "dst": "野树莓",
+    "evidence": "但是，如果再给你一次机会的话……小树莓，你会想成为血食怪吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自诩",
+    "dst": "血食怪",
+    "evidence": "血食怪野树莓，可是“多瑙黎明号”上最最可怕的生物！",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "命令",
+    "dst": "野树莓",
+    "evidence": "现在，不值一提的列车长命令你去打扫第五车厢的车窗。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "留任",
+    "dst": "多瑙黎明号",
+    "evidence": "是谁说自己什么都愿意做，只要肯让她留在“多瑙黎明号”上？",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "抽查",
+    "dst": "《员工手册》",
+    "evidence": "我给你的那本《员工手册》必须牢记于心。先从第一条背起，我会随时抽查……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d44061dca63aad73f058e1e": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "补写报告的人"
+   },
+   {
+    "name": "基金会客房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "写报告的房间"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "报告的收件方"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记下旅途的列车"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓",
+     "小树莓"
+    ],
+    "desc": "落款夸张的写信人"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "被写进报告的同盟"
+   },
+   {
+    "name": "阿诺德五世",
+    "type": "角色",
+    "aliases": [
+     "德古拉",
+     "穿刺公",
+     "阿诺德"
+    ],
+    "desc": "信中追溯的先祖"
+   },
+   {
+    "name": "萨瓦诺维奇",
+    "type": "角色",
+    "aliases": [],
+    "desc": "信中追溯的公爵"
+   },
+   {
+    "name": "埃杰什城堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "沿河的一座城堡"
+   },
+   {
+    "name": "阿诺德六世",
+    "type": "角色",
+    "aliases": [],
+    "desc": "信中提及的父亲"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "问候寄出的城市"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被揭穿的阴谋方"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "败露的军官"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被遏止的危机"
+   },
+   {
+    "name": "奥匈帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "列车驶入的帝国"
+   },
+   {
+    "name": "基金会的职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送来礼物的职员"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "信上自称的怪物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "撰写",
+    "dst": "基金会客房",
+    "evidence": "【标题卡】基金会客房",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "结识",
+    "dst": "野树莓",
+    "evidence": "结识了神秘学家乘客野树莓与列车长“告死鸟”等人。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "记述",
+    "dst": "告死鸟",
+    "evidence": "结识了神秘学家乘客野树莓与列车长“告死鸟”等人。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "挫败",
+    "dst": "鲍里斯",
+    "evidence": "挫败了投靠重塑之手的血食怪军官鲍里斯的阴谋",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "效命",
+    "dst": "重塑之手",
+    "evidence": "挫败了投靠重塑之手的血食怪军官鲍里斯的阴谋",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "遏止",
+    "dst": "感染种",
+    "evidence": "阻止了感染种危机扩散，并协助列车顺利驶入奥匈帝国境内。",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "驶入",
+    "dst": "奥匈帝国",
+    "evidence": "并协助列车顺利驶入奥匈帝国境内。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "讳言",
+    "dst": "圣洛夫基金会",
+    "evidence": "把真话说一半，呵呵，那就不算是假的咯。",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会的职员",
+    "relation": "转赠",
+    "dst": "塞梅尔维斯",
+    "evidence": "从维也纳出差回来的同事带了礼物，托我给你送一份。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "写信",
+    "dst": "塞梅尔维斯",
+    "evidence": "致圣洛夫基金会的塞梅尔维斯女士。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自称末裔",
+    "dst": "阿诺德五世",
+    "evidence": "瓦拉几亚大公阿诺德五世的末裔",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "承袭",
+    "dst": "萨瓦诺维奇",
+    "evidence": "初代埃杰什公爵萨瓦诺维奇及多瑙河畔埃杰什城堡之唯一继承人",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨瓦诺维奇",
+    "relation": "拥有",
+    "dst": "埃杰什城堡",
+    "evidence": "初代埃杰什公爵萨瓦诺维奇及多瑙河畔埃杰什城堡之唯一继承人",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "述亲",
+    "dst": "阿诺德六世",
+    "evidence": "阿诺德六世之女……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "自称",
+    "dst": "血食怪",
+    "evidence": "本世纪最最勇敢的血食怪，野树莓，从布达佩斯向你问候！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "致候",
+    "dst": "布达佩斯",
+    "evidence": "本世纪最最勇敢的血食怪，野树莓，从布达佩斯向你问候！",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

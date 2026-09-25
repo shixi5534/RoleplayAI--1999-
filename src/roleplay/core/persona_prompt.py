@@ -38,6 +38,14 @@ MIN_CONTEXT_SCORE = 0.05
 #   原 0.6 拦不住噪声（0.84 > 0.6），收紧到 0.85 可完美切分且不误伤相关条目。
 RELATIVE_SCORE_GATE = 0.85
 
+# 已由上游「条数 + 字符」双预算限量的通道：**豁免** 0.85 相对门。
+# 剧情层（plot_graph / plot_lexical）在检索器内部已按名次融合截断到 plot_max_chunks，
+# 且注入时另有 plot_context_max_chars 独立预算；再套相对门只是同通道内互砍——
+# 实测（2026-09-12 真实对话诊断）5 块只剩 2 块，而答案块常在第 3~5 位
+# （「Baccarola, at last you've graced us with your presence」0.750 被丢，
+#   「That lump of flesh is...Arcana?」0.840 被丢）。故这两组只留绝对下限。
+BUDGETED_SCORE_GROUPS = ("plot_graph", "plot_lexical")
+
 
 def _score_group(meta: dict) -> str:
     """把检索块按「分数尺度」分组——相对门必须在**同尺度内**计算。
@@ -87,11 +95,21 @@ def _filter_chunks(chunks: list) -> list:
     for c in usable:
         groups.setdefault(_score_group(c.metadata or {}), []).append(c)
     if len(groups) == 1:
+        # 单一通道时同样要认「已限量通道豁免」：否则剧情查询（只命中 plot 一组）
+        # 会从这里提前返回、绕过下面的分组豁免——实测这正是"5 块只剩 2 块"的路径。
+        only_key = next(iter(groups))
+        if only_key in BUDGETED_SCORE_GROUPS:
+            return usable
         top = max(c.score for c in usable)
         kept = [c for c in usable if c.score >= top * RELATIVE_SCORE_GATE]
         return kept or usable[:1]
     kept_all: list = []
-    for group in groups.values():
+    for key, group in groups.items():
+        if key in BUDGETED_SCORE_GROUPS:
+            # 上游已限量（剧情层按名次融合截断 + 独立字符预算）：不再互相砍，
+            # 否则稳定的"5 块只剩 2 块"会把排在第 3~5 位的答案块丢掉。
+            kept_all.extend(group)
+            continue
         top = max(c.score for c in group)
         kept = [c for c in group if c.score >= top * RELATIVE_SCORE_GATE]
         kept_all.extend(kept or group[:1])
@@ -132,7 +150,12 @@ _PLOT_HEADER = (
     "下面是你亲身经历过的剧情片段。使用守则：\n"
     "- 这是你的**经历**而不是档案：用「我」的口吻讲，像在回忆当时在场的事；\n"
     "- 只讲片段里真正发生过的事，不要补全动机、他人台词或没写出来的细节；\n"
-    "- 片段来自语音转写，可能有听错的词——拿不准就说记不清，别硬说；\n"
+    # 措辞修正（2026-09-12）：旧措辞「拿不准就说记不清，别硬说」在实测里被判成
+    # 「可以回避」——注入英文转写片段时模型一律回"没接触过/不记得"，等于放弃资料。
+    # 改为「出现过的人名/事件照实讲」，只在片段确实没提时才允许说不记得。
+    "- 片段来自语音转写，可能有听错的词；但片段里**明确出现过的人名、事件与关系要照实讲**，"
+    "不要用「记不清」「没接触过」回避，也不要因为片段是英文转写就不认；\n"
+    "- 只有片段确实没提到某个名字或事情时，才可以说记不清或不知道；\n"
     "- 与当前话题无关时忽略即可，不要主动报流水账。"
 )
 

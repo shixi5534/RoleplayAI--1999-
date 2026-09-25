@@ -1,0 +1,44 @@
+配置：
+  plot_entity_expand_enabled = True
+  plot_entity_expand_backend = 'static'
+  plot_entity_expand_static_path = 'data\\knowledge\\_audit\\entity_expand_map.json'
+  plot_entity_expand_top = 3
+  plot_entity_expand_min_conf = 0.0
+  plot_entity_expand_max_append = 4
+  plot_entity_expand_whitelist = False
+
+检索器持有 expander：EntityExpander
+  enforce_whitelist = False
+  names 条数 = 10406
+  resolver = None
+  白名单映射条数 = 19987
+  identifier = StaticMapIdentifier（内部映射条数 67）
+
+逐题实测（前 5 道 A 类）：
+  [R002] ✅ 扩展
+      原：洞穴的囚徒篇中被称作 standkeeper 的女性是谁？
+      后：洞穴的囚徒篇中被称作 standkeeper 的女性是谁？ Zanetta
+  [R005] ✅ 扩展
+      原：洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？
+      后：洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？ Polina Lesage Polina
+  [R006] ✅ 扩展
+      原：洞穴的囚徒篇里名为 Zero 的角色对应数字几？
+      后：洞穴的囚徒篇里名为 Zero 的角色对应数字几？ Zero
+  [R008] ✅ 扩展
+      原：洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？
+      后：洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？ Tooth Fairy
+  [R010] ✅ 扩展
+      原：洞穴的囚徒篇里的洞穴隐喻出自哪位哲学家的理论？
+      后：洞穴的囚徒篇里的洞穴隐喻出自哪位哲学家的理论？ Plato
+
+stats 增量：
+  appended: 5
+  calls: 5
+  errors: 0
+  no_resolver: 0
+  produced: 5
+  rejected: 0
+stats 全量：{'calls': 5, 'produced': 5, 'appended': 5, 'rejected': 0, 'errors': 0, 'no_resolver': 0}
+
+全量 300 题中被扩展的：67 题
+最终 stats：{'calls': 305, 'produced': 72, 'appended': 72, 'rejected': 0, 'errors': 0, 'no_resolver': 0}

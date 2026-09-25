@@ -136,9 +136,9 @@ class ChatOrchestrator:
         # —— 剧情图谱（PlotGraph，独立于 lore 向量 RAG；默认关闭，零回归）——
         plot_graph: PlotGraphRegistry | None = None,
         plot_graph_enabled: bool = False,
-        plot_max_chunks: int = 3,
+        plot_max_chunks: int = 6,
         plot_lexical_fallback: int = 2,
-        plot_context_max_chars: int = 1000,
+        plot_context_max_chars: int = 2400,
         # —— lore 知识图谱（GraphRAG 第三路检索；默认关闭，零回归）——
         graph_registry: GraphSearchRegistry | None = None,
         graph_enabled: bool = False,

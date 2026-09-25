@@ -1,0 +1,1563 @@
+{
+ "230b85d249333aca00f94c89": {
+  "entities": [
+   {
+    "name": "石像鬼妇人",
+    "type": "角色",
+    "aliases": [
+     "玛德琳姨妈"
+    ],
+    "desc": "热情待客者"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [
+     "玛丽"
+    ],
+    "desc": "被拥抱者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "访客"
+   },
+   {
+    "name": "拉蒂斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指责访客者"
+   },
+   {
+    "name": "艾格尼丝",
+    "type": "角色",
+    "aliases": [
+     "少女雕塑"
+    ],
+    "desc": "掩面哭泣之雕塑"
+   },
+   {
+    "name": "军用帆布包",
+    "type": "物品",
+    "aliases": [
+     "情报包"
+    ],
+    "desc": "交给玛尔纱之物"
+   },
+   {
+    "name": "石像鬼教堂",
+    "type": "地点",
+    "aliases": [
+     "露天教堂"
+    ],
+    "desc": "静修之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "石像鬼妇人",
+    "relation": "拥抱",
+    "dst": "玛丽安娜",
+    "evidence": "就将玛丽安娜死死搂在怀里",
+    "confidence": 0.95
+   },
+   {
+    "src": "石像鬼妇人",
+    "relation": "拥抱",
+    "dst": "玛尔纱",
+    "evidence": "照例给了她一个令人窒息的拥抱",
+    "confidence": 0.9
+   },
+   {
+    "src": "石像鬼妇人",
+    "relation": "姨妈",
+    "dst": "玛丽安娜",
+    "evidence": "她是我姨妈，一年前自顾自地跑到这种危险的地方来",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉蒂斯",
+    "relation": "质问",
+    "dst": "玛尔纱",
+    "evidence": "为什么玛丽安娜会把你带进来",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "交付",
+    "dst": "玛尔纱",
+    "evidence": "将一只沉重的军用帆布包递给玛尔纱",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0b6c2d89c13a887248648654": {
+  "entities": [
+   {
+    "name": "拉蒂斯",
+    "type": "角色",
+    "aliases": [
+     "宣教者"
+    ],
+    "desc": "布道者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听众"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呵斥者"
+   },
+   {
+    "name": "石像鬼妇人",
+    "type": "角色",
+    "aliases": [
+     "玛德琳姨妈"
+    ],
+    "desc": "端茶者"
+   },
+   {
+    "name": "军用帆布包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载高层名单者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "合作名单所指"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "不再隐匿方"
+   },
+   {
+    "name": "石像鬼教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "不再对玛尔纱隐匿"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉蒂斯",
+    "relation": "布道",
+    "dst": "玛尔纱",
+    "evidence": "战争只会在文明彻底灭亡之日终结",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "呵斥",
+    "dst": "拉蒂斯",
+    "evidence": "别再搬出你那一套说教，拉蒂斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "交付",
+    "dst": "玛尔纱",
+    "evidence": "从1918年开始，我找到过的重要线索都在这",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "开放",
+    "dst": "石像鬼教堂",
+    "evidence": "从今天起，教堂不再对她隐匿",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "513826ac7d1a1710de959ca9": {
+  "entities": [
+   {
+    "name": "拉蒂斯",
+    "type": "角色",
+    "aliases": [
+     "宣教者"
+    ],
+    "desc": "解读预兆者"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反驳者"
+   },
+   {
+    "name": "艾格尼丝",
+    "type": "角色",
+    "aliases": [
+     "少女雕塑"
+    ],
+    "desc": "石化沉眠者"
+   },
+   {
+    "name": "石像鬼教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "争论之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉蒂斯",
+    "relation": "解读",
+    "dst": "艾格尼丝",
+    "evidence": "正是艾格尼丝带来了有关战争的预兆",
+    "confidence": 0.9
+   },
+   {
+    "src": "拉蒂斯",
+    "relation": "预言",
+    "dst": "玛丽安娜",
+    "evidence": "战争绝不可能在灭尽一切罪恶之前结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "否定",
+    "dst": "拉蒂斯",
+    "evidence": "昨日的世界已经被彻底毁灭，我们永远也回不到过去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dda3bc7f5a01cd118af3d315": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待命者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归来者"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "养伤者"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "刺杀者"
+   },
+   {
+    "name": "希施费尔德上校",
+    "type": "角色",
+    "aliases": [
+     "上校"
+    ],
+    "desc": "被害者"
+   },
+   {
+    "name": "查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "阿曼达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "派救援者"
+   },
+   {
+    "name": "反制神秘术监测设备",
+    "type": "物品",
+    "aliases": [
+     "反制设备"
+    ],
+    "desc": "运行正常"
+   },
+   {
+    "name": "299高地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "失联之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛尔纱",
+    "relation": "问候",
+    "dst": "梅蕾尔",
+    "evidence": "玛尔纱？……你终于……回来了",
+    "confidence": 0.9
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "汇报",
+    "dst": "玛尔纱",
+    "evidence": "查尔斯和阿曼达。4个小时前，他们和安全区失去了联系",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "救援",
+    "dst": "查尔斯",
+    "evidence": "刻雷乌斯长官已经派人去打探情况了",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "8f7349f53dcf31d4ea470d49": {
+  "entities": [
+   {
+    "name": "格奥尔格",
+    "type": "角色",
+    "aliases": [
+     "议员代表"
+    ],
+    "desc": "被证据震撼者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "补建议者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [
+     "副会长"
+    ],
+    "desc": "分享情报者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "旁听者"
+   },
+   {
+    "name": "布劳恩少校",
+    "type": "角色",
+    "aliases": [
+     "艾伯哈特"
+    ],
+    "desc": "治疗范例"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "治疗方"
+   },
+   {
+    "name": "首相",
+    "type": "角色",
+    "aliases": [],
+    "desc": "准备行动者"
+   },
+   {
+    "name": "议会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "发动一击方"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "合谋战争者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "情报来源"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格奥尔格",
+    "relation": "接收",
+    "dst": "圣洛夫基金会",
+    "evidence": "这些资料中的内容竟与最荒唐的阴谋论调完全吻合",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "建议",
+    "dst": "格奥尔格",
+    "evidence": "受到精神影响的军官和士兵，可以交由科算中心治疗",
+    "confidence": 0.9
+   },
+   {
+    "src": "康斯坦丁",
+    "relation": "分享",
+    "dst": "格奥尔格",
+    "evidence": "其他地区的负责人也已经通过相同的方式，向主和派政要分享了情报",
+    "confidence": 0.9
+   },
+   {
+    "src": "格奥尔格",
+    "relation": "逮捕",
+    "dst": "重塑之手",
+    "evidence": "我们有希望将这些出卖国家的叛徒全部逮捕",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "72e1476d9f3515c17d9ebd24": {
+  "entities": [
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "猜想者"
+   },
+   {
+    "name": "康斯坦丁",
+    "type": "角色",
+    "aliases": [
+     "副会长"
+    ],
+    "desc": "宣告者"
+   },
+   {
+    "name": "希施费尔德上校",
+    "type": "角色",
+    "aliases": [
+     "上校"
+    ],
+    "desc": "疑局中心"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告来源"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提交报告者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被疑吸引注意者"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "签约预定地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "质疑",
+    "dst": "希施费尔德上校",
+    "evidence": "如果希施费尔德不被刺杀，这场停火谈判是否会成为一场漫长而无果的交涉拉锯战",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "猜想",
+    "dst": "重塑之手",
+    "evidence": "他们在吸引基金会的注意力",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c2ccff5927bcafa7413bc0e1": {
+  "entities": [
+   {
+    "name": "格奥尔格",
+    "type": "角色",
+    "aliases": [
+     "部长"
+    ],
+    "desc": "宣布停火者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警备者"
+   },
+   {
+    "name": "查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "阿曼达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被疑残留者"
+   },
+   {
+    "name": "基金会安保Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "巡逻者"
+   },
+   {
+    "name": "基金会安保Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问询者"
+   },
+   {
+    "name": "停火协定",
+    "type": "事件",
+    "aliases": [
+     "西线停火"
+    ],
+    "desc": "11月11日11时生效"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "签约地"
+   },
+   {
+    "name": "299高地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "失联地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "请求增援方"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格奥尔格",
+    "relation": "宣布",
+    "dst": "停火协定",
+    "evidence": "西线的战事，将于1920年11月11日上午11时正式结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "请求增援",
+    "dst": "圣洛夫基金会",
+    "evidence": "行动队长仍然以相当坚定的态度向基金会请求了额外增援",
+    "confidence": 0.9
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "追查",
+    "dst": "查尔斯",
+    "evidence": "299高地的事情要查清楚",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "1d61bd0582173ad13cd5e1ff": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "收尸人"
+    ],
+    "desc": "离蒙佩者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及者"
+   },
+   {
+    "name": "埃里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "思乡者"
+   },
+   {
+    "name": "罗尔夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想写书者"
+   },
+   {
+    "name": "威利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被忆者"
+   },
+   {
+    "name": "弗兰兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被忆者"
+   },
+   {
+    "name": "安德烈森",
+    "type": "角色",
+    "aliases": [
+     "马儿"
+    ],
+    "desc": "被想念者"
+   },
+   {
+    "name": "巧克力",
+    "type": "物品",
+    "aliases": [
+     "半块巧克力"
+    ],
+    "desc": "梅蕾尔相赠"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "同行",
+    "dst": "卡戎",
+    "evidence": "要不要和我们车队一起走",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "赠予",
+    "dst": "卡戎",
+    "evidence": "摸出半块被细心重新封好包装的巧克力，塞到了卡戎手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "思念",
+    "dst": "安德烈森",
+    "evidence": "不知道安德烈森还会不会回来",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "8b59fe49398beb47943970f5": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "士官"
+    ],
+    "desc": "宣布停火者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "分发物资者"
+   },
+   {
+    "name": "埃里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "祝酒者"
+   },
+   {
+    "name": "罗尔夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受赠者"
+   },
+   {
+    "name": "布劳恩少校",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被留蒙佩者"
+   },
+   {
+    "name": "对面的士兵",
+    "type": "角色",
+    "aliases": [
+     "敌军"
+    ],
+    "desc": "隔壕共饮者"
+   },
+   {
+    "name": "和平旗帜",
+    "type": "物品",
+    "aliases": [
+     "碎布旗"
+    ],
+    "desc": "埃里希所制"
+   },
+   {
+    "name": "人道主义物资",
+    "type": "物品",
+    "aliases": [
+     "食物饮料"
+    ],
+    "desc": "基金会提供"
+   },
+   {
+    "name": "战壕",
+    "type": "地点",
+    "aliases": [],
+    "desc": "庆祝地"
+   },
+   {
+    "name": "士兵们",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受分发者"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "布劳恩留守地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡戎",
+    "relation": "告知",
+    "dst": "埃里希",
+    "evidence": "距离停火协定签订还有48小时",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "分发",
+    "dst": "士兵们",
+    "evidence": "基金会为前线士兵提供了一些食物和饮料",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃里希",
+    "relation": "祝酒",
+    "dst": "对面的士兵",
+    "evidence": "干杯，对面的坏东西，听得懂吗——干杯",
+    "confidence": 0.9
+   },
+   {
+    "src": "布劳恩少校",
+    "relation": "留守",
+    "dst": "蒙佩",
+    "evidence": "他仍然被留在蒙佩",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "1961e34426c75592aff1655f": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "士官"
+    ],
+    "desc": "辞行者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝食者"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [
+     "“猎犬”"
+    ],
+    "desc": "被提及者"
+   },
+   {
+    "name": "香肠罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被塞之物"
+   },
+   {
+    "name": "巧克力",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被摸到者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "玻璃缸脑袋"
+    ],
+    "desc": "被提及者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "赠予",
+    "dst": "卡戎",
+    "evidence": "她把罐头塞进了对方的大衣口袋里",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "提及",
+    "dst": "叶尔莫莱",
+    "evidence": "“猎犬”总说我吃得已经够多了",
+    "confidence": 0.85
+   },
+   {
+    "src": "卡戎",
+    "relation": "辞行",
+    "dst": "梅蕾尔",
+    "evidence": "这次我打算独自前往。我还有……一封信要送",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "092cddcd604e50f177ab1a01": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "读信者"
+   },
+   {
+    "name": "布劳恩少校",
+    "type": "角色",
+    "aliases": [
+     "艾伯哈特"
+    ],
+    "desc": "听信者"
+   },
+   {
+    "name": "穆伦贝格先生",
+    "type": "角色",
+    "aliases": [
+     "老师"
+    ],
+    "desc": "写信者"
+   },
+   {
+    "name": "瓦尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被惋惜者"
+   },
+   {
+    "name": "维吉尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引用者"
+   },
+   {
+    "name": "卢坎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及者"
+   },
+   {
+    "name": "纪念碑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "信被弃处"
+   },
+   {
+    "name": "公墓",
+    "type": "地点",
+    "aliases": [],
+    "desc": "重逢地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "穆伦贝格先生",
+    "relation": "致信",
+    "dst": "布劳恩少校",
+    "evidence": "是穆伦贝格先生写给三班学生的",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "读信",
+    "dst": "布劳恩少校",
+    "evidence": "打开它吧，保罗，你念给我听",
+    "confidence": 0.95
+   },
+   {
+    "src": "布劳恩少校",
+    "relation": "弃信",
+    "dst": "穆伦贝格先生",
+    "evidence": "艾伯哈特却一把夺过信纸，揉成一团，扔到纪念碑旁的杂草中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4bc8363a892a5dcdba93bfbb": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗"
+    ],
+    "desc": "留笔者"
+   },
+   {
+    "name": "布劳恩少校",
+    "type": "角色",
+    "aliases": [
+     "艾伯哈特"
+    ],
+    "desc": "自省者"
+   },
+   {
+    "name": "穆伦贝格先生",
+    "type": "角色",
+    "aliases": [
+     "老师"
+    ],
+    "desc": "受信者"
+   },
+   {
+    "name": "十三年级三班",
+    "type": "组织",
+    "aliases": [
+     "三班"
+    ],
+    "desc": "全员阵亡者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "布劳恩少校",
+    "relation": "告别",
+    "dst": "卡戎",
+    "evidence": "就像过去一样……这话真好。再见",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "代笔",
+    "dst": "穆伦贝格先生",
+    "evidence": "请您给穆伦贝格先生写一封回信吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "宣告",
+    "dst": "十三年级三班",
+    "evidence": "十三年级三班的学生已经全部阵亡",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "18a743ac2c3e6f8221c812b3": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [
+     "保罗",
+     "保罗·霍伊默尔"
+    ],
+    "desc": "记录主角"
+   },
+   {
+    "name": "十三年级三班",
+    "type": "组织",
+    "aliases": [
+     "三班"
+    ],
+    "desc": "全员阵亡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡戎",
+    "relation": "宣告",
+    "dst": "十三年级三班",
+    "evidence": "十三年级三班的学生已经全部阵亡",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "011aae8a6a636e4569ec7d87": {
+  "entities": [
+   {
+    "name": "拉蒂斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "绝食者"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [
+     "玛丽"
+    ],
+    "desc": "擦拭雕塑者"
+   },
+   {
+    "name": "石像鬼妇人",
+    "type": "角色",
+    "aliases": [
+     "玛德琳"
+    ],
+    "desc": "担忧者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "送补给者"
+   },
+   {
+    "name": "艾格尼丝",
+    "type": "角色",
+    "aliases": [
+     "少女雕塑"
+    ],
+    "desc": "石化者"
+   },
+   {
+    "name": "石像鬼教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "缄默之地"
+   },
+   {
+    "name": "鲁昂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "返乡地"
+   },
+   {
+    "name": "巴黎装饰艺术学院",
+    "type": "组织",
+    "aliases": [],
+    "desc": "玛丽安娜欲申请"
+   }
+  ],
+  "relations": [
+   {
+    "src": "石像鬼妇人",
+    "relation": "劝食",
+    "dst": "拉蒂斯",
+    "evidence": "他连我亲手给他做的饼干都不吃了",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "擦拭",
+    "dst": "艾格尼丝",
+    "evidence": "拿出一块手帕，在“雕塑”上轻轻擦拭",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "表妹",
+    "dst": "艾格尼丝",
+    "evidence": "她是艾格尼丝，我的远房表妹",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "907b3f843ea451852cf38719": {
+  "entities": [
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "拉蒂斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "预言落空者"
+   },
+   {
+    "name": "艾格尼丝",
+    "type": "角色",
+    "aliases": [],
+    "desc": "未复原者"
+   },
+   {
+    "name": "风车",
+    "type": "地点",
+    "aliases": [
+     "风车原野"
+    ],
+    "desc": "散步地"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉蒂斯",
+    "relation": "预言",
+    "dst": "艾格尼丝",
+    "evidence": "也许战争结束的那一天，会有奇迹降临在艾格尼丝身上",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "否定",
+    "dst": "拉蒂斯",
+    "evidence": "现在看来，他的预言是错的。艾格尼丝还是没能复原",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "玩笑",
+    "dst": "玛丽安娜",
+    "evidence": "你用烟雾弹呛过我",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "d196b9186ae2ee6b4d05808c": {
+  "entities": [
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "骑士"
+   },
+   {
+    "name": "战马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "风车中之马"
+   },
+   {
+    "name": "风车",
+    "type": "地点",
+    "aliases": [
+     "风车原野"
+    ],
+    "desc": "发现马之地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "监视者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛尔纱",
+    "relation": "骑乘",
+    "dst": "战马",
+    "evidence": "训练有素的骑士仍然飞快地攀上了马背",
+    "confidence": 0.95
+   },
+   {
+    "src": "战马",
+    "relation": "亲近",
+    "dst": "玛尔纱",
+    "evidence": "它耷拉着脑袋，向玛尔纱蹭了过去",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛丽安娜",
+    "relation": "同行",
+    "dst": "玛尔纱",
+    "evidence": "二人取下武器，小心翼翼地向风车的入口接近",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5992783b85dd74af588b526d": {
+  "entities": [
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被嘱托者"
+   },
+   {
+    "name": "玛丽安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "托付者"
+   },
+   {
+    "name": "战马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊逃者"
+   },
+   {
+    "name": "艾格尼丝",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被比天使者"
+   },
+   {
+    "name": "？？？",
+    "type": "角色",
+    "aliases": [
+     "未署名呼叫人"
+    ],
+    "desc": "召玛尔纱者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛丽安娜",
+    "relation": "相约",
+    "dst": "玛尔纱",
+    "evidence": "到那一天，我希望……还能再见到你",
+    "confidence": 0.95
+   },
+   {
+    "src": "？？？",
+    "relation": "召",
+    "dst": "玛尔纱",
+    "evidence": "玛尔纱，尽快到前线待命",
+    "confidence": 0.95
+   },
+   {
+    "src": "？？？",
+    "relation": "召",
+    "dst": "玛丽安娜",
+    "evidence": "如果石像鬼愿意跟你走，最好把她也一起带上",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "11e3c303bfcd6cdb1c5b99b6": {
+  "entities": [
+   {
+    "name": "格奥尔格",
+    "type": "角色",
+    "aliases": [
+     "部长"
+    ],
+    "desc": "练签名者"
+   },
+   {
+    "name": "部长助理",
+    "type": "角色",
+    "aliases": [
+     "鼹鼠"
+    ],
+    "desc": "潜伏者"
+   },
+   {
+    "name": "首相",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通话者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼叫失联者"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "部署者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [
+     "“猎犬”"
+    ],
+    "desc": "失联者"
+   },
+   {
+    "name": "查尔斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "阿曼达",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失联者"
+   },
+   {
+    "name": "停火协定",
+    "type": "事件",
+    "aliases": [
+     "停火备忘录"
+    ],
+    "desc": "待签之协定"
+   },
+   {
+    "name": "弗雷德里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被呼者"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "签字地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格奥尔格",
+    "relation": "练签",
+    "dst": "停火协定",
+    "evidence": "在停火协定上签字是他今天最重要的工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "部长助理",
+    "relation": "潜伏于",
+    "dst": "格奥尔格",
+    "evidence": "我不需要再对你做出任何解释，议员先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "呼叫",
+    "dst": "叶尔莫莱",
+    "evidence": "再次抬手，向“猎犬”发出同样的呼叫",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "82d1c820e86cf18418690742": {
+  "entities": [
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撤离指挥者"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受召者"
+   },
+   {
+    "name": "警卫士兵Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "中弹者"
+   },
+   {
+    "name": "警卫士兵Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问敌者"
+   },
+   {
+    "name": "重塑军官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "进攻指挥者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "被袭方"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "漆黑军服者"
+    ],
+    "desc": "进攻方"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "办公楼所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "召回",
+    "dst": "帕拉维扬",
+    "evidence": "帕拉维扬——回来，和我回指挥所去",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑军官",
+    "relation": "进攻",
+    "dst": "圣洛夫基金会",
+    "evidence": "其他人——全部杀光",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑军官",
+    "relation": "现身于",
+    "dst": "蒙佩",
+    "evidence": "身穿漆黑军服的人从格奥尔格部长的办公楼中走出",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d220f58c1d361acbca45828d": {
+  "entities": [
+   {
+    "name": "重塑军官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣言被杀者"
+   },
+   {
+    "name": "重塑士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "押人质者"
+   },
+   {
+    "name": "基金会安保Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疑问者"
+   },
+   {
+    "name": "？？？",
+    "type": "角色",
+    "aliases": [
+     "狙击手"
+    ],
+    "desc": "杀军官者"
+   },
+   {
+    "name": "人质",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被押者"
+   },
+   {
+    "name": "手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "军官把玩之物"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "军官所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "？？？",
+    "relation": "击杀",
+    "dst": "重塑军官",
+    "evidence": "一颗子弹穿透军官的太阳穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑军官",
+    "relation": "宣言",
+    "dst": "重塑之手",
+    "evidence": "每一个于时代受苦的神秘学家，都会团结在重塑之手的旗帜之下",
+    "confidence": 0.9
+   },
+   {
+    "src": "重塑士兵",
+    "relation": "押送",
+    "dst": "人质",
+    "evidence": "两名士兵押着人质来到空旷街道的正中央",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

@@ -1,0 +1,6172 @@
+{
+  "generated_at": "2026-09-17 13:14:55",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "degraded": false
+  },
+  "counts": {
+    "items": 300,
+    "pass": 195,
+    "fail": 105,
+    "fail_seedless": 5,
+    "fail_seeds_no_truth": 32,
+    "fail_seeds_has_truth": 68
+  },
+  "pass_rate_by_seed_quality": {
+    "has_truth": {
+      "n": 233,
+      "pass": 165,
+      "pass_rate": 0.7082
+    },
+    "no_truth": {
+      "n": 61,
+      "pass": 29,
+      "pass_rate": 0.4754
+    },
+    "seedless": {
+      "n": 6,
+      "pass": 1,
+      "pass_rate": 0.1667
+    }
+  },
+  "seed_path_distribution": {
+    "has_exact": 297,
+    "none": 3
+  },
+  "top_wrong_seed_names": [
+    [
+      "洞穴",
+      5
+    ],
+    [
+      "无名者",
+      4
+    ],
+    [
+      "孤独之歌",
+      3
+    ],
+    [
+      "失踪案",
+      2
+    ],
+    [
+      "孩子们",
+      2
+    ],
+    [
+      "乌卢鲁运动会",
+      2
+    ],
+    [
+      "雅典",
+      2
+    ],
+    [
+      "康复中心",
+      2
+    ],
+    [
+      "人工梦游",
+      2
+    ],
+    [
+      "海盗",
+      1
+    ],
+    [
+      "乘客",
+      1
+    ],
+    [
+      "船只",
+      1
+    ],
+    [
+      "维尔汀",
+      1
+    ],
+    [
+      "灯塔",
+      1
+    ],
+    [
+      "钥匙",
+      1
+    ],
+    [
+      "档案",
+      1
+    ],
+    [
+      "重塑之手",
+      1
+    ],
+    [
+      "阿派朗岛",
+      1
+    ],
+    [
+      "绿湖",
+      1
+    ],
+    [
+      "努库泰澳",
+      1
+    ],
+    [
+      "军官",
+      1
+    ],
+    [
+      "绿松石蛇俱乐部",
+      1
+    ],
+    [
+      "列车",
+      1
+    ],
+    [
+      "格蕾丝",
+      1
+    ],
+    [
+      "康斯坦丁",
+      1
+    ],
+    [
+      "城邦",
+      1
+    ],
+    [
+      "神秘学家",
+      1
+    ],
+    [
+      "暴雨",
+      1
+    ],
+    [
+      "记忆",
+      1
+    ],
+    [
+      "飞蛾",
+      1
+    ]
+  ],
+  "per_case": [
+    {
+      "id": "R001",
+      "q": "薇洛的真名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 185,
+      "seeds": [
+        {
+          "eid": "e_ca70918e5246",
+          "name": "薇洛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "q": "洞穴的囚徒篇中被称作 standkeeper 的女性是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "q": "洞穴的囚徒篇里海盗船上的歌手是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 56,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_3a9fc2fd105b",
+          "name": "海盗",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "q": "笃笃骨的真名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 164,
+      "seeds": [
+        {
+          "eid": "e_ca70918e5246",
+          "name": "笃笃骨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 426,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R006",
+      "q": "洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 14,
+      "seeds": [
+        {
+          "eid": "e_0c0da6ec9840",
+          "name": "保利娜",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R007",
+      "q": "洞穴的囚徒篇里的滚鳄书店英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 50,
+      "seeds": [
+        {
+          "eid": "e_5dc4ae05a713",
+          "name": "滚鳄书店",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R008",
+      "q": "洞穴的囚徒篇里名为 Zero 的角色对应数字几？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 24,
+      "seeds": [
+        {
+          "eid": "e_aa8c41330509",
+          "name": "zero",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R009",
+      "q": "洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 16,
+      "seeds": [
+        {
+          "eid": "e_341041c2a675",
+          "name": "牙仙",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_64f85f7ea7c8",
+          "name": "乘客",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R010",
+      "q": "洞穴的囚徒篇里的努玛是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 216,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_c41c64e4460e",
+          "name": "努玛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R011",
+      "q": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_64f85f7ea7c8",
+          "name": "乘客",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R012",
+      "q": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_68d0cb4cc747",
+          "name": "苏芙比",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_5100ff7685de",
+          "name": "扎内塔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R013",
+      "q": "洞穴的囚徒篇中与管理船只日常的 standkeeper 对话的是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 18,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_f6496012a44b",
+          "name": "船只",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R014",
+      "q": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 15,
+      "seeds": [
+        {
+          "eid": "e_f0874a93c76b",
+          "name": "shamane",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R015",
+      "q": "在洞穴的囚徒篇的航行里，出资买下摇滚苹果号、随身携带药箱的贵族小姐是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 446,
+      "seeds": [
+        {
+          "eid": "e_8235da924026",
+          "name": "洞穴",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b38d961e7096",
+          "name": "苹果",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_82b78f7fa350",
+          "name": "小姐",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R016",
+      "q": "在洞穴的囚徒篇的开场里，向维尔汀递交钥匙、请她整理档案的管家是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 44,
+      "seeds": [
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R017",
+      "q": "伦敦十字街的雾中女巫是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 74,
+      "seeds": [
+        {
+          "eid": "e_fa712d87e828",
+          "name": "十字街",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R018",
+      "q": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 19,
+      "seeds": [
+        {
+          "eid": "e_f63cea667697",
+          "name": "r(角色名)",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_0da838b043cd",
+          "name": "x(角色)",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_40bfb85e41e1",
+          "name": "将神秘术咒语结合人类的科学技术所研发的产物",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R019",
+      "q": "既管理灯塔又保管档案钥匙的女性是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": false,
+      "n_truth_entities": 44,
+      "seeds": [
+        {
+          "eid": "e_a868cfdf1858",
+          "name": "灯塔",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_187e6e6d8bb4",
+          "name": "钥匙",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_ebfb55f4432b",
+          "name": "档案",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R020",
+      "q": "以“雾女士”著称的伦敦女巫是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 264,
+      "seeds": [
+        {
+          "eid": "e_18b3f065ec7a",
+          "name": "雾女士",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R021",
+      "q": "卡卡尼亚的本名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 219,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R022",
+      "q": "维也纳篇与卡卡尼亚对峙决斗的医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 98,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R023",
+      "q": "海因里希最后被谁杀死？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R024",
+      "q": "今夜星光灿烂篇中红极一时的维也纳女演员是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 193,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R025",
+      "q": "今夜星光灿烂篇里的年轻调查员马库斯的英文名是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 88,
+      "seeds": [
+        {
+          "eid": "e_c1a6ec92fe30",
+          "name": "马库斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_165ce8e71503",
+          "name": "调查员",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R026",
+      "q": "特奥菲尔的英文名是什么？（维也纳篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 64,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R027",
+      "q": "以电击治疗骗财、与卡卡尼亚对峙的医生是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 40,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R028",
+      "q": "格蕾塔·霍夫曼的英文名是什么？（今夜星光灿烂篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 153,
+      "seeds": [
+        {
+          "eid": "e_1adc00aaeebe",
+          "name": "格蕾塔·霍夫曼",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R029",
+      "q": "今夜星光灿烂篇里出现的「血痛」概念英文叫什么？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 52,
+      "seeds": [
+        {
+          "eid": "e_19b662e2995f",
+          "name": "九万个为什么——神秘学种族篇",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_17474eb51a9d",
+          "name": "找到他发生了什么",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_65f32480ae94",
+          "name": "发生了什么",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R030",
+      "q": "多里斯医生的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 18,
+      "seeds": [
+        {
+          "eid": "e_90d8024a6153",
+          "name": "多里斯医生",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R031",
+      "q": "卡卡尼亚的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 18,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "卡卡尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R032",
+      "q": "血痛概念出现在哪个维也纳篇章里？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 19,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R033",
+      "q": "海因里希的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R034",
+      "q": "伊索尔德的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_02e8bab195f6",
+          "name": "伊索尔德",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R035",
+      "q": "维也纳的英文叫什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 193,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R036",
+      "q": "施瓦茨的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 50,
+      "seeds": [
+        {
+          "eid": "e_9efdc90d9b20",
+          "name": "施瓦茨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R037",
+      "q": "海因里希效忠的重塑之手在英文里叫什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 108,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R038",
+      "q": "在今夜星光灿烂篇的维也纳舞台上红极一时、最终枪杀海因里希的女演员是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 376,
+      "seeds": [
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R039",
+      "q": "在今夜星光灿烂篇的维也纳社交场里，本姓温格勒、以精神分析见长的年轻医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 256,
+      "seeds": [
+        {
+          "eid": "e_a07707409540",
+          "name": "精神分析",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R040",
+      "q": "根据她在维也纳行动、且本姓温格勒这两点，可以推断这位精神科医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 193,
+      "seeds": [
+        {
+          "eid": "e_e64854bb2976",
+          "name": "维也纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R041",
+      "q": "维尔汀在阿派朗岛击败阿尔卡纳之后获得的、能庇护更多人的道具是什么？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 17,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_3bfe0e11dc27",
+          "name": "阿派朗岛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R042",
+      "q": "阿尔卡纳最终死于哪种轰炸武器？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 62,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R043",
+      "q": "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 48,
+      "seeds": [
+        {
+          "eid": "e_726d2de42631",
+          "name": "乌尔里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3bfe0e11dc27",
+          "name": "阿派朗岛",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_f584e66655d9",
+          "name": "孤独之歌",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R044",
+      "q": "阿派朗岛与下面哪个英文名对应？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 60,
+      "seeds": [
+        {
+          "eid": "e_3bfe0e11dc27",
+          "name": "阿派朗岛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R045",
+      "q": "孤独之歌篇里零号概念的讲解围绕数字几展开？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 14,
+      "seeds": [
+        {
+          "eid": "e_f584e66655d9",
+          "name": "孤独之歌",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R046",
+      "q": "乌尔里希是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 555,
+      "seeds": [
+        {
+          "eid": "e_726d2de42631",
+          "name": "乌尔里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R047",
+      "q": "露西是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 462,
+      "seeds": [
+        {
+          "eid": "e_e96a5f599ed5",
+          "name": "露西",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R048",
+      "q": "索菲亚的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 380,
+      "seeds": [
+        {
+          "eid": "e_1e493b90511a",
+          "name": "索菲亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R049",
+      "q": "苏菲亚与 37 同属哪个篇章？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 180,
+      "seeds": [
+        {
+          "eid": "e_1e493b90511a",
+          "name": "苏菲亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R050",
+      "q": "阿德勒与乌尔里希同属哪座岛屿的故事？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_726d2de42631",
+          "name": "乌尔里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R051",
+      "q": "Six 与 37 同属哪座岛屿的故事？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 75,
+      "seeds": [
+        {
+          "eid": "e_bec9703f7a45",
+          "name": "six",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R052",
+      "q": "阿尔卡纳在大限将至时推举谁接任重塑之手的新领袖？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 380,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R053",
+      "q": "重塑之手首领盯上的、盛产非对称核素 R 的岛屿是哪座？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 75,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R054",
+      "q": "杀死阿尔卡纳的行动中，与基金会配合作战的军备学院是哪家？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 119,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R055",
+      "q": "孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 42,
+      "seeds": [
+        {
+          "eid": "e_f584e66655d9",
+          "name": "孤独之歌",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R056",
+      "q": "在孤独之歌篇的阿派朗岛上，与 37 同以数字为名、被称作“六”的少女叫什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 230,
+      "seeds": [
+        {
+          "eid": "e_3bfe0e11dc27",
+          "name": "阿派朗岛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_f584e66655d9",
+          "name": "孤独之歌",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R057",
+      "q": "岛上时间停留在 2007 年且未被暴雨回溯，据此推断这座与世隔绝的小岛是哪里？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 46,
+      "seeds": [
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_6d92be48cde0",
+          "name": "小岛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_89b4aa6364ce",
+          "name": "时间",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R058",
+      "q": "根据曾指挥真空弹轰炸、使重塑之手首领灰飞烟灭的这一战，推断这位首领是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 14,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R059",
+      "q": "孤独之歌这个篇章名，与哪位独自留守海岛、钻研数学的数字少女有关？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 51,
+      "seeds": [
+        {
+          "eid": "e_f584e66655d9",
+          "name": "孤独之歌",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R060",
+      "q": "阿派朗岛上的时间停滞在哪一年？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 26,
+      "seeds": [
+        {
+          "eid": "e_3bfe0e11dc27",
+          "name": "阿派朗岛",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R061",
+      "q": "绿湖噩梦篇的故事发生地是哪个营地？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 9,
+      "seeds": [
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_8c4b0ff3c2a0",
+          "name": "营地",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R062",
+      "q": "绿湖营地的传说中，森林里出没的怪物是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 17,
+      "seeds": [
+        {
+          "eid": "e_9e7e67bf9b1a",
+          "name": "绿湖营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R063",
+      "q": "绿湖噩梦中痴迷恐怖片的男孩的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 15,
+      "seeds": [
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R064",
+      "q": "洁西卡的英文名是什么？（绿湖噩梦篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 65,
+      "seeds": [
+        {
+          "eid": "e_15580d984077",
+          "name": "洁西卡",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R065",
+      "q": "迈克尔的英文名是什么？（绿湖噩梦篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 64,
+      "seeds": [
+        {
+          "eid": "e_019a57701187",
+          "name": "迈克尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R066",
+      "q": "弗莱迪的英文名是什么？（绿湖噩梦篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 33,
+      "seeds": [
+        {
+          "eid": "e_06877584a1b0",
+          "name": "弗莱迪",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R067",
+      "q": "冷周六的英文名是什么？（绿湖噩梦篇登场角色）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 15,
+      "seeds": [
+        {
+          "eid": "e_2a2a1cc23fef",
+          "name": "冷周六",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R068",
+      "q": "巨怪传说与失踪案发生在哪一年的绿湖？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 5,
+      "seeds": [
+        {
+          "eid": "e_ce02be54243f",
+          "name": "失踪案",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R069",
+      "q": "绿湖噩梦篇的孩子们在森林里遭遇了什么怪物？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 17,
+      "seeds": [
+        {
+          "eid": "e_9893f15e9cf3",
+          "name": "孩子们",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R070",
+      "q": "绿湖噩梦篇里的灯塔传说与哪个营地相关？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 36,
+      "seeds": [
+        {
+          "eid": "e_a868cfdf1858",
+          "name": "灯塔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8c4b0ff3c2a0",
+          "name": "营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R071",
+      "q": "绿湖噩梦篇里的巨怪英文叫什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 394,
+      "seeds": [
+        {
+          "eid": "e_8011d5108281",
+          "name": "巨怪",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R072",
+      "q": "绿湖营地发生的案件类型是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 566,
+      "seeds": [
+        {
+          "eid": "e_9e7e67bf9b1a",
+          "name": "绿湖营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R073",
+      "q": "绿湖噩梦篇里的巨怪居住在什么地方？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 384,
+      "seeds": [
+        {
+          "eid": "e_8011d5108281",
+          "name": "巨怪",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R074",
+      "q": "在 1971 年的绿湖营地，负责孩子们医疗健康的医生英文名叫什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 79,
+      "seeds": [
+        {
+          "eid": "e_9e7e67bf9b1a",
+          "name": "绿湖营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R075",
+      "q": "Horropedia 与 Jessica 同属哪个营地的故事？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 4,
+      "seeds": [
+        {
+          "eid": "e_203f820cc774",
+          "name": "horropedia",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_15580d984077",
+          "name": "洁西卡",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R076",
+      "q": "在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 394,
+      "seeds": [
+        {
+          "eid": "e_9893f15e9cf3",
+          "name": "孩子们",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R077",
+      "q": "在绿湖噩梦篇的夏令营里，一边讲恐怖片桥段一边协助调查失踪案的男孩是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 29,
+      "seeds": [
+        {
+          "eid": "e_ce02be54243f",
+          "name": "失踪案",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R078",
+      "q": "根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 79,
+      "seeds": [
+        {
+          "eid": "e_9e7e67bf9b1a",
+          "name": "绿湖营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R079",
+      "q": "绿湖营地的孩子们不敢进入的是哪里？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 489,
+      "seeds": [
+        {
+          "eid": "e_9e7e67bf9b1a",
+          "name": "绿湖营地",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R080",
+      "q": "绿湖噩梦篇的故事发生在哪一年？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 48,
+      "seeds": [
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_6122c1c93aa2",
+          "name": "绿湖",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R081",
+      "q": "可燃点体内的火到底是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 225,
+      "seeds": [
+        {
+          "eid": "e_106417cb70b2",
+          "name": "可燃点",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R082",
+      "q": "旧金山海特街的疗愈师是谁？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 271,
+      "seeds": [
+        {
+          "eid": "e_e452b3f01d15",
+          "name": "海特街",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_15c4b3c6713b",
+          "name": "疗愈师",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_61b3f1a25368",
+          "name": "旧金山",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R083",
+      "q": "J 的义妹是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 351,
+      "seeds": [
+        {
+          "eid": "e_8bfd13cad0bc",
+          "name": "j",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R084",
+      "q": "雷米特杯失窃案里 Melania 的保安公司叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 161,
+      "seeds": [
+        {
+          "eid": "e_6db3ebfced83",
+          "name": "melania",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R085",
+      "q": "《神秘警探C07》三部曲的导演是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 142,
+      "seeds": [
+        {
+          "eid": "e_c6da7ae42e8a",
+          "name": "《神秘警探c07》",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R086",
+      "q": "《疯癫与文明》里那座巨型监狱叫什么？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 368,
+      "seeds": [
+        {
+          "eid": "e_c38555831858",
+          "name": "监狱",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_ecd446b0965c",
+          "name": "文明",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_41be1b935466",
+          "name": "疯癫",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R087",
+      "q": "虚构集的小说《理性家族的崛起与衰落》的故事发生地是哪里？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 105,
+      "seeds": [
+        {
+          "eid": "e_bc637b7c7527",
+          "name": "《理性家族的崛起与衰落》",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_4007054a2e7c",
+          "name": "虚构集",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R088",
+      "q": "自由海风号邮轮的音乐总监是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 245,
+      "seeds": [
+        {
+          "eid": "e_1460e1f3184f",
+          "name": "自由海风号",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R089",
+      "q": "努库泰澳的岛民都有谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 14,
+      "seeds": [
+        {
+          "eid": "e_ece33505e869",
+          "name": "努库泰澳",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R090",
+      "q": "在中央塔里自囚的医生是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 17,
+      "seeds": [
+        {
+          "eid": "e_74e30060a10e",
+          "name": "中央塔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R091",
+      "q": "雷米特杯失窃案里出现的机器人保安英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 340,
+      "seeds": [
+        {
+          "eid": "e_dd312382a64f",
+          "name": "雷米特杯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R092",
+      "q": "唐人街影话篇的故事发生在哪条街？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 334,
+      "seeds": [
+        {
+          "eid": "e_6fd410f38c01",
+          "name": "唐人街",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R093",
+      "q": "《神秘警探C07》系列的故事出自哪个篇章？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 238,
+      "seeds": [
+        {
+          "eid": "e_c6da7ae42e8a",
+          "name": "《神秘警探c07》",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R094",
+      "q": "Noire 的中文译名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 216,
+      "seeds": [
+        {
+          "eid": "e_c6da7ae42e8a",
+          "name": "noire",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R095",
+      "q": "梅林的英文名是什么？（唐人街影话篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 97,
+      "seeds": [
+        {
+          "eid": "e_6fd410f38c01",
+          "name": "唐人街",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R096",
+      "q": "诺亚的英文名是什么？（唐人街影话篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 157,
+      "seeds": [
+        {
+          "eid": "e_6fd410f38c01",
+          "name": "唐人街",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R097",
+      "q": "斯科特的英文名是什么？（唐人街影话篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 98,
+      "seeds": [
+        {
+          "eid": "e_6fd410f38c01",
+          "name": "唐人街",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R098",
+      "q": "再见，来亚什基篇里的村庄英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 290,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R099",
+      "q": "来亚什基的少年奥古斯特的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 144,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R100",
+      "q": "叶夫根尼的英文名是什么？（再见，来亚什基篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 85,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R101",
+      "q": "克努特的英文名是什么？（再见，来亚什基篇）",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 135,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_d2f539dedeec",
+          "name": "Knut",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R102",
+      "q": "基克尔恩的英文名是什么？（再见，来亚什基篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 41,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R103",
+      "q": "温松的英文名是什么？（再见，来亚什基篇里的歌手）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 245,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R104",
+      "q": "忧郁的热带篇里的女军官是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 373,
+      "seeds": [
+        {
+          "eid": "e_4b914574755e",
+          "name": "军官",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R105",
+      "q": "卡森的英文名是什么？（忧郁的热带篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 221,
+      "seeds": [
+        {
+          "eid": "e_82bf2cffdc94",
+          "name": "卡森",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R106",
+      "q": "邓肯的英文名是什么？（忧郁的热带篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 206,
+      "seeds": [
+        {
+          "eid": "e_39ad3ae0a8ba",
+          "name": "邓肯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R107",
+      "q": "莉莉娅的英文名是什么？（忧郁的热带篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 338,
+      "seeds": [
+        {
+          "eid": "e_63404ef23297",
+          "name": "莉莉娅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R108",
+      "q": "佩拉的英文名是什么？（忧郁的热带篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 139,
+      "seeds": [
+        {
+          "eid": "e_c9c2708d92b2",
+          "name": "佩拉",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R109",
+      "q": "使徒兄弟会的英文名是什么？（忧郁的热带篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 188,
+      "seeds": [
+        {
+          "eid": "e_86ba35c1f2d2",
+          "name": "使徒兄弟会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R110",
+      "q": "金伯利女郎指的是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 285,
+      "seeds": [
+        {
+          "eid": "e_618c24ff99f2",
+          "name": "金伯利女郎",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R111",
+      "q": "斯特凡的英文名是什么？（77 号往事）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 190,
+      "seeds": [
+        {
+          "eid": "e_d321d6f7ccf9",
+          "name": "77",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R112",
+      "q": "芭芭拉的英文名是什么？（77 号往事）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 170,
+      "seeds": [
+        {
+          "eid": "e_5bced2a0fdb0",
+          "name": "芭芭拉",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R113",
+      "q": "阿格斯的英文名是什么？（77 号往事）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 168,
+      "seeds": [
+        {
+          "eid": "e_d321d6f7ccf9",
+          "name": "77",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R114",
+      "q": "77 号往事发生在哪条公路沿线？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 686,
+      "seeds": [
+        {
+          "eid": "e_d321d6f7ccf9",
+          "name": "77",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R115",
+      "q": "自由海风号邮轮的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 360,
+      "seeds": [
+        {
+          "eid": "e_1460e1f3184f",
+          "name": "自由海风号",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R116",
+      "q": "芭卡洛儿的故乡是哪座城市？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 81,
+      "seeds": [
+        {
+          "eid": "e_1460e1f3184f",
+          "name": "芭卡洛儿",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R117",
+      "q": "努库泰澳岛的英文拼法是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 73,
+      "seeds": [
+        {
+          "eid": "e_ece33505e869",
+          "name": "努库泰澳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R118",
+      "q": "图图石子的英文名是什么？（地球上最后的夜晚篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 114,
+      "seeds": [
+        {
+          "eid": "e_32a89bdcec2d",
+          "name": "图图石子",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R119",
+      "q": "托阿的英文名是什么？（地球上最后的夜晚篇）",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 138,
+      "seeds": [
+        {
+          "eid": "e_a04d7faed1e8",
+          "name": "地球",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_0a0593ea6200",
+          "name": "托阿",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R120",
+      "q": "塞洛尼的英文名是什么？（地球上最后的夜晚篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 34,
+      "seeds": [
+        {
+          "eid": "e_3a3aa156e003",
+          "name": "塞洛尼",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R121",
+      "q": "梅莉的英文名是什么？（地球上最后的夜晚篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 74,
+      "seeds": [
+        {
+          "eid": "e_a04d7faed1e8",
+          "name": "地球",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R122",
+      "q": "乌卢鲁运动会圣火中的小精灵叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 365,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R123",
+      "q": "乌卢鲁运动会的主会场叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 293,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R124",
+      "q": "参加乌卢鲁运动会的火焰系选手是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 62,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R125",
+      "q": "复兴！乌卢鲁运动会以哪座巨岩命名？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 478,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R126",
+      "q": "马库阿的英文名是什么？（乌卢鲁运动会篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 60,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R127",
+      "q": "福格先生发明的大型装置是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_68fca4284f5e",
+          "name": "福格先生",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R128",
+      "q": "卡罗琳·巴特利的英文名是什么？（圣火纪行篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 125,
+      "seeds": [
+        {
+          "eid": "e_45a4502460eb",
+          "name": "巴特利",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R129",
+      "q": "布里姆利的英文名是什么？（圣火纪行篇）",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 153,
+      "seeds": [
+        {
+          "eid": "e_32096b8be582",
+          "name": "圣火",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_7ecd62f00e79",
+          "name": "布里",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R130",
+      "q": "圣火纪行篇里伦敦举办的选拔赛叫什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 522,
+      "seeds": [
+        {
+          "eid": "e_32096b8be582",
+          "name": "圣火",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_1645ee78de0f",
+          "name": "伦敦",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R131",
+      "q": "1987 宇宙组曲篇里远赴太空的旅人是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 158,
+      "seeds": [
+        {
+          "eid": "e_a93cf93db3ae",
+          "name": "1987",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R132",
+      "q": "波因特的英文名是什么？（1987 宇宙组曲篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 202,
+      "seeds": [
+        {
+          "eid": "e_a93cf93db3ae",
+          "name": "1987",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R133",
+      "q": "科兹洛夫的英文名是什么？（1987 宇宙组曲篇）",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 228,
+      "seeds": [
+        {
+          "eid": "e_3fb5a486525c",
+          "name": "科兹洛夫",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_a93cf93db3ae",
+          "name": "1987",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R134",
+      "q": "诺谛卡的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 63,
+      "seeds": [
+        {
+          "eid": "e_e08fa19ea2a9",
+          "name": "诺谛卡",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R135",
+      "q": "复乐园篇的故事发生在哪块大陆？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 653,
+      "seeds": [
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R136",
+      "q": "阿黛尔的全名是什么？（迁流的盛宴篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 289,
+      "seeds": [
+        {
+          "eid": "e_263e996b0435",
+          "name": "阿黛尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R137",
+      "q": "塞莉亚的英文名是什么？（迁流的盛宴篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 219,
+      "seeds": [
+        {
+          "eid": "e_514c2545ed2b",
+          "name": "塞莉亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R138",
+      "q": "费利西恩的英文名是什么？（迁流的盛宴篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 301,
+      "seeds": [
+        {
+          "eid": "e_2fe63fe16cce",
+          "name": "费利西恩",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R139",
+      "q": "迁流的盛宴篇的故事发生在哪座城市？",
+      "pass": true,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 556,
+      "seeds": [
+        {
+          "eid": "e_590157b8d4d7",
+          "name": "城市",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R140",
+      "q": "绿松石蛇俱乐部篇的故事发生在哪个国家？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 625,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R141",
+      "q": "拉莫纳的英文名是什么？（绿松石蛇俱乐部篇）",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 275,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_0574417432ac",
+          "name": "拉莫纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R142",
+      "q": "绿松石蛇俱乐部篇里发生的命案中文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 344,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R143",
+      "q": "蝴蝶小姐的英文名是什么？（绿松石蛇俱乐部篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 270,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R144",
+      "q": "特蕾西塔的英文名是什么？（绿松石蛇俱乐部篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 108,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R145",
+      "q": "穆里尔的英文名是什么？（绿松石蛇俱乐部篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 186,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R146",
+      "q": "佩雷斯的英文名是什么？（绿松石蛇俱乐部篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 212,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R147",
+      "q": "克鲁托夫的英文名是什么？（远征记篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 281,
+      "seeds": [
+        {
+          "eid": "e_9ec6d1c4f2e6",
+          "name": "克鲁托夫",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R148",
+      "q": "伊万的英文名是什么？（远征记篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 189,
+      "seeds": [
+        {
+          "eid": "e_a15f8b81a160",
+          "name": "伊万",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R149",
+      "q": "远征记篇里的骑兵首领伊戈尔的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 589,
+      "seeds": [
+        {
+          "eid": "e_9d89ca535e34",
+          "name": "伊戈尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R150",
+      "q": "谢尔盖的英文名是什么？（远征记篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 83,
+      "seeds": [
+        {
+          "eid": "e_6c2651decd47",
+          "name": "谢尔盖",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R151",
+      "q": "长夜鸣笛篇的列车故事发生在哪条河流沿岸？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 306,
+      "seeds": [
+        {
+          "eid": "e_65ae8b88444f",
+          "name": "列车",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_c6a2f2aa949b",
+          "name": "河流",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R152",
+      "q": "塞梅尔维斯的英文名是什么？（长夜鸣笛篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 109,
+      "seeds": [
+        {
+          "eid": "e_c4c36da3bd8d",
+          "name": "塞梅尔维斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R153",
+      "q": "野树莓的英文名是什么？（长夜鸣笛篇）",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 42,
+      "seeds": [
+        {
+          "eid": "e_0613935a58f5",
+          "name": "野树莓",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R154",
+      "q": "皮罗斯大叔的英文名是什么？（长夜鸣笛篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 130,
+      "seeds": [
+        {
+          "eid": "e_e72b00bd1d2c",
+          "name": "皮罗斯大叔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R155",
+      "q": "长夜鸣笛篇里列车上的女售票员英文叫什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 103,
+      "seeds": [
+        {
+          "eid": "e_65ae8b88444f",
+          "name": "列车",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R156",
+      "q": "入雅典记篇的故事发生在哪座城市？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 181,
+      "seeds": [
+        {
+          "eid": "e_590157b8d4d7",
+          "name": "城市",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_48d97e5ab026",
+          "name": "雅典",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R157",
+      "q": "酒神节的英文名是什么？（入雅典记篇）",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 133,
+      "seeds": [
+        {
+          "eid": "e_48d97e5ab026",
+          "name": "雅典",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_7576df7a66cf",
+          "name": "酒神",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R158",
+      "q": "卡珊德拉的英文名是什么？（入雅典记篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 90,
+      "seeds": [
+        {
+          "eid": "e_3999f3d0c6c0",
+          "name": "卡珊德拉",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R159",
+      "q": "翡冷翠之春篇中的城市指的是哪座意大利城市？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 141,
+      "seeds": [
+        {
+          "eid": "e_590157b8d4d7",
+          "name": "城市",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R160",
+      "q": "乌切洛的英文名是什么？（翡冷翠之春篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 139,
+      "seeds": [
+        {
+          "eid": "e_8d8775a4f9bd",
+          "name": "乌切洛",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R161",
+      "q": "不老春篇里村民们疯狂追求的东西是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 546,
+      "seeds": [
+        {
+          "eid": "e_c9b378e0086b",
+          "name": "疯狂",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_863cc374e6dc",
+          "name": "东西",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_4406e2d9c8d5",
+          "name": "村民",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R162",
+      "q": "不老春篇里的教派叫什么名字？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 224,
+      "seeds": [
+        {
+          "eid": "e_364bd1bf0580",
+          "name": "名字",
+          "path": "exact",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_9f534ee96f40",
+          "name": "教派",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R163",
+      "q": "不老春篇里传说中的宝剑叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 240,
+      "seeds": [
+        {
+          "eid": "e_598e868b9e12",
+          "name": "传说",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R164",
+      "q": "朔日手记篇里酿得好酒的酒馆娘是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 226,
+      "seeds": [
+        {
+          "eid": "e_598e608aa4e5",
+          "name": "朔日手记",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R165",
+      "q": "朔日手记篇里九方之地举办的节日叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 85,
+      "seeds": [
+        {
+          "eid": "e_598e608aa4e5",
+          "name": "朔日手记",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R166",
+      "q": "九方是朔日手记篇里的什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 58,
+      "seeds": [
+        {
+          "eid": "e_598e608aa4e5",
+          "name": "朔日手记",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R167",
+      "q": "聚合浪潮篇里的机器人集体组织叫什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 161,
+      "seeds": [
+        {
+          "eid": "e_b232ae125d1a",
+          "name": "机器人",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R168",
+      "q": "马克西姆的英文名是什么？（聚合浪潮篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 246,
+      "seeds": [
+        {
+          "eid": "e_42db28c21077",
+          "name": "马克西姆",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R169",
+      "q": "瓦尼亚的英文名是什么？（聚合浪潮篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 124,
+      "seeds": [
+        {
+          "eid": "e_a15a78876a92",
+          "name": "瓦尼亚",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R170",
+      "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 194,
+      "seeds": [
+        {
+          "eid": "e_e1df6d68a1e1",
+          "name": "拉普拉斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R171",
+      "q": "他者的悲哀篇里出现的学园缩写是什么？",
+      "pass": false,
+      "n_seeds": 0,
+      "has_truth_seed": false,
+      "n_truth_entities": 295,
+      "seeds": [
+        {
+          "eid": "e_95416451f1e0",
+          "name": "协理者的记录",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_e6882bda4767",
+          "name": "调停者的命运",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_19b662e2995f",
+          "name": "九万个为什么——神秘学种族篇",
+          "path": "token",
+          "gated": false,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R172",
+      "q": "重燃！流金之海篇里的海上神祇纳西索斯的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 224,
+      "seeds": [
+        {
+          "eid": "e_aa47eb5d5e3f",
+          "name": "纳西索斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R173",
+      "q": "赫多涅的英文名是什么？（重燃！流金之海篇）",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 268,
+      "seeds": [
+        {
+          "eid": "e_fc358c3eb262",
+          "name": "赫多涅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R174",
+      "q": "重燃！流金之海篇里举办的水上竞技会英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 152,
+      "seeds": [
+        {
+          "eid": "e_725b76fd0079",
+          "name": "水上竞技会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R175",
+      "q": "世纪末尺度篇里出现的时间异常现象英文叫什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 223,
+      "seeds": [
+        {
+          "eid": "e_93aa735fcb47",
+          "name": "异常现象",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_f639c6c18f16",
+          "name": "时间异常",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R176",
+      "q": "在暴雨中唯一能自由行动的司辰是谁？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 519,
+      "seeds": [
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_4c974ea89d43",
+          "name": "自由",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "司辰",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R177",
+      "q": "维尔汀随身携带的、能庇护神秘学家的道具是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 544,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R178",
+      "q": "芝加哥情人节大屠杀发生在哪座城市？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 337,
+      "seeds": [
+        {
+          "eid": "e_6b8edaec1abb",
+          "name": "芝加哥",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_c02bfabbe0f0",
+          "name": "大屠杀",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R179",
+      "q": "无名者的神秘术能把记忆转换成什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 491,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_48281aecffd9",
+          "name": "神秘术",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R180",
+      "q": "无名者幼年被植入的、能生成人格与记忆的装置叫什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 114,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R181",
+      "q": "无名者在基金会内务档案中的机构代号是什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 440,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R182",
+      "q": "十四行诗的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 223,
+      "seeds": [
+        {
+          "eid": "e_b14dba0d6a32",
+          "name": "十四行诗",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R183",
+      "q": "玛蒂尔达的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 49,
+      "seeds": [
+        {
+          "eid": "e_6eee46e42543",
+          "name": "玛蒂尔达",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R184",
+      "q": "星锑的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 56,
+      "seeds": [
+        {
+          "eid": "e_731b9388efa3",
+          "name": "星锑",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R185",
+      "q": "苏芙比的英文名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 56,
+      "seeds": [
+        {
+          "eid": "e_68d0cb4cc747",
+          "name": "苏芙比",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R186",
+      "q": "牙仙的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 322,
+      "seeds": [
+        {
+          "eid": "e_341041c2a675",
+          "name": "牙仙",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R187",
+      "q": "神秘学家的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 416,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R188",
+      "q": "重塑之手的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 438,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R189",
+      "q": "圣洛夫基金会的英文全称是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 356,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R190",
+      "q": "鸽子屋的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 324,
+      "seeds": [
+        {
+          "eid": "e_b178b9aea33d",
+          "name": "鸽子屋",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R191",
+      "q": "拉普拉斯的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 411,
+      "seeds": [
+        {
+          "eid": "e_e1df6d68a1e1",
+          "name": "拉普拉斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R192",
+      "q": "芝诺的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 558,
+      "seeds": [
+        {
+          "eid": "e_94d74b092c3b",
+          "name": "芝诺",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R193",
+      "q": "暴雨的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 466,
+      "seeds": [
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R194",
+      "q": "司辰的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 442,
+      "seeds": [
+        {
+          "eid": "e_8b2de5038200",
+          "name": "司辰",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R195",
+      "q": "J 的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 290,
+      "seeds": [
+        {
+          "eid": "e_8bfd13cad0bc",
+          "name": "j",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R196",
+      "q": "伊戈尔是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 589,
+      "seeds": [
+        {
+          "eid": "e_9d89ca535e34",
+          "name": "伊戈尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R197",
+      "q": "多瑙河的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 306,
+      "seeds": [
+        {
+          "eid": "e_e95b69fadff1",
+          "name": "多瑙河",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R198",
+      "q": "雅典的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 181,
+      "seeds": [
+        {
+          "eid": "e_48d97e5ab026",
+          "name": "雅典",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R199",
+      "q": "LSCC 是什么机构？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 411,
+      "seeds": [
+        {
+          "eid": "e_e1df6d68a1e1",
+          "name": "lscc",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R200",
+      "q": "Charon 是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 145,
+      "seeds": [
+        {
+          "eid": "e_887c98da2587",
+          "name": "charon",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R201",
+      "q": "Enigma 是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 323,
+      "seeds": [
+        {
+          "eid": "e_cebb0ab321ea",
+          "name": "enigma",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R202",
+      "q": "芝加哥的英文叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 337,
+      "seeds": [
+        {
+          "eid": "e_6b8edaec1abb",
+          "name": "芝加哥",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R203",
+      "q": "雅致的多瑙河篇章名是什么？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 84,
+      "seeds": [
+        {
+          "eid": "e_e95b69fadff1",
+          "name": "多瑙河",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R204",
+      "q": "苏菲亚接手的重塑之手与阿尔卡纳的关系是？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 41,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_1e493b90511a",
+          "name": "索菲娅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R205",
+      "q": "勿忘我与斯奈德同属哪一年的芝加哥故事？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 7,
+      "seeds": [
+        {
+          "eid": "e_6b8edaec1abb",
+          "name": "芝加哥",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_e2feb235f360",
+          "name": "斯奈德",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_5943113f986f",
+          "name": "勿忘我",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R206",
+      "q": "77 号往事里淑女格蕾丝主持的行动代号与哪条公路有关？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 47,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "淑女格蕾丝",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R207",
+      "q": "「无名者」的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 313,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R208",
+      "q": "「露西」对应的英文原文是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 327,
+      "seeds": [
+        {
+          "eid": "e_e96a5f599ed5",
+          "name": "露西",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R209",
+      "q": "《重返未来：1999》剧情转写里「圣洛夫基金会」的英文写法是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 471,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R210",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「重塑之手」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 438,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R211",
+      "q": "「拉普拉斯」的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 412,
+      "seeds": [
+        {
+          "eid": "e_e1df6d68a1e1",
+          "name": "拉普拉斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R212",
+      "q": "《重返未来：1999》剧情转写里「暴雨」的英文写法是什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 379,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R213",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「神秘学家」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 421,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R214",
+      "q": "「伊戈尔」的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 395,
+      "seeds": [
+        {
+          "eid": "e_9d89ca535e34",
+          "name": "伊戈尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R215",
+      "q": "「乌尔里希」对应的英文原文是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 358,
+      "seeds": [
+        {
+          "eid": "e_726d2de42631",
+          "name": "乌尔里希",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R216",
+      "q": "《重返未来：1999》剧情转写里「诺谛卡」的英文写法是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 184,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_e08fa19ea2a9",
+          "name": "诺谛卡",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R217",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「卡珊德拉」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 90,
+      "seeds": [
+        {
+          "eid": "e_3999f3d0c6c0",
+          "name": "卡珊德拉",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R218",
+      "q": "「赫多涅」的英文名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 268,
+      "seeds": [
+        {
+          "eid": "e_fc358c3eb262",
+          "name": "赫多涅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R219",
+      "q": "《重返未来：1999》剧情转写里「哑谜」的英文写法是什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 164,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_cebb0ab321ea",
+          "name": "哑谜",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R220",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「远旅」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 158,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_1c7cf691654e",
+          "name": "远旅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R221",
+      "q": "《重返未来：1999》剧情转写里「维拉」的英文写法是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 281,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_358d227f1a21",
+          "name": "维拉",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R222",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「玛蒂尔达」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 349,
+      "seeds": [
+        {
+          "eid": "e_6eee46e42543",
+          "name": "玛蒂尔达",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R223",
+      "q": "《重返未来：1999》剧情转写里「谢尔盖」的英文写法是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 145,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_6c2651decd47",
+          "name": "谢尔盖",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R224",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「阿黛尔」这个名字写作什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 263,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_263e996b0435",
+          "name": "阿黛尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R225",
+      "q": "《重返未来：1999》剧情转写里「芦草结」的英文写法是什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 55,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b7728ea8147e",
+          "name": "芦草结",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R226",
+      "q": "在《重返未来：1999》的英文剧情与语音转写里，「十四行诗」这个名字写作什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 244,
+      "seeds": [
+        {
+          "eid": "e_b14dba0d6a32",
+          "name": "十四行诗",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R227",
+      "q": "《重返未来：1999》剧情转写里「贝丽尔」的英文写法是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 78,
+      "seeds": [
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_1118a2f7b614",
+          "name": "贝丽尔",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R228",
+      "q": "拉米雷斯保安公司的老板是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 49,
+      "seeds": [
+        {
+          "eid": "e_82eeba1f2783",
+          "name": "拉米雷斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R229",
+      "q": "Melania 与 Pickles 同属哪一起案件？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 35,
+      "seeds": [
+        {
+          "eid": "e_6db3ebfced83",
+          "name": "melania",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_08c406094e33",
+          "name": "pickles",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R230",
+      "q": "来亚什基矿区出产的特殊矿物在英文里叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 25,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R231",
+      "q": "77 号往事里与格蕾丝对立的契约魅魔是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 396,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "格蕾丝",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R232",
+      "q": "入雅典记篇里雅典的统治者是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 112,
+      "seeds": [
+        {
+          "eid": "e_48d97e5ab026",
+          "name": "雅典",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R233",
+      "q": "圣洛夫基金会的副会长、无名者的养母是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 436,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R234",
+      "q": "康斯坦丁给无名者的第一个名字是什么？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 24,
+      "seeds": [
+        {
+          "eid": "e_9e564b092142",
+          "name": "康斯坦丁",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R235",
+      "q": "在康复中心为无名者做人工梦游诊察的医生是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": false,
+      "n_truth_entities": 180,
+      "seeds": [
+        {
+          "eid": "e_c55fb7bd10ef",
+          "name": "康复中心",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b52c8a7c0718",
+          "name": "人工梦游",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R236",
+      "q": "基金会的首席助手、维尔汀的第一防线学校同窗是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 223,
+      "seeds": [
+        {
+          "eid": "e_fde53a71217a",
+          "name": "第一防线学校",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R237",
+      "q": "苏菲亚从阿尔卡纳手中接管的组织叫什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 587,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_1e493b90511a",
+          "name": "索菲娅",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R238",
+      "q": "苏菲亚与阿尼姆斯在南极事件中复活了谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 526,
+      "seeds": [
+        {
+          "eid": "e_898dd999f8b0",
+          "name": "南极事件",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_f97ef131e18b",
+          "name": "阿尼姆斯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_1e493b90511a",
+          "name": "索菲娅",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R239",
+      "q": "康斯坦丁的养女最终以什么身份加入司辰小队？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 298,
+      "seeds": [
+        {
+          "eid": "e_afa43c61e673",
+          "name": "司辰小队",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_9e564b092142",
+          "name": "康斯坦丁",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R240",
+      "q": "破坏无名者发条装置的重塑之手首领是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 526,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R241",
+      "q": "保利娜的义兄、人称 J 的男人叫什么名字？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 290,
+      "seeds": [
+        {
+          "eid": "e_0c0da6ec9840",
+          "name": "保利娜",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R242",
+      "q": "乔·布朗的义妹、原基金会调查员是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 351,
+      "seeds": [
+        {
+          "eid": "e_8bfd13cad0bc",
+          "name": "乔·布朗",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R243",
+      "q": "芝加哥事件中被阿尔卡纳折磨的少女是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 295,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R244",
+      "q": "救走斯奈德姐姐的行动发生在哪座城市？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 337,
+      "seeds": [
+        {
+          "eid": "e_e2feb235f360",
+          "name": "斯奈德",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R245",
+      "q": "可燃点体内的和平乌鲁与哪场运动会的圣火相关？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 478,
+      "seeds": [
+        {
+          "eid": "e_d868c1fc1879",
+          "name": "和平乌鲁",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_106417cb70b2",
+          "name": "Spathodea",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R246",
+      "q": "以斯拉导演的运动会里，圣火的本体是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 365,
+      "seeds": [
+        {
+          "eid": "e_32096b8be582",
+          "name": "圣火",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_4876fe13c53c",
+          "name": "导演",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R247",
+      "q": "施瓦茨医生的骗局最终被哪位维也纳医生揭穿？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 256,
+      "seeds": [
+        {
+          "eid": "e_9efdc90d9b20",
+          "name": "施瓦茨医生",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R248",
+      "q": "海因里希效忠的重塑之手首领是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 526,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_baa1a147bb07",
+          "name": "海因里希",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R249",
+      "q": "拉莫纳的俱乐部坐落在哪个国家？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 625,
+      "seeds": [
+        {
+          "eid": "e_0574417432ac",
+          "name": "拉莫纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e9933e8a7556",
+          "name": "俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R250",
+      "q": "杜硕节在朔日手记篇的哪个地点举办？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 58,
+      "seeds": [
+        {
+          "eid": "e_598e608aa4e5",
+          "name": "朔日手记",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R251",
+      "q": "温松的歌声回荡在哪座矿业村庄？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 290,
+      "seeds": [
+        {
+          "eid": "e_0ded8c870d73",
+          "name": "村庄",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_3931a28a98d8",
+          "name": "歌声",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R252",
+      "q": "诺谛卡出现的大陆是哪块？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 653,
+      "seeds": [
+        {
+          "eid": "e_e08fa19ea2a9",
+          "name": "诺谛卡",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R253",
+      "q": "本名克拉拉·温格勒的医生在维也纳以什么名字为人所知？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 256,
+      "seeds": [
+        {
+          "eid": "e_32c013447579",
+          "name": "克拉拉·温格勒",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R254",
+      "q": "在自由海风号上经历试炼的乘客们乘坐的邮轮英文名叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 159,
+      "seeds": [
+        {
+          "eid": "e_1460e1f3184f",
+          "name": "自由海风号",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R255",
+      "q": "阿尔卡纳盯上的非对称核素 R 可以让人免疫什么灾难？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 901,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R256",
+      "q": "在《重返未来：1999》第一章的芝加哥事件里，经营瓦尔登湖地下酒吧的重塑之手成员是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 465,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d585e89cc0b",
+          "name": "1999",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R257",
+      "q": "在 1990 年德克萨斯 77 号公路的往事里，被重塑之手追随者误认成格蕾丝的农场女孩是谁？",
+      "pass": false,
+      "n_seeds": 4,
+      "has_truth_seed": true,
+      "n_truth_entities": 184,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_bb3acf149db4",
+          "name": "1990",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_ca6a89492350",
+          "name": "德克萨斯",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R258",
+      "q": "在雷米特杯失窃案里协助警方寻回失窃奖杯、因此声名大噪的侦探狗叫什么名字？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 105,
+      "seeds": [
+        {
+          "eid": "e_dd312382a64f",
+          "name": "雷米特杯",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R259",
+      "q": "在迁流的盛宴篇的巴黎社交季里，出身塔维尼耶家族的年轻女士是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 289,
+      "seeds": [
+        {
+          "eid": "e_e13d44673333",
+          "name": "年轻女士",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R260",
+      "q": "在绿松石蛇俱乐部的墨西哥故事里，与画家圈子来往密切的女主角是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 275,
+      "seeds": [
+        {
+          "eid": "e_d0a6aab509a5",
+          "name": "绿松石蛇俱乐部",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R261",
+      "q": "在入雅典记的雅典城邦故事里，主持酒神节、执掌城邦的领袖人物是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 112,
+      "seeds": [
+        {
+          "eid": "e_b8bfe646d432",
+          "name": "故事",
+          "path": "exact",
+          "gated": false,
+          "truth": false
+        },
+        {
+          "eid": "e_48d97e5ab026",
+          "name": "雅典",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b4084be65bc9",
+          "name": "城邦",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R262",
+      "q": "在长夜鸣笛篇的多瑙河夜行列车上，与吸血鬼传闻纠缠在一起的女学者是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 109,
+      "seeds": [
+        {
+          "eid": "e_e95b69fadff1",
+          "name": "多瑙河",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_13a293063cff",
+          "name": "吸血鬼",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R263",
+      "q": "在 1987 宇宙组曲篇的太空任务里，跨越星海、远赴外层空间的旅人是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 158,
+      "seeds": [
+        {
+          "eid": "e_a93cf93db3ae",
+          "name": "1987",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R264",
+      "q": "在再见来亚什基篇的矿业村庄里，教孩子们唱歌、想去看海的少年是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 144,
+      "seeds": [
+        {
+          "eid": "e_36cd7e038581",
+          "name": "来亚什基",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R265",
+      "q": "在忧郁的热带篇的圣保罗贫民窟故事里，身居军职、行事果决的女军官是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 373,
+      "seeds": [
+        {
+          "eid": "e_0bcfa458d437",
+          "name": "圣保罗",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_1209ff8f9f04",
+          "name": "贫民窟",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R266",
+      "q": "在圣火纪行东区黎明的伦敦雾霾里，坚信自己的巨型机器能净化全城的绅士是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 226,
+      "seeds": [
+        {
+          "eid": "e_f956f42929b6",
+          "name": "机器",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_32096b8be582",
+          "name": "圣火",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_204c371ce233",
+          "name": "东区",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R267",
+      "q": "在复兴乌卢鲁运动会篇的赛场上，操控火焰参赛、守护和平乌鲁圣火的选手是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 62,
+      "seeds": [
+        {
+          "eid": "e_2ef8d1c6ae0f",
+          "name": "乌卢鲁运动会",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_d868c1fc1879",
+          "name": "和平乌鲁",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R268",
+      "q": "在地球上最后的夜晚篇的南太平洋航线上，奉命登船执行任务、代号淑女格蕾丝的间谍是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 424,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "淑女格蕾丝",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R269",
+      "q": "在朔日手记篇的大唐九方之地，于杜硕节期间酿出令人称奇的好酒的娘子是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 226,
+      "seeds": [
+        {
+          "eid": "e_598e608aa4e5",
+          "name": "朔日手记",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R270",
+      "q": "在唐人街影话篇的香港取景故事里，执导《神秘警探C07》三部曲的导演是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 216,
+      "seeds": [
+        {
+          "eid": "e_c6da7ae42e8a",
+          "name": "《神秘警探c07》",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R271",
+      "q": "在无路可返的个人剧情里，于康复中心为无名者进行人工梦游诊察的医生是谁？",
+      "pass": false,
+      "n_seeds": 3,
+      "has_truth_seed": false,
+      "n_truth_entities": 180,
+      "seeds": [
+        {
+          "eid": "e_c55fb7bd10ef",
+          "name": "康复中心",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b52c8a7c0718",
+          "name": "人工梦游",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R272",
+      "q": "在聚合浪潮篇的苏联背景故事里，与集体 2.0 的机器人群体打交道的研究者是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 246,
+      "seeds": [
+        {
+          "eid": "e_cbb59a082245",
+          "name": "研究者",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_b232ae125d1a",
+          "name": "机器人",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R273",
+      "q": "有位少女教师用神秘术守护村庄，而这座村庄以矿业为生，这座村庄是哪里？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 75,
+      "seeds": [
+        {
+          "eid": "e_48281aecffd9",
+          "name": "神秘术",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_358d227f1a21",
+          "name": "维拉",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R274",
+      "q": "以火焰本能参赛并守护圣火的选手，与和平乌鲁多次同框，这位选手是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 27,
+      "seeds": [
+        {
+          "eid": "e_d868c1fc1879",
+          "name": "和平乌鲁",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R275",
+      "q": "一场运动会因位于澳洲腹地的巨岩而得名，这场运动会叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 566,
+      "seeds": [
+        {
+          "eid": "e_4cee2c03e8b1",
+          "name": "澳洲",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R276",
+      "q": "伦敦雾霾事件里发明巨型净化机的先生是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 50,
+      "seeds": [
+        {
+          "eid": "e_808d614ea5f7",
+          "name": "净化机",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_3d0d2a12fda2",
+          "name": "阿莱夫",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R277",
+      "q": "一列夜行列车上流传着吸血鬼的传闻，这条列车行驶在哪条河沿岸？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 86,
+      "seeds": [
+        {
+          "eid": "e_13a293063cff",
+          "name": "吸血鬼",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R278",
+      "q": "圣洛夫基金会的英文名与哪位条件反射理论家同名？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 356,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R279",
+      "q": "一家以条件反射理论家命名的基金会收容并管理神秘学家，它的英文名是什么？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 466,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "圣洛夫基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R280",
+      "q": "一位神秘学家能免疫暴雨并带着手提箱穿越时代，她是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 428,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R281",
+      "q": "有人把两位好友的消失归咎于一场暴雨，这位幸存的司辰是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 629,
+      "seeds": [
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "司辰",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R282",
+      "q": "有人以“浸没于纯白中的执棋者”形容一位总是面带微笑的副会长，她是谁？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 436,
+      "seeds": [
+        {
+          "eid": "e_0efdd4476783",
+          "name": "副会长",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R283",
+      "q": "一位基金会副会长常以棋局比喻事件，她也是无名者的养母，她是谁？",
+      "pass": true,
+      "n_seeds": 3,
+      "has_truth_seed": true,
+      "n_truth_entities": 436,
+      "seeds": [
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_0efdd4476783",
+          "name": "副会长",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R284",
+      "q": "一个组织的首领别名“受苦者”，是芝加哥与维也纳事件的罪魁祸首，她是谁？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 401,
+      "seeds": [
+        {
+          "eid": "e_57bb0199f0f0",
+          "name": "维也纳事件",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R285",
+      "q": "一个组织试图回溯至“秩序正确”的时代并人为加速暴雨的到来，它是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 720,
+      "seeds": [
+        {
+          "eid": "e_4e6275c4b593",
+          "name": "暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_a3540e824bd4",
+          "name": "组织",
+          "path": "exact",
+          "gated": false,
+          "truth": true
+        },
+        {
+          "eid": "e_b89732cc7004",
+          "name": "秩序",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R286",
+      "q": "由鸽子意象命名、与基金会收容事务相关的场所有个绰号，它叫什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 324,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R287",
+      "q": "一位特工能把记忆化作飞蛾循光传递情报，她是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": false,
+      "n_truth_entities": 467,
+      "seeds": [
+        {
+          "eid": "e_b55ff5c3344b",
+          "name": "记忆",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_99b1d17f927b",
+          "name": "飞蛾",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R288",
+      "q": "一位怀疑神秘学家终将被淘汰的精神科医生坚持在康复中心工作，她是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 180,
+      "seeds": [
+        {
+          "eid": "e_23231cede01b",
+          "name": "神秘学家",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_c55fb7bd10ef",
+          "name": "康复中心",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R289",
+      "q": "一位精神科医生的同学包括维尔汀与玛蒂尔达，她是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 24,
+      "seeds": [
+        {
+          "eid": "e_6eee46e42543",
+          "name": "玛蒂尔达",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R290",
+      "q": "一位女士既是基金会间谍又以“淑女”自称，她的化名是什么？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 157,
+      "seeds": [
+        {
+          "eid": "e_e6d82275d20e",
+          "name": "基金会",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R291",
+      "q": "被阿尔卡纳称作“我的无名者”、以蛹为喻的角色是谁？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 424,
+      "seeds": [
+        {
+          "eid": "e_0f09fd869164",
+          "name": "阿尔卡纳",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_46b152872f2e",
+          "name": "无名者",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R292",
+      "q": "一位随维尔汀行动的女演员最终开枪杀死了一名重塑之手成员，她是谁？",
+      "pass": false,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 151,
+      "seeds": [
+        {
+          "eid": "e_2b654a686f4e",
+          "name": "重塑之手",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R293",
+      "q": "77 号往事发生在哪一年？",
+      "pass": false,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 354,
+      "seeds": [
+        {
+          "eid": "e_d321d6f7ccf9",
+          "name": "77",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R294",
+      "q": "第一次暴雨发生于哪一年？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 602,
+      "seeds": [
+        {
+          "eid": "e_ad974849efbd",
+          "name": "第一次暴雨",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R295",
+      "q": "1999 年 12 月 31 日那天发生了什么灾难？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 560,
+      "seeds": [
+        {
+          "eid": "e_65f32480ae94",
+          "name": "发生了什么",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R296",
+      "q": "芝加哥情人节大屠杀发生在哪一年？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 452,
+      "seeds": [
+        {
+          "eid": "e_6b8edaec1abb",
+          "name": "芝加哥",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        },
+        {
+          "eid": "e_c02bfabbe0f0",
+          "name": "大屠杀",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R297",
+      "q": "维尔汀在第一防线学校时是多少岁策划学生出逃的？",
+      "pass": true,
+      "n_seeds": 2,
+      "has_truth_seed": true,
+      "n_truth_entities": 209,
+      "seeds": [
+        {
+          "eid": "e_fde53a71217a",
+          "name": "第一防线学校",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        },
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R298",
+      "q": "雷米特杯失窃案发生在哪一年？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": false,
+      "n_truth_entities": 297,
+      "seeds": [
+        {
+          "eid": "e_dd312382a64f",
+          "name": "雷米特杯",
+          "path": "exact",
+          "gated": true,
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "R299",
+      "q": "1966 年的伦敦发生了哪起震惊世界的失窃案？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 297,
+      "seeds": [
+        {
+          "eid": "e_58000b8f5d8c",
+          "name": "1966",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "R300",
+      "q": "维尔汀首次登场的年份是哪一年？",
+      "pass": true,
+      "n_seeds": 1,
+      "has_truth_seed": true,
+      "n_truth_entities": 297,
+      "seeds": [
+        {
+          "eid": "e_8b2de5038200",
+          "name": "维尔汀",
+          "path": "exact",
+          "gated": true,
+          "truth": true
+        }
+      ]
+    }
+  ]
+}

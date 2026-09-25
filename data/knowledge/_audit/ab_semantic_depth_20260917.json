@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-09-17 13:32:30",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "prod_semantic_top": 5,
+    "items": 300
+  },
+  "selfcheck": "PASSED",
+  "results": [
+    {
+      "label": "semantic_top=5",
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass": 0.59,
+      "mrr": 0.3804,
+      "latency_p95_ms": 821.7,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "clean": false
+      },
+      "semantic_top": 5
+    },
+    {
+      "label": "semantic_top=20",
+      "strict_pass_n": 196,
+      "strict_pass": 0.6533,
+      "inject_pass": 0.5967,
+      "mrr": 0.3765,
+      "latency_p95_ms": 810.9,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 56,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "clean": false
+      },
+      "semantic_top": 20
+    }
+  ],
+  "delta_vs_prod": [
+    {
+      "semantic_top": 5,
+      "d_strict_pass_n": 0,
+      "d_inject_pass": 0.0,
+      "d_neg_cases": 0,
+      "d_neg_blocks": 0,
+      "new_leaks": [
+        "解释一下相对论",
+        "红楼梦的作者是谁"
+      ]
+    },
+    {
+      "semantic_top": 20,
+      "d_strict_pass_n": 1,
+      "d_inject_pass": 0.0067,
+      "d_neg_cases": 0,
+      "d_neg_blocks": 2,
+      "new_leaks": [
+        "解释一下相对论",
+        "红楼梦的作者是谁"
+      ]
+    }
+  ]
+}

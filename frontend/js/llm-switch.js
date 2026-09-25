@@ -67,6 +67,31 @@
 
   const state = loadState();
 
+  // ── 已拉取到的模型列表缓存（provider -> [model, ...]）──
+  // 必须持久化：`open()` 每次都会走 populateProviders() → onProviderChange()，
+  // 若那里直接用静态预设，用户「🔄 拉取模型列表」拿到的真实列表会被预设冲掉，
+  // 表现为「明明拉到了，再打开就没了」。
+  const PULLED_MODELS_KEY = "roleplay_llm_pulled_models";
+  let pulledModels = {};
+  try {
+    const rawPulled = localStorage.getItem(PULLED_MODELS_KEY);
+    if (rawPulled) {
+      const parsed = JSON.parse(rawPulled);
+      if (parsed && typeof parsed === "object") pulledModels = parsed;
+    }
+  } catch (_) { pulledModels = {}; }
+  function savePulledModels() {
+    try { localStorage.setItem(PULLED_MODELS_KEY, JSON.stringify(pulledModels)); } catch (_) {}
+  }
+  /** 当前 provider 的候选来源：优先真实拉取结果，没有才回退静态预设。 */
+  function modelsFor(provider) {
+    const pulled = pulledModels[provider];
+    if (Array.isArray(pulled) && pulled.length) return pulled;
+    return defaultModelsFor(provider);
+  }
+  // 上一次的 provider，用于判断「是否真的换了接入方式」（只有真换了才清空模型名）
+  let lastProvider = null;
+
   // 后端全局配置缓存（脱敏）：{provider, model, base_url, has_api_key, cloud_presets, ollama_default_url}
   let serverConfig = null;
   // provider 标签（HUD / 下拉）
@@ -85,10 +110,12 @@
   let backdrop = null;
   let providerSel = null;
   let modelSel = null;
+  let modelListEl = null;
   let baseUrlInput = null;
   let apiKeyInput = null;
   let testBtn = null;
   let testResultEl = null;
+  let refreshBtnEl = null;
   let saveBtn = null;
   let resetBtn = null;
   let initialized = false;
@@ -141,7 +168,7 @@
     h2.textContent = "🤖 模型切换";
     const sub = document.createElement("p");
     sub.className = "sub";
-    sub.textContent = "在本地 Ollama 与云端模型之间切换；配置仅保存在浏览器（localStorage），API Key 不落盘、不进日志。";
+    sub.textContent = "在本地 Ollama 与云端模型之间切换；点「保存并应用」会写入本机 .env，API Key 不进日志、不发往第三方。";
 
     // 接入方式
     providerSel = document.createElement("select");
@@ -150,10 +177,20 @@
 
     const providerWrap = makeField("接入方式", providerSel, "本地 Ollama：完全离线，免 Key；云端：需填入对应 API Key");
 
-    // 模型下拉
-    modelSel = document.createElement("select");
+    // 模型：可自由输入的文本框 + datalist 预设建议。
+    // 不同网关/中转的模型命名规则各不相同（如 cn:glm-5.3、自定义别名），
+    // 用固定下拉无法覆盖，故改为「可手填、预设仅作候选」的通用形式。
+    modelSel = document.createElement("input");
     modelSel.id = "llm-model";
-    const modelWrap = makeField("模型", modelSel, "Ollama 会实时拉取本地已安装模型；云端为官方预设");
+    modelSel.type = "text";
+    modelSel.setAttribute("autocomplete", "off");
+    modelSel.placeholder = "模型名，可直接手填（如 cn:glm-5.3 / gpt-4o）";
+    modelListEl = document.createElement("datalist");
+    modelListEl.id = "llm-model-options";
+    modelSel.setAttribute("list", "llm-model-options");
+    modelSel.addEventListener("input", () => { clearTestResult(); });
+    const modelWrap = makeField("模型", modelSel, "可直接手填任意模型名；下拉候选来自当前接入方式的预设");
+    modelWrap.appendChild(modelListEl);
 
     // Base URL
     baseUrlInput = document.createElement("input");
@@ -173,16 +210,25 @@
     apiKeyInput.type = "password";
     apiKeyInput.placeholder = "sk-…（云端必填，本地 Ollama 可留空）";
     apiKeyInput.addEventListener("input", () => { clearTestResult(); });
-    const apiKeyWrap = makeField("API Key", apiKeyInput, "仅保存在本浏览器；后端只在本请求使用一次，绝不落盘");
+    const apiKeyWrap = makeField("API Key", apiKeyInput, "点「保存并应用」后写入本机 .env（仅本地文件，不被 git 跟踪）；日志中始终脱敏");
 
-    // 操作行：刷新本地模型 / 测试连通
+    // 操作行：拉取模型列表 / 测试连通
     const actions1 = document.createElement("div");
     actions1.className = "llm-actions";
     const refreshBtn = document.createElement("button");
     refreshBtn.type = "button";
     refreshBtn.className = "clear-btn";
-    refreshBtn.textContent = "🔄 刷新本地模型";
-    refreshBtn.addEventListener("click", () => refreshOllamaModels(true));
+    refreshBtn.textContent = "🔄 拉取模型列表";
+    refreshBtn.title = "按当前 Base URL / API Key 拉取可用模型，结果填入上方候选";
+    refreshBtn.addEventListener("click", () => refreshModels(true));
+    refreshBtnEl = refreshBtn;
+    // 填完 Base URL / API Key 就自动拉一次（change 只在失焦后触发，不会随每次按键发请求，
+    // 避免对计费端点造成无谓调用）。
+    const autoFetch = () => {
+      if (providerSel && providerSel.value !== "ollama") refreshModels(false);
+    };
+    baseUrlInput.addEventListener("change", autoFetch);
+    apiKeyInput.addEventListener("change", autoFetch);
     testBtn = document.createElement("button");
     testBtn.type = "button";
     testBtn.className = "clear-btn";
@@ -376,9 +422,15 @@
     return [];
   }
 
-  /** provider 变化时刷新模型下拉 + base_url。silent=true 时不重置用户已填的 api_key。 */
+  /** provider 变化时刷新模型候选 + base_url。silent=true 时不重置用户已填的 api_key。 */
   async function onProviderChange(autoFetchModels) {
     const provider = providerSel.value;
+    // 只有**真的换了接入方式**才清空模型名（否则旧 provider 的模型名会串到新 provider）；
+    // 重开面板（provider 未变）时保留输入框原值，避免「打开就变空」。
+    if (lastProvider !== null && lastProvider !== provider) {
+      modelSel.value = "";
+    }
+    lastProvider = provider;
     // base_url：用户改过才填充默认，避免覆盖手填值
     const presetBase = defaultBaseUrlFor(provider);
     if (!baseUrlInput.dataset.touched) baseUrlInput.value = presetBase;
@@ -393,31 +445,90 @@
       apiKeyInput.value = "";
     }
 
-    // 模型下拉
-    modelSel.innerHTML = "";
-    const models = defaultModelsFor(provider);
+    // 模型候选：优先已拉取的真实列表，其次静态预设；没有已保存模型时不覆盖输入框
+    const models = modelsFor(provider);
     const currentModel = (state.configured && state.provider === provider && state.model) ||
       (serverConfig && serverConfig.provider === provider && serverConfig.model) || "";
-    let hasCurrent = false;
-    const candidates = models.length ? models : (currentModel ? [currentModel] : []);
-    candidates.forEach((m) => {
-      const opt = document.createElement("option");
-      opt.value = m;
-      opt.textContent = m;
-      modelSel.appendChild(opt);
-      if (m === currentModel) { modelSel.value = m; hasCurrent = true; }
-    });
-    if (!hasCurrent && currentModel) {
-      const opt = document.createElement("option");
-      opt.value = currentModel;
-      opt.textContent = currentModel;
-      modelSel.appendChild(opt);
-      modelSel.value = currentModel;
-    }
-    if (!modelSel.value && candidates.length) modelSel.value = candidates[0];
+    const preferred = currentModel || (provider === "ollama" ? (models[0] || "") : "");
+    fillModelOptions(models, preferred);
 
     if (provider === "ollama" && autoFetchModels !== false) {
       await refreshOllamaModels(false);
+    }
+  }
+
+  /** 重建 datalist 候选。
+   *  preferred 为空时**不清空输入框**——保留用户已手填/已保存的模型名，
+   *  避免「打开面板模型名就消失」。换 provider 时的清空由 onProviderChange 显式处理。
+   */
+  function fillModelOptions(models, preferred) {
+    if (!modelListEl) return;
+    modelListEl.innerHTML = "";
+    (models || []).forEach((m) => {
+      const opt = document.createElement("option");
+      opt.value = m;
+      modelListEl.appendChild(opt);
+    });
+    if (preferred) modelSel.value = preferred;
+  }
+
+  /** 拉取当前端点的可用模型，填入候选（datalist）。保留用户已输入的模型名。
+   *  - ollama：走 /api/llm/ollama/models（Ollama 原生 /api/tags）。
+   *  - 其它 provider：走 /api/llm/models（GET {base_url}/models），与主流客户端一致，
+   *    因此本地网关和云端官方端点都能自动列出模型，不需要为每个服务写死预设。
+   */
+  async function refreshModels(announce) {
+    if (!providerSel) return;
+    if (providerSel.value === "ollama") return refreshOllamaModels(announce);
+
+    const provider = providerSel.value;
+    const base_url = baseUrlInput.value.trim();
+    const api_key = apiKeyInput.value.trim();
+    if (!base_url) {
+      if (announce) toast("⚠️", "请先填 Base URL");
+      return;
+    }
+    const typed = modelSel ? modelSel.value : "";
+    if (refreshBtnEl) {
+      refreshBtnEl.disabled = true;
+      refreshBtnEl.textContent = "⏳ 拉取中…";
+    }
+    try {
+      const resp = await fetch(API_BASE + "/api/llm/models", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ provider: provider, base_url: base_url, api_key: api_key }),
+      });
+      if (!resp.ok) {
+        let detail = "HTTP " + resp.status;
+        try {
+          const errJson = await resp.json();
+          const err = errJson && errJson.error;
+          if (err && err.message) detail = err.message;
+          else if (errJson && errJson.detail) detail = errJson.detail;
+        } catch (_) { /* 保留 HTTP 状态 */ }
+        throw new Error(detail);
+      }
+      const data = await resp.json();
+      if (!data.ok || !(data.models || []).length) {
+        throw new Error(data.detail || "端点未返回模型");
+      }
+      // 拉取期间用户可能已切走 provider：复查后再改写候选
+      if (!providerSel || providerSel.value !== provider) return;
+      // 缓存下来（持久化）：否则下次打开面板会被静态预设冲掉
+      pulledModels[provider] = data.models;
+      savePulledModels();
+      fillModelOptions(data.models, typed);
+      if (announce) {
+        toast("🔄", data.is_local ? "已拉取本地模型" : "已拉取云端模型", data.models.length + " 个");
+      }
+    } catch (e) {
+      if (announce) toast("⚠️", "拉取模型失败", e.message);
+    } finally {
+      if (refreshBtnEl) {
+        refreshBtnEl.disabled = false;
+        refreshBtnEl.textContent = "🔄 拉取模型列表";
+      }
     }
   }
 
@@ -450,12 +561,13 @@
       }
       // 当前选中值优先保留
       const keep = modelSel ? modelSel.value : "";
-      modelSel.innerHTML = "";
+      pulledModels.ollama = models;
+      savePulledModels();
+      modelListEl.innerHTML = "";
       models.forEach((m) => {
         const opt = document.createElement("option");
         opt.value = m;
-        opt.textContent = m;
-        modelSel.appendChild(opt);
+        modelListEl.appendChild(opt);
       });
       if (keep && models.includes(keep)) modelSel.value = keep;
       else if (state.configured && state.provider === "ollama" && models.includes(state.model)) modelSel.value = state.model;
@@ -546,7 +658,7 @@
           state.provider = f.provider;
           state.model = f.model;
           state.base_url = f.base_url;
-          state.api_key = f.api_key; // 仅 localStorage；后端不落盘
+          state.api_key = f.api_key; // 浏览器副本；同时由后端写入本机 .env（重启不丢）
           saveState();
           close();
           emitChanged();

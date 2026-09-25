@@ -1,0 +1,1202 @@
+{
+ "9006b217d0e470cb178e522c": {
+  "entities": [
+   {
+    "name": "老鸵鸟文森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称老鸵鸟的电台主播"
+   },
+   {
+    "name": "鸵鸟电台",
+    "type": "物品",
+    "aliases": [],
+    "desc": "旧金山的本地广播节目"
+   },
+   {
+    "name": "杰洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在酒吧打探消息的男人"
+   },
+   {
+    "name": "维恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被揪住衣领的酒侍"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [
+     "死人莱格斯"
+    ],
+    "desc": "盘踞旧金山的势力首领"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被悬赏寻找的人"
+   },
+   {
+    "name": "东青商会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被踹出旧金山的商会"
+   },
+   {
+    "name": "旧金山",
+    "type": "地点",
+    "aliases": [],
+    "desc": "昨夜枪火与火光之地"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "迎来新生的集市"
+   },
+   {
+    "name": "谐波汇聚运动",
+    "type": "事件",
+    "aliases": [],
+    "desc": "1987 年结束的运动"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "莱格斯麾下的神秘学家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "鸵鸟电台",
+    "relation": "播报",
+    "dst": "旧金山",
+    "evidence": "下午好，旧金山！",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸵鸟电台",
+    "relation": "介绍",
+    "dst": "谐波汇聚运动",
+    "evidence": "自1987年“谐波汇聚运动”结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸵鸟电台",
+    "relation": "播报",
+    "dst": "新纪元集市",
+    "evidence": "死气沉沉的新纪元集市在近日迎来了新生",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸵鸟电台",
+    "relation": "播报",
+    "dst": "东青商会",
+    "evidence": "把“东青商会”一脚踹出了旧金山",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱格斯",
+    "relation": "驱逐",
+    "dst": "东青商会",
+    "evidence": "死人莱格斯和他的神秘学家崽子们",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱格斯",
+    "relation": "放话",
+    "dst": "J",
+    "evidence": "他想跟海特街的J谈一桩不能拒绝的好交易",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "打听",
+    "dst": "维恩",
+    "evidence": "谁——是——J？",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "威逼",
+    "dst": "维恩",
+    "evidence": "抬起你的手指，指出来，然后拿着钱滚出我的视线",
+    "confidence": 0.95
+   },
+   {
+    "src": "维恩",
+    "relation": "供出",
+    "dst": "J",
+    "evidence": "那个混账欠了我一屁股的债",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9171423f0022d9239171d491": {
+  "entities": [
+   {
+    "name": "杰洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招揽酒侍的男人"
+   },
+   {
+    "name": "维恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被招揽的酒侍"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "海特街土生土长的乡巴佬"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [
+     "死人莱格斯"
+    ],
+    "desc": "被老头强硬态度支配的首领"
+   },
+   {
+    "name": "海特街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "穷得叮当响的街区"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "老头非掺一脚的集市"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "老头只听其言的组织"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维恩",
+    "relation": "提醒",
+    "dst": "杰洛",
+    "evidence": "他是一个在海特街土生土长的乡巴佬",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "称赞",
+    "dst": "维恩",
+    "evidence": "你是个有眼力见儿的混账",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "询问",
+    "dst": "维恩",
+    "evidence": "告诉我，伙计，你叫什么名字？",
+    "confidence": 0.95
+   },
+   {
+    "src": "维恩",
+    "relation": "自陈",
+    "dst": "杰洛",
+    "evidence": "维恩，先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "维恩",
+    "relation": "询问",
+    "dst": "杰洛",
+    "evidence": "那个混账犯了什么事儿吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "告知",
+    "dst": "维恩",
+    "evidence": "就是那该死的新纪元集市",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "自陈",
+    "dst": "莱格斯",
+    "evidence": "老头子不知道是着了什么魔，非得掺上一脚",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "抱怨",
+    "dst": "启明会",
+    "evidence": "他除了“启明会”的人，谁的话也听不进去",
+    "confidence": 0.95
+   },
+   {
+    "src": "海特街",
+    "relation": "自陈",
+    "dst": "杰洛",
+    "evidence": "海特街这地方穷得叮当响",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "673430189c06ac1564619881": {
+  "entities": [
+   {
+    "name": "维恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "露出冷静面孔的赌徒"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "临行前告别的舞者"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破围捕的诱饵"
+   },
+   {
+    "name": "杰洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扑倒目标的领头者"
+   },
+   {
+    "name": "牙医”Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "“牙医”Ⅰ"
+    ],
+    "desc": "奉命拧紧手臂的部下"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当作诱饵的假人"
+   },
+   {
+    "name": "海特街舞厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "虹色光影中的场所"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "告别",
+    "dst": "J",
+    "evidence": "J，待会见",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "号令",
+    "dst": "牙医”Ⅰ",
+    "evidence": "按住他的胳膊儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙医”Ⅰ",
+    "relation": "拧断",
+    "dst": "先驱者",
+    "evidence": "男人的手掉落在地",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "反击",
+    "dst": "杰洛",
+    "evidence": "重重的拳头撞击下颚",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "讥讽",
+    "dst": "杰洛",
+    "evidence": "你作为诱饵，已经可以钓完整片太平洋了",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "抗议",
+    "dst": "J",
+    "evidence": "这是第几次了？！我的灵魂也是有痛觉的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "斥骂",
+    "dst": "J",
+    "evidence": "骗子杂种，你果然名不虚传",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "记恨",
+    "dst": "J",
+    "evidence": "我待会再来算你的账",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "闯入",
+    "dst": "海特街舞厅",
+    "evidence": "与舞池格格不入的人群",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c528ce0fcee0213395494fb8": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以假人诱敌的守街人"
+   },
+   {
+    "name": "杰洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "败退的挑衅者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喝退莱格斯走狗的伙伴"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挂彩后离去的修车汉"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讨要手掌的假人"
+   },
+   {
+    "name": "众人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "举杯欢呼的人们"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [
+     "死人莱格斯"
+    ],
+    "desc": "被杰洛代为问好的首领"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "下次和谈的议题"
+   },
+   {
+    "name": "海特街舞厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欢呼声溢满之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杰洛",
+    "relation": "称赞",
+    "dst": "J",
+    "evidence": "莱格斯会喜欢你这样的愣头青的",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "提及",
+    "dst": "新纪元集市",
+    "evidence": "关于新纪元集市，我很期待下次的“和谈”",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "托付",
+    "dst": "莱格斯",
+    "evidence": "替我向莱格斯先生问好",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "喝退",
+    "dst": "杰洛",
+    "evidence": "滚吧，莱格斯的狗崽子们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "宣告",
+    "dst": "众人",
+    "evidence": "全垒打！朋友们，咱们让他们摔了个大跟头！",
+    "confidence": 0.95
+   },
+   {
+    "src": "众人",
+    "relation": "举杯",
+    "dst": "J",
+    "evidence": "祝友谊胜过狗的忠诚！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍利克",
+    "relation": "告别",
+    "dst": "J",
+    "evidence": "我得先走了，救济大厅的门再晚一些就要关了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "承诺",
+    "dst": "霍利克",
+    "evidence": "J永远忠于你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "讨要",
+    "dst": "J",
+    "evidence": "把我的手还给我，可恶的家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "海特街舞厅",
+    "relation": "容纳",
+    "dst": "众人",
+    "evidence": "欢呼声溢满舞厅",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb9b7b1cd9db29d219b526c2": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉少了一人的领头者"
+   },
+   {
+    "name": "斯普特尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被询问去向的餐馆帮手"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拾起匕首追出的人"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "询问是否需要跟上的假人"
+   },
+   {
+    "name": "杰洛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在长巷中奔逃的男人"
+   },
+   {
+    "name": "匕首",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拾起又归还的凶器"
+   },
+   {
+    "name": "术杖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "杰洛口袋中露出尖端的杖"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "环状水星愿其求助之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "询问",
+    "dst": "斯普特尼克",
+    "evidence": "环状水星呢？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯普特尼克",
+    "relation": "告知",
+    "dst": "J",
+    "evidence": "她刚才拾起匕首，看上去很匆忙地离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "询问",
+    "dst": "J",
+    "evidence": "我们需要跟上去吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "拒绝",
+    "dst": "先驱者",
+    "evidence": "不，当然不用",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "招呼",
+    "dst": "杰洛",
+    "evidence": "你好，先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "斥骂",
+    "dst": "环状水星",
+    "evidence": "你追过来就是为了侮辱我？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "施术",
+    "dst": "环状水星",
+    "evidence": "蚀肉剜心！",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "识破",
+    "dst": "杰洛",
+    "evidence": "你以这些富有侵略性的黑色能量为生",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "归还",
+    "dst": "杰洛",
+    "evidence": "你忘了这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "邀请",
+    "dst": "杰洛",
+    "evidence": "如果你需要帮助，请随时来新纪元集市找我",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰洛",
+    "relation": "呕吐",
+    "dst": "术杖",
+    "evidence": "他想起第一次开枪……躲在厕所里颤抖的午夜",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cc7f322850bb1dffd8f3b437": {
+  "entities": [
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "醉醺醺的修车汉"
+   },
+   {
+    "name": "斯普特尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擦桌的圆形酒保"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "取笑霍利克的伙伴"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "心不在焉的领头者"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替 J 解释的假人"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见过奇怪视频画面的人"
+   },
+   {
+    "name": "海特街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "霍利克借以取信的街区"
+   },
+   {
+    "name": "电视机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传来残喘的旧电视机"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "J 口中要琢磨的人物"
+   },
+   {
+    "name": "众人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "餐馆中的众人"
+   },
+   {
+    "name": "唐老爹餐馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人闲谈之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍利克",
+    "relation": "吆喝",
+    "dst": "海特街",
+    "evidence": "您大可去整个海特街打听打听J和他的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯普特尼克",
+    "relation": "劝阻",
+    "dst": "霍利克",
+    "evidence": "您不该再喝了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "取笑",
+    "dst": "霍利克",
+    "evidence": "昨天你小子也就鼻子见了点儿血",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "解释",
+    "dst": "贝克特",
+    "evidence": "J可能有些事还没想清楚",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "自陈",
+    "dst": "莱格斯",
+    "evidence": "我确实在琢磨死人莱格斯那档子事儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "询问",
+    "dst": "众人",
+    "evidence": "他是……什么来头？",
+    "confidence": 0.95
+   },
+   {
+    "src": "电视机",
+    "relation": "播放",
+    "dst": "环状水星",
+    "evidence": "我也曾见过这个奇怪视频的画面",
+    "confidence": 0.95
+   },
+   {
+    "src": "电视机",
+    "relation": "停摆",
+    "dst": "众人",
+    "evidence": "老旧的电视机传来了寿终正寝的残喘",
+    "confidence": 0.95
+   },
+   {
+    "src": "众人",
+    "relation": "闲谈",
+    "dst": "唐老爹餐馆",
+    "evidence": "吧台上，醉醺醺的修车汉摇摇晃晃",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1a2555b2ca36010fd17a16da": {
+  "entities": [
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述莱格斯往事的修车汉"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出其他可能性的假人"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意守街的领头者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冥想会无人参加的讲述者"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [
+     "死人莱格斯"
+    ],
+    "desc": "传闻中死而复生的首领"
+   },
+   {
+    "name": "猎人角",
+    "type": "地点",
+    "aliases": [],
+    "desc": "莱格斯被围杀之处"
+   },
+   {
+    "name": "海特街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被警方抛之脑后的街区"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "盘踞着疯子的集市"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "受蛊惑的无辜神秘学家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍利克",
+    "relation": "讲述",
+    "dst": "猎人角",
+    "evidence": "就在猎人角的那片烂木头林里",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍利克",
+    "relation": "讲述",
+    "dst": "莱格斯",
+    "evidence": "有一群人把莱格斯当猪一样宰",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍利克",
+    "relation": "断言",
+    "dst": "莱格斯",
+    "evidence": "莱格斯可是一个彻头彻尾的人类",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "置疑",
+    "dst": "霍利克",
+    "evidence": "死而复生是好莱坞的陈词滥调",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "推断",
+    "dst": "莱格斯",
+    "evidence": "谋划已久的谣传",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "告知",
+    "dst": "J",
+    "evidence": "已经连续几天没人参加我的冥想会",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "担忧",
+    "dst": "新纪元集市",
+    "evidence": "他们已经与正盘踞在“新纪元集市”的那帮疯子搭上了肩",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "自陈",
+    "dst": "海特街",
+    "evidence": "除了我们，谁会管这条街的死活？",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "宣告",
+    "dst": "海特街",
+    "evidence": "这是我们的家",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "坚持",
+    "dst": "先驱者",
+    "evidence": "我们当然该逃……但我们没有",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家",
+    "relation": "受惑",
+    "dst": "新纪元集市",
+    "evidence": "无辜的神秘学家们受到蛊惑",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a71574ff329ad214ebd1478a": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝求助基金会的领头者"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议求助基金会的假人"
+   },
+   {
+    "name": "斯普特尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赞同并愿指路的酒保"
+   },
+   {
+    "name": "保利娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "J 多年未见的妹妹"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被提议求助的机构"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被小偷撒落的零钱"
+   }
+  ],
+  "relations": [
+   {
+    "src": "先驱者",
+    "relation": "建议",
+    "dst": "J",
+    "evidence": "基金会对我们而言，并非是一个差劲的选择",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "说明",
+    "dst": "圣洛夫基金会",
+    "evidence": "他们对神秘学家的事总是会很上心",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯普特尼克",
+    "relation": "赞同",
+    "dst": "先驱者",
+    "evidence": "我赞同先驱者先生的意见",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "提及",
+    "dst": "保利娜",
+    "evidence": "保利娜就在圣洛夫基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "拒绝",
+    "dst": "保利娜",
+    "evidence": "她决定加入那帮白袍子的时候，甚至都没跟我事先聊过一句话",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "自陈",
+    "dst": "保利娜",
+    "evidence": "她早就不是以前那个追着我们打闹的小家伙了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "逃避",
+    "dst": "先驱者",
+    "evidence": "我要去拿一瓶汽水！",
+    "confidence": 0.95
+   },
+   {
+    "src": "硬币",
+    "relation": "撒落",
+    "dst": "J",
+    "evidence": "一堆硬币撒落下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "斯普特尼克",
+    "relation": "惊呼",
+    "dst": "硬币",
+    "evidence": "吧台里的零钱——全都不见了！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "46fc8f6a0a00a37ed85e1124": {
+  "entities": [
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提住小偷后脖子的伙伴"
+   },
+   {
+    "name": "猫眼维森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拖车营的惯犯少年"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归还硬币的人"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招募孩子的人"
+   },
+   {
+    "name": "斯普特尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见证者"
+   },
+   {
+    "name": "启明会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "维森父亲搭上关系的组织"
+   },
+   {
+    "name": "救济大厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被建议去的地方"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "孩子们失去家之处"
+   },
+   {
+    "name": "硬币",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被塞回手心的零钱"
+   },
+   {
+    "name": "合影",
+    "type": "物品",
+    "aliases": [],
+    "desc": "吧台上的老旧合影"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝克特",
+    "relation": "识破",
+    "dst": "猫眼维森",
+    "evidence": "郊区拖车营的惯犯，猫眼维森",
+    "confidence": 0.95
+   },
+   {
+    "src": "猫眼维森",
+    "relation": "啐唾",
+    "dst": "贝克特",
+    "evidence": "你这个混球，有种把我放开！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "提及",
+    "dst": "启明会",
+    "evidence": "你爸爸跟“启明会”那帮人搭上关系又失踪之后",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "质问",
+    "dst": "猫眼维森",
+    "evidence": "你怎么没跟救济所的那帮人走？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "夺走",
+    "dst": "硬币",
+    "evidence": "夺走他怀里仅剩的硬币",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "拾取",
+    "dst": "硬币",
+    "evidence": "拾取贝壳一般，捡起了脏兮兮的硬币",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "归还",
+    "dst": "猫眼维森",
+    "evidence": "把硬币塞回了他脏兮兮的手心",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "说明",
+    "dst": "新纪元集市",
+    "evidence": "这些都是在新纪元集市里失去了家的孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "劝告",
+    "dst": "贝克特",
+    "evidence": "苦难是不会相形见绌的",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "招募",
+    "dst": "猫眼维森",
+    "evidence": "你和你那帮跟班，想不想找点活儿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "猫眼维森",
+    "relation": "自荐",
+    "dst": "J",
+    "evidence": "我的眼睛很敏锐！我能干很多细活",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "凝视",
+    "dst": "合影",
+    "evidence": "对着一张老旧的合影长叹了口气",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fde17387f7e40d805d604c9a": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对着合影叹息的人"
+   },
+   {
+    "name": "保利娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "合影中冷漠的一方"
+   },
+   {
+    "name": "合影",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录一段亲缘的旧照"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "叹息",
+    "dst": "合影",
+    "evidence": "他整个人趴在吧台上，对着一张老旧的合影长叹了口气",
+    "confidence": 0.95
+   },
+   {
+    "src": "合影",
+    "relation": "摄有",
+    "dst": "保利娜",
+    "evidence": "那是一张过于热情、充满关切的脸",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "自陈",
+    "dst": "保利娜",
+    "evidence": "谁也拦不住我跨出那扇门！",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

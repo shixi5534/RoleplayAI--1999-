@@ -1,0 +1,1792 @@
+{
+ "cbe0b2934112172ca87b6861": {
+  "entities": [],
+  "relations": []
+ },
+ "daedbd729ce27379d96a092a": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [
+     "塞梅尔维斯调查员"
+    ],
+    "desc": "扑空的基金会调查员"
+   },
+   {
+    "name": "剃刀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "砸穿书柜的行动队员"
+   },
+   {
+    "name": "队员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告二楼无目标者"
+   },
+   {
+    "name": "队员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告屋外无目标者"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "活了两百年以上的传说"
+   },
+   {
+    "name": "超自然者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "血食怪所属之类"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "不知何时落下"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "必须尽快返回之处"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "或会研究账单者"
+   },
+   {
+    "name": "隐蔽小屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被扑空的藏身屋"
+   },
+   {
+    "name": "血食怪的账单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "散落在地的旧账单"
+   },
+   {
+    "name": "血食怪的水晶球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "浮起红光的物件"
+   },
+   {
+    "name": "暗红色的术法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自球中射出的术法"
+   },
+   {
+    "name": "剃刀的长刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "展开击落术法的刀"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "对其所知甚少之力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "队员Ⅰ",
+    "relation": "报告",
+    "dst": "塞梅尔维斯",
+    "evidence": "报告，二楼未发现目标",
+    "confidence": 0.95
+   },
+   {
+    "src": "队员Ⅱ",
+    "relation": "报告",
+    "dst": "塞梅尔维斯",
+    "evidence": "报告，房屋周边未发现目标",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "断言扑空",
+    "dst": "血食怪",
+    "evidence": "所有地方都没有找到那家伙",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "怒砸",
+    "dst": "隐蔽小屋",
+    "evidence": "还是忍不住一拳砸在了木质书柜的侧面",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "劝冷静",
+    "dst": "剃刀",
+    "evidence": "冷静点，“剃刀”。任务已经失败了",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "自陈失态",
+    "dst": "塞梅尔维斯",
+    "evidence": "我有些失态了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "称其为",
+    "dst": "超自然者",
+    "evidence": "对方是真真切切地活了两百年以上的超自然者",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "放弃收容",
+    "dst": "血食怪",
+    "evidence": "我们必须放弃收容这只血食怪的计划了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "催促返回",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们必须尽快返回基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "忧惧",
+    "dst": "暴雨",
+    "evidence": "谁也不知道“暴雨”会在何时落下",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "叹未知",
+    "dst": "神秘术",
+    "evidence": "我们对于血食怪的神秘术能力所知甚少",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "拾起",
+    "dst": "血食怪的账单",
+    "evidence": "自地面捡起了“剃刀”打落的笔记",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪的账单",
+    "relation": "呈请研判",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯科算中心的研究者们或许会对此有兴趣的",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪的账单",
+    "relation": "记载饮食",
+    "dst": "血食怪",
+    "evidence": "这份账单能够帮助我们研究血食怪的日常饮食结构",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "察觉",
+    "dst": "血食怪的水晶球",
+    "evidence": "看上去似乎是一颗水晶球……不好",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪的水晶球",
+    "relation": "预警",
+    "dst": "暗红色的术法",
+    "evidence": "水晶球的表面浮现出了一道红色的光芒",
+    "confidence": 0.95
+   },
+   {
+    "src": "暗红色的术法",
+    "relation": "袭击",
+    "dst": "塞梅尔维斯",
+    "evidence": "数道暗红色的术法朝着房间的众人射去",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "展开",
+    "dst": "剃刀的长刀",
+    "evidence": "折叠的长刀快速展开",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "击落",
+    "dst": "暗红色的术法",
+    "evidence": "“剃刀”挥动长刀，将它们一一击落",
+    "confidence": 0.95
+   },
+   {
+    "src": "剃刀",
+    "relation": "喝令退避",
+    "dst": "塞梅尔维斯",
+    "evidence": "塞梅尔维斯调查员，退到房屋的外面",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2cf6324f9eeb36f4344c369b": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自噩梦中惊坐而起"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦中扼其颈者"
+   },
+   {
+    "name": "血食怪的伤痕",
+    "type": "概念",
+    "aliases": [],
+    "desc": "几乎消失的浅坑"
+   },
+   {
+    "name": "埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敲门汇报的队员"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "熙攘的巨大城市"
+   },
+   {
+    "name": "维也纳的街道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人声鼎沸的街衢"
+   },
+   {
+    "name": "维也纳的报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "分类整理的一叠报纸"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "女演员伊索尔德"
+    ],
+    "desc": "将办沙龙的歌剧演员"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留有遗作的自杀画家"
+   },
+   {
+    "name": "艺术沙龙",
+    "type": "事件",
+    "aliases": [],
+    "desc": "纪念亡兄的沙龙"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "境遇待唤起关注者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "血食怪",
+    "relation": "自阴影现身",
+    "dst": "塞梅尔维斯",
+    "evidence": "一道身影自塞梅尔维斯身后的阴影之中出现",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "咬其颈",
+    "dst": "塞梅尔维斯",
+    "evidence": "脖颈处传来剧烈的疼痛",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "压制",
+    "dst": "塞梅尔维斯",
+    "evidence": "黑色的阴影逐渐覆盖上塞梅尔维斯的身体",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "疑为幻梦",
+    "dst": "血食怪",
+    "evidence": "是梦吗？不，是幻觉吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "留下",
+    "dst": "血食怪的伤痕",
+    "evidence": "血食怪留下的伤痕已经几乎消失殆尽",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "起身凭窗",
+    "dst": "维也纳的街道",
+    "evidence": "塞梅尔维斯走下柔软的床铺，来到窗边",
+    "confidence": 0.95
+   },
+   {
+    "src": "维也纳的街道",
+    "relation": "坐落于",
+    "dst": "维也纳",
+    "evidence": "维也纳的街道熙熙攘攘，人声鼎沸",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "问候",
+    "dst": "塞梅尔维斯",
+    "evidence": "队长，你醒了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "收集",
+    "dst": "维也纳的报纸",
+    "evidence": "我按照队长你的指示，收集了维也纳最近的报纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "随手翻阅",
+    "dst": "维也纳的报纸",
+    "evidence": "随手捡起了一份报纸观看",
+    "confidence": 0.95
+   },
+   {
+    "src": "维也纳的报纸",
+    "relation": "预告",
+    "dst": "艺术沙龙",
+    "evidence": "即将举办纪念亡兄的艺术沙龙",
+    "confidence": 0.95
+   },
+   {
+    "src": "艺术沙龙",
+    "relation": "展出遗作",
+    "dst": "西奥菲尔",
+    "evidence": "著名艺术家西奥菲尔的遗作也将第一次得到展示",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "忆及",
+    "dst": "伊索尔德",
+    "evidence": "伊索尔德……我还记得她",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "曾闻名于",
+    "dst": "维也纳",
+    "evidence": "她还是维也纳最受瞩目的歌剧演员",
+    "confidence": 0.95
+   },
+   {
+    "src": "艺术沙龙",
+    "relation": "关切",
+    "dst": "神秘学家",
+    "evidence": "唤起人们对神秘学家境遇的思考与关注",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "讥评",
+    "dst": "艺术沙龙",
+    "evidence": "但一场艺术沙龙又能起到什么作用呢",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "439a24dd401e3c484ce05909": {
+  "entities": [
+   {
+    "name": "埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抨击时弊的汇报者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈不喜神秘学家的上司"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "占尽头版的身影"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "绝笔之作的亡者"
+   },
+   {
+    "name": "艺术沙龙",
+    "type": "事件",
+    "aliases": [],
+    "desc": "今日三时后举办"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被登记政策折腾者"
+   },
+   {
+    "name": "帝国的登记政策",
+    "type": "概念",
+    "aliases": [],
+    "desc": "臃肿粗暴的政策"
+   },
+   {
+    "name": "神秘学疯子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "目无法纪的一类人"
+   },
+   {
+    "name": "波西米亚人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "更严峻的问题之一"
+   },
+   {
+    "name": "克罗地亚人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与波西米亚人并列者"
+   },
+   {
+    "name": "罗马尼亚人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与波西米亚人并列者"
+   },
+   {
+    "name": "帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "垂垂老矣的帝国"
+   },
+   {
+    "name": "民族主义",
+    "type": "概念",
+    "aliases": [],
+    "desc": "席卷时代的浪潮"
+   },
+   {
+    "name": "迪塔斯多夫家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "最后的男性继承人所属"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "其最不喜之属"
+   },
+   {
+    "name": "超自然者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "同样难有好感者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艺术沙龙",
+    "relation": "定于今日",
+    "dst": "埃米尔",
+    "evidence": "艺术沙龙举办的时间刚好就是今天",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "身影登报",
+    "dst": "艺术沙龙",
+    "evidence": "头版头条无一例外都印刷着伊索尔德的身影与西奥菲尔的遗照",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "评其噱头",
+    "dst": "西奥菲尔",
+    "evidence": "没有什么比自杀的画家的绝笔之作更有噱头了",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "自杀成盛事",
+    "dst": "艺术沙龙",
+    "evidence": "但画家的自杀却是一场亘古不变的盛事",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "出自",
+    "dst": "迪塔斯多夫家族",
+    "evidence": "搭配上“古老贵族世家最后的男性继承人”这一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "抨击",
+    "dst": "帝国的登记政策",
+    "evidence": "他们所谓的那些登记政策",
+    "confidence": 0.95
+   },
+   {
+    "src": "帝国的登记政策",
+    "relation": "困扰",
+    "dst": "神秘学家",
+    "evidence": "只会让那些安分守己的神秘学家在臃肿的官僚机构之中疲于奔命",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "抨击",
+    "dst": "神秘学疯子",
+    "evidence": "而对于那些本就目无法纪的神秘学疯子来说",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "补言其祸",
+    "dst": "神秘学家",
+    "evidence": "一定会把普通的神秘学家也变为新的神秘学疯子",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "致歉于",
+    "dst": "塞梅尔维斯",
+    "evidence": "呃，抱歉，我不是有意的——",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "为其上司",
+    "dst": "埃米尔",
+    "evidence": "埃米尔突然想起了面前上司的神秘学家身份",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自陈疏离",
+    "dst": "神秘学家",
+    "evidence": "我本人对于神秘学家同样很难称得上有什么好感",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "尤恶",
+    "dst": "超自然者",
+    "evidence": "尤其是超自然者和血食怪",
+    "confidence": 0.95
+   },
+   {
+    "src": "波西米亚人",
+    "relation": "并称于",
+    "dst": "克罗地亚人",
+    "evidence": "在波西米亚人、克罗地亚人、罗马尼亚人——在这些更为严峻的问题面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗马尼亚人",
+    "relation": "并称于",
+    "dst": "克罗地亚人",
+    "evidence": "在波西米亚人、克罗地亚人、罗马尼亚人——在这些更为严峻的问题面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "波西米亚人",
+    "relation": "牵制",
+    "dst": "帝国",
+    "evidence": "神秘学家还不足以让帝国为之投入过多的精力",
+    "confidence": 0.95
+   },
+   {
+    "src": "民族主义",
+    "relation": "折磨",
+    "dst": "帝国",
+    "evidence": "将这个垂垂老矣的帝国折腾得死去活来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3b9ccac524030f7b2aff7d33": {
+  "entities": [
+   {
+    "name": "埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "调查难民群体的汇报者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闻其名而呼吸急促"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [
+     "莱茵河的罗蕾莱"
+    ],
+    "desc": "预言洪水的救助者"
+   },
+   {
+    "name": "神秘学家难民群体",
+    "type": "组织",
+    "aliases": [],
+    "desc": "深信胡言乱语的群体"
+   },
+   {
+    "name": "罗蕾莱的预言",
+    "type": "概念",
+    "aliases": [],
+    "desc": "河谷与洪水的说法"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "预言所指之灾"
+   },
+   {
+    "name": "罗蕾莱的信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未向任何人透露的信件"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "未曾透露之人"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "底层神秘学家"
+   },
+   {
+    "name": "帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "未与之直接冲突者"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她理应返回之城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "埃米尔",
+    "relation": "调查",
+    "dst": "神秘学家难民群体",
+    "evidence": "我对维也纳的神秘学家难民群体展开了简单的调查",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "查得",
+    "dst": "罗蕾莱",
+    "evidence": "获取了更多关于“莱茵河的罗蕾莱”的信息",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "闻而气促",
+    "dst": "罗蕾莱",
+    "evidence": "在听到这个名字时，塞梅尔维斯的呼吸仍旧在一瞬间变得急促",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "藏起",
+    "dst": "罗蕾莱的信件",
+    "evidence": "那封她并未向基金会的任何人透露过内容的信件",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱的信件",
+    "relation": "关乎",
+    "dst": "圣洛夫基金会",
+    "evidence": "那封她并未向基金会的任何人透露过内容的信件",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "声望高于",
+    "dst": "神秘学家难民群体",
+    "evidence": "罗蕾莱在这些社会底层的神秘学家中的声望",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "宣扬",
+    "dst": "罗蕾莱的预言",
+    "evidence": "依靠着“预言”，她成功地将众多神秘学家团体凝聚在了一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱的预言",
+    "relation": "避免冲突",
+    "dst": "帝国",
+    "evidence": "让这些神秘学家团体一直没有与帝国发生直接的冲突",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱的预言",
+    "relation": "喻为",
+    "dst": "暴雨",
+    "evidence": "罗蕾莱口中的“洪水”……莫非指的是“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "自任救助者",
+    "dst": "罗蕾莱的预言",
+    "evidence": "而罗蕾莱则宣称，自己会成为那个帮助众人的救助者",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "讥为胡说",
+    "dst": "罗蕾莱的预言",
+    "evidence": "我更愿意称它为，“神秘学家的胡言乱语”",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民群体",
+    "relation": "深信",
+    "dst": "罗蕾莱的预言",
+    "evidence": "但神秘学家难民群体都对她的“胡言乱语”深信不疑",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "揣度真相",
+    "dst": "暴雨",
+    "evidence": "还是关于“暴雨”真相的确切预兆呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "再难漠视",
+    "dst": "罗蕾莱",
+    "evidence": "她都无法再对这个点出了“暴雨”存在的神秘学家视若无睹",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "失踪于",
+    "dst": "维也纳",
+    "evidence": "她现在应该已返回了维也纳才对",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4ac07314b6efaa4ccac80ad8": {
+  "entities": [
+   {
+    "name": "埃米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递上报纸的下属"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独自前往分部者"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失去领袖的精神领袖"
+   },
+   {
+    "name": "神秘学家难民群体",
+    "type": "组织",
+    "aliases": [],
+    "desc": "已经发生分裂的群体"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "犯罪率翻倍的都城"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "难民倒向之处"
+   },
+   {
+    "name": "人类当权者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "难民口中的对象"
+   },
+   {
+    "name": "维也纳分部",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曾系统调查过的分部"
+   },
+   {
+    "name": "维也纳的报纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录骚动的报纸"
+   },
+   {
+    "name": "神秘学疯子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "设下逻辑陷阱者"
+   },
+   {
+    "name": "波西米亚人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "渴望独立的比较对象"
+   },
+   {
+    "name": "帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被添了麻烦的帝国"
+   }
+  ],
+  "relations": [
+   {
+    "src": "神秘学家难民群体",
+    "relation": "失去领袖",
+    "dst": "罗蕾莱",
+    "evidence": "在失去罗蕾莱这个精神领袖之后",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民群体",
+    "relation": "分裂于",
+    "dst": "维也纳",
+    "evidence": "维也纳的神秘学家难民群体已经发生了分裂",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民群体",
+    "relation": "添乱于",
+    "dst": "帝国",
+    "evidence": "这些失去了管制的难民群体同样给帝国造成了不小的麻烦",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民群体",
+    "relation": "无法比于",
+    "dst": "波西米亚人",
+    "evidence": "尽管无法与那些渴望着独立的波西米亚人相提并论",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学家难民群体",
+    "relation": "倒向",
+    "dst": "重塑之手",
+    "evidence": "有一部分难民已经倒向了重塑之手",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "争斗",
+    "dst": "人类当权者",
+    "evidence": "开始与他们口中的“人类当权者”展开了争斗",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "递上",
+    "dst": "维也纳的报纸",
+    "evidence": "埃米尔挑选出几张报纸，递给了塞梅尔维斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "归咎",
+    "dst": "神秘学疯子",
+    "evidence": "越来越多的人落入了那些神秘学疯子的逻辑陷阱之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "决意寻找",
+    "dst": "罗蕾莱",
+    "evidence": "我们都必须尽快找到罗蕾莱才行",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "举荐",
+    "dst": "维也纳分部",
+    "evidence": "我认为维也纳分部或许会知道点什么东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "维也纳分部",
+    "relation": "调查过",
+    "dst": "罗蕾莱",
+    "evidence": "他们曾经系统性地对难民群体展开过调查",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "前往",
+    "dst": "维也纳分部",
+    "evidence": "我现在就前往维也纳分部展开调查",
+    "confidence": 0.95
+   },
+   {
+    "src": "埃米尔",
+    "relation": "听命留守",
+    "dst": "塞梅尔维斯",
+    "evidence": "遵命，那我与小队其他成员就在这里等你",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "追问其目的",
+    "dst": "罗蕾莱",
+    "evidence": "罗蕾莱……她的目的究竟是什么？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "be352e8f4d7dd57ce49ee9d5": {
+  "entities": [],
+  "relations": []
+ },
+ "44635ee7bf91b529adf8af03": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "误入集会现场的过路者"
+   },
+   {
+    "name": "环城大道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被挤得水泄不通的大道"
+   },
+   {
+    "name": "抗议者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为波西米亚人呐喊者"
+   },
+   {
+    "name": "抗议者Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张三元制者"
+   },
+   {
+    "name": "抗议者Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喝令抓捕异议者"
+   },
+   {
+    "name": "抗议者Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辱骂下等民族者"
+   },
+   {
+    "name": "波西米亚人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "要求平等地位的一方"
+   },
+   {
+    "name": "奥地利人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "另一方抗议团体"
+   },
+   {
+    "name": "匈牙利人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已被享有权利者"
+   },
+   {
+    "name": "弗朗茨大公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "设想改组帝国之人"
+   },
+   {
+    "name": "三元制帝国",
+    "type": "概念",
+    "aliases": [],
+    "desc": "改组后的帝国体制"
+   },
+   {
+    "name": "帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被各方喊话的帝国"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "同为喊话对象"
+   },
+   {
+    "name": "维也纳分部",
+    "type": "组织",
+    "aliases": [],
+    "desc": "紧闭入口的分部"
+   },
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令闭门者"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲探其消息之人"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "终将化为尘埃者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "抗议者Ⅰ",
+    "relation": "要求承认",
+    "dst": "波西米亚人",
+    "evidence": "帝国与基金会应该承认波西米亚人的地位",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅰ",
+    "relation": "施压",
+    "dst": "圣洛夫基金会",
+    "evidence": "帝国与基金会应该承认波西米亚人的地位",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅱ",
+    "relation": "主张改组",
+    "dst": "三元制帝国",
+    "evidence": "改组为一个三元制的帝国",
+    "confidence": 0.95
+   },
+   {
+    "src": "弗朗茨大公",
+    "relation": "设想",
+    "dst": "三元制帝国",
+    "evidence": "帝国应该按照弗朗茨大公的设想",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅰ",
+    "relation": "要求同等权利",
+    "dst": "匈牙利人",
+    "evidence": "波西米亚人应当与匈牙利人享有同样的权利",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅲ",
+    "relation": "要求放弃",
+    "dst": "弗朗茨大公",
+    "evidence": "弗朗茨大公应该放弃改变帝国体制的不切实际的想法",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅲ",
+    "relation": "要求镇压",
+    "dst": "波西米亚人",
+    "evidence": "帝国和基金会应该尽快抓捕和处死这些异议者",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅳ",
+    "relation": "排斥",
+    "dst": "波西米亚人",
+    "evidence": "见鬼的波西米亚人，帝国没有你们的位置",
+    "confidence": 0.95
+   },
+   {
+    "src": "波西米亚人",
+    "relation": "推搡",
+    "dst": "奥地利人",
+    "evidence": "波西米亚人组成的抗议团体与奥地利人组成的抗议团体很快推搡在了一块",
+    "confidence": 0.95
+   },
+   {
+    "src": "抗议者Ⅱ",
+    "relation": "主张建国",
+    "dst": "波西米亚人",
+    "evidence": "我们应当建立起自己的国度，独属于波西米亚人的国度",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "误入",
+    "dst": "抗议者Ⅰ",
+    "evidence": "看来我像是误入了抗议集会现场",
+    "confidence": 0.95
+   },
+   {
+    "src": "维也纳分部",
+    "relation": "闭门拒",
+    "dst": "塞梅尔维斯",
+    "evidence": "维也纳分部也早已将入口紧紧地封闭了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡尔",
+    "relation": "下令封闭",
+    "dst": "维也纳分部",
+    "evidence": "维也纳分部也早已将入口紧紧地封闭了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "评点",
+    "dst": "卡尔",
+    "evidence": "卡尔或许是个好人，但一定没有那么好",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "放弃查询",
+    "dst": "罗蕾莱",
+    "evidence": "想要从维也纳分部这里获得罗蕾莱的信息，是不可能的事情了",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "将湮没",
+    "dst": "环城大道",
+    "evidence": "很快便会在“暴雨”之下化为尘埃",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "绕行",
+    "dst": "环城大道",
+    "evidence": "塞梅尔维斯绕开了两支抗议团体，准备通过主干道旁的小巷离开此地",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "55d977d42dd0173afa785306": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尾随身影的调查员"
+   },
+   {
+    "name": "杂乱小巷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "返回住处的必经之路"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "卡卡尼亚小姐"
+    ],
+    "desc": "翠绿色身影的女人"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "抗议者所属之列"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其所忌惮者"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其成员身份之所系"
+   },
+   {
+    "name": "神秘术许可证",
+    "type": "物品",
+    "aliases": [],
+    "desc": "落在家中的许可证"
+   },
+   {
+    "name": "镜子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被掀开端出的镜面"
+   },
+   {
+    "name": "盖布",
+    "type": "物品",
+    "aliases": [],
+    "desc": "遮在镜前的盖布"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沙龙即将开场者"
+   },
+   {
+    "name": "艺术沙龙",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她急于赶赴的沙龙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "取道",
+    "dst": "杂乱小巷",
+    "evidence": "这条小巷成为了塞梅尔维斯返回住处的必经之路",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "属于",
+    "dst": "神秘学家",
+    "evidence": "她注意到了一道身影——来自那群神秘学家抗议者团体",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "嫌其缠人",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会的人……？真倒霉！我现在可没有时间跟他们纠缠",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "尾随入",
+    "dst": "杂乱小巷",
+    "evidence": "塞梅尔维斯依旧还是跟随着这道身影走进小巷里",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "现身于",
+    "dst": "杂乱小巷",
+    "evidence": "翠绿色的身影站立在小巷的尽头",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "辩称未组织",
+    "dst": "神秘学家",
+    "evidence": "我可以向您解释，我并没有参与组织这次的抗议活动",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "出示",
+    "dst": "神秘术许可证",
+    "evidence": "我可以向您出示我的神秘术许可证……见鬼，它放到哪里去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "查得其档",
+    "dst": "卡卡尼亚",
+    "evidence": "很快便在脑海之中找到了面前喋喋不休的绿色鹦鹉的相关资料",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "成员于",
+    "dst": "魔圈",
+    "evidence": "卡卡尼亚？那个“魔圈”的成员？",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "撇清",
+    "dst": "圣洛夫基金会",
+    "evidence": "尽管我是基金会的成员，但我可以保证我与这里的抗议事件没有任何联系",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "掀开",
+    "dst": "盖布",
+    "evidence": "卡卡尼亚猛地拉开了身旁的盖布",
+    "confidence": 0.95
+   },
+   {
+    "src": "盖布",
+    "relation": "遮覆",
+    "dst": "镜子",
+    "evidence": "卡卡尼亚猛地拉开了身旁的盖布，露出了一面镜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜子",
+    "relation": "罩住",
+    "dst": "塞梅尔维斯",
+    "evidence": "剧烈的白光自镜面闪烁，将塞梅尔维斯全身笼罩进入了镜面",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "致歉",
+    "dst": "塞梅尔维斯",
+    "evidence": "很抱歉，这位小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "赶赴",
+    "dst": "艺术沙龙",
+    "evidence": "伊索尔德的艺术沙龙马上就要开始了",
+    "confidence": 0.95
+   },
+   {
+    "src": "艺术沙龙",
+    "relation": "所属",
+    "dst": "伊索尔德",
+    "evidence": "伊索尔德的艺术沙龙马上就要开始了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cdaff6564be96d61ed37a6c0": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "术法落空的绿衣者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "镜中不见其影者"
+   },
+   {
+    "name": "镜子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缺了一个主角的镜面"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "失效的小把戏"
+   },
+   {
+    "name": "失去的影子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "镜面上缺失之物"
+   },
+   {
+    "name": "超自然者感染症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "失去影子的解释"
+   },
+   {
+    "name": "塞梅尔维斯的幻象",
+    "type": "概念",
+    "aliases": [],
+    "desc": "镜面剧变所见之景"
+   },
+   {
+    "name": "幻觉中的医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "幻觉里再见的医生"
+   },
+   {
+    "name": "贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称其真名之声"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "给予代号者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "解除",
+    "dst": "神秘术",
+    "evidence": "卡卡尼亚打了个响指，小巷内的白光逐渐消失",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "无恙",
+    "dst": "卡卡尼亚",
+    "evidence": "本应该失去意识的塞梅尔维斯却平安无事地站立在了原地",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "讽其简陋",
+    "dst": "神秘术",
+    "evidence": "不然的话它会显得有点过分简陋了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "惊觉失效",
+    "dst": "神秘术",
+    "evidence": "我的神秘术……居然失效了",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "本欲窥心",
+    "dst": "塞梅尔维斯",
+    "evidence": "虽然这只是一些小把戏，但应该也足以窥探到她的内心才是",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜子",
+    "relation": "未映其形",
+    "dst": "失去的影子",
+    "evidence": "镜面上根本没有映照出你的影子",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自疑",
+    "dst": "超自然者感染症",
+    "evidence": "这也是……超自然者感染症的表现？我失去了影子",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "全力催动",
+    "dst": "镜子",
+    "evidence": "在卡卡尼亚的全力推动之下，镜面上的景象开始剧烈地变化",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜子",
+    "relation": "映出",
+    "dst": "塞梅尔维斯的幻象",
+    "evidence": "燃烧的阁楼……灰色大理石建筑……融化的天空",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "再次致歉",
+    "dst": "塞梅尔维斯",
+    "evidence": "抱歉了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "再度陷入",
+    "dst": "塞梅尔维斯的幻象",
+    "evidence": "她很快便意识到自己再度陷入了幻觉之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "再见其主",
+    "dst": "塞梅尔维斯",
+    "evidence": "我们又见面了，塞梅尔维斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "自陈即是",
+    "dst": "塞梅尔维斯",
+    "evidence": "我就是你",
+    "confidence": 0.95
+   },
+   {
+    "src": "幻觉中的医生",
+    "relation": "劝其勿惧",
+    "dst": "塞梅尔维斯",
+    "evidence": "你似乎有些畏惧我，但你没有必要对我如此警惕",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "自称真名于",
+    "dst": "塞梅尔维斯",
+    "evidence": "或许你也可以称呼我为“贝拉”——你真正的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "给予代号",
+    "dst": "塞梅尔维斯",
+    "evidence": "而非那个由基金会给予的代号",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "80dd86a8955b672312c21367": {
+  "entities": [
+   {
+    "name": "贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逼其直面内心的声音"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指不信基金会者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "克拉拉小姐"
+    ],
+    "desc": "以术令人见真实"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令人直面内心之术"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被指为伪装之所"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其所寻之神秘学家"
+   },
+   {
+    "name": "委外合约小组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为求外出而加入者"
+   },
+   {
+    "name": "超自然者感染症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "亟待治愈之症"
+   },
+   {
+    "name": "既定的死亡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "既定的死亡"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "罗蕾莱之身份所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝拉",
+    "relation": "指为幻觉",
+    "dst": "塞梅尔维斯",
+    "evidence": "我真的只是一个由于超自然者感染症出现，不断地试图扰乱你的幻觉吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "述及",
+    "dst": "卡卡尼亚",
+    "evidence": "这位克拉拉小姐神秘术的效果，是让你能够窥见自己真实的内心",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "迫人直面",
+    "dst": "塞梅尔维斯",
+    "evidence": "能够让所有人都必须直面自己的内心",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "赞许其术",
+    "dst": "神秘术",
+    "evidence": "克拉拉小姐拥有着一个相当了不起的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "初见此术",
+    "dst": "神秘术",
+    "evidence": "我先前从未见过这样的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "诘其否定",
+    "dst": "塞梅尔维斯",
+    "evidence": "即便在如此的前提下，你也要否定自己的“真实”吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "斥其搪塞",
+    "dst": "圣洛夫基金会",
+    "evidence": "不要再用“基金会”之类的鬼话来搪塞我了",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "被指为",
+    "dst": "塞梅尔维斯",
+    "evidence": "它不过是你的伪装",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "举其寻人",
+    "dst": "罗蕾莱",
+    "evidence": "又怎么会前来寻找那个名为“罗蕾莱”的神秘学家呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "属于",
+    "dst": "神秘学家",
+    "evidence": "又怎么会前来寻找那个名为“罗蕾莱”的神秘学家呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "自陈策略",
+    "dst": "圣洛夫基金会",
+    "evidence": "对基金会保持忠诚，便是我目前最佳的处理方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "断为利用",
+    "dst": "圣洛夫基金会",
+    "evidence": "这绝不是忠诚，而是相互利用",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "断其不信",
+    "dst": "圣洛夫基金会",
+    "evidence": "你根本不相信基金会",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约小组",
+    "relation": "提供外出",
+    "dst": "塞梅尔维斯",
+    "evidence": "不过是想要获得更多的外出机会，以求寻找到治愈的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "求治愈",
+    "dst": "超自然者感染症",
+    "evidence": "以求寻找到治愈的方法",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "视为途径",
+    "dst": "圣洛夫基金会",
+    "evidence": "自始至终，基金会都是实现我的目的的最佳途径",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝拉",
+    "relation": "揭其本质",
+    "dst": "既定的死亡",
+    "evidence": "你只是一个不愿意接受死亡的既定事实，企图改变“命运”的普通人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "425c53cdefeaabd6ef05d8be": {
+  "entities": [],
+  "relations": []
+ }
+}

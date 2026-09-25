@@ -1,0 +1,2036 @@
+{
+ "791c889320fde175853a419e": {
+  "entities": [
+   {
+    "name": "空心木",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追查感染源头的杂志编辑"
+   },
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贴上窗玻璃的感染者"
+   },
+   {
+    "name": "乘客Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喝堵门的旅客"
+   },
+   {
+    "name": "乘客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉车厢异样的绅士"
+   },
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道谢并许诺厚礼的贵妇"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "肩膀拉伤的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "率队破围的列车长"
+   },
+   {
+    "name": "雅科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带头报恩的难民"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "成群扑向列车的怪物"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "驻军堆放物资的仓库"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "感染驻军的源头"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "同胞们要抵达的城市"
+   },
+   {
+    "name": "加挂的车厢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "列车新加挂的车厢"
+   },
+   {
+    "name": "难民偷渡行动",
+    "type": "事件",
+    "aliases": [],
+    "desc": "受列车长照应的偷渡"
+   },
+   {
+    "name": "隔离条令",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已持续两小时的隔离"
+   },
+   {
+    "name": "车站守军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被感染的边境驻军"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "陷入重围的列车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "空心木",
+    "relation": "辨认",
+    "dst": "感染种",
+    "evidence": "是刚才见过的“感染种”？我倒不知道这还是可以量产的东西。",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的乘客",
+    "relation": "属于",
+    "dst": "感染种",
+    "evidence": "感染种扒车门",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染种",
+    "relation": "扑向",
+    "dst": "多瑙黎明号",
+    "evidence": "一部分融入了远处幽暗的树林中，另一部分则向着列车的方向奔来。",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "疑察",
+    "dst": "车站仓库",
+    "evidence": "看样子像是驻军的仓库……感染种都是从这里跑出来的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "问及",
+    "dst": "隔离条令",
+    "evidence": "从隔离到现在已经过去了将近两个小时。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "告诫",
+    "dst": "塞梅尔维斯",
+    "evidence": "我早就警告过了，霰弹枪不适合你。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "评点",
+    "dst": "感染种",
+    "evidence": "对付成堆扑来的感染种，手枪的威力还不够让我足够优雅地死去。",
+    "confidence": 0.95
+   },
+   {
+    "src": "血食怪",
+    "relation": "感染",
+    "dst": "车站守军",
+    "evidence": "边境站的驻军已经被血食怪感染了，军队带走了不少乘客。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "感激",
+    "dst": "难民偷渡行动",
+    "evidence": "多亏了他们的鼎力相助，我们才能突破感染种的包围",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "报恩",
+    "dst": "告死鸟",
+    "evidence": "我们只是为了还列车长一个人情。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "送抵",
+    "dst": "布达佩斯",
+    "evidence": "她不求回报地帮助许多同胞抵达布达佩斯。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅲ",
+    "relation": "注意到",
+    "dst": "加挂的车厢",
+    "evidence": "嘶……竟然加挂了车厢……",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "道谢",
+    "dst": "告死鸟",
+    "evidence": "不管怎么说……感谢诸位的帮助。",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "叮咛",
+    "dst": "索尼娅",
+    "evidence": "一会儿注意跟紧点儿，别乱跑——现在我们可都是一条船上的人了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅳ",
+    "relation": "抵御",
+    "dst": "感染的乘客",
+    "evidence": "见鬼，这扇门根本挡不住。我们得一齐堵上它！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cfe023c5808f3b0a64ef48f7": {
+  "entities": [
+   {
+    "name": "雅科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叮嘱众人跟紧的难民"
+   },
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "索要重火力的贵妇"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "筹划劫狱的列车长"
+   },
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押乘客的拘留室"
+   },
+   {
+    "name": "乘客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抗拒与军队为敌的旅客"
+   },
+   {
+    "name": "小伊凡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挂念同伴的孩子"
+   },
+   {
+    "name": "乘客Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出言讥讽的旅客"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "被关走的女孩"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意救人的女孩"
+   },
+   {
+    "name": "拉伊哈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讥笑大人的妇人"
+   },
+   {
+    "name": "阿不思诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扑在麻袋前的绅士"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "解袋分枪的乘务员"
+   },
+   {
+    "name": "告死鸟的军火库",
+    "type": "物品",
+    "aliases": [],
+    "desc": "麻袋里的各式枪械"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被安上假名的族类"
+   },
+   {
+    "name": "车站守军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被指为对手军队"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "策划",
+    "dst": "临时拘留室",
+    "evidence": "离开之前我们得先去车站的临时拘留室，救出被关押的其他乘客。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅲ",
+    "relation": "畏战",
+    "dst": "车站守军",
+    "evidence": "我们只是一群手无寸铁的旅客，和军队干架？你们是在开玩笑吧……",
+    "confidence": 0.95
+   },
+   {
+    "src": "小伊凡",
+    "relation": "寻问",
+    "dst": "野树莓",
+    "evidence": "列车长女士，您提到其他乘客……这也包括野树莓吗？我一直没有见到她……",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅳ",
+    "relation": "讥称",
+    "dst": "野树莓",
+    "evidence": "你是指那个假血食怪吗？恐怕也被关起来了，她是最早被带走的乘客。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "被称",
+    "dst": "血食怪",
+    "evidence": "你是指那个假血食怪吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "邀约",
+    "dst": "小伊凡",
+    "evidence": "你认识野树莓。所以你也想和我一起救出她吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小伊凡",
+    "relation": "守诺",
+    "dst": "野树莓",
+    "evidence": "她保护我们，还和我许下了约定……我们不能看着她身处险境。",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "质疑",
+    "dst": "小伊凡",
+    "evidence": "哼。天真的孩子，你们不害怕外面的怪物吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉伊哈",
+    "relation": "讥讽",
+    "dst": "索尼娅",
+    "evidence": "呵呵。瞧见了吗，就连孩子都比你们勇敢。",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿不思诺",
+    "relation": "顾虑",
+    "dst": "告死鸟的军火库",
+    "evidence": "可没有武器怎么行，总不能指望我们拿着刀叉冲锋吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "展示",
+    "dst": "告死鸟的军火库",
+    "evidence": "利索地解开身上携带的沉重麻袋，亮出里头乌泱泱闪着光的长枪短炮们",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿不思诺",
+    "relation": "惊叹",
+    "dst": "告死鸟的军火库",
+    "evidence": "这……勃朗宁M1910！莫辛-纳甘！毛瑟C96！",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "请战",
+    "dst": "乘务员艾玛",
+    "evidence": "给我也来一把！重火力的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "安抚",
+    "dst": "阿不思诺",
+    "evidence": "放心，我们早有准备。",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "叮咛",
+    "dst": "索尼娅",
+    "evidence": "厚礼就不必了，一会儿注意跟紧点儿，别乱跑",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a7a936d21d7a0a4dcc225c6b": {
+  "entities": [
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "会谈所在的仓库"
+   },
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "血迹蜿蜒的拘留室"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开出代价的军官"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "直面诱惑的女孩"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被许诺的不死之身"
+   },
+   {
+    "name": "故乡的墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "幻象中的潮湿墓园"
+   },
+   {
+    "name": "血月",
+    "type": "概念",
+    "aliases": [],
+    "desc": "幻象里猩红的月亮"
+   },
+   {
+    "name": "野树莓的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述传说的人"
+   },
+   {
+    "name": "血食怪的故事",
+    "type": "概念",
+    "aliases": [],
+    "desc": "关于血食怪的旧事"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "验看血迹的调查员"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冲进来寻人的女孩"
+   }
+  ],
+  "relations": [
+   {
+    "src": "鲍里斯",
+    "relation": "胁迫",
+    "dst": "野树莓",
+    "evidence": "血食怪的耐心远不及他的寿命来得要长。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "追问",
+    "dst": "鲍里斯",
+    "evidence": "先生，你的是哪一种呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "开价",
+    "dst": "野树莓",
+    "evidence": "代价是一丁点鲜血，以及……你有很大几率会变成“它们”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "化现",
+    "dst": "血食怪",
+    "evidence": "在她面前伫立的，是血食怪鲍里斯。他身披漆黑长袍",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的母亲",
+    "relation": "口传",
+    "dst": "血食怪的故事",
+    "evidence": "那是母亲曾无数次给她讲过的、血食怪栖息的潮湿墓园",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "置身",
+    "dst": "故乡的墓园",
+    "evidence": "她仿佛身处墓园中央，头顶是一轮鲜红的血月。",
+    "confidence": 0.95
+   },
+   {
+    "src": "血月",
+    "relation": "悬于",
+    "dst": "故乡的墓园",
+    "evidence": "她仿佛身处墓园中央，头顶是一轮鲜红的血月。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "逼选",
+    "dst": "野树莓",
+    "evidence": "成为血食怪，或是死亡。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "应允",
+    "dst": "鲍里斯",
+    "evidence": "……我接受。",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "搜寻",
+    "dst": "野树莓",
+    "evidence": "手持武器的人们冲了进来，却并未找到那一抹熟悉的身影。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "勘查",
+    "dst": "临时拘留室",
+    "evidence": "血液有拖拽的痕迹……看样子部分乘客被转移了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "现身于",
+    "dst": "车站仓库",
+    "evidence": "【标题卡】尼卡检查站·仓库",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb70bad6029696a0db92518e": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "循声查看的调查员"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "哭着想回家的孩子"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把孩子护在身边的妇人"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱住家人的女孩"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "出声示警的列车长"
+   },
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏有孩子的拘留室"
+   },
+   {
+    "name": "角落的阴影",
+    "type": "概念",
+    "aliases": [],
+    "desc": "身份未明的扑击者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "威廉",
+    "relation": "哭喊",
+    "dst": "多萝西",
+    "evidence": "呜呜呜……我要回家……",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "安抚",
+    "dst": "威廉",
+    "evidence": "没事的，我们会没事的……",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "相拥",
+    "dst": "多萝西",
+    "evidence": "安娜贝尔冲上前，紧紧抱住失散已久的家人。",
+    "confidence": 0.95
+   },
+   {
+    "src": "角落的阴影",
+    "relation": "扑向",
+    "dst": "安娜贝尔",
+    "evidence": "阴影从另一侧的角落中朝众人飞扑上来。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "示警",
+    "dst": "角落的阴影",
+    "evidence": "大家小心！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "循声",
+    "dst": "临时拘留室",
+    "evidence": "明黄的灯光下，几团黑糊糊的影子在角落蠕动着，一个熟悉的声音正在小声呜咽。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b36b36c648b31b0aa64fcfdc": {
+  "entities": [
+   {
+    "name": "临时拘留室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "尸语回荡的拘留室"
+   },
+   {
+    "name": "感染的士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "濒死狂笑的感染兵"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "开枪的列车长"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给予馈赠的军官"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "反噬契约的女孩"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "辨声的乘务员"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被预言的灾厄"
+   },
+   {
+    "name": "阿不思诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊觉军队沦陷的绅士"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "验尸的调查员"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "转化失败的产物"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被预告的新同类"
+   },
+   {
+    "name": "小尼古拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被呼唤的弟弟"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "藏货的仓库"
+   },
+   {
+    "name": "《征服者爬虫》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被诵念的诗句"
+   },
+   {
+    "name": "车站守军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "已经垮掉的军队"
+   }
+  ],
+  "relations": [
+   {
+    "src": "感染的士兵",
+    "relation": "供出",
+    "dst": "车站仓库",
+    "evidence": "仓……仓库，车站的仓库。那儿放了很多……很多……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "逼问",
+    "dst": "感染的士兵",
+    "evidence": "鲍里斯在什么地方？他绑走的那个小女孩呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "倒地",
+    "dst": "临时拘留室",
+    "evidence": "“士兵”倒在地上，双眼涨红，额角的血管如青黑色的菌丝般蔓延。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "辨识",
+    "dst": "野树莓",
+    "evidence": "是野树莓！这声音……难道说……",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "狂呼",
+    "dst": "血食怪",
+    "evidence": "你们就要收获一个新的血食怪朋友了！哈哈哈……",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "诵念",
+    "dst": "《征服者爬虫》",
+    "evidence": "血流如注！你我皆为牲畜。",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "预言",
+    "dst": "暴雨",
+    "evidence": "然后，“暴雨”将至……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿不思诺",
+    "relation": "惊觉",
+    "dst": "车站守军",
+    "evidence": "连军队都已经……难怪那些怪物像蟑螂一样到处都是……",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "查验",
+    "dst": "感染的士兵",
+    "evidence": "调查员蹲下身，将士兵的尸首仔细检查了一遍。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辨析",
+    "dst": "感染种",
+    "evidence": "这很可能不是自然生成的感染种，而是转化失败后的产物……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "忆亲",
+    "dst": "小尼古拉",
+    "evidence": "妈妈，爸爸，小尼古拉……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "突袭",
+    "dst": "鲍里斯",
+    "evidence": "下一秒，阴影如漆黑的潮水涌出。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "立志",
+    "dst": "血食怪",
+    "evidence": "一个能用自己的力量做些什么的、能够让大家躲在我翅膀下的血食怪。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "诱降",
+    "dst": "野树莓",
+    "evidence": "来吧。接受我的馈赠，脱去这副朽烂的肉身。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "击毙",
+    "dst": "感染的士兵",
+    "evidence": "枪声响起，血花四溅。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d226439283466acbb93359a7": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "拒绝施舍的女孩"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撕下面具的军官"
+   },
+   {
+    "name": "斯特兰贾",
+    "type": "地点",
+    "aliases": [],
+    "desc": "报春花盛开的山林"
+   },
+   {
+    "name": "木桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "传说处的刑具"
+   },
+   {
+    "name": "血食怪的故事",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被讥为假的传说"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她选择成为的样子"
+   },
+   {
+    "name": "故乡的墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "童年里的月亮与墓园"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "开枪解围的列车长"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "宣告",
+    "dst": "血食怪",
+    "evidence": "一个强大的、可以保护大家的血食怪……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "痛斥",
+    "dst": "鲍里斯",
+    "evidence": "而你……滚回你的坟墓里去吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "起誓",
+    "dst": "斯特兰贾",
+    "evidence": "最后一朵报春花在斯特兰贾的山林里盛开又凋谢……",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "嘲弄",
+    "dst": "血食怪的故事",
+    "evidence": "木桩、圣水、大蒜……让我猜猜看，还有什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "讥讽",
+    "dst": "木桩",
+    "evidence": "听你那番蠢得令人发笑的正义宣言，简直比被钉在木桩上还要痛苦。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "扼住",
+    "dst": "野树莓",
+    "evidence": "女孩的脖颈便被无形的黑影缠绕。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "断言",
+    "dst": "野树莓",
+    "evidence": "那些传说、故事……全都是假的。就连你也是个假血食怪。",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "忆及",
+    "dst": "故乡的墓园",
+    "evidence": "月亮、鲜血、墓园……那些组成她整个童年生活的事物",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "射击",
+    "dst": "鲍里斯",
+    "evidence": "子弹毫不留情地穿过军官的肩胛。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "寻获",
+    "dst": "野树莓",
+    "evidence": "我们找到你了。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "53c85c2c45d84a4d28ea30b9": {
+  "entities": [
+   {
+    "name": "波德莱尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "吟咏血泉的诗人"
+   },
+   {
+    "name": "《血泉》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "开篇所引的诗篇"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "团聚发生的仓库"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "被众人围住的女孩"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "表明心意的孩子"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [
+     "小威廉"
+    ],
+    "desc": "复述反击的孩子"
+   },
+   {
+    "name": "木桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插在胸口的那一截"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "端坐尸山的旧友"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出制服的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "被讥想象糟糕的列车长"
+   },
+   {
+    "name": "七十七行动小队",
+    "type": "组织",
+    "aliases": [
+     "七十七分队"
+    ],
+    "desc": "覆没于此的旧同僚"
+   },
+   {
+    "name": "色雷斯解放阵线",
+    "type": "组织",
+    "aliases": [],
+    "desc": "他曾经加入的阵线"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "他口中的纷争根源"
+   },
+   {
+    "name": "血肉山丘",
+    "type": "地点",
+    "aliases": [],
+    "desc": "尸骸堆成的山丘"
+   }
+  ],
+  "relations": [
+   {
+    "src": "波德莱尔",
+    "relation": "著述",
+    "dst": "《血泉》",
+    "evidence": "——波德莱尔《血泉》",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "团聚",
+    "dst": "安娜贝尔",
+    "evidence": "人们迫不及待地涌到野树莓的身边，将她团团围住。",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "劝慰",
+    "dst": "血食怪",
+    "evidence": "我们喜欢你、亲近你，并不因为你是血食怪。",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉",
+    "relation": "称赞",
+    "dst": "野树莓",
+    "evidence": "你把木桩插在了那个坏蛋的胸口上，你比血食怪都要厉害……",
+    "confidence": 0.95
+   },
+   {
+    "src": "木桩",
+    "relation": "刺伤",
+    "dst": "鲍里斯",
+    "evidence": "你把木桩插在了那个坏蛋的胸口上",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "堆积",
+    "dst": "血肉山丘",
+    "evidence": "无数尸体堆积成一座令人作呕的血肉山丘。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "高坐",
+    "dst": "血肉山丘",
+    "evidence": "鲍里斯便是坐在这座山丘上方，悠闲得像是坐进了柔软的沙发。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辨认",
+    "dst": "七十七行动小队",
+    "evidence": "这是，七十七分队的人，我的……我曾经的同僚们。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "歼灭",
+    "dst": "七十七行动小队",
+    "evidence": "我嫌他们碍事，早在他们上车前就一次性解决了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "旧属",
+    "dst": "色雷斯解放阵线",
+    "evidence": "我尝试了各种方法……包括加入解放阵线。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "追问",
+    "dst": "鲍里斯",
+    "evidence": "你本可以选择告诉我这些。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "讥诮",
+    "dst": "告死鸟",
+    "evidence": "你的想象力还是一如既往的糟糕啊，伊格丽卡。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "归咎",
+    "dst": "血食怪",
+    "evidence": "血。我们脚下的土地流淌着太多不同的血液。",
+    "confidence": 0.95
+   },
+   {
+    "src": "血肉山丘",
+    "relation": "位于",
+    "dst": "车站仓库",
+    "evidence": "【标题卡】尼卡检查站·仓库",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "发现",
+    "dst": "血肉山丘",
+    "evidence": "调查员眼尖地在山丘中找到了熟悉的制服和标记。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "db23da2337ffe5599b374e92": {
+  "entities": [
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "布道血脉的军官"
+   },
+   {
+    "name": "如歌的声音",
+    "type": "角色",
+    "aliases": [
+     "来自远方的歌者"
+    ],
+    "desc": "指引新路的远方之声"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "驳斥其逃避的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "被唤作血亲的乘务员"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "串起线索的调查员"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "出声呼唤的女孩"
+   },
+   {
+    "name": "围巾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拂过脸颊的红围巾"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被他奉为纽带之物"
+   },
+   {
+    "name": "血脉相连的世界",
+    "type": "概念",
+    "aliases": [],
+    "desc": "人人相连的理想"
+   }
+  ],
+  "relations": [
+   {
+    "src": "鲍里斯",
+    "relation": "信奉",
+    "dst": "如歌的声音",
+    "evidence": "那位来自远方的歌者听到了我的祈祷",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "布道",
+    "dst": "血脉相连的世界",
+    "evidence": "一条让我们血脉相连的道路！所有人都成为血食怪，没有隔阂与冲突",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "称颂",
+    "dst": "血食怪",
+    "evidence": "当所有人都摆脱了自己的肉体局限，平等地生活在永生之中……",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "鼓吹",
+    "dst": "血脉相连的世界",
+    "evidence": "血脉都会将我们连成一个庞大的家族，永远不再有敌人。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "反驳",
+    "dst": "鲍里斯",
+    "evidence": "人与人之间冲突永远不会结束。它不仅来自血脉，也来自误解、恐惧……甚至是爱。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "斥责",
+    "dst": "鲍里斯",
+    "evidence": "你只是一个吃不到糖，就想拉它一起坠入地狱的孩子。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "感慨",
+    "dst": "告死鸟",
+    "evidence": "你永远都知道该怎么伤害我，并对此毫无顾忌。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "招揽",
+    "dst": "乘务员艾玛",
+    "evidence": "来吧，到我身边。接下来会是一场恶战，你是我的血亲，我不想伤到你。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "串联",
+    "dst": "乘务员艾玛",
+    "evidence": "调查员的目光在乘务员和列车长之间流连，离散的线索在她脑内串联了起来。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "唤亲",
+    "dst": "鲍里斯",
+    "evidence": "鲍里斯叔叔……",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "呼唤",
+    "dst": "乘务员艾玛",
+    "evidence": "艾玛……！",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "系着",
+    "dst": "围巾",
+    "evidence": "红色围巾毛茸茸的触感划过她的脸颊。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9230d627e75c82170efabc92": {
+  "entities": [
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "选择留下的人"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拒后爆发的军官"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "她不愿被伤害的列车"
+   },
+   {
+    "name": "围巾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被她攥紧的围巾"
+   },
+   {
+    "name": "木桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "胸口外露的一截"
+   },
+   {
+    "name": "感染的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应声狂呼的乘客"
+   },
+   {
+    "name": "感染的士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高呼不休的士兵"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判断局势的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "立誓击杀的列车长"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被感召而来的怪物"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "撕裂背脊的怪物"
+   },
+   {
+    "name": "《征服者爬虫》",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被重复的诵词"
+   },
+   {
+    "name": "理解与共鸣",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被他否弃的共鸣"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘务员艾玛",
+    "relation": "回绝",
+    "dst": "鲍里斯",
+    "evidence": "对不起，叔叔。你是我的血亲，是我一直心怀感激的人……但我不能过去。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "维护",
+    "dst": "多瑙黎明号",
+    "evidence": "“多瑙黎明号”很好，大家也很好……我、我不希望你伤害大家……",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "攥紧",
+    "dst": "围巾",
+    "evidence": "于是她攥紧围巾，缓慢而坚定地直视军官的眼睛。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "决裂",
+    "dst": "理解与共鸣",
+    "evidence": "我早就明白了，根本不存在所谓的“理解与共鸣”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "拔出",
+    "dst": "木桩",
+    "evidence": "他低下头，慢慢抽出裸露在胸口外的那截木桩。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "现形",
+    "dst": "血食怪",
+    "evidence": "怪物“鲍里斯”发出一声尖锐的鸣叫，赤红的双目血流如注。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "感召",
+    "dst": "感染种",
+    "evidence": "在夜空中扩散开来，吸引了无数在外游荡的感染种们。",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的乘客",
+    "relation": "应和",
+    "dst": "鲍里斯",
+    "evidence": "血流如注……血流如注！",
+    "confidence": 0.95
+   },
+   {
+    "src": "感染的士兵",
+    "relation": "诵念",
+    "dst": "《征服者爬虫》",
+    "evidence": "永不复还！",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "察知",
+    "dst": "感染种",
+    "evidence": "那些感染种似乎受到了鲍里斯的感召，全都涌过来了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "宣战",
+    "dst": "鲍里斯",
+    "evidence": "鲍里斯……今天，我会亲手用子弹贯穿你的心脏。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "号令",
+    "dst": "塞梅尔维斯",
+    "evidence": "拿起武器，作好迎战准备！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3ba70c88692e9f5d1c921ca7": {
+  "entities": [
+   {
+    "name": "黄昏的墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "处刑发生的墓园"
+   },
+   {
+    "name": "村民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "守着尸首的村民"
+   },
+   {
+    "name": "村民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣称该死的村民"
+   },
+   {
+    "name": "青年鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被钉木桩的青年"
+   },
+   {
+    "name": "木桩",
+    "type": "物品",
+    "aliases": [],
+    "desc": "晒了他一周的刑具"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被斩尽的族类"
+   },
+   {
+    "name": "如歌的声音",
+    "type": "角色",
+    "aliases": [
+     "来自远方的歌者"
+    ],
+    "desc": "随风而来的声音"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "退回人形的仓库"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "临终托付的怪物"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "扣下扳机的旧战友"
+   },
+   {
+    "name": "色雷斯解放阵线",
+    "type": "组织",
+    "aliases": [],
+    "desc": "两人曾同属的阵线"
+   },
+   {
+    "name": "联合与希望",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阵线遗留的口号"
+   }
+  ],
+  "relations": [
+   {
+    "src": "村民Ⅰ",
+    "relation": "钉戮",
+    "dst": "青年鲍里斯",
+    "evidence": "被钉在木桩上晒了一个星期太阳，血都快流干了，还是没死。",
+    "confidence": 0.95
+   },
+   {
+    "src": "村民Ⅰ",
+    "relation": "指认",
+    "dst": "血食怪",
+    "evidence": "不愧是纯种的血食怪，上一个才三天就没了。",
+    "confidence": 0.95
+   },
+   {
+    "src": "村民Ⅱ",
+    "relation": "申斥",
+    "dst": "青年鲍里斯",
+    "evidence": "哪来那么多为什么？你是血食怪，所以该死。",
+    "confidence": 0.95
+   },
+   {
+    "src": "青年鲍里斯",
+    "relation": "自辩",
+    "dst": "村民Ⅰ",
+    "evidence": "我从来没有……伤害过……",
+    "confidence": 0.95
+   },
+   {
+    "src": "木桩",
+    "relation": "禁锢",
+    "dst": "青年鲍里斯",
+    "evidence": "被钉在木桩上晒了一个星期太阳",
+    "confidence": 0.95
+   },
+   {
+    "src": "青年鲍里斯",
+    "relation": "受刑于",
+    "dst": "黄昏的墓园",
+    "evidence": "【标题卡】黄昏的墓园",
+    "confidence": 0.95
+   },
+   {
+    "src": "如歌的声音",
+    "relation": "蛊惑",
+    "dst": "青年鲍里斯",
+    "evidence": "我将帮助你成就你自己。你将拥有许多的家人与同类，无需再感到孤单。",
+    "confidence": 0.95
+   },
+   {
+    "src": "青年鲍里斯",
+    "relation": "回应",
+    "dst": "如歌的声音",
+    "evidence": "我们互相依存，彼此折磨……直到永远。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "退回",
+    "dst": "车站仓库",
+    "evidence": "怪物退回人形，像一只幼小的虫蛹缩在角落，不住喘息。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "了结",
+    "dst": "鲍里斯",
+    "evidence": "都结束了，鲍里斯。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "举枪",
+    "dst": "鲍里斯",
+    "evidence": "列车长举枪对准昔日的战友。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "追念",
+    "dst": "色雷斯解放阵线",
+    "evidence": "还记得解放阵线的口号吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "色雷斯解放阵线",
+    "relation": "主张",
+    "dst": "联合与希望",
+    "evidence": "“联合与希望”。真是讽刺啊，看看我们现在……",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "坚信",
+    "dst": "联合与希望",
+    "evidence": "我从未怀疑。事实上……我无时无刻不在感受着它。",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "自悔",
+    "dst": "青年鲍里斯",
+    "evidence": "是我走得太远，受了不该有的蛊惑……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7ab79a714cc6c1b251e6547b": {
+  "entities": [
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "收枪离去的列车长"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被留下的亡者"
+   },
+   {
+    "name": "多瑙河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "终将平静的河流"
+   },
+   {
+    "name": "贝尔格莱德",
+    "type": "地点",
+    "aliases": [],
+    "desc": "废墟上的城市"
+   },
+   {
+    "name": "丁香花",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将要重开的花"
+   },
+   {
+    "name": "千万逝者的钟声",
+    "type": "物品",
+    "aliases": [],
+    "desc": "为逝者敲响的钟"
+   },
+   {
+    "name": "联合与希望",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未终结的信念"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "诀别",
+    "dst": "鲍里斯",
+    "evidence": "永别了，鲍里斯。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "祈望",
+    "dst": "多瑙河",
+    "evidence": "等到那时，多瑙河会再度平静流淌",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "展望",
+    "dst": "贝尔格莱德",
+    "evidence": "贝尔格莱德的废墟上，也会有新的丁香花盛开。",
+    "confidence": 0.95
+   },
+   {
+    "src": "丁香花",
+    "relation": "盛开于",
+    "dst": "贝尔格莱德",
+    "evidence": "贝尔格莱德的废墟上，也会有新的丁香花盛开。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "悼念",
+    "dst": "千万逝者的钟声",
+    "evidence": "我们会在曾是战场的原野上，为千万逝者敲响钟声。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "坚守",
+    "dst": "联合与希望",
+    "evidence": "但我相信，我们会等来那一天。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f40b612368c4cb4bcbcfd0aa": {
+  "entities": [
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [
+     "艾玛"
+    ],
+    "desc": "把套娃留下的告别者"
+   },
+   {
+    "name": "鲍里斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承诺治伤的叔叔"
+   },
+   {
+    "name": "莱切河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "需要渡过的小河"
+   },
+   {
+    "name": "瓦伦缇娜小姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传说中能治病的女士"
+   },
+   {
+    "name": "瓦伦缇娜的城堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "河畔的城堡"
+   },
+   {
+    "name": "套娃",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被放下的木质套娃"
+   },
+   {
+    "name": "多瑙河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "沿途吹过风的河流"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "联络基金会的调查员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "答应派人的基金会"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [
+     "伊格丽卡"
+    ],
+    "desc": "主张诱敌的列车长"
+   },
+   {
+    "name": "雅科夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "清点弹药的难民"
+   },
+   {
+    "name": "仓库里的炸药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "标记易燃的货物"
+   },
+   {
+    "name": "卡瓦尔长笛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "声音响亮的笛子"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [
+     "小野树莓"
+    ],
+    "desc": "想出法子的女孩"
+   },
+   {
+    "name": "感染种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "失控游荡的怪物"
+   },
+   {
+    "name": "车站仓库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人据守的仓库"
+   },
+   {
+    "name": "车站守军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "搜剿炸药的军队"
+   }
+  ],
+  "relations": [
+   {
+    "src": "鲍里斯",
+    "relation": "提及",
+    "dst": "莱切河",
+    "evidence": "然后我们会渡过莱切河，瓦伦缇娜小姐居住的城堡就在那边……",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲍里斯",
+    "relation": "投奔",
+    "dst": "瓦伦缇娜小姐",
+    "evidence": "她会的，艾玛。血食怪不会抛弃有着相同血脉的族人，这是我们的责任。",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜小姐",
+    "relation": "居于",
+    "dst": "瓦伦缇娜的城堡",
+    "evidence": "瓦伦缇娜小姐居住的城堡就在那边……",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "安放",
+    "dst": "套娃",
+    "evidence": "艾玛将木质的套娃轻轻放在地上。",
+    "confidence": 0.95
+   },
+   {
+    "src": "套娃",
+    "relation": "忆念",
+    "dst": "多瑙河",
+    "evidence": "仿佛还记得多瑙河沿岸的风、列车的晃动，还有她一路走来的低语与笑声。",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "诀别",
+    "dst": "鲍里斯",
+    "evidence": "叔叔……再见。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "求援",
+    "dst": "圣洛夫基金会",
+    "evidence": "信号恢复了。我已经联络了基金会，他们会派人过来。",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "忧虑",
+    "dst": "感染种",
+    "evidence": "不过看样子，恐怕增援来之前，这些感染种便会突破这儿。",
+    "confidence": 0.95
+   },
+   {
+    "src": "仓库里的炸药",
+    "relation": "藏于",
+    "dst": "车站仓库",
+    "evidence": "列车长指向仓库角落里标记着“易燃易爆”的沉重货物。",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "搜剿",
+    "dst": "仓库里的炸药",
+    "evidence": "这是军队之前从一伙民兵的基地里搜剿的。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "定计",
+    "dst": "感染种",
+    "evidence": "……我想，这或许是一个一网打尽的好机会。",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅科夫",
+    "relation": "忧惧",
+    "dst": "感染种",
+    "evidence": "可我们已经耗尽了弹药，又该怎么从这些危险的家伙中突围？",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "提议",
+    "dst": "卡瓦尔长笛",
+    "evidence": "而卡瓦尔的笛声非常响亮，只要不是聋子都会被它吸引注意力的!",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "引证",
+    "dst": "感染种",
+    "evidence": "感染种丧失了神志，只会本能地被声音吸引。",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "断言",
+    "dst": "鲍里斯",
+    "evidence": "虽然鲍里斯已经死了，但看起来这些感染种还处在失控的状态中。",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+PWD=C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai
+.env exists = True
+
+[1] 依赖检查 (Python314)
+  !! 依赖缺失: ModuleNotFoundError: No module named 'fastapi'
+
+[2] 走 build_plot_registry / build_embedder
+  get_settings ✅
+  settings.embedder=ollama embed_model=bge-m3
+  settings.plot_semantic_enabled=True
+  build_embedder() → OllamaEmbedder | name=ollama:bge-m3
+  ⇒ 正常(Ollama)；护栏是否会触发=不会
+
+  registry.semantic_status[wu_ming_zhe] = None
+  retr.semantic = SemanticIndex
+  !! build_plot_registry 失败: TypeError: 'str' object is not callable

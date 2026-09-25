@@ -1,0 +1,9053 @@
+{
+ "event": "eval_run_complete",
+ "meta": {
+  "tool": "scripts/eval_plot_rag.py",
+  "standard": "rag_testset_300.json（证据组并集子串覆盖）+ 负样本零注入",
+  "character": "wu_ming_zhe",
+  "argv": [
+   "scripts\\eval_plot_rag.py",
+   "--testset",
+   "data\\knowledge\\_audit\\rag_testset_200_new.json",
+   "--no-trace",
+   "--quiet",
+   "--out",
+   "data\\knowledge\\_audit\\eval_new200_on_k5.json"
+  ],
+  "top": 6,
+  "lexical_fallback": 2,
+  "sample": 0,
+  "seed": 7,
+  "limit": 0,
+  "trace_enabled": false,
+  "config": {
+   "plot_alias_authoritative": true,
+   "plot_alias_trust_chained_min_df": 3,
+   "plot_alias_trust_ratio": 0.25,
+   "plot_cache_dir": "./data/knowledge/plot_cache",
+   "plot_chapter_max_names": 2,
+   "plot_chapter_routing": true,
+   "plot_chapter_top": 3,
+   "plot_context_max_chars": 2400,
+   "plot_cooccurrence_bonus": true,
+   "plot_corpus_dir": "./data/knowledge",
+   "plot_diversity_per_doc": 1,
+   "plot_edge_min_confidence": 0.6,
+   "plot_embed_model": "bge-m3",
+   "plot_entity_expand_backend": "static",
+   "plot_entity_expand_enabled": false,
+   "plot_entity_expand_llm_api_key": "",
+   "plot_entity_expand_llm_base_url": "",
+   "plot_entity_expand_llm_model": "",
+   "plot_entity_expand_max_append": 4,
+   "plot_entity_expand_min_conf": 0.0,
+   "plot_entity_expand_static_path": "",
+   "plot_entity_expand_top": 3,
+   "plot_entity_expand_whitelist": true,
+   "plot_entity_query_max_len": 14,
+   "plot_extract_concurrency": 4,
+   "plot_extract_max_tokens": 800,
+   "plot_extract_timeout": 60.0,
+   "plot_filter_generic_seeds": true,
+   "plot_fuse_k": 3,
+   "plot_graph_dir": "./data/knowledge",
+   "plot_graph_enabled": true,
+   "plot_include_weak": true,
+   "plot_lexical_always": false,
+   "plot_lexical_fallback": 2,
+   "plot_lexical_topup": false,
+   "plot_link_threshold": 0.5,
+   "plot_lore_dir": "./data/lore",
+   "plot_max_chunks": 6,
+   "plot_max_edges": 10,
+   "plot_max_hops": 2,
+   "plot_mention_cache_size": 512,
+   "plot_mention_group_by_entity": true,
+   "plot_mention_per_entity": 5,
+   "plot_mention_scoring": "count",
+   "plot_mention_total_cap": 10,
+   "plot_min_chapter_kept": 0,
+   "plot_min_semantic_kept": 0,
+   "plot_name_salience": false,
+   "plot_ppr_damping": 0.85,
+   "plot_ppr_max_iter": 20,
+   "plot_ppr_node_specificity": false,
+   "plot_require_anchored_token_seeds": true,
+   "plot_rerank_topup_enabled": true,
+   "plot_rerank_topup_keep": 5,
+   "plot_semantic_enabled": true,
+   "plot_semantic_langs": "",
+   "plot_semantic_link_min": 0.0,
+   "plot_semantic_link_top": 3,
+   "plot_semantic_min_score": 0.0,
+   "plot_semantic_rerank_enabled": false,
+   "plot_semantic_rerank_min": 0.5,
+   "plot_semantic_rerank_top": 10,
+   "plot_semantic_top": 5,
+   "plot_semantic_zh_enabled": false,
+   "plot_trace_enabled": false,
+   "plot_untrusted_extra_per_entity": 1,
+   "plot_weak_exempt_sources": "manual",
+   "plot_weight_chapter": 1.0,
+   "plot_weight_edge": 1.0,
+   "plot_weight_lexical": 0.6,
+   "plot_weight_mention": 1.0,
+   "plot_weight_mention_entity": 1.0,
+   "plot_weight_semantic": 1.0
+  },
+  "assets_sha256_head16": {
+   "plot_graph": "a28213c15d2fb931",
+   "plot_corpus": "7eab3ef671d19070",
+   "testset": "2acbe40494d0c0b1"
+  },
+  "started_at": "2026-09-17 15:26:56",
+  "elapsed_s": 144.0
+ },
+ "summary": {
+  "cases": 200,
+  "ceiling_cases": 187,
+  "strict_pass": 0.74,
+  "strict_pass_n": 148,
+  "primary_pass": 0.74,
+  "primary_pass_n": 148,
+  "ceiling_pass": 0.7701,
+  "chunk_precision": 0.3296,
+  "answer_chunk_rate": 0.2379,
+  "mrr": 0.4637,
+  "recall": 0.3773,
+  "avg_returned_chunks": 7.96,
+  "latency_p50_ms": 720.6,
+  "latency_p90_ms": 796.6,
+  "latency_p95_ms": 826.5,
+  "latency_max_ms": 3982.7,
+  "path_counts": {
+   "mention": 338,
+   "edge": 500,
+   "semantic": 739,
+   "chapter": 16
+  },
+  "empty_rate": 0.0,
+  "inject_pass": 0.7,
+  "inject_pass_n": 140,
+  "injected_chars_avg": 2527.3
+ },
+ "by_dims": {
+  "type": {
+   "factoid": {
+    "cases": 144,
+    "strict_pass": 0.8403,
+    "chunk_precision": 0.2917,
+    "latency_p50_ms": 719.4
+   },
+   "multi-hop": {
+    "cases": 40,
+    "strict_pass": 0.45,
+    "chunk_precision": 0.4344,
+    "latency_p50_ms": 723.0
+   },
+   "reasoning": {
+    "cases": 12,
+    "strict_pass": 0.5,
+    "chunk_precision": 0.3854,
+    "latency_p50_ms": 718.3
+   },
+   "temporal": {
+    "cases": 4,
+    "strict_pass": 0.75,
+    "chunk_precision": 0.4688,
+    "latency_p50_ms": 748.7
+   }
+  },
+  "difficulty": {
+   "easy": {
+    "cases": 144,
+    "strict_pass": 0.8403,
+    "chunk_precision": 0.2917,
+    "latency_p50_ms": 719.4
+   },
+   "hard": {
+    "cases": 38,
+    "strict_pass": 0.4211,
+    "chunk_precision": 0.4836,
+    "latency_p50_ms": 710.3
+   },
+   "medium": {
+    "cases": 18,
+    "strict_pass": 0.6111,
+    "chunk_precision": 0.3056,
+    "latency_p50_ms": 727.9
+   }
+  },
+  "depth": {
+   "deep": {
+    "cases": 38,
+    "strict_pass": 0.4211,
+    "chunk_precision": 0.4836,
+    "latency_p50_ms": 710.3
+   },
+   "medium": {
+    "cases": 14,
+    "strict_pass": 0.5714,
+    "chunk_precision": 0.3304,
+    "latency_p50_ms": 723.9
+   },
+   "shallow": {
+    "cases": 148,
+    "strict_pass": 0.8378,
+    "chunk_precision": 0.2897,
+    "latency_p50_ms": 719.5
+   }
+  },
+  "hop": {
+   "multi": {
+    "cases": 47,
+    "strict_pass": 0.4681,
+    "chunk_precision": 0.4362,
+    "latency_p50_ms": 727.7
+   },
+   "single": {
+    "cases": 153,
+    "strict_pass": 0.8235,
+    "chunk_precision": 0.2966,
+    "latency_p50_ms": 719.3
+   }
+  },
+  "chapter": {
+   "1.4": {
+    "cases": 12,
+    "strict_pass": 0.4167,
+    "chunk_precision": 0.2083,
+    "latency_p50_ms": 601.0
+   },
+   "1.7": {
+    "cases": 7,
+    "strict_pass": 0.5714,
+    "chunk_precision": 0.5294,
+    "latency_p50_ms": 459.2
+   },
+   "1.9": {
+    "cases": 7,
+    "strict_pass": 0.5714,
+    "chunk_precision": 0.25,
+    "latency_p50_ms": 660.0
+   },
+   "1971": {
+    "cases": 6,
+    "strict_pass": 0.3333,
+    "chunk_precision": 0.4583,
+    "latency_p50_ms": 536.7
+   },
+   "其他": {
+    "cases": 168,
+    "strict_pass": 0.7917,
+    "chunk_precision": 0.3294,
+    "latency_p50_ms": 726.7
+   }
+  },
+  "text_len": {
+   "long": {
+    "cases": 53,
+    "strict_pass": 0.717,
+    "chunk_precision": 0.2052,
+    "latency_p50_ms": 749.1
+   },
+   "medium": {
+    "cases": 83,
+    "strict_pass": 0.6988,
+    "chunk_precision": 0.346,
+    "latency_p50_ms": 709.8
+   },
+   "short": {
+    "cases": 64,
+    "strict_pass": 0.8125,
+    "chunk_precision": 0.4118,
+    "latency_p50_ms": 703.4
+   }
+  }
+ },
+ "negatives": {
+  "cases": 53,
+  "negative_injection_total": 54,
+  "negative_clean": false,
+  "violations": [
+   "解释一下相对论",
+   "哈利波特是谁",
+   "红楼梦的作者是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "known_residual": [
+   "哈利波特是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "new_leaks": [
+   "解释一下相对论",
+   "红楼梦的作者是谁"
+  ],
+  "clear": false,
+  "by_category": {
+   "泛词实体": {
+    "cases": 10,
+    "injected": 8,
+    "cases_with_injection": 1
+   },
+   "闲聊": {
+    "cases": 8,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "工具型": {
+    "cases": 9,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "生活服务": {
+    "cases": 7,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "元问题": {
+    "cases": 5,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "跨域专名": {
+    "cases": 6,
+    "injected": 38,
+    "cases_with_injection": 5
+   },
+   "英文闲聊": {
+    "cases": 4,
+    "injected": 8,
+    "cases_with_injection": 1
+   },
+   "退化输入": {
+    "cases": 4,
+    "injected": 0,
+    "cases_with_injection": 0
+   }
+  },
+  "elapsed_s": 26.0,
+  "rows": [
+   {
+    "q": "今天天气怎么样",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 450.8
+   },
+   {
+    "q": "明天的天气预报是什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 470.07
+   },
+   {
+    "q": "最近经济形势如何",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 437.15
+   },
+   {
+    "q": "股市今天涨了吗",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 612.69
+   },
+   {
+    "q": "给我讲个故事",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 474.86
+   },
+   {
+    "q": "这个故事讲了什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 497.64
+   },
+   {
+    "q": "时间是什么",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 472.04
+   },
+   {
+    "q": "介绍几个历史事件",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 484.55
+   },
+   {
+    "q": "什么是哲学",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 452.22
+   },
+   {
+    "q": "解释一下相对论",
+    "category": "泛词实体",
+    "injected": 8,
+    "paths": {
+     "mention": 3,
+     "semantic": 5
+    },
+    "samples": [
+     "周围这些岩石吗这些奇怪的颜色我从没见过也不在任何的资料记录里那些石头上的水石洞也绝对不是这个气候应该出现的先生请冷静也许",
+     "One is thought, two is opinion, three is wisdom, four is str"
+    ],
+    "latency_ms": 514.43
+   },
+   {
+    "q": "你好呀，在吗",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 420.38
+   },
+   {
+    "q": "在干嘛呢",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 516.82
+   },
+   {
+    "q": "陪我聊聊天吧",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 444.42
+   },
+   {
+    "q": "我今天心情不太好",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 517.01
+   },
+   {
+    "q": "你觉得我这个人怎么样",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 574.95
+   },
+   {
+    "q": "晚安，早点休息",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 473.28
+   },
+   {
+    "q": "谢谢你",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 430.79
+   },
+   {
+    "q": "哈哈哈",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 484.28
+   },
+   {
+    "q": "1+1 等于几",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 483.5
+   },
+   {
+    "q": "123 乘以 456 是多少",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 502.69
+   },
+   {
+    "q": "用 Python 写一个快速排序",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 479.93
+   },
+   {
+    "q": "帮我写一个 SQL 查询",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 452.01
+   },
+   {
+    "q": "帮我把这段话翻译成英文",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 485.54
+   },
+   {
+    "q": "帮我写一首关于春天的诗",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 469.42
+   },
+   {
+    "q": "总结一下这篇文章的要点",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 493.47
+   },
+   {
+    "q": "正则表达式怎么匹配邮箱",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 495.97
+   },
+   {
+    "q": "Excel 怎么做透视表",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 489.73
+   },
+   {
+    "q": "推荐几家附近的餐厅",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 489.15
+   },
+   {
+    "q": "明天几点开会",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 468.72
+   },
+   {
+    "q": "这个软件怎么安装",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 434.66
+   },
+   {
+    "q": "帮我订一张去北京的机票",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 434.23
+   },
+   {
+    "q": "附近有充电桩吗",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 463.14
+   },
+   {
+    "q": "快递什么时候到",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 464.88
+   },
+   {
+    "q": "外卖有什么优惠",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 424.48
+   },
+   {
+    "q": "你是谁",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 447.91
+   },
+   {
+    "q": "你是什么模型",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 359.0
+   },
+   {
+    "q": "你和 ChatGPT 有什么区别",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 457.76
+   },
+   {
+    "q": "你有意识吗",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 433.36
+   },
+   {
+    "q": "你能帮我做什么",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 513.8
+   },
+   {
+    "q": "哈利波特是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 1,
+     "mention": 2,
+     "semantic": 5
+    },
+    "samples": [
+     "3. ……\n…………\n亲爱的同窗：\n愿早日康复。\n逃跑路线规划\n逃跑路线规划\n这或许是你们的孤注一掷，需要慎重对待。\n2",
+     "Those who invited this chaos did not comprehend that the fla"
+    ],
+    "latency_ms": 593.65
+   },
+   {
+    "q": "红楼梦的作者是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 1,
+     "mention": 2,
+     "semantic": 5
+    },
+    "samples": [
+     "which has started a new round of craze for traveling in the ",
+     "魔精观赏会——本农场的最新明星，由德克萨斯最勇敢的猎手捕捉。从那些扰乱你农场却无形无影的小恶魔，到荒原上真正的传说，如今"
+    ],
+    "latency_ms": 556.05
+   },
+   {
+    "q": "复仇者联盟有几部电影",
+    "category": "跨域专名",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 498.97
+   },
+   {
+    "q": "苹果公司的 CEO 是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 3,
+     "mention": 1,
+     "semantic": 4
+    },
+    "samples": [
+     "四处贩卖的入场券换来的金钱又入了谁的口袋？\n——是啦，我们早已有了答案！\n撰稿人：马科尔\n——《叮咚快报》136期周末特",
+     "We still have ways to go before we can truly understand it.W"
+    ],
+    "latency_ms": 822.39
+   },
+   {
+    "q": "巴黎在哪个国家",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 3,
+     "mention": 2,
+     "semantic": 3
+    },
+    "samples": [
+     "有关“好”与“坏”……你很快就会明白。\n说到生意\n说到生意\n？？？：\n当时我正在巴黎经营我的水晶生意。\n？？？：\n从简单",
+     "You can throw yourself into evil, or create a new one yourse"
+    ],
+    "latency_ms": 670.09
+   },
+   {
+    "q": "泰坦尼克号是哪一年沉没的",
+    "category": "跨域专名",
+    "injected": 6,
+    "paths": {
+     "mention": 1,
+     "semantic": 5
+    },
+    "samples": [
+     "In situations like these, those who blindly follow orders of",
+     "The world didn't end that night.It only rained, but almost e"
+    ],
+    "latency_ms": 481.93
+   },
+   {
+    "q": "what is the weather like today",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 395.98
+   },
+   {
+    "q": "tell me a joke",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 432.82
+   },
+   {
+    "q": "how do i install this software",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 465.87
+   },
+   {
+    "q": "who is the president of the united states",
+    "category": "英文闲聊",
+    "injected": 8,
+    "paths": {
+     "edge": 3,
+     "mention": 3,
+     "semantic": 2
+    },
+    "samples": [
+     "In the meantime, we will continue to deploy field agents to ",
+     "It is either one of the parties wins over two thirdsof suppo"
+    ],
+    "latency_ms": 699.38
+   },
+   {
+    "q": "。。。",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 427.9
+   },
+   {
+    "q": "？？？",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 448.74
+   },
+   {
+    "q": "asdfghjkl",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 508.43
+   },
+   {
+    "q": "1234567890",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 480.66
+   }
+  ]
+ },
+ "trace_agg": null,
+ "ablation": null,
+ "diff_vs_baseline": {
+  "newly_passed": [],
+  "newly_failed": [],
+  "source": null,
+  "cases_paired": 0,
+  "note": "未提供基线/消融参照：空 diff 必须与配对题数 = 0 同时呈现"
+ },
+ "bucket_attribution": null,
+ "semantic_status": {
+  "wu_ming_zhe": "ok（9021 块 / ollama:bge-m3）"
+ },
+ "semantic_loaded": true,
+ "assets_sha256_head16": {
+  "plot_graph": "a28213c15d2fb931",
+  "plot_corpus": "7eab3ef671d19070",
+  "testset": "2acbe40494d0c0b1"
+ },
+ "items": [
+  {
+   "id": "N001",
+   "q": "洞穴的囚徒篇里的亚瑟的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2734,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 3982.65,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N002",
+   "q": "洞穴的囚徒篇里的洞穴隐喻出自哪位哲学家的理论？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2345,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "semantic": 5,
+    "mention": 2,
+    "chapter": 1
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 477.95,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N003",
+   "q": "阿派朗岛上那位以数字命名的少女是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.9",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2513,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 775.67,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N004",
+   "q": "今夜星光灿烂篇的故事发生在哪座城市？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.7",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2106,
+   "ceiling": true,
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "chapter": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 459.17,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 0,
+    "seeds_total": 0
+   }
+  },
+  {
+   "id": "N005",
+   "q": "随维尔汀乘船出行、擅长专注倾听的基金会助手是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2478,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 852.19,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N006",
+   "q": "绿湖噩梦篇里驻扎在营地、负责孩子们健康的牙医是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1971",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2170,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 1,
+    "semantic": 5,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 618.77,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N007",
+   "q": "37 所居住的、完全不受暴雨影响的岛屿叫什么名字？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.9",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2048,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 659.97,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N008",
+   "q": "洞穴的囚徒篇里随行的火焰系角色是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2157,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 542.6,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N009",
+   "q": "绿湖噩梦篇里孩子们口口相传的怪物住在森林还是湖底？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "1971",
+    "hop": "single",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2712,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "semantic": 5,
+    "edge": 1,
+    "mention": 2
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 659.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N010",
+   "q": "效忠于重塑之手、最终被伊索尔德枪杀的男人是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2540,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 692.42,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N011",
+   "q": "孤独之歌篇里出现的露西的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.9",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2419,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 672.83,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N012",
+   "q": "洞穴的囚徒篇里的 J 先生的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2374,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 548.25,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N013",
+   "q": "本名克拉拉·温格勒的维也纳医生是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2548,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 472.11,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N014",
+   "q": "绿湖噩梦篇里孩子们口中的怪物传说与哪座营地有关？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1971",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2157,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 1,
+    "semantic": 5,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 511.91,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N015",
+   "q": "洞穴的囚徒篇里的恶魔荆棘是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2765,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "chapter": 1
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 504.32,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N016",
+   "q": "37 的同伴中，以数字六为名的少女叫什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.9",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2588,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 461.3,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N017",
+   "q": "伊索尔德最后开枪击毙了谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2599,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 445.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N018",
+   "q": "洁西卡与弗莱迪同为哪个营地的孩子？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1971",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2218,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 561.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N019",
+   "q": "阿德勒的英文名是什么？（孤独之歌篇）",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.9",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2789,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "semantic": 4,
+    "edge": 3,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 434.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N020",
+   "q": "洞穴的囚徒篇里自称经验丰富的猎人的角色是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2206,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 417.25,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N021",
+   "q": "牙仙与冷周六同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1971",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2412,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 442.84,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N022",
+   "q": "马库斯与特奥菲尔同样活跃于哪座城市的故事里？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2590,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 418.72,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N023",
+   "q": "洞穴的囚徒篇里呼啸而来的巨兽叫什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2169,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 441.74,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N024",
+   "q": "格蕾塔与多里斯同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2743,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 426.91,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N025",
+   "q": "冷周六与巨怪传说同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1971",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2711,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 407.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N026",
+   "q": "维尔汀为防止 37 被暴雨回溯，带她离开了哪里？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.9",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2657,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 426.1,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N027",
+   "q": "「重塑之手」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2693,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 436.7,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N028",
+   "q": "雷米特杯失窃案里协助找回奖杯的侦探狗是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2618,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "semantic": 5,
+    "mention": 2,
+    "edge": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 400.64,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N029",
+   "q": "「拉普拉斯」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2709,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 451.11,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N030",
+   "q": "雷米特杯失窃案里留下名片的大盗是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2429,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 383.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N031",
+   "q": "「神秘学家」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2650,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 658.25,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N032",
+   "q": "艾维森的英文名是什么？（雷米特杯失窃案）",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2405,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 553.78,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N033",
+   "q": "「伊戈尔」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2551,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 714.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N034",
+   "q": "威廉的英文名是什么？（雷米特杯失窃案）",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2476,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 2,
+    "edge": 1,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 498.87,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N035",
+   "q": "「卡珊德拉」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2483,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 590.99,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N036",
+   "q": "77 号往事中被误当作材料处置的农场女孩是谁？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2416,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 2,
+    "semantic": 4,
+    "chapter": 1
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 688.78,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N037",
+   "q": "「赫多涅」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2573,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 665.17,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N038",
+   "q": "洞穴的囚徒篇里的摇滚苹果号是同名的第几代船？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "1.4",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2752,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "semantic": 4,
+    "edge": 2
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 653.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N039",
+   "q": "「远旅」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2616,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 698.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N040",
+   "q": "在英文剧情语料里，「牙仙」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2493,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 719.34,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N041",
+   "q": "「野树莓」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2626,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 736.38,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N042",
+   "q": "《重返未来：1999》剧情转写里「维尔汀」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2700,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 784.97,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N043",
+   "q": "在英文剧情语料里，「芝诺军备学院」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2731,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 709.75,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N044",
+   "q": "「玛蒂尔达」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2778,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 692.93,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N045",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「圣洛夫基金会」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2723,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 767.36,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N046",
+   "q": "在英文剧情语料里，「乌尔里希」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2644,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 660.48,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N047",
+   "q": "「星锑」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2806,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 671.98,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N048",
+   "q": "《重返未来：1999》剧情转写里「鸽子屋」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 1998,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 696.86,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N049",
+   "q": "在英文剧情语料里，「拉莫纳」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2568,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 694.93,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N050",
+   "q": "「阿黛尔」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2612,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 8,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 2,
+    "mention": 2
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 701.98,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N051",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「暴雨」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2352,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 813.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N052",
+   "q": "在英文剧情语料里，「洛佩拉」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2490,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 696.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N053",
+   "q": "「回声谣」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2708,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 768.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N054",
+   "q": "《重返未来：1999》剧情转写里「纳西索斯」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2735,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 747.13,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N055",
+   "q": "在英文剧情语料里，「莫莉德尔」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2323,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 706.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N056",
+   "q": "「十四行诗」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2240,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
+   "paths": {
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 734.78,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N057",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「诺谛卡」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2621,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 697.8,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N058",
+   "q": "在英文剧情语料里，「奠基石」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2423,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 5,
+    "semantic": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 771.97,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N059",
+   "q": "「阿尔卡纳」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2699,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 717.72,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N060",
+   "q": "《重返未来：1999》剧情转写里「卡戎」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2437,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 632.78,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N061",
+   "q": "在英文剧情语料里，「兔毛手袋」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2803,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 783.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N062",
+   "q": "「告死鸟」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2468,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "semantic": 3,
+    "mention": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 749.76,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N063",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「哑谜」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2636,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 690.48,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N064",
+   "q": "「玛丽安娜」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2675,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 689.39,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N065",
+   "q": "在英文剧情语料里，「库珀花环」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2678,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.75,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 4,
+    "mention": 2
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 691.38,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N066",
+   "q": "《重返未来：1999》剧情转写里「玛尔纱」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2450,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 836.86,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N067",
+   "q": "在英文剧情语料里，「马库斯」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2582,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 784.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N068",
+   "q": "「阿利克西欧斯」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2496,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.75,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 2,
+    "mention": 2
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 690.38,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N069",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「维拉」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2500,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 793.28,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N070",
+   "q": "「嚼嚼松果」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2456,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 5,
+    "semantic": 1,
+    "mention": 2
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 821.52,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N071",
+   "q": "在英文剧情语料里，「北方哨歌」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2768,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 711.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N072",
+   "q": "《重返未来：1999》剧情转写里「冷周六」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2682,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 753.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N073",
+   "q": "「苏芙比」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2405,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 750.18,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N074",
+   "q": "在英文剧情语料里，「格蕾塔·霍夫曼」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2844,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 743.04,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N075",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「谢尔盖」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2408,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 723.52,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N076",
+   "q": "「纸信圈儿」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2719,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 766.79,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N077",
+   "q": "在英文剧情语料里，「天使娜娜」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2691,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 793.72,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N078",
+   "q": "《重返未来：1999》剧情转写里「塞梅尔维斯」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2469,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 805.14,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N079",
+   "q": "「洁西卡」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2540,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 770.58,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N080",
+   "q": "在英文剧情语料里，「黑雾生物」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2674,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 723.54,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N081",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「芦草结」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2613,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 837.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N082",
+   "q": "「母神」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2440,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 806.92,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N083",
+   "q": "在英文剧情语料里，「邓肯」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2412,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 767.63,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N084",
+   "q": "《重返未来：1999》剧情转写里「艾吉奥·奥迪托雷」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2555,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 717.86,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N085",
+   "q": "「贝斯茉尔」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2362,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.6,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 577.47,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N086",
+   "q": "在英文剧情语料里，「索菲娅」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2369,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "semantic": 3,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 791.23,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N087",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「贝丽尔」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2531,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 4,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 796.07,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N088",
+   "q": "「科兹洛夫」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2626,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 655.92,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N089",
+   "q": "在英文剧情语料里，「奥德修斯」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2428,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 701.66,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N090",
+   "q": "《重返未来：1999》剧情转写里「虚构集」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2704,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 718.15,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N091",
+   "q": "「达芬奇」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2636,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 704.73,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N092",
+   "q": "在英文剧情语料里，「花头铁皮匣」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2272,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 1,
+    "edge": 2,
+    "semantic": 5
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 755.01,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N093",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「白朗姆」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2524,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 767.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N094",
+   "q": "「施耐德」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2423,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 5,
+    "semantic": 2
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 690.44,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N095",
+   "q": "「路德维希先生」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2448,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 756.12,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N096",
+   "q": "《重返未来：1999》剧情转写里「门」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2643,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 795.41,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N097",
+   "q": "「屠夫」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2478,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 727.29,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N098",
+   "q": "「罗布斯卡女士」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2701,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "semantic": 5,
+    "mention": 2
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 621.5,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N099",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「小春雀儿」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2399,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 745.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N100",
+   "q": "「西蒙娜」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2758,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 773.6,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N101",
+   "q": "在英文剧情语料里，「胡亚雷斯先生」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2556,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 716.86,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N102",
+   "q": "《重返未来：1999》剧情转写里「命名日」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2452,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 768.45,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N103",
+   "q": "「卡隆先生」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2565,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 776.49,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N104",
+   "q": "在英文剧情语料里，「普列谢茨克」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2567,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 5,
+    "mention": 1,
+    "semantic": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 840.32,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N105",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「挖掘艺术」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2733,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 3,
+    "mention": 1
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 765.68,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N106",
+   "q": "「复活之母」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2475,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 719.37,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N107",
+   "q": "在英文剧情语料里，「高塔」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2328,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 709.48,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 1,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N108",
+   "q": "《重返未来：1999》剧情转写里「巴别塔之骰」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2239,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 728.45,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N109",
+   "q": "「勿忘我先生」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2411,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 772.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N110",
+   "q": "「这个循环实验室」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2761,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 705.07,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N111",
+   "q": "《重返未来：1999》剧情转写里「塞内塔」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2422,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.1429,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 785.61,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N112",
+   "q": "「道金斯」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2657,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 677.84,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N113",
+   "q": "在英文剧情语料里，「执瓷」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2580,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 684.39,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N114",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「引导者」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2737,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 745.1,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N115",
+   "q": "「谢琴诺夫博士」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2673,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 707.51,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N116",
+   "q": "「毕达哥拉斯学派」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2564,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 585.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N117",
+   "q": "《重返未来：1999》剧情转写里「苹果先生」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2545,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 721.55,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N118",
+   "q": "「星期二汽车旅馆」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2704,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 711.57,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N119",
+   "q": "在英文剧情语料里，「火贼」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2188,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 756.72,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N120",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「多丽丝博士」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2593,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 3,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 789.56,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N121",
+   "q": "「阿派朗岛」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2449,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 687.8,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N122",
+   "q": "「复活之母的孩子们」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2219,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 1,
+    "semantic": 5,
+    "mention": 2
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 563.02,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N123",
+   "q": "《重返未来：1999》剧情转写里「阿德勒·霍夫曼」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2558,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 731.34,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N124",
+   "q": "「圣所」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2658,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.5,
+   "mrr": 0.25,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 726.2,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N125",
+   "q": "在英文剧情语料里，「回响石」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2496,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 729.29,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N126",
+   "q": "乌尔里希与 37 同样生活在哪座岛屿上？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.9",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2299,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 776.26,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N127",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「仪式师」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2531,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 754.03,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N128",
+   "q": "菲林士多与梅林同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2616,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 669.62,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N129",
+   "q": "《重返未来：1999》剧情转写里「拉普拉斯研究员」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2633,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 749.07,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N130",
+   "q": "伊索尔德与海因里希的爱恨纠葛发生在哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.7",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2457,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 826.43,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N131",
+   "q": "「老兵之家」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2467,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 736.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N132",
+   "q": "洞穴的囚徒篇里苏芙比买下的船叫什么名字？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.4",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2411,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 755.78,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N133",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「克雷士」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2720,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 771.93,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N134",
+   "q": "来亚什基村里会神秘术的女老师是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2342,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 803.52,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N135",
+   "q": "《重返未来：1999》剧情转写里「弗莱迪」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2440,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 694.38,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N136",
+   "q": "一直跟随星锑的苹果形伙伴叫什么名字？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.4",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2357,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
+   "paths": {
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 744.65,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N137",
+   "q": "「青年军」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2572,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 746.88,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N138",
+   "q": "维尔汀一行在洞穴的囚徒篇里乘船前往的目的地是哪座岛？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "1.4",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2691,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "chapter": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 777.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N139",
+   "q": "「玩具盒」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2592,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 828.15,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N140",
+   "q": "Acie 与 Iverson 同属哪一起案件？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2691,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 4,
+    "semantic": 1
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 732.82,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N141",
+   "q": "曲娘的酒馆位于朔日手记篇的哪个地点？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2624,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
+   "paths": {
+    "semantic": 3,
+    "edge": 1,
+    "chapter": 2,
+    "mention": 2
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 743.33,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N142",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「牙仙精灵」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2680,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 763.9,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N143",
+   "q": "卡森与邓肯同为哪个篇章里的人物？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2459,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 4,
+    "edge": 3,
+    "semantic": 1
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 721.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N144",
+   "q": "《重返未来：1999》剧情转写里「乌尔里奇」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2703,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 691.42,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N145",
+   "q": "维拉守护的来亚什基村庄出产的特殊矿物叫什么？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2770,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 848.29,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N146",
+   "q": "「疯癫面具」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2776,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 778.04,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N147",
+   "q": "温松与奥古斯特同为哪座村庄篇章里的人物？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2180,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 727.68,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N148",
+   "q": "福格先生的净化机是为了哪座城市的雾霾而造？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2679,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 806.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N149",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「纳德尔」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2652,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 706.22,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N150",
+   "q": "凯拉被误认成了哪位重塑之手间谍？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2561,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 760.41,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N151",
+   "q": "《重返未来：1999》剧情转写里「叶戈尔」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2498,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.2,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 756.29,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N152",
+   "q": "苏芙比买下摇滚苹果号是为了航行到哪座岛？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2269,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "semantic": 4,
+    "edge": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 745.2,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N153",
+   "q": "「新火仪式」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2686,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 627.27,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N154",
+   "q": "被重塑之手追随者误认而遭处置的农场女孩死后，谁被迫长期扮演她在镇上生活？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2381,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 777.46,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N155",
+   "q": "37 随维尔汀离开海岛是为了躲避什么灾难的回溯？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2497,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 746.68,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N156",
+   "q": "「停战协定」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2574,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 640.08,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N157",
+   "q": "在自由海风号上执行勿忘我的任务而精神崩溃的间谍是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2367,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 730.27,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N158",
+   "q": "「冥想者之境」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2536,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 701.66,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N159",
+   "q": "在阿派朗岛被真空弹轰炸灰飞烟灭的重塑之手首领是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2522,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 746.73,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N160",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「奥古斯卡先生」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2365,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "semantic": 5,
+    "mention": 1
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 595.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N161",
+   "q": "一位海盗歌手的座船由苏芙比出资购买，这位歌手是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2409,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 771.2,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N162",
+   "q": "塞洛尼与卡穆塔同为哪座岛的岛民？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2537,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "semantic": 5,
+    "mention": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 593.73,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N163",
+   "q": "《重返未来：1999》剧情转写里「阿尼尔」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2562,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 4,
+    "semantic": 3
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 801.69,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N164",
+   "q": "被勿忘我要求戴上面具以测试忠诚的角色是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2689,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 4,
+    "mention": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 689.08,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N165",
+   "q": "「转生者」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2466,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 717.07,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N166",
+   "q": "一位来自小提琴之乡的女士担任邮轮音乐总监，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2625,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 633.55,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N167",
+   "q": "慧姑追求的长生之法与不老春篇的哪个教派有关？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2434,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 622.39,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N168",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「绿湖营地」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2488,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "semantic": 3,
+    "mention": 3
+   },
+   "zh_ratio": 0.0,
+   "latency_ms": 725.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N169",
+   "q": "乌卢鲁运动会的导演是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2466,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 626.24,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N170",
+   "q": "维尔汀用哪个道具庇护了逃过暴雨的神秘学家们？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2646,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 724.42,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N171",
+   "q": "一位少女随维尔汀离开海岛以躲避暴雨回溯，她是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/2",
+   "missing_groups": [
+    0,
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2705,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 794.69,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N172",
+   "q": "1987 宇宙组曲篇的发射任务与哪个矿区的资源有关？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2580,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 4,
+    "chapter": 1,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 504.41,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N173",
+   "q": "远旅与波因特同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2628,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 807.15,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N174",
+   "q": "第一次暴雨发生于哪一天的午夜？",
+   "dims": {
+    "type": "temporal",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2521,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 741.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N175",
+   "q": "与圣洛夫基金会联手阻止重塑之手仪式的军备学院是哪家？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2440,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 772.44,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N176",
+   "q": "《重返未来：1999》剧情转写里「地下墓穴」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2427,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 790.35,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N177",
+   "q": "「布朗妮」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2356,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 4,
+    "edge": 2,
+    "semantic": 2
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 728.57,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N178",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「沃尔登」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2351,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 837.71,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N179",
+   "q": "「埃尔登警长」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2405,
+   "ceiling": true,
+   "n_chunks": 6,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.167,
+   "latency_ms": 494.8,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N180",
+   "q": "《重返未来：1999》剧情转写里「南极洲」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2461,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 710.57,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N181",
+   "q": "「便携通讯装置」对应的英文原文是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2518,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.1667,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 756.05,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N182",
+   "q": "「双生舞伶」的英文名是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2354,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "semantic": 5
+   },
+   "zh_ratio": 0.375,
+   "latency_ms": 719.69,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N183",
+   "q": "把记忆化作飞蛾、循光传递情报的能力属于谁的神秘术？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2611,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 705.3,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N184",
+   "q": "《重返未来：1999》剧情转写里「蒙佩」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2424,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.4,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 856.74,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N185",
+   "q": "同时身为基金会副会长与无名者养母的角色是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2678,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 823.67,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N186",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「普莱西」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2715,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 745.61,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N187",
+   "q": "被重塑之手各分支尊为“受苦者”的首领是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2693,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 3,
+    "mention": 1,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 749.31,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N188",
+   "q": "在英文剧情语料里，「风暴前快速反应部队第一小队」被写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2879,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.6,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 686.88,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N189",
+   "q": "乌尔里希也登场的南极篇章是哪一篇？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2596,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 5,
+    "edge": 2,
+    "semantic": 1
+   },
+   "zh_ratio": 0.75,
+   "latency_ms": 674.03,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N190",
+   "q": "既能免疫暴雨又能带人穿越时代的唯一司辰是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2019,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 731.39,
+   "activation": {
+    "c4_candidates": 1,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  },
+  {
+   "id": "N191",
+   "q": "诺谛卡与南极洲同属哪个篇章？",
+   "dims": {
+    "type": "multi-hop",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "short"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2361,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 677.53,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N192",
+   "q": "芝加哥事件中瓦尔登湖酒吧的故事发生在哪一年？",
+   "dims": {
+    "type": "temporal",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2594,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 1,
+    "mention": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 698.97,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N193",
+   "q": "《重返未来：1999》剧情转写里「使徒兄弟会」的英文写法是什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2521,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
+   "paths": {
+    "edge": 4,
+    "semantic": 4
+   },
+   "zh_ratio": 0.25,
+   "latency_ms": 747.94,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N194",
+   "q": "1966 年的伦敦与哪位海盗歌手的故事有关？",
+   "dims": {
+    "type": "temporal",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2484,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.625,
+   "latency_ms": 844.59,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N195",
+   "q": "不老春篇里追求长生的教派叫什么？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "short"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2398,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "mention": 3,
+    "edge": 2,
+    "semantic": 3
+   },
+   "zh_ratio": 1.0,
+   "latency_ms": 684.06,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N196",
+   "q": "在《重返未来：1999》的英文剧情与语音转写里，「圆环社」这个名字写作什么？",
+   "dims": {
+    "type": "factoid",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "shallow",
+    "difficulty": "easy",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2476,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "mention": 1,
+    "edge": 3,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 715.57,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N197",
+   "q": "1966 年维尔汀首次登场于哪座城市？",
+   "dims": {
+    "type": "temporal",
+    "chapter": "其他",
+    "hop": "multi",
+    "depth": "deep",
+    "difficulty": "hard",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2647,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "mention": 2,
+    "edge": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.875,
+   "latency_ms": 755.87,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N198",
+   "q": "一位少女的同伴以数字命名，她自己也是如此，她叫什么？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "long"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2220,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 723.35,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 2
+   }
+  },
+  {
+   "id": "N199",
+   "q": "一位伦敦绅士笃信机器能驱散整座城市的雾霾，他是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "primary_pass": true,
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2795,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.3333,
+   "paths": {
+    "edge": 2,
+    "mention": 2,
+    "semantic": 4
+   },
+   "zh_ratio": 0.125,
+   "latency_ms": 713.34,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 1
+   }
+  },
+  {
+   "id": "N200",
+   "q": "雅典城邦的领袖主持了酒神节的庆典，他是谁？",
+   "dims": {
+    "type": "reasoning",
+    "chapter": "其他",
+    "hop": "single",
+    "depth": "medium",
+    "difficulty": "medium",
+    "text_len": "medium"
+   },
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "primary_pass": false,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2469,
+   "ceiling": false,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
+   "paths": {
+    "edge": 2,
+    "mention": 1,
+    "semantic": 5
+   },
+   "zh_ratio": 0.5,
+   "latency_ms": 568.19,
+   "activation": {
+    "c4_candidates": 0,
+    "c4_used": 0,
+    "d1_seeds_total": 0,
+    "d1_seeds_downweighted": 0,
+    "semantic_items_in": 5,
+    "seeds_total": 3
+   }
+  }
+ ]
+}

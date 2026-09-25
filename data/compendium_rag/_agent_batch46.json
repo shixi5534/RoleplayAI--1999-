@@ -1,0 +1,1450 @@
+{
+ "b11c4b83a50afddf394bf123": {
+  "entities": [
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重掌广场之使徒"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "欲救诺谛卡者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施咒解缚者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "施蛾术突围者"
+   },
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被救恍惚者"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "角色",
+    "aliases": [
+     "信徒"
+    ],
+    "desc": "被神秘术控制者"
+   },
+   {
+    "name": "蛾子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无名者所驱之蛾"
+   },
+   {
+    "name": "缢索",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无名者颈上之索"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "接受祭品时开启"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "解缚",
+    "dst": "诺谛卡",
+    "evidence": "束缚着诺谛卡的桎梏徐徐松开",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "掩护",
+    "dst": "维尔汀",
+    "evidence": "趁现在穿过神殿之门，司辰",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "醒转",
+    "dst": "重塑·信徒",
+    "evidence": "重塑之手的神秘术没能困住使徒太久",
+    "confidence": 0.85
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "点破",
+    "dst": "无名者",
+    "evidence": "你脖子上绑着一条迷人的缢索",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "围困",
+    "dst": "维尔汀",
+    "evidence": "更有信徒在她的示意下钳住了闯入者的双手",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "b721d025772c75329b031377": {
+  "entities": [
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [
+     "长者"
+    ],
+    "desc": "审问间谍者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "格蕾丝",
+     "饰蛾的女士",
+     "淑女格蕾丝"
+    ],
+    "desc": "被审之间谍"
+   },
+   {
+    "name": "蛾子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被碾碎之蛾"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因炼金事故离开者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被诈之闯入者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被挟持者"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "蚕食不诚者大脑"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "阿尔卡纳女士"
+    ],
+    "desc": "忠诚孩子们之主"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "间谍所属"
+   },
+   {
+    "name": "自由海风号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "病根落下之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尼姆斯",
+    "relation": "碾杀",
+    "dst": "蛾子",
+    "evidence": "蛾子被长者两指拈住，碾成了细碎的闪光粉末",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "顶替",
+    "dst": "勿忘我",
+    "evidence": "靠着筹备仪式的功劳，顶上了因炼金术事故而离开圣地的勿忘我",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会的虫豸根本无法与阿尔卡纳女士忠诚的孩子们抗衡",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "假降",
+    "dst": "阿尼姆斯",
+    "evidence": "这是我一开始就做出的选择，是我带给您与引导之人的礼物",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "诱骗",
+    "dst": "维尔汀",
+    "evidence": "我将她带到了您的面前",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "508551ed3460e95d99c50b0c": {
+  "entities": [
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被迫击者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "跳门者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挣脱施咒者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "蛾潮自毁者"
+   },
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "中箭者"
+   },
+   {
+    "name": "门徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被蛾群惑者"
+   },
+   {
+    "name": "蛾子",
+    "type": "角色",
+    "aliases": [
+     "蛾群"
+    ],
+    "desc": "遮天蔽日之蛾"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "被跃入之门"
+   },
+   {
+    "name": "铅制细箭",
+    "type": "物品",
+    "aliases": [
+     "铅箭"
+    ],
+    "desc": "穿透血肉之箭"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名者",
+    "relation": "遮目",
+    "dst": "阿尼姆斯",
+    "evidence": "迷人眼目、遮天蔽日的蛾群笼罩了广场，落在每一副面具上",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "射伤",
+    "dst": "诺谛卡",
+    "evidence": "铅箭穿透了血肉",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "跃入",
+    "dst": "神殿之门",
+    "evidence": "手挽手的女孩们已然快要跃进黑暗的门洞",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "537950163cb53bdcd40b9c7e": {
+  "entities": [
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率众入门者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留在门外者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "门外者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "懊悔者"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "关闭之门"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "角色",
+    "aliases": [
+     "重塑信徒",
+     "信徒"
+    ],
+    "desc": "追随入门者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尼姆斯",
+    "relation": "入门",
+    "dst": "神殿之门",
+    "evidence": "她一脚跨入了神殿之门内",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·信徒",
+    "relation": "追随",
+    "dst": "阿尼姆斯",
+    "evidence": "信徒们追随使徒而去，前往了\"门\"的对侧",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推断",
+    "dst": "神殿之门",
+    "evidence": "只有又一次活人的献祭，才能让门再次打开",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "02c8dce3ab759b0c438d675f": {
+  "entities": [
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告别耳朵虫者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "拒绝牺牲者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施平静咒者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "自请献祭者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尝试联络者"
+   },
+   {
+    "name": "耳朵虫",
+    "type": "概念",
+    "aliases": [
+     "小耳朵虫"
+    ],
+    "desc": "被识破不存在之声"
+   },
+   {
+    "name": "地母",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被识破不存在之神"
+   },
+   {
+    "name": "肺鱼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无名者自喻之物"
+   },
+   {
+    "name": "龙涎香",
+    "type": "物品",
+    "aliases": [
+     "石头"
+    ],
+    "desc": "包裹未知之石"
+   },
+   {
+    "name": "弗里莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被忆起之友"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "乌尔里希组长"
+    ],
+    "desc": "被联络者"
+   },
+   {
+    "name": "独角鲸牙糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "抑制恐慌之糖"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名者",
+    "relation": "自喻",
+    "dst": "肺鱼",
+    "evidence": "一种栖息在非洲淡水中的鱼……奇迹般演化出了肺",
+    "confidence": 0.85
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "识破",
+    "dst": "耳朵虫",
+    "evidence": "因为，我知道你本来就是不存在的。就像……\"地母\"一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "施咒",
+    "dst": "诺谛卡",
+    "evidence": "我想尝试对她施展一次平静咒",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "拒绝",
+    "dst": "无名者",
+    "evidence": "我们不会为了进门牺牲任何一个人",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "联络",
+    "dst": "乌尔里希",
+    "evidence": "麻烦你尝试一下能否联系上乌尔里希组长",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "06242adfd8a8aa4d0d781cf2": {
+  "entities": [
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忆祖父者"
+   },
+   {
+    "name": "罗夫·阿蒙森",
+    "type": "角色",
+    "aliases": [
+     "罗夫伯伯",
+     "祖父"
+    ],
+    "desc": "获地母好消息者"
+   },
+   {
+    "name": "弗里莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "共研者"
+   },
+   {
+    "name": "考特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "共研者"
+   },
+   {
+    "name": "奥兹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "共研者"
+   },
+   {
+    "name": "龙涎香",
+    "type": "物品",
+    "aliases": [
+     "石头",
+     "吊坠"
+    ],
+    "desc": "地母之好消息"
+   },
+   {
+    "name": "地母",
+    "type": "概念",
+    "aliases": [],
+    "desc": "祖父所信之神"
+   },
+   {
+    "name": "独角鲸牙糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被嚼尽之糖"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲施咒者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "联系后援者"
+   },
+   {
+    "name": "乌尔里希",
+    "type": "角色",
+    "aliases": [
+     "乌尔里希组长"
+    ],
+    "desc": "被联络者"
+   },
+   {
+    "name": "熔岩管",
+    "type": "概念",
+    "aliases": [],
+    "desc": "火山体内通路"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗夫·阿蒙森",
+    "relation": "获赠",
+    "dst": "龙涎香",
+    "evidence": "这是\"地母\"给我的\"好消息\"。这是神迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "继承",
+    "dst": "龙涎香",
+    "evidence": "一定有什么秘密藏在南极，藏在这枚石头里",
+    "confidence": 0.9
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "共研",
+    "dst": "弗里莱",
+    "evidence": "我、考特、奥兹、弗里莱……我们已经研究过它千遍万遍了",
+    "confidence": 0.9
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "共研",
+    "dst": "考特",
+    "evidence": "我们已经研究过它千遍万遍了",
+    "confidence": 0.85
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "共研",
+    "dst": "奥兹",
+    "evidence": "我们已经研究过它千遍万遍了",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "施咒",
+    "dst": "诺谛卡",
+    "evidence": "我想尝试对她施展一次平静咒",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "acc690a720e2684d4539d0cb": {
+  "entities": [
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯撤实冲者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被瞒者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追赶者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "惊呼者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "倚门者"
+   },
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "踩遍通路者"
+   },
+   {
+    "name": "龙涎香",
+    "type": "物品",
+    "aliases": [
+     "吊坠"
+    ],
+    "desc": "诺谛卡亲吻之石"
+   },
+   {
+    "name": "熔岩管",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所骗之路"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "神殿大门"
+    ],
+    "desc": "诺谛卡扑向之门"
+   }
+  ],
+  "relations": [
+   {
+    "src": "诺谛卡",
+    "relation": "亲吻",
+    "dst": "龙涎香",
+    "evidence": "她吻上了挂在自己脖上的吊坠",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "扑向",
+    "dst": "神殿之门",
+    "evidence": "她飞速地往回头的方向冲去。向着神殿大门的方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "谎言",
+    "dst": "熔岩管",
+    "evidence": "熔岩管不一定通向火山的内部",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "惊呼",
+    "dst": "诺谛卡",
+    "evidence": "——诺谛卡！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "a561be6151e4001c38b9138b": {
+  "entities": [
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "入门献祭者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追之不及者"
+   },
+   {
+    "name": "龙涎香",
+    "type": "物品",
+    "aliases": [],
+    "desc": "着迷之石"
+   },
+   {
+    "name": "神殿之门",
+    "type": "物品",
+    "aliases": [
+     "门"
+    ],
+    "desc": "被打开之门"
+   }
+  ],
+  "relations": [
+   {
+    "src": "诺谛卡",
+    "relation": "献祭于",
+    "dst": "神殿之门",
+    "evidence": "只要我足够近，我就能看到足够多",
+    "confidence": 0.9
+   },
+   {
+    "src": "诺谛卡",
+    "relation": "着迷",
+    "dst": "龙涎香",
+    "evidence": "原来那发光的未知本身——竟会令我如此着迷啊",
+    "confidence": 0.9
+   },
+   {
+    "src": "神殿之门",
+    "relation": "开启",
+    "dst": "诺谛卡",
+    "evidence": "门。……开了。",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4903365a5b3e6f0dcc9f7479": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "将军",
+     "伊戈尔将军"
+    ],
+    "desc": "索求奇迹者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [
+     "传道者·苏菲亚"
+    ],
+    "desc": "兑现承诺者"
+   },
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "备仪式者"
+   },
+   {
+    "name": "莫莉德尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听令者"
+   },
+   {
+    "name": "潘多拉之盒",
+    "type": "物品",
+    "aliases": [
+     "盒子"
+    ],
+    "desc": "神秘术不侵之盒"
+   },
+   {
+    "name": "军徽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "锃亮如新之徽"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "军徽跨越之灾"
+   },
+   {
+    "name": "圣像",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏菲亚摩挲之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊戈尔",
+    "relation": "索求",
+    "dst": "潘多拉之盒",
+    "evidence": "我需要祂为我们降下\"奇迹\"",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "交予",
+    "dst": "伊戈尔",
+    "evidence": "这就是您所期待的\"奇迹\"",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "获许",
+    "dst": "潘多拉之盒",
+    "evidence": "将\"奇迹\"收入怀中",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "摩挲",
+    "dst": "圣像",
+    "evidence": "她摩挲着胸前的圣像",
+    "confidence": 0.85
+   },
+   {
+    "src": "莫莉德尔",
+    "relation": "听令",
+    "dst": "伊戈尔",
+    "evidence": "计划可以进入下一阶段了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b34bae608044f631672ccdce": {
+  "entities": [
+   {
+    "name": "莫莉德尔",
+    "type": "角色",
+    "aliases": [
+     "中尉"
+    ],
+    "desc": "启动撤离者"
+   },
+   {
+    "name": "白手套队长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命者"
+   },
+   {
+    "name": "丹尼洛夫",
+    "type": "角色",
+    "aliases": [
+     "机长"
+    ],
+    "desc": "报修者"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [
+     "伊戈尔将军"
+    ],
+    "desc": "坚毅之源"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "提箱前行者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "第一助手"
+    ],
+    "desc": "交图者"
+   },
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地图原主"
+   },
+   {
+    "name": "手绘地图",
+    "type": "物品",
+    "aliases": [
+     "地图"
+    ],
+    "desc": "被交付之物"
+   },
+   {
+    "name": "箱子",
+    "type": "物品",
+    "aliases": [
+     "神秘学箱子"
+    ],
+    "desc": "容无线电与无名者"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "入箱休息者"
+   },
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "无名者小姐",
+     "淑女格蕾丝"
+    ],
+    "desc": "入箱休息者"
+   },
+   {
+    "name": "小犬号",
+    "type": "物品",
+    "aliases": [
+     "直升机"
+    ],
+    "desc": "可启动之机"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "监听被屏蔽者"
+   },
+   {
+    "name": "托勒密步兵班",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被联络者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莫莉德尔",
+    "relation": "下令",
+    "dst": "白手套队长",
+    "evidence": "通知队伍，清理之前探查出的重塑之手眼线，做好从据点撤离的准备",
+    "confidence": 0.95
+   },
+   {
+    "src": "丹尼洛夫",
+    "relation": "修复",
+    "dst": "小犬号",
+    "evidence": "直升机可以顺利启动了",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "转交",
+    "dst": "维尔汀",
+    "evidence": "我想将它交给您",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "安置",
+    "dst": "箱子",
+    "evidence": "\"无名者\"小姐和无线电小姐都已经进入箱中休息了",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "提携",
+    "dst": "箱子",
+    "evidence": "关上卡扣，提起箱子",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "df9b54acc8f39d0c975c71fd": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "第一助手"
+    ],
+    "desc": "迎战苏菲亚者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "先行者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [
+     "传道者·苏菲亚"
+    ],
+    "desc": "拦路者"
+   },
+   {
+    "name": "圣像",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏菲亚握持之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "迎战",
+    "dst": "苏菲亚",
+    "evidence": "你的对手是在这里的我",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "掩护",
+    "dst": "维尔汀",
+    "evidence": "司辰，请您继续前进。我留在这里掩护您",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "施术",
+    "dst": "圣像",
+    "evidence": "染上漆色的光辉瞬间席卷而来",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "779e4c7e8ebc8fd6e5c44d2a": {
+  "entities": [
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [
+     "第一助手"
+    ],
+    "desc": "质问使命者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [
+     "传道者·苏菲亚"
+    ],
+    "desc": "粘液屏障者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被放行者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝医生",
+     "德洛丝"
+    ],
+    "desc": "被问及者"
+   },
+   {
+    "name": "玻璃笔",
+    "type": "物品",
+    "aliases": [
+     "玻璃笔杖"
+    ],
+    "desc": "书写术式之笔"
+   },
+   {
+    "name": "粘液",
+    "type": "物品",
+    "aliases": [
+     "漆黑粘液"
+    ],
+    "desc": "苏菲亚之术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "质问",
+    "dst": "苏菲亚",
+    "evidence": "究竟是怎样的\"使命\"，能让你离开曾经的家园",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "掩护",
+    "dst": "维尔汀",
+    "evidence": "司辰，请您继续前进",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "屏障",
+    "dst": "十四行诗",
+    "evidence": "漆黑粘液再度化为了一道密不透风的屏障",
+    "confidence": 0.9
+   },
+   {
+    "src": "十四行诗",
+    "relation": "书写",
+    "dst": "玻璃笔",
+    "evidence": "在空中书写着神秘术式",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "7710d90817285571af0878ba": {
+  "entities": [
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [
+     "传道者·苏菲亚"
+    ],
+    "desc": "反问者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反击者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝女士",
+     "德洛丝"
+    ],
+    "desc": "凭意志到达者"
+   },
+   {
+    "name": "圣像",
+    "type": "物品",
+    "aliases": [],
+    "desc": "摇晃之圣像"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏菲亚",
+    "relation": "反问",
+    "dst": "十四行诗",
+    "evidence": "你又是为什么而前行",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "证实",
+    "dst": "卡卡尼亚",
+    "evidence": "德洛丝女士凭借她的意志到达了这里",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "47b3f80e04c9473fcd5d4b4d": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "循雾而行者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "女士",
+     "德洛丝"
+    ],
+    "desc": "夜歌者之谜"
+   },
+   {
+    "name": "纺车",
+    "type": "物品",
+    "aliases": [
+     "金色圈环"
+    ],
+    "desc": "雾中转动之物"
+   },
+   {
+    "name": "约瑟夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "藏帽恶作剧者"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "组织",
+    "aliases": [
+     "学校"
+    ],
+    "desc": "维尔汀童年之所"
+   },
+   {
+    "name": "学生Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "问梦之同学"
+   },
+   {
+    "name": "帽子",
+    "type": "物品",
+    "aliases": [
+     "靛色帽子"
+    ],
+    "desc": "被归还之帽"
+   },
+   {
+    "name": "金色的线",
+    "type": "物品",
+    "aliases": [
+     "丝线"
+    ],
+    "desc": "引路之线"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金色的线",
+    "relation": "引路",
+    "dst": "维尔汀",
+    "evidence": "金色的线催促着向前的脚步",
+    "confidence": 0.85
+   },
+   {
+    "src": "纺车",
+    "relation": "转动",
+    "dst": "卡卡尼亚",
+    "evidence": "朦胧雾气的尽头，隐约能看见正缓缓转动的金色圈环",
+    "confidence": 0.8
+   },
+   {
+    "src": "维尔汀",
+    "relation": "回忆",
+    "dst": "第一防线学校",
+    "evidence": "模糊了第一防线学校的光景",
+    "confidence": 0.85
+   },
+   {
+    "src": "约瑟夫",
+    "relation": "藏匿",
+    "dst": "帽子",
+    "evidence": "一定是约瑟夫恶作剧把它藏起来了",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "0c6c65eca263440e45aa1a1f": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忆夜歌者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝医生",
+     "玛尔塔",
+     "别斯米尔",
+     "兀尔德",
+     "德洛丝"
+    ],
+    "desc": "重逢之盲眼者；被否认之化名"
+   },
+   {
+    "name": "学生Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "纺车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "转动一格之车"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "维尔汀所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "重逢",
+    "dst": "维尔汀",
+    "evidence": "我和你在圣保罗有一面之缘",
+    "confidence": 0.9
+   },
+   {
+    "src": "维尔汀",
+    "relation": "寻访",
+    "dst": "卡卡尼亚",
+    "evidence": "我沿着您走过的足迹，找了您很久",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "护送提议",
+    "dst": "卡卡尼亚",
+    "evidence": "请您与我一同回到基金会，接受庇护",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2c47d0babd806cfee5516f5b": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝医生",
+     "德洛丝"
+    ],
+    "desc": "纺线者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝离者"
+   },
+   {
+    "name": "纺车",
+    "type": "物品",
+    "aliases": [
+     "纺轮"
+    ],
+    "desc": "不可停止之车"
+   },
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感谢启动仪式者"
+   },
+   {
+    "name": "重塑·信徒",
+    "type": "角色",
+    "aliases": [
+     "众教徒",
+     "信徒"
+    ],
+    "desc": "吟诵者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "概念",
+    "aliases": [
+     "引导之人",
+     "复苏之母"
+    ],
+    "desc": "将重临之神"
+   },
+   {
+    "name": "仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被启动之仪式"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "纺织",
+    "dst": "纺车",
+    "evidence": "我想尝试纺织出这些线",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "启动",
+    "dst": "仪式",
+    "evidence": "兀尔德女士，感谢你为我们启动了仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "迎接",
+    "dst": "阿尔卡纳",
+    "evidence": "我们终于可以重新迎回祂",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

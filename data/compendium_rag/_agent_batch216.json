@@ -1,0 +1,1471 @@
+{
+ "b883117e9c338280445a73d9": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "协调批准并承诺修机器者"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "分发应急指南与被单的女孩"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为众人张罗午餐的居民"
+   },
+   {
+    "name": "工人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊叹其准备的工人"
+   },
+   {
+    "name": "工人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试用小被单的工人"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称其仍能换来舞台与观众者"
+   },
+   {
+    "name": "小丽莎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来打气的女孩"
+   },
+   {
+    "name": "应急指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "纸信圈儿分发的应急指南"
+   },
+   {
+    "name": "白被单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "注入神秘术可驱雾的小被单"
+   },
+   {
+    "name": "应急管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "批准应急预案的机构"
+   },
+   {
+    "name": "管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "与福葛共同保障安全的机构"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小被单所驱散之雾"
+   },
+   {
+    "name": "民间运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "不计分的小型比赛"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "分发",
+    "dst": "应急指南",
+    "evidence": "我们需要保证每个人手里都有一份应急指南",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "发放",
+    "dst": "白被单",
+    "evidence": "大家可以裹上我特制的小被单",
+    "confidence": 0.95
+   },
+   {
+    "src": "白被单",
+    "relation": "驱散",
+    "dst": "黑雾",
+    "evidence": "驾驭着风驱散自己面前的雾",
+    "confidence": 0.95
+   },
+   {
+    "src": "应急管理局",
+    "relation": "批准",
+    "dst": "民间运动会",
+    "evidence": "你们的应急预案已经获得了应急管理局的批准",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "承诺",
+    "dst": "民间运动会",
+    "evidence": "我会尽力修好它",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "评价",
+    "dst": "民间运动会",
+    "evidence": "还能换来一个舞台，还有一群观众在看",
+    "confidence": 0.95
+   },
+   {
+    "src": "小丽莎",
+    "relation": "鼓励",
+    "dst": "雾行者",
+    "evidence": "大机器坏了可以修",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "张罗",
+    "dst": "民间运动会",
+    "evidence": "从清晨四点就在忙活大家的午餐了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3be0af99d0599661d659983b": {
+  "entities": [
+   {
+    "name": "广播声",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转播会场情况的广播"
+   },
+   {
+    "name": "工人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参与重建场馆的工人"
+   },
+   {
+    "name": "小丽莎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "画反舌鸟的女孩"
+   },
+   {
+    "name": "淘气鬼弗洛狄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "画剑鱼的男孩"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "整理运动员名单的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "统计到场人员者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与管理局沟通治安者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与安保局沟通治安者"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "换新行头现身的女子"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正被重建的运动会会场"
+   },
+   {
+    "name": "应急管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "负责治安协商的机构"
+   },
+   {
+    "name": "管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "负责治安协商的机构"
+   },
+   {
+    "name": "安保局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "负责治安协商的机构"
+   },
+   {
+    "name": "民间运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "已有二十八人报名的赛事"
+   }
+  ],
+  "relations": [
+   {
+    "src": "广播声",
+    "relation": "播报",
+    "dst": "民间运动会",
+    "evidence": "已有整整二十八个运动员报名本次运动会",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人Ⅰ",
+    "relation": "重建",
+    "dst": "运动会场",
+    "evidence": "居民自发组织在这里重建已经拆除了一半的场馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "整理",
+    "dst": "民间运动会",
+    "evidence": "我已经把所有报名参加运动会的运动员名单都整理好了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "统计",
+    "dst": "运动会场",
+    "evidence": "我这边也统计好了每天的到场人员",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "协商",
+    "dst": "应急管理局",
+    "evidence": "正在场外跟应急管理局和安保局的人沟通",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "协商",
+    "dst": "安保局",
+    "evidence": "如何维护比赛期间的治安问题",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "现身",
+    "dst": "牙仙",
+    "evidence": "你给自己换了一身新行头",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "21156a73449235b5e1d1bf65": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讽评会场却已报名者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以残缺而包容相答的医生"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "混乱却生机勃勃之处"
+   },
+   {
+    "name": "民间运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她口中最为破烂的一届运动会"
+   },
+   {
+    "name": "报名表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被她揉皱攥在手中的报名表"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "寻获",
+    "dst": "笃笃骨",
+    "evidence": "是我的“牙仙”们发现的",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "讥评",
+    "dst": "民间运动会",
+    "evidence": "最破烂、最简陋、参加人数最少、准备最凌乱的一届运动会",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "辩护",
+    "dst": "民间运动会",
+    "evidence": "但它仍然是一场运动会",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "注视",
+    "dst": "运动会场",
+    "evidence": "共同注视着眼前混乱的会场",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "攥握",
+    "dst": "报名表",
+    "evidence": "笃笃骨的手里，捏着一张被揉皱的报名表",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2f87524fd647e952888dd71d": {
+  "entities": [
+   {
+    "name": "威廉叔叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "台前聚众的十字街居民"
+   },
+   {
+    "name": "康蒂婶婶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "台前聚众的十字街居民"
+   },
+   {
+    "name": "小玛丽",
+    "type": "角色",
+    "aliases": [],
+    "desc": "台前聚众的孩童"
+   },
+   {
+    "name": "老汉斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "悄悄藏起铁锹的匠人"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登台宣布开幕者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "统筹裁判与补办的医生"
+   },
+   {
+    "name": "裁判组成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告裁判不足的组员"
+   },
+   {
+    "name": "裁判组成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引路的裁判组成员"
+   },
+   {
+    "name": "参赛选手Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "号码牌丢失的选手"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "负责证件补办者"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "正式开始的赛事"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "临时搭建的主席台所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "宽檐帽先生",
+    "relation": "宣布",
+    "dst": "乌卢鲁伦敦预选赛",
+    "evidence": "乌卢鲁运动会伦敦预选赛，正式——开始",
+    "confidence": 0.95
+   },
+   {
+    "src": "裁判组成员Ⅰ",
+    "relation": "报告",
+    "dst": "牙仙",
+    "evidence": "叩门飞匙赛的裁判不够了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "指派",
+    "dst": "利伯蒂",
+    "evidence": "去证件补办处找一名叫“纸信圈儿”的小女孩补办",
+    "confidence": 0.95
+   },
+   {
+    "src": "参赛选手Ⅰ",
+    "relation": "求助",
+    "dst": "牙仙",
+    "evidence": "我的号码牌丢了，能再给我一张吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "怀疑",
+    "dst": "裁判组成员Ⅱ",
+    "evidence": "我怎么从来没有见过你",
+    "confidence": 0.95
+   },
+   {
+    "src": "老汉斯",
+    "relation": "藏起",
+    "dst": "运动会场",
+    "evidence": "老汉斯悄悄地将铁锹踢到了身后",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "97be4e5be4324e8cd63c2afb": {
+  "entities": [
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破伪造裁判证者"
+   },
+   {
+    "name": "裁判组成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "伪装成裁判的狂热爱好者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令拒绝并关注赛程者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "守横幅示警的雾行者"
+   },
+   {
+    "name": "赛场观众Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为选手加油的观众"
+   },
+   {
+    "name": "赛场观众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高喊第一名的观众"
+   },
+   {
+    "name": "参赛选手Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向观众飞吻回应的选手"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "追问笃笃骨下落的女孩"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将开赛的项目"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "横幅与会场入口所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "宽檐帽先生",
+    "relation": "识破",
+    "dst": "裁判组成员Ⅱ",
+    "evidence": "这个证件是伪造的",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "示警",
+    "dst": "运动会场",
+    "evidence": "借由那台破铁块，向每一位前来参加运动会的人展示",
+    "confidence": 0.95
+   },
+   {
+    "src": "参赛选手Ⅱ",
+    "relation": "回应",
+    "dst": "赛场观众Ⅰ",
+    "evidence": "向观众们做出了飞吻的回应",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "委托",
+    "dst": "利伯蒂",
+    "evidence": "你去自由祭祀的会场那边看看吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "思量",
+    "dst": "自由祭祀",
+    "evidence": "是笃笃骨女士的项目",
+    "confidence": 0.95
+   },
+   {
+    "src": "赛场观众Ⅱ",
+    "relation": "喝彩",
+    "dst": "参赛选手Ⅱ",
+    "evidence": "第一名！！！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "80dd7c34028559ccc172d367": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "奔向自由祭祀会场的女孩"
+   },
+   {
+    "name": "2401号选手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首个上场的自由祭祀选手"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "候场并鼓励后辈的运动员"
+   },
+   {
+    "name": "志愿者Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认上场顺序的志愿者"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [
+     "夏洛特·奥黑根"
+    ],
+    "desc": "在准备区热身的选手"
+   },
+   {
+    "name": "第五准备区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "自由祭祀选手候场之处"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将开赛的项目"
+   }
+  ],
+  "relations": [
+   {
+    "src": "2401号选手",
+    "relation": "评论",
+    "dst": "第五准备区",
+    "evidence": "随便哪所女子学校的操场也比这个好",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "宽解",
+    "dst": "2401号选手",
+    "evidence": "这是在几天的时间内搭好的",
+    "confidence": 0.95
+   },
+   {
+    "src": "志愿者Ⅰ",
+    "relation": "安排",
+    "dst": "2401号选手",
+    "evidence": "2401号选手，请上场",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "追问",
+    "dst": "笃笃骨",
+    "evidence": "夏洛特呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "疏远",
+    "dst": "卡洛琳",
+    "evidence": "我不再是之前那个夏洛特了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "自陈",
+    "dst": "笃笃骨",
+    "evidence": "你一直就是我追寻的那只黑天鹅",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "奔赴",
+    "dst": "自由祭祀",
+    "evidence": "那边见",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f65a4a5b2130d3e70e6896de": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坐入观众席角落者"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登台起舞的选手"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "接收能量而奏鸣的乐器"
+   },
+   {
+    "name": "广播声",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报出选手序号的广播"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "卡洛琳上场之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "笃笃骨",
+    "relation": "入座",
+    "dst": "运动会场",
+    "evidence": "笃笃骨来到了观众席，坐在一个角落中",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "抚摸",
+    "dst": "迪吉里木",
+    "evidence": "轻轻地抚摸了放于场前的“迪吉里木”",
+    "confidence": 0.95
+   },
+   {
+    "src": "迪吉里木",
+    "relation": "奏鸣",
+    "dst": "卡洛琳",
+    "evidence": "接收到了卡洛琳灌输而来的能量",
+    "confidence": 0.95
+   },
+   {
+    "src": "广播声",
+    "relation": "报幕",
+    "dst": "卡洛琳",
+    "evidence": "2406号，卡洛琳，请开始",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "224ca393d154b116d1488893": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [
+     "夏洛特·奥黑根"
+    ],
+    "desc": "回忆中受训的少女"
+   },
+   {
+    "name": "乌鸦教练",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以严苛教诲施训的教练"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被称作镜子与密友的乐器"
+   },
+   {
+    "name": "乌鸦教练的练习室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "少女日夜受训之处"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与乐器对话所需的力量"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "教练所授的神圣技艺"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乌鸦教练",
+    "relation": "传授",
+    "dst": "笃笃骨",
+    "evidence": "它与你一起共舞",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌鸦教练",
+    "relation": "比拟",
+    "dst": "迪吉里木",
+    "evidence": "它不是木头，是镜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "迪吉里木",
+    "relation": "回应",
+    "dst": "笃笃骨",
+    "evidence": "它回应我了",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌鸦教练",
+    "relation": "要求",
+    "dst": "神秘术",
+    "evidence": "用神秘术说，它只能听懂这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "受训",
+    "dst": "乌鸦教练的练习室",
+    "evidence": "每天只会在这间练习室里跳些奇怪的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌鸦教练",
+    "relation": "训诫",
+    "dst": "自由祭祀",
+    "evidence": "神灵只能听见最虔诚的声音",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2fd8ff286f6400489281c370": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉浸回忆而躁动者"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接受众人致意的选手"
+   },
+   {
+    "name": "2407号选手安娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "申请暂停比赛的选手"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "忧虑看不到笃笃骨的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "望向浓雾叹息的医生"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈及时赶到的斥候"
+   },
+   {
+    "name": "赛场观众Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质问为何暂停的观众"
+   },
+   {
+    "name": "赛场观众Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨识出暂停手势的观众"
+   },
+   {
+    "name": "赛场观众Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传闻有人撞墙的观众"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "奏乐戛然而止的乐器"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "浓雾之名"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "正在进行的项目"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡洛琳",
+    "relation": "致意",
+    "dst": "赛场观众Ⅰ",
+    "evidence": "谢谢，谢谢大家",
+    "confidence": 0.95
+   },
+   {
+    "src": "2407号选手安娜",
+    "relation": "上场",
+    "dst": "自由祭祀",
+    "evidence": "名为安娜的运动员上场",
+    "confidence": 0.95
+   },
+   {
+    "src": "迪吉里木",
+    "relation": "止奏",
+    "dst": "2407号选手安娜",
+    "evidence": "“迪吉里木”的奏乐戛然而止",
+    "confidence": 0.95
+   },
+   {
+    "src": "2407号选手安娜",
+    "relation": "申请",
+    "dst": "自由祭祀",
+    "evidence": "安娜选手申请了暂停比赛",
+    "confidence": 0.95
+   },
+   {
+    "src": "赛场观众Ⅱ",
+    "relation": "辨识",
+    "dst": "2407号选手安娜",
+    "evidence": "看这个手势，是申请了暂停",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "忧虑",
+    "dst": "笃笃骨",
+    "evidence": "下一名就是笃笃骨了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "叹息",
+    "dst": "黑雾",
+    "evidence": "牙仙看着暗黄的浓雾，叹了口气",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d1d704cf4a95732371369c6": {
+  "entities": [
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代为挽留观众的选手"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "走向裁判组执意起舞者"
+   },
+   {
+    "name": "赛场观众Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨扫兴的观众"
+   },
+   {
+    "name": "赛场观众Ⅴ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跃跃欲试的观众"
+   },
+   {
+    "name": "广播声",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挽留其登场的广播"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被其抚上并奏出乐曲的乐器"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "其独自完成的仪式"
+   },
+   {
+    "name": "太阳神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "其祷词所呼的神祇"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "于雾中现身的怪物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "笃笃骨",
+    "relation": "决意",
+    "dst": "自由祭祀",
+    "evidence": "我不想再等了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "挽留",
+    "dst": "赛场观众Ⅳ",
+    "evidence": "各位，请等一下，比赛还没有结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "抚上",
+    "dst": "迪吉里木",
+    "evidence": "她抚上了场前的“迪吉里木”",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "起舞",
+    "dst": "自由祭祀",
+    "evidence": "我要起舞……并不需要他人的评判",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "祷祝",
+    "dst": "太阳神",
+    "evidence": "于黑暗中重生的太阳之神莱伊",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "唤出",
+    "dst": "黑雾",
+    "evidence": "雾里……雾里有东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "广播声",
+    "relation": "挽留",
+    "dst": "笃笃骨",
+    "evidence": "请等一下，笃笃骨选手",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "61aeb94c83295ca6388a01f7": {
+  "entities": [
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引导群体祭祀者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以机器收捕黑雾的雾行者"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "人群外雀跃挥手的女孩"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在观众席得体鼓掌者"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "躯体被消解者"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "发出空洞梵音的乐器"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被用来吸取残余煤灰的机器"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "引导众人进入忘我状态的仪式"
+   },
+   {
+    "name": "太阳神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仪式所崇拜的神祇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "笃笃骨",
+    "relation": "引导",
+    "dst": "自由祭祀",
+    "evidence": "群体祭祀也被笃笃骨引导着进入了几近忘我的状态",
+    "confidence": 0.95
+   },
+   {
+    "src": "自由祭祀",
+    "relation": "消解",
+    "dst": "黑雾",
+    "evidence": "在群体祭祀的作用下，“黑雾”的躯体消解了",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑雾",
+    "relation": "躲避",
+    "dst": "太阳神",
+    "evidence": "四处乱窜，慌乱地躲避着日光",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "收捕",
+    "dst": "黑雾",
+    "evidence": "将剩余的黑色煤灰物质统统吸了进去",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "启用",
+    "dst": "雾气净化器",
+    "evidence": "打开了他带来的“伦敦煤烟污染勘察与清除大使MK.Ⅲ”",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "谢幕",
+    "dst": "自由祭祀",
+    "evidence": "谢谢大家……我的表演……结束了",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "雀跃",
+    "dst": "笃笃骨",
+    "evidence": "在人群外跳跃着，向笃笃骨挥手",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "鼓掌",
+    "dst": "笃笃骨",
+    "evidence": "得体地为笃笃骨鼓掌",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f01952baf87cb903c4340d2e": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听取外派报告的副会长"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提交报告并解开真相者"
+   },
+   {
+    "name": "瓦尔普吉斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "黑雾的本体、西欧罗斯变异种"
+   },
+   {
+    "name": "西欧罗斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "已消失数世纪的魔精"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被正式定名之物"
+   },
+   {
+    "name": "乳牙",
+    "type": "物品",
+    "aliases": [],
+    "desc": "牙仙此行所藏的稀有藏品"
+   },
+   {
+    "name": "煤灰",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与乳牙并列展示的藏品"
+   },
+   {
+    "name": "伦敦分部",
+    "type": "组织",
+    "aliases": [],
+    "desc": "致力于重现祭祀仪式的机构"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "恰能诱捕瓦尔普吉斯的失传仪式"
+   },
+   {
+    "name": "迪吉里木",
+    "type": "物品",
+    "aliases": [],
+    "desc": "参与复原仪式的乐器"
+   },
+   {
+    "name": "太阳神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "仪式所崇拜的神祇"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提供家传残本的女巫"
+   },
+   {
+    "name": "Z的办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "由黑白灰方格建构的房间"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "提交",
+    "dst": "Z",
+    "evidence": "这是本次外派行动的报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "展示",
+    "dst": "乳牙",
+    "evidence": "一位孩子的最后一颗乳牙",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "定名",
+    "dst": "瓦尔普吉斯",
+    "evidence": "一颗瓦尔普吉斯——也就是“黑雾”，的牙齿",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦尔普吉斯",
+    "relation": "变异于",
+    "dst": "西欧罗斯",
+    "evidence": "这是一种已消失了数个世纪的魔精“西欧罗斯”的变异种",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "提供",
+    "dst": "伦敦分部",
+    "evidence": "向伦敦基金会分部的同事们提供了一本家传残本",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦敦分部",
+    "relation": "重现",
+    "dst": "自由祭祀",
+    "evidence": "仍在致力于重现乌卢鲁运动会分会场上的那次祭祀仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "自由祭祀",
+    "relation": "诱捕",
+    "dst": "瓦尔普吉斯",
+    "evidence": "正好能够诱捕那只造成伦敦浓雾的瓦尔普吉斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "太阳神",
+    "relation": "克制",
+    "dst": "黑雾",
+    "evidence": "崇拜太阳神的仪式能够诱捕遮天蔽日的怪物",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "635dde6b5bf07ac69fd6f506": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获准长假并告别者"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "批准长假并思乡者"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "送来邀请函与门票的女孩"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收拾行装的女巫"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提供轮船并邀其同行的运动员"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议一同出发的斥候"
+   },
+   {
+    "name": "传声花",
+    "type": "物品",
+    "aliases": [],
+    "desc": "代为应答的传声花"
+   },
+   {
+    "name": "预选赛邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "基金会承认预选赛的凭证"
+   },
+   {
+    "name": "奖牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "笃笃骨近十年首个荣誉"
+   },
+   {
+    "name": "笃笃骨的行李箱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被她合上的行装"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "获基金会承认的赛事"
+   },
+   {
+    "name": "澳大利亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "总决赛举办之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "报喜",
+    "dst": "笃笃骨",
+    "evidence": "我拿到你的邀请函和我们的门票了",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "递交",
+    "dst": "预选赛邀请函",
+    "evidence": "基金会承认了预选赛",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "合上",
+    "dst": "笃笃骨的行李箱",
+    "evidence": "笃笃骨将行李箱合上",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "指认",
+    "dst": "奖牌",
+    "evidence": "这块奖牌，你不带走了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "提议",
+    "dst": "笃笃骨",
+    "evidence": "我们是想与您一起出发",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "提供",
+    "dst": "宽檐帽先生",
+    "evidence": "我们乘坐的轮船，正是卡洛琳小姐家中的产业",
+    "confidence": 0.95
+   },
+   {
+    "src": "传声花",
+    "relation": "代言",
+    "dst": "笃笃骨",
+    "evidence": "你们来做什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "同行",
+    "dst": "澳大利亚",
+    "evidence": "前三名都要去澳洲参加乌卢鲁运动会的总决赛",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

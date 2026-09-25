@@ -1,0 +1,822 @@
+{
+ "2354892418e84864cfcfd9c0": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受挫的作者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "要求揭露真相的编辑"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打气的老船长"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愤愤不平者"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "第十五节被退"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "预留宣传版面"
+   },
+   {
+    "name": "守塔员失踪事件",
+    "type": "事件",
+    "aliases": [],
+    "desc": "读者要看的真相"
+   }
+  ],
+  "relations": [
+   {
+    "src": "丹尼希",
+    "relation": "退稿",
+    "dst": "弗兰南群岛史",
+    "evidence": "我们暂时不能发表您的《弗兰南群岛史》第十五节",
+    "confidence": 0.95
+   },
+   {
+    "src": "丹尼希",
+    "relation": "要求",
+    "dst": "马库斯",
+    "evidence": "我们希望您能揭露真相——关于三位守塔员更详细的信息",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "困惑",
+    "dst": "守塔员失踪事件",
+    "evidence": "他们一点儿也不好奇么？",
+    "confidence": 0.85
+   },
+   {
+    "src": "杜卡特",
+    "relation": "宽慰",
+    "dst": "马库斯",
+    "evidence": "这不怪你，小马库斯",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "不平",
+    "dst": "马库斯",
+    "evidence": "明明在前几节发表的时候，他们都对小马库斯的文章赞不绝口呢！",
+    "confidence": 0.85
+   },
+   {
+    "src": "白日梦邮报",
+    "relation": "宣传",
+    "dst": "弗兰南群岛史",
+    "evidence": "已为您的《弗兰南群岛史》提前预留了一部分宣传版面",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "86b5f60c0c81ecffd3c785e6": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "社恐发作"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "献策者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怯懦的建议者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "被忧惧审查"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "推进不顺"
+   },
+   {
+    "name": "埃利安锡尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "恐成笑柄之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "唐纳德",
+    "relation": "核查",
+    "dst": "马库斯",
+    "evidence": "这封信件的胶水完好，没有被其他人拆开过",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "忧惧",
+    "dst": "圣洛夫基金会",
+    "evidence": "他们很可能早就审查过所有到达这儿的信件了",
+    "confidence": 0.85
+   },
+   {
+    "src": "杜卡特",
+    "relation": "献策",
+    "dst": "马库斯",
+    "evidence": "那些出色的作者往往会把最容易引起遐想的内容放在最前面",
+    "confidence": 0.85
+   },
+   {
+    "src": "唐纳德",
+    "relation": "附议",
+    "dst": "杜卡特",
+    "evidence": "或许你应该写一写我们……",
+    "confidence": 0.8
+   },
+   {
+    "src": "马库斯",
+    "relation": "迟疑",
+    "dst": "圣洛夫基金会",
+    "evidence": "我应该加入基金会吗？",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "c394ebc9f82d80a98b08115e": {
+  "entities": [
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自夸的船长"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲巨浪者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执笔者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲矮人岛者"
+   },
+   {
+    "name": "七圣岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "弗兰南旧称"
+   },
+   {
+    "name": "矮人岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "类人骨骼传闻"
+   },
+   {
+    "name": "滴水嘴兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被救助的传说"
+   },
+   {
+    "name": "北方灯塔委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "唐纳德旧属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杜卡特",
+    "relation": "自述",
+    "dst": "杜卡特",
+    "evidence": "那时候我还是一位出色的船长",
+    "confidence": 0.7
+   },
+   {
+    "src": "杜卡特",
+    "relation": "驱赶",
+    "dst": "滴水嘴兽",
+    "evidence": "救助了拒饮海水而几乎渴死的滴水嘴兽",
+    "confidence": 0.8
+   },
+   {
+    "src": "马歇尔",
+    "relation": "回忆",
+    "dst": "马歇尔",
+    "evidence": "那是一场席卷了几乎半座岛屿的巨浪",
+    "confidence": 0.7
+   },
+   {
+    "src": "唐纳德",
+    "relation": "考据",
+    "dst": "七圣岛",
+    "evidence": "人们把弗兰南与周边的六座岛屿，一同称为“七圣岛”",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "考据",
+    "dst": "矮人岛",
+    "evidence": "所以这儿也被称为“矮人岛”",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "供职",
+    "dst": "北方灯塔委员会",
+    "evidence": "我便加入了北方灯塔委员会",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "争宠",
+    "dst": "杜卡特",
+    "evidence": "他们关心的绝对不是你和那些老掉牙的故事！",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "815174d37eccc7c780ffd2bb": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被迫抉择者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "争篇幅者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "争篇幅者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲完真相者"
+   },
+   {
+    "name": "矮人岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "历史记载要素"
+   },
+   {
+    "name": "滴水嘴兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "真实性之疑"
+   }
+  ],
+  "relations": [
+   {
+    "src": "唐纳德",
+    "relation": "质疑",
+    "dst": "杜卡特",
+    "evidence": "您还记得滴水嘴兽的模样吗……？",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "裁定",
+    "dst": "杜卡特",
+    "evidence": "杜卡特先生的回忆篇幅最长",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "裁定",
+    "dst": "马歇尔",
+    "evidence": "马歇尔先生的经历与外界的联系最为紧密",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "裁定",
+    "dst": "唐纳德",
+    "evidence": "它充分地具备了“历史记载”的所有要素",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "保证",
+    "dst": "马库斯",
+    "evidence": "我会把它们都用上的，我保证——！",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "ffab1efff58f8ab80eb0a106": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寄稿者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "收稿人"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "沉甸甸的稿件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "寄出",
+    "dst": "弗兰南群岛史",
+    "evidence": "一封沉甸甸的稿件被掷入了锈迹斑斑的铁皮匣子里",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "致信",
+    "dst": "丹尼希",
+    "evidence": "希望您能喜欢这一篇报道",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "b54ebb82910fbdc3783dccfc": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "憧憬者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "被感激的编辑"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报信的幽灵"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同往的幽灵"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "豁达的幽灵"
+   },
+   {
+    "name": "阿尔冯斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "《萨拉的故事》作者"
+   },
+   {
+    "name": "萨拉的故事",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未读全本"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旅游风潮"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "感激",
+    "dst": "丹尼希",
+    "evidence": "她在《群岛史》的写作上为我提供了许多帮助",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "憧憬",
+    "dst": "弗兰南群岛",
+    "evidence": "说不定这还能推动一阵弗兰南群岛的旅游风潮",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "报信",
+    "dst": "马库斯",
+    "evidence": "邮差们到岛上来了——！",
+    "confidence": 0.9
+   },
+   {
+    "src": "马歇尔",
+    "relation": "邀功",
+    "dst": "马库斯",
+    "evidence": "可别忘了在发表感言时提到我们的名字",
+    "confidence": 0.8
+   },
+   {
+    "src": "马库斯",
+    "relation": "想读",
+    "dst": "萨拉的故事",
+    "evidence": "我始终没能读到全本",
+    "confidence": 0.8
+   },
+   {
+    "src": "阿尔冯斯",
+    "relation": "著作",
+    "dst": "萨拉的故事",
+    "evidence": "阿尔冯斯先生真是位出色的作家",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "97cdc456e2018c3e4f62f415": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被斥为骗子"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被质疑的幽灵"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被质疑的幽灵"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被质疑的幽灵"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "被指望的裁判"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被指造假"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "夸赞源头"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "收读",
+    "dst": "弗兰南群岛史",
+    "evidence": "您联合出版社一同编造了一个巨大的谎言",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "僵立",
+    "dst": "弗兰南群岛史",
+    "evidence": "马库斯怔怔地站着，她张了张口",
+    "confidence": 0.8
+   },
+   {
+    "src": "唐纳德",
+    "relation": "惶恐",
+    "dst": "弗兰南群岛史",
+    "evidence": "这封信……可真吓人……",
+    "confidence": 0.8
+   },
+   {
+    "src": "马歇尔",
+    "relation": "求裁",
+    "dst": "丹尼希",
+    "evidence": "她一定能对你的故事做出公正的评判！",
+    "confidence": 0.85
+   },
+   {
+    "src": "杜卡特",
+    "relation": "宽解",
+    "dst": "马库斯",
+    "evidence": "这只是某些极端读者的偏见",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "fb430b38432e36db5220d95a": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "瘫坐者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读恐吓信者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读辱骂信者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻信者"
+   },
+   {
+    "name": "丹尼希",
+    "type": "角色",
+    "aliases": [
+     "丹尼希女士"
+    ],
+    "desc": "出版社立场"
+   },
+   {
+    "name": "弗兰南群岛史",
+    "type": "物品",
+    "aliases": [],
+    "desc": "销量成功而口碑崩塌"
+   },
+   {
+    "name": "白日梦邮报",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被读者占领"
+   },
+   {
+    "name": "警察署",
+    "type": "组织",
+    "aliases": [],
+    "desc": "欺诈质询之危"
+   }
+  ],
+  "relations": [
+   {
+    "src": "白日梦邮报",
+    "relation": "通牒",
+    "dst": "马库斯",
+    "evidence": "您或许不得不准备一个新的笔名……或是放弃这份工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "白日梦邮报",
+    "relation": "转嫁",
+    "dst": "马库斯",
+    "evidence": "认为我们同您一同欺骗了所有人",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "承诺",
+    "dst": "白日梦邮报",
+    "evidence": "您会对其中的真实性负责",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "筛选",
+    "dst": "马库斯",
+    "evidence": "毫不犹豫地将这封信扔到一旁",
+    "confidence": 0.8
+   },
+   {
+    "src": "杜卡特",
+    "relation": "示警",
+    "dst": "警察署",
+    "evidence": "我同样担忧您是否能顺利通过警察署的欺诈质询",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "95b950d4648a1a3a6ed092ae": {
+  "entities": [
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挑出稍缓之信"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "彻底瘫倒者"
+   },
+   {
+    "name": "珀涅罗珀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "织物之喻"
+   },
+   {
+    "name": "达那伊得斯姊妹",
+    "type": "概念",
+    "aliases": [],
+    "desc": "无底桶之喻"
+   },
+   {
+    "name": "坦塔罗斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "磨难之喻"
+   }
+  ],
+  "relations": [
+   {
+    "src": "唐纳德",
+    "relation": "安慰",
+    "dst": "马库斯",
+    "evidence": "我找到了一封，它看上去似乎没有那么可怕……",
+    "confidence": 0.85
+   },
+   {
+    "src": "唐纳德",
+    "relation": "取譬",
+    "dst": "珀涅罗珀",
+    "evidence": "为我们编出了一条绵长的织物",
+    "confidence": 0.85
+   },
+   {
+    "src": "唐纳德",
+    "relation": "取譬",
+    "dst": "达那伊得斯姊妹",
+    "evidence": "一个无底的水桶",
+    "confidence": 0.85
+   },
+   {
+    "src": "唐纳德",
+    "relation": "取譬",
+    "dst": "坦塔罗斯",
+    "evidence": "这甚至令我对坦塔罗斯先生都有所共情",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "4beb67fe534f1539cf802db5": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新登场者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被唤醒者"
+   },
+   {
+    "name": "杜卡特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诿过者"
+   },
+   {
+    "name": "马歇尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反击者"
+   },
+   {
+    "name": "唐纳德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指出真相者"
+   },
+   {
+    "name": "弗兰南群岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "失败发生地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "自介",
+    "dst": "马库斯",
+    "evidence": "我是霍夫曼。很高兴见到你，马库斯小姐",
+    "confidence": 0.9
+   },
+   {
+    "src": "杜卡特",
+    "relation": "诿过",
+    "dst": "马歇尔",
+    "evidence": "是他的部分拖累了整篇专栏！",
+    "confidence": 0.85
+   },
+   {
+    "src": "马歇尔",
+    "relation": "反击",
+    "dst": "杜卡特",
+    "evidence": "是你的部分毁掉了一切！",
+    "confidence": 0.85
+   },
+   {
+    "src": "唐纳德",
+    "relation": "指瑕",
+    "dst": "杜卡特",
+    "evidence": "您夸大了其中的情节，曲解了其中的真实部分",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "指瑕",
+    "dst": "马歇尔",
+    "evidence": "你完全忽略了编辑的建议",
+    "confidence": 0.9
+   },
+   {
+    "src": "唐纳德",
+    "relation": "归责",
+    "dst": "马库斯",
+    "evidence": "马库斯小姐，您、您也负有不可推卸的责任……",
+    "confidence": 0.85
+   },
+   {
+    "src": "马库斯",
+    "relation": "调停",
+    "dst": "杜卡特",
+    "evidence": "我想你们应该听一听唐纳德先生的建议",
+    "confidence": 0.8
+   }
+  ]
+ }
+}

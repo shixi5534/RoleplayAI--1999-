@@ -1,0 +1,1239 @@
+{
+ "5c9b8c05672f33fc4ef23d4c": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "赴救者"
+   },
+   {
+    "name": "先驱者",
+    "type": "角色",
+    "aliases": [
+     "假人先生"
+    ],
+    "desc": "报信者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被关押者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被关押者"
+   },
+   {
+    "name": "安东尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掳人者"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "约定会面者"
+   },
+   {
+    "name": "迪厅小子",
+    "type": "角色",
+    "aliases": [
+     "塔夫",
+     "小塔夫"
+    ],
+    "desc": "守门者"
+   },
+   {
+    "name": "曼妮",
+    "type": "角色",
+    "aliases": [
+     "“歌手女孩”"
+    ],
+    "desc": "求助对象"
+   },
+   {
+    "name": "帮派打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盘问者"
+   },
+   {
+    "name": "锻剑车库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "J 的工坊"
+   },
+   {
+    "name": "西海岸之星",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押之地"
+   },
+   {
+    "name": "唐老爹餐馆",
+    "type": "地点",
+    "aliases": [
+     "唐吉老爹的店"
+    ],
+    "desc": "出事之处"
+   },
+   {
+    "name": "老鼠大道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "约定会面地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "先驱者",
+    "relation": "通报",
+    "dst": "J",
+    "evidence": "昨晚你离开之后，安东尼带人来了餐馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "先驱者",
+    "relation": "告知",
+    "dst": "J",
+    "evidence": "看到他俩被带到西海岸之星去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "安东尼",
+    "relation": "关押",
+    "dst": "贝克特",
+    "evidence": "听说昨天弄了两个家伙进去关着",
+    "confidence": 0.85
+   },
+   {
+    "src": "安东尼",
+    "relation": "关押",
+    "dst": "霍利克",
+    "evidence": "听说昨天弄了两个家伙进去关着",
+    "confidence": 0.85
+   },
+   {
+    "src": "J",
+    "relation": "致电",
+    "dst": "布莱克汉警长",
+    "evidence": "下午三点，布莱克汉，约个地方见面",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "定址",
+    "dst": "老鼠大道",
+    "evidence": "老鼠大道的电话亭",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "求见",
+    "dst": "曼妮",
+    "evidence": "我找曼妮有急事",
+    "confidence": 0.95
+   },
+   {
+    "src": "迪厅小子",
+    "relation": "放行",
+    "dst": "J",
+    "evidence": "只要别闹大动静……我没看见你来过",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "诓骗",
+    "dst": "帮派打手",
+    "evidence": "安东尼老大叫我来看看你们有没有偷懒",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0301eacc4b29d5af35134a06": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "救人者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "头槌者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被解放者"
+   },
+   {
+    "name": "安东尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被缚者"
+   },
+   {
+    "name": "帮派打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看门恶犬"
+   },
+   {
+    "name": "醉酒打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "醉酒的看守"
+   },
+   {
+    "name": "请柬",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缴获的晚宴凭证"
+   },
+   {
+    "name": "垃圾桶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "叛徒归宿"
+   },
+   {
+    "name": "地下室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "关押之地"
+   },
+   {
+    "name": "下水道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "逃生之路"
+   },
+   {
+    "name": "西海岸之星",
+    "type": "地点",
+    "aliases": [],
+    "desc": "迪厅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "击倒",
+    "dst": "醉酒打手",
+    "evidence": "搞定一个醉鬼，只需要照着他鼻子来上一拳",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "头槌",
+    "dst": "安东尼",
+    "evidence": "被逮住机会的贝克特一击头槌砸了个狠",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "擒住",
+    "dst": "安东尼",
+    "evidence": "拎起叛徒的衣领，把那混球当待宰的兔子一样提着",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "缴获",
+    "dst": "请柬",
+    "evidence": "你兜里好东西不少嘛，安东尼，现在是我的了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "松绑",
+    "dst": "贝克特",
+    "evidence": "解开两个老伙计的束缚",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "松绑",
+    "dst": "霍利克",
+    "evidence": "解开两个老伙计的束缚",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "抛弃",
+    "dst": "安东尼",
+    "evidence": "捂住嘴，绑起来，扔进垃圾桶",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "发现",
+    "dst": "下水道",
+    "evidence": "他踢开了一道长满铁锈的旧门",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "0b0d3a4f9cc0255724d736f4": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "探路者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引路者"
+   },
+   {
+    "name": "后街伙计",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接应者"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "配发窃听器者"
+   },
+   {
+    "name": "窃听虫",
+    "type": "物品",
+    "aliases": [],
+    "desc": "警局配发的窃听器"
+   },
+   {
+    "name": "徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "J 之友谊的证明"
+   },
+   {
+    "name": "请柬",
+    "type": "物品",
+    "aliases": [],
+    "desc": "晚宴凭证"
+   },
+   {
+    "name": "老鼠大道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "下水道出口"
+   },
+   {
+    "name": "乔治老爷的糖果铺",
+    "type": "地点",
+    "aliases": [],
+    "desc": "会面点对面"
+   },
+   {
+    "name": "唐老爹餐馆",
+    "type": "地点",
+    "aliases": [
+     "唐吉老爹的店"
+    ],
+    "desc": "凭徽章可往"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "晚宴之地"
+   },
+   {
+    "name": "下水道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "穿行之路"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "感喟",
+    "dst": "下水道",
+    "evidence": "生活就像在下水道里跳舞",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍利克",
+    "relation": "引路",
+    "dst": "J",
+    "evidence": "往左边，大哥，左边，那儿该有个上去的梯子",
+    "confidence": 0.9
+   },
+   {
+    "src": "J",
+    "relation": "馈赠",
+    "dst": "后街伙计",
+    "evidence": "J亲手把一枚铮亮的金属徽章别在新朋友的旧衬衣上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "释义",
+    "dst": "徽章",
+    "evidence": "一个证明：现在你是J的朋友了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "指引",
+    "dst": "后街伙计",
+    "evidence": "到唐老爹餐馆去，给他们看这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "报讯",
+    "dst": "布莱克汉警长",
+    "evidence": "靠一个叫R的代理人和某些人物有勾结",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "配发",
+    "dst": "窃听虫",
+    "evidence": "我们叫它“虫子”，窃听虫",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "计划",
+    "dst": "银门饭店",
+    "evidence": "他们今晚会在银门饭店碰面",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "de3e5f40438ba20adf88cf56": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "部署者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯攻者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯攻者"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施压者"
+   },
+   {
+    "name": "请柬",
+    "type": "物品",
+    "aliases": [],
+    "desc": "入宴凭证"
+   },
+   {
+    "name": "移民",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待遣返的街坊"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "潜入目标"
+   },
+   {
+    "name": "金的首饰店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "碰面之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "部署",
+    "dst": "贝克特",
+    "evidence": "贝克特和霍利克会拿着请柬进去",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "部署",
+    "dst": "霍利克",
+    "evidence": "他们俩在一楼惹事",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "潜入",
+    "dst": "银门饭店",
+    "evidence": "而我会找机会溜上楼，偷到证据",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "通牒",
+    "dst": "J",
+    "evidence": "那后天早上我就必须把局子里关着的那些人送给相关部门了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "承诺",
+    "dst": "布莱克汉警长",
+    "evidence": "我答应过伙计们要给他们一条活路",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "约定",
+    "dst": "金的首饰店",
+    "evidence": "在金的首饰店门口碰面",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "威胁",
+    "dst": "移民",
+    "evidence": "你的那些朋友可能得被遣返",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "74839c5894ec62e0770dbc6f": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "潜入者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯攻者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掀桌者"
+   },
+   {
+    "name": "温妮弗雷德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "混入宾客者"
+   },
+   {
+    "name": "安东尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被冒名者"
+   },
+   {
+    "name": "帮派打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维持秩序者"
+   },
+   {
+    "name": "宴会宾客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "侧目者"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "宴会厅所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "温妮弗雷德",
+    "relation": "混入",
+    "dst": "银门饭店",
+    "evidence": "她靠一张能说会道的巧嘴和一身得体的礼服衣装加入宴会",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "佯攻",
+    "dst": "银门饭店",
+    "evidence": "两个伙计负责佯攻，而做大哥的则负责潜入",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍利克",
+    "relation": "掀翻",
+    "dst": "宴会宾客",
+    "evidence": "那就都别吃了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "帮派打手",
+    "relation": "处置",
+    "dst": "贝克特",
+    "evidence": "A13桌那边有人惹事，去几个人看看",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "潜入",
+    "dst": "银门饭店",
+    "evidence": "另一个矫健的身影则趁机悄悄绕过守备，溜上二楼",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "支开",
+    "dst": "帮派打手",
+    "evidence": "再去两个人，有个死胖子在惹事",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aa59e4368f1184fc3e9a2e28": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "窃听者"
+   },
+   {
+    "name": "洪三",
+    "type": "角色",
+    "aliases": [],
+    "desc": "汇报者"
+   },
+   {
+    "name": "代理人R",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议员阁下的传话人"
+   },
+   {
+    "name": "帮派打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受命者"
+   },
+   {
+    "name": "迪厅小子",
+    "type": "角色",
+    "aliases": [
+     "塔夫"
+    ],
+    "desc": "被追究者"
+   },
+   {
+    "name": "窃听虫",
+    "type": "物品",
+    "aliases": [],
+    "desc": "默默记录者"
+   },
+   {
+    "name": "博伊刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "并肩作战之刃"
+   },
+   {
+    "name": "衣柜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "藏身之处"
+   },
+   {
+    "name": "东青商会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被讥为东青帮"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "办公室所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洪三",
+    "relation": "汇报",
+    "dst": "代理人R",
+    "evidence": "一切顺利，阁下",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "训斥",
+    "dst": "洪三",
+    "evidence": "你的人最近办事不太干净",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "隐名",
+    "dst": "洪三",
+    "evidence": "大人不希望他的名字出现在非正面的报道里",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "许诺",
+    "dst": "洪三",
+    "evidence": "等新店开起来，那儿的生意也交给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "帮派打手",
+    "relation": "迁怒",
+    "dst": "迪厅小子",
+    "evidence": "一个叫塔夫的小子，我回头就收拾他",
+    "confidence": 0.9
+   },
+   {
+    "src": "J",
+    "relation": "躲藏",
+    "dst": "衣柜",
+    "evidence": "在大大的厚木衣柜里找到了藏身之处",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "握紧",
+    "dst": "博伊刀",
+    "evidence": "只有亲爱的博伊刀会跟他并肩作战",
+    "confidence": 0.9
+   },
+   {
+    "src": "代理人R",
+    "relation": "斥问",
+    "dst": "洪三",
+    "evidence": "难道我们是黑帮吗？！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "f21da2fa5343c1ac7d4d5499": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "窃据文件者"
+   },
+   {
+    "name": "代理人R",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警觉者"
+   },
+   {
+    "name": "洪三",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应诺者"
+   },
+   {
+    "name": "帮派打手",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请命者"
+   },
+   {
+    "name": "警卫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "巡逻者"
+   },
+   {
+    "name": "合同账本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "罪证文件"
+   },
+   {
+    "name": "记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被询者"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "办公室与窗下"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "候证者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "帮派打手",
+    "relation": "请命",
+    "dst": "代理人R",
+    "evidence": "叫上人！下去活动活动筋骨！",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "叫停",
+    "dst": "帮派打手",
+    "evidence": "算了，就这样吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "询问",
+    "dst": "洪三",
+    "evidence": "你们今晚请了记者吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "取走",
+    "dst": "合同账本",
+    "evidence": "现在你们是我的了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "击倒",
+    "dst": "警卫",
+    "evidence": "一拳正中鼻梁，紧接着第二拳直击眉心",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "跳窗",
+    "dst": "银门饭店",
+    "evidence": "他从窗口一跃而下，落到草地",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "等候",
+    "dst": "J",
+    "evidence": "七点四十三，你小子动作还挺快",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b9591aec2b574ec59183730b": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "交证者"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收网者"
+   },
+   {
+    "name": "洪三",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被逮捕者"
+   },
+   {
+    "name": "代理人R",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遁走者"
+   },
+   {
+    "name": "好事记者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "上级",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警长的靠山"
+   },
+   {
+    "name": "合同账本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "罪状"
+   },
+   {
+    "name": "窃听虫",
+    "type": "物品",
+    "aliases": [],
+    "desc": "录音证据"
+   },
+   {
+    "name": "移民",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待释的街坊"
+   },
+   {
+    "name": "海特街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将复旧观"
+   },
+   {
+    "name": "银门饭店",
+    "type": "地点",
+    "aliases": [],
+    "desc": "逮捕之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "交付",
+    "dst": "布莱克汉警长",
+    "evidence": "文件，窃听虫……就这些东西吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "上报",
+    "dst": "上级",
+    "evidence": "我们搞到那家伙的证据了，动手吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "索求",
+    "dst": "布莱克汉警长",
+    "evidence": "那就把人都放了",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "警告",
+    "dst": "洪三",
+    "evidence": "我已经掌握了你们的犯罪证据",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "逮捕",
+    "dst": "洪三",
+    "evidence": "把手铐锁上了气得满脸通红的帮派头子的腕儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "代理人R",
+    "relation": "遁走",
+    "dst": "银门饭店",
+    "evidence": "某个人影在保镖黑伞的簇拥下悄悄离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "追问",
+    "dst": "好事记者",
+    "evidence": "是那位R先生吗，伙计？",
+    "confidence": 0.9
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "许诺",
+    "dst": "移民",
+    "evidence": "你那些被关进局子里的伙计们很快就会回来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "宣告",
+    "dst": "洪三",
+    "evidence": "到局子里慢慢瞧吧",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "213b7a8a989c8d4b71f18e56": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "铸剑师"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被唤者"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来访者"
+   },
+   {
+    "name": "徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "赠友之礼"
+   },
+   {
+    "name": "剑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新铸之刃"
+   },
+   {
+    "name": "移民",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待保释者"
+   },
+   {
+    "name": "锻剑车库",
+    "type": "地点",
+    "aliases": [],
+    "desc": "J 的工坊"
+   },
+   {
+    "name": "海特街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "J 的名号所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "驯服",
+    "dst": "剑",
+    "evidence": "金属被他驯服，像一匹接纳了主人的烈马",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "铸成",
+    "dst": "剑",
+    "evidence": "一把新铸的剑即将诞生",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "备礼",
+    "dst": "徽章",
+    "evidence": "一份小小的礼物，准备送给那些即将重获自由的老朋友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "通报",
+    "dst": "J",
+    "evidence": "J，有客人来",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "到访",
+    "dst": "锻剑车库",
+    "evidence": "早上好啊，J",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "告知",
+    "dst": "J",
+    "evidence": "人要放走，但必须有人为他们担保",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "担保",
+    "dst": "移民",
+    "evidence": "我来，我为我的朋友负责",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "43dae8e91837a081596440ee": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "担保人"
+   },
+   {
+    "name": "布莱克汉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "履约者"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行者"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行者"
+   },
+   {
+    "name": "保利娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "J 的妹妹"
+   },
+   {
+    "name": "徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "乔·布朗的友谊"
+   },
+   {
+    "name": "担保文件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "保释文书"
+   },
+   {
+    "name": "移民",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将释之人"
+   },
+   {
+    "name": "海特街警局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "签字之处"
+   },
+   {
+    "name": "金门大桥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "凯旋留影处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "签署",
+    "dst": "担保文件",
+    "evidence": "把自己的名字接连抄写过几十遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "念及",
+    "dst": "保利娜",
+    "evidence": "那个喜欢做这些“体面”事儿的保利娜",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "承诺",
+    "dst": "J",
+    "evidence": "等局里的车回来，下午我把他们送到你店里去",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "托付",
+    "dst": "布莱克汉警长",
+    "evidence": "那记得把这些东西发给他们",
+    "confidence": 0.95
+   },
+   {
+    "src": "布莱克汉警长",
+    "relation": "调侃",
+    "dst": "J",
+    "evidence": "你小子是想当地下警长了",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "许诺",
+    "dst": "移民",
+    "evidence": "我会重新给他们介绍工作",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "留影",
+    "dst": "金门大桥",
+    "evidence": "大桥就在咱们背后！",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

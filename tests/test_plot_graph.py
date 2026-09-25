@@ -323,6 +323,20 @@ def test_noise_entity_filter():
         assert not is_noise_entity(good), good
 
 
+def test_noise_entity_folds_fullwidth_before_matching():
+    """全角形必须与半角形**判定一致**（NFKC 归一，plot 约束 F4）。
+
+    实测缺陷（compendium 中文正典入库后暴露）：``norm_name`` 走 NFKC，但
+    ``is_noise_entity`` 旧实现用 ``n.lower()``——于是
+    ``is_noise_entity("???")`` 为 True，``is_noise_entity("？？？")`` 却是 False。
+    正典正文里大量「？？？」是**未具名说话人占位符**，被抽成别名后任何「？？？」
+    查询都会点火（负样本护栏实测新增 1 条离题注入）。
+    """
+    for half, full in [("???", "？？？"), ("...", "．．．"), ("x", "Ｘ")]:
+        assert is_noise_entity(full) == is_noise_entity(half), (half, full)
+    assert is_noise_entity("？？？"), "全角占位符必须判为噪声"
+
+
 def test_rescue_noise_entity_via_alias():
     """5 类误杀：name 命中噪声但有干净别名时，别名升为正名、原 name 降为别名。"""
     cases = [

@@ -161,6 +161,10 @@ def validate_and_tag(oracle: Oracle) -> tuple[list[dict], list[dict]]:
                 "dims": fill_dims(cand), "source": cand["source"],
                 "_idx": idx,
                 "oracle_min_blocks": min(d["hits"] for d in detail)}
+        # 题干限定词（场景锚点）：2026-09-16 起不再进 evidence，作为独立字段透传，
+        # 供分析/可选校验使用，不参与 PASS 判定（见 docs/题集证据组复核.md）。
+        if cand.get("scenario_hints"):
+            item["scenario_hints"] = cand["scenario_hints"]
         valid.append(item)
     return valid, rejected
 
@@ -422,14 +426,24 @@ def finalize(chosen: list[dict]) -> list[dict]:
             },
             "oracle_min_blocks": c["oracle_min_blocks"],
             "source": c["source"],
+            # 题干限定词（场景锚点）：finalize 用的是字段白名单，必须显式透传，
+            # 否则 scenario_hints 在编号阶段被丢弃（2026-09-16 实测踩到）。
+            **({"scenario_hints": c["scenario_hints"]} if c.get("scenario_hints") else {}),
         })
     return out
 
 
-def write_outputs(final: list[dict], rejected: list[dict]) -> None:
-    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+def write_outputs(final: list[dict], rejected: list[dict],
+                  out_json: "Path | None" = None) -> None:
+    """写三件套。``out_json`` 可指定题库落盘路径（默认覆盖 OUT_JSON）。
+
+    为什么需要可指定（2026-09-16）：修正 SCENARIO_ADD 误标后要**生成一版干净题集
+    做对照**，但绝不能覆盖现行基准 rag_testset_300.json——历史指标都挂在它上面。
+    """
+    out_json = out_json or OUT_JSON
+    out_json.parent.mkdir(parents=True, exist_ok=True)
     OUT_MD.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps(final, ensure_ascii=False, indent=1),
+    out_json.write_text(json.dumps(final, ensure_ascii=False, indent=1),
                         encoding="utf-8")
     OUT_REJECTED.write_text(json.dumps(rejected, ensure_ascii=False, indent=1),
                             encoding="utf-8")
@@ -479,7 +493,7 @@ def _md_header(final: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def run_select(target: int) -> int:
+def run_select(target: int, out_json: "Path | None" = None) -> int:
     if not CORPUS_PATH.exists():
         print(f"[FAIL] 找不到语料文件：{CORPUS_PATH}")
         return 1
@@ -506,7 +520,7 @@ def run_select(target: int) -> int:
         return 2
 
     final = finalize(chosen)
-    write_outputs(final, rejected)
+    write_outputs(final, rejected, out_json)
 
     # 汇报统计
     print("\n==== 选题成功，维度分布 ====")
@@ -516,7 +530,7 @@ def run_select(target: int) -> int:
             or sorted(cnt)
         print(f"  {field}: " + "，".join(f"{k}={cnt.get(k, 0)}" for k in keys))
     print(f"  source: {dict(Counter(r['source'] for r in final))}")
-    print(f"\n[save] {OUT_JSON}")
+    print(f"\n[save] {out_json}")
     print(f"[save] {OUT_REJECTED}（剔除 {len(rejected)} 条）")
     print(f"[save] {OUT_MD}")
     return 0
@@ -550,9 +564,11 @@ def main() -> int:
                     help="select 模式的目标条数（默认 300）")
     ap.add_argument("--q", type=str, default="",
                     help="oracle-only 模式：按题干关键词查找候选题")
+    ap.add_argument("--out", type=str, default=str(OUT_JSON),
+                    help="select 模式：题库落盘路径（默认覆盖 rag_testset_300.json）")
     args = ap.parse_args()
     if args.mode == "select":
-        return run_select(args.target)
+        return run_select(args.target, Path(args.out))
     if not args.q:
         print("[FAIL] oracle-only 模式需要 --q <题干关键词>")
         return 1

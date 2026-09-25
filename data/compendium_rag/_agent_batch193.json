@@ -1,0 +1,1412 @@
+{
+ "98339f492e3b35c527b2de9d": {
+  "entities": [
+   {
+    "name": "克努特大叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述矿区旧事的工人"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问新矿石的学者"
+   },
+   {
+    "name": "霍伊图克",
+    "type": "概念",
+    "aliases": [],
+    "desc": "明黄质地脉痕迹的掘矿魔精"
+   },
+   {
+    "name": "卢恩矿石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已被开采殆尽的矿石"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曾派军队抓走怪物的机构"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "霸占矿区的怪物"
+   },
+   {
+    "name": "来亚什基生产工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "待改造的矿石加工厂"
+   },
+   {
+    "name": "来亚什基废弃矿区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "基本废弃的矿场"
+   },
+   {
+    "name": "地脉能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "明黄色线索所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "观察",
+    "dst": "来亚什基生产工厂",
+    "evidence": "两侧紧闭的大门，周遭飘忽的灰尘",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "安慰",
+    "dst": "北方哨歌",
+    "evidence": "哪怕芝诺不再需要矿石加工厂了，咱们也能把它改造成别的厂子",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "惋惜",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "要不是那些猖狂的小怪物，我们至少能到矿场去",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "追问",
+    "dst": "克努特大叔",
+    "evidence": "你在矿场里有挖出过什么新东西吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "否认",
+    "dst": "北方哨歌",
+    "evidence": "哪怕是矿场里的一颗砂砾我都能认得出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "追忆",
+    "dst": "芝诺",
+    "evidence": "芝诺还在热心地跟咱们打交道的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "发现",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "他们在矿区倒是发现了些我们从没见过的小石头",
+    "confidence": 0.95
+   },
+   {
+    "src": "芝诺",
+    "relation": "抓捕",
+    "dst": "魔精",
+    "evidence": "芝诺派来了军队，把它们抓了个干净",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "说明",
+    "dst": "卢恩矿石",
+    "evidence": "卢恩矿石被我们开采得一滴不剩",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "霸占",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "越来越多怪模怪样的魔精霸占了矿区",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "辨认",
+    "dst": "霍伊图克",
+    "evidence": "和它们长得很像！但是牙齿要比这更大一些",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "命名",
+    "dst": "霍伊图克",
+    "evidence": "难道是霍伊图克？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍伊图克",
+    "relation": "对应",
+    "dst": "地脉能量",
+    "evidence": "霍伊图克的性状是明黄质",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍伊图克",
+    "relation": "习性",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "它们生性喜爱挖掘，常常出没于0—50米之间的地下",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "db37a82dde0936a3044cfbb7": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断有新资源的学者"
+   },
+   {
+    "name": "克努特大叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "乐观的工厂工人"
+   },
+   {
+    "name": "阿夫西维",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议去食堂的孩子"
+   },
+   {
+    "name": "帕特里基大叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "镇上最好的厨师"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "相当特别的地方"
+   },
+   {
+    "name": "来亚什基生产工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "待复工的生产工厂"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被大家合力赶走的怪物"
+   },
+   {
+    "name": "向日葵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "盖住肚皮的花"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "始终不曾具备某种东西的学说"
+   },
+   {
+    "name": "劳动食堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "长身体的孩子们该去之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "推断",
+    "dst": "来亚什基",
+    "evidence": "这儿一定有尚未被发现的新资源",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "察觉",
+    "dst": "北方哨歌",
+    "evidence": "看来结果不错，好姑娘",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "道谢",
+    "dst": "克努特大叔",
+    "evidence": "这都是一道新的曙光……谢谢你，克努特先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "祝愿",
+    "dst": "来亚什基生产工厂",
+    "evidence": "也祝你们的工厂能早日复工",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "断言",
+    "dst": "魔精",
+    "evidence": "就算没有芝诺，大家也能靠着自己赶走魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "自陈",
+    "dst": "来亚什基",
+    "evidence": "我们总在劳动，总在生活，一切都会好起来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "说明",
+    "dst": "来亚什基",
+    "evidence": "全世界也找不着几个来亚什基这样的地方了",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "承认",
+    "dst": "来亚什基",
+    "evidence": "来亚什基是个相当特别的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "自省",
+    "dst": "理线学",
+    "evidence": "这正是过去的理线学始终不曾具备的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "询问",
+    "dst": "北方哨歌",
+    "evidence": "你想认识帕特里基先生吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "介绍",
+    "dst": "帕特里基大叔",
+    "evidence": "帕特里基可是个热情的老伙计，镇上最好的厨师",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "建议",
+    "dst": "阿夫西维",
+    "evidence": "你们确实该去食堂了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "欢呼",
+    "dst": "劳动食堂",
+    "evidence": "向布林同志出发！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "312fc092376c17f45e2caa4d": {
+  "entities": [
+   {
+    "name": "阿夫西维",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍食堂的孩子"
+   },
+   {
+    "name": "尼娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述食物的孩子"
+   },
+   {
+    "name": "彼得森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "纠正节名并说明劳作者"
+   },
+   {
+    "name": "帕索诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回忆大坑的孩子"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "展开地脉图的学者"
+   },
+   {
+    "name": "劳动食堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人头攒动的职工食堂"
+   },
+   {
+    "name": "工人节",
+    "type": "事件",
+    "aliases": [
+     "铁帽子节"
+    ],
+    "desc": "小镇每月举办的节日"
+   },
+   {
+    "name": "罐头园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "埋藏废弃钢铁之处"
+   },
+   {
+    "name": "罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "节庆所发的食物"
+   },
+   {
+    "name": "图桑卡罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "节庆罐头品类之一"
+   },
+   {
+    "name": "鲱鱼罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "节庆罐头品类之一"
+   },
+   {
+    "name": "手风琴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "维拉所奏的乐器"
+   },
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为众人拉手风琴的教师"
+   },
+   {
+    "name": "阿廖卡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尼娜分给众人的食物"
+   },
+   {
+    "name": "地脉能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "最后一片模糊区域"
+   },
+   {
+    "name": "布林饼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "孩子们熟知的餐食"
+   },
+   {
+    "name": "帕特里基大叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引述的食堂厨师"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿夫西维",
+    "relation": "介绍",
+    "dst": "劳动食堂",
+    "evidence": "这里是大家的食堂",
+    "confidence": 0.95
+   },
+   {
+    "src": "尼娜",
+    "relation": "列举",
+    "dst": "劳动食堂",
+    "evidence": "土豆泥，煮土豆，还有土豆炖汤",
+    "confidence": 0.95
+   },
+   {
+    "src": "尼娜",
+    "relation": "引述",
+    "dst": "帕特里基大叔",
+    "evidence": "真正的好厨师，能够把最简单的食物做成大家都爱吃的美味",
+    "confidence": 0.95
+   },
+   {
+    "src": "彼得森",
+    "relation": "宽慰",
+    "dst": "尼娜",
+    "evidence": "你不也总是把阿廖卡分给大家吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿夫西维",
+    "relation": "提及",
+    "dst": "工人节",
+    "evidence": "我们还有铁帽子节，帽子里藏着很多好吃的",
+    "confidence": 0.95
+   },
+   {
+    "src": "彼得森",
+    "relation": "纠正",
+    "dst": "阿夫西维",
+    "evidence": "它的名字叫“工人节”",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人节",
+    "relation": "举办",
+    "dst": "劳动食堂",
+    "evidence": "所有人围坐在食堂一起唱歌",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "演奏",
+    "dst": "手风琴",
+    "evidence": "维拉老师会为我们拉手风琴",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人节",
+    "relation": "发放",
+    "dst": "罐头",
+    "evidence": "每个人能得到一份罐头",
+    "confidence": 0.95
+   },
+   {
+    "src": "罐头",
+    "relation": "包含",
+    "dst": "图桑卡罐头",
+    "evidence": "图桑卡罐头、沙拉罐头，或者鲱鱼罐头",
+    "confidence": 0.95
+   },
+   {
+    "src": "罐头",
+    "relation": "包含",
+    "dst": "鲱鱼罐头",
+    "evidence": "图桑卡罐头、沙拉罐头，或者鲱鱼罐头",
+    "confidence": 0.95
+   },
+   {
+    "src": "彼得森",
+    "relation": "反驳",
+    "dst": "阿夫西维",
+    "evidence": "它们不是铁皮土豆，它们也不会长大",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "展开",
+    "dst": "地脉能量",
+    "evidence": "她猛然展开了地脉能量图",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "追问",
+    "dst": "罐头",
+    "evidence": "那些罐头，它们最后都去了这儿吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕索诺",
+    "relation": "回忆",
+    "dst": "罐头园",
+    "evidence": "大人们挖了一个很大的坑",
+    "confidence": 0.95
+   },
+   {
+    "src": "尼娜",
+    "relation": "说明",
+    "dst": "罐头园",
+    "evidence": "每个月，大家都会把废弃的钢铁重新熔成一个个方块",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "推断",
+    "dst": "罐头园",
+    "evidence": "那儿一定有不少尚未被发现的“大鱼”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "44ca22e8ca160bf83108b835": {
+  "entities": [
+   {
+    "name": "孩子众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为能外出而欢呼的孩子们"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "禁止孩子们外出的学者"
+   },
+   {
+    "name": "贝托尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布听证会的代表"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被讨论处理方案的小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "孩子众",
+    "relation": "欢呼",
+    "dst": "来亚什基",
+    "evidence": "我们又能去外面玩了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "禁止",
+    "dst": "孩子众",
+    "evidence": "你们都得给我乖乖地留在镇上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "宣布",
+    "dst": "来亚什基",
+    "evidence": "我们将在明天8：00开始举行最后一次听证会",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "说明",
+    "dst": "孩子众",
+    "evidence": "本次会议旨在厘清各位对于小镇处理方案的建议与疑虑",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2a46b8b0e4a41b632127a4c5": {
+  "entities": [
+   {
+    "name": "贝托尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝协助的代表"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "申请芝诺协助的学者"
+   },
+   {
+    "name": "来亚什基会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "对谈之处"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被申请协助的机构"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人员特聘计划的对象"
+   },
+   {
+    "name": "来亚什基废弃矿区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "拟前往的深处"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "早已泛滥成灾的怪物"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "几度未能通过的民间学派"
+   },
+   {
+    "name": "神秘学会考评会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "理线学未通过的评审机构"
+   },
+   {
+    "name": "人类科研课题立项",
+    "type": "概念",
+    "aliases": [],
+    "desc": "理线学未通过的立项"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝托尔特",
+    "relation": "询问",
+    "dst": "北方哨歌",
+    "evidence": "你也打算在芝诺谋个一官半职？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "告知",
+    "dst": "北方哨歌",
+    "evidence": "你并不在这次的“来亚什基人员特聘计划”的名单上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "强调",
+    "dst": "北方哨歌",
+    "evidence": "对于你们这样的学者来说，拿出成果才是最重要的",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "报告",
+    "dst": "贝托尔特",
+    "evidence": "这儿确实存在着某种尚未被开采出的新资源",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "驳斥",
+    "dst": "北方哨歌",
+    "evidence": "这就是你花了几个月的时间才调查清楚的事？",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "置疑",
+    "dst": "贝托尔特",
+    "evidence": "可你说的什么“永动能源”只是传说，不是么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "申请",
+    "dst": "芝诺",
+    "evidence": "我想申请芝诺的协助调查",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "请求",
+    "dst": "贝托尔特",
+    "evidence": "你派遣一支武装军队将我送往矿区深处",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "反驳",
+    "dst": "北方哨歌",
+    "evidence": "这儿的魔精早已泛滥成灾",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "讥评",
+    "dst": "理线学",
+    "evidence": "据我所知，这应该只是一门几度没能通过的民间学派",
+    "confidence": 0.95
+   },
+   {
+    "src": "理线学",
+    "relation": "未通过",
+    "dst": "神秘学会考评会",
+    "evidence": "在“神秘学会考评会”中几度没能通过",
+    "confidence": 0.95
+   },
+   {
+    "src": "理线学",
+    "relation": "未通过",
+    "dst": "人类科研课题立项",
+    "evidence": "在“人类科研课题立项”中几度没能通过",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "拒绝",
+    "dst": "北方哨歌",
+    "evidence": "在你拿出切实可行的证据之前，芝诺没法提供过多的帮助",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8b911cbc61d936f188e69b04": {
+  "entities": [
+   {
+    "name": "贝托尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坦言目标并递出文书的代表"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认清芝诺意图的学者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以永动能源为唯一目标的机构"
+   },
+   {
+    "name": "地脉能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传说中的终极能源"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被无声掌控的小镇"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "芝诺从不打算清理的灾害"
+   },
+   {
+    "name": "来亚什基废弃矿区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "学者孤身前往之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "讥评",
+    "dst": "芝诺",
+    "evidence": "这不过是举手之劳罢了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "纠正",
+    "dst": "北方哨歌",
+    "evidence": "你一定是误会了什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "坦言",
+    "dst": "北方哨歌",
+    "evidence": "芝诺的目标从来都只有一个，就是传说中的永动能源",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "识破",
+    "dst": "魔精",
+    "evidence": "所以你们从来都不打算清理这儿的魔精灾害",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "质问",
+    "dst": "贝托尔特",
+    "evidence": "就为了无声无息地彻底掌控这里？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "自陈",
+    "dst": "北方哨歌",
+    "evidence": "我们不希望引起其他组织的注意",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "推断",
+    "dst": "来亚什基",
+    "evidence": "哪怕最后找到了原矿，你们也不准备保留这座小镇",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "自陈",
+    "dst": "北方哨歌",
+    "evidence": "怎么能让一群化外之民来负责呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "承诺",
+    "dst": "来亚什基",
+    "evidence": "我们仍会努力地为当地居民提供力所能及的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "递出",
+    "dst": "北方哨歌",
+    "evidence": "他从书页之间抽出了一张漂亮的文书",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "利诱",
+    "dst": "北方哨歌",
+    "evidence": "当它盖上芝诺的章，你就能在任何一所大学开设课程",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "前往",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "它孤独而勇敢地朝着某个早已被占领的王国而去",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "319d675b0508bfa1955e354d": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独闯雪原的学者"
+   },
+   {
+    "name": "霍伊图克",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被辨析的温和魔精"
+   },
+   {
+    "name": "基基图克异种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "奥尔加海峡的异种"
+   },
+   {
+    "name": "奥尔加海峡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "基基图克异种原本的分布地"
+   },
+   {
+    "name": "来亚什基废弃矿区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "暴雪覆盖的废弃之地"
+   },
+   {
+    "name": "罐头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "滚落在地的空壳"
+   },
+   {
+    "name": "锡尔伯里山",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾进行同类扫描之山"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "敷衍学者的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "北方哨歌",
+    "relation": "自问",
+    "dst": "芝诺",
+    "evidence": "芝诺只是在敷衍我",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "推断",
+    "dst": "霍伊图克",
+    "evidence": "霍伊图克最主要的食物来源是地底的矿石",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "自陈",
+    "dst": "霍伊图克",
+    "evidence": "霍伊图克生性温和，它们很少会主动攻击人类",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "清理",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "先清理出一片干净的区域",
+    "confidence": 0.95
+   },
+   {
+    "src": "罐头",
+    "relation": "滚落",
+    "dst": "来亚什基废弃矿区",
+    "evidence": "只有零星的几个罐头壳滚落在地",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "类比",
+    "dst": "锡尔伯里山",
+    "evidence": "就像之前在锡尔伯里山那样",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "辨认",
+    "dst": "基基图克异种",
+    "evidence": "这副便于泅渡的鳞翼，你们是——基基图克的奥尔加异种",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "说明",
+    "dst": "奥尔加海峡",
+    "evidence": "你们应该逡巡在奥尔加海峡，捕食那儿洄游而过的鲑鱼与鲸",
+    "confidence": 0.95
+   },
+   {
+    "src": "基基图克异种",
+    "relation": "扑向",
+    "dst": "北方哨歌",
+    "evidence": "朝着北方哨歌的方向扑了上来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "deb2a7a4131a78653b5c0ec0": {
+  "entities": [
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被枪声救下的学者"
+   },
+   {
+    "name": "叶甫根尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开枪掩护的保卫者"
+   },
+   {
+    "name": "基基图克异种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "余怒未消的异种"
+   },
+   {
+    "name": "霍伊图克",
+    "type": "概念",
+    "aliases": [],
+    "desc": "齿爪已退化的魔精"
+   },
+   {
+    "name": "罐头园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "埋下的铁块被啃食殆尽之处"
+   },
+   {
+    "name": "卢恩矿石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在铁块被袭之前枯竭的矿石"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人们热爱且不愿离开之地"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "会呼朋引伴的小怪物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "基基图克异种",
+    "relation": "逼近",
+    "dst": "北方哨歌",
+    "evidence": "向着食物的方向步步紧逼",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "对比",
+    "dst": "霍伊图克",
+    "evidence": "它们的触觉比霍伊图克敏锐得多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "掩护",
+    "dst": "北方哨歌",
+    "evidence": "撤出那片区域，我会掩护你",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "开枪",
+    "dst": "基基图克异种",
+    "evidence": "准确地命中一只龇牙咧嘴的基基图克",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "道谢",
+    "dst": "叶甫根尼",
+    "evidence": "感谢你的救援，先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "追问",
+    "dst": "罐头园",
+    "evidence": "那片……罐头园，它在这儿么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "告知",
+    "dst": "罐头园",
+    "evidence": "我们埋下的铁块早就被啃食殆尽了",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "核实",
+    "dst": "卢恩矿石",
+    "evidence": "它们对铁块的袭击发生在卢恩矿石枯竭之前吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "告诫",
+    "dst": "北方哨歌",
+    "evidence": "你不该来这儿，这儿没有你要找的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "断言",
+    "dst": "魔精",
+    "evidence": "它们只会呼朋引伴，永远没个消停",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "置疑",
+    "dst": "叶甫根尼",
+    "evidence": "你们能驱赶这儿的基基图克——？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "坚持",
+    "dst": "来亚什基",
+    "evidence": "正如这儿的人们热爱这片土地，他们也从未打算离开",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "15895a49009a83e725cd3785": {
+  "entities": [
+   {
+    "name": "叶甫根尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持负责到最后的保卫者"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指责其家长作风的学者"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被叶甫根尼认可的机构"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被决定命运的小镇"
+   }
+  ],
+  "relations": [
+   {
+    "src": "叶甫根尼",
+    "relation": "评价",
+    "dst": "来亚什基",
+    "evidence": "只是种令人失望的顽固罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "主张",
+    "dst": "来亚什基",
+    "evidence": "他们应该在更广阔的地方发挥才能",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "质问",
+    "dst": "叶甫根尼",
+    "evidence": "你任由芝诺摆布这儿的一切，什么也不做",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "自陈",
+    "dst": "北方哨歌",
+    "evidence": "我们共事了数十年",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "认可",
+    "dst": "芝诺",
+    "evidence": "我认可芝诺的决议",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "指责",
+    "dst": "叶甫根尼",
+    "evidence": "打着为所有人好的名头，然后自顾自地付出",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "自陈",
+    "dst": "北方哨歌",
+    "evidence": "对所有人负责，这才是我的责任",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶甫根尼",
+    "relation": "承诺",
+    "dst": "来亚什基",
+    "evidence": "我会说服他们的，就在明天的全员大会",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "020058ba0d7dcf4e51f24885": {
+  "entities": [
+   {
+    "name": "贝托尔特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布最终结果的代表"
+   },
+   {
+    "name": "叶甫根尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被致谢的配合者"
+   },
+   {
+    "name": "克努特大叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辩称尚有别的工厂者"
+   },
+   {
+    "name": "镇民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "质疑芝诺意图的镇民"
+   },
+   {
+    "name": "镇民众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "窃窃私语的人群"
+   },
+   {
+    "name": "来亚什基广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人群鱼贯而入之处"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "大幅调整对外政策的机构"
+   },
+   {
+    "name": "卢恩矿石",
+    "type": "物品",
+    "aliases": [],
+    "desc": "百年内无再生可能的矿石"
+   },
+   {
+    "name": "来亚什基生产工厂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "无继续运行必要的加工厂"
+   },
+   {
+    "name": "来亚什基",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已无合作价值的对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝托尔特",
+    "relation": "致意",
+    "dst": "来亚什基",
+    "evidence": "来亚什基的朋友们，你们好",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "说明",
+    "dst": "芝诺",
+    "evidence": "芝诺完成了对这一区域的全方位危险评估与价值考察",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "称许",
+    "dst": "来亚什基",
+    "evidence": "我们的听证会似乎响应者寥寥",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "致谢",
+    "dst": "叶甫根尼",
+    "evidence": "我们仍需感谢叶甫根尼先生在此次行动中的大力支持与配合",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "宣布",
+    "dst": "卢恩矿石",
+    "evidence": "来亚什基的卢恩矿石已经枯竭，在未来百年之内已无再生可能",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "宣布",
+    "dst": "来亚什基生产工厂",
+    "evidence": "当地的矿石加工厂已无继续运行的必要",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "宣布",
+    "dst": "芝诺",
+    "evidence": "芝诺大幅调整了对外政策",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "断言",
+    "dst": "来亚什基",
+    "evidence": "来亚什基已无作为芝诺合作方的必要性与价值",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "辩称",
+    "dst": "贝托尔特",
+    "evidence": "我们不止有卢恩矿石，我们有许多别的工厂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "驳斥",
+    "dst": "来亚什基生产工厂",
+    "evidence": "可这一切都建立在开采卢恩矿石的基础上",
+    "confidence": 0.95
+   },
+   {
+    "src": "镇民众",
+    "relation": "议论",
+    "dst": "来亚什基",
+    "evidence": "人群窃窃私语，不同的声音在一起呜鸣",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "提出",
+    "dst": "来亚什基",
+    "evidence": "我们为来亚什基准备了两套方案",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝托尔特",
+    "relation": "邀请",
+    "dst": "镇民众",
+    "evidence": "希望各位能够与我们一同撤离来亚什基",
+    "confidence": 0.95
+   },
+   {
+    "src": "克努特大叔",
+    "relation": "质问",
+    "dst": "芝诺",
+    "evidence": "难道芝诺打算彻底收拢这儿的所有人吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "镇民Ⅰ",
+    "relation": "质问",
+    "dst": "贝托尔特",
+    "evidence": "你打算把我们所有人都糊弄到芝诺去——？",
+    "confidence": 0.95
+   },
+   {
+    "src": "来亚什基",
+    "relation": "置身",
+    "dst": "来亚什基广场",
+    "evidence": "人们从四面八方鱼贯而入",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

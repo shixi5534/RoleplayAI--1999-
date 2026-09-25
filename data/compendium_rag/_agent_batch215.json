@@ -1,0 +1,1263 @@
+{
+ "c99e0d4d326648151411aaea": {
+  "entities": [
+   {
+    "name": "巡逻警察Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "维持剪彩秩序的巡警"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扛着儿子观看仪式的父亲"
+   },
+   {
+    "name": "淘气鬼弗洛狄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "描述机器构造的男孩"
+   },
+   {
+    "name": "街坊Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲解机器功效的街坊"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向基金会展示吸尘器者"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "已升级为MK.Ⅲ的净化机器"
+   },
+   {
+    "name": "机械肺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "机器内形似器官的净化核心"
+   },
+   {
+    "name": "乌卢鲁联合组委会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "派员监督比赛的组织"
+   },
+   {
+    "name": "澳洲",
+    "type": "地点",
+    "aliases": [],
+    "desc": "比赛结果最终汇报之处"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人围观的剪彩现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "巡逻警察Ⅰ",
+    "relation": "维持",
+    "dst": "运动会场",
+    "evidence": "请大家稍微注意一点纪律",
+    "confidence": 0.95
+   },
+   {
+    "src": "淘气鬼弗洛狄",
+    "relation": "描述",
+    "dst": "机械肺",
+    "evidence": "那台大机器里面，装了一个巨大的机械……机械器官",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "展示",
+    "dst": "雾气净化器",
+    "evidence": "福葛先生开始向基金会的成员展示他的吸尘器",
+    "confidence": 0.95
+   },
+   {
+    "src": "街坊Ⅰ",
+    "relation": "说明",
+    "dst": "雾气净化器",
+    "evidence": "它正在运作……它正在运作",
+    "confidence": 0.95
+   },
+   {
+    "src": "街坊Ⅰ",
+    "relation": "转述",
+    "dst": "乌卢鲁联合组委会",
+    "evidence": "他们是乌卢鲁组委会派来监督比赛的",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌卢鲁联合组委会",
+    "relation": "汇报",
+    "dst": "澳洲",
+    "evidence": "最终的比赛结果也是由他们汇报到澳洲本部的",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "观看",
+    "dst": "淘气鬼弗洛狄",
+    "evidence": "爸爸要带你冲进前排观看了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "69ffffd2f0043e5d8d29ef56": {
+  "entities": [
+   {
+    "name": "街坊Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊叹净化范围扩张者"
+   },
+   {
+    "name": "淘气鬼弗洛狄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉福葛微笑的男孩"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉机器异常抖动的父亲"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "久未展颜的发明者"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "开始疯狂抖动的机器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "街坊Ⅰ",
+    "relation": "感叹",
+    "dst": "雾气净化器",
+    "evidence": "净化的范围正在扩张",
+    "confidence": 0.95
+   },
+   {
+    "src": "淘气鬼弗洛狄",
+    "relation": "察觉",
+    "dst": "雾行者",
+    "evidence": "我看到福葛先生笑了",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "察觉",
+    "dst": "雾气净化器",
+    "evidence": "那台机器怎么开始疯狂抖动起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "操作",
+    "dst": "雾气净化器",
+    "evidence": "他已经很多个礼拜没有笑过了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eb67a0bb726392bf45fb13f4": {
+  "entities": [
+   {
+    "name": "淘气鬼弗洛狄",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目睹机器炸裂的男孩"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊问其详的父亲"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受创后呆滞的发明者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲阻未果的斥候"
+   },
+   {
+    "name": "基金会分部成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷言讥评的基金会成员"
+   },
+   {
+    "name": "基金会分部成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣读取消决定的成员"
+   },
+   {
+    "name": "格里戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被同僚直呼其名的成员"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "吸气管炸开的机器"
+   },
+   {
+    "name": "机械肺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "自机器中滚出之物"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被宣布取消的赛事"
+   },
+   {
+    "name": "伦敦清洁大气委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被讥为笑话的伦敦大气机构"
+   },
+   {
+    "name": "乌卢鲁联合组委会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "做出沉痛决定者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "淘气鬼弗洛狄",
+    "relation": "目睹",
+    "dst": "雾气净化器",
+    "evidence": "那台机器……爆炸了",
+    "confidence": 0.95
+   },
+   {
+    "src": "机械肺",
+    "relation": "滚出",
+    "dst": "雾气净化器",
+    "evidence": "那颗巨大的机械肺从里面滚了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会分部成员Ⅱ",
+    "relation": "称名",
+    "dst": "格里戈尔",
+    "evidence": "不要太刻薄了，格里戈尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会分部成员Ⅰ",
+    "relation": "贬评",
+    "dst": "伦敦清洁大气委员会",
+    "evidence": "所谓的伦敦清洁大气委员会无非是一个天大的笑话",
+    "confidence": 0.95
+   },
+   {
+    "src": "基金会分部成员Ⅱ",
+    "relation": "宣布",
+    "dst": "乌卢鲁伦敦预选赛",
+    "evidence": "取消乌卢鲁运动会开设于伦敦的预选赛",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌卢鲁联合组委会",
+    "relation": "决定",
+    "dst": "乌卢鲁伦敦预选赛",
+    "evidence": "乌卢鲁运动会国际联合组委会考虑再三",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "欲阻",
+    "dst": "基金会分部成员Ⅱ",
+    "evidence": "嘿，这位女士……您……您想……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "02d9b82f75fb819e378c2bf5": {
+  "entities": [
+   {
+    "name": "基金会分部成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣读决定的成员"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "难以置信并追问的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转述情景的医生"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "默默转身走入人海者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向牙仙转述情景者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闭门谢客的雾行者"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被取消的赛事"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "工人潮涌动的会场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "追问",
+    "dst": "基金会分部成员Ⅱ",
+    "evidence": "你是说，乌卢鲁预选赛，被取消了",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "转述",
+    "dst": "牙仙",
+    "evidence": "宽檐帽先生向我转述了当时的情景",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "闭门",
+    "dst": "牙仙",
+    "evidence": "似乎正在办公室里，拒绝见人",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "离开",
+    "dst": "利伯蒂",
+    "evidence": "缓缓将手从纸信圈儿的手中抽出",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "没入",
+    "dst": "运动会场",
+    "evidence": "一言不发，走进了人海里",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "追问",
+    "dst": "牙仙",
+    "evidence": "为什么……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d8d18ff5b4202a0ae499071": {
+  "entities": [
+   {
+    "name": "病人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "忧叹黑雾与失业的病人"
+   },
+   {
+    "name": "病人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咳嗽不止的病人"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记录临床反应并培育样本者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "飞驰来报惊讯者"
+   },
+   {
+    "name": "医护站的护士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制止其在医护站喧哗者"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与普通肺结核表现迥异的病症"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被视作诅咒的黑雾"
+   },
+   {
+    "name": "培养皿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "培育出小黑雾的器皿"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "具一定智力的小黑雾所属"
+   },
+   {
+    "name": "牙仙的诊疗笔记",
+    "type": "物品",
+    "aliases": [],
+    "desc": "牙仙随身记录的诊疗本"
+   },
+   {
+    "name": "医护站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "病人与护士所在的医护站"
+   },
+   {
+    "name": "十字街塔楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "有人望见小女孩的高处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "记录",
+    "dst": "牙仙的诊疗笔记",
+    "evidence": "这是第一百三十二个病患",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "区分",
+    "dst": "煤炭肺结核",
+    "evidence": "这与普通的肺结核患者有着很大的差别",
+    "confidence": 0.95
+   },
+   {
+    "src": "病人Ⅰ",
+    "relation": "哀叹",
+    "dst": "黑雾",
+    "evidence": "该死的黑雾诅咒",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "培育",
+    "dst": "培养皿",
+    "evidence": "采集病人的唾液样本，可以放入培养皿观察培育",
+    "confidence": 0.95
+   },
+   {
+    "src": "培养皿",
+    "relation": "孕育",
+    "dst": "黑雾",
+    "evidence": "一小团黑雾，比我之前亲眼所见的要更弱小",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "推断",
+    "dst": "魔精",
+    "evidence": "这种魔精应该是有一定智力的",
+    "confidence": 0.95
+   },
+   {
+    "src": "医护站的护士",
+    "relation": "制止",
+    "dst": "宽檐帽先生",
+    "evidence": "您是不被允许在医护站大吵大嚷的",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "报讯",
+    "dst": "十字街塔楼",
+    "evidence": "他们说在老钟塔上看到一个小女孩儿",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d0b4369373d05de158754d34": {
+  "entities": [
+   {
+    "name": "路人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喊她下来的路人"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "高塔上晾被单的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登塔与她并坐的医生"
+   },
+   {
+    "name": "路人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直呼其名的路人"
+   },
+   {
+    "name": "路人Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝阻他人喊叫的路人"
+   },
+   {
+    "name": "白被单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "女孩在高塔上晾晒之物"
+   },
+   {
+    "name": "十字街塔楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被她称作秘密基地的塔楼"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她欲随风飞往的赛事"
+   },
+   {
+    "name": "澳洲",
+    "type": "地点",
+    "aliases": [],
+    "desc": "她欲飘往之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "路人Ⅰ",
+    "relation": "呼喊",
+    "dst": "利伯蒂",
+    "evidence": "嘿！孩子！快下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "晾晒",
+    "dst": "白被单",
+    "evidence": "小女孩状似惬意地晾着被单",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "登临",
+    "dst": "十字街塔楼",
+    "evidence": "脚踩在最后一节吱吱作响的朽木楼梯上",
+    "confidence": 0.95
+   },
+   {
+    "src": "路人Ⅱ",
+    "relation": "呼唤",
+    "dst": "利伯蒂",
+    "evidence": "下来！利伯蒂——",
+    "confidence": 0.95
+   },
+   {
+    "src": "路人Ⅲ",
+    "relation": "劝阻",
+    "dst": "路人Ⅱ",
+    "evidence": "你不能这么跟她说",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "向往",
+    "dst": "澳洲",
+    "evidence": "澳洲，对，那里肯定已经在举办乌卢鲁运动会了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "并坐",
+    "dst": "利伯蒂",
+    "evidence": "二人一起坐在塔楼之上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1145c04c561d44dde13b918f": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "自陈搞砸一切的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以问答相赠并拔牙的医生"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指手握答案却欲弃之者"
+   },
+   {
+    "name": "乳牙",
+    "type": "物品",
+    "aliases": [],
+    "desc": "牙仙拔下并收起的最后一颗乳牙"
+   },
+   {
+    "name": "自由祭祀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "笃笃骨所创的年龄纪录项目"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "自责",
+    "dst": "笃笃骨",
+    "evidence": "花园拒绝我了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "开解",
+    "dst": "利伯蒂",
+    "evidence": "你没有伤害她，事实上，你没有伤害任何人",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "评述",
+    "dst": "笃笃骨",
+    "evidence": "作为本世纪自由祭祀运动最小年纪的纪录保持者",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "拔下",
+    "dst": "乳牙",
+    "evidence": "它是最后一颗",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "收藏",
+    "dst": "乳牙",
+    "evidence": "看来这最后一颗乳牙，是我的了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "63c8d56227222da2a54eb70a": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登记赔偿并致歉的雾行者"
+   },
+   {
+    "name": "工人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拆卸舞台的工人"
+   },
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "前来道别的运动员"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝其多留几日的斥候"
+   },
+   {
+    "name": "笃笃骨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "卸下机械腿并摸索润滑脂者"
+   },
+   {
+    "name": "开幕会舞台",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拆卸的开幕会舞台"
+   },
+   {
+    "name": "观众席",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曾被擦得干干净净的座席"
+   },
+   {
+    "name": "广告牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "会场上的巨大广告牌"
+   },
+   {
+    "name": "润滑脂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "柜上仅剩的养护之物"
+   },
+   {
+    "name": "假肢",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被卸下的机械腿"
+   },
+   {
+    "name": "乌卢鲁联合组委会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "受理赔偿事宜的组织"
+   }
+  ],
+  "relations": [
+   {
+    "src": "工人Ⅰ",
+    "relation": "拆卸",
+    "dst": "开幕会舞台",
+    "evidence": "几个工人正在将刚搭好的会场舞台卸下",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人Ⅰ",
+    "relation": "惋惜",
+    "dst": "观众席",
+    "evidence": "还有擦得干干净净的观众席",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "登记",
+    "dst": "乌卢鲁联合组委会",
+    "evidence": "我会统一联系乌卢鲁组委会赔偿您的损失",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "道别",
+    "dst": "雾行者",
+    "evidence": "我可能会离开伦敦等待后续组委会的通知",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "挽留",
+    "dst": "卡洛琳",
+    "evidence": "您不考虑在这儿再多呆几天吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "取用",
+    "dst": "润滑脂",
+    "evidence": "伸出修长的手指去取放在柜子上的润滑脂",
+    "confidence": 0.95
+   },
+   {
+    "src": "笃笃骨",
+    "relation": "卸下",
+    "dst": "假肢",
+    "evidence": "笃笃骨将机械腿卸下",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5ccc0609ec93f6415817398e": {
+  "entities": [
+   {
+    "name": "卡洛琳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈直通决赛的运动员"
+   },
+   {
+    "name": "工人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉天色骤暗的工人"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊问时刻的斥候"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言绝非深夜者"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "如巨臂腾起的浓雾"
+   },
+   {
+    "name": "乌卢鲁联合组委会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "特批决赛门票的组织"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她最后一场家乡运动会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡洛琳",
+    "relation": "持有",
+    "dst": "乌卢鲁联合组委会",
+    "evidence": "我已经拿到了组委会特批的决赛门票",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡洛琳",
+    "relation": "追念",
+    "dst": "乌卢鲁运动会",
+    "evidence": "只是想在自己的家乡参加一次运动会",
+    "confidence": 0.95
+   },
+   {
+    "src": "工人Ⅰ",
+    "relation": "察觉",
+    "dst": "黑雾",
+    "evidence": "现在是不是天黑得太快了一点",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "询问",
+    "dst": "雾行者",
+    "evidence": "现在几点了",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "断言",
+    "dst": "黑雾",
+    "evidence": "至少绝对不会是深夜",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑雾",
+    "relation": "腾起",
+    "dst": "宽檐帽先生",
+    "evidence": "黑黄色的浓雾突然如巨臂一般腾起",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2c5ad942f70524bf9cf40164": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭示黑雾真相的医生"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敲打机器并追问者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不舍拆卸净化器者"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与入院时所见同源之雾"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "溶于雾中、以煤烟为食者"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "静躺角落的机器"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与黑雾成分一致的病症"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "疑与黑雾有关的被取消赛事"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "需要疏散群众之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "比照",
+    "dst": "黑雾",
+    "evidence": "和我刚到伦敦时，那个将医院屋顶掀翻的黑雾一模一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "怀疑",
+    "dst": "乌卢鲁伦敦预选赛",
+    "evidence": "这场乌卢鲁预选赛的取消，或许都跟它有关",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "疏散",
+    "dst": "运动会场",
+    "evidence": "我们现在首先要做的，是疏散群众",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "敲打",
+    "dst": "雾气净化器",
+    "evidence": "有些好奇地敲着它顶部的玻璃罩",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "不舍",
+    "dst": "雾气净化器",
+    "evidence": "还不太想把它拆了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "检测",
+    "dst": "煤炭肺结核",
+    "evidence": "从病患唾液中检测到了与它一模一样的成分",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "判断",
+    "dst": "魔精",
+    "evidence": "以煤烟和雾气为养料，变换自己的形态",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4b14932be205867607e2d0e5": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "苦于无计可施者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "思索引出黑雾之法者"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "撑被单凌空相邀的女孩"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先望见其身影者"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拿出大锅充当铅球的居民"
+   },
+   {
+    "name": "街坊Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自荐当记分员的街坊"
+   },
+   {
+    "name": "街坊Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自荐当裁判的老管道工"
+   },
+   {
+    "name": "白被单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "支撑其飘浮的白被单"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需被引出之物"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "居民自行筹办的替代赛事"
+   },
+   {
+    "name": "运动会场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人进发重建之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "设想",
+    "dst": "黑雾",
+    "evidence": "也许我们会有一种办法能够将它引出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "发现",
+    "dst": "利伯蒂",
+    "evidence": "在窗外，老伙计，窗外",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "邀请",
+    "dst": "牙仙",
+    "evidence": "想要加入我们吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "倡议",
+    "dst": "乌卢鲁运动会",
+    "evidence": "那么就举办一个属于我们自己的运动会",
+    "confidence": 0.95
+   },
+   {
+    "src": "街坊Ⅱ",
+    "relation": "自荐",
+    "dst": "乌卢鲁运动会",
+    "evidence": "我要求自荐",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "贡献",
+    "dst": "运动会场",
+    "evidence": "大家要一起把拆了的舞台重建起来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a101ad9dbbae6cae6a751d47": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "最终决定入伙办赛者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "力争不可放弃的斥候"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以舞台为战场的医生"
+   },
+   {
+    "name": "民间运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "众人筹办的民间运动会"
+   },
+   {
+    "name": "抗议请愿书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塞满办公室的请愿信"
+   },
+   {
+    "name": "管理局",
+    "type": "组织",
+    "aliases": [],
+    "desc": "需协商的主管机构"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "已撤资的机构"
+   },
+   {
+    "name": "雾气净化器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在办公室发霉的机器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "宽檐帽先生",
+    "relation": "力劝",
+    "dst": "雾行者",
+    "evidence": "你的心在哪儿，你的运动会就在哪儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "维护",
+    "dst": "雾行者",
+    "evidence": "我不允许有任何人肆意丢弃你的赫赫战功",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "鼓励",
+    "dst": "雾行者",
+    "evidence": "这也会是你我的舞台，或者说是……战场",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "抱怨",
+    "dst": "抗议请愿书",
+    "evidence": "是谁给我的办公室里塞满了请愿信的",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "应允",
+    "dst": "民间运动会",
+    "evidence": "我会去跟管理局那边协商好",
+    "confidence": 0.95
+   },
+   {
+    "src": "管理局",
+    "relation": "审批",
+    "dst": "民间运动会",
+    "evidence": "争取给大家把这场民间运动会，办得顺顺利利",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "撤资",
+    "dst": "雾行者",
+    "evidence": "可基金会已经撤资了",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

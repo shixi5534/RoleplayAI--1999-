@@ -80,7 +80,22 @@ _RE_CJK_NAME = re.compile(r"[\u4e00-\u9fff]{2,6}(?:姐|哥|先生|女士|小姐|
 
 
 def _norm(s: str) -> str:
-    return (s or "").strip().lower().replace(" ", "")
+    """审计用的归一化：去空白 + **去引号**。
+
+    为什么要去引号（2026-09-20 实测修复）：
+        中文正文习惯给术语加引号强调，如 ``“思想”控制器`` / ``'Ⅻ'小队``。
+        实体名 ``思想控制器`` / ``Ⅻ小队`` 因此无法子串命中，被误判为
+        ``hallucinated_entity``——实测最后残留的 4 块里 3 块属这类**判据误报**，
+        并非真臆造。引号只是排版强调，不改变指称。
+    """
+    out = (s or "").strip().lower()
+    for ch in (" ", "\n", "\r", "\u3000"):
+        out = out.replace(ch, "")
+    for q in ("\u201c", "\u201d", "\u2018", "\u2019",       # “ ” ‘ ’
+              "\u300c", "\u300d", "\u300e", "\u300f",       # 「 」 『 』
+              '"', "'", "`"):
+        out = out.replace(q, "")
+    return out
 
 
 def _in_text(name: str, text_norm: str) -> bool:

@@ -42,13 +42,15 @@ def build_llm(settings: Settings | None = None) -> LLMPort:
         # 缺省空 key 会触发 ProviderError；此处兜底，避免 ollama + 空 key 直接 502。
         if s.llm_provider == "ollama" and not api_key:
             api_key = "ollama"
+        # 本地/非本地分流：本地端点用本地适配参数，非本地用 cloud_* 那组
+        prof = s.llm_profile()
         client = OpenAILikeProvider(
             model=s.llm_model,
             api_key=api_key,
             base_url=base_url,
-            max_tokens=s.max_tokens_per_reply,
-            top_p=s.llm_top_p,
-            repetition_penalty=s.llm_repetition_penalty,
+            max_tokens=prof.max_tokens,
+            top_p=prof.top_p,
+            repetition_penalty=prof.repetition_penalty,
         )
         _GLOBAL_LLM_CACHE[s.llm_provider] = client
         return client
@@ -137,14 +139,16 @@ def build_llm_from_config(
         # 否则 model/base_url 变了但无 key 会必抛「缺少 LLM API Key」（与 docstring 决策矛盾）
         if not api_key and provider == s.llm_provider:
             api_key = s.llm_api_key
+        # 本地/非本地分流：按**本次 override 的实际端点**判定（不是全局端点）
+        prof = s.llm_profile_for(provider, base_url)
         client = OpenAILikeProvider(
             model=model,
             api_key=api_key or "",
             base_url=base_url,
             timeout=timeout,
-            max_tokens=s.max_tokens_per_reply,
-            top_p=s.llm_top_p,
-            repetition_penalty=s.llm_repetition_penalty,
+            max_tokens=prof.max_tokens,
+            top_p=prof.top_p,
+            repetition_penalty=prof.repetition_penalty,
         )
         return client, True
 

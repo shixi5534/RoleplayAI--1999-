@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-09-17 20:08:23",
+  "config": {
+    "cases": 300,
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "pool": 30,
+    "ppr_top_m": 50
+  },
+  "results": [
+    {
+      "label": "基线（无 PPR 引导）",
+      "beta": 0.0,
+      "strict_pass_n": 195,
+      "strict_pass": 0.65,
+      "inject_pass_n": 177,
+      "inject_pass": 0.59,
+      "by_type": {
+        "factoid": {
+          "n": 200,
+          "pass": 140,
+          "rate": 0.7
+        },
+        "multi-hop": {
+          "n": 60,
+          "pass": 31,
+          "rate": 0.5167
+        },
+        "reasoning": {
+          "n": 30,
+          "pass": 16,
+          "rate": 0.5333
+        },
+        "temporal": {
+          "n": 10,
+          "pass": 8,
+          "rate": 0.8
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 167.4
+    },
+    {
+      "label": "PPR引导 β=0.05",
+      "beta": 0.05,
+      "strict_pass_n": 194,
+      "strict_pass": 0.6467,
+      "inject_pass_n": 173,
+      "inject_pass": 0.5767,
+      "by_type": {
+        "factoid": {
+          "n": 200,
+          "pass": 141,
+          "rate": 0.705
+        },
+        "multi-hop": {
+          "n": 60,
+          "pass": 29,
+          "rate": 0.4833
+        },
+        "reasoning": {
+          "n": 30,
+          "pass": 16,
+          "rate": 0.5333
+        },
+        "temporal": {
+          "n": 10,
+          "pass": 8,
+          "rate": 0.8
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 167.4
+    },
+    {
+      "label": "PPR引导 β=0.1",
+      "beta": 0.1,
+      "strict_pass_n": 192,
+      "strict_pass": 0.64,
+      "inject_pass_n": 173,
+      "inject_pass": 0.5767,
+      "by_type": {
+        "factoid": {
+          "n": 200,
+          "pass": 138,
+          "rate": 0.69
+        },
+        "multi-hop": {
+          "n": 60,
+          "pass": 30,
+          "rate": 0.5
+        },
+        "reasoning": {
+          "n": 30,
+          "pass": 16,
+          "rate": 0.5333
+        },
+        "temporal": {
+          "n": 10,
+          "pass": 8,
+          "rate": 0.8
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 166.9
+    },
+    {
+      "label": "PPR引导 β=0.2",
+      "beta": 0.2,
+      "strict_pass_n": 188,
+      "strict_pass": 0.6267,
+      "inject_pass_n": 169,
+      "inject_pass": 0.5633,
+      "by_type": {
+        "factoid": {
+          "n": 200,
+          "pass": 135,
+          "rate": 0.675
+        },
+        "multi-hop": {
+          "n": 60,
+          "pass": 29,
+          "rate": 0.4833
+        },
+        "reasoning": {
+          "n": 30,
+          "pass": 16,
+          "rate": 0.5333
+        },
+        "temporal": {
+          "n": 10,
+          "pass": 8,
+          "rate": 0.8
+        }
+      },
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 167.6
+    }
+  ],
+  "delta": [
+    {
+      "beta": 0.0,
+      "d_strict": 0,
+      "d_inject": 0,
+      "d_neg_cases": 0
+    },
+    {
+      "beta": 0.05,
+      "d_strict": -1,
+      "d_inject": -4,
+      "d_neg_cases": 0
+    },
+    {
+      "beta": 0.1,
+      "d_strict": -3,
+      "d_inject": -4,
+      "d_neg_cases": 0
+    },
+    {
+      "beta": 0.2,
+      "d_strict": -7,
+      "d_inject": -8,
+      "d_neg_cases": 0
+    }
+  ],
+  "fail_ids_baseline": []
+}

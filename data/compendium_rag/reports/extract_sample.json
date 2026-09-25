@@ -1,0 +1,800 @@
+{
+  "model": "cn:kimi-k2.6",
+  "prompt_version": "v1",
+  "report": {
+    "chunks": 8,
+    "extracted": 8,
+    "cache_hits": 0,
+    "failed": 0,
+    "entities": 0,
+    "edges": 0,
+    "seconds": 24.6,
+    "usage": {
+      "prompt_tokens": 6715,
+      "completion_tokens": 3919,
+      "calls": 8,
+      "retries": 0,
+      "failures": 0,
+      "total_tokens": 10634
+    },
+    "stages": {
+      "extract": {
+        "todo": 8,
+        "cache_hits": 0
+      }
+    }
+  },
+  "summary": {
+    "chunks": 8,
+    "ok": 8,
+    "failed": 0,
+    "entities_raw": 45,
+    "relations_raw": 46,
+    "empty": 2,
+    "avg_entities": 5.62,
+    "avg_relations": 5.75
+  },
+  "results": [
+    {
+      "chunk_id": "mainline__000_此即明日:0.0.0",
+      "chapter": "此即明日",
+      "scene": "序章0-1",
+      "chars": 1152,
+      "speakers": [
+        "星锑",
+        "APPLe",
+        "调查员Ⅱ",
+        "调查员Ⅰ"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "星锑",
+            "type": "角色",
+            "aliases": [],
+            "desc": "APPLe号船长，自称海盗，热爱摇滚乐与唱片"
+          },
+          {
+            "name": "APPLe",
+            "type": "角色",
+            "aliases": [],
+            "desc": "星锑的同伴，称呼星锑为船长"
+          },
+          {
+            "name": "调查员Ⅱ",
+            "type": "角色",
+            "aliases": [],
+            "desc": "自称基金会调查员，被星锑误抓"
+          },
+          {
+            "name": "调查员Ⅰ",
+            "type": "角色",
+            "aliases": [],
+            "desc": "自称基金会调查员，被星锑误抓"
+          },
+          {
+            "name": "重塑之手",
+            "type": "组织",
+            "aliases": [],
+            "desc": "攻击星锑船只的恐怖主义组织"
+          },
+          {
+            "name": "基金会",
+            "type": "组织",
+            "aliases": [],
+            "desc": "调查员Ⅰ与调查员Ⅱ所属的组织"
+          },
+          {
+            "name": "APPLe号",
+            "type": "物品",
+            "aliases": [
+              "摇滚巨轮"
+            ],
+            "desc": "星锑的船，正被重塑之手炮击"
+          },
+          {
+            "name": "唱片",
+            "type": "物品",
+            "aliases": [],
+            "desc": "星锑珍藏的音乐唱片"
+          },
+          {
+            "name": "英国伦敦",
+            "type": "地点",
+            "aliases": [],
+            "desc": "1966年暴雨降临的地点"
+          },
+          {
+            "name": "暴雨",
+            "type": "概念",
+            "aliases": [],
+            "desc": "即将降临的神秘灾难现象"
+          }
+        ],
+        "relations": [
+          {
+            "src": "星锑",
+            "relation": "驾驶",
+            "dst": "APPLe号",
+            "evidence": "APPLe号“摇滚巨轮”迎来了最不受欢迎的乘客",
+            "confidence": 0.9
+          },
+          {
+            "src": "星锑",
+            "relation": "抓捕",
+            "dst": "调查员Ⅱ",
+            "evidence": "本海盗将对你们这几天的跟踪罪行——进行正式的公开审讯",
+            "confidence": 0.9
+          },
+          {
+            "src": "星锑",
+            "relation": "抓捕",
+            "dst": "调查员Ⅰ",
+            "evidence": "本海盗将对你们这几天的跟踪罪行——进行正式的公开审讯",
+            "confidence": 0.9
+          },
+          {
+            "src": "调查员Ⅱ",
+            "relation": "隶属于",
+            "dst": "基金会",
+            "evidence": "我们是基金会的调查员",
+            "confidence": 1.0
+          },
+          {
+            "src": "调查员Ⅰ",
+            "relation": "隶属于",
+            "dst": "基金会",
+            "evidence": "我们是基金会的调查员",
+            "confidence": 1.0
+          },
+          {
+            "src": "重塑之手",
+            "relation": "攻击",
+            "dst": "APPLe号",
+            "evidence": "我们身后多了一只漆黑的大船。它正在向我们炮击",
+            "confidence": 0.95
+          },
+          {
+            "src": "APPLe",
+            "relation": "识别出",
+            "dst": "重塑之手",
+            "evidence": "船长，那是重塑之手的标志",
+            "confidence": 0.95
+          },
+          {
+            "src": "星锑",
+            "relation": "持有",
+            "dst": "唱片",
+            "evidence": "这些唱片很珍贵的",
+            "confidence": 0.9
+          },
+          {
+            "src": "暴雨",
+            "relation": "位于",
+            "dst": "英国伦敦",
+            "evidence": "【标题卡】1966英国伦敦",
+            "confidence": 0.8
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "mainline__108_忧郁的热带:8.2.0",
+      "chapter": "忧郁的热带",
+      "scene": "第八章8-09.2",
+      "chars": 338,
+      "speakers": [
+        "金伯利女郎",
+        "白朗姆",
+        "贫民区少年"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "金伯利女郎",
+            "type": "角色",
+            "aliases": [],
+            "desc": "下手不知轻重的女性角色，轻松摆平了挑事少年"
+          },
+          {
+            "name": "白朗姆",
+            "type": "角色",
+            "aliases": [],
+            "desc": "认识少年们的父亲，了解兄弟会行事风格"
+          },
+          {
+            "name": "贫民区少年",
+            "type": "角色",
+            "aliases": [],
+            "desc": "自称兄弟会信众，被吓尿后逃离的少年"
+          },
+          {
+            "name": "兄弟会",
+            "type": "组织",
+            "aliases": [],
+            "desc": "能动刀子解决问题的暴力组织"
+          }
+        ],
+        "relations": [
+          {
+            "src": "金伯利女郎",
+            "relation": "驱赶",
+            "dst": "贫民区少年",
+            "evidence": "赶走上来挑事的孩子后，她撒气般将脚边的瓶罐一一踹入河中",
+            "confidence": 0.95
+          },
+          {
+            "src": "白朗姆",
+            "relation": "认识",
+            "dst": "贫民区少年",
+            "evidence": "我认识你们的老爹",
+            "confidence": 0.9
+          },
+          {
+            "src": "贫民区少年",
+            "relation": "自称属于",
+            "dst": "兄弟会",
+            "evidence": "要是让他知道你们说自己是兄弟会的人",
+            "confidence": 0.9
+          },
+          {
+            "src": "白朗姆",
+            "relation": "否定",
+            "dst": "贫民区少年",
+            "evidence": "我敢保证兄弟会的人根本不认识他们",
+            "confidence": 0.9
+          },
+          {
+            "src": "白朗姆",
+            "relation": "评价",
+            "dst": "金伯利女郎",
+            "evidence": "我现在确信你真是个魅魔了，小姐。你下手真的没有轻重",
+            "confidence": 0.85
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "mainline__113_他者的悲哀:13.0.0",
+      "chapter": "他者的悲哀",
+      "scene": "",
+      "chars": 12,
+      "speakers": [],
+      "extraction": {
+        "entities": [],
+        "relations": [],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "activity__20101_飞驰_明日之城:14.0.1",
+      "chapter": "飞驰！明日之城",
+      "scene": "",
+      "chars": 1113,
+      "speakers": [
+        "J",
+        "玛蒂尔达",
+        "先驱者",
+        "？？？",
+        "莱格斯",
+        "杰洛",
+        "使徒米修斯"
+      ],
+      "extraction": {
+        "entities": [],
+        "relations": [],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "activity__305201_入雅典记:2.0.2",
+      "chapter": "入雅典记",
+      "scene": "",
+      "chars": 185,
+      "speakers": [
+        "星锑"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "星锑",
+            "type": "角色",
+            "aliases": [],
+            "desc": "自称“伦敦传奇”的角色，热情开朗"
+          },
+          {
+            "name": "维尔汀",
+            "type": "角色",
+            "aliases": [],
+            "desc": "星锑对话的对象，未直接出场"
+          },
+          {
+            "name": "伦敦",
+            "type": "地点",
+            "aliases": [],
+            "desc": "星锑自称所属的城市"
+          },
+          {
+            "name": "雅典",
+            "type": "地点",
+            "aliases": [],
+            "desc": "星锑当前所在的城市"
+          }
+        ],
+        "relations": [
+          {
+            "src": "星锑",
+            "relation": "自称属于",
+            "dst": "伦敦",
+            "evidence": "正如伦敦属于星锑",
+            "confidence": 0.95
+          },
+          {
+            "src": "星锑",
+            "relation": "前往",
+            "dst": "雅典",
+            "evidence": "雅典也理应属于……",
+            "confidence": 0.8
+          },
+          {
+            "src": "星锑",
+            "relation": "认识",
+            "dst": "维尔汀",
+            "evidence": "放心交给我吧，维尔汀～",
+            "confidence": 0.95
+          },
+          {
+            "src": "星锑",
+            "relation": "承诺帮助",
+            "dst": "维尔汀",
+            "evidence": "放心交给我吧，维尔汀～",
+            "confidence": 0.9
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "activity__385101_聚合浪潮:0.0.1",
+      "chapter": "聚合浪潮",
+      "scene": "",
+      "chars": 1081,
+      "speakers": [
+        "露西",
+        "X",
+        "小梅斯梅尔",
+        "维尔汀"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "露西",
+            "type": "角色",
+            "aliases": [],
+            "desc": "拉普拉斯的意识唤醒者，算力强大，主动要求操作干涉仪"
+          },
+          {
+            "name": "X",
+            "type": "角色",
+            "aliases": [],
+            "desc": "拉普拉斯研究员，干涉仪的操作者，熟悉仪器原理"
+          },
+          {
+            "name": "小梅斯梅尔",
+            "type": "角色",
+            "aliases": [],
+            "desc": "对实验有担忧的神秘学家，产生好奇心后参与实验"
+          },
+          {
+            "name": "维尔汀",
+            "type": "角色",
+            "aliases": [],
+            "desc": "陪同小梅斯梅尔参与实验的角色"
+          },
+          {
+            "name": "拉普拉斯",
+            "type": "组织",
+            "aliases": [],
+            "desc": "露西、X等人所属的研究机构"
+          },
+          {
+            "name": "干涉仪",
+            "type": "物品",
+            "aliases": [],
+            "desc": "可通过混沌粒子投影预测舞台内情况的仪器"
+          },
+          {
+            "name": "混沌粒子",
+            "type": "概念",
+            "aliases": [],
+            "desc": "与意识交互可产生逼真现实空间的粒子"
+          },
+          {
+            "name": "雨幕舞台",
+            "type": "地点",
+            "aliases": [],
+            "desc": "展现科技急速发展的苏联可能性的虚拟空间"
+          },
+          {
+            "name": "苏联",
+            "type": "地点",
+            "aliases": [],
+            "desc": "资料记载的国家，雨幕舞台展现其某种可能性"
+          },
+          {
+            "name": "阿德勒研究员",
+            "type": "角色",
+            "aliases": [],
+            "desc": "X提及的另一位研究员，操作记录可能保存给他"
+          },
+          {
+            "name": "洛伦兹",
+            "type": "角色",
+            "aliases": [],
+            "desc": "X试图保守其秘密的人物"
+          }
+        ],
+        "relations": [
+          {
+            "src": "露西",
+            "relation": "隶属于",
+            "dst": "拉普拉斯",
+            "evidence": "属于拉普拉斯众人",
+            "confidence": 0.9
+          },
+          {
+            "src": "X",
+            "relation": "隶属于",
+            "dst": "拉普拉斯",
+            "evidence": "会对拉普拉斯的其他研究起到帮助",
+            "confidence": 0.9
+          },
+          {
+            "src": "X",
+            "relation": "操作",
+            "dst": "干涉仪",
+            "evidence": "X走上干涉仪的操作台，按下几个按键",
+            "confidence": 1.0
+          },
+          {
+            "src": "干涉仪",
+            "relation": "预测",
+            "dst": "雨幕舞台",
+            "evidence": "通过混沌粒子的投影对舞台内的情况做一些模糊的预测",
+            "confidence": 0.9
+          },
+          {
+            "src": "雨幕舞台",
+            "relation": "展现",
+            "dst": "苏联",
+            "evidence": "它向我们展现了一个科技急速发展的苏联",
+            "confidence": 0.9
+          },
+          {
+            "src": "X",
+            "relation": "保存给",
+            "dst": "阿德勒研究员",
+            "evidence": "下次再见到阿德勒研究员时，就可以向他传达了",
+            "confidence": 0.8
+          },
+          {
+            "src": "X",
+            "relation": "保守秘密",
+            "dst": "洛伦兹",
+            "evidence": "试图保守洛伦兹的秘密已极难做到",
+            "confidence": 0.9
+          },
+          {
+            "src": "露西",
+            "relation": "陪同",
+            "dst": "小梅斯梅尔",
+            "evidence": "你的身边还有维尔汀与露西女士的陪同",
+            "confidence": 0.9
+          },
+          {
+            "src": "维尔汀",
+            "relation": "陪同",
+            "dst": "小梅斯梅尔",
+            "evidence": "你的身边还有维尔汀与露西女士的陪同",
+            "confidence": 0.9
+          },
+          {
+            "src": "露西",
+            "relation": "要求操作",
+            "dst": "干涉仪",
+            "evidence": "露西女士，我可以代替你操作干涉仪",
+            "confidence": 0.9
+          },
+          {
+            "src": "X",
+            "relation": "同意",
+            "dst": "露西",
+            "evidence": "露西女士，这的确是一个很好的提议",
+            "confidence": 0.9
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "anecdote__1901_雾行者角色故事:2.0.1",
+      "chapter": "雾行者角色故事",
+      "scene": "",
+      "chars": 671,
+      "speakers": [
+        "雾行者",
+        "未锈铠",
+        "？？？"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "雾行者",
+            "type": "角色",
+            "aliases": [],
+            "desc": "本片段说话人之一，福葛家族成员，对父亲感情复杂"
+          },
+          {
+            "name": "未锈铠",
+            "type": "角色",
+            "aliases": [],
+            "desc": "本片段说话人之一，能感知他人情感的神秘存在"
+          },
+          {
+            "name": "雾行者的父亲",
+            "type": "角色",
+            "aliases": [
+              "他",
+              "父亲"
+            ],
+            "desc": "已故的雾行者，一生钻研改良福葛家族神秘术"
+          },
+          {
+            "name": "雾行者的母亲",
+            "type": "角色",
+            "aliases": [
+              "母亲"
+            ],
+            "desc": "雾行者提及的家人，未被陪伴"
+          },
+          {
+            "name": "福葛家族",
+            "type": "组织",
+            "aliases": [],
+            "desc": "拥有神秘术的家族，雾行者与其父亲所属"
+          },
+          {
+            "name": "伦敦城",
+            "type": "地点",
+            "aliases": [],
+            "desc": "雾行者职务所在的城市"
+          },
+          {
+            "name": "魔精",
+            "type": "概念",
+            "aliases": [],
+            "desc": "从丛林深处窜出包围角色的黑影生物"
+          },
+          {
+            "name": "雾行者职务",
+            "type": "概念",
+            "aliases": [
+              "雾行者这个称号",
+              "雾行者这个职务"
+            ],
+            "desc": "伦敦城唯一的职务，被赋予很多意义"
+          },
+          {
+            "name": "福葛家族的神秘术",
+            "type": "概念",
+            "aliases": [],
+            "desc": "雾行者父亲一生钻研改良的神秘术"
+          },
+          {
+            "name": "神秘术",
+            "type": "概念",
+            "aliases": [],
+            "desc": "雾行者父亲研究的对象，现代社会中的特殊能力"
+          }
+        ],
+        "relations": [
+          {
+            "src": "雾行者的父亲",
+            "relation": "钻研改良",
+            "dst": "福葛家族的神秘术",
+            "evidence": "他用了自己的一生去钻研改良福葛家族的神秘术",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者的父亲",
+            "relation": "担任",
+            "dst": "雾行者职务",
+            "evidence": "他是雾行者，整个伦敦城只有一个的雾行者",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者的父亲",
+            "relation": "疏于陪伴",
+            "dst": "雾行者",
+            "evidence": "他几乎没有陪伴过我和母亲",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者的父亲",
+            "relation": "疏于陪伴",
+            "dst": "雾行者的母亲",
+            "evidence": "他几乎没有陪伴过我和母亲",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者",
+            "relation": "曾经崇拜",
+            "dst": "雾行者的父亲",
+            "evidence": "在我还是个小孩的时候，我曾经也想要成为雾行者，也曾经非常崇拜我的父亲",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者",
+            "relation": "曾经想要成为",
+            "dst": "雾行者职务",
+            "evidence": "在我还是个小孩的时候，我曾经也想要成为雾行者",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者",
+            "relation": "否定",
+            "dst": "雾行者职务",
+            "evidence": "雾行者这个职务与挑粪工并没有什么区别",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者",
+            "relation": "否定",
+            "dst": "雾行者的父亲",
+            "evidence": "我永远不会像父亲那样",
+            "confidence": 1.0
+          },
+          {
+            "src": "雾行者",
+            "relation": "隶属于",
+            "dst": "福葛家族",
+            "evidence": "改良福葛家族的神秘术",
+            "confidence": 0.8
+          },
+          {
+            "src": "未锈铠",
+            "relation": "感知到",
+            "dst": "雾行者",
+            "evidence": "您很敬仰您的父亲，某人能够感受得到",
+            "confidence": 1.0
+          },
+          {
+            "src": "魔精",
+            "relation": "包围",
+            "dst": "雾行者",
+            "evidence": "这些魔精是什么时候追过来的？",
+            "confidence": 1.0
+          },
+          {
+            "src": "魔精",
+            "relation": "包围",
+            "dst": "未锈铠",
+            "evidence": "这些魔精是什么时候追过来的？",
+            "confidence": 1.0
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    },
+    {
+      "chunk_id": "anecdote__1924_在路上:5.0.1",
+      "chapter": "在路上",
+      "scene": "",
+      "chars": 781,
+      "speakers": [
+        "坎吉拉",
+        "贾纳丹",
+        "学生",
+        "扒手",
+        "警员Ⅰ",
+        "警员Ⅱ"
+      ],
+      "extraction": {
+        "entities": [
+          {
+            "name": "坎吉拉",
+            "type": "角色",
+            "aliases": [],
+            "desc": "被贾纳丹挟持的人质之一，关心学生"
+          },
+          {
+            "name": "贾纳丹",
+            "type": "角色",
+            "aliases": [],
+            "desc": "携带包逃跑的罪犯，挟持了两个人质"
+          },
+          {
+            "name": "扒手",
+            "type": "角色",
+            "aliases": [],
+            "desc": "被警员殴打审讯的窃贼，指出了货箱方向"
+          },
+          {
+            "name": "警员Ⅰ",
+            "type": "角色",
+            "aliases": [],
+            "desc": "审讯扒手的警察，追问包和人质的去向"
+          },
+          {
+            "name": "警员Ⅱ",
+            "type": "角色",
+            "aliases": [],
+            "desc": "发现贾纳丹跳车的警察，呼叫集合追捕"
+          },
+          {
+            "name": "货箱",
+            "type": "地点",
+            "aliases": [],
+            "desc": "扒手指出的方向，警察走向的地点"
+          }
+        ],
+        "relations": [
+          {
+            "src": "贾纳丹",
+            "relation": "挟持",
+            "dst": "坎吉拉",
+            "evidence": "贾纳丹那个混账，带着两个人质跳车了",
+            "confidence": 0.9
+          },
+          {
+            "src": "贾纳丹",
+            "relation": "威胁",
+            "dst": "坎吉拉",
+            "evidence": "他甩开坎吉拉的手，用刀子指向了她",
+            "confidence": 0.95
+          },
+          {
+            "src": "警员Ⅰ",
+            "relation": "殴打",
+            "dst": "扒手",
+            "evidence": "警棍重重地捅在他肚子上",
+            "confidence": 0.95
+          },
+          {
+            "src": "警员Ⅰ",
+            "relation": "审讯",
+            "dst": "扒手",
+            "evidence": "你最后一次见到他们，是在哪里",
+            "confidence": 0.9
+          },
+          {
+            "src": "扒手",
+            "relation": "指向",
+            "dst": "货箱",
+            "evidence": "用手指指出了货箱的方向",
+            "confidence": 0.95
+          }
+        ],
+        "ok": true,
+        "error": "",
+        "attempts": 1
+      }
+    }
+  ]
+}

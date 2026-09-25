@@ -1,0 +1,1255 @@
+{
+ "12f7fb66521a544ecb29f84a": {
+  "entities": [
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留守资料的机器人研究员"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "托付遗书的研究员"
+   },
+   {
+    "name": "电子遗书",
+    "type": "概念",
+    "aliases": [],
+    "desc": "希望不被用上的交代"
+   },
+   {
+    "name": "录像数据卡",
+    "type": "物品",
+    "aliases": [],
+    "desc": "还有余温的数据卡"
+   },
+   {
+    "name": "传送用软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尚未安全的软盘"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "数小时后将至的浩劫"
+   }
+  ],
+  "relations": [
+   {
+    "src": "指针",
+    "relation": "接卡",
+    "dst": "录像数据卡",
+    "evidence": "数据卡有轻微的热度",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "表明",
+    "dst": "冷周六",
+    "evidence": "我只是希望这份电子遗书不会派上用场",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "汇报",
+    "dst": "指针",
+    "evidence": "目前只能实现定点传送，而且会造成不可避免的压力",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "承诺",
+    "dst": "冷周六",
+    "evidence": "等我读完研究资料，就会着手解决这些副作用",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "劝离",
+    "dst": "指针",
+    "evidence": "你留在绝对安全的地方保护资料",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "自陈",
+    "dst": "冷周六",
+    "evidence": "它教导我以保护周围的生命为先",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "追问",
+    "dst": "指针",
+    "evidence": "你能尝出普通食物的味道？",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "自证",
+    "dst": "冷周六",
+    "evidence": "我的设计目的之一就是尽可能地仿真",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "释疑",
+    "dst": "指针",
+    "evidence": "就像乌尔里希研究员和露西女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "相送",
+    "dst": "指针",
+    "evidence": "我该走了。多保重",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9531a32be9882e69d12d2901": {
+  "entities": [
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀指针去看雕像者"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为坏结局收场者"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以笔迹作祝福的女孩"
+   },
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收到登船提醒的宇航员"
+   },
+   {
+    "name": "小蛇Ⅷ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登船提醒的传话蛇"
+   },
+   {
+    "name": "记号笔",
+    "type": "物品",
+    "aliases": [],
+    "desc": "远旅不惯使用的记号笔"
+   },
+   {
+    "name": "乌特恩亚亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "蛇发女妖雕像仍存之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "冷周六",
+    "relation": "相邀",
+    "dst": "指针",
+    "evidence": "吕西尼昂的大街小巷都有关于蛇发女妖的雕像",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "许诺",
+    "dst": "指针",
+    "evidence": "即使被“暴雨”冲刷也会在那儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "自陈",
+    "dst": "冷周六",
+    "evidence": "得有人为坏结局做好准备，帮忙收场",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "书写",
+    "dst": "库珀花环",
+    "evidence": "手掌上的笔迹组成一个复杂难辨的图形",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "祝福",
+    "dst": "库珀花环",
+    "evidence": "阿涅娅。回家",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "惊叹",
+    "dst": "远旅",
+    "evidence": "你居然说了这么长的话",
+    "confidence": 0.95
+   },
+   {
+    "src": "小蛇Ⅷ",
+    "relation": "提醒",
+    "dst": "库珀花环",
+    "evidence": "姐姐让我来提醒你，该登上飞船了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小蛇Ⅷ",
+    "relation": "鼓励",
+    "dst": "库珀花环",
+    "evidence": "我们九个都觉得你很厉害",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "许诺",
+    "dst": "小蛇Ⅷ",
+    "evidence": "等我回来就给你们做特色果酱",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "倒计时",
+    "dst": "库珀花环",
+    "evidence": "三。二。一。发射",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "de884e975702e2101a1b4547": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执行投放的宇航员"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地面保持通信者"
+   },
+   {
+    "name": "监测器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被投放的监测器"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被观测到影响的浩劫"
+   },
+   {
+    "name": "宇宙的侧面",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被拉入的奇异空间"
+   },
+   {
+    "name": "玩偶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "牵住她的会说话玩偶"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在侧面现身的女孩"
+   },
+   {
+    "name": "含章鼎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告失联者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "库珀花环",
+    "relation": "升空",
+    "dst": "冷周六",
+    "evidence": "她望向舷窗之外，清晰地感受到地面在远离",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "启用",
+    "dst": "监测器",
+    "evidence": "启用“暴雨”监测系统",
+    "confidence": 0.95
+   },
+   {
+    "src": "监测器",
+    "relation": "放行",
+    "dst": "库珀花环",
+    "evidence": "禁止向器械泼洒酒精，否则后果自负",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "报告",
+    "dst": "暴雨",
+    "evidence": "报告，确认观测到“暴雨”影响",
+    "confidence": 0.95
+   },
+   {
+    "src": "监测器",
+    "relation": "警告",
+    "dst": "暴雨",
+    "evidence": "神秘术波动超过阈值",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "迷失",
+    "dst": "宇宙的侧面",
+    "evidence": "周围的景色彻底变了样",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "现身",
+    "dst": "宇宙的侧面",
+    "evidence": "自己的手中牵着一个可笑的小东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "含章鼎",
+    "relation": "报告",
+    "dst": "冷周六",
+    "evidence": "通讯信号被干扰了，她没有回复",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a13d8a841a176938aa3fb89f": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在侧面中前行者"
+   },
+   {
+    "name": "玩偶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在前方奔跑的玩偶"
+   },
+   {
+    "name": "宇宙的侧面",
+    "type": "地点",
+    "aliases": [],
+    "desc": "星球如弹珠崩毁之处"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报剩余时间者"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝相信失败者"
+   },
+   {
+    "name": "监测器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尝试自动程序者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "库珀花环",
+    "relation": "观察",
+    "dst": "宇宙的侧面",
+    "evidence": "简直可以看清地表起伏，多精致的道具",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "拽住",
+    "dst": "玩偶",
+    "evidence": "别往前跑，还没确认这里的安全",
+    "confidence": 0.95
+   },
+   {
+    "src": "宇宙的侧面",
+    "relation": "崩毁",
+    "dst": "玩偶",
+    "evidence": "星球在几次震颤后崩毁，声音清脆",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "拾起",
+    "dst": "玩偶",
+    "evidence": "我能带上它，我还有力气",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "播报",
+    "dst": "冷周六",
+    "evidence": "还有七分钟。监测器远程连接稳定",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "坚持",
+    "dst": "库珀花环",
+    "evidence": "我不相信库珀花环会在这时候就失败",
+    "confidence": 0.95
+   },
+   {
+    "src": "玩偶",
+    "relation": "奔逃",
+    "dst": "库珀花环",
+    "evidence": "绳索瞬间绷紧，将她往远处拉扯",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "失去",
+    "dst": "宇宙的侧面",
+    "evidence": "她怀抱的东西都轻易地消散了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6dcfbb9611cdbf082989c9ad": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "悟出意义者"
+   },
+   {
+    "name": "监测器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "到达指定坐标者"
+   },
+   {
+    "name": "宇宙的侧面",
+    "type": "地点",
+    "aliases": [],
+    "desc": "顿悟发生之处"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "地面守候者"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同在侧面的女孩"
+   }
+  ],
+  "relations": [
+   {
+    "src": "库珀花环",
+    "relation": "自省",
+    "dst": "冷周六",
+    "evidence": "我的确是渺小的、短暂的存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "顿悟",
+    "dst": "远旅",
+    "evidence": "是我们自己赋予了万物意义",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "立志",
+    "dst": "宇宙的侧面",
+    "evidence": "无论消失的事物会不会回来，我都要往前走",
+    "confidence": 0.95
+   },
+   {
+    "src": "监测器",
+    "relation": "抵达",
+    "dst": "宇宙的侧面",
+    "evidence": "成功到达指定坐标",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "96a66ab22cf3bda7feb40fae": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被困太空的宇航员"
+   },
+   {
+    "name": "监测器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "亮灯运行的设备"
+   },
+   {
+    "name": "卡扣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "自动锁死的卡扣"
+   },
+   {
+    "name": "安全绳",
+    "type": "物品",
+    "aliases": [],
+    "desc": "连接她与监测器的绳索"
+   },
+   {
+    "name": "曼德尔施塔姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诗句被引用的诗人"
+   },
+   {
+    "name": "旅行者一号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被追忆的远行者"
+   },
+   {
+    "name": "含章鼎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告失联者"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "切线路者"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尝试通讯者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "库珀花环",
+    "relation": "确认",
+    "dst": "监测器",
+    "evidence": "监测装置亮着灯，看上去和之前训练里一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "追忆",
+    "dst": "旅行者一号",
+    "evidence": "旅行者一号在离开太阳系之前调转镜头",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡扣",
+    "relation": "锁死",
+    "dst": "库珀花环",
+    "evidence": "卡扣自动锁紧避免滑脱",
+    "confidence": 0.95
+   },
+   {
+    "src": "曼德尔施塔姆",
+    "relation": "诗句",
+    "dst": "库珀花环",
+    "evidence": "永恒的花朵，完整的天空",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "自励",
+    "dst": "曼德尔施塔姆",
+    "evidence": "在一根纤细的钢丝上找到立足之地",
+    "confidence": 0.95
+   },
+   {
+    "src": "含章鼎",
+    "relation": "报告",
+    "dst": "冷周六",
+    "evidence": "信号彻底中断了",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "切换",
+    "dst": "冷周六",
+    "evidence": "切了第二条线路，再试",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "尝试",
+    "dst": "库珀花环",
+    "evidence": "再次尝试通讯",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1557f1bc890ca8f18aa9d5f": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "割断绳索的宇航员"
+   },
+   {
+    "name": "卡扣",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被切断的卡扣"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "名片救人的学者"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "启动返航程序者"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认坐标者"
+   },
+   {
+    "name": "含章鼎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下遗言者"
+   },
+   {
+    "name": "返回舱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "她最后的归处"
+   },
+   {
+    "name": "传送用软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被她攥紧的软盘"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "临界线上的增幅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "冷周六",
+    "relation": "决策",
+    "dst": "库珀花环",
+    "evidence": "五十秒之后我会启动返航程序",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "解释",
+    "dst": "暴雨",
+    "evidence": "只有在“暴雨”降临的临界线上，神秘术才能得到足够的增幅",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "呼唤",
+    "dst": "库珀花环",
+    "evidence": "阿涅娅。回家",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "忆起",
+    "dst": "北方哨歌",
+    "evidence": "你桌上废弃的名片可以",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "割断",
+    "dst": "卡扣",
+    "evidence": "感谢新型材料的锋利，感谢安全绳没有坚不可摧，感谢理线学",
+    "confidence": 0.95
+   },
+   {
+    "src": "含章鼎",
+    "relation": "打趣",
+    "dst": "冷周六",
+    "evidence": "如果活下来找我进货可以打折",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "回应",
+    "dst": "含章鼎",
+    "evidence": "任何材料都打折，我死也会记住",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "打趣",
+    "dst": "冷周六",
+    "evidence": "我希望死后的世界有双休",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "入舱",
+    "dst": "返回舱",
+    "evidence": "舱门在她身后关闭",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "紧握",
+    "dst": "传送用软盘",
+    "evidence": "陷在座椅里，捏紧软盘，她闭上眼睛",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "自励",
+    "dst": "返回舱",
+    "evidence": "我会成功的。这是最后的、最简单的一步了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d10d9da4f4c0c5ff0d11e66f": {
+  "entities": [
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "成功返航的宇航员"
+   },
+   {
+    "name": "拉普拉斯职员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出冷周六者"
+   },
+   {
+    "name": "拉普拉斯职员Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "见证奇迹者"
+   },
+   {
+    "name": "系统提示音Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "播报坐标者"
+   },
+   {
+    "name": "拉普拉斯研究中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "成功传回数据之处"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被欢呼的研究员"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指挥救援者"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "降临的暴雨"
+   },
+   {
+    "name": "维拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安慰她的朋友"
+   },
+   {
+    "name": "北方哨歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引荐维拉者"
+   },
+   {
+    "name": "理线学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "库珀花环决定继续学习的学科"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "握住她手掌的女孩"
+   }
+  ],
+  "relations": [
+   {
+    "src": "系统提示音Ⅱ",
+    "relation": "播报",
+    "dst": "拉普拉斯研究中心",
+    "evidence": "成像数据回传结束",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "认出",
+    "dst": "冷周六",
+    "evidence": "你瞧，那是冷周六",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅲ",
+    "relation": "惊叹",
+    "dst": "冷周六",
+    "evidence": "他们……如果这真的是从太空回传的数据",
+    "confidence": 0.95
+   },
+   {
+    "src": "指针",
+    "relation": "指挥",
+    "dst": "拉普拉斯职员Ⅱ",
+    "evidence": "去申请紧急医疗援助，快点",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "降临",
+    "dst": "拉普拉斯研究中心",
+    "evidence": "“暴雨”降临。请注意避险",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "欢呼",
+    "dst": "冷周六",
+    "evidence": "他们成功了……他们成功了",
+    "confidence": 0.95
+   },
+   {
+    "src": "维拉",
+    "relation": "安慰",
+    "dst": "库珀花环",
+    "evidence": "你要先照顾好自己，孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "引荐",
+    "dst": "维拉",
+    "evidence": "维拉，我的朋友。一位最亲切的同志",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "介绍",
+    "dst": "库珀花环",
+    "evidence": "这是库珀花环，我的学生。我能这样介绍吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "决定",
+    "dst": "理线学",
+    "evidence": "我想继续学习理线学",
+    "confidence": 0.95
+   },
+   {
+    "src": "北方哨歌",
+    "relation": "通报",
+    "dst": "库珀花环",
+    "evidence": "冷周六、命名日和含章鼎也都还在病房里躺着",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "握手",
+    "dst": "库珀花环",
+    "evidence": "隔着病床柔软的被单，另一只手捉住了库珀花环的手掌",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "951b4acc83d3d58ab6d70c32": {
+  "entities": [
+   {
+    "name": "拉普拉斯职员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "憧憬传送通勤者"
+   },
+   {
+    "name": "拉普拉斯职员Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "泼冷水的同僚"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被约喝酒者"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "庭院奏琴者"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨认曲子者"
+   },
+   {
+    "name": "指针",
+    "type": "角色",
+    "aliases": [],
+    "desc": "录音带的主人"
+   },
+   {
+    "name": "金唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "穿越群星的唱片"
+   },
+   {
+    "name": "旅行者一号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "搭载金唱片的探测器"
+   },
+   {
+    "name": "传送用软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "将登上申请单的发明"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被确证全宇宙回溯者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "庭院所属机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "憧憬",
+    "dst": "传送用软盘",
+    "evidence": "如果它能彻底普及开，让我每天下班直接传送回宿舍",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅲ",
+    "relation": "打趣",
+    "dst": "传送用软盘",
+    "evidence": "万一反过来缩短我们的集合时间呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅲ",
+    "relation": "确认",
+    "dst": "暴雨",
+    "evidence": "全宇宙都会被回溯，还挺公平嘛",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅱ",
+    "relation": "提及",
+    "dst": "命名日",
+    "evidence": "可惜命名日好像又去跑外勤了",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "奏琴",
+    "dst": "圣洛夫基金会",
+    "evidence": "这里不常有琴声",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "辨认",
+    "dst": "金唱片",
+    "evidence": "她说是金唱片母带的翻录",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "溯源",
+    "dst": "旅行者一号",
+    "evidence": "就是旅行者一号带着的那张",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "询问",
+    "dst": "旅行者一号",
+    "evidence": "1987年它在哪儿呢？已经到太阳系边缘了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "预计",
+    "dst": "旅行者一号",
+    "evidence": "它的动力要到2025年才耗尽",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "感慨",
+    "dst": "金唱片",
+    "evidence": "听上去比我们这群人的神秘术还要没用",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "47faaf4b96842c1d4427c332": {
+  "entities": [
+   {
+    "name": "含章鼎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点破信件本质者"
+   },
+   {
+    "name": "冷周六",
+    "type": "角色",
+    "aliases": [],
+    "desc": "相信有人听见者"
+   },
+   {
+    "name": "命名日",
+    "type": "角色",
+    "aliases": [],
+    "desc": "托问上帝者"
+   },
+   {
+    "name": "库珀花环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应下付费服务者"
+   },
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "听见旋律的星星"
+   },
+   {
+    "name": "金唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被听懂的金唱片"
+   },
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "站上桌面的演讲者"
+   },
+   {
+    "name": "拉普拉斯职员Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁观庆祝会者"
+   },
+   {
+    "name": "路德维希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引述关注心理者"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "要先抵达九九九年之后的浩劫"
+   }
+  ],
+  "relations": [
+   {
+    "src": "含章鼎",
+    "relation": "点破",
+    "dst": "金唱片",
+    "evidence": "这本就是一封并不期待回应的信件",
+    "confidence": 0.95
+   },
+   {
+    "src": "冷周六",
+    "relation": "相信",
+    "dst": "金唱片",
+    "evidence": "或许等不到结果，但我个人相信会有谁听见这句问候",
+    "confidence": 0.95
+   },
+   {
+    "src": "命名日",
+    "relation": "托问",
+    "dst": "库珀花环",
+    "evidence": "如果你在宇宙里见到了上帝，帮我问问他最喜欢什么音乐",
+    "confidence": 0.95
+   },
+   {
+    "src": "库珀花环",
+    "relation": "应答",
+    "dst": "命名日",
+    "evidence": "我想这该算是付费服务，请考虑把你的骨碟收藏分给我",
+    "confidence": 0.95
+   },
+   {
+    "src": "含章鼎",
+    "relation": "提醒",
+    "dst": "暴雨",
+    "evidence": "总之我们要先抵达九九年之后的世界",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "听见",
+    "dst": "金唱片",
+    "evidence": "那是她从未想象过，从未感受过的旋律",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "来源",
+    "dst": "金唱片",
+    "evidence": "它来自那个黯淡的蓝色光点。地球",
+    "confidence": 0.95
+   },
+   {
+    "src": "兔毛手袋",
+    "relation": "演讲",
+    "dst": "拉普拉斯职员Ⅲ",
+    "evidence": "命名日在劝兔毛手袋别站在桌上发表总统就任演讲",
+    "confidence": 0.95
+   },
+   {
+    "src": "路德维希",
+    "relation": "鼓励",
+    "dst": "拉普拉斯职员Ⅲ",
+    "evidence": "路德维希先生很关注职员的心理状态",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "163ba2944330c0bb39fcd75c": {
+  "entities": [
+   {
+    "name": "远旅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "学会第一首歌的星星"
+   },
+   {
+    "name": "米尔内",
+    "type": "地点",
+    "aliases": [],
+    "desc": "为普列谢茨克的日子谱歌"
+   },
+   {
+    "name": "拉普拉斯职员Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被琴声送别者"
+   },
+   {
+    "name": "金唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "她留下声音的回应对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "远旅",
+    "relation": "学唱",
+    "dst": "金唱片",
+    "evidence": "她学会的第一首歌",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "纪念",
+    "dst": "米尔内",
+    "evidence": "为那些在普列谢茨克的日子，为今后的岁月",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "回礼",
+    "dst": "金唱片",
+    "evidence": "于是也在这儿留下自己的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "远旅",
+    "relation": "见证",
+    "dst": "拉普拉斯职员Ⅲ",
+    "evidence": "朋友。勇敢的访客。四季的更替，海岸线的蜿蜒",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯职员Ⅲ",
+    "relation": "聆听",
+    "dst": "远旅",
+    "evidence": "请……听",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

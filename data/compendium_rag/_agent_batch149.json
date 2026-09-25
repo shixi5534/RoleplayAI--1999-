@@ -1,0 +1,1607 @@
+{
+ "e3c7306cf27dde452fdae1da": {
+  "entities": [
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追着陌生男人拜师的女孩"
+   },
+   {
+    "name": "陌生男人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撕毁《除灵十三法》的邋遢男人"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "五岁打通天眼、八岁除遍全港恶灵者"
+   },
+   {
+    "name": "除灵十三法",
+    "type": "物品",
+    "aliases": [],
+    "desc": "李安安从地摊买到的除灵书"
+   },
+   {
+    "name": "鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "只是一种集体想象和癔症"
+   }
+  ],
+  "relations": [
+   {
+    "src": "陌生男人",
+    "relation": "撕毁",
+    "dst": "除灵十三法",
+    "evidence": "书被撕成两半，四半，雪白的碎屑飘落",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "索要",
+    "dst": "陌生男人",
+    "evidence": "那本《除灵十三法》是我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "警告",
+    "dst": "泥鯭的士",
+    "evidence": "里面都是胡编乱造，你会惹祸上身的",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "自陈",
+    "dst": "除灵十三法",
+    "evidence": "因为这书是我编的，我发神经写的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "断言",
+    "dst": "鬼",
+    "evidence": "鬼从本质上来讲，只是一种集体想象和癔症",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "认出",
+    "dst": "陈半仙",
+    "evidence": "你真是五岁打通天眼、八岁除遍全港恶灵的……陈半仙？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "追问",
+    "dst": "陌生男人",
+    "evidence": "那些神秘学家说，你早就归西了",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "拜师",
+    "dst": "陌生男人",
+    "evidence": "你收不收徒啊？师父，给个机会啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "拒绝",
+    "dst": "泥鯭的士",
+    "evidence": "我不收徒噶",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "表明",
+    "dst": "陌生男人",
+    "evidence": "正因如此，才能说明这是只有我能做到的事情！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "训斥",
+    "dst": "泥鯭的士",
+    "evidence": "除灵不是儿戏，年纪轻轻，你就想折寿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "陌生男人",
+    "relation": "逃离",
+    "dst": "泥鯭的士",
+    "evidence": "他甩开猫爪子般紧紧勾住衣服的小手",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "等同",
+    "dst": "陌生男人",
+    "evidence": "你真是五岁打通天眼、八岁除遍全港恶灵的……陈半仙？！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "25c18a0bf583d57a0af106ee": {
+  "entities": [
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "日日登门求拜师的女孩"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝收徒却最终放她进门者"
+   },
+   {
+    "name": "废旧木屋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陈半仙所居的弱不禁风的屋子"
+   },
+   {
+    "name": "旧城寨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "李安安偷溜来找刺激之处"
+   },
+   {
+    "name": "警局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "播放火灾新闻的警局"
+   },
+   {
+    "name": "兴街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "已致四人死亡的火灾发生地"
+   },
+   {
+    "name": "神秘学犯罪科警员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "神秘学犯罪科警员"
+   },
+   {
+    "name": "无线电小姐",
+    "type": "物品",
+    "aliases": [
+     "收音机"
+    ],
+    "desc": "播报兴街火灾的收音机"
+   },
+   {
+    "name": "阴阳眼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "使破案率得以维持的能力"
+   },
+   {
+    "name": "神秘学犯罪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "此次案件所属的类型"
+   }
+  ],
+  "relations": [
+   {
+    "src": "泥鯭的士",
+    "relation": "恳求",
+    "dst": "陈半仙",
+    "evidence": "我真的想同你拜师啊！师父！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "发誓",
+    "dst": "陈半仙",
+    "evidence": "我一定要做九龙最犀利的天师，我发过誓噶!",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "准许",
+    "dst": "泥鯭的士",
+    "evidence": "雨太大啦，进来吧。别死在我门口",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "置身",
+    "dst": "废旧木屋",
+    "evidence": "卷纸一圈圈堆叠在地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "拒绝",
+    "dst": "泥鯭的士",
+    "evidence": "我不能收你为徒，你对恐惧还没有敬畏之心",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "要求",
+    "dst": "泥鯭的士",
+    "evidence": "你首先需要学会的是恐惧",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "坦白",
+    "dst": "陈半仙",
+    "evidence": "我想找到一个够晒恐怖，能够吓倒我的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "拆穿",
+    "dst": "泥鯭的士",
+    "evidence": "你肯定是从不知道哪栋公寓偷偷溜走，来城寨找刺激的小千金",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "发现",
+    "dst": "泥鯭的士",
+    "evidence": "他的余光瞥到了手臂外侧，那是一个仿若被灼烧过的胎记",
+    "confidence": 0.95
+   },
+   {
+    "src": "无线电小姐",
+    "relation": "播报",
+    "dst": "兴街",
+    "evidence": "兴街的火灾已致四人死亡，三人重伤",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "提及",
+    "dst": "阴阳眼",
+    "evidence": "要不是她的阴阳眼，破案率都要跌到让你和我滚去当巡逻警啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "处理",
+    "dst": "神秘学犯罪",
+    "evidence": "这次神秘学犯罪，要不是她的阴阳眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "置身",
+    "dst": "警局",
+    "evidence": "关掉啦……别吵醒这个女孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "偷溜",
+    "dst": "旧城寨",
+    "evidence": "来城寨找刺激的小千金",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "居住",
+    "dst": "废旧木屋",
+    "evidence": "泛黄的报纸铺满了地面，飞蛾萦绕着灯罩",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e6d1f831e57852a28503828b": {
+  "entities": [
+   {
+    "name": "神秘学犯罪科警员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述女孩来历的警员"
+   },
+   {
+    "name": "神秘学犯罪科警员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议送福利院的警员"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看着父母焦尸也不落泪的女孩"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意收徒并带她前往天通洞者"
+   },
+   {
+    "name": "儿童福利院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "警员提议送女孩前往之处"
+   },
+   {
+    "name": "兴街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一年前大火之地"
+   },
+   {
+    "name": "天通洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "陈半仙带她所去之处"
+   },
+   {
+    "name": "鬼注人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被鬼上身因而不会害怕者"
+   },
+   {
+    "name": "怨鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "探员到场时围着女孩的鬼"
+   }
+  ],
+  "relations": [
+   {
+    "src": "神秘学犯罪科警员Ⅱ",
+    "relation": "提议",
+    "dst": "儿童福利院",
+    "evidence": "要送她去儿童福利院吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "说明",
+    "dst": "泥鯭的士",
+    "evidence": "她还有个远房小姑，待会儿过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "描述",
+    "dst": "泥鯭的士",
+    "evidence": "看着父母烧焦的尸体，竟然一点都不会怕",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "描述",
+    "dst": "怨鬼",
+    "evidence": "有几十只怨鬼围着她，但她只是蜷缩在那里",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "忌惮",
+    "dst": "泥鯭的士",
+    "evidence": "她那双总是不知道在看向什么的眼睛，才让我害怕",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘学犯罪科警员Ⅰ",
+    "relation": "提及",
+    "dst": "鬼注人",
+    "evidence": "只有被鬼上身的“鬼注人”，才不会害怕",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "检视",
+    "dst": "泥鯭的士",
+    "evidence": "你说这个伤痕就是一年前兴街的那场大火造成的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "推断",
+    "dst": "泥鯭的士",
+    "evidence": "你就是那场新闻报道里提到的女孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "承认",
+    "dst": "陈半仙",
+    "evidence": "原来师父你也知道那件事啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "同意",
+    "dst": "泥鯭的士",
+    "evidence": "你不是想拜我为师咩？豆丁，我同意了",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "带往",
+    "dst": "天通洞",
+    "evidence": "现在我们去哪儿啊，师父？——“天通洞”",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "负伤",
+    "dst": "兴街",
+    "evidence": "这个伤痕就是一年前兴街的那场大火造成的",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "异常",
+    "dst": "怨鬼",
+    "evidence": "她只是蜷缩在那里，纹丝不动，也不逃",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ecb64c31ec2d533120136c9e": {
+  "entities": [
+   {
+    "name": "盲眼算命师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "天通洞中盘腿而坐的盲眼算命师"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被盲佬拽住衣领的除灵师"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被断言骨骼精奇的女孩"
+   },
+   {
+    "name": "天通洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "桥洞下臭名昭著的算命聚集地"
+   },
+   {
+    "name": "天通洞的桥洞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "车辆从头顶驶过的桥洞"
+   },
+   {
+    "name": "天命",
+    "type": "地点",
+    "aliases": [],
+    "desc": "早在桥立起以前就存在的深井"
+   },
+   {
+    "name": "劫卦",
+    "type": "概念",
+    "aliases": [],
+    "desc": "须从井底泥壤中掏出的卦"
+   },
+   {
+    "name": "锈铜锁链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "盘起来的锈铜锁链"
+   },
+   {
+    "name": "三清铃",
+    "type": "物品",
+    "aliases": [],
+    "desc": "系在女孩腰上的铃"
+   },
+   {
+    "name": "符咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "井壁上错综复杂的黄色符咒"
+   },
+   {
+    "name": "铁桶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "李安安攀爬其中的下井载具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "盲眼算命师",
+    "relation": "招呼",
+    "dst": "陈半仙",
+    "evidence": "陈半仙先生，我还以为你早发达啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "质疑",
+    "dst": "盲眼算命师",
+    "evidence": "你不是盲佬吗，大叔",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "自陈",
+    "dst": "泥鯭的士",
+    "evidence": "盲佬也会点灯啊。眼盲不代表心盲",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "抓握",
+    "dst": "泥鯭的士",
+    "evidence": "他猛地伸手，抓住了眼前挥动的手腕",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "断言",
+    "dst": "泥鯭的士",
+    "evidence": "骨骼精奇，好坯子啊……刚渡大劫，命数归一",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "警告",
+    "dst": "陈半仙",
+    "evidence": "你不该带她来",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "带走",
+    "dst": "泥鯭的士",
+    "evidence": "他二话不说，拉着女孩穿过熙攘人群",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "警告",
+    "dst": "陈半仙",
+    "evidence": "你逃不过，安守天命啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "介绍",
+    "dst": "天命",
+    "evidence": "这口井，叫作“天命”",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "说明",
+    "dst": "劫卦",
+    "evidence": "就要先下这口井，从底下的泥壤里掏出属于你的劫卦",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "取出",
+    "dst": "锈铜锁链",
+    "evidence": "一条盘起来的锈铜锁链被他拽出",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "探视",
+    "dst": "天命",
+    "evidence": "女孩抓紧井的边沿，探出身子，朝洞里望去",
+    "confidence": 0.95
+   },
+   {
+    "src": "符咒",
+    "relation": "密布",
+    "dst": "天命",
+    "evidence": "井壁上，错综复杂的黄色符咒，宛如沿墙而上的爬山虎",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "系铃",
+    "dst": "三清铃",
+    "evidence": "他将裤腰上的三清铃松开，系在了女孩的腰上",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "下放",
+    "dst": "铁桶",
+    "evidence": "你要爬进铁桶，我会慢慢把你下放到井底",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "捆绑",
+    "dst": "锈铜锁链",
+    "evidence": "我接下来会把这条锁链捆在你身上",
+    "confidence": 0.95
+   },
+   {
+    "src": "天通洞",
+    "relation": "位于",
+    "dst": "天通洞的桥洞",
+    "evidence": "一辆辆车从头顶行驶而过，桥洞之中回荡着滚滚轰隆声",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4419a2c71c1186d417f9e410": {
+  "entities": [
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲以李安安之劫掩埋自己的劫者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "攀爬铁桶下沉井底的女孩"
+   },
+   {
+    "name": "盲眼算命师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "斥其无资格当除灵师的算命师"
+   },
+   {
+    "name": "三清铃",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可在井底摇响求援的铃"
+   },
+   {
+    "name": "天命",
+    "type": "地点",
+    "aliases": [],
+    "desc": "李安安所下沉的深井"
+   },
+   {
+    "name": "锈铜锁链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被盲佬徒手拉扯却纹丝不动的链"
+   },
+   {
+    "name": "天师",
+    "type": "概念",
+    "aliases": [],
+    "desc": "从未有那么小就许可下井的前几代除灵者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "陈半仙",
+    "relation": "授铃",
+    "dst": "泥鯭的士",
+    "evidence": "只要你想出来，就摇铃",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "应答",
+    "dst": "陈半仙",
+    "evidence": "定啦，师父，湿湿碎",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "下沉",
+    "dst": "天命",
+    "evidence": "她攀爬进铁桶，往井底缓缓下沉",
+    "confidence": 0.95
+   },
+   {
+    "src": "三清铃",
+    "relation": "系于",
+    "dst": "泥鯭的士",
+    "evidence": "戴好这个铃，如果有任何问题，摇铃三声",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "质问",
+    "dst": "陈半仙",
+    "evidence": "她知道你从没有下过井底，从来没有开过自己的劫吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "指责",
+    "dst": "陈半仙",
+    "evidence": "一年前，就是因为你无证除灵，足足烧了好几栋楼",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "警告",
+    "dst": "陈半仙",
+    "evidence": "之前几代的天师，从来没有那么小就许可下井的",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "斥责",
+    "dst": "陈半仙",
+    "evidence": "你根本无资格当除灵师，你明不明白？",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "算计",
+    "dst": "泥鯭的士",
+    "evidence": "她所遭的劫会掩埋掉我的劫……我就可以保住安稳",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "断言",
+    "dst": "泥鯭的士",
+    "evidence": "只要她摇铃，到时候，我和她的因果会断",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "拉拽",
+    "dst": "锈铜锁链",
+    "evidence": "盲佬赶忙走过去，试图徒手拉起锁链",
+    "confidence": 0.95
+   },
+   {
+    "src": "锈铜锁链",
+    "relation": "不动",
+    "dst": "天命",
+    "evidence": "锁链纹丝不动",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "拒绝",
+    "dst": "盲眼算命师",
+    "evidence": "无用噶，这是她开的劫",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "警告",
+    "dst": "陈半仙",
+    "evidence": "如果她因为自己的劫，死在井底，你也跑不掉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "赌注",
+    "dst": "盲眼算命师",
+    "evidence": "搏一搏，单车变摩托啊，死盲佬",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6789c8847ae94cc1ca3a5cef": {
+  "entities": [
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在井底触摸苔藓的女孩"
+   },
+   {
+    "name": "鲁尼小子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将李安安锁进铁皮柜的男孩"
+   },
+   {
+    "name": "阿珍妹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被迫淋乌鸦血的女生"
+   },
+   {
+    "name": "床底的黑影",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称在床底等她的黑影"
+   },
+   {
+    "name": "天命",
+    "type": "地点",
+    "aliases": [],
+    "desc": "没有出口的井底牢圈"
+   },
+   {
+    "name": "旧教室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被称午夜好热闹的旧教室"
+   },
+   {
+    "name": "铁皮柜子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "锁链缠起来的柜子"
+   },
+   {
+    "name": "乌鸦血",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被淋到柜子上的血"
+   },
+   {
+    "name": "鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "鲁尼小子要让她见的真鬼"
+   }
+  ],
+  "relations": [
+   {
+    "src": "泥鯭的士",
+    "relation": "倾听",
+    "dst": "鬼",
+    "evidence": "你能听到他们的话，不是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "抚摸",
+    "dst": "天命",
+    "evidence": "她用手抚摸井壁，有着苔藓湿漉漉的质感",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "发现",
+    "dst": "天命",
+    "evidence": "这些苔藓动起来了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲁尼小子",
+    "relation": "讥讽",
+    "dst": "泥鯭的士",
+    "evidence": "乖乖地在里边睡啦，你不是爱出风头，还说自己是阴阳眼咩？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲁尼小子",
+    "relation": "囚禁",
+    "dst": "泥鯭的士",
+    "evidence": "他拍了拍被锁链缠起来的铁皮柜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲁尼小子",
+    "relation": "命令",
+    "dst": "阿珍妹",
+    "evidence": "将乌鸦血淋到柜子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿珍妹",
+    "relation": "道歉",
+    "dst": "泥鯭的士",
+    "evidence": "我也不想这样做噶，安安……对、对不住",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "窥视",
+    "dst": "铁皮柜子",
+    "evidence": "被关起来的女孩从柜子缝里窥探着外面",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "置身",
+    "dst": "旧教室",
+    "evidence": "听讲这个旧教室，午夜好热闹的噢",
+    "confidence": 0.95
+   },
+   {
+    "src": "床底的黑影",
+    "relation": "招呼",
+    "dst": "泥鯭的士",
+    "evidence": "我在底下等你好久好久了",
+    "confidence": 0.95
+   },
+   {
+    "src": "床底的黑影",
+    "relation": "抓握",
+    "dst": "泥鯭的士",
+    "evidence": "床底伸出数只关节扭曲的手……抓住了她的脚腕",
+    "confidence": 0.95
+   },
+   {
+    "src": "床底的黑影",
+    "relation": "诉说",
+    "dst": "泥鯭的士",
+    "evidence": "被你丢弃的那些娃娃，嘻嘻嘻，他们的身体好好用",
+    "confidence": 0.95
+   },
+   {
+    "src": "鲁尼小子",
+    "relation": "目睹",
+    "dst": "阿珍妹",
+    "evidence": "他揪住另一位女生的头发，推搡着",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼",
+    "relation": "现身",
+    "dst": "旧教室",
+    "evidence": "就给个机会你见见真鬼啦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e7ea76393f0522942b93628c": {
+  "entities": [
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为僵尸按压涌泉穴的女孩"
+   },
+   {
+    "name": "僵尸Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在迷雾中匍匐的僵尸"
+   },
+   {
+    "name": "僵尸Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被弹掉眼珠的僵尸"
+   },
+   {
+    "name": "鬼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一直讲话并自陈职守者"
+   },
+   {
+    "name": "木卦",
+    "type": "物品",
+    "aliases": [],
+    "desc": "如嫩笋露出尖儿的坚硬木卦"
+   },
+   {
+    "name": "红丝线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "紧紧缠住男孩两只拇指的红线"
+   }
+  ],
+  "relations": [
+   {
+    "src": "泥鯭的士",
+    "relation": "戏弄",
+    "dst": "僵尸Ⅰ",
+    "evidence": "你们的手法太外行了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "教导",
+    "dst": "僵尸Ⅰ",
+    "evidence": "我楼下的推拿阿爷说……哩个叫做涌泉穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "僵尸Ⅰ",
+    "relation": "哀嚎",
+    "dst": "泥鯭的士",
+    "evidence": "把我从坟堆里伸出去的手还给我",
+    "confidence": 0.95
+   },
+   {
+    "src": "僵尸Ⅱ",
+    "relation": "抗议",
+    "dst": "泥鯭的士",
+    "evidence": "别弹它……那不是弹珠，是我的眼珠啊！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "跃上",
+    "dst": "僵尸Ⅰ",
+    "evidence": "女孩从一个墓碑跃到另一个墓碑顶部",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "询问",
+    "dst": "鬼",
+    "evidence": "你就是一直讲话那个人啊？",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼",
+    "relation": "自陈",
+    "dst": "泥鯭的士",
+    "evidence": "寻索下井人的恐惧是我的职守",
+    "confidence": 0.95
+   },
+   {
+    "src": "鬼",
+    "relation": "指引",
+    "dst": "木卦",
+    "evidence": "用手刨开你脚下的那片土，你想找的东西就在那儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "刨土",
+    "dst": "木卦",
+    "evidence": "坚硬的木卦如同嫩笋露出了尖儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "红丝线",
+    "relation": "缠绕",
+    "dst": "鬼",
+    "evidence": "两只拇指被一根红线紧紧缠住",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "停手",
+    "dst": "木卦",
+    "evidence": "不过，等等……",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "质疑",
+    "dst": "木卦",
+    "evidence": "如果真是风调雨顺，如意到头。那不是好无意思",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "邀约",
+    "dst": "鬼",
+    "evidence": "要不要……跟我一起出去，找到这个世界上真正恐怖的东西嘞？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "39512a6869b3960a2c48830e": {
+  "entities": [
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解开红绳后被井水吐出的女孩"
+   },
+   {
+    "name": "鬼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被解开红绳后消失者"
+   },
+   {
+    "name": "盲眼算命师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上前拍打女孩背部的算命师"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喃喃低语难以置信者"
+   },
+   {
+    "name": "红丝线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拨开勒紧拇指的红线"
+   },
+   {
+    "name": "符纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从井壁脱落漫天纷飞的符纸"
+   },
+   {
+    "name": "天命",
+    "type": "地点",
+    "aliases": [],
+    "desc": "泉涌口迸发之井"
+   },
+   {
+    "name": "三清铃",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在水下发不出任何声音的铃"
+   },
+   {
+    "name": "红丝线百合花",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缠着红丝线的诡谲百合花"
+   }
+  ],
+  "relations": [
+   {
+    "src": "泥鯭的士",
+    "relation": "解开",
+    "dst": "红丝线",
+    "evidence": "我帮你解开这条红绳子",
+    "confidence": 0.95
+   },
+   {
+    "src": "红丝线",
+    "relation": "断裂",
+    "dst": "鬼",
+    "evidence": "“叮”——红线断开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "符纸",
+    "relation": "脱落",
+    "dst": "天命",
+    "evidence": "符纸从井壁上脱落，漫天纷飞",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "困惑",
+    "dst": "鬼",
+    "evidence": "人嘞？奇了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "天命",
+    "relation": "涌出",
+    "dst": "泥鯭的士",
+    "evidence": "井底中心冒出了一个巨大的泉涌口，水源迸发而出",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "呼救",
+    "dst": "陈半仙",
+    "evidence": "救、救命啊师父！",
+    "confidence": 0.95
+   },
+   {
+    "src": "三清铃",
+    "relation": "失效",
+    "dst": "天命",
+    "evidence": "三清铃徒劳地晃荡，在水下发不出任何声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "天命",
+    "relation": "吐出",
+    "dst": "泥鯭的士",
+    "evidence": "水从井口漫溢而出，顺势将昏厥的小女孩也吐在了地上",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "惊呼",
+    "dst": "陈半仙",
+    "evidence": "她难道出来了……？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "震惊",
+    "dst": "盲眼算命师",
+    "evidence": "怎么，怎么可能……",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "施救",
+    "dst": "泥鯭的士",
+    "evidence": "上前拍打着女孩的背部，让她把呛在喉咙和鼻孔里的水咳出",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "持有",
+    "dst": "红丝线百合花",
+    "evidence": "缠着红丝线，那是一只诡谲的——百合花",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "询问",
+    "dst": "陈半仙",
+    "evidence": "她手里拿着咩？是……花吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ef843b5c84e725856a6633c3": {
+  "entities": [
+   {
+    "name": "盲眼算命师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述封井来历的算命师"
+   },
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与李安安约法三章者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蒙眼受训的女孩"
+   },
+   {
+    "name": "Lily",
+    "type": "角色",
+    "aliases": [],
+    "desc": "李安安不可泄露其事的对象"
+   },
+   {
+    "name": "天命",
+    "type": "地点",
+    "aliases": [],
+    "desc": "泉水涌出、使命已尽的井"
+   },
+   {
+    "name": "符箓竹简",
+    "type": "物品",
+    "aliases": [],
+    "desc": "东汉墓葬群中发现的符箓竹简"
+   },
+   {
+    "name": "东汉墓葬群",
+    "type": "地点",
+    "aliases": [],
+    "desc": "发现封井位置的东汉墓葬群"
+   },
+   {
+    "name": "约法三章",
+    "type": "概念",
+    "aliases": [],
+    "desc": "祖师爷规矩下的三条约定"
+   },
+   {
+    "name": "俄罗斯练胆大法",
+    "type": "概念",
+    "aliases": [],
+    "desc": "拜师后的第一门课"
+   },
+   {
+    "name": "鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "由人想象创造、本质为能量的存在"
+   },
+   {
+    "name": "阴阳眼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "除灵师一般天生具备的能力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "盲眼算命师",
+    "relation": "讲述",
+    "dst": "符箓竹简",
+    "evidence": "一群考古学家在东汉的墓葬群里，发现了驱逐恶鬼的符箓竹简",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "讲述",
+    "dst": "东汉墓葬群",
+    "evidence": "发现了驱逐恶鬼的符箓竹简，还有十几口封井的位置",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "说明",
+    "dst": "天命",
+    "evidence": "这“天命”几百年来始终是口枯井——而如今，泉水涌出",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "判断",
+    "dst": "泥鯭的士",
+    "evidence": "或许，真的是它使命已尽，遇到哩个女孩了",
+    "confidence": 0.95
+   },
+   {
+    "src": "盲眼算命师",
+    "relation": "劝告",
+    "dst": "陈半仙",
+    "evidence": "离她远点，自找安分吧，这样也能避开你的劫",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "立约",
+    "dst": "泥鯭的士",
+    "evidence": "根据祖师爷的规矩，我就同你约法三章",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "要求",
+    "dst": "泥鯭的士",
+    "evidence": "与“天命”那口井有关的一切事情，你切不可泄露天机",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "要求",
+    "dst": "泥鯭的士",
+    "evidence": "因果已定，你也永不能再返回那口井",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "承诺",
+    "dst": "Lily",
+    "evidence": "今后，Lily的事，无论如何都再不能泄露给他人半句",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "授课",
+    "dst": "俄罗斯练胆大法",
+    "evidence": "拜师后第一门课，我先要教你“俄罗斯练胆大法”",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "蒙眼",
+    "dst": "泥鯭的士",
+    "evidence": "他牵着被红布蒙住眼睛的少女",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "解释",
+    "dst": "鬼",
+    "evidence": "大多数所谓的鬼，都是人们自己创造出来的形象",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "断言",
+    "dst": "鬼",
+    "evidence": "它本质上是一种能量，根据人的想象才有模有样",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "解释",
+    "dst": "阴阳眼",
+    "evidence": "除灵师一般有天生的阴阳眼，所以如果乱加想象，就容易导致疯病",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "提问",
+    "dst": "陈半仙",
+    "evidence": "我不能看见他们在我的想象中已有的样子？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "500001fbc8f2ffa59b0c06cf": {
+  "entities": [
+   {
+    "name": "陈半仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "让李安安独自过夜并磕破头者"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "蒙眼过夜并抓住鬼魂的女孩"
+   },
+   {
+    "name": "Lily",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陪伴李安安的百合花"
+   },
+   {
+    "name": "奄奄一息的鬼魂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓住陈半仙脚踝求饶的鬼"
+   },
+   {
+    "name": "墓园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "空寂的墓园"
+   },
+   {
+    "name": "纸人",
+    "type": "物品",
+    "aliases": [],
+    "desc": "陈半仙为李安安备好的纸人"
+   },
+   {
+    "name": "帐篷",
+    "type": "物品",
+    "aliases": [],
+    "desc": "陈半仙备好的帐篷"
+   },
+   {
+    "name": "符纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "满地散落的符纸"
+   },
+   {
+    "name": "大哥大",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被李安安调侃未充满电的器物"
+   },
+   {
+    "name": "鬼",
+    "type": "概念",
+    "aliases": [],
+    "desc": "对陈半仙而言只是鸡毛蒜皮的小东西"
+   },
+   {
+    "name": "除灵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需收回工具后自力更生的工作"
+   }
+  ],
+  "relations": [
+   {
+    "src": "陈半仙",
+    "relation": "吩咐",
+    "dst": "泥鯭的士",
+    "evidence": "今晚你要自己在这里过夜",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "备置",
+    "dst": "帐篷",
+    "evidence": "我已经为你备好了帐篷和纸人",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "备置",
+    "dst": "纸人",
+    "evidence": "我已经为你备好了帐篷和纸人",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "警告",
+    "dst": "泥鯭的士",
+    "evidence": "如果你中途摘下蒙布，就不必与我相认",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "提问",
+    "dst": "陈半仙",
+    "evidence": "为什么你连鬼都不怕，却要怕那个劫嘞？",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "揭穿",
+    "dst": "陈半仙",
+    "evidence": "那个瞎子大叔讲咩我是你的劫，还有咩因果",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "承认",
+    "dst": "泥鯭的士",
+    "evidence": "所以我愿意教你，是因为我信你会顶不住",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "轻视",
+    "dst": "鬼",
+    "evidence": "对我来讲，那只是一些鸡毛蒜皮的小东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "警告",
+    "dst": "泥鯭的士",
+    "evidence": "这里好邪的，豆丁……小心血光之灾",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "自信",
+    "dst": "Lily",
+    "evidence": "何况我有Lily陪我，一定平安无恙啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "奄奄一息的鬼魂",
+    "relation": "哀求",
+    "dst": "陈半仙",
+    "evidence": "求哈你，带她走啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "奄奄一息的鬼魂",
+    "relation": "抓握",
+    "dst": "陈半仙",
+    "evidence": "却碰巧抓住了他的脚踝",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "摔倒",
+    "dst": "墓园",
+    "evidence": "脑袋重重磕在了墓碑上",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "摘下",
+    "dst": "Lily",
+    "evidence": "少女终于得以摘下蒙布",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "追赶",
+    "dst": "奄奄一息的鬼魂",
+    "evidence": "喂，别走啊！这台大哥大都未充满电！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陈半仙",
+    "relation": "收回",
+    "dst": "除灵",
+    "evidence": "我要收回你身上所有的除灵工具",
+    "confidence": 0.95
+   },
+   {
+    "src": "符纸",
+    "relation": "散落",
+    "dst": "墓园",
+    "evidence": "符纸满地散落",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

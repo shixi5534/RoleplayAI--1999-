@@ -1,0 +1,792 @@
+{
+ "2f9968571481f24dfb302c08": {
+  "entities": [
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "节选指南条文的管家"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "邓肯先生",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精培训指南",
+    "relation": "面向",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【邓肯先生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "db77b5ec99af7c403612f152": {
+  "entities": [
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "唤受训者小家伙的管家"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被夸做得很好的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "夸奖所在的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "邓肯先生",
+    "relation": "夸奖",
+    "dst": "魔精",
+    "evidence": "没错，你做得很好，小家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "你做得很好，小家伙！",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【邓肯先生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2aa907f1c346dca383377f69": {
+  "entities": [
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉情绪并重来的管家"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被看出不太高兴的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "一再重试的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "邓肯先生",
+    "relation": "察觉",
+    "dst": "魔精",
+    "evidence": "你看上去不太高兴？",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "提议重试",
+    "dst": "魔精",
+    "evidence": "好吧，让我们再尝试一次……",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【邓肯先生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "61a35153aedcc1bbf9d94d39": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "节选指南条文的露西"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精培训指南",
+    "relation": "面向",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【露西】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "835c9040c43fb8ed41b49459": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以效率评判的露西"
+   },
+   {
+    "name": "科学的训练方式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她认可的科学习练之法"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被科学方法训练的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "效率被肯定的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "肯定",
+    "dst": "科学的训练方式",
+    "evidence": "一种科学的训练方式，它的效率值得肯定。",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学的训练方式",
+    "relation": "施于",
+    "dst": "魔精",
+    "evidence": "一种科学的训练方式",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学的训练方式",
+    "relation": "增效",
+    "dst": "荒原经营驯化",
+    "evidence": "它的效率值得肯定",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【露西】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ad23f50349f810bbc0699fd8": {
+  "entities": [
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留待观察的露西"
+   },
+   {
+    "name": "科学的训练方式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚待继续考察的训练法"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被留作观察对象的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "仍待检验的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "露西",
+    "relation": "暂缓论定",
+    "dst": "科学的训练方式",
+    "evidence": "仍需进一步观察。",
+    "confidence": 0.95
+   },
+   {
+    "src": "科学的训练方式",
+    "relation": "关乎",
+    "dst": "魔精",
+    "evidence": "仍需进一步观察。",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【露西】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7292e23a2043473d691dff7f": {
+  "entities": [],
+  "relations": []
+ },
+ "6c90210ac4246d5132d7adfa": {
+  "entities": [
+   {
+    "name": "录像播报的基金会职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "示范操作规范的录像声音"
+   },
+   {
+    "name": "趋光性研究",
+    "type": "事件",
+    "aliases": [],
+    "desc": "基金会委派的趋光性研究实验"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "委派专员的机构"
+   },
+   {
+    "name": "诱蛾装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "吸引蛾子的房间装置"
+   },
+   {
+    "name": "特工化作的飞蛾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "特工神秘术所化的飞蛾"
+   },
+   {
+    "name": "有价值的情报档案",
+    "type": "物品",
+    "aliases": [],
+    "desc": "有阅读价值的情报档案"
+   },
+   {
+    "name": "身份认同危机",
+    "type": "概念",
+    "aliases": [],
+    "desc": "实验者可能发作的身份认同危机"
+   },
+   {
+    "name": "人格稳定性检测",
+    "type": "事件",
+    "aliases": [],
+    "desc": "医务人员的人格稳定性检测"
+   },
+   {
+    "name": "实验录像",
+    "type": "物品",
+    "aliases": [],
+    "desc": "反复阅读的示范录像"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "化出飞蛾的神秘术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "录像播报的基金会职员",
+    "relation": "讲授",
+    "dst": "趋光性研究",
+    "evidence": "本录像为实验项目——趋光性研究的操作规范示例",
+    "confidence": 0.95
+   },
+   {
+    "src": "录像播报的基金会职员",
+    "relation": "出示",
+    "dst": "实验录像",
+    "evidence": "接下来开始播放实验录像",
+    "confidence": 0.95
+   },
+   {
+    "src": "实验录像",
+    "relation": "规范",
+    "dst": "趋光性研究",
+    "evidence": "请在实验前完整观看本录像，以免发生事故",
+    "confidence": 0.95
+   },
+   {
+    "src": "趋光性研究",
+    "relation": "受委派于",
+    "dst": "圣洛夫基金会",
+    "evidence": "您是受圣洛夫基金会委派，负责进行实验的专员",
+    "confidence": 0.95
+   },
+   {
+    "src": "录像播报的基金会职员",
+    "relation": "效命",
+    "dst": "圣洛夫基金会",
+    "evidence": "您是受圣洛夫基金会委派",
+    "confidence": 0.95
+   },
+   {
+    "src": "诱蛾装置",
+    "relation": "引来",
+    "dst": "特工化作的飞蛾",
+    "evidence": "房间内的诱蛾装置会吸引蛾子来",
+    "confidence": 0.95
+   },
+   {
+    "src": "特工化作的飞蛾",
+    "relation": "表现为",
+    "dst": "神秘术",
+    "evidence": "那些蛾子是我们的特工的神秘术表现",
+    "confidence": 0.95
+   },
+   {
+    "src": "特工化作的飞蛾",
+    "relation": "携带",
+    "dst": "有价值的情报档案",
+    "evidence": "它们中有些携带着关键情报",
+    "confidence": 0.95
+   },
+   {
+    "src": "趋光性研究",
+    "relation": "产出",
+    "dst": "有价值的情报档案",
+    "evidence": "归纳出有阅读价值的情报档案",
+    "confidence": 0.95
+   },
+   {
+    "src": "趋光性研究",
+    "relation": "诱发",
+    "dst": "身份认同危机",
+    "evidence": "过程中您可能会产生身份认同危机",
+    "confidence": 0.95
+   },
+   {
+    "src": "身份认同危机",
+    "relation": "须做",
+    "dst": "人格稳定性检测",
+    "evidence": "立即联络医务人员并进行人格稳定性检测",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7a1c824b318b0f179b943c4f": {
+  "entities": [],
+  "relations": []
+ },
+ "6c8189be8ca52f35c06c1596": {
+  "entities": [
+   {
+    "name": "录像播报的基金会职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "结语交代的录像声音"
+   },
+   {
+    "name": "趋光性研究许可",
+    "type": "事件",
+    "aliases": [],
+    "desc": "正式获得的趋光性研究许可"
+   },
+   {
+    "name": "趋光性研究",
+    "type": "事件",
+    "aliases": [],
+    "desc": "获准开展的研究"
+   },
+   {
+    "name": "情报搜集小结",
+    "type": "物品",
+    "aliases": [],
+    "desc": "定期提交的情报搜集小结"
+   },
+   {
+    "name": "搜集报告的专员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "定时前来搜集报告的专员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "派出专员的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "录像播报的基金会职员",
+    "relation": "宣告",
+    "dst": "趋光性研究许可",
+    "evidence": "您已正式获得进行趋光性研究的许可",
+    "confidence": 0.95
+   },
+   {
+    "src": "趋光性研究许可",
+    "relation": "准入",
+    "dst": "趋光性研究",
+    "evidence": "您已正式获得进行趋光性研究的许可",
+    "confidence": 0.95
+   },
+   {
+    "src": "录像播报的基金会职员",
+    "relation": "叮嘱提交",
+    "dst": "情报搜集小结",
+    "evidence": "定期准时提交情报搜集小结",
+    "confidence": 0.95
+   },
+   {
+    "src": "搜集报告的专员",
+    "relation": "收取",
+    "dst": "情报搜集小结",
+    "evidence": "我们会定时派专员来搜集报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "搜集报告的专员",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我们会定时派专员来搜集报告",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "758637b1230a8a96ce0cd0e1": {
+  "entities": [],
+  "relations": []
+ },
+ "822ffbc5f5c671b2142bcd57": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为收容神秘学家抗命的调查员"
+   },
+   {
+    "name": "罗蕾莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "歌声能安抚感染者的神秘学家"
+   },
+   {
+    "name": "琳赛女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令撤退并启动术式的上司"
+   },
+   {
+    "name": "瓦伦缇娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "趁势现身的演员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "不容背叛的委派机构"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "撤离命令指向的城市"
+   },
+   {
+    "name": "罗蕾莱的海螺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "罗蕾莱举至嘴旁的海螺"
+   },
+   {
+    "name": "无声的歌曲",
+    "type": "概念",
+    "aliases": [],
+    "desc": "飘荡在广场上无人听闻的歌声"
+   },
+   {
+    "name": "传声的镜子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塞梅尔维斯口袋中传光的镜子"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被歌声安抚的暴雨症候"
+   },
+   {
+    "name": "灼热心脏",
+    "type": "概念",
+    "aliases": [],
+    "desc": "委外队员身上待发的灼热心脏"
+   },
+   {
+    "name": "委外合约人才管理组织",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为队员预备术式的管理组织"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "琳赛女士叹息启动的神秘术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "呼唤",
+    "dst": "罗蕾莱",
+    "evidence": "我们到了，罗蕾莱。",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "举起",
+    "dst": "罗蕾莱的海螺",
+    "evidence": "罗蕾莱将海螺举至嘴旁。",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "唱出",
+    "dst": "无声的歌曲",
+    "evidence": "无声的歌曲飘荡在空旷的广场之上",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "携带",
+    "dst": "传声的镜子",
+    "evidence": "塞梅尔维斯口袋中的镜子闪过一道微不可见的光辉",
+    "confidence": 0.95
+   },
+   {
+    "src": "传声的镜子",
+    "relation": "传递",
+    "dst": "无声的歌曲",
+    "evidence": "歌声跨越了现实的屏障，直接来到了塞梅尔维斯的耳畔",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "辨认",
+    "dst": "无声的歌曲",
+    "evidence": "这是……我在山麓时听到的歌声！",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "唤回",
+    "dst": "塞梅尔维斯",
+    "evidence": "冰冷的女声令塞梅尔维斯回归现实",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "质问",
+    "dst": "塞梅尔维斯",
+    "evidence": "我很乐意听听你至今仍未撤离的理由",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "相遇",
+    "dst": "罗蕾莱",
+    "evidence": "我在河畔遇到了一位“特别”的神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "安抚",
+    "dst": "暴雨症候",
+    "evidence": "她的歌声似乎能安抚被“暴雨症候”感染的民众",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "请求收容",
+    "dst": "罗蕾莱",
+    "evidence": "我希望基金会能够收容这名神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "责令撤离",
+    "dst": "维也纳",
+    "evidence": "立即从维也纳撤退。",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "代表",
+    "dst": "圣洛夫基金会",
+    "evidence": "而背叛在基金会，从没有胜算",
+    "confidence": 0.95
+   },
+   {
+    "src": "琳赛女士",
+    "relation": "启动",
+    "dst": "神秘术",
+    "evidence": "琳赛女士叹息着，启动了神秘术。",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约人才管理组织",
+    "relation": "备下",
+    "dst": "灼热心脏",
+    "evidence": "委外人才管理组织为每个委外小队成员准备的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "灼热心脏",
+    "relation": "属于",
+    "dst": "神秘术",
+    "evidence": "为每个委外小队成员准备的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "灼热心脏",
+    "relation": "发作于",
+    "dst": "塞梅尔维斯",
+    "evidence": "一道橘红色的光芒自塞梅尔维斯的胸口闪过",
+    "confidence": 0.95
+   },
+   {
+    "src": "瓦伦缇娜",
+    "relation": "现身",
+    "dst": "塞梅尔维斯",
+    "evidence": "而瓦伦缇娜现身在她近旁，眼中笑意难掩",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗蕾莱",
+    "relation": "呼告",
+    "dst": "瓦伦缇娜",
+    "evidence": "瓦伦缇娜，小音符，你们成功了！",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

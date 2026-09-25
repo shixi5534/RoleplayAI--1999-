@@ -1,0 +1,1357 @@
+{
+ "febfdfb04d52553f793b2154": {
+  "entities": [
+   {
+    "name": "施瓦茨医生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "否认污蔑者"
+   },
+   {
+    "name": "维也纳警卫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制止私人决斗者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被卡卡尼亚带走的学徒"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "携马库斯跃上窗框的决斗者"
+   },
+   {
+    "name": "路人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊呼卫兵到来者"
+   },
+   {
+    "name": "路人Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒别踩裙摆者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "尚未归来的导师"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维也纳警卫",
+    "relation": "制止",
+    "dst": "决斗",
+    "evidence": "停止！谁在这里进行私人决斗",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "带走",
+    "dst": "马库斯",
+    "evidence": "她牵着马库斯的手，狠狠一拽，二话不说将她抱在了臂弯",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "寻找",
+    "dst": "霍夫曼",
+    "evidence": "糟了！霍夫曼女士还没回来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "37360e1f5840a5a3ec1e1368": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "撕下假胡子者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通讯线路无法连接的学徒"
+   },
+   {
+    "name": "小贩Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "伊里奇"
+    ],
+    "desc": "提供假胡子的波斯尼亚小贩"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "疑启用屏障模式者"
+   },
+   {
+    "name": "委外合约小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "专员与霍夫曼会谈的队伍"
+   },
+   {
+    "name": "假胡子",
+    "type": "物品",
+    "aliases": [
+     "胡子"
+    ],
+    "desc": "经波西米亚药水浸泡的道具"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "马库斯试图联络导师的设备"
+   },
+   {
+    "name": "神秘术许可证",
+    "type": "物品",
+    "aliases": [
+     "许可证"
+    ],
+    "desc": "需三代以上神秘术安全使用担保"
+   },
+   {
+    "name": "波斯尼亚和黑塞哥维那",
+    "type": "地点",
+    "aliases": [],
+    "desc": "小贩Ⅰ的家乡"
+   },
+   {
+    "name": "罗马尼亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "马库斯长大之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "撕下",
+    "dst": "假胡子",
+    "evidence": "卡卡尼亚撕下了假胡子，用手给自己扇着风",
+    "confidence": 0.95
+   },
+   {
+    "src": "小贩Ⅰ",
+    "relation": "提供",
+    "dst": "假胡子",
+    "evidence": "伊里奇！你这次帮大忙啦。谢谢你！这道具真好用",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "无法联络",
+    "dst": "霍夫曼",
+    "evidence": "通讯线路一直无法连接，根本联系不上霍夫曼女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "成长于",
+    "dst": "罗马尼亚",
+    "evidence": "我在罗马尼亚长大",
+    "confidence": 0.95
+   },
+   {
+    "src": "小贩Ⅰ",
+    "relation": "来自",
+    "dst": "波斯尼亚和黑塞哥维那",
+    "evidence": "我来自波斯尼亚和黑塞哥维那",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "警戒",
+    "dst": "卡卡尼亚",
+    "evidence": "不用这样谨慎地盯着这位小姐。她救了我一命",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "4099583deea905063a058688": {
+  "entities": [
+   {
+    "name": "小贩Ⅰ",
+    "type": "角色",
+    "aliases": [
+     "伊里奇"
+    ],
+    "desc": "讲述许可证制度凶险者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称做纯神秘学营生者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "政府小姐"
+    ],
+    "desc": "被质问来意的学徒"
+   },
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [
+     "卡尔先生"
+    ],
+    "desc": "被怀疑叫人来查许可证者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠书给卡卡尼亚的朋友"
+   },
+   {
+    "name": "神秘术许可证",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无证可致拘留或判刑"
+   },
+   {
+    "name": "神秘学家孩子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "处境艰难的群体"
+   },
+   {
+    "name": "环城大道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "辉煌的建筑所在"
+   },
+   {
+    "name": "绅士街",
+    "type": "地点",
+    "aliases": [
+     "Herrengasse"
+    ],
+    "desc": "辉煌的街道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "自称",
+    "dst": "神秘学营生",
+    "evidence": "我做的是百分之百的神秘学营生，绝没有一丁点和科学以及医学沾边的成分",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "知情",
+    "dst": "卡卡尼亚",
+    "evidence": "我知道您的本名叫克拉拉",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "赠书",
+    "dst": "卡卡尼亚",
+    "evidence": "他是我的一位朋友，他给了我一本书，使我受益匪浅",
+    "confidence": 0.95
+   },
+   {
+    "src": "小贩Ⅰ",
+    "relation": "警示",
+    "dst": "神秘术许可证",
+    "evidence": "你要是照章办事，就会发现自己上了大当啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "维护",
+    "dst": "神秘学家孩子",
+    "evidence": "一些神秘学家孩子，我很惊讶您竟然不清楚这些",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "持有",
+    "dst": "世袭的神秘术使用许可",
+    "evidence": "我有世袭的神秘术使用许可",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f44fea431cefbae532924189": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阐释卡卡尼亚一词含义者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲留下蛛尾巴的学徒"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔"
+    ],
+    "desc": "听取交接汇报的调查员"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "委外合约人才管理组织塞梅尔维斯分队成员"
+   },
+   {
+    "name": "蛛尾巴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "霍夫曼留下的感知道具"
+   },
+   {
+    "name": "委外合约人才管理组织",
+    "type": "组织",
+    "aliases": [
+     "塞梅尔维斯分队"
+    ],
+    "desc": "被紧急调离维也纳的组织"
+   },
+   {
+    "name": "公墓",
+    "type": "地点",
+    "aliases": [],
+    "desc": "霍夫曼接听通讯之处"
+   },
+   {
+    "name": "K.K.",
+    "type": "概念",
+    "aliases": [
+     "帝国-皇室的"
+    ],
+    "desc": "卡卡尼亚一词的来源之一"
+   },
+   {
+    "name": "K.U.K.",
+    "type": "概念",
+    "aliases": [
+     "帝国及皇室的"
+    ],
+    "desc": "卡卡尼亚一词的来源之一"
+   },
+   {
+    "name": "Shitland",
+    "type": "概念",
+    "aliases": [],
+    "desc": "卡卡尼亚所称更精准的概括"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "有神秘学家曾跨越的灾难"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疑曾跨越暴雨的神秘学家"
+   },
+   {
+    "name": "柏林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "海因里希第六次暴雨时前往之地"
+   },
+   {
+    "name": "帝国",
+    "type": "组织",
+    "aliases": [],
+    "desc": "短时间内发生多桩刺杀案"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "意图留下",
+    "dst": "蛛尾巴",
+    "evidence": "如果能趁机留在卡卡尼亚小姐身上——或者她的居所的话",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "汇报",
+    "dst": "霍夫曼",
+    "evidence": "以上就是来自委外合约人才管理组织塞梅尔维斯分队的交接汇报",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "告知",
+    "dst": "海因里希",
+    "evidence": "维也纳很可能有一位曾经跨越过“暴雨”的神秘学家",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "前往",
+    "dst": "柏林",
+    "evidence": "他应该是在第六次“暴雨”时前往柏林，并在那里躲过了1913年的“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "解释",
+    "dst": "K.K.",
+    "evidence": "“卡卡尼亚”——是K.K.【帝国-皇室的】",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约人才管理组织",
+    "relation": "调离",
+    "dst": "维也纳",
+    "evidence": "这么紧急地将你们调离维也纳",
+    "confidence": 0.9
+   },
+   {
+    "src": "帝国",
+    "relation": "发生",
+    "dst": "刺杀案",
+    "evidence": "帝国在这样短的时间内发生了这么多桩刺杀案",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5577e61c9bf4f0dc71389047": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以个人名义告知一手信息者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "格蕾塔"
+    ],
+    "desc": "因蛛尾巴异常中断通话者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀请马库斯入诊所者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐",
+     "政府小姐"
+    ],
+    "desc": "被镜面神秘术惊到者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在柏林学了不少东西的艺术家"
+   },
+   {
+    "name": "蛛尾巴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "异常反应的感知道具"
+   },
+   {
+    "name": "诊所",
+    "type": "地点",
+    "aliases": [],
+    "desc": "四处散落画作与许多镜子的工作室"
+   },
+   {
+    "name": "分离派之家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "那本书不在之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "警告",
+    "dst": "霍夫曼",
+    "evidence": "时代又回到了1913年。对所有越过了第六次“暴雨”的神秘学家来说，这都是无比令人振奋的消息",
+    "confidence": 0.9
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "察觉",
+    "dst": "蛛尾巴",
+    "evidence": "我留在马库斯身上的“蛛尾巴”有异常的神秘术反应",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "邀请",
+    "dst": "马库斯",
+    "evidence": "请进！希望您不介意这里的混乱",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "施放",
+    "dst": "神秘术",
+    "evidence": "诊所里窗帘紧闭，镜子却强烈闪烁了一秒",
+    "confidence": 0.9
+   },
+   {
+    "src": "海因里希",
+    "relation": "学习于",
+    "dst": "柏林",
+    "evidence": "他在柏林真是学了不少好东西回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "询问",
+    "dst": "马库斯",
+    "evidence": "您是怎么发现那把手枪被做了手脚的？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "244e4001e3456a009f690cdf": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐"
+    ],
+    "desc": "识破镜中虚影并留下蛛尾巴者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀马库斯当诊所助手的心理医生"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "通过蛛尾巴定位并叮嘱守候者"
+   },
+   {
+    "name": "蛛尾巴",
+    "type": "物品",
+    "aliases": [],
+    "desc": "几乎不可见的隐线"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "马库斯追问的对象"
+   },
+   {
+    "name": "门与门之间",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "识破",
+    "dst": "卡卡尼亚",
+    "evidence": "镜中的虚影没有影子，没有呼吸的颤动",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "招揽",
+    "dst": "马库斯",
+    "evidence": "您辞了这份工作，来我的诊所当助手如何？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "附着",
+    "dst": "蛛尾巴",
+    "evidence": "几乎不可见的隐线落在了绿色织物上",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "定位",
+    "dst": "马库斯",
+    "evidence": "“蛛尾巴”告诉我你的方向了",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "叮嘱",
+    "dst": "马库斯",
+    "evidence": "在那里等着我！保护好自己，听到了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "追问",
+    "dst": "魔圈",
+    "evidence": "关于……“魔圈”",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "评价",
+    "dst": "马库斯",
+    "evidence": "您一定是生来就要成为心理医生的！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c76b2b72788541a592415141": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "魔圈创始人的自陈者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐"
+    ],
+    "desc": "追问《拯救》与岛屿者"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "卡卡尼亚创立的合法小团体"
+   },
+   {
+    "name": "拯救",
+    "type": "物品",
+    "aliases": [],
+    "desc": "西奥菲尔生前最后一幅画"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "《拯救》作者"
+   },
+   {
+    "name": "黄金岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "《拯救》的主题"
+   },
+   {
+    "name": "爱琴海",
+    "type": "地点",
+    "aliases": [],
+    "desc": "隐秘岛屿所在"
+   },
+   {
+    "name": "军火公司",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将巴尔干半岛当试验场者"
+   },
+   {
+    "name": "巴尔干半岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "欧洲军火公司的武器试验场"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "卡卡尼亚认为不如魔圈关心神秘学家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "创立",
+    "dst": "魔圈",
+    "evidence": "我就是“魔圈”的创始人！",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔圈",
+    "relation": "致力",
+    "dst": "神秘学家处境",
+    "evidence": "我们致力于改善维也纳神秘学家的处境——比基金会更关心",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "策划",
+    "dst": "公益画展",
+    "evidence": "我们马上会开展一场公益性质的画展，将所有募捐所得用于帮助下层神秘学家取得许可证",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "绘制",
+    "dst": "拯救",
+    "evidence": "那是西奥菲尔生前所绘的最后一幅画——以黄金岛为主题绘制的",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "询问",
+    "dst": "马库斯",
+    "evidence": "那座岛上是否真的有我们的同胞？",
+    "confidence": 0.95
+   },
+   {
+    "src": "军火公司",
+    "relation": "试验于",
+    "dst": "巴尔干半岛",
+    "evidence": "如今欧洲的军火公司将巴尔干半岛当成试验场",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "拒绝透露",
+    "dst": "卡卡尼亚",
+    "evidence": "抱歉，卡卡尼亚小姐，我不能",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bf85e494a5972efbc2efd1ba": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "卡卡尼亚医生"
+    ],
+    "desc": "邀请马库斯参加开展仪式者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "马库斯小姐",
+     "政府小姐"
+    ],
+    "desc": "为岛上神秘学家辩护者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将被告知发出两张邀请函者"
+   },
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [
+     "卡尔先生"
+    ],
+    "desc": "其做法并非人人赞同"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "因年轻人心中火焰而聚集"
+   },
+   {
+    "name": "分离派之家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "开展仪式举办地"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会总部",
+     "基金会"
+    ],
+    "desc": "为神秘学家合法权益奔走的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "辩护",
+    "dst": "神秘学家",
+    "evidence": "我，我个人也认为岛上的神秘学家并非疯子！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "澄清",
+    "dst": "卡卡尼亚",
+    "evidence": "我们来自基金会总部。那里有很多人和你们一样，正在为神秘学家的合法权益奔走",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "拥抱",
+    "dst": "马库斯",
+    "evidence": "马库斯得到了一个拥抱",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "邀请",
+    "dst": "马库斯",
+    "evidence": "我想邀请您明天来分离派之家，参加我们的开展仪式",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "允准",
+    "dst": "霍夫曼",
+    "evidence": "如果您要带上她，我也不介意。毕竟这是法律",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "评价",
+    "dst": "马库斯",
+    "evidence": "我知道您没有说谎——我不会错看年轻人心里燃烧的火焰",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7048b0c82152f3a20a4f1c44": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递交邀请函者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离去并向来人颔首者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与马库斯在门口擦肩者"
+   },
+   {
+    "name": "邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "魔圈的沙龙邀请函"
+   },
+   {
+    "name": "魔圈",
+    "type": "组织",
+    "aliases": [],
+    "desc": "欢迎马库斯到来的团体"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "递交",
+    "dst": "邀请函",
+    "evidence": "她匆匆盖上钢笔盖，将邀请函递给马库斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "颔首",
+    "dst": "伊索尔德",
+    "evidence": "马库斯没有停下脚步，向着来人轻轻颔首",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "9a0ba3efb6ff95c61b0dd4ae": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "更换调查目标并上报马库斯违纪者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "违反《外勤派遣手册》的学徒"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新的主要调查目标"
+   },
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提供名单者"
+   },
+   {
+    "name": "委外合约小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将在沙龙上展开行动的队伍"
+   },
+   {
+    "name": "邀请函",
+    "type": "物品",
+    "aliases": [],
+    "desc": "来自魔圈发起人的两张"
+   },
+   {
+    "name": "外勤派遣手册",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其条例每条诞生都伴随血或泪"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将决断马库斯行为之处"
+   },
+   {
+    "name": "内窥镜",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "更换",
+    "dst": "海因里希",
+    "evidence": "此次调查任务的主要目标更换为海因里希",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "上报",
+    "dst": "马库斯",
+    "evidence": "我会把你的行为上报给总部",
+    "confidence": 0.95
+   },
+   {
+    "src": "委外合约小队",
+    "relation": "行动于",
+    "dst": "沙龙",
+    "evidence": "我会与委外合约小队联系，在明晚的沙龙上展开行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡尔",
+    "relation": "提供",
+    "dst": "名单",
+    "evidence": "卡尔提供了名单",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "告诫",
+    "dst": "马库斯",
+    "evidence": "我担心的是你是否太过天真，马库斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "界定",
+    "dst": "马库斯",
+    "evidence": "我们所处的位置只能是“旁观者”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ede4e8904a4fcca5f9b78cc7": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "称维也纳为火药桶引信者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承诺不再犯错者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "伊索尔德小姐"
+    ],
+    "desc": "前来就诊的歌剧演员"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承认与施瓦茨决斗的心理医生"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "多嘴告知伊索尔德者"
+   },
+   {
+    "name": "施瓦茨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被斥为十足人渣的医生"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "1914年的火药桶引信与混乱时代临界点"
+   },
+   {
+    "name": "环城大道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "开阔宁静、人来人往的街道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "霍夫曼",
+    "relation": "告诫",
+    "dst": "马库斯",
+    "evidence": "我们能做的就是尽可能地谨小慎微",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "发起决斗",
+    "dst": "施瓦茨",
+    "evidence": "我是为了自己的职业伦理去和施瓦茨发起决斗的",
+    "confidence": 0.95
+   },
+   {
+    "src": "施瓦茨",
+    "relation": "出售",
+    "dst": "催眠技术",
+    "evidence": "他将用于治疗的催眠技术出卖给军方用作审讯",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "致谢",
+    "dst": "卡卡尼亚",
+    "evidence": "您竟然为了我的诊疗，去和施瓦茨医生决斗",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "告知",
+    "dst": "伊索尔德",
+    "evidence": "是海因里希告诉了您吗？他可真是多嘴",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "提出帮助",
+    "dst": "卡卡尼亚",
+    "evidence": "我可以帮助您，医生。我可以拜托卡尔先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "遇见",
+    "dst": "马库斯",
+    "evidence": "我在分离派之家见过她，当时您不在那儿",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "eb68a5cb9395ce679ec10d0d": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以话语引导伊索尔德回忆者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "伊索尔德小姐"
+    ],
+    "desc": "在镜中看见黄金圆圈者"
+   },
+   {
+    "name": "西格蒙德·弗洛伊德",
+    "type": "角色",
+    "aliases": [
+     "弗洛伊德医生"
+    ],
+    "desc": "提出本能遏制致歇斯底里症者"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在书房比划者"
+   },
+   {
+    "name": "镜子",
+    "type": "物品",
+    "aliases": [
+     "内视镜"
+    ],
+    "desc": "能映出内心图景的器具"
+   },
+   {
+    "name": "催眠",
+    "type": "概念",
+    "aliases": [],
+    "desc": "卡卡尼亚最厌恶的手段"
+   },
+   {
+    "name": "歇斯底里症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "因内心遏制本能所致"
+   },
+   {
+    "name": "黄金一般的圆圈",
+    "type": "概念",
+    "aliases": [],
+    "desc": "伊索尔德镜中所见"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "援引",
+    "dst": "西格蒙德·弗洛伊德",
+    "evidence": "西格蒙德·弗洛伊德医生曾经写过，是我们内心对本能的遏制导致了歇斯底里症",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "引导",
+    "dst": "伊索尔德",
+    "evidence": "我将通过话语去引导您进行回忆，您只需信任我，将其倾诉出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "使用",
+    "dst": "镜子",
+    "evidence": "如果您对开口述说感到困难，可以看着这面镜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "反对",
+    "dst": "催眠",
+    "evidence": "催眠正是我最厌恶的手段——它无助于您认清自己",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "看见",
+    "dst": "黄金一般的圆圈",
+    "evidence": "我看见……黄金一般的圆圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "诊断",
+    "dst": "伊索尔德",
+    "evidence": "糟糕，她的强迫行为发作了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5ee6547311c7af35569e86fa": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭镜布驱散游灵者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "强掰镜框、自我诘问者"
+   },
+   {
+    "name": "游灵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "从虚空应邀而来的无实体存在"
+   },
+   {
+    "name": "镜子",
+    "type": "物品",
+    "aliases": [
+     "真实之镜"
+    ],
+    "desc": "幽灵无法在其成像"
+   },
+   {
+    "name": "诊所",
+    "type": "地点",
+    "aliases": [
+     "工坊"
+    ],
+    "desc": "充斥镜面闪光之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "游灵",
+    "relation": "应邀而来",
+    "dst": "伊索尔德",
+    "evidence": "并无实体的“人”回应了她的问询，从虚空中应邀而来",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "驱散",
+    "dst": "游灵",
+    "evidence": "走吧，都走吧！幽灵无法在真实之镜里成像！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "揭开",
+    "dst": "镜子",
+    "evidence": "医生冲到工坊里等身高的镜子旁边，逐个揭开上面罩着的灰布",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "290be8e496bcd27e5904c013": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "担忧询问伊索尔德者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [
+     "伊索尔德小姐"
+    ],
+    "desc": "忆起大火的歌剧演员"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "站在火中尖叫者"
+   },
+   {
+    "name": "火",
+    "type": "事件",
+    "aliases": [],
+    "desc": "焚尽一切的那场火"
+   },
+   {
+    "name": "迪塔斯多夫家",
+    "type": "组织",
+    "aliases": [
+     "迪塔斯多夫"
+    ],
+    "desc": "伊索尔德自认必须合格的家族"
+   },
+   {
+    "name": "独幕剧",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "忆起",
+    "dst": "火",
+    "evidence": "那场火——那场焚尽了一切的火！我怎么会忘记呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西奥菲尔",
+    "relation": "站在",
+    "dst": "火",
+    "evidence": "西奥菲尔站在火中，尖叫着——他在点燃之前没有考虑任何事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "自责",
+    "dst": "迪塔斯多夫家",
+    "evidence": "要是一名合格的迪塔斯多夫，一个好妹妹、好女儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "关切",
+    "dst": "伊索尔德",
+    "evidence": "您现在好些了吗？还有东西缠着您，要同您说话吗？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

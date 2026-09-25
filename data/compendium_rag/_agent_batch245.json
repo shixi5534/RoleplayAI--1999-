@@ -1,0 +1,1052 @@
+{
+ "c6d6b0f9eafcf8fee18a1841": {
+  "entities": [
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "伊斯坦布尔至维也纳的传奇列车"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传说中的吸血怪物"
+   },
+   {
+    "name": "戴毡帽的男孩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读传说的红瞳男孩"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自报姓名的男孩"
+   },
+   {
+    "name": "车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "故事发生的车站"
+   },
+   {
+    "name": "伊斯坦布尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "列车东端起点"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "列车西端终点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "多瑙黎明号",
+    "relation": "传说",
+    "dst": "血食怪",
+    "evidence": "它是血食怪盘踞的秘密基地，对不对",
+    "confidence": 0.95
+   },
+   {
+    "src": "戴毡帽的男孩",
+    "relation": "听讲",
+    "dst": "野树莓",
+    "evidence": "好久都没读到有关血食怪的新传说了",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "介绍",
+    "dst": "戴毡帽的男孩",
+    "evidence": "我叫野树莓！很高兴认识你，女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "戴毡帽的男孩",
+    "relation": "等待",
+    "dst": "车站",
+    "evidence": "一会儿要进站的列车就叫多瑙黎明号",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "往返",
+    "dst": "伊斯坦布尔",
+    "evidence": "从伊斯坦布尔到维也纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "往返",
+    "dst": "维也纳",
+    "evidence": "从伊斯坦布尔到维也纳",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f62f9c92c23a2898f50f6555": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "相信血食怪的男孩"
+   },
+   {
+    "name": "乘客Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断腿的老兵"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被争论的存在"
+   },
+   {
+    "name": "车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "守候者聚集之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "乘客Ⅰ",
+    "relation": "质疑",
+    "dst": "血食怪",
+    "evidence": "本质都是人吃人罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "反驳",
+    "dst": "乘客Ⅰ",
+    "evidence": "难道您不相信血食怪是真实存在的吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "期待",
+    "dst": "血食怪",
+    "evidence": "或许会有死人因为被血食怪咬了而再度苏醒",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅰ",
+    "relation": "指点",
+    "dst": "车站",
+    "evidence": "就像这些可怜虫，已经在这里守了好些天了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "db310bb70111115376e0204c": {
+  "entities": [
+   {
+    "name": "平民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想要抓住机会的平民"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告别老人者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "复诵情报的调查员"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "安插血食怪的敌对组织"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塞梅尔维斯的通讯器"
+   },
+   {
+    "name": "七十七行动小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "塞梅尔维斯所属小队"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被复述的列车"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "第五次暴雨"
+   },
+   {
+    "name": "乘客Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨拥挤者"
+   },
+   {
+    "name": "乘客Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨者"
+   },
+   {
+    "name": "傲慢的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "车票被抢的女士"
+   },
+   {
+    "name": "站务员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝解的站务员"
+   },
+   {
+    "name": "疯狂的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抢票的乘客"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "复述",
+    "dst": "多瑙黎明号",
+    "evidence": "多瑙黎明号，一九一二年十一月三十日，靠站于",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "怀疑",
+    "dst": "重塑之手",
+    "evidence": "重塑之手安插的血食怪很有可能会登上这趟列车",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "呼叫",
+    "dst": "七十七行动小队",
+    "evidence": "下多瑙河七十七行动小队，傍晚六点二十分，车站会合",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "使用",
+    "dst": "通讯器",
+    "evidence": "拿出外衣口袋内的通讯器",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "历经",
+    "dst": "暴雨",
+    "evidence": "第五次“暴雨”后的首次外勤任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "抢夺",
+    "dst": "傲慢的乘客",
+    "evidence": "你刚才是怎么从我手里抢走票的",
+    "confidence": 0.95
+   },
+   {
+    "src": "站务员",
+    "relation": "劝解",
+    "dst": "疯狂的乘客",
+    "evidence": "这趟列车不会是最后一班，请冷静下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘客Ⅲ",
+    "relation": "抱怨",
+    "dst": "乘客Ⅳ",
+    "evidence": "见鬼，别挤了！你们买得起车票吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f6a93fa053000f90fde90fd4": {
+  "entities": [
+   {
+    "name": "站务员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再次劝阻者"
+   },
+   {
+    "name": "疯狂的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "挟持人质者"
+   },
+   {
+    "name": "车站守军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶到支援者"
+   },
+   {
+    "name": "傲慢的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被挟持的女士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "疯狂的乘客",
+    "relation": "挟持",
+    "dst": "傲慢的乘客",
+    "evidence": "他用手钳住女士的脖颈",
+    "confidence": 0.95
+   },
+   {
+    "src": "站务员",
+    "relation": "劝阻",
+    "dst": "疯狂的乘客",
+    "evidence": "先生！请不要冲动",
+    "confidence": 0.95
+   },
+   {
+    "src": "车站守军",
+    "relation": "警告",
+    "dst": "疯狂的乘客",
+    "evidence": "把你的手从那位女士身上拿开",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "挑衅",
+    "dst": "车站守军",
+    "evidence": "要不要试试看——我们谁的子弹比较快",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "068426d02a41a273f823d5df": {
+  "entities": [
+   {
+    "name": "车站守军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "救回人质者"
+   },
+   {
+    "name": "傲慢的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被救的女士"
+   },
+   {
+    "name": "疯狂的乘客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坠轨者"
+   },
+   {
+    "name": "月台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "男人坠落之处"
+   },
+   {
+    "name": "平民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出列车者"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "进站的方舟"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "疯客心中的安全之地"
+   },
+   {
+    "name": "玛丽娜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疯客的亲人"
+   },
+   {
+    "name": "染血的车票",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被血染的车票"
+   },
+   {
+    "name": "乘务员女孩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下车查看的乘务员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "车站守军",
+    "relation": "救回",
+    "dst": "傲慢的乘客",
+    "evidence": "惊魂未定的人质被驻军拽了回来",
+    "confidence": 0.95
+   },
+   {
+    "src": "傲慢的乘客",
+    "relation": "指认",
+    "dst": "疯狂的乘客",
+    "evidence": "但我的票……票还在他手上",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "坠落",
+    "dst": "月台",
+    "evidence": "男人脚底一空，不慎从月台坠落",
+    "confidence": 0.95
+   },
+   {
+    "src": "平民Ⅰ",
+    "relation": "辨认",
+    "dst": "多瑙黎明号",
+    "evidence": "是列车……多瑙黎明号来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "思念",
+    "dst": "布达佩斯",
+    "evidence": "布达佩斯！只有那儿是安全的",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "呼喊",
+    "dst": "玛丽娜",
+    "evidence": "我来了……母亲、父亲，玛丽娜",
+    "confidence": 0.95
+   },
+   {
+    "src": "疯狂的乘客",
+    "relation": "挥舞",
+    "dst": "染血的车票",
+    "evidence": "举起左手，用力挥动着那张薄薄的车票",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "碾压",
+    "dst": "疯狂的乘客",
+    "evidence": "铁轮碾过他的血肉",
+    "confidence": 0.95
+   },
+   {
+    "src": "多瑙黎明号",
+    "relation": "带走",
+    "dst": "染血的车票",
+    "evidence": "被列车带起的风拖曳向远方",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员女孩",
+    "relation": "下车",
+    "dst": "多瑙黎明号",
+    "evidence": "车门开启，头戴眼罩的乘务员着急忙慌地跑了下来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "00f77c9f3fb3605969563d17": {
+  "entities": [
+   {
+    "name": "染血的车票",
+    "type": "物品",
+    "aliases": [],
+    "desc": "飘向塞梅尔维斯的车票"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被影子干扰的调查员"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "卷走车票的神秘术"
+   },
+   {
+    "name": "多萝西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招呼同伴的女士"
+   },
+   {
+    "name": "安娜贝尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的小女孩"
+   },
+   {
+    "name": "威廉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行的孩子"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "手握车票的男孩"
+   },
+   {
+    "name": "野树莓的毡帽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被挤落的毡帽"
+   },
+   {
+    "name": "血食怪",
+    "type": "概念",
+    "aliases": [],
+    "desc": "野树莓的真实身份"
+   },
+   {
+    "name": "基金会资料室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "塞梅尔维斯提到的图鉴"
+   }
+  ],
+  "relations": [
+   {
+    "src": "染血的车票",
+    "relation": "飘向",
+    "dst": "塞梅尔维斯",
+    "evidence": "悄无声息地飘到了另一人眼前",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "卷走",
+    "dst": "染血的车票",
+    "evidence": "飘在半空中的车票早已失去踪影",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "推测",
+    "dst": "神秘术",
+    "evidence": "似乎是某种神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西",
+    "relation": "招呼",
+    "dst": "安娜贝尔",
+    "evidence": "安娜贝尔，威廉——快跟上来",
+    "confidence": 0.95
+   },
+   {
+    "src": "安娜贝尔",
+    "relation": "回应",
+    "dst": "多萝西",
+    "evidence": "等等我，多萝西女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "拾取",
+    "dst": "染血的车票",
+    "evidence": "调查员敏锐地捕捉到了男孩手中攥着的那张染血车票",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "碰落",
+    "dst": "野树莓的毡帽",
+    "evidence": "她只来得及碰到那顶深色的毡帽",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓的毡帽",
+    "relation": "揭穿",
+    "dst": "血食怪",
+    "evidence": "再标准不过的血食怪长相",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "联想",
+    "dst": "基金会资料室",
+    "evidence": "她应该被收集进基金会资料室那些厚厚的图鉴上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f869c1a6bb3cd5843debffaa": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "饥饿上车的血食怪"
+   },
+   {
+    "name": "乘务员女孩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为难的乘务员"
+   },
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要求立刻上车的女士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "打量",
+    "dst": "乘务员女孩",
+    "evidence": "漫不经心地看向前方正面露难色的小乘务员",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "催促",
+    "dst": "乘务员女孩",
+    "evidence": "我现在必须上车——立刻、马上",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员女孩",
+    "relation": "安抚",
+    "dst": "索尼娅",
+    "evidence": "乘务组正在核实身份",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "14b328e597706d03365b913b": {
+  "entities": [
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "出手擒贼的列车长"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拎起的偷票者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "车票定位的神秘术"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "配合取票的乘务员"
+   }
+  ],
+  "relations": [
+   {
+    "src": "告死鸟",
+    "relation": "困住",
+    "dst": "野树莓",
+    "evidence": "微弱的电流悄然游走在女孩脚下",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "指引",
+    "dst": "神秘术",
+    "evidence": "车票上的神秘术会指引我们找到它",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "索票",
+    "dst": "野树莓",
+    "evidence": "请交出您裤子左边内侧口袋里的车票",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "下令",
+    "dst": "乘务员艾玛",
+    "evidence": "艾玛，把她的车票拿出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "取票",
+    "dst": "野树莓",
+    "evidence": "裤子左边内侧的口袋里！我都听见啦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ff803cf16abc2592377c02dd": {
+  "entities": [
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认错的偷票者"
+   },
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解围的调查员"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "放下女孩的列车长"
+   },
+   {
+    "name": "染血的车票",
+    "type": "物品",
+    "aliases": [],
+    "desc": "递出的新车票"
+   },
+   {
+    "name": "七十七行动小队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "车票原属的小队"
+   },
+   {
+    "name": "野树莓的毡帽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被归还的毡帽"
+   }
+  ],
+  "relations": [
+   {
+    "src": "野树莓",
+    "relation": "求饶",
+    "dst": "告死鸟",
+    "evidence": "我没有想伤害任何人",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "解围",
+    "dst": "野树莓",
+    "evidence": "她是我的助手",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "归还",
+    "dst": "野树莓的毡帽",
+    "evidence": "她顺手将其扣回女孩的头上",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "释放",
+    "dst": "野树莓",
+    "evidence": "列车长放下女孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "赠票",
+    "dst": "野树莓",
+    "evidence": "一张崭新的车票递交到野树莓的手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "染血的车票",
+    "relation": "转属",
+    "dst": "七十七行动小队",
+    "evidence": "这原是为七十七分队的成员准备的车票之一",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0b486c1ca25fdef15aae2150": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提问的调查员"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想溜的女孩"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致辞的列车长"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被介绍的主乘务员"
+   },
+   {
+    "name": "潘诺尼亚运输公司",
+    "type": "组织",
+    "aliases": [],
+    "desc": "列车运营公司"
+   },
+   {
+    "name": "多瑙黎明号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "推迟发车的列车"
+   },
+   {
+    "name": "布达佩斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中途经停站"
+   },
+   {
+    "name": "尼卡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中途经停站"
+   },
+   {
+    "name": "伊斯坦布尔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "东端起点"
+   },
+   {
+    "name": "维也纳",
+    "type": "地点",
+    "aliases": [],
+    "desc": "西端终点"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "挽留",
+    "dst": "野树莓",
+    "evidence": "我还有几个问题需要你来回答",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "许诺",
+    "dst": "塞梅尔维斯",
+    "evidence": "等到了布达佩斯，如果您还记得我",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "介绍",
+    "dst": "潘诺尼亚运输公司",
+    "evidence": "由维也纳-潘诺尼亚运输公司经营的列车",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "自陈",
+    "dst": "多瑙黎明号",
+    "evidence": "我是列车长告死鸟",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "介绍",
+    "dst": "乘务员艾玛",
+    "evidence": "这位是主乘务员艾玛",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "宣布",
+    "dst": "布达佩斯",
+    "evidence": "中间将经停尼卡与布达佩斯两个站点",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "宣布",
+    "dst": "尼卡",
+    "evidence": "经停尼卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "告死鸟",
+    "relation": "致歉",
+    "dst": "多瑙黎明号",
+    "evidence": "列车将推迟至晚餐后启动",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "93555dde80ce4d887ba2db4b": {
+  "entities": [
+   {
+    "name": "索尼娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨炖菜的女士"
+   },
+   {
+    "name": "乘务员艾玛",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致歉的乘务员"
+   },
+   {
+    "name": "阿不思诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回怼的英国绅士"
+   },
+   {
+    "name": "空心木",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记录争吵的编辑"
+   }
+  ],
+  "relations": [
+   {
+    "src": "索尼娅",
+    "relation": "抱怨",
+    "dst": "乘务员艾玛",
+    "evidence": "它吃起来简直像过了火的牛革",
+    "confidence": 0.95
+   },
+   {
+    "src": "乘务员艾玛",
+    "relation": "解释",
+    "dst": "索尼娅",
+    "evidence": "现在是战争时期，我们食物供应十分紧张",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿不思诺",
+    "relation": "批评",
+    "dst": "索尼娅",
+    "evidence": "外面多少人还在挨饿受冻。您倒好",
+    "confidence": 0.95
+   },
+   {
+    "src": "索尼娅",
+    "relation": "回怼",
+    "dst": "阿不思诺",
+    "evidence": "你们英国人除了站在世界另一端评头论足",
+    "confidence": 0.95
+   },
+   {
+    "src": "空心木",
+    "relation": "调停",
+    "dst": "索尼娅",
+    "evidence": "你们可以接着吵下去，为我提供更多创作的灵感",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b1a70f2c7a2f2ee079ba240b": {
+  "entities": [
+   {
+    "name": "塞梅尔维斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "审问的调查员"
+   },
+   {
+    "name": "野树莓",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被审的女孩"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "纸条上的图案"
+   },
+   {
+    "name": "告死鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被议论的列车长"
+   }
+  ],
+  "relations": [
+   {
+    "src": "塞梅尔维斯",
+    "relation": "剖析",
+    "dst": "告死鸟",
+    "evidence": "比如那位列车长",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "点破",
+    "dst": "野树莓",
+    "evidence": "但你拿走了别人的车票，不是吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "野树莓",
+    "relation": "坦白",
+    "dst": "塞梅尔维斯",
+    "evidence": "我已经四天没有吃到一顿正常的饭了",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞梅尔维斯",
+    "relation": "出示",
+    "dst": "重塑之手",
+    "evidence": "你见过这个图案吗",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

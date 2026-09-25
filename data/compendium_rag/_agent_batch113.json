@@ -1,0 +1,1144 @@
+{
+ "edcd89c3c2e8a41533074416": {
+  "entities": [
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "水乡的医生"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "路过的旅人"
+   },
+   {
+    "name": "乡民首领",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拦路诘问者"
+   },
+   {
+    "name": "严肃的家丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恭敬侍立者"
+   },
+   {
+    "name": "怯懦的家丁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "擦拭台阶者"
+   },
+   {
+    "name": "沮丧的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "述虎伤者"
+   },
+   {
+    "name": "冷静的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陈情者"
+   },
+   {
+    "name": "胡海岳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "胡家朝奉"
+   },
+   {
+    "name": "保长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶来的乡吏"
+   },
+   {
+    "name": "乡民们",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚集的乡民"
+   },
+   {
+    "name": "受伤的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被虎咬伤者"
+   },
+   {
+    "name": "藤牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "家丁所持"
+   },
+   {
+    "name": "羽箭",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被刀劈开"
+   },
+   {
+    "name": "忠孝节义牌坊",
+    "type": "物品",
+    "aliases": [],
+    "desc": "胡家院前"
+   },
+   {
+    "name": "胡家庭院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "朝奉宅院"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秀郎中",
+    "relation": "诊治",
+    "dst": "胡海岳",
+    "evidence": "一点夜里看不清东西的小毛病",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "诊视",
+    "dst": "受伤的乡民",
+    "evidence": "怎么伤的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "喝令",
+    "dst": "严肃的家丁",
+    "evidence": "马上抬进来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "驳斥",
+    "dst": "严肃的家丁",
+    "evidence": "在大门口死了人不是更晦气？",
+    "confidence": 0.95
+   },
+   {
+    "src": "乡民首领",
+    "relation": "拦阻",
+    "dst": "程和光",
+    "evidence": "你是谁？为何要拦下我的箭？",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "指点",
+    "dst": "乡民首领",
+    "evidence": "你的弓箭劣质，无法射穿藤牌",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "告诫",
+    "dst": "乡民首领",
+    "evidence": "你先动手，便是殴斗的主犯",
+    "confidence": 0.95
+   },
+   {
+    "src": "保长",
+    "relation": "斥退",
+    "dst": "乡民们",
+    "evidence": "不许再上山了！",
+    "confidence": 0.9
+   },
+   {
+    "src": "乡民首领",
+    "relation": "诉苦",
+    "dst": "保长",
+    "evidence": "五年前发洪水，今年又旱，粮价比金子还贵！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b843014619be7ff2d6d86201": {
+  "entities": [
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自请打虎者"
+   },
+   {
+    "name": "保长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驱赶者"
+   },
+   {
+    "name": "受伤的乡民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哀嚎者"
+   },
+   {
+    "name": "蓝白巨虎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "额烧蓝焰的虎"
+   },
+   {
+    "name": "长刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "出鞘一半"
+   },
+   {
+    "name": "飞羽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "肩甲所出"
+   },
+   {
+    "name": "松林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "水乡山顶"
+   },
+   {
+    "name": "崖边",
+    "type": "地点",
+    "aliases": [],
+    "desc": "搏斗之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "程和光",
+    "relation": "自荐",
+    "dst": "保长",
+    "evidence": "如果几位要上山打虎，我可以从旁协助",
+    "confidence": 0.95
+   },
+   {
+    "src": "保长",
+    "relation": "回绝",
+    "dst": "程和光",
+    "evidence": "你既非官吏，也不是乡民，管这闲事做什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "保长",
+    "relation": "挥棍",
+    "dst": "程和光",
+    "evidence": "保长骤然挥棍擦过程和光的衣摆",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "问询",
+    "dst": "受伤的乡民",
+    "evidence": "你们在哪里遇见了老虎？可有确定的位置？",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝白巨虎",
+    "relation": "扑倒",
+    "dst": "程和光",
+    "evidence": "巨大的白虎猛然从草中扑出，程和光未及躲闪，便被压倒在地",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "横刀",
+    "dst": "长刀",
+    "evidence": "出鞘一半的长刀被他横在胸前，勉强抵住这次攻击",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "射出",
+    "dst": "飞羽",
+    "evidence": "肩甲上的一片飞羽如箭般脱出，直刺入老虎的额头",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝白巨虎",
+    "relation": "拖拽",
+    "dst": "程和光",
+    "evidence": "拖着他奔跑挣扎",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1e5dbbb4f0b5170da3915a5": {
+  "entities": [
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "悬空者"
+   },
+   {
+    "name": "蓝白巨虎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坠崖者"
+   },
+   {
+    "name": "飞羽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "连刺之器"
+   },
+   {
+    "name": "锐意",
+    "type": "概念",
+    "aliases": [],
+    "desc": "化金的神秘术"
+   },
+   {
+    "name": "泥土",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所着力之处"
+   },
+   {
+    "name": "银线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "破空而来"
+   },
+   {
+    "name": "崖边",
+    "type": "地点",
+    "aliases": [],
+    "desc": "悬身之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "飞羽",
+    "relation": "逼落",
+    "dst": "蓝白巨虎",
+    "evidence": "更多的飞羽向下刺去，老虎终于松口，哀嚎着摔下了崖底",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "施展",
+    "dst": "锐意",
+    "evidence": "感受气的流向……气能触及的地方，即可化为金石",
+    "confidence": 0.95
+   },
+   {
+    "src": "锐意",
+    "relation": "转化",
+    "dst": "泥土",
+    "evidence": "指下的泥土泛出了淡淡的金属色泽，但却难以更进一步",
+    "confidence": 0.95
+   },
+   {
+    "src": "银线",
+    "relation": "弹出",
+    "dst": "程和光",
+    "evidence": "一根笔直细长的银线从崖边弹出，破空而来",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "43592e45eb640e3a3ed81f2f": {
+  "entities": [
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施救者"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "伤者"
+   },
+   {
+    "name": "程道官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "程和光的父亲"
+   },
+   {
+    "name": "短木枝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插于小腿"
+   },
+   {
+    "name": "骨梭子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "收束银线之器"
+   },
+   {
+    "name": "银线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缠卷之具"
+   },
+   {
+    "name": "草药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "外敷之用"
+   },
+   {
+    "name": "白布",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包扎之用"
+   },
+   {
+    "name": "医馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "秀郎中所设"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秀郎中",
+    "relation": "卷回",
+    "dst": "程和光",
+    "evidence": "银线缠住程和光的腰腹，把他卷回崖上",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "讥讽",
+    "dst": "程和光",
+    "evidence": "一个人逞英雄，可不是个好习惯",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "拔出",
+    "dst": "短木枝",
+    "evidence": "她并未等待程和光回答，直接把那木枝拔出",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "缝合",
+    "dst": "程和光",
+    "evidence": "秀郎中操纵银线，迅速完成了细密的缝合",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "收束",
+    "dst": "骨梭子",
+    "evidence": "将银线重新收入手里的骨梭子",
+    "confidence": 0.9
+   },
+   {
+    "src": "秀郎中",
+    "relation": "旧识",
+    "dst": "程道官",
+    "evidence": "我是你父亲的朋友，你也算我的贤侄了",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "坦承",
+    "dst": "秀郎中",
+    "evidence": "他是我父亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "受请",
+    "dst": "医馆",
+    "evidence": "我的医馆就在山脚，你来住几天吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4413699889ceee3a719f1cae": {
+  "entities": [
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "授术者"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受教者"
+   },
+   {
+    "name": "程道官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "已故的父亲"
+   },
+   {
+    "name": "伙计",
+    "type": "角色",
+    "aliases": [],
+    "desc": "医馆药童"
+   },
+   {
+    "name": "猎户",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被虎咬伤者"
+   },
+   {
+    "name": "锐意",
+    "type": "概念",
+    "aliases": [],
+    "desc": "化金之术"
+   },
+   {
+    "name": "银线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "对练之器"
+   },
+   {
+    "name": "飞羽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "程和光之器"
+   },
+   {
+    "name": "医馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "水乡山脚"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秀郎中",
+    "relation": "探问",
+    "dst": "程和光",
+    "evidence": "你母亲可好？",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "告知",
+    "dst": "秀郎中",
+    "evidence": "他去世了",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "突袭",
+    "dst": "程和光",
+    "evidence": "手中三条银线如蛛丝般袭向程和光的关节要处",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "训诫",
+    "dst": "程和光",
+    "evidence": "你的神秘术怎么用得如此不像样？",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "自陈",
+    "dst": "秀郎中",
+    "evidence": "这能力不好控制，幼时贪玩出过祸事",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "传授",
+    "dst": "程和光",
+    "evidence": "我们的神秘术都是以气控物，不如我来教你几招",
+    "confidence": 0.95
+   },
+   {
+    "src": "伙计",
+    "relation": "迎候",
+    "dst": "秀郎中",
+    "evidence": "大姐，你回来了！",
+    "confidence": 0.9
+   },
+   {
+    "src": "程和光",
+    "relation": "自述",
+    "dst": "锐意",
+    "evidence": "族人虽然都能操纵轻量金属，但这化金的能力……如今除我之外无人掌握",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "982f195f5119c41128d917f6": {
+  "entities": [
+   {
+    "name": "青年人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "药到病除者"
+   },
+   {
+    "name": "老年人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哀嚎的病患"
+   },
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诊治者"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被点名的帮手"
+   },
+   {
+    "name": "伙计",
+    "type": "角色",
+    "aliases": [],
+    "desc": "熬药者"
+   },
+   {
+    "name": "药",
+    "type": "物品",
+    "aliases": [],
+    "desc": "新熬之剂"
+   },
+   {
+    "name": "医馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "青年人",
+    "relation": "称谢",
+    "dst": "秀郎中",
+    "evidence": "那药真好用！我今天浑身都是力气",
+    "confidence": 0.95
+   },
+   {
+    "src": "老年人",
+    "relation": "求救",
+    "dst": "秀郎中",
+    "evidence": "郎中！救命啊！",
+    "confidence": 0.95
+   },
+   {
+    "src": "老年人",
+    "relation": "违嘱",
+    "dst": "药",
+    "evidence": "说了禁食！谁让你吃东西了！",
+    "confidence": 0.9
+   },
+   {
+    "src": "伙计",
+    "relation": "熬制",
+    "dst": "药",
+    "evidence": "我给他新熬了药，刚倒出来，还烫着",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "指派",
+    "dst": "程和光",
+    "evidence": "正好，我们有个不怕烫的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "29e5323091a5250480cdf78e": {
+  "entities": [
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "教习者"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "习术者"
+   },
+   {
+    "name": "猎户",
+    "type": "角色",
+    "aliases": [],
+    "desc": "苏醒的伤者"
+   },
+   {
+    "name": "老年人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论的病患"
+   },
+   {
+    "name": "青年人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论的病患"
+   },
+   {
+    "name": "铁碗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "化为金属"
+   },
+   {
+    "name": "锐意",
+    "type": "概念",
+    "aliases": [],
+    "desc": "绣花般的技巧"
+   },
+   {
+    "name": "银线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被议论的兵器"
+   },
+   {
+    "name": "祝县",
+    "type": "地点",
+    "aliases": [],
+    "desc": "涣州最富庶的县"
+   },
+   {
+    "name": "涣州",
+    "type": "地点",
+    "aliases": [],
+    "desc": "所辖之地"
+   },
+   {
+    "name": "医馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "正房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秀郎中",
+    "relation": "指派",
+    "dst": "程和光",
+    "evidence": "把台上那碗药挪到我手里——用神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "施展",
+    "dst": "锐意",
+    "evidence": "药碗瞬间变了黑色，几乎是飞旋着撞进了秀郎中的手心",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "指点",
+    "dst": "程和光",
+    "evidence": "“锐意”与我的神秘术类似，无非是个绣花的技巧",
+    "confidence": 0.95
+   },
+   {
+    "src": "猎户",
+    "relation": "搭话",
+    "dst": "程和光",
+    "evidence": "小哥，我看你天天在摔这个破碗",
+    "confidence": 0.95
+   },
+   {
+    "src": "老年人",
+    "relation": "贬议",
+    "dst": "秀郎中",
+    "evidence": "她一个不会拳脚的老婆婆，竟当起教头来了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "青年人",
+    "relation": "回护",
+    "dst": "秀郎中",
+    "evidence": "可从没见过她和人打过架",
+    "confidence": 0.9
+   },
+   {
+    "src": "程和光",
+    "relation": "提及",
+    "dst": "银线",
+    "evidence": "可我听说，涣州以前有个匪徒，也是用银线做武器",
+    "confidence": 0.95
+   },
+   {
+    "src": "老年人",
+    "relation": "印证",
+    "dst": "祝县",
+    "evidence": "最后是进了祝县抢劫不是？之后就没听说了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "168915648dc126af0b204618": {
+  "entities": [
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "习成者"
+   },
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被揭者"
+   },
+   {
+    "name": "伙计",
+    "type": "角色",
+    "aliases": [],
+    "desc": "查获者"
+   },
+   {
+    "name": "猎户",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赞叹者"
+   },
+   {
+    "name": "老年人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称便者"
+   },
+   {
+    "name": "通缉令",
+    "type": "物品",
+    "aliases": [],
+    "desc": "淡黄色的纸"
+   },
+   {
+    "name": "锐意",
+    "type": "概念",
+    "aliases": [],
+    "desc": "化金之术"
+   },
+   {
+    "name": "衙门",
+    "type": "组织",
+    "aliases": [],
+    "desc": "领受追缉之处"
+   },
+   {
+    "name": "铁碗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "落于桌上"
+   },
+   {
+    "name": "茶杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "圈足化金"
+   },
+   {
+    "name": "医馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "偏房"
+   }
+  ],
+  "relations": [
+   {
+    "src": "程和光",
+    "relation": "练成",
+    "dst": "锐意",
+    "evidence": "铁碗缓慢升起，摇晃着飞向另一边——最终平稳地落到了桌上",
+    "confidence": 0.95
+   },
+   {
+    "src": "老年人",
+    "relation": "称便",
+    "dst": "秀郎中",
+    "evidence": "这下可以把我的药平安拿来了！",
+    "confidence": 0.9
+   },
+   {
+    "src": "程和光",
+    "relation": "以茶试技",
+    "dst": "茶杯",
+    "evidence": "一只茶杯却忽然从侧后方飞旋砸来",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "赞许",
+    "dst": "程和光",
+    "evidence": "三日便能如此，的确值得夸奖",
+    "confidence": 0.95
+   },
+   {
+    "src": "伙计",
+    "relation": "查出",
+    "dst": "通缉令",
+    "evidence": "伙计从衣襟里掏出一张淡黄色的纸",
+    "confidence": 0.95
+   },
+   {
+    "src": "伙计",
+    "relation": "翻检",
+    "dst": "程和光",
+    "evidence": "你翻了我的包裹？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "通缉令",
+    "relation": "通缉",
+    "dst": "秀郎中",
+    "evidence": "骨梭子，明火执仗，劫掠府仓",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "只为",
+    "dst": "衙门",
+    "evidence": "我只是从衙门那里领了追缉的任务",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "a81cfca514dbedaeb6fa9e9d": {
+  "entities": [
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承认者"
+   },
+   {
+    "name": "伙计",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怨愤者"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追缉者"
+   },
+   {
+    "name": "程道官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被怨恨的旧友"
+   },
+   {
+    "name": "通缉令",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被投入火盆"
+   },
+   {
+    "name": "铁碗",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被扫落"
+   },
+   {
+    "name": "火盆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "焚纸之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "秀郎中",
+    "relation": "袒护",
+    "dst": "程和光",
+    "evidence": "这是程小弟的小孩",
+    "confidence": 0.95
+   },
+   {
+    "src": "伙计",
+    "relation": "怨恨",
+    "dst": "程道官",
+    "evidence": "我女儿都饿死了，他还在那装什么老爷",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "喝止",
+    "dst": "伙计",
+    "evidence": "够了！你进去把药熬了",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "承认",
+    "dst": "程和光",
+    "evidence": "可惜我做了",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "申明",
+    "dst": "秀郎中",
+    "evidence": "我在此观察多日，你的行径不像恶人",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "焚毁",
+    "dst": "通缉令",
+    "evidence": "把通缉令对折，丢到一边的火盆里",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "约战",
+    "dst": "程和光",
+    "evidence": "你的伤是不是好了？那就打吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "097954444cf8c480c1276dbe": {
+  "entities": [
+   {
+    "name": "母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "程和光的母亲"
+   },
+   {
+    "name": "程和光",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赴战者"
+   },
+   {
+    "name": "秀郎中",
+    "type": "角色",
+    "aliases": [],
+    "desc": "树上周旋者"
+   },
+   {
+    "name": "程道官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "秀郎中的旧识"
+   },
+   {
+    "name": "骨梭子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所转之器"
+   },
+   {
+    "name": "银线",
+    "type": "物品",
+    "aliases": [],
+    "desc": "半里之长"
+   },
+   {
+    "name": "长刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所持之刃"
+   },
+   {
+    "name": "铁叶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "空中落下"
+   },
+   {
+    "name": "衙门",
+    "type": "组织",
+    "aliases": [],
+    "desc": "领受追缉之处"
+   },
+   {
+    "name": "水乡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "山脚空地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "母亲",
+    "relation": "追忆",
+    "dst": "秀郎中",
+    "evidence": "骨梭子……我记得是你父亲之前认识的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "告知",
+    "dst": "母亲",
+    "evidence": "衙门审讯得知，她就是那晚劫掠祝县的主谋",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "求功",
+    "dst": "衙门",
+    "evidence": "巡检有个空缺。若我能解决这件事，便有了能填缺的功劳",
+    "confidence": 0.95
+   },
+   {
+    "src": "母亲",
+    "relation": "告诫",
+    "dst": "程和光",
+    "evidence": "她实力强劲，是个可靠的朋友，也是难缠的对手",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "自信",
+    "dst": "母亲",
+    "evidence": "母亲传我的刀法在涣州府本就鲜有敌手",
+    "confidence": 0.95
+   },
+   {
+    "src": "秀郎中",
+    "relation": "周旋",
+    "dst": "程和光",
+    "evidence": "年轻时，我就是这么遛官兵的",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "横劈",
+    "dst": "长刀",
+    "evidence": "程和光抽刀出鞘，猛然横劈高树的枝干",
+    "confidence": 0.95
+   },
+   {
+    "src": "银线",
+    "relation": "崩断",
+    "dst": "秀郎中",
+    "evidence": "银线本应如她所料将她收往高处，却中途崩断，把她甩落在地",
+    "confidence": 0.95
+   },
+   {
+    "src": "程和光",
+    "relation": "识破",
+    "dst": "银线",
+    "evidence": "只要你用的银线够长，我的神秘术便能够到你",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

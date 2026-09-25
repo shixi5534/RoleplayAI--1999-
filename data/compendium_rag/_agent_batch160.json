@@ -1,0 +1,1468 @@
+{
+ "dff0b671412c93ce3acbad86": {
+  "entities": [
+   {
+    "name": "报童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为黑衣女士朗读新闻的报童"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在伦敦制造彩虹泡泡的艺术怪人"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "多次劫持广播频段的摇滚海盗"
+   },
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代表“新人类”游说警长的负责人"
+   },
+   {
+    "name": "威廉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拒绝安保公司参与治安的警长"
+   },
+   {
+    "name": "伦敦之心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "珠宝展上悬赏百万的展品"
+   },
+   {
+    "name": "新人类",
+    "type": "组织",
+    "aliases": [],
+    "desc": "发布悬赏的机器人安保公司"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "治安问题严峻的城市"
+   },
+   {
+    "name": "邦德街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可领百万赏金之处"
+   },
+   {
+    "name": "拉米雷斯",
+    "type": "组织",
+    "aliases": [],
+    "desc": "令人对私人安保公司信赖一落千丈的企业"
+   },
+   {
+    "name": "贪婪杰克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失手被捕的知名大盗"
+   },
+   {
+    "name": "佩恩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失手被捕的雌雄大盗之一"
+   },
+   {
+    "name": "崔斯特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失手被捕的雌雄大盗之一"
+   }
+  ],
+  "relations": [
+   {
+    "src": "报童",
+    "relation": "播报",
+    "dst": "新人类",
+    "evidence": "“新人类”公司为第十三届国际珠宝展再发悬赏",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "播报",
+    "dst": "伦敦之心",
+    "evidence": "凡取走“伦敦之心”者，可前往邦德街15号领取百万赏金",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "播报",
+    "dst": "贪婪杰克",
+    "evidence": "已有数人失手被捕，其中包括“贪婪杰克”",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "播报",
+    "dst": "佩恩",
+    "evidence": "雌雄大盗佩恩与崔斯特等知名大盗",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "朗读",
+    "dst": "挖掘艺术",
+    "evidence": "街头出现艺术怪人 警方提醒市民们警惕彩虹泡泡",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "朗读",
+    "dst": "星锑",
+    "evidence": "摇滚海盗多次劫持广播频段 声称好戏即将开场",
+    "confidence": 0.95
+   },
+   {
+    "src": "报童",
+    "relation": "招揽",
+    "dst": "伦敦",
+    "evidence": "您对今天的新闻感兴趣吗？来一份报纸吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "游说",
+    "dst": "威廉警长",
+    "evidence": "我们诚意十足，威廉警长",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "拒绝",
+    "dst": "艾弗森",
+    "evidence": "安保公司参与伦敦治安的提议并不符合执法规定",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "提及",
+    "dst": "拉米雷斯",
+    "evidence": "拉米雷斯事件发生后，人们对私人安保公司的信赖一落千丈",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "贬低",
+    "dst": "拉米雷斯",
+    "evidence": "您怎么能把我们与一家“神秘学家企业”相提并论呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "断言",
+    "dst": "新人类",
+    "evidence": "“新人类”是一家走在正确道路上的机器人公司",
+    "confidence": 0.95
+   },
+   {
+    "src": "新人类",
+    "relation": "悬赏",
+    "dst": "伦敦之心",
+    "evidence": "为第十三届国际珠宝展再发悬赏",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "提及",
+    "dst": "崔斯特",
+    "evidence": "他们从不制定安保计划，不运用枪械与武力",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦敦之心",
+    "relation": "展出",
+    "dst": "伦敦",
+    "evidence": "伦敦之心不见了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b941d5aee8110e47ff463db8": {
+  "entities": [
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "演示机器人装置的负责人"
+   },
+   {
+    "name": "威廉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁观演示的警长"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从窗帘后现身的闯入者"
+   },
+   {
+    "name": "安保机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搭载多种安保装置的新型机器人"
+   },
+   {
+    "name": "汤姆森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被警长喝令的下属"
+   },
+   {
+    "name": "安保指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "“新人类”公司制定的安保指南"
+   },
+   {
+    "name": "安全制约-Ⅰ型",
+    "type": "物品",
+    "aliases": [],
+    "desc": "艾弗森展示的最新研究产品"
+   },
+   {
+    "name": "新人类",
+    "type": "组织",
+    "aliases": [],
+    "desc": "研发出该机器人的公司"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾弗森",
+    "relation": "保证",
+    "dst": "威廉警长",
+    "evidence": "我们有着完善的《安保指南》",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "按下",
+    "dst": "安全制约-Ⅰ型",
+    "evidence": "艾弗森表情轻松地按下了手上的按钮",
+    "confidence": 0.95
+   },
+   {
+    "src": "安保机器人",
+    "relation": "驶入",
+    "dst": "威廉警长",
+    "evidence": "一个造型奇特的机器人驶入了房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "介绍",
+    "dst": "安全制约-Ⅰ型",
+    "evidence": "这就是我们公司的最新研究产品——安全制约-Ⅰ型",
+    "confidence": 0.95
+   },
+   {
+    "src": "安全制约-Ⅰ型",
+    "relation": "搭载",
+    "dst": "安保指南",
+    "evidence": "搭载了催泪喷剂、苦麦虫粉末、磁场干扰圈等装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "安保机器人",
+    "relation": "警报",
+    "dst": "挖掘艺术",
+    "evidence": "检测到可疑人员，位置：第一张办公桌正下方",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "质疑",
+    "dst": "艾弗森",
+    "evidence": "它故障了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "断言",
+    "dst": "安保机器人",
+    "evidence": "它们从不出错",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "现身",
+    "dst": "威廉警长",
+    "evidence": "一个鬼鬼祟祟的身影顺势站起身来",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "喝令",
+    "dst": "汤姆森",
+    "evidence": "汤姆森，快进来把这小子给我扔出去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "辩解",
+    "dst": "威廉警长",
+    "evidence": "我只是想和您聊聊关于洒水车的事儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "训斥",
+    "dst": "挖掘艺术",
+    "evidence": "根本没人关心波普元素之类的乱七八糟的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "归类",
+    "dst": "挖掘艺术",
+    "evidence": "这是一个行为出格的破坏分子",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "触摸",
+    "dst": "安保机器人",
+    "evidence": "挖掘艺术拍了拍机器人的头部",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "评点",
+    "dst": "安保机器人",
+    "evidence": "手感也远不如警犬们",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "计划",
+    "dst": "安保机器人",
+    "evidence": "接下来我将为您演示安全制约-Ⅰ型的教化功能",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3acf42fe0ab09bf70752d6f8": {
+  "entities": [
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "启动教化功能者"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被机器人逼近的艺术家"
+   },
+   {
+    "name": "安保机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闪烁红光逼近目标的机器人"
+   },
+   {
+    "name": "安全制约-Ⅰ型",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被演示教化功能的装置"
+   },
+   {
+    "name": "威廉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁观教化演示的警长"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾弗森",
+    "relation": "说明",
+    "dst": "安全制约-Ⅰ型",
+    "evidence": "它拥有全面的、应对所有市民的预案",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "强调",
+    "dst": "安全制约-Ⅰ型",
+    "evidence": "它绝不依赖难以捉摸的“想象力”",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "确认",
+    "dst": "艾弗森",
+    "evidence": "完全可控？",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "启动",
+    "dst": "安保机器人",
+    "evidence": "艾弗森按下了另一个按钮",
+    "confidence": 0.95
+   },
+   {
+    "src": "安保机器人",
+    "relation": "逼近",
+    "dst": "挖掘艺术",
+    "evidence": "它朝着挖掘艺术的方向一步步靠近",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "惊叫",
+    "dst": "安保机器人",
+    "evidence": "喂——！你故障了吗？铁皮怪物！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抗议",
+    "dst": "安保机器人",
+    "evidence": "要和平，不要战争！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3a40a722da9eb6f88408c894": {
+  "entities": [
+   {
+    "name": "艾弗森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣称机器人表现出色者"
+   },
+   {
+    "name": "威廉警长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "考虑机器人发挥更大作用的警长"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣扬乌托邦盛会的艺术家"
+   },
+   {
+    "name": "新人类安保员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报告失窃消息的安保员"
+   },
+   {
+    "name": "安保机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被关闭后恢复平静的机器人"
+   },
+   {
+    "name": "伦敦之心",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被报告失窃的展品"
+   },
+   {
+    "name": "新人类",
+    "type": "组织",
+    "aliases": [],
+    "desc": "公众支持率稳步提升的公司"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "需要彻底整治与肃清的城市"
+   },
+   {
+    "name": "新苏格兰场",
+    "type": "组织",
+    "aliases": [],
+    "desc": "将认真考虑机器人作用的新苏格兰场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾弗森",
+    "relation": "关闭",
+    "dst": "安保机器人",
+    "evidence": "艾弗森满意地按下了开关",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "断言",
+    "dst": "新人类",
+    "evidence": "“新人类”公司的公众支持率正稳步提升",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "宣告",
+    "dst": "伦敦",
+    "evidence": "许多人期待着一个更安全、更平静的伦敦",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "称赞",
+    "dst": "安保机器人",
+    "evidence": "这位机器人先生的才能令人惊讶",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "劝告",
+    "dst": "威廉警长",
+    "evidence": "不要相信他的胡言乱语！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "主张",
+    "dst": "伦敦",
+    "evidence": "伦敦需要天马行空的艺术派对",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "驳斥",
+    "dst": "挖掘艺术",
+    "evidence": "我们只接到了无数人的投诉，尤其是对你的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾弗森",
+    "relation": "主张",
+    "dst": "伦敦",
+    "evidence": "伦敦已经混乱了太久，需要一场彻底的整治与肃清",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "表态",
+    "dst": "艾弗森",
+    "evidence": "我非常同意你的意见",
+    "confidence": 0.95
+   },
+   {
+    "src": "威廉警长",
+    "relation": "承诺",
+    "dst": "新苏格兰场",
+    "evidence": "新苏格兰场也会认真考虑安保机器人的可能性",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "抗议",
+    "dst": "威廉警长",
+    "evidence": "这是对公民权利的侵犯，是对挑衅的挑衅",
+    "confidence": 0.95
+   },
+   {
+    "src": "新人类安保员",
+    "relation": "报告",
+    "dst": "艾弗森",
+    "evidence": "大事不好了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "新人类安保员",
+    "relation": "通报",
+    "dst": "伦敦之心",
+    "evidence": "“伦敦之心”不见了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "趁隙",
+    "dst": "威廉警长",
+    "evidence": "慷慨陈词者显然注意到了这个能省下更多口水的逃脱时机",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "72d836bfe0600c6e486eef8c": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以硝酸闪光纸骗过机器人的窃贼"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梅兰妮的老师,藏于手提包中"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "驾驶消防车办派对者"
+   },
+   {
+    "name": "安保机器人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被黏得无法动弹的机器人"
+   },
+   {
+    "name": "消防车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "涂着奇怪花纹、驶入摄政街的车"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "能映照出景象的镜面泡泡"
+   },
+   {
+    "name": "硝酸闪光纸",
+    "type": "物品",
+    "aliases": [],
+    "desc": "骗过机器人使其打开消防喷头的纸"
+   },
+   {
+    "name": "鼻涕虫香精",
+    "type": "物品",
+    "aliases": [],
+    "desc": "溶入消防池水的鼻涕虫香精"
+   },
+   {
+    "name": "失眠夜旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮计划前往的旅馆"
+   },
+   {
+    "name": "摄政街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "消防车驶入的街道"
+   },
+   {
+    "name": "蜜蜂号糖果屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮路线中的地标"
+   },
+   {
+    "name": "洁净灵水枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "梅兰妮找到的洁净灵水枪"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "自陈",
+    "dst": "艾西",
+    "evidence": "您对这份答卷还满意吗？艾西老师",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "要求",
+    "dst": "梅兰妮",
+    "evidence": "还差最后一步，梅兰妮",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "承诺",
+    "dst": "艾西",
+    "evidence": "我会按计划回到旅馆里的，分秒不差！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "计划",
+    "dst": "失眠夜旅馆",
+    "evidence": "下一个目的地，失眠夜旅馆，1132号房",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "使用",
+    "dst": "硝酸闪光纸",
+    "evidence": "只需几张硝酸闪光纸，就能让它们忠诚地打开所有的消防喷头",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "施放",
+    "dst": "鼻涕虫香精",
+    "evidence": "溶入鼻涕虫香精的消防池水源源不断地从喷头里喷涌而出",
+    "confidence": 0.95
+   },
+   {
+    "src": "鼻涕虫香精",
+    "relation": "黏住",
+    "dst": "安保机器人",
+    "evidence": "那群机器人被黏得无法动弹的模样",
+    "confidence": 0.95
+   },
+   {
+    "src": "消防车",
+    "relation": "驶入",
+    "dst": "摄政街",
+    "evidence": "一辆古怪的消防车缓缓驶入了摄政街",
+    "confidence": 0.95
+   },
+   {
+    "src": "消防车",
+    "relation": "喷出",
+    "dst": "镜面肥皂泡",
+    "evidence": "一个光滑的肥皂泡冒了出来，再然后就是更多、更多、更多的镜面小圆球",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "欢迎",
+    "dst": "镜面肥皂泡",
+    "evidence": "欢迎来到砰砰飞盘摇滚派对！",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "宣告",
+    "dst": "梅兰妮",
+    "evidence": "这是一场即兴的、自由的、所有人都能参与的艺术盛会",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "抱怨",
+    "dst": "挖掘艺术",
+    "evidence": "一个在我必经之路上制造交通拥堵的混球？",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "催促",
+    "dst": "梅兰妮",
+    "evidence": "时间不多了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "取出",
+    "dst": "洁净灵水枪",
+    "evidence": "找到了！洁净灵水枪！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "途经",
+    "dst": "蜜蜂号糖果屋",
+    "evidence": "蜜蜂号糖果屋……失眠夜旅馆……",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜面肥皂泡",
+    "relation": "映照",
+    "dst": "梅兰妮",
+    "evidence": "肥皂泡在日光下反射着奇妙的效果，似乎能映照出不一般的景象",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9cd43662f4904b4de20458d4": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以洁净灵水枪净化街道的窃贼"
+   },
+   {
+    "name": "艾西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破吸附灵的指导者"
+   },
+   {
+    "name": "挖掘艺术",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致谢前卫女孩的艺术家"
+   },
+   {
+    "name": "查尔顿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "杂志被抢的收藏者"
+   },
+   {
+    "name": "趁乱打劫的流浪汉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "趁派对混乱抢夺手提包者"
+   },
+   {
+    "name": "洁净灵水枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可同时射出23发洁净球的武器"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被吸成巨型透明球体的泡泡"
+   },
+   {
+    "name": "失眠夜旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮计划中的目的地"
+   },
+   {
+    "name": "蜜蜂号糖果屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮路线中的地标"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "说明",
+    "dst": "洁净灵水枪",
+    "evidence": "能同时射出23发洁净球，仅消一瞬，就可以让这儿亮洁如新",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "射击",
+    "dst": "镜面肥皂泡",
+    "evidence": "一颗颗墨绿色的果子向空中飘浮的肥皂泡飞散而开",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾西",
+    "relation": "识破",
+    "dst": "镜面肥皂泡",
+    "evidence": "它是……吸附灵",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜面肥皂泡",
+    "relation": "聚成",
+    "dst": "洁净灵水枪",
+    "evidence": "泡泡们被一股股无名之力吸在了一起，凝成了一个巨型的透明球体",
+    "confidence": 0.95
+   },
+   {
+    "src": "挖掘艺术",
+    "relation": "致谢",
+    "dst": "梅兰妮",
+    "evidence": "谢谢你！那位前卫的、勇敢的、具有创新精神的戴皮帽女孩！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "自陈",
+    "dst": "镜面肥皂泡",
+    "evidence": "我好像也被那些景象影响了",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "复盘",
+    "dst": "失眠夜旅馆",
+    "evidence": "蜜蜂号糖果屋……失眠夜旅馆……",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "自励",
+    "dst": "失眠夜旅馆",
+    "evidence": "你需要一个新计划，一个天马行空的新计划",
+    "confidence": 0.95
+   },
+   {
+    "src": "趁乱打劫的流浪汉",
+    "relation": "抢夺",
+    "dst": "梅兰妮",
+    "evidence": "像一支准确的箭矢一样攥住了梅兰妮的手提包",
+    "confidence": 0.95
+   },
+   {
+    "src": "趁乱打劫的流浪汉",
+    "relation": "呼喊",
+    "dst": "查尔顿",
+    "evidence": "派对，派对！都抛上天空去吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "惊呼",
+    "dst": "趁乱打劫的流浪汉",
+    "evidence": "喂！我的杂志——！你想干什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "索还",
+    "dst": "趁乱打劫的流浪汉",
+    "evidence": "你要拿艾西老师做什么？快还给我！",
+    "confidence": 0.95
+   },
+   {
+    "src": "趁乱打劫的流浪汉",
+    "relation": "守护",
+    "dst": "镜面肥皂泡",
+    "evidence": "那些有自主意识的肥皂泡愉悦地游荡在流浪汉身旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "提醒",
+    "dst": "梅兰妮",
+    "evidence": "留神点，他可是个疯子！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "途经",
+    "dst": "蜜蜂号糖果屋",
+    "evidence": "蜜蜂号糖果屋……失眠夜旅馆……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2d5c9f8678c858194546dfb3": {
+  "entities": [
+   {
+    "name": "查尔顿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获救后讲述奖杯传说的市民"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向查尔顿问路的窃贼"
+   },
+   {
+    "name": "雷米特杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "四年前被巴西队赢走的奖杯"
+   },
+   {
+    "name": "安息旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "离警察局最远的旅馆"
+   },
+   {
+    "name": "失眠夜旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "通路被消防车堵住的旅馆"
+   },
+   {
+    "name": "今日足球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "查尔顿收藏的《今日足球》杂志"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "捕获查尔顿的镜面泡泡"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "查尔顿幻觉中呼喊的小狗"
+   },
+   {
+    "name": "警察局",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮想远离的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "查尔顿",
+    "relation": "致谢",
+    "dst": "梅兰妮",
+    "evidence": "多亏了你的那些让人眼花缭乱的东西的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "询问",
+    "dst": "梅兰妮",
+    "evidence": "如果有什么我能为你效劳的事情，请尽管开口",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "担忧",
+    "dst": "梅兰妮",
+    "evidence": "你不会也被“镜面肥皂泡”给影响了吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "惊醒",
+    "dst": "警察局",
+    "evidence": "警察？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "询问",
+    "dst": "查尔顿",
+    "evidence": "请告诉我离这儿最近，离警察局最远的旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "推荐",
+    "dst": "安息旅馆",
+    "evidence": "安息旅馆？也许你能在那里碰碰运气",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "说明",
+    "dst": "失眠夜旅馆",
+    "evidence": "更好一点的选择就是失眠夜旅馆了",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "提及",
+    "dst": "今日足球",
+    "evidence": "我正是因为这期的栏目选题才买来收藏的",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "讲述",
+    "dst": "雷米特杯",
+    "evidence": "就是那个在四年前被巴西队赢走的奖杯！",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "讲述",
+    "dst": "雷米特杯",
+    "evidence": "它在展出时离奇失踪，被小偷神不知鬼不觉地换成了仿品",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜面肥皂泡",
+    "relation": "捕获",
+    "dst": "查尔顿",
+    "evidence": "它主动捕获了查尔顿，带着毛糙的触角",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "呓语",
+    "dst": "皮克勒斯",
+    "evidence": "皮克勒斯，皮克勒斯，快来！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "纠正",
+    "dst": "查尔顿",
+    "evidence": "现在是三月，距离世界杯的决赛还有一段相当长的时间",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d9058da0de36ede6270a595f": {
+  "entities": [
+   {
+    "name": "查尔顿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被喷雾唤醒的市民"
+   },
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以喷雾换取杂志的窃贼"
+   },
+   {
+    "name": "臭臭泥清新剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "能以粗暴破坏力净化空气的喷雾"
+   },
+   {
+    "name": "镜面肥皂泡",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被施下生命力咒语的泡泡"
+   },
+   {
+    "name": "安息旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "梅兰妮新计划中的终点"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "查尔顿仍在寻找的小狗"
+   },
+   {
+    "name": "今日足球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被梅兰妮塞进手提包的杂志"
+   }
+  ],
+  "relations": [
+   {
+    "src": "查尔顿",
+    "relation": "呼唤",
+    "dst": "皮克勒斯",
+    "evidence": "皮克勒斯，小皮克勒斯！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "诊断",
+    "dst": "镜面肥皂泡",
+    "evidence": "那些肥皂泡被施下了某种具有生命力的咒语",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "建议",
+    "dst": "查尔顿",
+    "evidence": "我建议您试试这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "使用",
+    "dst": "臭臭泥清新剂",
+    "evidence": "朝着查尔顿的鼻子喷了上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "臭臭泥清新剂",
+    "relation": "净化",
+    "dst": "查尔顿",
+    "evidence": "它能以粗暴的破坏力净化附近的空气",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "恢复",
+    "dst": "臭臭泥清新剂",
+    "evidence": "感觉舒服多了，差点就要喘不过气来了",
+    "confidence": 0.95
+   },
+   {
+    "src": "查尔顿",
+    "relation": "道谢",
+    "dst": "梅兰妮",
+    "evidence": "谢谢你，梅兰妮小姐！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "取走",
+    "dst": "今日足球",
+    "evidence": "梅兰妮将一本皱巴巴的杂志塞进手提包里",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "抵达",
+    "dst": "安息旅馆",
+    "evidence": "再转几个弯，她就能抵达新计划中的终点——安息旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "祝愿",
+    "dst": "皮克勒斯",
+    "evidence": "愿上帝保佑你早日找到你的小皮克勒斯",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fab6f9bc09e6166008b98193": {
+  "entities": [
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述故事的牧羊犬"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从高空降落与小狗攀谈的苹果"
+   },
+   {
+    "name": "温迪",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带头集合的柯基犬"
+   },
+   {
+    "name": "纳尔森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参与狗群对话的小狗"
+   },
+   {
+    "name": "爱丽丝",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁听故事的小狗"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "APPLe 所属的摇滚海盗船长"
+   },
+   {
+    "name": "卡纳比街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "少有清闲时刻的街道"
+   },
+   {
+    "name": "机车酒吧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "星锑参加比赛的起点"
+   },
+   {
+    "name": "北环路",
+    "type": "地点",
+    "aliases": [],
+    "desc": "机车酒吧正门所在的环路"
+   }
+  ],
+  "relations": [
+   {
+    "src": "皮克勒斯",
+    "relation": "藏身",
+    "dst": "卡纳比街",
+    "evidence": "黑白相间的牧羊犬安心地趴在未经修理的花圃里",
+    "confidence": 0.95
+   },
+   {
+    "src": "温迪",
+    "relation": "呼唤",
+    "dst": "皮克勒斯",
+    "evidence": "在一阵兴奋的叫声之后，小狗们收到了集合的信号",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "讲述",
+    "dst": "温迪",
+    "evidence": "皮克勒斯叹了口气",
+    "confidence": 0.95
+   },
+   {
+    "src": "纳尔森",
+    "relation": "附和",
+    "dst": "皮克勒斯",
+    "evidence": "汪汪汪！",
+    "confidence": 0.95
+   },
+   {
+    "src": "爱丽丝",
+    "relation": "旁听",
+    "dst": "皮克勒斯",
+    "evidence": "呜——？",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "离开",
+    "dst": "温迪",
+    "evidence": "他独自朝着街道的另一端走去",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "报告",
+    "dst": "星锑",
+    "evidence": "机车酒吧正门位于北环路，与终点的距离约为4.803英里",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "说明",
+    "dst": "星锑",
+    "evidence": "星锑船长的时速为65英里",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "问候",
+    "dst": "皮克勒斯",
+    "evidence": "你好，小狗先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "询问",
+    "dst": "皮克勒斯",
+    "evidence": "你看上去有些激动，小狗先生……你饿了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "求助",
+    "dst": "星锑",
+    "evidence": "船长，救我",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "介绍",
+    "dst": "皮克勒斯",
+    "evidence": "她是一位流浪在自由广阔的公海之上……伟大海盗",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "提及",
+    "dst": "机车酒吧",
+    "evidence": "机车酒吧正门位于北环路",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "提及",
+    "dst": "北环路",
+    "evidence": "机车酒吧正门位于北环路，与终点的距离约为4.803英里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "940ac6c3a2ec12628c6eaad3": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "因船长遇麻烦而匆匆道别的苹果"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对星锑船长兴致满满的小狗"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在伦敦各处流浪的海盗"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苹果与船长流浪的城市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "猜测",
+    "dst": "皮克勒斯",
+    "evidence": "我猜你会喜欢星锑船长的",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "说明",
+    "dst": "星锑",
+    "evidence": "我们大多时候都在伦敦的各处流浪，船长热衷于一切新奇有趣的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "告辞",
+    "dst": "皮克勒斯",
+    "evidence": "很抱歉，小狗，但我得走了",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "解释",
+    "dst": "星锑",
+    "evidence": "星锑船长似乎遇到了麻烦",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "承诺",
+    "dst": "皮克勒斯",
+    "evidence": "或许我能做出点儿小东西来帮助我们相互交流",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "道别",
+    "dst": "皮克勒斯",
+    "evidence": "再见，小狗。汪汪汪～",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "流浪",
+    "dst": "伦敦",
+    "evidence": "我们大多时候都在伦敦的各处流浪",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "疑问",
+    "dst": "APPLe",
+    "evidence": "汪？",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

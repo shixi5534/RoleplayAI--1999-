@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-09-17 13:23:31",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "prod_semantic_top": 5,
+    "items": 25
+  },
+  "selfcheck": "SKIPPED",
+  "results": [
+    {
+      "label": "semantic_top=5",
+      "strict_pass_n": 12,
+      "strict_pass": 0.48,
+      "inject_pass": 0.48,
+      "mrr": 0.2917,
+      "latency_p95_ms": 942.5,
+      "negatives": {
+        "injection_total": 54,
+        "cases": 53,
+        "clean": false,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "semantic_top": 5
+    },
+    {
+      "label": "semantic_top=20",
+      "strict_pass_n": 12,
+      "strict_pass": 0.48,
+      "inject_pass": 0.48,
+      "mrr": 0.2783,
+      "latency_p95_ms": 722.0,
+      "negatives": {
+        "injection_total": 56,
+        "cases": 53,
+        "clean": false,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "semantic_top": 20
+    }
+  ],
+  "delta_vs_prod": [
+    {
+      "semantic_top": 5,
+      "d_strict_pass_n": 0,
+      "d_inject_pass": 0.0,
+      "d_neg_injection": 0
+    },
+    {
+      "semantic_top": 20,
+      "d_strict_pass_n": 0,
+      "d_inject_pass": 0.0,
+      "d_neg_injection": 2
+    }
+  ]
+}

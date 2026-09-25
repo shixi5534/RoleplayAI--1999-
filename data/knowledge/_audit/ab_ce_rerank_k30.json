@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-09-17 19:44:03",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400,
+    "budget": 8,
+    "ks": [
+      30
+    ],
+    "model_dir": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\models\\bge-reranker-base-onnx",
+    "onnx": "onnx/model_int8.onnx",
+    "cases": 300
+  },
+  "baseline": {
+    "strict_pass_n": 195,
+    "inject_pass_n": 177,
+    "neg_cases": null,
+    "neg_blocks": 54,
+    "latency_p95_ms": 497.0,
+    "neg_violations": [
+      "解释一下相对论",
+      "哈利波特是谁",
+      "红楼梦的作者是谁",
+      "苹果公司的 CEO 是谁",
+      "巴黎在哪个国家",
+      "泰坦尼克号是哪一年沉没的",
+      "who is the president of the united states"
+    ]
+  },
+  "results": [
+    {
+      "label": "CE k=30",
+      "k": 30,
+      "strict_pass_n": 201,
+      "strict_pass": 0.67,
+      "inject_pass_n": 174,
+      "inject_pass": 0.58,
+      "pool_avg": 20.4,
+      "pool_k": 30,
+      "ce_latency_p50_ms": 990.5,
+      "ce_latency_p95_ms": 13005.4,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ],
+        "crosscheck_main_eval": {
+          "cases_with_injection": 7,
+          "injection_total": 54,
+          "consistent": true
+        },
+        "new_vs_baseline": []
+      },
+      "elapsed_s": 1520.2
+    }
+  ],
+  "delta_vs_baseline": [
+    {
+      "k": 30,
+      "d_strict": 6,
+      "d_inject": -3,
+      "d_neg_cases": null,
+      "d_neg_blocks": 0
+    }
+  ]
+}

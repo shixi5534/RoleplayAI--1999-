@@ -1,0 +1,1563 @@
+{
+ "af312b3c96df342992a3774e": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "招呼客人并赠出贝壳项链者"
+   },
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "支持物品交换的努库泰澳人"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收到贝壳项链并解答疑问的司辰"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "补足照明能源的机械女士"
+   },
+   {
+    "name": "芭卡洛儿",
+    "type": "角色",
+    "aliases": [],
+    "desc": "换轻快曲调推动兴趣的乐手"
+   },
+   {
+    "name": "努库泰澳人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "展示手工编织品的努库泰澳人"
+   },
+   {
+    "name": "努库泰澳人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述贝壳保佑的努库泰澳人"
+   },
+   {
+    "name": "箱庭贸易节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "努库泰澳人摊位售罄的贸易节"
+   },
+   {
+    "name": "罗盘灼灼",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在摊位间流转照明的器物"
+   },
+   {
+    "name": "贝壳项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "维尔汀留下的那条传统项链"
+   },
+   {
+    "name": "荧树枝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "斜插在细颈瓶中生芽的树枝"
+   },
+   {
+    "name": "细颈花瓶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "插着荧树枝的细颈瓶"
+   },
+   {
+    "name": "提丰小灯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "与图图石子交换所得的提丰小灯"
+   },
+   {
+    "name": "司辰的藏书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "维尔汀未交换出去的那几本书"
+   },
+   {
+    "name": "图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "努库泰澳人需填写登记表之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "图图石子",
+    "relation": "招呼",
+    "dst": "努库泰澳人Ⅰ",
+    "evidence": "欢迎看看努库泰澳的产品！",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅰ",
+    "relation": "展示",
+    "dst": "贝壳项链",
+    "evidence": "这是我们手工编织的项链和手杖",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅱ",
+    "relation": "说明",
+    "dst": "贝壳项链",
+    "evidence": "贝壳也曾保佑我们平安出海",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭卡洛儿",
+    "relation": "伴奏",
+    "dst": "箱庭贸易节",
+    "evidence": "换了一首轻快的曲调，推动着人们高涨的兴趣",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "招揽",
+    "dst": "箱庭贸易节",
+    "evidence": "我们支持各种物品交换，请随意挑选！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗盘灼灼",
+    "relation": "照明",
+    "dst": "箱庭贸易节",
+    "evidence": "罗盘灼灼在摊位之间流转着，照亮每一处地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "荧树枝",
+    "relation": "斜插",
+    "dst": "细颈花瓶",
+    "evidence": "斜插在细颈瓶之中的荧树枝",
+    "confidence": 0.95
+   },
+   {
+    "src": "提丰小灯",
+    "relation": "摇晃",
+    "dst": "芭卡洛儿",
+    "evidence": "三盏魔药师小姐与图图石子交换的提丰小灯，随乐曲摇晃",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "补足",
+    "dst": "箱庭贸易节",
+    "evidence": "理应在此补足因占用能源而欠缺的照明",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "致谢",
+    "dst": "露西",
+    "evidence": "感谢您的慷慨……露西女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "告知",
+    "dst": "图图石子",
+    "evidence": "这是我……没交换出去的东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "赠予",
+    "dst": "维尔汀",
+    "evidence": "我给你留了一条贝壳项链",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "致谢",
+    "dst": "维尔汀",
+    "evidence": "我们都很感谢你和基金会……让我们留在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "感激",
+    "dst": "维尔汀",
+    "evidence": "图图石子和我们能有新的住所，我们对此非常感激",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅰ",
+    "relation": "提及",
+    "dst": "维尔汀",
+    "evidence": "那些繁琐的申请手续，没有你的话，我们完全写不来",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "提问",
+    "dst": "维尔汀",
+    "evidence": "有一个问题，我想从你这里得到解答",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "摩挲",
+    "dst": "贝壳项链",
+    "evidence": "她摩挲着自己的贝壳项链，它们依旧完整如新",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅱ",
+    "relation": "登记",
+    "dst": "图书馆",
+    "evidence": "还有图书馆登记表",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "85b7e101e2519d64d78f09f2": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "递出贝壳项链求证的女孩"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解答贝壳完整之谜的司辰"
+   },
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选好书呼唤图图石子的友人"
+   },
+   {
+    "name": "努库泰澳人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "选定《高效沟通》的努库泰澳人"
+   },
+   {
+    "name": "贝壳项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在夜色中光洁明亮的项链"
+   },
+   {
+    "name": "司辰的藏书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被努库泰澳人留下的那本书"
+   }
+  ],
+  "relations": [
+   {
+    "src": "图图石子",
+    "relation": "递出",
+    "dst": "贝壳项链",
+    "evidence": "她将自己的贝壳项链递过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "感知",
+    "dst": "贝壳项链",
+    "evidence": "我能感受到",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解答",
+    "dst": "图图石子",
+    "evidence": "你从未离开，所以它依旧完整",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "呼唤",
+    "dst": "图图石子",
+    "evidence": "图图石子！司辰小姐！我们选好了～",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅰ",
+    "relation": "选定",
+    "dst": "司辰的藏书",
+    "evidence": "我们要留下这本《高效沟通：谈话技巧艺术》！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "释然",
+    "dst": "塞洛尼",
+    "evidence": "那真是……太好了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c076c003d784de946e13eeb3": {
+  "entities": [
+   {
+    "name": "图图石子",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在湖畔哼唱古老歌谣的女孩"
+   },
+   {
+    "name": "塞洛尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要去图书馆看新书的友人"
+   },
+   {
+    "name": "卡穆塔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "歌谣中三条告诫的讲述者"
+   },
+   {
+    "name": "努库泰澳人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "去学钟表维修的努库泰澳人"
+   },
+   {
+    "name": "努库泰澳人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "只读完一页书的努库泰澳人"
+   },
+   {
+    "name": "箱中的湖畔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "留下欢声笑语的湖畔"
+   },
+   {
+    "name": "图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "塞洛尼前往之处"
+   },
+   {
+    "name": "贝壳项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "图图石子胸前的原项链"
+   },
+   {
+    "name": "音符勋章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在海浪间跳动的音符勋章"
+   },
+   {
+    "name": "复古迷你唱片",
+    "type": "物品",
+    "aliases": [],
+    "desc": "闪闪发光的复古迷你唱片"
+   },
+   {
+    "name": "拼贴邮票",
+    "type": "物品",
+    "aliases": [],
+    "desc": "描绘四季景色的拼贴邮票"
+   },
+   {
+    "name": "银质怀表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "崭新轻巧的单链银质怀表"
+   },
+   {
+    "name": "司辰的藏书",
+    "type": "物品",
+    "aliases": [],
+    "desc": "努库泰澳人研读的书"
+   }
+  ],
+  "relations": [
+   {
+    "src": "图图石子",
+    "relation": "询问",
+    "dst": "塞洛尼",
+    "evidence": "那本书你看完了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "困惑",
+    "dst": "司辰的藏书",
+    "evidence": "上面说，面对不一样的人，称呼是不一样的，笑容也要不一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "演示",
+    "dst": "图图石子",
+    "evidence": "海岛的女孩用手指提起自己的嘴角",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "举例",
+    "dst": "卡穆塔",
+    "evidence": "哥哥捕鱼的时候会笑得很痛快",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅰ",
+    "relation": "认同",
+    "dst": "图图石子",
+    "evidence": "痛快的笑，我们用不着学习！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "唱歌",
+    "dst": "箱中的湖畔",
+    "evidence": "小船儿哟，停泊在沙儿上",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡穆塔",
+    "relation": "吟诵",
+    "dst": "贝壳项链",
+    "evidence": "当第一条告诫在贝壳上显现的时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "塞洛尼",
+    "relation": "告别",
+    "dst": "图图石子",
+    "evidence": "我要去图书馆了～",
+    "confidence": 0.95
+   },
+   {
+    "src": "努库泰澳人Ⅱ",
+    "relation": "抱怨",
+    "dst": "司辰的藏书",
+    "evidence": "花了一天，那本书我们也只看完了一页！",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "凝望",
+    "dst": "箱中的湖畔",
+    "evidence": "图图石子静静地站在湖边，凝望着湖面",
+    "confidence": 0.95
+   },
+   {
+    "src": "音符勋章",
+    "relation": "串入",
+    "dst": "贝壳项链",
+    "evidence": "串起一条新的项链",
+    "confidence": 0.95
+   },
+   {
+    "src": "复古迷你唱片",
+    "relation": "串入",
+    "dst": "贝壳项链",
+    "evidence": "一张闪闪发光的复古迷你唱片",
+    "confidence": 0.95
+   },
+   {
+    "src": "拼贴邮票",
+    "relation": "串入",
+    "dst": "贝壳项链",
+    "evidence": "一张描绘四季景色的拼贴邮票",
+    "confidence": 0.95
+   },
+   {
+    "src": "银质怀表",
+    "relation": "串入",
+    "dst": "贝壳项链",
+    "evidence": "一枚崭新轻巧的单链银质怀表",
+    "confidence": 0.95
+   },
+   {
+    "src": "图图石子",
+    "relation": "哼唱",
+    "dst": "箱中的湖畔",
+    "evidence": "湖面掠来风，海岛的女孩闭上眼睛",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb3083d2acc1c0a8a38592f8": {
+  "entities": [
+   {
+    "name": "警员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以温和语气审问的警员"
+   },
+   {
+    "name": "警员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "踹门而入的警员"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咬下警员耳垂的摩卢旁卡神秘学家"
+   },
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报纸失踪报道上的名字"
+   },
+   {
+    "name": "阿贾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "召集同伴去见坎吉拉的男孩"
+   },
+   {
+    "name": "孩子Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指关节敲头的孩子"
+   },
+   {
+    "name": "孩子Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨阿贾尔记错时间的孩子"
+   },
+   {
+    "name": "夏尔贾",
+    "type": "角色",
+    "aliases": [],
+    "desc": "孩子们提防的老师"
+   },
+   {
+    "name": "昌迪加尔警局审讯室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贾纳丹咬人的审讯室"
+   },
+   {
+    "name": "失踪报道",
+    "type": "物品",
+    "aliases": [],
+    "desc": "登载失踪报道的报纸"
+   },
+   {
+    "name": "摩卢旁卡村",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贾纳丹所来自的村庄"
+   }
+  ],
+  "relations": [
+   {
+    "src": "警员Ⅰ",
+    "relation": "审问",
+    "dst": "贾纳丹",
+    "evidence": "有年轻人为了让老母亲不再饥肠辘辘",
+    "confidence": 0.95
+   },
+   {
+    "src": "警员Ⅰ",
+    "relation": "追问",
+    "dst": "贾纳丹",
+    "evidence": "那么……那份钱去哪儿了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "警员Ⅰ",
+    "relation": "追问",
+    "dst": "坎吉拉",
+    "evidence": "还有你绑架的孩子，我们所有人都很关心她的去向",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "撕咬",
+    "dst": "警员Ⅰ",
+    "evidence": "牙齿撕咬着他的耳垂，渗出鲜血",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "辱骂",
+    "dst": "警员Ⅰ",
+    "evidence": "你以为我不知道你在想什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "警员Ⅱ",
+    "relation": "喝止",
+    "dst": "贾纳丹",
+    "evidence": "猪猡，把他放开！！！",
+    "confidence": 0.95
+   },
+   {
+    "src": "警员Ⅱ",
+    "relation": "击打",
+    "dst": "贾纳丹",
+    "evidence": "迅速从腰带间掏出一根黑色铁棒，狠狠捶在男人的肚子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "松口",
+    "dst": "警员Ⅰ",
+    "evidence": "突如其来的捶打，令他顿生呕吐感，终于松下了口",
+    "confidence": 0.95
+   },
+   {
+    "src": "失踪报道",
+    "relation": "登载",
+    "dst": "坎吉拉",
+    "evidence": "一位失踪孩子的名字赫然在目",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "置身",
+    "dst": "昌迪加尔警局审讯室",
+    "evidence": "只留他在审讯室中",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "召集",
+    "dst": "孩子Ⅰ",
+    "evidence": "可别被夏尔贾老师听到了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "催促",
+    "dst": "孩子Ⅱ",
+    "evidence": "等进了大篷车再说",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅱ",
+    "relation": "抱怨",
+    "dst": "阿贾尔",
+    "evidence": "你记错了时间，害我的屁股都被那只看门的大狗咬了个破洞",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅰ",
+    "relation": "提防",
+    "dst": "夏尔贾",
+    "evidence": "偶尔有大人经过身边，便缩起脖子",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "来自",
+    "dst": "摩卢旁卡村",
+    "evidence": "你这个摩卢旁卡村的猪猡神秘学家",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2616a7348715e9e205cbc3ec": {
+  "entities": [
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "修好父母遗留大篷车的女孩"
+   },
+   {
+    "name": "阿贾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以为要去抢大人生意的男孩"
+   },
+   {
+    "name": "孩子Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "假装放狗威慑入侵者的孩子"
+   },
+   {
+    "name": "秘密基地",
+    "type": "地点",
+    "aliases": [],
+    "desc": "孩子们在郊林的秘密基地"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被修好并能发动的废旧大篷车"
+   },
+   {
+    "name": "摩卢旁卡村",
+    "type": "地点",
+    "aliases": [],
+    "desc": "坎吉拉打算离开的村庄"
+   },
+   {
+    "name": "蛇形足环",
+    "type": "物品",
+    "aliases": [],
+    "desc": "坎吉拉脚上的蛇形足环"
+   },
+   {
+    "name": "寻人启事",
+    "type": "物品",
+    "aliases": [],
+    "desc": "只绘蛇形足环的寻人启事"
+   },
+   {
+    "name": "火车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "小扒手逃下来的那趟火车"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿贾尔",
+    "relation": "呼唤",
+    "dst": "坎吉拉",
+    "evidence": "坎吉拉大姐，你到了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅰ",
+    "relation": "抱怨",
+    "dst": "坎吉拉",
+    "evidence": "她又迟到……",
+    "confidence": 0.95
+   },
+   {
+    "src": "大篷车",
+    "relation": "作响",
+    "dst": "秘密基地",
+    "evidence": "早已报废的大篷车，忽然犹如巨兽般响起了喘息",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅰ",
+    "relation": "威慑",
+    "dst": "秘密基地",
+    "evidence": "再不出来，我可要放狗咬你了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "宣布",
+    "dst": "阿贾尔",
+    "evidence": "终于，终于成功了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "询问",
+    "dst": "坎吉拉",
+    "evidence": "你是把你爸妈留给你的大篷车修好了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "说明",
+    "dst": "大篷车",
+    "evidence": "看来在修理店偷师的那小子没有骗我",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "宣告",
+    "dst": "阿贾尔",
+    "evidence": "我打算开着这辆大篷车，离开摩卢旁卡村",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "质疑",
+    "dst": "坎吉拉",
+    "evidence": "如果他们真的在这个国家的另一边儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "依据",
+    "dst": "蛇形足环",
+    "evidence": "那个从火车上逃下来的小扒手，一眼就认出了我脚上的蛇形足环",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "出示",
+    "dst": "寻人启事",
+    "evidence": "她从口袋掏出那张寻人启事",
+    "confidence": 0.95
+   },
+   {
+    "src": "寻人启事",
+    "relation": "绘有",
+    "dst": "蛇形足环",
+    "evidence": "以及，一只绘制的蛇形足环",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "置身",
+    "dst": "摩卢旁卡村",
+    "evidence": "我打算开着这辆大篷车，离开摩卢旁卡村",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅰ",
+    "relation": "到达",
+    "dst": "秘密基地",
+    "evidence": "很快到达了目的地",
+    "confidence": 0.95
+   },
+   {
+    "src": "火车",
+    "relation": "见证",
+    "dst": "蛇形足环",
+    "evidence": "他说在那辆火车的始发站，曾见过一模一样的妇人戴着一样的足环",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "abf458c3ef21a8fb2340a87d": {
+  "entities": [
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意亲眼确认身世的女孩"
+   },
+   {
+    "name": "阿贾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "献出车站收获的男孩"
+   },
+   {
+    "name": "孩子Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替官员擦鞋赚钱的孩子"
+   },
+   {
+    "name": "孩子Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "掏出一天所得的孩子"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逃入大篷车的通缉犯"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贾纳丹翻入的庇护处"
+   },
+   {
+    "name": "摩卢旁卡村",
+    "type": "地点",
+    "aliases": [],
+    "desc": "坎吉拉所说的家"
+   }
+  ],
+  "relations": [
+   {
+    "src": "坎吉拉",
+    "relation": "推测",
+    "dst": "阿贾尔",
+    "evidence": "他们并不是抛弃了我，而是因为什么原因不小心把我忘记在了这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "坚持",
+    "dst": "阿贾尔",
+    "evidence": "那我也要去亲眼确认！",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "断言",
+    "dst": "摩卢旁卡村",
+    "evidence": "这里才是我的家呀！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "献出",
+    "dst": "坎吉拉",
+    "evidence": "这是今早我在车站的“收获”",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅰ",
+    "relation": "献出",
+    "dst": "坎吉拉",
+    "evidence": "这是我今天替那些官员老爷爷擦鞋子赚的钱",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子Ⅱ",
+    "relation": "献出",
+    "dst": "坎吉拉",
+    "evidence": "还有我的……",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "承诺",
+    "dst": "阿贾尔",
+    "evidence": "我会还给你们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "打趣",
+    "dst": "坎吉拉",
+    "evidence": "等你回来，我们可还是要收好多利息的哟",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "逃入",
+    "dst": "大篷车",
+    "evidence": "眼前破破烂烂的大篷车正好是最佳的庇护处",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "昏迷",
+    "dst": "大篷车",
+    "evidence": "他翻入篷车后部，手一滑，摔倒在座椅后方",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "许诺",
+    "dst": "孩子Ⅱ",
+    "evidence": "我连半张卢比都不会还你们！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "aa038de58395286879a37a09": {
+  "entities": [
+   {
+    "name": "阿贾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催促众人送行的男孩"
+   },
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独自驾大篷车离村的女孩"
+   },
+   {
+    "name": "乔普拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "走漏消息的卖鱼大叔"
+   },
+   {
+    "name": "苏塔莉娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "耳聋却包打听的婆婆"
+   },
+   {
+    "name": "夏尔贾",
+    "type": "角色",
+    "aliases": [],
+    "desc": "孩子们避之不及的老师"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持枪爬出车厢的通缉犯"
+   },
+   {
+    "name": "孩子们",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在车后推车并追逐的伙伴"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "驶向村外道路的大篷车"
+   },
+   {
+    "name": "摩卢旁卡村",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被大门分割开的村庄"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿贾尔",
+    "relation": "催促",
+    "dst": "孩子们",
+    "evidence": "咱们在天亮以前，一定要让坎吉拉大姐离开村子",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "说明",
+    "dst": "乔普拉",
+    "evidence": "趁着卖鱼的乔普拉大叔还没来赶集，我现在就要动身了",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "提防",
+    "dst": "苏塔莉娅",
+    "evidence": "就能传到耳聋的苏塔莉娅婆婆的嘴里啦",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子们",
+    "relation": "推动",
+    "dst": "大篷车",
+    "evidence": "孩子们齐齐在车屁股后面推了起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "跟随",
+    "dst": "大篷车",
+    "evidence": "跟上去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "告别",
+    "dst": "摩卢旁卡村",
+    "evidence": "摩卢旁卡村……",
+    "confidence": 0.95
+   },
+   {
+    "src": "孩子们",
+    "relation": "追逐",
+    "dst": "大篷车",
+    "evidence": "孩子们在大篷车后面，兔子般追逐",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿贾尔",
+    "relation": "送别",
+    "dst": "坎吉拉",
+    "evidence": "再……再见，坎吉拉大姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "现身",
+    "dst": "坎吉拉",
+    "evidence": "黑色的枪，随着打开的门，似一条毒蛇伸了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "致谢",
+    "dst": "坎吉拉",
+    "evidence": "谢谢你载我一程，小不点",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "警告",
+    "dst": "坎吉拉",
+    "evidence": "趁着我还没改主意，滚开。回家找你妈妈去",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "认出",
+    "dst": "贾纳丹",
+    "evidence": "你是那个通缉犯，贾纳丹",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "声明",
+    "dst": "贾纳丹",
+    "evidence": "那是我的大篷车",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "避让",
+    "dst": "夏尔贾",
+    "evidence": "绝不能让夏尔贾老师或者其他人看见",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "64e8ce9ed328760de2e5adc4": {
+  "entities": [
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯装女儿求脱身的女孩"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以匕首抵住女孩后背者"
+   },
+   {
+    "name": "农夫拉胡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为萨尔曼老爷干活的农夫"
+   },
+   {
+    "name": "陶工塔拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "制作蓝陶的陶工"
+   },
+   {
+    "name": "萨尔曼老爷",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拉胡尔夫妇所侍奉的老爷"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "停在路边的交通工具"
+   },
+   {
+    "name": "蓝陶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "塔拉所制作的陶器"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贾纳丹",
+    "relation": "挟持",
+    "dst": "坎吉拉",
+    "evidence": "用匕首抵住了她的后背",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "谎称",
+    "dst": "农夫拉胡尔",
+    "evidence": "我只是在跟我的女儿郊游呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "配合",
+    "dst": "贾纳丹",
+    "evidence": "嗯……没错，爸爸",
+    "confidence": 0.95
+   },
+   {
+    "src": "农夫拉胡尔",
+    "relation": "自介",
+    "dst": "萨尔曼老爷",
+    "evidence": "我是拉胡尔，就住在这附近，为萨尔曼老爷干活",
+    "confidence": 0.95
+   },
+   {
+    "src": "农夫拉胡尔",
+    "relation": "告知",
+    "dst": "贾纳丹",
+    "evidence": "警察局离这里不远，您如果需要帮助，我可以帮您叫他们过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "请求",
+    "dst": "农夫拉胡尔",
+    "evidence": "我想在这里玩一会儿，就一会儿好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "农夫拉胡尔",
+    "relation": "提议",
+    "dst": "坎吉拉",
+    "evidence": "我妻子怀孕在家，正愁缺个小帮手呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "警告",
+    "dst": "坎吉拉",
+    "evidence": "你可绝不能离开我的视线半点儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "指导",
+    "dst": "坎吉拉",
+    "evidence": "把手均匀用上力气，感受陶土在你双手上游走的力度",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "制作",
+    "dst": "蓝陶",
+    "evidence": "不计其数已制作好的蓝陶，齐齐地摆放着",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "担忧",
+    "dst": "萨尔曼老爷",
+    "evidence": "离萨尔曼老爷要的数量还远，我今晚得挑灯继续做了",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "建议",
+    "dst": "陶工塔拉",
+    "evidence": "直接把陶器拿去大集市上卖的话，一定能拿个好价钱！",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "解释",
+    "dst": "坎吉拉",
+    "evidence": "我自打出生就在这块儿地方，我还没出过远门",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e5a92d3e392cad8f290ac1d8": {
+  "entities": [
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以卢布替塔拉补足数额的女孩"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冒充坎吉拉父亲的通缉犯"
+   },
+   {
+    "name": "陶工塔拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被催促交数的陶工"
+   },
+   {
+    "name": "萨尔曼少爷",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上门收数的萨尔曼少爷"
+   },
+   {
+    "name": "萨尔曼老爷",
+    "type": "角色",
+    "aliases": [],
+    "desc": "派儿子前来收数的老爷"
+   },
+   {
+    "name": "仆人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跟随少爷的仆人"
+   },
+   {
+    "name": "仆人Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看见东西从少爷身上窜过的仆人"
+   },
+   {
+    "name": "农夫拉胡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "其家被踹开门的农夫"
+   },
+   {
+    "name": "拉胡尔家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被萨尔曼少爷踹开门的居所"
+   },
+   {
+    "name": "蓝陶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "尚未交够数的陶器"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "停在附近的交通工具"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "塔拉劝坎吉拉善用的天赋"
+   }
+  ],
+  "relations": [
+   {
+    "src": "陶工塔拉",
+    "relation": "断言",
+    "dst": "坎吉拉",
+    "evidence": "像我们这样的人类，手上没什么绝活",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "劝告",
+    "dst": "坎吉拉",
+    "evidence": "你应当好好利用神秘术，孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "催逼",
+    "dst": "拉胡尔家",
+    "evidence": "拉胡尔家的数齐了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "斥责",
+    "dst": "陶工塔拉",
+    "evidence": "你已经拖了好几天！",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "质问",
+    "dst": "陶工塔拉",
+    "evidence": "这个小丫头和脏兮兮的男人又是谁？",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "掩饰",
+    "dst": "萨尔曼少爷",
+    "evidence": "他们只是走错了路，来问问而已！",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "警告",
+    "dst": "陶工塔拉",
+    "evidence": "晚些我会再过来收数，如果你们还不够",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "依仗",
+    "dst": "萨尔曼老爷",
+    "evidence": "托了我爸爸的照顾，你们——",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "赠予",
+    "dst": "陶工塔拉",
+    "evidence": "莫名留下了几张大面额的卢布",
+    "confidence": 0.95
+   },
+   {
+    "src": "陶工塔拉",
+    "relation": "催促",
+    "dst": "坎吉拉",
+    "evidence": "你们得抓紧离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "解释",
+    "dst": "陶工塔拉",
+    "evidence": "这样你就够数了，塔拉大婶",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "下令",
+    "dst": "仆人Ⅰ",
+    "evidence": "我正好口渴了",
+    "confidence": 0.95
+   },
+   {
+    "src": "仆人Ⅰ",
+    "relation": "发现",
+    "dst": "萨尔曼少爷",
+    "evidence": "您的首饰也不见了，少爷！",
+    "confidence": 0.95
+   },
+   {
+    "src": "仆人Ⅱ",
+    "relation": "描述",
+    "dst": "坎吉拉",
+    "evidence": "有个东西很快从您身上窜了过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "仆人Ⅰ",
+    "relation": "报告",
+    "dst": "大篷车",
+    "evidence": "我看见了他们停的车，就在不远的地方",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a5830f8976c8b5b90066dde7": {
+  "entities": [
+   {
+    "name": "坎吉拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自夸手法并推车的女孩"
+   },
+   {
+    "name": "贾纳丹",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警告女孩惹祸的通缉犯"
+   },
+   {
+    "name": "萨尔曼少爷",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令掰断手指的少爷"
+   },
+   {
+    "name": "仆人Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叫喊指认的仆人"
+   },
+   {
+    "name": "大篷车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "冲入下坡消失的大篷车"
+   },
+   {
+    "name": "喷吉",
+    "type": "概念",
+    "aliases": [],
+    "desc": "坎吉拉对自己偷技的称呼"
+   }
+  ],
+  "relations": [
+   {
+    "src": "坎吉拉",
+    "relation": "端详",
+    "dst": "喷吉",
+    "evidence": "她端详着手上的钱包与首饰，胜利而归",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "警告",
+    "dst": "坎吉拉",
+    "evidence": "如果被发现，牵连到人会远比你想象得更多",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "自夸",
+    "dst": "喷吉",
+    "evidence": "喷吉来无影去无踪！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "催促",
+    "dst": "坎吉拉",
+    "evidence": "去推车",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "质疑",
+    "dst": "贾纳丹",
+    "evidence": "你不会就这样开走吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贾纳丹",
+    "relation": "威胁",
+    "dst": "坎吉拉",
+    "evidence": "要么相信我，要么咱们都在这儿等死",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "推动",
+    "dst": "大篷车",
+    "evidence": "她抵在车后方，艰难地推行着",
+    "confidence": 0.95
+   },
+   {
+    "src": "仆人Ⅰ",
+    "relation": "指认",
+    "dst": "坎吉拉",
+    "evidence": "就在这儿！",
+    "confidence": 0.95
+   },
+   {
+    "src": "大篷车",
+    "relation": "驶离",
+    "dst": "坎吉拉",
+    "evidence": "大篷车驶向前方，速度越来越快",
+    "confidence": 0.95
+   },
+   {
+    "src": "坎吉拉",
+    "relation": "追赶",
+    "dst": "大篷车",
+    "evidence": "她奔跑着，喘息着，试图跟上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "萨尔曼少爷",
+    "relation": "下令",
+    "dst": "仆人Ⅰ",
+    "evidence": "抓住她！把她的手指，给我一根根地掰断！",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

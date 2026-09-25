@@ -1,0 +1,13 @@
+﻿python.exe : Traceback (most recent call last):
+所在位置 行:450 字符: 1
++ & ".\.venv\Scripts\python.exe" -X utf8 -c "import json;d=json.load(op ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 1, in <module>
+    import json;d=json.load(open(r'data/knowledge/_audit/repeat/guarded_1.json',encoding='utf-8'));s=d.get('summary',{}
+);print('inject',s.get('inject_pass'),'strict',s.get('strict_pass'));print('semantic_loaded',d.get('semantic_loaded'));
+print('status',d.get('semantic_status'))
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/knowledge/_audit/repeat/guarded_1.json'

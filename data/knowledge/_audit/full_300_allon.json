@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-09-17 16:10:47",
+  "config": {
+    "testset": "rag_testset_300.json",
+    "cases": 300,
+    "top": 6,
+    "lexical_fallback": 2,
+    "inject_chars": 2400
+  },
+  "results": [
+    {
+      "label": "基线（无改写）",
+      "enable": false,
+      "strict_pass_n": 199,
+      "strict_pass": 0.6633,
+      "inject_pass_n": 176,
+      "inject_pass": 0.5867,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 172.5
+    },
+    {
+      "label": "多路改写",
+      "enable": true,
+      "strict_pass_n": 227,
+      "strict_pass": 0.7567,
+      "inject_pass_n": 212,
+      "inject_pass": 0.7067,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 229.2
+    }
+  ],
+  "delta": {
+    "d_strict": 28,
+    "d_inject": 36,
+    "d_neg_cases": 0
+  }
+}

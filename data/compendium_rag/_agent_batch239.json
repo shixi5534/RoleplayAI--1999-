@@ -1,0 +1,1058 @@
+{
+ "684607b6b0146abfe1872a1e": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受邀参与观测实验的司辰"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同被邀请的苹果"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "介绍实验的研究员"
+   },
+   {
+    "name": "干涉仪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "惠更斯-菲涅尔干涉仪"
+   },
+   {
+    "name": "雨幕舞台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "全景观测空间的别称"
+   },
+   {
+    "name": "全景观测空间",
+    "type": "概念",
+    "aliases": [],
+    "desc": "意识可进入的特殊空间"
+   },
+   {
+    "name": "混沌粒子",
+    "type": "概念",
+    "aliases": [],
+    "desc": "模拟雨滴的混沌粒子"
+   },
+   {
+    "name": "观测指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "分发的观测手册"
+   },
+   {
+    "name": "洛伦兹实验室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "实验所在之处"
+   },
+   {
+    "name": "观测者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "观测即行动的参与者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱昂纳多",
+    "relation": "邀请",
+    "dst": "维尔汀",
+    "evidence": "欢迎参与此次观测实验",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "介绍",
+    "dst": "干涉仪",
+    "evidence": "是惠更斯-菲涅尔干涉仪用混沌粒子模拟出来的伪装",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "命名",
+    "dst": "雨幕舞台",
+    "evidence": "我个人喜欢叫它“雨幕舞台”",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "说明",
+    "dst": "全景观测空间",
+    "evidence": "它似乎能让我们的意识进入一些尤为“特殊”的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "提问",
+    "dst": "莱昂纳多",
+    "evidence": "接下来需要我们做些什么吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "宣告",
+    "dst": "观测者",
+    "evidence": "在舞台之上，观测本身就是一种行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "提及",
+    "dst": "混沌粒子",
+    "evidence": "随后雨滴开始舞动，它们的轨迹因你而改变",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "预告",
+    "dst": "雨幕舞台",
+    "evidence": "祝你们玩得开心",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a9175cb45eac56630628e60": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被围观的金色苹果"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被绑架来的天才"
+   },
+   {
+    "name": "圣殿骑士Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "押送的圣殿骑士"
+   },
+   {
+    "name": "米兰",
+    "type": "地点",
+    "aliases": [],
+    "desc": "莱昂纳多被绑来之地"
+   },
+   {
+    "name": "佛罗伦萨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "众人所在之城"
+   },
+   {
+    "name": "意大利",
+    "type": "地点",
+    "aliases": [],
+    "desc": "支离破碎的半岛"
+   },
+   {
+    "name": "手术刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "莱昂纳多钟爱的手术刀"
+   }
+  ],
+  "relations": [
+   {
+    "src": "APPLe",
+    "relation": "苏醒",
+    "dst": "佛罗伦萨",
+    "evidence": "难道这里是意大利吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "自陈",
+    "dst": "APPLe",
+    "evidence": "我是莱昂纳多·达·芬奇，你可以叫我莱昂纳多",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "自谦",
+    "dst": "APPLe",
+    "evidence": "比起画家，我更愿意被当作一位天才的发明家",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士Ⅰ",
+    "relation": "包围",
+    "dst": "APPLe",
+    "evidence": "身影遮住了背后的阳光",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "吓唬",
+    "dst": "APPLe",
+    "evidence": "准备好被我解剖了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "展示",
+    "dst": "手术刀",
+    "evidence": "这是我最钟爱的一把手术刀",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0c29197e20d60c3bea529945": {
+  "entities": [
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "兴致勃勃的解剖学家"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "险被切成四瓣的苹果"
+   },
+   {
+    "name": "手术刀",
+    "type": "物品",
+    "aliases": [],
+    "desc": "锋利冰冷的手术刀"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱昂纳多",
+    "relation": "宣告",
+    "dst": "APPLe",
+    "evidence": "我会先将你切成四瓣，记录下你的果肉层次与分布",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "炫耀",
+    "dst": "手术刀",
+    "evidence": "能以最快的速度划破皮肤、脂肪和肌腱",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "求饶",
+    "dst": "莱昂纳多",
+    "evidence": "这是针对APPLe某的严重迫害",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0037ed1f6f44d5520fd40872": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被当作钥匙的苹果"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "暗中演戏的囚徒"
+   },
+   {
+    "name": "圣殿骑士长官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷冰冰的长官"
+   },
+   {
+    "name": "圣殿骑士Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扬言烧死巫术苹果的骑士"
+   },
+   {
+    "name": "湿壁画",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无名圣徒的湿壁画"
+   },
+   {
+    "name": "无名之人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "画中圣徒的统称"
+   },
+   {
+    "name": "亚诺河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苹果被冲刷上岸之河"
+   }
+  ],
+  "relations": [
+   {
+    "src": "圣殿骑士长官",
+    "relation": "讲述",
+    "dst": "APPLe",
+    "evidence": "几个月前，一只金色的苹果被冲刷至亚诺河的岸边",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚诺河",
+    "relation": "冲来",
+    "dst": "APPLe",
+    "evidence": "一只金色的苹果——也就是你，被冲刷至亚诺河的岸边",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "下令",
+    "dst": "莱昂纳多",
+    "evidence": "你，去给它演示一遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "耳语",
+    "dst": "APPLe",
+    "evidence": "他会来救我们的",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "展示",
+    "dst": "湿壁画",
+    "evidence": "莱昂纳多在湿壁画前停下脚步",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "介绍",
+    "dst": "无名之人",
+    "evidence": "无名之人【Persona sconosciuta】",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士Ⅰ",
+    "relation": "威胁",
+    "dst": "APPLe",
+    "evidence": "真正的骑士会毫不犹豫地烧死一只会使用巫术的苹果",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0f37be1e351e8a47bd5edafd": {
+  "entities": [
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点亮湿壁画者"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解读铭文者"
+   },
+   {
+    "name": "湿壁画",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被夕光照亮的湿壁画"
+   },
+   {
+    "name": "凯撒密码",
+    "type": "概念",
+    "aliases": [],
+    "desc": "墙上的凯撒密码"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱昂纳多",
+    "relation": "等待",
+    "dst": "APPLe",
+    "evidence": "奇迹可不是什么廉价的咒语就能唤醒的",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "照亮",
+    "dst": "湿壁画",
+    "evidence": "温暖的光从它体内溢出，倾泻在壁画上",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "发现",
+    "dst": "凯撒密码",
+    "evidence": "这下面似乎还写着一串字母",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "解读",
+    "dst": "凯撒密码",
+    "evidence": "简单的凯撒密码，只需将它们的位置回正即可",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1162b73c58a9419791e9dd31": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打探消息的旅人"
+   },
+   {
+    "name": "书商",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推销手抄本的书商"
+   },
+   {
+    "name": "晚祷会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "黄昏集会的异教组织"
+   },
+   {
+    "name": "大教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "密室所在的大教堂"
+   },
+   {
+    "name": "佛罗伦萨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罗马美丽的女儿"
+   },
+   {
+    "name": "美第奇",
+    "type": "组织",
+    "aliases": [],
+    "desc": "靠金钱统治的家族"
+   },
+   {
+    "name": "金苹果",
+    "type": "概念",
+    "aliases": [],
+    "desc": "城中传言的金苹果"
+   },
+   {
+    "name": "APPLe",
+    "type": "概念",
+    "aliases": [],
+    "desc": "城中传言的金苹果"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "打听",
+    "dst": "书商",
+    "evidence": "孩子们似乎都在唱这首歌，有什么故事吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "介绍",
+    "dst": "晚祷会",
+    "evidence": "这一切，都源于一个叫“晚祷会”的异教组织",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "指点",
+    "dst": "大教堂",
+    "evidence": "他们集会的地方，就位于大教堂穹顶内的一处密室",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "夸耀",
+    "dst": "佛罗伦萨",
+    "evidence": "诗人曾说，佛罗伦萨是罗马美丽而著名的女儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "提及",
+    "dst": "美第奇",
+    "evidence": "不然你以为美第奇是靠什么统治的",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推理",
+    "dst": "金苹果",
+    "evidence": "能改变湿壁画的金苹果就成了那把唯一的钥匙",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d4030046f2114af543dfd314": {
+  "entities": [
+   {
+    "name": "书商",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被激怒的书商"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出以工换书者"
+   },
+   {
+    "name": "手抄本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记载湿壁画异象的手抄本"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被骑士踹倒者"
+   },
+   {
+    "name": "圣殿骑士长官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "粗暴的长官"
+   },
+   {
+    "name": "领主宫",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苹果曾流经之地"
+   },
+   {
+    "name": "圣马可修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "苹果曾流经之地"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被官命令的苹果"
+   }
+  ],
+  "relations": [
+   {
+    "src": "书商",
+    "relation": "推销",
+    "dst": "手抄本",
+    "evidence": "借助它的力量，你将成为佛罗伦萨首屈一指的寻宝者",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "还价",
+    "dst": "书商",
+    "evidence": "或许我可以为你解决一些神秘学相关的困扰",
+    "confidence": 0.95
+   },
+   {
+    "src": "书商",
+    "relation": "怒斥",
+    "dst": "维尔汀",
+    "evidence": "滚出我的书摊",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "殴打",
+    "dst": "莱昂纳多",
+    "evidence": "铁靴毫不留情地踹了过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "命令",
+    "dst": "APPLe",
+    "evidence": "接下来你们两个只需要按照我的指示做",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "追溯",
+    "dst": "领主宫",
+    "evidence": "你几经人手，领主宫、圣马可修道院、小偷公会",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "14c546a6d300eea81d5e9a42": {
+  "entities": [
+   {
+    "name": "圣殿骑士长官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被袭的长官"
+   },
+   {
+    "name": "圣殿骑士Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "中毒倒下的骑士"
+   },
+   {
+    "name": "圣殿骑士Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "望天示警者"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从天而降的刺客"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被救的苹果"
+   },
+   {
+    "name": "袖剑",
+    "type": "物品",
+    "aliases": [],
+    "desc": "同时弹出的袖剑"
+   },
+   {
+    "name": "圣殿骑士Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被袖剑刺中的骑士"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢呼救援者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾吉奥",
+    "relation": "袭击",
+    "dst": "圣殿骑士Ⅰ",
+    "evidence": "泛着冷光的袖剑从两侧同时弹出",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士Ⅱ",
+    "relation": "认出",
+    "dst": "艾吉奥",
+    "evidence": "是刺客……艾吉奥·奥迪托雷",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士Ⅲ",
+    "relation": "示警",
+    "dst": "艾吉奥",
+    "evidence": "长官，快看天上",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "告别",
+    "dst": "圣殿骑士Ⅱ",
+    "evidence": "死亡并非残酷。安息吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱昂纳多",
+    "relation": "欢呼",
+    "dst": "艾吉奥",
+    "evidence": "艾吉奥！",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "救援",
+    "dst": "APPLe",
+    "evidence": "刺客就站在这片血雾中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dbc748d12dba9f1aa8467bf8": {
+  "entities": [
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带苹果逃亡的刺客"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "趴在兜帽上的苹果"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "分头引开追兵者"
+   },
+   {
+    "name": "圣殿骑士长官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率众追赶者"
+   },
+   {
+    "name": "市民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "起哄的市民"
+   },
+   {
+    "name": "市民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "争抢遗物者"
+   },
+   {
+    "name": "市民Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣称遗物归己者"
+   },
+   {
+    "name": "领主宫",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被追往的方向"
+   },
+   {
+    "name": "大教堂",
+    "type": "地点",
+    "aliases": [],
+    "desc": "远眺的大教堂"
+   },
+   {
+    "name": "佛罗伦萨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被夕阳染红的城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "莱昂纳多",
+    "relation": "分头",
+    "dst": "艾吉奥",
+    "evidence": "这是你一直在找的那只苹果，快带他离开这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "保证",
+    "dst": "莱昂纳多",
+    "evidence": "他是米兰公爵的座上宾，他们不敢真的杀了他",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "追踪",
+    "dst": "艾吉奥",
+    "evidence": "他们往领主宫的方向跑了，快追上去",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "攀爬",
+    "dst": "领主宫",
+    "evidence": "我们还可以爬",
+    "confidence": 0.95
+   },
+   {
+    "src": "市民Ⅰ",
+    "relation": "起哄",
+    "dst": "APPLe",
+    "evidence": "那边屋顶上似乎有什么金色的东西闪了过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "市民Ⅱ",
+    "relation": "追逐",
+    "dst": "APPLe",
+    "evidence": "金色的……好像是金苹果",
+    "confidence": 0.95
+   },
+   {
+    "src": "市民Ⅲ",
+    "relation": "争抢",
+    "dst": "APPLe",
+    "evidence": "遗物是我的，别想跟我抢",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "远眺",
+    "dst": "大教堂",
+    "evidence": "她所投下的阴影是一张巨大的风帆",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7860234d5adc3ed077394d83": {
+  "entities": [
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坦陈宿怨的刺客"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求寻找朋友者"
+   },
+   {
+    "name": "圣殿骑士",
+    "type": "组织",
+    "aliases": [],
+    "desc": "刺客的宿敌"
+   },
+   {
+    "name": "刺客",
+    "type": "组织",
+    "aliases": [],
+    "desc": "艾吉奥所属组织"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被信任的友人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾吉奥",
+    "relation": "自陈",
+    "dst": "APPLe",
+    "evidence": "艾吉奥·奥迪托雷。你可以叫我艾吉奥",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "敌对",
+    "dst": "圣殿骑士",
+    "evidence": "圣殿骑士是刺客的敌人",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "所属",
+    "dst": "刺客",
+    "evidence": "在我们的组织里，刺杀并非目的，而是手段",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "求援",
+    "dst": "艾吉奥",
+    "evidence": "能否请你帮忙找到APPLe某走失的朋友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "信任",
+    "dst": "莱昂纳多",
+    "evidence": "既然你跟他是好友，那么你大概也是位有信用的先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "感谢",
+    "dst": "APPLe",
+    "evidence": "很抱歉让你卷入了这场纷争，苹果先生",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bb3f5c2b11404e8bad46c8ca": {
+  "entities": [
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跳下屋顶的刺客"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被吓坏的乘客"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "机智掩护的司辰"
+   },
+   {
+    "name": "圣殿骑士长官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "盘问维尔汀者"
+   },
+   {
+    "name": "圣殿骑士Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "比划金苹果的骑士"
+   }
+  ],
+  "relations": [
+   {
+    "src": "艾吉奥",
+    "relation": "邀请",
+    "dst": "APPLe",
+    "evidence": "我的意思是，从这里跳下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "着陆",
+    "dst": "APPLe",
+    "evidence": "他们坠入一个装满干草的小车",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士长官",
+    "relation": "盘问",
+    "dst": "维尔汀",
+    "evidence": "见过一个戴着灰色兜帽，个子很高的男人吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "否认",
+    "dst": "圣殿骑士长官",
+    "evidence": "抱歉，我没太留意",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣殿骑士Ⅲ",
+    "relation": "比划",
+    "dst": "APPLe",
+    "evidence": "没看到人，那别的东西呢",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f98a22b87e0d6983f15292ce": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赶来碰运气的司辰"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重逢的苹果"
+   },
+   {
+    "name": "艾吉奥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致谢并邀行者"
+   },
+   {
+    "name": "莱昂纳多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等候的老友"
+   },
+   {
+    "name": "刺客",
+    "type": "组织",
+    "aliases": [],
+    "desc": "艾吉奥所属的组织"
+   }
+  ],
+  "relations": [
+   {
+    "src": "维尔汀",
+    "relation": "问候",
+    "dst": "APPLe",
+    "evidence": "没有受伤吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "重逢",
+    "dst": "维尔汀",
+    "evidence": "维尔汀！想不到再次相遇是在这样尴尬的场合",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "解释",
+    "dst": "APPLe",
+    "evidence": "我听到了一些关于“金苹果”的传闻",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "致谢",
+    "dst": "维尔汀",
+    "evidence": "刚才的掩护真是令人印象深刻",
+    "confidence": 0.95
+   },
+   {
+    "src": "APPLe",
+    "relation": "介绍",
+    "dst": "艾吉奥",
+    "evidence": "艾吉奥·奥迪托雷，一位货真价实的刺客",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "澄清",
+    "dst": "刺客",
+    "evidence": "刺杀并非目的，而是手段",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾吉奥",
+    "relation": "引路",
+    "dst": "莱昂纳多",
+    "evidence": "我那位老朋友恐怕已经等得不耐烦了",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

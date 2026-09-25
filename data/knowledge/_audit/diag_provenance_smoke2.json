@@ -1,0 +1,231 @@
+{
+  "generated_at": "2026-09-17 13:18:54",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top": 6,
+    "lexical_fallback": 2,
+    "degraded": false,
+    "source": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\diag_seed_quality_20260917.json"
+  },
+  "counts": {
+    "fail_diagnosed": 10,
+    "never_candidate": 4,
+    "candidate_but_squeezed": 1,
+    "in_final_but_still_fail": 0,
+    "no_full_ceiling": 5
+  },
+  "ratios": {
+    "never_candidate": 0.4,
+    "candidate_but_squeezed": 0.1,
+    "in_final_but_still_fail": 0.0,
+    "no_full_ceiling": 0.5
+  },
+  "channel_candidate_hit": {
+    "edge": {
+      "n": 3,
+      "rate": 0.3
+    },
+    "mention": {
+      "n": 3,
+      "rate": 0.3
+    },
+    "semantic": {
+      "n": 4,
+      "rate": 0.4
+    },
+    "chapter": {
+      "n": 1,
+      "rate": 0.1
+    },
+    "lexical": {
+      "n": 0,
+      "rate": 0.0
+    }
+  },
+  "channel_unique_provider": {
+    "edge": 0,
+    "mention": 1,
+    "semantic": 1,
+    "chapter": 0,
+    "lexical": 0
+  },
+  "per_case": [
+    {
+      "id": "R002",
+      "q": "洞穴的囚徒篇中被称作 standkeeper 的女性是谁？",
+      "kind": "never_candidate",
+      "gold_any_fallback": false,
+      "n_gold": 1,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [],
+      "in_final": false,
+      "n_fused": 8
+    },
+    {
+      "id": "R003",
+      "q": "洞穴的囚徒篇里海盗船上的歌手是谁？",
+      "kind": "never_candidate",
+      "gold_any_fallback": false,
+      "n_gold": 3,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [],
+      "in_final": false,
+      "n_fused": 8
+    },
+    {
+      "id": "R005",
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "kind": "never_candidate",
+      "gold_any_fallback": false,
+      "n_gold": 211,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [],
+      "in_final": false,
+      "n_fused": 8
+    },
+    {
+      "id": "R006",
+      "q": "洞穴的囚徒篇里保利娜也随行登场，她的英文名是什么？",
+      "kind": "no_full_ceiling",
+      "gold_any_fallback": true,
+      "n_gold": 223,
+      "chan_rank": {
+        "edge": 4,
+        "mention": 1,
+        "semantic": 2,
+        "chapter": null
+      },
+      "providers": [
+        "edge",
+        "mention",
+        "semantic"
+      ],
+      "in_final": true,
+      "n_fused": 8
+    },
+    {
+      "id": "R008",
+      "q": "洞穴的囚徒篇里名为 Zero 的角色对应数字几？",
+      "kind": "never_candidate",
+      "gold_any_fallback": false,
+      "n_gold": 1,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [],
+      "in_final": false,
+      "n_fused": 8
+    },
+    {
+      "id": "R009",
+      "q": "洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？",
+      "kind": "no_full_ceiling",
+      "gold_any_fallback": true,
+      "n_gold": 251,
+      "chan_rank": {
+        "edge": 4,
+        "mention": 1,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [
+        "edge",
+        "mention"
+      ],
+      "in_final": true,
+      "n_fused": 8
+    },
+    {
+      "id": "R011",
+      "q": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+      "kind": "no_full_ceiling",
+      "gold_any_fallback": true,
+      "n_gold": 270,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": 2,
+        "chapter": null
+      },
+      "providers": [
+        "semantic"
+      ],
+      "in_final": true,
+      "n_fused": 8
+    },
+    {
+      "id": "R013",
+      "q": "洞穴的囚徒篇中与管理船只日常的 standkeeper 对话的是谁？",
+      "kind": "no_full_ceiling",
+      "gold_any_fallback": true,
+      "n_gold": 361,
+      "chan_rank": {
+        "edge": 1,
+        "mention": null,
+        "semantic": 1,
+        "chapter": null
+      },
+      "providers": [
+        "edge",
+        "semantic"
+      ],
+      "in_final": true,
+      "n_fused": 8
+    },
+    {
+      "id": "R014",
+      "q": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+      "kind": "no_full_ceiling",
+      "gold_any_fallback": true,
+      "n_gold": 195,
+      "chan_rank": {
+        "edge": null,
+        "mention": 1,
+        "semantic": null,
+        "chapter": null
+      },
+      "providers": [
+        "mention"
+      ],
+      "in_final": true,
+      "n_fused": 8
+    },
+    {
+      "id": "R015",
+      "q": "在洞穴的囚徒篇的航行里，出资买下摇滚苹果号、随身携带药箱的贵族小姐是谁？",
+      "kind": "candidate_but_squeezed",
+      "gold_any_fallback": false,
+      "n_gold": 80,
+      "chan_rank": {
+        "edge": null,
+        "mention": null,
+        "semantic": 5,
+        "chapter": 1
+      },
+      "providers": [
+        "semantic",
+        "chapter"
+      ],
+      "in_final": false,
+      "n_fused": 8
+    }
+  ]
+}

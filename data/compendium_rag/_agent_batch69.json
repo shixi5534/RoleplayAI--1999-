@@ -1,0 +1,1253 @@
+{
+ "6bf04b55a2b7110d08eb0e33": {
+  "entities": [
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "格蕾丝",
+     "淑女格蕾丝"
+    ],
+    "desc": "潜入5号楼者；面具中的低语"
+   },
+   {
+    "name": "歌唱家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重塑之手乐团主事"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [
+     "普莱玛"
+    ],
+    "desc": "受托维风网"
+   },
+   {
+    "name": "重塑军官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "无人理会的军官"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "概念",
+    "aliases": [
+     "复苏之母"
+    ],
+    "desc": "低语劝降之神"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "乐团维系之物"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "撕咬意识"
+   },
+   {
+    "name": "五号楼",
+    "type": "地点",
+    "aliases": [
+     "5号楼"
+    ],
+    "desc": "避难安置区"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "一般收容安置"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "军队队列出自"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "由此进入基金会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名者",
+    "relation": "低语",
+    "dst": "面具",
+    "evidence": "记得曾经有多少人在你的劝诱之下戴上面具吗",
+    "confidence": 0.8
+   },
+   {
+    "src": "无名者",
+    "relation": "戴用",
+    "dst": "面具",
+    "evidence": "这张面具杀不死我，我知道如何控制它",
+    "confidence": 0.95
+   },
+   {
+    "src": "歌唱家",
+    "relation": "托付",
+    "dst": "仪式术士",
+    "evidence": "我想你应该能接下维系“风网”的任务",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "接任",
+    "dst": "歌唱家",
+    "evidence": "我铭记于心",
+    "confidence": 0.85
+   },
+   {
+    "src": "无名者",
+    "relation": "查明",
+    "dst": "五号楼",
+    "evidence": "重塑之手真的是从这里进入基金会的",
+    "confidence": 0.9
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "调动",
+    "dst": "五号楼",
+    "evidence": "是格鲁托夫的军队。普莱玛的记忆没有出错",
+    "confidence": 0.85
+   },
+   {
+    "src": "无名者",
+    "relation": "潜入",
+    "dst": "五号楼",
+    "evidence": "她进入5号楼",
+    "confidence": 0.95
+   },
+   {
+    "src": "风网",
+    "relation": "连通",
+    "dst": "重塑之手",
+    "evidence": "是它连接着我们所有人",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "5ffadfa95f141d58bf639a17": {
+  "entities": [
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "淑女格蕾丝"
+    ],
+    "desc": "诵咒闭通道者；许诺新名者"
+   },
+   {
+    "name": "重塑乐团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "器官劣化的信徒"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被奏闭"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "侵蚀加深"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "概念",
+    "aliases": [
+     "复苏之母"
+    ],
+    "desc": "许诺归属"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "输送通道所属"
+   },
+   {
+    "name": "歌唱家",
+    "type": "角色",
+    "aliases": [],
+    "desc": "乐团之主"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名者",
+    "relation": "操控",
+    "dst": "重塑乐团",
+    "evidence": "我记得怎么控制这些失去理智的信徒",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "关闭",
+    "dst": "风网",
+    "evidence": "我会让乐团演奏出可以关闭“风网”的乐声",
+    "confidence": 0.9
+   },
+   {
+    "src": "风网",
+    "relation": "输送",
+    "dst": "重塑之手",
+    "evidence": "是它连接着我们所有人",
+    "confidence": 0.85
+   },
+   {
+    "src": "面具",
+    "relation": "侵蚀",
+    "dst": "无名者",
+    "evidence": "使用重塑之手的神秘术只会让面具对你的侵蚀更深",
+    "confidence": 0.9
+   },
+   {
+    "src": "无名者",
+    "relation": "归属",
+    "dst": "阿尔卡纳",
+    "evidence": "这是回家的机会，赎回自由的机会",
+    "confidence": 0.75
+   },
+   {
+    "src": "歌唱家",
+    "relation": "创建",
+    "dst": "风网",
+    "evidence": "歌唱家口中的“乐团”",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "f4dbbab168c6fb5d592b8d51": {
+  "entities": [
+   {
+    "name": "无名者",
+    "type": "角色",
+    "aliases": [
+     "格蕾丝"
+    ],
+    "desc": "完成任务求援"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接住间谍者"
+   },
+   {
+    "name": "红色38",
+    "type": "物品",
+    "aliases": [],
+    "desc": "引擎哑火"
+   },
+   {
+    "name": "手枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "防身之器"
+   },
+   {
+    "name": "风网",
+    "type": "概念",
+    "aliases": [],
+    "desc": "通道已关闭"
+   }
+  ],
+  "relations": [
+   {
+    "src": "无名者",
+    "relation": "告知",
+    "dst": "红弩箭",
+    "evidence": "通道……重塑之手进入基金会的通道……已经关闭",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "救助",
+    "dst": "无名者",
+    "evidence": "红弩箭接住向前摔倒的“间谍”",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "弃置",
+    "dst": "红色38",
+    "evidence": "我只能先把你留在这里了，伙计",
+    "confidence": 0.95
+   },
+   {
+    "src": "无名者",
+    "relation": "完成",
+    "dst": "风网",
+    "evidence": "我的任务……完成",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "ee4f4bdab99cd2014d203b5c": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "发手雷护身符"
+   },
+   {
+    "name": "艾米莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "得爆炸手雷"
+   },
+   {
+    "name": "卢卡斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "得隐身手雷"
+   },
+   {
+    "name": "除灵师",
+    "type": "角色",
+    "aliases": [],
+    "desc": "春分检查者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被念及者"
+   },
+   {
+    "name": "光学神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "隐身手雷效果"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "部分暴露雨中"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "攀爬之所"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "熔化高墙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "赠予",
+    "dst": "艾米莉亚",
+    "evidence": "冷硬的金属静静躺在孩子们柔软的掌心",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "赠予",
+    "dst": "卢卡斯",
+    "evidence": "收好，一人一个",
+    "confidence": 0.95
+   },
+   {
+    "src": "艾米莉亚",
+    "relation": "持用",
+    "dst": "光学神秘术",
+    "evidence": "艾米莉亚的这颗扔出去可以引发小规模爆炸",
+    "confidence": 0.8
+   },
+   {
+    "src": "卢卡斯",
+    "relation": "持用",
+    "dst": "光学神秘术",
+    "evidence": "爆炸后可以触发一次光学神秘术，关键时刻可以让人隐身",
+    "confidence": 0.85
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "安抚",
+    "dst": "艾米莉亚",
+    "evidence": "学校里哪有什么恶鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "侵蚀",
+    "dst": "第一防线学校",
+    "evidence": "第一防线学校的一部分，已经暴露在了“暴雨”中",
+    "confidence": 0.9
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "信任",
+    "dst": "维尔汀",
+    "evidence": "维尔汀……还有很多人一定都在努力",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a3516813dbda851514ce6222": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许愿门开者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "观最后一结"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨出大楼"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "黑暗穿身"
+   },
+   {
+    "name": "金色丝线",
+    "type": "概念",
+    "aliases": [],
+    "desc": "扎进门后"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "走廊重现"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "顶层平台"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "待取回"
+   },
+   {
+    "name": "图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "会合目标"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "援军未至之因"
+   },
+   {
+    "name": "黑色立方体",
+    "type": "物品",
+    "aliases": [],
+    "desc": "迷宫缔造者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "祈求",
+    "dst": "维尔汀",
+    "evidence": "是你们在帮我吗，维尔汀，十四行诗……？",
+    "confidence": 0.8
+   },
+   {
+    "src": "维尔汀",
+    "relation": "研判",
+    "dst": "梅蕾尔",
+    "evidence": "如果结已经解开，说明梅蕾尔顺利进入顶层平台了？",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "发现",
+    "dst": "委员会大楼",
+    "evidence": "基金会总部居然也被囊括在“奇迹”的迷宫中",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "感知",
+    "dst": "阿尔卡纳",
+    "evidence": "这是……阿尔卡纳",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "辨认",
+    "dst": "委员会大楼",
+    "evidence": "这里是……委员会大楼的走廊",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "研判",
+    "dst": "圣洛夫基金会",
+    "evidence": "我知道援军为什么迟迟未到了",
+    "confidence": 0.8
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "现身",
+    "dst": "委员会大楼",
+    "evidence": "祂出现在了学校吗？还是……出现在了基金会总部？",
+    "confidence": 0.85
+   },
+   {
+    "src": "金色丝线",
+    "relation": "指向",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "她一定能把气象鸽带回图书馆的",
+    "confidence": 0.8
+   },
+   {
+    "src": "黑色立方体",
+    "relation": "囊括",
+    "dst": "委员会大楼",
+    "evidence": "基金会总部居然也被囊括在“奇迹”的迷宫中",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "c8fcf18f9727daa47456eace": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "接住命运者"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "跳窗同行"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下谜题"
+   },
+   {
+    "name": "金色丝线",
+    "type": "概念",
+    "aliases": [],
+    "desc": "复苏的本能"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "被袭之因"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "调虎离山之计"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "跳窗之处"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被研判之敌"
+   },
+   {
+    "name": "黑色立方体",
+    "type": "物品",
+    "aliases": [],
+    "desc": "缔造的迷宫"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "研判",
+    "dst": "重塑之手",
+    "evidence": "重塑之手袭击学校，只是为了将部分有经验的队伍调离",
+    "confidence": 0.85
+   },
+   {
+    "src": "十四行诗",
+    "relation": "引路",
+    "dst": "维尔汀",
+    "evidence": "请握住我的手，司辰，小心脚下",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指引",
+    "dst": "十四行诗",
+    "evidence": "我们现在要继续前进——向这个方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "复苏",
+    "dst": "金色丝线",
+    "evidence": "我好像……找到了一些新的方向感",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "接住",
+    "dst": "金色丝线",
+    "evidence": "在崩塌前一刻抬起手，接住了摇摇欲坠的命运",
+    "confidence": 0.9
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "设题",
+    "dst": "维尔汀",
+    "evidence": "这是你留给我的谜题吗，阿尔卡纳？",
+    "confidence": 0.85
+   },
+   {
+    "src": "维尔汀",
+    "relation": "立誓",
+    "dst": "阿尔卡纳",
+    "evidence": "终有一天，我会得到谜题背后的真相",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "被袭",
+    "dst": "第一防线学校",
+    "evidence": "重塑之手袭击学校，只是为了将部分有经验的队伍调离，削弱基金会总部防御",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "2a6a15c690e286036a64da07": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "取回气象鸽者"
+   },
+   {
+    "name": "艾米莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "候于门外"
+   },
+   {
+    "name": "卢卡斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "候于门外"
+   },
+   {
+    "name": "福格尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "殉职护鸽的教员"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同历可怕之地"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "仅存的光"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "顶层惨状"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "暴雨禁令被破"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "最后的倚仗"
+   },
+   {
+    "name": "拉文德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将赞英雄者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "福格尔",
+    "relation": "护鸽",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "教员女士的身下压着几只完好的备用气象鸽",
+    "confidence": 0.9
+   },
+   {
+    "src": "福格尔",
+    "relation": "殉职",
+    "dst": "第一防线学校",
+    "evidence": "她终于知道学校里消失的教师和警卫都去了哪里",
+    "confidence": 0.85
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "取回",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "抱出了仅存的气象鸽",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "追忆",
+    "dst": "福格尔",
+    "evidence": "当年被福格尔女士关禁闭的那些懊恼",
+    "confidence": 0.8
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "转交",
+    "dst": "艾米莉亚",
+    "evidence": "几只气象鸽落进了小鸽子们的手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "转交",
+    "dst": "卢卡斯",
+    "evidence": "几只气象鸽落进了小鸽子们的手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "回忆",
+    "dst": "卡戎",
+    "evidence": "我和卡戎一起去过更可怕的地方",
+    "confidence": 0.8
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "部署",
+    "dst": "艾米莉亚",
+    "evidence": "你们先钻进通风管道躲起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "部署",
+    "dst": "卢卡斯",
+    "evidence": "你们先钻进通风管道躲起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "破例",
+    "dst": "圣洛夫基金会",
+    "evidence": "她已经顾不上那些针对学生的“暴雨”禁令",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "50008ce2771e5b34baf14e8b": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "独战门徒者"
+   },
+   {
+    "name": "艾米莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执行计划者"
+   },
+   {
+    "name": "卢卡斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同逃的学生"
+   },
+   {
+    "name": "重塑·门徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "破门的敌人"
+   },
+   {
+    "name": "悬浮咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "平稳落地"
+   },
+   {
+    "name": "拉文德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将赞英雄者"
+   },
+   {
+    "name": "图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "逃跑目的地"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被炸开缺口"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "悬浮与破墙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "送走",
+    "dst": "艾米莉亚",
+    "evidence": "将他们从炸开的缺口推了出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "送走",
+    "dst": "卢卡斯",
+    "evidence": "将他们从炸开的缺口推了出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "施展",
+    "dst": "悬浮咒",
+    "evidence": "悬浮定止！",
+    "confidence": 0.9
+   },
+   {
+    "src": "艾米莉亚",
+    "relation": "计划",
+    "dst": "图书馆",
+    "evidence": "一口气冲回图书馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑·门徒",
+    "relation": "破坏",
+    "dst": "中央瞭望塔",
+    "evidence": "防爆门终于无法支撑",
+    "confidence": 0.85
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "断后",
+    "dst": "艾米莉亚",
+    "evidence": "我会用悬浮咒让你们平稳落地",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "断后",
+    "dst": "卢卡斯",
+    "evidence": "我会用悬浮咒让你们平稳落地",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "独战",
+    "dst": "重塑·门徒",
+    "evidence": "我也能干掉你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "识破",
+    "dst": "重塑·门徒",
+    "evidence": "我知道你的弱点在哪里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b5fced56f5bd5973173e1c1f": {
+  "entities": [
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "包扎后入雨者"
+   },
+   {
+    "name": "重塑·门徒",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被击杀之敌"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传授包扎者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被念及者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "被念及者"
+   },
+   {
+    "name": "暴雨气象稳定鸽",
+    "type": "物品",
+    "aliases": [
+     "气象鸽"
+    ],
+    "desc": "黯淡怀中"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "自地升起"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "身后的校园"
+   },
+   {
+    "name": "图书馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "约定的去处"
+   },
+   {
+    "name": "中央瞭望塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "底层门外"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅蕾尔",
+    "relation": "击杀",
+    "dst": "重塑·门徒",
+    "evidence": "内藏的软体组织流出破碎的颅腔",
+    "confidence": 0.9
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "学自",
+    "dst": "玛尔纱",
+    "evidence": "这不难，玛尔纱教过我的……",
+    "confidence": 0.85
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "挂念",
+    "dst": "卡戎",
+    "evidence": "卡戎，我的队友，维尔汀……我会告诉他们",
+    "confidence": 0.8
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "奔赴",
+    "dst": "图书馆",
+    "evidence": "回图书馆去——和维尔汀还有十四行诗约好了的",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨",
+    "relation": "降临",
+    "dst": "第一防线学校",
+    "evidence": "雨滴从地面升起",
+    "confidence": 0.85
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "携有",
+    "dst": "暴雨气象稳定鸽",
+    "evidence": "只剩怀中黯淡的气象鸽",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b96ad6ca580828858b17055e": {
+  "entities": [
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令避阿尔卡纳"
+   },
+   {
+    "name": "伊里内伊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求枪欲战者"
+   },
+   {
+    "name": "佩德拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赞同伴者"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失能的德鲁伊"
+   },
+   {
+    "name": "星锑",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怀揣APPLe"
+   },
+   {
+    "name": "APPLe",
+    "type": "角色",
+    "aliases": [],
+    "desc": "包中的大副"
+   },
+   {
+    "name": "诺谛卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "尚安的奇美拉"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "战地救护"
+   },
+   {
+    "name": "虚构集",
+    "type": "角色",
+    "aliases": [
+     "小吟游诗人"
+    ],
+    "desc": "昏迷者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "穿过防线"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "占领大楼"
+   },
+   {
+    "name": "行动队长Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报敌情"
+   },
+   {
+    "name": "剃刀",
+    "type": "角色",
+    "aliases": [
+     "“剃刀”"
+    ],
+    "desc": "被困一楼"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "完全被占"
+   },
+   {
+    "name": "会长办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "最后退路"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "退无可退"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "失去者无力回天"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "告诫",
+    "dst": "伊里内伊",
+    "evidence": "不要与祂对视，不要向祂表现出敌意",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "求枪",
+    "dst": "刻雷乌斯",
+    "evidence": "把你的手枪借给我",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊里内伊",
+    "relation": "死志",
+    "dst": "阿尔卡纳",
+    "evidence": "把它钉进阿尔卡纳的脑袋里",
+    "confidence": 0.8
+   },
+   {
+    "src": "佩德拉",
+    "relation": "赞同",
+    "dst": "伊里内伊",
+    "evidence": "这是我这么多年来最赞同你的一次",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "占领",
+    "dst": "委员会大楼",
+    "evidence": "委员会大楼已经完全被格鲁托夫的军队占领",
+    "confidence": 0.9
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "救护",
+    "dst": "虚构集",
+    "evidence": "她被埋在一个文件柜下面",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "研判",
+    "dst": "阿尔卡纳",
+    "evidence": "只要不阻拦阿尔卡纳，祂不会在乎我们",
+    "confidence": 0.85
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "独行",
+    "dst": "委员会大楼",
+    "evidence": "只有阿尔卡纳本人穿过了防线",
+    "confidence": 0.85
+   },
+   {
+    "src": "槲寄生",
+    "relation": "失能",
+    "dst": "神秘术",
+    "evidence": "但一如之前的无数次尝试那样失败",
+    "confidence": 0.85
+   },
+   {
+    "src": "星锑",
+    "relation": "携有",
+    "dst": "APPLe",
+    "evidence": "他现在正躺在我的包里",
+    "confidence": 0.95
+   },
+   {
+    "src": "星锑",
+    "relation": "挂念",
+    "dst": "诺谛卡",
+    "evidence": "不知道诺谛卡他们是不是还安全！",
+    "confidence": 0.95
+   },
+   {
+    "src": "行动队长Ⅰ",
+    "relation": "通报",
+    "dst": "阿尔卡纳",
+    "evidence": "——我看见阿尔卡纳了",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "退守",
+    "dst": "会长办公室",
+    "evidence": "最终我们所有人都会被驱赶到一个很小的房间",
+    "confidence": 0.8
+   }
+  ]
+ }
+}

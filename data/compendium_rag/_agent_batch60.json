@@ -1,0 +1,1444 @@
+{
+ "57cd8e526907f06296e14d2c": {
+  "entities": [
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "锁定格鲁托夫的队长"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被瞄准之敌"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借术阵现身"
+   },
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对天鸣枪下令"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识别死亡女巫术阵"
+   },
+   {
+    "name": "重塑军官",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲进军别列格勒"
+   },
+   {
+    "name": "飞行中队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "如利箭刺破寂静"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被剿灭半数之军"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被炸之敌"
+   },
+   {
+    "name": "渡鸦-3型火龙燃素燃烧弹",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从天而降的燃烧弹"
+   },
+   {
+    "name": "死亡女巫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借出力量给伊戈尔者"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "格鲁托夫欲进军之城"
+   },
+   {
+    "name": "红柳树村",
+    "type": "地点",
+    "aliases": [],
+    "desc": "战场所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "发现",
+    "dst": "格鲁托夫",
+    "evidence": "我看见格鲁托夫了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "指挥",
+    "dst": "飞行中队",
+    "evidence": "打击坐标：桥头枯树三点钟方向。目标视觉确认，全员解除保险栓！",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞行中队",
+    "relation": "轰炸",
+    "dst": "重塑之手",
+    "evidence": "渡鸦-3型火龙燃素燃烧弹从天而降，砸向重塑之手的车队",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞行中队",
+    "relation": "投掷",
+    "dst": "渡鸦-3型火龙燃素燃烧弹",
+    "evidence": "渡鸦-3型火龙燃素燃烧弹从天而降",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "押送",
+    "dst": "骑兵军",
+    "evidence": "火光照亮了拖车俘虏们伤痕累累的脊梁",
+    "confidence": 0.7
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "下令",
+    "dst": "飞行中队",
+    "evidence": "通知空中部队，把这些苍蝇打下来",
+    "confidence": 0.6
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "进军",
+    "dst": "别列格勒",
+    "evidence": "按照原计划，向别列格勒进军",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "歼灭",
+    "dst": "骑兵军",
+    "evidence": "我们已经剿灭了半数的骑兵军",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "识别",
+    "dst": "死亡女巫",
+    "evidence": "是死亡女巫的术阵痕迹！快从那里走开！",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "现身",
+    "dst": "格鲁托夫",
+    "evidence": "格鲁托夫，好久不见",
+    "confidence": 0.95
+   },
+   {
+    "src": "死亡女巫",
+    "relation": "留痕",
+    "dst": "仪式术士",
+    "evidence": "是死亡女巫的术阵痕迹",
+    "confidence": 0.7
+   },
+   {
+    "src": "军长伊万",
+    "relation": "冲锋",
+    "dst": "红柳树村",
+    "evidence": "骏马上的少年们高举马刀",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "fd2b0013e12cc4873da754ee": {
+  "entities": [
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下令行动的军长"
+   },
+   {
+    "name": "少年骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高举马刀的少年"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破战术之敌"
+   },
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被嘲弄的中尉"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阻托勒密复仇"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "分头冲向坦途"
+   },
+   {
+    "name": "狮鹫军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "拖住敌步兵队"
+   },
+   {
+    "name": "第三特种连",
+    "type": "组织",
+    "aliases": [],
+    "desc": "奉命拦截骑兵"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被拖住的敌军"
+   },
+   {
+    "name": "补给线",
+    "type": "概念",
+    "aliases": [],
+    "desc": "骑兵欲毁之目标"
+   },
+   {
+    "name": "近卫团",
+    "type": "组织",
+    "aliases": [],
+    "desc": "托勒密所属"
+   }
+  ],
+  "relations": [
+   {
+    "src": "军长伊万",
+    "relation": "下令",
+    "dst": "少年骑兵",
+    "evidence": "——行动！",
+    "confidence": 0.95
+   },
+   {
+    "src": "少年骑兵",
+    "relation": "冲锋",
+    "dst": "格鲁托夫",
+    "evidence": "马蹄掀翻了漆黑的士兵，枪与刀推倒了所有拦路的阻碍",
+    "confidence": 0.8
+   },
+   {
+    "src": "骑兵军",
+    "relation": "突袭",
+    "dst": "补给线",
+    "evidence": "他们要去破坏我军的补给线！",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "调兵",
+    "dst": "第三特种连",
+    "evidence": "第三特种连！全力拦住骑兵！",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "阻击",
+    "dst": "重塑之手",
+    "evidence": "狮鹫军——把重塑之手的步兵队拖在这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "羞辱",
+    "dst": "托勒密",
+    "evidence": "父亲最乖巧的孩子，需要父亲的帮助才敢开枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "保护",
+    "dst": "托勒密",
+    "evidence": "退下，托勒密，现在还不到时候",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "邀战",
+    "dst": "格鲁托夫",
+    "evidence": "现在，我来了，这是你唯一的机会",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "隶属",
+    "dst": "近卫团",
+    "evidence": "以戏谑的神情在前近卫团军官的自尊上反复踩踏",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "6dc6e879c1b4978c457145dd": {
+  "entities": [
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被困泥淖的将军"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "步步逼近之敌"
+   },
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "狙击救父的独眼军官"
+   },
+   {
+    "name": "死亡女巫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "借出力量者"
+   },
+   {
+    "name": "雅加婆婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "死亡与巫术的女巫"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾与伊戈尔交易"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "化作泥淖困人之力"
+   },
+   {
+    "name": "炼金辉光管",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被抛至空中引爆"
+   },
+   {
+    "name": "骨骸庭院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾被困之地"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "赐予力量的毒饵"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格鲁托夫",
+    "relation": "施术",
+    "dst": "神秘术",
+    "evidence": "大地在神秘术作用下化作黏稠的泥淖，死死咬住了伊戈尔的双腿",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "困住",
+    "dst": "伊戈尔",
+    "evidence": "死死咬住了伊戈尔的双腿",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "质问",
+    "dst": "伊戈尔",
+    "evidence": "你与雅加婆婆——那个象征着死亡与巫术的女巫做了什么交易",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "欲杀",
+    "dst": "伊戈尔",
+    "evidence": "我会给予你一场仁慈的解脱",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "交易",
+    "dst": "雅加婆婆",
+    "evidence": "是你救下了我们所有人",
+    "confidence": 0.95
+   },
+   {
+    "src": "雅加婆婆",
+    "relation": "赐力",
+    "dst": "伊戈尔",
+    "evidence": "从死亡女巫处借来的力量为这具混血神秘学家的身体带来了超乎想象的负荷",
+    "confidence": 0.8
+   },
+   {
+    "src": "托勒密",
+    "relation": "狙击",
+    "dst": "格鲁托夫",
+    "evidence": "隐匿在暗处的独眼狙击手射出了打碎太阳的子弹",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "使用",
+    "dst": "炼金辉光管",
+    "evidence": "炼金辉光管被抛至空中，被激活的活性溶液正向外散发着热烈如恒星的光",
+    "confidence": 0.8
+   },
+   {
+    "src": "托勒密",
+    "relation": "搀扶",
+    "dst": "伊戈尔",
+    "evidence": "在父亲双腿即将被永远封入冻土前搀起了他",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "承诺",
+    "dst": "托勒密",
+    "evidence": "我承诺过，会把亲手复仇的机会留给你",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔卡纳",
+    "relation": "交易",
+    "dst": "伊戈尔",
+    "evidence": "甚至让阿尔卡纳都愿意屈尊纡贵，与你做交易",
+    "confidence": 0.85
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "堕落",
+    "dst": "重塑之手",
+    "evidence": "与他们牵扯过深的人最终都会成为牺牲品",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "59464b281847d016f60750c1": {
+  "entities": [
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受试炼戴上面具"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破最后节点"
+   },
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲碎面具被阻"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "偷走冬天者"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "捧住双眼的手形之物"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "概念",
+    "aliases": [
+     "复苏之母"
+    ],
+    "desc": "格鲁托夫呼告之神"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "最后的节点"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [
+     "红弩箭中尉"
+    ],
+    "desc": "受命攻击节点者"
+   },
+   {
+    "name": "飞行中队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "未能摧毁天候术式"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "格鲁托夫通过试炼"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "天候术式所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格鲁托夫",
+    "relation": "戴上",
+    "dst": "面具",
+    "evidence": "手形的面具捧住了他的双眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "通过",
+    "dst": "面具",
+    "evidence": "格鲁托夫通过了试炼",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "呼告",
+    "dst": "阿尔卡纳",
+    "evidence": "哈……哈，复苏之母……",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "授予",
+    "dst": "格鲁托夫",
+    "evidence": "她将偷走的冬天全部交给了格鲁托夫",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "窃取",
+    "dst": "顿河",
+    "evidence": "她将偷走的冬天全部交给了格鲁托夫",
+    "confidence": 0.8
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "识破",
+    "dst": "术阵",
+    "evidence": "术阵最后的节点找到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "通知",
+    "dst": "红弩箭",
+    "evidence": "通知红弩箭中尉，术阵最后的节点找到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "保护",
+    "dst": "托勒密",
+    "evidence": "伊戈尔警觉地扣住养子肩膀，把他拉到了身后",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "阻拦",
+    "dst": "托勒密",
+    "evidence": "一道锋利的冰墙切开了托勒密方才站立处的空气",
+    "confidence": 0.85
+   },
+   {
+    "src": "托勒密",
+    "relation": "围攻",
+    "dst": "格鲁托夫",
+    "evidence": "托勒密对准格鲁托夫扣下扳机",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞行中队",
+    "relation": "未竟",
+    "dst": "术阵",
+    "evidence": "怪不得飞行巫师始终没能彻底摧毁顿河的天候术式",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "d3b6cf81d8ac08d0e18daa4c": {
+  "entities": [
+   {
+    "name": "托勒密",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追击格鲁托夫的军官"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜寻传送术阵的中尉"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "派地面部队者"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逃逸之敌"
+   },
+   {
+    "name": "谢尔盖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "用望远镜反光的骑兵"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "追击残余匪军"
+   },
+   {
+    "name": "匪军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "溃退之敌"
+   },
+   {
+    "name": "飞行中队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "搜寻术式地点"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "消失之敌"
+   },
+   {
+    "name": "术阵",
+    "type": "概念",
+    "aliases": [],
+    "desc": "待寻的传送术阵"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "控制天候之术"
+   }
+  ],
+  "relations": [
+   {
+    "src": "格鲁托夫",
+    "relation": "失控",
+    "dst": "神秘术",
+    "evidence": "这家伙控制不住天候术式了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "追击",
+    "dst": "格鲁托夫",
+    "evidence": "可恶……他跑去了哪里？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "汇报",
+    "dst": "托勒密",
+    "evidence": "敌人已经开始溃退了。骑兵军在追击残余的匪军",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵军",
+    "relation": "追击",
+    "dst": "匪军",
+    "evidence": "骑兵军在追击残余的匪军",
+    "confidence": 0.95
+   },
+   {
+    "src": "飞行中队",
+    "relation": "搜索",
+    "dst": "术阵",
+    "evidence": "飞行中队正在寻找术式地点",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "遁走",
+    "dst": "术阵",
+    "evidence": "重塑之手一定布置了自己的传送术阵",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "建议",
+    "dst": "伊戈尔",
+    "evidence": "你们应该快点派人去进行地面搜查",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "派遣",
+    "dst": "红弩箭",
+    "evidence": "我会派出地面部队的，但他们的速度不如你快",
+    "confidence": 0.85
+   },
+   {
+    "src": "红弩箭",
+    "relation": "发现",
+    "dst": "谢尔盖",
+    "evidence": "谢尔盖？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "托勒密",
+    "relation": "催促",
+    "dst": "红弩箭",
+    "evidence": "不能地毯式轰炸吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cd60dac9da1d92175970808c": {
+  "entities": [
+   {
+    "name": "谢尔盖",
+    "type": "角色",
+    "aliases": [],
+    "desc": "生还的年轻骑兵"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "轰炸马厩的中尉"
+   },
+   {
+    "name": "格鲁托夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再遁之敌"
+   },
+   {
+    "name": "仪式术士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搀扶格鲁托夫者"
+   },
+   {
+    "name": "军长伊万",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被问询的军长"
+   },
+   {
+    "name": "匪军",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同遁之敌"
+   },
+   {
+    "name": "马厩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "敌人藏身被炸处"
+   },
+   {
+    "name": "顿河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "水流清亮的故乡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "红弩箭",
+    "relation": "轰炸",
+    "dst": "马厩",
+    "evidence": "随着爆炸尘埃一同撒向空中的还有被炸开的冰晶",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "追猎",
+    "dst": "格鲁托夫",
+    "evidence": "格鲁托夫和重塑的术士可能还被埋在下面",
+    "confidence": 0.95
+   },
+   {
+    "src": "格鲁托夫",
+    "relation": "遁逃",
+    "dst": "马厩",
+    "evidence": "一瘸一拐的格鲁托夫正在术士的搀扶下走进马厩",
+    "confidence": 0.95
+   },
+   {
+    "src": "仪式术士",
+    "relation": "搀扶",
+    "dst": "格鲁托夫",
+    "evidence": "正在术士的搀扶下走进马厩",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢尔盖",
+    "relation": "指引",
+    "dst": "红弩箭",
+    "evidence": "一只手仍然坚持不懈地指向某个方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "谢尔盖",
+    "relation": "问候",
+    "dst": "军长伊万",
+    "evidence": "军长和其他骑兵军在哪里？",
+    "confidence": 0.8
+   },
+   {
+    "src": "红弩箭",
+    "relation": "告知",
+    "dst": "谢尔盖",
+    "evidence": "庆幸吧，这一次，是我们赢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "匪军",
+    "relation": "败退",
+    "dst": "马厩",
+    "evidence": "我看匪军和重塑之手的人都跑了",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "cbb8638e8618a1aab366a10b": {
+  "entities": [
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "写信的骑士"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [
+     "猎犬"
+    ],
+    "desc": "带信的猎犬"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被“密令”解救者"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "下达密令者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曾同行之战友"
+   },
+   {
+    "name": "骑兵军",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被观察政治倾向"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "须斩断联系者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "玛尔纱将归之处"
+   },
+   {
+    "name": "金色饥荒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梅蕾尔调查任务"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "屹立不倒之城"
+   },
+   {
+    "name": "蒙佩",
+    "type": "地点",
+    "aliases": [],
+    "desc": "原定送信之地"
+   },
+   {
+    "name": "卢森堡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "猎犬初遇石像鬼处"
+   },
+   {
+    "name": "刻雷乌斯的密令",
+    "type": "物品",
+    "aliases": [],
+    "desc": "补办的文书"
+   }
+  ],
+  "relations": [
+   {
+    "src": "玛尔纱",
+    "relation": "记述",
+    "dst": "别列格勒",
+    "evidence": "顽强地抵抗着匪军与重塑之手的进攻，最终让别列格勒免于沦陷",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "托付",
+    "dst": "叶尔莫莱",
+    "evidence": "那就拜托你把这封信带回蒙佩",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "提及",
+    "dst": "卡戎",
+    "evidence": "你是说那个石像鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "密令",
+    "dst": "梅蕾尔",
+    "evidence": "接到此信后立刻前往顿河地区，隐藏身份秘密调查“金色饥荒”",
+    "confidence": 0.95
+   },
+   {
+    "src": "刻雷乌斯",
+    "relation": "派遣",
+    "dst": "叶尔莫莱",
+    "evidence": "刻雷乌斯要我来做一些“收尾工作”",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "监视",
+    "dst": "骑兵军",
+    "evidence": "我得观察骑兵军在战斗结束后的政治倾向有没有异常",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "追捕",
+    "dst": "梅蕾尔",
+    "evidence": "之后她就跟我走了，玛尔纱",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "授意",
+    "dst": "梅蕾尔",
+    "evidence": "以后不管什么人问你，你都要这么回答",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "隐瞒",
+    "dst": "梅蕾尔",
+    "evidence": "是你隐瞒了梅蕾尔的行踪",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "感激",
+    "dst": "卡戎",
+    "evidence": "等、等等！卡戎和这件事儿没有关系！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "隶属",
+    "dst": "圣洛夫基金会",
+    "evidence": "我马上会回基金会总部",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "调查",
+    "dst": "金色饥荒",
+    "evidence": "隐藏身份秘密调查“金色饥荒”",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "见过",
+    "dst": "卡戎",
+    "evidence": "在别的地方见过她几次",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "59b35f6b4c7ee62b7715f7e3": {
+  "entities": [
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "执行押送与药剂"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被罚的逃兵"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护梅蕾尔的骑士"
+   },
+   {
+    "name": "刻雷乌斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "伪造密令者"
+   },
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别的前旅伴"
+   },
+   {
+    "name": "安德烈森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别之马"
+   },
+   {
+    "name": "帕拉维扬",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知行踪者"
+   },
+   {
+    "name": "跟踪药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需实验样本的新玩意"
+   },
+   {
+    "name": "苦哑巴药剂",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被吓唬之药"
+   },
+   {
+    "name": "龙血印章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "密令上的印"
+   }
+  ],
+  "relations": [
+   {
+    "src": "刻雷乌斯",
+    "relation": "伪造",
+    "dst": "梅蕾尔",
+    "evidence": "这日期当然是假的",
+    "confidence": 0.7
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "携带",
+    "dst": "龙血印章",
+    "evidence": "签名上的龙血印章都还没有干透",
+    "confidence": 0.8
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "欲用",
+    "dst": "跟踪药剂",
+    "evidence": "刻雷乌斯要我给她打上跟踪药剂",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "吓唬",
+    "dst": "梅蕾尔",
+    "evidence": "还是说想尝一尝苦哑巴药剂？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "保证",
+    "dst": "叶尔莫莱",
+    "evidence": "我一定不会再跑了！我保证！",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛尔纱",
+    "relation": "安慰",
+    "dst": "梅蕾尔",
+    "evidence": "别担心，回去的路上我们还会在一起",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "道别",
+    "dst": "梅蕾尔",
+    "evidence": "很高兴你选择回到自己的朋友身边",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "道谢",
+    "dst": "玛尔纱",
+    "evidence": "谢谢你为我提供的援助",
+    "confidence": 0.95
+   },
+   {
+    "src": "帕拉维扬",
+    "relation": "告知",
+    "dst": "叶尔莫莱",
+    "evidence": "帕拉维扬告诉我，是你隐瞒了梅蕾尔的行踪",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "袒护",
+    "dst": "卡戎",
+    "evidence": "卡戎和这件事儿没有关系！是我坚持要他这么做的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8fd17ffd75b28f0386eb2692": {
+  "entities": [
+   {
+    "name": "卡戎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赴远方的亡者"
+   },
+   {
+    "name": "梅蕾尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别的旅伴"
+   },
+   {
+    "name": "玛尔纱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道别的骑士"
+   },
+   {
+    "name": "叶尔莫莱",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同队押送者"
+   },
+   {
+    "name": "安德烈森",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随行黑马"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "梅蕾尔欲归而未归"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡戎",
+    "relation": "宽慰",
+    "dst": "梅蕾尔",
+    "evidence": "死亡是平等的，对死亡的恐惧也是平等的",
+    "confidence": 0.95
+   },
+   {
+    "src": "叶尔莫莱",
+    "relation": "保证",
+    "dst": "卡戎",
+    "evidence": "保证她平平安安",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "道别",
+    "dst": "卡戎",
+    "evidence": "希望以后还能见到你，卡戎",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "道别",
+    "dst": "安德烈森",
+    "evidence": "还有你，安德烈森",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "离别",
+    "dst": "玛尔纱",
+    "evidence": "希望我们会在更和平的年代相见",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡戎",
+    "relation": "远行",
+    "dst": "玛尔纱",
+    "evidence": "他们消失在冬日的草原",
+    "confidence": 0.7
+   },
+   {
+    "src": "梅蕾尔",
+    "relation": "未归",
+    "dst": "圣洛夫基金会",
+    "evidence": "“基金会”三个字卡在她的喉咙里",
+    "confidence": 0.7
+   }
+  ]
+ },
+ "ecdfa2e0fdd4c0f31161aba0": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "叩问实验真相"
+   },
+   {
+    "name": "伊戈尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "道出灌体实验目的"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "兀尔德女士",
+     "盲眼女士",
+     "兀尔德"
+    ],
+    "desc": "被实验者"
+   },
+   {
+    "name": "鸽子屋",
+    "type": "组织",
+    "aliases": [],
+    "desc": "主导灌体实验者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会"
+    ],
+    "desc": "建立应急系统"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "暴雨的本质疑云"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "两次时代消失之灾"
+   },
+   {
+    "name": "琥珀屋",
+    "type": "概念",
+    "aliases": [],
+    "desc": "回环实验室所在"
+   },
+   {
+    "name": "回环实验室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "琥珀屋内之实验设施"
+   },
+   {
+    "name": "灌体实验",
+    "type": "事件",
+    "aliases": [],
+    "desc": "为找回兀尔德的实验"
+   },
+   {
+    "name": "白色大理石椅",
+    "type": "物品",
+    "aliases": [],
+    "desc": "兀尔德曾坐之椅"
+   },
+   {
+    "name": "别列格勒",
+    "type": "地点",
+    "aliases": [],
+    "desc": "万人空巷之城"
+   },
+   {
+    "name": "修道院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "深埋建筑之上"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "曾坐",
+    "dst": "白色大理石椅",
+    "evidence": "兀尔德曾在这张椅子上坐过",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "尝试",
+    "dst": "白色大理石椅",
+    "evidence": "我也想尝试一下，也许会有所发现",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "寻找",
+    "dst": "琥珀屋",
+    "evidence": "琥珀屋里还有一些遗留的实验资料",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "说明",
+    "dst": "灌体实验",
+    "evidence": "包括开展“灌体”实验，都是为了实现这个目标",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸽子屋",
+    "relation": "主导",
+    "dst": "灌体实验",
+    "evidence": "鸽子屋对兀尔德做了什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "鸽子屋",
+    "relation": "建立",
+    "dst": "回环实验室",
+    "evidence": "在“暴雨”安全区建立这间回环实验室",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "建立",
+    "dst": "琥珀屋",
+    "evidence": "第二次“暴雨”后，基金会建立了“暴雨”应急系统",
+    "confidence": 0.7
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "需要",
+    "dst": "卡卡尼亚",
+    "evidence": "我们需要兀尔德",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "改造",
+    "dst": "卡卡尼亚",
+    "evidence": "强迫盲眼女士成为兀尔德——1999年的兀尔德",
+    "confidence": 0.9
+   },
+   {
+    "src": "伊戈尔",
+    "relation": "回答",
+    "dst": "维尔汀",
+    "evidence": "鸽子屋对兀尔德做了什么，我想你的心里已经得出了答案",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "引发",
+    "dst": "暴雨",
+    "evidence": "无论“暴雨”的本质是重塑之手利用灵界捏造了新的灵魂",
+    "confidence": 0.7
+   },
+   {
+    "src": "暴雨",
+    "relation": "催生",
+    "dst": "琥珀屋",
+    "evidence": "在“暴雨”安全区建立这间回环实验室",
+    "confidence": 0.6
+   }
+  ]
+ }
+}

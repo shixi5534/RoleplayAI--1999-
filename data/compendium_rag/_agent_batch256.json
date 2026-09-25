@@ -1,0 +1,2037 @@
+{
+ "175524422b5bf2850f3a9391": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [
+     "塔沃尼尔小姐"
+    ],
+    "desc": "以火焰鉴定真伪的司机"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士",
+     "贝丽尔·布翁尼"
+    ],
+    "desc": "人脉广泛的同行占卜师"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "头灯故障的求助者"
+   },
+   {
+    "name": "罗西教授的研究室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "无人接听电话的研究室"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失了联的学生"
+   },
+   {
+    "name": "西莉亚的家",
+    "type": "地点",
+    "aliases": [],
+    "desc": "先去扑过空的住处"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "灯影摇晃的地下通道"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "墓穴里栖息的小东西"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "鉴定真伪的家传术式"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙"
+    ],
+    "desc": "扑上教授手腕的幼龙"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "披上人皮的传闻"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被当作证据的项链"
+   },
+   {
+    "name": "罗西教授的公开讲座",
+    "type": "事件",
+    "aliases": [],
+    "desc": "贝丽尔旁听过的讲座"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗西教授",
+    "relation": "求助",
+    "dst": "阿黛拉",
+    "evidence": "请帮帮忙，我的头灯出了故障，又和学生们失散了",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "认出",
+    "dst": "贝丽尔",
+    "evidence": "还有……贝丽尔·布翁尼女士？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "旁听",
+    "dst": "罗西教授的公开讲座",
+    "evidence": "我曾旁听过罗西先生的公开讲座",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "追问",
+    "dst": "罗西教授",
+    "evidence": "罗西教授，我无论如何都联系不上西莉亚，您知道她去哪儿了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "致电",
+    "dst": "罗西教授的研究室",
+    "evidence": "我打了好几通电话到您的研究室，但始终没人接听",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "失约",
+    "dst": "西莉亚",
+    "evidence": "今天她的确没有露面，本来她应该和我们一起来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "寻访",
+    "dst": "西莉亚的家",
+    "evidence": "我去过她家里了，没人在",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "验真",
+    "dst": "罗西教授",
+    "evidence": "幼龙猛地扑向教授的手腕，火焰顺着手指爬上他的皮肤",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "验证",
+    "dst": "罗西教授",
+    "evidence": "鉴定真伪的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "戒备",
+    "dst": "热沃当的野兽",
+    "evidence": "也许会有怪物披上人皮接近身边，必须谨慎些",
+    "confidence": 0.95
+   },
+   {
+    "src": "地下墓穴",
+    "relation": "栖息",
+    "dst": "魔精",
+    "evidence": "加上地下墓穴里本就有不少魔精栖息",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "劝返",
+    "dst": "阿黛拉",
+    "evidence": "她该做的是回家好好睡一觉",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "作证",
+    "dst": "贝丽尔",
+    "evidence": "布翁尼女士能为我作证",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "陈述",
+    "dst": "好运项链",
+    "evidence": "她向教授简单描述了预言与噩梦，以及那条作为证据的项链",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "轻忽",
+    "dst": "阿黛拉",
+    "evidence": "神情中仍然带着怜悯和不以为意",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b2a6412838e8742d32ab7cd5": {
+  "entities": [
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言癔症传染的教授"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指为幻想的辩驳者"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被过度担忧的友人"
+   },
+   {
+    "name": "城市的癔症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传染性极强的城市癔症"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被点名的拿走者"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "追问下落的项链"
+   },
+   {
+    "name": "无人得见的费利西安",
+    "type": "事件",
+    "aliases": [],
+    "desc": "说出来就像发疯的疑云"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "尽头的黑暗"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与梦中相同的皮毛"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗西教授",
+    "relation": "宽解",
+    "dst": "阿黛拉",
+    "evidence": "我明白你们感情好，所以你会过度担忧西莉亚的安危",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "归因",
+    "dst": "城市的癔症",
+    "evidence": "现在城里蔓延的癔症传染性很强，防不胜防",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "反驳",
+    "dst": "罗西教授",
+    "evidence": "这不可能！如果一切都是我的幻想，那条项链要怎么解释",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "质疑",
+    "dst": "好运项链",
+    "evidence": "真有这样一条你在梦中拿到的项链？那它现在在哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "推测",
+    "dst": "城市的癔症",
+    "evidence": "也许你感染癔症的时间比你以为的要早得多",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "带走",
+    "dst": "好运项链",
+    "evidence": "它被拿走了。费利西安她……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "讳言",
+    "dst": "无人得见的费利西安",
+    "evidence": "只会让自己听起来更像是个疯子",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "惊忆",
+    "dst": "热沃当的野兽",
+    "evidence": "她似乎又看见了与梦中完全相同的皮毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "警觉",
+    "dst": "地下墓穴",
+    "evidence": "在墓穴尽头的黑暗里",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "喝止",
+    "dst": "热沃当的野兽",
+    "evidence": "毛绒绒的黑影尖叫着躲闪，声音甚至盖过了她的惊呼",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "00ae86bcf3f2b2a10723b166": {
+  "entities": [
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倡导心意合一的研究者"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [
+     "塔沃尼尔小姐"
+    ],
+    "desc": "怒气消散仍存疑"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被递去眼神的占卜师"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "黑暗里凝成的人影"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "随处可见的普通魔精"
+   },
+   {
+    "name": "超心理学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与占卜重合的研究领域"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被谎言觊觎的集体"
+   },
+   {
+    "name": "冒充先知的骗子",
+    "type": "组织",
+    "aliases": [],
+    "desc": "冒充先知的无耻之徒"
+   },
+   {
+    "name": "一瞬即逝的西莉亚",
+    "type": "事件",
+    "aliases": [],
+    "desc": "再熟悉不过的人影"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "深浅不一的黑暗通道"
+   },
+   {
+    "name": "罗西教授的课题组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "一同努力的师生们"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗西教授",
+    "relation": "指认",
+    "dst": "魔精",
+    "evidence": "你瞧，那只是随处可见的普通魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "尊重",
+    "dst": "超心理学",
+    "evidence": "我尊重占卜这门技艺，事实上我的研究领域也与其有许多重合",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "抨击",
+    "dst": "冒充先知的骗子",
+    "evidence": "可总有无耻之徒冒充先知，谎称自己找到了答案",
+    "confidence": 0.95
+   },
+   {
+    "src": "冒充先知的骗子",
+    "relation": "反噬",
+    "dst": "集体潜意识",
+    "evidence": "他们以为能控制集体，最终被集体的记忆反噬",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "率领",
+    "dst": "罗西教授的课题组",
+    "evidence": "我也好，我在研究中认识的同道也罢，包括西莉亚在内",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "劝勉",
+    "dst": "阿黛拉",
+    "evidence": "每个人的判断都只能由每个人自己做出",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "缓和",
+    "dst": "罗西教授",
+    "evidence": "面前的年长者言辞诚恳，那股涌上胸口的怒气逐渐消散",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "坚持",
+    "dst": "地下墓穴",
+    "evidence": "我很确定一定有什么地方不对劲",
+    "confidence": 0.95
+   },
+   {
+    "src": "一瞬即逝的西莉亚",
+    "relation": "凝聚",
+    "dst": "西莉亚",
+    "evidence": "它越来越近，越发清晰，凝聚成再熟悉不过的人影",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "追逐",
+    "dst": "一瞬即逝的西莉亚",
+    "evidence": "甚至顾不上重新点燃熄灭的煤油灯，阿黛拉立刻抬腿追去",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "劝阻",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉小姐，不要一个人行动",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "致意",
+    "dst": "贝丽尔",
+    "evidence": "略带歉意地向一旁的贝丽尔递去一个眼神",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dafebe7b6fe193217fca250e": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被好友扣住肩膀的司机"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭穿导师的学生"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指为内鬼的教授"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士"
+    ],
+    "desc": "工房之行的对证者"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "布翁尼女士的水晶工房"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "从齿缝里喊出的名字"
+   },
+   {
+    "name": "地下墓穴的死路口",
+    "type": "地点",
+    "aliases": [],
+    "desc": "砖石堵死的道路尽头"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "隐蔽入口之下的墓道"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被提及的失踪青年"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "梦中所见的变形"
+   },
+   {
+    "name": "罗西教授的座驾",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载走文森特的雪铁龙"
+   },
+   {
+    "name": "意象的巴黎",
+    "type": "概念",
+    "aliases": [],
+    "desc": "绝不能降临的意象之城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "西莉亚",
+    "relation": "质问",
+    "dst": "阿黛拉",
+    "evidence": "为什么你和他们在一起？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "撞见",
+    "dst": "地下墓穴的死路口",
+    "evidence": "那里除了堵得严实的砖石外空无一物",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "痛斥",
+    "dst": "重塑之手",
+    "evidence": "一个仅在梦中出现过的名字被咬牙切齿地喊了出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "揭发",
+    "dst": "罗西教授",
+    "evidence": "罗西骗了我们所有人，他一直是重塑之手的一员",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "隶属",
+    "dst": "重塑之手",
+    "evidence": "他一直是重塑之手的一员",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "图谋",
+    "dst": "意象的巴黎",
+    "evidence": "绝对不能让他把门打开！意象的巴黎绝不能降临",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "梦见",
+    "dst": "热沃当的野兽",
+    "evidence": "我还梦到他变成了“热沃当的野兽”",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "目击",
+    "dst": "文森特",
+    "evidence": "我却看到文森特坐上了一辆雪铁龙",
+    "confidence": 0.95
+   },
+   {
+    "src": "文森特",
+    "relation": "乘坐",
+    "dst": "罗西教授的座驾",
+    "evidence": "我认得那辆车，那是罗西教授的座驾",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "潜入",
+    "dst": "地下墓穴",
+    "evidence": "立刻拦下一辆车追了上去，看到他们从一处隐蔽的入口进了地下墓穴",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "带领",
+    "dst": "文森特",
+    "evidence": "男子阔步走入道路尽头的房间，神情恍惚的青年紧随其后",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "惊疑",
+    "dst": "地下墓穴",
+    "evidence": "入口处透出的奇妙光亮刺入她的双眼",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "对证",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "正好是我去布翁尼女士的水晶工房的时候",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "507d1220e157b17fb732fad9": {
+  "entities": [
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告迷思海的主祭"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "毫不犹豫下潜的青年"
+   },
+   {
+    "name": "异化的文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不再属于人类的模样"
+   },
+   {
+    "name": "迷思海",
+    "type": "概念",
+    "aliases": [],
+    "desc": "有太多称呼的那个所在"
+   },
+   {
+    "name": "迷思海的入口",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地板正中张开的圆洞"
+   },
+   {
+    "name": "向下的爬梯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "看不出材质的爬梯"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拐角处窥视的学生"
+   },
+   {
+    "name": "意象宝库",
+    "type": "概念",
+    "aliases": [],
+    "desc": "迷思海的一个称呼"
+   },
+   {
+    "name": "世界灵魂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "迷思海的又一称呼"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "潜意识的海洋"
+   },
+   {
+    "name": "奥斯特里茨",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾照耀这片土地的太阳"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可敬前人的临终发现"
+   }
+  ],
+  "relations": [
+   {
+    "src": "文森特",
+    "relation": "下潜",
+    "dst": "向下的爬梯",
+    "evidence": "他沿着那架爬梯向下，灵巧地活动起手脚",
+    "confidence": 0.95
+   },
+   {
+    "src": "向下的爬梯",
+    "relation": "悬于",
+    "dst": "迷思海的入口",
+    "evidence": "洞壁挂着一架看不出材质的爬梯",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "指点",
+    "dst": "文森特",
+    "evidence": "如其在上，如其在下——不要被眼前的表象迷惑",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "命名",
+    "dst": "迷思海",
+    "evidence": "它有太多的称呼，但我更愿意称呼它为——迷思海",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "别名",
+    "dst": "意象宝库",
+    "evidence": "意象宝库、世界灵魂、所有人的梦境、集体潜意识的海洋",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "别名",
+    "dst": "世界灵魂",
+    "evidence": "意象宝库、世界灵魂、所有人的梦境、集体潜意识的海洋",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "别名",
+    "dst": "集体潜意识",
+    "evidence": "意象宝库、世界灵魂、所有人的梦境、集体潜意识的海洋",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海的入口",
+    "relation": "通向",
+    "dst": "迷思海",
+    "evidence": "是的，这里就是它的入口",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "追慕",
+    "dst": "奥斯特里茨",
+    "evidence": "就像是奥斯特里茨的太阳曾带来的那般光亮",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "告诫",
+    "dst": "文森特",
+    "evidence": "意象的混沌盛宴会吞没所及之物，下潜者对灵与肉的认同将被颠覆",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "嘱咐",
+    "dst": "法兰西之蓝",
+    "evidence": "你应当会发现一把钥匙，一枚法兰西之蓝",
+    "confidence": 0.95
+   },
+   {
+    "src": "法兰西之蓝",
+    "relation": "沉埋",
+    "dst": "迷思海",
+    "evidence": "她在下潜时不幸消融在了迷思的深处",
+    "confidence": 0.95
+   },
+   {
+    "src": "文森特",
+    "relation": "异化为",
+    "dst": "异化的文森特",
+    "evidence": "那副模样显然已经不再属于人类",
+    "confidence": 0.95
+   },
+   {
+    "src": "异化的文森特",
+    "relation": "现身",
+    "dst": "迷思海的入口",
+    "evidence": "首先沿着梯子抓上来的是一双粗大的利爪",
+    "confidence": 0.95
+   },
+   {
+    "src": "异化的文森特",
+    "relation": "攫取",
+    "dst": "法兰西之蓝",
+    "evidence": "锐利的獠牙间闪烁着瑰丽的蓝色",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "弃绝",
+    "dst": "文森特",
+    "evidence": "真是遗憾，亲爱的文森特……看来你并不是合适的人选",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "觊觎",
+    "dst": "西莉亚",
+    "evidence": "也许你可以帮我完成最后的实验——西莉亚，我最聪明的学生",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7d18f97fe9eb73fa3d4bb326": {
+  "entities": [
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自述坠落的幸存者"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [
+     "劳伦·罗西"
+    ],
+    "desc": "被斥为疯子的导师"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抓紧好友双手的人"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "制造怪物的组织"
+   },
+   {
+    "name": "迷思海",
+    "type": "概念",
+    "aliases": [],
+    "desc": "连接梦境的迷思海"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "当面变成野兽的同伴"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "亲眼所见的变形"
+   },
+   {
+    "name": "城市的癔症",
+    "type": "概念",
+    "aliases": [],
+    "desc": "城里蔓延的癔症"
+   },
+   {
+    "name": "连环失踪案",
+    "type": "事件",
+    "aliases": [],
+    "desc": "与怪物并提的失踪案"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "必须毁掉的钻石项链"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被疑为仿品的那枚钻石"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被拉开无数次的副驾驶席"
+   },
+   {
+    "name": "西莉亚被投入迷思海",
+    "type": "事件",
+    "aliases": [],
+    "desc": "从梯子上被扔下去"
+   },
+   {
+    "name": "意象的巴黎",
+    "type": "概念",
+    "aliases": [],
+    "desc": "将被意象侵占的巴黎"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "足以销毁钻石的神秘术"
+   },
+   {
+    "name": "超心理学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被背叛的超心理学理想"
+   }
+  ],
+  "relations": [
+   {
+    "src": "西莉亚",
+    "relation": "控诉",
+    "dst": "罗西教授",
+    "evidence": "劳伦·罗西根本就是一个疯子",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "曾信",
+    "dst": "超心理学",
+    "evidence": "我以为他真的想用超心理学研究改变现状",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "归罪",
+    "dst": "重塑之手",
+    "evidence": "都是他和重塑之手搞的鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "制造",
+    "dst": "热沃当的野兽",
+    "evidence": "文森特就在我面前变成了“热沃当的野兽”",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "煽动",
+    "dst": "城市的癔症",
+    "evidence": "那些癔症和失踪案，都是他和重塑之手搞的鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "造成",
+    "dst": "连环失踪案",
+    "evidence": "那些癔症和失踪案，都是他和重塑之手搞的鬼",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "抛下",
+    "dst": "西莉亚",
+    "evidence": "他们发现了我，把我从那架梯子上扔了下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚被投入迷思海",
+    "relation": "施于",
+    "dst": "西莉亚",
+    "evidence": "把我从那架梯子上扔了下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "灌入",
+    "dst": "西莉亚",
+    "evidence": "数不尽的声音钻进我脑袋里，我感觉不到自己身体的存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "听闻",
+    "dst": "重塑之手",
+    "evidence": "就是在那些声音中，我得知了“重塑之手”这个名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "仿造",
+    "dst": "法兰西之蓝",
+    "evidence": "这枚钻石只可能是重塑之手制造的仿品",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "图谋",
+    "dst": "意象的巴黎",
+    "evidence": "重塑之手的人要利用它打开迷思海的入口，到时候巴黎会被混乱的意象侵占",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "盟誓",
+    "dst": "西莉亚",
+    "evidence": "她有十足的自信，不会再弄丢寻回的珍藏",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "现身于",
+    "dst": "标致201",
+    "evidence": "一扇我拉开过无数次的出租车副驾驶席的门",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "嘱托",
+    "dst": "阿黛拉",
+    "evidence": "我一定要见到你",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "习得",
+    "dst": "神秘术",
+    "evidence": "你的神秘术可以销毁它",
+    "confidence": 0.95
+   },
+   {
+    "src": "神秘术",
+    "relation": "销毁",
+    "dst": "好运项链",
+    "evidence": "你的神秘术可以销毁它",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eae80288a915e8cd91354417": {
+  "entities": [
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急切求证答案的人"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坦白没烧钻石的迟疑者"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被揭穿底细的大小姐"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "费利西安所属之手"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仍待销毁的钻石项链"
+   },
+   {
+    "name": "无人得见的费利西安",
+    "type": "事件",
+    "aliases": [],
+    "desc": "曾被断言不存在的名字"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "唯一的销毁之法"
+   }
+  ],
+  "relations": [
+   {
+    "src": "西莉亚",
+    "relation": "追问",
+    "dst": "阿黛拉",
+    "evidence": "告诉我，阿黛拉，你一定已经烧毁它了，对不对",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "坦白",
+    "dst": "西莉亚",
+    "evidence": "我还没有销毁它。现在它在费利西安那里",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "持有",
+    "dst": "好运项链",
+    "evidence": "现在它在费利西安那里",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "指认",
+    "dst": "费利西安",
+    "evidence": "那个费利西安也和他们是一伙的，是重塑之手的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "隶属",
+    "dst": "重塑之手",
+    "evidence": "是重塑之手的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "警告",
+    "dst": "阿黛拉",
+    "evidence": "你绝不能再靠近她了",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "欲言",
+    "dst": "费利西安",
+    "evidence": "你不知道，她早就已经——",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "噤声",
+    "dst": "西莉亚",
+    "evidence": "呃……唔……",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "迟疑",
+    "dst": "无人得见的费利西安",
+    "evidence": "不……不对！我终于明白了，原来……",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "现身",
+    "dst": "阿黛拉",
+    "evidence": "我亲爱的阿黛拉，你的朋友真是没有教养",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "恼怒",
+    "dst": "西莉亚",
+    "evidence": "我最讨厌别人在背后对我说短论长",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1d749cab5f3053a69e83e5d7": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱着血泊却无人相信"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倒在血泊中的身影"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "布翁尼女士"
+    ],
+    "desc": "唤回她神智的占卜师"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言她发疯的教授"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目击行凶的对象"
+   },
+   {
+    "name": "脑海中的细语声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "越钻越响的细语声"
+   },
+   {
+    "name": "无从证实的血迹",
+    "type": "事件",
+    "aliases": [],
+    "desc": "只剩灰尘的双手"
+   },
+   {
+    "name": "墙壁上的箭头记号",
+    "type": "物品",
+    "aliases": [],
+    "desc": "回到原地的铁证"
+   },
+   {
+    "name": "地下墓穴",
+    "type": "地点",
+    "aliases": [],
+    "desc": "绕回原点的墓道"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "扑向",
+    "dst": "西莉亚",
+    "evidence": "她扑向倒在血泊中的好友",
+    "confidence": 0.95
+   },
+   {
+    "src": "脑海中的细语声",
+    "relation": "刺痛",
+    "dst": "阿黛拉",
+    "evidence": "不知何处传来的细语声钻入脑海，声音越来越大",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "唤醒",
+    "dst": "阿黛拉",
+    "evidence": "感觉好些了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "安抚",
+    "dst": "阿黛拉",
+    "evidence": "别着急，别动。我们就这样待一会儿，放轻松",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "指认",
+    "dst": "罗西教授",
+    "evidence": "离他远些，布翁尼女士！他就是罪魁祸首",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "反驳",
+    "dst": "阿黛拉",
+    "evidence": "您刚才在原地来回打转、又哭又笑",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "指证",
+    "dst": "费利西安",
+    "evidence": "我看见费利西安把她……",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "伤重",
+    "dst": "无从证实的血迹",
+    "evidence": "西莉亚伤得很重，我看见费利西安把她",
+    "confidence": 0.95
+   },
+   {
+    "src": "无从证实的血迹",
+    "relation": "落空于",
+    "dst": "阿黛拉",
+    "evidence": "那双手上除了方向盘磨出的薄茧之外，只有灰尘",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "认出",
+    "dst": "墙壁上的箭头记号",
+    "evidence": "在她身旁的墙壁上，赫然刻着一枚小巧的箭头符号",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "困惑",
+    "dst": "地下墓穴",
+    "evidence": "我应该追着西莉亚跑出了很远，怎么会又回到了原地",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "讥弹",
+    "dst": "阿黛拉",
+    "evidence": "您真是疯了！好好看看，她根本不在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "求验",
+    "dst": "贝丽尔",
+    "evidence": "您可以用占卜验证我说的都是真的",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "沉默",
+    "dst": "阿黛拉",
+    "evidence": "那个温柔的、沉默的微笑，背后有她并不想听见的答案",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f28af92bf3814664a87581d9": {
+  "entities": [
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归咎于诅咒的占卜师"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在贪恋与决心间摇摆"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "未曾祛除干净的诅咒"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "重新回到颈间的项链"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被视为奇迹的蓝钻"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被认定拿走钻石的人"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "留下嘱托的人"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙",
+     "小家伙"
+    ],
+    "desc": "悄无声息消失的生灵"
+   },
+   {
+    "name": "小龙的无声消失",
+    "type": "事件",
+    "aliases": [],
+    "desc": "肩膀上的空无一物"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝她离开的年长者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "归因",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "你身上的诅咒没有完全祛除，以至于产生了可怕的幻觉",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "许诺",
+    "dst": "阿黛拉",
+    "evidence": "请放心，我会为你解决这些",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "后退",
+    "dst": "贝丽尔",
+    "evidence": "贝丽尔向她伸出手，这反而让阿黛拉下意识地后退了两步",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "坚称",
+    "dst": "费利西安",
+    "evidence": "它被费利西安拿走了，西莉亚告诉我必须要毁了它",
+    "confidence": 0.95
+   },
+   {
+    "src": "好运项链",
+    "relation": "缀着",
+    "dst": "法兰西之蓝",
+    "evidence": "在她的胸前，分明闪烁着那抹瑰丽的蓝色",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "惊觉",
+    "dst": "好运项链",
+    "evidence": "它……一直戴在我的脖子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "嘱托",
+    "dst": "阿黛拉",
+    "evidence": "是西莉亚让我烧毁它，那是西莉亚给我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "共生",
+    "dst": "阿黛拉",
+    "evidence": "与她共生的小小生灵是意识与灵魂的延伸",
+    "confidence": 0.95
+   },
+   {
+    "src": "小龙的无声消失",
+    "relation": "降临",
+    "dst": "阿黛拉",
+    "evidence": "她侧过头，终于发现肩膀上空无一物",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "贪恋",
+    "dst": "法兰西之蓝",
+    "evidence": "这可是法兰西之蓝，所有人都以为永远消失的奇迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "占有",
+    "dst": "好运项链",
+    "evidence": "那是西莉亚给我的……给我……我的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "劝慰",
+    "dst": "阿黛拉",
+    "evidence": "您真的应该好好休息一下了，阿黛拉小姐",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b11ff053f7d347ad99999543": {
+  "entities": [
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "体贴邀餐的教授"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欣然应下的疲惫者"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "触感真实的蓝钻项链"
+   },
+   {
+    "name": "罗西教授订下的餐厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "与学生订下的餐厅"
+   },
+   {
+    "name": "罗西教授的课题组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "一同聚餐的学生们"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗西教授",
+    "relation": "邀约",
+    "dst": "阿黛拉",
+    "evidence": "刚好我和学生们订了餐厅，您可以和我们一起来吃些东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "领队",
+    "dst": "罗西教授的课题组",
+    "evidence": "刚好我和学生们订了餐厅",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授的课题组",
+    "relation": "同往",
+    "dst": "罗西教授订下的餐厅",
+    "evidence": "您可以和我们一起来吃些东西",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "应允",
+    "dst": "罗西教授",
+    "evidence": "也许我的确需要呼吸一些新鲜空气了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "佩戴",
+    "dst": "好运项链",
+    "evidence": "镶着瑰丽蓝钻石的项链仍然沉甸甸地挂在颈间",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9868f4c29c9b4bef087544c3": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "单手劈砍牛排的失神者"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "引介老主顾的占卜师"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [
+     "劳伦·罗西"
+    ],
+    "desc": "换好衣服的演讲者"
+   },
+   {
+    "name": "代号蜂鸟的少年",
+    "type": "角色",
+    "aliases": [
+     "阴郁的少年"
+    ],
+    "desc": "寻找命运的老主顾"
+   },
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [
+     "刻薄的老妇人"
+    ],
+    "desc": "远道而来的责问者"
+   },
+   {
+    "name": "高级餐厅的宴会厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "礼仪约束下的餐厅"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "切牛排也不肯摘下的项链"
+   },
+   {
+    "name": "拉杜丽的甜点",
+    "type": "物品",
+    "aliases": [
+     "马卡龙"
+    ],
+    "desc": "被端来的那一碟马卡龙"
+   },
+   {
+    "name": "拉杜丽",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被念叨的正宗出品"
+   },
+   {
+    "name": "命运",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被视作无常水流的命运"
+   },
+   {
+    "name": "起死回生术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传闻成功的奇迹"
+   },
+   {
+    "name": "神秘学家的集会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "老主顾们的集会"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "劝阻",
+    "dst": "好运项链",
+    "evidence": "你没法用单手切牛排的，先放下项链吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "抓住",
+    "dst": "好运项链",
+    "evidence": "没有关系，就这样就行，不能再弄丢它了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "割裂",
+    "dst": "高级餐厅的宴会厅",
+    "evidence": "直到瓷质餐盘的边缘出现裂缝，肌肉才终于断开",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "谢绝",
+    "dst": "贝丽尔",
+    "evidence": "不必了，这是我的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "致意",
+    "dst": "贝丽尔",
+    "evidence": "贝丽尔女士，好久不见。您果然也在巴黎",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "引介",
+    "dst": "代号蜂鸟的少年",
+    "evidence": "这位是我的一位老主顾。我们都叫他“蜂鸟”",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "探问",
+    "dst": "命运",
+    "evidence": "你还在寻找遗失的命运吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "质疑",
+    "dst": "命运",
+    "evidence": "命运本身只是无常的水流，赋予其意义只是一种无稽之谈",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "尝试",
+    "dst": "命运",
+    "evidence": "但我仍想进行……一些无用的尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "称许",
+    "dst": "罗西教授",
+    "evidence": "听说劳伦·罗西先生在起死回生术上有了成功的尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "攻克",
+    "dst": "起死回生术",
+    "evidence": "听说劳伦·罗西先生在起死回生术上有了成功的尝试",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "举荐",
+    "dst": "阿黛拉",
+    "evidence": "她是我之前提到的，站在水流交汇处的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "关切",
+    "dst": "阿黛拉",
+    "evidence": "是否时常看见不属于尘世之人的身影，听见那些遗失的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "代号蜂鸟的少年",
+    "relation": "端来",
+    "dst": "拉杜丽的甜点",
+    "evidence": "他端来了另外的食物——一碗炖土豆泥，以及一碟马卡龙",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "挑剔",
+    "dst": "拉杜丽",
+    "evidence": "可惜还是拉杜丽的出品要更好些",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "打断",
+    "dst": "罗西教授",
+    "evidence": "够了，不要再进行无意义的问候了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "索要",
+    "dst": "起死回生术",
+    "evidence": "我远道而来，绝不是为了欣赏你浮夸的演技，你找到的起死回生术呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "主持",
+    "dst": "神秘学家的集会",
+    "evidence": "今天我们聚集在此，只为了庆祝一个伟大的发现",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "59d6780f839955f6992078d8": {
+  "entities": [
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣讲迷思海学说的教授"
+   },
+   {
+    "name": "阿尼姆斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "冷面催促的听者"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被借去口舌的主人"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目光落在远处的占卜师"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以纯粹灵性复生的祭司"
+   },
+   {
+    "name": "迷思海",
+    "type": "概念",
+    "aliases": [],
+    "desc": "意识长存的灵性之海"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被化为理想的集体"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被重新定义形式的灾祸"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被斥为驯养者的机构"
+   },
+   {
+    "name": "应许世界",
+    "type": "概念",
+    "aliases": [],
+    "desc": "各怀其想的应许世界"
+   },
+   {
+    "name": "神秘学家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "聚会的同胞们"
+   },
+   {
+    "name": "起死回生术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "再度归来的奇迹"
+   },
+   {
+    "name": "雷电的祭司",
+    "type": "概念",
+    "aliases": [],
+    "desc": "费利西安自封的神职"
+   },
+   {
+    "name": "路易十四",
+    "type": "角色",
+    "aliases": [
+     "太阳王"
+    ],
+    "desc": "宠臣口中的太阳王"
+   },
+   {
+    "name": "费利西安的再度归来",
+    "type": "事件",
+    "aliases": [],
+    "desc": "战胜命运的复生"
+   },
+   {
+    "name": "拉杜丽的甜点",
+    "type": "物品",
+    "aliases": [
+     "马卡龙"
+    ],
+    "desc": "被反复取用的马卡龙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "罗西教授",
+    "relation": "揭露",
+    "dst": "暴雨",
+    "evidence": "我们在引导之人的意志下不断揭露“暴雨”之后的奥秘",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "感召",
+    "dst": "神秘学家",
+    "evidence": "无数同胞为此献身，他们的生命化作种子，为我们带来丰收",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "质问",
+    "dst": "应许世界",
+    "evidence": "回到应许世界的形式难道只有“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "抨击",
+    "dst": "圣洛夫基金会",
+    "evidence": "难道不是只有基金会驯养的狗才会怀揣完全一致的思想",
+    "confidence": 0.95
+   },
+   {
+    "src": "迷思海",
+    "relation": "实现",
+    "dst": "应许世界",
+    "evidence": "由迷思海将集体的理想化为现实，不是更可靠吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "集体潜意识",
+    "relation": "汇入",
+    "dst": "迷思海",
+    "evidence": "由迷思海将集体的理想化为现实，不是更可靠吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尼姆斯",
+    "relation": "施压",
+    "dst": "罗西教授",
+    "evidence": "展示你的新成果，不然你什么都别想从我这儿得到",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "演示",
+    "dst": "起死回生术",
+    "evidence": "我们发现了打开迷思海的方法，成功借此实现了一个奇迹，一个起死回生的奇迹",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "论证",
+    "dst": "迷思海",
+    "evidence": "只要意识仍存在迷思海中，就能无数次归来",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "佐证",
+    "dst": "起死回生术",
+    "evidence": "费利西安就是意识能直接化为现实的最好证明",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "归来自",
+    "dst": "迷思海",
+    "evidence": "我从迷思海中归来，只因为我是我",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "宣告",
+    "dst": "费利西安的再度归来",
+    "evidence": "于此刻，宣布自己战胜了命运与死亡",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "自封",
+    "dst": "雷电的祭司",
+    "evidence": "我，费利西安，雷电的祭司，太阳王的宠臣",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "受宠于",
+    "dst": "路易十四",
+    "evidence": "雷电的祭司，太阳王的宠臣",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "斥责",
+    "dst": "罗西教授",
+    "evidence": "这等小偷行为，我真该赐死你，罗西",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "附身",
+    "dst": "阿黛拉",
+    "evidence": "哦，费利西安，你还没清醒过来吗？说点什么吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "抗拒",
+    "dst": "贝丽尔",
+    "evidence": "如果你再像这样怜悯我，我会当作受到了侮辱",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "自矜",
+    "dst": "神秘学家",
+    "evidence": "你们总是这样，蒙受我和引导之人的恩惠却不自知",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "取用",
+    "dst": "拉杜丽的甜点",
+    "evidence": "反复取用着马卡龙的右手在投来的视线中停下",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

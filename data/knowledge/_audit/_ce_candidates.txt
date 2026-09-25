@@ -1,0 +1,31 @@
+寻找可直接 onnxruntime 加载的中文 cross-encoder
+====================================================================================
+  Xenova/bge-reranker-v2-m3                不可达（RepositoryNotFoundError）
+  Xenova/bge-reranker-base                   1060.9MB  onnx/model.onnx
+  Xenova/bge-reranker-base                    787.6MB  onnx/model_q4.onnx
+  Xenova/bge-reranker-base                    782.5MB  onnx/model_bnb4.onnx
+  Xenova/bge-reranker-base                    530.7MB  onnx/model_fp16.onnx
+  Xenova/bge-reranker-base                    414.2MB  onnx/model_q4f16.onnx
+  Xenova/bge-reranker-base                    266.4MB  onnx/model_quantized.onnx
+  Xenova/bge-reranker-base                    265.9MB  onnx/model_uint8.onnx
+  Xenova/bge-reranker-base                    265.9MB  onnx/model_int8.onnx
+                                           tokenizer.json=有
+  Xenova/bge-reranker-large                  2135.8MB  onnx/model.onnx_data
+  Xenova/bge-reranker-large                  1164.4MB  onnx/model_q4.onnx
+  Xenova/bge-reranker-large                  1146.4MB  onnx/model_bnb4.onnx
+  Xenova/bge-reranker-large                  1068.5MB  onnx/model_fp16.onnx
+  Xenova/bge-reranker-large                   654.5MB  onnx/model_q4f16.onnx
+  Xenova/bge-reranker-large                   536.9MB  onnx/model_quantized.onnx
+  Xenova/bge-reranker-large                   535.7MB  onnx/model_uint8.onnx
+  Xenova/bge-reranker-large                   535.7MB  onnx/model_int8.onnx
+  Xenova/bge-reranker-large                     0.6MB  onnx/model.onnx
+                                           tokenizer.json=有
+  onnx-community/bge-reranker-v2-m3        不可达（RepositoryNotFoundError）
+  onnx-community/bge-reranker-base         不可达（RepositoryNotFoundError）
+  maidalun1020/bce-reranker-base_v1        无 onnx（safetensors 0MB）
+  Xenova/bce-reranker-base_v1              不可达（RepositoryNotFoundError）
+
+====================================================================================
+候选（按体积升序）：
+    1060.9MB  Xenova/bge-reranker-base / onnx/model.onnx
+    2135.8MB  Xenova/bge-reranker-large / onnx/model.onnx

@@ -1,0 +1,1936 @@
+{
+ "2adb447d872dee654abeffb2": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "记不住理论的差生司机"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被称作老主顾的大小姐"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣讲荣格学说的高材生"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带头突破的课题组长"
+   },
+   {
+    "name": "罗西教授的课题组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "正快速推进研究的组"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "小家伙"
+    ],
+    "desc": "会抗议的肩头小生物"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "呼唤守护神的家传术式"
+   },
+   {
+    "name": "守护神",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与主人共享记忆的存在"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [
+     "可收集意识"
+    ],
+    "desc": "所有人共有的意识之湖"
+   },
+   {
+    "name": "心理学家荣格",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给了课题组启发的瑞士人"
+   },
+   {
+    "name": "超心理学",
+    "type": "概念",
+    "aliases": [],
+    "desc": "西莉亚正在深耕的学问"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "潜意识里藏着关键的城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "推责",
+    "dst": "费利西安",
+    "evidence": "我？可不是我想去，是我的老主顾费利西安大小姐一时兴起",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "追问",
+    "dst": "费利西安",
+    "evidence": "老主顾？没听你提起过她，是我住在学校太久了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "拍打",
+    "dst": "阿黛拉的小龙",
+    "evidence": "阿黛拉肩膀上的小生物闻言发出了疑似抗议的叫声，西莉亚隔空拍了拍它的脑袋",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "解说",
+    "dst": "守护神",
+    "evidence": "小家伙不是你的家传神秘术呼唤出来的守护神吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "归因",
+    "dst": "神秘术",
+    "evidence": "是你的家传神秘术呼唤出来的守护神吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "读取",
+    "dst": "阿黛拉",
+    "evidence": "它的记忆就是你的记忆，它甚至能读到你自己无法察觉的潜意识",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "借鉴",
+    "dst": "心理学家荣格",
+    "evidence": "罗西教授从一位瑞士心理学家处获得了很多启发",
+    "confidence": 0.95
+   },
+   {
+    "src": "罗西教授",
+    "relation": "带领",
+    "dst": "罗西教授的课题组",
+    "evidence": "现在正带着整个课题组快速突破，我们的研究已经初有成效了",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "纠正",
+    "dst": "集体潜意识",
+    "evidence": "是集体潜意识！",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "立说",
+    "dst": "集体潜意识",
+    "evidence": "这就是荣格认为的集体潜意识，它被所有人共享",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "误称",
+    "dst": "集体潜意识",
+    "evidence": "又是那个什么……可收集意识？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "指点",
+    "dst": "巴黎",
+    "evidence": "潜意识领域可比你想的要复杂多了，阿黛拉。其中可能还有着能够改变巴黎的关键",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "譬喻",
+    "dst": "集体潜意识",
+    "evidence": "我们每个人就像是一座座湖中的小岛，有意识的记忆就是岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "譬喻",
+    "dst": "集体潜意识",
+    "evidence": "而储存意识不到的记忆的，则是连接我们所有人的这片湖",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "不解",
+    "dst": "超心理学",
+    "evidence": "我可听不懂，也记不住这些复杂的理论……这是你现在的研究课题吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "ea8528696c4eb2b41baefe2e": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "一句话点破关键的司机"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被灵感点燃的研究者"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拿破仑意象感染的学生"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "史无其事却人人恐惧的名号"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "可供注入和平之水的湖"
+   },
+   {
+    "name": "文豪雨果",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被引作范例的法国作家"
+   },
+   {
+    "name": "死亡之舞壁画",
+    "type": "物品",
+    "aliases": [],
+    "desc": "待复查的关联画作"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "许诺中的稿费报酬"
+   },
+   {
+    "name": "城市里的冒险家",
+    "type": "概念",
+    "aliases": [],
+    "desc": "西莉亚自比的另一重身份"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "追问",
+    "dst": "西莉亚",
+    "evidence": "所以你们的研究就是……如何控制每一个人的思想？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "申辩",
+    "dst": "集体潜意识",
+    "evidence": "把一个美好的愿景留在集体潜意识中，即便短期内不会有成果，但可能性已经存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "举例",
+    "dst": "文豪雨果",
+    "evidence": "雨果想象不到那美好的一天要如何到来，但他还是把梦想都写成了书",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "担忧",
+    "dst": "文森特",
+    "evidence": "那文森特呢？他看起来可是个拿破仑狂热分子",
+    "confidence": 0.95
+   },
+   {
+    "src": "文森特",
+    "relation": "感染",
+    "dst": "热沃当的野兽",
+    "evidence": "文森特应该是“拿破仑”感染了……该说不说，他以前就有这方面的嗜好",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "预警",
+    "dst": "文森特",
+    "evidence": "在找到安全的研究方法之前，文森特不会是最后一个意外……",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "讲解",
+    "dst": "集体潜意识",
+    "evidence": "集体潜意识中有着文明的原始意象",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "联想",
+    "dst": "热沃当的野兽",
+    "evidence": "比如“热沃当的野兽”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "考据",
+    "dst": "热沃当的野兽",
+    "evidence": "但历史上其实根本不存在什么“热沃当的野兽”……",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "汇入",
+    "dst": "集体潜意识",
+    "evidence": "恐惧“热沃当的野兽”的种子通过传言汇入集体潜意识中，接着被个体吸收",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "致谢",
+    "dst": "阿黛拉",
+    "evidence": "谢谢你，阿黛拉，你总是能够给我提供全新的灵感！",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "研究",
+    "dst": "死亡之舞壁画",
+    "evidence": "我得再去研究一下那幅死亡之舞壁画了——这一切也许都是关联的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "许诺",
+    "dst": "好运项链",
+    "evidence": "我一定会用稿费给你买一条最漂亮的好运项链！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "叮嘱",
+    "dst": "好运项链",
+    "evidence": "那你得好好选，我可会每天都戴着它出门的",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "自比",
+    "dst": "城市里的冒险家",
+    "evidence": "有时我会觉得自己也是一名城市里的冒险家……用我手中的纸与笔",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d33b38bd5d29af2364a7a654": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [
+     "灰调蓝"
+    ],
+    "desc": "在审讯里回忆晚餐的证言者"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说漏了父母二字的好友"
+   },
+   {
+    "name": "阿黛拉的父母",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍在远方发现矿产的夫妇"
+   },
+   {
+    "name": "塔沃尼尔家",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被西莉亚艳羡的家族"
+   },
+   {
+    "name": "宝石猎人",
+    "type": "概念",
+    "aliases": [],
+    "desc": "父母书信里的日常"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "次日约见之地"
+   },
+   {
+    "name": "和平街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "工房所在的和平街"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "贝丽尔·布翁尼"
+    ],
+    "desc": "早已预见造访的工房主人"
+   },
+   {
+    "name": "执夜人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "替她续上第二日的话头"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "尚未连通的梦境之海"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被占卜师反复提起的宿命"
+   }
+  ],
+  "relations": [
+   {
+    "src": "西莉亚",
+    "relation": "类比",
+    "dst": "阿黛拉的父母",
+    "evidence": "某种意义上——就像你的父母一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "疏远",
+    "dst": "阿黛拉的父母",
+    "evidence": "他们可算不上什么负责的人，西莉亚",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的父母",
+    "relation": "寄信",
+    "dst": "阿黛拉",
+    "evidence": "我最近又收到了他们的来信",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的父母",
+    "relation": "寻宝",
+    "dst": "宝石猎人",
+    "evidence": "里头还是一个劲地在提发现了值钱的矿产",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "打趣",
+    "dst": "塔沃尼尔家",
+    "evidence": "我有时候觉得你才更像塔沃尼尔家的一员",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "探问",
+    "dst": "阿黛拉",
+    "evidence": "你明天打算和那位老主顾去哪儿？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "计划",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "和平街的水晶工房。我有些想确认的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "打趣",
+    "dst": "阿黛拉",
+    "evidence": "你是不是在想那个占卜师的预言？可别被你的潜意识奴役，阿黛拉……",
+    "confidence": 0.95
+   },
+   {
+    "src": "布翁尼的水晶工房",
+    "relation": "坐落于",
+    "dst": "和平街",
+    "evidence": "和平街的水晶工房。我有些想确认的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "主张",
+    "dst": "集体潜意识",
+    "evidence": "我说了，绝大多数问题的根源都在人们的脑海深处",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "发问",
+    "dst": "西莉亚",
+    "evidence": "西莉亚，你说，世上真的有命运吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "祝愿",
+    "dst": "西莉亚",
+    "evidence": "好吧，晚安……祝我俩明天都一路平安",
+    "confidence": 0.95
+   },
+   {
+    "src": "执夜人",
+    "relation": "复述",
+    "dst": "阿黛拉",
+    "evidence": "于是第二天，你前往了贝丽尔·布翁尼的水晶工房",
+    "confidence": 0.95
+   },
+   {
+    "src": "执夜人",
+    "relation": "追问",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "你说你在那里接受了一场“奇异的占卜”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "预见",
+    "dst": "阿黛拉",
+    "evidence": "贝丽尔·布翁尼……她早就预见了我的造访",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "占断",
+    "dst": "阿黛拉",
+    "evidence": "正如她早就预见了在那之后发生的一切",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "49ca8d75cf9d278921548010": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在门口踢石子的候客"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "约了人却不露面的雇主"
+   },
+   {
+    "name": "旺多姆广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人流汇集的广场"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雕花木门紧闭的工房"
+   },
+   {
+    "name": "和平街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "工房所在的和平街"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "小家伙",
+     "幼龙"
+    ],
+    "desc": "以火焰照明的幼龙"
+   },
+   {
+    "name": "占卜妖精",
+    "type": "角色",
+    "aliases": [],
+    "desc": "工房里的透明小贼"
+   }
+  ],
+  "relations": [
+   {
+    "src": "布翁尼的水晶工房",
+    "relation": "坐落于",
+    "dst": "和平街",
+    "evidence": "巴黎·和平街",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "等候",
+    "dst": "费利西安",
+    "evidence": "费利西安说是今天在这里见面，也不留个时间……我不会得等到晚上吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "相约",
+    "dst": "旺多姆广场",
+    "evidence": "旺多姆广场上的人越来越多，从四面八方的街巷里汇集的人流积聚于此",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "守望",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "水晶工房那扇漂亮的雕花木门和两三个小时前一样紧闭着",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "叩门",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "木门刚被叩响，就顺势朝两侧敞开",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "摸索",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "阿黛拉伸手摸索着墙壁，凭借刚才的记忆前进",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "照明",
+    "dst": "阿黛拉",
+    "evidence": "幼龙的火焰勉强映亮了周围，它没精打采地甩动尾巴",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "抱怨",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "我说，至少给新顾客留下些照明吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "寻人",
+    "dst": "费利西安",
+    "evidence": "你们好——有谁见到了一位趾高气昂的小姐吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "占卜妖精",
+    "relation": "出没",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "我怎么会忘了，有占卜师在的地方，总有这种小东西！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "喝止",
+    "dst": "占卜妖精",
+    "evidence": "别和我捣乱，我现在可没空了解你们又偷了些什么！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3c6ab99215dd2619a90c0260": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "屏息走进光之屋的访客"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [
+     "贝丽尔·布翁尼",
+     "布翁尼女士"
+    ],
+    "desc": "工房真正的主人"
+   },
+   {
+    "name": "布翁尼的水晶工房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "由光编织成的屋子"
+   },
+   {
+    "name": "辉耀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "借水晶显现的星界之光"
+   },
+   {
+    "name": "意象宝库",
+    "type": "概念",
+    "aliases": [],
+    "desc": "储存意象的宝库"
+   },
+   {
+    "name": "世界灵魂",
+    "type": "概念",
+    "aliases": [],
+    "desc": "藏在宝库里的奥秘"
+   },
+   {
+    "name": "贝丽尔的灵摆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被指尖轻触的柔和灵摆"
+   },
+   {
+    "name": "水晶工房的贵宾室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "为阿黛拉预留的里间"
+   },
+   {
+    "name": "流出工房的劣质水晶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被偷卖的残次水晶"
+   },
+   {
+    "name": "占卜沙龙",
+    "type": "地点",
+    "aliases": [],
+    "desc": "劣质水晶流出之所"
+   },
+   {
+    "name": "占卜妖精",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拍打火焰的透明身影"
+   }
+  ],
+  "relations": [
+   {
+    "src": "占卜妖精",
+    "relation": "带路",
+    "dst": "阿黛拉",
+    "evidence": "妖精们将她领到了一扇小门前，从透着光的缝隙中挤了进去",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "赞叹",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "一间由光编织成的屋子",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "揣度",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "是巧妙的灯光布设让这些水晶变得特别？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "点破",
+    "dst": "辉耀",
+    "evidence": "也许你想说的是……“辉耀”。它会借由水晶显现",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "阐释",
+    "dst": "辉耀",
+    "evidence": "曾有人说，“辉耀”是神用来创造世界的工具，也是祂不可分割的一部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "触碰",
+    "dst": "贝丽尔的灵摆",
+    "evidence": "她伸出手，用指尖轻触一枚光芒柔和的灵摆",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔的灵摆",
+    "relation": "捕捉",
+    "dst": "辉耀",
+    "evidence": "我们偶尔可以捕捉那些光辉",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "窥探",
+    "dst": "世界灵魂",
+    "evidence": "在它的帮助下，我们得以自意象的宝库中，窥探世界灵魂的奥秘",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "援引",
+    "dst": "意象宝库",
+    "evidence": "我们得以自意象的宝库中，窥探世界灵魂的奥秘",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "延坐",
+    "dst": "水晶工房的贵宾室",
+    "evidence": "请先随我到里面的贵宾室去吧。这扇门本就是为你而留的",
+    "confidence": 0.95
+   },
+   {
+    "src": "水晶工房的贵宾室",
+    "relation": "安抚",
+    "dst": "阿黛拉",
+    "evidence": "松软的玛德琳蛋糕很好地抚平了阿黛拉的不安",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "推断",
+    "dst": "贝丽尔",
+    "evidence": "您今天并没有见到我以外的其他人……我明白了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "求证",
+    "dst": "流出工房的劣质水晶",
+    "evidence": "而您之所以出现在那间占卜沙龙，是为了追回流出工房的劣质水晶？",
+    "confidence": 0.95
+   },
+   {
+    "src": "流出工房的劣质水晶",
+    "relation": "流出",
+    "dst": "占卜沙龙",
+    "evidence": "是为了追回流出工房的劣质水晶？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "疏于",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "近些日子我忙于海外的生意，这才放松了对工房的管理",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "维护",
+    "dst": "布翁尼的水晶工房",
+    "evidence": "我必须为顾客的安全和工房的声誉负责",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3244efcf8ec53434384ec2b6": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不愿被预言裹挟的年轻人"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把命运视作规律的主人"
+   },
+   {
+    "name": "塔沃尼尔家",
+    "type": "组织",
+    "aliases": [],
+    "desc": "人人皆知其宿命的家族"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被反复道出的家族宿命"
+   },
+   {
+    "name": "塔沃尼尔的冒险",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝丽尔给出的另一种说法"
+   },
+   {
+    "name": "雷曼女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在记忆里重演预言的死者"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失约一整天的老主顾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "道谢",
+    "dst": "阿黛拉",
+    "evidence": "我需要再次向你表示感谢，塔沃尼尔小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "探问",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "她的预言让你有些困扰，是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "坦承",
+    "dst": "雷曼女士",
+    "evidence": "毕竟我最开始也没打算插手……正巧那位占卜师自己找上了我",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "自嘲",
+    "dst": "贝丽尔",
+    "evidence": "哈哈，您真的和那些占卜师不太一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "申述",
+    "dst": "贝丽尔",
+    "evidence": "也许“命运”真的会在该来的时候来，但在那之前我可不想被它裹挟",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "自许",
+    "dst": "塔沃尼尔家",
+    "evidence": "我还年轻——我还有很多想做的事儿呢！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "答疑",
+    "dst": "阿黛拉",
+    "evidence": "占卜告诉我你今天会来拜访，然后你来了。事情如此发生，仅此而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "抱怨",
+    "dst": "费利西安",
+    "evidence": "她连来都没来！放了我一天鸽子，她到底跑哪儿去了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "点破",
+    "dst": "阿黛拉",
+    "evidence": "你为你的疑惑而来。这份疑惑并非源于不信，而是因为相信它正要灵验",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "断言",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "你们家族中每一个人都知道的命运，塔沃尼尔的诅咒……抑或者是“塔沃尼尔的冒险”",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "重估",
+    "dst": "塔沃尼尔的冒险",
+    "evidence": "塔沃尼尔的诅咒……抑或者是“塔沃尼尔的冒险”",
+    "confidence": 0.95
+   },
+   {
+    "src": "雷曼女士",
+    "relation": "重演",
+    "dst": "阿黛拉",
+    "evidence": "你注定逃不过宿命的感召！怀有私心的贤者将玩弄你的命运，死亡的深渊正等待你坠入……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "生疑",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "怪了，为什么我这两天遇到的所有占卜师都知道“塔沃尼尔的诅咒”……",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "93e317e22c50c3e75d9bc534": {
+  "entities": [
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "语出惊人的工房主人"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不愿听见答案的听者"
+   },
+   {
+    "name": "雷曼女士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被重新评价的死者"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "附在她身上的那道阴影"
+   },
+   {
+    "name": "塔沃尼尔的诅咒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被当场坐实的诊断"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "评说",
+    "dst": "雷曼女士",
+    "evidence": "雷曼女士当时确实窥见了命运——只是不小心看到了太多",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "回避",
+    "dst": "雷曼女士",
+    "evidence": "不不，应该不是我想的那样吧……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "辩称",
+    "dst": "雷曼女士",
+    "evidence": "我还以为她是出现幻觉才活活吓死的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "援引",
+    "dst": "热沃当的野兽",
+    "evidence": "你看，毕竟她死前还说着什么“热沃当的野兽”……",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "安抚",
+    "dst": "阿黛拉",
+    "evidence": "别着急，阿黛拉小姐。我说了是“某种意义上”。",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "揭示",
+    "dst": "热沃当的野兽",
+    "evidence": "她看见的“命运”并不完全属于你——因为你的身上，正附着另一个阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "附着",
+    "dst": "阿黛拉",
+    "evidence": "因为你的身上，正附着另一个阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "断定",
+    "dst": "塔沃尼尔的诅咒",
+    "evidence": "阿黛拉小姐，你的确中了某种诅咒",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dd0c0bcb73a3e40a4d506177": {
+  "entities": [
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主持仪式的引路人"
+   },
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在暗示下沉入意识的受术者"
+   },
+   {
+    "name": "茶褐色烟晶",
+    "type": "物品",
+    "aliases": [
+     "烟晶"
+    ],
+    "desc": "冻结着烟雾的茶褐色水晶"
+   },
+   {
+    "name": "巴西",
+    "type": "地点",
+    "aliases": [],
+    "desc": "这颗烟晶的产地"
+   },
+   {
+    "name": "辉耀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "于双音中化形的光"
+   },
+   {
+    "name": "水晶工房的净化仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被省略在梦后的仪式"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把睡着的人骂醒的雇主"
+   },
+   {
+    "name": "花神咖啡馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "深夜独自灯火通明"
+   },
+   {
+    "name": "巴黎",
+    "type": "地点",
+    "aliases": [],
+    "desc": "一夜之间空无一人的城"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝丽尔",
+    "relation": "引导",
+    "dst": "阿黛拉",
+    "evidence": "万物都有自己的能量，而我们远比我们所以为的更擅于感受它们",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "考校",
+    "dst": "阿黛拉",
+    "evidence": "请告诉我，阿黛拉小姐——哪一颗水晶最吸引你？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "挑选",
+    "dst": "茶褐色烟晶",
+    "evidence": "几次呼吸后，她将手伸向了位于倒数第二排第三个的那颗",
+    "confidence": 0.95
+   },
+   {
+    "src": "茶褐色烟晶",
+    "relation": "产自",
+    "dst": "巴西",
+    "evidence": "产自巴西的烟晶",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "解说",
+    "dst": "茶褐色烟晶",
+    "evidence": "它能够引导负向的能量转为正向，帮助持有者稳固精神",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "诵念",
+    "dst": "辉耀",
+    "evidence": "——双音有七，万物均如是，辉耀于此化形",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "嘱咐",
+    "dst": "阿黛拉",
+    "evidence": "保持呼吸的规律。往暗处看，你会注意到一些光",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "迷惘",
+    "dst": "贝丽尔",
+    "evidence": "是想象它离得更近？还是我走过去？我……",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "摇醒",
+    "dst": "阿黛拉",
+    "evidence": "你这个懒虫，快给我醒醒！",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "埋怨",
+    "dst": "阿黛拉",
+    "evidence": "我找了你一整天，没想到你躲在这里消极怠工！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "失语",
+    "dst": "贝丽尔",
+    "evidence": "奇怪，我记得……贝丽尔女士……",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "调侃",
+    "dst": "阿黛拉",
+    "evidence": "你还真会享受，知道工房里的沙发比你的车舒服",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "沉入",
+    "dst": "水晶工房的净化仪式",
+    "evidence": "意识在下沉，或向内挤压",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "疑惑",
+    "dst": "巴黎",
+    "evidence": "没听说今天要实行宵禁，人都哪儿去了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "拽离",
+    "dst": "阿黛拉",
+    "evidence": "要不是我，等早上你多半会被当成潜进工房的贼抓起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆",
+    "relation": "座落于",
+    "dst": "巴黎",
+    "evidence": "无人的夜中亮起一间灯火通明的咖啡馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "不解",
+    "dst": "花神咖啡馆",
+    "evidence": "他们的营业时间有这么长吗？我之前都没注意",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6e4855fdb58230e02f760d1b": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破画布的闯入者"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "身处幻席的好友"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不肯进店的乘客"
+   },
+   {
+    "name": "花神咖啡馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "深夜接近满座的咖啡馆"
+   },
+   {
+    "name": "花神咖啡馆的客人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "齐刷刷回头的谈论者"
+   },
+   {
+    "name": "巴塔耶",
+    "type": "角色",
+    "aliases": [],
+    "desc": "要招募刽子手的社团主人"
+   },
+   {
+    "name": "大木偶剧场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被滑稽戏糟蹋的剧场"
+   },
+   {
+    "name": "若文",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被讥为外行的剧场作者"
+   },
+   {
+    "name": "马克萨",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被怀念的死亡木偶"
+   },
+   {
+    "name": "活祭仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "社团成员甘愿充当祭品的仪式"
+   },
+   {
+    "name": "集体潜意识",
+    "type": "概念",
+    "aliases": [],
+    "desc": "藏在共通想象里的关键"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "在面孔背后显出的獠牙"
+   }
+  ],
+  "relations": [
+   {
+    "src": "费利西安",
+    "relation": "差遣",
+    "dst": "阿黛拉",
+    "evidence": "去给我买点吃的。我不想进去，里面太吵了",
+    "confidence": 0.95
+   },
+   {
+    "src": "费利西安",
+    "relation": "拒入",
+    "dst": "花神咖啡馆",
+    "evidence": "我不想进去，里面太吵了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "揣测",
+    "dst": "花神咖啡馆的客人",
+    "evidence": "阿黛拉边走向柜台，边猜测这些客人的来处",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆的客人",
+    "relation": "转述",
+    "dst": "巴塔耶",
+    "evidence": "是的，乔治·巴塔耶正在为他的社团招募刽子手",
+    "confidence": 0.95
+   },
+   {
+    "src": "巴塔耶",
+    "relation": "举行",
+    "dst": "活祭仪式",
+    "evidence": "他和他所有的社团成员都宁愿成为活祭仪式上的祭品，却没有人愿意当刽子手",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆的客人",
+    "relation": "讥讽",
+    "dst": "大木偶剧场",
+    "evidence": "你看过大木偶剧场的新剧了吗？杰克·若文根本就不是那块料",
+    "confidence": 0.95
+   },
+   {
+    "src": "若文",
+    "relation": "糟蹋",
+    "dst": "大木偶剧场",
+    "evidence": "那个喜欢卖弄自我的肥猪就这样把大木偶剧场变成了上演蹩脚滑稽戏的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆的客人",
+    "relation": "怀念",
+    "dst": "马克萨",
+    "evidence": "我很想念我美丽的马克萨，她的每一次死亡我都忘不掉",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆的客人",
+    "relation": "设问",
+    "dst": "集体潜意识",
+    "evidence": "一个时代所有人都认为某个东西存在，这个东西就会真的存在？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "论证",
+    "dst": "集体潜意识",
+    "evidence": "根据我最新的研究，或许问题的关键就在人们的共通想象之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "招呼",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉？你来了！我还以为你对我们的研究不感兴趣……",
+    "confidence": 0.95
+   },
+   {
+    "src": "花神咖啡馆的客人",
+    "relation": "注视",
+    "dst": "阿黛拉",
+    "evidence": "所有客人在同一时间转过头，一动不动地注视着这名莽撞的闯入者",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "望见",
+    "dst": "热沃当的野兽",
+    "evidence": "客人们的轮廓逐渐消融，取而代之的是獠牙与……皮毛",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "款留",
+    "dst": "阿黛拉",
+    "evidence": "你的脸色好差……留下来和我们一块吃些东西吧？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "扯走",
+    "dst": "西莉亚",
+    "evidence": "阿黛拉攥住好友的手腕，猛地将她扯到身边，冲向身后的玻璃门",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "茫然",
+    "dst": "阿黛拉",
+    "evidence": "好痛——怎么了？阿黛拉！阿黛拉——",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9649d60a19ac710aab20ebeb": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "护着好友奔逃的司机"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被牵着跑的恍惚者"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指望独自离开的任性者"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "停在巷子里的车"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "吼声盖过引擎的野兽"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称康复在望的救援者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "呼喝",
+    "dst": "西莉亚",
+    "evidence": "该死，车停在巷子里……西莉亚，跟紧我！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "牵挂",
+    "dst": "费利西安",
+    "evidence": "费利西安，快跑！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "期盼",
+    "dst": "费利西安",
+    "evidence": "阿黛拉第一次由衷地祈祷费利西安贯彻了任性的作风，她最好是已经独自离开",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "逼近",
+    "dst": "阿黛拉",
+    "evidence": "她刚想转过身为西莉亚争取一点逃跑的时间，引擎的轰鸣已迅速逼近",
+    "confidence": 0.95
+   },
+   {
+    "src": "标致201",
+    "relation": "盖过",
+    "dst": "热沃当的野兽",
+    "evidence": "引擎的轰鸣已迅速逼近，甚至盖过了野兽的吼叫",
+    "confidence": 0.95
+   },
+   {
+    "src": "文森特",
+    "relation": "救援",
+    "dst": "阿黛拉",
+    "evidence": "快上车！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "认出",
+    "dst": "文森特",
+    "evidence": "你是……白天的那个司机！你不是被送去接受治疗了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "推入",
+    "dst": "西莉亚",
+    "evidence": "她一把拉开车门，将恍惚的西莉亚推上去，自己也跳进了后座",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "催促",
+    "dst": "文森特",
+    "evidence": "快点！把油门踩到底！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a82406a20e8d65c5e784979b": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以真知验伪的证词者"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被怀疑为梦中假货的好友"
+   },
+   {
+    "name": "文森特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "深夜伸出的援手之形"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "披着人形的追逐者"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙"
+    ],
+    "desc": "扑向司机的幼龙"
+   },
+   {
+    "name": "费利西安",
+    "type": "角色",
+    "aliases": [],
+    "desc": "口红痕迹的真正来源"
+   },
+   {
+    "name": "标致201",
+    "type": "物品",
+    "aliases": [],
+    "desc": "悬停在黑暗中的车"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "炼化虚妄的火焰"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿黛拉",
+    "relation": "探问",
+    "dst": "西莉亚",
+    "evidence": "你还好吗，西莉亚？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "松一口气",
+    "dst": "热沃当的野兽",
+    "evidence": "看见几道黑影被远远甩开，消失在身后的夜色中",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "致谢",
+    "dst": "文森特",
+    "evidence": "多亏您出现得及时！不过，我还以为您会多休息一段时间……",
+    "confidence": 0.95
+   },
+   {
+    "src": "文森特",
+    "relation": "自励",
+    "dst": "阿黛拉",
+    "evidence": "法语里没有不可能这个词！我的康复之日早已临近！",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "试探",
+    "dst": "文森特",
+    "evidence": "您刚才在咖啡馆门口见过其他人吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "劝阻",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉，别再问了——我觉得——",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "辨认",
+    "dst": "费利西安",
+    "evidence": "您副驾驶车窗上的口红痕迹，很像我的一个朋友留下的",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "质疑",
+    "dst": "文森特",
+    "evidence": "我早就把痕迹擦掉了。可它为什么出现在你的车上？这真的是你的车吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "苛问",
+    "dst": "西莉亚",
+    "evidence": "难道你就不是我梦见的假货吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "标致201",
+    "relation": "悬停",
+    "dst": "阿黛拉",
+    "evidence": "车已经没有再往前行驶。它悬置在一片黑暗中。",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "扑向",
+    "dst": "文森特",
+    "evidence": "幼龙攀上了驾驶座的靠背，跳到司机肩上",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "施术",
+    "dst": "神秘术",
+    "evidence": "唯以真知炼化虚妄！",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "伪装",
+    "dst": "文森特",
+    "evidence": "在火焰灼烧之下，兽类的尖牙撕裂了属于人的躯壳",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "94a44677dc2bd2c94f8f484a": {
+  "entities": [
+   {
+    "name": "阿黛拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "醒来仍握着钻石的人"
+   },
+   {
+    "name": "西莉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在梦中想通一切的研究者"
+   },
+   {
+    "name": "贝丽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "姿势从未变过的引路者"
+   },
+   {
+    "name": "热沃当的野兽",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被识破后遁走的追逐者"
+   },
+   {
+    "name": "阿黛拉的小龙",
+    "type": "角色",
+    "aliases": [
+     "幼龙"
+    ],
+    "desc": "火焰只燃一瞬的幼龙"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "撬开宝库的敌手"
+   },
+   {
+    "name": "意象宝库",
+    "type": "概念",
+    "aliases": [],
+    "desc": "绝不能被开启的宝库"
+   },
+   {
+    "name": "连环失踪案",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被归因于宝库之祸的失踪"
+   },
+   {
+    "name": "法兰西之蓝",
+    "type": "物品",
+    "aliases": [],
+    "desc": "骤然落入掌心的传说"
+   },
+   {
+    "name": "茶褐色烟晶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "本该在手里的那颗水晶"
+   },
+   {
+    "name": "好运项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "冰冷坠手的信物"
+   },
+   {
+    "name": "水晶工房的净化仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被证实成功的净化仪式"
+   },
+   {
+    "name": "罗西教授",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被告诫不可轻信的人"
+   },
+   {
+    "name": "花神咖啡馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "野兽显形的舞台"
+   }
+  ],
+  "relations": [
+   {
+    "src": "热沃当的野兽",
+    "relation": "遁入",
+    "dst": "阿黛拉",
+    "evidence": "文森特跳出车窗，扭曲的身影立刻被夜色吞没",
+    "confidence": 0.95
+   },
+   {
+    "src": "热沃当的野兽",
+    "relation": "灼痛",
+    "dst": "阿黛拉",
+    "evidence": "阿黛拉感到胃里一阵烧灼般的疼痛",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉的小龙",
+    "relation": "试探",
+    "dst": "西莉亚",
+    "evidence": "幼龙的尾巴已经卷上西莉亚的手臂。但火焰只燃起了一瞬",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "求证",
+    "dst": "西莉亚",
+    "evidence": "你真的是——？",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "醒悟",
+    "dst": "重塑之手",
+    "evidence": "“重塑之手”撬开了意象宝库，导致了所有的癔症和失踪案",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "开启",
+    "dst": "意象宝库",
+    "evidence": "“重塑之手”撬开了意象宝库，导致了所有的癔症和失踪案",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "酿成",
+    "dst": "连环失踪案",
+    "evidence": "导致了所有的癔症和失踪案",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "告诫",
+    "dst": "罗西教授",
+    "evidence": "不要相信罗西教授，不要急着来找我，你必须先做一件事——",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "递出",
+    "dst": "好运项链",
+    "evidence": "冰冷的物件落进阿黛拉手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "好运项链",
+    "relation": "缀着",
+    "dst": "法兰西之蓝",
+    "evidence": "她认识项链上缀着的这枚钻石",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "惊认",
+    "dst": "法兰西之蓝",
+    "evidence": "这……这是法兰西之蓝？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "西莉亚",
+    "relation": "催促",
+    "dst": "法兰西之蓝",
+    "evidence": "你一定要烧掉它——",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "唤醒",
+    "dst": "阿黛拉",
+    "evidence": "——于此破暗归真。",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "主持",
+    "dst": "水晶工房的净化仪式",
+    "evidence": "一切都和接受“净化仪式”前的情景别无二致",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "释疑",
+    "dst": "热沃当的野兽",
+    "evidence": "不完全是。你沉入了潜意识的深处，找出了盘踞在那里的阴影",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "追认",
+    "dst": "花神咖啡馆",
+    "evidence": "我的确看到了“热沃当的野兽”……在花神咖啡馆里……",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿黛拉",
+    "relation": "错愕",
+    "dst": "茶褐色烟晶",
+    "evidence": "手中的钻石。它本该是一颗烟晶",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "否认",
+    "dst": "茶褐色烟晶",
+    "evidence": "你在说什么，阿黛拉小姐？你并未挑选过水晶",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝丽尔",
+    "relation": "断言",
+    "dst": "法兰西之蓝",
+    "evidence": "那颗钻石——你从一开始就握在手中",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

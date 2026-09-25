@@ -1,0 +1,1206 @@
+{
+ "2ceb0494e82fe46f05a60be5": {
+  "entities": [
+   {
+    "name": "桑托斯",
+    "type": "角色",
+    "aliases": [
+     "阁下"
+    ],
+    "desc": "以受苦者之名索取忠诚者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怒斥其坏蛋的小淑女"
+   },
+   {
+    "name": "马坎多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "桑托斯手下"
+   },
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "佯装投靠并供出加莱亚诺者"
+   },
+   {
+    "name": "加莱亚诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指策划带年轻人投芝诺者"
+   },
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被邓肯嘱托者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "苏芙比曾见其面具"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏芙比在1929年见过"
+   },
+   {
+    "name": "铁特河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被误认的恶棍来源地"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [
+     "兄弟会"
+    ],
+    "desc": "邓肯佯称要投靠"
+   },
+   {
+    "name": "受苦者",
+    "type": "概念",
+    "aliases": [],
+    "desc": "其荣耀被极尽谦卑"
+   },
+   {
+    "name": "芝诺",
+    "type": "组织",
+    "aliases": [],
+    "desc": "加莱亚诺欲投奔处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏芙比",
+    "relation": "认出",
+    "dst": "重塑之手",
+    "evidence": "天哪！重塑之手！苏芙比见过那张面具",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "宣示",
+    "dst": "受苦者",
+    "evidence": "舍身跳下的，必有翅膀接住你们",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "限期",
+    "dst": "贫民区住民",
+    "evidence": "你们有三天时间考虑",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏芙比",
+    "relation": "指控",
+    "dst": "桑托斯",
+    "evidence": "不！他是个坏蛋！",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "告发",
+    "dst": "加莱亚诺",
+    "evidence": "那边有个叫加莱亚诺的小子，他在策划把这儿的年轻人带到芝诺去当兵！",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "命令",
+    "dst": "马坎多",
+    "evidence": "马坎多，带他过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "下跪",
+    "dst": "桑托斯",
+    "evidence": "老人虔敬地屈膝下跪——如同他为小淑女扮演“卡森”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "39a5387fdef6dad8326692b1": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "趁乱带苏芙比乘木划艇离开者"
+   },
+   {
+    "name": "苏芙比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被洛佩拉带离者"
+   },
+   {
+    "name": "桑托斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以匕首逼问加莱亚诺者"
+   },
+   {
+    "name": "加莱亚诺",
+    "type": "角色",
+    "aliases": [],
+    "desc": "倔强拒答后被击倒者"
+   },
+   {
+    "name": "邓肯先生",
+    "type": "角色",
+    "aliases": [
+     "“叛徒”邓肯"
+    ],
+    "desc": "揍倒加莱亚诺以保护朋友者"
+   },
+   {
+    "name": "马坎多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被留下执行任务者"
+   },
+   {
+    "name": "木划艇",
+    "type": "物品",
+    "aliases": [],
+    "desc": "带两人离开风暴中心"
+   },
+   {
+    "name": "匕首",
+    "type": "物品",
+    "aliases": [],
+    "desc": "抵住加莱亚诺喉咙"
+   },
+   {
+    "name": "名单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "想加入芝诺者名单"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "带走",
+    "dst": "苏芙比",
+    "evidence": "洛佩拉趁乱抓住苏芙比。一艘木划艇将两人带离风暴中心",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "逼问",
+    "dst": "加莱亚诺",
+    "evidence": "告诉我，他说的是真的吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "邓肯先生",
+    "relation": "击倒",
+    "dst": "加莱亚诺",
+    "evidence": "“叛徒”邓肯对着年轻人的脸，狠狠揍了一拳，将他仰头击倒",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "索要",
+    "dst": "加莱亚诺",
+    "evidence": "让他交出名单——所有想加入芝诺的人的名单",
+    "confidence": 0.95
+   },
+   {
+    "src": "桑托斯",
+    "relation": "威胁",
+    "dst": "邓肯先生",
+    "evidence": "明天中午我要见到那些名字，或者……见到他的舌头跟眼睛。老先生，你来动手",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0d8a92a8d90694726ca46934": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生",
+     "德洛丝医生"
+    ],
+    "desc": "在河岸敲打字机的盲眼医生"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [
+     "瓶中船"
+    ],
+    "desc": "瓶中船，1688年苏醒的盖伦帆船；会说话的船"
+   },
+   {
+    "name": "贫民区小孩",
+    "type": "概念",
+    "aliases": [],
+    "desc": "围观打字机的孩子们"
+   },
+   {
+    "name": "白痴草",
+    "type": "概念",
+    "aliases": [
+     "羊癫草"
+    ],
+    "desc": "据说吃下能想起所有事"
+   },
+   {
+    "name": "魅魔",
+    "type": "概念",
+    "aliases": [],
+    "desc": "沙漠半岛传说中的存在"
+   },
+   {
+    "name": "跨国公司",
+    "type": "组织",
+    "aliases": [],
+    "desc": "切开拉丁美洲血管抽走生命者"
+   },
+   {
+    "name": "河岸贫民区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "医生所在之处"
+   },
+   {
+    "name": "新英格兰",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾被称作新英格兰的繁华海岸"
+   },
+   {
+    "name": "马德里",
+    "type": "地点",
+    "aliases": [],
+    "desc": "其王公曾享用此地血肉"
+   },
+   {
+    "name": "圣萨尔瓦多岛",
+    "type": "地点",
+    "aliases": [],
+    "desc": "伊洛潘戈湖所在"
+   },
+   {
+    "name": "河上的生与死",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "工作于",
+    "dst": "河岸贫民区",
+    "evidence": "喧哗的河岸边，医生敲打着打字机",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "苏醒于",
+    "dst": "1688年",
+    "evidence": "1681年的拿骚港和1990年的圣保罗，说真的，医生，在我看来就是一回事",
+    "confidence": 0.9
+   },
+   {
+    "src": "跨国公司",
+    "relation": "掠夺",
+    "dst": "拉丁美洲",
+    "evidence": "跨国公司切开了拉丁美洲的血管，扎进针管，从中抽走它旺盛蓬勃的生命",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "讲述",
+    "dst": "白痴草",
+    "evidence": "好了，羊癫草只是一个可爱的传说",
+    "confidence": 0.9
+   },
+   {
+    "src": "白朗姆",
+    "relation": "讲述",
+    "dst": "魅魔",
+    "evidence": "男人们听到这个，都得站起来！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "258c611da281282333cd4e17": {
+  "entities": [
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称摩根大副遇魅魔传说者"
+   },
+   {
+    "name": "贫民区小孩",
+    "type": "概念",
+    "aliases": [],
+    "desc": "发现落水者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "溺水昏迷并发烧者"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱维尔汀游上岸者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生",
+     "德洛丝医生"
+    ],
+    "desc": "施救维尔汀的盲眼医生"
+   },
+   {
+    "name": "摩根",
+    "type": "角色",
+    "aliases": [
+     "摩根大副"
+    ],
+    "desc": "1688年在贝卢港遇魅魔者"
+   },
+   {
+    "name": "魅魔的封印物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "摩根捡到之物"
+   },
+   {
+    "name": "热毒菌",
+    "type": "概念",
+    "aliases": [],
+    "desc": "疑感染维尔汀的河内病菌"
+   },
+   {
+    "name": "贝卢港",
+    "type": "地点",
+    "aliases": [],
+    "desc": "摩根遇魅魔并死亡之处"
+   },
+   {
+    "name": "河岸贫民区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "落水者漂到之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "救起",
+    "dst": "维尔汀",
+    "evidence": "一个抱着另一个，正在奋力游向岸上",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "施救",
+    "dst": "维尔汀",
+    "evidence": "医生熟练地跪下，把女孩口中的污秽掏出，确保呼吸通畅后，开始按压胸部",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "诊断",
+    "dst": "热毒菌",
+    "evidence": "这不像是普通的发热，或许感染了河内的热毒菌",
+    "confidence": 0.95
+   },
+   {
+    "src": "摩根",
+    "relation": "捡到",
+    "dst": "魅魔的封印物",
+    "evidence": "摩根大副在贝卢港捡到了某个魅魔的封印物，然后遇见了那该死的魅魔",
+    "confidence": 0.9
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "携带",
+    "dst": "维尔汀",
+    "evidence": "她应该还有个一起的朋友，但她不见了，我只能抱着她一起漂流",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "30d6cad7514554eedaafd52b": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生",
+     "德洛丝医生"
+    ],
+    "desc": "自言自语安抚病人者"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追上医生并跟入其家"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [
+     "瓶中船"
+    ],
+    "desc": "跟在身后者"
+   },
+   {
+    "name": "家",
+    "type": "地点",
+    "aliases": [
+     "医生的家"
+    ],
+    "desc": "金伯利走入之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "卡卡尼亚",
+    "relation": "背负",
+    "dst": "维尔汀",
+    "evidence": "请把她抬到我背上",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "安抚",
+    "dst": "维尔汀",
+    "evidence": "别担心，我会帮助你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "追随",
+    "dst": "卡卡尼亚",
+    "evidence": "金伯利女郎追上医生——等回过神来，她发现，自己已经跟着走了很远",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "进入",
+    "dst": "家",
+    "evidence": "她走进了医生的“家”",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "bfb03067e50018117a7981e8": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生",
+     "德洛丝医生"
+    ],
+    "desc": "照料发烧病患者"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [
+     "金伯利小姐"
+    ],
+    "desc": "自陈两次遇到维尔汀都倒霉者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "昏迷发烧的病患"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等在门口者"
+   },
+   {
+    "name": "避难小屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "医生安顿病患之处"
+   },
+   {
+    "name": "荣军院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "将带维尔汀进一步治疗"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "金伯利与维尔汀初次相遇处"
+   },
+   {
+    "name": "庄园",
+    "type": "地点",
+    "aliases": [],
+    "desc": "金伯利被绑走之处"
+   },
+   {
+    "name": "塔",
+    "type": "地点",
+    "aliases": [],
+    "desc": "金伯利被关押之处"
+   },
+   {
+    "name": "德克萨斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两人上一次不愉快的相遇地"
+   },
+   {
+    "name": "惊情三百年",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "救起",
+    "dst": "维尔汀",
+    "evidence": "河水正好把她冲到我身旁……我不想看着她就这样沉下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "相遇",
+    "dst": "维尔汀",
+    "evidence": "这是我们第二次见面，尽管上一回……上一回在德克萨斯，闹得不太愉快",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "承诺",
+    "dst": "维尔汀",
+    "evidence": "等情况好一点，我会带她去荣军院进一步治疗",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "被绑走于",
+    "dst": "庄园",
+    "evidence": "后来在庄园，我只是在那儿吃饭，天哪——冲进来一群人，把我绑走，扔到塔里关着",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "等待",
+    "dst": "金伯利女郎",
+    "evidence": "瓶中船等在门口",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "提议",
+    "dst": "金伯利女郎",
+    "evidence": "来吧，亲爱的，我送你一程，路上也好聊聊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "739d75c3860efb66edf65891": {
+  "entities": [
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [
+     "伟大的白朗姆号"
+    ],
+    "desc": "识破金伯利魅魔身份者"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [
+     "魅魔小姐",
+     "小魅魔"
+    ],
+    "desc": "被通缉追捕的古老种族"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生",
+     "德洛丝医生"
+    ],
+    "desc": "往返荣军院靠白朗姆接送"
+   },
+   {
+    "name": "盖伦帆船",
+    "type": "物品",
+    "aliases": [],
+    "desc": "源于十六世纪探索之梦"
+   },
+   {
+    "name": "封印物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "魅魔须服从持有者"
+   },
+   {
+    "name": "埃尔多拉多",
+    "type": "概念",
+    "aliases": [],
+    "desc": "传说中的黄金国"
+   },
+   {
+    "name": "亚马孙雨林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "连水坑都被标注"
+   },
+   {
+    "name": "荣军院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "医生往返之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "被认出为",
+    "dst": "魅魔",
+    "evidence": "她被认出来了——一个被通缉、被追捕、被遗忘于世人记忆中的古老种族",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "识破",
+    "dst": "金伯利女郎",
+    "evidence": "魅魔小姐，你应该给自己弄一只更好的手套，这样才能遮住爪子",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "自陈",
+    "dst": "盖伦帆船",
+    "evidence": "我只是一艘船呀，被我那亲爱的船长放进瓶子里，一睡睡了将近三百年的小船",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "接送",
+    "dst": "卡卡尼亚",
+    "evidence": "医生往返荣军院和这边，都靠我接送",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "推测",
+    "dst": "封印物",
+    "evidence": "我猜，她是你的主人，对不对？或者……她拿着你的封印物？",
+    "confidence": 0.9
+   },
+   {
+    "src": "白朗姆",
+    "relation": "类比",
+    "dst": "金伯利女郎",
+    "evidence": "和你一样，她也是位逃犯",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "be9bd51485788e744dfba5e9": {
+  "entities": [
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "晕船并自陈主人弄丢封印物者"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回忆历任船长的船长兼船"
+   },
+   {
+    "name": "断腿”威廉",
+    "type": "角色",
+    "aliases": [
+     "“断腿”威廉"
+    ],
+    "desc": "被吊死前是纵火犯"
+   },
+   {
+    "name": "红手”爱德华",
+    "type": "角色",
+    "aliases": [
+     "“红手”爱德华"
+    ],
+    "desc": "低地佬，在托尔图加港被抹脖子"
+   },
+   {
+    "name": "咆哮西风带",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾随船长穿行之地"
+   },
+   {
+    "name": "旧金山",
+    "type": "地点",
+    "aliases": [],
+    "desc": "金伯利诅咒主人死于此"
+   },
+   {
+    "name": "南安普敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "威廉上船处"
+   },
+   {
+    "name": "托尔图加港",
+    "type": "地点",
+    "aliases": [],
+    "desc": "爱德华被杀处"
+   },
+   {
+    "name": "普利茅斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾随船长前往"
+   },
+   {
+    "name": "拿骚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾随船长前往"
+   },
+   {
+    "name": "皇家港",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾随船长前往"
+   },
+   {
+    "name": "塞维利亚",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾装商船偷运香料"
+   },
+   {
+    "name": "封印物",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被金伯利的主人弄丢"
+   },
+   {
+    "name": "十八磅加农炮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "在船身留下无数弹孔"
+   }
+  ],
+  "relations": [
+   {
+    "src": "白朗姆",
+    "relation": "回忆",
+    "dst": "断腿”威廉",
+    "evidence": "“断腿”威廉被吊死前是个纵火犯，一嘴烂牙",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "回忆",
+    "dst": "红手”爱德华",
+    "evidence": "“红手”爱德华是低地佬……但他却在托尔图加港被一个醉鬼抹了脖子",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "航行于",
+    "dst": "普利茅斯",
+    "evidence": "有船长的时候，我跟着船长的号令走，去普利茅斯，去拿骚，去皇家港",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "自陈",
+    "dst": "封印物",
+    "evidence": "那家伙是个傻子，还弄丢了我的封印物",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "建议",
+    "dst": "金伯利女郎",
+    "evidence": "你有没有想过……过上另一种生活呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "晕船",
+    "dst": "白朗姆",
+    "evidence": "你也没跟我说……河上会……这么晃",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a4cb987cb6a474b47f92d183": {
+  "entities": [
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以铝罐还击少年者"
+   },
+   {
+    "name": "贫民区少年",
+    "type": "角色",
+    "aliases": [],
+    "desc": "用铝罐颠球并自称兄弟会者"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒刀不明智者"
+   },
+   {
+    "name": "铝罐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被当作足球"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [
+     "兄弟会"
+    ],
+    "desc": "少年冒名自称"
+   },
+   {
+    "name": "桑托斯",
+    "type": "角色",
+    "aliases": [
+     "桑托斯大人"
+    ],
+    "desc": "少年称其已回来"
+   },
+   {
+    "name": "河岸贫民区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "少年练球之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "投掷",
+    "dst": "贫民区少年",
+    "evidence": "金伯利捡起铝罐，气冲冲地扔向那小伙子的脑袋",
+    "confidence": 0.95
+   },
+   {
+    "src": "贫民区少年",
+    "relation": "冒称",
+    "dst": "天使兄弟会",
+    "evidence": "你敢对我们天使兄弟会的人动手！",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "警告",
+    "dst": "贫民区少年",
+    "evidence": "刀？小家伙们，这可不明智呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "贫民区少年",
+    "relation": "声称",
+    "dst": "桑托斯",
+    "evidence": "桑托斯大人回来了！你完了！",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "b9f1705b8dce30e6215324ef": {
+  "entities": [
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "轻松摆平少年并踹瓶罐者"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言其真是魅魔者"
+   },
+   {
+    "name": "贫民区少年",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被吓退的少年们"
+   },
+   {
+    "name": "天使兄弟会",
+    "type": "组织",
+    "aliases": [
+     "兄弟会"
+    ],
+    "desc": "据白朗姆称根本人不认识这些少年"
+   },
+   {
+    "name": "瓶罐",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被踹入河中"
+   },
+   {
+    "name": "河",
+    "type": "地点",
+    "aliases": [],
+    "desc": "瓶罐被踹入之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "击退",
+    "dst": "贫民区少年",
+    "evidence": "她轻松摆平了这些不自量力的小伙子",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "踹入",
+    "dst": "瓶罐",
+    "evidence": "她撒气般将脚边的瓶罐一一踹入河中",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "断言",
+    "dst": "金伯利女郎",
+    "evidence": "我现在确信你真是个魅魔了，小姐。你下手真的没有轻重",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "评价",
+    "dst": "天使兄弟会",
+    "evidence": "那伙人能动刀子解决问题，就绝不会动嘴皮子",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c7482dcfd2ba01dca0efeab4": {
+  "entities": [
+   {
+    "name": "马坎多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率众闯入小屋者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝医生"
+    ],
+    "desc": "听出谎话的盲眼医生"
+   },
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "亮爪护住维尔汀者"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "察觉爆炸动静者"
+   },
+   {
+    "name": "兄弟会信众",
+    "type": "组织",
+    "aliases": [
+     "野狗"
+    ],
+    "desc": "踢翻药瓶者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被挟持的高烧病人"
+   },
+   {
+    "name": "桑托斯",
+    "type": "角色",
+    "aliases": [
+     "桑托斯阁下"
+    ],
+    "desc": "想找医生聊聊者"
+   },
+   {
+    "name": "避难小屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被闯入之处"
+   },
+   {
+    "name": "荣军院",
+    "type": "地点",
+    "aliases": [],
+    "desc": "医生所属机构"
+   },
+   {
+    "name": "白色航船",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马坎多",
+    "relation": "率众闯入",
+    "dst": "避难小屋",
+    "evidence": "几位不速之客破门而入",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "识破",
+    "dst": "马坎多",
+    "evidence": "先生，您在说谎。我能听出这是谎话",
+    "confidence": 0.95
+   },
+   {
+    "src": "兄弟会信众",
+    "relation": "踢翻",
+    "dst": "药瓶",
+    "evidence": "不速之客踢翻医生的药瓶，试管意外引起了一个小小的爆炸",
+    "confidence": 0.95
+   },
+   {
+    "src": "金伯利女郎",
+    "relation": "阻拦",
+    "dst": "马坎多",
+    "evidence": "她得照顾维尔汀，不能跟你们走",
+    "confidence": 0.95
+   },
+   {
+    "src": "马坎多",
+    "relation": "下令",
+    "dst": "兄弟会信众",
+    "evidence": "干掉他们，带走医生",
+    "confidence": 0.95
+   },
+   {
+    "src": "马坎多",
+    "relation": "声称",
+    "dst": "卡卡尼亚",
+    "evidence": "桑托斯阁下有些话想找这位荣军院的医生“聊聊”",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "37442880b80ea888f50dc180": {
+  "entities": [
+   {
+    "name": "金伯利女郎",
+    "type": "角色",
+    "aliases": [],
+    "desc": "捏住暴徒头颅又松手者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "德洛丝医生"
+    ],
+    "desc": "喝止争斗者"
+   },
+   {
+    "name": "白朗姆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒维尔汀仍在对方手中"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高烧被挟持者"
+   },
+   {
+    "name": "暴徒",
+    "type": "概念",
+    "aliases": [],
+    "desc": "挟持维尔汀者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "金伯利女郎",
+    "relation": "停手",
+    "dst": "卡卡尼亚",
+    "evidence": "想用力捏碎，却突然停住，犹豫着回头看向医生",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "喝止",
+    "dst": "金伯利女郎",
+    "evidence": "请各位停止争斗！",
+    "confidence": 0.95
+   },
+   {
+    "src": "白朗姆",
+    "relation": "提醒",
+    "dst": "金伯利女郎",
+    "evidence": "医生，维尔汀还在他们那边",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴徒",
+    "relation": "挟持",
+    "dst": "维尔汀",
+    "evidence": "高烧的病人被暴徒挟持着",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

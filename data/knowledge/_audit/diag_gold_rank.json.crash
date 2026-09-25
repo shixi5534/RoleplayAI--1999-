@@ -1,0 +1,9 @@
+2026-09-17 13:37:16
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\diag_gold_rank.py", line 239, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\diag_gold_rank.py", line 107, in main
+    hashes = [str(h) for h in (sem.hashes or [])]
+                               ^^^^^^^^^^^^^^^^
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

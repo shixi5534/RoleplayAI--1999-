@@ -1,0 +1,25 @@
+2026-09-17 13:46:31
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\ab_rerank_ceiling.py", line 240, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\ab_rerank_ceiling.py", line 205, in main
+    run(f"C 扩池+余弦重排({args.expand_per},{args.expand_cap})",
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        args.expand_per, args.expand_cap, True),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\ab_rerank_ceiling.py", line 177, in run
+    row = E.evaluate_case(retr, item, oracle[str(item.get("id"))], top, lex_fb,
+                          inject_chars, chunks_transform=make_rerank(rerank))
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\eval_plot_rag.py", line 399, in evaluate_case
+    paths = Counter(infer_path(c.metadata or {}) for c in chunks)
+  File "C:\Users\Lenovo\.workbuddy\binaries\python\versions\3.13.12\Lib\collections\__init__.py", line 611, in __init__
+    self.update(iterable, **kwds)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\.workbuddy\binaries\python\versions\3.13.12\Lib\collections\__init__.py", line 703, in update
+    _count_elements(self, iterable)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\scripts\eval_plot_rag.py", line 399, in <genexpr>
+    paths = Counter(infer_path(c.metadata or {}) for c in chunks)
+                               ^^^^^^^^^^
+AttributeError: 'PlotChunk' object has no attribute 'metadata'

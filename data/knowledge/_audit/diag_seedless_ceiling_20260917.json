@@ -1,0 +1,961 @@
+{
+  "generated_at": "2026-09-17 13:07:04",
+  "character": "wu_ming_zhe",
+  "config": {
+    "top_chunks_probe": 20,
+    "top_entities_probe": 20,
+    "semantic_top": 5,
+    "semantic_min_score": 0.0,
+    "semantic_link_top": 3,
+    "semantic_link_min": 0.0,
+    "embedder": "",
+    "degraded": false
+  },
+  "counts": {
+    "items": 300,
+    "seedless": 6,
+    "with_truth_entity": 6,
+    "embed_failed": 0,
+    "negatives": 53,
+    "negatives_embedded": 53
+  },
+  "chunk_side_upper_bound": {
+    "recall_at_k": {
+      "1": 0.1667,
+      "3": 0.3333,
+      "5": 0.3333,
+      "10": 0.3333,
+      "20": 0.3333
+    },
+    "semantic_only_ceiling_at_k": {
+      "1": 0.1667,
+      "3": 0.3333,
+      "5": 0.3333,
+      "10": 0.3333,
+      "20": 0.3333
+    }
+  },
+  "entity_side_upper_bound": {
+    "recall_at_k": {
+      "1": 0.1667,
+      "3": 0.5,
+      "5": 0.6667,
+      "10": 0.6667,
+      "20": 0.6667
+    },
+    "truth_best_score_quantiles": {
+      "p10": 0.4741,
+      "p25": 0.4966,
+      "p50": 0.5118,
+      "p75": 0.5334,
+      "p90": 0.5676
+    },
+    "top_nontruth_score_quantiles": {
+      "p10": 0.5014,
+      "p25": 0.5118,
+      "p50": 0.5169,
+      "p75": 0.5584,
+      "p90": 0.5796
+    }
+  },
+  "negatives_detail": [
+    {
+      "cat": "泛词实体",
+      "q": "今天天气怎么样",
+      "max_score": 0.7063,
+      "top1_name": "today's game"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "明天的天气预报是什么",
+      "max_score": 0.6767,
+      "top1_name": "明日"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "最近经济形势如何",
+      "max_score": 0.6314,
+      "top1_name": "当前状况"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "股市今天涨了吗",
+      "max_score": 0.6869,
+      "top1_name": "Stock prices"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "给我讲个故事",
+      "max_score": 0.782,
+      "top1_name": "story"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "这个故事讲了什么",
+      "max_score": 0.7672,
+      "top1_name": "story"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "时间是什么",
+      "max_score": 0.7696,
+      "top1_name": "time"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "介绍几个历史事件",
+      "max_score": 0.6436,
+      "top1_name": "历史"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "什么是哲学",
+      "max_score": 0.6559,
+      "top1_name": "哲学家"
+    },
+    {
+      "cat": "泛词实体",
+      "q": "解释一下相对论",
+      "max_score": 0.6394,
+      "top1_name": "解释"
+    },
+    {
+      "cat": "闲聊",
+      "q": "你好呀，在吗",
+      "max_score": 0.6771,
+      "top1_name": "Hey"
+    },
+    {
+      "cat": "闲聊",
+      "q": "在干嘛呢",
+      "max_score": 0.721,
+      "top1_name": "Whoever's doing this"
+    },
+    {
+      "cat": "闲聊",
+      "q": "陪我聊聊天吧",
+      "max_score": 0.6942,
+      "top1_name": "advice"
+    },
+    {
+      "cat": "闲聊",
+      "q": "我今天心情不太好",
+      "max_score": 0.6686,
+      "top1_name": "精神崩溃"
+    },
+    {
+      "cat": "闲聊",
+      "q": "你觉得我这个人怎么样",
+      "max_score": 0.6006,
+      "top1_name": "this guy"
+    },
+    {
+      "cat": "闲聊",
+      "q": "晚安，早点休息",
+      "max_score": 0.6968,
+      "top1_name": "Buona sera"
+    },
+    {
+      "cat": "闲聊",
+      "q": "谢谢你",
+      "max_score": 0.8137,
+      "top1_name": "感谢信"
+    },
+    {
+      "cat": "闲聊",
+      "q": "哈哈哈",
+      "max_score": 0.805,
+      "top1_name": "Haha"
+    },
+    {
+      "cat": "工具型",
+      "q": "1+1 等于几",
+      "max_score": 0.6274,
+      "top1_name": "number"
+    },
+    {
+      "cat": "工具型",
+      "q": "123 乘以 456 是多少",
+      "max_score": 0.5118,
+      "top1_name": "number"
+    },
+    {
+      "cat": "工具型",
+      "q": "用 Python 写一个快速排序",
+      "max_score": 0.6154,
+      "top1_name": "基因排序"
+    },
+    {
+      "cat": "工具型",
+      "q": "帮我写一个 SQL 查询",
+      "max_score": 0.6187,
+      "top1_name": "数据库"
+    },
+    {
+      "cat": "工具型",
+      "q": "帮我把这段话翻译成英文",
+      "max_score": 0.6373,
+      "top1_name": "letter"
+    },
+    {
+      "cat": "工具型",
+      "q": "帮我写一首关于春天的诗",
+      "max_score": 0.7314,
+      "top1_name": "春天"
+    },
+    {
+      "cat": "工具型",
+      "q": "总结一下这篇文章的要点",
+      "max_score": 0.5977,
+      "top1_name": "感谢声明一则"
+    },
+    {
+      "cat": "工具型",
+      "q": "正则表达式怎么匹配邮箱",
+      "max_score": 0.5993,
+      "top1_name": "信件"
+    },
+    {
+      "cat": "工具型",
+      "q": "Excel 怎么做透视表",
+      "max_score": 0.6903,
+      "top1_name": "透视术"
+    },
+    {
+      "cat": "生活服务",
+      "q": "推荐几家附近的餐厅",
+      "max_score": 0.8165,
+      "top1_name": "restaurant"
+    },
+    {
+      "cat": "生活服务",
+      "q": "明天几点开会",
+      "max_score": 0.6887,
+      "top1_name": "13号会客房"
+    },
+    {
+      "cat": "生活服务",
+      "q": "这个软件怎么安装",
+      "max_score": 0.6217,
+      "top1_name": "备案"
+    },
+    {
+      "cat": "生活服务",
+      "q": "帮我订一张去北京的机票",
+      "max_score": 0.6822,
+      "top1_name": "车票"
+    },
+    {
+      "cat": "生活服务",
+      "q": "附近有充电桩吗",
+      "max_score": 0.7485,
+      "top1_name": "charging stations"
+    },
+    {
+      "cat": "生活服务",
+      "q": "快递什么时候到",
+      "max_score": 0.7031,
+      "top1_name": "未寄出的信"
+    },
+    {
+      "cat": "生活服务",
+      "q": "外卖有什么优惠",
+      "max_score": 0.6705,
+      "top1_name": "外卖技术"
+    },
+    {
+      "cat": "元问题",
+      "q": "你是谁",
+      "max_score": 0.6645,
+      "top1_name": "Thou"
+    },
+    {
+      "cat": "元问题",
+      "q": "你是什么模型",
+      "max_score": 0.615,
+      "top1_name": "模型"
+    },
+    {
+      "cat": "元问题",
+      "q": "你和 ChatGPT 有什么区别",
+      "max_score": 0.464,
+      "top1_name": "喋喋帽"
+    },
+    {
+      "cat": "元问题",
+      "q": "你有意识吗",
+      "max_score": 0.6944,
+      "top1_name": "consciousness"
+    },
+    {
+      "cat": "元问题",
+      "q": "你能帮我做什么",
+      "max_score": 0.6851,
+      "top1_name": "advice"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "哈利波特是谁",
+      "max_score": 0.4981,
+      "top1_name": "Halloween"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "红楼梦的作者是谁",
+      "max_score": 0.5529,
+      "top1_name": "literature"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "复仇者联盟有几部电影",
+      "max_score": 0.5536,
+      "top1_name": "movies"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "苹果公司的 CEO 是谁",
+      "max_score": 0.5563,
+      "top1_name": "apples"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "巴黎在哪个国家",
+      "max_score": 0.5823,
+      "top1_name": "Paris"
+    },
+    {
+      "cat": "跨域专名",
+      "q": "泰坦尼克号是哪一年沉没的",
+      "max_score": 0.5562,
+      "top1_name": "沉船"
+    },
+    {
+      "cat": "英文闲聊",
+      "q": "what is the weather like today",
+      "max_score": 0.6827,
+      "top1_name": "rainy days"
+    },
+    {
+      "cat": "英文闲聊",
+      "q": "tell me a joke",
+      "max_score": 0.6723,
+      "top1_name": "message"
+    },
+    {
+      "cat": "英文闲聊",
+      "q": "how do i install this software",
+      "max_score": 0.6204,
+      "top1_name": "Mounting the device"
+    },
+    {
+      "cat": "英文闲聊",
+      "q": "who is the president of the united states",
+      "max_score": 0.6343,
+      "top1_name": "Mr. President"
+    },
+    {
+      "cat": "退化输入",
+      "q": "。。。",
+      "max_score": 0.63,
+      "top1_name": "未知"
+    },
+    {
+      "cat": "退化输入",
+      "q": "？？？",
+      "max_score": 0.5679,
+      "top1_name": "UFO"
+    },
+    {
+      "cat": "退化输入",
+      "q": "asdfghjkl",
+      "max_score": 0.5438,
+      "top1_name": "Die Fakl"
+    },
+    {
+      "cat": "退化输入",
+      "q": "1234567890",
+      "max_score": 0.575,
+      "top1_name": "number"
+    }
+  ],
+  "neg_max_score_quantiles": {
+    "p10": 0.5541,
+    "p25": 0.6006,
+    "p50": 0.6559,
+    "p75": 0.6942,
+    "p90": 0.7635
+  },
+  "threshold_table": [
+    {
+      "threshold": 0.2,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.25,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.3,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.35,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.4,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.45,
+      "truth_link_rate": 0.6667,
+      "neg_link_rate": 1.0,
+      "truth_linked": 4,
+      "neg_linked": 53
+    },
+    {
+      "threshold": 0.5,
+      "truth_link_rate": 0.5,
+      "neg_link_rate": 0.9623,
+      "truth_linked": 3,
+      "neg_linked": 51
+    },
+    {
+      "threshold": 0.55,
+      "truth_link_rate": 0.1667,
+      "neg_link_rate": 0.9245,
+      "truth_linked": 1,
+      "neg_linked": 49
+    },
+    {
+      "threshold": 0.6,
+      "truth_link_rate": 0.0,
+      "neg_link_rate": 0.7547,
+      "truth_linked": 0,
+      "neg_linked": 40
+    }
+  ],
+  "per_case": [
+    {
+      "id": "R018",
+      "q": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+      "n_truth_entities": 19,
+      "truth_src": "evidence=3, context=17",
+      "n_related_in_top": 0,
+      "first_related_rank": null,
+      "top1_chunk_score": 0.4956,
+      "truth_best_rank": null,
+      "truth_best_score": null,
+      "top_nontruth_score": 0.5878,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_25c8be550bab",
+          "score": 0.5878,
+          "truth": false,
+          "name": "old gentleman"
+        },
+        {
+          "rank": 2,
+          "eid": "e_6178ad9b8e2d",
+          "score": 0.5828,
+          "truth": false,
+          "name": "老上司"
+        },
+        {
+          "rank": 3,
+          "eid": "e_5f0eb0e54c87",
+          "score": 0.5746,
+          "truth": false,
+          "name": "老兵"
+        },
+        {
+          "rank": 4,
+          "eid": "e_ba666db5fc7a",
+          "score": 0.5391,
+          "truth": false,
+          "name": "老邮差"
+        },
+        {
+          "rank": 5,
+          "eid": "e_5d1a70055bdd",
+          "score": 0.5294,
+          "truth": false,
+          "name": "老顽固"
+        },
+        {
+          "rank": 6,
+          "eid": "e_ea4b9635569e",
+          "score": 0.5271,
+          "truth": false,
+          "name": "探险者"
+        },
+        {
+          "rank": 7,
+          "eid": "e_9ea6297f6b7b",
+          "score": 0.5239,
+          "truth": false,
+          "name": "拿着锤子的人"
+        },
+        {
+          "rank": 8,
+          "eid": "e_5089535ab741",
+          "score": 0.5227,
+          "truth": false,
+          "name": "雨天的老朋友"
+        },
+        {
+          "rank": 9,
+          "eid": "e_5352b9e78ccc",
+          "score": 0.5167,
+          "truth": false,
+          "name": "老市民"
+        },
+        {
+          "rank": 10,
+          "eid": "e_78313e758c9e",
+          "score": 0.5101,
+          "truth": false,
+          "name": "老朋友"
+        }
+      ]
+    },
+    {
+      "id": "R029",
+      "q": "今夜星光灿烂篇里出现的「血痛」概念英文叫什么？",
+      "n_truth_entities": 52,
+      "truth_src": "evidence=3, context=51",
+      "n_related_in_top": 0,
+      "first_related_rank": null,
+      "top1_chunk_score": 0.4925,
+      "truth_best_rank": 1,
+      "truth_best_score": 0.5904,
+      "top_nontruth_score": 0.5193,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_4679f3161dfa",
+          "score": 0.5904,
+          "truth": true,
+          "name": "bloody pain"
+        },
+        {
+          "rank": 2,
+          "eid": "e_d2cda6a309df",
+          "score": 0.5193,
+          "truth": false,
+          "name": "blood red eyes"
+        },
+        {
+          "rank": 3,
+          "eid": "e_41d2dad1fdb6",
+          "score": 0.5152,
+          "truth": false,
+          "name": "血食怪眷属说"
+        },
+        {
+          "rank": 4,
+          "eid": "e_09dfe76313db",
+          "score": 0.5149,
+          "truth": false,
+          "name": "blood moon"
+        },
+        {
+          "rank": 5,
+          "eid": "e_9e4ab2be79d0",
+          "score": 0.5076,
+          "truth": false,
+          "name": "血液"
+        },
+        {
+          "rank": 6,
+          "eid": "e_c2c4a896be2b",
+          "score": 0.5016,
+          "truth": true,
+          "name": "blood"
+        },
+        {
+          "rank": 7,
+          "eid": "e_d41675a13295",
+          "score": 0.5015,
+          "truth": false,
+          "name": "blood-red eyes"
+        },
+        {
+          "rank": 8,
+          "eid": "e_3c12899dd731",
+          "score": 0.4991,
+          "truth": false,
+          "name": "血迹"
+        },
+        {
+          "rank": 9,
+          "eid": "e_575dc4d41971",
+          "score": 0.4917,
+          "truth": false,
+          "name": "bloodshed"
+        },
+        {
+          "rank": 10,
+          "eid": "e_2386f12f23ba",
+          "score": 0.4878,
+          "truth": false,
+          "name": "死亡乌云将落在谁身上"
+        }
+      ]
+    },
+    {
+      "id": "R135",
+      "q": "复乐园篇的故事发生在哪块大陆？",
+      "n_truth_entities": 678,
+      "truth_src": "evidence=11, context=675",
+      "first_related_score": 0.5257,
+      "n_related_in_top": 3,
+      "first_related_rank": 2,
+      "top1_chunk_score": 0.5298,
+      "truth_best_rank": 2,
+      "truth_best_score": 0.5145,
+      "top_nontruth_score": 0.5146,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_778a80563ab3",
+          "score": 0.5146,
+          "truth": false,
+          "name": "复仙人线"
+        },
+        {
+          "rank": 2,
+          "eid": "e_374594a062bb",
+          "score": 0.5145,
+          "truth": true,
+          "name": "负乐园"
+        },
+        {
+          "rank": 3,
+          "eid": "e_7458ea89a37b",
+          "score": 0.5131,
+          "truth": false,
+          "name": "不可回溯地"
+        },
+        {
+          "rank": 4,
+          "eid": "e_eeb7caaa41af",
+          "score": 0.5051,
+          "truth": true,
+          "name": "富乐园"
+        },
+        {
+          "rank": 5,
+          "eid": "e_eb9678882532",
+          "score": 0.5044,
+          "truth": false,
+          "name": "回环实验室"
+        },
+        {
+          "rank": 6,
+          "eid": "e_86a4b3462c39",
+          "score": 0.4974,
+          "truth": false,
+          "name": "rebirth"
+        },
+        {
+          "rank": 7,
+          "eid": "e_a8f5a535b43b",
+          "score": 0.4934,
+          "truth": false,
+          "name": "童话的背面"
+        },
+        {
+          "rank": 8,
+          "eid": "e_ef55bfce07bf",
+          "score": 0.488,
+          "truth": false,
+          "name": "return capsule"
+        },
+        {
+          "rank": 9,
+          "eid": "e_cc922287043e",
+          "score": 0.4864,
+          "truth": false,
+          "name": "回到大地"
+        },
+        {
+          "rank": 10,
+          "eid": "e_c6c446e05f0d",
+          "score": 0.4837,
+          "truth": true,
+          "name": "resurrection"
+        }
+      ]
+    },
+    {
+      "id": "R139",
+      "q": "迁流的盛宴篇的故事发生在哪座城市？",
+      "n_truth_entities": 556,
+      "truth_src": "evidence=7, context=554",
+      "n_related_in_top": 0,
+      "first_related_rank": null,
+      "top1_chunk_score": 0.4549,
+      "truth_best_rank": 5,
+      "truth_best_score": 0.4591,
+      "top_nontruth_score": 0.5715,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_0727145cd4f4",
+          "score": 0.5715,
+          "truth": false,
+          "name": "乔迁派对"
+        },
+        {
+          "rank": 2,
+          "eid": "e_7dd1d19b5385",
+          "score": 0.4977,
+          "truth": false,
+          "name": "teleport ritual site"
+        },
+        {
+          "rank": 3,
+          "eid": "e_065d81ceb95d",
+          "score": 0.4959,
+          "truth": false,
+          "name": "teleport ritual"
+        },
+        {
+          "rank": 4,
+          "eid": "e_c62539b05e87",
+          "score": 0.4842,
+          "truth": false,
+          "name": "teleportation ritual"
+        },
+        {
+          "rank": 5,
+          "eid": "e_d01593a7b391",
+          "score": 0.4591,
+          "truth": true,
+          "name": "story"
+        },
+        {
+          "rank": 6,
+          "eid": "e_c6a2f2aa949b",
+          "score": 0.4418,
+          "truth": false,
+          "name": "河流"
+        },
+        {
+          "rank": 7,
+          "eid": "e_db68de403338",
+          "score": 0.4357,
+          "truth": false,
+          "name": "流放"
+        },
+        {
+          "rank": 8,
+          "eid": "e_cbb7f28beb11",
+          "score": 0.4344,
+          "truth": false,
+          "name": "运河"
+        },
+        {
+          "rank": 9,
+          "eid": "e_f1a6f056e7d7",
+          "score": 0.4331,
+          "truth": true,
+          "name": "电流"
+        },
+        {
+          "rank": 10,
+          "eid": "e_99079d03bd6d",
+          "score": 0.4328,
+          "truth": false,
+          "name": "跨年夜"
+        }
+      ]
+    },
+    {
+      "id": "R159",
+      "q": "翡冷翠之春篇中的城市指的是哪座意大利城市？",
+      "n_truth_entities": 141,
+      "truth_src": "evidence=7, context=138",
+      "first_related_score": 0.5085,
+      "n_related_in_top": 6,
+      "first_related_rank": 1,
+      "top1_chunk_score": 0.5085,
+      "truth_best_rank": 2,
+      "truth_best_score": 0.5091,
+      "top_nontruth_score": 0.5109,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_e49abd288d1a",
+          "score": 0.5109,
+          "truth": false,
+          "name": "米兰"
+        },
+        {
+          "rank": 2,
+          "eid": "e_3af314702272",
+          "score": 0.5091,
+          "truth": true,
+          "name": "In Firenze"
+        },
+        {
+          "rank": 3,
+          "eid": "e_89fb82062681",
+          "score": 0.4867,
+          "truth": false,
+          "name": "罗马"
+        },
+        {
+          "rank": 4,
+          "eid": "e_0cd0b19231db",
+          "score": 0.4534,
+          "truth": true,
+          "name": "town"
+        },
+        {
+          "rank": 5,
+          "eid": "e_a3d2916a1c1d",
+          "score": 0.4476,
+          "truth": false,
+          "name": "surrounding cities"
+        },
+        {
+          "rank": 6,
+          "eid": "e_11b993e11c34",
+          "score": 0.441,
+          "truth": true,
+          "name": "Firenze"
+        },
+        {
+          "rank": 7,
+          "eid": "e_48d97e5ab026",
+          "score": 0.4391,
+          "truth": false,
+          "name": "雅典"
+        },
+        {
+          "rank": 8,
+          "eid": "e_f6bebddbb9ab",
+          "score": 0.4343,
+          "truth": false,
+          "name": "Ferenze"
+        },
+        {
+          "rank": 9,
+          "eid": "e_0b423f8ea517",
+          "score": 0.4223,
+          "truth": false,
+          "name": "西西里岛"
+        },
+        {
+          "rank": 10,
+          "eid": "e_4d225b21097b",
+          "score": 0.4205,
+          "truth": false,
+          "name": "this city"
+        }
+      ]
+    },
+    {
+      "id": "R171",
+      "q": "他者的悲哀篇里出现的学园缩写是什么？",
+      "n_truth_entities": 295,
+      "truth_src": "evidence=4, context=295",
+      "n_related_in_top": 0,
+      "first_related_rank": null,
+      "top1_chunk_score": 0.4951,
+      "truth_best_rank": null,
+      "truth_best_score": null,
+      "top_nontruth_score": 0.4919,
+      "entity_cands": [
+        {
+          "rank": 1,
+          "eid": "e_3b6afdaab7c3",
+          "score": 0.4919,
+          "truth": false,
+          "name": "other students"
+        },
+        {
+          "rank": 2,
+          "eid": "e_532fbe803cb9",
+          "score": 0.484,
+          "truth": false,
+          "name": "低年级学生"
+        },
+        {
+          "rank": 3,
+          "eid": "e_bcdd3a4597e4",
+          "score": 0.4775,
+          "truth": false,
+          "name": "哭声"
+        },
+        {
+          "rank": 4,
+          "eid": "e_3930d9085fc7",
+          "score": 0.4697,
+          "truth": false,
+          "name": "campus"
+        },
+        {
+          "rank": 5,
+          "eid": "e_3c5a0286917a",
+          "score": 0.4657,
+          "truth": false,
+          "name": "another carriage"
+        },
+        {
+          "rank": 6,
+          "eid": "e_b9d783f2e638",
+          "score": 0.4633,
+          "truth": false,
+          "name": "谁的梦魇"
+        },
+        {
+          "rank": 7,
+          "eid": "e_eff8e3370be7",
+          "score": 0.4607,
+          "truth": false,
+          "name": "悲伤的麦子们"
+        },
+        {
+          "rank": 8,
+          "eid": "e_dc28a65f2d5b",
+          "score": 0.4578,
+          "truth": false,
+          "name": "数学学派"
+        },
+        {
+          "rank": 9,
+          "eid": "e_11dad9eae0f4",
+          "score": 0.453,
+          "truth": false,
+          "name": "secular school"
+        },
+        {
+          "rank": 10,
+          "eid": "e_d995468333b3",
+          "score": 0.4499,
+          "truth": false,
+          "name": "舞台下阴暗的角落"
+        }
+      ]
+    }
+  ]
+}

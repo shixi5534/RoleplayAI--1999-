@@ -1,0 +1,25 @@
+文件                         inject   strict   elapsed       态
+--------------------------------------------------------------
+base_1.json                0.6200   0.6767     170.9      慢态
+base_2.json                0.6200   0.6767     199.0      慢态
+base_3.json                0.6200   0.6767     169.0      慢态
+entnolist_1.json           0.6167   0.6333      43.9      快态
+entoff_1.json              0.6200   0.6767     202.4      慢态
+enton_1.json               0.6533   0.7000      92.6      快态
+expand_1.json              0.6900   0.7533     154.1      慢态
+expand_2.json              0.6167   0.6333      44.1      快态
+expand_high_1.json         0.6233   0.6800     204.3      慢态
+expand_hm_1.json           0.6600   0.7233     204.6      慢态
+lexalways_1.json           0.6100   0.6333     186.4      慢态
+linkmin50_1.json           0.6200   0.6800     191.4      慢态
+seed_base_1.json           0.5533   0.5667      63.3      快态
+seed_base_7.json           0.5533   0.5667      22.6      快态
+seed_exp_1.json            0.6167   0.6333      23.8      快态
+seed_exp_7.json            0.6167   0.6333      23.3      快态
+seedbaseB_1.json           0.5533   0.5667      63.3      快态
+seedbase_1.json            0.5533   0.5667      22.6      快态
+seedexpB_1.json            0.6167   0.6333      23.8      快态
+seedexp_1.json             0.6167   0.6333      23.3      快态
+
+观察：elapsed ≥120s 的是慢态（inject≈0.62 / 0.69）,
+      elapsed <70s 的是快态（inject≈0.55 / 0.62）。两态之间不可直接比。

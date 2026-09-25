@@ -1,0 +1,802 @@
+{
+ "meta": {
+  "tool": "scripts/huiji_alias_bridge2.py",
+  "canon_source": "灰机 wiki《重返未来：1999》中文维基（离线 lexicon）",
+  "entities": 10406,
+  "lexicon": {
+   "zh": 747,
+   "en": 680
+  },
+  "targets": 95,
+  "targets_covered": 18,
+  "stats": {
+   "skip_name_clash": 11,
+   "no_new_name": 10366,
+   "noise": 1,
+   "proposed": 39,
+   "ambiguous": 1
+  }
+ },
+ "proposals": [
+  {
+   "key": "格蕾塔·霍夫曼",
+   "type": "角色",
+   "mentions": 73,
+   "add": [
+    "Greta Hofmann"
+   ],
+   "detail": [
+    {
+     "name": "Greta Hofmann",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：格蕾塔·霍夫曼 ↔ Greta Hofmann"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "Schwartz",
+   "type": "角色",
+   "mentions": 12,
+   "add": [
+    "Dr. Schwartz"
+   ],
+   "detail": [
+    {
+     "name": "Dr. Schwartz",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：施瓦茨医生 ↔ Dr. Schwartz"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "齐星",
+   "type": "角色",
+   "mentions": 6,
+   "add": [
+    "Qi Xing"
+   ],
+   "detail": [
+    {
+     "name": "Qi Xing",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：奇星 ↔ Qi Xing"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "乌卢鲁运动会",
+   "type": "事件",
+   "mentions": 78,
+   "add": [
+    "Revival! The Uluru Games"
+   ],
+   "detail": [
+    {
+     "name": "Revival! The Uluru Games",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：乌卢鲁运动会 ↔ Revival! The Uluru Games"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "radio",
+   "type": "物品",
+   "mentions": 1,
+   "add": [
+    "Ms. Radio"
+   ],
+   "detail": [
+    {
+     "name": "Ms. Radio",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：无线电小姐 ↔ Ms. Radio"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "Kayla",
+   "type": "角色",
+   "mentions": 31,
+   "add": [
+    "凯拉"
+   ],
+   "detail": [
+    {
+     "name": "凯拉",
+     "dir": "en→zh",
+     "reason": "灰机中英对照：Kayla ↔ 凯拉"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "Roberta",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "罗贝托"
+   ],
+   "detail": [
+    {
+     "name": "罗贝托",
+     "dir": "en→zh",
+     "reason": "灰机中英对照：Roberta ↔ 罗贝托"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "德洛斯医生",
+   "type": "角色",
+   "mentions": 3,
+   "add": [
+    "Doctor Dores"
+   ],
+   "detail": [
+    {
+     "name": "Doctor Dores",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：德洛斯医生 ↔ Doctor Dores"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "别斯米尔",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Bessmert"
+   ],
+   "detail": [
+    {
+     "name": "Bessmert",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：别斯米尔 ↔ Bessmert"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "小梅斯梅尔",
+   "type": "角色",
+   "mentions": 3,
+   "add": [
+    "Mesmer Jr"
+   ],
+   "detail": [
+    {
+     "name": "Mesmer Jr",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：小梅斯梅尔 ↔ Mesmer Jr"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "孤独之歌",
+   "type": "事件",
+   "mentions": 1,
+   "add": [
+    "Vereinsamt"
+   ],
+   "detail": [
+    {
+     "name": "Vereinsamt",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：孤独之歌 ↔ Vereinsamt"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "老虎的金黄",
+   "type": "事件",
+   "mentions": 1,
+   "add": [
+    "El Oro de los Tigres"
+   ],
+   "detail": [
+    {
+     "name": "El Oro de los Tigres",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：老虎的金黄 ↔ El Oro de los Tigres"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "朔日手记",
+   "type": "物品",
+   "mentions": 6,
+   "add": [
+    "Notes on Shuori"
+   ],
+   "detail": [
+    {
+     "name": "Notes on Shuori",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：朔日手记 ↔ Notes on Shuori"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "狼群",
+   "type": "组织",
+   "mentions": 1,
+   "add": [
+    "Pavia"
+   ],
+   "detail": [
+    {
+     "name": "Pavia",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：狼群 ↔ Pavia"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "五色月",
+   "type": "组织",
+   "mentions": 1,
+   "add": [
+    "Satsuki"
+   ],
+   "detail": [
+    {
+     "name": "Satsuki",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：五色月 ↔ Satsuki"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "卡森",
+   "type": "角色",
+   "mentions": 13,
+   "add": [
+    "Mr. Karson"
+   ],
+   "detail": [
+    {
+     "name": "Mr. Karson",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：卡森 ↔ Mr. Karson"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "丰饶之角",
+   "type": "概念",
+   "mentions": 2,
+   "add": [
+    "Horn of Abundance"
+   ],
+   "detail": [
+    {
+     "name": "Horn of Abundance",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：丰饶之角 ↔ Horn of Abundance"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "Liang",
+   "type": "角色",
+   "mentions": 2,
+   "add": [
+    "梁月"
+   ],
+   "detail": [
+    {
+     "name": "梁月",
+     "dir": "en→zh",
+     "reason": "灰机中英对照：Liang ↔ 梁月"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "程和光",
+   "type": "角色",
+   "mentions": 4,
+   "add": [
+    "Cheng Heguang"
+   ],
+   "detail": [
+    {
+     "name": "Cheng Heguang",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：程和光 ↔ Cheng Heguang"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "杜六",
+   "type": "角色",
+   "mentions": 2,
+   "add": [
+    "Du Liu"
+   ],
+   "detail": [
+    {
+     "name": "Du Liu",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：杜六 ↔ Du Liu"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "贝克特",
+   "type": "角色",
+   "mentions": 6,
+   "add": [
+    "Becket"
+   ],
+   "detail": [
+    {
+     "name": "Becket",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：贝克特 ↔ Becket"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "柏林以东",
+   "type": "角色",
+   "mentions": 2,
+   "add": [
+    "Bkornblume"
+   ],
+   "detail": [
+    {
+     "name": "Bkornblume",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：柏林以东 ↔ Bkornblume"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "爱兹拉",
+   "type": "角色",
+   "mentions": 4,
+   "add": [
+    "Ezra Theodore"
+   ],
+   "detail": [
+    {
+     "name": "Ezra Theodore",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：爱兹拉 ↔ Ezra Theodore"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "刻雷乌斯",
+   "type": "角色",
+   "mentions": 12,
+   "add": [
+    "Creius"
+   ],
+   "detail": [
+    {
+     "name": "Creius",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：刻雷乌斯 ↔ Creius"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "槲寄生",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Druvis III"
+   ],
+   "detail": [
+    {
+     "name": "Druvis III",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：槲寄生 ↔ Druvis III"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "收藏品",
+   "type": "物品",
+   "mentions": 1,
+   "add": [
+    "Collections"
+   ],
+   "detail": [
+    {
+     "name": "Collections",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：收藏品 ↔ Collections"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "彼得森",
+   "type": "角色",
+   "mentions": 3,
+   "add": [
+    "Pyotr"
+   ],
+   "detail": [
+    {
+     "name": "Pyotr",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：彼得森 ↔ Pyotr"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "埃尔登警长",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Deputy Chief Elden"
+   ],
+   "detail": [
+    {
+     "name": "Deputy Chief Elden",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：埃尔登警长 ↔ Deputy Chief Elden"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "雾行者",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Oliver Fog"
+   ],
+   "detail": [
+    {
+     "name": "Oliver Fog",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：雾行者 ↔ Oliver Fog"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "马科尔",
+   "type": "角色",
+   "mentions": 2,
+   "add": [
+    "Makower"
+   ],
+   "detail": [
+    {
+     "name": "Makower",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：马科尔 ↔ Makower"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "约翰·提托",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "John Titor"
+   ],
+   "detail": [
+    {
+     "name": "John Titor",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：约翰·提托 ↔ John Titor"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "灰调蓝",
+   "type": "角色",
+   "mentions": 7,
+   "add": [
+    "Brume"
+   ],
+   "detail": [
+    {
+     "name": "Brume",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：灰调蓝 ↔ Brume"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "双生舞伶",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "The Twins"
+   ],
+   "detail": [
+    {
+     "name": "The Twins",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：双生舞伶 ↔ The Twins"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "帕拉维扬",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Paravyan"
+   ],
+   "detail": [
+    {
+     "name": "Paravyan",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：帕拉维扬 ↔ Paravyan"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "梅蕾尔",
+   "type": "角色",
+   "mentions": 6,
+   "add": [
+    "Merel"
+   ],
+   "detail": [
+    {
+     "name": "Merel",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：梅蕾尔 ↔ Merel"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "艾伯哈特·布劳恩",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Eberhard Braun"
+   ],
+   "detail": [
+    {
+     "name": "Eberhard Braun",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：艾伯哈特·布劳恩 ↔ Eberhard Braun"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "伊万·伊万诺维奇·布列科夫",
+   "type": "角色",
+   "mentions": 3,
+   "add": [
+    "Ivan Ivanovich Burakov"
+   ],
+   "detail": [
+    {
+     "name": "Ivan Ivanovich Burakov",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：伊万·伊万诺维奇·布列科夫 ↔ Ivan Ivanovich Burakov"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "佳琳娜夫人",
+   "type": "角色",
+   "mentions": 1,
+   "add": [
+    "Galina"
+   ],
+   "detail": [
+    {
+     "name": "Galina",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：佳琳娜夫人 ↔ Galina"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  },
+  {
+   "key": "鲍里斯",
+   "type": "角色",
+   "mentions": 2,
+   "add": [
+    "Pyrrhos"
+   ],
+   "detail": [
+    {
+     "name": "Pyrrhos",
+     "dir": "zh→en",
+     "reason": "灰机中英对照：鲍里斯 ↔ Pyrrhos"
+    }
+   ],
+   "confidence": "high",
+   "source": "灰机 wiki 中文维基（huiji_lexicon.json）"
+  }
+ ],
+ "targets": [
+  "1990",
+  "37",
+  "anjo",
+  "antarctica",
+  "apeiron",
+  "arcana",
+  "bloody pain",
+  "camp",
+  "conductress",
+  "constantine",
+  "cremona",
+  "firenze",
+  "games",
+  "grace",
+  "green lake",
+  "heinrich",
+  "horropedia",
+  "isolde",
+  "kakania",
+  "kimberly",
+  "lopera",
+  "makua",
+  "maxim",
+  "melania",
+  "merlin",
+  "mesmer",
+  "missing",
+  "moth",
+  "nala",
+  "pavlov",
+  "pericles",
+  "pickles",
+  "pupa",
+  "purification",
+  "purifier",
+  "regulus",
+  "rockin",
+  "ryashki",
+  "schwartz",
+  "semmelweis",
+  "shamane",
+  "ship",
+  "snyder",
+  "sonnet",
+  "sophia",
+  "sotheby",
+  "spathodea",
+  "spdm",
+  "stranger",
+  "teofil",
+  "tooth fairy",
+  "toy box",
+  "troll",
+  "ulu",
+  "uluru",
+  "umbrella",
+  "vacuum",
+  "vienna",
+  "vila",
+  "yevgeny",
+  "zanetta",
+  "zeno",
+  "乌卢鲁",
+  "伊索尔德",
+  "伯里克利",
+  "克雷莫纳",
+  "净化机",
+  "初级防御学园",
+  "十四行诗",
+  "南极",
+  "卡卡尼亚",
+  "和平乌鲁",
+  "失踪",
+  "娜娜",
+  "巨怪",
+  "康斯坦丁",
+  "斯奈德",
+  "施瓦茨",
+  "无名者",
+  "星锑",
+  "普帕",
+  "洛佩拉",
+  "海因里希",
+  "牙仙",
+  "玩具盒",
+  "维也纳",
+  "维拉",
+  "翡冷翠",
+  "芝诺",
+  "苏芙比",
+  "苏菲亚",
+  "蛾",
+  "运动会",
+  "阿尔卡纳",
+  "阿派朗"
+ ],
+ "targets_covered": [
+  "arcana",
+  "constantine",
+  "heinrich",
+  "horropedia",
+  "isolde",
+  "kakania",
+  "lopera",
+  "melania",
+  "pickles",
+  "regulus",
+  "schwartz",
+  "semmelweis",
+  "shamane",
+  "sophia",
+  "sotheby",
+  "spathodea",
+  "tooth fairy",
+  "ulu"
+ ]
+}

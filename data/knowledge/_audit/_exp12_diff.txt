@@ -1,0 +1,68 @@
+expand_1 inject=0.69 recall=0.3731
+expand_2 inject=0.6167 recall=0.3463
+
+q 字段不同的题：0
+inject 判定不同的题：44
+
+[R003]
+    expand_1 q=洞穴的囚徒篇里海盗船上的歌手是谁？
+    expand_2 q=洞穴的囚徒篇里海盗船上的歌手是谁？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0]
+[R013]
+    expand_1 q=苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？
+    expand_2 q=苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0, 1]
+[R017]
+    expand_1 q=伦敦十字街的雾中女巫是谁？
+    expand_2 q=伦敦十字街的雾中女巫是谁？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0, 1]
+[R021]
+    expand_1 q=卡卡尼亚的本名是什么？
+    expand_2 q=卡卡尼亚的本名是什么？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0]
+[R042]
+    expand_1 q=阿尔卡纳最终死于哪种轰炸武器？
+    expand_2 q=阿尔卡纳最终死于哪种轰炸武器？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0]
+[R055]
+    expand_1 q=孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？ Apeiron
+    expand_2 q=孤独之歌篇里的研究卷轴与绳结等道具出现在哪座岛上？ Apeiron
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[1]
+[R070]
+    expand_1 q=绿湖噩梦篇里的灯塔传说与哪个营地相关？
+    expand_2 q=绿湖噩梦篇里的灯塔传说与哪个营地相关？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[1]
+[R071]
+    expand_1 q=绿湖噩梦篇里的巨怪英文叫什么？ troll
+    expand_2 q=绿湖噩梦篇里的巨怪英文叫什么？ troll
+    expand_1 inject=False n_chunks=8 miss=[0]
+    expand_2 inject=True n_chunks=8 miss=[]
+[R075]
+    expand_1 q=在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？ troll
+    expand_2 q=在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？ troll
+    expand_1 inject=False n_chunks=8 miss=[0]
+    expand_2 inject=True n_chunks=8 miss=[]
+[R077]
+    expand_1 q=根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？
+    expand_2 q=根据营地医生以牙科医疗见长的设定，推断绿湖营地的医生是谁？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0]
+[R080]
+    expand_1 q=绿湖噩梦篇的故事发生在哪一年？
+    expand_2 q=绿湖噩梦篇的故事发生在哪一年？
+    expand_1 inject=True n_chunks=8 miss=[]
+    expand_2 inject=False n_chunks=8 miss=[0]
+[R090]
+    expand_1 q=在中央塔里自囚的医生是谁？
+    expand_2 q=在中央塔里自囚的医生是谁？
+    expand_1 inject=False n_chunks=8 miss=[0]
+    expand_2 inject=True n_chunks=8 miss=[]
+expand_1 assets={'plot_graph': 'a28213c15d2fb931', 'plot_corpus': '7eab3ef671d19070', 'testset': '2acbe40494d0c0b1'} elapsed=154.1 trace=False
+expand_2 assets={'plot_graph': 'a28213c15d2fb931', 'plot_corpus': '7eab3ef671d19070', 'testset': '2acbe40494d0c0b1'} elapsed=44.1 trace=False

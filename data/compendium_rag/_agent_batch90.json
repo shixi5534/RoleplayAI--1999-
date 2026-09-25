@@ -1,0 +1,888 @@
+{
+ "1c1af17440c63549eea9e1e5": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "葡萄藤冠的雄辩者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赫尔墨斯之星"
+   },
+   {
+    "name": "教众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "6的协理者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "学派领袖的数字"
+   },
+   {
+    "name": "启示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "继任的征兆"
+   },
+   {
+    "name": "阿派朗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "学派之岛"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将承6者"
+   },
+   {
+    "name": "质数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37 之辩"
+   },
+   {
+    "name": "合数",
+    "type": "概念",
+    "aliases": [],
+    "desc": "210 之辩"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "讥评",
+    "dst": "37",
+    "evidence": "至少它们也获得了数字的名，你总是喜欢数字的",
+    "confidence": 0.85
+   },
+   {
+    "src": "37",
+    "relation": "贬数",
+    "dst": "210",
+    "evidence": "它有四个质因数，却没有一个坚实的基底",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "论数",
+    "dst": "质数",
+    "evidence": "质数生而独特，是构成所有数字的基石",
+    "confidence": 0.85
+   },
+   {
+    "src": "210",
+    "relation": "论数",
+    "dst": "合数",
+    "evidence": "合数则棋差一着",
+    "confidence": 0.85
+   },
+   {
+    "src": "37",
+    "relation": "纠正",
+    "dst": "210",
+    "evidence": "可我是37，不是3和7",
+    "confidence": 0.9
+   },
+   {
+    "src": "教众",
+    "relation": "延会",
+    "dst": "210",
+    "evidence": "6还未做好与你们对谈的准备",
+    "confidence": 0.9
+   },
+   {
+    "src": "6",
+    "relation": "统辖",
+    "dst": "阿派朗",
+    "evidence": "岛屿的领导者",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "将承",
+    "dst": "启示",
+    "evidence": "生来也是一个6，以后注定成为阿派朗的领袖",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c89ba43919185b6edff57d99": {
+  "entities": [
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "现任领袖，身体衰落"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "敬爱6者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同行者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与6密谈者"
+   },
+   {
+    "name": "教众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "支吾的协理者"
+   },
+   {
+    "name": "启示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "继承的征兆"
+   },
+   {
+    "name": "上一任6",
+    "type": "角色",
+    "aliases": [],
+    "desc": "亚齐的母亲"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "继任",
+    "dst": "上一任6",
+    "evidence": "在上任6回归真理之后，她便代替了那位年轻的母亲",
+    "confidence": 0.9
+   },
+   {
+    "src": "上一任6",
+    "relation": "为母",
+    "dst": "亚齐",
+    "evidence": "也就是亚齐的母亲",
+    "confidence": 0.95
+   },
+   {
+    "src": "6",
+    "relation": "获启",
+    "dst": "启示",
+    "evidence": "现任的6获得了“启示”，成为了学派新的领袖",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "敬仰",
+    "dst": "6",
+    "evidence": "她值得这些尊敬与爱戴",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "发现",
+    "dst": "亚齐",
+    "evidence": "是亚齐——真稀奇，我已经好久没能见过他了！",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "冷待",
+    "dst": "6",
+    "evidence": "他仍旧冷漠且挺拔地站着……毫无尊重",
+    "confidence": 0.95
+   },
+   {
+    "src": "教众",
+    "relation": "遮掩",
+    "dst": "210",
+    "evidence": "他的嘴唇嗫嚅着",
+    "confidence": 0.8
+   }
+  ]
+ },
+ "66c00e7ea890f8a31b9f135b": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愤慨质问者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被质问者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "旁观者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被亏待的领袖"
+   },
+   {
+    "name": "启示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "祝福之辩"
+   },
+   {
+    "name": "阿派朗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "学派之岛"
+   }
+  ],
+  "relations": [
+   {
+    "src": "210",
+    "relation": "斥责",
+    "dst": "亚齐",
+    "evidence": "我很好奇，你究竟对自己有没有认知？",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚齐",
+    "relation": "抽身",
+    "dst": "6",
+    "evidence": "将衣摆从中抽出……如此无礼",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "宣讲",
+    "dst": "启示",
+    "evidence": "你会获得一个好数字，它是过度与亏缺之间的媒介",
+    "confidence": 0.9
+   },
+   {
+    "src": "6",
+    "relation": "抚育",
+    "dst": "亚齐",
+    "evidence": "她对你视如己出，几乎承担起了母亲所有的职责",
+    "confidence": 0.95
+   },
+   {
+    "src": "210",
+    "relation": "断言",
+    "dst": "亚齐",
+    "evidence": "你根本不配拥有“启示”……你受之有愧",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "关切",
+    "dst": "6",
+    "evidence": "这下你不用担心6了",
+    "confidence": 0.85
+   },
+   {
+    "src": "亚齐",
+    "relation": "统辖",
+    "dst": "阿派朗",
+    "evidence": "以后注定成为阿派朗的领袖",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "aef6496c8fae413d92b20c16": {
+  "entities": [
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "反诘者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "失控者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "完美的领袖"
+   },
+   {
+    "name": "启示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被称诅咒"
+   }
+  ],
+  "relations": [
+   {
+    "src": "亚齐",
+    "relation": "反问",
+    "dst": "210",
+    "evidence": "你觉得，“启示”是祝福？",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚齐",
+    "relation": "断言",
+    "dst": "启示",
+    "evidence": "那是诅咒，我的朋友",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚齐",
+    "relation": "认可",
+    "dst": "6",
+    "evidence": "她是完美的，她是一个6……一个完满的数字",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "失控",
+    "dst": "亚齐",
+    "evidence": "事到如今……我无法否认我的失控",
+    "confidence": 0.85
+   },
+   {
+    "src": "210",
+    "relation": "崇智",
+    "dst": "6",
+    "evidence": "她是6，拥有智慧，掌握平衡，涉足圆满",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "fa0dd8f62e12a5fe65540783": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "品评者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "外来的吃法者"
+   },
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "葡萄藤冠者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受礼者"
+   },
+   {
+    "name": "143",
+    "type": "概念",
+    "aliases": [],
+    "desc": "口味之喻"
+   },
+   {
+    "name": "头冠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "苏菲亚所赠"
+   },
+   {
+    "name": "阿派朗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "共度的童年"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "品评",
+    "dst": "143",
+    "evidence": "这种口味尝起来就像是143……11和13",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "馈赠",
+    "dst": "头冠",
+    "evidence": "送给他一条安纳托利亚织物制作的帽子",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "改形",
+    "dst": "头冠",
+    "evidence": "将那顶头冠的形状修整为了略带棱角的圆",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "主张",
+    "dst": "头冠",
+    "evidence": "我们应该送他一枚头饰……等边三角形是最好的形状",
+    "confidence": 0.85
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "感念",
+    "dst": "亚齐",
+    "evidence": "亚齐帮了我很多忙",
+    "confidence": 0.85
+   },
+   {
+    "src": "37",
+    "relation": "嬉闹",
+    "dst": "210",
+    "evidence": "即使很久没吃你头上的葡萄了，它们依然这么甜",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "dc1df954665828ffb5317230": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首次送饭者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闭关者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲送餐者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "37 对亚齐的称呼"
+   },
+   {
+    "name": "几何原本",
+    "type": "物品",
+    "aliases": [],
+    "desc": "亚齐所读"
+   },
+   {
+    "name": "闭关小屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "昏暗无窗"
+   }
+  ],
+  "relations": [
+   {
+    "src": "37",
+    "relation": "送饭",
+    "dst": "亚齐",
+    "evidence": "今天那份工作已经交给我了……这是我第一次担任送饭的职务",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "称呼",
+    "dst": "6",
+    "evidence": "相较于大一些的6，更小一些的6",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "研读",
+    "dst": "几何原本",
+    "evidence": "亚齐在读一本《几何原本》",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "闭关",
+    "dst": "闭关小屋",
+    "evidence": "闭关小屋内昏暗而狭窄，没有一扇窗户",
+    "confidence": 0.9
+   },
+   {
+    "src": "苏菲亚",
+    "relation": "关切",
+    "dst": "亚齐",
+    "evidence": "也许我可以申请今天为亚齐送餐的工作",
+    "confidence": 0.85
+   },
+   {
+    "src": "37",
+    "relation": "求教",
+    "dst": "亚齐",
+    "evidence": "你只是不爱说话，不是不擅长思考",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "265295738001ebad8a43680a": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "求证者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被求教者"
+   },
+   {
+    "name": "26",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张留过程者"
+   },
+   {
+    "name": "证明",
+    "type": "概念",
+    "aliases": [],
+    "desc": "争论的核心"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "本质如一"
+   }
+  ],
+  "relations": [
+   {
+    "src": "26",
+    "relation": "主张",
+    "dst": "证明",
+    "evidence": "即使是最终结果是错误的证明，也应当留下过程",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "质疑",
+    "dst": "26",
+    "evidence": "这完全是莫名其妙！",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "求断",
+    "dst": "亚齐",
+    "evidence": "但我无法决定对错，我需要你的帮助",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚齐",
+    "relation": "释义",
+    "dst": "26",
+    "evidence": "26只是想要留下你的试错记录来告知后来的探寻者",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "断言",
+    "dst": "证明",
+    "evidence": "价值是相对的",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "坚信",
+    "dst": "证明",
+    "evidence": "人们之所以会记住一个证明，是因为它是正确的！",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "归属",
+    "dst": "6",
+    "evidence": "她是6，你也是6。你们的本质相同",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "574492c9884e2ad59305144e": {
+  "entities": [
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自证者"
+   },
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "亚齐所思之数"
+   },
+   {
+    "name": "证明",
+    "type": "概念",
+    "aliases": [],
+    "desc": "究极之证"
+   },
+   {
+    "name": "闭关小屋",
+    "type": "地点",
+    "aliases": [],
+    "desc": "洞穴般的门"
+   },
+   {
+    "name": "阿其翁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "神话中的惩罚者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "亚齐",
+    "relation": "自证",
+    "dst": "6",
+    "evidence": "我只是在思考“6”的事……或许这的确是我关于自己数字的证明",
+    "confidence": 0.95
+   },
+   {
+    "src": "亚齐",
+    "relation": "辞答",
+    "dst": "37",
+    "evidence": "我暂时没有办法帮助你解决这个问题",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "反诘",
+    "dst": "证明",
+    "evidence": "最终结果为正确的证明，有存在的价值吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "37",
+    "relation": "不解",
+    "dst": "亚齐",
+    "evidence": "我完全不明白6的意思",
+    "confidence": 0.85
+   },
+   {
+    "src": "37",
+    "relation": "调侃",
+    "dst": "阿其翁",
+    "evidence": "我可不想被阿其翁抓到岩壁上，叫秃鹰啄食眼睛！",
+    "confidence": 0.8
+   },
+   {
+    "src": "亚齐",
+    "relation": "幽居",
+    "dst": "闭关小屋",
+    "evidence": "比起门扉，更像洞穴",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "b542a7576d928d0e971f4889": {
+  "entities": [
+   {
+    "name": "37",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归途记录者"
+   },
+   {
+    "name": "苏菲亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "关切者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闭关中的6"
+   },
+   {
+    "name": "证明",
+    "type": "概念",
+    "aliases": [],
+    "desc": "有关于他自己的证明"
+   }
+  ],
+  "relations": [
+   {
+    "src": "苏菲亚",
+    "relation": "询问",
+    "dst": "37",
+    "evidence": "他读了许多书吗？他身体还健康吗？他在证明？",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "转述",
+    "dst": "苏菲亚",
+    "evidence": "他的证明我一无所知……那总归是一个有关于他自己的证明",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "行证",
+    "dst": "证明",
+    "evidence": "那总归是一个有关于他自己的证明",
+    "confidence": 0.9
+   },
+   {
+    "src": "37",
+    "relation": "记录",
+    "dst": "证明",
+    "evidence": "我急匆匆地返回家中，将其记录",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "b38ef52ca9c25d2d51c84e8e": {
+  "entities": [
+   {
+    "name": "210",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讥讽送行者"
+   },
+   {
+    "name": "亚齐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍在闭关者"
+   },
+   {
+    "name": "6",
+    "type": "概念",
+    "aliases": [],
+    "desc": "登船的领袖"
+   },
+   {
+    "name": "苏菲亚的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "登船者"
+   },
+   {
+    "name": "船",
+    "type": "物品",
+    "aliases": [],
+    "desc": "探索雨幕之舟"
+   },
+   {
+    "name": "阿派朗",
+    "type": "地点",
+    "aliases": [],
+    "desc": "免于流溢之岛"
+   },
+   {
+    "name": "流溢",
+    "type": "概念",
+    "aliases": [],
+    "desc": "岛屿所避之灾"
+   },
+   {
+    "name": "雨幕",
+    "type": "概念",
+    "aliases": [],
+    "desc": "船所驶向之处"
+   },
+   {
+    "name": "启示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "210 所执之念"
+   }
+  ],
+  "relations": [
+   {
+    "src": "6",
+    "relation": "登船",
+    "dst": "船",
+    "evidence": "苏菲亚的父亲，与6……他们都在船上",
+    "confidence": 0.95
+   },
+   {
+    "src": "苏菲亚的父亲",
+    "relation": "登船",
+    "dst": "船",
+    "evidence": "苏菲亚的父亲，与6……他们都在船上",
+    "confidence": 0.9
+   },
+   {
+    "src": "船",
+    "relation": "驶向",
+    "dst": "雨幕",
+    "evidence": "向雨幕的探索无疑聚集着数之不尽的勇气",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "拒送",
+    "dst": "船",
+    "evidence": "你不打算去送行吗？我尚在闭关中",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "讥评",
+    "dst": "亚齐",
+    "evidence": "你从不打算履行自己的义务",
+    "confidence": 0.9
+   },
+   {
+    "src": "210",
+    "relation": "疑质",
+    "dst": "亚齐",
+    "evidence": "我不免怀疑，你是否真的能做好6的工作",
+    "confidence": 0.9
+   },
+   {
+    "src": "亚齐",
+    "relation": "反驳",
+    "dst": "210",
+    "evidence": "你对她的尊敬蒙蔽了你……它们蒙蔽了你的判断",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿派朗",
+    "relation": "免于",
+    "dst": "流溢",
+    "evidence": "一座得以避免“流溢”的小岛",
+    "confidence": 0.85
+   }
+  ]
+ }
+}

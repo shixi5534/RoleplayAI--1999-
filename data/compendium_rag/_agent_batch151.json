@@ -1,0 +1,1447 @@
+{
+ "2569d970d00b2aedbd786ea1": {
+  "entities": [
+   {
+    "name": "恐怖通",
+    "type": "角色",
+    "aliases": [],
+    "desc": "核查案件并送出红包的调查员"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收取报酬并追问师门之事的除灵师"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知红包礼仪的基金会女士"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "泥鯭的士致谢并愿为之效劳的机构"
+   },
+   {
+    "name": "基金会办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "恐怖通与泥鯭的士谈话之处"
+   },
+   {
+    "name": "基金会走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "女孩轻快走过之处"
+   },
+   {
+    "name": "新科学除灵驱鬼事务所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "泥鯭的士所经营的除灵事务所"
+   },
+   {
+    "name": "红包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "恐怖通依Z女士所说礼仪准备的红信封"
+   },
+   {
+    "name": "信封",
+    "type": "物品",
+    "aliases": [],
+    "desc": "后勤部未采购过的红色信封"
+   }
+  ],
+  "relations": [
+   {
+    "src": "恐怖通",
+    "relation": "告知",
+    "dst": "泥鯭的士",
+    "evidence": "另外两个协会的成员，已经核查过了",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "说明",
+    "dst": "泥鯭的士",
+    "evidence": "毕竟这三个始作俑者都是托你的帮助才送进了警局",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "追问",
+    "dst": "恐怖通",
+    "evidence": "那今次我解决事件的报酬嘞？",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "递予",
+    "dst": "泥鯭的士",
+    "evidence": "一叠厚厚的红色信封丢到了她的手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "提及",
+    "dst": "Z",
+    "evidence": "我听Z女士说过这是你们那边的礼仪",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "解释",
+    "dst": "信封",
+    "evidence": "我花了点时间才找到这种红色的信封",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "致谢",
+    "dst": "圣洛夫基金会",
+    "evidence": "祝你们圣洛夫基金会——招财进宝、万事如意啦！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "欢迎",
+    "dst": "Z",
+    "evidence": "特别是你们那个Z女士啦，得闲过来饮茶啊！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "表态",
+    "dst": "新科学除灵驱鬼事务所",
+    "evidence": "我新科学除灵驱鬼事务所一定一呼百应",
+    "confidence": 0.95
+   },
+   {
+    "src": "恐怖通",
+    "relation": "询问",
+    "dst": "泥鯭的士",
+    "evidence": "明明是亲手把师父送进监狱，你看上去似乎并不难受",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "解释",
+    "dst": "恐怖通",
+    "evidence": "是因为他最后向我道谢了吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "置身",
+    "dst": "基金会办公室",
+    "evidence": "她的脸垮得越来越厉害，怨鬼般瞪着对方",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "离开",
+    "dst": "基金会走廊",
+    "evidence": "女孩轻快的步伐，在忙得焦头烂额的职员之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "收下",
+    "dst": "红包",
+    "evidence": "这才放心地塞进了口袋里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7b1dfde0a8ee1252cc44d21d": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "向泥鯭的士拜年的调查员"
+   },
+   {
+    "name": "泥鯭的士",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不情愿地派发红包的除灵师"
+   },
+   {
+    "name": "包租婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被屋中鬼声吓得神志不清者"
+   },
+   {
+    "name": "租客",
+    "type": "角色",
+    "aliases": [],
+    "desc": "供着鬼以求不涨租的住客"
+   },
+   {
+    "name": "租客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "议论包租婆的住客"
+   },
+   {
+    "name": "新科学除灵驱鬼事务所",
+    "type": "组织",
+    "aliases": [],
+    "desc": "因生意上门而开张的除灵事务所"
+   },
+   {
+    "name": "红包",
+    "type": "物品",
+    "aliases": [],
+    "desc": "女孩抽出一张钞票的信封"
+   },
+   {
+    "name": "基金会走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "哀鸣与捶打声回荡的走廊"
+   }
+  ],
+  "relations": [
+   {
+    "src": "马库斯",
+    "relation": "认出",
+    "dst": "泥鯭的士",
+    "evidence": "这是和Z女士来自同一个地方的人",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "拜年",
+    "dst": "泥鯭的士",
+    "evidence": "恭、恭喜发财！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "拒绝",
+    "dst": "马库斯",
+    "evidence": "我还未到要给你发红包的年纪！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "派发",
+    "dst": "马库斯",
+    "evidence": "从信封里抽出一张钞票，郑重地递交到马库斯的手中",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "逃窜",
+    "dst": "基金会走廊",
+    "evidence": "她逃窜起来卷起一阵烟尘",
+    "confidence": 0.95
+   },
+   {
+    "src": "租客",
+    "relation": "议论",
+    "dst": "包租婆",
+    "evidence": "听说包租婆都被吓得神志不清",
+    "confidence": 0.95
+   },
+   {
+    "src": "租客",
+    "relation": "供奉",
+    "dst": "租客Ⅱ",
+    "evidence": "我们会好吃好喝供着你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "租客Ⅱ",
+    "relation": "谈论",
+    "dst": "包租婆",
+    "evidence": "所以这两天才没有看见她过来收租",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "接到",
+    "dst": "新科学除灵驱鬼事务所",
+    "evidence": "新科学除灵驱鬼事务所，开张！",
+    "confidence": 0.95
+   },
+   {
+    "src": "泥鯭的士",
+    "relation": "取出",
+    "dst": "红包",
+    "evidence": "她不情不愿，从信封里抽出一张钞票",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3eba452af58db563eb8cb8d7": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从1930年代醒来的替身演员"
+   },
+   {
+    "name": "女性职员I",
+    "type": "角色",
+    "aliases": [],
+    "desc": "戴白色面具的基金会女性职员"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "收容暴雨幸存者的机构"
+   },
+   {
+    "name": "圣洛夫基金会客房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂出院后所住的基金会客房"
+   },
+   {
+    "name": "收容表格",
+    "type": "物品",
+    "aliases": [],
+    "desc": "需要填写姓名性别与神秘术的收容表格"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "令贝蒂世界瓦解的时空灾害"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "表格上需要填写的能力项"
+   },
+   {
+    "name": "假胡子道具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贝蒂猛然发现自己未佩戴的绅士胡"
+   },
+   {
+    "name": "白色面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "女性职员用以遮住面容的面具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "经历",
+    "dst": "暴雨",
+    "evidence": "那是一场全方位的现实崩溃，宛如娃娃屋被人一掌扇倒",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "困惑",
+    "dst": "暴雨",
+    "evidence": "是我入戏太深，分不清剧本和现实了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "探问",
+    "dst": "贝蒂",
+    "evidence": "今天是你出院的第二天，感觉好些了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "告知",
+    "dst": "贝蒂",
+    "evidence": "你的身体恢复得很好，今天就可以开始走收容流程了",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "递交",
+    "dst": "收容表格",
+    "evidence": "她从文件夹中拿出一张表格，将它放到了贝蒂的眼前",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "填写",
+    "dst": "收容表格",
+    "evidence": "如此常见的表格，在她20年的人生里，她已经填了几十遍",
+    "confidence": 0.95
+   },
+   {
+    "src": "收容表格",
+    "relation": "包含",
+    "dst": "神秘术",
+    "evidence": "神秘术：_____________",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "佩戴",
+    "dst": "假胡子道具",
+    "evidence": "那里并没有自己一直佩戴着的绅士胡",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "佩戴",
+    "dst": "白色面具",
+    "evidence": "一名戴着白色面具，身着黑白色职业裙装的女性",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "置身",
+    "dst": "圣洛夫基金会客房",
+    "evidence": "今天是你出院的第二天",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "女性职员I",
+    "evidence": "外面……究竟发生了什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "代表",
+    "dst": "圣洛夫基金会",
+    "evidence": "今天就可以开始走收容流程了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f033e0b1d27f962fcaeb8919": {
+  "entities": [
+   {
+    "name": "女性职员I",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为贝蒂介绍新时代的职员"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "对平静美景感到诡异者"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与贝蒂一同送来的人类女性"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为幸存者形成标准处理流程的机构"
+   },
+   {
+    "name": "基金会走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "可窥见新时代一隅的走廊"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "幸存者所躲过的时空灾害"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "职员所述贝蒂所具备的能力"
+   }
+  ],
+  "relations": [
+   {
+    "src": "女性职员I",
+    "relation": "带往",
+    "dst": "贝蒂",
+    "evidence": "女性职员将贝蒂带到了客房外的走廊",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "怀疑",
+    "dst": "基金会走廊",
+    "evidence": "这太奇怪了……甚至诡异",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "解释",
+    "dst": "贝蒂",
+    "evidence": "世界还是这个世界，但确实有一些地方变得不同了",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "提议",
+    "dst": "贝蒂",
+    "evidence": "可以在康复之后来参加基金会举办的说明会",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "告知",
+    "dst": "圣洛夫基金会",
+    "evidence": "对于那些躲过“暴雨”的幸存者，我们已经形成了一套标准的处理流程",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "说明",
+    "dst": "暴雨",
+    "evidence": "雨滴会从地面升上天空，随后，时代会在一瞬间更替",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "提及",
+    "dst": "琼斯",
+    "evidence": "她叫琼斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "抱怨",
+    "dst": "贝蒂",
+    "evidence": "我真讨厌这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "允许",
+    "dst": "贝蒂",
+    "evidence": "如果你希望去见见与你一同送来的那位人类女性也可以",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "追问",
+    "dst": "女性职员I",
+    "evidence": "与我一同送来的人类女性？",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "欢迎",
+    "dst": "贝蒂",
+    "evidence": "总之，欢迎来到雨后的新时代",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "扮装",
+    "dst": "圣洛夫基金会",
+    "evidence": "他们就只是把砖块画贴在了木板上而已",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "7b7b72db046c0dc4ed3459e0": {
+  "entities": [
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在高塔布景上抱怨的好莱坞明星"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扮成男主角并从高塔跃下者"
+   },
+   {
+    "name": "剧组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "布景高塔与拍摄现场所属"
+   },
+   {
+    "name": "女性职员I",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将贝蒂带到琼斯病房的职员"
+   },
+   {
+    "name": "防护绳",
+    "type": "物品",
+    "aliases": [],
+    "desc": "绑在贝蒂腰间的安全带"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "琼斯所躺的重症病房"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所躺、仪器环绕的装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "抱怨",
+    "dst": "剧组",
+    "evidence": "他们就只是把砖块画贴在了木板上而已",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "安抚",
+    "dst": "琼斯",
+    "evidence": "我会争取一遍过，这样我们就能早点从这里下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "检查",
+    "dst": "防护绳",
+    "evidence": "贝蒂低着头检查着绑在腰间的防护绳",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "扮演",
+    "dst": "琼斯",
+    "evidence": "贝蒂就要扮成男主角的样子，从琼斯的面前一跃而下",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "催促",
+    "dst": "剧组",
+    "evidence": "他们到底什么时候才会发开拍的信号？",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "警觉",
+    "dst": "贝蒂",
+    "evidence": "那是什么？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "断言",
+    "dst": "贝蒂",
+    "evidence": "出事了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "置身",
+    "dst": "剧组",
+    "evidence": "布景高塔已如孤岛",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员I",
+    "relation": "带往",
+    "dst": "贝蒂",
+    "evidence": "她就在里面",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "躺卧",
+    "dst": "玻璃棺",
+    "evidence": "躺在玻璃棺一般的仪器中",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "探视",
+    "dst": "琼斯",
+    "evidence": "将贝蒂带到琼斯的病房后，女性职员便离开了",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "受伤",
+    "dst": "病房",
+    "evidence": "一名面部缠满绷带的女性躺在玻璃棺一般的仪器中",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "呼唤",
+    "dst": "琼斯",
+    "evidence": "琼斯？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "50a4a8cccc45eb2fbec84b89": {
+  "entities": [
+   {
+    "name": "女性职员II",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在说明会上介绍暴雨概念的职员"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以变换容貌潜入餐馆的替身演员"
+   },
+   {
+    "name": "餐馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为贝蒂做胡佛炖菜的餐馆老板"
+   },
+   {
+    "name": "贝蒂的男装形象",
+    "type": "角色",
+    "aliases": [],
+    "desc": "贝蒂所变换的男装形象"
+   },
+   {
+    "name": "基金会会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "坐满暴雨幸存者的白色阶梯议事厅"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "原因未明的时空灾害"
+   },
+   {
+    "name": "暴雨症候",
+    "type": "概念",
+    "aliases": [],
+    "desc": "暴雨来临前世界所陷入的状态"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂用以变换容貌与体型的能力"
+   },
+   {
+    "name": "胡佛炖菜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "老板所做的胡佛炖菜"
+   },
+   {
+    "name": "高礼帽",
+    "type": "物品",
+    "aliases": [],
+    "desc": "男装贝蒂所戴的高礼帽"
+   },
+   {
+    "name": "文明棍",
+    "type": "物品",
+    "aliases": [],
+    "desc": "男装贝蒂所持的棍"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "为幸存者提供安置的机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "女性职员II",
+    "relation": "介绍",
+    "dst": "暴雨",
+    "evidence": "“暴雨”是一种原因未明的时空灾害",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "说明",
+    "dst": "暴雨症候",
+    "evidence": "“暴雨”来临前，世界会陷入某种“暴雨症候”中",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "预告",
+    "dst": "暴雨",
+    "evidence": "雨滴会从地面升上天空，随后，时代会在一瞬间更替",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "代表",
+    "dst": "圣洛夫基金会",
+    "evidence": "而圣洛夫基金会为大家提供了……",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "观察",
+    "dst": "基金会会议室",
+    "evidence": "贝蒂观察着神色各异的人们",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "评价",
+    "dst": "贝蒂的男装形象",
+    "evidence": "贝雷帽，钓鱼马甲，说不定脸上还有个红鼻子",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂的男装形象",
+    "relation": "前往",
+    "dst": "餐馆老板",
+    "evidence": "脚步急切地走向半熄灯的餐馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂的男装形象",
+    "relation": "问候",
+    "dst": "餐馆老板",
+    "evidence": "现在还有剩的肉吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "变换",
+    "dst": "贝蒂的男装形象",
+    "evidence": "男人衣服下的身形似乎缓慢变化着",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "邀请",
+    "dst": "贝蒂",
+    "evidence": "老板转身走向厨房，将贝蒂让了进来",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "提供",
+    "dst": "胡佛炖菜",
+    "evidence": "我这里只有胡佛炖菜",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "索要",
+    "dst": "胡佛炖菜",
+    "evidence": "多加点肉！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂的男装形象",
+    "relation": "佩戴",
+    "dst": "高礼帽",
+    "evidence": "高礼帽上的金属钮扣时不时反着不知何处射来的光线",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂的男装形象",
+    "relation": "持握",
+    "dst": "文明棍",
+    "evidence": "文明棍的首端碰撞粗糙的墙壁",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "使用",
+    "dst": "神秘术",
+    "evidence": "男人衣服下的身形似乎缓慢变化着",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c264008f84ab66769ae17d23": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "获得三句台词角色的替身演员"
+   },
+   {
+    "name": "餐馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请贝蒂吃炖菜的餐馆老板"
+   },
+   {
+    "name": "女性职员II",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收表格的基金会职员"
+   },
+   {
+    "name": "基金会会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人们排队交表格的议事厅"
+   },
+   {
+    "name": "胡佛炖菜",
+    "type": "物品",
+    "aliases": [],
+    "desc": "热气腾腾的胡佛炖菜"
+   },
+   {
+    "name": "收容表格",
+    "type": "物品",
+    "aliases": [],
+    "desc": "填好后交到演讲台的表格"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "贝蒂盼在其来临前拍完戏份的灾害"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "报喜",
+    "dst": "餐馆老板",
+    "evidence": "我获得了一个有台词的角色！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "归因",
+    "dst": "胡佛炖菜",
+    "evidence": "这肯定是因为之前吃到了老板的胡佛炖菜",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "推上",
+    "dst": "胡佛炖菜",
+    "evidence": "将炖菜推到贝蒂面前",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "请客",
+    "dst": "贝蒂",
+    "evidence": "请你了，为那些你曾经背了却没用上的剧本",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "享用",
+    "dst": "胡佛炖菜",
+    "evidence": "一勺又一勺地舀起这盘丰盛无比的炖菜",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "担忧",
+    "dst": "暴雨",
+    "evidence": "要是我的戏份能在“暴雨”来之前拍完就好了",
+    "confidence": 0.95
+   },
+   {
+    "src": "女性职员II",
+    "relation": "要求",
+    "dst": "基金会会议室",
+    "evidence": "大家可以把填好的表格交给我了",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "递交",
+    "dst": "收容表格",
+    "evidence": "人们排着队将手中填好的表格交到了演讲台上",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "置身",
+    "dst": "基金会会议室",
+    "evidence": "贝蒂在脑中重复着自己已经演练百遍的台词",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "承诺",
+    "dst": "贝蒂",
+    "evidence": "你会成为好莱坞的明星",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "be6c884fc9965fa4b2e25e22": {
+  "entities": [
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抛弃恐慌淹没的幸存者"
+   },
+   {
+    "name": "餐馆老板",
+    "type": "角色",
+    "aliases": [],
+    "desc": "断言贝蒂会成为明星的老板"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "每次暴雨都收容失去时代者的机构"
+   },
+   {
+    "name": "基金会会议室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "人们陆续走出的议事厅"
+   },
+   {
+    "name": "基金会走廊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "贝蒂望向其头尾的走廊"
+   },
+   {
+    "name": "收容表格",
+    "type": "物品",
+    "aliases": [],
+    "desc": "未给贝蒂任何归属感的表格"
+   },
+   {
+    "name": "时代",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂所属并被收录的时代"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "每次都会产生失去时代者的灾害"
+   },
+   {
+    "name": "好莱坞",
+    "type": "地点",
+    "aliases": [],
+    "desc": "老板断言贝蒂会成为明星之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "贝蒂",
+    "relation": "发问",
+    "dst": "圣洛夫基金会",
+    "evidence": "每一次“暴雨”，圣洛夫基金会都会收容这样一群失去时代的人吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "比喻",
+    "dst": "时代",
+    "evidence": "这里就像是一个时代床头柜，现在收录的是我的时代",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "恐慌",
+    "dst": "基金会会议室",
+    "evidence": "一种被抛弃的恐慌感突然淹没了贝蒂",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "递交",
+    "dst": "收容表格",
+    "evidence": "急忙填好了表格，将它交到了工作人员的手里",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "目送",
+    "dst": "基金会走廊",
+    "evidence": "贝蒂看着他们的背影走向了视野的尽头",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "迷茫",
+    "dst": "好莱坞",
+    "evidence": "如果没有电影可拍，自己该去干什么呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "预言",
+    "dst": "贝蒂",
+    "evidence": "你会成为好莱坞的明星",
+    "confidence": 0.95
+   },
+   {
+    "src": "餐馆老板",
+    "relation": "许诺",
+    "dst": "贝蒂",
+    "evidence": "然后整日在香槟塔上醒来",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "缺席",
+    "dst": "收容表格",
+    "evidence": "那份表格也没有给她任何归属感",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "收容",
+    "dst": "暴雨",
+    "evidence": "每一次“暴雨”，圣洛夫基金会都会收容这样一群失去时代的人吗？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "90693bcb1ae3d7c7c1738872": {
+  "entities": [
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在玻璃棺中追问摄影机者"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隐瞒剧组下落的探视者"
+   },
+   {
+    "name": "娜斯佳",
+    "type": "角色",
+    "aliases": [
+     "护士"
+    ],
+    "desc": "冲入病房施救的护士"
+   },
+   {
+    "name": "剧组",
+    "type": "组织",
+    "aliases": [],
+    "desc": "贝蒂与琼斯遗留在1930年代的未竟之事"
+   },
+   {
+    "name": "病房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "琼斯癫痫发作的病房"
+   },
+   {
+    "name": "玻璃棺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所躺的装置"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "琼斯所带并追问其下落的机器"
+   },
+   {
+    "name": "盐酸氯丙嗪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被注入琼斯体内的盐酸氯丙嗪"
+   },
+   {
+    "name": "保险丝",
+    "type": "概念",
+    "aliases": [],
+    "desc": "特技演员之间对安全带的谑称"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "琼斯承受不了的两个字"
+   }
+  ],
+  "relations": [
+   {
+    "src": "琼斯",
+    "relation": "呼唤",
+    "dst": "贝蒂",
+    "evidence": "是你……",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "致谢",
+    "dst": "贝蒂",
+    "evidence": "你保护了我……不然我早就摔断了脖子",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "询问",
+    "dst": "剧组",
+    "evidence": "他们呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "隐瞒",
+    "dst": "琼斯",
+    "evidence": "他们在外面",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "追问",
+    "dst": "摄影机",
+    "evidence": "摄影机在哪里？我带着摄影机",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "回避",
+    "dst": "暴雨",
+    "evidence": "她并承受不了“暴雨”这两个字",
+    "confidence": 0.95
+   },
+   {
+    "src": "娜斯佳",
+    "relation": "注射",
+    "dst": "盐酸氯丙嗪",
+    "evidence": "盐酸氯丙嗪，注意剂量",
+    "confidence": 0.95
+   },
+   {
+    "src": "娜斯佳",
+    "relation": "施救",
+    "dst": "琼斯",
+    "evidence": "开始急救措施，无关人员请出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "发病",
+    "dst": "病房",
+    "evidence": "琼斯的癫痫是一瞬间发生的事",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "联想",
+    "dst": "保险丝",
+    "evidence": "仿佛只要我动动食指，琼斯就会在我面前堕入深渊",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "探视",
+    "dst": "玻璃棺",
+    "evidence": "虽然有着玻璃罩相隔，但贝蒂还没有离琼斯这么近过",
+    "confidence": 0.95
+   },
+   {
+    "src": "剧组",
+    "relation": "遗留",
+    "dst": "琼斯",
+    "evidence": "是贝蒂和琼斯遗留在1930年代的未竟之事",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "躺卧",
+    "dst": "玻璃棺",
+    "evidence": "琼斯仍旧如同白雪公主一般躺在玻璃棺的病房中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "0f36dd6a3e86676e7900cb1c": {
+  "entities": [
+   {
+    "name": "护士劳拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称劳拉并收购旧物的护士"
+   },
+   {
+    "name": "贝蒂",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劳拉搭话的替身演员"
+   },
+   {
+    "name": "琼斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持有一台摄影机者"
+   },
+   {
+    "name": "储物间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人谈话的狭小储物间"
+   },
+   {
+    "name": "摄影机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "劳拉想收购的物件"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂临时改变体型与容貌的能力"
+   },
+   {
+    "name": "替身演员",
+    "type": "概念",
+    "aliases": [],
+    "desc": "贝蒂赖以为生的职业"
+   },
+   {
+    "name": "铜吊坠",
+    "type": "物品",
+    "aliases": [],
+    "desc": "劳拉曾收过的铜吊坠"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "劳拉所称带来创伤的灾害"
+   }
+  ],
+  "relations": [
+   {
+    "src": "护士劳拉",
+    "relation": "搭话",
+    "dst": "贝蒂",
+    "evidence": "那名为琼斯注射药液的护士轻松地冲着她打了一声招呼",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "揭穿",
+    "dst": "贝蒂",
+    "evidence": "而且你还骗了她",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "邀请",
+    "dst": "贝蒂",
+    "evidence": "聊聊？",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "吐烟",
+    "dst": "贝蒂",
+    "evidence": "将口中的烟气喷了贝蒂一脸",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "抗议",
+    "dst": "护士劳拉",
+    "evidence": "你本来就不该在这里抽烟！",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "评价",
+    "dst": "暴雨",
+    "evidence": "这个世界都疯了，一会是这年一会是那年的",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "询问",
+    "dst": "贝蒂",
+    "evidence": "你的神秘术是什么？",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "说明",
+    "dst": "神秘术",
+    "evidence": "临时改变自己的体型和容貌，我通过这个来当替身演员",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝蒂",
+    "relation": "从事",
+    "dst": "替身演员",
+    "evidence": "我通过这个来当替身演员",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "提议",
+    "dst": "摄影机",
+    "evidence": "你想收购琼斯的摄影机？",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "举例",
+    "dst": "铜吊坠",
+    "evidence": "我之前收过一个铜吊坠，破烂一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "解释",
+    "dst": "贝蒂",
+    "evidence": "有人就喜欢收这种带着情感的物件",
+    "confidence": 0.95
+   },
+   {
+    "src": "琼斯",
+    "relation": "持有",
+    "dst": "摄影机",
+    "evidence": "就像琼斯的那台摄影机一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "护士劳拉",
+    "relation": "置身",
+    "dst": "储物间",
+    "evidence": "那名自称劳拉的护士正站在窗前",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

@@ -70,6 +70,12 @@ class EmbedderPort(ABC):
     def name(self) -> str:
         return "embedder"
 
+    @property
+    def degraded(self) -> bool:
+        """是否处于降级态：配置要求语义嵌入（ollama）却探测失败、被迫回退哈希兜底。
+        显式配置 offline/hashing 不算降级。生产启动时可据此告警或拒绝服务。"""
+        return False
+
 
 class HashingEmbedder(EmbedderPort):
     """特征哈希向量（定长、确定性、零依赖）。离线兜底用。"""
@@ -79,6 +85,10 @@ class HashingEmbedder(EmbedderPort):
     def __init__(self, dim: int | None = None) -> None:
         # 维度默认取自配置 embed_dim（768）；显式传入时优先（测试常用小维度加速）。
         self._dim = dim if dim is not None else get_settings().embed_dim
+        # 降级标记：仅当「配置要求 ollama 却探测失败被迫回退」时为 True；
+        # 显式 offline/hashing 配置不算降级（保持 False）。
+        self._degraded = False
+        self._degraded_reason = ""
 
     def embed(self, texts: List[str]) -> List[List[float]]:
         out: List[List[float]] = []
@@ -102,6 +112,14 @@ class HashingEmbedder(EmbedderPort):
     @property
     def name(self) -> str:
         return "hashing"
+
+    @property
+    def degraded(self) -> bool:
+        return self._degraded
+
+    @property
+    def degraded_reason(self) -> str:
+        return self._degraded_reason
 
 
 class OllamaEmbedder(EmbedderPort):
@@ -250,7 +268,14 @@ def build_embedder(settings: Settings | None = None) -> EmbedderPort:
                 pass
             return emb
         except Exception as exc:  # noqa: BLE001
-            logger.warning("Ollama 嵌入不可用，回退 hashing 嵌入：%s", exc)
-            return HashingEmbedder(dim=s.embed_dim)
+            logger.error(
+                "嵌入器降级：Ollama 嵌入不可用，回退 hashing 嵌入（语义检索将静默失效）。"
+                "原因：%s｜ollama_base=%s｜处置：确认 ollama 可用后重启进程。",
+                exc, base,
+            )
+            hashing = HashingEmbedder(dim=s.embed_dim)
+            hashing._degraded = True
+            hashing._degraded_reason = f"ollama_probe_failed: {exc}"
+            return hashing
     logger.info("嵌入器：使用 hashing（离线兜底）")
     return HashingEmbedder(dim=s.embed_dim)

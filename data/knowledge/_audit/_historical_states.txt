@@ -1,0 +1,111 @@
+扫描 164 个 JSON（仅 _audit 顶层 / ablation / repeat）
+================================================================================================
+历史评测报告的批次态复核（elapsed ≥120s = 语义正常；<100s = 语义已静默降级）
+================================================================================================
+文件                                                                elapsed   inject           态
+------------------------------------------------------------------------------------------------
+repeat\seed_base_7.json                                              22.6   0.5533     降级(语义关)
+repeat\seedbase_1.json                                               22.6   0.5533     降级(语义关)
+repeat\seed_exp_7.json                                               23.3   0.6167     降级(语义关)
+repeat\seedexp_1.json                                                23.3   0.6167     降级(语义关)
+repeat\seed_exp_1.json                                               23.8   0.6167     降级(语义关)
+repeat\seedexpB_1.json                                               23.8   0.6167     降级(语义关)
+ablation\r_inject6.json                                              36.2   0.4967     降级(语义关)
+ablation\m_6_12.json                                                 36.5   0.5000     降级(语义关)
+ablation\r_grid_8_3200.json                                          36.7   0.5500     降级(语义关)
+ablation\r_grid_6_3200.json                                          36.9   0.5500     降级(语义关)
+ablation\m_5_10.json                                                 37.2   0.5033     降级(语义关)
+ablation\r_inject.json                                               37.3   0.3733     降级(语义关)
+ablation\h_hops4.json                                                38.7   0.5000     降级(语义关)
+ablation\r_grid_8_2400.json                                          38.9   0.4967     降级(语义关)
+ablation\bge_off2.json                                               39.1   0.5033     降级(语义关)
+ablation\m_3_6.json                                                  40.0   0.5000     降级(语义关)
+ablation\m_8_16.json                                                 40.1   0.5067     降级(语义关)
+ablation\r_nogovern.json                                             40.4   0.4933     降级(语义关)
+ablation\h_hops2.json                                                40.5   0.5000     降级(语义关)
+ablation\h_hops3.json                                                40.5   0.5000     降级(语义关)
+ablation\sem_off.json                                                41.5   0.5033     降级(语义关)
+ablation\bge_sem_off.json                                            43.3   0.5033     降级(语义关)
+repeat\entnolist_1.json                                              43.9   0.6167     降级(语义关)
+repeat\expand_2.json                                                 44.1   0.6167     降级(语义关)
+repeat\seed_base_1.json                                              63.3   0.5533     降级(语义关)
+repeat\seedbaseB_1.json                                              63.3   0.5533     降级(语义关)
+repeat\enton_1.json                                                  92.6   0.6533     降级(语义关)
+ablate_maxedges5.json                                               137.2   0.6233     正常(语义开)
+ablate_wsem2.json                                                   137.9   0.6200     正常(语义开)
+ablation\link_base2.json                                            137.9   0.6200     正常(语义开)
+ablation\link_min35.json                                            138.2   0.6200     正常(语义开)
+ablation\link_min35_top10.json                                      138.2   0.6233     正常(语义开)
+ablation\link_min20.json                                            138.3   0.6200     正常(语义开)
+ablation\link_min50.json                                            138.6   0.6233     正常(语义开)
+ablation\link_top10.json                                            138.7   0.6200     正常(语义开)
+ablate_hops1.json                                                   139.9   0.6233     正常(语义开)
+ablate_nodespec.json                                                139.9   0.6200     正常(语义开)
+ablation\link_top20.json                                            140.0   0.6200     正常(语义开)
+plot_rag_eval_report_clean_top10.json                               140.1   0.6200     正常(语义开)
+plot_rag_eval_report_after_b1.json                                  151.3   0.5900     正常(语义开)
+repeat\expand_1.json                                                154.1   0.6900     正常(语义开)
+ablation\sem_on.json                                                161.0   0.4700     正常(语义开)
+ablation\sem_on_en.json                                             166.0   0.4767     正常(语义开)
+repeat\base_3.json                                                  169.0   0.6200     正常(语义开)
+repeat\base_1.json                                                  170.9   0.6200     正常(语义开)
+ablation\vol_combo_s_m.json                                         179.9   0.6067     正常(语义开)
+plot_rag_eval_report_clean.json                                     180.0   0.6200     正常(语义开)
+ablation\vol_men_cap20.json                                         183.1   0.6133     正常(语义开)
+ablation\vol_link_top6.json                                         186.1   0.6200     正常(语义开)
+repeat\lexalways_1.json                                             186.4   0.6100     正常(语义开)
+plot_rag_eval_report_r0.json                                        187.4   0.5833     正常(语义开)
+ablation\vol_sem_top20.json                                         188.1   0.6267     正常(语义开)
+ablation\c4_off.json                                                189.3   0.5833     正常(语义开)
+ablation\d1_off.json                                                191.0   0.5833     正常(语义开)
+repeat\linkmin50_1.json                                             191.4   0.6200     正常(语义开)
+plot_rag_eval_report.json                                           191.6   0.5833     正常(语义开)
+plot_rag_eval_report_p0_2_baseline.json                             191.6   0.5833     正常(语义开)
+ablation\d1_on.json                                                 191.6   0.5700     正常(语义开)
+plot_rag_eval_report_p0_1.json                                      191.8   0.5833     正常(语义开)
+ablation\bge_sem_on.json                                            191.8   0.5933     正常(语义开)
+ablation\vol_edges20.json                                           192.2   0.6200     正常(语义开)
+plot_rag_eval_report_final.json                                     194.1   0.5800     正常(语义开)
+ablation\vol_sem_top10.json                                         197.9   0.6233     正常(语义开)
+ablation\vol_chap_top6.json                                         198.0   0.6267     正常(语义开)
+ablation\vol_base.json                                              198.3   0.6200     正常(语义开)
+ablation\vol_men_pe10.json                                          198.9   0.6167     正常(语义开)
+repeat\base_2.json                                                  199.0   0.6200     正常(语义开)
+plot_rag_eval_report_bridge_v2.json                                 199.6   0.5900     正常(语义开)
+plot_rag_eval_report_dualeval.json                                  200.0   0.5900     正常(语义开)
+repeat\entoff_1.json                                                202.4   0.6200     正常(语义开)
+repeat\expand_high_1.json                                           204.3   0.6233     正常(语义开)
+repeat\expand_hm_1.json                                             204.6   0.6600     正常(语义开)
+plot_rag_eval_report_after_backfill.json                            205.4   0.5900     正常(语义开)
+------------------------------------------------------------------------------------------------
+
+总计 73 份含 inject_pass 的报告；其中 **降级态 27 份**。
+
+⚠️ 降级态报告（其结论**不能**与正常态报告混比）：
+  · repeat\seed_base_7.json  inject=0.5533  elapsed=22.6s
+  · repeat\seedbase_1.json  inject=0.5533  elapsed=22.6s
+  · repeat\seed_exp_7.json  inject=0.6167  elapsed=23.3s
+  · repeat\seedexp_1.json  inject=0.6167  elapsed=23.3s
+  · repeat\seed_exp_1.json  inject=0.6167  elapsed=23.8s
+  · repeat\seedexpB_1.json  inject=0.6167  elapsed=23.8s
+  · ablation\r_inject6.json  inject=0.4967  elapsed=36.2s
+  · ablation\m_6_12.json  inject=0.5  elapsed=36.5s
+  · ablation\r_grid_8_3200.json  inject=0.55  elapsed=36.7s
+  · ablation\r_grid_6_3200.json  inject=0.55  elapsed=36.9s
+  · ablation\m_5_10.json  inject=0.5033  elapsed=37.2s
+  · ablation\r_inject.json  inject=0.3733  elapsed=37.3s
+  · ablation\h_hops4.json  inject=0.5  elapsed=38.7s
+  · ablation\r_grid_8_2400.json  inject=0.4967  elapsed=38.9s
+  · ablation\bge_off2.json  inject=0.5033  elapsed=39.1s
+  · ablation\m_3_6.json  inject=0.5  elapsed=40.0s
+  · ablation\m_8_16.json  inject=0.5067  elapsed=40.1s
+  · ablation\r_nogovern.json  inject=0.4933  elapsed=40.4s
+  · ablation\h_hops2.json  inject=0.5  elapsed=40.5s
+  · ablation\h_hops3.json  inject=0.5  elapsed=40.5s
+  · ablation\sem_off.json  inject=0.5033  elapsed=41.5s
+  · ablation\bge_sem_off.json  inject=0.5033  elapsed=43.3s
+  · repeat\entnolist_1.json  inject=0.6167  elapsed=43.9s
+  · repeat\expand_2.json  inject=0.6167  elapsed=44.1s
+  · repeat\seed_base_1.json  inject=0.5533  elapsed=63.3s
+  · repeat\seedbaseB_1.json  inject=0.5533  elapsed=63.3s
+  · repeat\enton_1.json  inject=0.6533  elapsed=92.6s

@@ -1,0 +1,665 @@
+{
+  "generated_at": "2026-09-17 22:56:47",
+  "config": {
+    "testset": "rag_testset_300_clean.json",
+    "cases": 300,
+    "en_map": "en_queries_300_20260917.json",
+    "en_cases": 300
+  },
+  "results": [
+    {
+      "label": "A 基线（中文 query）",
+      "mode": "cn",
+      "strict_pass_n": 203,
+      "strict_pass": 0.6767,
+      "strict_pass_retrieved_n": 203,
+      "inject_pass_n": 186,
+      "inject_pass": 0.62,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 153.4
+    },
+    {
+      "label": "B 英文 query",
+      "mode": "en",
+      "strict_pass_n": 181,
+      "strict_pass": 0.6033,
+      "strict_pass_retrieved_n": 181,
+      "inject_pass_n": 171,
+      "inject_pass": 0.57,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 150.8
+    },
+    {
+      "label": "C 中英混合",
+      "mode": "mix",
+      "strict_pass_n": 200,
+      "strict_pass": 0.6667,
+      "strict_pass_retrieved_n": 200,
+      "inject_pass_n": 187,
+      "inject_pass": 0.6233,
+      "negatives": {
+        "cases": 53,
+        "cases_with_injection": 7,
+        "injection_total": 54,
+        "new_leaks": [
+          "解释一下相对论",
+          "红楼梦的作者是谁"
+        ]
+      },
+      "elapsed_s": 154.0
+    }
+  ],
+  "delta": [
+    {
+      "label": "A 基线（中文 query）",
+      "d_strict": 0,
+      "d_inject": 0,
+      "d_neg": 0
+    },
+    {
+      "label": "B 英文 query",
+      "d_strict": -22,
+      "d_inject": -15,
+      "d_neg": 0
+    },
+    {
+      "label": "C 中英混合",
+      "d_strict": -3,
+      "d_inject": 1,
+      "d_neg": 0
+    }
+  ],
+  "changes": [
+    {
+      "mode": "en",
+      "id": "R001",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R007",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R015",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R020",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R022",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R026",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R027",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R037",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R039",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R040",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R043",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R044",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R051",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R078",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R082",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R083",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R085",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R086",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R087",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R088",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R090",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R100",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R101",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R103",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R104",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R119",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R121",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R122",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R132",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R140",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R141",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R145",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R152",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R156",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R160",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R163",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R166",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R167",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R175",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R178",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R182",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R189",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R190",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R203",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R205",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R207",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R220",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R225",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R227",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R228",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R233",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R243",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R251",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R252",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R253",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R256",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R257",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R260",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R261",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R264",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R266",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R270",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R273",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R274",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R286",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R288",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R290",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R293",
+      "effect": "fixed"
+    },
+    {
+      "mode": "en",
+      "id": "R298",
+      "effect": "broken"
+    },
+    {
+      "mode": "en",
+      "id": "R299",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R007",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R015",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R022",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R026",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R027",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R037",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R040",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R043",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R051",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R078",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R083",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R086",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R090",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R098",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R100",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R101",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R103",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R119",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R122",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R132",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R136",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R140",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R145",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R156",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R160",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R163",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R166",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R203",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R205",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R225",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R227",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R228",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R234",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R241",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R243",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R248",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R249",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R252",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R256",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R257",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R260",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R264",
+      "effect": "broken"
+    },
+    {
+      "mode": "mix",
+      "id": "R273",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R278",
+      "effect": "fixed"
+    },
+    {
+      "mode": "mix",
+      "id": "R288",
+      "effect": "fixed"
+    }
+  ]
+}

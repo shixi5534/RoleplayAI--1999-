@@ -2,18 +2,20 @@
  "standard": "灰机wiki(res1999.huijiwiki.com) 2026-09-12 核查",
  "top_chunks": 10,
  "argv": [
-  "scripts\\eval_rag_huiji.py",
+  "scripts/eval_rag_huiji.py",
   "--top",
   "10"
  ],
- "ran_at": "2026-09-12 21:32:02",
+ "ran_at": "2026-09-13 23:22:08",
  "path_counts": {
-  "edge": 73,
-  "mention": 58
+  "mention": 59,
+  "edge": 56,
+  "semantic": 44,
+  "chapter": 3
  },
  "summary": {
   "cases": 14,
-  "passed": 12
+  "passed": 14
  },
  "cases": [
   {
@@ -23,11 +25,12 @@
    "covered": "1/1",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 1,
+   "n_relevant": 2,
    "n_via_graph": 12,
    "paths": {
-    "edge": 6,
-    "mention": 6
+    "mention": 4,
+    "edge": 5,
+    "semantic": 3
    }
   },
   {
@@ -37,11 +40,12 @@
    "covered": "2/2",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 9,
+   "n_relevant": 7,
    "n_via_graph": 12,
    "paths": {
-    "edge": 7,
-    "mention": 5
+    "mention": 4,
+    "edge": 4,
+    "semantic": 4
    }
   },
   {
@@ -54,8 +58,9 @@
    "n_relevant": 3,
    "n_via_graph": 12,
    "paths": {
-    "edge": 7,
-    "mention": 5
+    "mention": 3,
+    "edge": 6,
+    "semantic": 3
    }
   },
   {
@@ -65,11 +70,12 @@
    "covered": "1/1",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 3,
+   "n_relevant": 2,
    "n_via_graph": 12,
    "paths": {
-    "edge": 8,
-    "mention": 4
+    "edge": 5,
+    "semantic": 4,
+    "mention": 3
    }
   },
   {
@@ -78,27 +84,28 @@
    "pass": true,
    "covered": "1/1",
    "missing_groups": [],
-   "n_chunks": 6,
-   "n_relevant": 1,
-   "n_via_graph": 6,
+   "n_chunks": 12,
+   "n_relevant": 5,
+   "n_via_graph": 12,
    "paths": {
     "edge": 1,
-    "mention": 5
+    "mention": 5,
+    "semantic": 3,
+    "chapter": 3
    }
   },
   {
    "q": "《神秘警探C07》三部曲的导演是谁？",
    "ref": "菲林士多（Noire），中国香港导演",
-   "pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    1
-   ],
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_via_graph": 3,
+   "pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "n_chunks": 11,
+   "n_relevant": 7,
+   "n_via_graph": 11,
    "paths": {
-    "mention": 3
+    "mention": 6,
+    "semantic": 5
    }
   },
   {
@@ -107,12 +114,13 @@
    "pass": true,
    "covered": "1/1",
    "missing_groups": [],
-   "n_chunks": 9,
-   "n_relevant": 1,
-   "n_via_graph": 9,
+   "n_chunks": 12,
+   "n_relevant": 4,
+   "n_via_graph": 12,
    "paths": {
+    "mention": 7,
     "edge": 4,
-    "mention": 5
+    "semantic": 1
    }
   },
   {
@@ -122,11 +130,12 @@
    "covered": "1/1",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 4,
+   "n_relevant": 5,
    "n_via_graph": 12,
    "paths": {
-    "edge": 7,
-    "mention": 5
+    "edge": 4,
+    "mention": 5,
+    "semantic": 3
    }
   },
   {
@@ -139,8 +148,9 @@
    "n_relevant": 3,
    "n_via_graph": 12,
    "paths": {
-    "edge": 9,
-    "mention": 3
+    "edge": 4,
+    "mention": 4,
+    "semantic": 4
    }
   },
   {
@@ -150,11 +160,12 @@
    "covered": "1/1",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 1,
+   "n_relevant": 2,
    "n_via_graph": 12,
    "paths": {
-    "edge": 9,
-    "mention": 3
+    "mention": 4,
+    "edge": 6,
+    "semantic": 2
    }
   },
   {
@@ -164,11 +175,12 @@
    "covered": "2/2",
    "missing_groups": [],
    "n_chunks": 12,
-   "n_relevant": 6,
+   "n_relevant": 8,
    "n_via_graph": 12,
    "paths": {
-    "edge": 8,
-    "mention": 4
+    "edge": 4,
+    "semantic": 5,
+    "mention": 3
    }
   },
   {
@@ -177,27 +189,27 @@
    "pass": true,
    "covered": "1/1",
    "missing_groups": [],
-   "n_chunks": 11,
-   "n_relevant": 3,
-   "n_via_graph": 11,
+   "n_chunks": 12,
+   "n_relevant": 5,
+   "n_via_graph": 12,
    "paths": {
+    "mention": 4,
     "edge": 7,
-    "mention": 4
+    "semantic": 1
    }
   },
   {
    "q": "努库泰澳的岛民都有谁？",
    "ref": "图图石子（Fatutu）、托阿（Toa）、塞洛尼（Selone）、卡穆塔（Kamuta）",
-   "pass": false,
-   "covered": "2/3",
-   "missing_groups": [
-    2
-   ],
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_via_graph": 3,
+   "pass": true,
+   "covered": "3/3",
+   "missing_groups": [],
+   "n_chunks": 7,
+   "n_relevant": 2,
+   "n_via_graph": 7,
    "paths": {
-    "mention": 3
+    "mention": 5,
+    "semantic": 2
    }
   },
   {
@@ -206,11 +218,13 @@
    "pass": true,
    "covered": "2/2",
    "missing_groups": [],
-   "n_chunks": 3,
-   "n_relevant": 2,
-   "n_via_graph": 3,
+   "n_chunks": 12,
+   "n_relevant": 4,
+   "n_via_graph": 12,
    "paths": {
-    "mention": 3
+    "mention": 2,
+    "edge": 6,
+    "semantic": 4
    }
   }
  ]

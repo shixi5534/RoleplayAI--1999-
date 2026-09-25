@@ -1,0 +1,1034 @@
+{
+ "f0479e796345331ce2ff4c5a": {
+  "entities": [
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "铸剑师"
+   },
+   {
+    "name": "霍利克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "稚嫩的摄影师"
+   },
+   {
+    "name": "贝克特",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扔香蕉皮者"
+   },
+   {
+    "name": "相机",
+    "type": "物品",
+    "aliases": [],
+    "desc": "计时留影之器"
+   },
+   {
+    "name": "金门大桥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "横跨金门海峡"
+   },
+   {
+    "name": "金门海峡",
+    "type": "地点",
+    "aliases": [],
+    "desc": "大桥所跨之峡"
+   }
+  ],
+  "relations": [
+   {
+    "src": "J",
+    "relation": "教用",
+    "dst": "相机",
+    "evidence": "把计时器插进快门口，你给它上一个弦",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍利克",
+    "relation": "摔倒",
+    "dst": "贝克特",
+    "evidence": "谁吃了香蕉把皮乱扔的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "贝克特",
+    "relation": "抵赖",
+    "dst": "霍利克",
+    "evidence": "刚吃了炸鸡，大哥，炸鸡，都是油",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "打趣",
+    "dst": "贝克特",
+    "evidence": "贝克特，手拿出来瞅瞅",
+    "confidence": 0.95
+   },
+   {
+    "src": "金门大桥",
+    "relation": "横跨",
+    "dst": "金门海峡",
+    "evidence": "大桥横跨金门海峡",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "5e0cc9ca93803ae21084e004": {
+  "entities": [
+   {
+    "name": "按摩师埃德加多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "篝火聚会主持者"
+   },
+   {
+    "name": "疗愈师库伯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚会成员"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "聚会成员"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被致敬的恩人"
+   },
+   {
+    "name": "莱格斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "接替 J 的庇护者"
+   },
+   {
+    "name": "J",
+    "type": "角色",
+    "aliases": [
+     "乔·布朗"
+    ],
+    "desc": "赴基金会的旧友"
+   },
+   {
+    "name": "焦油人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "淌着焦油的入侵者"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "旧金山的集市"
+   },
+   {
+    "name": "篝火聚会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "时隔一月复办"
+   }
+  ],
+  "relations": [
+   {
+    "src": "按摩师埃德加多",
+    "relation": "主持",
+    "dst": "篝火聚会",
+    "evidence": "欢迎各位可爱的先生与小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "焦油人",
+    "relation": "侵袭",
+    "dst": "新纪元集市",
+    "evidence": "他们还企图将我们转化成他们的行尸走肉",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "拯救",
+    "dst": "新纪元集市",
+    "evidence": "多亏了有环状水星小姐和J先生，我们才能够幸免于难",
+    "confidence": 0.95
+   },
+   {
+    "src": "J",
+    "relation": "拯救",
+    "dst": "新纪元集市",
+    "evidence": "多亏了有环状水星小姐和J先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱格斯",
+    "relation": "接替",
+    "dst": "J",
+    "evidence": "他代替了前往基金会的J先生",
+    "confidence": 0.95
+   },
+   {
+    "src": "莱格斯",
+    "relation": "庇护",
+    "dst": "新纪元集市",
+    "evidence": "继续保护留在了旧金山的我们",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "致敬",
+    "dst": "环状水星",
+    "evidence": "让我们向环状水星小姐和J先生致以最崇高的敬意！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2ffacc0cb1d6064ab158951": {
+  "entities": [
+   {
+    "name": "按摩师埃德加多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抚慰者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "泼翻饮料者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提醒者"
+   },
+   {
+    "name": "疗愈师库伯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻柴者"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻柴者"
+   },
+   {
+    "name": "灵药师菲比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨者"
+   },
+   {
+    "name": "水晶球",
+    "type": "物品",
+    "aliases": [],
+    "desc": "绊脚之物"
+   },
+   {
+    "name": "饮料桶",
+    "type": "物品",
+    "aliases": [],
+    "desc": "倾覆之物"
+   },
+   {
+    "name": "篝火",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被浇灭"
+   },
+   {
+    "name": "至高理性学会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "误收邀请函者"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "聚会广场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "德克斯特",
+    "relation": "踩中",
+    "dst": "水晶球",
+    "evidence": "德克斯特的右脚踩在了一颗水晶球上",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "提醒",
+    "dst": "德克斯特",
+    "evidence": "右脚。",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "浇灭",
+    "dst": "篝火",
+    "evidence": "两桶饮料尽数倾倒在篝火之上",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "扶起",
+    "dst": "德克斯特",
+    "evidence": "快起来吧，可怜的孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "灵药师菲比",
+    "relation": "埋怨",
+    "dst": "德克斯特",
+    "evidence": "难道真的不能让他干点别的活吗？",
+    "confidence": 0.9
+   },
+   {
+    "src": "商贩梅克卢",
+    "relation": "回护",
+    "dst": "德克斯特",
+    "evidence": "上次让他准备篝火的时候，他差点把集市烧光",
+    "confidence": 0.85
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "提及",
+    "dst": "至高理性学会",
+    "evidence": "他把邀请函发到了“至高理性学会”",
+    "confidence": 0.9
+   },
+   {
+    "src": "疗愈师库伯",
+    "relation": "寻找",
+    "dst": "新纪元集市",
+    "evidence": "库伯与梅克卢起身去寻找干燥的木料",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "3478bc3541116dbd5ee5a321": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施疗愈者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "受净化者"
+   },
+   {
+    "name": "灵药师菲比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "归来者"
+   },
+   {
+    "name": "疗愈师库伯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搭柴者"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搭柴者"
+   },
+   {
+    "name": "白鼠尾草",
+    "type": "物品",
+    "aliases": [],
+    "desc": "驱散阴影之草"
+   },
+   {
+    "name": "疗愈仪式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "净化能量"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "祥和广场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "德克斯特",
+    "relation": "请求",
+    "dst": "环状水星",
+    "evidence": "能请你再帮我做一次净化仪式吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "净化",
+    "dst": "德克斯特",
+    "evidence": "倒霉蛋德克斯特顺从地将头向环状水星低过去",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "燃烧",
+    "dst": "白鼠尾草",
+    "evidence": "她早就准备好了一把已经燃起的白鼠尾草",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "施展",
+    "dst": "疗愈仪式",
+    "evidence": "环状水星则拿着药草在他的后脑上方盘旋",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "致谢",
+    "dst": "环状水星",
+    "evidence": "谢谢你，环状水星小姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "疗愈仪式",
+    "relation": "平复",
+    "dst": "新纪元集市",
+    "evidence": "众人静声聆听着，宛如陷入了婴儿般的睡眠",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "cf3e95340c62def4405349f5": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀座者"
+   },
+   {
+    "name": "按摩师埃德加多",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述传统者"
+   },
+   {
+    "name": "芳香师丽雅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新来的成员"
+   },
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宽慰者"
+   },
+   {
+    "name": "灵药师菲比",
+    "type": "角色",
+    "aliases": [],
+    "desc": "滞销者"
+   },
+   {
+    "name": "疗愈师库伯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同情者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "被怜者"
+   },
+   {
+    "name": "驱魔香",
+    "type": "物品",
+    "aliases": [],
+    "desc": "滞销之货"
+   },
+   {
+    "name": "篝火聚会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "为德克斯特而办"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "邀请",
+    "dst": "德克斯特",
+    "evidence": "你可以过来一些，德克斯特",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "告知",
+    "dst": "德克斯特",
+    "evidence": "这本就是为你举办的聚会",
+    "confidence": 0.95
+   },
+   {
+    "src": "芳香师丽雅",
+    "relation": "询问",
+    "dst": "按摩师埃德加多",
+    "evidence": "我……可以问问吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "按摩师埃德加多",
+    "relation": "应答",
+    "dst": "芳香师丽雅",
+    "evidence": "新人需得知道传统的来源",
+    "confidence": 0.95
+   },
+   {
+    "src": "灵药师菲比",
+    "relation": "滞销",
+    "dst": "驱魔香",
+    "evidence": "我的驱魔香也滞销了快八个月了",
+    "confidence": 0.95
+   },
+   {
+    "src": "疗愈师库伯",
+    "relation": "怜惜",
+    "dst": "德克斯特",
+    "evidence": "现在好像只有你还陷在那个泥沼里了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "7dc852a91ca9587f8dc4525d": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "寻能量者"
+   },
+   {
+    "name": "灵占师索拉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恍惚的灵占师"
+   },
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嗜酒的塔罗师"
+   },
+   {
+    "name": "塔罗牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "抽出的牌面"
+   },
+   {
+    "name": "药草束",
+    "type": "物品",
+    "aliases": [],
+    "desc": "包扎好的草药"
+   },
+   {
+    "name": "能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "灰白的哀嚎"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "喧闹的集市"
+   },
+   {
+    "name": "露天式酒吧",
+    "type": "地点",
+    "aliases": [],
+    "desc": "比安卡所在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "寻察",
+    "dst": "能量",
+    "evidence": "她注意到了墙角蜷缩着一小团能量",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "挥散",
+    "dst": "能量",
+    "evidence": "那团能量被她的手挥散后又缓慢地聚集了起来",
+    "confidence": 0.9
+   },
+   {
+    "src": "灵占师索拉亚",
+    "relation": "招呼",
+    "dst": "塔罗师比安卡",
+    "evidence": "快来这里啊，比安卡",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "抽取",
+    "dst": "塔罗牌",
+    "evidence": "命运之轮、星币四、星币学徒",
+    "confidence": 0.95
+   },
+   {
+    "src": "灵占师索拉亚",
+    "relation": "诉苦",
+    "dst": "塔罗师比安卡",
+    "evidence": "我最近的精神真的太差了呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "弹拂",
+    "dst": "灵占师索拉亚",
+    "evidence": "轻轻弹了一下索拉亚的裙尾",
+    "confidence": 0.95
+   },
+   {
+    "src": "塔罗师比安卡",
+    "relation": "守候",
+    "dst": "露天式酒吧",
+    "evidence": "守着站立式吧台，品尝着一杯龙舌兰",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "fb55d5954878ea91e4aec317": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "新邻居"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "算错的占卜师"
+   },
+   {
+    "name": "顾客Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愤怒的客人"
+   },
+   {
+    "name": "灵占师索拉亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离开者"
+   },
+   {
+    "name": "塔罗师比安卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "争执者"
+   },
+   {
+    "name": "麻布帐篷",
+    "type": "地点",
+    "aliases": [],
+    "desc": "德克斯特的摊位"
+   },
+   {
+    "name": "大乐透",
+    "type": "概念",
+    "aliases": [],
+    "desc": "客人所求"
+   },
+   {
+    "name": "赠品篮",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被震飞"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "摊位之所"
+   }
+  ],
+  "relations": [
+   {
+    "src": "顾客Ⅱ",
+    "relation": "斥责",
+    "dst": "德克斯特",
+    "evidence": "你给了我6个字母？德克斯特？",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "解释",
+    "dst": "顾客Ⅱ",
+    "evidence": "这每个字母都代替了一个数字",
+    "confidence": 0.95
+   },
+   {
+    "src": "顾客Ⅱ",
+    "relation": "求占",
+    "dst": "大乐透",
+    "evidence": "我是来找你算大乐透的号码的",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "点评",
+    "dst": "德克斯特",
+    "evidence": "你的注意力有些太不集中了",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "自介",
+    "dst": "德克斯特",
+    "evidence": "我叫环状水星",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "自陈",
+    "dst": "环状水星",
+    "evidence": "我最近过得有些太迷糊了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "c37619928554e32b3405bd31": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "诊断者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "被诊断者"
+   },
+   {
+    "name": "能量",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不成形的孩子"
+   },
+   {
+    "name": "项链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "失落的遗物"
+   },
+   {
+    "name": "母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "埋怨者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "指尖的小人"
+   },
+   {
+    "name": "小人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "德克斯特的术造之物"
+   },
+   {
+    "name": "疗愈仪式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所邀之事"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "能量外溢之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "诊断",
+    "dst": "德克斯特",
+    "evidence": "你的精神，你的……能量……你流淌了一路",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "寻找",
+    "dst": "项链",
+    "evidence": "我在寻找我母亲的项链，我把它弄丢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "点破",
+    "dst": "德克斯特",
+    "evidence": "不是你的母亲，是你自己",
+    "confidence": 0.95
+   },
+   {
+    "src": "能量",
+    "relation": "外溢",
+    "dst": "新纪元集市",
+    "evidence": "整个集市都有着你的痕迹，大家都感受到了",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "施展",
+    "dst": "神秘术",
+    "evidence": "这个才是我的神秘术",
+    "confidence": 0.95
+   },
+   {
+    "src": "小人",
+    "relation": "依附",
+    "dst": "德克斯特",
+    "evidence": "死死地抱着德克斯特的指尖",
+    "confidence": 0.9
+   },
+   {
+    "src": "环状水星",
+    "relation": "邀请",
+    "dst": "德克斯特",
+    "evidence": "我是来邀请你参加我的疗愈仪式的",
+    "confidence": 0.95
+   },
+   {
+    "src": "母亲",
+    "relation": "埋怨",
+    "dst": "德克斯特",
+    "evidence": "她一直在埋怨我",
+    "confidence": 0.85
+   }
+  ]
+ },
+ "e64403f2b2c728051afca4c1": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抚颊者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "被触者"
+   },
+   {
+    "name": "芭芭拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "买钥匙链的常客"
+   },
+   {
+    "name": "钥匙链",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被误认的赠品"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所受之感"
+   }
+  ],
+  "relations": [
+   {
+    "src": "环状水星",
+    "relation": "抚触",
+    "dst": "德克斯特",
+    "evidence": "将掌心放到了德克斯特的脸颊上",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "劝告",
+    "dst": "德克斯特",
+    "evidence": "听从你的心吧。它不会骗你的",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭芭拉",
+    "relation": "唤醒",
+    "dst": "德克斯特",
+    "evidence": "嘿、嘿，德克斯特！",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭芭拉",
+    "relation": "购买",
+    "dst": "钥匙链",
+    "evidence": "为什么你每次都要买下我握过的钥匙链？",
+    "confidence": 0.95
+   },
+   {
+    "src": "芭芭拉",
+    "relation": "误解",
+    "dst": "德克斯特",
+    "evidence": "这不是你的诅咒服务吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "感受",
+    "dst": "神秘术",
+    "evidence": "感觉自己飞起来了？很轻盈，很舒适",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "86f6c50b069239bf1f7a2a6b": {
+  "entities": [
+   {
+    "name": "商贩梅克卢",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝说者"
+   },
+   {
+    "name": "德克斯特",
+    "type": "角色",
+    "aliases": [
+     "倒霉蛋德克斯特"
+    ],
+    "desc": "犹疑者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "守摊者"
+   },
+   {
+    "name": "灵应板",
+    "type": "物品",
+    "aliases": [],
+    "desc": "每周坏一块"
+   },
+   {
+    "name": "夜幕粉",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被弄撒的货"
+   },
+   {
+    "name": "广告牌",
+    "type": "物品",
+    "aliases": [],
+    "desc": "疗愈仪式招贴"
+   },
+   {
+    "name": "疗愈仪式",
+    "type": "概念",
+    "aliases": [],
+    "desc": "免费之举"
+   },
+   {
+    "name": "新纪元集市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "帐篷与摊位"
+   }
+  ],
+  "relations": [
+   {
+    "src": "德克斯特",
+    "relation": "弄撒",
+    "dst": "夜幕粉",
+    "evidence": "你打开了夜幕粉的袋子，还弄撒了不少",
+    "confidence": 0.95
+   },
+   {
+    "src": "商贩梅克卢",
+    "relation": "取出",
+    "dst": "灵应板",
+    "evidence": "随手在箱子里一探，便拿出来了一块崭新的灵应板",
+    "confidence": 0.95
+   },
+   {
+    "src": "商贩梅克卢",
+    "relation": "劝说",
+    "dst": "德克斯特",
+    "evidence": "那为何不去参加一下她举办的疗愈仪式呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "德克斯特",
+    "relation": "忆及",
+    "dst": "环状水星",
+    "evidence": "那时候我确实感觉好些了",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "守候",
+    "dst": "广告牌",
+    "evidence": "安静地守在她的广告牌旁边",
+    "confidence": 0.9
+   },
+   {
+    "src": "商贩梅克卢",
+    "relation": "评价",
+    "dst": "疗愈仪式",
+    "evidence": "这个仪式完全是免费的",
+    "confidence": 0.9
+   },
+   {
+    "src": "商贩梅克卢",
+    "relation": "宽解",
+    "dst": "德克斯特",
+    "evidence": "集市里发生的那些怪事应该不是环状水星做的",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

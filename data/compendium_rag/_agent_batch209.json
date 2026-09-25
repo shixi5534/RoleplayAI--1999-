@@ -1,0 +1,922 @@
+{
+ "a24d23f19f689d4cdf314dc2": {
+  "entities": [
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以电话自陈处境的UTTU编辑"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与之通话并询问下落者"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "隔绝其联络的侍应生"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "具备超自然生命力的存在"
+   },
+   {
+    "name": "传记作家兀尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会欲查明下落者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "派司辰前来寻找编辑的机构"
+   },
+   {
+    "name": "UTTU",
+    "type": "组织",
+    "aliases": [],
+    "desc": "数羊羔所属的杂志"
+   }
+  ],
+  "relations": [
+   {
+    "src": "数羊羔",
+    "relation": "自陈",
+    "dst": "维尔汀",
+    "evidence": "我是《UTTU》的编辑",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "受命",
+    "dst": "圣洛夫基金会",
+    "evidence": "基金会希望能够得知兀尔德的下落",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "寻找",
+    "dst": "数羊羔",
+    "evidence": "我要怎样才能见到您",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "判断",
+    "dst": "蓝手帕旅馆",
+    "evidence": "这个旅馆并不是普通的旅馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "受阻",
+    "dst": "蓝手帕",
+    "evidence": "这个房间隔绝了所有的联络",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "无法告知",
+    "dst": "传记作家兀尔德",
+    "evidence": "我听不到风的声音，无法得知兀尔德的下落",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fafb853cab2b23843352dbb5": {
+  "entities": [
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被诱入无门房间者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "推断707房即囚处者"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打听凯拉下落的雇佣兵"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀请数羊羔入住者"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "数羊羔曾见其挎篮下楼者"
+   },
+   {
+    "name": "蓝手帕旅馆707房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "数羊羔所指的红色门房间"
+   },
+   {
+    "name": "苦目糖",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔古斯所剩无几的药剂"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "诱入",
+    "dst": "数羊羔",
+    "evidence": "是那个名叫蓝……蓝手帕的侍应生",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "描述",
+    "dst": "蓝手帕旅馆707房",
+    "evidence": "就在走廊的一侧，编号为707",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "打听",
+    "dst": "农场女孩凯拉",
+    "evidence": "您在这里，看见一个高约5英尺3英寸的女孩了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "见过",
+    "dst": "农场女孩凯拉",
+    "evidence": "有这样的一个女孩从楼道上走了下来",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推断",
+    "dst": "数羊羔",
+    "evidence": "数羊羔就在那个名为707的房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "索求",
+    "dst": "苦目糖",
+    "evidence": "你那儿还有多余的糖果吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "承诺",
+    "dst": "阿尔古斯",
+    "evidence": "我找到数羊羔，你也能找到凯拉",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6ab01c53b0590b803eae08fd": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以母亲口吻待客的侍应生"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被视作孩子并采访对方者"
+   },
+   {
+    "name": "蓝手帕旅馆红房间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "中心摆着婴儿床的红色房间"
+   },
+   {
+    "name": "UTTU",
+    "type": "组织",
+    "aliases": [],
+    "desc": "蓝手帕自陈兄长喜读的杂志"
+   },
+   {
+    "name": "德克萨斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "蓝手帕口中不容阅读之处"
+   },
+   {
+    "name": "洛杉矶",
+    "type": "地点",
+    "aliases": [],
+    "desc": "兄长机票所往之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "截断",
+    "dst": "数羊羔",
+    "evidence": "您都不该按断我的电话",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "质问",
+    "dst": "数羊羔",
+    "evidence": "你的母亲呢？她没有告诉你要小心吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "否认",
+    "dst": "蓝手帕",
+    "evidence": "……我不是孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "采访",
+    "dst": "蓝手帕",
+    "evidence": "她将眼前的侍应生视作采访对象",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "回忆",
+    "dst": "UTTU",
+    "evidence": "这是一本有关于时尚、潮流与先锋的杂志",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "回忆",
+    "dst": "德克萨斯",
+    "evidence": "这可不是一个德克萨斯男人应该做的事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "回忆",
+    "dst": "洛杉矶",
+    "evidence": "连同哥哥那张前往洛杉矶的机票",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "停留",
+    "dst": "蓝手帕旅馆红房间",
+    "evidence": "红房间的中心，摆放着一张雪白的婴儿床",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6788b78664e5f29fb4451357": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈以恐惧育儿的侍应生"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咳嗽并被劝睡者"
+   },
+   {
+    "name": "蓝手帕旅馆红房间",
+    "type": "地点",
+    "aliases": [],
+    "desc": "门扉自行消失的房间"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "怪谈源源不断的旅店"
+   },
+   {
+    "name": "襁褓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "发出古怪哭声的襁褓"
+   },
+   {
+    "name": "奇索斯",
+    "type": "地点",
+    "aliases": [],
+    "desc": "居民告诫勿住该店的镇子"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "讲述",
+    "dst": "蓝手帕旅馆",
+    "evidence": "我的旅馆里正好缺了这一类的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "劝睡",
+    "dst": "数羊羔",
+    "evidence": "您先睡一觉吧，等精神放松之后",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "拒绝",
+    "dst": "蓝手帕",
+    "evidence": "我不需要这样的偏爱",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "逗弄",
+    "dst": "襁褓",
+    "evidence": "怀中的襁褓忽然发出古怪的哭声",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "离开",
+    "dst": "蓝手帕旅馆红房间",
+    "evidence": "羔羊眼看着门扉从房间之中消失了",
+    "confidence": 0.95
+   },
+   {
+    "src": "数羊羔",
+    "relation": "听闻",
+    "dst": "奇索斯",
+    "evidence": "不要去蓝手帕旅馆居住",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "db960353bdf7870f5d982ce6": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感到能量扰动者"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问707房、被夺视力的雇佣兵"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以倒计时施压的侍应生"
+   },
+   {
+    "name": "蓝手帕旅馆707房",
+    "type": "地点",
+    "aliases": [],
+    "desc": "走廊上并无门扉的房间"
+   },
+   {
+    "name": "苦目糖",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔古斯用以恢复视野的药剂"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "阿尔古斯眼中再燃的辉光"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "追问",
+    "dst": "蓝手帕",
+    "evidence": "你知道那个707房间该怎么走吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "拒绝",
+    "dst": "阿尔古斯",
+    "evidence": "那不是您该去的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "告诫",
+    "dst": "阿尔古斯",
+    "evidence": "这样频繁地施展神秘术，对您的眼睛并不好",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "施展",
+    "dst": "神秘术",
+    "evidence": "她的眼睛里再次燃烧起了蓝绿色的辉光",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "施压",
+    "dst": "阿尔古斯",
+    "evidence": "这就是您的极限",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "拾取",
+    "dst": "苦目糖",
+    "evidence": "她拾起了糖块，放在了雇佣兵的掌心",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "警示",
+    "dst": "阿尔古斯",
+    "evidence": "苦目糖不是万能的解药",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "eda85482d94a2015468c7cec": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "服药过量而失明者"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "揭示真相并自陈为母者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张停止冲突者"
+   },
+   {
+    "name": "苦目糖",
+    "type": "概念",
+    "aliases": [],
+    "desc": "过量反致失明的药剂"
+   },
+   {
+    "name": "猎枪",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被扣下扳机的武器"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被蓝手帕称作好住客者"
+   },
+   {
+    "name": "数羊羔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指与凯拉同在707房者"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "发出古怪嚎叫的存在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "阿尔古斯",
+    "relation": "服用",
+    "dst": "苦目糖",
+    "evidence": "她又往嘴里扔了一颗糖",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "指出",
+    "dst": "苦目糖",
+    "evidence": "您正是因为吃得太多了，才会让眼睛派不上用处",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "开枪",
+    "dst": "猎枪",
+    "evidence": "向着声音的来源狠狠地扣下了扳机",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "激怒",
+    "dst": "阿尔古斯",
+    "evidence": "所谓的百眼巨人，竟然是一个盲目的瞎子",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "喝止",
+    "dst": "蓝手帕",
+    "evidence": "别用你那脏嘴叫她的名字",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "提及",
+    "dst": "数羊羔",
+    "evidence": "数羊羔、凯拉……都在那个房间",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "声言",
+    "dst": "蓝手帕旅馆",
+    "evidence": "它才是这个旅馆的主人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "1ad4f2d52c23b697df6628e6": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将襁褓塞入对方怀中的侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坠入泥沼般梦境者"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "匍匐拉住其手的雇佣兵"
+   },
+   {
+    "name": "襁褓",
+    "type": "物品",
+    "aliases": [],
+    "desc": "轻得不像孩子的襁褓"
+   },
+   {
+    "name": "蓝手帕旅馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "地毯翻滚为泥沼之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "交托",
+    "dst": "维尔汀",
+    "evidence": "您应当先和它打个招呼——抱住它",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "怀抱",
+    "dst": "襁褓",
+    "evidence": "手中的那个襁褓沉重得如同铅坠",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "困住",
+    "dst": "蓝手帕旅馆",
+    "evidence": "脚下的地毯翻滚为泥沼",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "拉住",
+    "dst": "维尔汀",
+    "evidence": "紧紧地拉住了她的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "踩踏",
+    "dst": "阿尔古斯",
+    "evidence": "属于侍应生的皮靴轻轻地碾住了雇佣兵的手指",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "窥梦",
+    "dst": "维尔汀",
+    "evidence": "让我来看看你的梦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "8bcac140756cbc89b0c24557": {
+  "entities": [
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦见第一防线学校同伴者"
+   },
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "令雨滴逆流的侍应生"
+   },
+   {
+    "name": "伊莎贝拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中所见的第一防线学生"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中所见的第一防线学生"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "同伴与逆雨记忆所系之处"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "逆流雨水所预示的时代"
+   },
+   {
+    "name": "平衡伞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "维尔汀为同伴撑起之伞"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊莎贝拉",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "你这次喊我们过来，也是为了这一件事吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "圈环",
+    "relation": "询问",
+    "dst": "维尔汀",
+    "evidence": "维尔汀，我们成功了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "逆转",
+    "dst": "暴雨",
+    "evidence": "所有的雨滴自半空停止后，逆流而上",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "探问",
+    "dst": "维尔汀",
+    "evidence": "您所害怕的是这样的雨，对吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "追忆",
+    "dst": "第一防线学校",
+    "evidence": "在第一防线学校的课堂中",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "撑开",
+    "dst": "平衡伞",
+    "evidence": "至少在“暴雨”之中，我能为同伴们撑起这一把伞",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "指认",
+    "dst": "蓝手帕",
+    "evidence": "您就是一切的罪魁祸首，对吗",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fcd69dfa5878c6811af24f48": {
+  "entities": [
+   {
+    "name": "蓝手帕",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈以恐惧为业的侍应生"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "转向更深处寻友者"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坠入荒野幻境的雇佣兵"
+   },
+   {
+    "name": "丹尼斯叔叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "幻境中已死却殷切相迎的镇民"
+   },
+   {
+    "name": "底特律",
+    "type": "地点",
+    "aliases": [],
+    "desc": "丹尼斯为寻女而殒命之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "蓝手帕",
+    "relation": "自白",
+    "dst": "维尔汀",
+    "evidence": "通过伤害而产生的恐惧，最为简单",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "宣称",
+    "dst": "维尔汀",
+    "evidence": "我将给予他们恐惧，而他们也将成为我可爱的孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "查问",
+    "dst": "蓝手帕",
+    "evidence": "阿尔古斯在哪里",
+    "confidence": 0.95
+   },
+   {
+    "src": "蓝手帕",
+    "relation": "透露",
+    "dst": "阿尔古斯",
+    "evidence": "她正在经历自身的恐惧",
+    "confidence": 0.95
+   },
+   {
+    "src": "丹尼斯叔叔",
+    "relation": "迎接",
+    "dst": "阿尔古斯",
+    "evidence": "太久没有见到你了",
+    "confidence": 0.95
+   },
+   {
+    "src": "丹尼斯叔叔",
+    "relation": "殒命",
+    "dst": "底特律",
+    "evidence": "丹尼斯为了寻找自己的女儿，死在了底特律",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "点破",
+    "dst": "丹尼斯叔叔",
+    "evidence": "可是……你不应该在这里",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b8c6be4f12aed452de8b6fa1": {
+  "entities": [
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破幻境却终被诱骗者"
+   },
+   {
+    "name": "丹尼斯叔叔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "塞来请柬的幻影镇民"
+   },
+   {
+    "name": "玛丽姨妈",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称委托送信、早已下葬者"
+   },
+   {
+    "name": "镜中幽灵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扮作凯拉诱其动摇的幻影"
+   },
+   {
+    "name": "农场女孩凯拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阿尔古斯记忆中的农场女孩"
+   },
+   {
+    "name": "婚礼请柬",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被塞入手心的婚礼请柬"
+   },
+   {
+    "name": "底特律",
+    "type": "地点",
+    "aliases": [],
+    "desc": "丹尼斯之女远走之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "丹尼斯叔叔",
+    "relation": "递予",
+    "dst": "婚礼请柬",
+    "evidence": "将一封请柬塞到了她的手心",
+    "confidence": 0.95
+   },
+   {
+    "src": "玛丽姨妈",
+    "relation": "否认",
+    "dst": "阿尔古斯",
+    "evidence": "我可没让你去送信呀",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "识破",
+    "dst": "玛丽姨妈",
+    "evidence": "眼前的人应当在1989年寿终正寝",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜中幽灵",
+    "relation": "扮作",
+    "dst": "农场女孩凯拉",
+    "evidence": "是我呀，阿尔古斯，你忘记我了吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "镜中幽灵",
+    "relation": "复述",
+    "dst": "阿尔古斯",
+    "evidence": "天一黑，你的眼睛就什么都看不见了",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "误认",
+    "dst": "镜中幽灵",
+    "evidence": "凯拉……",
+    "confidence": 0.95
+   },
+   {
+    "src": "丹尼斯叔叔",
+    "relation": "提及",
+    "dst": "底特律",
+    "evidence": "和谢弗先生一起去了东部……大概是底特律",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

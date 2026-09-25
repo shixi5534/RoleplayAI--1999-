@@ -1,0 +1,730 @@
+{
+ "3551fb4b985185c88932b4e0": {
+  "entities": [
+   {
+    "name": "柏林以东",
+    "type": "角色",
+    "aliases": [],
+    "desc": "领受训示的柏林以东"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "训示所要引导的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她奉行的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "柏林以东",
+    "relation": "领受",
+    "dst": "陪伴与教育的训示",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程。”我明白了",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【柏林以东】",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精",
+    "relation": "受训于",
+    "dst": "荒原经营驯化",
+    "evidence": "我明白了。",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c1bd5b5bc790a5e8619a7bc5": {
+  "entities": [
+   {
+    "name": "柏林以东",
+    "type": "角色",
+    "aliases": [],
+    "desc": "克制而不事张扬的柏林以东"
+   },
+   {
+    "name": "柏林以东的低调戒律",
+    "type": "概念",
+    "aliases": [],
+    "desc": "不得张扬的低调戒律"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被肯定的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "须暗中进行的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "柏林以东",
+    "relation": "赞许",
+    "dst": "魔精",
+    "evidence": "做得很好，但我们不应该张扬。",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "恪守",
+    "dst": "柏林以东的低调戒律",
+    "evidence": "我们不应该张扬",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东的低调戒律",
+    "relation": "约束",
+    "dst": "荒原经营驯化",
+    "evidence": "我们不应该张扬",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【柏林以东】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b3e08f153ba150932aeec693": {
+  "entities": [
+   {
+    "name": "柏林以东",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张改换做法的柏林以东"
+   },
+   {
+    "name": "更换方式的主张",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她提议更换的训练方式"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被换法对待的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "待被改进的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "柏林以东",
+    "relation": "提议",
+    "dst": "更换方式的主张",
+    "evidence": "我想我们需要换个方式。",
+    "confidence": 0.95
+   },
+   {
+    "src": "更换方式的主张",
+    "relation": "针对",
+    "dst": "魔精",
+    "evidence": "我想我们需要换个方式。",
+    "confidence": 0.95
+   },
+   {
+    "src": "更换方式的主张",
+    "relation": "改进",
+    "dst": "荒原经营驯化",
+    "evidence": "我想我们需要换个方式。",
+    "confidence": 0.95
+   },
+   {
+    "src": "柏林以东",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【柏林以东】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "809e327949b7d1a9332af677": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "节选指南条文的梅兰妮"
+   },
+   {
+    "name": "魔精培训指南",
+    "type": "物品",
+    "aliases": [],
+    "desc": "载有第25条培训条文的指南"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陪伴与教育乃成长的必要过程"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "需要被引导成长的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "指南条文服务的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "引用",
+    "dst": "魔精培训指南",
+    "evidence": "（节选自《魔精培训指南》，第25条）",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "出自",
+    "dst": "魔精培训指南",
+    "evidence": "节选自《魔精培训指南》，第25条",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "魔精培训指南",
+    "relation": "面向",
+    "dst": "魔精",
+    "evidence": "陪伴与教育，这是引导魔精成长的必要过程",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【梅兰妮】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4eb75bea75ce0b8f6b8be79f": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "把进步视作必然的梅兰妮"
+   },
+   {
+    "name": "预料之中的进步",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她预料之中的进步"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "取得进步的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "进步所自的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "判定",
+    "dst": "预料之中的进步",
+    "evidence": "预料之中的进步。",
+    "confidence": 0.95
+   },
+   {
+    "src": "预料之中的进步",
+    "relation": "归于",
+    "dst": "魔精",
+    "evidence": "预料之中的进步。",
+    "confidence": 0.95
+   },
+   {
+    "src": "预料之中的进步",
+    "relation": "证成",
+    "dst": "荒原经营驯化",
+    "evidence": "预料之中的进步。",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【梅兰妮】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "69bdb38ce50e4d6f2de4977d": {
+  "entities": [
+   {
+    "name": "梅兰妮",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仍求改善训练法的梅兰妮"
+   },
+   {
+    "name": "训练方式的改善",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她力求的训练方式改善"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被继续调教的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "有待完善的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "梅兰妮",
+    "relation": "谋求",
+    "dst": "训练方式的改善",
+    "evidence": "也许，训练方式仍需要改善？",
+    "confidence": 0.95
+   },
+   {
+    "src": "训练方式的改善",
+    "relation": "针对",
+    "dst": "魔精",
+    "evidence": "也许，训练方式仍需要改善？",
+    "confidence": 0.95
+   },
+   {
+    "src": "训练方式的改善",
+    "relation": "完善",
+    "dst": "荒原经营驯化",
+    "evidence": "也许，训练方式仍需要改善？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅兰妮",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【梅兰妮】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "759bffd7b200f8f2b4ce3523": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自认不擅此道的槲寄生"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她念出便自愧的训示"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "本该被陪伴引导的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "令她为难的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "自认不擅",
+    "dst": "陪伴与教育的训示",
+    "evidence": "“陪伴与教育”……我不擅长这种事情",
+    "confidence": 0.95
+   },
+   {
+    "src": "陪伴与教育的训示",
+    "relation": "引导",
+    "dst": "魔精",
+    "evidence": "陪伴与教育",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【槲寄生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b1010869f29c075538353dd4": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以自身作喻的槲寄生"
+   },
+   {
+    "name": "生命终会去往的地方",
+    "type": "概念",
+    "aliases": [],
+    "desc": "生命中终会去往的地方"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被预言将寻得归处的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "归处之论所在的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "预言",
+    "dst": "魔精",
+    "evidence": "你也会像我一样，找到生命中终会去往的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "指向",
+    "dst": "生命终会去往的地方",
+    "evidence": "找到生命中终会去往的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "生命终会去往的地方",
+    "relation": "命定于",
+    "dst": "魔精",
+    "evidence": "你也会像我一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "生命终会去往的地方",
+    "relation": "言说于",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【槲寄生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "5d04a637ab2378fc20d09640": {
+  "entities": [
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宽宥欠缺的槲寄生"
+   },
+   {
+    "name": "人人皆有所欠缺",
+    "type": "概念",
+    "aliases": [],
+    "desc": "人人皆有所欠缺之说"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被同样视为有欠缺的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "以欠缺为常的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "槲寄生",
+    "relation": "断言",
+    "dst": "人人皆有所欠缺",
+    "evidence": "每个人都会有所欠缺，魔精亦然。",
+    "confidence": 0.95
+   },
+   {
+    "src": "人人皆有所欠缺",
+    "relation": "及于",
+    "dst": "魔精",
+    "evidence": "每个人都会有所欠缺，魔精亦然",
+    "confidence": 0.95
+   },
+   {
+    "src": "人人皆有所欠缺",
+    "relation": "开脱",
+    "dst": "荒原经营驯化",
+    "evidence": "每个人都会有所欠缺，魔精亦然",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【槲寄生】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f71ec4493c5771e4990fd539": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嫌条文无聊的洛佩拉"
+   },
+   {
+    "name": "陪伴与教育的训示",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被她半途丢开的训示"
+   },
+   {
+    "name": "抛硬币的赌戏",
+    "type": "事件",
+    "aliases": [],
+    "desc": "她提议的抛硬币之戏"
+   },
+   {
+    "name": "硬币的正面",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她押下的硬币正面"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被她唤作小毛头们的魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被她拿来赌博的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "鄙弃",
+    "dst": "陪伴与教育的训示",
+    "evidence": "哈啊，真够无聊的",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "邀约",
+    "dst": "魔精",
+    "evidence": "要跟我一起抛硬币玩吗，小毛头们？",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "发起",
+    "dst": "抛硬币的赌戏",
+    "evidence": "要跟我一起抛硬币玩吗，小毛头们？",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "押注",
+    "dst": "硬币的正面",
+    "evidence": "我押正面。",
+    "confidence": 0.95
+   },
+   {
+    "src": "抛硬币的赌戏",
+    "relation": "赌于",
+    "dst": "硬币的正面",
+    "evidence": "我押正面。",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【洛佩拉】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "2547fbee0029ea880bee921f": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被激起兴致的洛佩拉"
+   },
+   {
+    "name": "洛佩拉的期待",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她坦承的期待"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "令她期待的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "忽而有趣的驯化现场"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "坦陈",
+    "dst": "洛佩拉的期待",
+    "evidence": "这下有意思了，我很期待！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的期待",
+    "relation": "指向",
+    "dst": "魔精",
+    "evidence": "这下有意思了，我很期待！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的期待",
+    "relation": "发生于",
+    "dst": "荒原经营驯化",
+    "evidence": "这下有意思了，我很期待！",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【洛佩拉】",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bff47f2cb6521009b19cb860": {
+  "entities": [
+   {
+    "name": "洛佩拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "叹息可惜的洛佩拉"
+   },
+   {
+    "name": "洛佩拉的惋惜",
+    "type": "概念",
+    "aliases": [],
+    "desc": "她拖长的惋惜"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "惹出惋惜的受训魔精"
+   },
+   {
+    "name": "荒原经营驯化",
+    "type": "事件",
+    "aliases": [],
+    "desc": "以惋惜收束的驯化事务"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洛佩拉",
+    "relation": "表达",
+    "dst": "洛佩拉的惋惜",
+    "evidence": "啊……真可惜啊。",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的惋惜",
+    "relation": "关涉",
+    "dst": "魔精",
+    "evidence": "啊……真可惜啊。",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉的惋惜",
+    "relation": "收束",
+    "dst": "荒原经营驯化",
+    "evidence": "啊……真可惜啊。",
+    "confidence": 0.95
+   },
+   {
+    "src": "洛佩拉",
+    "relation": "参与",
+    "dst": "荒原经营驯化",
+    "evidence": "【2.2】荒原经营驯化【洛佩拉】",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

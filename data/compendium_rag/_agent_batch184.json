@@ -1,0 +1,1320 @@
+{
+ "986e03983e654563407923e1": {
+  "entities": [
+   {
+    "name": "城中居民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊见烛夜的女子"
+   },
+   {
+    "name": "城中居民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨酒味的居民"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不识烛夜的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "闻到酒香的学者"
+   },
+   {
+    "name": "烛夜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "带酒香、白日跃市的动物"
+   },
+   {
+    "name": "沛城",
+    "type": "地点",
+    "aliases": [],
+    "desc": "烛夜跃市的大街"
+   }
+  ],
+  "relations": [
+   {
+    "src": "城中居民Ⅰ",
+    "relation": "惊见",
+    "dst": "烛夜",
+    "evidence": "烛夜怎么会白日里出现在大街上？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "询问",
+    "dst": "烛夜",
+    "evidence": "烛夜是什么？一种魔精吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "烛夜",
+    "relation": "跃下",
+    "dst": "沛城",
+    "evidence": "它们自屋檐跃下，挥动潮湿的小翅膀",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "察觉",
+    "dst": "烛夜",
+    "evidence": "我似乎闻到了一股酒香味儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅱ",
+    "relation": "抱怨",
+    "dst": "烛夜",
+    "evidence": "谁家的酒坛子翻了招的烛夜！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "警示",
+    "dst": "探险家别斯米尔",
+    "evidence": "它朝我们来了，别斯米尔女士，小心！",
+    "confidence": 0.95
+   },
+   {
+    "src": "烛夜",
+    "relation": "扑向",
+    "dst": "小叶尼塞",
+    "evidence": "它径直地朝人群中心飞扑而来，扬起了钩爪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "842f4cca827841eefd104cc1": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "牵不住节庆动物的女孩"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲上前相助的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "准许她离去的学者"
+   },
+   {
+    "name": "城中居民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "认出曲娘的女子"
+   },
+   {
+    "name": "城中居民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上前帮忙的居民"
+   },
+   {
+    "name": "城中居民Ⅳ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "率先伸手相助者"
+   },
+   {
+    "name": "烛夜",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搅乱街市的动物"
+   },
+   {
+    "name": "年节动物",
+    "type": "角色",
+    "aliases": [],
+    "desc": "扎彩带奔逃的牲畜"
+   },
+   {
+    "name": "麻绳",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曲娘攥紧的绳索"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曲娘本该值守之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "烛夜",
+    "relation": "搅乱",
+    "dst": "年节动物",
+    "evidence": "烛夜的称霸之路被一群突然闯入的牲畜所终结",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "呼喝",
+    "dst": "年节动物",
+    "evidence": "你们——给我——回来——！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "描述",
+    "dst": "烛夜",
+    "evidence": "路上突然出现了一种被称为“烛夜”的当地神秘学动物",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅰ",
+    "relation": "认出",
+    "dst": "曲娘",
+    "evidence": "这不是曲娘吗？！",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅰ",
+    "relation": "询问",
+    "dst": "职祠",
+    "evidence": "你不应该在职祠吗——你这是……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "联想",
+    "dst": "曲娘",
+    "evidence": "这不是里正让我们去找的那个人吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "准许",
+    "dst": "小叶尼塞",
+    "evidence": "去吧，我会在这里等你",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "攥紧",
+    "dst": "麻绳",
+    "evidence": "她只能把麻绳用力在掌心绞紧，一圈，又一圈",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅳ",
+    "relation": "相助",
+    "dst": "曲娘",
+    "evidence": "我来帮你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅱ",
+    "relation": "相助",
+    "dst": "曲娘",
+    "evidence": "我也来帮帮忙！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "40e4b9800712fcdc18441c9d": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代班执礼、惦记祥瑞的女孩"
+   },
+   {
+    "name": "城中居民Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打趣曲娘的邻居"
+   },
+   {
+    "name": "城中居民Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议取药的居民"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "安静观察的少女"
+   },
+   {
+    "name": "说书先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述灭蒙传说的说书人"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "原先执礼回乡之处"
+   },
+   {
+    "name": "酒坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曲娘的营生所在"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "曲娘念念不忘之物"
+   },
+   {
+    "name": "年节动物",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被拴在彩旗柱上的动物"
+   },
+   {
+    "name": "彩旗柱",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拴系节庆动物之柱"
+   },
+   {
+    "name": "帝尧",
+    "type": "角色",
+    "aliases": [],
+    "desc": "说书人所讲的上古之君"
+   },
+   {
+    "name": "结匈国",
+    "type": "角色",
+    "aliases": [],
+    "desc": "献灭蒙鸟的使者之国"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "职祠",
+    "evidence": "我就在那边，在职祠里",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅰ",
+    "relation": "说明",
+    "dst": "曲娘",
+    "evidence": "原先的执礼回乡去了。现在呀，曲娘已是新的执礼了",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "澄清",
+    "dst": "城中居民Ⅰ",
+    "evidence": "我只是，呃，代班！",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "说书先生",
+    "evidence": "我想着，他可能会讲祥瑞的故事，才着急出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅰ",
+    "relation": "调侃",
+    "dst": "曲娘",
+    "evidence": "总是惦记着“祥瑞”、“祥瑞”的",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅲ",
+    "relation": "提议",
+    "dst": "曲娘",
+    "evidence": "一会儿可随我去医馆取药",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "拴系",
+    "dst": "年节动物",
+    "evidence": "把冷静下来的动物都拴在了彩旗柱子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "年节动物",
+    "relation": "系于",
+    "dst": "彩旗柱",
+    "evidence": "把冷静下来的动物都拴在了彩旗柱子上",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "确认",
+    "dst": "曲娘",
+    "evidence": "那位应该就是……里正所说的“执礼”",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "讲述",
+    "dst": "帝尧",
+    "evidence": "且说那帝尧，亦是多见此类异兽",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "讲述",
+    "dst": "结匈国",
+    "evidence": "此使乃结匈国人，样貌精奇，胸脯尖削",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b3fd8e30af8395605bc75990": {
+  "entities": [
+   {
+    "name": "说书先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以韵律讲古的说书人"
+   },
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "艳羡灭蒙的听众"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "比照画像的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "品评语调的学者"
+   },
+   {
+    "name": "城中居民Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问凤凰的听众"
+   },
+   {
+    "name": "城中居民Ⅲ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "恍然扫门之理者"
+   },
+   {
+    "name": "小童",
+    "type": "角色",
+    "aliases": [],
+    "desc": "侍立扫灰的孩童"
+   },
+   {
+    "name": "灭蒙鸟",
+    "type": "概念",
+    "aliases": [],
+    "desc": "度朔山始祖之后的火属之鸟"
+   },
+   {
+    "name": "度朔山",
+    "type": "地点",
+    "aliases": [],
+    "desc": "灭蒙鸟所自之山"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "人主所受之献"
+   },
+   {
+    "name": "门笺",
+    "type": "物品",
+    "aliases": [],
+    "desc": "剪刻灭蒙形状的红纸"
+   },
+   {
+    "name": "庭燎",
+    "type": "物品",
+    "aliases": [],
+    "desc": "燃春之燎，灭蒙属火之喻"
+   },
+   {
+    "name": "爆竿",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被神秘术加强、声大的爆竹"
+   },
+   {
+    "name": "巨鸟",
+    "type": "角色",
+    "aliases": [],
+    "desc": "小叶尼塞所画之对象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "说书先生",
+    "relation": "讲述",
+    "dst": "灭蒙鸟",
+    "evidence": "此鸟唤作灭蒙鸟，云是能勘骨相，改命貌，禳异灾",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "讲述",
+    "dst": "度朔山",
+    "evidence": "今人所见灭蒙，盖度朔山始祖之后也",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅱ",
+    "relation": "追问",
+    "dst": "说书先生",
+    "evidence": "难道真的是凤凰？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "询问",
+    "dst": "说书先生",
+    "evidence": "您、您有亲眼见过灭蒙鸟吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "说明",
+    "dst": "祥瑞",
+    "evidence": "古今之人常将门前扫净，盼望祥瑞禽鸟停留聚集",
+    "confidence": 0.95
+   },
+   {
+    "src": "城中居民Ⅲ",
+    "relation": "恍然",
+    "dst": "门笺",
+    "evidence": "我们朔日需得扫门，原是这么个道理？",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "展示",
+    "dst": "门笺",
+    "evidence": "他举起一张红色的门笺，上面剪刻了某种鸟类的形状",
+    "confidence": 0.95
+   },
+   {
+    "src": "门笺",
+    "relation": "自燃",
+    "dst": "庭燎",
+    "evidence": "红色的纸张瞬间在灰衣男子手中自燃",
+    "confidence": 0.95
+   },
+   {
+    "src": "说书先生",
+    "relation": "解释",
+    "dst": "庭燎",
+    "evidence": "灭蒙属火，庭燎燃春，此即为喻",
+    "confidence": 0.95
+   },
+   {
+    "src": "小童",
+    "relation": "扫灰",
+    "dst": "庭燎",
+    "evidence": "将那些灰烬扫进了下方的炭盆中",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "惊觉",
+    "dst": "爆竿",
+    "evidence": "庭燎爆竿……糟了。天哪，我差点忘了正事！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "比照",
+    "dst": "巨鸟",
+    "evidence": "也像我刚才画的巨鸟？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "e8904e4bbaca2d16aadf6d96": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与动物私语的执礼"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "上前搭话的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "称许其反应及时的学者"
+   },
+   {
+    "name": "羽人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "曲娘口中的“祥瑞”"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "年节动物聚集之处"
+   },
+   {
+    "name": "年节动物",
+    "type": "角色",
+    "aliases": [],
+    "desc": "围栏中的牲畜"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "城外那位之谓"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "询问",
+    "dst": "年节动物",
+    "evidence": "你们能听懂我说的话吗……？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "招呼",
+    "dst": "曲娘",
+    "evidence": "请问……",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "欢迎",
+    "dst": "小叶尼塞",
+    "evidence": "欢迎你们来沛城玩！",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "称许",
+    "dst": "曲娘",
+    "evidence": "您的反应很及时，避免了一场灾难的发生",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "询问",
+    "dst": "曲娘",
+    "evidence": "请问羽人今日来过职祠了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "回应",
+    "dst": "羽人",
+    "evidence": "你说城外那位“祥瑞”？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "职祠",
+    "evidence": "今天我到职祠点卯的时候，围栏里就已经有很多年节动物了",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自述",
+    "dst": "年节动物",
+    "evidence": "它们都长得差不多，我不知道哪些是今天送到的",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "祥瑞",
+    "evidence": "我只知道摄提神",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "36ce9e8ccf89572c83e34c72": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述摄提神与跳桥的女孩"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "联想所求必应的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问祭仪负责者的学者"
+   },
+   {
+    "name": "摄提神",
+    "type": "角色",
+    "aliases": [],
+    "desc": "有十二三位之神"
+   },
+   {
+    "name": "执徐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "今年生辰的摄提神"
+   },
+   {
+    "name": "断桥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "悬崖之上、跳不过去的桥"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "管理沛城神秘术事务之处"
+   },
+   {
+    "name": "年节动物",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被带往断桥供奉的动物"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被别斯米尔推想为本地信仰者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "摄提神",
+    "evidence": "我只知道摄提神有十二……还是十三位",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "告知",
+    "dst": "执徐",
+    "evidence": "今年是摄提神执徐的生辰年",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "说明",
+    "dst": "年节动物",
+    "evidence": "我们会请很多的年节动物去断桥供奉祂",
+    "confidence": 0.95
+   },
+   {
+    "src": "年节动物",
+    "relation": "供奉",
+    "dst": "执徐",
+    "evidence": "请很多的年节动物去断桥供奉祂",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "讲述",
+    "dst": "断桥",
+    "evidence": "带着年节动物去到悬崖上的断桥前",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "联想",
+    "dst": "断桥",
+    "evidence": "跳过悬崖上的断桥？这听起来不仅危险",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "否认",
+    "dst": "断桥",
+    "evidence": "跳不过去的！还没听说有谁能跳过去呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "说明",
+    "dst": "职祠",
+    "evidence": "职祠是负责管理沛城神秘术事务的地方",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "询问",
+    "dst": "职祠",
+    "evidence": "那些提前的神秘术设置，都是由什么人负责的？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "推测",
+    "dst": "祥瑞",
+    "evidence": "更类似一种本地的信仰，传奇的神秘学家之类的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cf13ea99d824e510d639b060": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "邀二人住酒坊的女孩"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谢过好意并提议等消息的学者"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "辨认同伴失败的少女"
+   },
+   {
+    "name": "酒坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "离职祠两坊距离的金市中"
+   },
+   {
+    "name": "金市",
+    "type": "地点",
+    "aliases": [],
+    "desc": "酒坊所在之闹市"
+   },
+   {
+    "name": "职祠",
+    "type": "组织",
+    "aliases": [],
+    "desc": "曲娘送动物回去之处"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "难以辨认的同伴"
+   },
+   {
+    "name": "度朔节",
+    "type": "事件",
+    "aliases": [],
+    "desc": "有金灯与庭燎的节日"
+   },
+   {
+    "name": "庭燎",
+    "type": "物品",
+    "aliases": [],
+    "desc": "照得天上地上亮堂之火"
+   },
+   {
+    "name": "金灯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "节日所悬之灯"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "询问",
+    "dst": "小叶尼塞",
+    "evidence": "你们能从这些马里面，认出来哪些是你们的同伴吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "自陈",
+    "dst": "斑纹马",
+    "evidence": "我认不出来，当时太匆忙了",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "提议",
+    "dst": "曲娘",
+    "evidence": "我们先等等里正那边的消息",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "出示",
+    "dst": "曲娘",
+    "evidence": "来，曲娘小姐，请你看看这个",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "邀请",
+    "dst": "探险家别斯米尔",
+    "evidence": "你们可以住在我的酒坊里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "酒坊",
+    "evidence": "我正在经营一家酒坊",
+    "confidence": 0.95
+   },
+   {
+    "src": "酒坊",
+    "relation": "坐落",
+    "dst": "金市",
+    "evidence": "酒坊就在离职祠两坊距离的金市中",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "承诺",
+    "dst": "职祠",
+    "evidence": "我还可以顺路把这些家伙都送回职祠",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "描述",
+    "dst": "度朔节",
+    "evidence": "度朔节有金灯和庭燎，照得天上和地上都亮堂堂",
+    "confidence": 0.95
+   },
+   {
+    "src": "度朔节",
+    "relation": "设有",
+    "dst": "金灯",
+    "evidence": "度朔节有金灯和庭燎",
+    "confidence": 0.95
+   },
+   {
+    "src": "度朔节",
+    "relation": "设有",
+    "dst": "庭燎",
+    "evidence": "度朔节有金灯和庭燎",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "dcdf0d64943b7b7b2aa5e954": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问所求必应的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以代价作答的学者"
+   },
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述断桥与渊庙者"
+   },
+   {
+    "name": "酒坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人落脚之处"
+   },
+   {
+    "name": "断桥",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被洪水冲断之桥"
+   },
+   {
+    "name": "渊庙",
+    "type": "地点",
+    "aliases": [],
+    "desc": "断桥对面、为雾气遮盖之庙"
+   },
+   {
+    "name": "执徐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "于渊庙可对话之神"
+   },
+   {
+    "name": "问卜",
+    "type": "概念",
+    "aliases": [],
+    "desc": "向执徐求答之法"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "或可跳过悬崖者"
+   },
+   {
+    "name": "浊酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曲娘提供的助眠之酒"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小叶尼塞",
+    "relation": "询问",
+    "dst": "探险家别斯米尔",
+    "evidence": "您觉得白天曲娘说的，有可能是“所求必应”吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "解释",
+    "dst": "断桥",
+    "evidence": "跃过断桥就像跃过悬崖……一个不可能达成的条件",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "追问",
+    "dst": "探险家别斯米尔",
+    "evidence": "一种绝对的代价？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "讲述",
+    "dst": "断桥",
+    "evidence": "反正在我到城里的时候，就已经断掉很久了",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "讲述",
+    "dst": "渊庙",
+    "evidence": "对面是一个叫渊庙的地方，但被雾气遮盖了",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "说明",
+    "dst": "执徐",
+    "evidence": "据说在渊庙里，你能和执徐对话",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "说明",
+    "dst": "问卜",
+    "evidence": "有什么问题，你虔诚地问祂，祂就会回答",
+    "confidence": 0.95
+   },
+   {
+    "src": "探险家别斯米尔",
+    "relation": "质疑",
+    "dst": "断桥",
+    "evidence": "如果最开始这座桥能修建起来，那就没有道理不能重建",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "解释",
+    "dst": "断桥",
+    "evidence": "是因为水变少了，人们不能游过去到对岸",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "设想",
+    "dst": "祥瑞",
+    "evidence": "如果能成为新的“祥瑞”，或许就能跳过去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "提供",
+    "dst": "浊酒",
+    "evidence": "还有助眠的浊酒，能帮你们睡个好觉",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "置身",
+    "dst": "酒坊",
+    "evidence": "两人决定先跟随曲娘到酒坊中落脚",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "17454c613da4054a0bd831da": {
+  "entities": [
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摩挲陶杯的少女"
+   },
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赠水并展示陶杯的女孩"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "先行休息的学者"
+   },
+   {
+    "name": "绘鹿蜀的陶杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "彩绘鹿蜀纹的陶土杯"
+   },
+   {
+    "name": "鹿蜀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "陶杯上所绘的祥瑞"
+   },
+   {
+    "name": "斑纹马",
+    "type": "角色",
+    "aliases": [],
+    "desc": "与鹿蜀形态相近的动物"
+   },
+   {
+    "name": "浊酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "曲娘杯中发香的酒"
+   },
+   {
+    "name": "助眠酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "加酸枣仁的药酒"
+   },
+   {
+    "name": "酒坊",
+    "type": "地点",
+    "aliases": [],
+    "desc": "打水与歇息之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "递水",
+    "dst": "小叶尼塞",
+    "evidence": "喏，这是你要的水",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "赠送",
+    "dst": "绘鹿蜀的陶杯",
+    "evidence": "这是别人给我的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "端详",
+    "dst": "绘鹿蜀的陶杯",
+    "evidence": "她用手指摩挲杯壁，轻轻擦过那些彩绘的纹路",
+    "confidence": 0.95
+   },
+   {
+    "src": "绘鹿蜀的陶杯",
+    "relation": "绘有",
+    "dst": "鹿蜀",
+    "evidence": "上面画的是鹿蜀，一种祥瑞",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "自陈",
+    "dst": "鹿蜀",
+    "evidence": "它好雄伟的，尾鬃就像傍晚的云霞一样",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "比照",
+    "dst": "斑纹马",
+    "evidence": "它和职祠里那些斑纹马还有点相近",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "品尝",
+    "dst": "浊酒",
+    "evidence": "这就是普通的浊酒",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "询问",
+    "dst": "助眠酒",
+    "evidence": "这个，就是你说的助眠酒吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "解释",
+    "dst": "助眠酒",
+    "evidence": "助眠酒就是一种加了酸枣仁的药酒",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f1a4dabfa80c9529d6c3e1da": {
+  "entities": [
+   {
+    "name": "曲娘",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以吉兆宽慰人的女孩"
+   },
+   {
+    "name": "小叶尼塞",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈忧虑的少女"
+   },
+   {
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被回头望去的学者"
+   },
+   {
+    "name": "渊庙",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曲娘设想中的转机"
+   },
+   {
+    "name": "羽人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被议论是否祥瑞者"
+   },
+   {
+    "name": "祥瑞",
+    "type": "概念",
+    "aliases": [],
+    "desc": "城中另有的存在"
+   }
+  ],
+  "relations": [
+   {
+    "src": "曲娘",
+    "relation": "设问",
+    "dst": "小叶尼塞",
+    "evidence": "如果你的同伴变成了马……那就不是你的同伴了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "自陈",
+    "dst": "曲娘",
+    "evidence": "其实我很担心",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "自责",
+    "dst": "曲娘",
+    "evidence": "他们会被变成动物，都是由于我指错了方向",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "宽慰",
+    "dst": "小叶尼塞",
+    "evidence": "我觉得，一定会有办法的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "举例",
+    "dst": "渊庙",
+    "evidence": "也许渊庙是真的呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "推断",
+    "dst": "羽人",
+    "evidence": "就算羽人不是祥瑞，这城里却还有别的祥瑞",
+    "confidence": 0.95
+   },
+   {
+    "src": "曲娘",
+    "relation": "承诺",
+    "dst": "小叶尼塞",
+    "evidence": "我一定会帮你们的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "道谢",
+    "dst": "曲娘",
+    "evidence": "谢谢你，曲娘",
+    "confidence": 0.95
+   },
+   {
+    "src": "小叶尼塞",
+    "relation": "回望",
+    "dst": "探险家别斯米尔",
+    "evidence": "控制回头去看别斯米尔所在方向的冲动",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

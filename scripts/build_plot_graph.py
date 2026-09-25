@@ -28,10 +28,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "scripts"))  # M-9：同目录的 apply_manual_edges 需可导入
 
 from roleplay.config import get_settings  # noqa: E402
 from roleplay.core.knowledge.graph_extract import GraphCache, GraphExtractor  # noqa: E402
 from roleplay.core.knowledge.graph_store import GraphStore  # noqa: E402
+from apply_manual_edges import replay as replay_manual_edges  # noqa: E402  (M-9 自动重放)
 from roleplay.core.knowledge.plot_corpus import (  # noqa: E402
     PlotCorpus,
     plot_namespace,
@@ -49,8 +51,13 @@ NOOP_EXIT_CODE = 2
 
 
 def _paths(settings, character_id: str) -> tuple[Path, Path, Path, Path]:
-    """(语料源目录, 语料落盘, 图谱落盘, 缓存目录)"""
-    src = Path(settings.plot_lore_dir) / character_id / "视频文案"
+    """(语料源目录, 语料落盘, 图谱落盘, 缓存目录)
+
+    语料源目录取**角色目录**而非 ``视频文案``：``PlotCorpus.build`` 自己按目录段
+    白名单分流——``视频文案/`` 走 B 站转写解析（文件名 + 头部双白名单），
+    ``canon_zh/`` 走灰机正典中文解析（要求头部带来源 URL）。两者互不干扰。
+    """
+    src = Path(settings.plot_lore_dir) / character_id
     corpus = Path(settings.plot_corpus_dir) / f"plot_corpus_{character_id}.json"
     graph = Path(settings.plot_graph_dir) / f"plot_graph_{character_id}.json"
     cache = Path(settings.plot_cache_dir) / character_id
@@ -116,7 +123,8 @@ def _cmd_build_corpus(settings, character_id: str, chunk_size: int) -> int:
     print(f"[corpus] 源目录 {src}")
     print(
         f"[corpus] 文件 {stat['files']}（采纳 {stat['kept']} / 拒绝 {stat['rejected']}）"
-        f"→ 切块 {stat['chunks']} 条"
+        f" ＋ 灰机正典 {stat.get('canon_files', 0)} 篇"
+        f" → 切块 {stat['chunks']} 条"
     )
     if stat["rejected_samples"]:
         print(f"[corpus] 被拒样例（非转写产物）：{stat['rejected_samples']}")
@@ -210,6 +218,7 @@ async def _cmd_build_graph(
     rebuild: bool,
     allow_noop: bool = False,
     rebuild_graph_only: bool = False,
+    no_manual_edges: bool = False,
 ) -> int:
     _src, cpath, gpath, cache_dir = _paths(settings, character_id)
     if not cpath.exists():
@@ -245,6 +254,9 @@ async def _cmd_build_graph(
     table, alias_stats = load_alias_table_with_stats(alias_file)
     if table:
         n = store.bind_alias_table(table)
+        # 注：空 type 锚点的补齐放在**抽取之后**（见下方 _fill_default_types），
+        # 这里不能补——bind 阶段图还是空的，提前补会把 227 个 canonical 全锁成
+        # 默认类型，导致后续抽取写入的真实 type（角色/组织…）被覆盖成默认值。
         print(
             f"[alias] 绑定双语别名 {n} 条（{alias_file}）"
             f"｜条目 {alias_stats['kept']}/{alias_stats['total']}"
@@ -296,6 +308,15 @@ async def _cmd_build_graph(
         limit=limit,
         only_lang=lang,
     )
+    # 抽取完成后再补默认类型：此时真实 type 已写入，只剩 bind_alias_table 建的
+    # 空 type 锚点需要兜底（store.entities() 返回副本，必须走 upsert_entities）。
+    _untyped = [
+        e["name"] for e in store.entities()
+        if not str(e.get("type") or "").strip()
+    ]
+    if _untyped:
+        store.upsert_entities([{"name": n, "type": "概念"} for n in _untyped])
+        print(f"[graph] 补默认类型（空 type 锚点）{len(_untyped)} 个")
     store.set_fingerprint(
         embedder="none", embed_dim=0, extract_llm=f"{settings.llm_provider}:{settings.llm_model}"
     )
@@ -312,6 +333,29 @@ async def _cmd_build_graph(
         )
         return 1
     print(f"[graph] 落盘 {gpath}（schema={PLOT_GRAPH_SCHEMA}）")
+    # ── M-9：重建后**自动**重放手工事实边并归一 source 标记 ──
+    # 为什么必须自动：重建（尤其 --rebuild-graph-only）会把人工补的边整条清掉，
+    # 旧流程依赖"记得手动跑一遍 apply_manual_edges.py"——忘记就是 R8 静默失守。
+    # 放在 no-op 快照**之前**，让快照反映最终落盘状态（否则手工边会让 no-op 判定误报）。
+    if not no_manual_edges:
+        try:
+            _mstats = replay_manual_edges(character_id, graph_path=gpath)
+            if _mstats.get("skipped_no_file"):
+                print("[manual_edges] 无手工边清单，跳过")
+            else:
+                print(
+                    f"[manual_edges] 清单 {_mstats['total']} 条｜新增 {_mstats['added']}"
+                    f"｜归一 source {_mstats['normalized']}｜已一致 {_mstats['consistent']}"
+                    f"｜在场率 {_mstats['present_rate']:.0%}（跑前 {_mstats['present_rate_before']:.0%}）"
+                )
+                if _mstats["missing"]:
+                    print(f"[manual_edges][warn] 实体缺失 {len(_mstats['missing'])} 条："
+                          f"{_mstats['missing'][:3]}")
+                if _mstats["present_rate"] < 1.0:
+                    print("[manual_edges][warn] 手工边在场率不足 100%（R8 红线），请核对清单")
+        except Exception as exc:  # noqa: BLE001 - 重放失败不能把构建判为成功
+            print(f"[manual_edges][error] 重放失败：{exc}")
+            return 1
     # ── no-op 检测（M0-4）：跑了一大轮却一个字节都没变 = 白跑，明确报错 ──
     after = _graph_snapshot(gpath)
     # --rebuild 与 --rebuild-graph-only 都是「先删图再重建」，同内容属正常，不判 no-op
@@ -348,6 +392,12 @@ def main() -> int:
         "别名表改动后必须用这个才生效（否则合并会被 first-write-wins 静默跳过）",
     )
     ap.add_argument(
+        "--no-manual-edges",
+        action="store_true",
+        help="M-9：构建后**不**自动重放手工事实边（默认自动重放并对账；"
+        "仅在需要复现「纯抽取产物」做差分对比时关闭）",
+    )
+    ap.add_argument(
         "--allow-noop",
         action="store_true",
         help="豁免 no-op 检测：图谱构建前后完全一致时仍返回 0（默认返回 2）",
@@ -376,6 +426,7 @@ def main() -> int:
                 args.rebuild,
                 allow_noop=args.allow_noop,
                 rebuild_graph_only=args.rebuild_graph_only,
+                no_manual_edges=args.no_manual_edges,
             )
         )
     if args.stats:

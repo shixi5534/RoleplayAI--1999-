@@ -1,0 +1,1158 @@
+{
+ "13b5762869fa19bf4a43124a": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托赴伦敦调查的校医"
+   },
+   {
+    "name": "伦敦的司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "载其前往医院的伦敦司机"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "委派特别外勤的副会长"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "各分部正收集社会运动报告者"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "牙仙任职的校医院所在"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "罢工运动与肺结核异常发生地"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "发病率异常升高的病症"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "任职",
+    "dst": "第一防线学校",
+    "evidence": "第一防线学校校医院的生活还不算太糟吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "委派",
+    "dst": "牙仙",
+    "evidence": "我会为你的这次特别外勤申请额外津贴的",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "收集",
+    "dst": "伦敦",
+    "evidence": "这是伦敦分部提交的一份报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "指出",
+    "dst": "煤炭肺结核",
+    "evidence": "附录中的伦敦空气污染和肺结核病例报告里有异常数据",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "辨认",
+    "dst": "煤炭肺结核",
+    "evidence": "肺结核",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦敦的司机",
+    "relation": "载送",
+    "dst": "牙仙",
+    "evidence": "再过两条街就是您要去的那家医院了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦敦的司机",
+    "relation": "提议",
+    "dst": "牙仙",
+    "evidence": "按照流程，您应该先和福葛先生见一面",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "15fb47b0e0a64c9de0a2442c": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意追踪黑雾的医生"
+   },
+   {
+    "name": "伦敦的司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以见怪不怪自解者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "王室与基金会之间的桥梁"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为之安排接洽的副会长"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "雾行者所代表的英方对接机构"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被黑雾摧毁医院的城市"
+   },
+   {
+    "name": "乌卢鲁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "预选赛引发全城热情之地"
+   },
+   {
+    "name": "乌卢鲁运动会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "伦敦预选赛即将开幕的赛事"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "几乎摧毁一座医院的黑雾"
+   },
+   {
+    "name": "乌卢鲁传单",
+    "type": "物品",
+    "aliases": [],
+    "desc": "乘客偶然得到的乌卢鲁宣传单"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "指派",
+    "dst": "雾行者",
+    "evidence": "福葛先生会与你接洽",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "沟通",
+    "dst": "圣洛夫基金会",
+    "evidence": "他是英国政府与基金会之间沟通的桥梁",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑雾",
+    "relation": "摧毁",
+    "dst": "伦敦",
+    "evidence": "我们刚刚遭遇的黑雾几乎摧毁了一座医院",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "追踪",
+    "dst": "黑雾",
+    "evidence": "沿着黑雾在街道上留下的裂痕继续追踪",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "浏览",
+    "dst": "乌卢鲁传单",
+    "evidence": "眉头紧皱的乘客将偶然得到的传单叠好",
+    "confidence": 0.95
+   },
+   {
+    "src": "乌卢鲁运动会",
+    "relation": "举办于",
+    "dst": "乌卢鲁",
+    "evidence": "乌卢鲁伦敦预选赛开幕在即",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "41b618d69d3783cf9b920e4e": {
+  "entities": [
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇撞车事故的乘客"
+   },
+   {
+    "name": "伦敦的司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在东区急刹车的司机"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "能唤风托身半空的女孩"
+   },
+   {
+    "name": "奇奇比翁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被车撞伤腰部的魔精"
+   },
+   {
+    "name": "东区",
+    "type": "地点",
+    "aliases": [],
+    "desc": "酒鬼与流浪汉游荡之地"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "在医院留下事故的存在"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "巷中魔精所属的族群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伦敦的司机",
+    "relation": "急刹",
+    "dst": "东区",
+    "evidence": "再往前走就是东区了",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "浮空",
+    "dst": "东区",
+    "evidence": "她如一朵水母般浮游于半空",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "自陈",
+    "dst": "牙仙",
+    "evidence": "他就是奇奇比翁，而我是纸信圈儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "奇奇比翁",
+    "relation": "被撞",
+    "dst": "伦敦的司机",
+    "evidence": "黑色的汽车把他的腰给撞断了",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "唤出",
+    "dst": "奇奇比翁",
+    "evidence": "奇奇比翁，快出来",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "辨识",
+    "dst": "魔精",
+    "evidence": "受惊的魔精很危险",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "90f1a6981c72f44aaa1f5586": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "向小巷呼唤同伴的女孩"
+   },
+   {
+    "name": "奇奇比翁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搅动雾气跃出的魔精"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "警告退后的医生"
+   },
+   {
+    "name": "伦敦的司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊呼其体型者"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "受惊即危险的族群"
+   }
+  ],
+  "relations": [
+   {
+    "src": "奇奇比翁",
+    "relation": "跃出",
+    "dst": "利伯蒂",
+    "evidence": "它搅动着淡黄色的雾气，突然跃出",
+    "confidence": 0.95
+   },
+   {
+    "src": "伦敦的司机",
+    "relation": "惊骇",
+    "dst": "奇奇比翁",
+    "evidence": "它比袋鼠还大啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "纠正",
+    "dst": "伦敦的司机",
+    "evidence": "是你看不见他的腰",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "警惕",
+    "dst": "魔精",
+    "evidence": "受惊的魔精很危险。退后",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "826af11ef32a60968c7fd44a": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "承诺带路的孩子"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为其敷药并说明来意者"
+   },
+   {
+    "name": "伦敦的司机",
+    "type": "角色",
+    "aliases": [],
+    "desc": "先行离去的司机"
+   },
+   {
+    "name": "奇奇比翁",
+    "type": "角色",
+    "aliases": [],
+    "desc": "先行离去的魔精"
+   },
+   {
+    "name": "魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "泛指其所见生物"
+   },
+   {
+    "name": "十字街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "神秘学家聚居的街区"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "此地并不存在的黑雾"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "敷药",
+    "dst": "利伯蒂",
+    "evidence": "牙仙指尖出现了一份金光闪闪的药膏",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "询问",
+    "dst": "牙仙",
+    "evidence": "你是巫医，对吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "自陈",
+    "dst": "利伯蒂",
+    "evidence": "我是来伦敦调查肺结核病的医生",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "说明",
+    "dst": "黑雾",
+    "evidence": "一道奇怪的黑雾摧毁了我正要造访的医院",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "否认",
+    "dst": "黑雾",
+    "evidence": "这里没有什么黑雾",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "带领",
+    "dst": "牙仙",
+    "evidence": "我带你去看看，你一定会喜欢的",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "描述",
+    "dst": "十字街",
+    "evidence": "十字街上的人都在关心乌卢鲁",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "716e885565b6bb8948c1330b": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "撒发传单并消失的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜寻黑雾踪迹者"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请摊贩填表的雾行者"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呵斥乱扔传单的孩子"
+   },
+   {
+    "name": "十字街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "支起摊位的集市所在"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "踪迹消失于此的雾气"
+   },
+   {
+    "name": "金丝绵雀",
+    "type": "概念",
+    "aliases": [],
+    "desc": "烟囱中知蜗牛去处之鸟"
+   },
+   {
+    "name": "乌卢鲁欢庆集市",
+    "type": "事件",
+    "aliases": [],
+    "desc": "为预选赛造势的欢庆集市"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "散发",
+    "dst": "乌卢鲁欢庆集市",
+    "evidence": "将手中最后一把乌卢鲁传单撒出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "呵斥",
+    "dst": "利伯蒂",
+    "evidence": "不要再乱扔垃圾了，小坏种",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "推断",
+    "dst": "黑雾",
+    "evidence": "黑雾的踪迹消失在神秘学家聚居的街区",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "讲述",
+    "dst": "黑雾",
+    "evidence": "有人说，它出生在工厂的大烟管里",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "寻找",
+    "dst": "金丝绵雀",
+    "evidence": "我去烟囱里找金丝绵雀了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "初遇",
+    "dst": "雾行者",
+    "evidence": "福葛先生，没想到会在这里遇见你",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "自称",
+    "dst": "牙仙",
+    "evidence": "欢迎来到伦敦",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a049b7c7383da15283dda570": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱怨居民不信雾气有蹊跷者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以医学解释肺结核的医生"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称受诅咒、胸有火烧感者"
+   },
+   {
+    "name": "雾中鬼婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指为黑雾源头的女巫"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被居民当诅咒的病症"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "鬼婆被指召来的烟雾"
+   },
+   {
+    "name": "十字街",
+    "type": "地点",
+    "aliases": [],
+    "desc": "鬼婆所居的街区"
+   }
+  ],
+  "relations": [
+   {
+    "src": "雾行者",
+    "relation": "抱怨",
+    "dst": "十字街",
+    "evidence": "十字街的居民不相信那些雾气有蹊跷",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "自陈",
+    "dst": "牙仙",
+    "evidence": "这只是恶毒的诅咒罢了",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "描述",
+    "dst": "煤炭肺结核",
+    "evidence": "如果是肺结核，我的胸口怎么会像火烧一样难受",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "纠正",
+    "dst": "威尔",
+    "evidence": "肺结核源于空气中的病菌",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾中鬼婆",
+    "relation": "召唤",
+    "dst": "黑雾",
+    "evidence": "生来就会召唤黑色的烟雾",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "畏惧",
+    "dst": "雾中鬼婆",
+    "evidence": "别在我面前谈这么晦气的东西",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6b57ada0e613e93513eaffa8": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "感叹伦敦现状的雾行者"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "策棍马奔来报讯的斥候"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "确认黑雾藏身于此者"
+   },
+   {
+    "name": "雾中鬼婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指惊扰黑雾的女巫"
+   },
+   {
+    "name": "煤烟魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "黑雾派出危害无辜者的魔精"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "藏身于十字街的雾气"
+   },
+   {
+    "name": "威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "惊呼魔精自花园钻出者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "宽檐帽先生",
+    "relation": "报讯",
+    "dst": "雾行者",
+    "evidence": "我们碰上了硬茬",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "宣称",
+    "dst": "黑雾",
+    "evidence": "对十字街的探索惊扰了黑色的雾气",
+    "confidence": 0.95
+   },
+   {
+    "src": "黑雾",
+    "relation": "派出",
+    "dst": "煤烟魔精",
+    "evidence": "它派出了可怕的魔精",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "确认",
+    "dst": "黑雾",
+    "evidence": "它果然藏在这里",
+    "confidence": 0.95
+   },
+   {
+    "src": "威尔",
+    "relation": "惊呼",
+    "dst": "雾中鬼婆",
+    "evidence": "魔精从她的花园里钻出来了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d139512c66f19db674472417": {
+  "entities": [
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈斥候身份并探明方位者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "主张与女巫谈谈的医生"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提出因果假设的雾行者"
+   },
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "带着蜗牛归来的女孩"
+   },
+   {
+    "name": "雾中鬼婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "住在向南尽头花园小屋的女巫"
+   },
+   {
+    "name": "黑雾",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被判为三事之一者"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "火烧感异常的第二件怪事"
+   },
+   {
+    "name": "十字街古宅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "鬼婆据守的花园独栋小屋"
+   },
+   {
+    "name": "羊脂蜗牛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "纸信圈儿罐中所盛之物"
+   }
+  ],
+  "relations": [
+   {
+    "src": "宽檐帽先生",
+    "relation": "自陈",
+    "dst": "牙仙",
+    "evidence": "我是宽檐帽，福葛伙计的同僚与斥候",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "归纳",
+    "dst": "黑雾",
+    "evidence": "今天遭遇了三件怪事。第一，黑色的雾气",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "归纳",
+    "dst": "雾中鬼婆",
+    "evidence": "住十字街里的“雾中鬼婆”",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "推断",
+    "dst": "煤炭肺结核",
+    "evidence": "鬼婆释放出黑雾，让伦敦居民染上了奇怪的肺结核",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "探明",
+    "dst": "十字街古宅",
+    "evidence": "那是十字街向南尽头的一幢花园独栋小屋",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "携带",
+    "dst": "羊脂蜗牛",
+    "evidence": "容器中装着的蜗牛有孩子的半个手掌那么大",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "带领",
+    "dst": "牙仙",
+    "evidence": "我这就带你去吧",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6f5807d587150f7c12e65e71": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "引路的常客女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "审视古宅建筑者"
+   },
+   {
+    "name": "花园魔精",
+    "type": "概念",
+    "aliases": [],
+    "desc": "缠满藤蔓、拦路的花园魔精"
+   },
+   {
+    "name": "十字街古宅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "维多利亚式的古老宅邸"
+   },
+   {
+    "name": "雾中鬼婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "从不外出、独居的女巫"
+   },
+   {
+    "name": "羊脂蜗牛",
+    "type": "物品",
+    "aliases": [],
+    "desc": "要送给女巫的礼物"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "女巫心情好时教她的东西"
+   }
+  ],
+  "relations": [
+   {
+    "src": "牙仙",
+    "relation": "判别",
+    "dst": "十字街古宅",
+    "evidence": "或许是维多利亚时期的建筑",
+    "confidence": 0.95
+   },
+   {
+    "src": "花园魔精",
+    "relation": "拦路",
+    "dst": "利伯蒂",
+    "evidence": "他们以前从来不是这样的",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "常访",
+    "dst": "雾中鬼婆",
+    "evidence": "我把蜗牛带给她，她就让我在她家玩一会儿",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾中鬼婆",
+    "relation": "传授",
+    "dst": "利伯蒂",
+    "evidence": "女巫小姐心情好的时候，就会教我一些单词",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "退让",
+    "dst": "利伯蒂",
+    "evidence": "你去把蜗牛送给她吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "利伯蒂",
+    "relation": "献礼",
+    "dst": "羊脂蜗牛",
+    "evidence": "把蜗牛罐子高高举过头顶",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "6908bbe105f510f7732090f9": {
+  "entities": [
+   {
+    "name": "利伯蒂",
+    "type": "角色",
+    "aliases": [
+     "纸信圈儿"
+    ],
+    "desc": "被拒门外的女孩"
+   },
+   {
+    "name": "雾中鬼婆",
+    "type": "角色",
+    "aliases": [],
+    "desc": "厌恶乌卢鲁一词的女巫"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请其外出未果的医生"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被风吹到走廊上的斥候"
+   },
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "终于能与牙仙详谈者"
+   },
+   {
+    "name": "伦敦清洁大气委员会",
+    "type": "地点",
+    "aliases": [],
+    "desc": "二人坐下相谈之处"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "斥候须前往巡逻的城市"
+   },
+   {
+    "name": "乌卢鲁",
+    "type": "地点",
+    "aliases": [],
+    "desc": "令女巫受刺激的赛事名"
+   },
+   {
+    "name": "十字街古宅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "橡木大门合上的古宅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "利伯蒂",
+    "relation": "呈递",
+    "dst": "雾中鬼婆",
+    "evidence": "这是这周的蜗牛",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾中鬼婆",
+    "relation": "驱逐",
+    "dst": "牙仙",
+    "evidence": "出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾中鬼婆",
+    "relation": "警告",
+    "dst": "利伯蒂",
+    "evidence": "别再蹦出“乌卢鲁”这个词",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾中鬼婆",
+    "relation": "闭门",
+    "dst": "十字街古宅",
+    "evidence": "橡木大门合上了",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "判断",
+    "dst": "乌卢鲁",
+    "evidence": "“乌卢鲁”这个词会给她带去某种刺激",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "致谢",
+    "dst": "牙仙",
+    "evidence": "我终于可以坐下来谈一谈了",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "拟去",
+    "dst": "伦敦",
+    "evidence": "我必须要去伦敦的街头巡逻了",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9e2e6f6e01ceed967e1e0b32": {
+  "entities": [
+   {
+    "name": "雾行者",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收到取消通知的雾行者"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "直言三周内无解的医生"
+   },
+   {
+    "name": "宽檐帽先生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请求援手病人的斥候"
+   },
+   {
+    "name": "有声信",
+    "type": "物品",
+    "aliases": [],
+    "desc": "变化为大嘴并朗读的有声信"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "发出取消通知的机构"
+   },
+   {
+    "name": "伦敦清洁大气委员会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被抄送通知的伦敦大气主管部门"
+   },
+   {
+    "name": "乌卢鲁伦敦预选赛",
+    "type": "事件",
+    "aliases": [],
+    "desc": "将酌情取消的伦敦预选赛"
+   },
+   {
+    "name": "煤炭肺结核",
+    "type": "概念",
+    "aliases": [],
+    "desc": "泛滥成灾的煤炭肺结核"
+   },
+   {
+    "name": "伦敦",
+    "type": "地点",
+    "aliases": [],
+    "desc": "恐成笑柄的大英帝国首都"
+   }
+  ],
+  "relations": [
+   {
+    "src": "圣洛夫基金会",
+    "relation": "致信",
+    "dst": "伦敦清洁大气委员会",
+    "evidence": "圣洛夫基金会乌卢鲁运动会组织委员会致信",
+    "confidence": 0.95
+   },
+   {
+    "src": "有声信",
+    "relation": "宣告",
+    "dst": "乌卢鲁伦敦预选赛",
+    "evidence": "乌卢鲁伦敦预选赛将酌情取消",
+    "confidence": 0.95
+   },
+   {
+    "src": "雾行者",
+    "relation": "担忧",
+    "dst": "伦敦",
+    "evidence": "大英帝国的伟大首都会成为笑柄",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "断言",
+    "dst": "雾行者",
+    "evidence": "你没有办法在这么短的时间内解决弥漫在整个伦敦的暗黄色雾气",
+    "confidence": 0.95
+   },
+   {
+    "src": "宽檐帽先生",
+    "relation": "请求",
+    "dst": "牙仙",
+    "evidence": "你愿意向伦敦的肺结核病人伸出援手吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "煤炭肺结核",
+    "relation": "泛滥",
+    "dst": "伦敦",
+    "evidence": "患有“煤炭肺结核”的病人像野兔一样泛滥成灾",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

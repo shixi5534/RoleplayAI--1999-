@@ -4,287 +4,769 @@
   "standard": "rag_testset_300.json（证据组并集子串覆盖）+ 负样本零注入",
   "character": "wu_ming_zhe",
   "argv": [
-   "scripts\\eval_plot_rag.py",
+   "scripts/eval_plot_rag.py",
    "--quiet",
+   "--check-targets",
    "--baseline",
-   "data\\knowledge\\_audit\\plot_rag_eval_report_baseline.json",
-   "--check-targets"
+   "data/knowledge/_audit/plot_rag_eval_report_p0_1.json",
+   "--tolerance",
+   "0.02",
+   "--out",
+   "data/knowledge/_audit/plot_rag_eval_report.json"
   ],
-  "top": 3,
+  "top": 6,
   "lexical_fallback": 2,
   "sample": 0,
   "seed": 7,
   "limit": 0,
   "config": {
    "plot_alias_authoritative": true,
+   "plot_alias_trust_chained_min_df": 3,
+   "plot_alias_trust_ratio": 0.25,
    "plot_cache_dir": "./data/knowledge/plot_cache",
-   "plot_context_max_chars": 1000,
+   "plot_chapter_max_names": 2,
+   "plot_chapter_routing": true,
+   "plot_chapter_top": 3,
+   "plot_context_max_chars": 2400,
    "plot_cooccurrence_bonus": true,
    "plot_corpus_dir": "./data/knowledge",
    "plot_diversity_per_doc": 1,
    "plot_edge_min_confidence": 0.6,
+   "plot_embed_model": "bge-m3",
+   "plot_entity_query_max_len": 14,
    "plot_extract_concurrency": 4,
    "plot_extract_max_tokens": 800,
    "plot_extract_timeout": 60.0,
    "plot_filter_generic_seeds": true,
    "plot_fuse_k": 3,
    "plot_graph_dir": "./data/knowledge",
-   "plot_graph_enabled": false,
+   "plot_graph_enabled": true,
    "plot_include_weak": true,
+   "plot_lexical_always": false,
    "plot_lexical_fallback": 2,
    "plot_lexical_topup": false,
    "plot_link_threshold": 0.5,
    "plot_lore_dir": "./data/lore",
-   "plot_max_chunks": 3,
+   "plot_max_chunks": 6,
    "plot_max_edges": 10,
    "plot_max_hops": 2,
    "plot_mention_cache_size": 512,
    "plot_mention_group_by_entity": true,
+   "plot_mention_per_entity": 5,
    "plot_mention_scoring": "count",
+   "plot_mention_total_cap": 10,
+   "plot_name_salience": false,
    "plot_ppr_damping": 0.85,
+   "plot_ppr_max_iter": 20,
+   "plot_ppr_node_specificity": false,
    "plot_require_anchored_token_seeds": true,
+   "plot_semantic_enabled": true,
+   "plot_semantic_langs": "",
+   "plot_semantic_link_min": 0.0,
+   "plot_semantic_link_top": 3,
+   "plot_semantic_min_score": 0.0,
+   "plot_semantic_rerank_enabled": false,
+   "plot_semantic_rerank_min": 0.5,
+   "plot_semantic_rerank_top": 10,
+   "plot_semantic_top": 5,
+   "plot_semantic_zh_enabled": false,
+   "plot_trace_enabled": false,
+   "plot_untrusted_extra_per_entity": 1,
+   "plot_weak_exempt_sources": "manual",
+   "plot_weight_chapter": 1.0,
    "plot_weight_edge": 1.0,
    "plot_weight_lexical": 0.6,
-   "plot_weight_mention": 1.0
+   "plot_weight_mention": 1.0,
+   "plot_weight_mention_entity": 1.0,
+   "plot_weight_semantic": 1.0
   },
   "assets_sha256_head16": {
-   "plot_graph": "324e5fe6d58af19c",
-   "plot_corpus": "c0e35a96ba10ad9b",
+   "plot_graph": "a5f14f5cb831f25d",
+   "plot_corpus": "7eab3ef671d19070",
    "testset": "2acbe40494d0c0b1"
   },
-  "started_at": "2026-09-12 21:31:36",
-  "elapsed_s": 67.4
+  "started_at": "2026-09-13 22:20:01",
+  "elapsed_s": 191.6
  },
  "summary": {
   "cases": 300,
-  "ceiling_cases": 273,
-  "strict_pass": 0.46,
-  "strict_pass_n": 138,
-  "ceiling_pass": 0.5055,
-  "chunk_precision": 0.3382,
-  "answer_chunk_rate": 0.2264,
-  "mrr": 0.3264,
-  "recall": 0.3028,
-  "avg_returned_chunks": 4.59,
-  "latency_p50_ms": 248.5,
-  "latency_p90_ms": 279.6,
-  "latency_p95_ms": 293.6,
-  "latency_max_ms": 878.4,
+  "ceiling_cases": 279,
+  "strict_pass": 0.6367,
+  "strict_pass_n": 191,
+  "ceiling_pass": 0.6667,
+  "chunk_precision": 0.3283,
+  "answer_chunk_rate": 0.221,
+  "mrr": 0.3864,
+  "recall": 0.2999,
+  "avg_returned_chunks": 7.74,
+  "latency_p50_ms": 641.1,
+  "latency_p90_ms": 680.8,
+  "latency_p95_ms": 691.2,
+  "latency_max_ms": 3521.6,
   "path_counts": {
-   "edge": 787,
-   "mention": 581,
-   "lexical": 10
+   "mention": 731,
+   "edge": 857,
+   "semantic": 636,
+   "chapter": 97
   },
-  "empty_rate": 0.04
+  "empty_rate": 0.01,
+  "inject_pass": 0.5833,
+  "inject_pass_n": 175,
+  "injected_chars_avg": 2469.6
  },
  "by_dims": {
   "type": {
    "factoid": {
     "cases": 200,
-    "strict_pass": 0.54,
-    "chunk_precision": 0.4152,
-    "latency_p50_ms": 247.0
+    "strict_pass": 0.7,
+    "chunk_precision": 0.3878,
+    "latency_p50_ms": 645.5
    },
    "multi-hop": {
     "cases": 60,
-    "strict_pass": 0.3167,
-    "chunk_precision": 0.1463,
-    "latency_p50_ms": 248.5
+    "strict_pass": 0.4833,
+    "chunk_precision": 0.1628,
+    "latency_p50_ms": 640.7
    },
    "reasoning": {
     "cases": 30,
-    "strict_pass": 0.2333,
-    "chunk_precision": 0.2971,
-    "latency_p50_ms": 258.2
+    "strict_pass": 0.5,
+    "chunk_precision": 0.3018,
+    "latency_p50_ms": 633.0
    },
    "temporal": {
     "cases": 10,
-    "strict_pass": 0.4,
-    "chunk_precision": 0.1333,
-    "latency_p50_ms": 245.6
+    "strict_pass": 0.7,
+    "chunk_precision": 0.2329,
+    "latency_p50_ms": 628.3
    }
   },
   "difficulty": {
    "easy": {
     "cases": 150,
-    "strict_pass": 0.62,
-    "chunk_precision": 0.3819,
-    "latency_p50_ms": 245.0
+    "strict_pass": 0.7933,
+    "chunk_precision": 0.3472,
+    "latency_p50_ms": 641.2
    },
    "hard": {
     "cases": 50,
-    "strict_pass": 0.28,
-    "chunk_precision": 0.4826,
-    "latency_p50_ms": 256.7
+    "strict_pass": 0.46,
+    "chunk_precision": 0.4883,
+    "latency_p50_ms": 633.3
    },
    "medium": {
     "cases": 100,
-    "strict_pass": 0.31,
-    "chunk_precision": 0.2063,
-    "latency_p50_ms": 250.4
+    "strict_pass": 0.49,
+    "chunk_precision": 0.2215,
+    "latency_p50_ms": 642.9
    }
   },
   "depth": {
    "deep": {
     "cases": 50,
-    "strict_pass": 0.28,
-    "chunk_precision": 0.4826,
-    "latency_p50_ms": 256.7
+    "strict_pass": 0.46,
+    "chunk_precision": 0.4883,
+    "latency_p50_ms": 633.3
    },
    "medium": {
     "cases": 80,
-    "strict_pass": 0.2875,
-    "chunk_precision": 0.2263,
-    "latency_p50_ms": 250.4
+    "strict_pass": 0.4625,
+    "chunk_precision": 0.2417,
+    "latency_p50_ms": 645.3
    },
    "shallow": {
     "cases": 170,
-    "strict_pass": 0.5941,
-    "chunk_precision": 0.3503,
-    "latency_p50_ms": 245.7
+    "strict_pass": 0.7706,
+    "chunk_precision": 0.3229,
+    "latency_p50_ms": 640.2
    }
   },
   "hop": {
    "multi": {
     "cases": 100,
-    "strict_pass": 0.31,
-    "chunk_precision": 0.2912,
-    "latency_p50_ms": 250.4
+    "strict_pass": 0.47,
+    "chunk_precision": 0.2985,
+    "latency_p50_ms": 640.7
    },
    "single": {
     "cases": 200,
-    "strict_pass": 0.535,
-    "chunk_precision": 0.3622,
-    "latency_p50_ms": 246.9
+    "strict_pass": 0.72,
+    "chunk_precision": 0.3435,
+    "latency_p50_ms": 641.8
    }
   },
   "chapter": {
    "1.4": {
     "cases": 20,
-    "strict_pass": 0.2,
-    "chunk_precision": 0.1236,
-    "latency_p50_ms": 251.6
+    "strict_pass": 0.35,
+    "chunk_precision": 0.1533,
+    "latency_p50_ms": 630.3
    },
    "1.7": {
     "cases": 20,
-    "strict_pass": 0.4,
-    "chunk_precision": 0.5368,
-    "latency_p50_ms": 262.9
+    "strict_pass": 0.55,
+    "chunk_precision": 0.5613,
+    "latency_p50_ms": 615.1
    },
    "1.9": {
     "cases": 20,
-    "strict_pass": 0.35,
-    "chunk_precision": 0.36,
-    "latency_p50_ms": 259.6
+    "strict_pass": 0.45,
+    "chunk_precision": 0.4188,
+    "latency_p50_ms": 654.4
    },
    "1971": {
     "cases": 20,
-    "strict_pass": 0.25,
-    "chunk_precision": 0.3667,
-    "latency_p50_ms": 248.3
+    "strict_pass": 0.4,
+    "chunk_precision": 0.3425,
+    "latency_p50_ms": 657.6
    },
    "其他": {
     "cases": 220,
-    "strict_pass": 0.5182,
-    "chunk_precision": 0.3337,
-    "latency_p50_ms": 245.9
+    "strict_pass": 0.7091,
+    "chunk_precision": 0.3129,
+    "latency_p50_ms": 641.8
    }
   },
   "text_len": {
    "long": {
     "cases": 80,
-    "strict_pass": 0.3375,
-    "chunk_precision": 0.2737,
-    "latency_p50_ms": 251.8
+    "strict_pass": 0.55,
+    "chunk_precision": 0.2724,
+    "latency_p50_ms": 652.6
    },
    "medium": {
     "cases": 120,
-    "strict_pass": 0.4417,
-    "chunk_precision": 0.3188,
-    "latency_p50_ms": 248.3
+    "strict_pass": 0.6417,
+    "chunk_precision": 0.3033,
+    "latency_p50_ms": 635.7
    },
    "short": {
     "cases": 100,
-    "strict_pass": 0.58,
-    "chunk_precision": 0.4165,
-    "latency_p50_ms": 246.2
+    "strict_pass": 0.7,
+    "chunk_precision": 0.4045,
+    "latency_p50_ms": 636.4
    }
   }
  },
  "negatives": {
-  "cases": 10,
-  "negative_injection_total": 0,
-  "negative_clean": true,
+  "cases": 53,
+  "negative_injection_total": 37,
+  "negative_clean": false,
+  "violations": [
+   "哈利波特是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "known_residual": [
+   "哈利波特是谁",
+   "苹果公司的 CEO 是谁",
+   "巴黎在哪个国家",
+   "泰坦尼克号是哪一年沉没的",
+   "who is the president of the united states"
+  ],
+  "new_leaks": [],
+  "clear": true,
+  "by_category": {
+   "泛词实体": {
+    "cases": 10,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "闲聊": {
+    "cases": 8,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "工具型": {
+    "cases": 9,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "生活服务": {
+    "cases": 7,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "元问题": {
+    "cases": 5,
+    "injected": 0,
+    "cases_with_injection": 0
+   },
+   "跨域专名": {
+    "cases": 6,
+    "injected": 29,
+    "cases_with_injection": 4
+   },
+   "英文闲聊": {
+    "cases": 4,
+    "injected": 8,
+    "cases_with_injection": 1
+   },
+   "退化输入": {
+    "cases": 4,
+    "injected": 0,
+    "cases_with_injection": 0
+   }
+  },
+  "elapsed_s": 27.1,
   "rows": [
    {
     "q": "今天天气怎么样",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 3.46
+    "latency_ms": 506.64
    },
    {
-    "q": "帮我写一首关于春天的诗",
+    "q": "明天的天气预报是什么",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 2.98
+    "latency_ms": 498.83
    },
    {
-    "q": "1+1 等于几",
+    "q": "最近经济形势如何",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 8.18
+    "latency_ms": 524.38
    },
    {
-    "q": "推荐几家附近的餐厅",
+    "q": "股市今天涨了吗",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 9.89
+    "latency_ms": 493.05
    },
    {
-    "q": "你怎么看最近的经济形势",
+    "q": "给我讲个故事",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 3.69
+    "latency_ms": 517.31
    },
    {
-    "q": "给我讲个笑话",
+    "q": "这个故事讲了什么",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 9.89
+    "latency_ms": 547.42
    },
    {
-    "q": "明天几点开会",
+    "q": "时间是什么",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 9.73
+    "latency_ms": 509.7
    },
    {
-    "q": "这个软件怎么安装",
+    "q": "介绍几个历史事件",
+    "category": "泛词实体",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 10.7
+    "latency_ms": 505.53
+   },
+   {
+    "q": "什么是哲学",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 514.37
+   },
+   {
+    "q": "解释一下相对论",
+    "category": "泛词实体",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 490.49
    },
    {
     "q": "你好呀，在吗",
+    "category": "闲聊",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 9.42
+    "latency_ms": 521.36
+   },
+   {
+    "q": "在干嘛呢",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 492.84
+   },
+   {
+    "q": "陪我聊聊天吧",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 519.72
+   },
+   {
+    "q": "我今天心情不太好",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 467.6
+   },
+   {
+    "q": "你觉得我这个人怎么样",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 495.65
+   },
+   {
+    "q": "晚安，早点休息",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 493.33
+   },
+   {
+    "q": "谢谢你",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 489.72
+   },
+   {
+    "q": "哈哈哈",
+    "category": "闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 472.58
+   },
+   {
+    "q": "1+1 等于几",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 509.49
+   },
+   {
+    "q": "123 乘以 456 是多少",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 508.3
    },
    {
     "q": "用 Python 写一个快速排序",
+    "category": "工具型",
     "injected": 0,
     "paths": {},
     "samples": [],
-    "latency_ms": 9.45
+    "latency_ms": 522.85
+   },
+   {
+    "q": "帮我写一个 SQL 查询",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 487.69
+   },
+   {
+    "q": "帮我把这段话翻译成英文",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 525.64
+   },
+   {
+    "q": "帮我写一首关于春天的诗",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 501.0
+   },
+   {
+    "q": "总结一下这篇文章的要点",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 609.17
+   },
+   {
+    "q": "正则表达式怎么匹配邮箱",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 469.64
+   },
+   {
+    "q": "Excel 怎么做透视表",
+    "category": "工具型",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 464.53
+   },
+   {
+    "q": "推荐几家附近的餐厅",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 456.0
+   },
+   {
+    "q": "明天几点开会",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 482.65
+   },
+   {
+    "q": "这个软件怎么安装",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 464.37
+   },
+   {
+    "q": "帮我订一张去北京的机票",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 474.91
+   },
+   {
+    "q": "附近有充电桩吗",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 484.54
+   },
+   {
+    "q": "快递什么时候到",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 493.79
+   },
+   {
+    "q": "外卖有什么优惠",
+    "category": "生活服务",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 502.25
+   },
+   {
+    "q": "你是谁",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 487.76
+   },
+   {
+    "q": "你是什么模型",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 506.13
+   },
+   {
+    "q": "你和 ChatGPT 有什么区别",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 527.04
+   },
+   {
+    "q": "你有意识吗",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 523.76
+   },
+   {
+    "q": "你能帮我做什么",
+    "category": "元问题",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 516.46
+   },
+   {
+    "q": "哈利波特是谁",
+    "category": "跨域专名",
+    "injected": 7,
+    "paths": {
+     "mention": 2,
+     "semantic": 5
+    },
+    "samples": [
+     "Those who invited this chaos did not comprehend that the fla",
+     "If one Horipedia's not enough,we have one more creative Miss"
+    ],
+    "latency_ms": 524.51
+   },
+   {
+    "q": "红楼梦的作者是谁",
+    "category": "跨域专名",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 517.24
+   },
+   {
+    "q": "复仇者联盟有几部电影",
+    "category": "跨域专名",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 505.74
+   },
+   {
+    "q": "苹果公司的 CEO 是谁",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 1,
+     "mention": 3,
+     "semantic": 4
+    },
+    "samples": [
+     "But please watch over her, Miss Furtin.Her rockstar spirit m",
+     "在这个舞台上，没有报酬，但有义务。\n预备出演\n“好演员指南”\n章节一 混沌粒子与混沌场域综述\n章节二 惠更斯-菲涅尔原理"
+    ],
+    "latency_ms": 636.25
+   },
+   {
+    "q": "巴黎在哪个国家",
+    "category": "跨域专名",
+    "injected": 8,
+    "paths": {
+     "edge": 3,
+     "mention": 3,
+     "semantic": 2
+    },
+    "samples": [
+     "You can throw yourself into evil, or create a new one yourse",
+     "Democratic, independent, chosen by her peopleand shaped by t"
+    ],
+    "latency_ms": 609.8
+   },
+   {
+    "q": "泰坦尼克号是哪一年沉没的",
+    "category": "跨域专名",
+    "injected": 6,
+    "paths": {
+     "mention": 1,
+     "semantic": 5
+    },
+    "samples": [
+     "In situations like these, those who blindly follow orders of",
+     "The world didn't end that night.It only rained, but almost e"
+    ],
+    "latency_ms": 526.19
+   },
+   {
+    "q": "what is the weather like today",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 533.2
+   },
+   {
+    "q": "tell me a joke",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 519.93
+   },
+   {
+    "q": "how do i install this software",
+    "category": "英文闲聊",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 526.89
+   },
+   {
+    "q": "who is the president of the united states",
+    "category": "英文闲聊",
+    "injected": 8,
+    "paths": {
+     "edge": 6,
+     "mention": 2
+    },
+    "samples": [
+     "In the meantime, we will continue to deploy field agents to ",
+     "It is either one of the parties wins over two thirdsof suppo"
+    ],
+    "latency_ms": 645.88
+   },
+   {
+    "q": "。。。",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 510.86
+   },
+   {
+    "q": "？？？",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 458.62
+   },
+   {
+    "q": "asdfghjkl",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 516.97
+   },
+   {
+    "q": "1234567890",
+    "category": "退化输入",
+    "injected": 0,
+    "paths": {},
+    "samples": [],
+    "latency_ms": 465.57
    }
   ]
  },
@@ -303,17 +785,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2562,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.2,
+   "mrr": 1.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 878.38
+   "latency_ms": 3521.57
   },
   {
    "id": "R002",
@@ -332,17 +818,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2636,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 2,
+    "edge": 4
    },
-   "latency_ms": 333.03
+   "latency_ms": 747.99
   },
   {
    "id": "R003",
@@ -356,22 +849,27 @@
     "text_len": "short"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2379,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 2,
     "edge": 3,
-    "mention": 2
+    "semantic": 3
    },
-   "latency_ms": 249.02
+   "latency_ms": 721.49
   },
   {
    "id": "R004",
@@ -387,17 +885,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2548,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.2,
+   "mrr": 1.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 223.71
+   "latency_ms": 638.1
   },
   {
    "id": "R005",
@@ -415,17 +917,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2623,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 211.96
+   "latency_ms": 641.17
   },
   {
    "id": "R006",
@@ -443,17 +951,24 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2376,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "edge": 3,
     "mention": 2,
-    "edge": 3
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 352.73
+   "latency_ms": 679.58
   },
   {
    "id": "R007",
@@ -469,16 +984,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2591,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 1,
+    "semantic": 5,
+    "chapter": 2
    },
-   "latency_ms": 14.03
+   "latency_ms": 550.55
   },
   {
    "id": "R008",
@@ -497,16 +1017,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2467,
    "ceiling": true,
-   "n_chunks": 3,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 10.86
+   "latency_ms": 472.23
   },
   {
    "id": "R009",
@@ -524,17 +1052,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2470,
    "ceiling": false,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 279.58
+   "latency_ms": 652.76
   },
   {
    "id": "R010",
@@ -550,17 +1084,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2686,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 245.78
+   "latency_ms": 562.82
   },
   {
    "id": "R011",
@@ -574,22 +1112,28 @@
     "text_len": "long"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
+    1
+   ],
+   "inject_pass": false,
+   "inject_missing": [
     0,
     1
    ],
+   "injected_chars": 2368,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 258.0
+   "latency_ms": 591.65
   },
   {
    "id": "R012",
@@ -602,23 +1146,24 @@
     "chapter": "1.4",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/2",
-   "missing_groups": [
-    0,
-    1
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2498,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 263.1
+   "latency_ms": 626.84
   },
   {
    "id": "R013",
@@ -636,17 +1181,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2708,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 3,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 252.04
+   "latency_ms": 633.84
   },
   {
    "id": "R014",
@@ -664,17 +1215,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2538,
    "ceiling": false,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 277.17
+   "latency_ms": 654.63
   },
   {
    "id": "R015",
@@ -692,17 +1249,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 1802,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 2,
     "edge": 3,
-    "mention": 2
+    "semantic": 3
    },
-   "latency_ms": 261.08
+   "latency_ms": 623.62
   },
   {
    "id": "R016",
@@ -720,17 +1283,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2478,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "edge": 4,
+    "chapter": 1
    },
-   "latency_ms": 283.65
+   "latency_ms": 693.45
   },
   {
    "id": "R017",
@@ -743,22 +1312,23 @@
     "chapter": "1.4",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/2",
-   "missing_groups": [
-    0,
-    1
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2537,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
+   "n_chunks": 6,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "mention": 3
+    "mention": 1,
+    "semantic": 5
    },
-   "latency_ms": 15.2
+   "latency_ms": 466.57
   },
   {
    "id": "R018",
@@ -776,6 +1346,11 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 0,
    "ceiling": true,
    "n_chunks": 0,
    "n_relevant": 0,
@@ -783,7 +1358,7 @@
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {},
-   "latency_ms": 102.98
+   "latency_ms": 549.99
   },
   {
    "id": "R019",
@@ -801,17 +1376,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2277,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "mention": 4,
+    "semantic": 3
    },
-   "latency_ms": 236.26
+   "latency_ms": 599.19
   },
   {
    "id": "R020",
@@ -824,22 +1405,24 @@
     "chapter": "1.4",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2740,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 251.17
+   "latency_ms": 545.03
   },
   {
    "id": "R021",
@@ -855,17 +1438,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2550,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
    "mrr": 0.3333,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
    },
-   "latency_ms": 297.02
+   "latency_ms": 639.67
   },
   {
    "id": "R022",
@@ -883,17 +1470,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2754,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 280.63
+   "latency_ms": 617.51
   },
   {
    "id": "R023",
@@ -909,17 +1500,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2867,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 1,
-   "recall": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 254.81
+   "latency_ms": 612.71
   },
   {
    "id": "R024",
@@ -935,17 +1530,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2702,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.25,
+   "mrr": 1.0,
    "paths": {
+    "semantic": 2,
     "edge": 3,
-    "mention": 2
+    "mention": 3
    },
-   "latency_ms": 386.62
+   "latency_ms": 767.9
   },
   {
    "id": "R025",
@@ -961,17 +1560,22 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2459,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
+   "n_chunks": 8,
+   "n_relevant": 5,
    "n_full_match": 1,
-   "recall": 0.3333,
+   "recall": 0.2,
    "mrr": 0.5,
    "paths": {
     "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 266.19
+   "latency_ms": 603.96
   },
   {
    "id": "R026",
@@ -989,17 +1593,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2723,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 265.3
+   "latency_ms": 585.21
   },
   {
    "id": "R027",
@@ -1018,17 +1628,23 @@
     0,
     1
    ],
-   "ceiling": false,
-   "n_chunks": 5,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2733,
+   "ceiling": true,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
    },
-   "latency_ms": 260.42
+   "latency_ms": 604.21
   },
   {
    "id": "R028",
@@ -1046,17 +1662,24 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2768,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "chapter": 1,
+    "semantic": 1
    },
-   "latency_ms": 257.17
+   "latency_ms": 578.65
   },
   {
    "id": "R029",
@@ -1074,14 +1697,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 1565,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 3,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 14.06
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 464.27
   },
   {
    "id": "R030",
@@ -1095,22 +1725,27 @@
     "text_len": "short"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2029,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 271.14
+   "latency_ms": 571.16
   },
   {
    "id": "R031",
@@ -1123,22 +1758,24 @@
     "chapter": "1.7",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2550,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 4,
+    "semantic": 2
    },
-   "latency_ms": 245.04
+   "latency_ms": 624.09
   },
   {
    "id": "R032",
@@ -1156,17 +1793,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2748,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 238.7
+   "latency_ms": 607.41
   },
   {
    "id": "R033",
@@ -1182,17 +1825,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2797,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 1,
-   "recall": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "semantic": 2,
+    "mention": 3
    },
-   "latency_ms": 277.51
+   "latency_ms": 634.63
   },
   {
    "id": "R034",
@@ -1208,17 +1855,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2697,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 2,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 4,
    "recall": 0.6667,
-   "mrr": 0.25,
+   "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
    },
-   "latency_ms": 282.72
+   "latency_ms": 648.71
   },
   {
    "id": "R035",
@@ -1236,17 +1887,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2812,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 282.39
+   "latency_ms": 611.96
   },
   {
    "id": "R036",
@@ -1264,17 +1921,23 @@
    "missing_groups": [
     1
    ],
-   "ceiling": false,
-   "n_chunks": 5,
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2811,
+   "ceiling": true,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 264.37
+   "latency_ms": 652.1
   },
   {
    "id": "R037",
@@ -1290,17 +1953,23 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2717,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 261.41
+   "latency_ms": 668.99
   },
   {
    "id": "R038",
@@ -1316,17 +1985,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2609,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
    "paths": {
+    "semantic": 3,
     "edge": 3,
     "mention": 2
    },
-   "latency_ms": 224.58
+   "latency_ms": 609.44
   },
   {
    "id": "R039",
@@ -1339,22 +2012,24 @@
     "chapter": "1.7",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2702,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
+    "semantic": 2,
     "edge": 3,
-    "mention": 2
+    "mention": 3
    },
-   "latency_ms": 249.97
+   "latency_ms": 665.11
   },
   {
    "id": "R040",
@@ -1367,22 +2042,26 @@
     "chapter": "1.7",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2550,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1667,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 249.2
+   "latency_ms": 665.82
   },
   {
    "id": "R041",
@@ -1401,17 +2080,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2573,
    "ceiling": false,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 256.25
+   "latency_ms": 691.22
   },
   {
    "id": "R042",
@@ -1424,22 +2110,24 @@
     "chapter": "1.9",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2698,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 256.83
+   "latency_ms": 668.85
   },
   {
    "id": "R043",
@@ -1455,19 +2143,26 @@
    "strict_pass": false,
    "covered": "1/2",
    "missing_groups": [
-    1
+    0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2494,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 1,
+    "chapter": 1
    },
-   "latency_ms": 249.63
+   "latency_ms": 695.34
   },
   {
    "id": "R044",
@@ -1485,17 +2180,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2653,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 257.78
+   "latency_ms": 624.6
   },
   {
    "id": "R045",
@@ -1509,22 +2210,28 @@
     "text_len": "medium"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
+    1
+   ],
+   "inject_pass": false,
+   "inject_missing": [
     0,
     1
    ],
+   "injected_chars": 2480,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 268.91
+   "latency_ms": 684.67
   },
   {
    "id": "R046",
@@ -1540,17 +2247,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2442,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 239.06
+   "latency_ms": 667.37
   },
   {
    "id": "R047",
@@ -1566,17 +2277,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2486,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 255.95
+   "latency_ms": 672.05
   },
   {
    "id": "R048",
@@ -1592,17 +2307,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2367,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 278.49
+   "latency_ms": 659.38
   },
   {
    "id": "R049",
@@ -1618,17 +2337,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2351,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 5,
+    "mention": 2,
+    "semantic": 1
    },
-   "latency_ms": 259.54
+   "latency_ms": 661.57
   },
   {
    "id": "R050",
@@ -1644,17 +2367,23 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2616,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
+   "n_chunks": 8,
+   "n_relevant": 7,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.2,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 260.16
+   "latency_ms": 649.41
   },
   {
    "id": "R051",
@@ -1670,17 +2399,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2618,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 6,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.2,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "mention": 4,
+    "edge": 3,
+    "semantic": 1
    },
-   "latency_ms": 266.69
+   "latency_ms": 665.7
   },
   {
    "id": "R052",
@@ -1698,17 +2431,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2538,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 261.21
+   "latency_ms": 678.88
   },
   {
    "id": "R053",
@@ -1726,17 +2465,23 @@
    "missing_groups": [
     0
    ],
-   "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2484,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 291.21
+   "latency_ms": 638.43
   },
   {
    "id": "R054",
@@ -1749,22 +2494,24 @@
     "chapter": "1.9",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2645,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 253.31
+   "latency_ms": 610.97
   },
   {
    "id": "R055",
@@ -1778,22 +2525,27 @@
     "text_len": "medium"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2450,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 4,
+    "semantic": 3,
     "mention": 1
    },
-   "latency_ms": 259.69
+   "latency_ms": 581.98
   },
   {
    "id": "R056",
@@ -1809,16 +2561,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2803,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
-    "edge": 5
+    "edge": 3,
+    "mention": 2,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 286.17
+   "latency_ms": 616.04
   },
   {
    "id": "R057",
@@ -1832,22 +2590,27 @@
     "text_len": "long"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
-    1
+    0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2588,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 251.68
+   "latency_ms": 622.25
   },
   {
    "id": "R058",
@@ -1866,17 +2629,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2704,
    "ceiling": false,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 259.91
+   "latency_ms": 569.03
   },
   {
    "id": "R059",
@@ -1895,17 +2665,24 @@
     0,
     1
    ],
-   "ceiling": false,
-   "n_chunks": 5,
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2680,
+   "ceiling": true,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 269.28
+   "latency_ms": 622.56
   },
   {
    "id": "R060",
@@ -1919,22 +2696,27 @@
     "text_len": "short"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
-    1
+    0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2611,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 241.89
+   "latency_ms": 626.59
   },
   {
    "id": "R061",
@@ -1948,22 +2730,28 @@
     "text_len": "short"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2677,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 256.56
+   "latency_ms": 631.89
   },
   {
    "id": "R062",
@@ -1981,17 +2769,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2583,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 4,
+   "n_chunks": 8,
+   "n_relevant": 5,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 245.99
+   "latency_ms": 662.81
   },
   {
    "id": "R063",
@@ -2010,14 +2804,22 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 634,
    "ceiling": false,
-   "n_chunks": 0,
+   "n_chunks": 1,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 10.27
+   "paths": {
+    "chapter": 1
+   },
+   "latency_ms": 522.48
   },
   {
    "id": "R064",
@@ -2033,17 +2835,22 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1998,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
+   "n_chunks": 8,
+   "n_relevant": 3,
    "n_full_match": 1,
-   "recall": 0.3333,
+   "recall": 0.2,
    "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 1,
+    "mention": 3,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 245.34
+   "latency_ms": 662.16
   },
   {
    "id": "R065",
@@ -2059,17 +2866,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2599,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 0.5,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "semantic": 2,
+    "edge": 2,
+    "mention": 4
    },
-   "latency_ms": 249.42
+   "latency_ms": 657.6
   },
   {
    "id": "R066",
@@ -2085,17 +2896,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2458,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 2,
+   "recall": 1.0,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "semantic": 3,
+    "edge": 2,
+    "mention": 3
    },
-   "latency_ms": 257.09
+   "latency_ms": 622.14
   },
   {
    "id": "R067",
@@ -2113,17 +2928,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2663,
    "ceiling": false,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "semantic": 4,
+    "mention": 1
    },
-   "latency_ms": 335.93
+   "latency_ms": 663.77
   },
   {
    "id": "R068",
@@ -2137,22 +2958,27 @@
     "text_len": "medium"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
-    1
+    0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2761,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 1,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 280.09
+   "latency_ms": 662.78
   },
   {
    "id": "R069",
@@ -2166,22 +2992,28 @@
     "text_len": "medium"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
+    0
+   ],
+   "inject_pass": false,
+   "inject_missing": [
     0,
     1
    ],
+   "injected_chars": 2638,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "semantic": 5,
     "edge": 1,
-    "mention": 4
+    "mention": 2
    },
-   "latency_ms": 229.65
+   "latency_ms": 608.72
   },
   {
    "id": "R070",
@@ -2194,22 +3026,25 @@
     "chapter": "1971",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    1
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2620,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 243.33
+   "latency_ms": 661.18
   },
   {
    "id": "R071",
@@ -2227,17 +3062,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2463,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "semantic": 4,
     "edge": 2,
-    "mention": 3
+    "mention": 2
    },
-   "latency_ms": 247.11
+   "latency_ms": 668.44
   },
   {
    "id": "R072",
@@ -2255,17 +3096,22 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2583,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 5,
+    "edge": 3
    },
-   "latency_ms": 258.6
+   "latency_ms": 653.37
   },
   {
    "id": "R073",
@@ -2281,17 +3127,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2463,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "semantic": 5,
+    "edge": 1,
+    "mention": 2
    },
-   "latency_ms": 246.36
+   "latency_ms": 657.56
   },
   {
    "id": "R074",
@@ -2309,17 +3159,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2476,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 251.87
+   "latency_ms": 676.42
   },
   {
    "id": "R075",
@@ -2332,22 +3188,26 @@
     "chapter": "1971",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     1
    ],
+   "injected_chars": 2490,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 3,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 5,
+    "edge": 1,
+    "semantic": 2
    },
-   "latency_ms": 257.79
+   "latency_ms": 652.32
   },
   {
    "id": "R076",
@@ -2365,17 +3225,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2712,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "mention": 2,
+    "semantic": 4,
+    "chapter": 1
    },
-   "latency_ms": 252.2
+   "latency_ms": 640.89
   },
   {
    "id": "R077",
@@ -2393,17 +3260,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2758,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 236.42
+   "latency_ms": 645.36
   },
   {
    "id": "R078",
@@ -2416,22 +3290,24 @@
     "chapter": "1971",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2764,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.25,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 240.41
+   "latency_ms": 663.7
   },
   {
    "id": "R079",
@@ -2447,17 +3323,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2615,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 249.42
+   "latency_ms": 679.04
   },
   {
    "id": "R080",
@@ -2476,14 +3356,22 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 634,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 1,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 3.53
+   "paths": {
+    "chapter": 1
+   },
+   "latency_ms": 529.0
   },
   {
    "id": "R081",
@@ -2499,17 +3387,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2243,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
+   "n_chunks": 8,
+   "n_relevant": 5,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 1.0,
+   "recall": 0.1667,
+   "mrr": 0.5,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "edge": 3,
+    "semantic": 3
    },
-   "latency_ms": 300.19
+   "latency_ms": 735.37
   },
   {
    "id": "R082",
@@ -2525,17 +3417,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2636,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 1,
+    "edge": 5,
+    "semantic": 2
    },
-   "latency_ms": 274.63
+   "latency_ms": 689.58
   },
   {
    "id": "R083",
@@ -2551,16 +3447,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2733,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "edge": 5
+    "edge": 3,
+    "semantic": 4,
+    "mention": 1
    },
-   "latency_ms": 266.51
+   "latency_ms": 681.44
   },
   {
    "id": "R084",
@@ -2576,17 +3477,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2435,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.3333,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "mention": 4,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 114.62
+   "latency_ms": 592.52
   },
   {
    "id": "R085",
@@ -2599,21 +3505,23 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    1
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2713,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 4
    },
-   "latency_ms": 20.35
+   "latency_ms": 537.46
   },
   {
    "id": "R086",
@@ -2629,17 +3537,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2684,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.3333,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 284.55
+   "latency_ms": 631.39
   },
   {
    "id": "R087",
@@ -2655,17 +3567,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2746,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 234.9
+   "latency_ms": 676.74
   },
   {
    "id": "R088",
@@ -2681,17 +3597,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2441,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
    "paths": {
+    "mention": 3,
     "edge": 4,
-    "mention": 1
+    "semantic": 1
    },
-   "latency_ms": 237.72
+   "latency_ms": 659.46
   },
   {
    "id": "R089",
@@ -2704,21 +3624,25 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "2/3",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "3/3",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     2
    ],
+   "injected_chars": 2672,
    "ceiling": false,
-   "n_chunks": 3,
-   "n_relevant": 1,
+   "n_chunks": 7,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "mention": 3
+    "mention": 5,
+    "semantic": 2
    },
-   "latency_ms": 19.07
+   "latency_ms": 487.84
   },
   {
    "id": "R090",
@@ -2734,16 +3658,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2426,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 2,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 1,
    "recall": 1.0,
-   "mrr": 0.3333,
+   "mrr": 0.2,
    "paths": {
-    "mention": 3
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 14.9
+   "latency_ms": 654.63
   },
   {
    "id": "R091",
@@ -2756,22 +3685,25 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2430,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
+    "mention": 3,
     "edge": 1,
-    "mention": 4
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 97.91
+   "latency_ms": 541.59
   },
   {
    "id": "R092",
@@ -2784,19 +3716,22 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2351,
    "ceiling": true,
-   "n_chunks": 0,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 4.81
+   "n_chunks": 3,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 520.16
   },
   {
    "id": "R093",
@@ -2809,21 +3744,23 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2668,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "semantic": 5
    },
-   "latency_ms": 15.43
+   "latency_ms": 508.89
   },
   {
    "id": "R094",
@@ -2839,16 +3776,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2499,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.3333,
+   "mrr": 0.5,
    "paths": {
-    "mention": 3
+    "mention": 5,
+    "semantic": 3
    },
-   "latency_ms": 14.78
+   "latency_ms": 543.69
   },
   {
    "id": "R095",
@@ -2866,14 +3807,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2601,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 3,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 10.6
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 481.67
   },
   {
    "id": "R096",
@@ -2889,16 +3837,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2746,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "chapter": 3,
+    "semantic": 2
    },
-   "latency_ms": 18.98
+   "latency_ms": 475.74
   },
   {
    "id": "R097",
@@ -2911,22 +3864,25 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2374,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
-    "edge": 2,
+    "edge": 1,
+    "semantic": 4,
+    "chapter": 2,
     "mention": 1
    },
-   "latency_ms": 217.57
+   "latency_ms": 566.32
   },
   {
    "id": "R098",
@@ -2942,17 +3898,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2460,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.2,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "edge": 1,
+    "semantic": 3
    },
-   "latency_ms": 286.05
+   "latency_ms": 628.96
   },
   {
    "id": "R099",
@@ -2968,17 +3928,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2443,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.3333,
+   "recall": 0.1667,
+   "mrr": 0.1667,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "semantic": 2,
+    "edge": 2
    },
-   "latency_ms": 260.52
+   "latency_ms": 591.88
   },
   {
    "id": "R100",
@@ -2996,17 +3962,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2460,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 5,
     "edge": 2,
-    "mention": 3
+    "semantic": 1
    },
-   "latency_ms": 244.3
+   "latency_ms": 583.21
   },
   {
    "id": "R101",
@@ -3019,22 +3991,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2390,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "edge": 1,
+    "semantic": 3
    },
-   "latency_ms": 239.82
+   "latency_ms": 608.27
   },
   {
    "id": "R102",
@@ -3047,22 +4021,26 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2460,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.5,
+   "mrr": 0.25,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "edge": 1,
+    "semantic": 4
    },
-   "latency_ms": 308.26
+   "latency_ms": 588.44
   },
   {
    "id": "R103",
@@ -3075,22 +4053,26 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2460,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "edge": 1,
+    "semantic": 3
    },
-   "latency_ms": 227.57
+   "latency_ms": 627.77
   },
   {
    "id": "R104",
@@ -3108,17 +4090,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 1871,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "mention": 3,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 251.08
+   "latency_ms": 661.53
   },
   {
    "id": "R105",
@@ -3134,17 +4123,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1544,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
     "mention": 2,
-    "edge": 3
+    "edge": 2,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 244.98
+   "latency_ms": 641.2
   },
   {
    "id": "R106",
@@ -3160,17 +4154,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2393,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
+   "recall": 1.0,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 4,
+    "edge": 4
    },
-   "latency_ms": 255.88
+   "latency_ms": 651.73
   },
   {
    "id": "R107",
@@ -3186,17 +4183,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1666,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "semantic": 2,
+    "chapter": 1,
+    "mention": 1
    },
-   "latency_ms": 243.53
+   "latency_ms": 670.04
   },
   {
    "id": "R108",
@@ -3212,17 +4214,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2406,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 233.56
+   "latency_ms": 656.82
   },
   {
    "id": "R109",
@@ -3238,17 +4244,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2706,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 5,
+    "chapter": 1,
+    "semantic": 2
    },
-   "latency_ms": 253.19
+   "latency_ms": 651.87
   },
   {
    "id": "R110",
@@ -3264,17 +4274,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2504,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 0.5,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
    },
-   "latency_ms": 256.65
+   "latency_ms": 705.17
   },
   {
    "id": "R111",
@@ -3287,22 +4301,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2745,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 232.15
+   "latency_ms": 633.1
   },
   {
    "id": "R112",
@@ -3315,21 +4331,23 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2392,
    "ceiling": true,
-   "n_chunks": 2,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "lexical": 2
+    "semantic": 5,
+    "chapter": 3
    },
-   "latency_ms": 17.06
+   "latency_ms": 538.76
   },
   {
    "id": "R113",
@@ -3342,22 +4360,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2759,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 245.95
+   "latency_ms": 652.56
   },
   {
    "id": "R114",
@@ -3373,17 +4393,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2421,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "semantic": 2
    },
-   "latency_ms": 234.59
+   "latency_ms": 656.73
   },
   {
    "id": "R115",
@@ -3399,17 +4423,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2420,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "edge": 1,
-    "mention": 4
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 119.24
+   "latency_ms": 668.54
   },
   {
    "id": "R116",
@@ -3427,17 +4455,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2368,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 238.91
+   "latency_ms": 648.8
   },
   {
    "id": "R117",
@@ -3453,16 +4487,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2672,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.6,
    "mrr": 0.5,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 4
    },
-   "latency_ms": 13.69
+   "latency_ms": 537.47
   },
   {
    "id": "R118",
@@ -3478,16 +4516,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2511,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "semantic": 4,
+    "chapter": 1
    },
-   "latency_ms": 14.58
+   "latency_ms": 558.21
   },
   {
    "id": "R119",
@@ -3503,17 +4546,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2363,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 273.05
+   "latency_ms": 677.27
   },
   {
    "id": "R120",
@@ -3529,17 +4577,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2736,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "semantic": 4,
+    "chapter": 1,
+    "mention": 2
    },
-   "latency_ms": 107.18
+   "latency_ms": 568.84
   },
   {
    "id": "R121",
@@ -3552,22 +4605,27 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2562,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.2,
+   "mrr": 0.1429,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 249.67
+   "latency_ms": 621.12
   },
   {
    "id": "R122",
@@ -3583,17 +4641,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2448,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 280.4
+   "latency_ms": 605.05
   },
   {
    "id": "R123",
@@ -3609,17 +4671,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2420,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 0.3333,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "mention": 1,
+    "semantic": 2
    },
-   "latency_ms": 246.03
+   "latency_ms": 583.29
   },
   {
    "id": "R124",
@@ -3637,17 +4703,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2448,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "mention": 2,
+    "semantic": 1
    },
-   "latency_ms": 247.49
+   "latency_ms": 601.81
   },
   {
    "id": "R125",
@@ -3663,17 +4733,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2377,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "semantic": 3,
+    "edge": 5
    },
-   "latency_ms": 242.45
+   "latency_ms": 613.68
   },
   {
    "id": "R126",
@@ -3691,17 +4764,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2492,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "mention": 2,
+    "semantic": 1
    },
-   "latency_ms": 246.77
+   "latency_ms": 591.31
   },
   {
    "id": "R127",
@@ -3719,17 +4798,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2650,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 252.94
+   "latency_ms": 631.9
   },
   {
    "id": "R128",
@@ -3742,21 +4827,25 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 1474,
    "ceiling": true,
-   "n_chunks": 2,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.25,
    "paths": {
-    "lexical": 2
+    "mention": 3,
+    "semantic": 5
    },
-   "latency_ms": 24.02
+   "latency_ms": 499.41
   },
   {
    "id": "R129",
@@ -3769,22 +4858,26 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2439,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 242.12
+   "latency_ms": 657.32
   },
   {
    "id": "R130",
@@ -3800,16 +4893,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2719,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 3,
-   "n_full_match": 3,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 4
    },
-   "latency_ms": 17.95
+   "latency_ms": 542.99
   },
   {
    "id": "R131",
@@ -3822,21 +4919,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2680,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "semantic": 4,
+    "chapter": 1
    },
-   "latency_ms": 14.44
+   "latency_ms": 501.83
   },
   {
    "id": "R132",
@@ -3849,21 +4949,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2351,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 2,
+    "chapter": 2
    },
-   "latency_ms": 14.09
+   "latency_ms": 537.92
   },
   {
    "id": "R133",
@@ -3879,17 +4982,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2608,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
+    "semantic": 4,
+    "edge": 2,
     "mention": 2
    },
-   "latency_ms": 236.9
+   "latency_ms": 632.83
   },
   {
    "id": "R134",
@@ -3907,17 +5014,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2676,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "semantic": 2
    },
-   "latency_ms": 278.72
+   "latency_ms": 606.26
   },
   {
    "id": "R135",
@@ -3935,14 +5048,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2107,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 3,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 5.83
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 461.1
   },
   {
    "id": "R136",
@@ -3958,17 +5078,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2940,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
+    "edge": 5,
+    "semantic": 1,
+    "chapter": 1,
     "mention": 1
    },
-   "latency_ms": 247.53
+   "latency_ms": 611.18
   },
   {
    "id": "R137",
@@ -3984,17 +5109,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2763,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "semantic": 2,
+    "mention": 2
    },
-   "latency_ms": 252.83
+   "latency_ms": 601.38
   },
   {
    "id": "R138",
@@ -4010,17 +5139,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2755,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 5,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.8333,
+   "mrr": 0.5,
    "paths": {
+    "semantic": 3,
     "edge": 3,
     "mention": 2
    },
-   "latency_ms": 257.8
+   "latency_ms": 552.59
   },
   {
    "id": "R139",
@@ -4033,19 +5166,22 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1614,
    "ceiling": true,
-   "n_chunks": 0,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 3.48
+   "n_chunks": 3,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.5,
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 434.71
   },
   {
    "id": "R140",
@@ -4061,17 +5197,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2189,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.3333,
+   "mrr": 0.5,
    "paths": {
     "edge": 4,
+    "semantic": 2,
+    "chapter": 1,
     "mention": 1
    },
-   "latency_ms": 256.28
+   "latency_ms": 528.38
   },
   {
    "id": "R141",
@@ -4087,17 +5228,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2436,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 233.0
+   "latency_ms": 623.46
   },
   {
    "id": "R142",
@@ -4110,22 +5255,25 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1647,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "chapter": 1,
+    "mention": 1,
+    "semantic": 2
    },
-   "latency_ms": 240.87
+   "latency_ms": 627.3
   },
   {
    "id": "R143",
@@ -4141,17 +5289,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2748,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "recall": 0.1667,
+   "mrr": 0.1667,
    "paths": {
+    "semantic": 3,
     "edge": 4,
     "mention": 1
    },
-   "latency_ms": 233.38
+   "latency_ms": 686.32
   },
   {
    "id": "R144",
@@ -4169,17 +5323,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2135,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 1,
     "edge": 4,
-    "mention": 1
+    "chapter": 1,
+    "semantic": 2
    },
-   "latency_ms": 245.68
+   "latency_ms": 649.78
   },
   {
    "id": "R145",
@@ -4192,22 +5353,26 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2193,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "chapter": 1,
+    "semantic": 2
    },
-   "latency_ms": 247.18
+   "latency_ms": 642.3
   },
   {
    "id": "R146",
@@ -4223,17 +5388,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2761,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
    "recall": 0.6667,
-   "mrr": 0.5,
+   "mrr": 1.0,
    "paths": {
+    "mention": 1,
     "edge": 4,
-    "mention": 1
+    "chapter": 1,
+    "semantic": 2
    },
-   "latency_ms": 233.41
+   "latency_ms": 682.54
   },
   {
    "id": "R147",
@@ -4249,17 +5419,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2348,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 5,
-   "recall": 1.0,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 251.16
+   "latency_ms": 671.23
   },
   {
    "id": "R148",
@@ -4275,17 +5449,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2404,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 5,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.8333,
+   "mrr": 0.3333,
    "paths": {
+    "semantic": 3,
     "edge": 4,
     "mention": 1
    },
-   "latency_ms": 283.08
+   "latency_ms": 623.59
   },
   {
    "id": "R149",
@@ -4301,17 +5479,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2552,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "semantic": 1,
+    "edge": 4,
+    "mention": 3
    },
-   "latency_ms": 256.75
+   "latency_ms": 655.32
   },
   {
    "id": "R150",
@@ -4327,17 +5509,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2673,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 2,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 267.7
+   "latency_ms": 658.29
   },
   {
    "id": "R151",
@@ -4350,22 +5537,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2731,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 1,
+    "semantic": 2,
+    "edge": 5
    },
-   "latency_ms": 258.92
+   "latency_ms": 632.7
   },
   {
    "id": "R152",
@@ -4381,17 +5570,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2329,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
-   "mrr": 0.5,
+   "mrr": 0.3333,
    "paths": {
+    "semantic": 2,
     "edge": 2,
-    "mention": 3
+    "mention": 4
    },
-   "latency_ms": 331.34
+   "latency_ms": 670.56
   },
   {
    "id": "R153",
@@ -4409,16 +5602,20 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2666,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "semantic": 3,
     "edge": 5
    },
-   "latency_ms": 330.1
+   "latency_ms": 636.15
   },
   {
    "id": "R154",
@@ -4434,16 +5631,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2624,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
-    "edge": 5
+    "edge": 4,
+    "semantic": 2,
+    "chapter": 1,
+    "mention": 1
    },
-   "latency_ms": 250.5
+   "latency_ms": 635.18
   },
   {
    "id": "R155",
@@ -4461,17 +5664,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2783,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 239.21
+   "latency_ms": 656.91
   },
   {
    "id": "R156",
@@ -4484,21 +5693,23 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2483,
    "ceiling": true,
-   "n_chunks": 2,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 7,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
    "paths": {
-    "lexical": 2
+    "mention": 2,
+    "semantic": 5
    },
-   "latency_ms": 15.15
+   "latency_ms": 537.14
   },
   {
    "id": "R157",
@@ -4514,17 +5725,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2304,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 262.47
+   "latency_ms": 652.67
   },
   {
    "id": "R158",
@@ -4540,17 +5755,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2512,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
     "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "semantic": 2
    },
-   "latency_ms": 274.22
+   "latency_ms": 640.7
   },
   {
    "id": "R159",
@@ -4568,14 +5787,19 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2192,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 3,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 3.69
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 509.32
   },
   {
    "id": "R160",
@@ -4591,17 +5815,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2765,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 5
    },
-   "latency_ms": 223.52
+   "latency_ms": 625.01
   },
   {
    "id": "R161",
@@ -4614,22 +5841,25 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2182,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "semantic": 3,
+    "edge": 2,
+    "mention": 2,
+    "chapter": 1
    },
-   "latency_ms": 256.22
+   "latency_ms": 579.43
   },
   {
    "id": "R162",
@@ -4645,17 +5875,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2168,
    "ceiling": true,
-   "n_chunks": 4,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 0.5,
    "paths": {
     "edge": 1,
-    "mention": 3
+    "mention": 2,
+    "semantic": 3,
+    "chapter": 2
    },
-   "latency_ms": 216.67
+   "latency_ms": 587.06
   },
   {
    "id": "R163",
@@ -4668,21 +5903,24 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2638,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "semantic": 3,
+    "mention": 4,
+    "chapter": 1
    },
-   "latency_ms": 14.98
+   "latency_ms": 473.46
   },
   {
    "id": "R164",
@@ -4698,17 +5936,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2423,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.25,
+   "mrr": 0.3333,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "semantic": 2,
+    "chapter": 1,
+    "mention": 2
    },
-   "latency_ms": 243.03
+   "latency_ms": 583.31
   },
   {
    "id": "R165",
@@ -4721,22 +5964,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2565,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "semantic": 3,
+    "chapter": 2
    },
-   "latency_ms": 248.15
+   "latency_ms": 611.49
   },
   {
    "id": "R166",
@@ -4752,17 +5997,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2825,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.25,
+   "mrr": 0.5,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "semantic": 1,
+    "chapter": 3,
+    "mention": 1
    },
-   "latency_ms": 242.19
+   "latency_ms": 572.23
   },
   {
    "id": "R167",
@@ -4780,17 +6030,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2499,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
+    "edge": 2,
+    "semantic": 2,
+    "chapter": 2,
     "mention": 2
    },
-   "latency_ms": 262.71
+   "latency_ms": 601.7
   },
   {
    "id": "R168",
@@ -4806,17 +6063,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2484,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 1.0,
+   "recall": 0.3333,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 1,
+    "chapter": 1
    },
-   "latency_ms": 243.21
+   "latency_ms": 594.85
   },
   {
    "id": "R169",
@@ -4832,17 +6094,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2745,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 3,
+    "semantic": 3,
+    "chapter": 2
    },
-   "latency_ms": 239.74
+   "latency_ms": 645.41
   },
   {
    "id": "R170",
@@ -4860,17 +6126,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2454,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "chapter": 1,
+    "semantic": 1
    },
-   "latency_ms": 241.33
+   "latency_ms": 682.2
   },
   {
    "id": "R171",
@@ -4888,14 +6161,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2158,
    "ceiling": true,
-   "n_chunks": 0,
+   "n_chunks": 3,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
-   "paths": {},
-   "latency_ms": 11.86
+   "paths": {
+    "chapter": 3
+   },
+   "latency_ms": 520.98
   },
   {
    "id": "R172",
@@ -4911,17 +6191,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2722,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 5,
-   "recall": 1.0,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 1,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 271.63
+   "latency_ms": 680.81
   },
   {
    "id": "R173",
@@ -4937,17 +6222,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2692,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "chapter": 1,
+    "semantic": 1
    },
-   "latency_ms": 241.46
+   "latency_ms": 647.96
   },
   {
    "id": "R174",
@@ -4963,17 +6253,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2612,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "semantic": 1,
+    "chapter": 1,
+    "mention": 3
    },
-   "latency_ms": 226.53
+   "latency_ms": 630.69
   },
   {
    "id": "R175",
@@ -4989,17 +6284,24 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2744,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.25,
+   "recall": 0.1667,
+   "mrr": 0.1667,
    "paths": {
     "edge": 4,
+    "semantic": 2,
+    "chapter": 1,
     "mention": 1
    },
-   "latency_ms": 269.36
+   "latency_ms": 704.56
   },
   {
    "id": "R176",
@@ -5015,17 +6317,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2769,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 261.82
+   "latency_ms": 657.65
   },
   {
    "id": "R177",
@@ -5038,22 +6344,23 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2513,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 5
    },
-   "latency_ms": 283.47
+   "latency_ms": 680.64
   },
   {
    "id": "R178",
@@ -5069,17 +6376,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2337,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 267.42
+   "latency_ms": 650.86
   },
   {
    "id": "R179",
@@ -5097,17 +6408,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2364,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 278.63
+   "latency_ms": 679.41
   },
   {
    "id": "R180",
@@ -5125,17 +6442,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2420,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 249.53
+   "latency_ms": 636.86
   },
   {
    "id": "R181",
@@ -5153,17 +6476,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2434,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 266.06
+   "latency_ms": 691.79
   },
   {
    "id": "R182",
@@ -5181,17 +6510,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2622,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 256.7
+   "latency_ms": 676.02
   },
   {
    "id": "R183",
@@ -5209,17 +6544,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2330,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
+   "n_chunks": 8,
+   "n_relevant": 5,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 235.57
+   "latency_ms": 623.31
   },
   {
    "id": "R184",
@@ -5237,17 +6578,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2748,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
+   "n_chunks": 8,
+   "n_relevant": 6,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 242.53
+   "latency_ms": 679.21
   },
   {
    "id": "R185",
@@ -5265,17 +6612,23 @@
    "missing_groups": [
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2663,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 240.08
+   "latency_ms": 670.32
   },
   {
    "id": "R186",
@@ -5291,17 +6644,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2493,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
+   "recall": 1.0,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 259.33
+   "latency_ms": 631.25
   },
   {
    "id": "R187",
@@ -5317,17 +6674,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2450,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
+    "edge": 4,
     "mention": 2,
-    "edge": 3
+    "semantic": 2
    },
-   "latency_ms": 262.34
+   "latency_ms": 665.62
   },
   {
    "id": "R188",
@@ -5343,17 +6704,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2717,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 250.51
+   "latency_ms": 653.24
   },
   {
    "id": "R189",
@@ -5371,17 +6736,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2691,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 245.09
+   "latency_ms": 644.8
   },
   {
    "id": "R190",
@@ -5397,16 +6768,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2069,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "edge": 5
+    "mention": 1,
+    "semantic": 3,
+    "edge": 4
    },
-   "latency_ms": 246.96
+   "latency_ms": 652.1
   },
   {
    "id": "R191",
@@ -5422,17 +6798,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2690,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 248.79
+   "latency_ms": 671.43
   },
   {
    "id": "R192",
@@ -5450,6 +6830,11 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 0,
    "ceiling": true,
    "n_chunks": 0,
    "n_relevant": 0,
@@ -5457,7 +6842,7 @@
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {},
-   "latency_ms": 9.74
+   "latency_ms": 508.61
   },
   {
    "id": "R193",
@@ -5473,17 +6858,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2658,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.3333,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 239.96
+   "latency_ms": 666.66
   },
   {
    "id": "R194",
@@ -5499,17 +6888,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2698,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 1.0,
+   "recall": 0.1667,
+   "mrr": 0.3333,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 237.82
+   "latency_ms": 670.66
   },
   {
    "id": "R195",
@@ -5525,16 +6918,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2741,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
-    "edge": 5
+    "edge": 3,
+    "semantic": 3,
+    "mention": 2
    },
-   "latency_ms": 240.38
+   "latency_ms": 662.13
   },
   {
    "id": "R196",
@@ -5550,17 +6948,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1781,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 250.0
+   "latency_ms": 658.75
   },
   {
    "id": "R197",
@@ -5576,17 +6978,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2363,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
+   "mrr": 1.0,
    "paths": {
+    "mention": 5,
     "edge": 1,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 97.27
+   "latency_ms": 517.38
   },
   {
    "id": "R198",
@@ -5599,21 +7005,23 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2430,
    "ceiling": true,
-   "n_chunks": 2,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 7,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 1.0,
    "paths": {
-    "lexical": 2
+    "mention": 2,
+    "semantic": 5
    },
-   "latency_ms": 14.34
+   "latency_ms": 533.06
   },
   {
    "id": "R199",
@@ -5629,17 +7037,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2564,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 246.07
+   "latency_ms": 664.31
   },
   {
    "id": "R200",
@@ -5655,17 +7067,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2464,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 7,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "mention": 3
    },
-   "latency_ms": 238.16
+   "latency_ms": 678.34
   },
   {
    "id": "R201",
@@ -5681,17 +7096,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2340,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 5,
+   "n_chunks": 8,
+   "n_relevant": 8,
+   "n_full_match": 8,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 5,
+    "mention": 2,
+    "semantic": 1
    },
-   "latency_ms": 259.95
+   "latency_ms": 655.99
   },
   {
    "id": "R202",
@@ -5707,17 +7126,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2438,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 236.03
+   "latency_ms": 628.55
   },
   {
    "id": "R203",
@@ -5730,20 +7153,28 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": true,
-   "covered": "2/2",
-   "missing_groups": [],
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    0
+   ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2557,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 3,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
    "paths": {
+    "mention": 5,
     "edge": 1,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 102.91
+   "latency_ms": 569.63
   },
   {
    "id": "R204",
@@ -5761,17 +7192,23 @@
    "missing_groups": [
     0
    ],
-   "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 2,
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2760,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 3,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 269.38
+   "latency_ms": 667.54
   },
   {
    "id": "R205",
@@ -5784,22 +7221,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2348,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 1,
+   "n_chunks": 8,
+   "n_relevant": 4,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "edge": 3,
+    "semantic": 2
    },
-   "latency_ms": 260.98
+   "latency_ms": 646.01
   },
   {
    "id": "R206",
@@ -5812,22 +7251,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    1
-   ],
-   "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2409,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "semantic": 2,
+    "mention": 3,
+    "edge": 3
    },
-   "latency_ms": 238.51
+   "latency_ms": 662.0
   },
   {
    "id": "R207",
@@ -5843,17 +7284,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2416,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.5,
+   "recall": 0.3333,
+   "mrr": 0.2,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 227.11
+   "latency_ms": 658.05
   },
   {
    "id": "R208",
@@ -5869,17 +7316,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2486,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 254.85
+   "latency_ms": 638.53
   },
   {
    "id": "R209",
@@ -5895,17 +7346,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2241,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 301.14
+   "latency_ms": 723.06
   },
   {
    "id": "R210",
@@ -5921,17 +7376,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2561,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 6,
    "recall": 1.0,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 253.68
+   "latency_ms": 683.57
   },
   {
    "id": "R211",
@@ -5947,17 +7406,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2690,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 4,
-   "recall": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 5,
+   "n_full_match": 5,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 230.75
+   "latency_ms": 615.65
   },
   {
    "id": "R212",
@@ -5975,17 +7438,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2397,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "mention": 2,
-    "edge": 3
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 249.84
+   "latency_ms": 673.42
   },
   {
    "id": "R213",
@@ -5998,22 +7467,25 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2409,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 4,
+    "edge": 4
    },
-   "latency_ms": 262.75
+   "latency_ms": 674.42
   },
   {
    "id": "R214",
@@ -6029,17 +7501,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1921,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.6667,
+   "mrr": 0.5,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 253.95
+   "latency_ms": 649.64
   },
   {
    "id": "R215",
@@ -6055,17 +7531,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2442,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
+   "recall": 0.6667,
+   "mrr": 0.3333,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 234.51
+   "latency_ms": 666.51
   },
   {
    "id": "R216",
@@ -6081,17 +7561,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2658,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 1.0,
+   "recall": 0.3333,
+   "mrr": 0.3333,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 239.98
+   "latency_ms": 645.66
   },
   {
    "id": "R217",
@@ -6107,17 +7591,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2699,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 4,
    "n_full_match": 4,
-   "recall": 1.0,
+   "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 244.51
+   "latency_ms": 646.99
   },
   {
    "id": "R218",
@@ -6133,17 +7621,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2566,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 5,
    "n_full_match": 5,
-   "recall": 1.0,
+   "recall": 0.8333,
    "mrr": 1.0,
    "paths": {
+    "mention": 2,
     "edge": 3,
-    "mention": 2
+    "semantic": 3
    },
-   "latency_ms": 235.68
+   "latency_ms": 653.82
   },
   {
    "id": "R219",
@@ -6161,16 +7653,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2209,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 5
+    "mention": 1,
+    "edge": 4,
+    "semantic": 3
    },
-   "latency_ms": 236.49
+   "latency_ms": 692.29
   },
   {
    "id": "R220",
@@ -6186,17 +7685,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2609,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 270.01
+   "latency_ms": 654.49
   },
   {
    "id": "R221",
@@ -6212,17 +7715,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2500,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 1.0,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 241.17
+   "latency_ms": 659.97
   },
   {
    "id": "R222",
@@ -6238,17 +7745,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2712,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 254.12
+   "latency_ms": 680.79
   },
   {
    "id": "R223",
@@ -6264,17 +7775,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2448,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.3333,
+   "recall": 0.3333,
+   "mrr": 0.25,
    "paths": {
+    "mention": 2,
     "edge": 3,
-    "mention": 2
+    "semantic": 3
    },
-   "latency_ms": 233.15
+   "latency_ms": 634.46
   },
   {
    "id": "R224",
@@ -6290,17 +7805,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2496,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "semantic": 2
    },
-   "latency_ms": 243.22
+   "latency_ms": 681.05
   },
   {
    "id": "R225",
@@ -6318,17 +7837,22 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2475,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 6,
+    "semantic": 2
    },
-   "latency_ms": 238.5
+   "latency_ms": 671.17
   },
   {
    "id": "R226",
@@ -6346,17 +7870,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2564,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 247.45
+   "latency_ms": 652.55
   },
   {
    "id": "R227",
@@ -6372,17 +7902,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2450,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 1.0,
+   "mrr": 0.3333,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 249.81
+   "latency_ms": 653.91
   },
   {
    "id": "R228",
@@ -6396,22 +7930,27 @@
     "text_len": "short"
    },
    "strict_pass": false,
-   "covered": "0/2",
+   "covered": "1/2",
    "missing_groups": [
-    0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    1
+   ],
+   "injected_chars": 2288,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
+   "n_chunks": 8,
+   "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 229.78
+   "latency_ms": 625.01
   },
   {
    "id": "R229",
@@ -6427,17 +7966,20 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2585,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 1,
-   "recall": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 2,
+   "recall": 1.0,
    "mrr": 1.0,
    "paths": {
-    "mention": 4,
-    "edge": 1
+    "mention": 7,
+    "semantic": 1
    },
-   "latency_ms": 114.82
+   "latency_ms": 573.45
   },
   {
    "id": "R230",
@@ -6453,17 +7995,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 1649,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_full_match": 1,
+   "recall": 1.0,
+   "mrr": 0.3333,
    "paths": {
     "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 265.03
+   "latency_ms": 681.23
   },
   {
    "id": "R231",
@@ -6481,17 +8027,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2574,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 2,
+    "chapter": 1
    },
-   "latency_ms": 246.39
+   "latency_ms": 669.96
   },
   {
    "id": "R232",
@@ -6509,16 +8062,22 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2466,
    "ceiling": true,
-   "n_chunks": 2,
+   "n_chunks": 7,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "lexical": 2
+    "mention": 2,
+    "semantic": 5
    },
-   "latency_ms": 16.56
+   "latency_ms": 549.79
   },
   {
    "id": "R233",
@@ -6534,17 +8093,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2753,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 239.29
+   "latency_ms": 670.65
   },
   {
    "id": "R234",
@@ -6562,17 +8127,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2631,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 248.52
+   "latency_ms": 610.73
   },
   {
    "id": "R235",
@@ -6590,17 +8161,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2562,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 237.14
+   "latency_ms": 652.65
   },
   {
    "id": "R236",
@@ -6618,17 +8195,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2595,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 4,
-    "mention": 1
+    "semantic": 1
    },
-   "latency_ms": 242.8
+   "latency_ms": 690.73
   },
   {
    "id": "R237",
@@ -6644,17 +8227,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2048,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
+   "n_chunks": 8,
+   "n_relevant": 4,
+   "n_full_match": 4,
    "recall": 0.6667,
    "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 238.46
+   "latency_ms": 657.29
   },
   {
    "id": "R238",
@@ -6672,17 +8259,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2386,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 256.04
+   "latency_ms": 652.89
   },
   {
    "id": "R239",
@@ -6700,17 +8293,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2414,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 248.54
+   "latency_ms": 679.99
   },
   {
    "id": "R240",
@@ -6728,17 +8327,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2717,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 3,
+    "semantic": 1
    },
-   "latency_ms": 250.84
+   "latency_ms": 640.33
   },
   {
    "id": "R241",
@@ -6754,17 +8359,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2648,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
+   "recall": 0.1667,
    "mrr": 1.0,
    "paths": {
-    "mention": 2,
+    "mention": 3,
+    "semantic": 2,
     "edge": 3
    },
-   "latency_ms": 266.65
+   "latency_ms": 670.21
   },
   {
    "id": "R242",
@@ -6780,17 +8389,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2558,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 246.39
+   "latency_ms": 645.18
   },
   {
    "id": "R243",
@@ -6808,17 +8421,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2686,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 257.74
+   "latency_ms": 664.2
   },
   {
    "id": "R244",
@@ -6834,17 +8453,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2423,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 1.0,
+   "mrr": 0.25,
    "paths": {
     "mention": 2,
-    "edge": 3
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 261.38
+   "latency_ms": 640.43
   },
   {
    "id": "R245",
@@ -6860,17 +8485,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2621,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 277.96
+   "latency_ms": 638.12
   },
   {
    "id": "R246",
@@ -6888,17 +8517,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2451,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 245.92
+   "latency_ms": 622.84
   },
   {
    "id": "R247",
@@ -6911,22 +8546,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2831,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 363.23
+   "latency_ms": 599.87
   },
   {
    "id": "R248",
@@ -6939,22 +8576,24 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2693,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 234.93
+   "latency_ms": 557.25
   },
   {
    "id": "R249",
@@ -6967,22 +8606,24 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2329,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 1.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 231.89
+   "latency_ms": 599.87
   },
   {
    "id": "R250",
@@ -6998,17 +8639,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2683,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
+   "recall": 0.1667,
    "mrr": 0.25,
    "paths": {
     "edge": 2,
-    "mention": 3
+    "semantic": 3,
+    "chapter": 2,
+    "mention": 1
    },
-   "latency_ms": 266.69
+   "latency_ms": 623.34
   },
   {
    "id": "R251",
@@ -7026,17 +8672,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2444,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 2,
-    "mention": 3
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 248.17
+   "latency_ms": 620.77
   },
   {
    "id": "R252",
@@ -7054,17 +8706,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2676,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "semantic": 2
    },
-   "latency_ms": 247.59
+   "latency_ms": 616.69
   },
   {
    "id": "R253",
@@ -7082,17 +8740,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2550,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 4,
+    "edge": 2,
+    "semantic": 2
    },
-   "latency_ms": 240.7
+   "latency_ms": 609.71
   },
   {
    "id": "R254",
@@ -7108,17 +8770,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2426,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.2,
    "paths": {
-    "edge": 1,
-    "mention": 4
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 101.24
+   "latency_ms": 641.06
   },
   {
    "id": "R255",
@@ -7131,22 +8799,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2676,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 257.27
+   "latency_ms": 643.24
   },
   {
    "id": "R256",
@@ -7159,22 +8829,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2719,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.3333,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 258.41
+   "latency_ms": 636.48
   },
   {
    "id": "R257",
@@ -7192,47 +8864,27 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2756,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 244.86
+   "latency_ms": 657.23
   },
   {
    "id": "R258",
    "q": "在雷米特杯失窃案里协助警方寻回失窃奖杯、因此声名大噪的侦探狗叫什么名字？",
-   "dims": {
-    "type": "multi-hop",
-    "difficulty": "medium",
-    "depth": "medium",
-    "hop": "multi",
-    "chapter": "其他",
-    "text_len": "long"
-   },
-   "strict_pass": true,
-   "covered": "1/1",
-   "missing_groups": [],
-   "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
-   "mrr": 0.5,
-   "paths": {
-    "edge": 1,
-    "mention": 4
-   },
-   "latency_ms": 110.18
-  },
-  {
-   "id": "R259",
-   "q": "在迁流的盛宴篇的巴黎社交季里，出身塔维尼耶家族的年轻女士是谁？",
    "dims": {
     "type": "multi-hop",
     "difficulty": "medium",
@@ -7246,16 +8898,54 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2618,
    "ceiling": true,
-   "n_chunks": 3,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "mention": 3
+    "semantic": 4,
+    "mention": 3,
+    "edge": 1
    },
-   "latency_ms": 14.59
+   "latency_ms": 598.28
+  },
+  {
+   "id": "R259",
+   "q": "在迁流的盛宴篇的巴黎社交季里，出身塔维尼耶家族的年轻女士是谁？",
+   "dims": {
+    "type": "multi-hop",
+    "difficulty": "medium",
+    "depth": "medium",
+    "hop": "multi",
+    "chapter": "其他",
+    "text_len": "long"
+   },
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2341,
+   "ceiling": true,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
+   "paths": {
+    "semantic": 4,
+    "mention": 4
+   },
+   "latency_ms": 516.58
   },
   {
    "id": "R260",
@@ -7271,17 +8961,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2861,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.2,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.25,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "chapter": 1,
+    "semantic": 1
    },
-   "latency_ms": 234.43
+   "latency_ms": 642.58
   },
   {
    "id": "R261",
@@ -7299,17 +8994,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2543,
    "ceiling": true,
-   "n_chunks": 3,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 1,
-    "mention": 2
+    "mention": 4,
+    "semantic": 3
    },
-   "latency_ms": 110.3
+   "latency_ms": 544.75
   },
   {
    "id": "R262",
@@ -7327,17 +9028,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2449,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "edge": 5,
+    "semantic": 1
    },
-   "latency_ms": 215.38
+   "latency_ms": 655.28
   },
   {
    "id": "R263",
@@ -7350,21 +9057,26 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     0
    ],
+   "injected_chars": 2604,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.1429,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "semantic": 4,
+    "chapter": 1
    },
-   "latency_ms": 13.93
+   "latency_ms": 529.57
   },
   {
    "id": "R264",
@@ -7380,17 +9092,23 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2453,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 1,
    "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.3333,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 235.08
+   "latency_ms": 667.24
   },
   {
    "id": "R265",
@@ -7408,17 +9126,24 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2335,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 3,
+    "mention": 1,
+    "semantic": 3,
+    "chapter": 1
    },
-   "latency_ms": 249.14
+   "latency_ms": 656.79
   },
   {
    "id": "R266",
@@ -7434,16 +9159,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2406,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
-    "mention": 3
+    "mention": 3,
+    "semantic": 5
    },
-   "latency_ms": 15.73
+   "latency_ms": 523.77
   },
   {
    "id": "R267",
@@ -7461,17 +9190,21 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2359,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "mention": 1,
-    "edge": 4
+    "edge": 3,
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 268.29
+   "latency_ms": 658.64
   },
   {
    "id": "R268",
@@ -7487,17 +9220,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2628,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 3,
    "n_full_match": 3,
-   "recall": 1.0,
-   "mrr": 1.0,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 1,
+    "chapter": 1
    },
-   "latency_ms": 265.42
+   "latency_ms": 667.69
   },
   {
    "id": "R269",
@@ -7513,17 +9251,22 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2602,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.25,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 0.5,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "semantic": 3,
+    "chapter": 1,
+    "mention": 1
    },
-   "latency_ms": 257.68
+   "latency_ms": 678.11
   },
   {
    "id": "R270",
@@ -7539,16 +9282,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2379,
    "ceiling": true,
-   "n_chunks": 3,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "mention": 3
+    "mention": 4,
+    "semantic": 4
    },
-   "latency_ms": 15.14
+   "latency_ms": 535.97
   },
   {
    "id": "R271",
@@ -7566,17 +9313,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2499,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 247.68
+   "latency_ms": 652.67
   },
   {
    "id": "R272",
@@ -7594,17 +9347,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2200,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 4,
+    "semantic": 2,
+    "edge": 2
    },
-   "latency_ms": 270.1
+   "latency_ms": 654.62
   },
   {
    "id": "R273",
@@ -7623,17 +9382,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2710,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 259.14
+   "latency_ms": 667.86
   },
   {
    "id": "R274",
@@ -7646,22 +9412,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2185,
    "ceiling": false,
-   "n_chunks": 5,
-   "n_relevant": 5,
+   "n_chunks": 8,
+   "n_relevant": 7,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 2,
+    "mention": 3,
+    "semantic": 3
    },
-   "latency_ms": 258.78
+   "latency_ms": 650.49
   },
   {
    "id": "R275",
@@ -7680,6 +9448,12 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 0,
    "ceiling": true,
    "n_chunks": 0,
    "n_relevant": 0,
@@ -7687,7 +9461,7 @@
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {},
-   "latency_ms": 11.64
+   "latency_ms": 523.49
   },
   {
    "id": "R276",
@@ -7700,20 +9474,26 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": true,
-   "covered": "2/2",
-   "missing_groups": [],
+   "strict_pass": false,
+   "covered": "1/2",
+   "missing_groups": [
+    1
+   ],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2636,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
    "paths": {
-    "edge": 3,
+    "edge": 4,
+    "semantic": 2,
     "mention": 2
    },
-   "latency_ms": 292.02
+   "latency_ms": 682.5
   },
   {
    "id": "R277",
@@ -7726,21 +9506,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2803,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 0.1429,
    "paths": {
-    "edge": 5
+    "edge": 5,
+    "mention": 2,
+    "semantic": 1
    },
-   "latency_ms": 242.84
+   "latency_ms": 640.9
   },
   {
    "id": "R278",
@@ -7758,17 +9541,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2268,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 275.56
+   "latency_ms": 697.1
   },
   {
    "id": "R279",
@@ -7784,17 +9573,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2454,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
    "mrr": 0.5,
    "paths": {
-    "mention": 3,
-    "edge": 2
+    "mention": 4,
+    "edge": 4
    },
-   "latency_ms": 282.46
+   "latency_ms": 646.25
   },
   {
    "id": "R280",
@@ -7812,17 +9604,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2391,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 264.54
+   "latency_ms": 647.0
   },
   {
    "id": "R281",
@@ -7838,17 +9636,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2515,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 5,
-   "n_full_match": 1,
-   "recall": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 4,
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 254.61
+   "latency_ms": 668.36
   },
   {
    "id": "R282",
@@ -7866,17 +9668,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2504,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
+    "semantic": 3,
     "mention": 2
    },
-   "latency_ms": 257.96
+   "latency_ms": 686.23
   },
   {
    "id": "R283",
@@ -7889,22 +9697,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2704,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 261.33
+   "latency_ms": 666.86
   },
   {
    "id": "R284",
@@ -7917,22 +9727,26 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": false,
+   "inject_missing": [
     1
    ],
+   "injected_chars": 2423,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.125,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 371.89
+   "latency_ms": 771.43
   },
   {
    "id": "R285",
@@ -7948,17 +9762,21 @@
    "strict_pass": true,
    "covered": "2/2",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2398,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 3,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 6,
+   "n_full_match": 3,
+   "recall": 0.5,
+   "mrr": 1.0,
    "paths": {
+    "mention": 3,
     "edge": 3,
-    "mention": 2
+    "semantic": 2
    },
-   "latency_ms": 269.37
+   "latency_ms": 668.97
   },
   {
    "id": "R286",
@@ -7971,22 +9789,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2636,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.5,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 244.53
+   "latency_ms": 528.58
   },
   {
    "id": "R287",
@@ -7999,20 +9819,28 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": true,
-   "covered": "1/1",
-   "missing_groups": [],
+   "strict_pass": false,
+   "covered": "0/1",
+   "missing_groups": [
+    0
+   ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2641,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
-   "mrr": 0.5,
+   "n_chunks": 8,
+   "n_relevant": 0,
+   "n_full_match": 0,
+   "recall": 0.0,
+   "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 107.86
+   "latency_ms": 543.09
   },
   {
    "id": "R288",
@@ -8030,17 +9858,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2465,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 245.27
+   "latency_ms": 610.91
   },
   {
    "id": "R289",
@@ -8058,17 +9892,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2673,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "edge": 4,
+    "semantic": 1
    },
-   "latency_ms": 293.46
+   "latency_ms": 618.41
   },
   {
    "id": "R290",
@@ -8081,22 +9921,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "1/2",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2404,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 4,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 7,
+   "n_full_match": 1,
+   "recall": 0.25,
+   "mrr": 0.3333,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 3,
+    "semantic": 2
    },
-   "latency_ms": 261.94
+   "latency_ms": 609.96
   },
   {
    "id": "R291",
@@ -8112,17 +9954,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2411,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 1.0,
    "paths": {
     "edge": 4,
-    "mention": 1
+    "mention": 2,
+    "semantic": 2
    },
-   "latency_ms": 277.19
+   "latency_ms": 600.1
   },
   {
    "id": "R292",
@@ -8141,17 +9987,24 @@
     0,
     1
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0,
+    1
+   ],
+   "injected_chars": 2553,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 4,
     "edge": 3,
-    "mention": 2
+    "semantic": 1
    },
-   "latency_ms": 258.42
+   "latency_ms": 625.14
   },
   {
    "id": "R293",
@@ -8169,17 +10022,23 @@
    "missing_groups": [
     0
    ],
+   "inject_pass": false,
+   "inject_missing": [
+    0
+   ],
+   "injected_chars": 2421,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 0,
    "n_full_match": 0,
    "recall": 0.0,
    "mrr": 0.0,
    "paths": {
+    "mention": 2,
     "edge": 4,
-    "mention": 1
+    "semantic": 2
    },
-   "latency_ms": 254.34
+   "latency_ms": 609.31
   },
   {
    "id": "R294",
@@ -8195,17 +10054,20 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2545,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
-   "recall": 0.3333,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 1.0,
    "paths": {
-    "edge": 4,
-    "mention": 1
+    "edge": 6,
+    "semantic": 2
    },
-   "latency_ms": 301.07
+   "latency_ms": 610.89
   },
   {
    "id": "R295",
@@ -8218,23 +10080,24 @@
     "chapter": "其他",
     "text_len": "long"
    },
-   "strict_pass": false,
-   "covered": "0/2",
-   "missing_groups": [
-    0,
-    1
-   ],
+   "strict_pass": true,
+   "covered": "2/2",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2674,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 2,
+   "recall": 0.3333,
+   "mrr": 0.2,
    "paths": {
     "edge": 1,
-    "mention": 4
+    "mention": 4,
+    "semantic": 3
    },
-   "latency_ms": 320.0
+   "latency_ms": 757.98
   },
   {
    "id": "R296",
@@ -8250,17 +10113,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2337,
    "ceiling": true,
-   "n_chunks": 5,
+   "n_chunks": 8,
    "n_relevant": 2,
    "n_full_match": 2,
-   "recall": 0.6667,
+   "recall": 0.3333,
    "mrr": 0.5,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "edge": 3,
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 248.84
+   "latency_ms": 629.93
   },
   {
    "id": "R297",
@@ -8273,22 +10140,24 @@
     "chapter": "其他",
     "text_len": "medium"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2718,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
-    "edge": 3,
-    "mention": 2
+    "edge": 5,
+    "mention": 1,
+    "semantic": 2
    },
-   "latency_ms": 278.17
+   "latency_ms": 690.97
   },
   {
    "id": "R298",
@@ -8301,22 +10170,25 @@
     "chapter": "其他",
     "text_len": "short"
    },
-   "strict_pass": false,
-   "covered": "0/1",
-   "missing_groups": [
-    0
-   ],
+   "strict_pass": true,
+   "covered": "1/1",
+   "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2618,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 0,
-   "n_full_match": 0,
-   "recall": 0.0,
-   "mrr": 0.0,
+   "n_chunks": 8,
+   "n_relevant": 1,
+   "n_full_match": 1,
+   "recall": 0.1667,
+   "mrr": 0.25,
    "paths": {
+    "mention": 3,
     "edge": 1,
-    "mention": 4
+    "chapter": 1,
+    "semantic": 3
    },
-   "latency_ms": 90.02
+   "latency_ms": 582.36
   },
   {
    "id": "R299",
@@ -8332,17 +10204,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2669,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 2,
-   "n_full_match": 2,
-   "recall": 0.6667,
+   "n_chunks": 8,
+   "n_relevant": 3,
+   "n_full_match": 3,
+   "recall": 0.5,
    "mrr": 0.5,
    "paths": {
     "edge": 3,
-    "mention": 2
+    "mention": 2,
+    "semantic": 3
    },
-   "latency_ms": 241.38
+   "latency_ms": 637.73
   },
   {
    "id": "R300",
@@ -8358,17 +10234,21 @@
    "strict_pass": true,
    "covered": "1/1",
    "missing_groups": [],
+   "inject_pass": true,
+   "inject_missing": [],
+   "injected_chars": 2445,
    "ceiling": true,
-   "n_chunks": 5,
-   "n_relevant": 1,
-   "n_full_match": 1,
+   "n_chunks": 8,
+   "n_relevant": 2,
+   "n_full_match": 2,
    "recall": 0.3333,
-   "mrr": 0.5,
+   "mrr": 1.0,
    "paths": {
-    "edge": 2,
-    "mention": 3
+    "mention": 2,
+    "edge": 4,
+    "semantic": 2
    },
-   "latency_ms": 242.29
+   "latency_ms": 672.42
   }
  ]
 }

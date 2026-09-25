@@ -1,0 +1,1754 @@
+{
+ "b1ccebfd85c617315f7b7404": {
+  "entities": [
+   {
+    "name": "兔毛手袋",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为旧式循环机找上门的研究员"
+   },
+   {
+    "name": "拉普拉斯康复中心职员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知小梅斯梅尔休假的工作人员"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首次为自己启动人工梦游的少女"
+   },
+   {
+    "name": "软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "标签写着多萝西娅的备份软盘"
+   },
+   {
+    "name": "人工梦游仪器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "用以实验记忆储存技术的仪器"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中过生日的孩子"
+   },
+   {
+    "name": "多萝西娅的父亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为多萝西娅庆生的父亲"
+   },
+   {
+    "name": "多萝西娅的母亲",
+    "type": "角色",
+    "aliases": [],
+    "desc": "试图打断许愿的母亲"
+   },
+   {
+    "name": "多萝西娅的姐姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "崩溃后蹲坐在地的护士姐姐"
+   },
+   {
+    "name": "石子",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被姐姐丢进沙坑又被弹出的石子"
+   },
+   {
+    "name": "沙坑",
+    "type": "地点",
+    "aliases": [],
+    "desc": "姐姐丢石子的沙坑"
+   },
+   {
+    "name": "小马",
+    "type": "概念",
+    "aliases": [],
+    "desc": "多萝西娅许愿想要的一匹小马"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "多萝西娅奔走其中的康复机构"
+   }
+  ],
+  "relations": [
+   {
+    "src": "兔毛手袋",
+    "relation": "索取",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "我听说你们有一架旧式循环机废弃了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "拉普拉斯康复中心职员",
+    "relation": "告知",
+    "dst": "兔毛手袋",
+    "evidence": "小梅斯梅尔女士不在办公室，她今天休假了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "翻找",
+    "dst": "软盘",
+    "evidence": "拾起里面的软盘",
+    "confidence": 0.95
+   },
+   {
+    "src": "软盘",
+    "relation": "标签",
+    "dst": "多萝西娅",
+    "evidence": "软盘上贴着泛黄的标签，上面写着——“多萝西娅”",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "启动",
+    "dst": "人工梦游仪器",
+    "evidence": "这是她第一次为自己启动人工梦游",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的父亲",
+    "relation": "祝贺",
+    "dst": "多萝西娅",
+    "evidence": "哈哈，生日快乐，多萝西娅！许个愿吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "许愿",
+    "dst": "小马",
+    "evidence": "我还想要一匹小马，一只能装下鲸鱼的泳池",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的母亲",
+    "relation": "打断",
+    "dst": "多萝西娅",
+    "evidence": "嘿，亲爱的……我们先停一停好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的父亲",
+    "relation": "纵容",
+    "dst": "多萝西娅",
+    "evidence": "让多萝西娅说吧，我想我们的天才应该攒了一肚子的愿望",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "旁观",
+    "dst": "多萝西娅",
+    "evidence": "你有很多不切实际的幻想，多萝西娅",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的姐姐",
+    "relation": "崩溃",
+    "dst": "多萝西娅",
+    "evidence": "我已经撑不住了，我再也不敢看向那些孩子渴盼的眼睛了",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的姐姐",
+    "relation": "丢弃",
+    "dst": "石子",
+    "evidence": "我又把一颗石子丢进了那个沙坑里",
+    "confidence": 0.95
+   },
+   {
+    "src": "石子",
+    "relation": "弹出",
+    "dst": "沙坑",
+    "evidence": "它被弹了出来，就像是一辆公交车满员了",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "宽慰",
+    "dst": "多萝西娅的姐姐",
+    "evidence": "不管如何，我就在你身后，姐姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅的姐姐",
+    "relation": "身着",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "曾经洁白的护士服沾满了灰土",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "c52cf8aa2022458390a8ec47": {
+  "entities": [
+   {
+    "name": "多萝西娅的姐姐",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定回家修养的护士"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "攥紧医学院徽章立志考取者"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判定姐姐是逃兵的旁观者"
+   },
+   {
+    "name": "本杰明",
+    "type": "角色",
+    "aliases": [],
+    "desc": "打算明天结婚的舅舅"
+   },
+   {
+    "name": "代表人",
+    "type": "角色",
+    "aliases": [
+     "马克"
+    ],
+    "desc": "在医院实习并留言的追求者"
+   },
+   {
+    "name": "医学院徽章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "多萝西娅攥紧的医学院徽章"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "多萝西娅立志要进入的机构"
+   },
+   {
+    "name": "软盘",
+    "type": "物品",
+    "aliases": [],
+    "desc": "记录多萝西娅一生的备份"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "小梅斯梅尔用以翻阅记忆的术式"
+   },
+   {
+    "name": "梅斯梅尔家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "三小时四分后将有代理人到达的家族"
+   }
+  ],
+  "relations": [
+   {
+    "src": "多萝西娅的姐姐",
+    "relation": "辞别",
+    "dst": "多萝西娅",
+    "evidence": "我会回家修养一段时间",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "支持",
+    "dst": "多萝西娅的姐姐",
+    "evidence": "不管如何，我就在你身后，姐姐",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "攥紧",
+    "dst": "医学院徽章",
+    "evidence": "多萝西娅抱住姐姐，攒紧了手中的医学院徽章",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "评判",
+    "dst": "多萝西娅的姐姐",
+    "evidence": "……逃兵",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "立志",
+    "dst": "科算中心",
+    "evidence": "拉普拉斯科算中心……等着我",
+    "confidence": 0.95
+   },
+   {
+    "src": "本杰明",
+    "relation": "留言",
+    "dst": "多萝西娅",
+    "evidence": "你的舅舅本杰明打算在明天结婚，希望你能来",
+    "confidence": 0.95
+   },
+   {
+    "src": "代表人",
+    "relation": "留言",
+    "dst": "多萝西娅",
+    "evidence": "我是在医院实习的马克，记得吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "隔绝",
+    "dst": "代表人",
+    "evidence": "书籍竖起高墙，将一则则留言隔绝",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "判定",
+    "dst": "多萝西娅",
+    "evidence": "这就是分岔路了",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "阅读",
+    "dst": "软盘",
+    "evidence": "她看见她毕业在一个隆冬",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "终止",
+    "dst": "人工梦游",
+    "evidence": "接下来她只要轻轻按住磁贴，这场梦游便宣告结束了",
+    "confidence": 0.95
+   },
+   {
+    "src": "多萝西娅",
+    "relation": "现身",
+    "dst": "小梅斯梅尔",
+    "evidence": "你长高了，小梅斯梅尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "告别",
+    "dst": "多萝西娅",
+    "evidence": "很遗憾，这是我们最后一次见面了，多萝西娅",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "销毁",
+    "dst": "软盘",
+    "evidence": "接下来我们将会销毁这些废旧资料",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅斯梅尔家族",
+    "relation": "派员",
+    "dst": "小梅斯梅尔",
+    "evidence": "梅斯梅尔家族的代理人还有三小时四分才到达",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "使用",
+    "dst": "人工梦游",
+    "evidence": "这是她第一次为自己启动人工梦游",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "306da940c6deae5b4bd6c8ca": {
+  "entities": [
+   {
+    "name": "哀歌",
+    "type": "角色",
+    "aliases": [
+     "杰弗里·梅斯梅尔"
+    ],
+    "desc": "梅斯梅尔家族代理人,本名杰弗里"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "晋升二级治疗师并获席位的职员"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被哀歌用作要挟筹码的死者"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "基金会释放决策所涉的病人"
+   },
+   {
+    "name": "梅斯梅尔家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "授予小梅斯梅尔会议席位的家族"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "正与家族进行第三次会谈的机构"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "多萝西娅曾通过其审核的机构"
+   },
+   {
+    "name": "第一防线学校",
+    "type": "地点",
+    "aliases": [],
+    "desc": "家族投入不少孩子的学校"
+   },
+   {
+    "name": "柏林",
+    "type": "地点",
+    "aliases": [],
+    "desc": "传来小梅斯梅尔最新消息之处"
+   },
+   {
+    "name": "中心广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "雨雾遮盖的中心广场"
+   },
+   {
+    "name": "胸章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "象征家族会议席位的胸章"
+   },
+   {
+    "name": "梅斯梅尔基金",
+    "type": "组织",
+    "aliases": [],
+    "desc": "资助医学生的第十一届梅斯梅尔基金"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哀歌",
+    "relation": "致敬",
+    "dst": "小梅斯梅尔",
+    "evidence": "家族向你致以敬意，小梅斯梅尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "授予",
+    "dst": "小梅斯梅尔",
+    "evidence": "我们赋予你家族会议的席位",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "递予",
+    "dst": "胸章",
+    "evidence": "一枚胸章递到了她的手心",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "第一防线学校",
+    "evidence": "我们往第一防线学校投入了不少孩子",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "圣洛夫基金会",
+    "evidence": "圣洛夫基金会正在与家族进行第三次会谈",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "柏林",
+    "evidence": "在柏林的家族听到了你最新的消息",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "讥讽",
+    "dst": "哀歌",
+    "evidence": "你打起官腔来让我感到恶心，哀歌",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "揭露",
+    "dst": "哀歌",
+    "evidence": "家族在外的私生子，对规矩嗤之以鼻",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "梅斯梅尔基金",
+    "evidence": "你对第十一届梅斯梅尔基金所资助的医学生感兴趣吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "多萝西娅",
+    "evidence": "她叫——噢，我想起来了，多萝西娅？",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "停步",
+    "dst": "哀歌",
+    "evidence": "她停住了",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "告知",
+    "dst": "小梅斯梅尔",
+    "evidence": "梅斯梅尔家族通过运作，让她通过了拉普拉斯科算中心的审核",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "这涉及到了基金会释放杰瑞·威尔逊的决策",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "维护",
+    "dst": "梅斯梅尔家族",
+    "evidence": "梅斯梅尔家族已经通过了慎重的决议",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "断言",
+    "dst": "小梅斯梅尔",
+    "evidence": "多萝西娅当初的加入就是为你如今的成就所铺路",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "归咎",
+    "dst": "小梅斯梅尔",
+    "evidence": "如果不是因为你，她也许不会殉职",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "置身",
+    "dst": "中心广场",
+    "evidence": "空旷而寒冷的广场上，行人们失去踪影",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "科算中心",
+    "evidence": "让她通过了拉普拉斯科算中心的审核",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "48c937a2a3739dc9abcf73af": {
+  "entities": [
+   {
+    "name": "哀歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以牺牲论劝服小梅斯梅尔的代理人"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以理性抗衡情绪的青年职员"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被称作小小砝码的死者"
+   },
+   {
+    "name": "梅斯梅尔家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "哀歌所效力的家族"
+   },
+   {
+    "name": "梅斯梅尔基金",
+    "type": "组织",
+    "aliases": [],
+    "desc": "受资助孩子们梦寐以求的计划来源"
+   },
+   {
+    "name": "中心广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两人雨中对话之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "哀歌",
+    "relation": "论断",
+    "dst": "小梅斯梅尔",
+    "evidence": "决策总是伴随着牺牲",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "贬低",
+    "dst": "多萝西娅",
+    "evidence": "相比于我们家族所能拯救的人，一个她太渺小了",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "断言",
+    "dst": "多萝西娅",
+    "evidence": "她作为一个小小的砝码，已经物尽其用",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "追问",
+    "dst": "哀歌",
+    "evidence": "你到底想说什么……杰弗里·梅斯梅尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "识破",
+    "dst": "哀歌",
+    "evidence": "我大概应该被你的话干扰，出现激烈的应激反应",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "认同",
+    "dst": "梅斯梅尔家族",
+    "evidence": "我们都是梅斯梅尔",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "克制",
+    "dst": "哀歌",
+    "evidence": "我们所崇尚的理性便意味着与这种情绪相抗衡",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "评价",
+    "dst": "小梅斯梅尔",
+    "evidence": "你的神经质似乎有所好转",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "自陈",
+    "dst": "梅斯梅尔家族",
+    "evidence": "因为一头离过群的羔羊，最明白其他的羊羔在想什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "追问",
+    "dst": "小梅斯梅尔",
+    "evidence": "能告诉我，多萝西娅最后跟你说了什么吗",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "否认",
+    "dst": "哀歌",
+    "evidence": "她没有说什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "质疑",
+    "dst": "小梅斯梅尔",
+    "evidence": "你似乎还是很珍视自己的小秘密",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "提及",
+    "dst": "梅斯梅尔基金",
+    "evidence": "万千受梅斯梅尔基金资助的孩子们所梦寐以求的",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "置身",
+    "dst": "中心广场",
+    "evidence": "伞遮住了她的面孔",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "93e279619e7f8fd1693b5789": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚称未听清遗言的青年职员"
+   },
+   {
+    "name": "哀歌",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问遗言未果的家族代理人"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喉咙被血呛住的死者"
+   },
+   {
+    "name": "铅玻璃",
+    "type": "角色",
+    "aliases": [],
+    "desc": "想把书还给多萝西娅的女孩"
+   },
+   {
+    "name": "牙仙",
+    "type": "角色",
+    "aliases": [],
+    "desc": "告知书主人已不在世的女士"
+   },
+   {
+    "name": "康复中心职员丹尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布杰瑞自由的康复中心职员"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被释放的病人"
+   },
+   {
+    "name": "捕梦网",
+    "type": "物品",
+    "aliases": [],
+    "desc": "悬挂在门把上的捕梦网"
+   },
+   {
+    "name": "拉普拉斯康复中心",
+    "type": "地点",
+    "aliases": [],
+    "desc": "铅玻璃未见到多萝西娅的机构"
+   },
+   {
+    "name": "中心广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "两柄圆伞各自挪移而去的石砖地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "否认",
+    "dst": "哀歌",
+    "evidence": "我没有听清楚她说了什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "描述",
+    "dst": "多萝西娅",
+    "evidence": "当时她的喉咙已经被血呛住了，血液浸湿了我的手",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "送客",
+    "dst": "哀歌",
+    "evidence": "我可以走了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "应允",
+    "dst": "小梅斯梅尔",
+    "evidence": "请便",
+    "confidence": 0.95
+   },
+   {
+    "src": "哀歌",
+    "relation": "离开",
+    "dst": "中心广场",
+    "evidence": "两柄圆伞在空旷的石砖上，各自往回挪移而去",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "询问",
+    "dst": "牙仙",
+    "evidence": "那位名叫多萝西娅的医生最后去哪了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "寻找",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "我似乎没有在拉普拉斯康复中心见到她",
+    "confidence": 0.95
+   },
+   {
+    "src": "牙仙",
+    "relation": "告知",
+    "dst": "铅玻璃",
+    "evidence": "这本书的主人已经不在世了",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "托付",
+    "dst": "牙仙",
+    "evidence": "还请您再帮我一个忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "挂上",
+    "dst": "捕梦网",
+    "evidence": "孤零零的捕梦网悬挂在门把上",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "释放",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "杰瑞·威尔逊对吗——你自由了",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "驱逐",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "滚出拉普拉斯吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "铅玻璃",
+    "relation": "站立",
+    "dst": "拉普拉斯康复中心",
+    "evidence": "在竭尽全力扬起身体后，铅玻璃张开了手心",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "650695d0f7d929475e9453e9": {
+  "entities": [
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "三年来首次主动触发梦境者"
+   },
+   {
+    "name": "康复中心职员丹尼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中斥责小梅斯梅尔的幻影"
+   },
+   {
+    "name": "康复中心职员威尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中质问其脸面的幻影"
+   },
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中指其本可自选的幻影"
+   },
+   {
+    "name": "红弩箭",
+    "type": "角色",
+    "aliases": [],
+    "desc": "梦中斥其甘当棋子的幻影"
+   },
+   {
+    "name": "童年的伙伴",
+    "type": "角色",
+    "aliases": [],
+    "desc": "迷雾中责问小梅斯梅尔的童年伙伴"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被软禁之事所涉者"
+   },
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被释放一事所涉的病人"
+   },
+   {
+    "name": "多萝西娅",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被指本可以活下去的死者"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "童年许诺所在的乔治橡树"
+   },
+   {
+    "name": "梅斯梅尔家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "千万条命运交织于她身上的家族"
+   },
+   {
+    "name": "人工梦游",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被主动触发的梦境"
+   }
+  ],
+  "relations": [
+   {
+    "src": "小梅斯梅尔",
+    "relation": "触发",
+    "dst": "人工梦游",
+    "evidence": "这算是我的身体三年来头一次主动触发梦境",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "斥责",
+    "dst": "小梅斯梅尔",
+    "evidence": "多萝西娅本可以就这样活下去，只要她没有接近你！",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "指责",
+    "dst": "小梅斯梅尔",
+    "evidence": "你却选择轻飘飘地放走他，听从那些事不关己的上层安排",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员威尔",
+    "relation": "质问",
+    "dst": "小梅斯梅尔",
+    "evidence": "你竟然还能心安理得地站在这里，对我们发号施令？",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "提示",
+    "dst": "小梅斯梅尔",
+    "evidence": "在软禁维尔汀的事情上，你本可以有自己的做法",
+    "confidence": 0.95
+   },
+   {
+    "src": "红弩箭",
+    "relation": "讥讽",
+    "dst": "小梅斯梅尔",
+    "evidence": "你就那么甘愿当一枚小棋子吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "归咎",
+    "dst": "多萝西娅",
+    "evidence": "多萝西娅的死，本该全由他来承受！",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "提及",
+    "dst": "维尔汀",
+    "evidence": "在软禁维尔汀的事情上",
+    "confidence": 0.95
+   },
+   {
+    "src": "康复中心职员丹尼",
+    "relation": "提及",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "把杰瑞·威尔逊放出来也合乎你所谓的理性是吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "拽住",
+    "dst": "小梅斯梅尔",
+    "evidence": "直到一只小手轻轻拽住了她的衣角",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "呼唤",
+    "dst": "小梅斯梅尔",
+    "evidence": "你来找我们了",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "回忆",
+    "dst": "乔治橡树",
+    "evidence": "曾在乔治橡树底下的声音",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "质问",
+    "dst": "小梅斯梅尔",
+    "evidence": "你背叛了我们吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅斯梅尔家族",
+    "relation": "凝视",
+    "dst": "小梅斯梅尔",
+    "evidence": "梅斯梅尔家族千万条命运正交织并汇聚于她身上",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a859e5f55842c72fbcfd9eef": {
+  "entities": [
+   {
+    "name": "童年的伙伴",
+    "type": "角色",
+    "aliases": [],
+    "desc": "哭泣着质问小梅斯梅尔的童年伙伴"
+   },
+   {
+    "name": "小梅斯梅尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回答“我是梅斯梅尔”的青年"
+   },
+   {
+    "name": "圈环",
+    "type": "角色",
+    "aliases": [
+     "“圈环”"
+    ],
+    "desc": "质问为何见其消失于暴雨下者"
+   },
+   {
+    "name": "乔治橡树",
+    "type": "地点",
+    "aliases": [],
+    "desc": "曾许下诺言的乔治橡树"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "伙伴们消失其下的灾难"
+   },
+   {
+    "name": "梅斯梅尔家族",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以雕塑之姿注视其存在的家族"
+   }
+  ],
+  "relations": [
+   {
+    "src": "童年的伙伴",
+    "relation": "质问",
+    "dst": "小梅斯梅尔",
+    "evidence": "为什么你现在才来？你没有跟着我们一起逃出去",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "否认",
+    "dst": "童年的伙伴",
+    "evidence": "不，我、我没有……",
+    "confidence": 0.95
+   },
+   {
+    "src": "圈环",
+    "relation": "质问",
+    "dst": "小梅斯梅尔",
+    "evidence": "为什么你要眼睁睁看着我们，在暴雨底下消失？",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "责备",
+    "dst": "小梅斯梅尔",
+    "evidence": "你明明可以阻止他们",
+    "confidence": 0.95
+   },
+   {
+    "src": "圈环",
+    "relation": "要求",
+    "dst": "小梅斯梅尔",
+    "evidence": "哪怕你替我们说句话呢？",
+    "confidence": 0.95
+   },
+   {
+    "src": "童年的伙伴",
+    "relation": "追忆",
+    "dst": "乔治橡树",
+    "evidence": "你忘了我们在乔治橡树底下的许诺了吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "圈环",
+    "relation": "消失",
+    "dst": "暴雨",
+    "evidence": "在暴雨底下消失",
+    "confidence": 0.95
+   },
+   {
+    "src": "梅斯梅尔家族",
+    "relation": "注视",
+    "dst": "小梅斯梅尔",
+    "evidence": "一尊尊的雕塑矗立，注视着她的存在",
+    "confidence": 0.95
+   },
+   {
+    "src": "小梅斯梅尔",
+    "relation": "回答",
+    "dst": "童年的伙伴",
+    "evidence": "因为……我是梅斯梅尔",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4a1b93ece5295d2bcbb1f7f1": {
+  "entities": [
+   {
+    "name": "杰瑞·威尔逊",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自基金会出逃的病人"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣布捕鼠器起效者"
+   },
+   {
+    "name": "佩德拉",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被通知结果的基金会委员"
+   },
+   {
+    "name": "实习职员亚当",
+    "type": "角色",
+    "aliases": [],
+    "desc": "陪柯布夜间散步的实习职员"
+   },
+   {
+    "name": "病人柯布",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲述第三次踏入河流的老人"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [],
+    "desc": "杰瑞所称会对其网开一面者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "杰瑞所逃离的机构"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "杰瑞曾加入并背叛的组织"
+   },
+   {
+    "name": "太妃糖",
+    "type": "物品",
+    "aliases": [],
+    "desc": "从杰瑞兜里抖落的糖块"
+   },
+   {
+    "name": "同一条河流",
+    "type": "概念",
+    "aliases": [],
+    "desc": "柯布三次踏入的同一条河流"
+   },
+   {
+    "name": "小狗",
+    "type": "概念",
+    "aliases": [],
+    "desc": "柯布走失、躲在河对岸的小狗"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "逃离",
+    "dst": "圣洛夫基金会",
+    "evidence": "你们拦不住我，这下你们谁也拦不住我了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "遗落",
+    "dst": "太妃糖",
+    "evidence": "那颗太妃糖，在奔跑中，从他的兜里抖落",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "踩碎",
+    "dst": "太妃糖",
+    "evidence": "糖块儿变成了碎渣",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "背叛",
+    "dst": "重塑之手",
+    "evidence": "加入你们，背叛重塑之手是我做过最愚蠢的选择",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰瑞·威尔逊",
+    "relation": "投奔",
+    "dst": "勿忘我",
+    "evidence": "勿忘我先生……会对我网开一面",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "告知",
+    "dst": "佩德拉",
+    "evidence": "如你所愿，佩德拉。捕鼠器起作用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "佩德拉",
+    "relation": "提议",
+    "dst": "露西",
+    "evidence": "让我们瞧瞧这只小老鼠会钻进哪个窝吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "释放",
+    "dst": "杰瑞·威尔逊",
+    "evidence": "捕鼠器起作用了",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "陪同",
+    "dst": "病人柯布",
+    "evidence": "让我带您回房间好吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "实习职员亚当",
+    "relation": "自陈",
+    "dst": "病人柯布",
+    "evidence": "亚当，先生……",
+    "confidence": 0.95
+   },
+   {
+    "src": "病人柯布",
+    "relation": "讲述",
+    "dst": "同一条河流",
+    "evidence": "我曾经三次踏入过同一条河流",
+    "confidence": 0.95
+   },
+   {
+    "src": "病人柯布",
+    "relation": "自述",
+    "dst": "小狗",
+    "evidence": "我走失的小狗，一直躲在河边的那岸啊",
+    "confidence": 0.95
+   },
+   {
+    "src": "病人柯布",
+    "relation": "衰老",
+    "dst": "圣洛夫基金会",
+    "evidence": "我衰老得要命，忘记了自己身处何处",
+    "confidence": 0.95
+   },
+   {
+    "src": "病人柯布",
+    "relation": "失忆",
+    "dst": "实习职员亚当",
+    "evidence": "抱歉，你叫什么名字？我想这还是咱们第一次见面",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a6a3ca0ff8fd82b31baa91c3": {
+  "entities": [
+   {
+    "name": "洋葱头",
+    "type": "角色",
+    "aliases": [],
+    "desc": "报道加油站爆炸案的记者"
+   },
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以灵体沟通疗愈众人的疗愈师"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "参与仪式的德鲁伊"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "善于思考、佩戴翻译器的狗狗"
+   },
+   {
+    "name": "阿尔古斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "仪式中似有不适者"
+   },
+   {
+    "name": "小刀\"麦高芬",
+    "type": "角色",
+    "aliases": [
+     "\"小刀\"麦高芬"
+    ],
+    "desc": "代号“小刀”的亡命徒"
+   },
+   {
+    "name": "《headonion》电视节目",
+    "type": "组织",
+    "aliases": [],
+    "desc": "洋葱头所属的电视节目"
+   },
+   {
+    "name": "ONiON",
+    "type": "角色",
+    "aliases": [],
+    "desc": "第一时间赶赴现场的记者"
+   },
+   {
+    "name": "箱中客厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "箱中维持静止的客厅"
+   },
+   {
+    "name": "加油站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "星期日早上第一个油桶爆炸之处"
+   },
+   {
+    "name": "面包车",
+    "type": "物品",
+    "aliases": [],
+    "desc": "嫌疑人驾驶冲出加油站的车"
+   },
+   {
+    "name": "白茅花",
+    "type": "概念",
+    "aliases": [],
+    "desc": "从东方飘来的白茅花"
+   },
+   {
+    "name": "颂钵",
+    "type": "物品",
+    "aliases": [],
+    "desc": "环状水星敲打的乐器"
+   },
+   {
+    "name": "迷迭香",
+    "type": "物品",
+    "aliases": [],
+    "desc": "涂在每人耳根后的草药"
+   },
+   {
+    "name": "灵体",
+    "type": "概念",
+    "aliases": [],
+    "desc": "与自身沟通的对象"
+   },
+   {
+    "name": "仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "围坐一圈点燃明火的沟通仪式"
+   },
+   {
+    "name": "黄金",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所有人唯一的希望与缪斯"
+   },
+   {
+    "name": "翻译器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "皮克勒斯用以转译犬吠的装置"
+   }
+  ],
+  "relations": [
+   {
+    "src": "洋葱头",
+    "relation": "播报",
+    "dst": "加油站",
+    "evidence": "两名嫌疑人驾驶着他们的面包车以时速四十英里的速度从燃烧的加油站中冲出",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "播报",
+    "dst": "面包车",
+    "evidence": "驾驶着他们的面包车以时速四十英里的速度从燃烧的加油站中冲出",
+    "confidence": 0.95
+   },
+   {
+    "src": "ONiON",
+    "relation": "调查",
+    "dst": "加油站",
+    "evidence": "本台记者ONiON在第一时间赶赴现场",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "主持",
+    "dst": "《headonion》电视节目",
+    "evidence": "《headonion》电视节目",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "预言",
+    "dst": "黄金",
+    "evidence": "它是真正的黄金",
+    "confidence": 0.95
+   },
+   {
+    "src": "小刀\"麦高芬",
+    "relation": "涉入",
+    "dst": "加油站",
+    "evidence": "调查结果表明，这个加油站爆炸案，只是一个更长的新闻故事的序章",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "主持",
+    "dst": "仪式",
+    "evidence": "与自身的灵体进行沟通，这是这个仪式的一个解释",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "沟通",
+    "dst": "灵体",
+    "evidence": "与自身的灵体进行沟通",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "敲打",
+    "dst": "颂钵",
+    "evidence": "她轻轻敲打颂钵",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "涂抹",
+    "dst": "迷迭香",
+    "evidence": "往每人的耳根后涂上一层迷迭香",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "解读",
+    "dst": "阿尔古斯",
+    "evidence": "阿尔古斯皱着眉头，似乎有些不适",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "解读",
+    "dst": "洋葱头",
+    "evidence": "洋葱头晃了晃脑袋，而后很快就恢复了平静",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "解读",
+    "dst": "槲寄生",
+    "evidence": "来自油画里的一阵草木气息的风，厚重，痛，且一切都过去了",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "解读",
+    "dst": "皮克勒斯",
+    "evidence": "草场、汗水打湿的奖牌、褐色的逻辑以及……高温的书页",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "使用",
+    "dst": "翻译器",
+    "evidence": "看来你的翻译器有时会出现一定的误差",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "惊讶",
+    "dst": "环状水星",
+    "evidence": "小狗表示出惊讶",
+    "confidence": 0.95
+   },
+   {
+    "src": "阿尔古斯",
+    "relation": "置身",
+    "dst": "箱中客厅",
+    "evidence": "大家围成一圈坐在客厅中央",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "置身",
+    "dst": "箱中客厅",
+    "evidence": "大家围成一圈坐在客厅中央",
+    "confidence": 0.8
+   },
+   {
+    "src": "白茅花",
+    "relation": "飘落",
+    "dst": "加油站",
+    "evidence": "行人在城市中遇到从东方飘来的白茅花",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "环绕",
+    "dst": "箱中客厅",
+    "evidence": "环状水星绕过地上摆放着的一个个灵性器皿",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "61b5bd3f98e8051a5b69e335": {
+  "entities": [
+   {
+    "name": "环状水星",
+    "type": "角色",
+    "aliases": [],
+    "desc": "收信后立即离席的疗愈师"
+   },
+   {
+    "name": "十四行诗",
+    "type": "角色",
+    "aliases": [],
+    "desc": "抱着书信集撞进集会的学生"
+   },
+   {
+    "name": "槲寄生",
+    "type": "角色",
+    "aliases": [],
+    "desc": "提议改良烟雾报警系统者"
+   },
+   {
+    "name": "洋葱头",
+    "type": "角色",
+    "aliases": [],
+    "desc": "翻转信封的新闻记者"
+   },
+   {
+    "name": "皮克勒斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "表示惊讶的小狗"
+   },
+   {
+    "name": "亨特利尔高墙监狱",
+    "type": "地点",
+    "aliases": [],
+    "desc": "信件寄出之地"
+   },
+   {
+    "name": "电玩餐馆",
+    "type": "地点",
+    "aliases": [],
+    "desc": "被同类信件塞爆的餐馆"
+   },
+   {
+    "name": "信件",
+    "type": "物品",
+    "aliases": [],
+    "desc": "寄给环状水星的信"
+   },
+   {
+    "name": "书信集",
+    "type": "物品",
+    "aliases": [],
+    "desc": "十四行诗怀中所抱之物"
+   },
+   {
+    "name": "箱中客厅",
+    "type": "地点",
+    "aliases": [],
+    "desc": "烟雾报警器过载的客厅"
+   }
+  ],
+  "relations": [
+   {
+    "src": "十四行诗",
+    "relation": "告知",
+    "dst": "环状水星",
+    "evidence": "环状水星女士，这里有你的信件——",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "递交",
+    "dst": "信件",
+    "evidence": "她递出一封信",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "预感",
+    "dst": "信件",
+    "evidence": "不祥的莓果，像沼泽地……",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "提及",
+    "dst": "电玩餐馆",
+    "evidence": "类似的信件已经塞爆了电玩餐馆",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "阅读",
+    "dst": "信件",
+    "evidence": "无声地将信纸平整展开，开始阅读",
+    "confidence": 0.95
+   },
+   {
+    "src": "槲寄生",
+    "relation": "建议",
+    "dst": "箱中客厅",
+    "evidence": "看来需要改良一下客厅的烟雾报警系统了",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "翻转",
+    "dst": "信件",
+    "evidence": "将信封翻转过来",
+    "confidence": 0.95
+   },
+   {
+    "src": "洋葱头",
+    "relation": "指出",
+    "dst": "亨特利尔高墙监狱",
+    "evidence": "这封信看上去不是从任何住宅区寄出来的",
+    "confidence": 0.95
+   },
+   {
+    "src": "亨特利尔高墙监狱",
+    "relation": "寄出",
+    "dst": "信件",
+    "evidence": "这是他最近的住址",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "回应",
+    "dst": "洋葱头",
+    "evidence": "是的，这是他最近的住址",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "追问",
+    "dst": "环状水星",
+    "evidence": "怎么了，发生什么事了？",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "自陈",
+    "dst": "十四行诗",
+    "evidence": "他需要我",
+    "confidence": 0.95
+   },
+   {
+    "src": "皮克勒斯",
+    "relation": "回应",
+    "dst": "环状水星",
+    "evidence": "谢谢你对我的认可",
+    "confidence": 0.95
+   },
+   {
+    "src": "十四行诗",
+    "relation": "持有",
+    "dst": "书信集",
+    "evidence": "怀里抱着一堆书信集和文件的好好学生女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "环状水星",
+    "relation": "离开",
+    "dst": "箱中客厅",
+    "evidence": "直到最后，她将信合起，准备离开",
+    "confidence": 0.95
+   }
+  ]
+ }
+}

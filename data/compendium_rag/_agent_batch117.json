@@ -1,0 +1,1203 @@
+{
+ "227338624cf96ee5c25f09c5": {
+  "entities": [
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "民众剧团团长"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "剧团的谋士小丑"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自治市议员"
+   },
+   {
+    "name": "商贩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "分发饮食者"
+   },
+   {
+    "name": "居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受食的市民"
+   },
+   {
+    "name": "民众剧团",
+    "type": "组织",
+    "aliases": [
+     "国王剧团"
+    ],
+    "desc": "最受期待的演出者"
+   },
+   {
+    "name": "护国公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "颁禁令者"
+   },
+   {
+    "name": "圣诞",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被宣布非法的节日"
+   },
+   {
+    "name": "接骨木麦芽酒",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被禁之酒"
+   },
+   {
+    "name": "市场集会",
+    "type": "事件",
+    "aliases": [],
+    "desc": "掩人耳目的名目"
+   },
+   {
+    "name": "火堆",
+    "type": "物品",
+    "aliases": [],
+    "desc": "广场中央"
+   },
+   {
+    "name": "广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "集会之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "商贩",
+    "relation": "分发",
+    "dst": "居民",
+    "evidence": "今天的面包与肉食由市议会提供，通通免费",
+    "confidence": 0.95
+   },
+   {
+    "src": "商贩",
+    "relation": "掩饰",
+    "dst": "接骨木麦芽酒",
+    "evidence": "这也不是酒水，只是我们从神秘学家那儿买来的“发酵接骨木糖浆”",
+    "confidence": 0.95
+   },
+   {
+    "src": "接骨木麦芽酒",
+    "relation": "违禁",
+    "dst": "护国公",
+    "evidence": "所有酒类都已经被禁止了，神秘学酒品也不例外",
+    "confidence": 0.95
+   },
+   {
+    "src": "居民",
+    "relation": "低语",
+    "dst": "市场集会",
+    "evidence": "好吧，这只是一场“市场集会”……",
+    "confidence": 0.95
+   },
+   {
+    "src": "护国公",
+    "relation": "宣布非法",
+    "dst": "圣诞",
+    "evidence": "护国公明明已经宣布了庆祝圣诞节是非法行为",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "感叹",
+    "dst": "广场",
+    "evidence": "我已经很久没有见到这么热闹的情景了",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "论断",
+    "dst": "夏利",
+    "evidence": "人们当然会接踵而至！这是我们的天性",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "排演",
+    "dst": "民众剧团",
+    "evidence": "我们将剧团的演出排在了最后一场",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "d33ab6678f21186ed30a5291": {
+  "entities": [
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "排演者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怯场者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宽慰者"
+   },
+   {
+    "name": "老人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "怀念旧剧的观众"
+   },
+   {
+    "name": "民众剧团",
+    "type": "组织",
+    "aliases": [
+     "国王剧团"
+    ],
+    "desc": "曾名国王剧团"
+   },
+   {
+    "name": "舞台",
+    "type": "物品",
+    "aliases": [],
+    "desc": "帐篷覆盖的木质台"
+   },
+   {
+    "name": "节日",
+    "type": "事件",
+    "aliases": [],
+    "desc": "所追念者"
+   },
+   {
+    "name": "戏剧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被禁之艺"
+   },
+   {
+    "name": "广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "演出之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杰弗里",
+    "relation": "告知",
+    "dst": "夏利",
+    "evidence": "民众剧团是其中最具分量、最受期待的演出者",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "勉励",
+    "dst": "夏利",
+    "evidence": "而我，也同样对您充满信心",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "推辞",
+    "dst": "弄臣",
+    "evidence": "不行的……我绝对不可能办得到！",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "认出",
+    "dst": "民众剧团",
+    "evidence": "我曾经看过国王剧团的演出，我认出了你们其中的几位演员",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "追念",
+    "dst": "戏剧",
+    "evidence": "节日和戏剧！我原本以为它们是我们生活理所当然的一部分",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "论暴",
+    "dst": "老人",
+    "evidence": "暴君的光荣来自于罪恶，为了独断与声名，故而抛弃良心",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "叹惋",
+    "dst": "民众剧团",
+    "evidence": "剧团遭到解散，剧院将被拆除",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "坚信",
+    "dst": "戏剧",
+    "evidence": "它们不会遭到遗忘，它们将一代代地延续于纸面与记忆之中",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "cb50cd4ec6297c9a0c57a786": {
+  "entities": [
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "许诺超越者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "起誓者"
+   },
+   {
+    "name": "老人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "重获笑意者"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "致歉者"
+   },
+   {
+    "name": "民众剧团",
+    "type": "组织",
+    "aliases": [
+     "国王剧团"
+    ],
+    "desc": "主办方所倚重的剧团"
+   },
+   {
+    "name": "士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "急报者"
+   },
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逼近之军"
+   },
+   {
+    "name": "护国公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "骑兵之主"
+   },
+   {
+    "name": "戏剧",
+    "type": "概念",
+    "aliases": [],
+    "desc": "因演出而生彩"
+   },
+   {
+    "name": "广场",
+    "type": "地点",
+    "aliases": [],
+    "desc": "集会之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "夏利",
+    "relation": "许诺",
+    "dst": "老人",
+    "evidence": "我们将会拿出足以超越以往的表演",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "起誓",
+    "dst": "老人",
+    "evidence": "我同样可以向您保证这一点，以我如今还有的一切起誓",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "领悟",
+    "dst": "戏剧",
+    "evidence": "戏剧并非是因为华服道具而生彩的，而是因为演员们的演出",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "致歉",
+    "dst": "民众剧团",
+    "evidence": "作为主办者，我要为自己的轻视而道歉",
+    "confidence": 0.95
+   },
+   {
+    "src": "士兵",
+    "relation": "急报",
+    "dst": "杰弗里",
+    "evidence": "护国公的骑兵，马上要抵达城镇了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵",
+    "relation": "隶属于",
+    "dst": "护国公",
+    "evidence": "护国公的骑兵",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "9929d293dda3ada70331bdf5": {
+  "entities": [
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "应变者"
+   },
+   {
+    "name": "士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "回报者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "设喻者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲逃者"
+   },
+   {
+    "name": "珂麦托",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所引神话"
+   },
+   {
+    "name": "剧团成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "整装者"
+   },
+   {
+    "name": "剧团成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "期待演出者"
+   },
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "来犯者"
+   },
+   {
+    "name": "市长",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受托拖延者"
+   },
+   {
+    "name": "演出",
+    "type": "事件",
+    "aliases": [],
+    "desc": "所备之艺"
+   },
+   {
+    "name": "密道",
+    "type": "地点",
+    "aliases": [],
+    "desc": "预备的退路"
+   },
+   {
+    "name": "护国公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "疑为泄密受益者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "士兵",
+    "relation": "报告",
+    "dst": "杰弗里",
+    "evidence": "根据回报，骑兵们的目的地就是这里！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "疑心",
+    "dst": "护国公",
+    "evidence": "难不成……是有人向护国公泄露了秘密？",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "引喻",
+    "dst": "珂麦托",
+    "evidence": "可悲又可恨的珂麦托【Comaetho】，夺走了我们的发丝",
+    "confidence": 0.9
+   },
+   {
+    "src": "夏利",
+    "relation": "主张",
+    "dst": "弄臣",
+    "evidence": "我们必须赶快逃走！",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "指令",
+    "dst": "士兵",
+    "evidence": "赶快去通知市长先生，让他想办法去拖住骑兵们",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "安排",
+    "dst": "密道",
+    "evidence": "让演出者们沿着准备好的密道逃走",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "劝离",
+    "dst": "夏利",
+    "evidence": "夏利团长还请赶快离开吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "剧团成员Ⅰ",
+    "relation": "整装",
+    "dst": "演出",
+    "evidence": "大家已经准备好演出所需要的东西了",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "e47a01d1e9b08fa22e22850e": {
+  "entities": [
+   {
+    "name": "剧团成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "谈笑者"
+   },
+   {
+    "name": "剧团成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被调侃者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "面具下藏心者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欲言又止者"
+   },
+   {
+    "name": "铅粉",
+    "type": "物品",
+    "aliases": [],
+    "desc": "化妆所用"
+   },
+   {
+    "name": "面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "小丑之面"
+   },
+   {
+    "name": "众人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢笑者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "铅粉",
+    "relation": "遮掩",
+    "dst": "剧团成员Ⅱ",
+    "evidence": "铅粉都没遮住你的黑眼圈",
+    "confidence": 0.9
+   },
+   {
+    "src": "夏利",
+    "relation": "哽住",
+    "dst": "铅粉",
+    "evidence": "化妆时扬起的铅粉在烛光下熠熠生辉，将夏利想要说出来的话又重新推回了嘴里",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "催问",
+    "dst": "夏利",
+    "evidence": "您在犹豫什么，夏利团长？",
+    "confidence": 0.95
+   },
+   {
+    "src": "面具",
+    "relation": "流露",
+    "dst": "弄臣",
+    "evidence": "它带着嘲弄，带着讽刺——这是不应该属于“弄臣”的情绪",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a6eb86c4e45ad650d5b801fe": {
+  "entities": [
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "讲喻者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "犹疑者"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "催行者"
+   },
+   {
+    "name": "剧团成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "追问者"
+   },
+   {
+    "name": "剧团成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "有备者"
+   },
+   {
+    "name": "米诺斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "违背诺言的国王"
+   },
+   {
+    "name": "白色公牛",
+    "type": "概念",
+    "aliases": [],
+    "desc": "神灵所赐"
+   },
+   {
+    "name": "暴君",
+    "type": "概念",
+    "aliases": [],
+    "desc": "怪物般的存在"
+   },
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将至者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "弄臣",
+    "relation": "催促",
+    "dst": "夏利",
+    "evidence": "再不向他们说出那个消息，我们可就逃不掉了",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "不解",
+    "dst": "弄臣",
+    "evidence": "明明这些都是能够让所有人欢笑的美好事物，为什么他要将这些事物从世间剥离",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "急告",
+    "dst": "夏利",
+    "evidence": "骑兵马上就要到了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "讲述",
+    "dst": "米诺斯",
+    "evidence": "那位国王的故事",
+    "confidence": 0.95
+   },
+   {
+    "src": "米诺斯",
+    "relation": "索求",
+    "dst": "白色公牛",
+    "evidence": "倘若您支持我，便向我赐予一头白色公牛吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "米诺斯",
+    "relation": "违背",
+    "dst": "白色公牛",
+    "evidence": "米诺斯却因为贪欲，而违背了自己的诺言",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "论断",
+    "dst": "暴君",
+    "evidence": "暴君的本质是一只怪物，一只翱翔的怪物",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "补充",
+    "dst": "暴君",
+    "evidence": "他不受制约，无人可以阻挡",
+    "confidence": 0.9
+   },
+   {
+    "src": "弄臣",
+    "relation": "逼问",
+    "dst": "夏利",
+    "evidence": "逃走，抑或是反抗？苟且偷生，抑或是死亡？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "36432841dc2208193a0ad30f": {
+  "entities": [
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决意反抗者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "请命者"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "劝阻者"
+   },
+   {
+    "name": "剧团成员Ⅰ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "待命者"
+   },
+   {
+    "name": "剧团成员Ⅱ",
+    "type": "角色",
+    "aliases": [],
+    "desc": "不再逃者"
+   },
+   {
+    "name": "忒休斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所志之神话英雄"
+   },
+   {
+    "name": "米诺斯",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所弃之暴君"
+   },
+   {
+    "name": "暴君",
+    "type": "概念",
+    "aliases": [],
+    "desc": "所抗者"
+   },
+   {
+    "name": "演出",
+    "type": "事件",
+    "aliases": [],
+    "desc": "反抗之形式"
+   },
+   {
+    "name": "钟声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "开幕之号"
+   }
+  ],
+  "relations": [
+   {
+    "src": "杰弗里",
+    "relation": "警告",
+    "dst": "夏利",
+    "evidence": "骑兵们是有权当场杀死你们的！",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "决意",
+    "dst": "暴君",
+    "evidence": "暴君终有一天将会坠落于地面，在此之前，我们将承担起反抗暴君的重任",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "吩咐",
+    "dst": "弄臣",
+    "evidence": "准备上台吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "释明",
+    "dst": "杰弗里",
+    "evidence": "夏利团长的心中早有决断",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "誓言",
+    "dst": "暴君",
+    "evidence": "倘若暴君给予我们死亡，我们将会自坟墓中再生",
+    "confidence": 0.95
+   },
+   {
+    "src": "剧团成员Ⅱ",
+    "relation": "表态",
+    "dst": "夏利",
+    "evidence": "我们已经逃得够久了，但这并不意味着我们会一直逃下去",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "自况",
+    "dst": "忒休斯",
+    "evidence": "我们会成为忒休斯，而非践踏诺言的米诺斯",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "吩咐",
+    "dst": "弄臣",
+    "evidence": "鸣响教堂的钟声，向观众们宣告演出的开始",
+    "confidence": 0.95
+   },
+   {
+    "src": "钟声",
+    "relation": "宣告",
+    "dst": "演出",
+    "evidence": "弄臣，鸣响教堂的钟声",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "de1273e6f47476d292ec9078": {
+  "entities": [
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "搜捕者"
+   },
+   {
+    "name": "弄臣",
+    "type": "角色",
+    "aliases": [],
+    "desc": "持火把者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "宣告者"
+   },
+   {
+    "name": "士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受困者"
+   },
+   {
+    "name": "火把",
+    "type": "物品",
+    "aliases": [],
+    "desc": "所掷之炬"
+   },
+   {
+    "name": "火焰",
+    "type": "物品",
+    "aliases": [],
+    "desc": "封路之火墙"
+   },
+   {
+    "name": "钟楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "钟声所出"
+   },
+   {
+    "name": "乌斯怀亚",
+    "type": "地点",
+    "aliases": [
+     "街道"
+    ],
+    "desc": "对峙之地"
+   },
+   {
+    "name": "人群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "沉默的磐石"
+   }
+  ],
+  "relations": [
+   {
+    "src": "骑兵",
+    "relation": "搜捕",
+    "dst": "夏利",
+    "evidence": "这次一定要抓住他们！",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "嘲讽",
+    "dst": "骑兵",
+    "evidence": "恭喜你们，抓住了我们这些遭受不白之冤的可怜人了",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "质论",
+    "dst": "骑兵",
+    "evidence": "是人们给予了他这份权力",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "比况",
+    "dst": "骑兵",
+    "evidence": "就像约翰王恐惧着亚瑟，克劳狄斯恐惧着哈姆雷特，麦克白恐惧着马尔康",
+    "confidence": 0.9
+   },
+   {
+    "src": "夏利",
+    "relation": "断言",
+    "dst": "骑兵",
+    "evidence": "他在害怕着我们——害怕着这份权力的真正拥有者",
+    "confidence": 0.95
+   },
+   {
+    "src": "弄臣",
+    "relation": "抛出",
+    "dst": "火把",
+    "evidence": "小丑举起手里的火把，将其抛到了一旁",
+    "confidence": 0.95
+   },
+   {
+    "src": "火焰",
+    "relation": "封堵",
+    "dst": "骑兵",
+    "evidence": "火焰蔓延的速度极快，很快就将街道的两旁化作了不可逾越的火墙",
+    "confidence": 0.95
+   },
+   {
+    "src": "人群",
+    "relation": "聚集",
+    "dst": "夏利",
+    "evidence": "不知何时，夏利的身边出现了大量的人群",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "宣告",
+    "dst": "骑兵",
+    "evidence": "这是最后的演出——但并非我们的，而是你们的",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "4817254616ab0ee631557aae": {
+  "entities": [
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "识破者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "镇静者"
+   },
+   {
+    "name": "杰弗里",
+    "type": "角色",
+    "aliases": [],
+    "desc": "代表议会抗议者"
+   },
+   {
+    "name": "士兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "退缩者"
+   },
+   {
+    "name": "老人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "喝斥者"
+   },
+   {
+    "name": "商贩",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逐客者"
+   },
+   {
+    "name": "居民",
+    "type": "角色",
+    "aliases": [],
+    "desc": "附和者"
+   },
+   {
+    "name": "神秘术",
+    "type": "概念",
+    "aliases": [],
+    "desc": "制造幻象之力"
+   },
+   {
+    "name": "幻象",
+    "type": "概念",
+    "aliases": [],
+    "desc": "被质疑者"
+   },
+   {
+    "name": "火焰",
+    "type": "物品",
+    "aliases": [],
+    "desc": "真实之焰"
+   },
+   {
+    "name": "市议会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "所代表之机构"
+   },
+   {
+    "name": "人群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "愤怒者"
+   },
+   {
+    "name": "臭鸡蛋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "羞辱之投"
+   }
+  ],
+  "relations": [
+   {
+    "src": "骑兵",
+    "relation": "揭破",
+    "dst": "夏利",
+    "evidence": "你的神秘学能力是制造幻象，没错吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵",
+    "relation": "断言",
+    "dst": "幻象",
+    "evidence": "这些所谓的火焰和人群，一定是你制造出来的幻象！",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "反诘",
+    "dst": "骑兵",
+    "evidence": "真实抑或是幻象，你们试试不就知道了",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "抗议",
+    "dst": "骑兵",
+    "evidence": "我代表自治市市议会，向你们提出抗议，请你们立即离开！",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "喝斥",
+    "dst": "骑兵",
+    "evidence": "暴君的走狗们，滚出去！",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵",
+    "relation": "试焰",
+    "dst": "火焰",
+    "evidence": "为首的骑兵咬了咬牙，冲进了一旁街道燃烧的火焰之中",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "揭示",
+    "dst": "火焰",
+    "evidence": "因为这是人们的愤怒",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "申明",
+    "dst": "骑兵",
+    "evidence": "给予明君敬爱，给予暴君反抗",
+    "confidence": 0.95
+   },
+   {
+    "src": "杰弗里",
+    "relation": "隶属",
+    "dst": "市议会",
+    "evidence": "我是市议会的杰弗里议员！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "fcabe8f2101d16569534c67a": {
+  "entities": [
+   {
+    "name": "骑兵",
+    "type": "角色",
+    "aliases": [],
+    "desc": "溃退者"
+   },
+   {
+    "name": "夏利",
+    "type": "角色",
+    "aliases": [],
+    "desc": "逼退者"
+   },
+   {
+    "name": "老人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "嘲讽者"
+   },
+   {
+    "name": "护国公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被抗之权"
+   },
+   {
+    "name": "臭鸡蛋",
+    "type": "物品",
+    "aliases": [],
+    "desc": "贯穿甲胄的耻辱"
+   },
+   {
+    "name": "钟声",
+    "type": "概念",
+    "aliases": [],
+    "desc": "催促与审判"
+   },
+   {
+    "name": "人群",
+    "type": "角色",
+    "aliases": [],
+    "desc": "声讨者"
+   },
+   {
+    "name": "城门",
+    "type": "地点",
+    "aliases": [],
+    "desc": "撤退方向"
+   }
+  ],
+  "relations": [
+   {
+    "src": "臭鸡蛋",
+    "relation": "羞辱",
+    "dst": "骑兵",
+    "evidence": "它带来的耻辱，却足以贯穿甲胄",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "诘问",
+    "dst": "骑兵",
+    "evidence": "你还认为，这些愤怒仅仅只是幻象吗？",
+    "confidence": 0.95
+   },
+   {
+    "src": "钟声",
+    "relation": "审判",
+    "dst": "骑兵",
+    "evidence": "像是催促，像是审判",
+    "confidence": 0.9
+   },
+   {
+    "src": "骑兵",
+    "relation": "崩溃",
+    "dst": "夏利",
+    "evidence": "你们怎么胆敢对抗护国公的……",
+    "confidence": 0.95
+   },
+   {
+    "src": "夏利",
+    "relation": "催离",
+    "dst": "骑兵",
+    "evidence": "趁还来得及，赶快离开吧",
+    "confidence": 0.95
+   },
+   {
+    "src": "骑兵",
+    "relation": "撤退",
+    "dst": "城门",
+    "evidence": "兵士们只能灰溜溜地收起武器，朝着城门方向离去",
+    "confidence": 0.95
+   },
+   {
+    "src": "老人",
+    "relation": "讥嘲",
+    "dst": "骑兵",
+    "evidence": "这还差不多！别再让我见到你们的脸了！",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

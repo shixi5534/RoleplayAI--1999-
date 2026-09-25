@@ -23,6 +23,7 @@ from .memory_tier import LongTermMemory
 from .character_store import CharacterStore
 from .profile import UserProfile
 from .plot_graph import PlotGraphRegistry
+from .graph_ppr import parse_exempt_sources
 from .graph_search import GraphSearchRegistry
 
 
@@ -98,6 +99,80 @@ def build_services(settings: Settings | None = None) -> KnowledgeServices:
     )
 
 
+def _build_plot_embedder(s: Settings):
+    """剧情层嵌入器：``plot_embed_model`` 非空时用它，否则跟随全局 ``embed_model``。
+
+    为什么必须能分开（M8 实测教训）：全局 ``embed_model`` 同时被 lore 向量库使用，
+    而 lore 库的向量是按 nomic-embed-text（768 维）建的。为了让剧情语义层用上
+    真正跨语言的 bge-m3（1024 维）而把全局一改，lore 检索会因维度失配整体失效。
+    分开配置后各用各的，互不影响。
+    """
+    model = str(getattr(s, "plot_embed_model", "") or "").strip()
+    if not model or model == getattr(s, "embed_model", ""):
+        return build_embedder(s)
+    # 复制一份设置、只换模型名：其余嵌入参数（base_url / timeout）保持一致
+    try:
+        clone = s.model_copy(update={"embed_model": model})
+    except AttributeError:  # pragma: no cover - pydantic v1 兜底
+        clone = s.copy(update={"embed_model": model})
+    return build_embedder(clone)
+
+
+def _build_entity_expander(s):
+    """按配置构造「查询侧实体扩展器」。
+
+    未启用 / 配置不完整 / 构造异常 ⇒ 一律返回 **None**（等价于功能关闭，零回归）。
+    识别后端必须**懂该作品设定**：本地 qwen2.5:7b 实测只有 15.0% 命中率，强模型 62.7%。
+    """
+    if not bool(getattr(s, "plot_entity_expand_enabled", False)):
+        return None
+    try:
+        from roleplay.core.knowledge.plot_entity_expand import (  # noqa: PLC0415
+            EntityExpander, LLMEntityIdentifier, NullIdentifier, StaticMapIdentifier,
+        )
+
+        backend = str(getattr(s, "plot_entity_expand_backend", "static") or "static")
+        top_k = int(getattr(s, "plot_entity_expand_top", 3))
+        if backend == "static":
+            path = str(getattr(s, "plot_entity_expand_static_path", "") or "")
+            if not path:
+                logging.getLogger(__name__).warning(
+                    "实体扩展启用了 static 后端但未配置 plot_entity_expand_static_path，"
+                    "本次不扩展")
+                return None
+            ident = StaticMapIdentifier(path)
+        elif backend == "llm":
+            base = str(getattr(s, "plot_entity_expand_llm_base_url", "")
+                       or getattr(s, "llm_base_url", ""))
+            key = str(getattr(s, "plot_entity_expand_llm_api_key", "")
+                      or getattr(s, "llm_api_key", ""))
+            model = str(getattr(s, "plot_entity_expand_llm_model", "")
+                        or getattr(s, "llm_model", ""))
+            if not (base and model):
+                logging.getLogger(__name__).warning(
+                    "实体扩展启用了 llm 后端但缺少 base_url/model，本次不扩展")
+                return None
+            ident = LLMEntityIdentifier(base_url=base, api_key=key, model=model,
+                                        top_k=top_k)
+        else:
+            ident = NullIdentifier()
+
+        exp = EntityExpander(
+            identifier=ident,
+            top_k=top_k,
+            min_conf=float(getattr(s, "plot_entity_expand_min_conf", 0.0)),
+            max_append=int(getattr(s, "plot_entity_expand_max_append", 4)),
+            enforce_whitelist=bool(getattr(s, "plot_entity_expand_whitelist", True)),
+        )
+        logging.getLogger(__name__).info(
+            "查询侧实体扩展已启用：backend=%s top_k=%d min_conf=%.2f whitelist=%s",
+            backend, top_k, exp.min_conf, exp.enforce_whitelist)
+        return exp
+    except Exception as exc:  # noqa: BLE001 —— 剧情层永不拖垮主链路
+        logging.getLogger(__name__).warning("实体扩展器构造失败：%s", exc)
+        return None
+
+
 def build_plot_registry(settings: Settings | None = None) -> PlotGraphRegistry:
     """剧情图谱注册表（独立于 KnowledgeBase / 嵌入器）。"""
     s = settings or get_settings()
@@ -128,6 +203,52 @@ def build_plot_registry(settings: Settings | None = None) -> PlotGraphRegistry:
         mention_scoring=str(getattr(s, "plot_mention_scoring", "count")),
         cooccurrence_bonus=bool(getattr(s, "plot_cooccurrence_bonus", True)),
         mention_group_by_entity=bool(getattr(s, "plot_mention_group_by_entity", True)),
+        alias_trust_ratio=float(getattr(s, "plot_alias_trust_ratio", 0.25)),
+        untrusted_extra_per_entity=int(
+            getattr(s, "plot_untrusted_extra_per_entity", 1)
+        ),
+        weight_mention_entity=float(getattr(s, "plot_weight_mention_entity", 1.0)),
+        entity_query_max_len=int(getattr(s, "plot_entity_query_max_len", 14)),
+        alias_trust_chained_min_df=int(
+            getattr(s, "plot_alias_trust_chained_min_df", 3)
+        ),
+        name_salience=bool(getattr(s, "plot_name_salience", False)),
+        ppr_max_iter=int(getattr(s, "plot_ppr_max_iter", 20)),
+        # M7 篇章路由
+        chapter_routing=bool(getattr(s, "plot_chapter_routing", True)),
+        chapter_top=int(getattr(s, "plot_chapter_top", 3)),
+        chapter_max_names=int(getattr(s, "plot_chapter_max_names", 2)),
+        weight_chapter=float(getattr(s, "plot_weight_chapter", 1.0)),
+        lexical_topup=bool(getattr(s, "plot_lexical_topup", False)),
+        lexical_always=bool(getattr(s, "plot_lexical_always", False)),
+        mention_per_entity=int(getattr(s, "plot_mention_per_entity", 3)),
+        mention_total_cap=int(getattr(s, "plot_mention_total_cap", 6)),
+        # M8 语义通道：嵌入器在此构建一次，索引加载由注册表按 mtime 懒加载 + 指纹校验。
+        # 剧情层可单独指定模型（plot_embed_model）——全局 embed_model 同时被 lore 向量库
+        # 使用，而 lore 向量是按旧模型维度建的，一改就整体失配。
+        embedder=_build_plot_embedder(s),
+        semantic_enabled=bool(getattr(s, "plot_semantic_enabled", True)),
+        semantic_top=int(getattr(s, "plot_semantic_top", 5)),
+        weight_semantic=float(getattr(s, "plot_weight_semantic", 1.0)),
+        semantic_link_min=float(getattr(s, "plot_semantic_link_min", 0.0)),
+        semantic_link_top=int(getattr(s, "plot_semantic_link_top", 3)),
+        semantic_langs=str(getattr(s, "plot_semantic_langs", "") or ""),
+        semantic_min_score=float(getattr(s, "plot_semantic_min_score", 0.0)),
+        # P1-4 召回率修复：融合层保底保留名额（语义/篇章两通道各自至少入选 N 块）
+        min_semantic_kept=int(getattr(s, "plot_min_semantic_kept", 0)),
+        min_chapter_kept=int(getattr(s, "plot_min_chapter_kept", 0)),
+        # 60 题 never_candidate 专项：融合后语义补位重排（默认关 = 现状逐位一致）
+        rerank_topup_enabled=bool(getattr(s, "plot_rerank_topup_enabled", False)),
+        rerank_topup_keep=int(getattr(s, "plot_rerank_topup_keep", 3)),
+        # P0-1 / P0-4：弱证豁免来源集合（逗号分隔 -> frozenset）+ node specificity 开关
+        exempt_sources=parse_exempt_sources(
+            getattr(s, "plot_weak_exempt_sources", "manual")
+        ),
+        node_specificity=bool(getattr(s, "plot_ppr_node_specificity", False)),
+        trace_enabled=bool(getattr(s, "plot_trace_enabled", False)),
+        # 查询侧实体扩展（默认关；构造失败返回 None ⇒ 零回归）
+        entity_expander=_build_entity_expander(s),
+        trace_dir=Path(getattr(s, "plot_corpus_dir", "./data/knowledge")),
         # P4 人工别名表权威性（仅剧情层；lore 层保持 GraphStore 默认 skip 语义）
         alias_authoritative=bool(getattr(s, "plot_alias_authoritative", True)),
     )

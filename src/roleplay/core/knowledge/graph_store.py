@@ -142,6 +142,11 @@ class GraphStore:
         self._alias_ambiguous_dropped: int = 0
         # bind_alias_table(on_conflict="merge") 因人工表优先而改指的条数（观测性）
         self._alias_reassigned: int = 0
+        # 人工别名表登记的「归一别名 → 实体」来源记录（**仅运行时，不落盘**）。
+        # 用途（剧情层 P1）：检索侧要区分「人写的可信名」与「抽取别名」——
+        # 抽取别名里混着 Campbell/doll 这类与实体无关的词（实测会劫持提及通道），
+        # 而 GraphStore 原本只记录实体级 _anchored，无法回答"这条别名是不是人工写的"。
+        self._human_aliases: dict[str, set[str]] = {}
         # 边索引 (src, dst, relation) -> edge：upsert_edge 合并查找 O(n) → O(1)。
         # 仅运行时维护，**不落盘**（save 的 payload 不含它，_load 后重建）。
         self._edge_idx: dict[tuple[str, str, str], dict] = {}
@@ -326,6 +331,15 @@ class GraphStore:
         """bind_alias_table(on_conflict="merge") 把别名从抽取实体改指人工规范实体的条数。"""
         return self._alias_reassigned
 
+    def human_aliases(self, eid: str) -> set[str]:
+        """该实体在人工别名表里登记的**归一别名**集合（仅运行时；空集表示未进人工表）。
+
+        与 ``link_exact`` 的区别：这里回答的是"这个名字是不是人写的"，
+        而不是"这个名字现在指向谁"——冲突跳过的别名也算人工声明。
+        """
+        with self._lock:
+            return set(self._human_aliases.get(eid) or ())
+
     @property
     def revision(self) -> int:
         """图内容版本号（每次写操作自增）：检索层缓存失效键。"""
@@ -442,6 +456,9 @@ class GraphStore:
                     na = norm_name(alias)
                     if not alias or na == norm_name(name):
                         continue
+                    # 人工声明先记下来（与别名索引最终归谁无关）：检索侧据此区分
+                    # 「人写的可信名」与「抽取别名」，不依赖索引归属（冲突时索引会让给别家）。
+                    self._human_aliases.setdefault(eid, set()).add(na)
                     other = self._alias_index.get(na)
                     if other is not None and other != eid:
                         if on_conflict != "merge" or other in self._anchored:

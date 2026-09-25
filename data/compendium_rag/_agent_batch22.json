@@ -1,0 +1,1117 @@
+{
+ "2ae6d0da38efd00963fa79e2": {
+  "entities": [
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "身下血泊扩散的维也纳分部负责人"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高呼演出暂停者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "饰演托斯卡并转向卡卡尼亚者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "读到大量刺杀新闻者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "通报一级紧急事态者"
+   },
+   {
+    "name": "卡瓦拉多西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "伊索尔德口中的恋人"
+   },
+   {
+    "name": "斯卡比亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "伊索尔德宣称已死的男人"
+   },
+   {
+    "name": "通讯器",
+    "type": "物品",
+    "aliases": [],
+    "desc": "霍夫曼用以通报的设备"
+   },
+   {
+    "name": "波蒂奥拉卡",
+    "type": "角色",
+    "aliases": [],
+    "desc": "中毒身亡的刺杀案受害者"
+   },
+   {
+    "name": "弗拉斯尼克",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被枪杀的刺杀案受害者"
+   },
+   {
+    "name": "赫岑霍夫",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇刺的刺杀案受害者"
+   },
+   {
+    "name": "希腊国王",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇刺的刺杀案受害者"
+   },
+   {
+    "name": "弗朗茨大公",
+    "type": "角色",
+    "aliases": [],
+    "desc": "遇刺的刺杀案受害者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "饰演",
+    "dst": "托斯卡",
+    "evidence": "舞台上，饰演托斯卡的伊索尔德转过身来",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "要求同行",
+    "dst": "卡卡尼亚",
+    "evidence": "和我一同逃离这里吧！卡瓦拉多西",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "读到",
+    "dst": "弗朗茨大公",
+    "evidence": "“弗朗茨大公遇刺”——",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "通报",
+    "dst": "马库斯",
+    "evidence": "计划有变。出现——了一级紧急事态",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "宣告",
+    "dst": "演出暂停",
+    "evidence": "难道都没有发现有人死了吗？！演出暂停",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "0306a056ad890b87e5180d4f": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目睹人群狂热互相杀戮者"
+   },
+   {
+    "name": "楼座观众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "望远镜长在眼睛上的观众"
+   },
+   {
+    "name": "后座观众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "高呼握紧匕首的观众"
+   },
+   {
+    "name": "包厢观众",
+    "type": "角色",
+    "aliases": [],
+    "desc": "赞叹血液溅脸者"
+   },
+   {
+    "name": "歌剧",
+    "type": "事件",
+    "aliases": [],
+    "desc": "依然在奏乐、大幕未落"
+   },
+   {
+    "name": "雨幕",
+    "type": "事件",
+    "aliases": [],
+    "desc": "相关意象"
+   }
+  ],
+  "relations": [
+   {
+    "src": "后座观众",
+    "relation": "煽动",
+    "dst": "人群",
+    "evidence": "握紧你们的匕首，到上面去！我们也要拥有属于自己的斯卡比亚！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "目睹",
+    "dst": "人群",
+    "evidence": "他们在狂热地互相杀戮",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "失去联络",
+    "dst": "霍夫曼",
+    "evidence": "通讯器的联络也因此中断",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "645dd575eadd079613211f23": {
+  "entities": [
+   {
+    "name": "军人",
+    "type": "角色",
+    "aliases": [],
+    "desc": "拔枪射击暴乱分子者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自责引发暴雨者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "传达24小时倒计时者"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [
+     "司辰"
+    ],
+    "desc": "发布24小时倒计时通知者"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会总部"
+    ],
+    "desc": "发布避难通知的机构"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [
+     "重塑"
+    ],
+    "desc": "同一天发动多起刺杀案"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "即将发生"
+   },
+   {
+    "name": "维也纳火车站",
+    "type": "地点",
+    "aliases": [],
+    "desc": "最近的撤退点"
+   },
+   {
+    "name": "维也纳分部",
+    "type": "组织",
+    "aliases": [],
+    "desc": "其原负责人惊恐躺着"
+   }
+  ],
+  "relations": [
+   {
+    "src": "军人",
+    "relation": "射击",
+    "dst": "暴乱分子",
+    "evidence": "你们这些暴乱分子，都见上帝去吧！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "传达",
+    "dst": "马库斯",
+    "evidence": "司辰发布了24小时倒计时通知",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "发动",
+    "dst": "刺杀案",
+    "evidence": "重塑在同一天发动了多起刺杀案，时代的不稳定性抵达了临界点",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "自责",
+    "dst": "暴雨",
+    "evidence": "不，不……怎么会……导致“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "训诫",
+    "dst": "马库斯",
+    "evidence": "不要步入幽微，马库斯！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "指明",
+    "dst": "维也纳火车站",
+    "evidence": "离我们最近的撤退点是维也纳火车站，时间是，两小时后",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "bba77435d44b8bbe68fa1980": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "判定舞台有暗室机关者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "给子弹上膛并扳开马库斯者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "施放深紫色咒文并设地板陷阱者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "呼喊伊索尔德者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "等待另一位主角登台者"
+   },
+   {
+    "name": "提灯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "马库斯握紧的器具"
+   }
+  ],
+  "relations": [
+   {
+    "src": "海因里希",
+    "relation": "施放",
+    "dst": "咒文",
+    "evidence": "深紫色的咒文辉光破空而来",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "保护",
+    "dst": "马库斯",
+    "evidence": "霍夫曼及时将马库斯的肩膀向后一扳",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "设置",
+    "dst": "地板陷阱",
+    "evidence": "地板上有陷阱",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "呼喊",
+    "dst": "伊索尔德",
+    "evidence": "——伊索尔德！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "546b07740381591e3a23dafe": {
+  "entities": [
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生"
+    ],
+    "desc": "质问伊索尔德目的者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "承认杀死卡尔的歌剧演员"
+   },
+   {
+    "name": "卡尔",
+    "type": "角色",
+    "aliases": [
+     "卡尔先生"
+    ],
+    "desc": "被伊索尔德杀死的官僚"
+   },
+   {
+    "name": "战争与和平",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "承认杀死",
+    "dst": "卡尔",
+    "evidence": "您在生气吗，医生？因为我杀死了卡尔先生？",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "引用",
+    "dst": "卡卡尼亚",
+    "evidence": "是您对我说，我们每个人都生病了",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "后悔",
+    "dst": "伊索尔德",
+    "evidence": "我真后悔把这些话告诉您",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "恳求",
+    "dst": "卡卡尼亚",
+    "evidence": "医生，我究竟是哪里做错了，让您不能原谅我？",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "43da96d05f2cc4afee16c054": {
+  "entities": [
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自陈在卡卡尼亚梦想中映出自己者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "保持沉默如冰冷雕塑者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "摔落至舞台下方空间者"
+   },
+   {
+    "name": "重塑之手",
+    "type": "组织",
+    "aliases": [],
+    "desc": "给了伊索尔德拯救方法者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "同样坠入后台者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "欢迎二人来到重塑世界起点者"
+   },
+   {
+    "name": "剧院后台",
+    "type": "地点",
+    "aliases": [],
+    "desc": "舞台之下的另一个舞台"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "自白",
+    "dst": "卡卡尼亚",
+    "evidence": "我在您的梦想中映出自己，就像凝望一面镜子",
+    "confidence": 0.95
+   },
+   {
+    "src": "重塑之手",
+    "relation": "给予",
+    "dst": "伊索尔德",
+    "evidence": "他们给了我拯救的方法，医生",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "自称",
+    "dst": "重塑世界的小小起点",
+    "evidence": "欢迎来到我们重塑世界的小小起点",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "坠落于",
+    "dst": "剧院后台",
+    "evidence": "这是什么地方？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "435fe6f7345c55d1230b03cd": {
+  "entities": [
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "自称拯救马库斯者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "安杰罗提"
+    ],
+    "desc": "被海因里希称为安杰罗提者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "看见未来历史幽灵者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "开枪射击海因里希者"
+   },
+   {
+    "name": "宽仁面具",
+    "type": "物品",
+    "aliases": [],
+    "desc": "海因里希所戴面具"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "被加速以使时代提前落幕"
+   },
+   {
+    "name": "提灯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "驱散黑暗的器具"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "慷慨踏过甲板者"
+   },
+   {
+    "name": "本",
+    "type": "角色",
+    "aliases": [],
+    "desc": "演奏过a小调前奏曲、失去左臂左腿的友人"
+   },
+   {
+    "name": "伊曼纽尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "为写诗而生却死于疫病的友人"
+   },
+   {
+    "name": "西奥菲尔",
+    "type": "角色",
+    "aliases": [],
+    "desc": "点燃自己的自杀者"
+   },
+   {
+    "name": "催眠孢子弹头",
+    "type": "物品",
+    "aliases": [],
+    "desc": "拉普拉斯的弹药"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [
+     "基金会总部"
+    ],
+    "desc": "将带回海因里希之处"
+   }
+  ],
+  "relations": [
+   {
+    "src": "海因里希",
+    "relation": "佩戴",
+    "dst": "宽仁面具",
+    "evidence": "是因为我戴上了宽仁面具？",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "承认",
+    "dst": "暴雨",
+    "evidence": "加速了“暴雨”，让这个时代提前落幕？",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "看见",
+    "dst": "未来历史的幽灵",
+    "evidence": "我也看得见他们，我听得见他们，这些未来历史的幽灵，徘徊在这座城市的上空！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "使用",
+    "dst": "催眠孢子弹头",
+    "evidence": "拉普拉斯的催眠孢子弹头",
+    "confidence": 0.95
+   },
+   {
+    "src": "本",
+    "relation": "失去肢体于",
+    "dst": "战场",
+    "evidence": "但他回来的时候，左臂与左腿都被留在了战场上",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊曼纽尔",
+    "relation": "死于",
+    "dst": "疫病",
+    "evidence": "他没日没夜地挖壕沟，最终死在一场疫病里",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "拒绝谈判",
+    "dst": "海因里希",
+    "evidence": "和恐怖分子没有什么好说的",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "堵住",
+    "dst": "海因里希",
+    "evidence": "慷慨的勿忘我先生踏过甲板，将他急切的询问用一沓厚厚的信件堵在了喉咙里",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "d3faf7890feb399a774d3c03": {
+  "entities": [
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "指控人类为真正恐怖分子者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "咳出鲜血并半蹲者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "首次见导师如此痛苦者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "海因里希",
+    "relation": "指控",
+    "dst": "人类",
+    "evidence": "真正的恐怖分子是你们——人类！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "关切",
+    "dst": "霍夫曼",
+    "evidence": "霍夫曼女士……？霍夫曼女士！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "356b9d69cd9a807d6f41f35d": {
+  "entities": [
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "安杰罗提小姐"
+    ],
+    "desc": "目睹导师倒下的学徒"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "解释筛选药剂原理者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被药剂重创者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "调配筛选药剂者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "引导之人"
+    ],
+    "desc": "听见哭喊并允诺救恩者"
+   },
+   {
+    "name": "苦目树",
+    "type": "物品",
+    "aliases": [],
+    "desc": "药剂来源"
+   },
+   {
+    "name": "怀表",
+    "type": "物品",
+    "aliases": [],
+    "desc": "海因里希查看起效时间的工具"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "为狂乱曲目安上休止符"
+   },
+   {
+    "name": "混血种",
+    "type": "概念",
+    "aliases": [],
+    "desc": "有少量神秘学血统却自认人类者"
+   },
+   {
+    "name": "回旋镖",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "海因里希",
+    "relation": "解释",
+    "dst": "苦目树",
+    "evidence": "这是勿忘我先生特意调配的药剂——来源自苦目树的馈赠",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦目树",
+    "relation": "增强",
+    "dst": "神秘学家",
+    "evidence": "对拥有血脉的我们来说，它无疑能让我们的神秘学能力更加活跃",
+    "confidence": 0.95
+   },
+   {
+    "src": "苦目树",
+    "relation": "毒杀",
+    "dst": "混血种",
+    "evidence": "但对于并无能力的人类混血种……它将是致命的毒药",
+    "confidence": 0.95
+   },
+   {
+    "src": "勿忘我",
+    "relation": "调配",
+    "dst": "药剂",
+    "evidence": "勿忘我先生对魔药的研究非常深入",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "宣称",
+    "dst": "筛选",
+    "evidence": "“筛选”已经开始了，女士们",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "威胁",
+    "dst": "马库斯",
+    "evidence": "而现在，安杰罗提小姐，您又要如何选择？",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "ea7a57bb40adee5fa1f43df8": {
+  "entities": [
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "令马库斯捡匕首杀死导师者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "安杰罗提"
+    ],
+    "desc": "自陈1914正是自己的时代者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "被劝勿步入疯狂者"
+   },
+   {
+    "name": "苦目树",
+    "type": "物品",
+    "aliases": [],
+    "desc": "其香气钻入脑海"
+   },
+   {
+    "name": "匕首",
+    "type": "物品",
+    "aliases": [],
+    "desc": "被扔到地面的凶器"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "将带其越过者"
+   },
+   {
+    "name": "玫瑰花园",
+    "type": "概念",
+    "aliases": [
+     "空中王国"
+    ],
+    "desc": "马库斯讥讽的不存在之地"
+   }
+  ],
+  "relations": [
+   {
+    "src": "海因里希",
+    "relation": "威逼",
+    "dst": "马库斯",
+    "evidence": "捡起它，杀死您的导师，表决您的决心",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "拾起",
+    "dst": "匕首",
+    "evidence": "她捡起了匕首，刀尖向外",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "邀请",
+    "dst": "马库斯",
+    "evidence": "我们将带您越过“暴雨”，重回——属于我们的时代",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "控诉",
+    "dst": "海因里希",
+    "evidence": "您说您在拯救，可是你们只是用毁灭取代了另一场毁灭",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "宣称",
+    "dst": "1914年",
+    "evidence": "被您用“暴雨”所毁灭的1914年——正是我的时代！",
+    "confidence": 0.95
+   },
+   {
+    "src": "马库斯",
+    "relation": "攻击",
+    "dst": "海因里希",
+    "evidence": "海因里希，我要杀了你！！！",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "f2829584cb2617a148d68815": {
+  "entities": [
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "决定杀死海因里希证明立场者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [
+     "医生"
+    ],
+    "desc": "无声拒绝同行的心理医生"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "踢倒马库斯并失去警惕者"
+   },
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目状纹路蔓延至胸口者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [
+     "安杰罗提小姐"
+    ],
+    "desc": "陷入巨大情绪旋涡者"
+   },
+   {
+    "name": "手枪",
+    "type": "物品",
+    "aliases": [
+     "火器"
+    ],
+    "desc": "曾帮西奥菲尔结束痛苦之枪"
+   },
+   {
+    "name": "传送咒文",
+    "type": "概念",
+    "aliases": [],
+    "desc": "送卡尔登上舞台的咒术"
+   },
+   {
+    "name": "目状纹路",
+    "type": "概念",
+    "aliases": [],
+    "desc": "从心脏蔓延到胸口的可怖纹路"
+   },
+   {
+    "name": "暴雨",
+    "type": "事件",
+    "aliases": [],
+    "desc": "落下前最后的筛选时限"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "决定杀害",
+    "dst": "海因里希",
+    "evidence": "我会去杀了海因里希，这样就公平了",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "持用",
+    "dst": "手枪",
+    "evidence": "她从裙摆下拿出一把手枪",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "施展",
+    "dst": "传送咒文",
+    "evidence": "熟悉的神秘术波动——正是那道送卡尔登上舞台的传送咒文",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "踢倒",
+    "dst": "马库斯",
+    "evidence": "海因里希怜悯地踢了她一脚",
+    "confidence": 0.95
+   },
+   {
+    "src": "目状纹路",
+    "relation": "蔓延",
+    "dst": "霍夫曼",
+    "evidence": "可怖的目状纹路已经从心脏蔓延到了胸口",
+    "confidence": 0.95
+   },
+   {
+    "src": "伊索尔德",
+    "relation": "瞄准",
+    "dst": "海因里希",
+    "evidence": "那把致命的火器对准了曾经的友人",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "3f6fa8b8f0b628462703b232": {
+  "entities": [
+   {
+    "name": "霍夫曼",
+    "type": "角色",
+    "aliases": [
+     "霍夫曼女士"
+    ],
+    "desc": "以身体挡下关键射击者"
+   },
+   {
+    "name": "海因里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "小腿中弹并质问托斯卡者"
+   },
+   {
+    "name": "伊索尔德",
+    "type": "角色",
+    "aliases": [],
+    "desc": "枪口指向海因里希者"
+   },
+   {
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "aliases": [],
+    "desc": "阻止伊索尔德并牵制者"
+   },
+   {
+    "name": "马库斯",
+    "type": "角色",
+    "aliases": [],
+    "desc": "目睹射击并自动开启阅读者"
+   },
+   {
+    "name": "勿忘我",
+    "type": "角色",
+    "aliases": [
+     "勿忘我先生"
+    ],
+    "desc": "海因里希称向其求情者"
+   },
+   {
+    "name": "阿尔卡纳",
+    "type": "角色",
+    "aliases": [
+     "引导之人"
+    ],
+    "desc": "海因里希称带其面见者"
+   },
+   {
+    "name": "暴雨症候群",
+    "type": "概念",
+    "aliases": [],
+    "desc": "马库斯可能沾染的症候"
+   },
+   {
+    "name": "空白页",
+    "type": "事件",
+    "aliases": [],
+    "desc": "本篇标题卡所指事件"
+   }
+  ],
+  "relations": [
+   {
+    "src": "伊索尔德",
+    "relation": "射击",
+    "dst": "海因里希",
+    "evidence": "这一发只是射中了海因里希的小腿",
+    "confidence": 0.95
+   },
+   {
+    "src": "海因里希",
+    "relation": "质问",
+    "dst": "伊索尔德",
+    "evidence": "托斯卡……！你竟然，将匕首对准我！",
+    "confidence": 0.95
+   },
+   {
+    "src": "卡卡尼亚",
+    "relation": "阻止",
+    "dst": "伊索尔德",
+    "evidence": "我不能再让您杀人了！",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "决断",
+    "dst": "卡卡尼亚",
+    "evidence": "局势变化了，扭转战局的关键在卡卡尼亚的选择",
+    "confidence": 0.95
+   },
+   {
+    "src": "霍夫曼",
+    "relation": "挡下",
+    "dst": "子弹",
+    "evidence": "她用全身的力气动了起来",
+    "confidence": 0.9
+   },
+   {
+    "src": "马库斯",
+    "relation": "开启",
+    "dst": "阅读",
+    "evidence": "“阅读”罔顾个人意志地开启了",
+    "confidence": 0.95
+   },
+   {
+    "src": "子弹",
+    "relation": "附着",
+    "dst": "灵的气息",
+    "evidence": "子弹上有着灵的气息",
+    "confidence": 0.9
+   }
+  ]
+ }
+}

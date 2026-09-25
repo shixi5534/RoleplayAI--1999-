@@ -1,0 +1,838 @@
+{
+ "1397d00107dc52a4165fba44": {
+  "entities": [],
+  "relations": []
+ },
+ "01b6a601bd3d0dee9a6e5adf": {
+  "entities": [],
+  "relations": []
+ },
+ "42c48fcc010da8033055cbbb": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "代表基金会前来表彰的上司；代表基金会表彰维尔汀的上司"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "受表彰并获休假的调查员；受表彰、即将进入休假的箱主"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "赞赏其贡献并推进下一步者；赞赏维尔汀贡献的基金会"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "正与基金会商议合作的机构；与基金会商议合作的科算中心"
+   },
+   {
+    "name": "平衡伞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "可抵御暴雨的划时代发明；可免疫暴雨的伟大发明"
+   },
+   {
+    "name": "平衡伞研究项目",
+    "type": "事件",
+    "aliases": [],
+    "desc": "两家正在商议的合作项目"
+   },
+   {
+    "name": "外出法案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将出台的外出新规"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "外出所须免疫的灾变；外出须免疫的暴雨"
+   },
+   {
+    "name": "Z的勋章",
+    "type": "物品",
+    "aliases": [],
+    "desc": "连同讲稿装袋递出的勋章"
+   },
+   {
+    "name": "Z的保温杯",
+    "type": "物品",
+    "aliases": [],
+    "desc": "暂时失了地位的爱用杯"
+   },
+   {
+    "name": "基金会各派系",
+    "type": "概念",
+    "aliases": [],
+    "desc": "结构将被打破的内部派系"
+   },
+   {
+    "name": "最需要外出的调查员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "将先行平衡起来的一群人"
+   },
+   {
+    "name": "新时代",
+    "type": "概念",
+    "aliases": [],
+    "desc": "众人即将前往的新时代"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "表彰",
+    "dst": "维尔汀",
+    "evidence": "恭喜你，维尔汀。基金会对你这次的贡献大为赞赏",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "代表",
+    "dst": "圣洛夫基金会",
+    "evidence": "我代表基金会前来表彰你",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "递交",
+    "dst": "维尔汀",
+    "evidence": "一边将勋章和讲稿装进了塑料文件袋，直接递给了你",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "手持",
+    "dst": "Z的勋章",
+    "evidence": "她的左手正拿着一枚勋章",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "搁置",
+    "dst": "Z的保温杯",
+    "evidence": "爱用的保温杯暂时失去了地位",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "商议合作",
+    "dst": "科算中心",
+    "evidence": "现在正就平衡伞研究项目与科算中心商议合作",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "承接",
+    "dst": "平衡伞研究项目",
+    "evidence": "现在正就平衡伞研究项目与科算中心商议合作",
+    "confidence": 0.95
+   },
+   {
+    "src": "平衡伞",
+    "relation": "免疫",
+    "dst": "暴雨",
+    "evidence": "我们现在只能算是堪堪应用了平衡伞去免疫“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "即将出台",
+    "dst": "外出法案",
+    "evidence": "委员会很快就将出台新的外出法案",
+    "confidence": 0.95
+   },
+   {
+    "src": "外出法案",
+    "relation": "针对",
+    "dst": "暴雨",
+    "evidence": "在“暴雨”中外出不再是天方夜谭",
+    "confidence": 0.95
+   },
+   {
+    "src": "平衡伞",
+    "relation": "打破",
+    "dst": "基金会各派系",
+    "evidence": "恐怕基金会内各派系之间的稳定结构也会被平衡伞打破",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "优先护持",
+    "dst": "最需要外出的调查员",
+    "evidence": "最需要外出的调查员们，先行“平衡”起来",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "代批报告",
+    "dst": "维尔汀",
+    "evidence": "我会替你处理这期间的报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "展望",
+    "dst": "新时代",
+    "evidence": "在前往新时代前，你可以休息一会",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推动",
+    "dst": "新时代",
+    "evidence": "真正推动时代回到正轨的是你和你的朋友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "探究成因",
+    "dst": "暴雨",
+    "evidence": "想要真正了解“暴雨”的成因，解开其谜团",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "共勉",
+    "dst": "维尔汀",
+    "evidence": "共勉，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "赞赏",
+    "dst": "维尔汀",
+    "evidence": "基金会对你这次的贡献大为赞赏",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "合作",
+    "dst": "科算中心",
+    "evidence": "现在正就平衡伞研究项目与科算中心商议合作",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "感谢",
+    "dst": "Z",
+    "evidence": "这也多亏了您的协助，Z女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "劝休",
+    "dst": "维尔汀",
+    "evidence": "你可以休息一会，和新认识的朋友聊聊",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "b953e1a42f772042477d4f65": {
+  "entities": [
+   {
+    "name": "Z",
+    "type": "角色",
+    "aliases": [
+     "Z女士"
+    ],
+    "desc": "问及来意的直属上司；与维尔汀谈论新阶段的上司"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被劝歇一歇的司辰；被劝休假的箱主"
+   },
+   {
+    "name": "圣洛夫基金会",
+    "type": "组织",
+    "aliases": [],
+    "desc": "已在筹划下一步的机构；已着手下一步的基金会"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被商议合作的研究中心；商议合作的科算中心"
+   },
+   {
+    "name": "平衡伞",
+    "type": "物品",
+    "aliases": [],
+    "desc": "打破派系平衡的发明；免疫暴雨外出的平衡伞"
+   },
+   {
+    "name": "外出法案",
+    "type": "概念",
+    "aliases": [],
+    "desc": "委员会即将出台的新法案"
+   },
+   {
+    "name": "暴雨",
+    "type": "概念",
+    "aliases": [],
+    "desc": "成因仍是谜团的灾变；成因仍待解开的暴雨"
+   },
+   {
+    "name": "基金会各派系",
+    "type": "概念",
+    "aliases": [],
+    "desc": "稳定结构受冲击的派系"
+   },
+   {
+    "name": "最需要外出的调查员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被先行保护的外出者"
+   },
+   {
+    "name": "新时代",
+    "type": "概念",
+    "aliases": [],
+    "desc": "即将到来的新时代"
+   }
+  ],
+  "relations": [
+   {
+    "src": "Z",
+    "relation": "问询",
+    "dst": "维尔汀",
+    "evidence": "还有什么事么，维尔汀？",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "推进下一步",
+    "dst": "科算中心",
+    "evidence": "在庆祝胜利的同时，基金会已经开始下一步了",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "商议合作",
+    "dst": "科算中心",
+    "evidence": "现在正就平衡伞研究项目与科算中心商议合作",
+    "confidence": 0.95
+   },
+   {
+    "src": "平衡伞",
+    "relation": "免疫",
+    "dst": "暴雨",
+    "evidence": "我们现在只能算是堪堪应用了平衡伞去免疫“暴雨”",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "即将出台",
+    "dst": "外出法案",
+    "evidence": "委员会很快就将出台新的外出法案",
+    "confidence": 0.95
+   },
+   {
+    "src": "外出法案",
+    "relation": "针对",
+    "dst": "暴雨",
+    "evidence": "在“暴雨”中外出不再是天方夜谭",
+    "confidence": 0.95
+   },
+   {
+    "src": "平衡伞",
+    "relation": "打破",
+    "dst": "基金会各派系",
+    "evidence": "恐怕基金会内各派系之间的稳定结构也会被平衡伞打破",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "优先护持",
+    "dst": "最需要外出的调查员",
+    "evidence": "但至少我们能让一部分人——最需要外出的调查员们",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "代批报告",
+    "dst": "维尔汀",
+    "evidence": "我会替你处理这期间的报告",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "劝其歇息",
+    "dst": "维尔汀",
+    "evidence": "在前往新时代前，你可以休息一会",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "推动",
+    "dst": "新时代",
+    "evidence": "真正推动时代回到正轨的是你和你的朋友们",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "探究成因",
+    "dst": "暴雨",
+    "evidence": "想要真正了解“暴雨”的成因，解开其谜团",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "共勉",
+    "dst": "维尔汀",
+    "evidence": "共勉，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "问候",
+    "dst": "维尔汀",
+    "evidence": "还有什么事么，维尔汀",
+    "confidence": 0.95
+   },
+   {
+    "src": "维尔汀",
+    "relation": "感谢",
+    "dst": "Z",
+    "evidence": "这也多亏了您的协助，Z女士",
+    "confidence": 0.95
+   },
+   {
+    "src": "圣洛夫基金会",
+    "relation": "合作",
+    "dst": "科算中心",
+    "evidence": "现在正就平衡伞研究项目与科算中心商议合作",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "劝休",
+    "dst": "维尔汀",
+    "evidence": "在前往新时代前，你可以休息一会",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "探究",
+    "dst": "暴雨",
+    "evidence": "想要真正了解暴雨的成因",
+    "confidence": 0.95
+   },
+   {
+    "src": "Z",
+    "relation": "勉励",
+    "dst": "维尔汀",
+    "evidence": "共勉，维尔汀",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "97355d2c91047c28bde40c5a": {
+  "entities": [],
+  "relations": []
+ },
+ "1f62691e9d2ddfd41ac97359": {
+  "entities": [],
+  "relations": []
+ },
+ "c467a88f3f7416186232f4a8": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "在岛上搭建奇器的另类奇才；岛上设计连锁装置的奇才"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "偶遇奇人的来访者；偶遇闲谈的箱主"
+   },
+   {
+    "name": "戈德堡装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "以杠杆与石头串联的奇器；X新设的连锁投石装置"
+   },
+   {
+    "name": "跨越大洋的海鸥",
+    "type": "角色",
+    "aliases": [],
+    "desc": "装置设想中筑巢的旅鸟"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "眼下乱成一团的研究机构；暂无主事的科算中心"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "离去而继任未定的负责人；离去后声望犹在的研究者露西"
+   },
+   {
+    "name": "露西的欢送仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "尽显离去者人望的仪式"
+   },
+   {
+    "name": "充电王座",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无人敢接管的那把王座；无人愿接管的充电王座"
+   },
+   {
+    "name": "露西的办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "待改装回生物用的办公室"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "以绝食表达抗议的研究者；仍在楼前静坐的绝食者"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "抗议者静坐其前的楼宇"
+   },
+   {
+    "name": "委员会的怀柔部队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "被斥为叛徒的怀柔一翼"
+   },
+   {
+    "name": "人类研究员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "后来加入声援的研究者"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "招呼",
+    "dst": "维尔汀",
+    "evidence": "嗨，维尔汀，在这见面可真巧",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "设计",
+    "dst": "戈德堡装置",
+    "evidence": "我正在设计一个新的戈德堡装置",
+    "confidence": 0.95
+   },
+   {
+    "src": "跨越大洋的海鸥",
+    "relation": "触发",
+    "dst": "戈德堡装置",
+    "evidence": "等到一只跨越大洋的海鸥来到这里，在杠杆的一端筑巢",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "笑谈",
+    "dst": "科算中心",
+    "evidence": "比如科算中心现在乱成一团",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "留下",
+    "dst": "露西的欢送仪式",
+    "evidence": "露西走前的欢送仪式充分展示了她的人望",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "无人接管",
+    "dst": "充电王座",
+    "evidence": "暂时没有人想接管那把充电王座",
+    "confidence": 0.95
+   },
+   {
+    "src": "充电王座",
+    "relation": "置于",
+    "dst": "露西的办公室",
+    "evidence": "光是把办公室改装回生物用就需要点时间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "静坐于",
+    "dst": "委员会大楼",
+    "evidence": "它还在委员会大楼前坐着呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类研究员",
+    "relation": "加入声援",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "后来人类研究员和神秘学家也加入了它",
+    "confidence": 0.95
+   },
+   {
+    "src": "委员会的怀柔部队",
+    "relation": "瓦解",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "最后委员会的怀柔部队推来了一辆餐车",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "怒斥",
+    "dst": "委员会的怀柔部队",
+    "evidence": "当时乌尔里希那声“叛徒！”喊得可大声了呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "坚持",
+    "dst": "科算中心",
+    "evidence": "它还有很多研究与工作要忙",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "道别",
+    "dst": "维尔汀",
+    "evidence": "随时欢迎你再来聊天",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "问候",
+    "dst": "维尔汀",
+    "evidence": "嗨，维尔汀，在这见面可真巧",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "谈起",
+    "dst": "科算中心",
+    "evidence": "比如科算中心现在乱成一团",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "称赞",
+    "dst": "露西",
+    "evidence": "露西走前的欢送仪式充分展示了她的人望",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "调侃",
+    "dst": "充电王座",
+    "evidence": "暂时没有人想接管那把充电王座",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "转述",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "它还在委员会大楼前坐着呢",
+    "confidence": 0.95
+   }
+  ]
+ },
+ "a391cdfa367dd52745bdc9dd": {
+  "entities": [
+   {
+    "name": "X",
+    "type": "角色",
+    "aliases": [],
+    "desc": "再度接待访客的装置设计者；再次招呼来客的装置奇才"
+   },
+   {
+    "name": "维尔汀",
+    "type": "角色",
+    "aliases": [],
+    "desc": "被问及近况的来访者；再度来访闲谈的箱主"
+   },
+   {
+    "name": "戈德堡装置",
+    "type": "物品",
+    "aliases": [],
+    "desc": "仍待调试的杠杆奇器"
+   },
+   {
+    "name": "科算中心",
+    "type": "组织",
+    "aliases": [],
+    "desc": "继任未定的机构"
+   },
+   {
+    "name": "露西",
+    "type": "角色",
+    "aliases": [],
+    "desc": "人望经由仪式显现者；声望仍被称道的研究者露西"
+   },
+   {
+    "name": "露西的欢送仪式",
+    "type": "事件",
+    "aliases": [],
+    "desc": "离去前举办的送别仪式"
+   },
+   {
+    "name": "充电王座",
+    "type": "物品",
+    "aliases": [],
+    "desc": "无人愿接的充电王座；无人愿接管的充电王座"
+   },
+   {
+    "name": "露西的办公室",
+    "type": "地点",
+    "aliases": [],
+    "desc": "需改装回去的旧办公室"
+   },
+   {
+    "name": "暴雨小组组长乌尔里希",
+    "type": "角色",
+    "aliases": [],
+    "desc": "坚持最久的绝食者；坚持绝食静坐的乌尔里希"
+   },
+   {
+    "name": "委员会大楼",
+    "type": "地点",
+    "aliases": [],
+    "desc": "绝食者所坐的委员会楼前"
+   },
+   {
+    "name": "委员会的怀柔部队",
+    "type": "组织",
+    "aliases": [],
+    "desc": "以餐车收场的一翼"
+   },
+   {
+    "name": "人类研究员",
+    "type": "角色",
+    "aliases": [],
+    "desc": "随之加入抗议的人"
+   }
+  ],
+  "relations": [
+   {
+    "src": "X",
+    "relation": "欢迎",
+    "dst": "维尔汀",
+    "evidence": "欢迎再次光临，这次想聊些什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "调试",
+    "dst": "戈德堡装置",
+    "evidence": "我的装置还需要些调试",
+    "confidence": 0.95
+   },
+   {
+    "src": "露西",
+    "relation": "留下",
+    "dst": "露西的欢送仪式",
+    "evidence": "露西走前的欢送仪式充分展示了她的人望",
+    "confidence": 0.95
+   },
+   {
+    "src": "科算中心",
+    "relation": "无人接管",
+    "dst": "充电王座",
+    "evidence": "暂时没有人想接管那把充电王座",
+    "confidence": 0.95
+   },
+   {
+    "src": "充电王座",
+    "relation": "置于",
+    "dst": "露西的办公室",
+    "evidence": "光是把办公室改装回生物用就需要点时间了",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "静坐于",
+    "dst": "委员会大楼",
+    "evidence": "它还在委员会大楼前坐着呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "人类研究员",
+    "relation": "加入声援",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "后来人类研究员和神秘学家也加入了它",
+    "confidence": 0.95
+   },
+   {
+    "src": "委员会的怀柔部队",
+    "relation": "瓦解",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "最后委员会的怀柔部队推来了一辆餐车",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "怒斥",
+    "dst": "委员会的怀柔部队",
+    "evidence": "当时乌尔里希那声“叛徒！”喊得可大声了呢",
+    "confidence": 0.95
+   },
+   {
+    "src": "暴雨小组组长乌尔里希",
+    "relation": "坚持",
+    "dst": "科算中心",
+    "evidence": "虽然没有谁能比乌尔里希坚持得久",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "招呼",
+    "dst": "维尔汀",
+    "evidence": "欢迎再次光临，这次想聊些什么",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "称赞",
+    "dst": "露西",
+    "evidence": "露西走前的欢送仪式充分展示了她的人望",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "调侃",
+    "dst": "充电王座",
+    "evidence": "暂时没有人想接管那把充电王座",
+    "confidence": 0.95
+   },
+   {
+    "src": "X",
+    "relation": "转述",
+    "dst": "暴雨小组组长乌尔里希",
+    "evidence": "它还在委员会大楼前坐着呢",
+    "confidence": 0.95
+   }
+  ]
+ }
+}
