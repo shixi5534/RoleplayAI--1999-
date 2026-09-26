@@ -1,0 +1,910 @@
+{
+  "_meta": {
+    "author": "gen-agent-2",
+    "timestamp": "2026-09-26",
+    "blind": "盲写：仅读取 corpus.json、_control_chunks.json 与 rag_testset_native.json 前2例（仅格式参考）；未读取 graph.json、reports/*、其他 rag_testset 文件及任何修复/审计/验证文档；无网络、无 Ollama。",
+    "count": 50
+  },
+  "cases": [
+    {
+      "id": "GC-01",
+      "q": "在霍夫曼与马库斯的对话中，马库斯认为有问题的西奥菲尔遗作是哪幅画？",
+      "ref": "《拯救》",
+      "evidence": [
+        "拯救",
+        "西奥菲尔",
+        "委外合约小队"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:14.2.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-02",
+      "q": "红弩箭向维尔汀汇报，飞行中队在哪个坐标点附近遭到了重塑之手的伏击？",
+      "ref": "别列格勒城东南42英里坐标点",
+      "evidence": [
+        "阿尔法2号",
+        "别列格勒",
+        "飞行中队"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__112_远征记:17.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-03",
+      "q": "洋葱头说吉娃娃去追逐它的什么了？",
+      "ref": "麦高芬",
+      "evidence": [
+        "麦高芬",
+        "红气球",
+        "洋葱头"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "anecdote__1919_黄金与悲喜剧:7.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-04",
+      "q": "阿黛拉请贝丽尔上了她开的什么车？",
+      "ref": "标致201",
+      "evidence": [
+        "标致201",
+        "地下墓穴",
+        "阿黛拉"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__32101_迁流的盛宴:9.2.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-05",
+      "q": "环状水星的手指最后停在了那张美国地图上的哪个地名？",
+      "ref": "弗雷斯诺",
+      "evidence": [
+        "弗雷斯诺",
+        "美国地图",
+        "旅行房车"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__20603_第一千夜:3.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-06",
+      "q": "苏菲亚认为，让人得以面对既定结局的品质除了勇气还可能是什么？",
+      "ref": "对真相的畏惧",
+      "evidence": [
+        "勇气",
+        "畏惧",
+        "棉垫"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "character__19101_漫漫之夜行迹:1.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-07",
+      "q": "莱格斯那两颗没能射穿胸膛的子弹“射”向了哪里，造成了什么后果？",
+      "ref": "霍利克的修车铺",
+      "evidence": [
+        "霍利克",
+        "修车铺",
+        "博伊刀"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "activity__20101_飞驰_明日之城:9.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-08",
+      "q": "阿夫西维说哪种食物同志只会在每周五的晚餐被找到？",
+      "ref": "布林饼",
+      "evidence": [
+        "布林饼",
+        "捉迷藏",
+        "手风琴"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__18101_再见_来亚什基:7.0.3"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-09",
+      "q": "这段文字开头所引《半而未满》一诗的作者是谁？",
+      "ref": "纪伯伦·哈利勒·纪伯伦",
+      "evidence": [
+        "纪伯伦",
+        "半而未满",
+        "啄木鸟"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "anecdote__1904_埃里克角色故事:0.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-10",
+      "q": "？？？感叹自己第一次见到异化程度如此之高的生物，它的名字是什么？",
+      "ref": "伊吉拉格【Ijiraq】",
+      "evidence": [
+        "伊吉拉格",
+        "Ijiraq",
+        "向日葵"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__18101_再见_来亚什基:1.1.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-11",
+      "q": "北方哨歌根据“鲸鱼骨骼，菱形利齿”等特征辨认出的魔精叫什么？",
+      "ref": "基基图克[Kikituk]",
+      "evidence": [
+        "基基图克",
+        "Kikituk",
+        "卡尔王地群岛"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__18101_再见_来亚什基:6.1.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-12",
+      "q": "鬃毛沙砾说这次UTTU闪烁集会要读的书是什么？",
+      "ref": "《罗摩衍那》",
+      "evidence": [
+        "罗摩衍那",
+        "闪烁集会",
+        "鬃毛沙砾"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "appendix_unbound__002_1_3_最初的诗赛季剧情:1.1.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-13",
+      "q": "神教教徒Ⅲ想等到仪式结束后向哪位大人请教斯基泰密码的答案？",
+      "ref": "“德谟斯”大人",
+      "evidence": [
+        "德谟斯",
+        "斯基泰密码",
+        "神教教徒"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__305201_入雅典记:7.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-14",
+      "q": "？？？说“这就是我们的诅咒”——这个诅咒指什么？",
+      "ref": "脑中的阳光会吞噬一切",
+      "evidence": [
+        "吞噬",
+        "诅咒",
+        "多瑙河"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "anecdote__1912_塞梅尔维斯:4.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-15",
+      "q": "卡珊德拉说，也许连谁也要赞颂多米蒂乌斯的名？",
+      "ref": "伯里克利",
+      "evidence": [
+        "伯里克利",
+        "吟游诗人",
+        "卡珊德拉"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__305201_入雅典记:7.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-16",
+      "q": "重塑士兵认出直飞而来的巨物是什么（来自哪里）？",
+      "ref": "来自南极的奇美拉",
+      "evidence": [
+        "奇美拉",
+        "南极",
+        "槲寄生"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__113_他者的悲哀:12.1.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-17",
+      "q": "环状水星说马上就会知道比安卡会不会有一只什么？",
+      "ref": "宠物鸡",
+      "evidence": [
+        "宠物鸡",
+        "招牌",
+        "塔罗师比安卡"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "character__20603_第一千夜:4.0.4"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-18",
+      "q": "赶走了旧朋友之后，夏洛特称谁是“我唯一的朋友”？",
+      "ref": "苏利丝",
+      "evidence": [
+        "苏利丝",
+        "夏洛特",
+        "女巫"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "character__23501_太阳的背面:3.1.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-19",
+      "q": "红尾马驹从谁的身后掠走了别斯米尔？",
+      "ref": "曲娘",
+      "evidence": [
+        "曲娘",
+        "别斯米尔",
+        "红尾马驹"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:12.2.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-20",
+      "q": "阿夫西维把画儿送给了那位有一台漂亮打字机的什么人？",
+      "ref": "微笑的盲眼女士",
+      "evidence": [
+        "盲眼女士",
+        "打字机",
+        "彼得森"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__18101_再见_来亚什基:7.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-21",
+      "q": "露西认为横渡大西洋的唯一方法是什么？",
+      "ref": "乘船",
+      "evidence": [
+        "横渡大西洋",
+        "乘船",
+        "希梅娜"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__19601_飞渡往日:1.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-22",
+      "q": "玛蒂尔达醒来时，之前一直守在她床边、刚刚才离开的是谁？",
+      "ref": "贝丽尔女士",
+      "evidence": [
+        "贝丽尔",
+        "康复中心",
+        "文书工作"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__113_他者的悲哀:22.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-23",
+      "q": "星锑保证在APPLe电台为回归的唱片举办连续多少小时的派对？",
+      "ref": "72小时",
+      "evidence": [
+        "72小时",
+        "APPLe电台",
+        "唱片"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__24101_地球上最后的夜晚:9.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-24",
+      "q": "37解释海豚对星锑又拍又咬的原因是什么？",
+      "ref": "它们认为你是无理数",
+      "evidence": [
+        "无理数",
+        "海豚",
+        "阿派朗"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__105_洞穴的囚徒:5.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-25",
+      "q": "谁说“第一次进来的人是会不太习惯”？",
+      "ref": "伽菈波那",
+      "evidence": [
+        "伽菈波那",
+        "幻境",
+        "库玛尔"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__13101_行至摩卢旁卡:14.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-26",
+      "q": "陈半仙提起《除灵十三法》的来由时，唤泥鯭的士的本名叫什么？",
+      "ref": "李安安",
+      "evidence": [
+        "李安安",
+        "除灵十三法",
+        "陈半仙"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "anecdote__1921_鬼马探灵记:6.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-27",
+      "q": "马歇尔批评杜卡特讲的故事有什么问题？",
+      "ref": "完全与我们的死亡无关",
+      "evidence": [
+        "死亡无关",
+        "读者的兴趣",
+        "马歇尔"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "character__17703_灯塔集:2.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-28",
+      "q": "乔治橡树生长于多少年前？",
+      "ref": "七百年前",
+      "evidence": [
+        "乔治橡树",
+        "七百年",
+        "树洞"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__103_故事一无所有:9.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-29",
+      "q": "努库泰澳人的灯具“罗盘灼灼”的灯罩是用什么树的树皮打磨的？",
+      "ref": "棕榈树",
+      "evidence": [
+        "罗盘灼灼",
+        "棕榈树",
+        "努库泰澳"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__24101_地球上最后的夜晚:6.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-30",
+      "q": "尼迪亚说她在家人们的尸体上看见长出了什么？",
+      "ref": "得了黄叶病的香蕉树",
+      "evidence": [
+        "黄叶病",
+        "香蕉树",
+        "尼迪亚"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__22911_洛佩拉玩法剧情:5.0.3"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-31",
+      "q": "伊索尔德认为西奥菲尔若是一个真正有勇气的人，他就应该怎么做？",
+      "ref": "去参军，或是痛痛快快地跟人决斗",
+      "evidence": [
+        "风流债",
+        "决斗",
+        "参军"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:10.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-32",
+      "q": "空脑袋靠什么物品施展“转念即至”逃离了现场？",
+      "ref": "传送软盘",
+      "evidence": [
+        "传送软盘",
+        "转念即至",
+        "拍卖会"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__35101_绿松石蛇俱乐部:10.2.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-33",
+      "q": "阿黛拉为什么没有告诉罗西教授项链的真实下落？",
+      "ref": "听起来更像是个疯子",
+      "evidence": [
+        "雇主",
+        "疯子",
+        "项链"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "activity__32101_迁流的盛宴:10.1.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-34",
+      "q": "卡珊德拉向两人自报的名号是什么？",
+      "ref": "斯巴达的卡珊德拉",
+      "evidence": [
+        "斯巴达",
+        "驯鹰人",
+        "酬金"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__305201_入雅典记:3.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-35",
+      "q": "莫桑女士打开的崭新物资箱里装着重塑之手用来做什么的面具？",
+      "ref": "免疫“暴雨”",
+      "evidence": [
+        "免疫",
+        "面具",
+        "莫桑女士"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__105_洞穴的囚徒:2.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-36",
+      "q": "诺谛卡说自己变得和梦中谁的样子很像？",
+      "ref": "地母",
+      "evidence": [
+        "地母",
+        "羽翼",
+        "诺谛卡"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:20.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-37",
+      "q": "维尔汀说基金会内部抗议的声音凝聚成的新群体叫什么？",
+      "ref": "人类党团",
+      "evidence": [
+        "人类党团",
+        "背景分析报告",
+        "Z女士"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__104_老虎的金黄:0.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-38",
+      "q": "威尔提议拿自己家的什么家产当铅球？",
+      "ref": "大锅",
+      "evidence": [
+        "铅球",
+        "大锅",
+        "记分员"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__23101_圣火纪行_东区黎明:14.2.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-39",
+      "q": "梁月自报是十二侲子中哪一家的后人？",
+      "ref": "梁家",
+      "evidence": [
+        "十二侲子",
+        "梁家",
+        "奇星"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__25101_唐人街影话:3.2.3"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-40",
+      "q": "该脚本条目中的 Script ID 是多少？",
+      "ref": "800807",
+      "evidence": [
+        "800807",
+        "Script ID",
+        "荒原经营引导剧情"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "appendix_unbound__025_2_2_荒原经营引导剧情:2.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-41",
+      "q": "艾弗森命令把什么系统开到最大功率？",
+      "ref": "通风系统",
+      "evidence": [
+        "通风系统",
+        "狗毛",
+        "镇静喷剂"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__11101_雷米特杯失窃案:10.2.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-42",
+      "q": "按罗西教授的说法，什么样的巴黎才是真正的巴黎？",
+      "ref": "由世人意象构成的巴黎",
+      "evidence": [
+        "世人意象",
+        "埃菲尔铁塔",
+        "罗西教授"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__32101_迁流的盛宴:15.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-43",
+      "q": "苏菲亚说37在哪一年的“流溢”结束之后就把自己关进了研究室？",
+      "ref": "1929年",
+      "evidence": [
+        "流溢",
+        "1929",
+        "几何体"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__105_洞穴的囚徒:16.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-44",
+      "q": "？？？想着给谁的报告“该怎么圆呢”？",
+      "ref": "洛伦兹",
+      "evidence": [
+        "洛伦兹",
+        "报告",
+        "封存"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "appendix_unbound__063_3_1_雨前漫游:2.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-45",
+      "q": "阿莱夫说虚构集在第七次来信中新增的角色是什么？",
+      "ref": "提着箱子的能量扰动学家",
+      "evidence": [
+        "能量扰动学家",
+        "第七次来信",
+        "科马拉"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__109_疯癫与文明:14.1.1"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-46",
+      "q": "傅书生的妻子霍氏出身何处？",
+      "ref": "钱塘",
+      "evidence": [
+        "钱塘",
+        "霍氏",
+        "狐仙"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "appendix_unbound__006_1_6_赛季剧情:2.1.3"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-47",
+      "q": "该脚本条目的 Internal title 是什么？",
+      "ref": "【1.9】去往新世界【37】",
+      "evidence": [
+        "806602",
+        "Internal title",
+        "去往新世界"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "appendix_unbound__008_1_9_去往新世界_37:1.0.0"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-48",
+      "q": "X给露西的通讯仪是供谁跟外界沟通的？",
+      "ref": "雨幕舞台内的成员",
+      "evidence": [
+        "通讯仪",
+        "雨幕舞台",
+        "干涉仪"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__385101_聚合浪潮:0.0.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-49",
+      "q": "艾吉奥说莱昂纳多的镜像体倒过来是什么意思？",
+      "ref": "“过来”",
+      "evidence": [
+        "镜像体",
+        "avanti",
+        "圣殿骑士"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__305101_翡冷翠之春:5.1.2"
+      ],
+      "source": "gen_r1r2_control"
+    },
+    {
+      "id": "GC-50",
+      "q": "斯考特通过什么物品与神秘女士进行传信术通讯？",
+      "ref": "花瓶",
+      "evidence": [
+        "花瓶",
+        "传信术",
+        "夜巡特遣"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__25101_唐人街影话:21.0.1"
+      ],
+      "source": "gen_r1r2_control"
+    }
+  ]
+}

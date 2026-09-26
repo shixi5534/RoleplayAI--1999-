@@ -1,0 +1,968 @@
+{
+  "meta": {
+    "author": "gen-agent-1",
+    "timestamp": "2026-09-27T00:26:56",
+    "count": 50,
+    "blind": "corpus+native-format-only",
+    "notes": [
+      "All 50 questions written blind from data/compendium_rag/corpus.json only; format mirrored from the first 2 cases of rag_testset_native.json.",
+      "chunk_id third index estimated as floor(turn_index/50) per scene (part.scene from corpus.json); scheme verified against rag_testset_native.json N001 (anecdote__1913_淑女的守则:5.0.4 -> turn 203) and N002 (activity__18101_再见_来亚什基:11.0.0 -> turns 14-40). Exact pipeline windows may differ by a few turns at chunk boundaries.",
+      "Entity label 允尔德 never appears verbatim in corpus text; questions use corpus surface forms 德洛丝/德洛丝医生/兀尔德/兀尔德女士.",
+      "Each evidence keyword was programmatically verified to appear verbatim in the cited chunk window (anchor turn included)."
+    ]
+  },
+  "cases": [
+    {
+      "id": "GA-01",
+      "q": "小叶尼塞发现的那份听写稿件，是别斯米尔女士曾委托她记录的什么？",
+      "ref": "游记（或者说“手记”），她本应整理完成后寄给别斯米尔",
+      "evidence": [
+        "委托我记录的游记",
+        "手记"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:0.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 28
+    },
+    {
+      "id": "GA-02",
+      "q": "关于实现“所求必应”需要付出的代价，别斯米尔从商人们那里听到的说法是什么？",
+      "ref": "代价并不是固定的，在民间传说中多数都需要以身犯险",
+      "evidence": [
+        "付出代价",
+        "以身犯险"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:1.2.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 29
+    },
+    {
+      "id": "GA-03",
+      "q": "别斯米尔凭多年登山经验判断，他们所处地方的海拔大约是多少？",
+      "ref": "绝对超过3000米（同伴们只是不适应这种高度）",
+      "evidence": [
+        "海拔绝对超过3000米",
+        "窄坡"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:3.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 13
+    },
+    {
+      "id": "GA-04",
+      "q": "同行者们被巨鸟控制后，别斯米尔怀疑是哪种生物拥有隔空操纵行为的能力？",
+      "ref": "鹰身女妖（她尚不确定其是否有这种能力）",
+      "evidence": [
+        "鹰身女妖",
+        "隔空操纵行为的能力"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:4.1.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 62
+    },
+    {
+      "id": "GA-05",
+      "q": "误把别斯米尔当作小叶尼塞的母亲之后，里正道歉时提到自己遗忘了她的什么情况？",
+      "ref": "她的眼疾（别斯米尔看不见，只是看上去行动太过自如，人们常忽略这一点）",
+      "evidence": [
+        "忘了她的眼疾",
+        "行动太过自如"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:7.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 24
+    },
+    {
+      "id": "GA-06",
+      "q": "在曲娘家院子里，别斯米尔在水缸附近的落叶中摸出了什么东西？",
+      "ref": "一根骨头——里正说羽人也拿着像骨头的术杖（骨杖）",
+      "evidence": [
+        "一根骨头",
+        "术杖"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:11.2.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 84
+    },
+    {
+      "id": "GA-07",
+      "q": "面对“失落的神秘术”无法像低地沉积岩那样被验证的质疑，别斯米尔给出了怎样的回应？",
+      "ref": "所以我才更应该亲自找到它",
+      "evidence": [
+        "失落的神秘术",
+        "亲自找到它"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:0.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 62
+    },
+    {
+      "id": "GA-08",
+      "q": "在城外断桥边问卜时，别斯米尔用什么方式在地上写下自己的问题？",
+      "ref": "以食指戳在松软的泥水中，写下几个西里尔字母",
+      "evidence": [
+        "西里尔字母",
+        "食指"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:20.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-besmiel",
+      "_anchor_turn": 36
+    },
+    {
+      "id": "GA-09",
+      "q": "电台新闻里提到，传记作家兀尔德出版了哪部引发新一轮爱琴海旅游狂潮的游记？",
+      "ref": "《漫步阿派朗》",
+      "evidence": [
+        "传记作家兀尔德",
+        "漫步阿派朗",
+        "爱琴海旅游狂潮"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__105_洞穴的囚徒:2.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 49
+    },
+    {
+      "id": "GA-10",
+      "q": "马坎多替生病的老板上门求医时说，“大伙儿都认识”荣军院的哪位医生？",
+      "ref": "德洛丝（德洛丝医生）",
+      "evidence": [
+        "荣军院的德洛丝",
+        "大伙儿都认识你"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__108_忧郁的热带:9.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 15
+    },
+    {
+      "id": "GA-11",
+      "q": "据康斯坦丁的说法，被伊戈尔劫走的“德洛丝医生”实际上是谁？",
+      "ref": "兀尔德女士",
+      "evidence": [
+        "就是兀尔德女士",
+        "行为的动机"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__108_忧郁的热带:22.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 66
+    },
+    {
+      "id": "GA-12",
+      "q": "维尔汀一行发现的、曾“参与了圣保罗喧闹的夜晚”的那台便携式古典打字机是谁的物品？",
+      "ref": "德洛丝医生",
+      "evidence": [
+        "便携式古典打字机",
+        "德洛丝医生的打字机"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:9.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 58
+    },
+    {
+      "id": "GA-13",
+      "q": "关于德洛丝医生的眼睛，维尔汀向诺谛卡作了怎样的描述？",
+      "ref": "她总是用眼罩或绷带藏着自己的眼睛，始终如此",
+      "evidence": [
+        "眼罩或绷带",
+        "始终如此"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:10.1.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 58
+    },
+    {
+      "id": "GA-14",
+      "q": "“无名者”自称掌握着有关谁的“下落的最后一块拼图”？",
+      "ref": "德洛丝医生——又或者说，兀尔德女士",
+      "evidence": [
+        "兀尔德女士",
+        "最后一块拼图"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:12.2.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 32
+    },
+    {
+      "id": "GA-15",
+      "q": "面对维尔汀“玛尔塔、别斯米尔、兀尔德……我该如何称呼您”的疑问，德洛丝医生如何回答？",
+      "ref": "“……我是德洛丝医生，而‘兀尔德’的确是我的笔名。”（她用它写一些文章）",
+      "evidence": [
+        "我该如何称呼您",
+        "的确是我的笔名"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:19.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 99
+    },
+    {
+      "id": "GA-16",
+      "q": "在琥珀屋的实验场景中，被称作“兀尔德女士”的她如何说明这个名字与自己职业的关系？",
+      "ref": "她自称只是一名调查记者，“兀尔德”只是她用来给特定杂志投稿的笔名",
+      "evidence": [
+        "调查记者",
+        "特定杂志投稿的笔名"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__112_远征记:10.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-urd",
+      "_anchor_turn": 4
+    },
+    {
+      "id": "GA-17",
+      "q": "维尔汀向玛尔塔女士索要了什么？",
+      "ref": "一些新的纸笔（玛尔塔：我们从不会疏于给予沉思者的养料）",
+      "evidence": [
+        "新的纸笔",
+        "沉思者的养料"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:12.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-marta",
+      "_anchor_turn": 19
+    },
+    {
+      "id": "GA-18",
+      "q": "苏菲亚为即将参加试炼的37担忧时，玛尔塔是如何安慰她的？",
+      "ref": "37会安然无事的，她是被真理眷顾的孩子",
+      "evidence": [
+        "被真理眷顾的孩子",
+        "安然无事"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__107_孤独之歌:3.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-marta",
+      "_anchor_turn": 74
+    },
+    {
+      "id": "GA-19",
+      "q": "冲进烟尘去找苏菲亚之前，37把谁托付给了玛尔塔女士照顾？",
+      "ref": "6（“6就拜托你了，玛尔塔女士”）",
+      "evidence": [
+        "6就拜托你了",
+        "我得去找苏菲亚"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__107_孤独之歌:19.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-marta",
+      "_anchor_turn": 7
+    },
+    {
+      "id": "GA-20",
+      "q": "玛尔塔请求6为她解答疑惑时，6给出了怎样的回答？",
+      "ref": "“我能回答您的并不多。但我想——命运比我们更清楚自己的命运。”",
+      "evidence": [
+        "我能回答您的并不多",
+        "命运比我们更清楚自己的命运"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__107_孤独之歌:26.0.2"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-marta",
+      "_anchor_turn": 149
+    },
+    {
+      "id": "GA-21",
+      "q": "众人离开后空荡的厅堂里，888向玛尔塔女士询问谁的状况？",
+      "ref": "6（是否仍未醒来；盲眼的信众玛尔塔摇了摇头）",
+      "evidence": [
+        "6仍未醒来吗",
+        "盲眼的信众"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__107_孤独之歌:21.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-marta",
+      "_anchor_turn": 19
+    },
+    {
+      "id": "GA-22",
+      "q": "据马库斯向霍夫曼的汇报，“卡卡尼亚”这个名字对应的本名是什么？",
+      "ref": "克拉拉（克拉拉小姐）",
+      "evidence": [
+        "也就是克拉拉小姐",
+        "镜子映射人们内心的图景"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:6.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-klara",
+      "_anchor_turn": 30
+    },
+    {
+      "id": "GA-23",
+      "q": "在拉普拉斯康复中心，露西为何能一眼认出卡卡尼亚的身份？",
+      "ref": "因为她的名字“克拉拉·温格勒”就写在康复病床末端的名牌上",
+      "evidence": [
+        "克拉拉·温格勒",
+        "床尾"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__19603_犹在镜中:0.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-klara",
+      "_anchor_turn": 32
+    },
+    {
+      "id": "GA-24",
+      "q": "卡卡尼亚向马库斯说明，“卡卡尼亚”这个名字源自什么？",
+      "ref": "源自朋友海因里希给她的一本书——正如那个名字一样，“既是又是，既有又有，无处可寻，又无处不在”",
+      "evidence": [
+        "给了我一本书",
+        "既是又是"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:7.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-klara",
+      "_anchor_turn": 55
+    },
+    {
+      "id": "GA-25",
+      "q": "在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？",
+      "ref": "医生是一把钥匙——一把用于打开上锁的门的钥匙（克拉拉，或是卡卡尼亚医生）",
+      "evidence": [
+        "克拉拉，或是卡卡尼亚医生",
+        "医生是一把钥匙"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "character__17701_小房间:7.0.3"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-klara",
+      "_anchor_turn": 175
+    },
+    {
+      "id": "GA-26",
+      "q": "决斗开始前的公证声明中，合法的决斗武器只有哪三种？",
+      "ref": "军刀、剑、手枪",
+      "evidence": [
+        "军刀",
+        "手枪",
+        "合法的武器"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:6.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-kakania",
+      "_anchor_turn": 39
+    },
+    {
+      "id": "GA-27",
+      "q": "纪念画展的致辞中，伊索尔德如何向宾客介绍克拉拉小姐？",
+      "ref": "她是“魔圈”的创始人，来自一个新兴的神秘学家中产家庭，是一位尽职的医生，也是一位品位卓越的艺术鉴赏家",
+      "evidence": [
+        "创始人——克拉拉小姐",
+        "艺术鉴赏家"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:11.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-kakania",
+      "_anchor_turn": 35
+    },
+    {
+      "id": "GA-28",
+      "q": "关于自己的第一枚手镜，卡卡尼亚说它有什么禁忌？",
+      "ref": "它永远不能被打破",
+      "evidence": [
+        "第一枚手镜",
+        "永远不能被打破"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "character__19603_犹在镜中:2.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-kakania",
+      "_anchor_turn": 49
+    },
+    {
+      "id": "GA-29",
+      "q": "温格勒先生（克拉拉的父亲）如何评价她带回家的第一枚手镜？",
+      "ref": "上面没有篆刻、没有铭纹，着色轻浮妖艳，改变不了它只是一个残次品的事实，不能用它作为第一枚手镜",
+      "evidence": [
+        "没有篆刻",
+        "残次品"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "character__19603_犹在镜中:4.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-kakania",
+      "_anchor_turn": 8
+    },
+    {
+      "id": "GA-30",
+      "q": "对于施瓦茨收治伊索尔德一事，卡卡尼亚向伊索尔德指出了什么？",
+      "ref": "施瓦茨并不是一个好医生，他对您的收治更多是为了利益与人们的关注",
+      "evidence": [
+        "并不是一个好医生",
+        "利益与人们的关注"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__17701_小房间:6.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "A-kakania",
+      "_anchor_turn": 30
+    },
+    {
+      "id": "GA-31",
+      "q": "喝过活水之后，尤利恩向别斯米尔如何形容水的味道？",
+      "ref": "水很清澈，甚至有些甜味",
+      "evidence": [
+        "水很清澈",
+        "甚至有些甜味"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:2.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 58
+    },
+    {
+      "id": "GA-32",
+      "q": "在沛城门口，里正猜测两位远道而来的异乡人丢失了什么？",
+      "ref": "过所文书（里正：远道而来，难免错漏）",
+      "evidence": [
+        "过所文书",
+        "远道而来，难免错漏"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:6.2.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 38
+    },
+    {
+      "id": "GA-33",
+      "q": "曲娘端出助眠的浊酒时，小叶尼塞是如何婉拒的？",
+      "ref": "她说自己不喝酒，别斯米尔女士也不喝酒",
+      "evidence": [
+        "助眠的浊酒",
+        "不喝酒"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:10.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 31
+    },
+    {
+      "id": "GA-34",
+      "q": "小叶尼塞说自己上一次向别斯米尔展示“水中显影传声”的神秘术是在哪里？",
+      "ref": "图拉的沼泽",
+      "evidence": [
+        "水中显影传声",
+        "图拉的沼泽"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:14.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 34
+    },
+    {
+      "id": "GA-35",
+      "q": "葛天如何向小叶尼塞评价曲娘的为人？",
+      "ref": "曲娘本性非恶，除将他人变为鹿蜀以外，再无旁的行迹",
+      "evidence": [
+        "本性非恶",
+        "变为鹿蜀"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:15.2.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 51
+    },
+    {
+      "id": "GA-36",
+      "q": "据葛天解释，“岁朝春”指的是什么？",
+      "ref": "百载难逢——既是朔日，也是立春",
+      "evidence": [
+        "百载难逢岁朝春",
+        "既是朔日，也是立春"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:19.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 72
+    },
+    {
+      "id": "GA-37",
+      "q": "问卜应验、同伴变回人形后，据小叶尼塞所说，谁以人身的样子跃过了断桥？",
+      "ref": "曲娘（她没有坠下去，半空中似乎有一瞬间真的变成了鹿蜀）",
+      "evidence": [
+        "曲娘跳过去了",
+        "以人身的样子"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "activity__16101_朔日手记:20.0.2"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 109
+    },
+    {
+      "id": "GA-38",
+      "q": "十四行诗根据谁提供的信息，判断德洛丝女士就是在这一带的海岸登陆？",
+      "ref": "阿莱夫先生",
+      "evidence": [
+        "阿莱夫先生",
+        "海岸登陆"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:1.2.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 5
+    },
+    {
+      "id": "GA-39",
+      "q": "维尔汀打算如何借助听诊器找到德洛丝医生离去的方向？",
+      "ref": "让雪橇犬熟悉听诊器上残留的气味，循着气味追踪",
+      "evidence": [
+        "听诊器上残留的气味",
+        "雪橇犬"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:9.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 23
+    },
+    {
+      "id": "GA-40",
+      "q": "“无名者”提出带维尔汀一行到何处与德洛丝医生（兀尔德女士）会合？",
+      "ref": "火山神殿（她已经抵达了那里）",
+      "evidence": [
+        "火山神殿",
+        "兀尔德女士"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:14.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 32
+    },
+    {
+      "id": "GA-41",
+      "q": "传道者苏菲亚说，德洛丝女士是凭借什么到达仪式核心的？",
+      "ref": "她的意志",
+      "evidence": [
+        "凭借她的意志",
+        "德洛丝女士"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:18.2.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 50
+    },
+    {
+      "id": "GA-42",
+      "q": "为了把纺车带给维尔汀，德洛丝医生做了什么？",
+      "ref": "撕下裙子的布条，将不停转动的纺车捆在自己的身上，携其进入湍急的水流",
+      "evidence": [
+        "撕下裙子的布条",
+        "捆在了自己的身上"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__110_复乐园:23.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 95
+    },
+    {
+      "id": "GA-43",
+      "q": "促使维尔汀决定前往别列格勒的、有关兀尔德的情报来自谁？",
+      "ref": "刻雷乌斯（他私下给了维尔汀一份情报，称兀尔德就在别列格勒城中）",
+      "evidence": [
+        "刻雷乌斯",
+        "有关兀尔德的情报"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__112_远征记:2.2.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 80
+    },
+    {
+      "id": "GA-44",
+      "q": "1999年，在兀尔德准备靠近仪式中心之前，她年幼的女儿由哪里照看？",
+      "ref": "第一防线学校（伊戈尔：第一防线学校会照看好她的）",
+      "evidence": [
+        "第一防线学校",
+        "您的孩子"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__112_远征记:9.0.2"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 119
+    },
+    {
+      "id": "GA-45",
+      "q": "据伊戈尔所说，基金会在“暴雨”安全区建立回环实验室、开展“灌体”实验，都是为了实现什么目标？",
+      "ref": "找回最初的兀尔德女士",
+      "evidence": [
+        "灌体",
+        "最初的兀尔德女士"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__112_远征记:23.0.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 39
+    },
+    {
+      "id": "GA-46",
+      "q": "逼问“小铁皮壳”交出情报时，红弩箭说当然不会这么浪费伏特加来给她“保养”，那他们实际要用的是什么？",
+      "ref": "福尔马林",
+      "evidence": [
+        "福尔马林",
+        "伏特加"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__105_洞穴的囚徒:3.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 57
+    },
+    {
+      "id": "GA-47",
+      "q": "施瓦茨医生抱怨弗洛伊德花了多少年才评上教授职称？",
+      "ref": "十七年",
+      "evidence": [
+        "十七年",
+        "教授职称"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:0.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 86
+    },
+    {
+      "id": "GA-48",
+      "q": "卡卡尼亚对伊索尔德实施催眠时，让她看什么？",
+      "ref": "一块怀表（“请看这块怀表”）",
+      "evidence": [
+        "这块怀表",
+        "催眠"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy"
+      },
+      "source_chunk_ids": [
+        "mainline__106_今夜星光灿烂:23.2.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 9
+    },
+    {
+      "id": "GA-49",
+      "q": "据APPLe介绍，“无限定者”这一哲学概念由谁提出、用来指代什么？",
+      "ref": "古希腊哲学家阿那克西曼德提出，用来指代世界的“本源”（不定和无限制的物质实在，万物产生于它，也复归于它）",
+      "evidence": [
+        "阿那克西曼德",
+        "本源"
+      ],
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard"
+      },
+      "source_chunk_ids": [
+        "mainline__107_孤独之歌:6.1.0"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 32
+    },
+    {
+      "id": "GA-50",
+      "q": "伊索尔德向卡卡尼亚提出了怎样的请求？",
+      "ref": "如果施瓦茨医生的电椅对她没有效用，请卡卡尼亚为她治疗",
+      "evidence": [
+        "电椅",
+        "请您为我治疗"
+      ],
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium"
+      },
+      "source_chunk_ids": [
+        "character__17701_小房间:6.0.1"
+      ],
+      "source": "gen_r1r2_repair_probe",
+      "_group": "B-inter",
+      "_anchor_turn": 64
+    }
+  ]
+}

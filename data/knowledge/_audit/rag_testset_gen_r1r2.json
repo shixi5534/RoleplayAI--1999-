@@ -1,0 +1,2228 @@
+{
+ "_meta": {
+  "frozen_at": "2026-09-27",
+  "author": "orchestrator-merge",
+  "n_cases": 120,
+  "batches": [
+   "batch_GA.json",
+   "batch_GB.json",
+   "batch_GC.json"
+  ],
+  "blind": "writers saw corpus only (+native format); no graph/retrieval/eval",
+  "df_filter": "DF>=50 or DF==0 flagged in df_flags (eval scores any-keyword-in-corpus)"
+ },
+ "cases": [
+  {
+   "id": "GA-01",
+   "q": "小叶尼塞发现的那份听写稿件，是别斯米尔女士曾委托她记录的什么？",
+   "ref": "游记（或者说“手记”），她本应整理完成后寄给别斯米尔",
+   "evidence": [
+    "委托我记录的游记",
+    "手记"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:0.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 28
+  },
+  {
+   "id": "GA-02",
+   "q": "关于实现“所求必应”需要付出的代价，别斯米尔从商人们那里听到的说法是什么？",
+   "ref": "代价并不是固定的，在民间传说中多数都需要以身犯险",
+   "evidence": [
+    "付出代价",
+    "以身犯险"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:1.2.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 29
+  },
+  {
+   "id": "GA-03",
+   "q": "别斯米尔凭多年登山经验判断，他们所处地方的海拔大约是多少？",
+   "ref": "绝对超过3000米（同伴们只是不适应这种高度）",
+   "evidence": [
+    "海拔绝对超过3000米",
+    "窄坡"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:3.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 13
+  },
+  {
+   "id": "GA-04",
+   "q": "同行者们被巨鸟控制后，别斯米尔怀疑是哪种生物拥有隔空操纵行为的能力？",
+   "ref": "鹰身女妖（她尚不确定其是否有这种能力）",
+   "evidence": [
+    "鹰身女妖",
+    "隔空操纵行为的能力"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:4.1.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 62
+  },
+  {
+   "id": "GA-05",
+   "q": "误把别斯米尔当作小叶尼塞的母亲之后，里正道歉时提到自己遗忘了她的什么情况？",
+   "ref": "她的眼疾（别斯米尔看不见，只是看上去行动太过自如，人们常忽略这一点）",
+   "evidence": [
+    "忘了她的眼疾",
+    "行动太过自如"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:7.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 24
+  },
+  {
+   "id": "GA-06",
+   "q": "在曲娘家院子里，别斯米尔在水缸附近的落叶中摸出了什么东西？",
+   "ref": "一根骨头——里正说羽人也拿着像骨头的术杖（骨杖）",
+   "evidence": [
+    "一根骨头",
+    "术杖"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:11.2.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 84
+  },
+  {
+   "id": "GA-07",
+   "q": "面对“失落的神秘术”无法像低地沉积岩那样被验证的质疑，别斯米尔给出了怎样的回应？",
+   "ref": "所以我才更应该亲自找到它",
+   "evidence": [
+    "失落的神秘术",
+    "亲自找到它"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:0.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 62
+  },
+  {
+   "id": "GA-08",
+   "q": "在城外断桥边问卜时，别斯米尔用什么方式在地上写下自己的问题？",
+   "ref": "以食指戳在松软的泥水中，写下几个西里尔字母",
+   "evidence": [
+    "西里尔字母",
+    "食指"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:20.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-besmiel",
+   "_anchor_turn": 36
+  },
+  {
+   "id": "GA-09",
+   "q": "电台新闻里提到，传记作家兀尔德出版了哪部引发新一轮爱琴海旅游狂潮的游记？",
+   "ref": "《漫步阿派朗》",
+   "evidence": [
+    "传记作家兀尔德",
+    "漫步阿派朗",
+    "爱琴海旅游狂潮"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:2.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 49
+  },
+  {
+   "id": "GA-10",
+   "q": "马坎多替生病的老板上门求医时说，“大伙儿都认识”荣军院的哪位医生？",
+   "ref": "德洛丝（德洛丝医生）",
+   "evidence": [
+    "荣军院的德洛丝",
+    "大伙儿都认识你"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__108_忧郁的热带:9.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 15
+  },
+  {
+   "id": "GA-11",
+   "q": "据康斯坦丁的说法，被伊戈尔劫走的“德洛丝医生”实际上是谁？",
+   "ref": "兀尔德女士",
+   "evidence": [
+    "就是兀尔德女士",
+    "行为的动机"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__108_忧郁的热带:22.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 66
+  },
+  {
+   "id": "GA-12",
+   "q": "维尔汀一行发现的、曾“参与了圣保罗喧闹的夜晚”的那台便携式古典打字机是谁的物品？",
+   "ref": "德洛丝医生",
+   "evidence": [
+    "便携式古典打字机",
+    "德洛丝医生的打字机"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:9.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 58
+  },
+  {
+   "id": "GA-13",
+   "q": "关于德洛丝医生的眼睛，维尔汀向诺谛卡作了怎样的描述？",
+   "ref": "她总是用眼罩或绷带藏着自己的眼睛，始终如此",
+   "evidence": [
+    "眼罩或绷带",
+    "始终如此"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:10.1.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 58
+  },
+  {
+   "id": "GA-14",
+   "q": "“无名者”自称掌握着有关谁的“下落的最后一块拼图”？",
+   "ref": "德洛丝医生——又或者说，兀尔德女士",
+   "evidence": [
+    "兀尔德女士",
+    "最后一块拼图"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:12.2.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 32
+  },
+  {
+   "id": "GA-15",
+   "q": "面对维尔汀“玛尔塔、别斯米尔、兀尔德……我该如何称呼您”的疑问，德洛丝医生如何回答？",
+   "ref": "“……我是德洛丝医生，而‘兀尔德’的确是我的笔名。”（她用它写一些文章）",
+   "evidence": [
+    "我该如何称呼您",
+    "的确是我的笔名"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:19.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 99
+  },
+  {
+   "id": "GA-16",
+   "q": "在琥珀屋的实验场景中，被称作“兀尔德女士”的她如何说明这个名字与自己职业的关系？",
+   "ref": "她自称只是一名调查记者，“兀尔德”只是她用来给特定杂志投稿的笔名",
+   "evidence": [
+    "调查记者",
+    "特定杂志投稿的笔名"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:10.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-urd",
+   "_anchor_turn": 4
+  },
+  {
+   "id": "GA-17",
+   "q": "维尔汀向玛尔塔女士索要了什么？",
+   "ref": "一些新的纸笔（玛尔塔：我们从不会疏于给予沉思者的养料）",
+   "evidence": [
+    "新的纸笔",
+    "沉思者的养料"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:12.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-marta",
+   "_anchor_turn": 19
+  },
+  {
+   "id": "GA-18",
+   "q": "苏菲亚为即将参加试炼的37担忧时，玛尔塔是如何安慰她的？",
+   "ref": "37会安然无事的，她是被真理眷顾的孩子",
+   "evidence": [
+    "被真理眷顾的孩子",
+    "安然无事"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:3.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-marta",
+   "_anchor_turn": 74
+  },
+  {
+   "id": "GA-19",
+   "q": "冲进烟尘去找苏菲亚之前，37把谁托付给了玛尔塔女士照顾？",
+   "ref": "6（“6就拜托你了，玛尔塔女士”）",
+   "evidence": [
+    "6就拜托你了",
+    "我得去找苏菲亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:19.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-marta",
+   "_anchor_turn": 7
+  },
+  {
+   "id": "GA-20",
+   "q": "玛尔塔请求6为她解答疑惑时，6给出了怎样的回答？",
+   "ref": "“我能回答您的并不多。但我想——命运比我们更清楚自己的命运。”",
+   "evidence": [
+    "我能回答您的并不多",
+    "命运比我们更清楚自己的命运"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:26.0.2"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-marta",
+   "_anchor_turn": 149
+  },
+  {
+   "id": "GA-21",
+   "q": "众人离开后空荡的厅堂里，888向玛尔塔女士询问谁的状况？",
+   "ref": "6（是否仍未醒来；盲眼的信众玛尔塔摇了摇头）",
+   "evidence": [
+    "6仍未醒来吗",
+    "盲眼的信众"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:21.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-marta",
+   "_anchor_turn": 19
+  },
+  {
+   "id": "GA-22",
+   "q": "据马库斯向霍夫曼的汇报，“卡卡尼亚”这个名字对应的本名是什么？",
+   "ref": "克拉拉（克拉拉小姐）",
+   "evidence": [
+    "也就是克拉拉小姐",
+    "镜子映射人们内心的图景"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:6.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-klara",
+   "_anchor_turn": 30
+  },
+  {
+   "id": "GA-23",
+   "q": "在拉普拉斯康复中心，露西为何能一眼认出卡卡尼亚的身份？",
+   "ref": "因为她的名字“克拉拉·温格勒”就写在康复病床末端的名牌上",
+   "evidence": [
+    "克拉拉·温格勒",
+    "床尾"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__19603_犹在镜中:0.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-klara",
+   "_anchor_turn": 32
+  },
+  {
+   "id": "GA-24",
+   "q": "卡卡尼亚向马库斯说明，“卡卡尼亚”这个名字源自什么？",
+   "ref": "源自朋友海因里希给她的一本书——正如那个名字一样，“既是又是，既有又有，无处可寻，又无处不在”",
+   "evidence": [
+    "给了我一本书",
+    "既是又是"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:7.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-klara",
+   "_anchor_turn": 55
+  },
+  {
+   "id": "GA-25",
+   "q": "在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？",
+   "ref": "医生是一把钥匙——一把用于打开上锁的门的钥匙（克拉拉，或是卡卡尼亚医生）",
+   "evidence": [
+    "克拉拉，或是卡卡尼亚医生",
+    "医生是一把钥匙"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "character__17701_小房间:7.0.3"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-klara",
+   "_anchor_turn": 175
+  },
+  {
+   "id": "GA-26",
+   "q": "决斗开始前的公证声明中，合法的决斗武器只有哪三种？",
+   "ref": "军刀、剑、手枪",
+   "evidence": [
+    "军刀",
+    "手枪",
+    "合法的武器"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:6.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-kakania",
+   "_anchor_turn": 39
+  },
+  {
+   "id": "GA-27",
+   "q": "纪念画展的致辞中，伊索尔德如何向宾客介绍克拉拉小姐？",
+   "ref": "她是“魔圈”的创始人，来自一个新兴的神秘学家中产家庭，是一位尽职的医生，也是一位品位卓越的艺术鉴赏家",
+   "evidence": [
+    "创始人——克拉拉小姐",
+    "艺术鉴赏家"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:11.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-kakania",
+   "_anchor_turn": 35
+  },
+  {
+   "id": "GA-28",
+   "q": "关于自己的第一枚手镜，卡卡尼亚说它有什么禁忌？",
+   "ref": "它永远不能被打破",
+   "evidence": [
+    "第一枚手镜",
+    "永远不能被打破"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "character__19603_犹在镜中:2.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-kakania",
+   "_anchor_turn": 49
+  },
+  {
+   "id": "GA-29",
+   "q": "温格勒先生（克拉拉的父亲）如何评价她带回家的第一枚手镜？",
+   "ref": "上面没有篆刻、没有铭纹，着色轻浮妖艳，改变不了它只是一个残次品的事实，不能用它作为第一枚手镜",
+   "evidence": [
+    "没有篆刻",
+    "残次品"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "character__19603_犹在镜中:4.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-kakania",
+   "_anchor_turn": 8
+  },
+  {
+   "id": "GA-30",
+   "q": "对于施瓦茨收治伊索尔德一事，卡卡尼亚向伊索尔德指出了什么？",
+   "ref": "施瓦茨并不是一个好医生，他对您的收治更多是为了利益与人们的关注",
+   "evidence": [
+    "并不是一个好医生",
+    "利益与人们的关注"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__17701_小房间:6.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "A-kakania",
+   "_anchor_turn": 30
+  },
+  {
+   "id": "GA-31",
+   "q": "喝过活水之后，尤利恩向别斯米尔如何形容水的味道？",
+   "ref": "水很清澈，甚至有些甜味",
+   "evidence": [
+    "水很清澈",
+    "甚至有些甜味"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:2.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 58
+  },
+  {
+   "id": "GA-32",
+   "q": "在沛城门口，里正猜测两位远道而来的异乡人丢失了什么？",
+   "ref": "过所文书（里正：远道而来，难免错漏）",
+   "evidence": [
+    "过所文书",
+    "远道而来，难免错漏"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:6.2.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 38
+  },
+  {
+   "id": "GA-33",
+   "q": "曲娘端出助眠的浊酒时，小叶尼塞是如何婉拒的？",
+   "ref": "她说自己不喝酒，别斯米尔女士也不喝酒",
+   "evidence": [
+    "助眠的浊酒",
+    "不喝酒"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:10.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 31
+  },
+  {
+   "id": "GA-34",
+   "q": "小叶尼塞说自己上一次向别斯米尔展示“水中显影传声”的神秘术是在哪里？",
+   "ref": "图拉的沼泽",
+   "evidence": [
+    "水中显影传声",
+    "图拉的沼泽"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:14.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 34
+  },
+  {
+   "id": "GA-35",
+   "q": "葛天如何向小叶尼塞评价曲娘的为人？",
+   "ref": "曲娘本性非恶，除将他人变为鹿蜀以外，再无旁的行迹",
+   "evidence": [
+    "本性非恶",
+    "变为鹿蜀"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:15.2.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 51
+  },
+  {
+   "id": "GA-36",
+   "q": "据葛天解释，“岁朝春”指的是什么？",
+   "ref": "百载难逢——既是朔日，也是立春",
+   "evidence": [
+    "百载难逢岁朝春",
+    "既是朔日，也是立春"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:19.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 72
+  },
+  {
+   "id": "GA-37",
+   "q": "问卜应验、同伴变回人形后，据小叶尼塞所说，谁以人身的样子跃过了断桥？",
+   "ref": "曲娘（她没有坠下去，半空中似乎有一瞬间真的变成了鹿蜀）",
+   "evidence": [
+    "曲娘跳过去了",
+    "以人身的样子"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:20.0.2"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 109
+  },
+  {
+   "id": "GA-38",
+   "q": "十四行诗根据谁提供的信息，判断德洛丝女士就是在这一带的海岸登陆？",
+   "ref": "阿莱夫先生",
+   "evidence": [
+    "阿莱夫先生",
+    "海岸登陆"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:1.2.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 5
+  },
+  {
+   "id": "GA-39",
+   "q": "维尔汀打算如何借助听诊器找到德洛丝医生离去的方向？",
+   "ref": "让雪橇犬熟悉听诊器上残留的气味，循着气味追踪",
+   "evidence": [
+    "听诊器上残留的气味",
+    "雪橇犬"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:9.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 23
+  },
+  {
+   "id": "GA-40",
+   "q": "“无名者”提出带维尔汀一行到何处与德洛丝医生（兀尔德女士）会合？",
+   "ref": "火山神殿（她已经抵达了那里）",
+   "evidence": [
+    "火山神殿",
+    "兀尔德女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:14.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 32
+  },
+  {
+   "id": "GA-41",
+   "q": "传道者苏菲亚说，德洛丝女士是凭借什么到达仪式核心的？",
+   "ref": "她的意志",
+   "evidence": [
+    "凭借她的意志",
+    "德洛丝女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:18.2.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 50
+  },
+  {
+   "id": "GA-42",
+   "q": "为了把纺车带给维尔汀，德洛丝医生做了什么？",
+   "ref": "撕下裙子的布条，将不停转动的纺车捆在自己的身上，携其进入湍急的水流",
+   "evidence": [
+    "撕下裙子的布条",
+    "捆在了自己的身上"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:23.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 95
+  },
+  {
+   "id": "GA-43",
+   "q": "促使维尔汀决定前往别列格勒的、有关兀尔德的情报来自谁？",
+   "ref": "刻雷乌斯（他私下给了维尔汀一份情报，称兀尔德就在别列格勒城中）",
+   "evidence": [
+    "刻雷乌斯",
+    "有关兀尔德的情报"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:2.2.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 80
+  },
+  {
+   "id": "GA-44",
+   "q": "1999年，在兀尔德准备靠近仪式中心之前，她年幼的女儿由哪里照看？",
+   "ref": "第一防线学校（伊戈尔：第一防线学校会照看好她的）",
+   "evidence": [
+    "第一防线学校",
+    "您的孩子"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:9.0.2"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 119
+  },
+  {
+   "id": "GA-45",
+   "q": "据伊戈尔所说，基金会在“暴雨”安全区建立回环实验室、开展“灌体”实验，都是为了实现什么目标？",
+   "ref": "找回最初的兀尔德女士",
+   "evidence": [
+    "灌体",
+    "最初的兀尔德女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:23.0.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 39
+  },
+  {
+   "id": "GA-46",
+   "q": "逼问“小铁皮壳”交出情报时，红弩箭说当然不会这么浪费伏特加来给她“保养”，那他们实际要用的是什么？",
+   "ref": "福尔马林",
+   "evidence": [
+    "福尔马林",
+    "伏特加"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:3.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 57
+  },
+  {
+   "id": "GA-47",
+   "q": "施瓦茨医生抱怨弗洛伊德花了多少年才评上教授职称？",
+   "ref": "十七年",
+   "evidence": [
+    "十七年",
+    "教授职称"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:0.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 86
+  },
+  {
+   "id": "GA-48",
+   "q": "卡卡尼亚对伊索尔德实施催眠时，让她看什么？",
+   "ref": "一块怀表（“请看这块怀表”）",
+   "evidence": [
+    "这块怀表",
+    "催眠"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:23.2.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 9
+  },
+  {
+   "id": "GA-49",
+   "q": "据APPLe介绍，“无限定者”这一哲学概念由谁提出、用来指代什么？",
+   "ref": "古希腊哲学家阿那克西曼德提出，用来指代世界的“本源”（不定和无限制的物质实在，万物产生于它，也复归于它）",
+   "evidence": [
+    "阿那克西曼德",
+    "本源"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:6.1.0"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 32
+  },
+  {
+   "id": "GA-50",
+   "q": "伊索尔德向卡卡尼亚提出了怎样的请求？",
+   "ref": "如果施瓦茨医生的电椅对她没有效用，请卡卡尼亚为她治疗",
+   "evidence": [
+    "电椅",
+    "请您为我治疗"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__17701_小房间:6.0.1"
+   ],
+   "source": "gen_r1r2_repair_probe",
+   "_group": "B-inter",
+   "_anchor_turn": 64
+  },
+  {
+   "id": "GB-01",
+   "q": "在送行场景中，洛佩拉提到“那老伙计……哈哈，我们认识很久了”，并说“见到他的时候我会帮你的”——她口中的这位“老伙计”是谁？",
+   "ref": "邓肯",
+   "evidence": [
+    "邓肯",
+    "老伙计",
+    "认识很久"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__108_忧郁的热带:3.0.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-02",
+   "q": "在工厂参观场景中，克努特提醒北方哨歌最好躲着一个人——他“可是个热情的老伙计，镇上最好的厨师”。这个人是谁？",
+   "ref": "帕特里基",
+   "evidence": [
+    "帕特里基",
+    "老伙计",
+    "厨师"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__18101_再见_来亚什基:7.0.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-03",
+   "q": "在“瓦尔登湖”地下酒馆的场景中，据说亲手研制魔药饮料的老板是谁？",
+   "ref": "勿忘我",
+   "evidence": [
+    "勿忘我",
+    "瓦尔登湖",
+    "魔药饮料"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__101_在我们的时代里:10.1.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-04",
+   "q": "场景中野木蓝说“他是俱乐部幕后的老板，也是墨西哥城最负盛名的神秘学家走私犯之一”——“他”是谁？",
+   "ref": "佩雷斯",
+   "evidence": [
+    "佩雷斯",
+    "走私犯",
+    "幕后"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__35101_绿松石蛇俱乐部:3.1.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-05",
+   "q": "苏芙比想象塔中之物“有公牛的力量、人类的智力”，洛佩拉说这样的怪物他们一般叫它什么？",
+   "ref": "奇美拉",
+   "evidence": [
+    "奇美拉",
+    "洛佩拉",
+    "翼蝠蜥蜴"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__108_忧郁的热带:2.1.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-06",
+   "q": "在黑暗街道的场景中，灯倌说“这点光亮不足以吓跑”的那个怪物叫什么名字？",
+   "ref": "巴纳赫",
+   "evidence": [
+    "巴纳赫",
+    "灯倌",
+    "指引方向"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__23601_夜游十字街:2.1.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-07",
+   "q": "小梅斯梅尔说，科算中心将面具解析报告里与“暴雨”水滴一致的成分命名为什么？",
+   "ref": "非对称核素R",
+   "evidence": [
+    "非对称核素R",
+    "科算中心",
+    "分叉结构"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:3.0.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-08",
+   "q": "玛蒂尔达在老屋院子里启用的便携联络装置是什么型号？",
+   "ref": "SPF-I型",
+   "evidence": [
+    "SPF-I",
+    "便携联络装置",
+    "玛蒂尔达"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__13101_行至摩卢旁卡:4.0.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-09",
+   "q": "马库斯介绍那位“人尽皆知的灵媒”时说，哪个家族都十分擅长通灵技艺？",
+   "ref": "迪塔斯多夫家族",
+   "evidence": [
+    "迪塔斯多夫",
+    "通灵技艺",
+    "灵媒"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:5.1.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-10",
+   "q": "J提到那位穷困潦倒的保险推销员是从哪个世代铸剑的家族里溜出来的私生子？",
+   "ref": "维兰德家族",
+   "evidence": [
+    "维兰德",
+    "铸剑",
+    "私生子"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__20101_飞驰_明日之城:10.0.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-11",
+   "q": "Z的汇报里，哪位校长在口头劝阻失败后动用了特勤警卫、苦哑巴药剂和防暴枪？",
+   "ref": "理查德",
+   "evidence": [
+    "理查德",
+    "特勤警卫",
+    "防暴枪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__103_故事一无所有:11.0.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-12",
+   "q": "场景中是谁在按下墙上硕大的红色按钮后大喊“——警卫！警卫！我们需要帮助！！！”？",
+   "ref": "破译组长",
+   "evidence": [
+    "破译组长",
+    "警卫",
+    "红色按钮"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__107_孤独之歌:5.1.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-13",
+   "q": "爱兹拉说自己已经听哪位店主小姐讲了冰淇淋诞生的经过？",
+   "ref": "米拉",
+   "evidence": [
+    "米拉",
+    "冰淇淋",
+    "爱兹拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "anecdote__1917_乘法轴上的一天:0.0.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-14",
+   "q": "河岸步道的告示牌上写着，店主因肺病发作已前往哪里就诊？",
+   "ref": "牙仙女士的特别医院",
+   "evidence": [
+    "肺病",
+    "特别医院",
+    "告示牌"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__23101_圣火纪行_东区黎明:5.0.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-15",
+   "q": "场景中哪位舵手高喊“准备好，伙计们！”随即“满舵——！”？",
+   "ref": "伊萨姆",
+   "evidence": [
+    "伊萨姆",
+    "满舵",
+    "水手"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__24101_地球上最后的夜晚:7.1.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-16",
+   "q": "场景中哪位先生安慰马库斯“别灰心”，并传授吸引读者的写作经验？",
+   "ref": "杜卡特",
+   "evidence": [
+    "杜卡特",
+    "别灰心",
+    "信纸"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__17703_灯塔集:2.0.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-17",
+   "q": "军长伊万说他花了很长的时间，才让哪位夫人接受他这个“孩子”？",
+   "ref": "佳琳娜夫人",
+   "evidence": [
+    "佳琳娜",
+    "一生无子的教师",
+    "军长伊万"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:5.2.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-18",
+   "q": "场景旁白说“作为教师，她有着几乎无穷的耐心”——这位教师是谁？",
+   "ref": "维拉",
+   "evidence": [
+    "维拉",
+    "无穷的耐心",
+    "教师"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "character__18601_黎明依旧到来:0.0.1"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-19",
+   "q": "根据奥克塔维奥宣布的判定，掷出“17”的何塞在获得药品奖励的同时，还将被擢升为什么职位？",
+   "ref": "科马拉议会的文化管理员",
+   "evidence": [
+    "何塞",
+    "文化管理员",
+    "利培酮"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__109_疯癫与文明:9.0.2"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GB-20",
+   "q": "场景中管理员让谁“把这些书放到原本的位置上”？",
+   "ref": "伊莎贝拉",
+   "evidence": [
+    "伊莎贝拉",
+    "书区",
+    "管理员"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__103_故事一无所有:12.0.0"
+   ],
+   "source": "gen_r1r2_generic"
+  },
+  {
+   "id": "GC-01",
+   "q": "在霍夫曼与马库斯的对话中，马库斯认为有问题的西奥菲尔遗作是哪幅画？",
+   "ref": "《拯救》",
+   "evidence": [
+    "拯救",
+    "西奥菲尔",
+    "委外合约小队"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:14.2.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-02",
+   "q": "红弩箭向维尔汀汇报，飞行中队在哪个坐标点附近遭到了重塑之手的伏击？",
+   "ref": "别列格勒城东南42英里坐标点",
+   "evidence": [
+    "阿尔法2号",
+    "别列格勒",
+    "飞行中队"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__112_远征记:17.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-03",
+   "q": "洋葱头说吉娃娃去追逐它的什么了？",
+   "ref": "麦高芬",
+   "evidence": [
+    "麦高芬",
+    "红气球",
+    "洋葱头"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "anecdote__1919_黄金与悲喜剧:7.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-04",
+   "q": "阿黛拉请贝丽尔上了她开的什么车？",
+   "ref": "标致201",
+   "evidence": [
+    "标致201",
+    "地下墓穴",
+    "阿黛拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__32101_迁流的盛宴:9.2.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-05",
+   "q": "环状水星的手指最后停在了那张美国地图上的哪个地名？",
+   "ref": "弗雷斯诺",
+   "evidence": [
+    "弗雷斯诺",
+    "美国地图",
+    "旅行房车"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__20603_第一千夜:3.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-06",
+   "q": "苏菲亚认为，让人得以面对既定结局的品质除了勇气还可能是什么？",
+   "ref": "对真相的畏惧",
+   "evidence": [
+    "勇气",
+    "畏惧",
+    "棉垫"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "character__19101_漫漫之夜行迹:1.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-07",
+   "q": "莱格斯那两颗没能射穿胸膛的子弹“射”向了哪里，造成了什么后果？",
+   "ref": "霍利克的修车铺",
+   "evidence": [
+    "霍利克",
+    "修车铺",
+    "博伊刀"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "activity__20101_飞驰_明日之城:9.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-08",
+   "q": "阿夫西维说哪种食物同志只会在每周五的晚餐被找到？",
+   "ref": "布林饼",
+   "evidence": [
+    "布林饼",
+    "捉迷藏",
+    "手风琴"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__18101_再见_来亚什基:7.0.3"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-09",
+   "q": "这段文字开头所引《半而未满》一诗的作者是谁？",
+   "ref": "纪伯伦·哈利勒·纪伯伦",
+   "evidence": [
+    "纪伯伦",
+    "半而未满",
+    "啄木鸟"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "anecdote__1904_埃里克角色故事:0.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-10",
+   "q": "？？？感叹自己第一次见到异化程度如此之高的生物，它的名字是什么？",
+   "ref": "伊吉拉格【Ijiraq】",
+   "evidence": [
+    "伊吉拉格",
+    "Ijiraq",
+    "向日葵"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__18101_再见_来亚什基:1.1.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-11",
+   "q": "北方哨歌根据“鲸鱼骨骼，菱形利齿”等特征辨认出的魔精叫什么？",
+   "ref": "基基图克[Kikituk]",
+   "evidence": [
+    "基基图克",
+    "Kikituk",
+    "卡尔王地群岛"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__18101_再见_来亚什基:6.1.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-12",
+   "q": "鬃毛沙砾说这次UTTU闪烁集会要读的书是什么？",
+   "ref": "《罗摩衍那》",
+   "evidence": [
+    "罗摩衍那",
+    "闪烁集会",
+    "鬃毛沙砾"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "appendix_unbound__002_1_3_最初的诗赛季剧情:1.1.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-13",
+   "q": "神教教徒Ⅲ想等到仪式结束后向哪位大人请教斯基泰密码的答案？",
+   "ref": "“德谟斯”大人",
+   "evidence": [
+    "德谟斯",
+    "斯基泰密码",
+    "神教教徒"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__305201_入雅典记:7.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-14",
+   "q": "？？？说“这就是我们的诅咒”——这个诅咒指什么？",
+   "ref": "脑中的阳光会吞噬一切",
+   "evidence": [
+    "吞噬",
+    "诅咒",
+    "多瑙河"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "anecdote__1912_塞梅尔维斯:4.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-15",
+   "q": "卡珊德拉说，也许连谁也要赞颂多米蒂乌斯的名？",
+   "ref": "伯里克利",
+   "evidence": [
+    "伯里克利",
+    "吟游诗人",
+    "卡珊德拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__305201_入雅典记:7.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-16",
+   "q": "重塑士兵认出直飞而来的巨物是什么（来自哪里）？",
+   "ref": "来自南极的奇美拉",
+   "evidence": [
+    "奇美拉",
+    "南极",
+    "槲寄生"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__113_他者的悲哀:12.1.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-17",
+   "q": "环状水星说马上就会知道比安卡会不会有一只什么？",
+   "ref": "宠物鸡",
+   "evidence": [
+    "宠物鸡",
+    "招牌",
+    "塔罗师比安卡"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "character__20603_第一千夜:4.0.4"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-18",
+   "q": "赶走了旧朋友之后，夏洛特称谁是“我唯一的朋友”？",
+   "ref": "苏利丝",
+   "evidence": [
+    "苏利丝",
+    "夏洛特",
+    "女巫"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "character__23501_太阳的背面:3.1.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-19",
+   "q": "红尾马驹从谁的身后掠走了别斯米尔？",
+   "ref": "曲娘",
+   "evidence": [
+    "曲娘",
+    "别斯米尔",
+    "红尾马驹"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__16101_朔日手记:12.2.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-20",
+   "q": "阿夫西维把画儿送给了那位有一台漂亮打字机的什么人？",
+   "ref": "微笑的盲眼女士",
+   "evidence": [
+    "盲眼女士",
+    "打字机",
+    "彼得森"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__18101_再见_来亚什基:7.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-21",
+   "q": "露西认为横渡大西洋的唯一方法是什么？",
+   "ref": "乘船",
+   "evidence": [
+    "横渡大西洋",
+    "乘船",
+    "希梅娜"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__19601_飞渡往日:1.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-22",
+   "q": "玛蒂尔达醒来时，之前一直守在她床边、刚刚才离开的是谁？",
+   "ref": "贝丽尔女士",
+   "evidence": [
+    "贝丽尔",
+    "康复中心",
+    "文书工作"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__113_他者的悲哀:22.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-23",
+   "q": "星锑保证在APPLe电台为回归的唱片举办连续多少小时的派对？",
+   "ref": "72小时",
+   "evidence": [
+    "72小时",
+    "APPLe电台",
+    "唱片"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__24101_地球上最后的夜晚:9.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-24",
+   "q": "37解释海豚对星锑又拍又咬的原因是什么？",
+   "ref": "它们认为你是无理数",
+   "evidence": [
+    "无理数",
+    "海豚",
+    "阿派朗"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:5.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-25",
+   "q": "谁说“第一次进来的人是会不太习惯”？",
+   "ref": "伽菈波那",
+   "evidence": [
+    "伽菈波那",
+    "幻境",
+    "库玛尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__13101_行至摩卢旁卡:14.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-26",
+   "q": "陈半仙提起《除灵十三法》的来由时，唤泥鯭的士的本名叫什么？",
+   "ref": "李安安",
+   "evidence": [
+    "李安安",
+    "除灵十三法",
+    "陈半仙"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "anecdote__1921_鬼马探灵记:6.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-27",
+   "q": "马歇尔批评杜卡特讲的故事有什么问题？",
+   "ref": "完全与我们的死亡无关",
+   "evidence": [
+    "死亡无关",
+    "读者的兴趣",
+    "马歇尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "character__17703_灯塔集:2.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-28",
+   "q": "乔治橡树生长于多少年前？",
+   "ref": "七百年前",
+   "evidence": [
+    "乔治橡树",
+    "七百年",
+    "树洞"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__103_故事一无所有:9.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-29",
+   "q": "努库泰澳人的灯具“罗盘灼灼”的灯罩是用什么树的树皮打磨的？",
+   "ref": "棕榈树",
+   "evidence": [
+    "罗盘灼灼",
+    "棕榈树",
+    "努库泰澳"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__24101_地球上最后的夜晚:6.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-30",
+   "q": "尼迪亚说她在家人们的尸体上看见长出了什么？",
+   "ref": "得了黄叶病的香蕉树",
+   "evidence": [
+    "黄叶病",
+    "香蕉树",
+    "尼迪亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "character__22911_洛佩拉玩法剧情:5.0.3"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-31",
+   "q": "伊索尔德认为西奥菲尔若是一个真正有勇气的人，他就应该怎么做？",
+   "ref": "去参军，或是痛痛快快地跟人决斗",
+   "evidence": [
+    "风流债",
+    "决斗",
+    "参军"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__106_今夜星光灿烂:10.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-32",
+   "q": "空脑袋靠什么物品施展“转念即至”逃离了现场？",
+   "ref": "传送软盘",
+   "evidence": [
+    "传送软盘",
+    "转念即至",
+    "拍卖会"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__35101_绿松石蛇俱乐部:10.2.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-33",
+   "q": "阿黛拉为什么没有告诉罗西教授项链的真实下落？",
+   "ref": "听起来更像是个疯子",
+   "evidence": [
+    "雇主",
+    "疯子",
+    "项链"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "activity__32101_迁流的盛宴:10.1.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-34",
+   "q": "卡珊德拉向两人自报的名号是什么？",
+   "ref": "斯巴达的卡珊德拉",
+   "evidence": [
+    "斯巴达",
+    "驯鹰人",
+    "酬金"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__305201_入雅典记:3.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-35",
+   "q": "莫桑女士打开的崭新物资箱里装着重塑之手用来做什么的面具？",
+   "ref": "免疫“暴雨”",
+   "evidence": [
+    "免疫",
+    "面具",
+    "莫桑女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:2.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-36",
+   "q": "诺谛卡说自己变得和梦中谁的样子很像？",
+   "ref": "地母",
+   "evidence": [
+    "地母",
+    "羽翼",
+    "诺谛卡"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__110_复乐园:20.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-37",
+   "q": "维尔汀说基金会内部抗议的声音凝聚成的新群体叫什么？",
+   "ref": "人类党团",
+   "evidence": [
+    "人类党团",
+    "背景分析报告",
+    "Z女士"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "mainline__104_老虎的金黄:0.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-38",
+   "q": "威尔提议拿自己家的什么家产当铅球？",
+   "ref": "大锅",
+   "evidence": [
+    "铅球",
+    "大锅",
+    "记分员"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__23101_圣火纪行_东区黎明:14.2.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-39",
+   "q": "梁月自报是十二侲子中哪一家的后人？",
+   "ref": "梁家",
+   "evidence": [
+    "十二侲子",
+    "梁家",
+    "奇星"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__25101_唐人街影话:3.2.3"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-40",
+   "q": "该脚本条目中的 Script ID 是多少？",
+   "ref": "800807",
+   "evidence": [
+    "800807",
+    "Script ID",
+    "荒原经营引导剧情"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "appendix_unbound__025_2_2_荒原经营引导剧情:2.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-41",
+   "q": "艾弗森命令把什么系统开到最大功率？",
+   "ref": "通风系统",
+   "evidence": [
+    "通风系统",
+    "狗毛",
+    "镇静喷剂"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__11101_雷米特杯失窃案:10.2.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-42",
+   "q": "按罗西教授的说法，什么样的巴黎才是真正的巴黎？",
+   "ref": "由世人意象构成的巴黎",
+   "evidence": [
+    "世人意象",
+    "埃菲尔铁塔",
+    "罗西教授"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__32101_迁流的盛宴:15.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-43",
+   "q": "苏菲亚说37在哪一年的“流溢”结束之后就把自己关进了研究室？",
+   "ref": "1929年",
+   "evidence": [
+    "流溢",
+    "1929",
+    "几何体"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "mainline__105_洞穴的囚徒:16.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-44",
+   "q": "？？？想着给谁的报告“该怎么圆呢”？",
+   "ref": "洛伦兹",
+   "evidence": [
+    "洛伦兹",
+    "报告",
+    "封存"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "appendix_unbound__063_3_1_雨前漫游:2.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-45",
+   "q": "阿莱夫说虚构集在第七次来信中新增的角色是什么？",
+   "ref": "提着箱子的能量扰动学家",
+   "evidence": [
+    "能量扰动学家",
+    "第七次来信",
+    "科马拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard"
+   },
+   "source_chunk_ids": [
+    "mainline__109_疯癫与文明:14.1.1"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-46",
+   "q": "傅书生的妻子霍氏出身何处？",
+   "ref": "钱塘",
+   "evidence": [
+    "钱塘",
+    "霍氏",
+    "狐仙"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "appendix_unbound__006_1_6_赛季剧情:2.1.3"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-47",
+   "q": "该脚本条目的 Internal title 是什么？",
+   "ref": "【1.9】去往新世界【37】",
+   "evidence": [
+    "806602",
+    "Internal title",
+    "去往新世界"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "appendix_unbound__008_1_9_去往新世界_37:1.0.0"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-48",
+   "q": "X给露西的通讯仪是供谁跟外界沟通的？",
+   "ref": "雨幕舞台内的成员",
+   "evidence": [
+    "通讯仪",
+    "雨幕舞台",
+    "干涉仪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "easy"
+   },
+   "source_chunk_ids": [
+    "activity__385101_聚合浪潮:0.0.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-49",
+   "q": "艾吉奥说莱昂纳多的镜像体倒过来是什么意思？",
+   "ref": "“过来”",
+   "evidence": [
+    "镜像体",
+    "avanti",
+    "圣殿骑士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__305101_翡冷翠之春:5.1.2"
+   ],
+   "source": "gen_r1r2_control"
+  },
+  {
+   "id": "GC-50",
+   "q": "斯考特通过什么物品与神秘女士进行传信术通讯？",
+   "ref": "花瓶",
+   "evidence": [
+    "花瓶",
+    "传信术",
+    "夜巡特遣"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "medium"
+   },
+   "source_chunk_ids": [
+    "activity__25101_唐人街影话:21.0.1"
+   ],
+   "source": "gen_r1r2_control"
+  }
+ ]
+}
