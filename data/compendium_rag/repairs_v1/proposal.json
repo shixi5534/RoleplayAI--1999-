@@ -1,0 +1,2546 @@
+{
+ "meta": {
+  "author": "R1-repairer-offline",
+  "timestamp": "2026-09-26 22:02:06",
+  "network": "none — WAF 403（38×403 见 data/compendium_rag/huiji_pages/_prefetch_log.json）；live-fetch blocked by WAF 403 (see _prefetch_log.json); identity verdicts from offline huiji cache fetched 2026-09-13 + corpus counter-evidence",
+  "sources": [
+   {
+    "file": "data/lore/_huiji_cache/49910dc30331af4cb845.json",
+    "page": "其他角色一览/1.x",
+    "verdict": "玛尔塔(Marta) desc=兀尔德 @1.7今夜星光灿烂；别斯米尔(Bessmert) desc=兀尔德 @1.6朔日手记"
+   },
+   {
+    "file": "data/lore/_huiji_cache/dd48cf716bfebe7c792b.json",
+    "page": "其他角色一览/2.x",
+    "verdict": "德洛斯医生(Doctor Dores) desc=兀尔德 @2.2忧郁的热带；兀尔德(Urd) 独立NPC（无desc）@2.8复乐园"
+   },
+   {
+    "file": "data/lore/_huiji_cache/ad593fdc51e3a5c218bf.json",
+    "page": "疯癫与文明",
+    "verdict": "小径故事《暗色带编织》＝兀尔德在主角团到达之前的故事"
+   },
+   {
+    "file": "data/lore/wu_ming_zhe/huiji_canon.json",
+    "page": "离线正典 fetched 2026-09-13",
+    "verdict": "卡卡尼亚↔Kakania；NPC表：玛尔塔/别斯米尔/德洛斯医生 identity=兀尔德；兀尔德@2.8"
+   },
+   {
+    "file": "data/lore/wu_ming_zhe/huiji_lexicon.json",
+    "page": "灰机离线词典 zh2en 885条",
+    "verdict": "卡卡尼亚=Kakania、玛尔塔=Marta、别斯米尔=Bessmert、兀尔德=Urd、德洛斯医生=Doctor Dores"
+   },
+   {
+    "file": "data/compendium_rag/repairs_v1/_r1_huiji_round2.json",
+    "page": "api.php 存活期抓取 2026-09-26 21:03",
+    "verdict": "卡卡尼亚页存在（infobox wikitext）；「兀尔德」全站搜索命中《疯癫与文明》小径说明（与 ad593fdc 一致）；无独立 德洛丝/玛尔塔/别斯米尔/兀尔德 角色页（query titles 全 missing）"
+   },
+   {
+    "file": "data/compendium_rag/huiji_pages/r1_卡卡尼亚.json",
+    "page": "搜索快照",
+    "verdict": "「卡卡尼亚」「卡卡尼亚·犹在镜中」页面存在（content 403，仅 snippet）"
+   }
+  ],
+  "reused": "data/compendium_rag/repairs_v1/_r1_weld_extract.json（前代理 253KB 提取，已对本图逐块复核：204/204 per_chunk 归因 0 处不一致，combo 表与质检报告检4.2 完全一致）",
+  "conflict_order": "语料明文反证 > 灰机 > 图谱现状 > 审计推断（作战书 §0）",
+  "dual_attribution_rule": "块归属=多归属制：块 text+titles 中逐字出现某实体的任一在册名（canonical/alias）→ 该实体声称此块（一名多主、一主多块均允许，与图内抽取惯例一致）。焊组 204 块：194 块逐字归属；10 块无任何成员名 → 人工裁决：4 块语境归兀尔德（荣军院盲眼医生转喻×3 + 纺车桥块邻接×1，标 inferred），1 块语境弱保留卡卡尼亚（106:5.1.0 绿衣小姐，标 context-only），5 块无信号删声称（107:26.0.0 / 108:20.1.1 / 110:24.0.0 / 30601×2）。焊组外补收：全语料逐字含 兴尔德组/玛尔塔组/卡卡尼亚组/别斯米尔 名且当前无该实体声称的块一律补收（与他属实体形成多归属，共 24 块，逐块列于 E06/E07/E09）；唯一例外=旅行队的别斯米尔 已声称的 appendix_unbound__006:4.1.0 不抢（同人裂名节点，R3 合并候选）。",
+  "edge_rule": "边先按 evidence 逐字成员名路由；无名字时按边 chunk 的新归属投票；multi（块双归属）按证据句说话人裁决；证据与块均无信号者保留卡卡尼亚（review 标注）；块被删声称且边仅挂该块者删边。",
+  "qc_deviations": [
+   "质检报告修复建议1 的「保留德洛丝独立节点」不采纳：灰机缓存 dd48cf7 证 兀尔德(Urd) 为 2.8 独立NPC、德洛斯医生 desc=兀尔德，语料桥块自述「兀尔德的确是我的笔名」→ 单节点 兀尔德，德洛丝系写法为其 alias。",
+   "质检报告「全网没有别斯米尔独立节点」勘误：图内已有 探险家别斯米尔（67块/219边，activity__16101_朔日手记），P0 修复=别名改挂 + 补2个无主逐字块，不新建节点；旅行队的别斯米尔（1块）疑同一人，留 R3 合并评估。",
+   "灰机三处 desc=兀尔德（玛尔塔/别斯米尔/德洛斯医生 identity=兀尔德）与语料桥块「其他名字应该并不是我」冲突：按 §0.3 语料反证优先，不建 兀尔德↔玛尔塔/别斯米尔 身份边、不合并；灰机主张记录于本 meta 备仲裁。"
+  ],
+  "validation": {
+   "V1_no_dangling_eid": {
+    "ok": true,
+    "bad": [],
+    "n": 0
+   },
+   "V2_no_dup_canonical": {
+    "ok": true,
+    "dup": []
+   },
+   "V3_eid_eq_name": {
+    "ok": true,
+    "bad": []
+   },
+   "V4_no_dangling_chunk": {
+    "ok": true,
+    "n": 0
+   },
+   "V5_alias_unique_owner": {
+    "ok": true,
+    "introduced_by_r1": {},
+    "pre_existing_unrelated": {
+     "高地据点": [
+      "299高地",
+      "地下堡垒"
+     ],
+     "法案": [
+      "《暴雨改革》",
+      "暴雨改革：增员与秩序",
+      "暴雨改革：秩序与增员"
+     ],
+     "玛丽": [
+      "圣路连士兵",
+      "玛丽安娜"
+     ],
+     "特里格拉夫战列舰": [
+      "特里格拉夫",
+      "特里格拉夫号"
+     ],
+     "许可证": [
+      "神秘术使用许可证",
+      "神秘术许可证"
+     ],
+     "飞行巫师": [
+      "阿尔法2号",
+      "飞行中队"
+     ]
+    }
+   },
+   "V6_alias_verbatim": {
+    "ok": true,
+    "fail": [],
+    "detail": {
+     "卡卡尼亚": {
+      "卡卡尼亚医生": "verbatim",
+      "卡卡尼亚小姐": "verbatim",
+      "克拉拉": "verbatim",
+      "克拉拉·温格勒": "verbatim",
+      "克拉拉女士": "verbatim",
+      "克拉拉小姐": "verbatim"
+     },
+     "兀尔德": {
+      "兀尔德女士": "verbatim",
+      "德洛丝": "verbatim",
+      "德洛丝医生": "verbatim",
+      "德洛丝女士": "verbatim",
+      "无国界医生德洛丝": "verbatim",
+      "传记作家兀尔德": "verbatim",
+      "原初的兀尔德": "inherited-dead DF=0 → inferred（R4 处理）"
+     },
+     "玛尔塔": {
+      "玛尔塔女士": "verbatim"
+     },
+     "探险家别斯米尔": {
+      "别斯米尔": "verbatim"
+     }
+    }
+   },
+   "V7_mentions_eq_chunks": {
+    "ok": true,
+    "bad": {}
+   },
+   "V8_weld_coverage": {
+    "ok": true,
+    "dropped_n": 5,
+    "dropped": [
+     "character__30601_三重赋格:2.0.1",
+     "character__30601_三重赋格:2.0.2",
+     "mainline__107_孤独之歌:26.0.0",
+     "mainline__108_忧郁的热带:20.1.1",
+     "mainline__110_复乐园:24.0.0"
+    ]
+   },
+   "V9_kakania_degree": {
+    "ok": true,
+    "before": 439,
+    "after": 310
+   },
+   "V10_query_routing": {
+    "ok": true,
+    "routes": {
+     "兀尔德": {
+      "兀尔德": "兀尔德"
+     },
+     "兀尔德女士": {
+      "兀尔德": "兀尔德女士"
+     },
+     "德洛丝医生": {
+      "兀尔德": "德洛丝医生"
+     },
+     "玛尔塔": {
+      "玛尔塔": "玛尔塔"
+     },
+     "玛尔塔女士": {
+      "玛尔塔": "玛尔塔女士"
+     },
+     "别斯米尔": {
+      "探险家别斯米尔": "别斯米尔"
+     },
+     "克拉拉": {
+      "卡卡尼亚": "克拉拉"
+     },
+     "卡卡尼亚": {
+      "卡卡尼亚": "卡卡尼亚"
+     },
+     "传记作家兀尔德": {
+      "兀尔德": "传记作家兀尔德"
+     }
+    },
+    "bad": {}
+   },
+   "V11_fingerprint_untouched": {
+    "ok": true,
+    "value": "7dc29bf90681a3f7"
+   },
+   "V12_edge_chunk_consistency": {
+    "ok": true,
+    "violations": 0
+   },
+   "V13_no_new_dead_alias": {
+    "ok": true,
+    "dead": [],
+    "flagged_inferred": [
+     "原初的兀尔德"
+    ]
+   },
+   "V14_rewire_collisions": {
+    "ok": true,
+    "collisions": [
+     {
+      "from": [
+       [
+        "维尔汀",
+        "寻访",
+        "卡卡尼亚"
+       ],
+       [
+        "维尔汀",
+        "寻访",
+        "传记作家兀尔德"
+       ]
+      ],
+      "to": [
+       "维尔汀",
+       "寻访",
+       "兀尔德"
+      ]
+     }
+    ],
+    "n_edges_merged_away": 1,
+    "note": "并边行为与 graph_store.build_from_extractions 一致（count 累加/chunk_ids 并集/confidence 取 max）；本例两源均为「维尔汀寻访兀尔德」同一事实的两次观察，合并无损"
+   }
+  },
+  "counts": {
+   "weld_before": {
+    "chunks": 204,
+    "degree": 439,
+    "aliases": 15
+   },
+   "kakania_after": {
+    "chunks": 118,
+    "degree": 310,
+    "aliases": 6
+   },
+   "urd_after": {
+    "chunks": 103,
+    "aliases": 7
+   },
+   "marta_after": {
+    "chunks": 9
+   },
+   "bessmert_after": {
+    "chunks": 70
+   },
+   "edge_actions": {
+    "move": 122,
+    "keep": 310,
+    "delete": 7
+   },
+   "entities_after": 7034,
+   "edges_after": 29959
+  }
+ },
+ "entries": [
+  {
+   "id": "R1-E01",
+   "type": "add_entity",
+   "target": "兀尔德",
+   "entity": {
+    "eid": "兀尔德",
+    "name": "兀尔德",
+    "type": "角色",
+    "aliases": [
+     "传记作家兀尔德",
+     "兀尔德女士",
+     "原初的兀尔德",
+     "德洛丝",
+     "德洛丝医生",
+     "德洛丝女士",
+     "无国界医生德洛丝"
+    ],
+    "desc": "圣保罗荣军院的盲眼医生，「兀尔德」为其笔名（灰机：兀尔德/Urd，2.8复乐园独立NPC）",
+    "mentions": 103,
+    "chunk_ids": [
+     "activity__20101_飞驰_明日之城:3.0.0",
+     "activity__21101_77号往事:1.0.0",
+     "activity__21101_77号往事:13.0.0",
+     "activity__21101_77号往事:18.0.0",
+     "activity__21101_77号往事:18.0.2",
+     "activity__35101_绿松石蛇俱乐部:12.0.1",
+     "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0",
+     "appendix_unbound__015_1_9_去往新世界_无线电小姐:1.1.0",
+     "appendix_unbound__062_2_8_启示录变相_收藏品:0.1.0",
+     "mainline__105_洞穴的囚徒:2.1.1",
+     "mainline__105_洞穴的囚徒:5.1.0",
+     "mainline__107_孤独之歌:27.0.0",
+     "mainline__108_忧郁的热带:0.0.1",
+     "mainline__108_忧郁的热带:11.0.0",
+     "mainline__108_忧郁的热带:11.0.1",
+     "mainline__108_忧郁的热带:12.0.0",
+     "mainline__108_忧郁的热带:12.0.2",
+     "mainline__108_忧郁的热带:13.0.0",
+     "mainline__108_忧郁的热带:13.0.1",
+     "mainline__108_忧郁的热带:15.1.1",
+     "mainline__108_忧郁的热带:18.1.0",
+     "mainline__108_忧郁的热带:18.1.1",
+     "mainline__108_忧郁的热带:18.2.0",
+     "mainline__108_忧郁的热带:19.1.0",
+     "mainline__108_忧郁的热带:19.1.1",
+     "mainline__108_忧郁的热带:19.2.0",
+     "mainline__108_忧郁的热带:20.1.0",
+     "mainline__108_忧郁的热带:21.0.0",
+     "mainline__108_忧郁的热带:21.0.1",
+     "mainline__108_忧郁的热带:22.0.1",
+     "mainline__108_忧郁的热带:22.0.2",
+     "mainline__108_忧郁的热带:6.1.0",
+     "mainline__108_忧郁的热带:7.0.0",
+     "mainline__108_忧郁的热带:7.0.1",
+     "mainline__108_忧郁的热带:7.0.2",
+     "mainline__108_忧郁的热带:8.1.0",
+     "mainline__108_忧郁的热带:8.1.1",
+     "mainline__108_忧郁的热带:9.1.0",
+     "mainline__108_忧郁的热带:9.2.0",
+     "mainline__109_疯癫与文明:0.2.0",
+     "mainline__109_疯癫与文明:1.0.0",
+     "mainline__109_疯癫与文明:1.0.1",
+     "mainline__109_疯癫与文明:1.0.2",
+     "mainline__109_疯癫与文明:11.0.0",
+     "mainline__109_疯癫与文明:11.0.1",
+     "mainline__109_疯癫与文明:13.0.0",
+     "mainline__109_疯癫与文明:14.1.1",
+     "mainline__109_疯癫与文明:14.1.2",
+     "mainline__109_疯癫与文明:18.0.0",
+     "mainline__109_疯癫与文明:18.0.1",
+     "mainline__109_疯癫与文明:18.0.2",
+     "mainline__109_疯癫与文明:19.0.2",
+     "mainline__109_疯癫与文明:3.0.0",
+     "mainline__109_疯癫与文明:3.0.1",
+     "mainline__109_疯癫与文明:3.0.2",
+     "mainline__109_疯癫与文明:4.0.1",
+     "mainline__109_疯癫与文明:4.0.2",
+     "mainline__109_疯癫与文明:5.1.1",
+     "mainline__109_疯癫与文明:5.1.2",
+     "mainline__109_疯癫与文明:7.0.1",
+     "mainline__109_疯癫与文明:7.0.3",
+     "mainline__109_疯癫与文明:7.0.4",
+     "mainline__109_疯癫与文明:8.0.1",
+     "mainline__109_疯癫与文明:8.0.2",
+     "mainline__109_疯癫与文明:8.0.3",
+     "mainline__109_疯癫与文明:9.0.0",
+     "mainline__109_疯癫与文明:9.0.1",
+     "mainline__110_复乐园:1.2.0",
+     "mainline__110_复乐园:10.1.1",
+     "mainline__110_复乐园:10.2.0",
+     "mainline__110_复乐园:12.1.0",
+     "mainline__110_复乐园:12.1.2",
+     "mainline__110_复乐园:12.2.0",
+     "mainline__110_复乐园:14.0.0",
+     "mainline__110_复乐园:17.0.0",
+     "mainline__110_复乐园:18.2.0",
+     "mainline__110_复乐园:18.2.1",
+     "mainline__110_复乐园:19.0.0",
+     "mainline__110_复乐园:19.0.1",
+     "mainline__110_复乐园:19.0.2",
+     "mainline__110_复乐园:20.1.0",
+     "mainline__110_复乐园:22.2.0",
+     "mainline__110_复乐园:23.0.0",
+     "mainline__110_复乐园:23.0.1",
+     "mainline__110_复乐园:23.0.2",
+     "mainline__110_复乐园:24.0.1",
+     "mainline__110_复乐园:5.1.0",
+     "mainline__110_复乐园:5.1.2",
+     "mainline__110_复乐园:6.1.0",
+     "mainline__110_复乐园:9.0.0",
+     "mainline__110_复乐园:9.0.1",
+     "mainline__111_行于漫漫长路上:23.0.2",
+     "mainline__112_远征记:10.1.0",
+     "mainline__112_远征记:13.0.0",
+     "mainline__112_远征记:2.2.2",
+     "mainline__112_远征记:23.0.0",
+     "mainline__112_远征记:23.0.1",
+     "mainline__112_远征记:24.0.3",
+     "mainline__112_远征记:7.0.2",
+     "mainline__112_远征记:7.0.4",
+     "mainline__112_远征记:9.0.3",
+     "mainline__112_远征记:9.0.4",
+     "mainline__112_远征记:9.0.5"
+    ]
+   },
+   "evidence": [
+    {
+     "src": "offline-cache dd48cf716bfebe7c792b.json（其他角色一览/2.x）",
+     "quote": "{{NPC信息/M|name=兀尔德|nameEn=Urd|id=5242|nameS=wed}}（{{stagv|2.8}} 复乐园 节下，无desc=独立正名NPC）"
+    },
+    {
+     "src": "offline-cache dd48cf716bfebe7c792b.json",
+     "quote": "{{NPC信息/M|name=德洛斯医生|nameEn=Doctor Dores|desc=兀尔德|id=5185}}（2.2 忧郁的热带）"
+    },
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "我是德洛丝医生，而“兀尔德”的确是我的笔名。／但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "offline-cache ad593fdc51e3a5c218bf.json（疯癫与文明）",
+     "quote": "其内容为兀尔德在主角团到达之前所发生的故事。"
+    }
+   ],
+   "before": "无 兀尔德 节点（仅 卡卡尼亚 的 alias + 传记作家兀尔德 独立节点）",
+   "after": "canonical 节点 兀尔德（eid==name），aliases 7 条（6 条语料逐字 + 原初的兀尔德 inherited-dead 标 inferred）"
+  },
+  {
+   "id": "R1-E02",
+   "type": "add_entity",
+   "target": "玛尔塔",
+   "entity": {
+    "eid": "玛尔塔",
+    "name": "玛尔塔",
+    "type": "角色",
+    "aliases": [
+     "玛尔塔女士"
+    ],
+    "desc": "1.7「今夜星光灿烂」登场女性（灰机：Marta，desc=兀尔德）",
+    "mentions": 9,
+    "chunk_ids": [
+     "mainline__106_今夜星光灿烂:12.0.0",
+     "mainline__107_孤独之歌:19.1.0",
+     "mainline__107_孤独之歌:21.0.0",
+     "mainline__107_孤独之歌:26.0.4",
+     "mainline__107_孤独之歌:3.0.1",
+     "mainline__107_孤独之歌:3.0.2",
+     "mainline__107_孤独之歌:6.1.1",
+     "mainline__110_复乐园:19.0.1",
+     "mainline__110_复乐园:20.1.1"
+    ]
+   },
+   "evidence": [
+    {
+     "src": "offline-cache 49910dc30331af4cb845.json（其他角色一览/1.x）",
+     "quote": "{{NPC信息/M|name=玛尔塔|nameEn=Marta|desc=兀尔德|id=6173}}（{{stagv|1.7}} 今夜星光灿烂 节下）"
+    },
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。（玛尔塔≠德洛丝医生，语料明文反证 → 不并入 兀尔德，独立成节点）"
+    },
+    {
+     "src": "语料 mainline__107_孤独之歌:26.0.4",
+     "quote": "**玛尔塔**：我也不知道我该去往何处。因此，我想请您为我解答疑惑。"
+    }
+   ],
+   "before": "玛尔塔 仅作 卡卡尼亚 alias（9 块被焊走）",
+   "after": "canonical 节点 玛尔塔（eid==name），9 块，alias 玛尔塔女士（逐字）"
+  },
+  {
+   "id": "R1-E03",
+   "type": "add_alias",
+   "target": "探险家别斯米尔",
+   "alias": "别斯米尔",
+   "evidence": [
+    {
+     "src": "offline-cache 49910dc30331af4cb845.json",
+     "quote": "{{NPC信息/M|name=别斯米尔|nameEn=Bessmert|desc=兀尔德|id=6157}}（1.6 朔日手记）"
+    },
+    {
+     "src": "语料 activity__16101_朔日手记:0.0.0",
+     "quote": "这是别斯米尔女士曾委托我记录的游记"
+    }
+   ],
+   "before": "查询「别斯米尔」经 alias_index 0.9 错种子 卡卡尼亚；探险家别斯米尔（67块/219边）对裸名不可达",
+   "after": "alias 别斯米尔 → 探险家别斯米尔（其 70 声称块中 65 块逐字含该名）"
+  },
+  {
+   "id": "R1-E04",
+   "type": "merge_entities",
+   "target": "传记作家兀尔德 → 兀尔德",
+   "moved_chunks": [
+    "activity__21101_77号往事:1.0.0",
+    "activity__21101_77号往事:13.0.0",
+    "activity__21101_77号往事:18.0.0",
+    "activity__35101_绿松石蛇俱乐部:12.0.1",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:1.1.0"
+   ],
+   "moved_edges": [
+    {
+     "edge": [
+      "数羊羔",
+      "提供",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "数羊羔",
+      "无法告知",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "数羊羔",
+      "探知",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "传记作家兀尔德",
+      "投稿",
+      "荣军院"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "芝诺",
+      "寻觅",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "寻访",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "无线电小姐",
+      "认出",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    },
+    {
+     "edge": [
+      "无线电小姐",
+      "留意",
+      "传记作家兀尔德"
+     ],
+     "how": "merge_entities 传记作家兀尔德→兀尔德"
+    }
+   ],
+   "evidence": [
+    {
+     "src": "语料 activity__21101_77号往事:18.0.0",
+     "quote": "最近一次收到兀尔德女士的投稿／是来自于圣保罗荣军院"
+    },
+    {
+     "src": "语料 activity__35101_绿松石蛇俱乐部:12.0.1",
+     "quote": "芝诺高层一直在寻找一位名为兀尔德的女士，想要找到尚未被暴雨所冲刷、最初的她"
+    },
+    {
+     "src": "语料 mainline__105_洞穴的囚徒:2.1.1",
+     "quote": "传记作家兀尔德于近日出版了最新游记《漫步阿派朗》"
+    },
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "我是德洛丝医生，而“兀尔德”的确是我的笔名。（笔名兀尔德的作者本人=德洛丝医生=兀尔德）"
+    },
+    {
+     "src": "offline-cache dd48cf716bfebe7c792b.json",
+     "quote": "兀尔德(Urd) 2.8 复乐园 独立NPC —— 灰机正名"
+    }
+   ],
+   "before": "传记作家兀尔德 6块/8边/alias[原初的兀尔德] 与笔名兀尔德分离（质检检4.2 连带分裂）",
+   "after": "并入 兴尔德：6 块、8 边改端点；alias 传记作家兀尔德（逐字 DF=1）、原初的兀尔德（DF=0，inferred，R4 候选）"
+  },
+  {
+   "id": "R1-E05-01",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "兀尔德",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[兀尔德] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[兀尔德] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-02",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "兀尔德女士",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[兀尔德女士] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[兀尔德女士] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-03",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "别斯米尔",
+   "repointed_to": "R1-E03(探险家别斯米尔)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[别斯米尔] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[别斯米尔] → R1-E03(探险家别斯米尔)"
+  },
+  {
+   "id": "R1-E05-04",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "德洛丝",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[德洛丝] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[德洛丝] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-05",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "德洛丝医生",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[德洛丝医生] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[德洛丝医生] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-06",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "德洛丝女士",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[德洛丝女士] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[德洛丝女士] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-07",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "无国界医生德洛丝",
+   "repointed_to": "R1-E01(兀尔德)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[无国界医生德洛丝] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[无国界医生德洛丝] → R1-E01(兀尔德)"
+  },
+  {
+   "id": "R1-E05-08",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "玛尔塔",
+   "repointed_to": "R1-E02(玛尔塔)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[玛尔塔] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[玛尔塔] → R1-E02(玛尔塔)"
+  },
+  {
+   "id": "R1-E05-09",
+   "type": "remove_alias",
+   "target": "卡卡尼亚",
+   "alias": "玛尔塔女士",
+   "repointed_to": "R1-E02(玛尔塔)",
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "但很遗憾，至于你提及的其他名字，应该并不是我。"
+    },
+    {
+     "src": "质检报告检4.2/检6",
+     "quote": "玛尔塔/德洛丝/兀尔德/别斯米尔/克拉拉 任一进查询都会把 204 块混合上下文拉进种子"
+    }
+   ],
+   "before": "alias_index[玛尔塔女士] → 卡卡尼亚（0.9 错种子）",
+   "after": "alias_index[玛尔塔女士] → R1-E02(玛尔塔)"
+  },
+  {
+   "id": "R1-E06",
+   "type": "reassign_chunk",
+   "target": "卡卡尼亚",
+   "add_chunk_ids": [
+    "mainline__106_今夜星光灿烂:14.2.1",
+    "mainline__106_今夜星光灿烂:17.0.0",
+    "mainline__106_今夜星光灿烂:19.0.2",
+    "mainline__106_今夜星光灿烂:21.0.1",
+    "mainline__106_今夜星光灿烂:9.0.0",
+    "mainline__107_孤独之歌:12.1.0",
+    "mainline__107_孤独之歌:26.0.1"
+   ],
+   "kept_weld_chunks": [
+    "activity__36101_人们向何处去:0.0.0",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.1",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.2",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.3",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.0",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.1",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.2",
+    "appendix_unbound__022_1_9_地牢剧情:3.1.0",
+    "character__17701_小房间:3.0.1",
+    "character__17701_小房间:3.0.3",
+    "character__17701_小房间:4.0.0",
+    "character__17701_小房间:4.0.1",
+    "character__17701_小房间:6.0.0",
+    "character__17701_小房间:6.0.1",
+    "character__17701_小房间:7.0.2",
+    "character__17701_小房间:7.0.3",
+    "character__17701_小房间:7.0.4",
+    "character__17701_小房间:7.0.5",
+    "character__19603_犹在镜中:0.0.0",
+    "character__19603_犹在镜中:0.0.1",
+    "character__19603_犹在镜中:0.0.2",
+    "character__19603_犹在镜中:1.0.0",
+    "character__19603_犹在镜中:1.0.1",
+    "character__19603_犹在镜中:1.0.2",
+    "character__19603_犹在镜中:2.0.0",
+    "character__19603_犹在镜中:2.0.1",
+    "character__19603_犹在镜中:2.0.2",
+    "character__19603_犹在镜中:3.0.0",
+    "character__19603_犹在镜中:3.0.1",
+    "character__19603_犹在镜中:3.0.2",
+    "character__19603_犹在镜中:4.0.0",
+    "character__19603_犹在镜中:4.0.1",
+    "character__19603_犹在镜中:4.0.2",
+    "character__19603_犹在镜中:5.0.0",
+    "character__19603_犹在镜中:5.0.1",
+    "character__19603_犹在镜中:5.0.2",
+    "character__19603_犹在镜中:6.0.0",
+    "character__19603_犹在镜中:6.0.1",
+    "character__19603_犹在镜中:6.0.2",
+    "character__19603_犹在镜中:7.0.0",
+    "character__19603_犹在镜中:7.0.1",
+    "character__19603_犹在镜中:7.0.2",
+    "mainline__106_今夜星光灿烂:0.0.1",
+    "mainline__106_今夜星光灿烂:0.0.2",
+    "mainline__106_今夜星光灿烂:10.0.0",
+    "mainline__106_今夜星光灿烂:10.0.1",
+    "mainline__106_今夜星光灿烂:10.0.2",
+    "mainline__106_今夜星光灿烂:10.0.3",
+    "mainline__106_今夜星光灿烂:10.0.4",
+    "mainline__106_今夜星光灿烂:10.0.5",
+    "mainline__106_今夜星光灿烂:11.0.0",
+    "mainline__106_今夜星光灿烂:11.0.1",
+    "mainline__106_今夜星光灿烂:11.0.2",
+    "mainline__106_今夜星光灿烂:13.1.0",
+    "mainline__106_今夜星光灿烂:13.2.0",
+    "mainline__106_今夜星光灿烂:13.2.1",
+    "mainline__106_今夜星光灿烂:14.1.0",
+    "mainline__106_今夜星光灿烂:14.2.0",
+    "mainline__106_今夜星光灿烂:14.2.2",
+    "mainline__106_今夜星光灿烂:15.0.0",
+    "mainline__106_今夜星光灿烂:15.0.1",
+    "mainline__106_今夜星光灿烂:15.0.2",
+    "mainline__106_今夜星光灿烂:15.0.3",
+    "mainline__106_今夜星光灿烂:16.0.0",
+    "mainline__106_今夜星光灿烂:16.0.1",
+    "mainline__106_今夜星光灿烂:16.0.2",
+    "mainline__106_今夜星光灿烂:17.0.1",
+    "mainline__106_今夜星光灿烂:18.2.1",
+    "mainline__106_今夜星光灿烂:19.0.0",
+    "mainline__106_今夜星光灿烂:19.0.1",
+    "mainline__106_今夜星光灿烂:20.2.0",
+    "mainline__106_今夜星光灿烂:21.0.0",
+    "mainline__106_今夜星光灿烂:21.0.2",
+    "mainline__106_今夜星光灿烂:22.0.0",
+    "mainline__106_今夜星光灿烂:22.0.1",
+    "mainline__106_今夜星光灿烂:22.0.2",
+    "mainline__106_今夜星光灿烂:23.1.0",
+    "mainline__106_今夜星光灿烂:23.1.1",
+    "mainline__106_今夜星光灿烂:23.2.0",
+    "mainline__106_今夜星光灿烂:4.1.0",
+    "mainline__106_今夜星光灿烂:4.1.1",
+    "mainline__106_今夜星光灿烂:4.2.0",
+    "mainline__106_今夜星光灿烂:5.1.0",
+    "mainline__106_今夜星光灿烂:5.1.2",
+    "mainline__106_今夜星光灿烂:6.0.0",
+    "mainline__106_今夜星光灿烂:6.0.1",
+    "mainline__106_今夜星光灿烂:6.0.2",
+    "mainline__106_今夜星光灿烂:6.0.3",
+    "mainline__106_今夜星光灿烂:6.0.4",
+    "mainline__106_今夜星光灿烂:7.0.0",
+    "mainline__106_今夜星光灿烂:7.0.1",
+    "mainline__106_今夜星光灿烂:7.0.2",
+    "mainline__106_今夜星光灿烂:7.0.3",
+    "mainline__106_今夜星光灿烂:8.0.0",
+    "mainline__106_今夜星光灿烂:8.0.1",
+    "mainline__106_今夜星光灿烂:8.0.2",
+    "mainline__106_今夜星光灿烂:8.0.3",
+    "mainline__106_今夜星光灿烂:9.0.1",
+    "mainline__106_今夜星光灿烂:9.0.2",
+    "mainline__106_今夜星光灿烂:9.0.3",
+    "mainline__107_孤独之歌:12.1.1",
+    "mainline__107_孤独之歌:12.1.2",
+    "mainline__107_孤独之歌:12.2.0",
+    "mainline__107_孤独之歌:21.0.2",
+    "mainline__107_孤独之歌:25.2.0",
+    "mainline__107_孤独之歌:25.2.1",
+    "mainline__107_孤独之歌:26.0.2",
+    "mainline__107_孤独之歌:26.0.3",
+    "mainline__107_孤独之歌:26.0.4",
+    "mainline__107_孤独之歌:4.0.0",
+    "mainline__109_疯癫与文明:7.0.3"
+   ],
+   "removed_weld_chunks": [
+    "character__30601_三重赋格:2.0.1",
+    "character__30601_三重赋格:2.0.2",
+    "mainline__105_洞穴的囚徒:2.1.1",
+    "mainline__105_洞穴的囚徒:5.1.0",
+    "mainline__106_今夜星光灿烂:12.0.0",
+    "mainline__107_孤独之歌:19.1.0",
+    "mainline__107_孤独之歌:21.0.0",
+    "mainline__107_孤独之歌:26.0.0",
+    "mainline__107_孤独之歌:27.0.0",
+    "mainline__107_孤独之歌:3.0.1",
+    "mainline__107_孤独之歌:3.0.2",
+    "mainline__107_孤独之歌:6.1.1",
+    "mainline__108_忧郁的热带:0.0.1",
+    "mainline__108_忧郁的热带:11.0.0",
+    "mainline__108_忧郁的热带:11.0.1",
+    "mainline__108_忧郁的热带:12.0.0",
+    "mainline__108_忧郁的热带:13.0.1",
+    "mainline__108_忧郁的热带:15.1.1",
+    "mainline__108_忧郁的热带:18.1.0",
+    "mainline__108_忧郁的热带:18.1.1",
+    "mainline__108_忧郁的热带:18.2.0",
+    "mainline__108_忧郁的热带:19.1.0",
+    "mainline__108_忧郁的热带:19.1.1",
+    "mainline__108_忧郁的热带:19.2.0",
+    "mainline__108_忧郁的热带:20.1.0",
+    "mainline__108_忧郁的热带:20.1.1",
+    "mainline__108_忧郁的热带:21.0.0",
+    "mainline__108_忧郁的热带:21.0.1",
+    "mainline__108_忧郁的热带:22.0.1",
+    "mainline__108_忧郁的热带:22.0.2",
+    "mainline__108_忧郁的热带:6.1.0",
+    "mainline__108_忧郁的热带:7.0.0",
+    "mainline__108_忧郁的热带:7.0.1",
+    "mainline__108_忧郁的热带:7.0.2",
+    "mainline__108_忧郁的热带:8.1.0",
+    "mainline__108_忧郁的热带:8.1.1",
+    "mainline__108_忧郁的热带:9.1.0",
+    "mainline__108_忧郁的热带:9.2.0",
+    "mainline__109_疯癫与文明:0.2.0",
+    "mainline__109_疯癫与文明:1.0.0",
+    "mainline__109_疯癫与文明:1.0.1",
+    "mainline__109_疯癫与文明:11.0.0",
+    "mainline__109_疯癫与文明:11.0.1",
+    "mainline__109_疯癫与文明:18.0.0",
+    "mainline__109_疯癫与文明:18.0.1",
+    "mainline__109_疯癫与文明:19.0.2",
+    "mainline__109_疯癫与文明:3.0.0",
+    "mainline__109_疯癫与文明:3.0.1",
+    "mainline__109_疯癫与文明:3.0.2",
+    "mainline__109_疯癫与文明:4.0.1",
+    "mainline__109_疯癫与文明:4.0.2",
+    "mainline__109_疯癫与文明:5.1.1",
+    "mainline__109_疯癫与文明:5.1.2",
+    "mainline__109_疯癫与文明:7.0.1",
+    "mainline__109_疯癫与文明:7.0.4",
+    "mainline__109_疯癫与文明:8.0.1",
+    "mainline__109_疯癫与文明:9.0.0",
+    "mainline__110_复乐园:1.2.0",
+    "mainline__110_复乐园:10.1.1",
+    "mainline__110_复乐园:10.2.0",
+    "mainline__110_复乐园:12.1.0",
+    "mainline__110_复乐园:12.2.0",
+    "mainline__110_复乐园:14.0.0",
+    "mainline__110_复乐园:18.2.0",
+    "mainline__110_复乐园:18.2.1",
+    "mainline__110_复乐园:19.0.0",
+    "mainline__110_复乐园:19.0.1",
+    "mainline__110_复乐园:19.0.2",
+    "mainline__110_复乐园:20.1.0",
+    "mainline__110_复乐园:20.1.1",
+    "mainline__110_复乐园:22.2.0",
+    "mainline__110_复乐园:23.0.0",
+    "mainline__110_复乐园:23.0.1",
+    "mainline__110_复乐园:23.0.2",
+    "mainline__110_复乐园:24.0.0",
+    "mainline__110_复乐园:24.0.1",
+    "mainline__110_复乐园:5.1.0",
+    "mainline__110_复乐园:5.1.2",
+    "mainline__110_复乐园:6.1.0",
+    "mainline__110_复乐园:9.0.0",
+    "mainline__110_复乐园:9.0.1",
+    "mainline__111_行于漫漫长路上:23.0.2",
+    "mainline__112_远征记:10.1.0",
+    "mainline__112_远征记:13.0.0",
+    "mainline__112_远征记:2.2.2",
+    "mainline__112_远征记:23.0.0",
+    "mainline__112_远征记:23.0.1",
+    "mainline__112_远征记:24.0.3",
+    "mainline__112_远征记:7.0.2",
+    "mainline__112_远征记:7.0.4",
+    "mainline__112_远征记:9.0.3",
+    "mainline__112_远征记:9.0.4",
+    "mainline__112_远征记:9.0.5"
+   ],
+   "final_chunk_ids": [
+    "activity__36101_人们向何处去:0.0.0",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.1",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.2",
+    "appendix_unbound__022_1_9_地牢剧情:1.1.3",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.0",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.1",
+    "appendix_unbound__022_1_9_地牢剧情:2.1.2",
+    "appendix_unbound__022_1_9_地牢剧情:3.1.0",
+    "character__17701_小房间:3.0.1",
+    "character__17701_小房间:3.0.3",
+    "character__17701_小房间:4.0.0",
+    "character__17701_小房间:4.0.1",
+    "character__17701_小房间:6.0.0",
+    "character__17701_小房间:6.0.1",
+    "character__17701_小房间:7.0.2",
+    "character__17701_小房间:7.0.3",
+    "character__17701_小房间:7.0.4",
+    "character__17701_小房间:7.0.5",
+    "character__19603_犹在镜中:0.0.0",
+    "character__19603_犹在镜中:0.0.1",
+    "character__19603_犹在镜中:0.0.2",
+    "character__19603_犹在镜中:1.0.0",
+    "character__19603_犹在镜中:1.0.1",
+    "character__19603_犹在镜中:1.0.2",
+    "character__19603_犹在镜中:2.0.0",
+    "character__19603_犹在镜中:2.0.1",
+    "character__19603_犹在镜中:2.0.2",
+    "character__19603_犹在镜中:3.0.0",
+    "character__19603_犹在镜中:3.0.1",
+    "character__19603_犹在镜中:3.0.2",
+    "character__19603_犹在镜中:4.0.0",
+    "character__19603_犹在镜中:4.0.1",
+    "character__19603_犹在镜中:4.0.2",
+    "character__19603_犹在镜中:5.0.0",
+    "character__19603_犹在镜中:5.0.1",
+    "character__19603_犹在镜中:5.0.2",
+    "character__19603_犹在镜中:6.0.0",
+    "character__19603_犹在镜中:6.0.1",
+    "character__19603_犹在镜中:6.0.2",
+    "character__19603_犹在镜中:7.0.0",
+    "character__19603_犹在镜中:7.0.1",
+    "character__19603_犹在镜中:7.0.2",
+    "mainline__106_今夜星光灿烂:0.0.1",
+    "mainline__106_今夜星光灿烂:0.0.2",
+    "mainline__106_今夜星光灿烂:10.0.0",
+    "mainline__106_今夜星光灿烂:10.0.1",
+    "mainline__106_今夜星光灿烂:10.0.2",
+    "mainline__106_今夜星光灿烂:10.0.3",
+    "mainline__106_今夜星光灿烂:10.0.4",
+    "mainline__106_今夜星光灿烂:10.0.5",
+    "mainline__106_今夜星光灿烂:11.0.0",
+    "mainline__106_今夜星光灿烂:11.0.1",
+    "mainline__106_今夜星光灿烂:11.0.2",
+    "mainline__106_今夜星光灿烂:13.1.0",
+    "mainline__106_今夜星光灿烂:13.2.0",
+    "mainline__106_今夜星光灿烂:13.2.1",
+    "mainline__106_今夜星光灿烂:14.1.0",
+    "mainline__106_今夜星光灿烂:14.2.0",
+    "mainline__106_今夜星光灿烂:14.2.1",
+    "mainline__106_今夜星光灿烂:14.2.2",
+    "mainline__106_今夜星光灿烂:15.0.0",
+    "mainline__106_今夜星光灿烂:15.0.1",
+    "mainline__106_今夜星光灿烂:15.0.2",
+    "mainline__106_今夜星光灿烂:15.0.3",
+    "mainline__106_今夜星光灿烂:16.0.0",
+    "mainline__106_今夜星光灿烂:16.0.1",
+    "mainline__106_今夜星光灿烂:16.0.2",
+    "mainline__106_今夜星光灿烂:17.0.0",
+    "mainline__106_今夜星光灿烂:17.0.1",
+    "mainline__106_今夜星光灿烂:18.2.1",
+    "mainline__106_今夜星光灿烂:19.0.0",
+    "mainline__106_今夜星光灿烂:19.0.1",
+    "mainline__106_今夜星光灿烂:19.0.2",
+    "mainline__106_今夜星光灿烂:20.2.0",
+    "mainline__106_今夜星光灿烂:21.0.0",
+    "mainline__106_今夜星光灿烂:21.0.1",
+    "mainline__106_今夜星光灿烂:21.0.2",
+    "mainline__106_今夜星光灿烂:22.0.0",
+    "mainline__106_今夜星光灿烂:22.0.1",
+    "mainline__106_今夜星光灿烂:22.0.2",
+    "mainline__106_今夜星光灿烂:23.1.0",
+    "mainline__106_今夜星光灿烂:23.1.1",
+    "mainline__106_今夜星光灿烂:23.2.0",
+    "mainline__106_今夜星光灿烂:4.1.0",
+    "mainline__106_今夜星光灿烂:4.1.1",
+    "mainline__106_今夜星光灿烂:4.2.0",
+    "mainline__106_今夜星光灿烂:5.1.0",
+    "mainline__106_今夜星光灿烂:5.1.2",
+    "mainline__106_今夜星光灿烂:6.0.0",
+    "mainline__106_今夜星光灿烂:6.0.1",
+    "mainline__106_今夜星光灿烂:6.0.2",
+    "mainline__106_今夜星光灿烂:6.0.3",
+    "mainline__106_今夜星光灿烂:6.0.4",
+    "mainline__106_今夜星光灿烂:7.0.0",
+    "mainline__106_今夜星光灿烂:7.0.1",
+    "mainline__106_今夜星光灿烂:7.0.2",
+    "mainline__106_今夜星光灿烂:7.0.3",
+    "mainline__106_今夜星光灿烂:8.0.0",
+    "mainline__106_今夜星光灿烂:8.0.1",
+    "mainline__106_今夜星光灿烂:8.0.2",
+    "mainline__106_今夜星光灿烂:8.0.3",
+    "mainline__106_今夜星光灿烂:9.0.0",
+    "mainline__106_今夜星光灿烂:9.0.1",
+    "mainline__106_今夜星光灿烂:9.0.2",
+    "mainline__106_今夜星光灿烂:9.0.3",
+    "mainline__107_孤独之歌:12.1.0",
+    "mainline__107_孤独之歌:12.1.1",
+    "mainline__107_孤独之歌:12.1.2",
+    "mainline__107_孤独之歌:12.2.0",
+    "mainline__107_孤独之歌:21.0.2",
+    "mainline__107_孤独之歌:25.2.0",
+    "mainline__107_孤独之歌:25.2.1",
+    "mainline__107_孤独之歌:26.0.1",
+    "mainline__107_孤独之歌:26.0.2",
+    "mainline__107_孤独之歌:26.0.3",
+    "mainline__107_孤独之歌:26.0.4",
+    "mainline__107_孤独之歌:4.0.0",
+    "mainline__109_疯癫与文明:7.0.3"
+   ],
+   "mentions": 118,
+   "evidence": [
+    {
+     "src": "语料 mainline__106_今夜星光灿烂:17.0.0",
+     "quote": "（焊组外逐字补收例，块含「卡卡尼亚小姐」）"
+    },
+    {
+     "src": "语料 mainline__110_复乐园:19.0.0（context-only 保留）",
+     "quote": "纺车桥块邻接，无成员名"
+    },
+    {
+     "src": "语料 character__30601_三重赋格:2.0.1/2.0.2（删声称）",
+     "quote": "战地医院场景，说话人「医生」为无名军医，非焊组任何成员"
+    }
+   ],
+   "before": "204 块 / mentions 204 / 度 439 / alias 15",
+   "after": "118 块 / mentions 118 / 度 310 / alias 6"
+  },
+  {
+   "id": "R1-E07",
+   "type": "reassign_chunk",
+   "target": "兀尔德",
+   "from_weld_verbatim": [
+    "mainline__105_洞穴的囚徒:2.1.1",
+    "mainline__105_洞穴的囚徒:5.1.0",
+    "mainline__107_孤独之歌:27.0.0",
+    "mainline__108_忧郁的热带:0.0.1",
+    "mainline__108_忧郁的热带:11.0.0",
+    "mainline__108_忧郁的热带:11.0.1",
+    "mainline__108_忧郁的热带:12.0.0",
+    "mainline__108_忧郁的热带:13.0.1",
+    "mainline__108_忧郁的热带:15.1.1",
+    "mainline__108_忧郁的热带:18.1.0",
+    "mainline__108_忧郁的热带:18.1.1",
+    "mainline__108_忧郁的热带:18.2.0",
+    "mainline__108_忧郁的热带:19.1.0",
+    "mainline__108_忧郁的热带:19.2.0",
+    "mainline__108_忧郁的热带:20.1.0",
+    "mainline__108_忧郁的热带:21.0.0",
+    "mainline__108_忧郁的热带:21.0.1",
+    "mainline__108_忧郁的热带:22.0.1",
+    "mainline__108_忧郁的热带:22.0.2",
+    "mainline__108_忧郁的热带:7.0.0",
+    "mainline__108_忧郁的热带:7.0.1",
+    "mainline__108_忧郁的热带:7.0.2",
+    "mainline__108_忧郁的热带:8.1.0",
+    "mainline__108_忧郁的热带:9.1.0",
+    "mainline__108_忧郁的热带:9.2.0",
+    "mainline__109_疯癫与文明:0.2.0",
+    "mainline__109_疯癫与文明:1.0.0",
+    "mainline__109_疯癫与文明:1.0.1",
+    "mainline__109_疯癫与文明:11.0.0",
+    "mainline__109_疯癫与文明:11.0.1",
+    "mainline__109_疯癫与文明:18.0.0",
+    "mainline__109_疯癫与文明:18.0.1",
+    "mainline__109_疯癫与文明:19.0.2",
+    "mainline__109_疯癫与文明:3.0.0",
+    "mainline__109_疯癫与文明:3.0.1",
+    "mainline__109_疯癫与文明:3.0.2",
+    "mainline__109_疯癫与文明:4.0.1",
+    "mainline__109_疯癫与文明:4.0.2",
+    "mainline__109_疯癫与文明:5.1.1",
+    "mainline__109_疯癫与文明:5.1.2",
+    "mainline__109_疯癫与文明:7.0.1",
+    "mainline__109_疯癫与文明:7.0.3",
+    "mainline__109_疯癫与文明:7.0.4",
+    "mainline__109_疯癫与文明:8.0.1",
+    "mainline__109_疯癫与文明:9.0.0",
+    "mainline__110_复乐园:1.2.0",
+    "mainline__110_复乐园:10.1.1",
+    "mainline__110_复乐园:10.2.0",
+    "mainline__110_复乐园:12.1.0",
+    "mainline__110_复乐园:12.2.0",
+    "mainline__110_复乐园:14.0.0",
+    "mainline__110_复乐园:18.2.0",
+    "mainline__110_复乐园:18.2.1",
+    "mainline__110_复乐园:19.0.1",
+    "mainline__110_复乐园:19.0.2",
+    "mainline__110_复乐园:20.1.0",
+    "mainline__110_复乐园:22.2.0",
+    "mainline__110_复乐园:23.0.0",
+    "mainline__110_复乐园:23.0.1",
+    "mainline__110_复乐园:23.0.2",
+    "mainline__110_复乐园:24.0.1",
+    "mainline__110_复乐园:5.1.0",
+    "mainline__110_复乐园:5.1.2",
+    "mainline__110_复乐园:6.1.0",
+    "mainline__110_复乐园:9.0.0",
+    "mainline__110_复乐园:9.0.1",
+    "mainline__111_行于漫漫长路上:23.0.2",
+    "mainline__112_远征记:10.1.0",
+    "mainline__112_远征记:13.0.0",
+    "mainline__112_远征记:2.2.2",
+    "mainline__112_远征记:23.0.0",
+    "mainline__112_远征记:23.0.1",
+    "mainline__112_远征记:24.0.3",
+    "mainline__112_远征记:7.0.2",
+    "mainline__112_远征记:7.0.4",
+    "mainline__112_远征记:9.0.3",
+    "mainline__112_远征记:9.0.4",
+    "mainline__112_远征记:9.0.5"
+   ],
+   "from_weld_contextual_inferred": [
+    "mainline__108_忧郁的热带:6.1.0",
+    "mainline__108_忧郁的热带:8.1.1",
+    "mainline__108_忧郁的热带:19.1.1",
+    "mainline__110_复乐园:19.0.0"
+   ],
+   "from_merge": [
+    "activity__21101_77号往事:1.0.0",
+    "activity__21101_77号往事:13.0.0",
+    "activity__21101_77号往事:18.0.0",
+    "activity__35101_绿松石蛇俱乐部:12.0.1",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:1.1.0"
+   ],
+   "from_outside_verbatim": [
+    "activity__20101_飞驰_明日之城:3.0.0",
+    "activity__21101_77号往事:18.0.2",
+    "appendix_unbound__062_2_8_启示录变相_收藏品:0.1.0",
+    "mainline__108_忧郁的热带:12.0.2",
+    "mainline__108_忧郁的热带:13.0.0",
+    "mainline__109_疯癫与文明:1.0.2",
+    "mainline__109_疯癫与文明:13.0.0",
+    "mainline__109_疯癫与文明:14.1.1",
+    "mainline__109_疯癫与文明:14.1.2",
+    "mainline__109_疯癫与文明:18.0.2",
+    "mainline__109_疯癫与文明:8.0.2",
+    "mainline__109_疯癫与文明:8.0.3",
+    "mainline__109_疯癫与文明:9.0.1",
+    "mainline__110_复乐园:12.1.2",
+    "mainline__110_复乐园:17.0.0"
+   ],
+   "final_chunk_ids": [
+    "activity__20101_飞驰_明日之城:3.0.0",
+    "activity__21101_77号往事:1.0.0",
+    "activity__21101_77号往事:13.0.0",
+    "activity__21101_77号往事:18.0.0",
+    "activity__21101_77号往事:18.0.2",
+    "activity__35101_绿松石蛇俱乐部:12.0.1",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0",
+    "appendix_unbound__015_1_9_去往新世界_无线电小姐:1.1.0",
+    "appendix_unbound__062_2_8_启示录变相_收藏品:0.1.0",
+    "mainline__105_洞穴的囚徒:2.1.1",
+    "mainline__105_洞穴的囚徒:5.1.0",
+    "mainline__107_孤独之歌:27.0.0",
+    "mainline__108_忧郁的热带:0.0.1",
+    "mainline__108_忧郁的热带:11.0.0",
+    "mainline__108_忧郁的热带:11.0.1",
+    "mainline__108_忧郁的热带:12.0.0",
+    "mainline__108_忧郁的热带:12.0.2",
+    "mainline__108_忧郁的热带:13.0.0",
+    "mainline__108_忧郁的热带:13.0.1",
+    "mainline__108_忧郁的热带:15.1.1",
+    "mainline__108_忧郁的热带:18.1.0",
+    "mainline__108_忧郁的热带:18.1.1",
+    "mainline__108_忧郁的热带:18.2.0",
+    "mainline__108_忧郁的热带:19.1.0",
+    "mainline__108_忧郁的热带:19.1.1",
+    "mainline__108_忧郁的热带:19.2.0",
+    "mainline__108_忧郁的热带:20.1.0",
+    "mainline__108_忧郁的热带:21.0.0",
+    "mainline__108_忧郁的热带:21.0.1",
+    "mainline__108_忧郁的热带:22.0.1",
+    "mainline__108_忧郁的热带:22.0.2",
+    "mainline__108_忧郁的热带:6.1.0",
+    "mainline__108_忧郁的热带:7.0.0",
+    "mainline__108_忧郁的热带:7.0.1",
+    "mainline__108_忧郁的热带:7.0.2",
+    "mainline__108_忧郁的热带:8.1.0",
+    "mainline__108_忧郁的热带:8.1.1",
+    "mainline__108_忧郁的热带:9.1.0",
+    "mainline__108_忧郁的热带:9.2.0",
+    "mainline__109_疯癫与文明:0.2.0",
+    "mainline__109_疯癫与文明:1.0.0",
+    "mainline__109_疯癫与文明:1.0.1",
+    "mainline__109_疯癫与文明:1.0.2",
+    "mainline__109_疯癫与文明:11.0.0",
+    "mainline__109_疯癫与文明:11.0.1",
+    "mainline__109_疯癫与文明:13.0.0",
+    "mainline__109_疯癫与文明:14.1.1",
+    "mainline__109_疯癫与文明:14.1.2",
+    "mainline__109_疯癫与文明:18.0.0",
+    "mainline__109_疯癫与文明:18.0.1",
+    "mainline__109_疯癫与文明:18.0.2",
+    "mainline__109_疯癫与文明:19.0.2",
+    "mainline__109_疯癫与文明:3.0.0",
+    "mainline__109_疯癫与文明:3.0.1",
+    "mainline__109_疯癫与文明:3.0.2",
+    "mainline__109_疯癫与文明:4.0.1",
+    "mainline__109_疯癫与文明:4.0.2",
+    "mainline__109_疯癫与文明:5.1.1",
+    "mainline__109_疯癫与文明:5.1.2",
+    "mainline__109_疯癫与文明:7.0.1",
+    "mainline__109_疯癫与文明:7.0.3",
+    "mainline__109_疯癫与文明:7.0.4",
+    "mainline__109_疯癫与文明:8.0.1",
+    "mainline__109_疯癫与文明:8.0.2",
+    "mainline__109_疯癫与文明:8.0.3",
+    "mainline__109_疯癫与文明:9.0.0",
+    "mainline__109_疯癫与文明:9.0.1",
+    "mainline__110_复乐园:1.2.0",
+    "mainline__110_复乐园:10.1.1",
+    "mainline__110_复乐园:10.2.0",
+    "mainline__110_复乐园:12.1.0",
+    "mainline__110_复乐园:12.1.2",
+    "mainline__110_复乐园:12.2.0",
+    "mainline__110_复乐园:14.0.0",
+    "mainline__110_复乐园:17.0.0",
+    "mainline__110_复乐园:18.2.0",
+    "mainline__110_复乐园:18.2.1",
+    "mainline__110_复乐园:19.0.0",
+    "mainline__110_复乐园:19.0.1",
+    "mainline__110_复乐园:19.0.2",
+    "mainline__110_复乐园:20.1.0",
+    "mainline__110_复乐园:22.2.0",
+    "mainline__110_复乐园:23.0.0",
+    "mainline__110_复乐园:23.0.1",
+    "mainline__110_复乐园:23.0.2",
+    "mainline__110_复乐园:24.0.1",
+    "mainline__110_复乐园:5.1.0",
+    "mainline__110_复乐园:5.1.2",
+    "mainline__110_复乐园:6.1.0",
+    "mainline__110_复乐园:9.0.0",
+    "mainline__110_复乐园:9.0.1",
+    "mainline__111_行于漫漫长路上:23.0.2",
+    "mainline__112_远征记:10.1.0",
+    "mainline__112_远征记:13.0.0",
+    "mainline__112_远征记:2.2.2",
+    "mainline__112_远征记:23.0.0",
+    "mainline__112_远征记:23.0.1",
+    "mainline__112_远征记:24.0.3",
+    "mainline__112_远征记:7.0.2",
+    "mainline__112_远征记:7.0.4",
+    "mainline__112_远征记:9.0.3",
+    "mainline__112_远征记:9.0.4",
+    "mainline__112_远征记:9.0.5"
+   ],
+   "mentions": 103,
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "我是德洛丝医生，而“兀尔德”的确是我的笔名。"
+    },
+    {
+     "src": "语料 mainline__108_忧郁的热带:6.1.0（contextual）",
+     "quote": "最近还来了个荣军院的医生。那女人是个瞎子，但她给很多人看病"
+    },
+    {
+     "src": "语料 mainline__108_忧郁的热带:8.1.1（contextual）",
+     "quote": "医生往返荣军院和这边，都靠我接送"
+    },
+    {
+     "src": "语料 mainline__108_忧郁的热带:19.1.1（contextual）",
+     "quote": "父亲需要她，我们需要这位医生。带上她，回到基地"
+    },
+    {
+     "src": "语料 mainline__110_复乐园:19.0.0（contextual）",
+     "quote": "纺车/歌声 ？？？→ 19.0.1 揭示为德洛丝医生（邻接推断，inferred）"
+    }
+   ],
+   "before": "无节点；其逐字块散落 卡卡尼亚焊组(78)/传记作家兀尔德(6)/其他实体多归属或无主(15)",
+   "after": "103 块（含 4 块 inferred 语境归属）"
+  },
+  {
+   "id": "R1-E08",
+   "type": "reassign_chunk",
+   "target": "玛尔塔",
+   "final_chunk_ids": [
+    "mainline__106_今夜星光灿烂:12.0.0",
+    "mainline__107_孤独之歌:19.1.0",
+    "mainline__107_孤独之歌:21.0.0",
+    "mainline__107_孤独之歌:26.0.4",
+    "mainline__107_孤独之歌:3.0.1",
+    "mainline__107_孤独之歌:3.0.2",
+    "mainline__107_孤独之歌:6.1.1",
+    "mainline__110_复乐园:19.0.1",
+    "mainline__110_复乐园:20.1.1"
+   ],
+   "mentions": 9,
+   "evidence": [
+    {
+     "src": "语料 mainline__107_孤独之歌:26.0.4",
+     "quote": "**玛尔塔**：您好。／**维尔汀**：……玛尔塔女士，您也要加入他们吗？"
+    }
+   ],
+   "before": "9 块全部焊在 卡卡尼亚",
+   "after": "9 块（=语料逐字 DF）"
+  },
+  {
+   "id": "R1-E09",
+   "type": "reassign_chunk",
+   "target": "探险家别斯米尔",
+   "add_chunk_ids": [
+    "activity__16101_朔日手记:15.1.0",
+    "activity__16101_朔日手记:8.2.1",
+    "mainline__110_复乐园:19.0.1"
+   ],
+   "skipped": {
+    "appendix_unbound__006_1_6_赛季剧情:4.1.0": "旅行队的别斯米尔 已声称（R3 合并候选，不抢）"
+   },
+   "final_chunk_ids": [
+    "activity__16101_朔日手记:0.0.0",
+    "activity__16101_朔日手记:0.0.1",
+    "activity__16101_朔日手记:0.0.2",
+    "activity__16101_朔日手记:0.0.3",
+    "activity__16101_朔日手记:1.1.0",
+    "activity__16101_朔日手记:1.2.0",
+    "activity__16101_朔日手记:1.2.1",
+    "activity__16101_朔日手记:1.2.2",
+    "activity__16101_朔日手记:10.0.0",
+    "activity__16101_朔日手记:10.0.1",
+    "activity__16101_朔日手记:10.0.2",
+    "activity__16101_朔日手记:11.1.0",
+    "activity__16101_朔日手记:11.2.0",
+    "activity__16101_朔日手记:11.2.1",
+    "activity__16101_朔日手记:11.2.2",
+    "activity__16101_朔日手记:12.2.0",
+    "activity__16101_朔日手记:12.2.1",
+    "activity__16101_朔日手记:13.0.0",
+    "activity__16101_朔日手记:13.0.3",
+    "activity__16101_朔日手记:14.0.0",
+    "activity__16101_朔日手记:14.0.1",
+    "activity__16101_朔日手记:14.0.2",
+    "activity__16101_朔日手记:15.1.0",
+    "activity__16101_朔日手记:15.2.1",
+    "activity__16101_朔日手记:16.1.0",
+    "activity__16101_朔日手记:16.1.1",
+    "activity__16101_朔日手记:16.1.2",
+    "activity__16101_朔日手记:16.2.0",
+    "activity__16101_朔日手记:16.2.1",
+    "activity__16101_朔日手记:16.2.2",
+    "activity__16101_朔日手记:18.1.0",
+    "activity__16101_朔日手记:18.2.0",
+    "activity__16101_朔日手记:19.0.1",
+    "activity__16101_朔日手记:19.0.2",
+    "activity__16101_朔日手记:2.0.0",
+    "activity__16101_朔日手记:2.0.1",
+    "activity__16101_朔日手记:2.0.2",
+    "activity__16101_朔日手记:20.0.0",
+    "activity__16101_朔日手记:20.0.1",
+    "activity__16101_朔日手记:20.0.2",
+    "activity__16101_朔日手记:21.0.0",
+    "activity__16101_朔日手记:21.0.1",
+    "activity__16101_朔日手记:22.0.0",
+    "activity__16101_朔日手记:3.1.0",
+    "activity__16101_朔日手记:3.1.1",
+    "activity__16101_朔日手记:3.1.2",
+    "activity__16101_朔日手记:3.2.0",
+    "activity__16101_朔日手记:4.1.0",
+    "activity__16101_朔日手记:4.1.1",
+    "activity__16101_朔日手记:4.1.2",
+    "activity__16101_朔日手记:4.2.0",
+    "activity__16101_朔日手记:4.2.1",
+    "activity__16101_朔日手记:5.0.0",
+    "activity__16101_朔日手记:5.0.1",
+    "activity__16101_朔日手记:6.1.0",
+    "activity__16101_朔日手记:6.2.0",
+    "activity__16101_朔日手记:6.2.1",
+    "activity__16101_朔日手记:7.0.0",
+    "activity__16101_朔日手记:7.0.1",
+    "activity__16101_朔日手记:7.0.2",
+    "activity__16101_朔日手记:7.0.3",
+    "activity__16101_朔日手记:8.1.0",
+    "activity__16101_朔日手记:8.1.1",
+    "activity__16101_朔日手记:8.2.0",
+    "activity__16101_朔日手记:8.2.1",
+    "activity__16101_朔日手记:8.2.2",
+    "activity__16101_朔日手记:9.0.0",
+    "activity__16101_朔日手记:9.0.1",
+    "activity__16101_朔日手记:9.0.2",
+    "mainline__110_复乐园:19.0.1"
+   ],
+   "mentions": 70,
+   "evidence": [
+    {
+     "src": "语料 mainline__110_复乐园:19.0.1",
+     "quote": "**维尔汀**：玛尔塔、别斯米尔、兀尔德……我该如何称呼您？"
+    },
+    {
+     "src": "语料 activity__16101_朔日手记:8.2.1 / :15.1.0（无主逐字补收）",
+     "quote": "（块含「别斯米尔」逐字，当前无任何实体声称）"
+    }
+   ],
+   "before": "67 块（63 逐字），桥块与 2 个逐字块游离",
+   "after": "70 块（65 逐字）"
+  },
+  {
+   "id": "R1-E10-urd",
+   "type": "move_edge",
+   "target": "兀尔德",
+   "edges": [
+    {
+     "edge": [
+      "卡卡尼亚",
+      "著作",
+      "漫步阿派朗"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "打听",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "寻找",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "推断",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "桑托斯",
+      "评估",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "工作于",
+      "河岸贫民区"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "讲述",
+      "白痴草"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "施救",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "诊断",
+      "热毒菌"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "金伯利女郎",
+      "追随",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "承诺",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "白朗姆",
+      "接送",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "识破",
+      "马坎多"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "马坎多",
+      "声称",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "金伯利女郎",
+      "停手",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "喝止",
+      "金伯利女郎"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "写作",
+      "稿纸"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "署名于",
+      "稿纸"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "金伯利女郎",
+      "评价",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "使用",
+      "打字机"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "桑托斯",
+      "囚禁",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "洛佩拉",
+      "救下",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "守护",
+      "打字机"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "莫莉德尔",
+      "劫走",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "莫莉德尔",
+      "掳走",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "交付",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "保护",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "相认",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "否认",
+      "伊戈尔"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "宣告",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "康斯坦丁",
+      "确认",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "捕捉",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "印证",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "相遇于",
+      "虚构集"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "指向",
+      "科马拉监狱"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "提问",
+      "虚构集"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "虚构集",
+      "回答",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "离去",
+      "科马拉监狱"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "寻访",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "狱卒",
+      "否认",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "隶属于",
+      "巴西圣保罗荣军院"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "投稿",
+      "神秘学杂志"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "虚构集",
+      "遇",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "狱卒",
+      "否认见过",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "提议追查",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "理想家",
+      "认得",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "未寻得",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "隶属于",
+      "美洲诗社"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "发现",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "确认",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "对应",
+      "盲眼的织工"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "阿莱夫",
+      "隐匿",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "带来",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "托付",
+      "奥克塔维奥"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "署名",
+      "UTTU"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "留迹",
+      "巴西圣保罗热情之家"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "狱卒",
+      "查无",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "致信",
+      "阿莱夫"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "隶属于",
+      "重塑之手"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "阿莱夫",
+      "指认",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "追问",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "阿莱夫",
+      "解答",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "无名者",
+      "放行",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "赴",
+      "南方"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "启程",
+      "南极"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "虚构集",
+      "交谈",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "辞别",
+      "虚构集"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "拜别",
+      "阿莱夫"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "追踪",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "追踪",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "听诊器",
+      "残留气味",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "打字机",
+      "属于",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "穿越",
+      "石壁迷宫"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "幻觉",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "搜寻",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "无名者",
+      "持有",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "苏菲亚",
+      "证实",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "纺车",
+      "转动",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "重逢",
+      "维尔汀"
+     ],
+     "how": "multi-resolved: 证据句说话人=德洛丝医生(桥块)"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "护送提议",
+      "卡卡尼亚"
+     ],
+     "how": "multi-resolved: 证据句说话人=德洛丝医生(桥块)"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "纺织",
+      "纺车"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "启动",
+      "仪式"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "阿尼姆斯",
+      "吸取",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "阿尼姆斯",
+      "沉没",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "受托",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "推测",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "开启",
+      "仪式"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "指引",
+      "维尔汀"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "消融于",
+      "洪水"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "交付",
+      "纺车"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "消散",
+      "洪水"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "诀别",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "追逐",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "许诺",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "阿尔卡纳",
+      "需要",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "脱离",
+      "琥珀屋"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "后悔",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "报告",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "接近",
+      "仪式"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "伊戈尔",
+      "承诺",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "圣洛夫基金会",
+      "承诺",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "留存",
+      "琥珀屋"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "遗留",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "关联",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "实验人员",
+      "灌输",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "转移",
+      "琥珀屋"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "维尔汀",
+      "目睹",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "经历",
+      "灌体实验"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "受困",
+      "纯白房间"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "曾坐",
+      "白色大理石椅"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "圣洛夫基金会",
+      "需要",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    },
+    {
+     "edge": [
+      "圣洛夫基金会",
+      "改造",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=兀尔德/德洛丝组名"
+    }
+   ],
+   "evidence": [
+    {
+     "src": "routing rule",
+     "quote": "evidence 逐字成员名 > 块归属投票 > multi 说话人裁决"
+    }
+   ],
+   "before": "边端点=卡卡尼亚",
+   "after": "卡卡尼亚端点 → 兀尔德"
+  },
+  {
+   "id": "R1-E10-marta",
+   "type": "move_edge",
+   "target": "玛尔塔",
+   "edges": [
+    {
+     "edge": [
+      "卡卡尼亚",
+      "任职于",
+      "阿派朗学派"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "告知",
+      "维尔汀"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "询问",
+      "苏菲亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "苏菲亚",
+      "说明",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    },
+    {
+     "edge": [
+      "十四行诗",
+      "咨询",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=玛尔塔组名"
+    },
+    {
+     "edge": [
+      "37",
+      "托付",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=玛尔塔组名"
+    },
+    {
+     "edge": [
+      "888",
+      "询问",
+      "卡卡尼亚"
+     ],
+     "how": "evidence=玛尔塔组名"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "请求",
+      "6"
+     ],
+     "how": "multi-resolved: 证据句说话人=玛尔塔(107:26.0.4)"
+    },
+    {
+     "edge": [
+      "6",
+      "回答",
+      "卡卡尼亚"
+     ],
+     "how": "multi-resolved: 证据句说话人=玛尔塔(107:26.0.4)"
+    },
+    {
+     "edge": [
+      "6",
+      "解答",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-vote"
+    }
+   ],
+   "evidence": [
+    {
+     "src": "routing rule",
+     "quote": "evidence 逐字成员名 > 块归属投票 > multi 说话人裁决"
+    }
+   ],
+   "before": "边端点=卡卡尼亚",
+   "after": "卡卡尼亚端点 → 玛尔塔"
+  },
+  {
+   "id": "R1-E11",
+   "type": "delete_edge",
+   "target": "卡卡尼亚",
+   "edges": [
+    {
+     "edge": [
+      "卡卡尼亚",
+      "告知",
+      "37"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "诊断",
+      "法比安"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "告知",
+      "卡戎"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡戎",
+      "询问",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "判断",
+      "法比安"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡戎",
+      "允诺",
+      "卡卡尼亚"
+     ],
+     "how": "chunk-dropped"
+    },
+    {
+     "edge": [
+      "卡卡尼亚",
+      "嘱托",
+      "卡戎"
+     ],
+     "how": "chunk-dropped"
+    }
+   ],
+   "evidence": [
+    {
+     "src": "语料 character__30601_三重赋格:2.0.1",
+     "quote": "**帕蒂塔**：弗兰兹，你别磕碰他……／**？？？**：保罗！（说话人为无名战地医生与卡戎，与卡卡尼亚无关）"
+    },
+    {
+     "src": "语料 mainline__107_孤独之歌:26.0.0",
+     "quote": "**37**：……你是说，6醒来了？（证据句说话人=37，场景为阿派朗研究室，无焊组成员在场）"
+    }
+   ],
+   "before": "7 条焊入边（无逐字证据、块已删声称）",
+   "after": "删除；「医生」泛指不转嫁任何成员（德洛丝≠三重赋格战地医生）"
+  }
+ ]
+}

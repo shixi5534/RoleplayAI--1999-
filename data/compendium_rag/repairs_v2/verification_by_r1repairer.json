@@ -1,0 +1,696 @@
+{
+ "meta": {
+  "verifier": "R1-repairer（按作战书 §2 轮换：R1 修复者任 R2 复核者）",
+  "timestamp": "2026-09-26 22:33:14",
+  "under_review": "data/compendium_rag/repairs_v2/proposal.json（71 entries）+ proposal_v2.md",
+  "independence": "复核者未参与 R2 提案撰写；全部数字由 graph.json/chunks.json/rag_testset_300_cn.json 独立重算，未采信提案数值（前代 scratch 件的复用声明另行抽查）",
+  "network": "none — 全程零网络；wiki 裁决复验只用离线资产（huiji_lexicon.json / huiji_canon.json / data/lore/_huiji_cache/ 474 件 / 前代 _scratch_wiki_raw.json 43 页）",
+  "read_only": "graph.json / chunks.json / corpus 零改动；本文件与 verification_by_r1repairer.md 为唯一输出",
+  "method": {
+   "alias_index": "按 GraphStore.from_dict 语义重建（canonical 直配 + alias 依实体序 setdefault 首主抢注），pre 8049 键与提案一致",
+   "link": "retriever._name_matches 逐字拷贝；长名优先；exact 1.0 / alias 0.9；top_k=6",
+   "df": "3695 块 text 原文子串计数（与提案/审计同口径）",
+   "seed_diff": "300 题 pre/post link() 全量 diff；lost seed 用 testset ref/evidence 逐题分类 right/wrong",
+   "keep_impact": "对 25 条 keep 逐条做『单别名摘除』反事实模拟（precomputed matched-keys 重放，精确含 top-k 截断）"
+  }
+ },
+ "summary": {
+  "n_entries": 71,
+  "agree": 71,
+  "disagree": 0,
+  "insufficient_evidence": 0,
+  "must_fix_before_apply": 0,
+  "notes_non_blocking": 4
+ },
+ "reproduction": {
+  "df_owner_check": {
+   "scope": "61/61 全量（36 remove + 25 keep，超出 ≥20 抽样要求）",
+   "df_total_mismatch": 0,
+   "owner_mapping_mismatch": 0,
+   "in_owner_claims_mismatch": [
+    {
+     "alias": "玛丽",
+     "claim": 1,
+     "mine_union_both_owners": 29,
+     "diagnosis": "提案的 in_owner_claims 只计主 owner(圣路连士兵)，extra owner 玛丽安娜 的 29 块被计入 unrelated——簿记口径不一致，不影响裁决（两主均摘除）"
+    }
+   ],
+   "list_58": {
+    "declared_aliases_dedup": 1016,
+    "df_ge50_count": 58,
+    "proposal_targets_consistent": true
+   },
+   "index_size": {
+    "pre": 8049,
+    "post": 8013,
+    "removed_keys": 36,
+    "removed_keys_still_in_post_index": []
+   }
+  },
+  "seed_diff_300": {
+   "changed_queries": 11,
+   "per_query_lost_seed_classification": [
+    {
+     "qid": "R018",
+     "lost": "邓肯先生",
+     "classification": "wrong",
+     "evidence": "ref=Shamane(鬃毛沙砾)"
+    },
+    {
+     "qid": "R062",
+     "lost": "奇美拉",
+     "classification": "wrong",
+     "evidence": "ref=巨怪(troll)"
+    },
+    {
+     "qid": "R069",
+     "lost": "奇美拉",
+     "classification": "wrong",
+     "evidence": "ref=巨怪(troll)"
+    },
+    {
+     "qid": "R076",
+     "lost": "奇美拉",
+     "classification": "wrong",
+     "evidence": "ref=巨怪(troll)"
+    },
+    {
+     "qid": "R087",
+     "lost": "泰内布朗热家",
+     "classification": "wrong",
+     "evidence": "ref=阿马尔菲塔诺"
+    },
+    {
+     "qid": "R127",
+     "lost": "环境监测装置",
+     "classification": "wrong",
+     "evidence": "ref=净化机"
+    },
+    {
+     "qid": "R170",
+     "lost": "环境监测装置",
+     "classification": "wrong",
+     "evidence": "ref=玩具盒"
+    },
+    {
+     "qid": "R180",
+     "lost": "环境监测装置",
+     "classification": "wrong",
+     "evidence": "ref=发条装置"
+    },
+    {
+     "qid": "R228",
+     "lost": "勿忘我",
+     "classification": "wrong",
+     "evidence": "ref=Melania；正确种子 拉米雷斯1.0 保留"
+    },
+    {
+     "qid": "R240",
+     "lost": "环境监测装置",
+     "classification": "wrong",
+     "evidence": "ref=阿尔卡纳"
+    },
+    {
+     "qid": "R259",
+     "lost": "泰内布朗热家",
+     "classification": "wrong",
+     "evidence": "ref=阿黛尔·塔维尼耶"
+    }
+   ],
+   "lost_correct_seeds": 0,
+   "gained_or_rescored": 0,
+   "verdict": "提案『11 题种子集变化全部为只失去错误种子、0 题失去正确种子』精确复现（11/11 逐题一致，含 lost 实体与 0.9 分数；无 gained/rescored）"
+  },
+  "R018": {
+   "pre": [
+    [
+     "伙计",
+     1.0
+    ],
+    [
+     "猎人",
+     1.0
+    ],
+    [
+     "邓肯先生",
+     0.9
+    ]
+   ],
+   "post": [
+    [
+     "伙计",
+     1.0
+    ],
+    [
+     "猎人",
+     1.0
+    ]
+   ],
+   "verdict": "与提案自验完全一致；残余 伙计/猎人 双泛称节点种子属 R3/R4 职权（鬃毛沙砾补 alias / 按篇限定），本批不动正确"
+  },
+  "wiki_offline_verdicts": {
+   "checked": 36,
+   "support_removal": 36,
+   "key_confirmations": [
+    "门：huiji_canon.json characters 含独立角色页 {zh:门, en:Door} → 挂神殿之门为跨实体冲突（提案 md 断言核实）",
+    "别斯米尔：lexicon zh2en 别斯米尔→Bessmert（独立 NPC）；卡卡尼亚 owner 页 wikitext（前代 revcontent）不含该串",
+    "老爷：维尔汀 owner 页 wikitext 仅 1 次命中，且为 ref 引文「老爷……您也不是纯血吧」（斯奈德 2ND-7）——非注册 alias，与提案注记一致",
+    "卡森（keep 侧）：灰机 NPC 卡森/Mr. Karson id=5013 @1.0（49910dc 缓存亲验）→ 按篇豁免 keep 成立",
+    "其余 33 条：owner 页多不存在（故事级实体，灰机无页）→ 灰机无法背书这些泛称 alias，摘除与 §0.1 身份标准一致"
+   ]
+  },
+  "evidence_chunks": {
+   "checked": "36 entries × 2 = 72",
+   "chunk_exists": 72,
+   "snip_verbatim_after_newline_normalization": 72,
+   "alias_string_present": 72,
+   "not_claimed_by_owner": 72,
+   "own_unrelated_spot_checks": [
+    "街道@圣火纪行10.1.1（官老爷们/街道上泛滥小怪物）",
+    "怪物@他者的悲哀5.2.0（失去半边头骨的怪物）",
+    "家族@迁流的盛宴0.0.2（家族诅咒词条）",
+    "组长@孤独之歌13.0.0（破译组长）",
+    "装置@复乐园22.1.2（组长的玻璃装置）"
+   ]
+  },
+  "keep_with_note": {
+   "sampled": "25/25 全量（超出 ≥10 要求）；逐条单别名摘除反事实模拟",
+   "load_bearing_confirmed": {
+    "基金会": 7,
+    "司辰": 4,
+    "拉普拉斯": 3,
+    "康复中心": 3,
+    "助手": 1,
+    "保罗": 1,
+    "伊万": 1,
+    "格蕾丝": 2,
+    "阿德勒": 1,
+    "卡森": 1
+   },
+   "redundant_confirmed_zero_impact": [
+    "重塑",
+    "军长",
+    "纸信圈儿",
+    "德洛丝",
+    "维尔汀小姐",
+    "Z女士",
+    "苏芙比小姐",
+    "APPLe先生",
+    "露西女士",
+    "莫莉",
+    "第一助手",
+    "十四行诗小姐",
+    "拉普拉斯科算中心",
+    "基金会总部",
+    "APPLe某"
+   ],
+   "ref_semantic_rechecks": [
+    {
+     "qid": "R236",
+     "alias": "助手",
+     "seed": "十四行诗 0.9",
+     "ref": "十四行诗（Sonetto）",
+     "verdict": "正确载荷——审计『摘除助手』建议据此推翻，成立"
+    },
+    {
+     "qid": "R105",
+     "alias": "卡森",
+     "seed": "邓肯先生 0.9",
+     "ref": "Carson（卡森）",
+     "verdict": "语义正确（灰机独立 NPC Mr. Karson；handoff §3.4 按篇豁免）"
+    },
+    {
+     "qid": "R279",
+     "alias": "基金会",
+     "seed": "圣洛夫基金会 0.9",
+     "ref": "St. Pavlov Foundation（圣洛夫基金会）",
+     "verdict": "seed=答案实体，bare 形载荷"
+    },
+    {
+     "qid": "R148",
+     "alias": "伊万",
+     "seed": "军长伊万 1.0",
+     "ref": "Ivan（伊万）",
+     "verdict": "seed=答案实体"
+    },
+    {
+     "qid": "R191_R211",
+     "alias": "拉普拉斯",
+     "seed": "科算中心",
+     "ref": "Laplace（拉普拉斯科算中心）",
+     "verdict": "seed=答案实体"
+    },
+    {
+     "qid": "R176_R281",
+     "alias": "司辰",
+     "seed": "维尔汀",
+     "ref": "维尔汀",
+     "verdict": "seed=答案实体；R194/R239 为正确语境种子"
+    }
+   ],
+   "count_nuance": "基金会 bare 依赖题数：复算 7（R054/R236/R242/R279/R283/R286/R290），提案 6（列 R181、漏 R279/R283）——R181 摘除模拟零变化（全称直配）；计数勘误不改 keep 裁决"
+  },
+  "owner_after_state": {
+   "n_checked": 34,
+   "canonical_grounded_field": "与复算一致",
+   "count_vs_list_bug": [
+    {
+     "owner": "卡卡尼亚",
+     "n_verbatim_aliases_left": 14,
+     "list_len": 6
+    },
+    {
+     "owner": "维尔汀",
+     "n_verbatim_aliases_left": 7,
+     "list_len": 6
+    }
+   ],
+   "diagnosis": "n 计数正确（与复算 14/7 一致），list 字段截断至 6 条（维尔汀漏 越狱头子；卡卡尼亚漏 卡卡尼亚医生/卡卡尼亚小姐/德洛丝系/玛尔塔系）——元数据瑕疵，不影响摘除裁决；Applier 以实体 aliases 实表重建，不受此字段影响",
+   "claim_16_of_18": "复现：18 个 owner 别名清空；其中 16 个 canonical 名逐字落地（name 通道可达），恰为 信仰/卡卡尼亚之兄 2 例外（先在 grounding 缺陷，R4 职权）"
+  },
+  "canonical_nodes": {
+   "numbers": "10/10 节点 df/claims/docs 与提案表逐项一致（管理员6/2/2、伙计161/5/1、小孩104/6/1、猎人20/1/1、教师21/2/1、信众24/1/1、店主21/14/2、水手26/3/2、卫兵43/6/1、警卫40/4/4）",
+   "管理员_keep": "合理：df=6、mainline103/113 图书馆场景、ts=0、有 图书管理员 alias",
+   "flag_grounding_9": "合理：R018 现役抢种子节点（伙计/猎人）+ 泛称篇限标注对象；警卫(4篇)/店主(2篇)/水手(2篇) 跨篇焊合嫌疑正确上报 R3",
+   "flag_merge_zero": "复算 name_contains 确认：10 节点均无干净 merge 目标（命中者皆为描述命名独立 NPC，如 维也纳警卫/城镇警卫Ⅰ/糖果店店主），flag-merge=0 成立"
+  },
+  "misc_claims": {
+   "dead_alias_78_77": "提案口径为 itemscope（自验件字段 dead_alias_count_itemscope_pre/post=78/77）；全 index nowhere 型死键按本复核口径为 1167→1166（同为 −1：仅 两人 被移除且本为死键）。两种口径下『恰移除 1 个死键、0 新增』均成立；建议提案注明口径",
+   "poolout_4": "poolout_involving_removed=[R018(老伙计), R127(装置), R170(装置), R297(学校)] 复现；R297 全称直配零变化在 300 题 diff 中确认（不在 11 题内）"
+  }
+ },
+ "open_questions": {
+  "a_保罗": {
+   "verdict": "QUALIFY（摘除裸 保罗；保留既有 alias 保罗·霍伊默尔）",
+   "evidence": [
+    "DF(保罗)=92，其中 66 块为 圣保罗（城市）子串碰撞，仅 26 块真指人名；卡戎 67 声称块中 19 块含非圣保罗的 保罗",
+    "testset R265『…圣保罗贫民窟…女军官是谁?』pre seeds 含 卡戎0.9——由 圣保罗 城名碰撞产生的假种子（ref=洛佩拉）；qualify 后该假种子消失（本复核模拟实测）",
+    "保罗·霍伊默尔 DF=1 且该块 mainline__111:14.0.2 为 卡戎 声称块 → 红线3 通过；卡戎 另有 亡者/士官/收尸人/邮递员 + canonical 可达",
+    "提案『两案对 testset 种子均零影响』表述不精确：qualify 使 R265 种子集变化（失去的恰是错误种子，属改善而非回归）"
+   ]
+  },
+  "b_重塑": {
+   "verdict": "KEEP（同意 repairer）",
+   "evidence": [
+    "单别名摘除模拟：testset 300 题零变化（12 个 owner-seeded 查询全部经全称 重塑之手 直配）",
+    "裸 重塑 并非纯子串伪影：standalone 用法（重塑 后不接 之手/·）实有 155 块、其中 70 块在 重塑之手 声称块之外（如 mainline__101:2.0.0「重塑的势力正逐年剧增」）——语料真实短称",
+    "提案的 327/506 in-claim 论证本身是循环的（重塑之手 包含 重塑），但结论恰被 standalone-155 事实独立支撑；建议提案补此论据"
+   ]
+  },
+  "c_offline_disclosure": {
+   "verdict": "ACCEPT — 协议合规",
+   "evidence": [
+    "本次会话 2 次 api.php 直连（urllib/curl+浏览器UA）均 Cloudflare 403，与 R1 期 _prefetch_log.json 38x403 WAF 阻断一致；任务约束亦禁用浏览器路径（huiji_fetch.py 真 Chrome bootstrap=前代死因，作战书 §0 明令禁止浏览器页）",
+    "关键 wiki 事实全部离线可决且经本复核亲验：lexicon(别斯米尔→Bessmert)、canon(门=Door 独立角色)、474 页缓存(卡森 id=5013 等)、前代 43 页 revcontent(维尔汀页 老爷 引文、各 owner 页存在性)",
+    "披露内容（复用件、403 记录、离线源清单）满足 §4 联网披露要求；『无未决网关』断言与本复核在离线侧的抽查结果一致"
+   ]
+  }
+ },
+ "issues_found_non_blocking": [
+  {
+   "n": 1,
+   "where": "entries[remove_alias 玛丽].df",
+   "issue": "in_owner_claims=1 只计主 owner，extra owner 玛丽安娜 的 29 块计入 unrelated",
+   "fix": "口径改并集或加注 primary-only",
+   "severity": "note"
+  },
+  {
+   "n": 2,
+   "where": "owner_after_state 卡卡尼亚/维尔汀（3 处：别斯米尔/头儿/老爷 entry）",
+   "issue": "verbatim_aliases_left 列表截断至 6 条，与自身 n 计数（14/7/7）不符",
+   "fix": "重生成列表或删列表留计数",
+   "severity": "note"
+  },
+  {
+   "n": 3,
+   "where": "keep_with_note 基金会",
+   "issue": "bare 依赖题列 6 题（含 R181、漏 R279/R283）；复算为 7 题（R181 非依赖）",
+   "fix": "更正题号列表",
+   "severity": "note"
+  },
+  {
+   "n": 4,
+   "where": "open question a_保罗",
+   "issue": "『两案对 testset 种子均零影响』不精确（qualify 使 R265 失去错误种子）",
+   "fix": "改述为『对 hit@6 无回归、qualify 兼除假种子』",
+   "severity": "note"
+  }
+ ],
+ "per_entry_verdicts": [
+  {
+   "entry": "remove_alias:信@信仰",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:门@神殿之门",
+   "verdict": "agree",
+   "basis": "灰机 canon「门」=独立角色页 Door，挂神殿之门属跨实体冲突"
+  },
+  {
+   "entry": "remove_alias:线@金线",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:两人@逃兵",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:总部@圣洛夫基金会总部",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:街道@乌斯怀亚",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:老板@勿忘我",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:石头@龙涎香",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:怪物@奇美拉",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:委员会@联合委员会",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:家族@泰内布朗热家",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:地图@手绘地图",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:信徒@重塑·信徒",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:幽灵@游灵",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:学派@阿派朗学派",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:幻觉@施特林",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:仪器@人工梦游训练仪",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:小家伙@阿黛拉的小龙",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:装置@环境监测装置",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:同胞@神秘学家",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:城里@别列格勒",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:迷宫@石壁迷宫",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:教堂@悲伤圣母教堂",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:玛丽@圣路连士兵",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:符号@禁锢术式",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:哥哥@卡卡尼亚之兄",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:副作用@诅咒",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:别斯米尔@卡卡尼亚",
+   "verdict": "agree",
+   "basis": "P0 残留：灰机 NPC 独立条目+canon；卡卡尼亚页无该串；与 R1 一致"
+  },
+  {
+   "entry": "remove_alias:组长@乌尔里希",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:学校@第一防线学校",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:妹妹@洛佩拉",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:伞@平衡伞",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:头儿@维尔汀",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:老爷@维尔汀",
+   "verdict": "agree",
+   "basis": "维尔汀页仅 ref 引文一次（已亲验上下文 2ND-7）；DF77 跨篇他指"
+  },
+  {
+   "entry": "remove_alias:老朋友@邓肯先生",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "remove_alias:老伙计@邓肯先生",
+   "verdict": "agree",
+   "basis": "DF/owner 复算一致；wiki 离线裁决支持；证据块逐字复验；seed-diff 复现"
+  },
+  {
+   "entry": "keep_with_note:基金会@圣洛夫基金会",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 7 题 ['R054', 'R236', 'R242', 'R279', 'R283', 'R286', 'R290']。载荷确认：bare 形摘除将断 7 题（repairer 报 6，R181 实为全称直配非 bare 依赖；R279/R283 为其漏计）"
+  },
+  {
+   "entry": "keep_with_note:重塑@重塑之手",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。摘除零影响；保留依语料 standalone 用法（155 块）"
+  },
+  {
+   "entry": "keep_with_note:司辰@维尔汀",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 4 题 ['R176', 'R194', 'R239', 'R281']。载荷确认"
+  },
+  {
+   "entry": "keep_with_note:拉普拉斯@科算中心",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 3 题 ['R170', 'R191', 'R211']。载荷确认（R191/R211 seed=答案实体）"
+  },
+  {
+   "entry": "keep_with_note:助手@十四行诗",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 1 题 ['R236']。载荷确认：R236 首席助手→十四行诗（ref=十四行诗），repairer 新发现成立"
+  },
+  {
+   "entry": "keep_with_note:保罗@卡戎",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 1 题 ['R265']。R265 的 卡戎0.9 系 圣保罗 城名碰撞的假种子；qualify 反而除噪"
+  },
+  {
+   "entry": "keep_with_note:康复中心@拉普拉斯康复中心",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 3 题 ['R235', 'R271', 'R288']。语境种子确认（ref=小梅斯梅尔，均为康复中心场景题）"
+  },
+  {
+   "entry": "keep_with_note:军长@军长伊万",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。冗余无害"
+  },
+  {
+   "entry": "keep_with_note:伊万@军长伊万",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 1 题 ['R148']。载荷确认（ref=Ivan，seed=答案实体）"
+  },
+  {
+   "entry": "keep_with_note:格蕾丝@无名者",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 2 题 ['R231', 'R257']。语境锚点确认（77号往事）"
+  },
+  {
+   "entry": "keep_with_note:阿德勒@哑谜",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 1 题 ['R050']。载荷确认"
+  },
+  {
+   "entry": "keep_with_note:卡森@邓肯先生",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 1 题 ['R105']。载荷确认（ref=Carson；灰机 NPC 卡森/Mr. Karson id=5013 按篇豁免成立）"
+  },
+  {
+   "entry": "keep_with_note:纸信圈儿@利伯蒂",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。逐字高占比；灰机正典 zh 名"
+  },
+  {
+   "entry": "keep_with_note:德洛丝@卡卡尼亚",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。P0 焊组成员，R1 处置，R2 不动正确"
+  },
+  {
+   "entry": "keep_with_note:维尔汀小姐@维尔汀",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:APPLe某@APPLe",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:Z女士@Z",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:苏芙比小姐@苏芙比",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:APPLe先生@APPLe",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:露西女士@露西",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:莫莉@莫莉德尔",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:第一助手@十四行诗",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:十四行诗小姐@十四行诗",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:拉普拉斯科算中心@科算中心",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_with_note:基金会总部@圣洛夫基金会",
+   "verdict": "agree",
+   "basis": "独立摘除模拟：testset 种子变化 0 题 []。"
+  },
+  {
+   "entry": "keep_node:管理员",
+   "verdict": "agree",
+   "basis": "df=6/2块/2篇 复算一致；图书管理员 alias 在册；低风险保留合理"
+  },
+  {
+   "entry": "flag_grounding_r4:伙计",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:猎人",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:小孩",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:教师",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:水手",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:警卫",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:店主",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:卫兵",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  },
+  {
+   "entry": "flag_grounding_r4:信众",
+   "verdict": "agree",
+   "basis": "df/claims/篇数复算一致（10/10）；name_contains 无干净 merge 目标复算一致；跨篇焊合嫌疑(警卫4篇/店主2篇/水手2篇)留 R3 合理"
+  }
+ ]
+}

@@ -1,0 +1,2897 @@
+{
+ "meta": {
+  "author": "R2-repairer",
+  "timestamp": "2026-09-26 21:59:30",
+  "batch": "R2 泛称别名清理（docs/图谱修复作战书_预注册_20260926.md §1-R2、§2 协议）",
+  "findings_ref": "docs/图谱与原文质检报告_20260926.md 检3（P1 泛称污染）+ 检6（R018 实测错种子）",
+  "scope": "58 个 DF≥50 的声明 alias（独立重算确认）＋ R018 案 3 条关联 alias（老伙计/老朋友/卡森，前两者为上一审计增量证据）＋ 10 个裸泛称规范节点",
+  "blob_rule": "DF(s) = #{chunk ∈ chunks.json 3695 块 : s 为 chunk['text'] 原文子串}（与审计检3 同口径）",
+  "alias_index_rule": "重建口径与 GraphStore._rebuild 一致：canonical 名直配，alias 依实体序 setdefault（首主抢注）",
+  "standard_order": "语料明文反证 > 灰机 > 图谱现状 > 审计推断（作战书 §0.3）",
+  "no_write_declaration": "graph.json / corpus.json / chunks.json 及一切既有文件未改动；本提案为唯一输出（proposal.json + proposal_v2.md + repairs_v2/ 下 _r2_* 工作件）",
+  "no_ollama": true,
+  "huiji_fetches": {
+   "predecessor_reused": [
+    {
+     "step": "bootstrap",
+     "url": "https://res1999.huijiwiki.com/wiki/首页",
+     "t": "2026-09-26 21:03:34",
+     "note": "repo 标准 huiji_fetch.py Cloudflare 放行"
+    },
+    {
+     "step": "revcontent",
+     "n_titles": 22,
+     "bytes": 12828,
+     "t": "2026-09-26 21:03:34",
+     "cache": "_huiji_cache/f7609ed91d8112d62177.json"
+    },
+    {
+     "step": "revcontent",
+     "n_titles": 21,
+     "t": "2026-09-26 21:03",
+     "cache": "_huiji_cache/6785bf78578df88a393f.json"
+    }
+   ],
+   "this_session": [
+    {
+     "attempt": "urllib api.php titles= 批查 47 题",
+     "result": "HTTP 403 Cloudflare『请稍候…』",
+     "t": "2026-09-26 21:59:30"
+    },
+    {
+     "attempt": "curl(浏览器UA) api.php 同参",
+     "result": "HTTP 403 Cloudflare JS challenge",
+     "t": "2026-09-26 21:59:30"
+    },
+    {
+     "decision": "按任务约束禁用浏览器路径（huiji_fetch.py 真实 Chrome bootstrap = 前代死因的验证码坑）；全部 wiki 裁决改由离线源闭合：huiji_lexicon.json(885 zh 名) + huiji_canon.json(141 角色/184 NPC) + data/lore/_huiji_cache/ 474 文件 + 前代 _scratch_wiki_raw.json(43 owner 页 wikitext)",
+     "result": "所有裁决关键 wiki 事实离线可得，无未决网关"
+    }
+   ]
+  },
+  "reused_from_predecessor": {
+   "_scratch_df.json": "1026 键全量 DF 表 —— 本次独立重算 8049 键，与该表 1026/1026 全一致（0 偏差），全部采信",
+   "_scratch_items.json": "63 item（58 清单全覆盖 + 伙计/小孩/卡森/老伙计/老朋友 增量）：owner 归属/link_winner/owner_grounded_keys/owner_docs 采信；unrelated_samples 51/63 直接采信，其余由本次补齐；testset_hits 以本次 _name_matches 全量重算覆盖",
+   "_scratch_wiki_raw.json": "43 owner 页 revcontent 存在性 + wikitext（fetch_log 3 步）——用于 owner 页存在性与页内引文核查（卡戎页无『保罗』、邓肯先生页无『老伙计/老朋友/卡森』、维尔汀页含『司辰/老爷』引文）",
+   "_huiji_cache/": "2 个 api.php 原始响应（revcontent 批查）",
+   "not_reused": "_scratch_canon（10 节点）中 df/snips 采信，但 df 与 name_contains 由本次独立重算复核一致"
+  },
+  "self_validation": {
+   "post_alias_index_size": 8013,
+   "removed_keys": 36,
+   "dangling_refs": [],
+   "seed_changes_on_testset300": 11,
+   "seed_change_rule": "11 题种子集变化全部为『只失去错误种子』：R018 失邓肯先生(0.9)、R062/R069/R076 失奇美拉（答案巨怪）、R087/R259 失泰内布朗热家、R127/R170/R180/R240 失环境监测装置、R228 失勿忘我（答案 Melania，正确种子 拉米雷斯 1.0 保留）；0 题失去正确种子",
+   "R018_seeds": {
+    "pre": [
+     [
+      "伙计",
+      1.0
+     ],
+     [
+      "猎人",
+      1.0
+     ],
+     [
+      "邓肯先生",
+      0.9
+     ]
+    ],
+    "post": [
+     [
+      "伙计",
+      1.0
+     ],
+     [
+      "猎人",
+      1.0
+     ]
+    ]
+   },
+   "poolout_14_involving_removed_strings": [
+    {
+     "qid": "R018",
+     "removed_aliases_matched": [
+      "老伙计"
+     ]
+    },
+    {
+     "qid": "R127",
+     "removed_aliases_matched": [
+      "装置"
+     ]
+    },
+    {
+     "qid": "R170",
+     "removed_aliases_matched": [
+      "装置"
+     ]
+    },
+    {
+     "qid": "R297",
+     "removed_aliases_matched": [
+      "学校"
+     ]
+    }
+   ],
+   "poolout_note": "R297 命中『学校』子串但为第一防线学校全称内部子串，canonical 直配不变（种子模拟确认 R297 不在变化清单）；R127/R170 本就是 pool-out miss，摘除只移除错误种子，hit@6 无从恶化",
+   "owner_alias_retention": "36 条摘除的 owner 全部保留 canonical 名；16/18 owner 另有 ≥1 逐字 alias 或 grounded canonical；2 个例外（信仰、卡卡尼亚之兄）canonical 本就不落地（grounding 缺陷先在，已在条目内标注 R4 接手）",
+   "dead_alias_count_whole_index": {
+    "pre": 78,
+    "post": 77
+   },
+   "no_new_dead_aliases": "本批只删不增 alias；唯一新增『死键化』为上述 2 个先在 grounding 缺陷节点（非新增 alias）"
+  },
+  "new_findings_for_ledger": [
+   "R236『基金会的首席助手』现役可答题依赖 alias 助手 种子十四行诗——审计检3『至少摘除』清单中的 助手 应改为保留（§0 补录）",
+   "R228『拉米雷斯保安公司的老板』答案为 Melania 而非 勿忘我——alias 老板 在该题为误种子且非载荷（拉米雷斯 1.0 正确种子在）",
+   "R062/R069/R076 三题答案为巨怪(troll)——alias 怪物→奇美拉 为 3 次误种子",
+   "灰机 NPC 总表（data/lore/_huiji_cache/49910dc30331af4cb845.json）：别斯米尔/Bessmert/desc=兀尔德 独立条目（与语料 mainline__110:19.0.1 自述否认互证）；卡森/Mr. Karson/id=5013 独立条目",
+   "灰机无 利伯蒂 页而 纸信圈儿(Flutterpage) 为 canon characters 正典 zh 名——节点 利伯蒂 的命名标准化归 R3 复核",
+   "10 个裸泛称节点中 警卫(4篇)/店主(2篇)/水手(2篇) 存在跨篇同泛称焊合嫌疑，超出 R2 职权，建议 R3 复核拆分（本提案仅 flag-grounding-for-R4）",
+   "测试集 ref 对 R018 答案写作『Shamane（沙曼）』而灰机 zh 正典为 鬃毛沙砾——R3 补 alias 时需以灰机形为准"
+  ]
+ },
+ "entries": [
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "信",
+    "owner_eid": "信仰",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 1374,
+    "in_owner_claims": 2,
+    "unrelated": 1372
+   },
+   "wiki_verdict": null,
+   "rationale": "单字常用字，DF1374 中 owner(信仰) 仅 2 块逐字；审计明示三条单字一并摘除；ts=0；灰机无此名",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:1.0.0",
+     "snip": "诗**：但现在事态紧急，请允许我向您汇报情况并请求支援！⏎**维尔汀**：请继续。⏎**十四行诗**：我们前天为星锑登记信息时遭到对方顽抗，队友也被她趁乱捉走了。⏎**十四行诗**：糟糕的是，现在重塑之手也盯上了她。⏎**十四行诗**：我们必"
+    },
+    {
+     "chunk_id": "mainline__000_此即明日:1.1.0",
+     "snip": "⏎**调查员Ⅱ**：退路被封锁了！我、我还在尝试突破！⏎**调查员Ⅰ**：我们……还能在“暴雨”前回去吗……⏎**重塑·信徒**：ㄞ——！⏎**星锑**：可恶，可恶！⏎**星锑**：我攒了五年的钱……我心爱的APPLe号……⏎**星锑**：还"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "信仰": {
+     "canonical_grounded": false,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['信'] = '信仰'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '信' 键（信仰 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "门",
+    "owner_eid": "神殿之门",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 1139,
+    "in_owner_claims": 11,
+    "unrelated": 1128
+   },
+   "wiki_verdict": null,
+   "rationale": "单字，DF1139 中 owner(神殿之门) 仅 11 块；灰机『门』是角色页(Door, pageid≈2085)，挂神殿之门属跨实体冲突；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:2.0.0",
+     "snip": "—⏎**调查员Ⅰ**：不好！大家快趴下——！⏎**十四行诗**：有伏击！⏎**维尔汀**：咳……大家没事吧？⏎**重塑·门徒**：ㄞ——！！交出……！⏎**维尔汀**：小心！这是另一拨暴徒！我们前面的路被拦截了。⏎**十四行诗**：重塑之手不"
+    },
+    {
+     "chunk_id": "mainline__000_此即明日:4.0.0",
+     "snip": "星锑，我需要你同我一起——越过“暴雨”。⏎**星锑**：越过“暴雨”？⏎**维尔汀**：嘘……！她来了。⏎**星锑**：门外传来术法的波动，赶紧从桌上拿起一片小胡子，粘到星锑脸上。⏎**十四行诗**：司辰——！您这边……有什么进展？⏎**维尔"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "神殿之门": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 1,
+     "verbatim_aliases_left": [
+      "神殿大门"
+     ]
+    }
+   },
+   "before": "alias_index['门'] = '神殿之门'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '门' 键（神殿之门 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "线",
+    "owner_eid": "金线",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 1008,
+    "in_owner_claims": 1,
+    "unrelated": 1007
+   },
+   "wiki_verdict": null,
+   "rationale": "单字，DF1008 中 owner(金线) 仅 1 块；审计明示摘除；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:2.1.0",
+     "snip": "荡。⏎**调查员Ⅱ**：她以前喜欢在康利庭那儿收唱片，可能还会回到那里。⏎**调查员Ⅰ**：对了，星锑的神秘术还能改变光线！千万要小心这一点！⏎**维尔汀**：明白了。出发吧，十四行诗。⏎**十四行诗**：您也与我一起去吗？啊，谢谢！我还以为"
+    },
+    {
+     "chunk_id": "mainline__000_此即明日:4.0.0",
+     "snip": "**维尔汀**：十分钟。⏎**维尔汀**：理查德·汉密尔顿的拼贴画从天上掉下来，溅了她一身的水。⏎**维尔汀**：但她视线仿佛僵住了似的，只是匆忙地点了点头。⏎**十四行诗**：我得走了。我必须回去了。⏎**十四行诗**：……十分感谢您的协助"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "金线": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['线'] = '金线'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '线' 键（金线 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "两人",
+    "owner_eid": "逃兵",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 148,
+    "in_owner_claims": 0,
+    "unrelated": 148
+   },
+   "wiki_verdict": null,
+   "rationale": "纯数量泛指，DF148 中 owner(逃兵) 0 块逐字（死 alias 兼泛称）；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:15.0.1",
+     "snip": "APPLe先生……过来过来。⏎**APPLe**：……怎么了？有什么需要APPLe某帮忙的吗？⏎**星锑**：行李架旁的两人声音渐渐低了下去。⏎**十四行诗**：不好意思，打扰一下。⏎**十四行诗**：方便借一步说话吗？司辰。⏎【标题卡】TO "
+    },
+    {
+     "chunk_id": "mainline__104_老虎的金黄:11.0.1",
+     "snip": "拦下。⏎有人将一封白色物什递给她。⏎再然后——⏎Z女士的身影便从门外消失了。⏎康斯坦丁收回目光，重新注视起台上针锋相对的两人。⏎离开会议厅，Z女士重新掏出了那个白色的纸张。⏎**Z**：这是什么？⏎**秘书莎朗**：十四行诗委托我亲手交给你。⏎"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "逃兵": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['两人'] = '逃兵'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '两人' 键（逃兵 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "总部",
+    "owner_eid": "圣洛夫基金会总部",
+    "owner_type": "组织",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 136,
+    "in_owner_claims": 1,
+    "unrelated": 135
+   },
+   "wiki_verdict": null,
+   "rationale": "DF136 中 owner(圣洛夫基金会总部) 仅 1 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:4.2.0",
+     "snip": "**维尔汀**：等一下。⏎**维尔汀**：合同印章上有地址……复方魔药酒吧，“瓦尔登湖”。⏎**维尔汀**：十四行诗，向总部报告一下本次行动的结果。⏎**十四行诗**：好。那我们……⏎**维尔汀**：我们先向下一个目的地前进。⏎**维尔汀**："
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:4.2.0",
+     "snip": "e某刚才的中毒反应也没引发肠胃相关的症状。⏎**十四行诗**：我已经将这些播报新闻和……司辰的情况记录在案，现在就回报给总部。⏎**十四行诗**：无论是“暴雨”问题的解决，还是营救司辰方案的制订，我们都需要一个更宏观的指示。⏎**庄园管家**："
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "圣洛夫基金会总部": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['总部'] = '圣洛夫基金会总部'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '总部' 键（圣洛夫基金会总部 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "街道",
+    "owner_eid": "乌斯怀亚",
+    "owner_type": "地点",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 131,
+    "in_owner_claims": 4,
+    "unrelated": 127
+   },
+   "wiki_verdict": null,
+   "rationale": "DF131 中 owner(乌斯怀亚) 仅 4 块；城市节点吸入子地点的存量实例（审计检4.1）；限定形 乌斯怀亚·街道 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:13.1.0",
+     "snip": "标题卡】天堂使徒⏎**APPLe**：岔路变少了！我们距离外墙应该越来越近了。⏎**维尔汀**：是的。我好像听到了附近有街道车流的声音。⏎**保镖**：苏芙比小姐，您没受伤吧？没想到里面有这么多埋伏……⏎**苏芙比**：别担心！你们背好弗迪……"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:1.0.0",
+     "snip": "汀**：……我很少遇到他们。他们被大量地遗弃了。⏎**维尔汀**：在精神病院，在惩教管理楼，在废弃的孤儿院，在无人问津的街道上。⏎**维尔汀**：在精神病院，在惩教管理楼，在废弃的孤儿院，在无人问津的街道上。⏎**阿尔卡纳**：我们被这个世界的"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "乌斯怀亚": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 4,
+     "verbatim_aliases_left": [
+      "乌斯怀亚·咖啡馆",
+      "乌斯怀亚·街道",
+      "乌斯怀亚·隐藏码头",
+      "咖啡馆"
+     ]
+    }
+   },
+   "before": "alias_index['街道'] = '乌斯怀亚'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '街道' 键（乌斯怀亚 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "老板",
+    "owner_eid": "勿忘我",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 124,
+    "in_owner_claims": 2,
+    "unrelated": 122
+   },
+   "wiki_verdict": null,
+   "rationale": "DF124 中 owner(勿忘我) 仅 2 块；R228(拉米雷斯保安公司的老板) 答案=Melania，本 alias 种错人；ts=1 全为误种子",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:5.3.0",
+     "snip": "抱歉，我得暂时离开一下。 我需要将箱子藏到更隐蔽的地方。⏎**星锑**：嘿，等一下。⏎**星锑**：……你做的这些事，你老板他们知道吗？⏎**维尔汀**：……⏎**维尔汀**：这是我自己的意愿。⏎**维尔汀**：我不想眼睁睁看着你被十四行诗带走"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:5.0.0",
+     "snip": "好了，苏芙比小姐。不用再故意大声读专栏了。⏎**庄园管家**：远在英国的老爷已经同意您出门了。另外，我也与“瓦尔登湖”的老板通了电话……⏎**苏芙比**：好耶——！⏎**庄园管家**：好耶……？这不是名门闺秀该发出的声音。⏎**苏芙比**：卡森"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R228"
+    ],
+    "seed_changes": [
+     {
+      "qid": "R228",
+      "before": "拉米雷斯保安公司的老板是谁？",
+      "lost": [
+       "勿忘我"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "勿忘我": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 2,
+     "verbatim_aliases_left": [
+      "勿忘我先生",
+      "勿忘我老爷"
+     ]
+    }
+   },
+   "before": "alias_index['老板'] = '勿忘我'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '老板' 键（勿忘我 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "石头",
+    "owner_eid": "龙涎香",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 121,
+    "in_owner_claims": 6,
+    "unrelated": 115
+   },
+   "wiki_verdict": null,
+   "rationale": "DF121 中 owner(龙涎香) 仅 6 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:1.1.0",
+     "snip": "，你也一起。⏎**星锑**：啊？⏎**星锑**：看在你救了本海盗……咳！一起就一起。⏎**星锑**：她将唱片小心翼翼藏在石头后，嘟囔着加入了队伍。⏎**维尔汀**：十四行诗，请你协助我。⏎**维尔汀**：突破口就在我们身后，那条通向国王路的小径"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:0.1.0",
+     "snip": "打劫不是值得你们这些孩子学习的优良品质。⏎**“南瓜头”詹姆**：苹果说话了！⏎**“南瓜头”詹姆**：——好恶心！快用石头扔它！！⏎**APPLe**：噢……！⏎**APPLe**：看来我们来到了一个并不友善的时代。⏎**维尔汀**：再这么摇"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "龙涎香": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 1,
+     "verbatim_aliases_left": [
+      "吊坠"
+     ]
+    }
+   },
+   "before": "alias_index['石头'] = '龙涎香'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '石头' 键（龙涎香 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "怪物",
+    "owner_eid": "奇美拉",
+    "owner_type": "概念",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 107,
+    "in_owner_claims": 6,
+    "unrelated": 101
+   },
+   "wiki_verdict": null,
+   "rationale": "DF107 中 owner(奇美拉) 仅 6 块；R062/R069/R076 答案均为巨怪(troll)，3 次误种子；灰机无奇美拉页",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:0.0.0",
+     "snip": "漆黑的大船。它正在向我们炮击！⏎**星锑**：我的天啊——快关掉麦克风！⏎**星锑**：舰桥……有血管的炮管……这是什么怪物？！⏎**星锑**：开什么玩笑！我只是放了首歌而已？！⏎**APPLe**：船长，那是重塑之手的标志！⏎**APPLe*"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:0.2.0",
+     "snip": "*：这里就是我们之前经过的树林哦～卡森先生说这里藏着很多可怕的东西……⏎**苏芙比**：十四行诗小姐当时就被一群像幽灵的怪物追击……！噢，我好像在《好脾气怪兽指南》里见过它们。⏎**苏芙比**：对！就是在这棵树下，我们赶走坏东西后，十四行诗小姐"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R062",
+     "R069",
+     "R076"
+    ],
+    "seed_changes": [
+     {
+      "qid": "R062",
+      "before": "绿湖营地的传说中，森林里出没的怪物是什么？",
+      "lost": [
+       "奇美拉"
+      ]
+     },
+     {
+      "qid": "R069",
+      "before": "绿湖噩梦篇的孩子们在森林里遭遇了什么怪物？",
+      "lost": [
+       "奇美拉"
+      ]
+     },
+     {
+      "qid": "R076",
+      "before": "在绿湖噩梦篇的营地传说里，孩子们深信森林暗处潜伏着哪一种怪物？",
+      "lost": [
+       "奇美拉"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "奇美拉": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['怪物'] = '奇美拉'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '怪物' 键（奇美拉 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "委员会",
+    "owner_eid": "联合委员会",
+    "owner_type": "组织",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 99,
+    "in_owner_claims": 17,
+    "unrelated": 82
+   },
+   "wiki_verdict": null,
+   "rationale": "DF99 中 owner(联合委员会) 17 块；限定形 基金会联合委员会/基金委 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:2.0.0",
+     "snip": "*十四行诗**：对、对不起！是我得意忘形了。⏎**十四行诗**：我……⏎**十四行诗**：我升职了。⏎**十四行诗**：委员会推荐我……作为您的第一助手协助您。⏎**十四行诗**：您的职责范围也扩大了，后续“暴雨”及重塑之手的调查事务都将由您主导"
+    },
+    {
+     "chunk_id": "mainline__103_故事一无所有:13.0.0",
+     "snip": "「副标题：亲爱的，那不是他们的错，孩子们只是需要正确的指引。」⏎【标题卡】迷途羔羊⏎【标题卡】基金会联合委员会办公室⏎**康斯坦丁**：这几天辛苦你了，小梅斯梅尔。⏎**康斯坦丁**：照看那些受“暴雨”刺激的病人很不容易吧？很抱歉"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "联合委员会": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 2,
+     "verbatim_aliases_left": [
+      "基金会联合委员会",
+      "基金委"
+     ]
+    }
+   },
+   "before": "alias_index['委员会'] = '联合委员会'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '委员会' 键（联合委员会 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "家族",
+    "owner_eid": "泰内布朗热家",
+    "owner_type": "组织",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 93,
+    "in_owner_claims": 1,
+    "unrelated": 92
+   },
+   "wiki_verdict": null,
+   "rationale": "DF93 中 owner(泰内布朗热家) 仅 1 块；R087/R259 答案均非泰内布朗热家，2 次误种子；ts=2 全为误",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__102_夜色温柔:10.2.0",
+     "snip": "有我不认识她吗！⏎**十四行诗**：我看过她的调查报告。她是华盛顿州林业大亨的继女。⏎**庄园管家**：您指的是韦耶豪瑟家族？我们的老爷曾与他们有过来往。⏎**庄园管家**：不过，他们家遭遇了巨大的不幸……此事还登过时报。⏎**庄园管家**：苏"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:11.0.1",
+     "snip": "夫人**：你是死去的韦耶豪瑟老爷的小姐？！⏎**槲寄生**：……⏎**记者Ⅰ**：……是那个韦耶豪瑟！破产后在林中自焚的家族……⏎**记者Ⅱ**：不，不是自焚！是他们的女儿，是她学了黑魔法，活活将父母烧死了……！⏎**记者Ⅰ**：死前拍到她也值"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R087",
+     "R259"
+    ],
+    "seed_changes": [
+     {
+      "qid": "R087",
+      "before": "虚构集的小说《理性家族的崛起与衰落》的故事发生地是哪里？",
+      "lost": [
+       "泰内布朗热家"
+      ]
+     },
+     {
+      "qid": "R259",
+      "before": "在迁流的盛宴篇的巴黎社交季里，出身塔维尼耶家族的年轻女士是谁？",
+      "lost": [
+       "泰内布朗热家"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "泰内布朗热家": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['家族'] = '泰内布朗热家'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '家族' 键（泰内布朗热家 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "地图",
+    "owner_eid": "手绘地图",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 86,
+    "in_owner_claims": 13,
+    "unrelated": 73
+   },
+   "wiki_verdict": null,
+   "rationale": "DF86 中 owner(手绘地图) 13 块；限定形 南极神秘学地图/诺谛卡的地图 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:6.2.0",
+     "snip": "**APPLe**：咳咳、咳咳……！⏎**十四行诗**：司辰。您看到我在地图上的标记了吗？⏎**维尔汀**：看到了。⏎**十四行诗**：那是我测算的距森林边缘最近的位置。⏎**十四行诗**：一分钟"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:7.0.0",
+     "snip": "处，或将其引入歧途，或将其引至辉光。⏎**槲寄生**：而你的朋友，拥有一份好运气。⏎**维尔汀**：西北方向的出口……从地图上看起来，离“瓦尔登湖”很近。⏎**槲寄生**：你们要去“瓦尔登湖”？⏎**槲寄生**：原来如此。你们也要去参加今晚的暴"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "手绘地图": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 2,
+     "verbatim_aliases_left": [
+      "南极神秘学地图",
+      "诺谛卡的地图"
+     ]
+    }
+   },
+   "before": "alias_index['地图'] = '手绘地图'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '地图' 键（手绘地图 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "信徒",
+    "owner_eid": "重塑·信徒",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 82,
+    "in_owner_claims": 21,
+    "unrelated": 61
+   },
+   "wiki_verdict": null,
+   "rationale": "DF82 中 owner(重塑·信徒) 21 块；限定形 重塑信徒/黑袍信徒 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__102_夜色温柔:3.1.0",
+     "snip": "啦，然后就……⏎**苏芙比**：咦？那一团黑影是什么？还在动，身上好像还有水……⏎**APPLe**：不好，是重塑之手的信徒。我们赶紧绕过去，别让他们发现我们的踪迹！⏎**行动队长**：不行！现在已经没法掉头了——⏎**苏芙比**：啊……他们看"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:5.1.1",
+     "snip": "这里不是给你打官腔说这些陈词滥调的地方。⏎**勿忘我**：既然你还没习惯脱离当局的生活——⏎**勿忘我**：不妨让我们的信徒来指点指点你，助你更快地熟悉重塑的秩序。"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "重塑·信徒": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 4,
+     "verbatim_aliases_left": [
+      "众教徒",
+      "教徒",
+      "重塑信徒",
+      "黑袍信徒"
+     ]
+    }
+   },
+   "before": "alias_index['信徒'] = '重塑·信徒'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '信徒' 键（重塑·信徒 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "幽灵",
+    "owner_eid": "游灵",
+    "owner_type": "概念",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 81,
+    "in_owner_claims": 6,
+    "unrelated": 75
+   },
+   "wiki_verdict": null,
+   "rationale": "DF81 中 owner(游灵) 仅 6 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:6.2.0",
+     "snip": "人压制下，我们不可能全身而退！⏎**十四行诗**：别担心，一个人的行动策略反而更加灵活。⏎**十四行诗**：只要敌人不是幽灵……不，就算是幽灵，我也一定能脱险制胜。⏎【选项】我相信你⏎**十四行诗**：请相信我。就像……我们以前合作的一样。⏎【"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:0.2.0",
+     "snip": "芙比**：这里就是我们之前经过的树林哦～卡森先生说这里藏着很多可怕的东西……⏎**苏芙比**：十四行诗小姐当时就被一群像幽灵的怪物追击……！噢，我好像在《好脾气怪兽指南》里见过它们。⏎**苏芙比**：对！就是在这棵树下，我们赶走坏东西后，十四行"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "游灵": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['幽灵'] = '游灵'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '幽灵' 键（游灵 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "学派",
+    "owner_eid": "阿派朗学派",
+    "owner_type": "组织",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 78,
+    "in_owner_claims": 21,
+    "unrelated": 57
+   },
+   "wiki_verdict": null,
+   "rationale": "DF78 中 owner(阿派朗学派) 21 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:6.1.0",
+     "snip": "我没给基金会造成任何财产损失……！⏎**星锑**：呜哇……这也太亏了……⏎**十四行诗**：我向莫桑女士提出了收集阿派朗学派信息的请求，但资料返回还需要一段时间。⏎**十四行诗**：“剃刀”特别行动分队的队长告诉我，这里可能是一个离群索居的神秘"
+    },
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:9.1.0",
+     "snip": "一个带有浓厚神秘色彩的奇特团体。⏎**APPLe**：万物皆数，尊崇整数，禁食豆子，还有宗教式的集体生活，都是毕达哥拉斯学派的特征。⏎**APPLe**：而且，最早的毕达哥拉斯学派正是因为无理数的发现而灭亡，这可以解释他们的厌恶。⏎**APPL"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "阿派朗学派": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 1,
+     "verbatim_aliases_left": [
+      "贵学派"
+     ]
+    }
+   },
+   "before": "alias_index['学派'] = '阿派朗学派'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '学派' 键（阿派朗学派 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "幻觉",
+    "owner_eid": "施特林",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 75,
+    "in_owner_claims": 1,
+    "unrelated": 74
+   },
+   "wiki_verdict": null,
+   "rationale": "DF75 中 owner(施特林) 仅 1 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__102_夜色温柔:7.2.0",
+     "snip": "……怎么会，明明应该还在急救时限内的……⏎**斯奈德**：老爷……⏎**维尔汀**：斯奈德！⏎**斯奈德**：是我出现了幻觉……还是您也像我思念您一样地……思念我……咳咳……⏎**斯奈德**：握得人家……这样的紧……⏎**维尔汀**：太好了，你"
+    },
+    {
+     "chunk_id": "mainline__104_老虎的金黄:19.1.0",
+     "snip": "是在这边——⏎星锑的声音越来越远。⏎**苏芙比**：唔，这可怎么办……⏎**苏芙比**：父亲说过，有一些魔精吃下去会出现幻觉和拉肚子的……！⏎**APPLe**：苏芙比小姐，发生什么事了吗？为什么一个人在这里兜圈呢？⏎苹果飘浮在空中，四下看了看"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "施特林": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['幻觉'] = '施特林'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '幻觉' 键（施特林 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "仪器",
+    "owner_eid": "人工梦游训练仪",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 74,
+    "in_owner_claims": 1,
+    "unrelated": 73
+   },
+   "wiki_verdict": null,
+   "rationale": "DF74 中 owner(人工梦游训练仪) 仅 1 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__103_故事一无所有:4.2.0",
+     "snip": "分享这些有趣的细节。⏎**小梅斯梅尔**：当然，如果你是个纯血的人类，我一定会更欣赏你。⏎她的椅子转了回去，面向人工梦游仪器。⏎**小梅斯梅尔**：维尔汀的磁场一直处在一种奇妙的平衡之中。她几乎从不主动做梦。⏎**小梅斯梅尔**：因此，我只能不"
+    },
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:2.2.0",
+     "snip": "**莫桑女士**：我想这才是他们来到此处的真正目的。⏎莫桑女士侧过身去，露出面前打开的崭新物资箱。⏎不同于尘封的拉普拉斯仪器，它显然还未被这里的雨水和雾气浸泡。⏎**维尔汀**：这是……⏎**维尔汀**：重塑之手用来免疫“暴雨”的面具？！⏎【标"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "人工梦游训练仪": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['仪器'] = '人工梦游训练仪'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '仪器' 键（人工梦游训练仪 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "小家伙",
+    "owner_eid": "阿黛拉的小龙",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 71,
+    "in_owner_claims": 3,
+    "unrelated": 68
+   },
+   "wiki_verdict": null,
+   "rationale": "爱称泛指，DF71 中 owner(阿黛拉的小龙) 3 块；小龙/幼龙 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__108_忧郁的热带:5.0.0",
+     "snip": "莱亚诺**：老天呀，它肚子鼓得这么大！⏎半透明的鱼肚子里，漂浮着一个大大的绿色小蛋糕。⏎**邓肯先生**：哈哈，吃了一个小家伙的大鱼？这条河还能给咱们弄点什么怪东西？⏎**邓肯先生**：圣母保佑，还好她让我俩遇到了。⏎老邓肯抽出短刀，剖开鱼肚子。"
+    },
+    {
+     "chunk_id": "mainline__108_忧郁的热带:8.1.3",
+     "snip": "**贫民区少年**：你敢对我们天使兄弟会的人动手！⏎**贫民区少年**：桑托斯大人回来了！你完了！⏎**白朗姆**：刀？小家伙们，这可不明智呀，嘿——"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "阿黛拉的小龙": {
+     "canonical_grounded": false,
+     "n_verbatim_aliases_left": 2,
+     "verbatim_aliases_left": [
+      "小龙",
+      "幼龙"
+     ]
+    }
+   },
+   "before": "alias_index['小家伙'] = '阿黛拉的小龙'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '小家伙' 键（阿黛拉的小龙 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "装置",
+    "owner_eid": "环境监测装置",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 71,
+    "in_owner_claims": 1,
+    "unrelated": 70
+   },
+   "wiki_verdict": null,
+   "rationale": "DF71 中 owner(环境监测装置) 仅 1 块；R127/R170(pool-out)＋R180/R240 4 次误种子（答案均非环境监测装置）；摘除只减误伤",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__104_老虎的金黄:10.2.0",
+     "snip": "Le**：正如我们之前所计划的，我隐去了身形，顺利抵达了隔壁的办公楼。⏎**APPLe**：尽管大楼门口设有监测神秘术的装置，但我从守卫的口中，探听到了我们想要的内容。⏎**苏芙比**：是什么？是什么？⏎**苏芙比**：维尔汀小姐的投票本本大获"
+    },
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:3.0.0",
+     "snip": "斯梅尔递来一个沉甸甸的皮制小箱。⏎**小梅斯梅尔**：我们需要更多样本。⏎**小梅斯梅尔**：这是“非对称核素R”的采样装置，仅此一台。使用方法都附在夹层内了。⏎**维尔汀**：谢谢你，小梅斯梅尔，我会小心使用。⏎**小梅斯梅尔**：我只是代为"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R127",
+     "R170",
+     "R180",
+     "R240"
+    ],
+    "seed_changes": [
+     {
+      "qid": "R127",
+      "before": "福格先生发明的大型装置是什么？",
+      "lost": [
+       "环境监测装置"
+      ]
+     },
+     {
+      "qid": "R170",
+      "before": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+      "lost": [
+       "环境监测装置"
+      ]
+     },
+     {
+      "qid": "R180",
+      "before": "无名者幼年被植入的、能生成人格与记忆的装置叫什么？",
+      "lost": [
+       "环境监测装置"
+      ]
+     },
+     {
+      "qid": "R240",
+      "before": "破坏无名者发条装置的重塑之手首领是谁？",
+      "lost": [
+       "环境监测装置"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "环境监测装置": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['装置'] = '环境监测装置'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '装置' 键（环境监测装置 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "同胞",
+    "owner_eid": "神秘学家",
+    "owner_type": "概念",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 70,
+    "in_owner_claims": 5,
+    "unrelated": 65
+   },
+   "wiki_verdict": null,
+   "rationale": "DF70 中 owner(神秘学家) 仅 5 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:0.0.0",
+     "snip": "—⏎本海盗将对你们这几天的跟踪罪行——⏎进行正式的公开审讯！⏎准备好被接下来的摇滚乐颠覆得日夜不分吧！⏎现在，收音机前的同胞们，跟我一起，疯狂倒数——！⏎三！⏎二！⏎一！⏎说出你们的名字，英国政府的跟屁虫！⏎说出你们的名字，重塑之手的抢劫犯！⏎"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:12.0.0",
+     "snip": "直到见证新秩序的诞生？⏎**雅座客人**：戴上这个面具……就不会被“暴雨”清理掉吗……⏎**勿忘我**：我们会确保每一位同胞的安全。⏎**十四行诗**：请不要骗人！你明明在密室里扣押了一个普通人——！⏎**斯奈德**：——！！⏎**勿忘我**："
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "神秘学家": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['同胞'] = '神秘学家'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '同胞' 键（神秘学家 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "城里",
+    "owner_eid": "别列格勒",
+    "owner_type": "地点",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 70,
+    "in_owner_claims": 10,
+    "unrelated": 60
+   },
+   "wiki_verdict": null,
+   "rationale": "方位泛指，DF70 中 owner(别列格勒) 10 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:9.1.0",
+     "snip": "巴士车的轮子转呀转~转呀转~转呀转~♪⏎**十四&苏芙比**：呀——！！⏎**十四行诗**：不行、太快了！这个速度……在城里是是是违规的——呀啊——！！⏎**苏芙比**：嘿，弗迪！我们已经到酒吧啦——别、踩油门了……？⏎**苏芙比**：快、快停"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:2.1.0",
+     "snip": "我站住，你这个偷橘子的家伙！⏎**维尔汀**：斯奈德？你怎么变得……这么小……？⏎**斯奈德**：咦？你的衣服……你是从城里来的吗？⏎**斯奈德**：啊……我明白了。你是姐姐说的那位来帮我们家摘橘子的朋友。⏎**斯奈德**：快跟我来，我们得抓紧"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "别列格勒": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['城里'] = '别列格勒'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '城里' 键（别列格勒 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "迷宫",
+    "owner_eid": "石壁迷宫",
+    "owner_type": "地点",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 58,
+    "in_owner_claims": 5,
+    "unrelated": 53
+   },
+   "wiki_verdict": null,
+   "rationale": "DF58 中 owner(石壁迷宫) 仅 5 块；限定形 玄武岩迷宫 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:9.1.0",
+     "snip": "我记得我们撞进了“瓦尔登湖”酒吧的后墙里……⏎**十四行诗**：是的。但是这里看起来……⏎**十四行诗**：像是一个地下迷宫。⏎**苏芙比**：呜哇……！我们、我们真的撞进酒吧的后墙了？！⏎“自动小岛”……也卡在墙里了？⏎**苏芙比**：弗迪～"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:14.0.0",
+     "snip": "最后有一个拐弯来着……⏎**苏芙比**：难道、难道是因为了不起的神秘学？！⏎**维尔汀**：他们竟然在酒馆里做了一个地下迷宫……迷宫的终点，会是什么样的地方？⏎**十四行诗**：司辰，我和苏芙比在这里摸索过一段时间。⏎**十四行诗**：这间密室"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "石壁迷宫": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 1,
+     "verbatim_aliases_left": [
+      "玄武岩迷宫"
+     ]
+    }
+   },
+   "before": "alias_index['迷宫'] = '石壁迷宫'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '迷宫' 键（石壁迷宫 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "教堂",
+    "owner_eid": "悲伤圣母教堂",
+    "owner_type": "地点",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 57,
+    "in_owner_claims": 2,
+    "unrelated": 55
+   },
+   "wiki_verdict": null,
+   "rationale": "DF57 中 owner(悲伤圣母教堂) 仅 2 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:10.1.2",
+     "snip": "】“瓦尔登湖”酒吧⏎**勿忘我**：所有的新移民、神秘学家、道德的人与不道德的人、反酒馆联盟与民主改革派、自由思想者与上教堂的人。⏎**勿忘我**：——欢迎你们来到你们永恒的家，“瓦尔登湖”。⏎**勿忘我**：如何？大家看起来对上一场的烈酒舞女"
+    },
+    {
+     "chunk_id": "mainline__107_孤独之歌:25.2.1",
+     "snip": "尔德**：祝福您，医生，祝您幸福和顺利，祝您的勇气能够跨越一切障碍。⏎**伊索尔德**：您值得一切的奇迹和好运，我也会去教堂为您祈祷……⏎今天不是卡卡尼亚的生日，她的身影也没有映照在那抹无神的目光中。⏎歌剧演员只是含笑地，渴盼地，向一无所有的空"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "悲伤圣母教堂": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['教堂'] = '悲伤圣母教堂'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '教堂' 键（悲伤圣母教堂 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "玛丽",
+    "owner_eid": "圣路连士兵",
+    "owner_type": "角色",
+    "extra_owners": [
+     "玛丽安娜"
+    ]
+   },
+   "df": {
+    "total": 57,
+    "in_owner_claims": 1,
+    "unrelated": 56
+   },
+   "wiki_verdict": null,
+   "rationale": "DF57 中 owner(圣路连士兵) 仅 1 块；多主 alias（圣路连士兵/玛丽安娜 setdefault 抢注歧义，审计检3）；从两 owner 一并摘除；R3 同物异写复核",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:5.2.0",
+     "snip": "有助于提高他的业绩，因此很配合我。⏎**星锑**：你为什么要拍他？他现在——⏎**维尔汀**：……⏎**维尔汀**：这是玛丽昂·史密斯，一位单身母亲。她在为周末的午餐担忧，却仍无法放弃写作的愿望。⏎**维尔汀**：我在凌晨2点的快餐店里遇到了她"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:7.0.1",
+     "snip": "姐姐。⏎**斯奈德**：那就有劳老爷们费心了～⏎**斯奈德**：懒洋洋的身影向门外踱步而去。⏎**勿忘我**：若你的义姐玛丽安知道你这般重情义，一定倍感欣慰。⏎**勿忘我**：毕竟你只是格雷克家的养女……⏎归根结底，和他们这群人类，没什么血缘关"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "圣路连士兵": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    },
+    "玛丽安娜": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 2,
+     "verbatim_aliases_left": [
+      "吊唁者",
+      "骑士团士兵"
+     ]
+    }
+   },
+   "before": "alias_index['玛丽'] = '圣路连士兵'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '玛丽' 键（圣路连士兵 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "符号",
+    "owner_eid": "禁锢术式",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 52,
+    "in_owner_claims": 1,
+    "unrelated": 51
+   },
+   "wiki_verdict": null,
+   "rationale": "DF52 中 owner(禁锢术式) 仅 1 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:5.1.0",
+     "snip": "叫维尔汀。⏎**37**：不不，我问的是你的数字。⏎**37**：教典说，只有尚不了解自己本质的人，才会用毫无意义的语音符号指代自我。⏎**37**：嗯，这样啊，你还不知道自己的数字……和苏菲亚一样。⏎她的话非常难懂。⏎但眼下还有更重要的问题。"
+    },
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:9.1.1",
+     "snip": "7，1，1.6，2.8，5.2，10，19.6……一共八个数字，遵循这个数列排布。⏎**APPLe**：下面的是八个天体符号，分别对应太阳、水星、金星、地球、火星、木星、土星、天王星。⏎**APPLe**：应该是要我们把天体填进数字后面的方块里"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "禁锢术式": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['符号'] = '禁锢术式'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '符号' 键（禁锢术式 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "哥哥",
+    "owner_eid": "卡卡尼亚之兄",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 51,
+    "in_owner_claims": 1,
+    "unrelated": 50
+   },
+   "wiki_verdict": null,
+   "rationale": "亲属泛称，DF51 中 owner(卡卡尼亚之兄) 仅 1 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__106_今夜星光灿烂:0.0.0",
+     "snip": "去。⏎**市民观众Ⅱ**：哦，是的，他们家还从未有人活过40岁，就像沾了什么诅咒似的……她可怜的姐姐年幼早夭，而如今她的哥哥——我在晨报上读到了……⏎**市民观众Ⅰ**：他自杀了，是吗？⏎**市民观众Ⅱ**：准确来说，那位浪漫的画家兼诗人写了一"
+    },
+    {
+     "chunk_id": "mainline__106_今夜星光灿烂:4.1.1",
+     "snip": "别过来……⏎卡卡尼亚挣开那双手，顺着伊索尔德涣散的目光望过去。⏎**卡卡尼亚**：她在害怕那些画！哦，可怜的女孩，那些她哥哥的遗作……⏎**卡卡尼亚**：呃！⏎**海因里希**：卡卡尼亚小姐，请当心！⏎**卡卡尼亚**：海因里希，麻烦你过来搭把"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "卡卡尼亚之兄": {
+     "canonical_grounded": false,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['哥哥'] = '卡卡尼亚之兄'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '哥哥' 键（卡卡尼亚之兄 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "副作用",
+    "owner_eid": "诅咒",
+    "owner_type": "概念",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 50,
+    "in_owner_claims": 3,
+    "unrelated": 47
+   },
+   "wiki_verdict": null,
+   "rationale": "DF50 中 owner(诅咒) 3 块；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__106_今夜星光灿烂:1.0.0",
+     "snip": "在桌面上。过大的力道使得内部的文件滑落一地。⏎**兔毛手袋**：恭喜，你们对重塑之手面具研究的唯一成果——彻底搞清了它的副作用！拜它所赐，拉普拉斯的走廊快被石油和疯子淹了。⏎**兔毛手袋**：你该感谢那个戴帽子的报时布谷鸟递交过报告，目前还没人被"
+    },
+    {
+     "chunk_id": "mainline__106_今夜星光灿烂:1.0.1",
+     "snip": "微微颔首，似乎很满意它们再度达成了一致。⏎**露西**：关于你的第二个要求——你提交的报告我已经看过了。我充分知悉面具的副作用，以及现阶段破译工作的局限。⏎**兔毛手袋**：那你还让我们对着易拉罐研究可乐配方？狗屎——我再重申一遍，拿不到重塑的原"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "诅咒": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['副作用'] = '诅咒'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '副作用' 键（诅咒 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "别斯米尔",
+    "owner_eid": "卡卡尼亚",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 67,
+    "in_owner_claims": 1,
+    "unrelated": 66
+   },
+   "wiki_verdict": null,
+   "rationale": "P0 焊组残留：语料明文否认（mainline__110_复乐园:19.0.1 德洛丝自述『应该并不是我』），灰机有独立 NPC 条目 别斯米尔/Bessmert；DF67 中 owner(卡卡尼亚) 仅 1 块；R1 将建独立节点",
+   "evidence_chunks": [
+    {
+     "chunk_id": "activity__16101_朔日手记:0.0.0",
+     "snip": "写稿件。⏎**小叶尼塞**：笔迹看起来像野外速记，页边磨损，已经干燥保存一年以上……⏎**小叶尼塞**：一年……噢，这是别斯米尔女士曾委托我记录的游记。⏎**小叶尼塞**：或者说，应该叫“手记”？哈哈……⏎**小叶尼塞**：无论是什么，我都应该已经"
+    },
+    {
+     "chunk_id": "activity__16101_朔日手记:0.0.2",
+     "snip": "年轻人记录的速度已经能与口述者的话语保持相当的同步。但即使如此，到此处她还是迟疑了。⏎**小叶尼塞**：别斯米尔女士，这个类比……⏎**别斯米尔**：嗯？有什么问题吗？⏎**小叶尼塞**：低地沉积岩是可以被验证的，“失落的神秘术”似"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "卡卡尼亚": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 14,
+     "verbatim_aliases_left": [
+      "兀尔德",
+      "兀尔德女士",
+      "克拉拉",
+      "克拉拉·温格勒",
+      "克拉拉女士",
+      "克拉拉小姐"
+     ]
+    }
+   },
+   "before": "alias_index['别斯米尔'] = '卡卡尼亚'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '别斯米尔' 键（卡卡尼亚 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "组长",
+    "owner_eid": "乌尔里希",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 77,
+    "in_owner_claims": 37,
+    "unrelated": 40
+   },
+   "wiki_verdict": null,
+   "rationale": "DF77 中 owner(乌尔里希) 37 块但跨篇泛称 40 块；限定形 乌尔里希组长/破译组长 保留；R3 合并 暴雨小组组长乌尔里希 后可达性恢复；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__107_孤独之歌:5.1.0",
+     "snip": "译小组办公室⏎**哑谜**：这个术式是没用的。⏎**哑谜**：不要再白费力气了，这么解下去是不会有什么结果的。⏎**破译组长**：——什么？⏎各式仪器堆满了房间。"
+    },
+    {
+     "chunk_id": "mainline__107_孤独之歌:8.0.2",
+     "snip": "了分享答案——⏎**37**：难道这个问题的解答……这个超越的真理……⏎**37**：——是我们无法承受的吗？⏎**破译组长**：……快让开，让开！⏎**破译组长**：露西女士，这个读法是对的！⏎**破译组长**：您拿给我的纸条是正确的，这就是"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "乌尔里希": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 5,
+     "verbatim_aliases_left": [
+      "乌尔里希先生",
+      "乌尔里希组长",
+      "意识唤醒者研究员",
+      "玻璃缸脑袋",
+      "破译组长"
+     ]
+    }
+   },
+   "before": "alias_index['组长'] = '乌尔里希'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '组长' 键（乌尔里希 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "学校",
+    "owner_eid": "第一防线学校",
+    "owner_type": "地点",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 157,
+    "in_owner_claims": 70,
+    "unrelated": 87
+   },
+   "wiki_verdict": null,
+   "rationale": "DF157 中 owner(第一防线学校) 70 块；ts 两问均含全称 第一防线学校（canonical 直配，alias 冗余）；87 块跨篇泛称",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__103_故事一无所有:0.0.0",
+     "snip": "教员**：学术研究要求“公开”且可被独立检验，但神秘学的不确定性会让专业研究落入“方法上的不可知论”。⏎**教员**：而学校给你们提供的训练与科学矫正器械支持，就是为了让大家的不确定性变得更为可控，以保证人类世界的和平与稳定。⏎**学生众**："
+    },
+    {
+     "chunk_id": "mainline__103_故事一无所有:3.0.1",
+     "snip": "流淌的血液。⏎**康斯坦丁**：为此，这些可怜人需要的不是更独立的编制和自主权。⏎**康斯坦丁**：而是一些约束，一些比学校里那些像白纸一样纯洁的孩子们所经受的还要严厉的约束。⏎**Z**：我明白了。⏎**Z**：您期望的是一批不会发声的木偶。"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R236",
+     "R297"
+    ],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "第一防线学校": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 0,
+     "verbatim_aliases_left": []
+    }
+   },
+   "before": "alias_index['学校'] = '第一防线学校'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '学校' 键（第一防线学校 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "妹妹",
+    "owner_eid": "洛佩拉",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 62,
+    "in_owner_claims": 10,
+    "unrelated": 52
+   },
+   "wiki_verdict": null,
+   "rationale": "亲属泛称，DF62 中 owner(洛佩拉) 10 块；限定形 亲爱的妹妹 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:13.1.0",
+     "snip": "…已经安全了……⏎**斯奈德**：他们到底逼你吃了什么……该死的。⏎**十四行诗**：……！⏎**十四行诗**：你是她的妹妹……我……⏎**十四行诗**：她吃的是吐真剂。我背过配方，手感和气味也都印证了这一点。⏎**十四行诗**：让她平卧，右手"
+    },
+    {
+     "chunk_id": "mainline__102_夜色温柔:8.1.0",
+     "snip": "着一个白色的小床，这又是什么！⏎**玛丽安**：黑色西装的袖口——这、这片羽毛装饰……⏎**玛丽安**：斯奈德？！是我的妹妹斯奈德……！她怎么了……为什么布上都是血迹……！⏎**追随者**：怎么了？当然是死了。⏎**追随者**：我们照看的死者很"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "洛佩拉": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 5,
+     "verbatim_aliases_left": [
+      "亲爱的妹妹",
+      "圣保罗的洛佩拉",
+      "小赌徒",
+      "洛佩拉小姐",
+      "那孩子"
+     ]
+    }
+   },
+   "before": "alias_index['妹妹'] = '洛佩拉'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '妹妹' 键（洛佩拉 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "伞",
+    "owner_eid": "平衡伞",
+    "owner_type": "物品",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 64,
+    "in_owner_claims": 28,
+    "unrelated": 36
+   },
+   "wiki_verdict": null,
+   "rationale": "DF64 中 owner(平衡伞) 28 块；限定形 便携式平衡伞 保留；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__104_老虎的金黄:0.0.0",
+     "snip": "「副标题：你得到过它了，这寂静的，陈旧的，你所熟识的黑色。」⏎【标题卡】老虎的金黄⏎【标题卡】旧雨伞⏎**槲寄生**：……！⏎**槲寄生**：维尔汀……⏎窗外的光穿过了一座停滞的雕像。⏎**槲寄生**：我看见……维尔汀她"
+    },
+    {
+     "chunk_id": "mainline__104_老虎的金黄:21.0.0",
+     "snip": "⏎**红弩箭**：从改革法案、宣战抗议……到无数次的打探、辩论与计算……⏎**红弩箭**：所有人……都在不约而同地为你撑伞，维尔汀。⏎**维尔汀**：……⏎**红弩箭**：会过去的。⏎**红弩箭**：这一场“暴雨”。⏎**维尔汀**：……谢谢"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "平衡伞": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 1,
+     "verbatim_aliases_left": [
+      "便携式平衡伞"
+     ]
+    }
+   },
+   "before": "alias_index['伞'] = '平衡伞'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '伞' 键（平衡伞 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "头儿",
+    "owner_eid": "维尔汀",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 74,
+    "in_owner_claims": 24,
+    "unrelated": 50
+   },
+   "wiki_verdict": null,
+   "rationale": "跨篇上级称呼，DF74 中 owner(维尔汀) 24 块、50 块他指；维尔汀余 8 条逐字 alias；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__108_忧郁的热带:19.1.0",
+     "snip": "幕转场⏎上校庄园⏎在教堂倒塌前，洛佩拉顺利带着盲眼医生来到教堂外。⏎**洛佩拉**：天使兄弟会呢？⏎找上她的，不是邓肯老头儿，也不是兄弟会的守卫……⏎**洛佩拉**：——啊，姐姐！⏎**莫莉德尔**：还好定位纽扣没出问题，总算找到你了。里面怎么"
+    },
+    {
+     "chunk_id": "mainline__112_远征记:24.0.2",
+     "snip": "方式能弥补他造成的流血。但也没有任何人能否定他在南极和别列格勒做的一切。⏎**红弩箭**：南极……⏎**红弩箭**：我听头儿提过，是你的副官帮助乌尔里希绕过了重塑之手的布防。⏎**红弩箭**：你暗示的？⏎**伊戈尔**：这是莫莉德尔自我意志下的"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "维尔汀": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 7,
+     "verbatim_aliases_left": [
+      "司辰",
+      "司辰小姐",
+      "小维尔汀",
+      "政府老爷",
+      "维尔汀博士",
+      "维尔汀小姐"
+     ]
+    }
+   },
+   "before": "alias_index['头儿'] = '维尔汀'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '头儿' 键（维尔汀 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "老爷",
+    "owner_eid": "维尔汀",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 77,
+    "in_owner_claims": 26,
+    "unrelated": 51
+   },
+   "wiki_verdict": null,
+   "rationale": "跨篇主家称呼（帕米埃老爷等），DF77 中 owner(维尔汀) 26 块、51 块他指；灰机维尔汀页引文含『老爷』一次（已记录）；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:4.1.0",
+     "snip": "**：……？⏎**？？？**：因为他们要杀死神秘学家呀。⏎**？？？**：你们不也是……正为此而来吗？熟知历史的……政府老爷们。⏎**？？？**：那么名单的下一位是……亚当·埃耶尔哦。⏎**亚当**：啊、为什么打不中……啊啊……⏎**十四行诗*"
+    },
+    {
+     "chunk_id": "mainline__101_在我们的时代里:7.0.1",
+     "snip": "**槲寄生**：如果你们见到了酒吧老板，帮我向他传达一声问候。⏎**？？？**：勿忘我老爷，今天过得挺好啊。⏎【标题卡】“瓦尔登湖”酒吧⏎**勿忘我**：我需要的人，带回来了？⏎**？？？**：嗯哼……7个神秘"
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": []
+   },
+   "owner_after_state": {
+    "维尔汀": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 7,
+     "verbatim_aliases_left": [
+      "司辰",
+      "司辰小姐",
+      "小维尔汀",
+      "政府老爷",
+      "维尔汀博士",
+      "维尔汀小姐"
+     ]
+    }
+   },
+   "before": "alias_index['老爷'] = '维尔汀'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '老爷' 键（维尔汀 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "老朋友",
+    "owner_eid": "邓肯先生",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 48,
+    "in_owner_claims": 4,
+    "unrelated": 44
+   },
+   "wiki_verdict": null,
+   "rationale": "跨篇客套称呼，DF48 中 owner(邓肯先生) 仅 4 块；R018 错种子家族；ts=1 即 R018 本身",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__107_孤独之歌:0.0.0",
+     "snip": "。⏎柔软的树枝划过由沙子构成的集合。⏎四条等长的边，两条交错的对角线。⏎一个规整的方形。⏎**77**：来看看我们熟悉的老朋友吧。⏎**77**：√2，一个无理数，是纯粹算术上可得的结论，它等价于“在a和b都是整数的情况下，2不可能被表达成（a/"
+    },
+    {
+     "chunk_id": "mainline__107_孤独之歌:1.0.0",
+     "snip": "呢？⏎教众们在熙攘声中骚动了起来。⏎**210**：可是兄弟们、姐妹们，别急着掷出你手上涂着灰白格子的卵石。再看看我们的老朋友，重塑之手吧。⏎报幕者伸出右手，引向高台的另一侧。⏎**阿尔卡纳**：那里端坐着一抹蓝黑相间的身影。⏎**阿尔卡纳**："
+    }
+   ],
+   "testset": {
+    "matched_qids": [],
+    "seed_changes": [
+     {
+      "qid": "R018",
+      "before": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+      "lost": [
+       "邓肯先生"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "邓肯先生": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 6,
+     "verbatim_aliases_left": [
+      "卡森",
+      "叛徒”邓肯",
+      "大胆的邓肯",
+      "无所不能的邓肯",
+      "老邓肯",
+      "邓肯"
+     ]
+    }
+   },
+   "before": "alias_index['老朋友'] = '邓肯先生'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '老朋友' 键（邓肯先生 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "remove_alias",
+   "target": {
+    "alias": "老伙计",
+    "owner_eid": "邓肯先生",
+    "owner_type": "角色",
+    "extra_owners": []
+   },
+   "df": {
+    "total": 24,
+    "in_owner_claims": 3,
+    "unrelated": 21
+   },
+   "wiki_verdict": null,
+   "rationale": "R018 实测错种子源（alias 0.9 → 邓肯先生，retriever.py:290 长名优先子串匹配）；DF24 散布 11 篇 21 块他指；owner 余 7 条逐字 alias",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__112_远征记:0.2.0",
+     "snip": "哈？⏎身下的扫帚发出松散的破碎声，精密的飞行器早已在防空火力中受损，如今终于快要支撑不住。⏎**红弩箭**：现在可不行，老伙计，你至少得把我带回河边去，我可不想栽在这林子里。⏎晚了。暴力驾驶的后果就是无故障时间急剧缩短。⏎她急速下坠。⏎**红弩箭"
+    },
+    {
+     "chunk_id": "activity__18101_再见_来亚什基:7.0.2",
+     "snip": "克努特**：你们确实该去食堂了，好姑娘们、小伙子们……你们现在正是长身体的时候呢！⏎**克努特**：帕特里基可是个热情的老伙计，镇上最好的厨师。⏎**克努特**：不过嘛，你最好躲着他点。⏎如果你不想被他拉着胡侃上一整晚的话……⏎**北方哨歌**："
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R018"
+    ],
+    "seed_changes": [
+     {
+      "qid": "R018",
+      "before": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+      "lost": [
+       "邓肯先生"
+      ]
+     }
+    ]
+   },
+   "owner_after_state": {
+    "邓肯先生": {
+     "canonical_grounded": true,
+     "n_verbatim_aliases_left": 6,
+     "verbatim_aliases_left": [
+      "卡森",
+      "叛徒”邓肯",
+      "大胆的邓肯",
+      "无所不能的邓肯",
+      "老邓肯",
+      "邓肯"
+     ]
+    }
+   },
+   "before": "alias_index['老伙计'] = '邓肯先生'（link() alias 命中 0.9 分，长名优先）",
+   "after": "alias_index 不再含 '老伙计' 键（邓肯先生 的 aliases 列表移除该条）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "基金会",
+    "owner_eid": "圣洛夫基金会",
+    "owner_type": "组织"
+   },
+   "df": {
+    "total": 800,
+    "in_owner_claims": 430,
+    "unrelated": 370
+   },
+   "wiki_verdict": null,
+   "rationale": "430/800 块在 owner(圣洛夫基金会) 声称块逐字出现，是语料对该实体的常态称呼；12 个 ts 命中全部语义正确且多数仅靠 bare『基金会』触发（R054/R181/R236/R242/R286/R290）；摘除将致现役可答题回归。残余风险：370 块他指（含含『基金会』的机构名）如实记录",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:4.0.0",
+     "snip": "四行诗很快也会发现这里。⏎**星锑**：那、那你到底想要怎样啊！呜……我好倒霉啊……⏎**维尔汀**：放心。我不会带你去基金会。我要你跟我去另一个安全的地方。⏎**维尔汀**：星锑，我需要你同我一起——越过“暴雨”。⏎**星锑**：越过“暴雨”？"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R054",
+     "R181",
+     "R189",
+     "R209",
+     "R233",
+     "R236",
+     "R242",
+     "R278",
+     "R279",
+     "R283",
+     "R286",
+     "R290"
+    ]
+   },
+   "before": "alias_index['基金会'] = '圣洛夫基金会'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "重塑",
+    "owner_eid": "重塑之手",
+    "owner_type": "组织"
+   },
+   "df": {
+    "total": 506,
+    "in_owner_claims": 327,
+    "unrelated": 179
+   },
+   "wiki_verdict": null,
+   "rationale": "327/506 块 owner 逐字；12 个 ts 命中全部含全称 重塑之手（alias 在评测冗余且无害）；语料标准优先；179 块他指记录",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__000_此即明日:1.1.0",
+     "snip": "么样！⏎**调查员Ⅱ**：退路被封锁了！我、我还在尝试突破！⏎**调查员Ⅰ**：我们……还能在“暴雨”前回去吗……⏎**重塑·信徒**：ㄞ——！⏎**星锑**：可恶，可恶！⏎**星锑**：我攒了五年的钱……我心爱的APPLe号……⏎**星锑**"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R037",
+     "R052",
+     "R053",
+     "R058",
+     "R188",
+     "R204",
+     "R210",
+     "R240",
+     "R248",
+     "R256",
+     "R257",
+     "R292"
+    ]
+   },
+   "before": "alias_index['重塑'] = '重塑之手'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "司辰",
+    "owner_eid": "维尔汀",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 356,
+    "in_owner_claims": 314,
+    "unrelated": 42
+   },
+   "wiki_verdict": null,
+   "rationale": "314/356(88%) owner 逐字；灰机有独立页 司辰(pageid 211)，维尔汀页正文以『司辰{{cb|Timekeeper}}』定义；handoff §3 豁免；4 个 ts 命中全部正确",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:4.1.0",
+     "snip": "⏎**？？？**：那么名单的下一位是……亚当·埃耶尔哦。⏎**亚当**：啊、为什么打不中……啊啊……⏎**十四行诗**：司辰！⏎【选项】营救亚当·埃耶尔⏎**APPLe**：小心对付她的枪，她瞄准的似乎不是我们的躯体——！"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R176",
+     "R194",
+     "R239",
+     "R281"
+    ]
+   },
+   "before": "alias_index['司辰'] = '维尔汀'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "拉普拉斯",
+    "owner_eid": "科算中心",
+    "owner_type": "组织"
+   },
+   "df": {
+    "total": 255,
+    "in_owner_claims": 131,
+    "unrelated": 124
+   },
+   "wiki_verdict": null,
+   "rationale": "131/255 owner 逐字（语料对科算中心的常态简称）；handoff §3 豁免；R191/R211（答案 Laplace）靠它种子；R170 的『巨节点种子过粗』归因 R3 玩具盒新抽取解决；124 块他指记录",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__103_故事一无所有:1.0.0",
+     "snip": "**：——在不停地失去中……⏎**维尔汀**：走向死亡？⏎**维尔汀**：……⏎**？？？**：啧，失败了。⏎【标题卡】拉普拉斯康复中心⏎**？？？**：创伤片段又被激活了。功率调大，稳住心相。⏎**？？？**：换下一个梦。⏎**Z**：她不一定适"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R170",
+     "R191",
+     "R211"
+    ]
+   },
+   "before": "alias_index['拉普拉斯'] = '科算中心'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "助手",
+    "owner_eid": "十四行诗",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 118,
+    "in_owner_claims": 69,
+    "unrelated": 49
+   },
+   "wiki_verdict": null,
+   "rationale": "69/118 owner 逐字；R236『基金会的首席助手』现役可答题靠它种子十四行诗（审计『至少摘除』清单未测此题）——新发现，已按作战书 §0 补录",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__106_今夜星光灿烂:2.2.0",
+     "snip": "字胡的微胖绅士小跑了过来，他锃亮的额头上已经出了一层汗。⏎**？？？**：噢，霍夫曼女士，这位夹着书箱的小姐就是您的……助手？⏎**？？？**：没有间谍会愚蠢到在公开场合携带这么多资料的，先生们，大可散了吧！⏎卫兵匆忙敬了一个礼，驱使戈连们回到"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R236"
+    ]
+   },
+   "before": "alias_index['助手'] = '十四行诗'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "保罗",
+    "owner_eid": "卡戎",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 92,
+    "in_owner_claims": 19,
+    "unrelated": 73
+   },
+   "wiki_verdict": null,
+   "rationale": "handoff §3.5 真名（保罗·霍伊默尔 逐字 alias 保留）；R265 现役可答题经『圣保罗』子串触发卡戎种子并可能经 PPR 救回 gold；19 块 owner 逐字；qualify 备选（→保罗·霍伊默尔）留复核人裁决",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__104_老虎的金黄:11.0.0",
+     "snip": "的准备。⏎马克没有回话。他从公文包里掏出一沓文件，在上面勾勾画画。⏎**主持人**：首先，向各位介绍第一位嘉宾，佩德拉·保罗·冈萨雷斯·罗萨。⏎**主持人**：他是圣保罗大学法学院的毕业生，担任联合委员会的委员要职，更重要的是，他是本次辩论的发"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R265"
+    ]
+   },
+   "before": "alias_index['保罗'] = '卡戎'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "康复中心",
+    "owner_eid": "拉普拉斯康复中心",
+    "owner_type": "地点"
+   },
+   "df": {
+    "total": 59,
+    "in_owner_claims": 30,
+    "unrelated": 29
+   },
+   "wiki_verdict": null,
+   "rationale": "30/59 owner 逐字；R235/R271/R288 三题种子语境全部正确；摘除有回归风险",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__103_故事一无所有:2.0.0",
+     "snip": "。⏎电梯停到了十五楼。这里非常空旷。⏎除了十四行诗的脚步声，整个楼层只有全自动语音播报机的声音在回响。⏎**播报机**：康复中心旨在为病患提供有效的医疗服务与训练，恢复其身体正常的机能。⏎**播报机**：本中心隶属拉普拉斯科算中心管理，如有特殊需求"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R235",
+     "R271",
+     "R288"
+    ]
+   },
+   "before": "alias_index['康复中心'] = '拉普拉斯康复中心'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "军长",
+    "owner_eid": "军长伊万",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 55,
+    "in_owner_claims": 46,
+    "unrelated": 9
+   },
+   "wiki_verdict": null,
+   "rationale": "46/55(84%) owner 逐字；ts=0；军长伊万 canonical 含『军长』",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__112_远征记:0.1.1",
+     "snip": "行扫帚，是不是就能多申请一架Su-01ве？我们可以轮流飞行。⏎**红弩箭**：我很想看你从天上掉下来的样子，可我不想和军长说你手底下的骑兵在我的扫帚上摔断了一条胳膊。⏎**谢尔盖**：别忘了，你刚来的时候也不会骑马，是斯捷尔诺娃上校教你才没有"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['军长'] = '军长伊万'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "伊万",
+    "owner_eid": "军长伊万",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 58,
+    "in_owner_claims": 47,
+    "unrelated": 11
+   },
+   "wiki_verdict": null,
+   "rationale": "47/58 owner 逐字；R148（答案 Ivan）正确且载荷",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__112_远征记:8.0.3",
+     "snip": "可不是攻取城市。⏎**仪式术士**：我们会用饥饿来消灭敌人。⏎**格鲁托夫**：给了我军队，我就有权力调动他们。伊戈尔和伊万见过面了，他们正在向别列格勒进军，我必须拦住他们。⏎一阵发动机的轰鸣声传来——负责运载重型武器的车队已经启动。⏎**格鲁"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R148"
+    ]
+   },
+   "before": "alias_index['伊万'] = '军长伊万'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "格蕾丝",
+    "owner_eid": "无名者",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 55,
+    "in_owner_claims": 46,
+    "unrelated": 9
+   },
+   "wiki_verdict": null,
+   "rationale": "46/55 owner 逐字；R206/R231/R257/R268 四题种子语境全部正确（格蕾丝=无名者 77号往事 代号）；跨篇他指 9 块",
+   "evidence_chunks": [
+    {
+     "chunk_id": "activity__24101_地球上最后的夜晚:7.1.0",
+     "snip": "起的“象形贝壳”——麦黎的舞蹈与合唱将滋养它们的外壳，纯粹而高涨的情感能够为它们晕染出最优美的纹理。⏎**图图石子**：格蕾丝女士呢？⏎**图图石子**：……⏎**图图石子**：她预言了麦黎的淹没，从洪水与风暴中拯救了我们，她向我们揭露世界的真相"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R206",
+     "R231",
+     "R257",
+     "R268"
+    ]
+   },
+   "before": "alias_index['格蕾丝'] = '无名者'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "阿德勒",
+    "owner_eid": "哑谜",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 64,
+    "in_owner_claims": 63,
+    "unrelated": 1
+   },
+   "wiki_verdict": null,
+   "rationale": "63/64(98%) owner 逐字；R050 正确；哑谜真名",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__111_行于漫漫长路上:0.0.1",
+     "snip": "她很健康。⏎小梅斯梅尔用简单的词语下达判断。⏎**维尔汀**：科算中心为她提供了足够的活动空间吗？⏎**小梅斯梅尔**：阿德勒先生为她临时腾出了一间阶梯式报告厅，不算舒适，也不会很拥挤。⏎**小梅斯梅尔**：不过现在她身边围绕着一大群神秘生物学家"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R050"
+    ]
+   },
+   "before": "alias_index['阿德勒'] = '哑谜'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "卡森",
+    "owner_eid": "邓肯先生",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 34,
+    "in_owner_claims": 7,
+    "unrelated": 27
+   },
+   "wiki_verdict": null,
+   "rationale": "handoff §3.4 卡森案按篇豁免；灰机独立 NPC 条目 卡森/Mr. Karson；R105（答案 Carson）载荷；7 块 owner 逐字；灰机歧义（与 Mr. Karson 独立条目并存）如实记录",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:5.0.0",
+     "snip": "老板通了电话……⏎**苏芙比**：好耶——！⏎**庄园管家**：好耶……？这不是名门闺秀该发出的声音。⏎**苏芙比**：卡森先生，苏芙比已经长大了～⏎**苏芙比**：而且我这次并不是出门去玩，还背负着拯救人们的重大使命喔。⏎**庄园管家**：好"
+    }
+   ],
+   "testset": {
+    "matched_qids": [
+     "R105"
+    ]
+   },
+   "before": "alias_index['卡森'] = '邓肯先生'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "纸信圈儿",
+    "owner_eid": "利伯蒂",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 67,
+    "in_owner_claims": 65,
+    "unrelated": 2
+   },
+   "wiki_verdict": null,
+   "rationale": "65/67(97%) owner 逐字；灰机正典 zh 名（纸信圈儿/Flutterpage，canon characters），灰机反无 利伯蒂 页——本 alias 是 wiki 标准名",
+   "evidence_chunks": [
+    {
+     "chunk_id": "activity__23101_圣火纪行_东区黎明:7.2.0",
+     "snip": "的对话。⏎**宽檐帽**：……？⏎**福葛先生**：……？⏎福葛先生和宽檐帽都没发现自己身边探出来一颗小头，她看上去只有纸信圈儿一半的年纪。⏎**小丽莎**：您一定知道让这团围绕着我们的巨大烟雾怪消失的办法吧，雾行者先生。⏎她眨巴着亮晶晶的眼睛，像"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['纸信圈儿'] = '利伯蒂'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "德洛丝",
+    "owner_eid": "卡卡尼亚",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 69,
+    "in_owner_claims": 60,
+    "unrelated": 9
+   },
+   "wiki_verdict": null,
+   "rationale": "P0 焊组成员：60/69 块逐字（多为德洛丝本人语境）；R1 拆焊将建独立 德洛丝 节点并重归属 chunk；R2 不动以免 R1 前可达性受损",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__108_忧郁的热带:12.0.2",
+     "snip": "：这看起来可不像好消息……⏎勒索信⏎**维尔汀**：桑托斯。⏎一封笔迹干净的勒索信，署名为“桑托斯”。⏎**维尔汀**：德洛丝医生在上校庄园。⏎**维尔汀**：他给我们三天时间。⏎**维尔汀**：桑托斯要求芝诺方面交还被逮捕的逃兵，否则将处决医生"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['德洛丝'] = '卡卡尼亚'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "维尔汀小姐",
+    "owner_eid": "维尔汀",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 102,
+    "in_owner_claims": 94,
+    "unrelated": 8
+   },
+   "wiki_verdict": null,
+   "rationale": "94/102 owner 逐字；ts=0；敬称语料逐字",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__101_在我们的时代里:9.1.0",
+     "snip": "：天呐，怎么还有这么久！⏎我们答应过要帮助十四行诗小姐找到她的朋友的，对吗？⏎**苏芙比**：再这样下去，我们就要错过和维尔汀小姐的见面了！⏎**苏芙比**：不行了，弗迪，快，你把这个喝下去——⏎**苏芙比**：这是我上午调配好的“勇敢猛冲跳跳剂”！"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['维尔汀小姐'] = '维尔汀'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "APPLe某",
+    "owner_eid": "APPLe",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 84,
+    "in_owner_claims": 82,
+    "unrelated": 2
+   },
+   "wiki_verdict": null,
+   "rationale": "82/84 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "activity__305201_入雅典记:7.0.1",
+     "snip": "PLe**：不，先生，远远不够。⏎**APPLe**：倘若不是您在与卡珊德拉的“亲密”交谈时提及了“斯基泰密码”的字眼，APPLe某也无法彻底洗脱自己的罪名。⏎**星锑**：APPLe先生，真没想到你连古希腊时期的斯巴达军事密码也有所涉猎……你果然是本"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['APPLe某'] = 'APPLe'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "Z女士",
+    "owner_eid": "Z",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 81,
+    "in_owner_claims": 72,
+    "unrelated": 9
+   },
+   "wiki_verdict": null,
+   "rationale": "72/81 owner 逐字；灰机 NPC 条目 Z女士/desc=张之之；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__104_老虎的金黄:12.2.0",
+     "snip": "方便让我们两个独处一会儿吗？⏎**红弩箭**：嗯，随你们的便。⏎女士与十四行诗徐步至走廊茶水间。⏎**秘书莎朗**：我替Z女士传话。请你本周五去她办公室一趟。⏎**十四行诗**：啊……好的，收到！多谢告知。⏎**秘书莎朗**：乐意效劳。⏎她点了点"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['Z女士'] = 'Z'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "苏芙比小姐",
+    "owner_eid": "苏芙比",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 77,
+    "in_owner_claims": 68,
+    "unrelated": 9
+   },
+   "wiki_verdict": null,
+   "rationale": "68/77 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "activity__15101_复兴_乌卢鲁运动会:8.0.1",
+     "snip": "下——哇啊！⏎声音还未散去，孩子们就一同消失在走廊的那头。⏎**芭妮芭妮**：哇……可燃点小姐跑得可真快，比喝了魔药后的苏芙比小姐还快……"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['苏芙比小姐'] = '苏芙比'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "APPLe先生",
+    "owner_eid": "APPLe",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 67,
+    "in_owner_claims": 56,
+    "unrelated": 11
+   },
+   "wiki_verdict": null,
+   "rationale": "56/67 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:5.2.0",
+     "snip": "**星锑**：呼，帮大忙了，维尔汀～！APPLe先生差点就要和我的唱片一起被做成仰望星空派了！⏎**维尔汀**：你也帮大忙了，星锑。⏎**星锑**：……我好像没帮到你什么啊"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['APPLe先生'] = 'APPLe'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "露西女士",
+    "owner_eid": "露西",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 66,
+    "in_owner_claims": 55,
+    "unrelated": 11
+   },
+   "wiki_verdict": null,
+   "rationale": "55/66 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__107_孤独之歌:8.0.2",
+     "snip": "……这个超越的真理……⏎**37**：——是我们无法承受的吗？⏎**破译组长**：……快让开，让开！⏎**破译组长**：露西女士，这个读法是对的！⏎**破译组长**：您拿给我的纸条是正确的，这就是这个术式使用的神秘学语言！您究竟是从哪里拿到了它——"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['露西女士'] = '露西'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "莫莉",
+    "owner_eid": "莫莉德尔",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 54,
+    "in_owner_claims": 52,
+    "unrelated": 2
+   },
+   "wiki_verdict": null,
+   "rationale": "52/54 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__108_忧郁的热带:1.0.1",
+     "snip": "……卡森管家他、他……⏎她被灰尘呛了个喷嚏。⏎**苏芙比**：阿、阿嚏……！⏎老将军走进了会客室。⏎**伊戈尔将军**：莫莉德尔呢？⏎他环视房间各处，但这儿没有一位叫做“莫莉德尔”的人。"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['莫莉'] = '莫莉德尔'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "第一助手",
+    "owner_eid": "十四行诗",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 53,
+    "in_owner_claims": 52,
+    "unrelated": 1
+   },
+   "wiki_verdict": null,
+   "rationale": "52/53 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__109_疯癫与文明:2.2.0",
+     "snip": "来拜访这座科马拉监狱——这是我的证件，它如假包换。⏎**十四行诗**：……⏎一些无关紧要的先斩后奏，让旁边并不擅长撒谎的第一助手涨红了脸。⏎隔着监狱的围栏，狱卒犹豫地接过了那张身份证明。⏎那是一张很有质感的卡片，上面还印有圣洛夫基金会的印章。⏎**"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['第一助手'] = '十四行诗'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "十四行诗小姐",
+    "owner_eid": "十四行诗",
+    "owner_type": "角色"
+   },
+   "df": {
+    "total": 52,
+    "in_owner_claims": 49,
+    "unrelated": 3
+   },
+   "wiki_verdict": null,
+   "rationale": "49/52 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__105_洞穴的囚徒:7.1.0",
+     "snip": "亚小姐，你能再念一下岛上的禁忌吗？⏎**十四行诗**：刚刚太黑，我没来得及全都记下来……⏎**无线电小姐**：不用担心，十四行诗小姐，我都录下来了。⏎蓝色小花自豪地微微晃动，展示它用心聆听的成果。⏎**无线电小姐**：一、不能吃豆子。二、东西落下后，不"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['十四行诗小姐'] = '十四行诗'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "拉普拉斯科算中心",
+    "owner_eid": "科算中心",
+    "owner_type": "组织"
+   },
+   "df": {
+    "total": 52,
+    "in_owner_claims": 40,
+    "unrelated": 12
+   },
+   "wiki_verdict": null,
+   "rationale": "40/52 owner 逐字；ts=0；全称形",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__107_孤独之歌:12.2.0",
+     "snip": "术式，那个你们说能帮助到所有人的“庇佑”，现在……它能生效了吗？⏎**哑谜**：——让我进去。⏎【标题卡】科算中心走廊⏎拉普拉斯科算中心-走廊⏎科算中心的走廊已经不复理性的洁净。⏎道金斯变成的泥巴傀儡无疑给它来了一记痛击，安全员们用上了所有的洁净球，才使地"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['拉普拉斯科算中心'] = '科算中心'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_with_note",
+   "target": {
+    "alias": "基金会总部",
+    "owner_eid": "圣洛夫基金会",
+    "owner_type": "组织"
+   },
+   "df": {
+    "total": 54,
+    "in_owner_claims": 39,
+    "unrelated": 15
+   },
+   "wiki_verdict": null,
+   "rationale": "39/54 owner 逐字；ts=0",
+   "evidence_chunks": [
+    {
+     "chunk_id": "mainline__103_故事一无所有:12.0.1",
+     "snip": "！等我们出去了，找机会谢谢他们吧！⏎**维尔汀**：嗯！⏎**“圈环”**：咳咳！我也带来了时间方面的重要情报，五天后，基金会总部会派人来我们学校。这段时间里，学校一定会把我们管得死死的。"
+    }
+   ],
+   "testset": {
+    "matched_qids": []
+   },
+   "before": "alias_index['基金会总部'] = '圣洛夫基金会'",
+   "after": "不变（保留）"
+  },
+  {
+   "type": "keep_node",
+   "target": {
+    "eid": "管理员",
+    "node_type": "角色",
+    "desc": "误以为维尔汀在反思的管理员"
+   },
+   "df": {
+    "total": 6
+   },
+   "nchunks": 2,
+   "docs": [
+    "mainline__103_故事一无所有",
+    "mainline__113_他者的悲哀"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=6 基本篇内（mainline103/113 图书馆场景），ts=0，无害",
+   "evidence_chunks": [
+    {
+     "snip": "们将面向不再相同的新天地。」⏎【标题卡】一处庭院⏎【标题卡】第一防线图书馆⏎**维尔汀**：你好，我来归还这本书。⏎**管理员**：好。⏎她抬起头，看到了眼前的人，又扶了扶眼镜，确认了下书名。⏎——《历代校长演讲精选》⏎**管理员**：……⏎**"
+    },
+    {
+     "snip": "3”。根据科马拉议会投掷准则，何塞的奖励是60片利培酮、40片氯氮平、40片地西泮。与此同时，他将擢升为科马拉议会的文化管理员。⏎**奥克塔维奥**：述职交接前，何塞需要在第一厕所完成为期七天的清扫任务。⏎**囚犯Ⅲ**：太……太好了！我早就有一"
+    }
+   ],
+   "name_contains_entities": [],
+   "before": "节点 '管理员' 为规范名（alias_index 直配 1.0 分）",
+   "after": "不变",
+   "r4_proposed_annotation": null
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "伙计",
+    "node_type": "角色",
+    "desc": "医馆药童"
+   },
+   "df": {
+    "total": 161
+   },
+   "nchunks": 5,
+   "docs": [
+    "character__34701_打虎记"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=161 vs 仅 5 块(打虎记 1 篇)；R018 以 1.0 分抢种子；R4 应标注按篇限定（如 打虎记·医馆伙计）",
+   "evidence_chunks": [
+    {
+     "snip": "。⏎**？？？**：嗯……好凶啊。⏎**？？？**：我们只是盯上了同一群人而已。在“暴雨”来临前，大家都想多多招揽好用的伙计。⏎**？？？**：这么一说，你与我的命运是不是……已经紧紧地、结合在一起了呢？⏎**十四行诗**：……⏎**十四行诗*"
+    },
+    {
+     "snip": "**行动队长**：快点、快点——好伙计就看你的了！⏎**行动队长**：就差一点……⏎**行动队长**：引擎发动了——！！⏎**苏芙比**：哇～这也是了不起的神"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "后街伙计",
+     1
+    ]
+   ],
+   "before": "节点 '伙计' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "character__34701_打虎记"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "猎人",
+    "node_type": "概念",
+    "desc": "诗中的贪婪者"
+   },
+   "df": {
+    "total": 20
+   },
+   "nchunks": 1,
+   "docs": [
+    "anecdote__1906_重返人间"
+   ],
+   "wiki_verdict": "灰机 lexicon 命中：[\"UFO\"]",
+   "rationale": "概念节点（anecdote__1906 诗中贪婪者，1 块）；R018 以 1.0 分抢种子；灰机 zh2en『猎人』↔UFO（疑另一所指）；R4 标注寓言概念属性",
+   "evidence_chunks": [
+    {
+     "snip": "红弩箭**：这么说吧，这里虽然被称为基地……⏎**红弩箭**：但实际能免疫“暴雨”的，不过是条二十米出头的狭长走道，没比猎人的狩猎小屋大到哪里。⏎**红弩箭**：我的那帮前同僚们早就把这里搜了个底朝天。⏎**红弩箭**：拉普拉斯的那群家伙让实验"
+    },
+    {
+     "snip": "弹巢。⏎**洛佩拉**：一，二，三。⏎这儿没有敌人，没有目标，也没有对手。⏎她从没有如此茫然地举起过枪。⏎如同置身荒原的猎人，她无处可去，也无家可归。⏎**洛佩拉**：中靶。⏎三颗子弹，留下标靶上的一个孔洞。⏎**洛佩拉**：一，二，三。⏎弹壳"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "宝石猎人",
+     5
+    ],
+    [
+     "猎人角",
+     1
+    ]
+   ],
+   "before": "节点 '猎人' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1906_重返人间"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "小孩",
+    "node_type": "角色",
+    "desc": "摔倒的孩子"
+   },
+   "df": {
+    "total": 104
+   },
+   "nchunks": 6,
+   "docs": [
+    "anecdote__1912_塞梅尔维斯"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=104 vs 仅 6 块(塞梅尔维斯 1 篇)；R4 按篇限定标注",
+   "evidence_chunks": [
+    {
+     "snip": "，超越任何能工巧匠，能雕琢薄叶、金属、宝石，也能轻易筑起一座圣殿，或摧毁一艘巨船。⏎**维尔汀**：现在……却沦为了惩罚小孩的道具了啊。⏎打断思考的是第一只攀登上小腿的圆形沙米尔。它开始工作了。⏎**维尔汀**：唔……！好痛。⏎**维尔汀**："
+    },
+    {
+     "snip": "接管。⏎**Z**：您打算做什么？⏎**康斯坦丁**：这一着我们是劣势。⏎**康斯坦丁**：他们如此小题大做，直接将那群小孩推到了对立面。⏎**康斯坦丁**：猜忌的种子已经在孩子们的心中种下了。⏎**康斯坦丁**：这场风波影响深远，重塑很快就会"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "小孩Ⅲ",
+     4
+    ],
+    [
+     "小孩Ⅳ",
+     4
+    ],
+    [
+     "贫民区小孩",
+     2
+    ],
+    [
+     "窗外的小孩",
+     1
+    ],
+    [
+     "船贩小孩",
+     1
+    ]
+   ],
+   "before": "节点 '小孩' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1912_塞梅尔维斯"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "教师",
+    "node_type": "角色",
+    "desc": "领着一群孩子进车厢的老师"
+   },
+   "df": {
+    "total": 21
+   },
+   "nchunks": 2,
+   "docs": [
+    "anecdote__1924_在路上"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=21 vs 2 块(在路上 1 篇)；R273『少女教师』被其抢种子（审计检6）；R4 按篇限定标注",
+   "evidence_chunks": [
+    {
+     "snip": "远方。⏎**星锑**：可恶，这可是苏芙比给我们买的新船啊……⏎**星锑**：我花了那么多心血，废了那么多口舌才摆脱那个女教师的唠叨！⏎**APPLe**：我想我们最好坦然接受人生的离别，船长。⏎**？？？**：有些时候，逃跑是为了奔赴下一个战场"
+    },
+    {
+     "snip": "，苏芙比小姐这段时间承蒙诸位照顾了。⏎**星锑**：等等，你认识苏芙比？⏎**维尔汀**：Z女士说，她以前是苏芙比的家庭教师。⏎**莫桑女士**：那是一个很长的故事。⏎**莫桑女士**：现在还是先让身为内部人员的红弩箭小姐介绍一下基地的情况吧。"
+    }
+   ],
+   "name_contains_entities": [],
+   "before": "节点 '教师' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1924_在路上"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "水手",
+    "node_type": "角色",
+    "desc": "帆船船头报告者"
+   },
+   "df": {
+    "total": 26
+   },
+   "nchunks": 3,
+   "docs": [
+    "activity__23101_圣火纪行_东区黎明",
+    "mainline__110_复乐园"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=26 vs 3 块但跨 2 篇（复乐园 迪达号水手 / 圣火纪行 东区黎明）——跨篇同泛称焊合嫌疑；R4 标注 + 建议 R3 复核拆分",
+   "evidence_chunks": [
+    {
+     "snip": "系统，以降低宇宙不稳定性的增长”……⏎**星锑**：假如说，宇宙是一根缆绳，不，是一大堆缆绳，那就必须得有一个拉拽缆绳的水手来维护它们之类的。⏎**X**：听起来像是几个世纪前的宇宙观……⏎他不置可否，原地转了一圈。⏎**X**：不过，缆绳的比"
+    },
+    {
+     "snip": "。⏎**乌尔里希**：什么……⏎螺旋桨飞速地搅动海面，燃油的味道充斥鼻腔。⏎**乌尔里希**：这是……？⏎站在帆船船头的水手回过头来。⏎**水手**：“迪达号”驱逐舰和“特里格拉夫”战列舰。⏎**水手**：从堪察加彼得罗巴甫洛夫斯克出发，跨越整"
+    }
+   ],
+   "name_contains_entities": [],
+   "before": "节点 '水手' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "activity__23101_圣火纪行_东区黎明",
+     "mainline__110_复乐园"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "警卫",
+    "node_type": "角色",
+    "desc": "按倒伊莎贝拉的警卫"
+   },
+   "df": {
+    "total": 40
+   },
+   "nchunks": 4,
+   "docs": [
+    "anecdote__1908_齿轮的意志",
+    "anecdote__1910_风吹乌哈拉",
+    "character__20601_旧金山小子",
+    "mainline__103_故事一无所有"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=40 vs 4 块但跨 4 篇（齿轮的意志/风吹乌哈拉/旧金山小子/故事一无所有）——4 个不同故事的警卫焊在一节点，跨篇泛称焊合最重者；R4 标注 + 建议 R3 复核拆分",
+   "evidence_chunks": [
+    {
+     "snip": "需求或遇可疑人员，可前往一楼大堂寻求帮助。⏎**播报机**：如您身处的位置距一楼大堂较远，请按响消防箱旁的黄色按钮。楼层警卫将提供协助。"
+    },
+    {
+     "snip": "**播报机**：如您身处的位置距一楼大堂较远，请按响消防箱旁的黄色按钮。楼层警卫将提供协助。⏎不远不近的脚步声又出现了。⏎**十四行诗**：来了。⏎**十四行诗**：这附近都没有消防箱……不过，没关系"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "城镇警卫Ⅰ",
+     5
+    ],
+    [
+     "校园警卫",
+     4
+    ],
+    [
+     "维也纳警卫",
+     4
+    ],
+    [
+     "城镇警卫Ⅱ",
+     2
+    ],
+    [
+     "城镇警卫Ⅲ",
+     1
+    ],
+    [
+     "警卫士兵",
+     1
+    ]
+   ],
+   "before": "节点 '警卫' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1908_齿轮的意志",
+     "anecdote__1910_风吹乌哈拉",
+     "character__20601_旧金山小子",
+     "mainline__103_故事一无所有"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "店主",
+    "node_type": "角色",
+    "desc": "路边小店主人"
+   },
+   "df": {
+    "total": 21
+   },
+   "nchunks": 14,
+   "docs": [
+    "anecdote__1917_乘法轴上的一天",
+    "character__20603_第一千夜"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=21 vs 14 块跨 2 篇（乘法轴上的一天 / 第一千夜）——跨篇焊合嫌疑；R4 标注 + 建议 R3 复核拆分",
+   "evidence_chunks": [
+    {
+     "snip": "如悲怆悠长的慢板，她一头扎进雾霭昏沉的伦敦。⏎【标题卡】河岸步道⏎临时写成的告示牌拒绝了来客的访问。⏎**笃笃骨**：“店主肺病发作，已前往牙仙女士的特别医院就诊。请在表单上留下姓名、住址与所需商品，店主病愈后将登门贩售。”⏎访客捏起笔又立刻放"
+    },
+    {
+     "snip": "⏎唐人街这里也是一样，第一次来的时候我吓了一跳。⏎**波蒂埃**：那次我们接到报警说这边的一家中药铺子遭了贼，过去一看，店主居然是只一人高的大白鸟。⏎**波蒂埃**：还有一次有个三流傀儡师让他的洋娃娃走丢了，我一路追到了这里，向路过的一个大婶问"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "糖果店店主",
+     1
+    ],
+    [
+     "莱恩父子商店的店主",
+     1
+    ],
+    [
+     "饭店店主罗莎",
+     1
+    ]
+   ],
+   "before": "节点 '店主' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1917_乘法轴上的一天",
+     "character__20603_第一千夜"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "卫兵",
+    "node_type": "角色",
+    "desc": "押送犯人者"
+   },
+   "df": {
+    "total": 43
+   },
+   "nchunks": 6,
+   "docs": [
+    "character__19601_飞渡往日"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=43 vs 6 块(飞渡往日 1 篇)；篇内身份一致但词面泛称；R4 按篇限定标注",
+   "evidence_chunks": [
+    {
+     "snip": "这位夹着书箱的小姐就是您的……助手？⏎**？？？**：没有间谍会愚蠢到在公开场合携带这么多资料的，先生们，大可散了吧！⏎卫兵匆忙敬了一个礼，驱使戈连们回到岗位上。⏎霍夫曼面露难色——目前的事态显然没有写在那本《外勤派遣手册》上。⏎**霍夫曼**"
+    },
+    {
+     "snip": "瓦茨医生**：该死……这是污蔑！我并没有……！⏎**维也纳警卫**：停止！谁在这里进行私人决斗——⏎**路人Ⅰ**：啊，卫兵来了——！⏎**路人Ⅲ**：当心些，别踩到我的裙摆！⏎**马库斯**：糟了！霍夫曼女士还没回来，霍夫曼女士——！⏎年轻的"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "护卫兵",
+     16
+    ],
+    [
+     "芝诺卫兵",
+     2
+    ],
+    [
+     "雅典卫兵",
+     2
+    ]
+   ],
+   "before": "节点 '卫兵' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "character__19601_飞渡往日"
+    ],
+    "suggested_qualified_display": null
+   }
+  },
+  {
+   "type": "flag_grounding_r4",
+   "target": {
+    "eid": "信众",
+    "node_type": "角色",
+    "desc": "前来祷告者"
+   },
+   "df": {
+    "total": 24
+   },
+   "nchunks": 1,
+   "docs": [
+    "anecdote__1903_帕米埃角色故事"
+   ],
+   "wiki_verdict": "灰机无同名页/条目（离线 lexicon + 474 页缓存核查）",
+   "rationale": "df=24 vs 1 块(帕米埃 1 篇)；宗教泛称；R4 按篇限定标注",
+   "evidence_chunks": [
+    {
+     "snip": "*露西**：重塑之手的领袖要展示奇迹——面具并不算一个奇迹。⏎**露西**：它只是一个工具，用来控制和挑选那些已经臣服的信众。马修用他自己为我们证明了这一点。⏎**露西**：但这个术式不一样。⏎**助理希曼**：……您是说，这个术式也许是比面具"
+    },
+    {
+     "snip": "如今，厅堂空了一半。被炸成碎石的穹顶自高处落下，占据了缺席者的位置。⏎**888**：玛尔塔女士，6仍未醒来吗？⏎盲眼的信众摇了摇头，脸上的忧虑越发凝重。⏎女妖不再言语，她身上的伤口也急需清理。⏎接连发生的变故摧毁了这里的一切：信仰的崩溃、人类"
+    }
+   ],
+   "name_contains_entities": [
+    [
+     "启明会”信众Ⅰ",
+     4
+    ],
+    [
+     "兄弟会信众",
+     2
+    ],
+    [
+     "启明会”信众Ⅱ",
+     2
+    ]
+   ],
+   "before": "节点 '信众' 为规范名（alias_index 直配 1.0 分）",
+   "after": "R4：标注 grounding_scope=per_story_generic 元数据（不改名不删节点）",
+   "r4_proposed_annotation": {
+    "grounding_scope": "per_story_generic",
+    "story_scope_docs": [
+     "anecdote__1903_帕米埃角色故事"
+    ],
+    "suggested_qualified_display": null
+   }
+  }
+ ]
+}
