@@ -155,6 +155,8 @@ async def main() -> int:
     ap.add_argument("--no-vector", action="store_true",
                     help="只跑纯图谱模式（更快）")
     ap.add_argument("--limit", type=int, default=0, help="只跑前 N 题（调试）")
+    ap.add_argument("--out", default="",
+                    help="报告落盘路径（默认 reports/eval_300.json；跑第二套题/k 值前必须另指，防覆盖基线）")
     args = ap.parse_args()
 
     s = get_settings()
@@ -214,7 +216,7 @@ async def main() -> int:
               "corpus": {"chunks": len(kb.chunks),
                          "entities": gst["entities"], "edges": gst["edges"]},
               "rows": all_rows}
-    out = s.reports_dir / "eval_300.json"
+    out = Path(args.out) if args.out else s.reports_dir / "eval_300.json"
     s.ensure_dirs()
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2),
                    encoding="utf-8")
