@@ -1,0 +1,6911 @@
+{
+ "_meta": {
+  "name": "rag_testset_i",
+  "built_from": "盲测写手（子代理只读原文）+ 事后图标注（scripts/_iset_annotate.py）",
+  "rules": [
+   "写手不见图谱/候选/模型输出（反循环 R2）",
+   "答案词必在语料（机检）",
+   "答案词不在题面（机检）",
+   "evidence_quote 逐字命中原文（机检）",
+   "pool 为事后图可达性标注，不用于筛题面",
+   "标注归一化：剥标点安全；别名包含逐题人工裁决（见预注册文档裁决表）"
+  ],
+  "seed": 20260926,
+  "annotator": "main-agent + 17 blind-writer subagents",
+  "date": "2026-09-26",
+  "counts": {
+   "L1_T1": 185,
+   "L2_report": 102
+  }
+ },
+ "cases": [
+  {
+   "id": "i001",
+   "q": "哑谜的姐姐葬礼之后，他执意为姐姐留下一套什么样的纪念命名方案？",
+   "ref": "activity__36101_人们向何处去:0.0.0",
+   "evidence": [
+    "霍夫曼结"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "术式核心",
+   "_anchor_eid": "哑谜",
+   "_gold_name": "术式核心",
+   "_neighborhood_size": 112,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i003",
+   "q": "马库斯在霍夫曼女士墓前致词时，说导师激起了她走出哪座岛屿的勇气？",
+   "ref": "activity__36101_人们向何处去:0.0.2",
+   "evidence": [
+    "弗兰南群岛"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "弗兰南群岛",
+   "_anchor_eid": "马库斯",
+   "_gold_name": "弗兰南群岛",
+   "_neighborhood_size": 71,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i004",
+   "q": "专程到拉普拉斯实验室找哑谜、告知他这次回溯把众人带到1920年还带来一场不该存在的战争的那个基金会幕僚长，代号是什么？",
+   "ref": "activity__36101_人们向何处去:1.0.1",
+   "evidence": [
+    "Z"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "Z",
+   "_anchor_eid": "哑谜",
+   "_gold_name": "Z",
+   "_neighborhood_size": 112,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i005",
+   "q": "被同事叫做“鱼缸头”“玻璃脑袋”的研究员乌尔里希，它的身体其实是由什么特殊物质构成的？",
+   "ref": "activity__36101_人们向何处去:2.0.1",
+   "evidence": [
+    "磁流体"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:2.0.1",
+   "_pool": "T1",
+   "_gold_eid": "磁流体",
+   "_anchor_eid": "乌尔里希",
+   "_gold_name": "磁流体",
+   "_neighborhood_size": 27,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i006",
+   "q": "哑谜接任拉普拉斯负责人的庆祝会上，哪个同事借着“生日许愿”的名义，要求取走一小部分玩具箱的外部材料？",
+   "ref": "activity__36101_人们向何处去:13.0.1",
+   "evidence": [
+    "兔毛手袋"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:13.0.1",
+   "_pool": "T1",
+   "_gold_eid": "兔毛手袋",
+   "_anchor_eid": "哑谜",
+   "_gold_name": "兔毛手袋",
+   "_neighborhood_size": 112,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i007",
+   "q": "拉普拉斯众人一直在研究的“玩具箱”，最初是由谁送来的？",
+   "ref": "activity__36101_人们向何处去:1.0.2",
+   "evidence": [
+    "缪斯三世"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:1.0.2",
+   "_pool": "T1",
+   "_gold_eid": "缪斯三世",
+   "_anchor_eid": "玩具箱",
+   "_gold_name": "缪斯三世",
+   "_neighborhood_size": 20,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i009",
+   "q": "基金会康斯坦丁力排人事改革争议、坚持要请来承接科算中心负责人一职的“最佳选择”是哪位研究员？",
+   "ref": "activity__36101_人们向何处去:3.2.1",
+   "evidence": [
+    "阿德勒"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:3.2.1",
+   "_pool": "T1",
+   "_gold_eid": "哑谜",
+   "_anchor_eid": "康斯坦丁",
+   "_gold_name": "哑谜",
+   "_neighborhood_size": 54,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i010",
+   "q": "众人都以为希曼应该陪着哪位女士一起到司辰的箱子里休养，她却自己回到拉普拉斯工作了？",
+   "ref": "activity__36101_人们向何处去:1.0.1",
+   "evidence": [
+    "露西"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "露西",
+   "_anchor_eid": "助理希曼",
+   "_gold_name": "露西",
+   "_neighborhood_size": 10,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i011",
+   "q": "在维也纳地牢剧情里，对多次抗命的塞梅尔维斯执行“灼热心脏”处置的基金会上级叫什么？",
+   "ref": "appendix_unbound__061_2_6_地牢剧情:1.1.0",
+   "evidence": [
+    "琳赛"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "061_2_6_地牢剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "琳赛女士",
+   "_anchor_eid": "塞梅尔维斯",
+   "_gold_name": "琳赛女士",
+   "_neighborhood_size": 205,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i012",
+   "q": "塞梅尔维斯不知不觉间早已完成转化，原来是有人借她随身携带的海螺里的歌声帮她做到了，那是谁的歌声？",
+   "ref": "appendix_unbound__061_2_6_地牢剧情:1.1.0",
+   "evidence": [
+    "罗蕾莱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "061_2_6_地牢剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "罗蕾莱",
+   "_anchor_eid": "塞梅尔维斯",
+   "_gold_name": "罗蕾莱",
+   "_neighborhood_size": 205,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i013",
+   "q": "瓦伦缇娜在维也纳苦等哪位重塑之手成员会合未果，导致双方契约被单方面撕毁？",
+   "ref": "appendix_unbound__061_2_6_地牢剧情:3.1.1",
+   "evidence": [
+    "海因里希"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "061_2_6_地牢剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__061_2_6_地牢剧情:3.1.1",
+   "_pool": "T1",
+   "_gold_eid": "海因里希",
+   "_anchor_eid": "瓦伦缇娜",
+   "_gold_name": "海因里希",
+   "_neighborhood_size": 46,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i015",
+   "q": "马库斯带着新写的文章先去墓园给导师看，她说这些稿子还没寄给哪家报社？",
+   "ref": "activity__36101_人们向何处去:5.0.2",
+   "evidence": [
+    "《白日梦邮报》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:5.0.2",
+   "_pool": "T1",
+   "_gold_eid": "白日梦邮报",
+   "_anchor_eid": "马库斯",
+   "_gold_name": "白日梦邮报",
+   "_neighborhood_size": 71,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i018",
+   "q": "哑谜在箱中高塔门前捡到一枚遗落的徽章，证明谁曾经真的走到过这里？",
+   "ref": "activity__36101_人们向何处去:6.2.0",
+   "evidence": [
+    "格蕾塔·霍夫曼"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:6.2.0",
+   "_pool": "T1",
+   "_gold_eid": "霍夫曼",
+   "_anchor_eid": "哑谜",
+   "_gold_name": "霍夫曼",
+   "_neighborhood_size": 112,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i029",
+   "q": "在荒村安置好伤员之后，贝托尔特把照顾伤兵这件走不开的活儿留给了谁？",
+   "ref": "anecdote__1910_风吹乌哈拉:3.2.1",
+   "evidence": [
+    "阿历克塞"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:3.2.1",
+   "_pool": "T1",
+   "_gold_eid": "阿历克塞·费奥多罗维奇·雷列耶夫",
+   "_anchor_eid": "贝托尔特",
+   "_gold_name": "阿历克塞·费奥多罗维奇·雷列耶夫",
+   "_neighborhood_size": 36,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i030",
+   "q": "红弩箭得知真相后跳起来狠揍了贝托尔特鼻子一拳——贝托尔特让她把救回被困队员当成顺带的事，优先去找回什么？",
+   "ref": "anecdote__1910_风吹乌哈拉:4.0.0",
+   "evidence": [
+    "神秘学文献"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:4.0.0",
+   "_pool": "T1",
+   "_gold_eid": "神秘学文献",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "神秘学文献",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i032",
+   "q": "按贝托尔特在审讯中的交代，1964年由法国佬指挥发掘、后来有一批文献在城破后被偷偷运出流落山间的那座希腊古城叫什么？",
+   "ref": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "evidence": [
+    "恩伊·哈努"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "_pool": "T1",
+   "_gold_eid": "恩伊·哈努遗迹",
+   "_anchor_eid": "贝托尔特",
+   "_gold_name": "恩伊·哈努遗迹",
+   "_neighborhood_size": 36,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i034",
+   "q": "红弩箭转交给贝托尔特的那块刻着ZENO字样的名牌原本是谁的？",
+   "ref": "anecdote__1910_风吹乌哈拉:7.0.1",
+   "evidence": [
+    "哈桑"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:7.0.1",
+   "_pool": "T1",
+   "_gold_eid": "哈桑",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "哈桑",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i035",
+   "q": "红弩箭在审讯结束后交给贝托尔特一件遗物，说是阿历克塞临别前托她转交的——那位总管阿历克塞叫兄弟、后来在洞口被装死的敌人用毒匕首割喉、临终前哀求给个痛快的战友，叫什么名字？",
+   "ref": "anecdote__1910_风吹乌哈拉:6.0.3",
+   "evidence": [
+    "哈桑"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:6.0.3",
+   "_pool": "T1",
+   "_gold_eid": "哈桑",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "哈桑",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i036",
+   "q": "夏利引用过某本指南的第25条，说“陪伴与教育”是引导一种小生物成长的必要过程，她说的是哪本书？",
+   "ref": "appendix_unbound__034_2_2_荒原经营驯化_夏利:0.0.0",
+   "evidence": [
+    "《魔精培训指南》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "034_2_2_荒原经营驯化_夏利",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__034_2_2_荒原经营驯化_夏利:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "魔精培训指南",
+   "_anchor_eid": "夏利",
+   "_gold_name": "魔精培训指南",
+   "_neighborhood_size": 24,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i039",
+   "q": "贝托尔特奉命找回那批来自定居中亚的西方神秘学家家族的文献——族谱、地图、日记和墓志铭抄本，他用哪个说法称呼这批东西？",
+   "ref": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "evidence": [
+    "爱琴海的遗宝"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "_pool": "T1",
+   "_gold_eid": "爱琴海的遗宝",
+   "_anchor_eid": "贝托尔特",
+   "_gold_name": "爱琴海的遗宝",
+   "_neighborhood_size": 36,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i040",
+   "q": "红弩箭在乌哈拉落地时没人来接，是个穿袍子的当地人热情地用步数和茶铺给她指了去驻地的路；后来部队集合点齐时，这个总念叨“阿历克塞兄弟”的迟到兵才露了真面目——他叫什么？",
+   "ref": "anecdote__1910_风吹乌哈拉:1.0.2",
+   "evidence": [
+    "哈桑"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:1.0.2",
+   "_pool": "T1",
+   "_gold_eid": "哈桑",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "哈桑",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i041",
+   "q": "会议上，露西这位曾任纽约第三分部负责人的汇报者，为了给群体癔症、雨水倒流、时间回退这串异象降低沟通成本，当场提议把它命名成什么？",
+   "ref": "activity__38101_世纪末尺度:0.0.0",
+   "evidence": [
+    "时空灾害"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "时空灾害",
+   "_anchor_eid": "露西",
+   "_gold_name": "时空灾害",
+   "_neighborhood_size": 95,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i042",
+   "q": "在“新办事处建设”这件事上，从格拉斯哥办事处调来工程部的肯纳在会上宣布，她将和哪位委员搭档共同推进后续计划？",
+   "ref": "activity__38101_世纪末尺度:0.0.1",
+   "evidence": [
+    "伊里内伊"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "伊里内伊",
+   "_anchor_eid": "肯纳",
+   "_gold_name": "伊里内伊",
+   "_neighborhood_size": 30,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i043",
+   "q": "去诺瓦米奇出发前，监工蓝图提起上次因为伦敦分部外立面选材跟人大吵一架，那位跟她吵过架、这次又被迫搭档的老同事是谁？",
+   "ref": "activity__38101_世纪末尺度:0.0.3",
+   "evidence": [
+    "奠基石"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:0.0.3",
+   "_pool": "T1",
+   "_gold_eid": "奠基石",
+   "_anchor_eid": "蓝图",
+   "_gold_name": "奠基石",
+   "_neighborhood_size": 82,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i044",
+   "q": "回声谣身边总跟着一只爱骂人、自称“这里真正的老大”的手偶伙伴，它叫什么名字？",
+   "ref": "activity__38101_世纪末尺度:13.0.1",
+   "evidence": [
+    "小洪扎"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:13.0.1",
+   "_pool": "T1",
+   "_gold_eid": "小洪扎",
+   "_anchor_eid": "回声谣",
+   "_gold_name": "小洪扎",
+   "_neighborhood_size": 46,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i045",
+   "q": "柏林以东带着穹顶模型和录像带回基金会四处游说，最后诺瓦米奇的重建工作究竟是在谁的授意下再度重启的？",
+   "ref": "activity__38101_世纪末尺度:18.0.0",
+   "evidence": [
+    "康斯坦丁"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:18.0.0",
+   "_pool": "T1",
+   "_gold_eid": "康斯坦丁",
+   "_anchor_eid": "柏林以东",
+   "_gold_name": "康斯坦丁",
+   "_neighborhood_size": 47,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i046",
+   "q": "伊里内伊委员在出发前叮嘱自己的哪名下属“只需要向我汇报”，让她以助手名义陪同建筑师去诺瓦米奇？",
+   "ref": "activity__38101_世纪末尺度:0.0.3",
+   "evidence": [
+    "蓝图"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:0.0.3",
+   "_pool": "T1",
+   "_gold_eid": "蓝图",
+   "_anchor_eid": "伊里内伊",
+   "_gold_name": "蓝图",
+   "_neighborhood_size": 46,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i047",
+   "q": "卢齐安融入回声石后，回声谣沉入一片无限的光海，那个称她“你是喜悦之流”的辽远声音叫什么？",
+   "ref": "activity__38101_世纪末尺度:15.2.1",
+   "evidence": [
+    "无明的回声"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:15.2.1",
+   "_pool": "T1",
+   "_gold_eid": "无明的回声",
+   "_anchor_eid": "回声谣",
+   "_gold_name": "无明的回声",
+   "_neighborhood_size": 46,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i049",
+   "q": "蓝图说自己差一点就成建筑师，她爷爷是那所著名设计学校的最后一届学生，是哪所学校？",
+   "ref": "activity__38101_世纪末尺度:14.1.0",
+   "evidence": [
+    "包豪斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:14.1.0",
+   "_pool": "T1",
+   "_gold_eid": "包豪斯",
+   "_anchor_eid": "蓝图",
+   "_gold_name": "包豪斯",
+   "_neighborhood_size": 82,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i051",
+   "q": "拉普拉斯实验室的通讯里，希曼讲完混沌能量与回声石的耦合假设、并提出“请中止重建工作”后，她这段话主要是说给哪位听众听的？",
+   "ref": "activity__38101_世纪末尺度:12.3.1",
+   "evidence": [
+    "奠基石"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:12.3.1",
+   "_pool": "T1",
+   "_gold_eid": "奠基石",
+   "_anchor_eid": "助理希曼",
+   "_gold_name": "奠基石",
+   "_neighborhood_size": 10,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i052",
+   "q": "“老橡树”酒馆里那位没有执照、却能报出奠基石小名“斯塔夏”的和蔼老妇人，真名叫什么？",
+   "ref": "activity__38101_世纪末尺度:5.0.4",
+   "evidence": [
+    "奥尔加"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:5.0.4",
+   "_pool": "T1",
+   "_gold_eid": "奥尔加",
+   "_anchor_eid": "奠基石",
+   "_gold_name": "奥尔加",
+   "_neighborhood_size": 136,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i053",
+   "q": "据奥尔加说，卢齐安是在一场人们被士兵粗暴塞进火车、往边境开去的事件中与父母走散的，这场事件被称作什么？",
+   "ref": "activity__38101_世纪末尺度:6.2.1",
+   "evidence": [
+    "大流放"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:6.2.1",
+   "_pool": "T1",
+   "_gold_eid": "大流放",
+   "_anchor_eid": "卢齐安",
+   "_gold_name": "大流放",
+   "_neighborhood_size": 32,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i054",
+   "q": "诺瓦米奇项目结束、办事处竣工之后，奠基石先被派往哪一处地方，评估那里被证实能抵御回溯的拉普拉斯办公室？",
+   "ref": "activity__38101_世纪末尺度:21.0.0",
+   "evidence": [
+    "普列谢茨克"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:21.0.0",
+   "_pool": "T1",
+   "_gold_eid": "普列谢茨克",
+   "_anchor_eid": "奠基石",
+   "_gold_name": "普列谢茨克",
+   "_neighborhood_size": 136,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i062",
+   "q": "炸掉化工厂的男孩X在最后对小春雀儿说，就算找不到失踪者也可以跟他一起回某个组织，X来自哪个组织？",
+   "ref": "anecdote__1911_小春雀儿:5.0.1",
+   "evidence": [
+    "拉普拉斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:5.0.1",
+   "_pool": "T1",
+   "_gold_eid": "科算中心",
+   "_anchor_eid": "X",
+   "_gold_name": "科算中心",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i064",
+   "q": "X拉小春雀儿在化工厂中心的空地上搭手帮忙，两人快要完工的那个庞大装置叫什么？",
+   "ref": "anecdote__1911_小春雀儿:4.0.0",
+   "evidence": [
+    "戈德堡装置"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:4.0.0",
+   "_pool": "T1",
+   "_gold_eid": "戈德堡装置",
+   "_anchor_eid": "X",
+   "_gold_name": "戈德堡装置",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i065",
+   "q": "初次见面时，自称X的男孩操纵一样东西飘到小春雀儿袖口边，替她扫掉了烟尘，那是件什么东西？",
+   "ref": "anecdote__1911_小春雀儿:3.0.1",
+   "evidence": [
+    "魔精毛刷"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:3.0.1",
+   "_pool": "T1",
+   "_gold_eid": "魔精毛刷",
+   "_anchor_eid": "小春雀儿",
+   "_gold_name": "魔精毛刷",
+   "_neighborhood_size": 58,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i067",
+   "q": "小春雀儿施展神秘术探查化工厂时，探知的淡色线条是从她身上的哪件物品延伸出来的？",
+   "ref": "anecdote__1911_小春雀儿:1.0.1",
+   "evidence": [
+    "怀表"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "怀表",
+   "_anchor_eid": "小春雀儿",
+   "_gold_name": "怀表",
+   "_neighborhood_size": 58,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i070",
+   "q": "小春雀儿在公墓扫墓时遇到一个自称与她父亲共事过的陌生人，之后她把消息告诉了母亲——那人提到父亲除了军队还隶属于什么地方？",
+   "ref": "anecdote__1911_小春雀儿:7.0.1",
+   "evidence": [
+    "洛伦兹"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:7.0.1",
+   "_pool": "T1",
+   "_gold_eid": "洛伦兹",
+   "_anchor_eid": "小春雀儿",
+   "_gold_name": "洛伦兹",
+   "_neighborhood_size": 58,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i071",
+   "q": "X最后一次出现在旅馆时，把一件制服作为“另一条路”带给小春雀儿，那是哪家机构的制服？",
+   "ref": "anecdote__1911_小春雀儿:7.0.1",
+   "evidence": [
+    "洛伦兹研究所"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:7.0.1",
+   "_pool": "T1",
+   "_gold_eid": "洛伦兹研究所",
+   "_anchor_eid": "X",
+   "_gold_name": "洛伦兹研究所",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i075",
+   "q": "故事结尾X劝小春雀儿不必执着于找那只走丢的狗，他说她真正该寻找的是什么？",
+   "ref": "anecdote__1911_小春雀儿:7.0.1",
+   "evidence": [
+    "蝴蝶"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:7.0.1",
+   "_pool": "T1",
+   "_gold_eid": "蝴蝶",
+   "_anchor_eid": "X",
+   "_gold_name": "蝴蝶",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i076",
+   "q": "X在调整装置回路时发现开闭单元尺寸不对，他抱怨说要是带上了拉普拉斯的哪样装备就好了？",
+   "ref": "anecdote__1911_小春雀儿:4.0.0",
+   "evidence": [
+    "万能工具箱5.0"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:4.0.0",
+   "_pool": "T1",
+   "_gold_eid": "万能工具箱5.0",
+   "_anchor_eid": "X",
+   "_gold_name": "万能工具箱5.0",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i077",
+   "q": "调查员解释工厂里那股脂肪燃烧、像十个月没洗的臭袜子味时，承认踩点阶段投放过一批清洁用品，那东西叫什么？",
+   "ref": "anecdote__1911_小春雀儿:1.0.0",
+   "evidence": [
+    "臭臭泥自走清洁球"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "臭臭泥自走清洁球",
+   "_anchor_eid": "调查员",
+   "_gold_name": "臭臭泥自走清洁球",
+   "_neighborhood_size": 8,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i084",
+   "q": "科考站里濒临崩溃的诺谛卡把上门求助的亮发访客当成恐怖存在，与“冰川里的黑色疫病”“地母脚下的蠕虫”并列，她冲闯入者吼出的那个可怕称呼是什么？",
+   "ref": "mainline__110_复乐园:1.1.1",
+   "evidence": [
+    "疯雪怪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:1.1.1",
+   "_pool": "T1",
+   "_gold_eid": "重塑之手",
+   "_anchor_eid": "诺谛卡",
+   "_gold_name": "重塑之手",
+   "_neighborhood_size": 48,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i085",
+   "q": "十四行诗凭什么人的情报断定德洛丝应该就是在这一带海岸登陆的，从而坚定了追上她的信心？",
+   "ref": "mainline__110_复乐园:1.2.0",
+   "evidence": [
+    "阿莱夫先生"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:1.2.0",
+   "_pool": "T1",
+   "_gold_eid": "阿莱夫",
+   "_anchor_eid": "卡卡尼亚",
+   "_gold_name": "阿莱夫",
+   "_neighborhood_size": 129,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i086",
+   "q": "在石壁迷宫里带着无线电小姐凭空消失的那队雪橇犬，原来是闻到了德洛丝留在哪件物件上的气味，才一路狂奔穿出了迷宫？",
+   "ref": "mainline__110_复乐园:10.1.1",
+   "evidence": [
+    "打字机"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:10.1.1",
+   "_pool": "T1",
+   "_gold_eid": "打字机",
+   "_anchor_eid": "卡卡尼亚",
+   "_gold_name": "打字机",
+   "_neighborhood_size": 129,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i087",
+   "q": "科考站的储备食物耗尽之后，诺谛卡被困百日，全靠吞吃哪种滑溜溜的黑色东西才撑了下来？",
+   "ref": "mainline__110_复乐园:12.1.1",
+   "evidence": [
+    "黑藻"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:12.1.1",
+   "_pool": "T1",
+   "_gold_eid": "黑藻",
+   "_anchor_eid": "诺谛卡",
+   "_gold_name": "黑藻",
+   "_neighborhood_size": 48,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i088",
+   "q": "按诺谛卡的说法，队里哪位神秘学生物学家最先发现了黑藻这种类藻生物，还亲自验证了它无毒？",
+   "ref": "mainline__110_复乐园:12.1.1",
+   "evidence": [
+    "奥兹"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:12.1.1",
+   "_pool": "T1",
+   "_gold_eid": "奥兹",
+   "_anchor_eid": "黑藻",
+   "_gold_name": "奥兹",
+   "_neighborhood_size": 6,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i091",
+   "q": "那个已经说不出话、靠鞋尖在雪上写字交流的前科考队员，最终作为“祭品”被门内伸出的无数双手拖进了神殿。诺谛卡曾以为她早已死在腹地，含泪抱住她痛哭。这个牺牲者是谁？",
+   "ref": "mainline__110_复乐园:15.0.1",
+   "evidence": [
+    "弗里莱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:15.0.1",
+   "_pool": "T1",
+   "_gold_eid": "弗里莱",
+   "_anchor_eid": "诺谛卡",
+   "_gold_name": "弗里莱",
+   "_neighborhood_size": 48,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i092",
+   "q": "曾与十四行诗和维尔汀在“自由海风号”上结下梁子的那位“老朋友”，在遗址城被白蛾环绕着现身，自称握着德洛丝下落的最后一块拼图。识破她其实是基金会安插在重塑之手内部的间谍，此人是谁？",
+   "ref": "mainline__110_复乐园:14.0.0",
+   "evidence": [
+    "淑女格蕾丝"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:14.0.0",
+   "_pool": "T1",
+   "_gold_eid": "无名者",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "无名者",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i093",
+   "q": "阿尼姆斯得意地宣称自己虔诚的眼睛不会错判任何不诚者，当场揭穿了那位“蛾子”间谍——她正是靠着筹备仪式的功劳，顶替了因一场炼金术事故离开圣地的人，才坐上使徒之位。被顶替掉的那位是谁？",
+   "ref": "mainline__110_复乐园:16.1.1",
+   "evidence": [
+    "勿忘我"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:16.1.1",
+   "_pool": "T1",
+   "_gold_eid": "勿忘我",
+   "_anchor_eid": "阿尼姆斯",
+   "_gold_name": "勿忘我",
+   "_neighborhood_size": 22,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i094",
+   "q": "蛾潮损毁了全部的蛾子之后，“无名者”用哪种鳃已萎缩退化、却奇迹般长出肺的非洲淡水鱼来自比——栖身的水反而会淹死它？",
+   "ref": "mainline__110_复乐园:17.0.0",
+   "evidence": [
+    "肺鱼"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:17.0.0",
+   "_pool": "T1",
+   "_gold_eid": "肺鱼",
+   "_anchor_eid": "无名者",
+   "_gold_name": "肺鱼",
+   "_neighborhood_size": 78,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i097",
+   "q": "在熔岩甬道的巢穴里，她把一件神秘术都留不下痕迹的黑盒当作“奇迹”交给伊戈尔将军，还提醒将军“还没到打开的时候”，此人是谁？",
+   "ref": "mainline__110_复乐园:18.1.0",
+   "evidence": [
+    "传道者·苏菲亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:18.1.0",
+   "_pool": "T1",
+   "_gold_eid": "苏菲亚",
+   "_anchor_eid": "伊戈尔",
+   "_gold_name": "苏菲亚",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i099",
+   "q": "乌尔里希带去南极、声称是目前唯一验证过能在“暴雨”中免疫的材料的那张唱片，最初其实是谁的私人物品？",
+   "ref": "mainline__110_复乐园:3.0.1",
+   "evidence": [
+    "星锑"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:3.0.1",
+   "_pool": "T1",
+   "_gold_eid": "星锑",
+   "_anchor_eid": "乌尔里希",
+   "_gold_name": "星锑",
+   "_neighborhood_size": 27,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i100",
+   "q": "诺谛卡临终跃入神殿大门前还吻着的那枚刻有“阿蒙森”家姓的吊坠，里面那块乳色奇石的原始包裹物是什么？",
+   "ref": "mainline__110_复乐园:17.0.0",
+   "evidence": [
+    "龙涎香"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:17.0.0",
+   "_pool": "T1",
+   "_gold_eid": "龙涎香",
+   "_anchor_eid": "诺谛卡",
+   "_gold_name": "龙涎香",
+   "_neighborhood_size": 48,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i102",
+   "q": "莫莉德尔推开科考站的门，说要独自进去好好和两位客人聊聊，她把哪两位队长留在了外面？一位是白手套队长，另一位是谁？",
+   "ref": "mainline__110_复乐园:8.2.0",
+   "evidence": [
+    "弗雷希特曼"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:8.2.0",
+   "_pool": "T1",
+   "_gold_eid": "弗雷希特曼队长",
+   "_anchor_eid": "莫莉德尔",
+   "_gold_name": "弗雷希特曼队长",
+   "_neighborhood_size": 32,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i103",
+   "q": "在南极平原迷路的诺谛卡自责地形和记忆中完全不一样，她口口念念提起一位同伴，说对方加入队伍就是为了在南极找到一块带金色矿物纹的深海岩石。这位同伴叫什么？",
+   "ref": "mainline__110_复乐园:9.0.1",
+   "evidence": [
+    "弗里莱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:9.0.1",
+   "_pool": "T1",
+   "_gold_eid": "弗里莱",
+   "_anchor_eid": "诺谛卡",
+   "_gold_name": "弗里莱",
+   "_neighborhood_size": 48,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i108",
+   "q": "星锑被一股喷香扑鼻的肉味引进树林，结果被成群的卡邦克鲁扑了满怀。那块包在锡纸里、最后从背包中掉出来的烤羊腿，究竟是谁带来的？",
+   "ref": "mainline__104_老虎的金黄:19.2.0",
+   "evidence": [
+    "红弩箭"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:19.2.0",
+   "_pool": "T1",
+   "_gold_eid": "红弩箭",
+   "_anchor_eid": "星锑",
+   "_gold_name": "红弩箭",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i109",
+   "q": "红弩箭砸穿病房玻璃救出刚苏醒的维尔汀后，让她抓紧自己扫帚的扶手。她出发前给这台载具喊出的名字是什么？",
+   "ref": "mainline__104_老虎的金黄:20.2.0",
+   "evidence": [
+    "红色38"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:20.2.0",
+   "_pool": "T1",
+   "_gold_eid": "红色38",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "红色38",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i111",
+   "q": "一心想把芝加哥办事处划进自己势力范围、证据又被丢进高温碎纸机的人类党团领袖，后来申请十四行诗出庭作证。这位申请证人的领袖全名叫什么？",
+   "ref": "mainline__104_老虎的金黄:17.1.0",
+   "evidence": [
+    "伯纳德·威尔逊"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:17.1.0",
+   "_pool": "T1",
+   "_gold_eid": "伯纳德",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "伯纳德",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i112",
+   "q": "代表人马克因起草了一份想用更高效方式笼络背景各异神秘学家的法案，被委员当众发起公开辩论挑战。这份草案的名字是什么？",
+   "ref": "mainline__104_老虎的金黄:11.0.0",
+   "evidence": [
+    "《暴雨改革：增员与秩序》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:11.0.0",
+   "_pool": "T1",
+   "_gold_eid": "暴雨改革：增员与秩序",
+   "_anchor_eid": "代表人",
+   "_gold_name": "暴雨改革：增员与秩序",
+   "_neighborhood_size": 6,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i113",
+   "q": "佩德拉就暴雨改革草案向代表人马克发起公开辩论挑战，主持人在开场时介绍他是从哪所学院毕业的？",
+   "ref": "mainline__104_老虎的金黄:11.0.0",
+   "evidence": [
+    "圣保罗大学法学院"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:11.0.0",
+   "_pool": "T1",
+   "_gold_eid": "圣保罗大学",
+   "_anchor_eid": "佩德拉",
+   "_gold_name": "圣保罗大学",
+   "_neighborhood_size": 16,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i114",
+   "q": "十四行诗在法庭上出示芝加哥办事处的拒信后，一名现任总部负责人拍案而起，要求与她进行辩论决斗。这名被告叫什么？",
+   "ref": "mainline__104_老虎的金黄:17.1.0",
+   "evidence": [
+    "赛斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:17.1.0",
+   "_pool": "T1",
+   "_gold_eid": "被告人",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "被告人",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i115",
+   "q": "玛蒂尔达·布翁尼那晚正备齐丝绸、乳香和没药要对着月光占卜，是哪一类小生物接二连三想偷走她的银制香料皿？",
+   "ref": "mainline__104_老虎的金黄:9.1.0",
+   "evidence": [
+    "占卜妖精"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:9.1.0",
+   "_pool": "T1",
+   "_gold_eid": "占卜妖精",
+   "_anchor_eid": "玛蒂尔达",
+   "_gold_name": "占卜妖精",
+   "_neighborhood_size": 127,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i116",
+   "q": "苏芙比在客房里念叨她的伟大变形药剂配方：五又三分之二的银酒、二十滴蛤蟆油、最后放入正在燃烧的酸盐。中间还加了哪种材料的渣滓？",
+   "ref": "mainline__104_老虎的金黄:2.1.0",
+   "evidence": [
+    "乌卡亚利软黄金"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:2.1.0",
+   "_pool": "T1",
+   "_gold_eid": "乌卡亚利软黄金",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "乌卡亚利软黄金",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i118",
+   "q": "苏芙比陪槲寄生去树林清理栎列队蛾时，绘声绘色讲了一种住在洞穴里、脑袋是猫形、皮肤和呼吸都有剧毒的巨虫。她管这种虫子叫什么？",
+   "ref": "mainline__104_老虎的金黄:10.1.1",
+   "evidence": [
+    "塔泽尔亚龙"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:10.1.1",
+   "_pool": "T1",
+   "_gold_eid": "塔泽尔亚龙",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "塔泽尔亚龙",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i119",
+   "q": "红弩箭砸穿议事厅一侧的窗户带走维尔汀时，现场有个缩在凳子旁胡乱搓手的人。早先维尔汀还在康复中心靠设备沉睡时，也是这个人挺着脊背守在病房里盯着窗外的访客。她是谁？",
+   "ref": "mainline__104_老虎的金黄:3.2.0",
+   "evidence": [
+    "小梅斯梅尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:3.2.0",
+   "_pool": "T1",
+   "_gold_eid": "小梅斯梅尔",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "小梅斯梅尔",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i120",
+   "q": "表决日的议事厅里，幕僚长匆匆告诉康斯坦丁，已经一年没露面的会长回来了。会长是从什么地方回来的？",
+   "ref": "mainline__104_老虎的金黄:16.0.0",
+   "evidence": [
+    "鸽子屋"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:16.0.0",
+   "_pool": "T1",
+   "_gold_eid": "鸽子屋",
+   "_anchor_eid": "康斯坦丁",
+   "_gold_name": "鸽子屋",
+   "_neighborhood_size": 54,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i121",
+   "q": "大导演布莱恩·芬努临终前对孩子们说，有一部电影他花了几十年都补不上缺口，成了一生的遗憾——那部电影叫什么名字？",
+   "ref": "anecdote__1909_致温妮弗雷德:0.0.0",
+   "evidence": [
+    "新英格兰之梦"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "新英格兰之梦",
+   "_anchor_eid": "布莱恩·芬努",
+   "_gold_name": "新英格兰之梦",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i123",
+   "q": "麦迪逊怒气冲冲闯进温妮弗雷德的宅邸讨说法，说买回来的东西影像死活不变，还骂她奸商——他上门退货的是哪件商品？",
+   "ref": "anecdote__1909_致温妮弗雷德:3.0.1",
+   "evidence": [
+    "记忆台灯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:3.0.1",
+   "_pool": "T1",
+   "_gold_eid": "记忆台灯",
+   "_anchor_eid": "麦迪逊",
+   "_gold_name": "记忆台灯",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i125",
+   "q": "温妮弗雷德最后亲口承认，让她几十年容颜不老、比任何古灵精怪的说法都管用的那种魔法，到底是什么？",
+   "ref": "anecdote__1909_致温妮弗雷德:4.0.1",
+   "evidence": [
+    "金钱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:4.0.1",
+   "_pool": "T1",
+   "_gold_eid": "金钱",
+   "_anchor_eid": "温妮弗雷德",
+   "_gold_name": "金钱",
+   "_neighborhood_size": 56,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i127",
+   "q": "布莱恩咽气后，随身的笔记本翻开在写有新墨渍的一页，上面那句‘至此，他度过了圆满的一生’的悼词其实是谁写下的？",
+   "ref": "anecdote__1909_致温妮弗雷德:7.0.1",
+   "evidence": [
+    "温妮弗雷德"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:7.0.1",
+   "_pool": "T1",
+   "_gold_eid": "温妮弗雷德",
+   "_anchor_eid": "布莱恩·芬努",
+   "_gold_name": "温妮弗雷德",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i128",
+   "q": "温妮弗雷德曾打发执拗的布莱恩去北方水边找鲁萨尔卡求证，可布莱恩在笔记开篇自己承认：这故事的真正起点是哪个地方？",
+   "ref": "anecdote__1909_致温妮弗雷德:0.0.1",
+   "evidence": [
+    "新英格兰"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "新英格兰",
+   "_anchor_eid": "布莱恩·芬努",
+   "_gold_name": "新英格兰",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i130",
+   "q": "退伍以后，布莱恩为了能拍出属于自己的吸血鬼影片，考进了哪所大学的电影艺术学院？",
+   "ref": "anecdote__1909_致温妮弗雷德:2.0.1",
+   "evidence": [
+    "南加州大学"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:2.0.1",
+   "_pool": "T1",
+   "_gold_eid": "南加州大学",
+   "_anchor_eid": "布莱恩·芬努",
+   "_gold_name": "南加州大学",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i132",
+   "q": "德克斯特抱着两桶饮料摇摇晃晃穿过人群时，是谁一句冷冰冰的提醒反倒让他踩中水晶球、把篝火浇灭？",
+   "ref": "character__20603_第一千夜:0.0.1",
+   "evidence": [
+    "环状水星"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "环状水星",
+   "_anchor_eid": "德克斯特",
+   "_gold_name": "环状水星",
+   "_neighborhood_size": 25,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i134",
+   "q": "环状水星给德克斯特做净化仪式时，手里一直燃着、最后烧到落灰的那束草药是什么？",
+   "ref": "character__20603_第一千夜:0.0.2",
+   "evidence": [
+    "白鼠尾草"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "白鼠尾草",
+   "_anchor_eid": "环状水星",
+   "_gold_name": "白鼠尾草",
+   "_neighborhood_size": 77,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i137",
+   "q": "环状水星动身前去寻项链时，把摊上的家当按各人需要全分给了集市众人，唯独留在自己手里没送出去的旧物件是什么？",
+   "ref": "character__20603_第一千夜:3.0.2",
+   "evidence": [
+    "美国地图"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:3.0.2",
+   "_pool": "T1",
+   "_gold_eid": "美国地图",
+   "_anchor_eid": "环状水星",
+   "_gold_name": "美国地图",
+   "_neighborhood_size": 77,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i141",
+   "q": "刻雷乌斯被传唤回总部受审时，坦白自己在1920年10月未经基金会授权就派去前线执行任务的是他小队里的哪名成员？",
+   "ref": "mainline__113_他者的悲哀:0.0.0",
+   "evidence": [
+    "叶尔莫莱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "叶尔莫莱",
+   "_anchor_eid": "刻雷乌斯",
+   "_gold_name": "叶尔莫莱",
+   "_neighborhood_size": 38,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i143",
+   "q": "梅蕾尔在中央瞭望塔大门前被门徒逼到绝境时，是哪个学生从通风管里挥术杖甩出铁网替她解了围？",
+   "ref": "mainline__113_他者的悲哀:14.1.0",
+   "evidence": [
+    "艾米莉亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:14.1.0",
+   "_pool": "T1",
+   "_gold_eid": "艾米莉亚",
+   "_anchor_eid": "梅蕾尔",
+   "_gold_name": "艾米莉亚",
+   "_neighborhood_size": 64,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i144",
+   "q": "奥斯本队长在雨前临时接管帕拉维扬和叶尔莫莱时，说他的雨前反应部队第一梯队归哪个机构直接管辖？",
+   "ref": "mainline__113_他者的悲哀:1.1.0",
+   "evidence": [
+    "雨前调度中心"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "雨前调度中心",
+   "_anchor_eid": "奥斯本",
+   "_gold_name": "雨前调度中心",
+   "_neighborhood_size": 14,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i145",
+   "q": "回第一防线学校帮忙的玛蒂尔达说，秩序协助小组除了维持典礼秩序，还肩负巡检瞭望塔顶上哪种装置的更重要使命？",
+   "ref": "mainline__113_他者的悲哀:1.2.1",
+   "evidence": [
+    "暴雨气象稳定鸽"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:1.2.1",
+   "_pool": "T1",
+   "_gold_eid": "暴雨气象稳定鸽",
+   "_anchor_eid": "玛蒂尔达",
+   "_gold_name": "暴雨气象稳定鸽",
+   "_neighborhood_size": 127,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i147",
+   "q": "卢卡斯和艾米莉亚照著书页空白处的隐形墨水复刻召唤狮鹫的术阵，结果被当场识破毫无效果——这幅恶作剧图样其实是谁上学时画上去的？",
+   "ref": "mainline__113_他者的悲哀:2.2.1",
+   "evidence": [
+    "梅蕾尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:2.2.1",
+   "_pool": "T1",
+   "_gold_eid": "梅蕾尔",
+   "_anchor_eid": "卢卡斯",
+   "_gold_name": "梅蕾尔",
+   "_neighborhood_size": 12,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i149",
+   "q": "无名者告诉洛伦兹蝴蝶研究员，自己体内的趋光性定律已经不存在了——是在与谁的短暂会面中被抹去的？",
+   "ref": "mainline__113_他者的悲哀:12.2.1",
+   "evidence": [
+    "阿尔卡纳"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:12.2.1",
+   "_pool": "T1",
+   "_gold_eid": "阿尔卡纳",
+   "_anchor_eid": "无名者",
+   "_gold_name": "阿尔卡纳",
+   "_neighborhood_size": 78,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i151",
+   "q": "第二次“暴雨”期间芝诺与基金会秘密组建的回环实验室，还有一个什么别称？",
+   "ref": "mainline__113_他者的悲哀:12.2.0",
+   "evidence": [
+    "琥珀屋"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:12.2.0",
+   "_pool": "T1",
+   "_gold_eid": "琥珀屋",
+   "_anchor_eid": "回环实验室",
+   "_gold_name": "琥珀屋",
+   "_neighborhood_size": 17,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i155",
+   "q": "无名者戴着面具关闭了重塑之手的传送通道后被侵蚀击垮，向前栽倒时接住她的飞行女巫是谁？",
+   "ref": "mainline__113_他者的悲哀:17.0.2",
+   "evidence": [
+    "红弩箭"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:17.0.2",
+   "_pool": "T1",
+   "_gold_eid": "红弩箭",
+   "_anchor_eid": "无名者",
+   "_gold_name": "红弩箭",
+   "_neighborhood_size": 78,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i156",
+   "q": "星锑敢躲在重塑之手防线后方用“无比黏口香糖发射器”对付怪物，这件装备是谁送来给她的？",
+   "ref": "mainline__113_他者的悲哀:13.1.0",
+   "evidence": [
+    "X"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:13.1.0",
+   "_pool": "T1",
+   "_gold_eid": "X",
+   "_anchor_eid": "星锑",
+   "_gold_name": "X",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i157",
+   "q": "玛蒂尔达在康复中心醒来后，是谁给她送来一颗新水晶球，替换掉她在第一防线学校碎掉的那颗？",
+   "ref": "mainline__113_他者的悲哀:22.0.0",
+   "evidence": [
+    "贝丽尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:22.0.0",
+   "_pool": "T1",
+   "_gold_eid": "贝丽尔",
+   "_anchor_eid": "玛蒂尔达",
+   "_gold_name": "贝丽尔",
+   "_neighborhood_size": 127,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i159",
+   "q": "审理委员会保留刻雷乌斯的职位和“Ⅻ”小队编制时，伊里内伊说队里只剩一名医生——这位常年的战地医护队员是谁？",
+   "ref": "mainline__113_他者的悲哀:23.0.1",
+   "evidence": [
+    "玛尔纱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:23.0.1",
+   "_pool": "T1",
+   "_gold_eid": "玛尔纱",
+   "_anchor_eid": "刻雷乌斯",
+   "_gold_name": "玛尔纱",
+   "_neighborhood_size": 38,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i160",
+   "q": "委员会大楼二三层接连沦陷之际，哪名重塑之手指挥官麾下的士兵以远超一般神秘学家的纪律性稳步推进？",
+   "ref": "mainline__113_他者的悲哀:12.1.1",
+   "evidence": [
+    "格鲁托夫"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:12.1.1",
+   "_pool": "T1",
+   "_gold_eid": "格鲁托夫",
+   "_anchor_eid": "委员会大楼",
+   "_gold_name": "格鲁托夫",
+   "_neighborhood_size": 13,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i163",
+   "q": "阿尔卡纳突袭基金会总部，在走廊里拦下无名者时，用了哪个名字唤她，还把她比作被人类牢笼囚禁的飞蛾？",
+   "ref": "mainline__113_他者的悲哀:8.0.3",
+   "evidence": [
+    "格蕾丝"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:8.0.3",
+   "_pool": "T1",
+   "_gold_eid": "无名者",
+   "_anchor_eid": "阿尔卡纳",
+   "_gold_name": "无名者",
+   "_neighborhood_size": 59,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i164",
+   "q": "平在南翼花园得知第一防线学校方向的基金会车队不会回援后，与他同伙的那位头目指挥突击小组攻进委员会大楼、扬言今天摧毁那座“高塔”，这人是谁？",
+   "ref": "mainline__113_他者的悲哀:8.0.3",
+   "evidence": [
+    "格鲁托夫"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:8.0.3",
+   "_pool": "T1",
+   "_gold_eid": "格鲁托夫",
+   "_anchor_eid": "平",
+   "_gold_name": "格鲁托夫",
+   "_neighborhood_size": 9,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i165",
+   "q": "重塑之手袭击基金会总部时审理程序被迫中止，特别检察官本宣布要继续限制受审人的人身自由，可哪位受审人反倒抢先一步冲出了审判他的“法庭”？",
+   "ref": "mainline__113_他者的悲哀:9.1.1",
+   "evidence": [
+    "刻雷乌斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.1.1",
+   "_pool": "T1",
+   "_gold_eid": "刻雷乌斯",
+   "_anchor_eid": "特别检察官",
+   "_gold_name": "刻雷乌斯",
+   "_neighborhood_size": 7,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i166",
+   "q": "刻雷乌斯在审理委员会上警告说重塑之手掌握隐秘性极强的传送链，他提到基金会至今没调查清楚、几乎被挖空的一座小山是哪处地点？",
+   "ref": "mainline__113_他者的悲哀:9.1.0",
+   "evidence": [
+    "299高地"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.1.0",
+   "_pool": "T1",
+   "_gold_eid": "299高地",
+   "_anchor_eid": "刻雷乌斯",
+   "_gold_name": "299高地",
+   "_neighborhood_size": 38,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i168",
+   "q": "东翼大楼与委员会大楼失联后，槲寄生从神秘学藏品里翻出了什么东西，靠着共生关系勉强打通了与科算中心的通讯？",
+   "ref": "mainline__113_他者的悲哀:9.2.1",
+   "evidence": [
+    "传讯喇叭蕈"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.2.1",
+   "_pool": "T1",
+   "_gold_eid": "传讯喇叭蕈",
+   "_anchor_eid": "槲寄生",
+   "_gold_name": "传讯喇叭蕈",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i169",
+   "q": "无名者捡起那副滴着黑色黏液的面具想要戴上时，暗处赶来的同伙喊话“别伤着孩子”，这个被护着的孩子指的是谁？",
+   "ref": "mainline__113_他者的悲哀:9.1.2",
+   "evidence": [
+    "小春雀儿"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.1.2",
+   "_pool": "T1",
+   "_gold_eid": "小春雀儿",
+   "_anchor_eid": "无名者",
+   "_gold_name": "小春雀儿",
+   "_neighborhood_size": 78,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i171",
+   "q": "律师用神秘学道具把挖掘艺术送到“瓦尔登湖”酒吧后，是哪个男人认出他就是卡纳比街镜面肥皂泡事件、导致交通瘫痪的罪魁祸首？",
+   "ref": "anecdote__1916_权利归花儿:0.0.2",
+   "evidence": [
+    "勿忘我"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1916_权利归花儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1916_权利归花儿:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "勿忘我",
+   "_anchor_eid": "挖掘艺术",
+   "_gold_name": "勿忘我",
+   "_neighborhood_size": 76,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i172",
+   "q": "挖掘艺术嘴上拒绝加入重塑之手，却被勿忘我提起的一场以反对战争为主题的筹划彻底打动，这场活动叫什么？",
+   "ref": "anecdote__1916_权利归花儿:0.0.2",
+   "evidence": [
+    "环欧洲巡回游行"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1916_权利归花儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1916_权利归花儿:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "环欧洲巡回游行",
+   "_anchor_eid": "勿忘我",
+   "_gold_name": "环欧洲巡回游行",
+   "_neighborhood_size": 30,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i175",
+   "q": "挖掘艺术中了神秘术后陷入幻象，在记忆里的摄政街碰到一位赫赫有名的慈善骗子、也是骗过他的受害者之一，这人是谁？",
+   "ref": "anecdote__1916_权利归花儿:5.0.1",
+   "evidence": [
+    "伦纳德·埃文斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1916_权利归花儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1916_权利归花儿:5.0.1",
+   "_pool": "T1",
+   "_gold_eid": "伦纳德",
+   "_anchor_eid": "挖掘艺术",
+   "_gold_name": "伦纳德",
+   "_neighborhood_size": 76,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i176",
+   "q": "海岸边一名同伴掏枪瞄准红发的除错师，站在中间的挖掘艺术非但没夺枪，反而从袖间抽出什么东西插进了枪管？",
+   "ref": "anecdote__1916_权利归花儿:5.0.0",
+   "evidence": [
+    "玫瑰"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1916_权利归花儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1916_权利归花儿:5.0.0",
+   "_pool": "T1",
+   "_gold_eid": "玫瑰",
+   "_anchor_eid": "挖掘艺术",
+   "_gold_name": "玫瑰",
+   "_neighborhood_size": 76,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i177",
+   "q": "坎吉拉在昌迪加尔街头摆三张牌找黑桃王后的局，赢走一百卢比的报童其实输了——坎吉拉靠谁的配合早把真王后换掉了？",
+   "ref": "appendix_unbound__002_1_3_最初的诗赛季剧情:0.1.0",
+   "evidence": [
+    "喷吉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "002_1_3_最初的诗赛季剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__002_1_3_最初的诗赛季剧情:0.1.0",
+   "_pool": "T1",
+   "_gold_eid": "喷吉",
+   "_anchor_eid": "坎吉拉",
+   "_gold_name": "喷吉",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i178",
+   "q": "伽菈波那讲起《罗摩衍那》成书的传说：这部史诗的作者曾以偷窃为生，某日开悟后收集罗摩的故事编撰成集，他叫什么？",
+   "ref": "appendix_unbound__002_1_3_最初的诗赛季剧情:3.1.0",
+   "evidence": [
+    "蚁垤"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "002_1_3_最初的诗赛季剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__002_1_3_最初的诗赛季剧情:3.1.0",
+   "_pool": "T1",
+   "_gold_eid": "蚁垤",
+   "_anchor_eid": "伽菈波那",
+   "_gold_name": "蚁垤",
+   "_neighborhood_size": 50,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i180",
+   "q": "无线电小姐念过一句“陪伴与教育，这是引导魔精成长的必要过程”，这句是节选自哪本指南的第25条？",
+   "ref": "appendix_unbound__039_2_2_荒原经营驯化_无线电小姐:0.0.0",
+   "evidence": [
+    "魔精培训指南"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "039_2_2_荒原经营驯化_无线电小姐",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__039_2_2_荒原经营驯化_无线电小姐:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "魔精培训指南",
+   "_anchor_eid": "无线电小姐",
+   "_gold_name": "魔精培训指南",
+   "_neighborhood_size": 31,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i181",
+   "q": "安保公司老板跑到威廉警长办公室游说让机器人参与伦敦治安，还当场演示了自家最新款的安保机器人原型机，这台产品的型号名是什么？",
+   "ref": "activity__11101_雷米特杯失窃案:0.1.1",
+   "evidence": [
+    "安全制约-Ⅰ型"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:0.1.1",
+   "_pool": "T1",
+   "_gold_eid": "安全制约-Ⅰ型",
+   "_anchor_eid": "艾弗森",
+   "_gold_name": "安全制约-Ⅰ型",
+   "_neighborhood_size": 27,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i182",
+   "q": "警长拒绝艾弗森的安保提案时，提到一起让民众对私人安保公司信赖一落千丈的旧事，那起事件牵扯的是哪家公司？",
+   "ref": "activity__11101_雷米特杯失窃案:0.1.0",
+   "evidence": [
+    "拉米雷斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:0.1.0",
+   "_pool": "T1",
+   "_gold_eid": "拉米雷斯",
+   "_anchor_eid": "艾弗森",
+   "_gold_name": "拉米雷斯",
+   "_neighborhood_size": 27,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i183",
+   "q": "梅兰妮用一个名字很有味道的喷雾救回了被镜面泡泡勾走魂的男士，她这瓶臭臭泥清新剂喷在了谁鼻子上？",
+   "ref": "activity__11101_雷米特杯失窃案:1.2.1",
+   "evidence": [
+    "查尔顿"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:1.2.1",
+   "_pool": "T1",
+   "_gold_eid": "查尔顿",
+   "_anchor_eid": "梅兰妮",
+   "_gold_name": "查尔顿",
+   "_neighborhood_size": 62,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i185",
+   "q": "偷伦敦之心这一路，戴皮帽的姑娘不停向藏在手提包里那位严厉的老师请教汇报，这位老师是谁？",
+   "ref": "activity__11101_雷米特杯失窃案:1.1.0",
+   "evidence": [
+    "艾西"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "艾西",
+   "_anchor_eid": "梅兰妮",
+   "_gold_name": "艾西",
+   "_neighborhood_size": 62,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i188",
+   "q": "梅兰妮向想摆脱围观人群的小狗摆出一堆稀奇古怪的道具，其中哪样她坦言平时专门用来对付昏昏欲睡的安保员？",
+   "ref": "activity__11101_雷米特杯失窃案:14.0.0",
+   "evidence": [
+    "震荡闹钟"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:14.0.0",
+   "_pool": "T1",
+   "_gold_eid": "震荡闹钟",
+   "_anchor_eid": "梅兰妮",
+   "_gold_name": "震荡闹钟",
+   "_neighborhood_size": 62,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i190",
+   "q": "扑到艾弗森脚边抢下遥控器的那只小狗逃出展馆后，把哪座奖杯放到了朋友查尔顿身边？",
+   "ref": "activity__11101_雷米特杯失窃案:15.0.0",
+   "evidence": [
+    "雷米特杯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:15.0.0",
+   "_pool": "T1",
+   "_gold_eid": "雷米特杯",
+   "_anchor_eid": "艾弗森",
+   "_gold_name": "雷米特杯",
+   "_neighborhood_size": 27,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i194",
+   "q": "苹果造型的机器人第一次遇见忧郁眼神的小狗时，正计算着某家酒吧正门到摩托赛终点的距离，这家酒吧叫什么？",
+   "ref": "activity__11101_雷米特杯失窃案:2.0.0",
+   "evidence": [
+    "机车酒吧"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:2.0.0",
+   "_pool": "T1",
+   "_gold_eid": "机车酒吧",
+   "_anchor_eid": "APPLe",
+   "_gold_name": "机车酒吧",
+   "_neighborhood_size": 99,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i195",
+   "q": "是谁带着频率干扰装置潜入监控室，让星锑船长得以掌控展馆附近五公里的所有广播？",
+   "ref": "activity__11101_雷米特杯失窃案:10.1.0",
+   "evidence": [
+    "APPLe"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:10.1.0",
+   "_pool": "T1",
+   "_gold_eid": "APPLe",
+   "_anchor_eid": "星锑",
+   "_gold_name": "APPLe",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i196",
+   "q": "挖掘艺术从两版新闻夹缝里发现自己的壮举在警方通告里只剩控制洒水车一条，他一怒之下决定把足以让所有人疯狂的派对舞台选在什么地方？",
+   "ref": "activity__11101_雷米特杯失窃案:5.0.1",
+   "evidence": [
+    "雷米特杯展厅"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:5.0.1",
+   "_pool": "T1",
+   "_gold_eid": "雷米特杯展厅",
+   "_anchor_eid": "挖掘艺术",
+   "_gold_name": "雷米特杯展厅",
+   "_neighborhood_size": 76,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i197",
+   "q": "把挖掘艺术抛上天的报纸叼回来、在主人面前转圈炫耀战利品的是只什么小狗？",
+   "ref": "activity__11101_雷米特杯失窃案:6.1.0",
+   "evidence": [
+    "温迪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:6.1.0",
+   "_pool": "T1",
+   "_gold_eid": "温迪",
+   "_anchor_eid": "查尔顿",
+   "_gold_name": "温迪",
+   "_neighborhood_size": 17,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i198",
+   "q": "安保员把想带狗入场的查尔顿挡在馆外，说为小动物们另外备好了一处甚至有专业警犬看护的地方，那处地方叫什么？",
+   "ref": "activity__11101_雷米特杯失窃案:9.0.0",
+   "evidence": [
+    "宠物留存区"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:9.0.0",
+   "_pool": "T1",
+   "_gold_eid": "宠物留存区",
+   "_anchor_eid": "查尔顿",
+   "_gold_name": "宠物留存区",
+   "_neighborhood_size": 17,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i199",
+   "q": "星锑劫播正到高潮时展馆突然陷入黑暗，全靠那颗被悄悄换上的老旧保险丝过载熔断，梅兰妮是在哪个设备里做的这次调包？",
+   "ref": "activity__11101_雷米特杯失窃案:7.1.0",
+   "evidence": [
+    "电闸箱"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:7.1.0",
+   "_pool": "T1",
+   "_gold_eid": "电闸箱",
+   "_anchor_eid": "梅兰妮",
+   "_gold_name": "电闸箱",
+   "_neighborhood_size": 62,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i201",
+   "q": "在《黄金与悲喜剧》里，环状水星收到那封不祥的信后赶去监狱的探监室，探望的是哪个外号带身体部位的老囚犯？",
+   "ref": "anecdote__1919_黄金与悲喜剧:1.0.0",
+   "evidence": [
+    "“断指”"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "断指",
+   "_anchor_eid": "环状水星",
+   "_gold_name": "断指",
+   "_neighborhood_size": 77,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i204",
+   "q": "皮克勒斯在郊野过夜时被潜入帐篷的黑影掳走，连全球最聪明的犬种之一都没能逃过那黑影手里的什么武器？",
+   "ref": "anecdote__1919_黄金与悲喜剧:3.0.0",
+   "evidence": [
+    "医用催眠枪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "医用催眠枪",
+   "_anchor_eid": "皮克勒斯",
+   "_gold_name": "医用催眠枪",
+   "_neighborhood_size": 39,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i205",
+   "q": "外号叫“断指”的囚犯生前是哪个帮派的人？",
+   "ref": "anecdote__1919_黄金与悲喜剧:7.0.0",
+   "evidence": [
+    "柴豆郡后街帮"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:7.0.0",
+   "_pool": "T1",
+   "_gold_eid": "柴豆郡后街帮",
+   "_anchor_eid": "断指",
+   "_gold_name": "柴豆郡后街帮",
+   "_neighborhood_size": 14,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i208",
+   "q": "箱中客厅的灵体沟通仪式结束后，是哪位德鲁伊率先总结说，环状水星找到了和动物沟通的秘诀？",
+   "ref": "anecdote__1919_黄金与悲喜剧:0.0.1",
+   "evidence": [
+    "槲寄生"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "槲寄生",
+   "_anchor_eid": "环状水星",
+   "_gold_name": "槲寄生",
+   "_neighborhood_size": 77,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i209",
+   "q": "在生产工厂里，克努特说要先给饭食填补好东西、让大家干活有力气，过两天再由哪位同志挨个儿安排其他物资？",
+   "ref": "appendix_unbound__007_1_8_地图支线:1.1.0",
+   "evidence": [
+    "维拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "007_1_8_地图支线",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__007_1_8_地图支线:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "维拉",
+   "_anchor_eid": "克努特大叔",
+   "_gold_name": "维拉",
+   "_neighborhood_size": 39,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i210",
+   "q": "克努特搬着工具零件离开工厂前，特意叮嘱工人们早点去食堂，说是当天有人做了炖菜，那是谁做的？",
+   "ref": "appendix_unbound__007_1_8_地图支线:1.1.0",
+   "evidence": [
+    "帕特里基"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "007_1_8_地图支线",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__007_1_8_地图支线:1.1.0",
+   "_pool": "T1",
+   "_gold_eid": "帕特里基",
+   "_anchor_eid": "克努特大叔",
+   "_gold_name": "帕特里基",
+   "_neighborhood_size": 39,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i214",
+   "q": "在来亚什基的港口，把水箭指向半路撞见的北方哨歌当标靶、还口口声声骂维拉是“杂种”的纯血鲁萨尔卡是谁？",
+   "ref": "character__18601_黎明依旧到来:1.0.1",
+   "evidence": [
+    "萨莫蒂瓦"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "18601_黎明依旧到来",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__18601_黎明依旧到来:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "萨莫蒂瓦",
+   "_anchor_eid": "维拉",
+   "_gold_name": "萨莫蒂瓦",
+   "_neighborhood_size": 55,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i217",
+   "q": "皮克勒斯脖子上的呼叫机一路都能收到一位新闻记者的唠叨，这位记者还在节目中自报“本台记者ONiON”的名号，他的代号是什么？",
+   "ref": "anecdote__1919_黄金与悲喜剧:3.0.0",
+   "evidence": [
+    "洋葱头"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "洋葱头",
+   "_anchor_eid": "皮克勒斯",
+   "_gold_name": "洋葱头",
+   "_neighborhood_size": 39,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i218",
+   "q": "在黑铁森林动手的那对杀手里，在车里喋喋不休自曝这一个月抢了三家加油站、五家便利店和一个歌厅的，是其中哪一位？",
+   "ref": "anecdote__1919_黄金与悲喜剧:6.0.0",
+   "evidence": [
+    "潘佐"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:6.0.0",
+   "_pool": "T1",
+   "_gold_eid": "潘佐",
+   "_anchor_eid": "黑铁森林",
+   "_gold_name": "潘佐",
+   "_neighborhood_size": 6,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i220",
+   "q": "潘佐和阿乔因为黑铁森林枪杀案被警方发布了通缉，这起命案原本的死者，当年在帮派里的外号是什么？",
+   "ref": "anecdote__1919_黄金与悲喜剧:7.0.2",
+   "evidence": [
+    "“断指”"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:7.0.2",
+   "_pool": "T1",
+   "_gold_eid": "断指",
+   "_anchor_eid": "黑铁森林",
+   "_gold_name": "断指",
+   "_neighborhood_size": 6,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i221",
+   "q": "带头叫洪三的那个买家，所属的是哪个想在海特街扩张生意的华人商会？",
+   "ref": "character__20601_旧金山小子:0.0.0",
+   "evidence": [
+    "东青商会"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "东青商会",
+   "_anchor_eid": "洪三",
+   "_gold_name": "东青商会",
+   "_neighborhood_size": 9,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i222",
+   "q": "是哪个油头小子把J领上天台谈所谓的军火生意，转头又为了钱反咬了J一口？",
+   "ref": "character__20601_旧金山小子:0.0.2",
+   "evidence": [
+    "安东尼"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "安东尼",
+   "_anchor_eid": "J",
+   "_gold_name": "安东尼",
+   "_neighborhood_size": 93,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i225",
+   "q": "J在天台被人设局那次，当场亮出的那把寒光凛凛的短刃是什么刀？",
+   "ref": "character__20601_旧金山小子:0.0.2",
+   "evidence": [
+    "博伊刀"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:0.0.2",
+   "_pool": "T1",
+   "_gold_eid": "博伊刀",
+   "_anchor_eid": "J",
+   "_gold_name": "博伊刀",
+   "_neighborhood_size": 93,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i227",
+   "q": "有个流浪汉在唐老爹餐馆吃饱后透露，安东尼每晚都搂着姑娘钻进哪家迪厅？",
+   "ref": "character__20601_旧金山小子:2.0.3",
+   "evidence": [
+    "西海岸之星"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:2.0.3",
+   "_pool": "T1",
+   "_gold_eid": "西海岸之星",
+   "_anchor_eid": "安东尼",
+   "_gold_name": "西海岸之星",
+   "_neighborhood_size": 13,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i228",
+   "q": "餐馆角落里两个流浪小孩从某位女士的手提包里翻出玩具把玩，这位穿蓝裙子的女士叫什么？",
+   "ref": "character__20601_旧金山小子:3.0.0",
+   "evidence": [
+    "温妮弗雷德"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "温妮弗雷德",
+   "_anchor_eid": "流浪儿童",
+   "_gold_name": "温妮弗雷德",
+   "_neighborhood_size": 1,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i230",
+   "q": "按安东尼在迪厅里透露的消息，帮派明晚要在都板街哪家饭店办庆功宴，连议员阁下的亲信都会到场？",
+   "ref": "character__20601_旧金山小子:4.0.3",
+   "evidence": [
+    "银门饭店"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:4.0.3",
+   "_pool": "T1",
+   "_gold_eid": "银门饭店",
+   "_anchor_eid": "安东尼",
+   "_gold_name": "银门饭店",
+   "_neighborhood_size": 13,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i232",
+   "q": "布莱克汉交给J一枚能录下一字一句的小玩意儿带进宴会，警局内部管它叫什么？",
+   "ref": "character__20601_旧金山小子:5.0.2",
+   "evidence": [
+    "窃听虫"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:5.0.2",
+   "_pool": "T1",
+   "_gold_eid": "窃听虫",
+   "_anchor_eid": "布莱克汉警长",
+   "_gold_name": "窃听虫",
+   "_neighborhood_size": 11,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i233",
+   "q": "X博士觉得啁啾表这个开关机设计轻松好用，建议推广到哪个地方？",
+   "ref": "appendix_unbound__071_S02_啁啾表_收藏品:0.1.0",
+   "evidence": [
+    "拉普拉斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "071_S02_啁啾表_收藏品",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__071_S02_啁啾表_收藏品:0.1.0",
+   "_pool": "T1",
+   "_gold_eid": "科算中心",
+   "_anchor_eid": "X",
+   "_gold_name": "科算中心",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i241",
+   "q": "库珀花环在实验事故后昏睡在隔离病房，最先赶到病床边探望她、还说自己刚从另一边的病房过来的理线学者是谁？",
+   "ref": "activity__27101_1987宇宙组曲:0.0.1",
+   "evidence": [
+    "北方哨歌"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "北方哨歌",
+   "_anchor_eid": "库珀花环",
+   "_gold_name": "北方哨歌",
+   "_neighborhood_size": 33,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i242",
+   "q": "冷周六没空去听理线学讲座，却让小蛇钻进听众口袋把笔记捎回来交给指针，这条叼着数据卡跑腿的小蛇叫什么名字？",
+   "ref": "activity__27101_1987宇宙组曲:2.0.0",
+   "evidence": [
+    "海伦娜"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:2.0.0",
+   "_pool": "T1",
+   "_gold_eid": "海伦娜(小蛇",
+   "_anchor_eid": "冷周六",
+   "_gold_name": "海伦娜(小蛇",
+   "_neighborhood_size": 65,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i244",
+   "q": "科兹洛夫给养女定了“库珀花环”这个演出用的名字，他说这个名字是我和谁一起想出来的？",
+   "ref": "activity__27101_1987宇宙组曲:14.2.0",
+   "evidence": [
+    "娜塔莉亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:14.2.0",
+   "_pool": "T1",
+   "_gold_eid": "娜塔莉亚",
+   "_anchor_eid": "科兹洛夫",
+   "_gold_name": "娜塔莉亚",
+   "_neighborhood_size": 10,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i248",
+   "q": "含章鼎给大伙儿解释鼎身底部那行“微波炉可用”的字，说它现在住的这只鼎是从哪个旧货市场买来的？",
+   "ref": "activity__27101_1987宇宙组曲:6.0.3",
+   "evidence": [
+    "潘家园"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:6.0.3",
+   "_pool": "T1",
+   "_gold_eid": "潘家园",
+   "_anchor_eid": "含章鼎",
+   "_gold_name": "潘家园",
+   "_neighborhood_size": 13,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i251",
+   "q": "北方哨歌翻看那台要跟着上天的监测器，发现语音包里有“钢铁的炼成方案”这一款，她猜这套语音是采样自谁的会议发言？",
+   "ref": "activity__27101_1987宇宙组曲:11.0.1",
+   "evidence": [
+    "露西女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:11.0.1",
+   "_pool": "T1",
+   "_gold_eid": "露西",
+   "_anchor_eid": "北方哨歌",
+   "_gold_name": "露西",
+   "_neighborhood_size": 102,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i252",
+   "q": "冷周六连人带鱼缸一起被传进会议室，慌乱中她把工牌挂变换了材质，于是那成了拉普拉斯第一块带着什么挂带的工牌？",
+   "ref": "activity__27101_1987宇宙组曲:11.0.2",
+   "evidence": [
+    "石棉石"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:11.0.2",
+   "_pool": "T1",
+   "_gold_eid": "石棉石",
+   "_anchor_eid": "冷周六",
+   "_gold_name": "石棉石",
+   "_neighborhood_size": 65,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i253",
+   "q": "阿夫西维安慰伙伴说只要认真上课、学好知识，在哪儿都能重建家园，这个说法是谁教给他的？",
+   "ref": "activity__27101_1987宇宙组曲:13.0.1",
+   "evidence": [
+    "维拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:13.0.1",
+   "_pool": "T1",
+   "_gold_eid": "维拉",
+   "_anchor_eid": "阿夫西维",
+   "_gold_name": "维拉",
+   "_neighborhood_size": 32,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i259",
+   "q": "冷周六说只要调整卢恩矿石的使用比例，就能把软盘的定位范围死死锁在分部附近、保证小宇航员安全返航，那这批矿石当初是谁一路“偷运”到普列谢茨克的？",
+   "ref": "activity__27101_1987宇宙组曲:6.0.1",
+   "evidence": [
+    "命名日"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:6.0.1",
+   "_pool": "T1",
+   "_gold_eid": "命名日",
+   "_anchor_eid": "冷周六",
+   "_gold_name": "命名日",
+   "_neighborhood_size": 65,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i260",
+   "q": "北方哨歌当年把那份要特批组员留下的申请书递给指针，指针一直没签；后来她在分部大厅追问到底是谁把申请交到了路德维希手里，答案是谁打算取监测器时顺带提交？",
+   "ref": "activity__27101_1987宇宙组曲:9.0.0",
+   "evidence": [
+    "冷周六"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:9.0.0",
+   "_pool": "T1",
+   "_gold_eid": "冷周六",
+   "_anchor_eid": "指针",
+   "_gold_name": "冷周六",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i261",
+   "q": "星锑视若性命的APPLe号“摇滚巨轮”，在1966年的伦敦海域被一艘漆黑大船轰沉了，动手的是哪股势力的船？",
+   "ref": "mainline__000_此即明日:0.0.0",
+   "evidence": [
+    "重塑之手"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:0.0.0",
+   "_pool": "T1",
+   "_gold_eid": "重塑之手",
+   "_anchor_eid": "星锑",
+   "_gold_name": "重塑之手",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i262",
+   "q": "十四行诗开场用能瞬移的“转念即至”软盘把维尔汀拉到伦敦，这种试验品软盘是谁只肯给她三张的？",
+   "ref": "mainline__000_此即明日:1.0.0",
+   "evidence": [
+    "Z女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "Z",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "Z",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i263",
+   "q": "序章里维尔汀在牛津街书店偷偷往星锑手里塞了个东西，既能制造烟雾掩护她逃走、又留下特殊气味当标记，那件道具叫什么？",
+   "ref": "mainline__000_此即明日:4.0.0",
+   "evidence": [
+    "迷障泡泡球"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:4.0.0",
+   "_pool": "T1",
+   "_gold_eid": "迷障泡泡球",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "迷障泡泡球",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i264",
+   "q": "星锑过去常去哪家唱片店淘唱片，以至于维尔汀追捕她时也说自己“正好也在”那里？",
+   "ref": "mainline__000_此即明日:2.1.0",
+   "evidence": [
+    "康利庭"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:2.1.0",
+   "_pool": "T1",
+   "_gold_eid": "康利庭",
+   "_anchor_eid": "星锑",
+   "_gold_name": "康利庭",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i268",
+   "q": "公民大会上十四行诗因“没有数字”被判发言无效、险些被处死，是台下谁突然宣称“维尔汀是数字0”，硬生生翻盘救了她？",
+   "ref": "mainline__105_洞穴的囚徒:11.2.0",
+   "evidence": [
+    "37"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:11.2.0",
+   "_pool": "T1",
+   "_gold_eid": "37",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "37",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i271",
+   "q": "37把算好的、关乎一个人自身本质的数字装进瓶子交给了一位学派除错师，可这位除错师自认是“无药可救的错误”、不敢打开，最终把瓶子丢进了大海。她是哪位除错师？",
+   "ref": "mainline__105_洞穴的囚徒:17.0.0",
+   "evidence": [
+    "苏菲亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:17.0.0",
+   "_pool": "T1",
+   "_gold_eid": "苏菲亚",
+   "_anchor_eid": "37",
+   "_gold_name": "苏菲亚",
+   "_neighborhood_size": 133,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i272",
+   "q": "在戈尔贡洋流的风暴里救下沉船的“剃刀”特别行动分队，和十四行诗他们一样隶属于哪个机构？",
+   "ref": "mainline__105_洞穴的囚徒:5.2.0",
+   "evidence": [
+    "圣洛夫基金会"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:5.2.0",
+   "_pool": "T1",
+   "_gold_eid": "圣洛夫基金会",
+   "_anchor_eid": "剃刀",
+   "_gold_name": "圣洛夫基金会",
+   "_neighborhood_size": 39,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i273",
+   "q": "星锑被关进岛上地牢时解那道《不可能的谜题》，把太阳当参照物排行星距离比，结果“重新发现”了火星和木星之间的那颗星叫什么？",
+   "ref": "mainline__105_洞穴的囚徒:9.2.0",
+   "evidence": [
+    "谷神星"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:9.2.0",
+   "_pool": "T1",
+   "_gold_eid": "谷神星",
+   "_anchor_eid": "星锑",
+   "_gold_name": "谷神星",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i274",
+   "q": "科算中心从重塑面具里提取出“非对称核素R”的稳定态后，是谁提着一台孤品采样装置来找维尔汀、让她上岛找更多样本的？",
+   "ref": "mainline__105_洞穴的囚徒:3.0.0",
+   "evidence": [
+    "小梅斯梅尔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "小梅斯梅尔",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "小梅斯梅尔",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i276",
+   "q": "风暴里维尔汀借用无线电小姐的旋钮发求救密钥，这套“顺时针一圈、逆时针半圈”的操作是记在哪本手册的第二十一条里的？",
+   "ref": "mainline__105_洞穴的囚徒:4.1.0",
+   "evidence": [
+    "《外派任务避难须知》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:4.1.0",
+   "_pool": "T1",
+   "_gold_eid": "外派任务避难须知",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "外派任务避难须知",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i278",
+   "q": "星锑在洞穴的囚徒里开的那艘“摇滚巨轮二世”是苏芙比掏钱买的，那位苏芙比以前的家庭教师后来加入了司辰小队，她是谁？",
+   "ref": "mainline__105_洞穴的囚徒:1.0.1",
+   "evidence": [
+    "莫桑女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "莫桑女士",
+   "_anchor_eid": "星锑",
+   "_gold_name": "莫桑女士",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i280",
+   "q": "基地那只收音机播报过一本1999年出版、掀起爱琴海旅游狂潮的游记《漫步阿派朗》，它的传记作家作者是谁？",
+   "ref": "mainline__105_洞穴的囚徒:2.1.1",
+   "evidence": [
+    "兀尔德"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:2.1.1",
+   "_pool": "T1",
+   "_gold_eid": "卡卡尼亚",
+   "_anchor_eid": "漫步阿派朗",
+   "_gold_name": "卡卡尼亚",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i281",
+   "q": "星锑一开始根本不肯跟基金会签约，最后是被维尔汀许诺的哪样好处打动，才勉强答应去办入会手续的？",
+   "ref": "mainline__101_在我们的时代里:1.0.0",
+   "evidence": [
+    "胡椒博士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "胡椒博士",
+   "_anchor_eid": "星锑",
+   "_gold_name": "胡椒博士",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i282",
+   "q": "十四行诗在湖边的纺车旁突然出现，她开口就说幸好听信了某人的消息才找过来。给她通风报信、告诉她星锑和维尔汀在一块的是谁？",
+   "ref": "mainline__101_在我们的时代里:0.4.0",
+   "evidence": [
+    "Z女士"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:0.4.0",
+   "_pool": "T1",
+   "_gold_eid": "Z",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "Z",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i284",
+   "q": "酒馆那场决斗观赏赛上，被聚光灯选中当挑战者的维尔汀，对手是去年连倒十位挑战者的卫冕者。这位卫冕者是谁？",
+   "ref": "mainline__101_在我们的时代里:10.1.3",
+   "evidence": [
+    "斯奈德"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:10.1.3",
+   "_pool": "T1",
+   "_gold_eid": "斯奈德",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "斯奈德",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i285",
+   "q": "苏芙比赖着要一个人出门去酒吧，庄园管家嘴上答应，却念叨说要是看见她失望地回来，有个人也会跟着担心。管家指的是谁？",
+   "ref": "mainline__101_在我们的时代里:5.0.0",
+   "evidence": [
+    "莫桑老师"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:5.0.0",
+   "_pool": "T1",
+   "_gold_eid": "莫桑女士",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "莫桑女士",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i287",
+   "q": "斯奈德在地下迷宫里抛下任务也要找的那个被灌了药的神秘学家女孩，最后被她背了出来。这个女孩叫什么名字？",
+   "ref": "mainline__101_在我们的时代里:14.0.0",
+   "evidence": [
+    "玛丽安"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:14.0.0",
+   "_pool": "T1",
+   "_gold_eid": "玛丽安",
+   "_anchor_eid": "斯奈德",
+   "_gold_name": "玛丽安",
+   "_neighborhood_size": 20,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i291",
+   "q": "施瓦茨医生的公开电击诊疗被后排站起来的一位娇小女士当场打断，医生讥讽她是靠兜售神秘学小花招出名的“社会活动家”。这位女士是谁？",
+   "ref": "mainline__106_今夜星光灿烂:0.0.1",
+   "evidence": [
+    "卡卡尼亚"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "卡卡尼亚",
+   "_anchor_eid": "施瓦茨医生",
+   "_gold_name": "卡卡尼亚",
+   "_neighborhood_size": 9,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i292",
+   "q": "兔毛手袋在“暴雨”观测室跟科算中心的总负责人吵架，那位冰冷的女士还会从兜里掏出一张脸扣上，好满足对方“当面说话”的要求。这位总负责人叫什么？",
+   "ref": "mainline__106_今夜星光灿烂:1.0.0",
+   "evidence": [
+    "露西"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "露西",
+   "_anchor_eid": "兔毛手袋",
+   "_gold_name": "露西",
+   "_neighborhood_size": 63,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i295",
+   "q": "暴雨倒计时后，通讯器里传来一个声音催霍夫曼按时撤离、说时间一到就不会再等。报上自己名字的是谁？",
+   "ref": "mainline__106_今夜星光灿烂:22.0.0",
+   "evidence": [
+    "塞梅尔维斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:22.0.0",
+   "_pool": "T1",
+   "_gold_eid": "塞梅尔维斯",
+   "_anchor_eid": "霍夫曼",
+   "_gold_name": "塞梅尔维斯",
+   "_neighborhood_size": 52,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i299",
+   "q": "苏芙比那辆硬得推不动、被叫做“自动小岛”的车，最初是谁开着它一头撞进“瓦尔登湖”酒吧后墙的？",
+   "ref": "mainline__101_在我们的时代里:9.1.0",
+   "evidence": [
+    "司机弗迪"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:9.1.0",
+   "_pool": "T1",
+   "_gold_eid": "弗迪",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "弗迪",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i301",
+   "q": "司辰在《夜色温柔》开场被困进重塑的伏击后，行动队长急得要炸墙冲回去救人，是谁搬出“第一助手接管指挥”的规矩冷静下令撤退的？",
+   "ref": "mainline__102_夜色温柔:0.1.0",
+   "evidence": [
+    "十四行诗"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:0.1.0",
+   "_pool": "T1",
+   "_gold_eid": "十四行诗",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "十四行诗",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i302",
+   "q": "苏芙比对征用的“自动小岛”手忙脚乱，说自己是第一次坐这玩意儿。那以前都是谁负责带她出门的？",
+   "ref": "mainline__102_夜色温柔:0.1.0",
+   "evidence": [
+    "路杰罗"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:0.1.0",
+   "_pool": "T1",
+   "_gold_eid": "骏鹰路杰罗",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "骏鹰路杰罗",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i303",
+   "q": "与维尔汀的会议上，是谁以“重塑之手”幕后领导者的身份正式邀请她入伙，还拿三个问题要挟她？",
+   "ref": "mainline__102_夜色温柔:1.0.0",
+   "evidence": [
+    "阿尔卡纳"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "阿尔卡纳",
+   "_anchor_eid": "重塑之手",
+   "_gold_name": "阿尔卡纳",
+   "_neighborhood_size": 196,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i304",
+   "q": "三问会议期间，阿尔卡纳为了让维尔汀开口回答，先弄断了谁的右手来立威？",
+   "ref": "mainline__102_夜色温柔:1.0.0",
+   "evidence": [
+    "斯奈德"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "斯奈德",
+   "_anchor_eid": "阿尔卡纳",
+   "_gold_name": "斯奈德",
+   "_neighborhood_size": 59,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i305",
+   "q": "阿尔卡纳逼问基金会是不是用神秘学家的遗孤做人体实验，维尔汀被折磨之下招认了那种免疫物质的名字。它叫什么？",
+   "ref": "mainline__102_夜色温柔:1.0.0",
+   "evidence": [
+    "免疫蛋白G"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:1.0.0",
+   "_pool": "T1",
+   "_gold_eid": "非对称免疫蛋白G",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "非对称免疫蛋白G",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i307",
+   "q": "阿尔卡纳让维尔汀拿枪去杀斯奈德，她口中所说重塑最好的术杖制造师是谁，那把枪经谁的手改造过？",
+   "ref": "mainline__102_夜色温柔:2.1.0",
+   "evidence": [
+    "槲寄生"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:2.1.0",
+   "_pool": "T1",
+   "_gold_eid": "槲寄生",
+   "_anchor_eid": "阿尔卡纳",
+   "_gold_name": "槲寄生",
+   "_neighborhood_size": 59,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i308",
+   "q": "X先生声称要用“反直觉的逻辑实验”在三分钟内烧沸一壶水，以此撬开救治所的白雾保护咒。他动用了什么机械？",
+   "ref": "mainline__102_夜色温柔:12.0.0",
+   "evidence": [
+    "戈德堡机械"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:12.0.0",
+   "_pool": "T1",
+   "_gold_eid": "戈德堡机械",
+   "_anchor_eid": "X",
+   "_gold_name": "戈德堡机械",
+   "_neighborhood_size": 161,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i309",
+   "q": "最后那场“暴雨”落下前，苏芙比终于研制成功、让难民们吃上“真正的食物”的幻剂叫什么名字？",
+   "ref": "mainline__102_夜色温柔:14.0.1",
+   "evidence": [
+    "美味嚼嚼幻剂Ⅻ"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:14.0.1",
+   "_pool": "T1",
+   "_gold_eid": "美味嚼嚼幻剂Ⅻ",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "美味嚼嚼幻剂Ⅻ",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i311",
+   "q": "苏芙比刚决定带大家去她家落脚时说过，家里有个绝不会同意她带朋友回来的人；可暴雨将至时，偏偏又是这人把记满庄园秘密的本子交给她、还叮嘱她之后去联系父亲和莫桑老师。他是谁？",
+   "ref": "mainline__102_夜色温柔:14.0.1",
+   "evidence": [
+    "卡森"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:14.0.1",
+   "_pool": "T1",
+   "_gold_eid": "邓肯先生",
+   "_anchor_eid": "苏芙比",
+   "_gold_name": "邓肯先生",
+   "_neighborhood_size": 148,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i316",
+   "q": "卡珊德拉那个投靠了邪教的亲弟弟，被组织起了个什么称号，连亲姐姐都不许再叫他本名？",
+   "ref": "activity__305201_入雅典记:1.0.1",
+   "evidence": [
+    "德谟斯"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "305201_入雅典记",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__305201_入雅典记:1.0.1",
+   "_pool": "T1",
+   "_gold_eid": "阿利克西欧斯",
+   "_anchor_eid": "卡珊德拉",
+   "_gold_name": "阿利克西欧斯",
+   "_neighborhood_size": 20,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i317",
+   "q": "在卫城墙根下被抓住的那个“演员”多米蒂乌斯，他照着剧本要领命去刺杀的人是谁？",
+   "ref": "activity__305201_入雅典记:0.2.0",
+   "evidence": [
+    "伯里克利"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "305201_入雅典记",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__305201_入雅典记:0.2.0",
+   "_pool": "T1",
+   "_gold_eid": "伯里克利",
+   "_anchor_eid": "多米蒂乌斯",
+   "_gold_name": "伯里克利",
+   "_neighborhood_size": 9,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i320",
+   "q": "星锑为打听苹果的下落，掏了23枚德拉克马的委托费。这个爱耍嘴皮子、还顺手把她介绍给卡珊德拉的吟游诗人叫什么？",
+   "ref": "activity__305201_入雅典记:3.0.0",
+   "evidence": [
+    "艾琳娜"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "305201_入雅典记",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__305201_入雅典记:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "艾琳娜",
+   "_anchor_eid": "星锑",
+   "_gold_name": "艾琳娜",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i321",
+   "q": "班里问起是哪部古代通神术著作开启了佛罗伦萨人文学者每年一聚的迦勒底会议，总强调爷爷童谣里记载着历史真相的玛蒂尔达脱口报出的答案是什么？",
+   "ref": "mainline__103_故事一无所有:0.0.1",
+   "evidence": [
+    "《迦勒底神谕》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:0.0.1",
+   "_pool": "T1",
+   "_gold_eid": "迦勒底神谕",
+   "_anchor_eid": "玛蒂尔达",
+   "_gold_name": "迦勒底神谕",
+   "_neighborhood_size": 127,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i322",
+   "q": "第一防线学校的校长在巡礼演出开场时先让大家唱校歌，这首被孩子们临场换上宣传单背面诗句的校歌叫什么名字？",
+   "ref": "mainline__103_故事一无所有:10.1.0",
+   "evidence": [
+    "《让和平永存》"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:10.1.0",
+   "_pool": "T1",
+   "_gold_eid": "让和平永存",
+   "_anchor_eid": "校长",
+   "_gold_name": "让和平永存",
+   "_neighborhood_size": 8,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i323",
+   "q": "校歌《让和平永存》的第一句歌词由谁负责，让她顶着打颤的喉咙第一个开口、把宣传单背面的诗句唱了出来？",
+   "ref": "mainline__103_故事一无所有:10.1.0",
+   "evidence": [
+    "伊莎贝拉"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:10.1.0",
+   "_pool": "T1",
+   "_gold_eid": "伊莎贝拉",
+   "_anchor_eid": "让和平永存",
+   "_gold_name": "伊莎贝拉",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i324",
+   "q": "巡礼演出上孩子们拒不下嘴唱歌时，安监主任命人接上水管准备往舞台上喷的是什么药剂？",
+   "ref": "mainline__103_故事一无所有:10.1.1",
+   "evidence": [
+    "苦哑巴药剂"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:10.1.1",
+   "_pool": "T1",
+   "_gold_eid": "苦哑巴药剂",
+   "_anchor_eid": "安监主任",
+   "_gold_name": "苦哑巴药剂",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i327",
+   "q": "部署追查奥利图欧指挥处的方案时，康斯坦丁特意吩咐Z除了转告军事部长，还要给哪个代号抄送一份？",
+   "ref": "mainline__103_故事一无所有:7.0.0",
+   "evidence": [
+    "“鸽子屋”"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:7.0.0",
+   "_pool": "T1",
+   "_gold_eid": "鸽子屋",
+   "_anchor_eid": "康斯坦丁",
+   "_gold_name": "鸽子屋",
+   "_neighborhood_size": 54,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i328",
+   "q": "小梅斯梅尔对Z说治疗维尔汀是委员会下达的指令，要她先去说服委员会的哪位高层才肯谈？此人在联合委员会办公室被Z尊称为副会长，本名叫什么？",
+   "ref": "mainline__103_故事一无所有:7.0.0",
+   "evidence": [
+    "康斯坦丁"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:7.0.0",
+   "_pool": "T1",
+   "_gold_eid": "康斯坦丁",
+   "_anchor_eid": "小梅斯梅尔",
+   "_gold_name": "康斯坦丁",
+   "_neighborhood_size": 123,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i329",
+   "q": "十四行诗在拉普拉斯科算中心察觉被人一路跟踪，用垃圾袋和术杖在转角截住的“可疑分子”其实是谁？",
+   "ref": "mainline__103_故事一无所有:3.0.0",
+   "evidence": [
+    "玛蒂尔达"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:3.0.0",
+   "_pool": "T1",
+   "_gold_eid": "玛蒂尔达",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "玛蒂尔达",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i332",
+   "q": "维尔汀在地下防空区的集会上拿出补全了地下通道的学校全局地图，按她当时最保险的方案，要从女生宿舍地下先去医务室、再进哪座塔一楼的铁门？",
+   "ref": "mainline__103_故事一无所有:12.0.1",
+   "evidence": [
+    "东南瞭望塔"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:12.0.1",
+   "_pool": "T1",
+   "_gold_eid": "东南瞭望塔",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "东南瞭望塔",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i334",
+   "q": "玛蒂尔达没有参加越狱行动，但她送给大家一样临别礼物，戴上就能在一定距离内听到彼此的声音，这是什么？",
+   "ref": "mainline__103_故事一无所有:14.1.0",
+   "evidence": [
+    "水晶耳饰"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:14.1.0",
+   "_pool": "T1",
+   "_gold_eid": "水晶耳饰",
+   "_anchor_eid": "玛蒂尔达",
+   "_gold_name": "水晶耳饰",
+   "_neighborhood_size": 127,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i335",
+   "q": "在地下防空区的岔路口，喝了伏特加、自称王牌飞行员的红弩箭拦下维尔汀一行，扬言要让每个人挂点彩，紧接着是谁追上来用一记“瞬时石化咒”把她定在墙边？",
+   "ref": "mainline__103_故事一无所有:14.2.0",
+   "evidence": [
+    "十四行诗"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:14.2.0",
+   "_pool": "T1",
+   "_gold_eid": "十四行诗",
+   "_anchor_eid": "红弩箭",
+   "_gold_name": "十四行诗",
+   "_neighborhood_size": 111,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i338",
+   "q": "传说中被关进禁闭室的维尔汀用来对付的沙米尔蠕虫，据说是哪位君王寻找多年的奇迹之物？",
+   "ref": "mainline__103_故事一无所有:5.0.1",
+   "evidence": [
+    "所罗门王"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:5.0.1",
+   "_pool": "T1",
+   "_gold_eid": "所罗门王",
+   "_anchor_eid": "沙米尔虫",
+   "_gold_name": "所罗门王",
+   "_neighborhood_size": 7,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i340",
+   "q": "燕平所属的鸟人一族生来通人言、能勘骨相，山下的人给他们起了个带“鸟”字的称呼，那是什么？",
+   "ref": "character__16603_天下有风:6.0.0",
+   "evidence": [
+    "灭蒙鸟"
+   ],
+   "dims": {
+    "type": "factoid",
+    "difficulty": "hard",
+    "depth": "shallow",
+    "hop": "single",
+    "chapter": "16603_天下有风",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__16603_天下有风:6.0.0",
+   "_pool": "T1",
+   "_gold_eid": "灭蒙鸟",
+   "_anchor_eid": "葛天",
+   "_gold_name": "灭蒙鸟",
+   "_neighborhood_size": 56,
+   "_gold_in_neighborhood": true
+  },
+  {
+   "id": "i002",
+   "q": "剧情里那把被形容为“合适的防身之物”、又是“精巧的、纯然的科学造物”的手枪具体是什么型号？",
+   "ref": "activity__36101_人们向何处去:0.0.0",
+   "evidence": [
+    "鲁格P08"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:0.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "鲁格P08",
+   "_anchor_eid": null,
+   "_gold_name": "鲁格P08",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i014",
+   "q": "“她全身上下没有一根头发丝不在大声叫喊着‘我是神秘学家’”这句吐槽是在说哪个角色？",
+   "ref": "activity__36101_人们向何处去:2.0.1",
+   "evidence": [
+    "星锑"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:2.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "星锑",
+   "_anchor_eid": null,
+   "_gold_name": "星锑",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i016",
+   "q": "哪位研究员被同事们拉着把“生日”和接任双喜凑成一场庆祝会，还被礼花彩带浇了个兜头？",
+   "ref": "activity__36101_人们向何处去:13.0.1",
+   "evidence": [
+    "哑谜"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:13.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "哑谜",
+   "_anchor_eid": null,
+   "_gold_name": "哑谜",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i017",
+   "q": "那份用来向基金会证明科算中心有暴雨避险预案的文档叫什么名字？它被磁流体研究员以半成品为由压着不交。",
+   "ref": "activity__36101_人们向何处去:3.2.0",
+   "evidence": [
+    "《雨前漫游指南》"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:3.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "《雨前漫游指南》",
+   "_anchor_eid": null,
+   "_gold_name": "《雨前漫游指南》",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i020",
+   "q": "哑谜从科算中心数据库里调出的资料中，那种在特定地区被测出浓度极高、且不受任何外界因素影响的物质叫什么？",
+   "ref": "activity__36101_人们向何处去:12.2.0",
+   "evidence": [
+    "非对称核素R"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "36101_人们向何处去",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__36101_人们向何处去:12.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "非对称核素R",
+   "_anchor_eid": "哑谜",
+   "_gold_name": "非对称核素R",
+   "_neighborhood_size": 112,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i022",
+   "q": "贝托尔特说是一场什么样的灾害让驻乌哈拉的人损失惨重、如今的芝诺军备学院像栋被炸毁的废楼？",
+   "ref": "anecdote__1910_风吹乌哈拉:0.0.1",
+   "evidence": [
+    "暴雨"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:0.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "暴雨",
+   "_anchor_eid": "贝托尔特",
+   "_gold_name": "暴雨",
+   "_neighborhood_size": 36,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i023",
+   "q": "她初到战区落地后没人来接，在坝子上干等了十分钟；到了基地门口又被一个在阴凉处抱着枪打盹的人爱答不理——她一气之下踹了谁一脚？",
+   "ref": "anecdote__1910_风吹乌哈拉:1.0.1",
+   "evidence": [
+    "守门的哨兵"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:1.0.1",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i026",
+   "q": "卡车遭火箭弹伏击后，一名士兵跪在公路旁用急救箱里珍贵的棉签给一个失去羊群、腿部流血的当地女人包扎；后来正是这女人把小队带进山洞，喊着意为“复仇”的词跑向黑暗。这个女人的身份是什么？",
+   "ref": "anecdote__1910_风吹乌哈拉:2.0.4",
+   "evidence": [
+    "牧羊女"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:2.0.4",
+   "_pool": "T2i",
+   "_gold_eid": "牧羊女",
+   "_anchor_eid": null,
+   "_gold_name": "牧羊女",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i031",
+   "q": "1964年是法国佬指挥发掘了那座希腊古城遗迹，而贝托尔特作为芝诺雇佣兵带着特遣队一直在哪个国家/战区作战？",
+   "ref": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "evidence": [
+    "乌哈拉"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:4.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "乌哈拉",
+   "_anchor_eid": "贝托尔特",
+   "_gold_name": "乌哈拉",
+   "_neighborhood_size": 36,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i037",
+   "q": "有位审讯官颈口带着旧伤，自述两年前撤出山口后山谷里只活了两个人；他如今还代行着别的部门的职务、四处处理各基地的军纪麻烦。这名审讯官隶属于哪支部队？",
+   "ref": "anecdote__1910_风吹乌哈拉:3.1.0",
+   "evidence": [
+    "军督队"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:3.1.0",
+   "_pool": "T2i",
+   "_gold_eid": "军督队",
+   "_anchor_eid": null,
+   "_gold_name": "军督队",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i038",
+   "q": "有三个人在漆黑如迷宫的洞窟里，跟着墙上用血画成的箭头探路，路口的无眼石像还托着一捧火光——这支小队深入的是什么地方？",
+   "ref": "anecdote__1910_风吹乌哈拉:5.1.2",
+   "evidence": [
+    "乌哈拉山洞"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1910_风吹乌哈拉",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1910_风吹乌哈拉:5.1.2",
+   "_pool": "T2i",
+   "_gold_eid": "乌哈拉山洞",
+   "_anchor_eid": null,
+   "_gold_name": "乌哈拉山洞",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i050",
+   "q": "伊里内伊向肯纳念的那份写到情报系统全线瘫痪、七日遭三场伏击的追击报告，出自哪位站在抗击重塑之手第一线的将军之手？",
+   "ref": "activity__38101_世纪末尺度:13.0.0",
+   "evidence": [
+    "伊戈尔"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:13.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "伊戈尔",
+   "_anchor_eid": "伊里内伊",
+   "_gold_name": "伊戈尔",
+   "_neighborhood_size": 46,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i055",
+   "q": "幻灯片的世界地图上散落着若干经理论模型验证、有几率不受那场时间回退灾害影响的候选光点，报告者为便于讨论把这类区域统称为什么？",
+   "ref": "activity__38101_世纪末尺度:0.0.1",
+   "evidence": [
+    "不可回溯地"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:0.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "不可回溯地",
+   "_anchor_eid": null,
+   "_gold_name": "不可回溯地",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i056",
+   "q": "那场把时间拨回1996年的世纪末灾变起初在组织内部有别的正式叫法，诺瓦米奇办事处落成授课时它已被改称一个两字的名称，是什么？",
+   "ref": "activity__38101_世纪末尺度:21.0.0",
+   "evidence": [
+    "暴雨"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:21.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "暴雨",
+   "_anchor_eid": null,
+   "_gold_name": "暴雨",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i057",
+   "q": "建筑师接连丢失的稿纸绘图尺里，有一样被她称为“左膀右臂”的旧物曾被那个发光少女一口吞下、险些卡住喉咙，那是什么东西？",
+   "ref": "activity__38101_世纪末尺度:8.0.1",
+   "evidence": [
+    "橡皮"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:8.0.1",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i058",
+   "q": "那个发光的少女在居民要离开时抱住方形屏幕不肯撒手，哭诉说两人一起看的木偶节目才只看了一半，这档电视节目叫什么？",
+   "ref": "activity__38101_世纪末尺度:13.0.1",
+   "evidence": [
+    "《荒唐童话》"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "38101_世纪末尺度",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__38101_世纪末尺度:13.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "荒唐童话",
+   "_anchor_eid": null,
+   "_gold_name": "荒唐童话",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i061",
+   "q": "化工厂那场爆炸之后，教官放话：只要女孩把她的朋友带来作证，就破例给她发一枚勋章。教官允诺的是哪种勋章？",
+   "ref": "anecdote__1911_小春雀儿:6.0.1",
+   "evidence": [
+    "雏鹰勋章"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:6.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "雏鹰勋章",
+   "_anchor_eid": null,
+   "_gold_name": "雏鹰勋章",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i063",
+   "q": "童子军们被派去找的“失踪者泽维尔”，折腾到最后真身到底是什么？",
+   "ref": "anecdote__1911_小春雀儿:5.0.1",
+   "evidence": [
+    "小狗"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:5.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "小狗",
+   "_anchor_eid": "泽维尔",
+   "_gold_name": "小狗",
+   "_neighborhood_size": 3,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i069",
+   "q": "调查员解释这次化工厂净化改造的来历时提到，任务需求是依据协议制定的，是哪个组织与一批污染严重的化工厂达成的协议？",
+   "ref": "anecdote__1911_小春雀儿:1.0.0",
+   "evidence": [
+    "基金会"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1911_小春雀儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1911_小春雀儿:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "圣洛夫基金会",
+   "_anchor_eid": null,
+   "_gold_name": "圣洛夫基金会",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i081",
+   "q": "复乐园开篇的新年通讯里，一位基金会副会长下令联络员立刻联络芝诺的索姆将军、带兵赶赴南极那座重塑之手最大据点，还念叨着“历史正在重演”。这位在霜雪玻璃窗前发号施令的副会长是谁？",
+   "ref": "mainline__110_复乐园:0.0.0",
+   "evidence": [
+    "康斯坦丁"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:0.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "康斯坦丁",
+   "_anchor_eid": null,
+   "_gold_name": "康斯坦丁",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i089",
+   "q": "十四行诗从炼金术士房间的小型祭坛下抽出一本帕拉塞尔苏斯的手稿，题记里那行已经模糊、只能辨出姓氏的抄录者是谁？",
+   "ref": "mainline__110_复乐园:12.1.2",
+   "evidence": [
+    "卡文迪许"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:12.1.2",
+   "_pool": "MULTI",
+   "_gold_eid": "卡文迪许",
+   "_anchor_eid": "帕拉塞尔苏斯",
+   "_gold_name": "卡文迪许",
+   "_neighborhood_size": 3,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i090",
+   "q": "环形广场上主持祭祀的老年女使徒对着即将沦为祭品的人类探险家冷笑：极地民族口口相传、指引他们一路来到极南的那位“神话女神”压根不存在，真正受供奉的是复苏之母。她否认的这位“女神”是谁？",
+   "ref": "mainline__110_复乐园:15.0.4",
+   "evidence": [
+    "地母"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:15.0.4",
+   "_pool": "T2i",
+   "_gold_eid": "地母",
+   "_anchor_eid": null,
+   "_gold_name": "地母",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i095",
+   "q": "在“门”内那片如胃袋般的黑暗深处，维尔汀把手探进一团温暖的光里，摸出了怎样一件刻着“阿蒙森”姓氏、最终让迷途者找回名字的遗物？",
+   "ref": "mainline__110_复乐园:20.1.3",
+   "evidence": [
+    "吊坠"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:20.1.3",
+   "_pool": "MULTI",
+   "_gold_eid": "龙涎香",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "龙涎香",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i096",
+   "q": "山巅之上，为了验证漫上来的“洪水”其实是另一种形态的“暴雨”，那位装在玻璃缸里的磁流体研究员取出了什么装置，眨眼间接满了一缸金色流体？",
+   "ref": "mainline__110_复乐园:22.1.2",
+   "evidence": [
+    "“非对称核素R”采样装置"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:22.1.2",
+   "_pool": "T2i",
+   "_gold_eid": "采样装置",
+   "_anchor_eid": null,
+   "_gold_name": "采样装置",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i101",
+   "q": "莫莉德尔带俘虏乌尔里希看过那间改造成野战医院的科考站后，坦白父亲承诺过的“保护”没能兑现。是哪支小队最终意志尽失，叛离队伍成了面具之下的狂热追随者？",
+   "ref": "mainline__110_复乐园:8.2.0",
+   "evidence": [
+    "安德烈小队"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:8.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "安德烈小队",
+   "_anchor_eid": "莫莉德尔",
+   "_gold_name": "安德烈小队",
+   "_neighborhood_size": 32,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i104",
+   "q": "指南针失灵又收不到信号的南极平原上，维尔汀靠一件随身物品让领头犬嗅闻，找到了德洛丝医生离去的方向。她让犬队嗅的是什么？",
+   "ref": "mainline__110_复乐园:9.0.0",
+   "evidence": [
+    "听诊器"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:9.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "听诊器",
+   "_anchor_eid": "维尔汀",
+   "_gold_name": "听诊器",
+   "_neighborhood_size": 364,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i105",
+   "q": "十四行诗在雪堆下认出了德洛丝医生的打字机，说档案里记载它印过落水者的病历，也见证过乌斯怀亚的小小社会。按她的转述，这台打字机还参与过哪座城市的喧闹夜晚？",
+   "ref": "mainline__110_复乐园:9.0.1",
+   "evidence": [
+    "圣保罗"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "110_复乐园",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__110_复乐园:9.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "圣保罗",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "圣保罗",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i106",
+   "q": "在第一防线图书馆里，是谁用一座未搭完的牌屋作比喻，对槲寄生说基金会才是她该倚靠的大厦？",
+   "ref": "mainline__104_老虎的金黄:1.0.0",
+   "evidence": [
+    "康斯坦丁"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "康斯坦丁",
+   "_anchor_eid": null,
+   "_gold_name": "康斯坦丁",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i107",
+   "q": "为了躲过被看守的晚餐时间，谁喝下一碗掺了铁碗杂质的半成品药剂，结果临时变成了一座衣帽架？",
+   "ref": "mainline__104_老虎的金黄:2.1.1",
+   "evidence": [
+    "苏芙比"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:2.1.1",
+   "_pool": "T2i",
+   "_gold_eid": "苏芙比",
+   "_anchor_eid": null,
+   "_gold_name": "苏芙比",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i110",
+   "q": "被基金会职员称为最后一位被邀请的客人，却只把掌心的树种子撒进楼梯砖缝而没有签字的人是谁？",
+   "ref": "mainline__104_老虎的金黄:1.0.0",
+   "evidence": [
+    "槲寄生"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "104_老虎的金黄",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__104_老虎的金黄:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "槲寄生",
+   "_anchor_eid": null,
+   "_gold_name": "槲寄生",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i124",
+   "q": "军官俱乐部里那位白发贵妇嫌年轻军官的吸血鬼理论不科学，只提了一个北方水边、专抢水手和船只的传说生灵让他自己去查——她说的是什么？",
+   "ref": "anecdote__1909_致温妮弗雷德:1.0.2",
+   "evidence": [
+    "鲁萨尔卡"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:1.0.2",
+   "_pool": "T2i",
+   "_gold_eid": "鲁萨尔卡",
+   "_anchor_eid": null,
+   "_gold_name": "鲁萨尔卡",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i126",
+   "q": "温妮弗雷德探病时一语道破：《新英格兰之梦》真正缺的那样致命的东西是什么？",
+   "ref": "anecdote__1909_致温妮弗雷德:6.0.1",
+   "evidence": [
+    "时间"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:6.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "时间",
+   "_anchor_eid": "新英格兰之梦",
+   "_gold_name": "时间",
+   "_neighborhood_size": 6,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i129",
+   "q": "四十年代军官俱乐部的酒会上，同僚起哄说那位抱小本子的年轻中士暗恋一位给伤员包扎抽血都很温柔的护士——他们口中的护士是谁？",
+   "ref": "anecdote__1909_致温妮弗雷德:1.0.0",
+   "evidence": [
+    "茱莉娅"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1909_致温妮弗雷德",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1909_致温妮弗雷德:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "茱莉娅",
+   "_anchor_eid": null,
+   "_gold_name": "茱莉娅",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i133",
+   "q": "那位总倒霉的占卜师早年把篝火聚会的邀请函错发给了一个机构，害得人家拿着指南针跑来集市找灵体——那是个什么学会？",
+   "ref": "character__20603_第一千夜:0.0.1",
+   "evidence": [
+    "至高理性学会"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:0.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "至高理性学会",
+   "_anchor_eid": null,
+   "_gold_name": "至高理性学会",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i138",
+   "q": "那晚在弗雷斯诺街头，一个女子脱下雨靴、赤着脚围着流浪歌者起舞，路人纷纷为一抹鲜红驻足——她身上那件惹眼的红色行头是什么？",
+   "ref": "character__20603_第一千夜:6.0.2",
+   "evidence": [
+    "晚礼服裙"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:6.0.2",
+   "_pool": "T2i",
+   "_gold_eid": "晚礼服裙",
+   "_anchor_eid": null,
+   "_gold_name": "晚礼服裙",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i140",
+   "q": "环状水星在弗雷斯诺打工的餐厅里，凭一串残留着德克斯特气息的钥匙链认出了老主顾芭芭拉，被芭芭拉拉来吃饭的那名男人缓过神后递上名片，邀请她加入哪个机构？",
+   "ref": "character__20603_第一千夜:7.0.2",
+   "evidence": [
+    "圣洛夫基金会"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "20603_第一千夜",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20603_第一千夜:7.0.2",
+   "_pool": "MULTI",
+   "_gold_eid": "圣洛夫基金会",
+   "_anchor_eid": "环状水星",
+   "_gold_name": "圣洛夫基金会",
+   "_neighborhood_size": 77,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i142",
+   "q": "梅蕾尔送给住院的玛尔纱一只亲手用神秘术做的小鸟，她是在哪本书里看到这种已灭绝物种的原型的？",
+   "ref": "mainline__113_他者的悲哀:0.0.2",
+   "evidence": [
+    "《珍奇神秘学生物饲养者走访札记》"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:0.0.2",
+   "_pool": "MULTI",
+   "_gold_eid": "珍奇神秘学生物饲养者走访札记",
+   "_anchor_eid": "梅蕾尔",
+   "_gold_name": "珍奇神秘学生物饲养者走访札记",
+   "_neighborhood_size": 64,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i146",
+   "q": "第一防线学校的气象鸽连拉普拉斯专门研究“暴雨”的研究员都摸不透运作原理，这些装置是由谁提供的？",
+   "ref": "mainline__113_他者的悲哀:1.2.1",
+   "evidence": [
+    "鸽子屋"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:1.2.1",
+   "_pool": "MULTI",
+   "_gold_eid": "鸽子屋",
+   "_anchor_eid": "第一防线学校",
+   "_gold_name": "鸽子屋",
+   "_neighborhood_size": 30,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i148",
+   "q": "某间实验室把一套由无数咒语组成、能保证受训者绝对优秀、坚定和忠诚的复杂神秘术镌刻在受训者的大脑皮层与皮肤表面，这套控制系统叫什么？",
+   "ref": "mainline__113_他者的悲哀:12.2.0",
+   "evidence": [
+    "趋光性定律"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:12.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "趋光性定律",
+   "_anchor_eid": null,
+   "_gold_name": "趋光性定律",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i150",
+   "q": "伊戈尔当年在顿河调查时交给维尔汀一颗立方体，说它或许能在暴雨中提供庇护，伊戈尔管这件东西叫什么？",
+   "ref": "mainline__113_他者的悲哀:11.0.2",
+   "evidence": [
+    "“奇迹”"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:11.0.2",
+   "_pool": "MULTI",
+   "_gold_eid": "奇迹",
+   "_anchor_eid": "伊戈尔",
+   "_gold_name": "奇迹",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i152",
+   "q": "那位从天而降、把栽跟头的摇滚海盗从重塑之手防线后方救走的飞行女巫炫耀对手低估了她的性能——她那架新型飞行扫帚叫什么名字？",
+   "ref": "mainline__113_他者的悲哀:13.1.0",
+   "evidence": [
+    "红色38"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:13.1.0",
+   "_pool": "T2i",
+   "_gold_eid": "红色38",
+   "_anchor_eid": null,
+   "_gold_name": "红色38",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i153",
+   "q": "学校里那间让学生长记性的禁闭室里，专门养着哪种虫子来震慑捣蛋的学生？",
+   "ref": "mainline__113_他者的悲哀:2.2.0",
+   "evidence": [
+    "沙米尔虫"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:2.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "沙米尔虫",
+   "_anchor_eid": null,
+   "_gold_name": "沙米尔虫",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i154",
+   "q": "果园里的女巫正要对两名闯入的客人念遗忘咒，施法被一声乘风而来的长啸打断，随后是哪只成年巨鸟用利爪把她拽上了天空？",
+   "ref": "mainline__113_他者的悲哀:24.2.2",
+   "evidence": [
+    "格林杜尔"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:24.2.2",
+   "_pool": "T2i",
+   "_gold_eid": "格林杜尔",
+   "_anchor_eid": null,
+   "_gold_name": "格林杜尔",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i158",
+   "q": "维尔汀说梅蕾尔消失在回溯瞬间时只剩一根金色纺线可寻，后来在1935年的妖精莓果园里，她再次看见这种熟悉的金线盘绕在哪个少女体内？",
+   "ref": "mainline__113_他者的悲哀:24.2.0",
+   "evidence": [
+    "小瑞安侬"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:24.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "小瑞安侬",
+   "_anchor_eid": "梅蕾尔",
+   "_gold_name": "小瑞安侬",
+   "_neighborhood_size": 64,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i161",
+   "q": "总部大门登记处前，那位身穿破旧军装、拖着硕大包裹想留给弟弟的东西，死活不肯扔的士兵叫什么名字？",
+   "ref": "mainline__113_他者的悲哀:8.0.1",
+   "evidence": [
+    "亚瑟"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:8.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "士兵Ⅰ",
+   "_anchor_eid": null,
+   "_gold_name": "士兵Ⅰ",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i167",
+   "q": "槲寄生联系科算中心时听到那边传来消息，说有位研究员准备引爆“天王星4号”火箭发动机的燃料罐、拉着所有人同归于尽，这名研究员是谁？",
+   "ref": "mainline__113_他者的悲哀:9.2.1",
+   "evidence": [
+    "冷周六"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.2.1",
+   "_pool": "MULTI",
+   "_gold_eid": "冷周六",
+   "_anchor_eid": "槲寄生",
+   "_gold_name": "冷周六",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i170",
+   "q": "神秘学藏品管理部里有人打趣说，有个家伙为了让这些无人在意的藏品保持整洁，每天要浪费八个小时的生命，说的是谁？",
+   "ref": "mainline__113_他者的悲哀:9.2.0",
+   "evidence": [
+    "莱瑟姆"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "113_他者的悲哀",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__113_他者的悲哀:9.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "空脑袋",
+   "_anchor_eid": null,
+   "_gold_name": "空脑袋",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i173",
+   "q": "黄昏的海滩上，一位艺术家把沙地里一个黑乎乎的东西错当成贝壳踢了出去，结果抱着脚哀嚎，那东西究竟是什么？",
+   "ref": "anecdote__1916_权利归花儿:1.0.1",
+   "evidence": [
+    "勃朗宁手枪"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1916_权利归花儿",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1916_权利归花儿:1.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "勃朗宁手枪",
+   "_anchor_eid": null,
+   "_gold_name": "勃朗宁手枪",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i179",
+   "q": "坎吉拉在街头纸牌局里从方块7底下翻出一张印着四个字母的褐色卡背小卡片，没过多久玛蒂尔达炫耀的侧刊附赠名人卡正是同款——这批卡片来自神秘学界哪场有名的盛会？",
+   "ref": "appendix_unbound__002_1_3_最初的诗赛季剧情:1.1.0",
+   "evidence": [
+    "UTTU闪烁集会"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "002_1_3_最初的诗赛季剧情",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "appendix_unbound__002_1_3_最初的诗赛季剧情:1.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "UTTU闪烁集会",
+   "_anchor_eid": "坎吉拉",
+   "_gold_name": "UTTU闪烁集会",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i184",
+   "q": "安保机器人伸手掏出电击器要制服溜进展馆的牧羊犬时，小狗身上泛起什么颜色的光让机器接连报警失灵？",
+   "ref": "activity__11101_雷米特杯失窃案:10.1.0",
+   "evidence": [
+    "靛蓝色"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:10.1.0",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i191",
+   "q": "警察在消防车旁清点挖掘艺术的劣迹时说他已经进过十三次警局，指控他拨弄过哪个著名地标建筑的指针？",
+   "ref": "activity__11101_雷米特杯失窃案:3.1.0",
+   "evidence": [
+    "大本钟"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:3.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "大本钟",
+   "_anchor_eid": "挖掘艺术",
+   "_gold_name": "大本钟",
+   "_neighborhood_size": 76,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i192",
+   "q": "刚甩开警员盯梢的邋遢男子，和骑摩托腾空摔进来的摇滚女孩撞作一团，这对不打不相识的人一同抵达的是哪条街？",
+   "ref": "activity__11101_雷米特杯失窃案:3.1.1",
+   "evidence": [
+    "卡纳比街"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:3.1.1",
+   "_pool": "T2i",
+   "_gold_eid": "卡纳比街",
+   "_anchor_eid": null,
+   "_gold_name": "卡纳比街",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i193",
+   "q": "自称摇滚海盗的船长问完头版新闻后，转头把那张皱巴巴的报纸塞回了哪个报童手里？",
+   "ref": "activity__11101_雷米特杯失窃案:5.0.0",
+   "evidence": [
+    "汤米"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:5.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "小巨人”汤米",
+   "_anchor_eid": null,
+   "_gold_name": "小巨人”汤米",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i200",
+   "q": "雷米特杯风波落幕时，一位始终没露真身的讲述者向某本杂志的读者讲完这个啼笑皆非的故事，他对话的是哪本杂志的读者？",
+   "ref": "activity__11101_雷米特杯失窃案:15.0.0",
+   "evidence": [
+    "《UTTU》"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "11101_雷米特杯失窃案",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__11101_雷米特杯失窃案:15.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "UTTU",
+   "_anchor_eid": null,
+   "_gold_name": "UTTU",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i202",
+   "q": "那桩轰动全城的寻宝风波里，传说肚子里封存着足量莱茵黄金、最后却在黑铁森林交换时从环状水星怀中掉出来的小宠物，它的名号是什么？",
+   "ref": "anecdote__1919_黄金与悲喜剧:5.0.0",
+   "evidence": [
+    "“小刀”麦高芬"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:5.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "小刀\"麦高芬",
+   "_anchor_eid": null,
+   "_gold_name": "小刀\"麦高芬",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i207",
+   "q": "十四行诗在客厅仪式上当场递给环状水星的那封信，信封上的寄出地址是哪座监狱？",
+   "ref": "anecdote__1919_黄金与悲喜剧:0.0.1",
+   "evidence": [
+    "亨特利尔高墙监狱"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:0.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "亨特利尔高墙监狱",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "亨特利尔高墙监狱",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i213",
+   "q": "那位自认应付不来小孩、也应付不来太正直的人的基金会新人，从寄不出去的信件小山上随手拿起一封信，信封上的收件人是以研究哪个学科著称的学者？",
+   "ref": "character__18601_黎明依旧到来:3.0.2",
+   "evidence": [
+    "理线学"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "18601_黎明依旧到来",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__18601_黎明依旧到来:3.0.2",
+   "_pool": "MULTI",
+   "_gold_eid": "理线学",
+   "_anchor_eid": "命名日",
+   "_gold_name": "理线学",
+   "_neighborhood_size": 45,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i215",
+   "q": "那封由一位理线学学者发来的密电里说，来亚什基的一切都因哪种现象改变了，熟知的人大多被“回溯”到凭空消失？",
+   "ref": "character__18601_黎明依旧到来:5.0.0",
+   "evidence": [
+    "暴雨"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "18601_黎明依旧到来",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__18601_黎明依旧到来:5.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "暴雨",
+   "_anchor_eid": null,
+   "_gold_name": "暴雨",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i216",
+   "q": "阿夫西维认定维拉没有像童话里的鲁萨尔卡公主那样变成泡沫，是因为她拥有某种东西，彼得森却争辩说那只是一件永远不会变脏的好衣服。孩子们争论的这个说法是什么？",
+   "ref": "character__18601_黎明依旧到来:0.0.1",
+   "evidence": [
+    "永恒的灵魂"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "18601_黎明依旧到来",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__18601_黎明依旧到来:0.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "永恒的灵魂",
+   "_anchor_eid": "阿夫西维",
+   "_gold_name": "永恒的灵魂",
+   "_neighborhood_size": 32,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i219",
+   "q": "一只眼神发亮、冲着拍摄者微笑的小狗照片，害得“断指”在出狱前夜丢掉了性命。这只小狗狗叫什么名字？",
+   "ref": "anecdote__1919_黄金与悲喜剧:1.0.1",
+   "evidence": [
+    "“小刀”麦高芬"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "1919_黄金与悲喜剧",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "anecdote__1919_黄金与悲喜剧:1.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "小刀\"麦高芬",
+   "_anchor_eid": null,
+   "_gold_name": "小刀\"麦高芬",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i229",
+   "q": "贝克特嘴上说不能把谁开的饭馆当慈善食堂办，转头却还是听J的给流浪汉们加肉？",
+   "ref": "character__20601_旧金山小子:2.0.3",
+   "evidence": [
+    "唐吉老爹"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:2.0.3",
+   "_pool": "MULTI",
+   "_gold_eid": "唐吉老爹",
+   "_anchor_eid": "贝克特",
+   "_gold_name": "唐吉老爹",
+   "_neighborhood_size": 19,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i235",
+   "q": "那位没执照的江湖医生数到五猛地下了一下，就把摔断腿的硬汉当场医好，他说这门用了几千年的古老东方医术叫什么？",
+   "ref": "character__20601_旧金山小子:1.0.0",
+   "evidence": [
+    "正骨"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "正骨",
+   "_anchor_eid": null,
+   "_gold_name": "正骨",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i236",
+   "q": "餐馆里那位住衣柜、讲话文绉绉的假人先生，是谁？",
+   "ref": "character__20601_旧金山小子:1.0.2",
+   "evidence": [
+    "先驱者"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:1.0.2",
+   "_pool": "T2i",
+   "_gold_eid": "先驱者",
+   "_anchor_eid": null,
+   "_gold_name": "先驱者",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i237",
+   "q": "那天台谈判的买家用钱做买卖，把钞票垒成砖一样整齐，他们付的是哪种钱币？",
+   "ref": "character__20601_旧金山小子:0.0.0",
+   "evidence": [
+    "美元"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:0.0.0",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i238",
+   "q": "J和警长约碰头的那座电话亭，在哪条大道的哪家糖果铺对面？",
+   "ref": "character__20601_旧金山小子:5.0.0",
+   "evidence": [
+    "老鼠大道"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:5.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "老鼠大道",
+   "_anchor_eid": null,
+   "_gold_name": "老鼠大道",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i239",
+   "q": "那位向J兜售“能记录青春容颜”不老镜的漂亮女士，说新奥尔良哪处地方适合美美睡上一觉？",
+   "ref": "character__20601_旧金山小子:2.0.1",
+   "evidence": [
+    "拉法耶特公墓"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "20601_旧金山小子",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__20601_旧金山小子:2.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "拉法耶特公墓",
+   "_anchor_eid": "不老镜",
+   "_gold_name": "拉法耶特公墓",
+   "_neighborhood_size": 1,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i245",
+   "q": "远旅还不会写字，用积木拼出一条彩色轨迹来给自己起称呼，库珀花环认出那个词是她最近从哪样东西里听来的？",
+   "ref": "activity__27101_1987宇宙组曲:4.0.0",
+   "evidence": [
+    "收音机"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:4.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "无线电小姐",
+   "_anchor_eid": "远旅",
+   "_gold_name": "无线电小姐",
+   "_neighborhood_size": 14,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i247",
+   "q": "北方哨歌在普列谢茨克分部的大厅里跟一只显眼的玻璃缸打起了招呼，住在那只缸里、被她称作又憔悴了些的磁流体研究员叫什么？",
+   "ref": "activity__27101_1987宇宙组曲:10.0.2",
+   "evidence": [
+    "乌尔里希"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:10.0.2",
+   "_pool": "MULTI",
+   "_gold_eid": "乌尔里希",
+   "_anchor_eid": "北方哨歌",
+   "_gold_name": "乌尔里希",
+   "_neighborhood_size": 102,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i250",
+   "q": "米尔内那家还亮着灯的餐馆老板托指针打听一位失联两三年的老朋友，这位以前开过烘焙工坊、姜饼做得比他好的朋友叫什么？",
+   "ref": "activity__27101_1987宇宙组曲:15.1.0",
+   "evidence": [
+    "拉伊莎"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:15.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "拉伊莎",
+   "_anchor_eid": "指针",
+   "_gold_name": "拉伊莎",
+   "_neighborhood_size": 35,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i255",
+   "q": "出发上天前的独白里，那位钢丝上的空中飞人说“我记得，他们这样称呼我”，紧接着提到的她自己真正的名字是什么？",
+   "ref": "activity__27101_1987宇宙组曲:14.2.0",
+   "evidence": [
+    "阿丽娜·梅德韦杰娃"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:14.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "阿丽娜·梅德韦杰娃",
+   "_anchor_eid": null,
+   "_gold_name": "阿丽娜·梅德韦杰娃",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i256",
+   "q": "听说一批“没有直接应用价值”的项目要被一刀切掉，有位研究员气得举了个最日常的例子：没有这些基础技术，人们吃泡面时会缺什么？",
+   "ref": "activity__27101_1987宇宙组曲:2.0.2",
+   "evidence": [
+    "蔬菜包"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:2.0.2",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i257",
+   "q": "实验事故后唯一短暂醒来十五分钟的伤员，睁眼第一件事就是签下某份文件，还催着自己的兄弟姐妹一起签，那是份什么协议？",
+   "ref": "activity__27101_1987宇宙组曲:0.0.0",
+   "evidence": [
+    "遗体捐献协议书"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:0.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "遗体捐献协议书",
+   "_anchor_eid": null,
+   "_gold_name": "遗体捐献协议书",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i258",
+   "q": "即将上太空的姑娘对同伴说，自己的家和家人都不在这里、而在她长大的那个地方，那个地方叫什么？",
+   "ref": "activity__27101_1987宇宙组曲:12.0.3",
+   "evidence": [
+    "乌特恩亚亚"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "27101_1987宇宙组曲",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__27101_1987宇宙组曲:12.0.3",
+   "_pool": "T2i",
+   "_gold_eid": "乌特恩亚亚",
+   "_anchor_eid": null,
+   "_gold_name": "乌特恩亚亚",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i265",
+   "q": "故事开头，基金会的队长用一张试验中的传送软盘，把那位能在时间倒流的暴雨里自由行动的司辰拉到了切尔西对岸的哪座公园？",
+   "ref": "mainline__000_此即明日:1.0.0",
+   "evidence": [
+    "巴特锡公园"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "巴特锡公园",
+   "_anchor_eid": null,
+   "_gold_name": "巴特锡公园",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i266",
+   "q": "暴雨落下前的最后一刻，是谁拆开一个箱子、把那位抱着唱片的摇滚海盗船长塞了进去，让她第一次亲眼看着一个时代消失？",
+   "ref": "mainline__000_此即明日:4.0.1",
+   "evidence": [
+    "维尔汀"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "000_此即明日",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__000_此即明日:4.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "维尔汀",
+   "_anchor_eid": null,
+   "_gold_name": "维尔汀",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i267",
+   "q": "那座信奉“万物皆数”的离岛学派有条头号的戒律，犯禁者的极刑是被丢进永恒回归的洋流里转圈，这桩“最大最坏的恶行”是什么？",
+   "ref": "mainline__105_洞穴的囚徒:11.1.1",
+   "evidence": [
+    "吃豆子"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:11.1.1",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i269",
+   "q": "在学派领袖6的见证下，基金会的维尔汀和重塑之手的阿尔卡纳把名字刻上石环、各滴一滴血，他们签下的那份以血起誓、再也摘不下来的契约叫什么？",
+   "ref": "mainline__105_洞穴的囚徒:13.0.1",
+   "evidence": [
+    "永不开战的和平协定"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:13.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "永不开战的和平协定",
+   "_anchor_eid": "阿尔卡纳",
+   "_gold_name": "永不开战的和平协定",
+   "_neighborhood_size": 59,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i275",
+   "q": "阿派朗学派管基金会所说的“暴雨”叫另一个名字，在他们“灵性潮涌、回归本质”的教义里这个词是什么？",
+   "ref": "mainline__105_洞穴的囚徒:15.1.0",
+   "evidence": [
+    "流溢"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:15.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "流溢",
+   "_anchor_eid": "阿派朗学派",
+   "_gold_name": "流溢",
+   "_neighborhood_size": 16,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i277",
+   "q": "在奥利图欧基地那只刻着维尔汀名字的木箱里，醒来就开始播报1999年新闻的脑袋长花的收音机，后来被小队叫成了什么名字？",
+   "ref": "mainline__105_洞穴的囚徒:4.1.0",
+   "evidence": [
+    "无线电小姐"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:4.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "无线电小姐",
+   "_anchor_eid": "奥利图欧基地",
+   "_gold_name": "无线电小姐",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i279",
+   "q": "司辰小队独立后的第一个调查起点，是重塑之手四年前用来饲养某种怪兽、却始终没被暴雨回溯的一处基地，那是什么地方？",
+   "ref": "mainline__105_洞穴的囚徒:1.0.0",
+   "evidence": [
+    "奥利图欧基地"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "105_洞穴的囚徒",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__105_洞穴的囚徒:1.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "奥利图欧基地",
+   "_anchor_eid": "重塑之手",
+   "_gold_name": "奥利图欧基地",
+   "_neighborhood_size": 196,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i283",
+   "q": "行动队长在“瓦尔登湖”行动前塞给维尔汀一件科算中心的新玩意儿，打开翅膀扇十几秒就能轰出一道冲击波。这件装备叫什么名号？",
+   "ref": "mainline__101_在我们的时代里:10.1.2",
+   "evidence": [
+    "天堂使徒34：7"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:10.1.2",
+   "_pool": "MULTI",
+   "_gold_eid": "天堂使徒",
+   "_anchor_eid": "行动队长",
+   "_gold_name": "天堂使徒",
+   "_neighborhood_size": 5,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i286",
+   "q": "司机弗迪被灌了药剂后一路狂飙喊着“冲上天堂吧”，最后把车撞进了酒吧后墙。苏芙比给他喝的那瓶东西叫什么？",
+   "ref": "mainline__101_在我们的时代里:9.1.0",
+   "evidence": [
+    "勇敢猛冲跳跳剂"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:9.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "勇敢猛冲跳跳剂",
+   "_anchor_eid": "弗迪",
+   "_gold_name": "勇敢猛冲跳跳剂",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i288",
+   "q": "星锑在基金会办事处由一位机械科学家领着参观，对方却说史料分享到此为止、要带她看更有意思的东西。这位科学家其实隶属科算中心内部的哪个机构？",
+   "ref": "mainline__101_在我们的时代里:8.0.0",
+   "evidence": [
+    "洛伦兹研究所"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:8.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "洛伦兹研究所",
+   "_anchor_eid": "星锑",
+   "_gold_name": "洛伦兹研究所",
+   "_neighborhood_size": 156,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i289",
+   "q": "洛伦兹研究所推断，让世界不断倒退的那场“暴雨”，源头能追溯到远古时期某个东西扇动翅膀留下的混沌能量。那是什么？",
+   "ref": "mainline__101_在我们的时代里:12.0.0",
+   "evidence": [
+    "最初的蝴蝶"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:12.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "蝴蝶",
+   "_anchor_eid": "洛伦兹研究所",
+   "_gold_name": "蝴蝶",
+   "_neighborhood_size": 15,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i293",
+   "q": "马库斯在咖啡馆门口盯着导师带来的奥地利国宝甜点犯了难，纠结横切竖切都会毁掉杏子酱夹层。这块让她流泪的点心是什么？",
+   "ref": "mainline__106_今夜星光灿烂:2.1.0",
+   "evidence": [
+    "萨赫蛋糕"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:2.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "萨赫蛋糕",
+   "_anchor_eid": "马库斯",
+   "_gold_name": "萨赫蛋糕",
+   "_neighborhood_size": 71,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i296",
+   "q": "有段被匆忙扯下的影像记录：飞行员破口大骂“别过来你们这些神秘学怪物”，随后他的飞机就被什么东西撞上、在空中化为火流星坠落。撞上飞机的是哪种生物？",
+   "ref": "mainline__106_今夜星光灿烂:1.0.2",
+   "evidence": [
+    "阿其翁"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:1.0.2",
+   "_pool": "T2i",
+   "_gold_eid": "阿其翁",
+   "_anchor_eid": null,
+   "_gold_name": "阿其翁",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i297",
+   "q": "焦树林里一群恶灵魔精追杀得众人快撑不住了，一个赤足着地、高跟鞋掉在别人怀里的古老术式使用者一击掀翻上百敌人，还自称是这片林子的主人。她是谁？",
+   "ref": "mainline__101_在我们的时代里:6.2.0",
+   "evidence": [
+    "槲寄生"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:6.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "槲寄生",
+   "_anchor_eid": null,
+   "_gold_name": "槲寄生",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i298",
+   "q": "1929年芝加哥车库外，两个醉汉的口袋里被翻出一袋只在神秘学界流通的硬币，还有一根儿童的断指。那种硬币叫什么？",
+   "ref": "mainline__101_在我们的时代里:3.2.0",
+   "evidence": [
+    "利齿子儿"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "101_在我们的时代里",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__101_在我们的时代里:3.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "利齿子儿",
+   "_anchor_eid": null,
+   "_gold_name": "利齿子儿",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i300",
+   "q": "那场公开诊疗上痛斥电击疗法、后来被官方当成叛国头子通缉的女士，在画展沙龙上被伊索尔德当众称作哪个组织的创始人？",
+   "ref": "mainline__106_今夜星光灿烂:11.0.1",
+   "evidence": [
+    "魔圈"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "106_今夜星光灿烂",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__106_今夜星光灿烂:11.0.1",
+   "_pool": "MULTI",
+   "_gold_eid": "魔圈",
+   "_anchor_eid": "伊索尔德",
+   "_gold_name": "魔圈",
+   "_neighborhood_size": 61,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i306",
+   "q": "去庄园的路上APPLe被门徒的毒液毒倒，嘴里念叨了一种大家没听过的药剂名。最后是谁想明白那其实是人类给植物用的保护性杀菌剂？",
+   "ref": "mainline__102_夜色温柔:3.2.0",
+   "evidence": [
+    "玛丽安"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:3.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "玛丽安",
+   "_anchor_eid": "APPLe",
+   "_gold_name": "玛丽安",
+   "_neighborhood_size": 99,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i310",
+   "q": "按十四行诗看过的调查报告，槲寄生是哪一位州林业大亨的继女？",
+   "ref": "mainline__102_夜色温柔:10.2.0",
+   "evidence": [
+    "华盛顿州"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:10.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "华盛顿州",
+   "_anchor_eid": "槲寄生",
+   "_gold_name": "华盛顿州",
+   "_neighborhood_size": 68,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i312",
+   "q": "会议上被自称“唯一一个能在暴雨中行走”、又亲口承认是基金会唯一成功实验体的人，最终绝望地答应加入重塑之手。她是谁？",
+   "ref": "mainline__102_夜色温柔:1.0.0",
+   "evidence": [
+    "维尔汀"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:1.0.0",
+   "_pool": "T2i",
+   "_gold_eid": "维尔汀",
+   "_anchor_eid": null,
+   "_gold_name": "维尔汀",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i313",
+   "q": "那位手持断矛流落在外邦、能唤来自己的鹰、同母弟弟给邪教当刺客，还因拯救城邦被执政官道谢的佣兵是谁？",
+   "ref": "activity__305201_入雅典记:5.2.0",
+   "evidence": [
+    "卡珊德拉"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "305201_入雅典记",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__305201_入雅典记:5.2.0",
+   "_pool": "T2i",
+   "_gold_eid": "卡珊德拉",
+   "_anchor_eid": null,
+   "_gold_name": "卡珊德拉",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i314",
+   "q": "记者看见焦黑土壤上凭空冒出的花田，激动喊说自己报道过这个地方、地点就在那儿，随即倒在血泊中。他脱口而出的是哪里？",
+   "ref": "mainline__102_夜色温柔:12.0.1",
+   "evidence": [
+    "瑞尼尔"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:12.0.1",
+   "_pool": "T2i",
+   "_gold_eid": null,
+   "_anchor_eid": null,
+   "_gold_name": null,
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i315",
+   "q": "改造斯奈德那把枪的神秘学家，其继父家族先因苏联木材压价破产、后又毁于林火。她出身于哪个家族？",
+   "ref": "mainline__102_夜色温柔:10.2.0",
+   "evidence": [
+    "韦耶豪瑟家族"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "102_夜色温柔",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__102_夜色温柔:10.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "韦耶豪瑟家族",
+   "_anchor_eid": "斯奈德",
+   "_gold_name": "韦耶豪瑟家族",
+   "_neighborhood_size": 20,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i319",
+   "q": "秩序神教那位号称“天选者”、顶着“德谟斯”名号的杀手随身带的是哪柄名剑，扬言要用它取下伯里克利的头颅？",
+   "ref": "activity__305201_入雅典记:5.2.0",
+   "evidence": [
+    "达摩克利斯之剑"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "305201_入雅典记",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "activity__305201_入雅典记:5.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "达摩克利斯之剑",
+   "_anchor_eid": "秩序神教",
+   "_gold_name": "达摩克利斯之剑",
+   "_neighborhood_size": 8,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i325",
+   "q": "第一防线学校出事之后，康斯坦丁让Z转告哪一个人：学校现进入特殊监察时期，接下来将由基金委全面接管？",
+   "ref": "mainline__103_故事一无所有:11.0.0",
+   "evidence": [
+    "理查德"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:11.0.0",
+   "_pool": "MULTI",
+   "_gold_eid": "理查德",
+   "_anchor_eid": "康斯坦丁",
+   "_gold_name": "理查德",
+   "_neighborhood_size": 54,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i326",
+   "q": "那位收了下好伏特加、便对熄灭的瞭望塔和视而不见的巡逻队睁一只眼闭一只眼的飞行员，自报“王牌飞行员，申请出动”后低空掠向地下防空区，拦在越狱孩子们面前的她是谁？",
+   "ref": "mainline__103_故事一无所有:14.1.1",
+   "evidence": [
+    "红弩箭"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:14.1.1",
+   "_pool": "T2i",
+   "_gold_eid": "红弩箭",
+   "_anchor_eid": null,
+   "_gold_name": "红弩箭",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i330",
+   "q": "在学校那株七百年古树树洞的集会上，哪位学生自夸家里是神秘学界的心理学世家、连某个著名学说都是祖上几代之前发明的？",
+   "ref": "mainline__103_故事一无所有:9.0.1",
+   "evidence": [
+    "小梅斯梅尔"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:9.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "小梅斯梅尔",
+   "_anchor_eid": null,
+   "_gold_name": "小梅斯梅尔",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i333",
+   "q": "越狱的原定路线经东南瞭望塔出去，可二十七日晚去医务室的路已被封死，孩子们改经图书馆钻地下防空通道后，最终是从哪座塔通往外界的铁门逃出去的？",
+   "ref": "mainline__103_故事一无所有:14.1.0",
+   "evidence": [
+    "西北瞭望塔"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:14.1.0",
+   "_pool": "MULTI",
+   "_gold_eid": "西北瞭望塔",
+   "_anchor_eid": "东南瞭望塔",
+   "_gold_name": "西北瞭望塔",
+   "_neighborhood_size": 2,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i336",
+   "q": "十四行诗查遍1929年在美登记的神秘学家名录，也查不到被“暴雨”带走的好友“斯奈德”的名字，她由此断定斯奈德其实是谁的血亲女儿？",
+   "ref": "mainline__103_故事一无所有:4.2.0",
+   "evidence": [
+    "格雷克"
+   ],
+   "dims": {
+    "type": "multi_hop",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "multi",
+    "chapter": "103_故事一无所有",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "mainline__103_故事一无所有:4.2.0",
+   "_pool": "MULTI",
+   "_gold_eid": "格雷克",
+   "_anchor_eid": "十四行诗",
+   "_gold_name": "格雷克",
+   "_neighborhood_size": 206,
+   "_gold_in_neighborhood": false
+  },
+  {
+   "id": "i337",
+   "q": "神秘学家之间通行的那种奇异货币，外形像铜钱却雕着一只狮子、会真的张嘴咬人，还因此被递钱给它的人夸赞不易被盗取，它叫什么？",
+   "ref": "character__16603_天下有风:2.0.1",
+   "evidence": [
+    "利齿子儿"
+   ],
+   "dims": {
+    "type": "definition",
+    "difficulty": "hard",
+    "depth": "deep",
+    "hop": "n/a",
+    "chapter": "16603_天下有风",
+    "text_len": "short"
+   },
+   "source": "human_blind_set_i",
+   "_from_chunk": "character__16603_天下有风:2.0.1",
+   "_pool": "T2i",
+   "_gold_eid": "利齿子儿",
+   "_anchor_eid": null,
+   "_gold_name": "利齿子儿",
+   "_neighborhood_size": 0,
+   "_gold_in_neighborhood": false
+  }
+ ]
+}

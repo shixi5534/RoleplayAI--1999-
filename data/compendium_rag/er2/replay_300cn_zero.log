@@ -1,0 +1,27 @@
+set=300_cn n=300 映射覆盖题数=0
+  [full] 50/300 (215s)
+  [full] 100/300 (418s)
+  [full] 150/300 (626s)
+  [full] 200/300 (842s)
+  [full] 250/300 (1101s)
+  [full] 300/300 (1359s)
+  [graph_only] 50/300 (238s)
+  [graph_only] 100/300 (435s)
+  [graph_only] 150/300 (648s)
+  [graph_only] 200/300 (836s)
+  [graph_only] 250/300 (1059s)
+  [graph_only] 300/300 (1246s)
+
+== 零档自检 分组指标（full 模式）==
+  all            n=300  hit@6=0.5267  MRR=0.4049  grounded=1.0
+  answerable     n=196  hit@6=0.801  MRR=0.6147  grounded=1.0
+  unanswerable   n=104  hit@6=0.0096  MRR=0.0096  grounded=1.0
+
+== 基线 after_welds 分组指标（full 模式，参考）==
+  all            n=300  hit@6=0.5267  MRR=0.4049  grounded=1.0
+  answerable     n=196  hit@6=0.801  MRR=0.6147  grounded=1.0
+  unanswerable   n=104  hit@6=0.0096  MRR=0.0096  grounded=1.0
+
+== 零档自检 vs after_welds 基线 ==
+差异行数: 0  (hit 翻转 up=0 down=0)
+报告 → data/compendium_rag/reports/replay_300cn_zero.json

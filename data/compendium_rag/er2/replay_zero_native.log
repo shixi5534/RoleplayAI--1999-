@@ -1,0 +1,25 @@
+set=native n=250 映射覆盖题数=0
+  [full] 50/250 (274s)
+  [full] 100/250 (405s)
+  [full] 150/250 (568s)
+  [full] 200/250 (781s)
+  [full] 250/250 (1046s)
+  [graph_only] 50/250 (241s)
+  [graph_only] 100/250 (501s)
+  [graph_only] 150/250 (717s)
+  [graph_only] 200/250 (981s)
+  [graph_only] 250/250 (1227s)
+
+== 零档自检 分组指标（full 模式）==
+  all            n=250  hit@6=0.632  MRR=0.4264  grounded=1.0
+  answerable     n=250  hit@6=0.632  MRR=0.4264  grounded=1.0
+  unanswerable   n=0  hit@6=None  MRR=None  grounded=None
+
+== 基线 after_welds 分组指标（full 模式，参考）==
+  all            n=250  hit@6=0.632  MRR=0.4264  grounded=1.0
+  answerable     n=250  hit@6=0.632  MRR=0.4264  grounded=1.0
+  unanswerable   n=0  hit@6=None  MRR=None  grounded=None
+
+== 零档自检 vs after_welds 基线 ==
+差异行数: 0  (hit 翻转 up=0 down=0)
+报告 → data/compendium_rag/reports/replay_native_zero.json

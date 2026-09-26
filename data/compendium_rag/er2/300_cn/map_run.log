@@ -1,0 +1,90 @@
+[chain] zero-tier process exited at 05:38:29, waiting for report file
+[chain] launching 300_cn MAP tier at 05:38:29
+set=300_cn n=300 映射覆盖题数=300
+  [full] 50/300 (243s)
+  [full] 100/300 (499s)
+  [full] 150/300 (756s)
+  [full] 200/300 (970s)
+  [full] 250/300 (1170s)
+  [full] 300/300 (1369s)
+  [graph_only] 50/300 (169s)
+  [graph_only] 100/300 (333s)
+  [graph_only] 150/300 (489s)
+  [graph_only] 200/300 (632s)
+  [graph_only] 250/300 (789s)
+  [graph_only] 300/300 (948s)
+
+== 回放档(entity_map_300_cn.json) 分组指标（full 模式）==
+  all            n=300  hit@6=0.5233  MRR=0.4215  grounded=1.0
+  answerable     n=196  hit@6=0.7959  MRR=0.6401  grounded=1.0
+  unanswerable   n=104  hit@6=0.0096  MRR=0.0096  grounded=1.0
+
+== 基线 after_welds 分组指标（full 模式，参考）==
+  all            n=300  hit@6=0.5267  MRR=0.4049  grounded=1.0
+  answerable     n=196  hit@6=0.801  MRR=0.6147  grounded=1.0
+  unanswerable   n=104  hit@6=0.0096  MRR=0.0096  grounded=1.0
+
+== 回放档(entity_map_300_cn.json) vs after_welds 基线 ==
+差异行数: 92  (hit 翻转 up=6 down=5)
+  DIFF ('R013', 'full', 'rr', 1.0, 0.5)
+  DIFF ('R020', 'full', 'rr', 0.5, 0.25)
+  DIFF ('R022', 'full', 'hit', True, False)
+  DIFF ('R027', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R031', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R038', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R039', 'full', 'seed_hit', False, True)
+  DIFF ('R056', 'full', 'seed_hit', False, True)
+  DIFF ('R057', 'full', 'rr', 0.25, 0.3333333333333333)
+  DIFF ('R058', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R059', 'full', 'seed_hit', False, True)
+  DIFF ('R069', 'full', 'rr', 0.3333333333333333, 1.0)
+  DIFF ('R074', 'full', 'rr', 0.25, 1.0)
+  DIFF ('R077', 'full', 'seed_hit', False, True)
+  DIFF ('R078', 'full', 'rr', 0.25, 1.0)
+  DIFF ('R079', 'full', 'rr', 1.0, 0.5)
+  DIFF ('R081', 'full', 'seed_hit', False, True)
+  DIFF ('R082', 'full', 'rr', 1.0, 0.16666666666666666)
+  DIFF ('R087', 'full', 'rr', 0.3333333333333333, 1.0)
+  DIFF ('R088', 'full', 'seed_hit', False, True)
+  DIFF ('R116', 'full', 'seed_hit', False, True)
+  DIFF ('R122', 'full', 'rr', 0.3333333333333333, 0.5)
+  DIFF ('R124', 'full', 'seed_hit', False, True)
+  DIFF ('R140', 'full', 'seed_hit', False, True)
+  DIFF ('R142', 'full', 'hit', False, True)
+  DIFF ('R177', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R179', 'full', 'rr', 0.2, 0.16666666666666666)
+  DIFF ('R199', 'full', 'hit', True, False)
+  DIFF ('R232', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R237', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R246', 'full', 'rr', 0.5, 0.2)
+  DIFF ('R249', 'full', 'seed_hit', False, True)
+  DIFF ('R253', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R258', 'full', 'rr', 0.5, 1.0)
+  DIFF ('R261', 'full', 'seed_hit', False, True)
+  DIFF ('R262', 'full', 'rr', 0.16666666666666666, 1.0)
+  DIFF ('R267', 'full', 'seed_hit', False, True)
+  DIFF ('R280', 'full', 'rr', 0.2, 1.0)
+  DIFF ('R289', 'full', 'rr', 1.0, 0.25)
+  DIFF ('R002', 'graph_only', 'n_evidence', 24, 18)
+  DIFF ('R012', 'graph_only', 'n_evidence', 21, 24)
+  DIFF ('R013', 'graph_only', 'rr', 1.0, 0.2)
+  DIFF ('R014', 'graph_only', 'n_evidence', 11, 12)
+  DIFF ('R017', 'graph_only', 'seed_hit', False, True)
+  DIFF ('R020', 'graph_only', 'rr', 0.2, 0.3333333333333333)
+  DIFF ('R021', 'graph_only', 'hit', True, False)
+  DIFF ('R022', 'graph_only', 'hit', True, False)
+  DIFF ('R024', 'graph_only', 'rr', 0.5, 1.0)
+  DIFF ('R031', 'graph_only', 'rr', 0.16666666666666666, 1.0)
+  DIFF ('R038', 'graph_only', 'rr', 0.5, 1.0)
+  DIFF ('R039', 'graph_only', 'seed_hit', False, True)
+  DIFF ('R056', 'graph_only', 'seed_hit', False, True)
+  DIFF ('R057', 'graph_only', 'hit', False, True)
+  DIFF ('R058', 'graph_only', 'seed_hit', False, True)
+  DIFF ('R059', 'graph_only', 'seed_hit', False, True)
+  DIFF ('R061', 'graph_only', 'n_evidence', 18, 19)
+  DIFF ('R063', 'graph_only', 'n_evidence', 15, 17)
+  DIFF ('R069', 'graph_only', 'rr', 0.3333333333333333, 1.0)
+  DIFF ('R070', 'graph_only', 'rr', 0.5, 0.25)
+  DIFF ('R072', 'graph_only', 'n_evidence', 19, 22)
+报告 → data/compendium_rag/reports/replay_300cn_map.json
+[chain] done at 06:17:09

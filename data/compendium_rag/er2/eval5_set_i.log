@@ -1,0 +1,68 @@
+题集 i: 287 题  arms=['empty', 'random', 'alias', 'vector', 'strong'] modes=['full', 'graph_only']
+  [map:empty ] 非空题数=0
+  [map:random] 非空题数=282
+  [map:alias ] 非空题数=214
+  [map:vector] 非空题数=287
+  [map:strong] 非空题数=279
+  [empty /full      ] L1(T1) n=185 hit@10=0.9243 hit@6=0.8919 MRR=0.661 grounded=1.0  ALL hit@10=0.9024  (1317s)
+  [random/full      ] L1(T1) n=185 hit@10=0.8919 hit@6=0.7946 MRR=0.5534 grounded=1.0  ALL hit@10=0.8571  (1205s)
+  [alias /full      ] L1(T1) n=185 hit@10=0.9135 hit@6=0.8703 MRR=0.6278 grounded=1.0  ALL hit@10=0.899  (1192s)
+  [vector/full      ] L1(T1) n=185 hit@10=0.8973 hit@6=0.8432 MRR=0.6078 grounded=1.0  ALL hit@10=0.8641  (1197s)
+  [strong/full      ] L1(T1) n=185 hit@10=0.9459 hit@6=0.9027 MRR=0.7099 grounded=1.0  ALL hit@10=0.9129  (1192s)
+  [empty /graph_only] L1(T1) n=185 hit@10=0.773 hit@6=0.6432 MRR=0.4882 grounded=1.0  ALL hit@10=0.7178  (992s)
+  [random/graph_only] L1(T1) n=185 hit@10=0.6703 hit@6=0.5784 MRR=0.4129 grounded=1.0  ALL hit@10=0.6167  (973s)
+  [alias /graph_only] L1(T1) n=185 hit@10=0.7622 hit@6=0.6486 MRR=0.4756 grounded=1.0  ALL hit@10=0.7038  (973s)
+  [vector/graph_only] L1(T1) n=185 hit@10=0.7135 hit@6=0.6324 MRR=0.4417 grounded=1.0  ALL hit@10=0.6481  (995s)
+  [strong/graph_only] L1(T1) n=185 hit@10=0.8703 hit@6=0.773 MRR=0.5886 grounded=1.0  ALL hit@10=0.8014  (971s)
+
+== 分组（graph_only）==
+  empty  graph_only L1={'n': 185, 'hit@6': 0.6432, 'hit@10': 0.773, 'MRR': 0.4882, 'grounded': 1.0}
+  random graph_only L1={'n': 185, 'hit@6': 0.5784, 'hit@10': 0.6703, 'MRR': 0.4129, 'grounded': 1.0}
+  alias  graph_only L1={'n': 185, 'hit@6': 0.6486, 'hit@10': 0.7622, 'MRR': 0.4756, 'grounded': 1.0}
+  vector graph_only L1={'n': 185, 'hit@6': 0.6324, 'hit@10': 0.7135, 'MRR': 0.4417, 'grounded': 1.0}
+  strong graph_only L1={'n': 185, 'hit@6': 0.773, 'hit@10': 0.8703, 'MRR': 0.5886, 'grounded': 1.0}
+
+== 闸门 ==
+{
+ "L1_hit10_ge_0.70": true,
+ "strong_minus_empty_pt": 2.16,
+ "gain_ge_5pt": false,
+ "mcnemar_vs_empty": {
+  "b": 11,
+  "c": 8,
+  "p": 0.647606
+ },
+ "up_qids": [
+  "i053",
+  "i076",
+  "i087",
+  "i138",
+  "i157",
+  "i168",
+  "i213",
+  "i227",
+  "i238",
+  "i265",
+  "i334"
+ ],
+ "down_qids": [
+  "i037",
+  "i058",
+  "i061",
+  "i095",
+  "i141",
+  "i228",
+  "i285",
+  "i296"
+ ],
+ "strong_minus_random_pt": 5.4,
+ "beats_random": true,
+ "mcnemar_vs_random": {
+  "b": 20,
+  "c": 4,
+  "p": 0.001544
+ },
+ "grounded_1": true
+}
+
+报告 → C:\Users\Lenovo\WorkBuddy\2026-07-27-16-45-03\roleplay-ai\data\compendium_rag\reports\eval5_set_i.json
