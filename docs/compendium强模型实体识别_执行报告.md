@@ -7,6 +7,16 @@
 
 计划书将"强模型识别由谁执行"列为治理阻塞点。用户 2026-09-25 裁决：**强模型直接由主 agent 处理**——识别过程 = agent 亲自读题+候选名表、手写 JSON，与 #36 抽取同形，符合铁律 #1（禁网关、禁云端抽取调用；例外仅限本地 Ollama bge-m3 向量嵌入）。全程零网关触达。
 
+**三题集终判（阶段 1→3 全部跑完，2026-09-26）**：
+
+| 题集 | 主口径（full，强模型补名 − 空映射） | 结论 |
+|---|---|---|
+| native 250 | **−4.40pt**（去盲敏感性 −5.24pt，§3.5） | 负向 |
+| 300_cn answerable 196 | **−0.51pt**（0.801→0.7959）；graph_only +1.02pt | 主口径负向；unanswerable 安全底线 **0.0096→0.0096 成立**；该集可达上限仅 +2.55pt（5 题可救） |
+| 题集 i（T1，hit@10） | **+2.16pt，p=0.344**；graph_only +9.73pt；strong−random +5.41pt（p=0.021） | **主闸未过 ⇒ 路线不验收** |
+
+安全底线与逐位复现三集全绿（grounded=1.000、空映射逐位差异 0），机理证据（纯符号通道 +9.73pt）证真"补名有信息、但合入 query 重嵌入会把它冲掉"⇒ 后续方向为**只走 symbol 通道、保留原始 query 嵌入**，而非扩大补名规模。
+
 ## 1. 阶段 1：零网关候选生成器
 
 脚本：`scripts/_gen_entity_candidates.py`（图 1-hop 邻域，无任何模型调用）
@@ -167,21 +177,22 @@ N055  斑纹马  # seen_gold(截断诊断时见过)
 
 **主闸结论：题集 i full 模式 strong−empty = +2.16pt、p=0.344，未过「≥+5pt 且 p<0.05」⇒ 路线未达验收，阶段 4 不触发。** 此为本轮诚实终判，未以任何口径调整来换取通过。
 
-### 5.1 证据链持久性缺陷（需用户决策，未擅自处理）
+### 5.1 证据链持久性（已按用户决策入库，2026-09-26）
 
-2026-09-26 用 `git ls-files --error-unmatch` + `git check-ignore` 逐文件实测，**本路线的全部三层产物都不在版本控制里**，且分两类成因：
+2026-09-26 用 `git ls-files --error-unmatch` + `git check-ignore` 逐文件实测发现本路线三层产物**当时全部不在版本控制里**，且成因是两条不同规则：`data/*`（`.gitignore:13`）让证据层连 `git add` 都拒绝、必须 `-f`；而文档与代码层**根本没被忽略**，只是本轮从未提交。当时唯一可复算形态是"本机工作区"，一次 `git clean -fdx` 或换机即整体丢失（含审计脚本自身）。
 
-| 层 | 文件 | tracked | ignored | 单文件体积 |
-|---|---|---|---|---|
-| 文档 | 本执行报告、`计划书`、`题集i_预注册与冻结记录` | **N** | N | 数十 KB |
-| 代码 | `_gen_entity_candidates.py`、`_er_merge_map.py`、`_er_report_gates.py`、`_er_audit_completion.py`、`_replay_entity_map.py`、`_iset_*`（9 个） | **N** | N | 3–13 KB |
-| 证据 | `entity_candidates_{native,300_cn,i}.json` | **N** | **Y** | 316K / 440K / 972K |
-| 证据 | `entity_candidates_stats_{…}.json`、`entity_map_{native,300_cn,i}.json` | **N** | **Y** | 88–100K；6.5–19K |
-| 证据 | `er2/picks_raw.tsv`（native 8K）、`er2/300_cn/`（353K） | **N** | **Y** | — |
-| 证据 | `reports/replay_{native_zero,native_map,300cn_zero}.json`、`eval5_set_i.json` | **N** | **Y** | 254K / 261K / 303K / 507K |
-| 证据 | `reports/er_{native,300cn}_gates.md`、`er_completion_audit.md`、`set_i_gates.md` | **N** | **Y** | 0.2–3.2K |
-| 题集 | `data/knowledge/_audit/rag_testset_i.json`（冻结集本体） | **N** | N | 216K |
+经用户选择「文档+脚本先提交，证据 -f 随后」后，已落地两个提交并逐文件复核：
 
-成因是两条不同的规则，不是一条：`data/*`（`.gitignore:13`）让**证据层**连 `git add` 都拒绝，必须 `-f`；而**文档与代码层根本没被忽略**，只是本轮从未提交——所以「计划书/执行报告/9 个脚本」这种最该进版本库的东西同样只活在本机工作区。净结果：`docs/` 与 `scripts/` 一次普通 `git add` 即可入库（约 80K），`data/` 证据需 `git add -f`（核心可复算集 ≈ 4.2MB；含 `data/eval_set_i/` 写手材料则再 +4MB，可选）。
+| 层 | 文件 | 归属提交 | 入库方式 |
+|---|---|---|---|
+| 文档 | 本执行报告、`计划书`、`题集i_预注册与冻结记录`、`补名路线_灰机实证`、`召回率_下一步路线评估`（后两篇被前两篇交叉引用，纳入以保持自洽） | `3759f61` docs(plotrag) | 普通 `git add` |
+| 代码 | `_gen_entity_candidates.py`、`_gen_identify_batches.py`、`_er_merge_map.py`、`_er_report_gates.py`、`_er_audit_completion.py`、`_replay_entity_map.py`、`_iset_{annotate,eval5,freeze,make_id_view,merge_map,prepare_material,report_gates}.py`（共 13 个） | `3759f61` docs(plotrag) | 普通 `git add` |
+| 证据 | `entity_candidates_{native,300_cn,i}.json`(+`_stats_*`)、`entity_map_{native,300_cn,i}.json`、`er2/`（批次文件 + 两份 `picks_raw.tsv` + 运行日志）、`reports/replay_{native,300cn}_{zero,map}.json`、`reports/eval5_set_i.json`、`reports/{er_native_gates,er_300cn_gates,er_completion_audit,set_i_gates}.md` | `0ce2b14` chore(evidence) | `git add -f` |
+| 证据（最原始识别记录） | `data/eval_set_i/id_out/batch_{01..19}.out.jsonl` —— 判据 E 盲性扫描的输入，不可由任何已提交产物推导 | `0ce2b14` chore(evidence) | `git add -f` |
+| 题集 | `data/knowledge/_audit/rag_testset_i.json`（287 题冻结集本体，未被忽略） | `0ce2b14` chore(evidence) | 普通 `git add` |
 
-⇒ 当前"冻结"与"逐位复现"仅存在于本机，一次 `git clean -fdx`、换机或误删即整体不可复算，且**审计脚本自身也会丢**。此前 #36 已有 `git add -f` 入库快照的先例（`c3193dc`、`1488660`）。**建议**：分两次提交——`docs(plotrag): 强模型实体识别路线文档与脚本` 与 `chore(evidence): -f` 证据+冻结题集；**是否执行待用户确认，未获授权前不提交**（提交属仓库共享状态变更）。
+两提交合计 88 个新文件 / 194,536 行。基线 `reports/eval_{native,300_cn}_after_welds.json` 经实测**此前已在库中**，故逐位复现的参照物同样可取。**未入库**：`data/eval_set_i/{material,drafts,id_batches}`（≈3.6MB 写手材料与识别视图）—— 均可由已提交的脚本 + `graph.json` 快照确定性重建，属可推导产物，故按计划排除。当前 `git status` 仅剩 Live2D 工作流的 4 个未跟踪项，本路线工作区已干净。
+
+**入库后实测的可复算边界（区分两件事，勿混称"可复现"）**：
+- ✅ **判读可复算**：`_er_report_gates.py` 与 `_er_audit_completion.py` 全部 18 条判据只读 `graph.json`（已跟踪）+ 本次入库的 replay/eval5/原始识别记录，fresh clone 即可原样重跑并得到同一张表。**已实测**：`git worktree add ../_ercheck HEAD` 建出干净工作副本，在该副本里跑两脚本 → 审计 **18/18 非 FAIL 非 PENDING、退出码 0**，`--set 300_cn` 闸门同样退出 0 且首行仍为「600/600/对齐 600，差异 0 行」；随后 `git worktree remove` 清理。
+- ⚠️ **回放需本机索引**：`_replay_entity_map.py` / `_iset_eval5.py` 依赖 `data/compendium_rag/{chunk_index,entity_index}.npz` 与 `chunks.json/corpus.json`（大二进制，经 `git ls-files` 实测**未跟踪**）+ 本地 Ollama。即换机可复算"结论"，但**重新产生** replay 需先按 #36 流程重建索引；因此本轮把四个 replay 与 eval5 产物一并入库，正是为了让结论不依赖该重建。
