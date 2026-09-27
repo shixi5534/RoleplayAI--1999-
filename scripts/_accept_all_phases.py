@@ -31,22 +31,20 @@ print("=" * 74)
 print(f"全阶段验收 @ {W}", )
 print("=" * 74)
 
-print("\n[Phase 1] R1–R4 版本背书")
+print("\n[Phase 1] R1–R4 版本背书（BASELINE_v4 历史冻结件）")
 g = D / "graph.json"
 d = json.loads(g.read_text(encoding="utf-8"))
-check("graph 7033/29957", len(d["entities"]) == 7033 and len(d["edges"]) == 29957,
-      f'{len(d["entities"])}/{len(d["edges"])}')
-check("graph SHA16 = c021f0a0bc7a0dce", sha16(g) == "c021f0a0bc7a0dce", sha16(g))
+check("graph 实体 7033", len(d["entities"]) == 7033, str(len(d["entities"])))
+check("graph 边 ≥ 29957（R5 后 30269）", len(d["edges"]) >= 29957, str(len(d["edges"])))
 L = json.loads((D / "reports/baseline_v4.json").read_text(encoding="utf-8"))
 m = {"eval_300cn_after_r4": "reports/eval_300cn_after_r4.json",
      "eval_gen_after_r4": "reports/eval_gen_after_r4.json",
      "rank_rerank_lab_300cn_r4": "reports/rank_rerank_lab_300cn_r4.json",
      "rank_collect_300cn_r4": "reports/rank_collect_300cn_r4_top30.json",
-     "graph_live": "graph.json",
      "backup_prev_r4": "backups/graph.json.prev.r4",
      "baseline_v3": "reports/baseline_v3.json"}
 bad = [k for k, r in m.items() if sha16(D / r) != L["artifact_sha256_16"][k]]
-check("BASELINE_v4 7/7 冻结锁命中", not bad, str(bad))
+check("BASELINE_v4 历史冻结锁仍命中（除 live 外 6/6）", not bad, str(bad))
 check("repairs_v3 全目录在库", (D / "repairs_v3/proposal.json").exists()
       and (D / "repairs_v3/verification.json").exists())
 check("backups/graph.json.prev.r3 在库", (D / "backups/graph.json.prev.r3").exists())
@@ -99,6 +97,27 @@ check("Applier 落盘 CRLF（与 save/冻结件一致）", '\\r\\n' in ap)
 check("R5 评估报告在库", (W / "docs/R5立项前评估_20260927_scene共现边.md").exists())
 check("Phase5 重放报告在库", (W / "docs/核验报告Phase5_20260927_R4重放链路修复.md").exists())
 check("Phase2 核验报告在库", (W / "docs/核验报告Phase2_20260927_插入序根因闭合与tiebreak修复.md").exists())
+
+print("\n[Phase 5] R5 落盘（定向补桥）")
+b5p = D / "reports/baseline_v5.json"
+check("BASELINE_v5 在库", b5p.exists())
+if b5p.exists():
+    B5 = json.loads(b5p.read_text(encoding="utf-8"))
+    check("R5 后边数 = 30269", B5["graph"]["edges"] == 30269, str(B5["graph"]["edges"]))
+    check("R5 主口径 0.8776", B5["primary"]["rerank_hit6"] == 0.8776,
+          str(B5["primary"]["rerank_hit6"]))
+    check("R5 零回归记录", B5["eval300_no_regression"]["full"].startswith("156/196"))
+    locks5 = B5["artifact_sha256_16"]
+    m5 = {"graph_live": "graph.json",
+          "backup_prev_r5": "backups/graph.json.prev.r5",
+          "eval_300cn_after_r5": "reports/eval_300cn_after_r5.json",
+          "rank_rerank_lab_300cn_r5": "reports/rank_rerank_lab_300cn_r5.json",
+          "meetability_after_r5": "reports/meetability_test_after_r5.json"}
+    bad5 = [k for k, r in m5.items() if sha16(D / r) != locks5[k]]
+    check("BASELINE_v5 锁命中（5/5 可复算）", not bad5, str(bad5))
+check("R5 提案在库（312 add_edge）", (D / "repairs_v5/proposal.json").exists())
+check("R5 落盘报告在库", (W / "docs/R5落盘报告_20260927_定向补桥.md").exists())
+check("相遇测试复测报告在库", (D / "reports/meetability_test_after_r5.json").exists())
 
 print("\n" + "=" * 74)
 if FAILS:
