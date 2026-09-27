@@ -1,0 +1,65 @@
+{
+ "baseline": "BASELINE_v2",
+ "frozen_at": "2026-09-27",
+ "freeze_scope": "R3/R4 落盘并重校准前，一切新实验与本基线对比",
+ "graph": {
+  "entities": 7034,
+  "edges": 29959,
+  "fingerprint": "7dc29bf90681a3f7",
+  "repair_batches": [
+   "R1(20)",
+   "R2(71)"
+  ],
+  "backup": "backups/graph.json.prev.r1r2"
+ },
+ "primary": {
+  "caliber": "300_cn answerable(196) full rerank-ON",
+  "hit6": 0.8724,
+  "policy": "full_topN[zfit]alpha=1.0",
+  "up": 17,
+  "down": [
+   "R080",
+   "R300"
+  ],
+  "loo_cv_gap_pt": 1.02
+ },
+ "secondary": {
+  "300cn_bare_hit6": 0.7959,
+  "300cn_bare_vs_old_paired": {
+   "old_rerank": 0.8776,
+   "mcnemar_p": 1.0,
+   "only_diff": "R248",
+   "ci95_delta": [
+    -0.0153,
+    0.0
+   ]
+  },
+  "native_hit6": 0.632,
+  "seti_T1_bare": {
+   "hit6": 0.8973,
+   "hit10": 0.9243
+  },
+  "safety": {
+   "unanswerable": "1/104",
+   "grounded": 1.0
+  }
+ },
+ "generalization": {
+  "n": 120,
+  "sha256_16": "2971728a507cdadc",
+  "full_hit6": 0.8,
+  "GC_control": 0.86,
+  "GB_generic": 0.85,
+  "GA_probe": 0.72
+ },
+ "artifact_sha256_16": {
+  "eval_300cn_after_r1r2.json": "e9f7d27167bb0cad",
+  "eval_native_after_r1r2.json": "a6d0d29f5fe6d46e",
+  "rank_rerank_lab_300cn_r1r2.json": "4b947fc87cff9dfc",
+  "eval_gen_r1r2.json": "3fcd729ff90351bf",
+  "rag_testset_gen_r1r2.json": "2971728a507cdadc",
+  "graph.json (live, repaired)": "25cf12c6f6e4bf61",
+  "backup prev.r1r2": "25cf12c6f6e4bf61"
+ },
+ "unfreeze_condition": "R3/R4 落盘 + rebuild_indexes + 重校准完成后，以 BASELINE_v3 取代"
+}
