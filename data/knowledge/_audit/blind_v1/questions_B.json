@@ -1,0 +1,418 @@
+{
+  "meta": {
+    "author": "blind-agent-B",
+    "shard": "B",
+    "n": 50,
+    "note": "盲写：未参考任何既有题集",
+    "source_docs": [
+      "mainline__109_疯癫与文明",
+      "mainline__112_远征记",
+      "activity__36101_人们向何处去",
+      "activity__21101_77号往事",
+      "anecdote__1906_重返人间",
+      "character__19603_犹在镜中"
+    ]
+  },
+  "cases": [
+    {
+      "id": "BB-001",
+      "q": "科马拉监狱里那位自称不过是选择自囚于此的囚徒、能回答所有人问题的人，叫什么名字？",
+      "evidence": [["阿莱夫"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "他叫阿莱夫，就是虚构集通信半年多的那位笔友。"
+    },
+    {
+      "id": "BB-002",
+      "q": "虚构集写的那部永远得不到结局的小说，书名是什么？",
+      "evidence": [["理性家族的崛起与衰落"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "书名是《理性家族的崛起与衰落》，科马拉监狱的一切都按它运转。"
+    },
+    {
+      "id": "BB-003",
+      "q": "1990年瓜达拉哈拉国际图书博览会上，那位青年作家一天之内被多少家出版社拒绝了？",
+      "evidence": [["第十七家出版社"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "这是当天拒绝她的第十七家出版社。"
+    },
+    {
+      "id": "BB-004",
+      "q": "科马拉监狱里那个以职务为称呼、其实是头大型猫科动物的看守，被叫作什么？",
+      "evidence": [["美洲豹", "狱卒"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "她被称为“狱卒”，本体是一只美洲豹。"
+    },
+    {
+      "id": "BB-005",
+      "q": "德洛丝女士给神秘学杂志投稿时用的笔名是什么？",
+      "evidence": [["兀尔德"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "她以“兀尔德”为笔名向神秘学杂志投稿。"
+    },
+    {
+      "id": "BB-006",
+      "q": "那位来自巴西圣保罗荣军院、总提着老式打字机的盲眼女士，在虚构集的小说里对应哪个角色？",
+      "evidence": [["盲眼的织工"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "疯癫与文明",
+      "answer_note": "德洛丝对应小说中那位被巴比伦之骰夺去双眼的盲眼织工。"
+    },
+    {
+      "id": "BB-007",
+      "q": "科马拉议会用来决定药物和物资分配的那颗纸皮骰子，一共有多少个面？",
+      "evidence": [["二十个面", "20个面的纸质骰子"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "是一颗二十个面的纸质骰子。"
+    },
+    {
+      "id": "BB-008",
+      "q": "科马拉监狱那颗能映射人心渴望、被狱医握在手里的骰子，除了“科马拉之雨”之外还被称为什么？",
+      "evidence": [["巴比伦之骰"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "它同时被称作“巴比伦之骰”。"
+    },
+    {
+      "id": "BB-009",
+      "q": "科马拉疗养院是在哪一年被废弃的？",
+      "evidence": [["1947年"]],
+      "dims": {"type": "temporal", "difficulty": "medium", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "1947年，人们意识到神秘学血统并不是一种疾病，疗养院被废弃。"
+    },
+    {
+      "id": "BB-010",
+      "q": "在“无人能懂展厅”里用成千上万张悬浮纸条构成一张巨大人脸、日复一日反复调整布展的那位囚犯，叫什么名字？",
+      "evidence": [["加西亚"], ["另一个我"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "是策展人加西亚，他的作品叫“另一个我”。"
+    },
+    {
+      "id": "BB-011",
+      "q": "科马拉监狱里那位坐镇瞭望塔、一边给囚犯做手术一边谈论爬虫脑与新皮质的“狱医先生”，叫什么名字？",
+      "evidence": [["梅林"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "他叫梅林，是阿莱夫脑海中诞生的幻影之一。"
+    },
+    {
+      "id": "BB-012",
+      "q": "阿莱夫是在哪一年、第几次“暴雨”来临之前来到乌斯怀亚的？",
+      "evidence": [["第四次暴雨来临前"], ["1977年，第四次暴雨来临前"]],
+      "dims": {"type": "temporal", "difficulty": "hard", "hop": "single"},
+      "chapter": "疯癫与文明",
+      "answer_note": "1977年，第四次“暴雨”来临前他来到乌斯怀亚。"
+    },
+    {
+      "id": "BB-013",
+      "q": "芝诺骑兵军军长的全名是什么？",
+      "evidence": [["伊万·伊万诺维奇·布列科夫"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "他叫伊万·伊万诺维奇·布列科夫，即布列科夫少将。"
+    },
+    {
+      "id": "BB-014",
+      "q": "红弩箭那架载着她冲上云霄、也载着她坠落的飞行扫帚，叫什么名字？",
+      "evidence": [["红色38"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "她的扫帚名为“红色38”，燃料按分钟计算。"
+    },
+    {
+      "id": "BB-015",
+      "q": "在顿河边的村子里，玛尔纱追到一个形迹可疑的影子，对方用变形术把自己变成了什么？",
+      "evidence": [["招潮蟹"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "梅蕾尔用拙劣的变形术把自己变成了一只招潮蟹。"
+    },
+    {
+      "id": "BB-016",
+      "q": "那个自称“没有目的的游荡者”、不用进食、脸上始终蒙着布、身边总跟着一匹黑马的人，叫什么？",
+      "evidence": [["卡戎"], ["意识唤醒者"]],
+      "dims": {"type": "reasoning", "difficulty": "medium", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "他是意识唤醒者卡戎，一匹黑马叫安德烈森。"
+    },
+    {
+      "id": "BB-017",
+      "q": "替伊戈尔穿过两军之间的空地、邀请军长与司辰当面会谈的人是谁？",
+      "evidence": [["托勒密"]],
+      "dims": {"type": "multi-hop", "difficulty": "medium", "hop": "multi"},
+      "chapter": "远征记",
+      "answer_note": "是伊戈尔的养子兼信使托勒密。"
+    },
+    {
+      "id": "BB-018",
+      "q": "琥珀屋那场“灌体”实验做到第几次时，兀尔德的人格才第一次在一瞬间回归？",
+      "evidence": [["第13次灌体实验"]],
+      "dims": {"type": "temporal", "difficulty": "hard", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "是第13次灌体实验，实验人员认为她的人格也许曾在一瞬间回归。"
+    },
+    {
+      "id": "BB-019",
+      "q": "伊戈尔那位独眼的狮鹫军养子，左眼是怎么失明的？",
+      "evidence": [["左眼视网膜被高温辉光重度灼伤"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "远征记",
+      "answer_note": "敌人浑身捆满炼金辉光管冲向运兵车，他的左眼视网膜被高温辉光重度灼伤。"
+    },
+    {
+      "id": "BB-020",
+      "q": "那位自称基金会“Ⅻ”特别行动小队队医、带着一队前线返乡士兵来到红柳树村的红发骑士，叫什么？",
+      "evidence": [["玛尔纱"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "她叫玛尔纱，来自基金会“Ⅻ”特别行动小队。"
+    },
+    {
+      "id": "BB-021",
+      "q": "军长伊万找到他那位“母亲”佳琳娜夫人时，她正在哪里观看“礼炮6号”空间站的发射转播？",
+      "evidence": [["基辅大街的咖啡馆"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "远征记",
+      "answer_note": "她当时坐在基辅大街的咖啡馆里，和朋友一起看发射转播。"
+    },
+    {
+      "id": "BB-022",
+      "q": "伊戈尔向阿尔卡纳换取的那份被称作“奇迹”的东西，外观是什么样的小物件？",
+      "evidence": [["黑色立方体", "黑色小盒"]],
+      "dims": {"type": "reasoning", "difficulty": "hard", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "是一只黑色的立方体，格鲁托夫则轻蔑地称它为黑色小盒。"
+    },
+    {
+      "id": "BB-023",
+      "q": "伊戈尔最后交到维尔汀手上的那本厚如字典的白色书册，承载着什么？",
+      "evidence": [["四十三个灵魂的重量"]],
+      "dims": {"type": "reasoning", "difficulty": "hard", "hop": "single"},
+      "chapter": "远征记",
+      "answer_note": "他说那是四十三个灵魂的重量，来自被他收殓的四十三具失去灵魂的躯壳。"
+    },
+    {
+      "id": "BB-024",
+      "q": "芝诺指挥部命令骑兵军在多长时间内撤离顿河，之后又要在哪里与重塑之手交战？",
+      "evidence": [["两周内从顿河撤离"], ["匈牙利与重塑之手交战"]],
+      "dims": {"type": "temporal", "difficulty": "medium", "hop": "multi"},
+      "chapter": "远征记",
+      "answer_note": "两周内撤离顿河，下个月在匈牙利与重塑之手交战。"
+    },
+    {
+      "id": "BB-025",
+      "q": "拉普拉斯那位代理负责人兼密码学家，同事给他起了个外号叫“哑谜”，他的真名是什么？",
+      "evidence": [["阿德勒·霍夫曼"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "他叫阿德勒·霍夫曼，同事给他的外号是“哑谜”。"
+    },
+    {
+      "id": "BB-026",
+      "q": "那位在纪念墓园被基金会众人悼念的外派调查员、也是哑谜仅剩的亲属，是谁？",
+      "evidence": [["格蕾塔·霍夫曼"], ["格蕾塔"]],
+      "dims": {"type": "multi-hop", "difficulty": "easy", "hop": "multi"},
+      "chapter": "人们向何处去",
+      "answer_note": "是哑谜的姐姐格蕾塔·霍夫曼，马库斯是她的学生。"
+    },
+    {
+      "id": "BB-027",
+      "q": "那种帮助人们越过“暴雨”的绳结，是用哪位调查员的名字来命名的？",
+      "evidence": [["霍夫曼结"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "哑谜坚持提出的命名方案是“霍夫曼结”。"
+    },
+    {
+      "id": "BB-028",
+      "q": "缪斯三世送来的、能在内部模拟“暴雨”的那个箱子，在拉普拉斯被叫作什么？",
+      "evidence": [["玩具箱"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "它被称作“玩具箱”，内部是一个不断重置的模拟世界。"
+    },
+    {
+      "id": "BB-029",
+      "q": "哑谜在“玩具箱”核心上解开的那道维吉尼亚密码，明文（一个德语单词）是什么？",
+      "evidence": [["Zukunft"]],
+      "dims": {"type": "reasoning", "difficulty": "hard", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "明文是 Zukunft，德语里意为“未来”。"
+    },
+    {
+      "id": "BB-030",
+      "q": "哑谜抽屉里那张来自一位先行者日记的纸条上，写着哪句话？",
+      "evidence": [["人类的时代已经结束了"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "纸条上写着“人类的时代已经结束了”。"
+    },
+    {
+      "id": "BB-031",
+      "q": "拉普拉斯那位体内是磁流体、负责“暴雨”专项研究小组的研究员，叫什么？",
+      "evidence": [["乌尔里希"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "他叫乌尔里希，被兔毛手袋叫作“鱼缸头”“玻璃脑袋”。"
+    },
+    {
+      "id": "BB-032",
+      "q": "格蕾塔用哪一座山峰、哪一个称呼，来解释自己为什么愿意一直做基金会的外派调查员？",
+      "evidence": [["K2峰"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "人们向何处去",
+      "answer_note": "她举的例子是乔戈里峰，也就是 K2 峰。"
+    },
+    {
+      "id": "BB-033",
+      "q": "露西在回复哑谜的信里指出，他测试解毒剂的手段违反了《拉普拉斯职员实验操作条例》的哪两条？",
+      "evidence": [["第51条与第106条"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "人们向何处去",
+      "answer_note": "违反的是第51条与第106条，他将因此登上当月公示榜。"
+    },
+    {
+      "id": "BB-034",
+      "q": "在姐姐的墓碑前，哑谜临走时塞到马库斯手心里的那把糖是什么？",
+      "evidence": [["薄荷糖"]],
+      "dims": {"type": "reasoning", "difficulty": "medium", "hop": "multi"},
+      "chapter": "人们向何处去",
+      "answer_note": "是薄荷糖，霍夫曼的口袋里也曾散落着这样的小东西。"
+    },
+    {
+      "id": "BB-035",
+      "q": "那位靠着能看清一切痕迹的眼睛接活、却有严重夜盲症的雇佣兵，叫什么名字？",
+      "evidence": [["阿尔古斯"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "她叫阿尔古斯，26岁，神秘术靠眼睛为生。"
+    },
+    {
+      "id": "BB-036",
+      "q": "阿尔古斯一路从德克萨斯追到蓝手帕旅馆、却始终没能找到的那个女孩，叫什么？",
+      "evidence": [["凯拉"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "那个女孩叫凯拉。"
+    },
+    {
+      "id": "BB-037",
+      "q": "蓝手帕旅馆里那间没有门、隔绝一切信息、数羊羔被关在其中的房间，编号是多少？",
+      "evidence": [["707"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "是 707 号房间，也就是那扇鲜红的门扉。"
+    },
+    {
+      "id": "BB-038",
+      "q": "那位羊首人身、为《UTTU》取材却被困在旅馆里的编辑，叫什么？",
+      "evidence": [["数羊羔"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "她是《UTTU》的编辑数羊羔。"
+    },
+    {
+      "id": "BB-039",
+      "q": "那位在旅馆里朝自己太阳穴开枪、生前是芝诺上尉的军官，全名是什么？",
+      "evidence": [["史蒂文·加西亚"]],
+      "dims": {"type": "multi-hop", "difficulty": "medium", "hop": "multi"},
+      "chapter": "77号往事",
+      "answer_note": "他是史蒂文·加西亚，芝诺上尉，36岁。"
+    },
+    {
+      "id": "BB-040",
+      "q": "旅馆房间里那通用摩斯电码敲出来的电话，最终拼出的单词是什么？",
+      "evidence": [["RESPOND"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "拼出的单词是 RESPOND。"
+    },
+    {
+      "id": "BB-041",
+      "q": "阿尔古斯用来短暂恢复视力的那种糖，叫什么？",
+      "evidence": [["苦目糖"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "是苦目糖，吃一颗能把丢失的视野恢复到50%。"
+    },
+    {
+      "id": "BB-042",
+      "q": "史蒂文先生自杀时用的那把枪，是什么型号？",
+      "evidence": [["飞矢M1903式手枪"]],
+      "dims": {"type": "factoid", "difficulty": "medium", "hop": "single"},
+      "chapter": "77号往事",
+      "answer_note": "是一把飞矢M1903式手枪，属于芝诺配发的军备用品。"
+    },
+    {
+      "id": "BB-043",
+      "q": "金伯利女郎被逼问时供出的那位同伙、也是重塑之手派来负责此地的人，是谁？",
+      "evidence": [["淑女格蕾丝"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "77号往事",
+      "answer_note": "她供出的名字是淑女格蕾丝。"
+    },
+    {
+      "id": "BB-044",
+      "q": "那位在极东孤岛上用羊皮纸和石头写诗、能与动物交流，后来加入圣洛夫基金会的神秘学家，给自己取的名字是什么？",
+      "evidence": [["恶魔岛诗人"], ["“冬”，就很好"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "重返人间",
+      "answer_note": "他给自己取的名字是“冬”。"
+    },
+    {
+      "id": "BB-045",
+      "q": "最早报道“恶魔岛诗人”的那位《真相报》主编，叫什么？",
+      "evidence": [["苏沃林"]],
+      "dims": {"type": "factoid", "difficulty": "hard", "hop": "single"},
+      "chapter": "重返人间",
+      "answer_note": "是《真相报》主编苏沃林，他因此升任文学主编。"
+    },
+    {
+      "id": "BB-046",
+      "q": "档案里记载，这位诗人是在哪一年被定以“侮辱最高当局”罪名、押送至东西伯利亚的？",
+      "evidence": [["1912年"]],
+      "dims": {"type": "temporal", "difficulty": "easy", "hop": "single"},
+      "chapter": "重返人间",
+      "answer_note": "1912年，他随后通过转运监狱被流放孤岛。"
+    },
+    {
+      "id": "BB-047",
+      "q": "那位被人称为“卡卡尼亚”的绿衣医生，本名是什么？",
+      "evidence": [["克拉拉·温格勒"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "犹在镜中",
+      "answer_note": "她的本名是克拉拉·温格勒。"
+    },
+    {
+      "id": "BB-048",
+      "q": "温格勒家族代代相传、能窥探一个人心中所想的神秘术，被称为什么？",
+      "evidence": [["温格勒的魔镜"]],
+      "dims": {"type": "factoid", "difficulty": "easy", "hop": "single"},
+      "chapter": "犹在镜中",
+      "answer_note": "这门神秘术被称为“温格勒的魔镜”。"
+    },
+    {
+      "id": "BB-049",
+      "q": "那位送给卡卡尼亚第一枚手镜、临别时郑重告诫她这面镜子绝不能被打破的朋友，叫什么名字？",
+      "evidence": [["泽姆菲拉"], ["这镜不可被打破"]],
+      "dims": {"type": "multi-hop", "difficulty": "medium", "hop": "multi"},
+      "chapter": "犹在镜中",
+      "answer_note": "她叫泽姆菲拉，临走前说“这镜不可被打破，否则必将降临灾祸”。"
+    },
+    {
+      "id": "BB-050",
+      "q": "卡卡尼亚需要替他解开催眠的那位对象，是“重塑之手”的前成员，她的全名是什么？",
+      "evidence": [["伊索尔德·冯·迪塔斯多夫"]],
+      "dims": {"type": "multi-hop", "difficulty": "hard", "hop": "multi"},
+      "chapter": "犹在镜中",
+      "answer_note": "她是伊索尔德·冯·迪塔斯多夫，正被基金会问询却一直处于被催眠状态。"
+    }
+  ]
+}

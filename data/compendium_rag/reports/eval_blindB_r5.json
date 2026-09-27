@@ -1,0 +1,2011 @@
+{
+  "testset": "data/knowledge/_audit/blind_v1/questions_B.json",
+  "top_k": 6,
+  "corpus": {
+    "chunks": 3695,
+    "entities": 7033,
+    "edges": 30269
+  },
+  "rows": [
+    {
+      "qid": "BB-001",
+      "query": "科马拉监狱里那位自称不过是选择自囚于此的囚徒、能回答所有人问题的人，叫什么名字？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 9.072,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-002",
+      "query": "虚构集写的那部永远得不到结局的小说，书名是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.947,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-003",
+      "query": "1990年瓜达拉哈拉国际图书博览会上，那位青年作家一天之内被多少家出版社拒绝了？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 6.038,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-004",
+      "query": "科马拉监狱里那个以职务为称呼、其实是头大型猫科动物的看守，被叫作什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.446,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-005",
+      "query": "德洛丝女士给神秘学杂志投稿时用的笔名是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.389,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-006",
+      "query": "那位来自巴西圣保罗荣军院、总提着老式打字机的盲眼女士，在虚构集的小说里对应哪个角色？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.834,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-007",
+      "query": "科马拉议会用来决定药物和物资分配的那颗纸皮骰子，一共有多少个面？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.708,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-008",
+      "query": "科马拉监狱那颗能映射人心渴望、被狱医握在手里的骰子，除了“科马拉之雨”之外还被称为什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.24,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-009",
+      "query": "科马拉疗养院是在哪一年被废弃的？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.957,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-010",
+      "query": "在“无人能懂展厅”里用成千上万张悬浮纸条构成一张巨大人脸、日复一日反复调整布展的那位囚犯，叫什么名字？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 6.027,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-011",
+      "query": "科马拉监狱里那位坐镇瞭望塔、一边给囚犯做手术一边谈论爬虫脑与新皮质的“狱医先生”，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 6.174,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-012",
+      "query": "阿莱夫是在哪一年、第几次“暴雨”来临之前来到乌斯怀亚的？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.444,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-013",
+      "query": "芝诺骑兵军军长的全名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.251,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-014",
+      "query": "红弩箭那架载着她冲上云霄、也载着她坠落的飞行扫帚，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.502,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-015",
+      "query": "在顿河边的村子里，玛尔纱追到一个形迹可疑的影子，对方用变形术把自己变成了什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.779,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-016",
+      "query": "那个自称“没有目的的游荡者”、不用进食、脸上始终蒙着布、身边总跟着一匹黑马的人，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 6.031,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-017",
+      "query": "替伊戈尔穿过两军之间的空地、邀请军长与司辰当面会谈的人是谁？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.697,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-018",
+      "query": "琥珀屋那场“灌体”实验做到第几次时，兀尔德的人格才第一次在一瞬间回归？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.298,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-019",
+      "query": "伊戈尔那位独眼的狮鹫军养子，左眼是怎么失明的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.437,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-020",
+      "query": "那位自称基金会“Ⅻ”特别行动小队队医、带着一队前线返乡士兵来到红柳树村的红发骑士，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.671,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-021",
+      "query": "军长伊万找到他那位“母亲”佳琳娜夫人时，她正在哪里观看“礼炮6号”空间站的发射转播？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.591,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-022",
+      "query": "伊戈尔向阿尔卡纳换取的那份被称作“奇迹”的东西，外观是什么样的小物件？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.766,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-023",
+      "query": "伊戈尔最后交到维尔汀手上的那本厚如字典的白色书册，承载着什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.98,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-024",
+      "query": "芝诺指挥部命令骑兵军在多长时间内撤离顿河，之后又要在哪里与重塑之手交战？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.73,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-025",
+      "query": "拉普拉斯那位代理负责人兼密码学家，同事给他起了个外号叫“哑谜”，他的真名是什么？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.262,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-026",
+      "query": "那位在纪念墓园被基金会众人悼念的外派调查员、也是哑谜仅剩的亲属，是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.72,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "easy",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-027",
+      "query": "那种帮助人们越过“暴雨”的绳结，是用哪位调查员的名字来命名的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.974,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-028",
+      "query": "缪斯三世送来的、能在内部模拟“暴雨”的那个箱子，在拉普拉斯被叫作什么？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.659,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-029",
+      "query": "哑谜在“玩具箱”核心上解开的那道维吉尼亚密码，明文（一个德语单词）是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.94,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-030",
+      "query": "哑谜抽屉里那张来自一位先行者日记的纸条上，写着哪句话？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.046,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-031",
+      "query": "拉普拉斯那位体内是磁流体、负责“暴雨”专项研究小组的研究员，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.313,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-032",
+      "query": "格蕾塔用哪一座山峰、哪一个称呼，来解释自己为什么愿意一直做基金会的外派调查员？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.379,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-033",
+      "query": "露西在回复哑谜的信里指出，他测试解毒剂的手段违反了《拉普拉斯职员实验操作条例》的哪两条？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.567,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-034",
+      "query": "在姐姐的墓碑前，哑谜临走时塞到马库斯手心里的那把糖是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.274,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-035",
+      "query": "那位靠着能看清一切痕迹的眼睛接活、却有严重夜盲症的雇佣兵，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.43,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-036",
+      "query": "阿尔古斯一路从德克萨斯追到蓝手帕旅馆、却始终没能找到的那个女孩，叫什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.287,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-037",
+      "query": "蓝手帕旅馆里那间没有门、隔绝一切信息、数羊羔被关在其中的房间，编号是多少？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.361,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-038",
+      "query": "那位羊首人身、为《UTTU》取材却被困在旅馆里的编辑，叫什么？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.15,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-039",
+      "query": "那位在旅馆里朝自己太阳穴开枪、生前是芝诺上尉的军官，全名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.439,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-040",
+      "query": "旅馆房间里那通用摩斯电码敲出来的电话，最终拼出的单词是什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.48,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-041",
+      "query": "阿尔古斯用来短暂恢复视力的那种糖，叫什么？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.027,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-042",
+      "query": "史蒂文先生自杀时用的那把枪，是什么型号？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.054,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-043",
+      "query": "金伯利女郎被逼问时供出的那位同伙、也是重塑之手派来负责此地的人，是谁？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.376,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-044",
+      "query": "那位在极东孤岛上用羊皮纸和石头写诗、能与动物交流，后来加入圣洛夫基金会的神秘学家，给自己取的名字是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.194,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-045",
+      "query": "最早报道“恶魔岛诗人”的那位《真相报》主编，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.689,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-046",
+      "query": "档案里记载，这位诗人是在哪一年被定以“侮辱最高当局”罪名、押送至东西伯利亚的？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.546,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-047",
+      "query": "那位被人称为“卡卡尼亚”的绿衣医生，本名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.328,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-048",
+      "query": "温格勒家族代代相传、能窥探一个人心中所想的神秘术，被称为什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.555,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-049",
+      "query": "那位送给卡卡尼亚第一枚手镜、临别时郑重告诫她这面镜子绝不能被打破的朋友，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.538,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-050",
+      "query": "卡卡尼亚需要替他解开催眠的那位对象，是“重塑之手”的前成员，她的全名是什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.954,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "BB-001",
+      "query": "科马拉监狱里那位自称不过是选择自囚于此的囚徒、能回答所有人问题的人，叫什么名字？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.619,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-002",
+      "query": "虚构集写的那部永远得不到结局的小说，书名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.537,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-003",
+      "query": "1990年瓜达拉哈拉国际图书博览会上，那位青年作家一天之内被多少家出版社拒绝了？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.496,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-004",
+      "query": "科马拉监狱里那个以职务为称呼、其实是头大型猫科动物的看守，被叫作什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.614,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-005",
+      "query": "德洛丝女士给神秘学杂志投稿时用的笔名是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.641,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-006",
+      "query": "那位来自巴西圣保罗荣军院、总提着老式打字机的盲眼女士，在虚构集的小说里对应哪个角色？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.464,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-007",
+      "query": "科马拉议会用来决定药物和物资分配的那颗纸皮骰子，一共有多少个面？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.814,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-008",
+      "query": "科马拉监狱那颗能映射人心渴望、被狱医握在手里的骰子，除了“科马拉之雨”之外还被称为什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.579,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-009",
+      "query": "科马拉疗养院是在哪一年被废弃的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.951,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-010",
+      "query": "在“无人能懂展厅”里用成千上万张悬浮纸条构成一张巨大人脸、日复一日反复调整布展的那位囚犯，叫什么名字？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 23,
+      "n_edges": 30,
+      "seconds": 4.452,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-011",
+      "query": "科马拉监狱里那位坐镇瞭望塔、一边给囚犯做手术一边谈论爬虫脑与新皮质的“狱医先生”，叫什么名字？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.637,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-012",
+      "query": "阿莱夫是在哪一年、第几次“暴雨”来临之前来到乌斯怀亚的？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.492,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-013",
+      "query": "芝诺骑兵军军长的全名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.844,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-014",
+      "query": "红弩箭那架载着她冲上云霄、也载着她坠落的飞行扫帚，叫什么名字？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.89,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-015",
+      "query": "在顿河边的村子里，玛尔纱追到一个形迹可疑的影子，对方用变形术把自己变成了什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.838,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-016",
+      "query": "那个自称“没有目的的游荡者”、不用进食、脸上始终蒙着布、身边总跟着一匹黑马的人，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 19,
+      "n_edges": 30,
+      "seconds": 4.442,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-017",
+      "query": "替伊戈尔穿过两军之间的空地、邀请军长与司辰当面会谈的人是谁？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.647,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-018",
+      "query": "琥珀屋那场“灌体”实验做到第几次时，兀尔德的人格才第一次在一瞬间回归？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.4,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-019",
+      "query": "伊戈尔那位独眼的狮鹫军养子，左眼是怎么失明的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.535,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-020",
+      "query": "那位自称基金会“Ⅻ”特别行动小队队医、带着一队前线返乡士兵来到红柳树村的红发骑士，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.429,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-021",
+      "query": "军长伊万找到他那位“母亲”佳琳娜夫人时，她正在哪里观看“礼炮6号”空间站的发射转播？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.516,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-022",
+      "query": "伊戈尔向阿尔卡纳换取的那份被称作“奇迹”的东西，外观是什么样的小物件？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.674,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-023",
+      "query": "伊戈尔最后交到维尔汀手上的那本厚如字典的白色书册，承载着什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.769,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-024",
+      "query": "芝诺指挥部命令骑兵军在多长时间内撤离顿河，之后又要在哪里与重塑之手交战？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.504,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-025",
+      "query": "拉普拉斯那位代理负责人兼密码学家，同事给他起了个外号叫“哑谜”，他的真名是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.418,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-026",
+      "query": "那位在纪念墓园被基金会众人悼念的外派调查员、也是哑谜仅剩的亲属，是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.798,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "easy",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-027",
+      "query": "那种帮助人们越过“暴雨”的绳结，是用哪位调查员的名字来命名的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.468,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-028",
+      "query": "缪斯三世送来的、能在内部模拟“暴雨”的那个箱子，在拉普拉斯被叫作什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.546,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-029",
+      "query": "哑谜在“玩具箱”核心上解开的那道维吉尼亚密码，明文（一个德语单词）是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.545,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-030",
+      "query": "哑谜抽屉里那张来自一位先行者日记的纸条上，写着哪句话？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.537,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-031",
+      "query": "拉普拉斯那位体内是磁流体、负责“暴雨”专项研究小组的研究员，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.503,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-032",
+      "query": "格蕾塔用哪一座山峰、哪一个称呼，来解释自己为什么愿意一直做基金会的外派调查员？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.461,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-033",
+      "query": "露西在回复哑谜的信里指出，他测试解毒剂的手段违反了《拉普拉斯职员实验操作条例》的哪两条？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.74,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-034",
+      "query": "在姐姐的墓碑前，哑谜临走时塞到马库斯手心里的那把糖是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.784,
+      "dims": {
+        "type": "reasoning",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-035",
+      "query": "那位靠着能看清一切痕迹的眼睛接活、却有严重夜盲症的雇佣兵，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 18,
+      "n_edges": 30,
+      "seconds": 4.51,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-036",
+      "query": "阿尔古斯一路从德克萨斯追到蓝手帕旅馆、却始终没能找到的那个女孩，叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.571,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-037",
+      "query": "蓝手帕旅馆里那间没有门、隔绝一切信息、数羊羔被关在其中的房间，编号是多少？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.502,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-038",
+      "query": "那位羊首人身、为《UTTU》取材却被困在旅馆里的编辑，叫什么？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.15,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-039",
+      "query": "那位在旅馆里朝自己太阳穴开枪、生前是芝诺上尉的军官，全名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.817,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-040",
+      "query": "旅馆房间里那通用摩斯电码敲出来的电话，最终拼出的单词是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 22,
+      "n_edges": 30,
+      "seconds": 4.632,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": false,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-041",
+      "query": "阿尔古斯用来短暂恢复视力的那种糖，叫什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 20,
+      "n_edges": 30,
+      "seconds": 4.443,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-042",
+      "query": "史蒂文先生自杀时用的那把枪，是什么型号？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 15,
+      "n_edges": 30,
+      "seconds": 4.468,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-043",
+      "query": "金伯利女郎被逼问时供出的那位同伙、也是重塑之手派来负责此地的人，是谁？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.238,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-044",
+      "query": "那位在极东孤岛上用羊皮纸和石头写诗、能与动物交流，后来加入圣洛夫基金会的神秘学家，给自己取的名字是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 22,
+      "n_edges": 30,
+      "seconds": 4.63,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-045",
+      "query": "最早报道“恶魔岛诗人”的那位《真相报》主编，叫什么？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 19,
+      "n_edges": 30,
+      "seconds": 4.858,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-046",
+      "query": "档案里记载，这位诗人是在哪一年被定以“侮辱最高当局”罪名、押送至东西伯利亚的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.732,
+      "dims": {
+        "type": "temporal",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-047",
+      "query": "那位被人称为“卡卡尼亚”的绿衣医生，本名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.597,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-048",
+      "query": "温格勒家族代代相传、能窥探一个人心中所想的神秘术，被称为什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.783,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "hop": "single",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-049",
+      "query": "那位送给卡卡尼亚第一枚手镜、临别时郑重告诫她这面镜子绝不能被打破的朋友，叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.558,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "medium",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "BB-050",
+      "query": "卡卡尼亚需要替他解开催眠的那位对象，是“重塑之手”的前成员，她的全名是什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.459,
+      "dims": {
+        "type": "multi-hop",
+        "difficulty": "hard",
+        "hop": "multi",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    }
+  ]
+}
