@@ -344,21 +344,54 @@ class GraphStore:
     @staticmethod
     def from_dict(d: dict) -> "GraphStore":
         g = GraphStore(fingerprint=d.get("fingerprint", ""))
+        # 两遍构造，消除插入序依赖（#39 核验，2026-09-27）：
+        #   ① 实体名一律登记（规范名唯一，不存在冲突）；
+        #   ② 别名冲突按**确定性规则**裁决 —— 先到者不再靠 dict 顺序，
+        #      而是「实体自身 name 等于该别名者优先，其次 eid 字典序最小者」。
+        # 原实现用 `setdefault` 直接落，冲突归属取决于实体遍历序，
+        # 导致暖进程/冷启动之间 alias_index 可能指向不同实体
+        # （实测 `许可证`：神秘术使用许可证 / 神秘术许可证）。
+        name_owner: dict[str, str] = {}
+        alias_claims: dict[str, set[str]] = {}
+        ents: list[Entity] = []
         for ed in d.get("entities", []):
             e = Entity.from_dict(ed)
-            g.entities[e.eid] = e
-            g.alias_index[e.name] = e.eid
+            ents.append(e)
+            name_owner[e.name] = e.eid
+        for e in ents:
             for a in e.aliases:
-                g.alias_index.setdefault(a, e.eid)
+                if a in name_owner:
+                    continue          # 已被某个实体的规范名占用，规范名优先
+                alias_claims.setdefault(a, set()).add(e.eid)
+
+        g.entities = {e.eid: e for e in ents}
+        g.alias_index.update(name_owner)
+        for a in sorted(alias_claims):          # 排序 -> 插入序确定
+            g.alias_index[a] = min(alias_claims[a])   # 冲突取 eid 字典序最小
         g.edges = [Edge.from_dict(x) for x in d.get("edges", [])]
         g._edge_index = {e.key: e for e in g.edges}
         return g
 
     def save(self, path: Path) -> None:
+        """原子落盘。格式与 Applier/历史冻结件**逐字节一致**（#39 核验，2026-09-27）。
+
+        此前本函数写 `json.dumps(..., ensure_ascii=False)`（压缩、LF），
+        而 scripts/_graph_apply_repairs.py:365 写 `indent=2`（缩进），
+        且 .gitattributes 缺失 + core.autocrlf=true 会把 CRLF 转 LF 入库。
+        三者叠加的后果：同一张图经不同路径落盘得到不同字节 ——
+        BASELINE_v4 冻结的 graph_live SHA16 `c021f0a0bc7a0dce`
+        是「indent=2 + CRLF」，而 GraphStore.save 产出 `b7341d9480c857cd`，
+        于是「保存后校验指纹」必然失败，并产生 43 万行伪 diff。
+
+        现统一为：indent=2 + CRLF + UTF-8（不转义非 ASCII），
+        使 save() 的产物与冻结锚点可逐字节对账。
+        """
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(path.suffix + ".tmp")
-        tmp.write_text(json.dumps(self.to_dict(), ensure_ascii=False),
-                       encoding="utf-8")
+        body = json.dumps(self.to_dict(), ensure_ascii=False, indent=2)
+        # 换行统一 CRLF（与历史冻结件/git 工作区一致）
+        body = body.replace("\r\n", "\n").replace("\n", "\r\n")
+        tmp.write_bytes(body.encode("utf-8"))
         tmp.replace(path)
 
     @staticmethod

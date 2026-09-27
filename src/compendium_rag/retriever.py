@@ -296,8 +296,13 @@ class GraphRetriever:
         seeds: dict[str, Seed] = {}
         ql = q.lower()
 
-        # 长名优先，避免「伊索」抢「伊索尔德」
-        cands = sorted(self.graph.alias_index.keys(), key=len, reverse=True)
+        # 长名优先，避免「伊索」抢「伊索尔德」。
+        # ⚠ 必须带**显式次级键**：Python 的 sorted 是稳定排序，只按 len 排时，
+        #   同长键的先后完全由 dict 插入序决定 —— 而 alias_index 的插入序在
+        #   暖进程（Applier 落盘后内存态）与冷启动（自 graph.json 重建）之间不同，
+        #   实测 300 题里有 37 题的 seeds 会因此改变（#39 核验，2026-09-27）。
+        #   次级键取键本身（字典序），使排序结果与插入序无关，暖冷恒等。
+        cands = sorted(self.graph.alias_index.keys(), key=lambda k: (-len(k), k))
         for name in cands:
             if not _name_matches(name, ql):
                 continue

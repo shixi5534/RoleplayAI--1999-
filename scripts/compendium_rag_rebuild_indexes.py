@@ -10,13 +10,21 @@
   2. 本地嵌入全部块 + 全部实体名 → 重建 chunk_index.npz / entity_index.npz
   3. 把 index 统计同步进 reports/build_report.json（只改 index 键，其余不动）
 
+写前自动备份（2026-09-27 #39 核验追加）：
+  此前本脚本直接覆盖 *.npz，无任何备份；2026-09-27 12:06 的 entity_index
+  就被就地覆盖且无可回退副本（只能靠 .prev 的 Sep 25 版本 + 重嵌重建）。
+  现改为：覆盖前把现有索引复制为 `<name>.prev`（保留上一版），
+  并把当前图的 SHA-16 记入 `index_backup_manifest.json` 以便对账。
+
 全程唯一网络访问目标是本地 Ollama（embed_base_url），无任何云端调用。
 """
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import logging
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -33,6 +41,36 @@ from compendium_rag.graph_store import GraphStore, fingerprint_of  # noqa: E402
 from compendium_rag.retriever import ChunkIndex, EntityVectorIndex  # noqa: E402
 
 logger = logging.getLogger("rebuild_indexes")
+
+
+def _sha16(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+
+
+def _backup_existing(paths: list[Path], manifest_path: Path, note: str) -> dict:
+    """覆盖前把现有索引另存为 <name>.prev（原子替换），并记录对账清单。
+
+    只备份**已存在**的文件；不存在（首次构建）则跳过。
+    """
+    backed: dict[str, dict[str, str]] = {}
+    for p in paths:
+        prev = p.with_suffix(p.suffix + ".prev")
+        if not p.exists():
+            logger.info("备份跳过（不存在，视为首次构建）: %s", p.name)
+            continue
+        before = _sha16(p)
+        shutil.copy2(p, prev)
+        backed[p.name] = {"sha16_before_overwrite": before,
+                          "prev_path": prev.name,
+                          "prev_sha16": _sha16(prev)}
+        logger.info("已备份 %s → %s（覆盖前 SHA16=%s）", p.name, prev.name, before)
+    manifest = {"backed_up_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "note": note, "files": backed}
+    if backed:
+        manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
+                                 encoding="utf-8")
+        logger.info("备份清单 → %s", manifest_path)
+    return manifest
 
 
 async def run() -> int:
@@ -56,6 +94,13 @@ async def run() -> int:
                 len(chunks), len(graph.entities), len(graph.edges))
 
     # ── 2. 本地嵌入 + 落盘 ──
+    # 写前备份：先把现有索引存为 .prev（#39 核验追加，防无备份就地覆盖）
+    ep = s.data_dir / "entity_index.npz"
+    _backup_existing(
+        [s.index_path, ep],
+        s.reports_dir / "index_backup_manifest.json",
+        note=f"rebuild_indexes 覆盖前备份；graph_sha16={_sha16(s.graph_path)}")
+
     t0 = time.time()
     async with OllamaEmbedder(s.embed_base_url, s.embed_model,
                               s.embed_timeout, concurrency=4) as emb:
@@ -75,7 +120,6 @@ async def run() -> int:
         names = [graph.entities[e].name for e in eids]
         t1 = time.time()
         evecs = await emb.embed(names) if names else []
-        ep = s.data_dir / "entity_index.npz"
         if evecs:
             EntityVectorIndex.build(eids, names, evecs).save(ep)
         logger.info("实体索引 %d 条 → %s（%.1fs）", len(evecs), ep, time.time() - t1)
