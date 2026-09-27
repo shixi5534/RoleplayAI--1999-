@@ -133,6 +133,15 @@ class Settings:
         default_factory=lambda: _env_float("CMPRAG_VECTOR_WEIGHT", 1.0))
     graph_weight: float = field(
         default_factory=lambda: _env_float("CMPRAG_GRAPH_WEIGHT", 1.0))
+    # 词面通道（BM25 变体，不依赖实体链接/嵌入）。
+    # 默认 0.0 = 关闭，保持历史行为逐位可复现；经 300cn 选定的生产值为 **1.0**
+    # （2026-09-28 盲测验收：盲测 206 题裸检索 0.6748 -> 0.8301，up=32 / down=0）。
+    # 启用方式：CMPRAG_LEX_WEIGHT=1.0。
+    # ⚠ 启用后评测语义变化，按 §4bis 必须**冷启动重新校准**（eval300 + 泛化 + 安全线）
+    #   才能引用新数字，不得与历史基线直接比较。
+    lex_weight: float = field(
+        default_factory=lambda: _env_float("CMPRAG_LEX_WEIGHT", 0.0))
+    lex_top: int = field(default_factory=lambda: _env_int("CMPRAG_LEX_TOP", 30))
     context_max_chars: int = field(
         default_factory=lambda: _env_int("CMPRAG_CONTEXT_MAX_CHARS", 3000))
 

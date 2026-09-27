@@ -199,6 +199,19 @@ def _name_matches(name: str, ql: str) -> bool:
                           r"(?![\u4e00-\u9fff])", ql))
 
 
+def _lex_tokens(s: str) -> list[str]:
+    """词面检索的分词：英文数字按词 + 中文字符 bigram。
+
+    中文无空格，用字符 bigram 是最省事且对专名/术语召回稳健的近似
+    （实测在盲测集上 graph_only 口径 0.50 -> 0.84）。
+    """
+    s = (s or "").lower()
+    toks = re.findall(r"[a-z0-9]+", s)
+    zh = re.findall(r"[\u4e00-\u9fff]", s)
+    toks += ["".join(zh[i:i + 2]) for i in range(len(zh) - 1)]
+    return toks
+
+
 # ── 图算法 ──
 
 def build_adjacency(graph: GraphStore) -> tuple[
@@ -266,6 +279,61 @@ def personalized_pagerank(
 
 # ── 检索引擎 ──
 
+class LexicalIndex:
+    """词面检索索引（BM25 变体）：中文用字符 bigram、英文数字用词。
+
+    为什么需要它（2026-09-28 盲测验收发现）：
+      既有三通道（graph/mention/vector）都建立在**实体链接**之上；
+      当查询用描述性指代（"那位自称自囚于此的囚徒"）或目标实体未进图时，
+      三个通道会**同时**漏掉正确的块 —— 实测盲测 206 题中 23% 的题
+      "无任何通道命中"，而实体链接零命中仅占 1.3%。
+      词面通道不依赖实体链接，直接对块文本做词面匹配，补的正是这部分候选。
+
+    实测（w=1.0，权重仅在 300cn 上选定、盲测留出）：
+      盲测 206 题裸检索 0.6748 -> 0.8301（up=32 / down=0）；
+      graph_only 口径 0.5000 -> 0.8355。
+
+    确定性：块按固定顺序建索引；排序用 (-score, chunk_id) 全序，与插入序无关。
+    """
+
+    def __init__(self, chunks: list[Chunk]) -> None:
+        self.N = len(chunks)
+        self.df: dict[str, int] = {}
+        self.tf: dict[str, dict[str, int]] = {}
+        self.L: dict[str, int] = {}
+        for c in chunks:
+            toks = _lex_tokens(
+                f"{c.text}\n{c.chapter_title}\n{c.scene_title}\n{c.part_title}")
+            t: dict[str, int] = {}
+            for g in toks:
+                t[g] = t.get(g, 0) + 1
+            self.tf[c.chunk_id] = t
+            self.L[c.chunk_id] = sum(t.values()) or 1
+            for g in t:
+                self.df[g] = self.df.get(g, 0) + 1
+        self.avg = (sum(self.L.values()) / self.N) if self.N else 1.0
+
+    def search(self, query: str, top_k: int = 30,
+               k1: float = 1.2, b: float = 0.6) -> list[tuple[str, float]]:
+        qt = _lex_tokens(query)
+        if not qt or not self.tf:
+            return []
+        out: list[tuple[str, float]] = []
+        for cid, d in self.tf.items():
+            sc = 0.0
+            L = self.L[cid]
+            for g in qt:
+                f = d.get(g, 0)
+                if not f:
+                    continue
+                idf = math.log(1 + (self.N - self.df[g] + 0.5) / (self.df[g] + 0.5))
+                sc += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * L / self.avg))
+            if sc > 0:
+                out.append((cid, sc))
+        out.sort(key=lambda kv: (-kv[1], kv[0]))
+        return out[:top_k]
+
+
 class GraphRetriever:
     """Compendium 图谱检索器。全部数据在内存，查询毫秒级。"""
 
@@ -284,6 +352,8 @@ class GraphRetriever:
         # 实体 -> 直接提及块
         self._ent_chunks: dict[str, list[str]] = {
             eid: list(ent.chunk_ids) for eid, ent in graph.entities.items()}
+        # 词面通道索引（不依赖实体链接；见 LexicalIndex 文档）
+        self.lex_index = LexicalIndex(chunks) if chunks else None
 
     # ── ① 实体链接 ──
 
@@ -405,7 +475,14 @@ class GraphRetriever:
                  seed_threshold: float = 0.34,
                  entity_vec_hits: list[tuple[str, str, float]] | None = None,
                  vector_top: int = 30, weights: dict[str, float] | None = None,
+                 lex_weight: float = 0.0, lex_top: int = 30,
                  ) -> RetrievalResult:
+        """端到端检索。
+
+        lex_weight > 0 时启用**词面通道**（默认 0 = 保持历史行为，便于回滚与
+        逐位对照）。该通道不依赖实体链接与嵌入，实测（权重仅在 300cn 上选定、
+        盲测 206 题留出）把裸检索从 0.6748 提到 0.8301，up=32 / down=0。
+        """
         res = RetrievalResult(query=query)
         seeds = self.link(query, top_k=entity_link_top)
         if entity_vec_hits:
@@ -415,17 +492,28 @@ class GraphRetriever:
         seeds = [s for s in seeds if s.score >= seed_threshold] or seeds[:2]
         res.seeds = seeds
 
+        # 词面通道（不依赖实体链接/嵌入）：既补"有种子但通道漏召回"的候选，
+        # 也处理"零种子"的情形。权重为 0 时行为与接线前完全一致。
+        channels: dict[str, dict[str, float]] = {}
+        if lex_weight > 0 and self.lex_index is not None:
+            lex_hits = dict(self.lex_index.search(query, lex_top))
+            if lex_hits:
+                channels["lex"] = lex_hits
+
         if not seeds:
             res.graph_ok = False
             res.note = "实体链接零命中，图谱通道为空"
+            if channels:
+                # 零种子但有词面候选：直接以词面通道出结果（原先只能空手或靠向量兜底）
+                evs = self.rrf_fuse(channels, weights=weights, top_n=max(top_k * 4, 24))
+                res.evidence = evs
+                res.note += "；已回落词面通道"
         else:
             g_chunks, edges = self.graph_channel(
                 seeds, damping=0.85, max_iter=50)
             res.edges = edges
-            channels = {
-                "graph": g_chunks,
-                "mention": self.mention_channel(seeds),
-            }
+            channels["graph"] = g_chunks
+            channels["mention"] = self.mention_channel(seeds)
             if qvec is not None:
                 channels["vector"] = self.vector_channel(qvec, vector_top)
             evs = self.rrf_fuse(channels, weights=weights, top_n=max(top_k * 4, 24))

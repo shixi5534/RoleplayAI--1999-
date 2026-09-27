@@ -333,7 +333,8 @@ class KnowledgeBase:
             seed_threshold=s.seed_score_threshold,
             entity_vec_hits=ent_hits,
             weights={"graph": s.graph_weight, "mention": 1.0,
-                     "vector": s.vector_weight})
+                     "vector": s.vector_weight},
+            lex_weight=s.lex_weight, lex_top=s.lex_top)
         return res.to_dict()
 
     def context(self, query_res: dict, top_k: int | None = None) -> str:
