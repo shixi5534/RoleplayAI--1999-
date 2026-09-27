@@ -11,7 +11,7 @@
 闸门: 交错校验(逐条对演进状态) -> 后检全图(悬空 eid/chunk、重名、eid!=name、边悬空 chunk) -> 边去重 -> 全绿才写；写前备份。
 退出码: 0=干跑全绿 / 1=校验失败 / 2=文件缺失。
 """
-import argparse, copy, json, shutil, sys, time
+import argparse, copy, hashlib, json, shutil, sys, time
 from collections import Counter
 from pathlib import Path
 
@@ -361,10 +361,18 @@ def main():
     bdir.mkdir(exist_ok=True)
     bpath = bdir / f"graph.json.prev.{args.version_tag}"
     shutil.copy2(gpath, bpath)
+    # 落盘格式必须与 GraphStore.save 及历史冻结件**逐字节一致**（#39 核验，2026-09-27）：
+    #   indent=2 + CRLF。此前本行只写 indent=2（LF），叠加 core.autocrlf=true
+    #   会让入库 blob 与磁盘字节不等（12,299,423 -> 11,865,337，SHA16 c021f0a0 -> eb48f8e1），
+    #   导致「从 git 重建并校验指纹」失败，并产生 43 万行伪 diff。
+    body = json.dumps(g2, ensure_ascii=False, indent=2)
+    body = body.replace("\r\n", "\n").replace("\n", "\r\n")
     tmp = gpath.with_name(gpath.name + ".tmp")
-    tmp.write_text(json.dumps(g2, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.write_bytes(body.encode("utf-8"))
     tmp.replace(gpath)
     print(f"[APPLIED] 备份 -> {bpath}；新图 -> {gpath}")
+    print(f"          落盘 SHA16 = {hashlib.sha256(gpath.read_bytes()).hexdigest()[:16]}"
+          f"（格式 indent=2 + CRLF，与 GraphStore.save 一致）")
 
 if __name__ == "__main__":
     main()

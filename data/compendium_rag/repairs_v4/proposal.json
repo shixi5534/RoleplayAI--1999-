@@ -1964,7 +1964,7 @@
   },
   {
    "id": "R4-K01",
-   "type": "remove_alias",
+   "type": "keep_with_note",
    "target": "诊所",
    "note": "死别名 诊疗@诊所 保留（测试集豁免）：gen_r1r2 [GA-25] 查询「在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？」含该串（『诊疗室』），当前 link() 经 alias 0.9 种子 诊所（跨篇：犹在镜中/今夜星光灿烂/孤独之歌；GA-25 gold=卡卡尼亚@小房间）。作战书规则：已知查询路由路径上的死别名 → keep-with-waiver 而非删除；摘除会改变该题种子集（可能消除跨篇错种子，但也属路由变更），留给 Verifier/重校准闸门裁决后再动。DF=41（12 docs）。",
    "evidence": [
@@ -1978,8 +1978,11 @@
     }
    ],
    "before": "alias 诊疗@诊所 保留（waiver）",
-   "after": "不变；建议 Verifier 裁决是否降级/摘除并重跑 GA-25",
-   "arbitration": "2026-09-27 仲裁：采纳 Verifier remove 方案——GA-25 命中来源为 诊疗室 exact-1.0（独立实体，声称块=GA-25 gold 文档），诊疗@诊所 为跨篇噪声种子（0.9）；摘除后置闸门：gen-120 复跑 GA-25 必须保持命中，破则回滚。"
+   "after": "保留（未摘除）。图现状：诊所.aliases 仍含 '诊疗'，alias_index['诊疗']=诊所",
+   "arbitration": "2026-09-27 仲裁：采纳 Verifier remove 方案——GA-25 命中来源为 诊疗室 exact-1.0（独立实体，声称块=GA-25 gold 文档），诊疗@诊所 为跨篇噪声种子（0.9）；摘除后置闸门：gen-120 复跑 GA-25 必须保持命中，破则回滚。",
+   "arbitration_status": "NOT-APPLIED（2026-09-27 晚 #39 核验发现）",
+   "not_applied_note": "该仲裁**未落盘**。第二会话曾把本条 type 改为 remove_alias 并追加仲裁文本，但 target 是裸字符串且无 alias 字段 -> Applier 的 _alias() 返回 None -> 预检报「alias 不在属主别名表: None@诊所」-> 全图 fail-closed 不写盘。实测：(a) live 图 诊所.aliases 仍为 ['工坊','诊疗']（未摘除）；(b) 别名总数 994->917 即摘 77 条，而提案含 78 条 remove_alias；(c) 从 prev.r4 重放，本条为 remove_alias 时 rc=1 且写不出图，还原为 keep_with_note 时可**逐字节复现冻结 SHA c021f0a0bc7a0dce**。故 R4 实际落盘语义 = 本条 NOOP。为恢复重放链路，本条还原为 keep_with_note；是否真正执行摘除（需重跑 GA-25 闸门并产生新 SHA，进而影响 BASELINE_v4 冻结值）留待用户裁决。",
+   "replay_verified": "scripts/_check_r4_replay.py：keep_with_note 下从 prev.r4 重放 -> c021f0a0bc7a0dce（= BASELINE_v4 graph_live 锁定值）"
   }
  ]
 }
