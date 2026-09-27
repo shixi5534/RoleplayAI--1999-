@@ -1,0 +1,702 @@
+{
+ "n_entities": 7033,
+ "n_alias_index_pre": 8049,
+ "n_alias_index_post": 8013,
+ "removed_from_index": [
+  "两人",
+  "仪器",
+  "伞",
+  "信",
+  "信徒",
+  "别斯米尔",
+  "副作用",
+  "同胞",
+  "哥哥",
+  "地图",
+  "城里",
+  "头儿",
+  "妹妹",
+  "委员会",
+  "学校",
+  "学派",
+  "家族",
+  "小家伙",
+  "幻觉",
+  "幽灵",
+  "怪物",
+  "总部",
+  "教堂",
+  "玛丽",
+  "石头",
+  "符号",
+  "线",
+  "组长",
+  "老伙计",
+  "老朋友",
+  "老板",
+  "老爷",
+  "街道",
+  "装置",
+  "迷宫",
+  "门"
+ ],
+ "dangling": [],
+ "n_removed_alias_declarations": 36,
+ "n_keep": 25,
+ "retention": {
+  "怪物": {
+   "奇美拉": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "委员会": {
+   "联合委员会": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "基金会联合委员会",
+     "基金委"
+    ],
+    "n_verbatim_aliases": 2
+   }
+  },
+  "老爷": {
+   "维尔汀": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "司辰",
+     "司辰小姐",
+     "小维尔汀",
+     "政府老爷",
+     "维尔汀博士",
+     "维尔汀小姐"
+    ],
+    "n_verbatim_aliases": 7
+   }
+  },
+  "小家伙": {
+   "阿黛拉的小龙": {
+    "canonical_grounded": false,
+    "remaining_verbatim_aliases": [
+     "小龙",
+     "幼龙"
+    ],
+    "n_verbatim_aliases": 2
+   }
+  },
+  "家族": {
+   "泰内布朗热家": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "地图": {
+   "手绘地图": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "南极神秘学地图",
+     "诺谛卡的地图"
+    ],
+    "n_verbatim_aliases": 2
+   }
+  },
+  "哥哥": {
+   "卡卡尼亚之兄": {
+    "canonical_grounded": false,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "符号": {
+   "禁锢术式": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "信": {
+   "信仰": {
+    "canonical_grounded": false,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "幻觉": {
+   "施特林": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "玛丽": {
+   "圣路连士兵": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   },
+   "玛丽安娜": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "吊唁者",
+     "骑士团士兵"
+    ],
+    "n_verbatim_aliases": 2
+   }
+  },
+  "老板": {
+   "勿忘我": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "勿忘我先生",
+     "勿忘我老爷"
+    ],
+    "n_verbatim_aliases": 2
+   }
+  },
+  "教堂": {
+   "悲伤圣母教堂": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "门": {
+   "神殿之门": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "神殿大门"
+    ],
+    "n_verbatim_aliases": 1
+   }
+  },
+  "妹妹": {
+   "洛佩拉": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "亲爱的妹妹",
+     "圣保罗的洛佩拉",
+     "小赌徒",
+     "洛佩拉小姐",
+     "那孩子"
+    ],
+    "n_verbatim_aliases": 5
+   }
+  },
+  "装置": {
+   "环境监测装置": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "信徒": {
+   "重塑·信徒": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "众教徒",
+     "教徒",
+     "重塑信徒",
+     "黑袍信徒"
+    ],
+    "n_verbatim_aliases": 4
+   }
+  },
+  "仪器": {
+   "人工梦游训练仪": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "学派": {
+   "阿派朗学派": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "贵学派"
+    ],
+    "n_verbatim_aliases": 1
+   }
+  },
+  "副作用": {
+   "诅咒": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "老朋友": {
+   "邓肯先生": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "卡森",
+     "叛徒”邓肯",
+     "大胆的邓肯",
+     "无所不能的邓肯",
+     "老邓肯",
+     "邓肯"
+    ],
+    "n_verbatim_aliases": 6
+   }
+  },
+  "城里": {
+   "别列格勒": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "伞": {
+   "平衡伞": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "便携式平衡伞"
+    ],
+    "n_verbatim_aliases": 1
+   }
+  },
+  "组长": {
+   "乌尔里希": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "乌尔里希先生",
+     "乌尔里希组长",
+     "意识唤醒者研究员",
+     "玻璃缸脑袋",
+     "破译组长"
+    ],
+    "n_verbatim_aliases": 5
+   }
+  },
+  "学校": {
+   "第一防线学校": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "两人": {
+   "逃兵": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "头儿": {
+   "维尔汀": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "司辰",
+     "司辰小姐",
+     "小维尔汀",
+     "政府老爷",
+     "维尔汀博士",
+     "维尔汀小姐"
+    ],
+    "n_verbatim_aliases": 7
+   }
+  },
+  "别斯米尔": {
+   "卡卡尼亚": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "兀尔德",
+     "兀尔德女士",
+     "克拉拉",
+     "克拉拉·温格勒",
+     "克拉拉女士",
+     "克拉拉小姐"
+    ],
+    "n_verbatim_aliases": 14
+   }
+  },
+  "街道": {
+   "乌斯怀亚": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "乌斯怀亚·咖啡馆",
+     "乌斯怀亚·街道",
+     "乌斯怀亚·隐藏码头",
+     "咖啡馆"
+    ],
+    "n_verbatim_aliases": 4
+   }
+  },
+  "同胞": {
+   "神秘学家": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "总部": {
+   "圣洛夫基金会总部": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "老伙计": {
+   "邓肯先生": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "卡森",
+     "叛徒”邓肯",
+     "大胆的邓肯",
+     "无所不能的邓肯",
+     "老邓肯",
+     "邓肯"
+    ],
+    "n_verbatim_aliases": 6
+   }
+  },
+  "迷宫": {
+   "石壁迷宫": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "玄武岩迷宫"
+    ],
+    "n_verbatim_aliases": 1
+   }
+  },
+  "石头": {
+   "龙涎香": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [
+     "吊坠"
+    ],
+    "n_verbatim_aliases": 1
+   }
+  },
+  "幽灵": {
+   "游灵": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  "线": {
+   "金线": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  }
+ },
+ "retention_exceptions": [
+  {
+   "alias": "怪物",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "家族",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "哥哥",
+   "detail": {
+    "canonical_grounded": false,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "符号",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "信",
+   "detail": {
+    "canonical_grounded": false,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "幻觉",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "玛丽",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "教堂",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "装置",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "仪器",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "副作用",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "城里",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "学校",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "两人",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "同胞",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "总部",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "幽灵",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  },
+  {
+   "alias": "线",
+   "detail": {
+    "canonical_grounded": true,
+    "remaining_verbatim_aliases": [],
+    "n_verbatim_aliases": 0
+   }
+  }
+ ],
+ "changed_queries": [
+  {
+   "qid": "R018",
+   "lost": [
+    "邓肯先生"
+   ],
+   "gained": [],
+   "was_poolout": true
+  },
+  {
+   "qid": "R062",
+   "lost": [
+    "奇美拉"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R069",
+   "lost": [
+    "奇美拉"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R076",
+   "lost": [
+    "奇美拉"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R087",
+   "lost": [
+    "泰内布朗热家"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R127",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": true
+  },
+  {
+   "qid": "R170",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": true
+  },
+  {
+   "qid": "R180",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R228",
+   "lost": [
+    "勿忘我"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R240",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": false
+  },
+  {
+   "qid": "R259",
+   "lost": [
+    "泰内布朗热家"
+   ],
+   "gained": [],
+   "was_poolout": false
+  }
+ ],
+ "n_changed_queries": 11,
+ "changed_poolout": [
+  {
+   "qid": "R018",
+   "lost": [
+    "邓肯先生"
+   ],
+   "gained": [],
+   "was_poolout": true
+  },
+  {
+   "qid": "R127",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": true
+  },
+  {
+   "qid": "R170",
+   "lost": [
+    "环境监测装置"
+   ],
+   "gained": [],
+   "was_poolout": true
+  }
+ ],
+ "poolout_involving_removed": [
+  {
+   "qid": "R018",
+   "removed_aliases_matched": [
+    "老伙计"
+   ]
+  },
+  {
+   "qid": "R127",
+   "removed_aliases_matched": [
+    "装置"
+   ]
+  },
+  {
+   "qid": "R170",
+   "removed_aliases_matched": [
+    "装置"
+   ]
+  },
+  {
+   "qid": "R297",
+   "removed_aliases_matched": [
+    "学校"
+   ]
+  }
+ ],
+ "dead_alias_count_itemscope_pre": 78,
+ "dead_alias_count_itemscope_post": 77,
+ "R018_pre": [
+  [
+   "伙计",
+   1.0
+  ],
+  [
+   "猎人",
+   1.0
+  ],
+  [
+   "邓肯先生",
+   0.9
+  ]
+ ],
+ "R018_post": [
+  [
+   "伙计",
+   1.0
+  ],
+  [
+   "猎人",
+   1.0
+  ]
+ ]
+}

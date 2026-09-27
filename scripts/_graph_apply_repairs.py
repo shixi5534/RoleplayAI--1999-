@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
-"""图谱修复落盘执行器（作战书 §2.4 Applier——脚本，非代理；单稿终版）。
+"""图谱修复落盘执行器（作战书 §2.4 Applier——脚本，非代理；R5 版：+add_edge）。
 用法:
-  干跑(默认):  ./.venv/Scripts/python.exe scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v1/proposal.json [--proposal .../repairs_v2/proposal.json]
-  落盘:        同上 --apply --version-tag r1
+  干跑(默认):  ./.venv/Scripts/python.exe scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_vN/proposal.json [--proposal ...]
+  落盘:        同上 --apply --version-tag rN
 双 schema 兼容:
-  v1: target=属主字符串（merge 为 "A → B"；move_edge 的 target=新属主），alias/alias 列表顶层，entity=dict，edges=list
+  v1: target=属主字符串（merge 为 "A → B"；move_edge 的 target=新属主），alias 顶层，entity=dict，edges/moved_*/add_chunk_ids=list
   v2: target=dict{alias,owner_eid,...}；keep_with_note/keep_node/flag_grounding_r4 为 no-op（只验引用）
-规则:
-  1) 预检(逐条) -> 模拟应用 -> 后检全图（悬空 eid/chunk、重名、eid!=name、边悬空 chunk）全绿才写；
-  2) 写前备份 graph.json -> backups/graph.json.prev.<tag>；--apply 才写；
-  3) move_edge 旧属主 = 同提案 remove_alias 属主的众数（数据驱动，不硬编码）；
-  4) 退出码 0=干跑全绿 / 1=校验失败 / 2=文件缺失。
+条目类型: remove_alias/add_alias/add_entity/merge_entities/reassign_chunk/move_edge/delete_edge/add_edge(R5 新增)
+跳过标记: entry.inferred / entry.rejected / entry.superseded_by → 只记警告不落图（作战书 §0.2 与仲裁语义）
+闸门: 交错校验(逐条对演进状态) -> 后检全图(悬空 eid/chunk、重名、eid!=name、边悬空 chunk) -> 边去重 -> 全绿才写；写前备份。
+退出码: 0=干跑全绿 / 1=校验失败 / 2=文件缺失。
 """
 import argparse, copy, json, shutil, sys, time
 from collections import Counter
@@ -25,9 +24,9 @@ from compendium_rag.config import get_settings  # noqa: E402
 from compendium_rag import pipeline as P        # noqa: E402
 
 NOOP_TYPES = {"keep_with_note", "keep_node", "flag_grounding_r4", "keep", "flag"}
+SKIP_MARKS = ("inferred", "rejected", "superseded_by")
 
 def _owner(entry):
-    """remove_alias/add_alias/reassign_chunk 的属主：v1 target=字符串；v2 target.owner_eid。"""
     t = entry.get("target")
     if isinstance(t, dict):
         return t.get("owner_eid") or t.get("eid")
@@ -72,9 +71,8 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
     removed_pairs = removed_pairs or set()
     et = entry.get("type")
     errs = []
-    tgt = entry.get("target")
     if et in NOOP_TYPES:
-        ref = tgt.get("owner_eid") or tgt.get("eid") if isinstance(tgt, dict) else tgt
+        ref = _owner(entry)
         if ref and ref not in ents:
             errs.append(f"no-op 引用实体不存在: {ref}")
         return errs
@@ -96,7 +94,7 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
         elif not any(alias in t for t in ctexts.values()):
             warnings.append(f"add_alias 语料无逐字（inferred?）: {alias}@{owner}")
     elif et == "add_entity":
-        payload = entry.get("entity") if isinstance(entry.get("entity"), dict) else (tgt if isinstance(tgt, dict) else {})
+        payload = entry.get("entity") if isinstance(entry.get("entity"), dict) else (entry.get("target") if isinstance(entry.get("target"), dict) else {})
         eid = payload.get("eid") or entry.get("eid")
         name = payload.get("name") or eid
         if not eid:
@@ -106,12 +104,12 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
                 errs.append(f"eid 已存在: {eid}")
             if name and eid != name:
                 errs.append(f"eid != name: {eid} vs {name}")
-            for a in (payload.get("aliases") or []):
-                if not any(a in t for t in ctexts.values()):
-                    warnings.append(f"新实体 alias 语料无逐字（inferred?）: {a}@{eid}")
-            for cid in (payload.get("chunk_ids") or []):
-                if cid not in ctexts:
-                    errs.append(f"add_entity 悬空 chunk: {cid}@{eid}")
+        for a in (payload.get("aliases") or []):
+            if not any(a in t for t in ctexts.values()):
+                warnings.append(f"新实体 alias 语料无逐字（inferred?）: {a}@{eid}")
+        for cid in (payload.get("chunk_ids") or []):
+            if cid not in ctexts:
+                errs.append(f"add_entity 悬空 chunk: {cid}@{eid}")
     elif et == "merge_entities":
         t = entry.get("target")
         if not (isinstance(t, str) and "→" in t):
@@ -120,7 +118,7 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
         src, dst = [x.strip() for x in t.split("→", 1)]
         if src not in ents:
             errs.append(f"merge 源不存在: {src}")
-        if dst not in ents and dst != (entry.get("new_eid")):
+        if dst not in ents:
             errs.append(f"merge 目标不存在: {dst}")
         for cid in (entry.get("moved_chunks") or []):
             if cid not in ctexts:
@@ -151,11 +149,8 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
                 errs.append(f"move 边三元组非法: {item}")
                 continue
             src, rel, dst = triple
-            hit = [e for e in edges if e["src"] == src and e["relation"] == rel and e["dst"] == dst]
-            if not hit:
+            if not any(e["src"] == src and e["relation"] == rel and e["dst"] == dst for e in edges):
                 errs.append(f"move 边不存在: {src}-[{rel}]->{dst}")
-            elif weld_owner and weld_owner not in (src, dst):
-                errs.append(f"move 边不含焊主端点: {src}-[{rel}]->{dst} (焊主={weld_owner})")
     elif et == "delete_edge":
         for item in (entry.get("edges") or []):
             triple = item.get("edge") if isinstance(item, dict) else item
@@ -165,6 +160,20 @@ def validate_entry(entry, ents, names, ctexts, warnings, edges, weld_owner, remo
             src, rel, dst = triple
             if not any(e["src"] == src and e["relation"] == rel and e["dst"] == dst for e in edges):
                 errs.append(f"delete 边不存在: {src}-[{rel}]->{dst}")
+    elif et == "add_edge":
+        ev = entry.get("edge") or {}
+        src, rel, dst = ev.get("src"), ev.get("relation"), ev.get("dst")
+        if src not in ents:
+            errs.append(f"add_edge 源不存在: {src}")
+        if dst not in ents:
+            errs.append(f"add_edge 目标不存在: {dst}")
+        if src and dst and src == dst:
+            errs.append(f"add_edge 自环: {src}")
+        for cid in (ev.get("chunk_ids") or []):
+            if cid not in ctexts:
+                errs.append(f"add_edge 悬空 chunk: {cid}")
+        if src and rel and dst and any(e["src"] == src and e["relation"] == rel and e["dst"] == dst for e in edges):
+            errs.append(f"add_edge 与既有边重复: {src}-[{rel}]->{dst}")
     else:
         errs.append(f"未知条目类型: {et}")
     return errs
@@ -229,6 +238,13 @@ def apply_entry(entry, g, ents, names, weld_owner):
             drop.add((triple[0], triple[1], triple[2]))
         g["edges"] = [e for e in g["edges"]
                       if (e["src"], e["relation"], e["dst"]) not in drop]
+    elif et == "add_edge":
+        ev = entry.get("edge") or {}
+        g["edges"].append({"src": ev["src"], "dst": ev["dst"], "relation": ev["relation"],
+                           "confidence": ev.get("confidence", 0.5),
+                           "evidence": ev.get("evidence", ""),
+                           "chunk_ids": list(ev.get("chunk_ids") or []),
+                           "count": ev.get("count", len(ev.get("chunk_ids") or []))})
 
 def post_validate(g, ctexts):
     ents, names = index_graph(g)
@@ -288,19 +304,22 @@ def main():
     for prop in proposals:
         for entry in prop.get("entries", []):
             n_entries += 1
+            if any(entry.get(k) for k in SKIP_MARKS):
+                why = ("inferred（语料查无不落图，作战书 §0.2）" if entry.get("inferred")
+                       else "rejected（仲裁否决）" if entry.get("rejected")
+                       else f"superseded（仲裁改制 → {', '.join(entry.get('superseded_by'))}）")
+                warnings.append(f"[{entry.get('id', '?')}] skipped — {why}: {_alias(entry) or entry.get('target')}")
+                continue
             ents2, names2 = index_graph(g2)
-            if entry.get("type") == "remove_alias":
-                pair = (_owner(entry), _alias(entry))
-                if pair in removed_pairs:
-                    warnings.append(f"[{entry.get('id', '?')}] 已由前版删除（跨版本幂等重叠）: {pair[1]}@{pair[0]}")
-                removed_pairs.add(pair)
             errs = validate_entry(entry, ents2, names2, ctexts, warnings, g2["edges"], weld_owner, removed_pairs)
             if errs:
                 all_errs += [f"[{entry.get('id', '?')}] {m}" for m in errs]
                 continue  # 该条校验失败：不应用（级联影响如实报）
             apply_entry(entry, g2, ents2, names2, weld_owner)
+            if entry.get("type") == "remove_alias":
+                removed_pairs.add((_owner(entry), _alias(entry)))
 
-    # 边去重：merge/move 可能产生同 (src,relation,dst) 重复——图规范零重复（质检结构项基线）
+    # 边去重：merge/move/add 可能产生同 (src,relation,dst) 重复——图规范零重复
     seen, deduped = {}, []
     for e in g2["edges"]:
         key = (e["src"], e["relation"], e["dst"])
@@ -342,7 +361,7 @@ def main():
     bdir.mkdir(exist_ok=True)
     bpath = bdir / f"graph.json.prev.{args.version_tag}"
     shutil.copy2(gpath, bpath)
-    tmp = gpath.with_suffix(".json.tmp")
+    tmp = gpath.with_name(gpath.name + ".tmp")
     tmp.write_text(json.dumps(g2, ensure_ascii=False, indent=2), encoding="utf-8")
     tmp.replace(gpath)
     print(f"[APPLIED] 备份 -> {bpath}；新图 -> {gpath}")

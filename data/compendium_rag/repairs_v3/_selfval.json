@@ -1,0 +1,291 @@
+{
+ "preconditions": "PASS（全部断言见 _build_proposal.py）",
+ "simulation": {
+  "applied": [
+   {
+    "id": "R3-E01",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E02",
+    "status": "skipped-inferred"
+   },
+   {
+    "id": "R3-E03",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E04",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E05",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E06",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E07",
+    "status": "skipped-inferred"
+   },
+   {
+    "id": "R3-E08",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E09",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E10",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E11",
+    "status": "noop"
+   },
+   {
+    "id": "R3-E12",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E13",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E14",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E15",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E16",
+    "status": "ok"
+   },
+   {
+    "id": "R3-E17",
+    "status": "noop"
+   },
+   {
+    "id": "R3-E18",
+    "status": "noop"
+   }
+  ],
+  "errors": [],
+  "warnings": [
+   "R3-E02 inferred alias（按作战书 §0.2 不落图，需用户裁决）: Noire@菲林士多",
+   "R3-E07 inferred alias（按作战书 §0.2 不落图，需用户裁决）: 契约魅魔@金伯利女郎"
+  ]
+ },
+ "post_validate": "PASS：无 eid 重复/无重名/eid==name/无悬空 chunk（实体+边）/无悬空边端点/触碰实体 mentions==len(set(chunk_ids))/新 alias 均逐字于属主声称块/触碰实体 chunk_ids 无重复",
+ "graph_delta": {
+  "entities": "7034 -> 7034",
+  "edges": "29959 -> 29959"
+ },
+ "link_simulation": {
+  "R090": {
+   "query": "在中央塔里自囚的医生是谁？",
+   "before": [],
+   "after": [
+    [
+     "中央瞭望塔",
+     0.9,
+     "alias"
+    ]
+   ]
+  },
+  "R094": {
+   "query": "Noire 的中文译名是什么？",
+   "before": [],
+   "after": [],
+   "after_if_inferred_applied": [
+    [
+     "菲林士多",
+     0.9,
+     "alias"
+    ]
+   ]
+  },
+  "R127": {
+   "query": "福格先生发明的大型装置是什么？",
+   "before": [],
+   "after": []
+  },
+  "R170": {
+   "query": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+   "before": [
+    [
+     "科算中心",
+     0.9,
+     "alias"
+    ]
+   ],
+   "after": [
+    [
+     "科算中心",
+     0.9,
+     "alias"
+    ]
+   ]
+  },
+  "R231": {
+   "query": "77 号往事里与格蕾丝对立的契约魅魔是谁？",
+   "before": [
+    [
+     "77",
+     1.0,
+     "exact"
+    ],
+    [
+     "魅魔",
+     1.0,
+     "exact"
+    ],
+    [
+     "无名者",
+     0.9,
+     "alias"
+    ]
+   ],
+   "after": [
+    [
+     "77",
+     1.0,
+     "exact"
+    ],
+    [
+     "魅魔",
+     1.0,
+     "exact"
+    ],
+    [
+     "无名者",
+     0.9,
+     "alias"
+    ]
+   ],
+   "after_if_inferred_applied": [
+    [
+     "77",
+     1.0,
+     "exact"
+    ],
+    [
+     "魅魔",
+     1.0,
+     "exact"
+    ],
+    [
+     "金伯利女郎",
+     0.9,
+     "alias"
+    ],
+    [
+     "无名者",
+     0.9,
+     "alias"
+    ]
+   ]
+  },
+  "R005": {
+   "query": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+   "before": [
+    [
+     "洞穴的囚徒",
+     1.0,
+     "exact"
+    ],
+    [
+     "洞穴",
+     1.0,
+     "exact"
+    ],
+    [
+     "雪地摩托",
+     0.9,
+     "alias"
+    ]
+   ],
+   "after": [
+    [
+     "洞穴的囚徒",
+     1.0,
+     "exact"
+    ],
+    [
+     "洞穴",
+     1.0,
+     "exact"
+    ],
+    [
+     "雪地摩托",
+     0.9,
+     "alias"
+    ]
+   ]
+  },
+  "R012": {
+   "query": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+   "before": [
+    [
+     "苏芙比",
+     1.0,
+     "exact"
+    ],
+    [
+     "苹果",
+     1.0,
+     "exact"
+    ]
+   ],
+   "after": [
+    [
+     "苏芙比",
+     1.0,
+     "exact"
+    ],
+    [
+     "苹果",
+     1.0,
+     "exact"
+    ]
+   ]
+  },
+  "R018": {
+   "query": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+   "before": [
+    [
+     "伙计",
+     1.0,
+     "exact"
+    ],
+    [
+     "猎人",
+     1.0,
+     "exact"
+    ]
+   ],
+   "after": [
+    [
+     "伙计",
+     1.0,
+     "exact"
+    ],
+    [
+     "猎人",
+     1.0,
+     "exact"
+    ]
+   ]
+  }
+ },
+ "real_applier_dryrun": {
+  "command": "scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v3/proposal.json",
+  "result": "条目 18 | 预检错误 0 | 警告 2（inferred alias: Noire@菲林士多, 契约魅魔@金伯利女郎）| 后检错误 0 | [DRY-RUN] 全绿",
+  "edges_after_dedup": "29959 -> 29957（哑谜-质问→乌尔里希 ×2、乌尔里希-反驳→哑谜 ×2 同三元组合并，chunk_ids 并入）"
+ }
+}

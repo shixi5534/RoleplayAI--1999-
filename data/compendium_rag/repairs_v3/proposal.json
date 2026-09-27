@@ -1,0 +1,737 @@
+{
+ "meta": {
+  "author": "R3-repairer",
+  "timestamp": "2026-09-26",
+  "network": "none — huiji WAF 403 禁网（见 data/compendium_rag/huiji_pages/_prefetch_log.json）；身份裁决全部来自本地缓存 data/lore/_huiji_cache/（474 文件）+ data/lore/wu_ming_zhe/ 词表 + 语料逐字 grep",
+  "schema": "v1（target=属主字符串；entity=dict；列表为 list；merge target='A → B'）— 与 repairs_v1/proposal.json 同构，适配 scripts/_graph_apply_repairs.py",
+  "sources": [
+   {
+    "file": "docs/图谱修复作战书_预注册_20260926.md",
+    "role": "协议（§0 冲突序 / §2 角色 / R3 范围）"
+   },
+   {
+    "file": "docs/图谱与原文质检报告_20260926.md",
+    "role": "检6 归因表 + 修复建议清单（R094/R090/R127/R170/R231/R005/R012/乌尔里希/保罗）"
+   },
+   {
+    "file": "data/compendium_rag/reports/rank_triage_300cn.json",
+    "role": "14 例 corpus_not_pooled / entity_bridge=true 明细"
+   },
+   {
+    "file": "data/knowledge/_audit/rag_testset_300_cn.json",
+    "role": "R090/R094/R127/R170/R231/R005/R012 查询与 ref"
+   },
+   {
+    "file": "data/compendium_rag/repairs_arbitration_20260926.md",
+    "role": "仲裁#1：保罗→QUALIFY，执行推迟至 R3"
+   },
+   {
+    "file": "data/compendium_rag/repairs_v2/verification_by_r1repairer.json",
+    "role": "保罗 DF92/66圣保罗/R265 证据"
+   },
+   {
+    "file": "data/compendium_rag/repairs_v1/proposal.json",
+    "role": "v1 schema 参照 + 传记作家兀尔德→兀尔德 合并先例"
+   },
+   {
+    "file": "data/lore/_huiji_cache/（474 文件）+ data/lore/wu_ming_zhe/huiji_canon|lexicon|plot_aliases|plot_glossary|wiki_zh_en.json",
+    "role": "灰机离线缓存/词表（禁网，2026-09-13 采集）"
+   },
+   {
+    "file": "data/compendium_rag/graph.json（7034 实体 / 29959 边，R1+R2 后现状）+ chunks.json（3695 块）",
+    "role": "全部图谱现状核验与逐字 grep"
+   }
+  ],
+  "conflict_order": "语料明文反证 > 灰机 > 图谱现状 > 审计推断（作战书 §0）；语料反证条目：R3-E11（船名不合并）、E03（R127 归因修正：福葛先生≠福格尔）、E02/E07/E08（inferred/稀疏标注）",
+  "counts": {
+   "entries": 18,
+   "add_entity": 3,
+   "add_alias": 6,
+   "remove_alias": 1,
+   "merge_entities": 3,
+   "reassign_chunk": 2,
+   "keep_with_note": 3
+  },
+  "arbitration": "2026-09-27 仲裁：E03 撤回改制（雾行者已存在）/E02 inferred 跳过/E07 rejected 跳过（评测泄漏）；+E03a/E03b。来源 repairs_v3/verification.json（17/18 agree + 1 disagree 证据确凿）。"
+ },
+ "entries": [
+  {
+   "id": "R3-E01",
+   "item": 1,
+   "type": "add_alias",
+   "target": "中央瞭望塔",
+   "alias": "中央塔",
+   "evidence": [
+    {
+     "src": "corpus mainline__113_他者的悲哀:5.1.1",
+     "quote": "*梅蕾尔**：之后带玛蒂尔达去中央塔或者图书馆……最后只要撑到救援抵达就行了——就、就这样办！ / 滚烫的血液在危机中泵入四肢，加"
+    },
+    {
+     "src": "corpus mainline__113_他者的悲哀:19.1.1",
+     "quote": "两截。 / **梅蕾尔**：中央塔的气象鸽果然也已经……没关系，还有备用的…… / 她蹲下身，推开一具尸体，试图在基座"
+    },
+    {
+     "src": "corpus mainline__109_疯癫与文明:11.0.1",
+     "quote": "阿莱夫**：恐怕这些猜测都不准确，我不过是一名选择自囚于此的囚徒罢了。然而，既然您有疑问，我确实可以作答"
+    },
+    {
+     "src": "corpus mainline__109_疯癫与文明:8.0.2",
+     "quote": "着荒诞离奇的故事； / 而在中央的瞭望塔前，美洲豹敲响了一扇紧闭的门扉。 / **狱"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R090行",
+     "quote": "「在中央塔里自囚的医生是谁？」模拟 link() 种子=0（`中央塔` 无节点/alias）；gold=`阿莱夫`，34 块 gold 可达"
+    }
+   ],
+   "before": "查询形「中央塔」在 alias_index 无落点（0 种子）；节点 中央瞭望塔（地点，24 块，alias 中心瞭望塔/瞭望塔/瞭望塔·手术室/瞭望塔·等候室）声称 R090 gold 块 mainline__109:11.0.1（阿莱夫自囚自白）但对查询形不可达",
+   "after": "alias_index[中央塔]→中央瞭望塔（0.9）。逐字性：中央塔 逐字出现于该节点声称块 2/24（均在 mainline__113），满足红线3 per-owner；其声称块含 gold 块 109:11.0.1 → 图通道可达"
+  },
+  {
+   "id": "R3-E02",
+   "item": 1,
+   "type": "add_alias",
+   "target": "菲林士多",
+   "alias": "Noire",
+   "inferred": true,
+   "evidence": [
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/huiji_lexicon.json [zh2en]（本地词表，禁网）",
+     "quote": "菲林士多 -> [\"Noire\"]"
+    },
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/wiki_zh_en.json（本地词表，禁网）",
+     "quote": "菲林士多: \"Noire\""
+    },
+    {
+     "src": "offline-huiji data/lore/_huiji_cache/f8ae467bdc5b463db196.json [莫桑女士]（本地缓存，禁网）",
+     "quote": "flex-direction: column;\\\">菲林士多 <small style=\\\"color: grey\\\">Noire</small></span></span>\"}}, {\"pageid\": 93"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R094行",
+     "quote": "语料从不出现 \"Noire\"（DF=0）；需建立『词表 alias 豁免』机制"
+    }
+   ],
+   "before": "测试集 R094「Noire 的中文译名是什么？」0 种子；菲林士多（52 块，0 alias）不可达",
+   "after": "【inferred — 作战书 §0.2：语料 DF(Noire)=0，不满足红线3，仅入提案备用户裁决；Applier 无豁免机制时必须跳过本条，不得直接落图】alias_index[Noire]→菲林士多（ASCII 词边界 0.9），52 块入池",
+   "arbitration": "deferred — 作战书 §0.2：灰机有而语料查无（DF=0）不落图，保留 inferred 待 R4/用户授权。"
+  },
+  {
+   "id": "R3-E03",
+   "item": 1,
+   "type": "add_entity",
+   "target": "福葛先生",
+   "entity": {
+    "eid": "福葛先生",
+    "name": "福葛先生",
+    "type": "角色",
+    "aliases": [
+     "奥利弗·福葛",
+     "福葛伙计"
+    ],
+    "desc": "伦敦的「雾行者」，福葛家族成员（雾行者角色故事自述「奥利弗·福葛，伦敦的雾行者」，家族宿命世代相传）；圣火纪行·东区黎明中以「福葛先生」身份在十字街开展驱雾实验，打造雾气净化器「伦敦煤烟污染勘察与清除大使」（MK.Ⅰ→MK.Ⅲ）",
+    "mentions": 40,
+    "chunk_ids": [
+     "activity__23101_圣火纪行_东区黎明:0.1.0",
+     "activity__23101_圣火纪行_东区黎明:0.1.1",
+     "activity__23101_圣火纪行_东区黎明:1.1.0",
+     "activity__23101_圣火纪行_东区黎明:1.1.1",
+     "activity__23101_圣火纪行_东区黎明:1.1.2",
+     "activity__23101_圣火纪行_东区黎明:1.2.0",
+     "activity__23101_圣火纪行_东区黎明:2.0.1",
+     "activity__23101_圣火纪行_东区黎明:2.0.2",
+     "activity__23101_圣火纪行_东区黎明:3.2.0",
+     "activity__23101_圣火纪行_东区黎明:4.2.0",
+     "activity__23101_圣火纪行_东区黎明:4.2.1",
+     "activity__23101_圣火纪行_东区黎明:7.1.0",
+     "activity__23101_圣火纪行_东区黎明:7.1.1",
+     "activity__23101_圣火纪行_东区黎明:7.2.0",
+     "activity__23101_圣火纪行_东区黎明:7.2.1",
+     "activity__23101_圣火纪行_东区黎明:8.0.2",
+     "activity__23101_圣火纪行_东区黎明:8.0.3",
+     "activity__23101_圣火纪行_东区黎明:10.1.0",
+     "activity__23101_圣火纪行_东区黎明:10.1.2",
+     "activity__23101_圣火纪行_东区黎明:10.1.3",
+     "activity__23101_圣火纪行_东区黎明:11.2.0",
+     "activity__23101_圣火纪行_东区黎明:11.2.2",
+     "activity__23101_圣火纪行_东区黎明:12.1.0",
+     "activity__23101_圣火纪行_东区黎明:12.1.1",
+     "activity__23101_圣火纪行_东区黎明:12.2.0",
+     "activity__23101_圣火纪行_东区黎明:12.2.1",
+     "activity__23101_圣火纪行_东区黎明:14.1.0",
+     "activity__23101_圣火纪行_东区黎明:14.1.1",
+     "activity__23101_圣火纪行_东区黎明:14.2.0",
+     "activity__23101_圣火纪行_东区黎明:14.2.1",
+     "activity__23101_圣火纪行_东区黎明:15.0.0",
+     "activity__23101_圣火纪行_东区黎明:15.0.1",
+     "activity__23101_圣火纪行_东区黎明:15.0.2",
+     "activity__23101_圣火纪行_东区黎明:16.0.1",
+     "activity__23101_圣火纪行_东区黎明:18.2.0",
+     "activity__23101_圣火纪行_东区黎明:19.0.0",
+     "anecdote__1901_雾行者角色故事:2.0.1",
+     "anecdote__1901_雾行者角色故事:3.0.2",
+     "anecdote__1901_雾行者角色故事:6.0.1",
+     "anecdote__1905_庸碌喜剧:0.0.3"
+    ]
+   },
+   "evidence": [
+    {
+     "src": "corpus anecdote__1901_雾行者角色故事:6.0.1",
+     "quote": "**雾行者**：奥利弗·福葛，伦敦的雾行者。 / 【标题卡】THE END"
+    },
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:0.1.1",
+     "quote": "*Z**：而且，这个年代的“雾行者”福葛先生也声称，浓雾的成分有些异常。 / **牙仙**：需要有一位对“暴"
+    },
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:7.2.1",
+     "quote": "**：越多人越好，我们要打造的，可是一个史上最大的雾气净化器——“伦敦煤烟污染勘察与清除大使”！ / **宽檐帽**：……还是叫……吸尘器吧。 / 【标题卡】"
+    },
+    {
+     "src": "corpus anecdote__1901_雾行者角色故事:3.0.2",
+     "quote": "*：就像我的父亲，我的祖父，我的曾祖父一样——这是福葛家族的宿命。 / **雾行者**："
+    },
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/huiji_lexicon.json [zh2en]（本地词表，禁网）",
+     "quote": "雾行者 -> [\"Oliver Fog\"]；亚瑟·福葛 -> [\"Arthur Fog\"]（先祖名，语料 DF=0 不设 alias）"
+    },
+    {
+     "src": "offline-huiji data/lore/_huiji_cache/dd48cf716bfebe7c792b.json [其他角色一览/2.x]（本地缓存，禁网）",
+     "quote": "信息/M|name=亚瑟·福葛|nameEn=Arthur Fog|id=6287|nameS=fg}} {{NPC信息/M|name=灯倌|des"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R127行（归因修正）",
+     "quote": "原归因指向 福格尔（第一防线学校教员，mainline__113，2 块）；语料实测：查询「福格先生发明的大型装置」对应 圣火纪行 的 福葛先生（福格/福葛 措辞差）与 雾气净化器（ref 净化机 DF=0）"
+    }
+   ],
+   "before": "R127 gold 链人物 福葛先生（40 块：activity__23101×36 + anecdote__1901×3 + anecdote__1905×1）整体不在图；QC 原归因的 福格尔 实为另一人（SPDM 教员女士）",
+   "after": "canonical 节点 福葛先生（eid==name，40 块，alias 奥利弗·福葛/福葛伙计 均逐字于属主块）；其中 3 块（1901:2.0.1/3.0.2、1905:0.0.3）经 福葛家族（其本人旁白）与 福葛（X 的称呼）指认；与 雾气净化器/伦敦煤烟污染勘察与清除大使 共块 5+ 块，R127 类查询按正确人名形即可达",
+   "arbitration": "R3-E03 撤回 add_entity（复核裁定：雾行者节点已存在，78块/222边，alias 已含 福葛/奥利弗·福葛，36/40 块重叠；新建=复刻一人两节点病）。改制为 add_alias 福葛先生@雾行者（per-owner 逐字 31/78）+ 福葛伙计@雾行者（10/78）。",
+   "superseded_by": [
+    "R3-E03a",
+    "R3-E03b"
+   ]
+  },
+  {
+   "id": "R3-E04",
+   "item": 1,
+   "type": "merge_entities",
+   "target": "伦敦煤烟污染勘察与清除大使 → 雾气净化器",
+   "moved_chunks": [
+    "activity__23101_圣火纪行_东区黎明:7.2.1",
+    "activity__23101_圣火纪行_东区黎明:8.0.2",
+    "activity__23101_圣火纪行_东区黎明:8.0.3"
+   ],
+   "evidence": [
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:7.2.1",
+     "quote": "人越好，我们要打造的，可是一个史上最大的雾气净化器——“伦敦煤烟污染勘察与清除大使”！ / **宽檐帽**：……还是叫……吸尘器吧。 / 【标题卡】十字街，古宅 / **笃"
+    },
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:10.1.2",
+     "quote": "再次改良，它的性能已经比之前提高了不少。 / 机器旁，原本写着“伦敦煤烟污染勘察与清除大使MK.Ⅱ”的标志牌，现在已经加上了一笔，变成了“伦敦煤烟污染勘察与清除大使MK."
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检4.4 同物裂名型",
+     "quote": "「同物裂名」先例：暴雨改革×2、奠基石海报×2、特里格拉夫×2"
+    }
+   ],
+   "before": "同一台机器裂为两节点：雾气净化器（物品，10 块）与 伦敦煤烟污染勘察与清除大使（物品，3 块）——7.2.1 明文「史上最大的雾气净化器——『伦敦煤烟污染勘察与清除大使』」为同物同位语",
+   "after": "单节点 雾气净化器 13 块，边自动重接（Applier merge_entities 语义）"
+  },
+  {
+   "id": "R3-E05",
+   "item": 1,
+   "type": "add_alias",
+   "target": "雾气净化器",
+   "alias": "伦敦煤烟污染勘察与清除大使",
+   "evidence": [
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:10.1.0",
+     "quote": "心，放宽心，大家……要相信，我一定是咱们中最希望“伦敦煤烟污染勘察与清除大使MK.Ⅱ”能成功的—— / **宽檐帽**：福葛伙计！ / **福葛先生**：——！来了！ / 福葛先"
+    },
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:12.1.0",
+     "quote": "，有序地庆祝这次雾气净化器的剪彩仪式—— / 机器旁，原本写着“伦敦煤烟污染勘察与清除大使MK.Ⅱ”的标志牌，现在已经加上了一笔，变成了“伦敦煤烟污染勘察与清除大使MK.Ⅲ”。 / *"
+    }
+   ],
+   "before": "全名形仅作独立节点存在；合并后若不补 alias，长形查询将失去 exact 落点",
+   "after": "alias_index 保留长形（0.9）；逐字于该节点声称块（含合并前既有共块 5 块：10.1.0/10.1.2/12.1.0/12.2.0/18.2.0）"
+  },
+  {
+   "id": "R3-E06",
+   "item": 1,
+   "type": "add_alias",
+   "target": "福格尔",
+   "alias": "福格尔女士",
+   "evidence": [
+    {
+     "src": "corpus mainline__113_他者的悲哀:1.2.2",
+     "quote": "身边。 / **玛蒂尔达**：之前福格尔女士委托你寻找的走失学生找到了吗？ / **拉文德**：我正要汇报这件事。我按照你的占卜"
+    },
+    {
+     "src": "corpus mainline__113_他者的悲哀:19.1.1",
+     "quote": "象鸽。 / **梅蕾尔**：福格尔女士…… / 回忆一股脑涌进毕业生的脑子里，可当年被福格尔女士关禁闭的那些懊恼，却无论如何都回忆不"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 修复建议4",
+     "quote": "为 0-alias 高价值节点补 alias（遵守红线 3）：…福格尔…"
+    }
+   ],
+   "before": "福格尔（第一防线学校教员，mainline__113，2 块）0 alias",
+   "after": "alias 福格尔女士（语料唯一称呼形，逐字 2/2 块）。注：与 R127 查询形「福格先生」非一人（见 R3-E03 归因修正）"
+  },
+  {
+   "id": "R3-E07",
+   "item": 1,
+   "type": "add_alias",
+   "target": "金伯利女郎",
+   "alias": "契约魅魔",
+   "inferred": true,
+   "evidence": [
+    {
+     "src": "data/knowledge/_audit/rag_testset_300_cn.json [R231]",
+     "quote": "q=77 号往事里与格蕾丝对立的契约魅魔是谁？ ref=天使娜娜（Anjo Nala） evidence=[Anjo,Nala,娜娜,Kimberly]"
+    },
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/plot_glossary.json（本地词表，禁网）",
+     "quote": "灰机页面『金伯利女郎』直接重定向至『天使娜娜 Anjo Nala』，故为同一角色（本名与代号关系）。语料中称 Missy（17）、Ms.Kimberly / Kimberley（共 7）及 ASR 变体 JoNala / Joanala / Nahari /"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R231行",
+     "quote": "金伯利女郎 在图、53 块、9 alias，但无 契约魅魔（该词 DF=0，查询为转述）"
+    }
+   ],
+   "before": "R231 查询的转述形「契约魅魔」在 alias_index 无落点（种子仅 无名者0.9@格蕾丝 / 77 / 泛称节点魅魔1.0）",
+   "after": "【inferred — DF(契约魅魔)=0，不满足红线3，仅入提案备用户裁决；Applier 无豁免机制时必须跳过本条】alias_index[契约魅魔]→金伯利女郎（0.9）。另：裸「魅魔」不作 alias（泛称节点 魅魔 持有 canonical，R2 泛称精神，防 R018 型错种子）",
+   "rejected": true,
+   "arbitration": "rejected — 契约魅魔 在 474 缓存+词表零出现，字串唯一来源是评测题面（评测泄漏风险）；转 R4 统一转述 alias 机制。"
+  },
+  {
+   "id": "R3-E08",
+   "item": 2,
+   "type": "add_entity",
+   "target": "玩具盒",
+   "entity": {
+    "eid": "玩具盒",
+    "name": "玩具盒",
+    "type": "概念",
+    "aliases": [
+     "玩具盒子"
+    ],
+    "desc": "1987宇宙组曲中宇航员库珀花环出舱观测「暴雨」影响时的比喻意象：「宇宙在她眼前展开，如同……玩具盒子」。本中文语料唯一提及（DF=1）。评测集 R170 将「玩具盒（toy box）」列为「人们向何处去篇拉普拉斯的重要装置」答案——该装置读法来自官方英文配音语料（plot_glossary：toy box 39 次），本中文语料无该装置明文；本抽取按语料实际语义落档（零网关）",
+    "mentions": 1,
+    "chunk_ids": [
+     "activity__27101_1987宇宙组曲:17.1.0"
+    ]
+   },
+   "evidence": [
+    {
+     "src": "corpus activity__27101_1987宇宙组曲:17.1.0",
+     "quote": "宙 / 再一次眨眼后，宇宙在她眼前展开，如同……玩具盒子。 / **库珀花环**：——！ / **库珀花环**：……报告，确认观测到“暴雨”影响"
+    },
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/plot_glossary.json（本地词表，禁网）",
+     "quote": "riority\": \"P2\",    \"status\": \"review\",    \"aliases\": [     \"toy box\"    ],    \"note\": \"灰机无此词条（页面无内容）。语料为官方英文配音 ASR，固定出现 toy box（39 次，含 'the toy box's instability'、'Back with the toy box'"
+    },
+    {
+     "src": "data/knowledge/_audit/rag_testset_300_cn.json [R170]",
+     "quote": "q=人们向何处去篇里拉普拉斯的重要装置是什么？ ref=玩具盒（toy box）"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R170行",
+     "quote": "「玩具盒」不在图（语料 DF=1，唯一提及块未被抽成实体）→ 图谱可修/稀疏：抽取遗漏"
+    }
+   ],
+   "before": "玩具盒 全图无节点、无 alias；唯一提及块 activity__27101:17.1.0（现由 冷周六/库珀花环/监测器 等 8 节点声称）不产生 玩具盒 落点",
+   "after": "canonical 玩具盒（exact 1.0）+ alias 玩具盒子（逐字），声称唯一 DF 块；R170 miss 的机械改善取决于重排窗口（评测重校准闸门复验）"
+  },
+  {
+   "id": "R3-E09",
+   "item": 3,
+   "type": "merge_entities",
+   "target": "暴雨小组组长乌尔里希 → 乌尔里希",
+   "moved_chunks": [
+    "activity__24101_地球上最后的夜晚:0.2.2",
+    "activity__24101_地球上最后的夜晚:2.1.0",
+    "activity__24101_地球上最后的夜晚:2.1.1",
+    "activity__24101_地球上最后的夜晚:2.2.0",
+    "activity__24101_地球上最后的夜晚:2.2.1",
+    "activity__24101_地球上最后的夜晚:3.1.0",
+    "activity__24101_地球上最后的夜晚:3.1.1",
+    "activity__24101_地球上最后的夜晚:3.2.0",
+    "activity__24101_地球上最后的夜晚:3.2.1",
+    "activity__24101_地球上最后的夜晚:3.2.2",
+    "activity__24101_地球上最后的夜晚:4.0.1",
+    "activity__24101_地球上最后的夜晚:7.2.1",
+    "activity__24101_地球上最后的夜晚:8.0.0",
+    "activity__24101_地球上最后的夜晚:8.0.1",
+    "activity__24101_地球上最后的夜晚:8.0.2",
+    "activity__24101_地球上最后的夜晚:9.0.0",
+    "activity__24101_地球上最后的夜晚:9.0.1",
+    "activity__24101_地球上最后的夜晚:12.1.0",
+    "activity__24101_地球上最后的夜晚:13.1.0",
+    "activity__24101_地球上最后的夜晚:13.1.1",
+    "activity__24101_地球上最后的夜晚:13.1.2",
+    "activity__24101_地球上最后的夜晚:14.0.1",
+    "activity__24101_地球上最后的夜晚:15.0.0",
+    "activity__24101_地球上最后的夜晚:15.0.1",
+    "activity__24101_地球上最后的夜晚:16.0.0",
+    "activity__24101_地球上最后的夜晚:16.0.1",
+    "activity__24101_地球上最后的夜晚:17.0.0",
+    "activity__24101_地球上最后的夜晚:17.0.1",
+    "activity__24101_地球上最后的夜晚:19.2.0",
+    "activity__24101_地球上最后的夜晚:22.0.0",
+    "activity__35101_绿松石蛇俱乐部:1.0.1",
+    "activity__35101_绿松石蛇俱乐部:1.0.3",
+    "activity__35101_绿松石蛇俱乐部:20.0.2",
+    "activity__35101_绿松石蛇俱乐部:20.0.3",
+    "activity__36101_人们向何处去:1.0.0",
+    "activity__36101_人们向何处去:1.0.1",
+    "activity__36101_人们向何处去:2.0.0",
+    "activity__36101_人们向何处去:2.0.1",
+    "activity__36101_人们向何处去:2.0.2",
+    "activity__36101_人们向何处去:3.1.0",
+    "activity__36101_人们向何处去:3.2.0",
+    "activity__36101_人们向何处去:3.2.1",
+    "activity__36101_人们向何处去:4.1.0",
+    "activity__36101_人们向何处去:4.1.1",
+    "activity__36101_人们向何处去:6.1.0",
+    "activity__36101_人们向何处去:6.1.1",
+    "activity__36101_人们向何处去:6.1.2",
+    "activity__36101_人们向何处去:6.2.0",
+    "activity__36101_人们向何处去:7.0.2",
+    "activity__36101_人们向何处去:8.1.0",
+    "activity__36101_人们向何处去:8.1.1",
+    "activity__36101_人们向何处去:9.1.0",
+    "activity__36101_人们向何处去:9.2.0",
+    "activity__36101_人们向何处去:9.2.1",
+    "activity__36101_人们向何处去:13.0.1",
+    "activity__36101_人们向何处去:13.0.2",
+    "appendix_unbound__010_1_9_去往新世界_X:0.1.0",
+    "appendix_unbound__010_1_9_去往新世界_X:1.1.0",
+    "appendix_unbound__013_1_9_去往新世界_哑谜:0.1.0",
+    "appendix_unbound__013_1_9_去往新世界_哑谜:1.1.0",
+    "appendix_unbound__062_2_8_启示录变相_收藏品:0.1.0",
+    "appendix_unbound__063_3_1_雨前漫游:0.1.0",
+    "appendix_unbound__063_3_1_雨前漫游:0.1.1",
+    "appendix_unbound__063_3_1_雨前漫游:0.1.2",
+    "appendix_unbound__063_3_1_雨前漫游:1.1.0",
+    "appendix_unbound__067_3_4_雨前漫游:0.1.0",
+    "appendix_unbound__067_3_4_雨前漫游:0.1.1",
+    "appendix_unbound__067_3_4_雨前漫游:0.1.2",
+    "appendix_unbound__067_3_4_雨前漫游:1.1.0",
+    "appendix_unbound__067_3_4_雨前漫游:1.1.1",
+    "appendix_unbound__072_第十章10_25:0.1.0",
+    "appendix_unbound__072_第十章10_25:0.1.1"
+   ],
+   "evidence": [
+    {
+     "src": "corpus activity__24101_地球上最后的夜晚:0.2.2",
+     "quote": "…我吗？ / **爱兹拉**：当然，“暴雨”专项研究小组的负责人乌尔里希先生亲自将您列入了名单，它很期待与您的首次会面。 / **星锑**：这也太草率了吧——它"
+    },
+    {
+     "src": "corpus activity__24101_地球上最后的夜晚:3.1.0",
+     "quote": "也太多了！ / **星锑**：乌尔里希组长，难道这就是你随身携带玻璃脑袋的原因吗？ / 摸清了身旁组员的习性后，快步前进的组长早已明了最"
+    },
+    {
+     "src": "corpus mainline__110_复乐园:3.0.1",
+     "quote": "窗。 / **乌尔里希**：没错，我们曾非常艰难地验证过“星锑”在“暴雨”中的稳定性，但我们还没有完成所有实验，这就是问题所在。 / **乌尔里希"
+    },
+    {
+     "src": "corpus mainline__110_复乐园:7.0.1",
+     "quote": "**维尔汀**：希望乌尔里希组长也能遇到像它们一样可靠的伙伴。 / 诺谛卡趴下身子，把脸埋在雪橇犬脖子后的"
+    },
+    {
+     "src": "offline-huiji data/lore/wu_ming_zhe/huiji_lexicon.json [zh2en/plot_glossary]（本地词表，禁网）",
+     "quote": "乌尔里希 -> Ulrich；plot_glossary：乌尔里希，type=角色，en=Ulrich，status=verified，note=拉普拉斯科算中心成员。（灰机单一词条，无第二乌尔里希）"
+    },
+    {
+     "src": "offline-huiji data/lore/_huiji_cache/150c2161ffb8e33df537.json [圣洛夫基金会]（本地缓存，2026-09-13 采集；禁网）",
+     "quote": "]]、[[爱兹拉]]、[[北方哨歌]]、[[冷周六]]、[[乌尔里希]]、[[洛伦兹蝴蝶]]、[[银装小春雀"
+    }
+   ],
+   "before": "一人两节点：乌尔里希（53 块，5 alias：乌尔里希先生/乌尔里希组长/意识唤醒者研究员/玻璃缸脑袋/破译组长）∪ 暴雨小组组长乌尔里希（72 块，0 alias；71/72 块含裸名 乌尔里希）；块集零重叠，提及与边碎片化；「暴雨小组组长乌尔里希」DF=0（v3 归一形，语料实形为『「暴雨」专项研究小组的负责人乌尔里希先生』）",
+   "after": "单节点 乌尔里希 125 块（53+72）、mentions 125，边自动重接；规范名取语料逐字裸名（R1 先例：传记作家兀尔德→兀尔德）。语料身份链：拉普拉斯「暴雨」专项研究小组负责人=乌尔里希先生（24101:0.2.2）→ 随身玻璃脑袋（=alias 玻璃缸脑袋，24101:3.1.0）→ 意识唤醒者研究员/破译组长（mainline__107）→ 携磁流体赴南极验证「星锑」暴雨稳定性（mainline__110）"
+  },
+  {
+   "id": "R3-E10",
+   "item": 4,
+   "type": "reassign_chunk",
+   "target": "APPLe号摇滚巨轮二世",
+   "add_chunk_ids": [
+    "mainline__105_洞穴的囚徒:0.0.1"
+   ],
+   "removed_weld_chunks": [],
+   "evidence": [
+    {
+     "src": "corpus mainline__105_洞穴的囚徒:0.0.1",
+     "quote": "片、我的胡椒博士、我的海盗电台、我的APPLe号“摇滚巨轮”二世！ / **星锑**：真是气死我了，究"
+    },
+    {
+     "src": "corpus mainline__105_洞穴的囚徒:0.0.0",
+     "quote": "我要和APPLe号“摇滚巨轮”二世同生共死！ / **红弩箭**：那这艘船为什么是“二世”？ / **星锑**：…… / 星锑墨镜后的目光短暂望向了远方。 /"
+    }
+   ],
+   "before": "APPLe号摇滚巨轮二世 仅声称 105:0.0.0；同景相邻块 0.0.1（「我的APPLe号『摇滚巨轮』二世！」逐字）漏收",
+   "after": "二世 节点 1→2 块（同篇承接段），mentions=2"
+  },
+  {
+   "id": "R3-E11",
+   "item": 4,
+   "type": "keep_with_note",
+   "target": "APPLe号摇滚巨轮二世",
+   "note": "QC R005/R012「船名分裂→合并」被语料明文反证，不合并：APPLe号（一世，alias 摇滚巨轮，mainline__000 泰晤士河被击沉）与 APPLe号摇滚巨轮二世（苏芙比买的新船，mainline__105 爱琴海沉没）为两代不同的船。反证：105:0.0.0「那这艘船为什么是『二世』？……这可是苏芙比给我们买的新船啊」；anecdote__1920:5.0.1「两代APPLe号！一艘毁于泰晤士河上的『炮击』，另一艘则葬身于爱琴海的风浪」；anecdote__1917:7.0.0「全新的APPLe号三世」（第三艘）。合并即 R1 式错焊。R005/R012 的 miss 主因应改判措辞差异（摇滚苹果/Rockin/扎内塔 DF=0），船名分裂仅为次要残差",
+   "evidence": [
+    {
+     "src": "corpus mainline__105_洞穴的囚徒:0.0.0",
+     "quote": "。 / **星锑**：可恶，这可是苏芙比给我们买的新船啊…… / **星锑**：我花了那"
+    },
+    {
+     "src": "corpus anecdote__1920_最佳乐队:5.0.1",
+     "quote": "*星锑**：不止一艘哇！两代APPLe号！ / 一艘毁于泰晤士河上的“炮击”，另一艘则葬身于爱琴海的风浪。 / **莱莉**：那一定是很让"
+    },
+    {
+     "src": "corpus anecdote__1917_乘法轴上的一天:7.0.0",
+     "quote": "会融化的对吧？我不能让我全新的APPLe号三世被那些甜腻腻黏糊糊的东西弄脏了甲板。 / **星锑**"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检6 R005/R012行",
+     "quote": "「船在图中裂成两个不相连节点……图谱可修：船名分裂」——本条按冲突序（语料明文反证＞QC 推断）改判 keep"
+    }
+   ],
+   "before": "QC 建议合并 APPLe号 与 APPLe号摇滚巨轮二世",
+   "after": "keep：两节点保持独立（一世 4 块 / 二世 2 块），并附语料反证"
+  },
+  {
+   "id": "R3-E12",
+   "item": 5,
+   "type": "remove_alias",
+   "target": "卡戎",
+   "alias": "保罗",
+   "evidence": [
+    {
+     "src": "data/compendium_rag/repairs_arbitration_20260926.md 仲裁#1",
+     "quote": "保罗 keep vs qualify→保罗·霍伊默尔：QUALIFY（DF92 中 66 块为圣保罗城市碰撞；R265 的卡戎 0.9 为错种子，qualify 反而改善 R265）→ 采纳，执行推迟至 R3"
+    },
+    {
+     "src": "data/compendium_rag/repairs_v2/verification_by_r1repairer.json",
+     "quote": "DF(保罗)=92，其中 66 块为 圣保罗（城市）子串碰撞，仅 26 块真指人名；卡戎 67 声称块中 19 块含非圣保罗的 保罗"
+    },
+    {
+     "src": "corpus mainline__111_行于漫漫长路上:1.1.2",
+     "quote": "*：这样也行。你的名字是保罗…… / **卡戎**：如果你不介意的话，可以用卡戎称呼我，像其他人那样。至于我的名"
+    },
+    {
+     "src": "corpus mainline__111_行于漫漫长路上:23.0.0",
+     "quote": "蝴蝶封面的笔记本。 / ——曾属于名叫保罗的年轻人的一切。 / **卡戎**：你的战争结束了，保罗。 / 遗物被妥善安"
+    }
+   ],
+   "before": "alias_index[保罗]→卡戎（0.9）；DF(保罗)=92（66 块圣保罗城市碰撞，26 块真指人名，其中 19 块属卡戎），R265 类查询产生 卡戎0.9 假种子",
+   "after": "摘除裸 保罗；卡戎 保留 亡者/保罗·霍伊默尔/士官/收尸人/邮递员 + canonical。仲裁 qualify 的 add 半步（保罗·霍伊默尔）R2 已落图且逐字（mainline__111:14.0.2，DF=1），本条为 remove 半步"
+  },
+  {
+   "id": "R3-E13",
+   "item": 6,
+   "type": "merge_entities",
+   "target": "旅行队的别斯米尔 → 探险家别斯米尔",
+   "moved_chunks": [
+    "appendix_unbound__006_1_6_赛季剧情:4.1.0"
+   ],
+   "evidence": [
+    {
+     "src": "corpus appendix_unbound__006_1_6_赛季剧情:4.1.0",
+     "quote": "*小叶尼塞**：怎么了，别斯米尔女士？ / **别斯米尔**：不，没什么，只是我的背包中忽然多出了这样一张名片，上面刻着点涂的盲文，似乎是……“UTTU”？ / *"
+    },
+    {
+     "src": "corpus appendix_unbound__006_1_6_赛季剧情:4.1.0",
+     "quote": "许我阅读这样的闲杂书籍，而加入远行队后，更是没有时间用于阅读……我对于这些东西一无所知。 / **小叶尼塞**"
+    },
+    {
+     "src": "corpus activity__16101_朔日手记:0.0.0",
+     "quote": "塞**：一年……噢，这是别斯米尔女士曾委托我记录的游记。 / **小叶尼塞**：或者说，应该叫“手记”？哈哈…"
+    },
+    {
+     "src": "offline-huiji data/lore/_huiji_cache/49910dc30331af4cb845.json [其他角色一览/1.x]（本地缓存，禁网；R1 同源）",
+     "quote": "name=别斯米尔|nameEn=Bessmert|desc=兀尔德|id=6157|nameS=bsmr}} {{NPC信息/M|name=里正|id=6202|nameS=lz|htype=w"
+    },
+    {
+     "src": "docs/图谱修复作战书_预注册_20260926.md",
+     "quote": "appendix_unbound__006 为 1.6 赛季剧情（朔日手记同版本）；灰机单词条 别斯米尔/Bessmert，无第二别斯米尔"
+    }
+   ],
+   "before": "一人两节点：探险家别斯米尔（70 块：朔日手记 69 + 复乐园 1，alias 别斯米尔）与 旅行队的别斯米尔（1 块：1.6 赛季剧情，0 alias）；同对人物（别斯米尔女士+小叶尼塞）、同一远行队语境；「旅行队的别斯米尔」DF=0（v3 归一形）",
+   "after": "单节点 探险家别斯米尔 71 块；规范名保持 R1 既有 canonical（与 玛尔塔/兀尔德 独立，非卡卡尼亚焊组成员）"
+  },
+  {
+   "id": "R3-E14",
+   "item": 6,
+   "type": "add_alias",
+   "target": "探险家别斯米尔",
+   "alias": "别斯米尔女士",
+   "evidence": [
+    {
+     "src": "corpus activity__16101_朔日手记:0.0.0",
+     "quote": "塞**：一年……噢，这是别斯米尔女士曾委托我记录的游记。 / **小叶尼塞**：或者说，应该叫“手记”？哈哈…"
+    },
+    {
+     "src": "corpus activity__16101_朔日手记:0.0.2",
+     "quote": "/ **小叶尼塞**：别斯米尔女士，这个类比…… / **别斯米尔**：嗯？有什么问题吗？ / **小叶尼塞**：低地沉积"
+    },
+    {
+     "src": "corpus appendix_unbound__006_1_6_赛季剧情:4.1.0",
+     "quote": "*小叶尼塞**：怎么了，别斯米尔女士？ / **别斯米尔**：不，没什么，只是我的背包中忽然多出了这"
+    }
+   ],
+   "before": "语料高频敬称形 别斯米尔女士（DF=19）无落点；查「别斯米尔女士」仅靠裸 alias 别斯米尔 0.9",
+   "after": "alias_index[别斯米尔女士]→探险家别斯米尔（exact→alias 0.9）；逐字于属主声称块 18/70（合并后 19/71）"
+  },
+  {
+   "id": "R3-E15",
+   "item": 7,
+   "type": "add_entity",
+   "target": "店主米拉",
+   "entity": {
+    "eid": "店主米拉",
+    "name": "店主米拉",
+    "type": "角色",
+    "aliases": [
+     "米拉小姐"
+    ],
+    "desc": "拉普拉斯博物馆休息区冰淇淋店的店主（乘法轴上的一天：「我已经听店主米拉小姐说了」）；37 以盈亏平衡分析助其渡过经营危机，店铺最终在转让前迎来「冰淇淋奇迹」",
+    "mentions": 10,
+    "chunk_ids": [
+     "anecdote__1917_乘法轴上的一天:0.0.0",
+     "anecdote__1917_乘法轴上的一天:3.0.0",
+     "anecdote__1917_乘法轴上的一天:3.0.5",
+     "anecdote__1917_乘法轴上的一天:4.0.0",
+     "anecdote__1917_乘法轴上的一天:4.0.1",
+     "anecdote__1917_乘法轴上的一天:4.0.2",
+     "anecdote__1917_乘法轴上的一天:4.0.3",
+     "anecdote__1917_乘法轴上的一天:6.0.1",
+     "anecdote__1917_乘法轴上的一天:6.0.2",
+     "anecdote__1917_乘法轴上的一天:6.0.3"
+    ]
+   },
+   "evidence": [
+    {
+     "src": "corpus anecdote__1917_乘法轴上的一天:0.0.0",
+     "quote": "**爱兹拉**：我已经听店主米拉小姐说了，这支冰淇淋的诞生是大家伙一同努力的结果。但我还不了解事情的具体经过。 /"
+    },
+    {
+     "src": "corpus anecdote__1917_乘法轴上的一天:4.0.0",
+     "quote": "研究“一个不懂经营的家伙经营的冰淇淋店为什么会倒闭”这样的愚蠢问题？答案一目了然。 / **兔毛手袋**：你怎么能够指望一个在被问到"
+    },
+    {
+     "src": "corpus character__20603_第一千夜:5.0.0",
+     "quote": "吧，门没锁。 / 【标题卡】路边小店 / 比安卡迫不及待地拉开了门，“叮铃——”门铃发出了清脆的碰撞声。 / 这是一家二手店"
+    },
+    {
+     "src": "docs/图谱与原文质检报告_20260926.md 检4.3/修复建议2",
+     "quote": "泛称 canonical 节点（店主 在列）跨篇焊嫌疑：按篇限定名或拆分"
+    }
+   ],
+   "before": "泛称节点 店主（14 块）为跨篇焊：character__20603_第一千夜（路边二手店女店主，无名，3 块）∪ anecdote__1917_乘法轴上的一天（冰淇淋店店主，语料具名 米拉，11 块）——两人两店两故事",
+   "after": "新具名节点 店主米拉（10 块逐字含 店主，alias 米拉小姐 逐字于 0.0.0）；规范名不用裸 米拉（与 卡米拉 存在 4 块子串碰撞，防 R265 型假种子）"
+  },
+  {
+   "id": "R3-E16",
+   "item": 7,
+   "type": "reassign_chunk",
+   "target": "店主",
+   "add_chunk_ids": [],
+   "removed_weld_chunks": [
+    "anecdote__1917_乘法轴上的一天:0.0.0",
+    "anecdote__1917_乘法轴上的一天:3.0.0",
+    "anecdote__1917_乘法轴上的一天:3.0.5",
+    "anecdote__1917_乘法轴上的一天:4.0.0",
+    "anecdote__1917_乘法轴上的一天:4.0.1",
+    "anecdote__1917_乘法轴上的一天:4.0.2",
+    "anecdote__1917_乘法轴上的一天:4.0.3",
+    "anecdote__1917_乘法轴上的一天:6.0.0",
+    "anecdote__1917_乘法轴上的一天:6.0.1",
+    "anecdote__1917_乘法轴上的一天:6.0.2",
+    "anecdote__1917_乘法轴上的一天:6.0.3"
+   ],
+   "evidence": [
+    {
+     "src": "corpus character__20603_第一千夜:5.0.0",
+     "quote": "璃观察着。 / **店主**：你们不是开车来的吗？ / 店主从屋后面的院子走了出来，她似乎在后院照顾着自己的花园，围裙"
+    },
+    {
+     "src": "corpus anecdote__1917_乘法轴上的一天:0.0.0",
+     "quote": "限定发售。 / **店主**：久等了，这里是你们的冰淇淋！ / **37**：我不觉得我"
+    }
+   ],
+   "before": "店主 节点 14 块横跨 第一千夜/乘法轴上的一天 两个不相关故事",
+   "after": "店主 保留 3 块（第一千夜 路边小店女店主，语料无名）；11 块移出，其中 10 块归 店主米拉、6.0.0（纯场景块，无任何指称）不再由泛称节点声称。泛称节点本体保留（R4 grounding:none 候选），仅解除跨篇焊"
+  },
+  {
+   "id": "R3-E17",
+   "item": 7,
+   "type": "keep_with_note",
+   "target": "警卫",
+   "note": "跨篇焊复核成立但保守保留：4 块横跨 4 篇（mainline__103 故事一无所有（按倒伊莎贝拉的警卫）/ character__20601 旧金山小子 / anecdote__1908 齿轮的意志 / anecdote__1910 风吹乌哈拉），均为无名群众角色，语料零具名，拆分缺乏 R1 卡卡尼亚式具名锚点且别名 警卫 只能落到其中之一（setdefault 遮蔽）；4 块规模 PPR 污染半径有限。建议 R4 flag_grounding 处理",
+   "evidence": [
+    {
+     "src": "corpus mainline__103_故事一无所有:10.1.1",
+     "quote": "白。他转向旁边站着的警卫。 / **校长**：去把第一排最右边的那个女孩给我拉下去！！ /"
+    },
+    {
+     "src": "corpus anecdote__1910_风吹乌哈拉:0.0.0",
+     "quote": "。 / 脚戴镣铐的先生被警卫押入房间，迟疑地坐上身后的木凳。 / 审讯官抬手示意，警卫随即解下他的眼罩"
+    }
+   ],
+   "before": "警卫 4 块/4 篇（不同故事的不同个体）",
+   "after": "keep（记录在案，R4 候选）"
+  },
+  {
+   "id": "R3-E18",
+   "item": 7,
+   "type": "keep_with_note",
+   "target": "水手",
+   "note": "跨篇焊复核成立但保守保留：mainline__110 ×2（乌尔里希纵帆船上的水手，alias 无武装水手 逐字于 110:7.0.2「除一名无武装水手外，纵帆船已确认清空」）+ activity__23101:7.1.0（圣火纪行「刚从蒂尔伯里码头回来的水手」，无名，1 块）。第二实例语料无名且仅 1 块，拆分收益不足；记录在案，R4 候选",
+   "evidence": [
+    {
+     "src": "corpus mainline__110_复乐园:7.0.2",
+     "quote": "*对讲机**：报告中尉，除一名无武装水手外，纵帆船已确认清空。经前哨确认，暂无任何其余船只侵入近海。"
+    },
+    {
+     "src": "corpus activity__23101_圣火纪行_东区黎明:7.1.0",
+     "quote": "*福葛先生**：看看他，本家的大儿子，刚从蒂尔伯里码头回来的水手，看到他手上的麻绳了吗，那可是世界上最稳固的一种。 / **宽檐帽**：是的，我看到"
+    }
+   ],
+   "before": "水手 3 块/2 篇（110 乌尔里希纵帆船水手 ∪ 23101 蒂尔伯里码头水手）",
+   "after": "keep（记录在案，R4 候选）"
+  },
+  {
+   "id": "R3-E03a",
+   "type": "add_alias",
+   "target": "雾行者",
+   "alias": "福葛先生",
+   "evidence": [
+    {
+     "src": "R3-verifier",
+     "quote": "「这个年代的“雾行者”福葛先生」（23101:0.1.1）、「奥利弗·福葛，伦敦的雾行者」（1901:6.0.1）逐字；huiji 雾行者→Oliver Fog 单一词条"
+    }
+   ],
+   "before": "alias_index 无 福葛先生 键",
+   "after": "福葛先生 → 雾行者 0.9（per-owner 逐字 31/78）",
+   "arbitration": "R3-E03 复核改制产物"
+  },
+  {
+   "id": "R3-E03b",
+   "type": "add_alias",
+   "target": "雾行者",
+   "alias": "福葛伙计",
+   "evidence": [
+    {
+     "src": "R3-verifier",
+     "quote": "per-owner 逐字 10/78（可选采纳）"
+    }
+   ],
+   "before": "alias_index 无 福葛伙计 键",
+   "after": "福葛伙计 → 雾行者 0.9",
+   "arbitration": "R3-E03 复核改制产物（可选项一并采纳）"
+  }
+ ]
+}

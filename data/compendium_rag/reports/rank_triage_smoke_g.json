@@ -1,0 +1,108 @@
+{
+ "kind": "rank_triage",
+ "collect": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\reports\\rank_collect_smoke_g_top20.json",
+ "mode": "graph_only",
+ "top_k": 20,
+ "n_answerable": 14,
+ "n_misses": 8,
+ "classes": {
+  "pooled_in_window": 1,
+  "corpus_not_pooled": 7,
+  "no_corpus_match": 0
+ },
+ "entity_bridge_count": 6,
+ "rank_mismatch_qids": [],
+ "consistent": true,
+ "title_only_keywords": [],
+ "title_only_qids": [],
+ "per_miss": [
+  {
+   "qid": "R001",
+   "query": "薇洛的真名是什么？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 4,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 47,
+   "entity_bridge": false
+  },
+  {
+   "qid": "R005",
+   "query": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 3,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 1,
+   "entity_bridge": true
+  },
+  {
+   "qid": "R007",
+   "query": "洞穴的囚徒篇里的滚鳄书店英文名是什么？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 2,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 3,
+   "entity_bridge": true
+  },
+  {
+   "qid": "R009",
+   "query": "洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？",
+   "stored_rank": 10,
+   "seed_hit": true,
+   "n_eval_keywords": 4,
+   "class": "pooled_in_window",
+   "min_pooled_rank": 10,
+   "n_corpus_keyword_chunks": 81
+  },
+  {
+   "qid": "R011",
+   "query": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 4,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 81,
+   "entity_bridge": true
+  },
+  {
+   "qid": "R012",
+   "query": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 4,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 6,
+   "entity_bridge": true
+  },
+  {
+   "qid": "R014",
+   "query": "自称经验丰富的猎人的 Shamane 活跃于哪个篇章？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 8,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 421,
+   "entity_bridge": true
+  },
+  {
+   "qid": "R018",
+   "query": "结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 2,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 37,
+   "entity_bridge": true
+  }
+ ],
+ "markdown": "# 未命中归因分诊 · rank_collect_smoke_g_top20.json（graph_only）\n\n- answerable n=14  k=6 misses n=8  采集窗口 top_k=20\n- 分诊：pooled_in_window=1  corpus_not_pooled=7（其中实体桥接可及=6）  no_corpus_match=0\n- answerable 规则自洽性（(iii) 必须为 0）：PASS\n- 名次交叉核对（min pooled rank vs 采集 rank）不一致：0 题[]\n- title-only 关键词（只活在篇名 → 规则判不可答）：0 个 []  影响题数=0\n\n| qid | 类 | min_rank | 语料kw块 | 桥接 | seed_hit | query |\n|---|---|---|---|---|---|---|\n| R001 | corpus_not_pooled | None | 47 | False | False | 薇洛的真名是什么？ |\n| R005 | corpus_not_pooled | None | 1 | True | False | 洞穴的囚徒篇的故事主要发生在什么载具上？ |\n| R007 | corpus_not_pooled | None | 3 | True | False | 洞穴的囚徒篇里的滚鳄书店英文名是什么？ |\n| R009 | pooled_in_window | 10 | 81 |  | True | 洞穴的囚徒篇里牙仙也登船照看乘客，她的英文名是什么？ |\n| R011 | corpus_not_pooled | None | 81 | True | False | 在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？ |\n| R012 | corpus_not_pooled | None | 6 | True | False | 苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？ |\n| R014 | corpus_not_pooled | None | 421 | True | False | 自称经验丰富的猎人的 Shamane 活跃于哪个篇章？ |\n| R018 | corpus_not_pooled | None | 37 | True | False | 结合“老伙计”与“经验丰富的猎人”两个称呼，这位角色是谁？ |\n"
+}

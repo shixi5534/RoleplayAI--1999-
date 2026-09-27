@@ -62,6 +62,12 @@ docs/_tmp_voicestat.txt
 desktop/resources/ocr/traineddata/
 #   同上：bge-reranker 的 ONNX 权重（1.1 G + 279 M），可从 HuggingFace 重新下载
 models/**/*.onnx
+#   同上：bge-reranker-large / bge-reranker-v2-m3 的 safetensors 全量权重（约 4.4 GB）。
+#   2026-09-27 核验补漏：原规则只挡 *.onnx，挡不住 .safetensors —— `git add .` 会一次吞下
+#   整个 models/ 目录。这些权重可从 HuggingFace 重新下载，属「可再生派生物」，不入库。
+models/**/*.safetensors
+models/bge-reranker-large/
+models/bge-reranker-v2-m3/
 #   漂移实验的一次性嵌入缓存（73 M），派生物
 data/knowledge/_audit/_drift_embed_cache.npz
 

@@ -1,0 +1,22 @@
+# 换行符归一：显式禁用 EOL 转换，保证入库字节 == 磁盘字节
+#
+# 背景（2026-09-27 核验发现）：本仓库此前无 .gitattributes，且 core.autocrlf=true。
+# 于是 graph.json 等 CRLF 文本在 `git add` 时被静默转成 LF 入库：
+#   磁盘 12,299,423 B / SHA-16 c021f0a0bc7a0dce
+#   入库 11,865,337 B / SHA-16 eb48f8e1d367dd75   ← 差 434,086 字节 = 行数
+# 而 BASELINE_v2/v3/v4 与 verify_* 全部以「磁盘字节 SHA-16」为回滚锚点，
+# 一旦 blob 与磁盘不等，「从 git 重建并校验指纹」即告失败。
+# 故对 compendium_rag 的全部证据类 JSON 显式声明 -text（不做任何 EOL 转换）。
+#
+# 注意： -text 是「原样存储」，不是「视为二进制」—— diff 仍可用。
+
+# 图谱本体与三份落盘前备份（回滚锚点）
+data/compendium_rag/graph.json -text
+data/compendium_rag/backups/** -text
+
+# 修复提案/验证/仲裁记录（R1–R4 证据链）
+data/compendium_rag/repairs_v*/** -text
+data/compendium_rag/repairs_arbitration_*.md -text
+
+# 评测/采集/lab 报告与基线锁定件（冻结 SHA 的载体）
+data/compendium_rag/reports/** -text

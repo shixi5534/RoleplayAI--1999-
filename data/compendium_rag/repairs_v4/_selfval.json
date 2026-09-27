@@ -1,0 +1,87 @@
+{
+ "n_entries": 78,
+ "n_remove_alias": 77,
+ "n_keep_with_note": 1,
+ "precheck_errors": [],
+ "warnings": [],
+ "postcheck_errors": [],
+ "only_aliases_mutated": true,
+ "entities_losing_last_alias": [
+  "299高地",
+  "APPLe号摇滚巨轮二世",
+  "Su-02ве",
+  "《科考日记》",
+  "人道主义物资",
+  "仙人掌猫",
+  "军用帆布包",
+  "剃刀",
+  "原始意识",
+  "和平旗帜",
+  "国家福柯学会",
+  "士兵们",
+  "复乐园",
+  "奥尔布里希",
+  "家",
+  "封印物",
+  "尼塔",
+  "巧克力",
+  "帽子",
+  "彩票箱",
+  "手稿",
+  "手表",
+  "拉普拉斯科算中心安全管理条例",
+  "拯救的魔圈",
+  "斯塔尔先生",
+  "既视感",
+  "旧照片",
+  "暴雨观测体系",
+  "最初的圆",
+  "极光",
+  "波拉比",
+  "洛佩拉之父",
+  "洞穴的囚徒",
+  "渔网",
+  "火地岛",
+  "爪子女俘虏",
+  "爱琴海",
+  "特里格拉夫",
+  "特里格拉夫号",
+  "红色38",
+  "芝加哥办事处",
+  "荣军院客房",
+  "袭击者",
+  "走私名单",
+  "迪达号",
+  "重塑军官"
+ ],
+ "n_queries": 420,
+ "seed_diffs_after_repair": [],
+ "removed_alias_query_hits": [],
+ "multi_owner_removals": [
+  {
+   "alias": "高地据点",
+   "removed_from": "299高地",
+   "still_declared_by": [
+    "地下堡垒"
+   ],
+   "note": "setdefault 语义下 alias_index 键仍在（指向其余声明者或按序重路由）"
+  },
+  {
+   "alias": "特里格拉夫战列舰",
+   "removed_from": "特里格拉夫",
+   "still_declared_by": [
+    "特里格拉夫号"
+   ],
+   "note": "setdefault 语义下 alias_index 键仍在（指向其余声明者或按序重路由）"
+  },
+  {
+   "alias": "特里格拉夫战列舰",
+   "removed_from": "特里格拉夫号",
+   "still_declared_by": [
+    "特里格拉夫"
+   ],
+   "note": "setdefault 语义下 alias_index 键仍在（指向其余声明者或按序重路由）"
+  }
+ ],
+ "verdict": "PASS"
+}

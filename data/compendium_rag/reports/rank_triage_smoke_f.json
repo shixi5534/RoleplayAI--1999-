@@ -1,0 +1,32 @@
+{
+ "kind": "rank_triage",
+ "collect": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\reports\\rank_collect_smoke_f_top20.json",
+ "mode": "full",
+ "top_k": 20,
+ "n_answerable": 2,
+ "n_misses": 1,
+ "classes": {
+  "pooled_in_window": 0,
+  "corpus_not_pooled": 1,
+  "no_corpus_match": 0
+ },
+ "entity_bridge_count": 1,
+ "rank_mismatch_qids": [],
+ "consistent": true,
+ "title_only_keywords": [],
+ "title_only_qids": [],
+ "per_miss": [
+  {
+   "qid": "R001",
+   "query": "薇洛的真名是什么？",
+   "stored_rank": null,
+   "seed_hit": false,
+   "n_eval_keywords": 4,
+   "class": "corpus_not_pooled",
+   "min_pooled_rank": null,
+   "n_corpus_keyword_chunks": 47,
+   "entity_bridge": true
+  }
+ ],
+ "markdown": "# 未命中归因分诊 · rank_collect_smoke_f_top20.json（full）\n\n- answerable n=2  k=6 misses n=1  采集窗口 top_k=20\n- 分诊：pooled_in_window=0  corpus_not_pooled=1（其中实体桥接可及=1）  no_corpus_match=0\n- answerable 规则自洽性（(iii) 必须为 0）：PASS\n- 名次交叉核对（min pooled rank vs 采集 rank）不一致：0 题[]\n- title-only 关键词（只活在篇名 → 规则判不可答）：0 个 []  影响题数=0\n\n| qid | 类 | min_rank | 语料kw块 | 桥接 | seed_hit | query |\n|---|---|---|---|---|---|---|\n| R001 | corpus_not_pooled | None | 47 | True | False | 薇洛的真名是什么？ |\n"
+}
