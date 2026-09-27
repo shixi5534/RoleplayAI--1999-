@@ -1,0 +1,36 @@
+{
+ "baseline": "BASELINE_v3",
+ "frozen_at": "2026-09-27",
+ "freeze_scope": "R4 落盘并重校准前冻结",
+ "graph": {
+  "entities": 7033,
+  "edges": 29957,
+  "fingerprint": "7dc29bf90681a3f7",
+  "repair_batches": [
+   "R1(20)",
+   "R2(71)",
+   "R3(20→18生效: E02 inferred跳过/E03 superseded/E07 rejected)"
+  ],
+  "backup": "backups/graph.json.prev.r3"
+ },
+ "numbers": {
+  "300cn_answerable_hit6": 0.7959,
+  "300cn_MRR": 0.626,
+  "rerank_ON_hit6": 0.8724,
+  "loo_cv_gap_pt": 1.02,
+  "native_hit6": 0.632,
+  "seti_T1_hit6": 0.8973,
+  "gen120_hit6": 0.8,
+  "unanswerable": "1/104",
+  "grounded": 1.0
+ },
+ "r3_semantic_note": "R3 为语义正确性批次：乌尔里希合并/福葛归位雾行者/店主拆分/中央塔桥——检索指标中性（桥修路由不改 gold 深度），收益兑现挂 R5 同场边或 R3 实体新题",
+ "artifact_sha256_16": {
+  "eval_300cn_after_r3": "abaea5343e53b12b",
+  "eval_gen_after_r3": "efc492cd21263c9b",
+  "rank_rerank_lab_300cn_r3": "be2d8b84f3e460a7",
+  "graph_live": "eac19efec7fa9026",
+  "backup_prev_r3": "c26f8f749bb5ecbe"
+ },
+ "unfreeze": "R4 落盘 + rebuild + 重校准后以 BASELINE_v4 取代"
+}
