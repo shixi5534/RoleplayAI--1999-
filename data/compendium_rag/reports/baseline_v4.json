@@ -1,0 +1,68 @@
+{
+ "baseline": "BASELINE_v4",
+ "frozen_at": "2026-09-27",
+ "freeze_scope": "R5（scene 共现边）立项前冻结；接线（StaticReranker）以此为主口径",
+ "graph": {
+  "entities": 7033,
+  "edges": 29957,
+  "fingerprint": "7dc29bf90681a3f7",
+  "repair_batches": [
+   "R1(20)",
+   "R2(71)",
+   "R3(18生效)",
+   "R4(78)"
+  ],
+  "backups": [
+   "prev.r1r2",
+   "prev.r3",
+   "prev.r4"
+  ]
+ },
+ "primary": {
+  "caliber": "300_cn answerable(196) full rerank-ON",
+  "refit_chosen": {
+   "config": "full_topN[zfit]alpha=0.3",
+   "hit6": 0.8673,
+   "loo_cv_gap_pt": 1.02,
+   "down": [
+    "R300"
+   ]
+  },
+  "frozen_v2_config": {
+   "config": "full_topN[zfit]alpha=1.0",
+   "hit6": 0.8571,
+   "note": "alpha 敏感性：修复改变池构成，最优 alpha 移位；双配置均 >=0.85"
+  },
+  "target_line": 0.85,
+  "verdict": "PASS（双配置）"
+ },
+ "secondary": {
+  "bare_hit6": 0.8112,
+  "bare_note": "历史最高（超 #37 原点 0.8010）；R248 回归 rank6、R163/R299 回归，up=3 down=0",
+  "native_hit6": 0.632,
+  "seti_T1_hit6": 0.8973,
+  "gen120_hit6": 0.8083,
+  "GA_probe": 0.74,
+  "GC_control": 0.86,
+  "safety": {
+   "unanswerable": "1/104",
+   "grounded": 1.0
+  },
+  "paired_vs_old": {
+   "300cn_p": 1.0,
+   "gen120_p": 0.625,
+   "graph_only_p": 1.0
+  }
+ },
+ "r4_mechanism_note": "R4 收益超模拟预测（模拟 0/420 种子 diff，实测 +4 题）——疑似 alias_index 同长键序依赖，模拟保真度缺口入协议（实测>预测 双向生效）",
+ "artifact_sha256_16": {
+  "eval_300cn_after_r4": "6e32179cf70d476c",
+  "eval_gen_after_r4": "e1a91fe3596b6548",
+  "rank_rerank_lab_300cn_r4": "6a692f2a72bbd09f",
+  "rank_collect_300cn_r4": "aa70863b5df98ccb",
+  "graph_live": "c021f0a0bc7a0dce",
+  "backup_prev_r4": "eac19efec7fa9026",
+  "baseline_v3": "6c90445c53d83f0a"
+ },
+ "unfreeze": "R5（scene 共现边）立项前冻结；R5 落盘后以 BASELINE_v5 取代"
+}
