@@ -452,20 +452,28 @@ class GraphRetriever:
     def rrf_fuse(channels: dict[str, dict[str, float]], k: int = 60,
                  weights: dict[str, float] | None = None,
                  top_n: int = 20) -> list[Evidence]:
-        """Reciprocal Rank Fusion：按各通道排名融合，规避量纲不一致。"""
+        """Reciprocal Rank Fusion：按各通道排名融合，规避量纲不一致。
+
+        确定性（2026-09-28 追加，作战书 §4bis「排序必须带显式次级键」）：
+          两处排序都补了次级键 `chunk_id`。原因：RRF 分数是 `1/(k+rank)` 的加和，
+          平局极常见 —— 实测 120 题中 **116 题**存在并列（单题最多 42 个元素并列），
+          而原先只按分数排序时，平局先后完全由 **dict 插入序**决定，
+          等于 top-6 的边界取舍是任意的（与 #39 Phase 2 修掉的 link() 同类缺陷）。
+        """
         weights = weights or {}
         agg: dict[str, Evidence] = {}
-        for ch, scored in channels.items():
+        for ch in sorted(channels):          # 通道遍历序确定（不依赖调用方构造顺序）
+            scored = channels[ch]
             if not scored:
                 continue
             w = weights.get(ch, 1.0)
-            ranked = sorted(scored.items(), key=lambda kv: -kv[1])
+            ranked = sorted(scored.items(), key=lambda kv: (-kv[1], kv[0]))
             for rank, (cid, raw) in enumerate(ranked, start=1):
                 ev = agg.setdefault(cid, Evidence(chunk_id=cid, score=0.0))
                 ev.channels[ch] = raw
                 ev.score += w * (1.0 / (k + rank))
                 ev.reasons.append(f"{ch}#{rank}")
-        out = sorted(agg.values(), key=lambda e: -e.score)
+        out = sorted(agg.values(), key=lambda e: (-e.score, e.chunk_id))
         return out[:top_n]
 
     # ── 端到端 ──

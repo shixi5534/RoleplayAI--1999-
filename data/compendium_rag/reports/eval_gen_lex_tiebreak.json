@@ -1,0 +1,4571 @@
+{
+  "testset": "data/knowledge/_audit/rag_testset_gen_r1r2.json",
+  "top_k": 6,
+  "corpus": {
+    "chunks": 3695,
+    "entities": 7033,
+    "edges": 30269
+  },
+  "rows": [
+    {
+      "qid": "GA-01",
+      "query": "小叶尼塞发现的那份听写稿件，是别斯米尔女士曾委托她记录的什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 8.358,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-02",
+      "query": "关于实现“所求必应”需要付出的代价，别斯米尔从商人们那里听到的说法是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.958,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-03",
+      "query": "别斯米尔凭多年登山经验判断，他们所处地方的海拔大约是多少？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.537,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-04",
+      "query": "同行者们被巨鸟控制后，别斯米尔怀疑是哪种生物拥有隔空操纵行为的能力？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.797,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-05",
+      "query": "误把别斯米尔当作小叶尼塞的母亲之后，里正道歉时提到自己遗忘了她的什么情况？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.562,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-06",
+      "query": "在曲娘家院子里，别斯米尔在水缸附近的落叶中摸出了什么东西？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.675,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-07",
+      "query": "面对“失落的神秘术”无法像低地沉积岩那样被验证的质疑，别斯米尔给出了怎样的回应？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.625,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-08",
+      "query": "在城外断桥边问卜时，别斯米尔用什么方式在地上写下自己的问题？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.543,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-09",
+      "query": "电台新闻里提到，传记作家兀尔德出版了哪部引发新一轮爱琴海旅游狂潮的游记？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.596,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-10",
+      "query": "马坎多替生病的老板上门求医时说，“大伙儿都认识”荣军院的哪位医生？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.525,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-11",
+      "query": "据康斯坦丁的说法，被伊戈尔劫走的“德洛丝医生”实际上是谁？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.4,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-12",
+      "query": "维尔汀一行发现的、曾“参与了圣保罗喧闹的夜晚”的那台便携式古典打字机是谁的物品？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.382,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-13",
+      "query": "关于德洛丝医生的眼睛，维尔汀向诺谛卡作了怎样的描述？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.432,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-14",
+      "query": "“无名者”自称掌握着有关谁的“下落的最后一块拼图”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.515,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-15",
+      "query": "面对维尔汀“玛尔塔、别斯米尔、兀尔德……我该如何称呼您”的疑问，德洛丝医生如何回答？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.081,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-16",
+      "query": "在琥珀屋的实验场景中，被称作“兀尔德女士”的她如何说明这个名字与自己职业的关系？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.476,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-17",
+      "query": "维尔汀向玛尔塔女士索要了什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.446,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-18",
+      "query": "苏菲亚为即将参加试炼的37担忧时，玛尔塔是如何安慰她的？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.735,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-19",
+      "query": "冲进烟尘去找苏菲亚之前，37把谁托付给了玛尔塔女士照顾？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.627,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-20",
+      "query": "玛尔塔请求6为她解答疑惑时，6给出了怎样的回答？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.602,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-21",
+      "query": "众人离开后空荡的厅堂里，888向玛尔塔女士询问谁的状况？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.522,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-22",
+      "query": "据马库斯向霍夫曼的汇报，“卡卡尼亚”这个名字对应的本名是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.791,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-23",
+      "query": "在拉普拉斯康复中心，露西为何能一眼认出卡卡尼亚的身份？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.795,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-24",
+      "query": "卡卡尼亚向马库斯说明，“卡卡尼亚”这个名字源自什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 5.038,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-25",
+      "query": "在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.661,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-26",
+      "query": "决斗开始前的公证声明中，合法的决斗武器只有哪三种？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.833,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-27",
+      "query": "纪念画展的致辞中，伊索尔德如何向宾客介绍克拉拉小姐？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.982,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-28",
+      "query": "关于自己的第一枚手镜，卡卡尼亚说它有什么禁忌？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.758,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-29",
+      "query": "温格勒先生（克拉拉的父亲）如何评价她带回家的第一枚手镜？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.715,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-30",
+      "query": "对于施瓦茨收治伊索尔德一事，卡卡尼亚向伊索尔德指出了什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.728,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-31",
+      "query": "喝过活水之后，尤利恩向别斯米尔如何形容水的味道？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.712,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-32",
+      "query": "在沛城门口，里正猜测两位远道而来的异乡人丢失了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.588,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-33",
+      "query": "曲娘端出助眠的浊酒时，小叶尼塞是如何婉拒的？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.525,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-34",
+      "query": "小叶尼塞说自己上一次向别斯米尔展示“水中显影传声”的神秘术是在哪里？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.781,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-35",
+      "query": "葛天如何向小叶尼塞评价曲娘的为人？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.582,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-36",
+      "query": "据葛天解释，“岁朝春”指的是什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.653,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-37",
+      "query": "问卜应验、同伴变回人形后，据小叶尼塞所说，谁以人身的样子跃过了断桥？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.586,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-38",
+      "query": "十四行诗根据谁提供的信息，判断德洛丝女士就是在这一带的海岸登陆？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.786,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-39",
+      "query": "维尔汀打算如何借助听诊器找到德洛丝医生离去的方向？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.649,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-40",
+      "query": "“无名者”提出带维尔汀一行到何处与德洛丝医生（兀尔德女士）会合？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.778,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-41",
+      "query": "传道者苏菲亚说，德洛丝女士是凭借什么到达仪式核心的？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.69,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-42",
+      "query": "为了把纺车带给维尔汀，德洛丝医生做了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.457,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-43",
+      "query": "促使维尔汀决定前往别列格勒的、有关兀尔德的情报来自谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.442,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-44",
+      "query": "1999年，在兀尔德准备靠近仪式中心之前，她年幼的女儿由哪里照看？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.65,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-45",
+      "query": "据伊戈尔所说，基金会在“暴雨”安全区建立回环实验室、开展“灌体”实验，都是为了实现什么目标？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.62,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-46",
+      "query": "逼问“小铁皮壳”交出情报时，红弩箭说当然不会这么浪费伏特加来给她“保养”，那他们实际要用的是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.805,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-47",
+      "query": "施瓦茨医生抱怨弗洛伊德花了多少年才评上教授职称？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.54,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-48",
+      "query": "卡卡尼亚对伊索尔德实施催眠时，让她看什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.912,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-49",
+      "query": "据APPLe介绍，“无限定者”这一哲学概念由谁提出、用来指代什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.886,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-50",
+      "query": "伊索尔德向卡卡尼亚提出了怎样的请求？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.745,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-01",
+      "query": "在送行场景中，洛佩拉提到“那老伙计……哈哈，我们认识很久了”，并说“见到他的时候我会帮你的”——她口中的这位“老伙计”是谁？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.585,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-02",
+      "query": "在工厂参观场景中，克努特提醒北方哨歌最好躲着一个人——他“可是个热情的老伙计，镇上最好的厨师”。这个人是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.734,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-03",
+      "query": "在“瓦尔登湖”地下酒馆的场景中，据说亲手研制魔药饮料的老板是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.573,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-04",
+      "query": "场景中野木蓝说“他是俱乐部幕后的老板，也是墨西哥城最负盛名的神秘学家走私犯之一”——“他”是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.65,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-05",
+      "query": "苏芙比想象塔中之物“有公牛的力量、人类的智力”，洛佩拉说这样的怪物他们一般叫它什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.643,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-06",
+      "query": "在黑暗街道的场景中，灯倌说“这点光亮不足以吓跑”的那个怪物叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.827,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-07",
+      "query": "小梅斯梅尔说，科算中心将面具解析报告里与“暴雨”水滴一致的成分命名为什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.694,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-08",
+      "query": "玛蒂尔达在老屋院子里启用的便携联络装置是什么型号？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.618,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-09",
+      "query": "马库斯介绍那位“人尽皆知的灵媒”时说，哪个家族都十分擅长通灵技艺？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.47,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-10",
+      "query": "J提到那位穷困潦倒的保险推销员是从哪个世代铸剑的家族里溜出来的私生子？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.481,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-11",
+      "query": "Z的汇报里，哪位校长在口头劝阻失败后动用了特勤警卫、苦哑巴药剂和防暴枪？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.575,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-12",
+      "query": "场景中是谁在按下墙上硕大的红色按钮后大喊“——警卫！警卫！我们需要帮助！！！”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.716,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-13",
+      "query": "爱兹拉说自己已经听哪位店主小姐讲了冰淇淋诞生的经过？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.789,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-14",
+      "query": "河岸步道的告示牌上写着，店主因肺病发作已前往哪里就诊？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.669,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-15",
+      "query": "场景中哪位舵手高喊“准备好，伙计们！”随即“满舵——！”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.858,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-16",
+      "query": "场景中哪位先生安慰马库斯“别灰心”，并传授吸引读者的写作经验？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.635,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-17",
+      "query": "军长伊万说他花了很长的时间，才让哪位夫人接受他这个“孩子”？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.52,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-18",
+      "query": "场景旁白说“作为教师，她有着几乎无穷的耐心”——这位教师是谁？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.819,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-19",
+      "query": "根据奥克塔维奥宣布的判定，掷出“17”的何塞在获得药品奖励的同时，还将被擢升为什么职位？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.846,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GB-20",
+      "query": "场景中管理员让谁“把这些书放到原本的位置上”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.521,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-01",
+      "query": "在霍夫曼与马库斯的对话中，马库斯认为有问题的西奥菲尔遗作是哪幅画？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.579,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-02",
+      "query": "红弩箭向维尔汀汇报，飞行中队在哪个坐标点附近遭到了重塑之手的伏击？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.486,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-03",
+      "query": "洋葱头说吉娃娃去追逐它的什么了？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.79,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-04",
+      "query": "阿黛拉请贝丽尔上了她开的什么车？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.642,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-05",
+      "query": "环状水星的手指最后停在了那张美国地图上的哪个地名？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.652,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-06",
+      "query": "苏菲亚认为，让人得以面对既定结局的品质除了勇气还可能是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.537,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-07",
+      "query": "莱格斯那两颗没能射穿胸膛的子弹“射”向了哪里，造成了什么后果？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.641,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-08",
+      "query": "阿夫西维说哪种食物同志只会在每周五的晚餐被找到？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.536,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-09",
+      "query": "这段文字开头所引《半而未满》一诗的作者是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.807,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-10",
+      "query": "？？？感叹自己第一次见到异化程度如此之高的生物，它的名字是什么？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.849,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-11",
+      "query": "北方哨歌根据“鲸鱼骨骼，菱形利齿”等特征辨认出的魔精叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.494,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-12",
+      "query": "鬃毛沙砾说这次UTTU闪烁集会要读的书是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.712,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-13",
+      "query": "神教教徒Ⅲ想等到仪式结束后向哪位大人请教斯基泰密码的答案？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.67,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-14",
+      "query": "？？？说“这就是我们的诅咒”——这个诅咒指什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.381,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-15",
+      "query": "卡珊德拉说，也许连谁也要赞颂多米蒂乌斯的名？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.748,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-16",
+      "query": "重塑士兵认出直飞而来的巨物是什么（来自哪里）？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.434,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-17",
+      "query": "环状水星说马上就会知道比安卡会不会有一只什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.459,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-18",
+      "query": "赶走了旧朋友之后，夏洛特称谁是“我唯一的朋友”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.493,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-19",
+      "query": "红尾马驹从谁的身后掠走了别斯米尔？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.517,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-20",
+      "query": "阿夫西维把画儿送给了那位有一台漂亮打字机的什么人？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.591,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-21",
+      "query": "露西认为横渡大西洋的唯一方法是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.421,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-22",
+      "query": "玛蒂尔达醒来时，之前一直守在她床边、刚刚才离开的是谁？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.588,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-23",
+      "query": "星锑保证在APPLe电台为回归的唱片举办连续多少小时的派对？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.684,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-24",
+      "query": "37解释海豚对星锑又拍又咬的原因是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.637,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-25",
+      "query": "谁说“第一次进来的人是会不太习惯”？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.765,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-26",
+      "query": "陈半仙提起《除灵十三法》的来由时，唤泥鯭的士的本名叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.664,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-27",
+      "query": "马歇尔批评杜卡特讲的故事有什么问题？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.765,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-28",
+      "query": "乔治橡树生长于多少年前？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.869,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-29",
+      "query": "努库泰澳人的灯具“罗盘灼灼”的灯罩是用什么树的树皮打磨的？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.603,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-30",
+      "query": "尼迪亚说她在家人们的尸体上看见长出了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.536,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-31",
+      "query": "伊索尔德认为西奥菲尔若是一个真正有勇气的人，他就应该怎么做？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.987,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-32",
+      "query": "空脑袋靠什么物品施展“转念即至”逃离了现场？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.997,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-33",
+      "query": "阿黛拉为什么没有告诉罗西教授项链的真实下落？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.535,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-34",
+      "query": "卡珊德拉向两人自报的名号是什么？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.53,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-35",
+      "query": "莫桑女士打开的崭新物资箱里装着重塑之手用来做什么的面具？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.65,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-36",
+      "query": "诺谛卡说自己变得和梦中谁的样子很像？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.719,
+      "dims": {
+        "type": "definition",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-37",
+      "query": "维尔汀说基金会内部抗议的声音凝聚成的新群体叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.622,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-38",
+      "query": "威尔提议拿自己家的什么家产当铅球？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.772,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-39",
+      "query": "梁月自报是十二侲子中哪一家的后人？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.505,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-40",
+      "query": "该脚本条目中的 Script ID 是多少？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.784,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-41",
+      "query": "艾弗森命令把什么系统开到最大功率？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.916,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-42",
+      "query": "按罗西教授的说法，什么样的巴黎才是真正的巴黎？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.565,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-43",
+      "query": "苏菲亚说37在哪一年的“流溢”结束之后就把自己关进了研究室？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.613,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-44",
+      "query": "？？？想着给谁的报告“该怎么圆呢”？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.816,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-45",
+      "query": "阿莱夫说虚构集在第七次来信中新增的角色是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.871,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-46",
+      "query": "傅书生的妻子霍氏出身何处？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.94,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-47",
+      "query": "该脚本条目的 Internal title 是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.787,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-48",
+      "query": "X给露西的通讯仪是供谁跟外界沟通的？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.412,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-49",
+      "query": "艾吉奥说莱昂纳多的镜像体倒过来是什么意思？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.958,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GC-50",
+      "query": "斯考特通过什么物品与神秘女士进行传信术通讯？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.558,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "full",
+      "answerable": true
+    },
+    {
+      "qid": "GA-01",
+      "query": "小叶尼塞发现的那份听写稿件，是别斯米尔女士曾委托她记录的什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.381,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-02",
+      "query": "关于实现“所求必应”需要付出的代价，别斯米尔从商人们那里听到的说法是什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.126,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-03",
+      "query": "别斯米尔凭多年登山经验判断，他们所处地方的海拔大约是多少？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.317,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-04",
+      "query": "同行者们被巨鸟控制后，别斯米尔怀疑是哪种生物拥有隔空操纵行为的能力？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.124,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-05",
+      "query": "误把别斯米尔当作小叶尼塞的母亲之后，里正道歉时提到自己遗忘了她的什么情况？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.169,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-06",
+      "query": "在曲娘家院子里，别斯米尔在水缸附近的落叶中摸出了什么东西？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.115,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-07",
+      "query": "面对“失落的神秘术”无法像低地沉积岩那样被验证的质疑，别斯米尔给出了怎样的回应？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.32,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-08",
+      "query": "在城外断桥边问卜时，别斯米尔用什么方式在地上写下自己的问题？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.143,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-09",
+      "query": "电台新闻里提到，传记作家兀尔德出版了哪部引发新一轮爱琴海旅游狂潮的游记？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.086,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-10",
+      "query": "马坎多替生病的老板上门求医时说，“大伙儿都认识”荣军院的哪位医生？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.089,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-11",
+      "query": "据康斯坦丁的说法，被伊戈尔劫走的“德洛丝医生”实际上是谁？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.056,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-12",
+      "query": "维尔汀一行发现的、曾“参与了圣保罗喧闹的夜晚”的那台便携式古典打字机是谁的物品？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.281,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-13",
+      "query": "关于德洛丝医生的眼睛，维尔汀向诺谛卡作了怎样的描述？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.079,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-14",
+      "query": "“无名者”自称掌握着有关谁的“下落的最后一块拼图”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 3.985,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-15",
+      "query": "面对维尔汀“玛尔塔、别斯米尔、兀尔德……我该如何称呼您”的疑问，德洛丝医生如何回答？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.336,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-16",
+      "query": "在琥珀屋的实验场景中，被称作“兀尔德女士”的她如何说明这个名字与自己职业的关系？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.124,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-17",
+      "query": "维尔汀向玛尔塔女士索要了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.332,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-18",
+      "query": "苏菲亚为即将参加试炼的37担忧时，玛尔塔是如何安慰她的？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.188,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-19",
+      "query": "冲进烟尘去找苏菲亚之前，37把谁托付给了玛尔塔女士照顾？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.189,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-20",
+      "query": "玛尔塔请求6为她解答疑惑时，6给出了怎样的回答？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.232,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-21",
+      "query": "众人离开后空荡的厅堂里，888向玛尔塔女士询问谁的状况？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.106,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-22",
+      "query": "据马库斯向霍夫曼的汇报，“卡卡尼亚”这个名字对应的本名是什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.221,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-23",
+      "query": "在拉普拉斯康复中心，露西为何能一眼认出卡卡尼亚的身份？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.072,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-24",
+      "query": "卡卡尼亚向马库斯说明，“卡卡尼亚”这个名字源自什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.23,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-25",
+      "query": "在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.519,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-26",
+      "query": "决斗开始前的公证声明中，合法的决斗武器只有哪三种？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 3.97,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-27",
+      "query": "纪念画展的致辞中，伊索尔德如何向宾客介绍克拉拉小姐？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.351,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-28",
+      "query": "关于自己的第一枚手镜，卡卡尼亚说它有什么禁忌？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.197,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-29",
+      "query": "温格勒先生（克拉拉的父亲）如何评价她带回家的第一枚手镜？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.118,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-30",
+      "query": "对于施瓦茨收治伊索尔德一事，卡卡尼亚向伊索尔德指出了什么？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.456,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-31",
+      "query": "喝过活水之后，尤利恩向别斯米尔如何形容水的味道？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.043,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-32",
+      "query": "在沛城门口，里正猜测两位远道而来的异乡人丢失了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.139,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-33",
+      "query": "曲娘端出助眠的浊酒时，小叶尼塞是如何婉拒的？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.344,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-34",
+      "query": "小叶尼塞说自己上一次向别斯米尔展示“水中显影传声”的神秘术是在哪里？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.18,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-35",
+      "query": "葛天如何向小叶尼塞评价曲娘的为人？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.175,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-36",
+      "query": "据葛天解释，“岁朝春”指的是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.134,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-37",
+      "query": "问卜应验、同伴变回人形后，据小叶尼塞所说，谁以人身的样子跃过了断桥？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.172,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-38",
+      "query": "十四行诗根据谁提供的信息，判断德洛丝女士就是在这一带的海岸登陆？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.868,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-39",
+      "query": "维尔汀打算如何借助听诊器找到德洛丝医生离去的方向？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.212,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-40",
+      "query": "“无名者”提出带维尔汀一行到何处与德洛丝医生（兀尔德女士）会合？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.362,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-41",
+      "query": "传道者苏菲亚说，德洛丝女士是凭借什么到达仪式核心的？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.466,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-42",
+      "query": "为了把纺车带给维尔汀，德洛丝医生做了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.286,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-43",
+      "query": "促使维尔汀决定前往别列格勒的、有关兀尔德的情报来自谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.208,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-44",
+      "query": "1999年，在兀尔德准备靠近仪式中心之前，她年幼的女儿由哪里照看？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.138,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-45",
+      "query": "据伊戈尔所说，基金会在“暴雨”安全区建立回环实验室、开展“灌体”实验，都是为了实现什么目标？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.276,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-46",
+      "query": "逼问“小铁皮壳”交出情报时，红弩箭说当然不会这么浪费伏特加来给她“保养”，那他们实际要用的是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.301,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-47",
+      "query": "施瓦茨医生抱怨弗洛伊德花了多少年才评上教授职称？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.246,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-48",
+      "query": "卡卡尼亚对伊索尔德实施催眠时，让她看什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.52,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-49",
+      "query": "据APPLe介绍，“无限定者”这一哲学概念由谁提出、用来指代什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.332,
+      "dims": {
+        "type": "definition",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GA-50",
+      "query": "伊索尔德向卡卡尼亚提出了怎样的请求？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.689,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-01",
+      "query": "在送行场景中，洛佩拉提到“那老伙计……哈哈，我们认识很久了”，并说“见到他的时候我会帮你的”——她口中的这位“老伙计”是谁？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.356,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-02",
+      "query": "在工厂参观场景中，克努特提醒北方哨歌最好躲着一个人——他“可是个热情的老伙计，镇上最好的厨师”。这个人是谁？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.363,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-03",
+      "query": "在“瓦尔登湖”地下酒馆的场景中，据说亲手研制魔药饮料的老板是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.118,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-04",
+      "query": "场景中野木蓝说“他是俱乐部幕后的老板，也是墨西哥城最负盛名的神秘学家走私犯之一”——“他”是谁？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.203,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-05",
+      "query": "苏芙比想象塔中之物“有公牛的力量、人类的智力”，洛佩拉说这样的怪物他们一般叫它什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.215,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-06",
+      "query": "在黑暗街道的场景中，灯倌说“这点光亮不足以吓跑”的那个怪物叫什么名字？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.336,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-07",
+      "query": "小梅斯梅尔说，科算中心将面具解析报告里与“暴雨”水滴一致的成分命名为什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.252,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-08",
+      "query": "玛蒂尔达在老屋院子里启用的便携联络装置是什么型号？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.307,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-09",
+      "query": "马库斯介绍那位“人尽皆知的灵媒”时说，哪个家族都十分擅长通灵技艺？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.303,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-10",
+      "query": "J提到那位穷困潦倒的保险推销员是从哪个世代铸剑的家族里溜出来的私生子？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.132,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-11",
+      "query": "Z的汇报里，哪位校长在口头劝阻失败后动用了特勤警卫、苦哑巴药剂和防暴枪？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.395,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-12",
+      "query": "场景中是谁在按下墙上硕大的红色按钮后大喊“——警卫！警卫！我们需要帮助！！！”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.406,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-13",
+      "query": "爱兹拉说自己已经听哪位店主小姐讲了冰淇淋诞生的经过？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.663,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-14",
+      "query": "河岸步道的告示牌上写着，店主因肺病发作已前往哪里就诊？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.6,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-15",
+      "query": "场景中哪位舵手高喊“准备好，伙计们！”随即“满舵——！”？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 3.806,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-16",
+      "query": "场景中哪位先生安慰马库斯“别灰心”，并传授吸引读者的写作经验？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.29,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-17",
+      "query": "军长伊万说他花了很长的时间，才让哪位夫人接受他这个“孩子”？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.31,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-18",
+      "query": "场景旁白说“作为教师，她有着几乎无穷的耐心”——这位教师是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.564,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-19",
+      "query": "根据奥克塔维奥宣布的判定，掷出“17”的何塞在获得药品奖励的同时，还将被擢升为什么职位？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.06,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GB-20",
+      "query": "场景中管理员让谁“把这些书放到原本的位置上”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.055,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-01",
+      "query": "在霍夫曼与马库斯的对话中，马库斯认为有问题的西奥菲尔遗作是哪幅画？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.187,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-02",
+      "query": "红弩箭向维尔汀汇报，飞行中队在哪个坐标点附近遭到了重塑之手的伏击？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.194,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-03",
+      "query": "洋葱头说吉娃娃去追逐它的什么了？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.405,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-04",
+      "query": "阿黛拉请贝丽尔上了她开的什么车？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.138,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-05",
+      "query": "环状水星的手指最后停在了那张美国地图上的哪个地名？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.281,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-06",
+      "query": "苏菲亚认为，让人得以面对既定结局的品质除了勇气还可能是什么？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.239,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-07",
+      "query": "莱格斯那两颗没能射穿胸膛的子弹“射”向了哪里，造成了什么后果？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.144,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-08",
+      "query": "阿夫西维说哪种食物同志只会在每周五的晚餐被找到？",
+      "hit": false,
+      "rr": 0.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.075,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-09",
+      "query": "这段文字开头所引《半而未满》一诗的作者是谁？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 0,
+      "seconds": 0.033,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-10",
+      "query": "？？？感叹自己第一次见到异化程度如此之高的生物，它的名字是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 0,
+      "seconds": 0.051,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-11",
+      "query": "北方哨歌根据“鲸鱼骨骼，菱形利齿”等特征辨认出的魔精叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.252,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-12",
+      "query": "鬃毛沙砾说这次UTTU闪烁集会要读的书是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.25,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-13",
+      "query": "神教教徒Ⅲ想等到仪式结束后向哪位大人请教斯基泰密码的答案？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.235,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-14",
+      "query": "？？？说“这就是我们的诅咒”——这个诅咒指什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.062,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-15",
+      "query": "卡珊德拉说，也许连谁也要赞颂多米蒂乌斯的名？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.058,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-16",
+      "query": "重塑士兵认出直飞而来的巨物是什么（来自哪里）？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.038,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-17",
+      "query": "环状水星说马上就会知道比安卡会不会有一只什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.198,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-18",
+      "query": "赶走了旧朋友之后，夏洛特称谁是“我唯一的朋友”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.01,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-19",
+      "query": "红尾马驹从谁的身后掠走了别斯米尔？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.122,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-20",
+      "query": "阿夫西维把画儿送给了那位有一台漂亮打字机的什么人？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.234,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-21",
+      "query": "露西认为横渡大西洋的唯一方法是什么？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.089,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-22",
+      "query": "玛蒂尔达醒来时，之前一直守在她床边、刚刚才离开的是谁？",
+      "hit": true,
+      "rr": 0.16666666666666666,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.286,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-23",
+      "query": "星锑保证在APPLe电台为回归的唱片举办连续多少小时的派对？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.262,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-24",
+      "query": "37解释海豚对星锑又拍又咬的原因是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.226,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-25",
+      "query": "谁说“第一次进来的人是会不太习惯”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 0,
+      "seconds": 0.034,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-26",
+      "query": "陈半仙提起《除灵十三法》的来由时，唤泥鯭的士的本名叫什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.232,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-27",
+      "query": "马歇尔批评杜卡特讲的故事有什么问题？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.231,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-28",
+      "query": "乔治橡树生长于多少年前？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.093,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-29",
+      "query": "努库泰澳人的灯具“罗盘灼灼”的灯罩是用什么树的树皮打磨的？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.115,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-30",
+      "query": "尼迪亚说她在家人们的尸体上看见长出了什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.32,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-31",
+      "query": "伊索尔德认为西奥菲尔若是一个真正有勇气的人，他就应该怎么做？",
+      "hit": true,
+      "rr": 0.2,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.407,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-32",
+      "query": "空脑袋靠什么物品施展“转念即至”逃离了现场？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.201,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-33",
+      "query": "阿黛拉为什么没有告诉罗西教授项链的真实下落？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.092,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-34",
+      "query": "卡珊德拉向两人自报的名号是什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.163,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-35",
+      "query": "莫桑女士打开的崭新物资箱里装着重塑之手用来做什么的面具？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.115,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-36",
+      "query": "诺谛卡说自己变得和梦中谁的样子很像？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.078,
+      "dims": {
+        "type": "definition",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-37",
+      "query": "维尔汀说基金会内部抗议的声音凝聚成的新群体叫什么？",
+      "hit": true,
+      "rr": 0.5,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 3.979,
+      "dims": {
+        "type": "definition",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-38",
+      "query": "威尔提议拿自己家的什么家产当铅球？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.145,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-39",
+      "query": "梁月自报是十二侲子中哪一家的后人？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.197,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-40",
+      "query": "该脚本条目中的 Script ID 是多少？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 0,
+      "seconds": 0.029,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-41",
+      "query": "艾弗森命令把什么系统开到最大功率？",
+      "hit": true,
+      "rr": 0.3333333333333333,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.085,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-42",
+      "query": "按罗西教授的说法，什么样的巴黎才是真正的巴黎？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.073,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-43",
+      "query": "苏菲亚说37在哪一年的“流溢”结束之后就把自己关进了研究室？",
+      "hit": true,
+      "rr": 0.25,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.234,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-44",
+      "query": "？？？想着给谁的报告“该怎么圆呢”？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.492,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-45",
+      "query": "阿莱夫说虚构集在第七次来信中新增的角色是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.054,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "hard",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-46",
+      "query": "傅书生的妻子霍氏出身何处？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.051,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-47",
+      "query": "该脚本条目的 Internal title 是什么？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 0,
+      "seconds": 0.032,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-48",
+      "query": "X给露西的通讯仪是供谁跟外界沟通的？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": false,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.069,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "easy",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-49",
+      "query": "艾吉奥说莱昂纳多的镜像体倒过来是什么意思？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.523,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    },
+    {
+      "qid": "GC-50",
+      "query": "斯考特通过什么物品与神秘女士进行传信术通讯？",
+      "hit": true,
+      "rr": 1.0,
+      "seed_hit": true,
+      "grounded": true,
+      "n_evidence": 24,
+      "n_edges": 30,
+      "seconds": 4.249,
+      "dims": {
+        "type": "factoid",
+        "difficulty": "medium",
+        "_answerable": true
+      },
+      "cn_keyword": true,
+      "mode": "graph_only",
+      "answerable": true
+    }
+  ]
+}

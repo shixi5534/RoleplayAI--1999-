@@ -1,0 +1,101 @@
+{
+  "baseline": "BASELINE_v6",
+  "frozen_at": "2026-09-28",
+  "freeze_scope": "词面通道（BM25，lex_weight=1.0）启用后冻结；取代 BASELINE_v5（v5 为 lex=0 口径，两者不可直接混比）",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "note": "启用词面通道。该通道不依赖实体链接/嵌入，用于补上『无任何通道命中』的候选；权重 1.0 系仅在 300cn 上选定，盲测 206 题为留出集。",
+    "rollback": "CMPRAG_LEX_WEIGHT=0 即回到 BASELINE_v5 口径"
+  },
+  "graph": {
+    "entities": 7033,
+    "edges": 30269,
+    "sha256_16": "4bbefd9eba577c01",
+    "repair_batches": [
+      "R1(20)",
+      "R2(71)",
+      "R3(18生效)",
+      "R4(78)",
+      "R5(312 add_edge)"
+    ]
+  },
+  "primary_blind": {
+    "caliber": "子代理盲写 206 题留出集（无泄题、与 300cn 零重叠）",
+    "production_rerank_hit6": 0.8786,
+    "production_caliber": "full + 冻结重排（在 300cn 上拟合，未在盲测集重新拟合）",
+    "bare_hit6": {
+      "hits": 172,
+      "n": 206,
+      "rate": 0.835,
+      "grounded_rate": 1.0
+    },
+    "up": 10,
+    "down": 1,
+    "target_line": 0.85,
+    "verdict": "PASS"
+  },
+  "secondary_300cn": {
+    "production_rerank_hit6": 0.8673,
+    "lex_on_bare_hit6": {
+      "hits": 165,
+      "n": 196,
+      "rate": 0.8418,
+      "grounded_rate": 1.0
+    },
+    "lex_on_graph_only": {
+      "hits": 157,
+      "n": 196,
+      "rate": 0.801,
+      "grounded_rate": 1.0
+    },
+    "safety_unanswerable": {
+      "hits": 1,
+      "n": 104,
+      "rate": 0.0096,
+      "grounded_rate": 1.0
+    }
+  },
+  "generalization_120": {
+    "lex_on_full_hit6": {
+      "hits": 109,
+      "n": 120,
+      "rate": 0.9083,
+      "grounded_rate": 1.0
+    }
+  },
+  "comparison_vs_v5": {
+    "note": "同一题集上 lex=0（v5 口径）vs lex=1（v6 口径）",
+    "300cn": {
+      "lex0": 0.7959,
+      "lex1": 0.8418
+    },
+    "blind206": {
+      "lex0": 0.6408,
+      "lex1": 0.835
+    },
+    "gen120": {
+      "lex0": 0.8,
+      "lex1": 0.9083
+    }
+  },
+  "determinism": {
+    "rrf_secondary_key": "已加（排序键 (-score, chunk_id)，通道按名排序）",
+    "evidence": "scripts/_rrf_tie_probe.py 实测 120 题中 116 题存在分数并列",
+    "harness": "scripts/_rrf_determinism.py 多 hashseed 一致"
+  },
+  "r4_k01_status": {
+    "state": "NOT-APPLIED（用户裁决：暂不执行）",
+    "detail": "诊所的别名『诊疗』仲裁未落盘；Applier 曾因缺 alias 字段 fail-closed。"
+  },
+  "artifact_sha256_16": {
+    "graph_live": "4bbefd9eba577c01",
+    "baseline_v5": "8ae02968aeb9ccce",
+    "eval_300cn_lex_on": "651a868b5356ff69",
+    "eval_gen_lex_on": "41f93e9fc74c2ffc",
+    "eval_blind_lex_on": "f211976b0bd078ac",
+    "eval_blind_lex_tiebreak": "4279c8b45d692210",
+    "eval_300cn_lex_off": "a46e682f7bf51892"
+  },
+  "unfreeze": "R6 或 P4 StaticReranker 接线前冻结；落盘后以 BASELINE_v7 取代"
+}
