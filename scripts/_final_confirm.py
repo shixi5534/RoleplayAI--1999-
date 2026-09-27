@@ -14,7 +14,7 @@ print(f"  up={b['up']}  down={b['down']}   目标 0.85 -> "
       f"{'PASS' if b['frozen_hit6'] >= 0.85 else 'FAIL'}")
 
 print()
-print("=== 目标①：词面通道接线后的正式冷启动对照（盲测 206 题）===")
+print("=== 目标①：词面通道接线后的正式冷启动对照（**同一 206 题集**）===")
 
 
 def full_rate(name):
@@ -23,10 +23,15 @@ def full_rate(name):
     return sum(1 for r in rows if r.get("hit")), len(rows)
 
 
-h0, n = full_rate("eval_blind_strict_r5.json")
-h1, n1 = full_rate("eval_blind_lex_on.json")
-print(f"  通道关 lex=0 : {h0}/{n} = {h0 / n:.4f}")
-print(f"  通道开 lex=1 : {h1}/{n1} = {h1 / n1:.4f}   ({(h1 - h0) / n * 100:+.1f}pt)")
+off = R / "eval_blind_lex_off.json"
+if off.exists():
+    h0, n = full_rate("eval_blind_lex_off.json")
+    h1, n1 = full_rate("eval_blind_lex_on.json")
+    assert n == n1, f"两文件题数不一致 {n} vs {n1}，不可直接比较"
+    print(f"  通道关 lex=0 : {h0}/{n} = {h0 / n:.4f}")
+    print(f"  通道开 lex=1 : {h1}/{n1} = {h1 / n1:.4f}   ({(h1 - h0) / n * 100:+.1f}pt)")
+else:
+    print(f"  [待生成] {off.name}（同集 lex=0 基线）；生成前不与 lex=on 比较")
 
 print()
 print("=== 图未被本次工作改动 ===")
