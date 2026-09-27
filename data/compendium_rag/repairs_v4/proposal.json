@@ -1,0 +1,1984 @@
+{
+ "meta": {
+  "author": "R4-repairer-offline",
+  "timestamp": "2026-09-26",
+  "batch": "R4 死别名清理 + 实体标注 sidecar + 版本映射 sidecar + 时间一致性审计（作战书 §1-R4、§2 协议）",
+  "network": "none（零网络；huiji WAF 403 已知，仅用本地缓存/词表，不涉身份裁决）",
+  "graph_state": {
+   "entities": 7033,
+   "edges": 29957,
+   "chunks": 3695,
+   "fingerprint": "7dc29bf90681a3f7",
+   "state": "post-R1/R2/R3（R3 于 2026-09-27 应用于同指纹图）"
+  },
+  "dead_alias_rule": "dead = alias 不逐字出现在属主任一声称 chunk 文本（QC 检3 同口径保守红线3）；DF 口径 = 3695 块原文子串计数",
+  "baseline_recount": {
+   "pre_R1_graph": "backups/graph.json.prev.r1r2（7033 实体/29967 边）：dead 79 / grounding-none 967 —— 与 QC 检3 检2 完全一致（79/1023、967）",
+   "current_post_R3": "dead 78 / grounding-none 965 / claimed-mismatch 121",
+   "delta_dead": "+原初的兀尔德 由 传记作家兀尔德 继承至 兀尔德（R1 合并，仍死）；-（逃兵,两人）（R2 泛称摘除连带）→ 净 -1",
+   "delta_none": "-旅行队的别斯米尔、-暴雨小组组长乌尔里希（R3 合并入落地名节点）；R3 新增 店主米拉/玩具盒 均落地（无新增死名）"
+  },
+  "exceptions_rule": "keep-with-waiver = 已知测试集（300_cn 420 题并集）查询串包含该死别名；alias==他实体规范名 = 现图 0 例（QC 检3 已清零，本版复算确认）",
+  "applier_compat": "仅 remove_alias + keep_with_note（Applier NOOP）；无 desc 编辑——实体标注走 sidecar data/compendium_rag/repairs_v4/entity_annotations.json，不改 graph.json",
+  "task_context_note": "任务书语境中的『允尔德』为『兀尔德』笔误：原初的兀尔德 死别名实际属主=兀尔德；R1/R2/R3 应用状态经读图核实一致",
+  "sidecars": [
+   "entity_annotations.json — 965 grounding:none + 121 claimed_mismatch + 9 per_story_generic + 玩具盒 metaphor + 警卫/水手 跨篇审计判定",
+   "chunk_version_map.json — 3695 chunk→version（3539 有版本 / 156 null；1243 条无版本化 chunk 的边全部被 null 文档覆盖）",
+   "time_consistency_audit.md — 201 条跨版本边分类（对账 meetability 199）：117 章节重复伪跨版本 + 81 长线关系 + 3 R3 合并伴生；0 删边提案"
+  ]
+ },
+ "entries": [
+  {
+   "id": "R4-E01",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "299高地",
+    "alias": "高地据点"
+   },
+   "owner": "299高地",
+   "alias": "高地据点",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 7,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__111_行于漫漫长路上:20.1.0",
+      "doc": "mainline__111_行于漫漫长路上",
+      "snippet": "已见过更险恶的深渊。⏎**玛丽安娜**：高地据点的核心区应该在更靠近山顶的位置。但……这"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere",
+     "multi_owner→removal re-routes alias_index[高地据点] to 地下堡垒（首属主 地下堡垒，其声称块逐字含该串）"
+    ]
+   },
+   "before": "alias 高地据点@299高地 在属主 7 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 299高地 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 高地据点@299高地；299高地 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E02",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "APPLe号摇滚巨轮二世",
+    "alias": "摇滚巨轮二世"
+   },
+   "owner": "APPLe号摇滚巨轮二世",
+   "alias": "摇滚巨轮二世",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 摇滚巨轮二世@APPLe号摇滚巨轮二世 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 APPLe号摇滚巨轮二世 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 摇滚巨轮二世@APPLe号摇滚巨轮二世；APPLe号摇滚巨轮二世 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E03",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "Su-02ве",
+    "alias": "02型飞行扫帚"
+   },
+   "owner": "Su-02ве",
+   "alias": "02型飞行扫帚",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 02型飞行扫帚@Su-02ве 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 Su-02ве 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 02型飞行扫帚@Su-02ве；Su-02ве 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E04",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "Ⅻ”小队",
+    "alias": "第十二小队"
+   },
+   "owner": "Ⅻ”小队",
+   "alias": "第十二小队",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 6,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 第十二小队@Ⅻ”小队 在属主 6 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 Ⅻ”小队 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 第十二小队@Ⅻ”小队；Ⅻ”小队 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E05",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "《科考日记》",
+    "alias": "科考资料"
+   },
+   "owner": "《科考日记》",
+   "alias": "科考资料",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 科考资料@《科考日记》 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 《科考日记》 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 科考资料@《科考日记》；《科考日记》 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E06",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "人道主义物资",
+    "alias": "食物饮料"
+   },
+   "owner": "人道主义物资",
+   "alias": "食物饮料",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 食物饮料@人道主义物资 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 人道主义物资 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 食物饮料@人道主义物资；人道主义物资 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E07",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "仙人掌猫",
+    "alias": "CactusCat"
+   },
+   "owner": "仙人掌猫",
+   "alias": "CactusCat",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "cross_language_alias（语料 DF=0；如需保留须走『词表 alias 豁免』机制，本版按红线3 摘除）"
+    ]
+   },
+   "before": "alias CactusCat@仙人掌猫 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 仙人掌猫 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias CactusCat@仙人掌猫；仙人掌猫 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E08",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "仪式",
+    "alias": "伟大仪式"
+   },
+   "owner": "仪式",
+   "alias": "伟大仪式",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 14,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__110_复乐园:4.0.0",
+      "doc": "mainline__110_复乐园",
+      "snippet": "错师”“秘之教诲者沉睡后唯一的领导者”“伟大仪式的最高主持者”……⏎“噗嗤——”⏎禽类头"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 伟大仪式@仪式 在属主 14 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 仪式 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 伟大仪式@仪式；仪式 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E09",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "仪式",
+    "alias": "伟大的仪式"
+   },
+   "owner": "仪式",
+   "alias": "伟大的仪式",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 14,
+    "df_corpus": 3,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=3/2docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__110_复乐园:2.0.2",
+      "doc": "mainline__110_复乐园",
+      "snippet": "·苏菲亚**：目盲的来客，将代为开启这一伟大的仪式。⏎黑袍的信徒们向着目盲者屈膝，匍匐，持"
+     },
+     {
+      "chunk_id": "mainline__110_复乐园:16.1.1",
+      "doc": "mainline__110_复乐园",
+      "snippet": "金术事故而离开圣地的勿忘我，得以观礼这场伟大的仪式……⏎**阿尼姆斯**：但你也油尽灯枯了"
+     },
+     {
+      "chunk_id": "appendix_unbound__069_3_7_地牢剧情:0.1.0",
+      "doc": "appendix_unbound__069_3_7_地牢剧情",
+      "snippet": "的途径不止一种。跟我来，我们可以去一场更伟大的仪式。⏎**平**：你是想……！你也疯了？⏎"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 伟大的仪式@仪式 在属主 14 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 仪式 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 伟大的仪式@仪式；仪式 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E10",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "停火协定",
+    "alias": "西线停火"
+   },
+   "owner": "停火协定",
+   "alias": "西线停火",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 西线停火@停火协定 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 停火协定 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 西线停火@停火协定；停火协定 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E11",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "兀尔德",
+    "alias": "原初的兀尔德"
+   },
+   "owner": "兀尔德",
+   "alias": "原初的兀尔德",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 109,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "R1 disclosure inherited（R1 合并 传记作家兀尔德→兀尔德 时继承；任务书语境『允尔德』系『兀尔德』笔误）"
+    ]
+   },
+   "before": "alias 原初的兀尔德@兀尔德 在属主 109 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 兀尔德 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 原初的兀尔德@兀尔德；兀尔德 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E12",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "公墓",
+    "alias": "壕沟坡地"
+   },
+   "owner": "公墓",
+   "alias": "壕沟坡地",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 6,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 壕沟坡地@公墓 在属主 6 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 公墓 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 壕沟坡地@公墓；公墓 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E13",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "军用帆布包",
+    "alias": "情报包"
+   },
+   "owner": "军用帆布包",
+   "alias": "情报包",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 情报包@军用帆布包 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 军用帆布包 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 情报包@军用帆布包；军用帆布包 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E14",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "刻雷乌斯",
+    "alias": "蒙佩指挥官"
+   },
+   "owner": "刻雷乌斯",
+   "alias": "蒙佩指挥官",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 51,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 蒙佩指挥官@刻雷乌斯 在属主 51 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 刻雷乌斯 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 蒙佩指挥官@刻雷乌斯；刻雷乌斯 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E15",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "剃刀",
+    "alias": "剃刀小队"
+   },
+   "owner": "剃刀",
+   "alias": "剃刀小队",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 28,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 剃刀小队@剃刀 在属主 28 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 剃刀 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 剃刀小队@剃刀；剃刀 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E16",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "剃刀",
+    "alias": "剃刀队长"
+   },
+   "owner": "剃刀",
+   "alias": "剃刀队长",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 28,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 剃刀队长@剃刀 在属主 28 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 剃刀 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 剃刀队长@剃刀；剃刀 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E17",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "十四行诗",
+    "alias": "司辰的同伴"
+   },
+   "owner": "十四行诗",
+   "alias": "司辰的同伴",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 361,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 司辰的同伴@十四行诗 在属主 361 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 十四行诗 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 司辰的同伴@十四行诗；十四行诗 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E18",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "卡森先生",
+    "alias": "苏芙比的管家"
+   },
+   "owner": "卡森先生",
+   "alias": "苏芙比的管家",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 25,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 苏芙比的管家@卡森先生 在属主 25 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 卡森先生 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 苏芙比的管家@卡森先生；卡森先生 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E19",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "原始意识",
+    "alias": "最初的律动"
+   },
+   "owner": "原始意识",
+   "alias": "最初的律动",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 最初的律动@原始意识 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 原始意识 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 最初的律动@原始意识；原始意识 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E20",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "史蒂文",
+    "alias": "叛逃军官"
+   },
+   "owner": "史蒂文",
+   "alias": "叛逃军官",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 15,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:15.1.1",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "⏎一个丑陋的发条玩具，曾属于蓝手帕旅馆的叛逃军官，与G33针管和一把飞矢M1903式手枪"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 叛逃军官@史蒂文 在属主 15 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 史蒂文 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 叛逃军官@史蒂文；史蒂文 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E21",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "和平旗帜",
+    "alias": "碎布旗"
+   },
+   "owner": "和平旗帜",
+   "alias": "碎布旗",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 碎布旗@和平旗帜 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 和平旗帜 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 碎布旗@和平旗帜；和平旗帜 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E22",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "国家福柯学会",
+    "alias": "国家福柯协会"
+   },
+   "owner": "国家福柯学会",
+   "alias": "国家福柯协会",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__109_疯癫与文明:12.2.0",
+      "doc": "mainline__109_疯癫与文明",
+      "snippet": "*狱医**：还是说从典狱长达尔杜夫，带着国家福柯协会解散的消息离开乌斯怀亚开始？⏎**狱医*"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 国家福柯协会@国家福柯学会 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 国家福柯学会 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 国家福柯协会@国家福柯学会；国家福柯学会 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E23",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "壁画复兴运动",
+    "alias": "墨西哥壁画复兴运动"
+   },
+   "owner": "壁画复兴运动",
+   "alias": "墨西哥壁画复兴运动",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 墨西哥壁画复兴运动@壁画复兴运动 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 壁画复兴运动 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 墨西哥壁画复兴运动@壁画复兴运动；壁画复兴运动 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E24",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "士兵们",
+    "alias": "2连老兵"
+   },
+   "owner": "士兵们",
+   "alias": "2连老兵",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 2连老兵@士兵们 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 士兵们 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 2连老兵@士兵们；士兵们 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E25",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "复乐园",
+    "alias": "ParadiseRegained"
+   },
+   "owner": "复乐园",
+   "alias": "ParadiseRegained",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "cross_language_alias（语料 DF=0；如需保留须走『词表 alias 豁免』机制，本版按红线3 摘除）"
+    ]
+   },
+   "before": "alias ParadiseRegained@复乐园 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 复乐园 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias ParadiseRegained@复乐园；复乐园 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E26",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "奥尔布里希",
+    "alias": "奥尔布里希先生"
+   },
+   "owner": "奥尔布里希",
+   "alias": "奥尔布里希先生",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 奥尔布里希先生@奥尔布里希 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 奥尔布里希 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 奥尔布里希先生@奥尔布里希；奥尔布里希 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E27",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "家",
+    "alias": "医生的家"
+   },
+   "owner": "家",
+   "alias": "医生的家",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 医生的家@家 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 家 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 医生的家@家；家 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E28",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "封印物",
+    "alias": "契约物"
+   },
+   "owner": "封印物",
+   "alias": "契约物",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:15.1.1",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "，拿着这个，她不能违抗你。⏎魅魔难以抗拒契约物所有者的意志。⏎**伊戈尔将军**：我不"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 契约物@封印物 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 封印物 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 契约物@封印物；封印物 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E29",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "尼塔",
+    "alias": "罗德里戈之女"
+   },
+   "owner": "尼塔",
+   "alias": "罗德里戈之女",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 4,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 罗德里戈之女@尼塔 在属主 4 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 尼塔 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 罗德里戈之女@尼塔；尼塔 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E30",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "巧克力",
+    "alias": "半块巧克力"
+   },
+   "owner": "巧克力",
+   "alias": "半块巧克力",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 半块巧克力@巧克力 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 巧克力 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 半块巧克力@巧克力；巧克力 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E31",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "帽子",
+    "alias": "靛色帽子"
+   },
+   "owner": "帽子",
+   "alias": "靛色帽子",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 靛色帽子@帽子 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 帽子 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 靛色帽子@帽子；帽子 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E32",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "平衡伞",
+    "alias": "第一代平衡伞"
+   },
+   "owner": "平衡伞",
+   "alias": "第一代平衡伞",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 29,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 第一代平衡伞@平衡伞 在属主 29 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 平衡伞 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 第一代平衡伞@平衡伞；平衡伞 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E33",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "彩票箱",
+    "alias": "纸皮箱子"
+   },
+   "owner": "彩票箱",
+   "alias": "纸皮箱子",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__109_疯癫与文明:10.2.2",
+      "doc": "mainline__109_疯癫与文明",
+      "snippet": "需要答案的问题。⏎她无所适从地望着手中的纸皮箱子与二十面骰——此刻，它们显得那样滑稽可笑"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 纸皮箱子@彩票箱 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 彩票箱 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 纸皮箱子@彩票箱；彩票箱 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E34",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "手稿",
+    "alias": "帕拉塞尔苏斯手稿"
+   },
+   "owner": "手稿",
+   "alias": "帕拉塞尔苏斯手稿",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 帕拉塞尔苏斯手稿@手稿 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 手稿 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 帕拉塞尔苏斯手稿@手稿；手稿 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E35",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "手表",
+    "alias": "古董手表"
+   },
+   "owner": "手表",
+   "alias": "古董手表",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__110_复乐园:9.0.0",
+      "doc": "mainline__110_复乐园",
+      "snippet": "能玩的东西，去、去！⏎诺谛卡珍惜地擦了擦古董手表表面的口水，把它收进了包里。⏎群犬像乌洛"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 古董手表@手表 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 手表 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 古董手表@手表；手表 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E36",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "手表",
+    "alias": "祖父的手表"
+   },
+   "owner": "手表",
+   "alias": "祖父的手表",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 祖父的手表@手表 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 手表 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 祖父的手表@手表；手表 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E37",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "拉普拉斯科算中心安全管理条例",
+    "alias": "管理条文的手册"
+   },
+   "owner": "拉普拉斯科算中心安全管理条例",
+   "alias": "管理条文的手册",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__107_孤独之歌:12.2.0",
+      "doc": "mainline__107_孤独之歌",
+      "snippet": "它带来了，不用客气。⏎研究员把那本记录着管理条文的手册甩在了前组长脸上。⏎**哑谜**：如果你"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 管理条文的手册@拉普拉斯科算中心安全管理条例 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 拉普拉斯科算中心安全管理条例 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 管理条文的手册@拉普拉斯科算中心安全管理条例；拉普拉斯科算中心安全管理条例 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E38",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "拯救的魔圈",
+    "alias": "免疫暴雨的术式"
+   },
+   "owner": "拯救的魔圈",
+   "alias": "免疫暴雨的术式",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 免疫暴雨的术式@拯救的魔圈 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 拯救的魔圈 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 免疫暴雨的术式@拯救的魔圈；拯救的魔圈 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E39",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "斯塔尔先生",
+    "alias": "海因兹·斯塔尔"
+   },
+   "owner": "斯塔尔先生",
+   "alias": "海因兹·斯塔尔",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 4,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "anecdote__1915_起火点:1.0.2",
+      "doc": "anecdote__1915_起火点",
+      "snippet": "⏎**金蜜儿**：“祝你生日快乐，宝贝。海因兹·斯塔尔与杰克·斯塔尔，摄于1983年。”⏎照片"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 海因兹·斯塔尔@斯塔尔先生 在属主 4 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 斯塔尔先生 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 海因兹·斯塔尔@斯塔尔先生；斯塔尔先生 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E40",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "既视感",
+    "alias": "déjàvu"
+   },
+   "owner": "既视感",
+   "alias": "déjàvu",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias déjàvu@既视感 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 既视感 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias déjàvu@既视感；既视感 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E41",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "旧照片",
+    "alias": "退伍军人合照"
+   },
+   "owner": "旧照片",
+   "alias": "退伍军人合照",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 退伍军人合照@旧照片 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 旧照片 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 退伍军人合照@旧照片；旧照片 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E42",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "暴雨观测体系",
+    "alias": "暴雨观测站"
+   },
+   "owner": "暴雨观测体系",
+   "alias": "暴雨观测站",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 暴雨观测站@暴雨观测体系 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 暴雨观测体系 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 暴雨观测站@暴雨观测体系；暴雨观测体系 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E43",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "最初的圆",
+    "alias": "Launuacirklo"
+   },
+   "owner": "最初的圆",
+   "alias": "Launuacirklo",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "cross_language_alias（语料 DF=0；如需保留须走『词表 alias 豁免』机制，本版按红线3 摘除）"
+    ]
+   },
+   "before": "alias Launuacirklo@最初的圆 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 最初的圆 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias Launuacirklo@最初的圆；最初的圆 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E44",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "极光",
+    "alias": "白日极光"
+   },
+   "owner": "极光",
+   "alias": "白日极光",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 白日极光@极光 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 极光 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 白日极光@极光；极光 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E45",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "格奥尔格",
+    "alias": "跨党团委员会代表"
+   },
+   "owner": "格奥尔格",
+   "alias": "跨党团委员会代表",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 跨党团委员会代表@格奥尔格 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 格奥尔格 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 跨党团委员会代表@格奥尔格；格奥尔格 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E46",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "死火山",
+    "alias": "孤峰"
+   },
+   "owner": "死火山",
+   "alias": "孤峰",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 2,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=2/2docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__107_孤独之歌:26.0.4",
+      "doc": "mainline__107_孤独之歌",
+      "snippet": "何毁灭⏎你改变河的流向与异域的海洋⏎你在孤峰上饮醉了酒⏎用蝰蛇为色雷斯的信徒盘好头发"
+     },
+     {
+      "chunk_id": "mainline__110_复乐园:11.1.2",
+      "doc": "mainline__110_复乐园",
+      "snippet": "尔**：真正举行仪式的地点，位于遗址城后孤峰的山体中，那里有一处更为隐秘的神殿。⏎*"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 孤峰@死火山 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 死火山 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 孤峰@死火山；死火山 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E47",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "毒气",
+    "alias": "暗紫色气体"
+   },
+   "owner": "毒气",
+   "alias": "暗紫色气体",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 暗紫色气体@毒气 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 毒气 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 暗紫色气体@毒气；毒气 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E48",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "波拉比",
+    "alias": "像素鸸鹋"
+   },
+   "owner": "波拉比",
+   "alias": "像素鸸鹋",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 像素鸸鹋@波拉比 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 波拉比 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 像素鸸鹋@波拉比；波拉比 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E49",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "洛佩拉之父",
+    "alias": "血缘意义上的父亲"
+   },
+   "owner": "洛佩拉之父",
+   "alias": "血缘意义上的父亲",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:12.0.1",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "工人。⏎**洛佩拉**：不是伊戈尔，而是血缘意义上的父亲。⏎她望着天，无奈地笑起来，像在讲一个陌"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 血缘意义上的父亲@洛佩拉之父 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 洛佩拉之父 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 血缘意义上的父亲@洛佩拉之父；洛佩拉之父 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E50",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "洞穴的囚徒",
+    "alias": "洞穴寓言"
+   },
+   "owner": "洞穴的囚徒",
+   "alias": "洞穴寓言",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 洞穴寓言@洞穴的囚徒 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 洞穴的囚徒 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 洞穴寓言@洞穴的囚徒；洞穴的囚徒 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E51",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "洪水",
+    "alias": "暴雨之水"
+   },
+   "owner": "洪水",
+   "alias": "暴雨之水",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 18,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 暴雨之水@洪水 在属主 18 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 洪水 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 暴雨之水@洪水；洪水 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E52",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "洪水",
+    "alias": "真正的洪水"
+   },
+   "owner": "洪水",
+   "alias": "真正的洪水",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 18,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 真正的洪水@洪水 在属主 18 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 洪水 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 真正的洪水@洪水；洪水 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E53",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "渔网",
+    "alias": "老索莫夫的渔网"
+   },
+   "owner": "渔网",
+   "alias": "老索莫夫的渔网",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 老索莫夫的渔网@渔网 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 渔网 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 老索莫夫的渔网@渔网；渔网 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E54",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "火地岛",
+    "alias": "TierradelFuego"
+   },
+   "owner": "火地岛",
+   "alias": "TierradelFuego",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 4,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "cross_language_alias（语料 DF=0；如需保留须走『词表 alias 豁免』机制，本版按红线3 摘除）"
+    ]
+   },
+   "before": "alias TierradelFuego@火地岛 在属主 4 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 火地岛 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias TierradelFuego@火地岛；火地岛 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E55",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "爪子女俘虏",
+    "alias": "黑发女人"
+   },
+   "owner": "爪子女俘虏",
+   "alias": "黑发女人",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 黑发女人@爪子女俘虏 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 爪子女俘虏 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 黑发女人@爪子女俘虏；爪子女俘虏 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E56",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "爱琴海",
+    "alias": "外国"
+   },
+   "owner": "爱琴海",
+   "alias": "外国",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 6,
+    "df_corpus": 21,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=21/10docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:4.1.0",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "】“短吻鳄”号游轮⏎风穿过少女的指缝。⏎外国游客聚集在船舷边，看向那些划着小艇靠近游"
+     },
+     {
+      "chunk_id": "mainline__111_行于漫漫长路上:6.0.1",
+      "doc": "mainline__111_行于漫漫长路上",
+      "snippet": "少校**：——这是在军队里蔓延的瘟疫，是外国人的小市民思想在我们年轻人心中种下的毒瘤"
+     },
+     {
+      "chunk_id": "mainline__111_行于漫漫长路上:6.0.2",
+      "doc": "mainline__111_行于漫漫长路上",
+      "snippet": "少校**：——这是在军队里蔓延的瘟疫，是外国人的小市民思想在我们年轻人心中种下的毒瘤"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 外国@爱琴海 在属主 6 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 爱琴海 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 外国@爱琴海；爱琴海 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E57",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "特里格拉夫",
+    "alias": "特里格拉夫战列舰"
+   },
+   "owner": "特里格拉夫",
+   "alias": "特里格拉夫战列舰",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "multi_owner_all_dead→alias 消失"
+    ]
+   },
+   "before": "alias 特里格拉夫战列舰@特里格拉夫 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 特里格拉夫 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 特里格拉夫战列舰@特里格拉夫；特里格拉夫 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E58",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "特里格拉夫号",
+    "alias": "特里格拉夫战列舰"
+   },
+   "owner": "特里格拉夫号",
+   "alias": "特里格拉夫战列舰",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "multi_owner_all_dead→alias 消失"
+    ]
+   },
+   "before": "alias 特里格拉夫战列舰@特里格拉夫号 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 特里格拉夫号 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 特里格拉夫战列舰@特里格拉夫号；特里格拉夫号 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E59",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "真理",
+    "alias": "至高的秩序"
+   },
+   "owner": "真理",
+   "alias": "至高的秩序",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 20,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__107_孤独之歌:10.0.1",
+      "doc": "mainline__107_孤独之歌",
+      "snippet": "是她从神谕里得知——⏎**888**：那至高的秩序，超验的规律，我们信仰的“真理”——发生"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 至高的秩序@真理 在属主 20 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 真理 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 至高的秩序@真理；真理 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E60",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "科马拉议会",
+    "alias": "TheCongress"
+   },
+   "owner": "科马拉议会",
+   "alias": "TheCongress",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 7,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere",
+     "cross_language_alias（语料 DF=0；如需保留须走『词表 alias 豁免』机制，本版按红线3 摘除）"
+    ]
+   },
+   "before": "alias TheCongress@科马拉议会 在属主 7 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 科马拉议会 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias TheCongress@科马拉议会；科马拉议会 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E61",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "空白时代",
+    "alias": "空白时期"
+   },
+   "owner": "空白时代",
+   "alias": "空白时期",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 2,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=2/2docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__101_在我们的时代里:12.0.0",
+      "doc": "mainline__101_在我们的时代里",
+      "snippet": "的远古时期……是最古最古的……呃……那段空白时期吗？⏎**X**：恐怕是的。⏎**X**"
+     },
+     {
+      "chunk_id": "mainline__110_复乐园:14.0.1",
+      "doc": "mainline__110_复乐园",
+      "snippet": "已经找到了“地母栖身的尽头”，采集到了“空白时期”的样本——我完成了队伍原本在南极计划的"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 空白时期@空白时代 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 空白时代 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 空白时期@空白时代；空白时代 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E62",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "红色38",
+    "alias": "坐骑"
+   },
+   "owner": "红色38",
+   "alias": "坐骑",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 15,
+    "df_corpus": 3,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=3/3docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:14.1.1",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "箭**：……我懂了。⏎飞行员握紧她心爱的坐骑，可靠的红色38会永远与它骄傲的空中骑士"
+     },
+     {
+      "chunk_id": "anecdote__1904_埃里克角色故事:3.0.0",
+      "doc": "anecdote__1904_埃里克角色故事",
+      "snippet": "这个大家伙会对我们心悦诚服，乖乖做我们的坐骑！⏎**埃里克**：而且有句话……怎么说"
+     },
+     {
+      "chunk_id": "anecdote__1910_风吹乌哈拉:3.2.1",
+      "doc": "anecdote__1910_风吹乌哈拉",
+      "snippet": "⏎扫帚的尾焰熄灭，红弩箭摘掉护目镜，跳下坐骑，落回到地上。⏎**红弩箭**：希望我没"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 坐骑@红色38 在属主 15 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 红色38 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 坐骑@红色38；红色38 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E63",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "纺车",
+    "alias": "金色纺车"
+   },
+   "owner": "纺车",
+   "alias": "金色纺车",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 11,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 金色纺车@纺车 在属主 11 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 纺车 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 金色纺车@纺车；纺车 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E64",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "罗夫·阿蒙森",
+    "alias": "罗夫伯伯"
+   },
+   "owner": "罗夫·阿蒙森",
+   "alias": "罗夫伯伯",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__110_复乐园:17.0.0",
+      "doc": "mainline__110_复乐园",
+      "snippet": "是……⏎**弗里莱**：这是一块龙涎香，罗夫伯伯。⏎**诺谛卡**：动作轻一些，弗里莱！"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 罗夫伯伯@罗夫·阿蒙森 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 罗夫·阿蒙森 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 罗夫伯伯@罗夫·阿蒙森；罗夫·阿蒙森 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E65",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "艾格尼丝",
+    "alias": "耳中声音"
+   },
+   "owner": "艾格尼丝",
+   "alias": "耳中声音",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 13,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 耳中声音@艾格尼丝 在属主 13 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 艾格尼丝 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 耳中声音@艾格尼丝；艾格尼丝 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E66",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "芝加哥办事处",
+    "alias": "美国芝加哥办事处"
+   },
+   "owner": "芝加哥办事处",
+   "alias": "美国芝加哥办事处",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__104_老虎的金黄:17.1.0",
+      "doc": "mainline__104_老虎的金黄",
+      "snippet": "**十四行诗**：我，我个人认为，基金会美国芝加哥办事处仍有极大的改善空间。⏎检察官有点诧异。⏎"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 美国芝加哥办事处@芝加哥办事处 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 芝加哥办事处 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 美国芝加哥办事处@芝加哥办事处；芝加哥办事处 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E67",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "荣军院客房",
+    "alias": "医生房间"
+   },
+   "owner": "荣军院客房",
+   "alias": "医生房间",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 1,
+    "qc_class": "elsewhere（QC 检3：语料他块出现、属主块 0 命中，DF=1/1docs）",
+    "elsewhere_examples": [
+     {
+      "chunk_id": "mainline__108_忧郁的热带:11.0.0",
+      "doc": "mainline__108_忧郁的热带",
+      "snippet": "颖的方式。⏎**维尔汀**：进去看看。⏎医生房间⏎【标题卡】荣军院客房⏎……⏎一处平平无"
+     }
+    ],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "elsewhere"
+    ]
+   },
+   "before": "alias 医生房间@荣军院客房 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 荣军院客房 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 医生房间@荣军院客房；荣军院客房 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E68",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "袭击者",
+    "alias": "五个黑衣人"
+   },
+   "owner": "袭击者",
+   "alias": "五个黑衣人",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 五个黑衣人@袭击者 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 袭击者 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 五个黑衣人@袭击者；袭击者 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E69",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "西格丽德",
+    "alias": "西格丽德阿姨"
+   },
+   "owner": "西格丽德",
+   "alias": "西格丽德阿姨",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 1,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 西格丽德阿姨@西格丽德 在属主 1 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 西格丽德 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 西格丽德阿姨@西格丽德；西格丽德 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E70",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "走私名单",
+    "alias": "走私人员名单"
+   },
+   "owner": "走私名单",
+   "alias": "走私人员名单",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 5,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 走私人员名单@走私名单 在属主 5 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 走私名单 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 走私人员名单@走私名单；走私名单 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E71",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "迪达号",
+    "alias": "迪达号驱逐舰"
+   },
+   "owner": "迪达号",
+   "alias": "迪达号驱逐舰",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 2,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 迪达号驱逐舰@迪达号 在属主 2 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 迪达号 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 迪达号驱逐舰@迪达号；迪达号 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E72",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "遗址城",
+    "alias": "遗址神庙"
+   },
+   "owner": "遗址城",
+   "alias": "遗址神庙",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 12,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 遗址神庙@遗址城 在属主 12 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 遗址城 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 遗址神庙@遗址城；遗址城 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E73",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "采样装置",
+    "alias": "非对称核素R采样装置"
+   },
+   "owner": "采样装置",
+   "alias": "非对称核素R采样装置",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 3,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 非对称核素R采样装置@采样装置 在属主 3 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 采样装置 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 非对称核素R采样装置@采样装置；采样装置 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E74",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "重塑之手",
+    "alias": "术士所属"
+   },
+   "owner": "重塑之手",
+   "alias": "术士所属",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 342,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 术士所属@重塑之手 在属主 342 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 重塑之手 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 术士所属@重塑之手；重塑之手 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E75",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "重塑之手",
+    "alias": "漆黑军服者"
+   },
+   "owner": "重塑之手",
+   "alias": "漆黑军服者",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 342,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 漆黑军服者@重塑之手 在属主 342 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 重塑之手 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 漆黑军服者@重塑之手；重塑之手 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E76",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "重塑军官",
+    "alias": "被借用外表"
+   },
+   "owner": "重塑军官",
+   "alias": "被借用外表",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 6,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 被借用外表@重塑军官 在属主 6 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 重塑军官 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 被借用外表@重塑军官；重塑军官 规范名/边通道不变"
+  },
+  {
+   "id": "R4-E77",
+   "type": "remove_alias",
+   "target": {
+    "owner_eid": "龙涎香",
+    "alias": "阿蒙森吊坠"
+   },
+   "owner": "龙涎香",
+   "alias": "阿蒙森吊坠",
+   "evidence": {
+    "df_in_owner": 0,
+    "owner_nchunks": 11,
+    "df_corpus": 0,
+    "qc_class": "nowhere（QC 检3：全语料 0 命中）",
+    "elsewhere_examples": [],
+    "qc_ref": "docs/图谱与原文质检报告_20260926.md 检3（死 alias 79/1023 → 本版在 R1-R3 后图重算 78/994，逐条对账见 meta.baseline_recount）",
+    "tags": [
+     "nowhere"
+    ]
+   },
+   "before": "alias 阿蒙森吊坠@龙涎香 在属主 11 个声称块中逐字 0 命中（死别名）——查询若含该串将以 0.9 分注入 龙涎香 为错锚点（mention 通道召回的块内并无此词）",
+   "after": "摘除 alias 阿蒙森吊坠@龙涎香；龙涎香 规范名/边通道不变"
+  },
+  {
+   "id": "R4-K01",
+   "type": "keep_with_note",
+   "target": "诊所",
+   "note": "死别名 诊疗@诊所 保留（测试集豁免）：gen_r1r2 [GA-25] 查询「在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？」含该串（『诊疗室』），当前 link() 经 alias 0.9 种子 诊所（跨篇：犹在镜中/今夜星光灿烂/孤独之歌；GA-25 gold=卡卡尼亚@小房间）。作战书规则：已知查询路由路径上的死别名 → keep-with-waiver 而非删除；摘除会改变该题种子集（可能消除跨篇错种子，但也属路由变更），留给 Verifier/重校准闸门裁决后再动。DF=41（12 docs）。",
+   "evidence": [
+    {
+     "src": "testset gen_r1r2 GA-25",
+     "quote": "在诊疗室门前等待时，伊索尔德领悟到“医生”是什么？"
+    },
+    {
+     "src": "graph 诊所",
+     "quote": "aliases=['工坊', '诊疗']; chunks=6 跨 3 篇"
+    }
+   ],
+   "before": "alias 诊疗@诊所 保留（waiver）",
+   "after": "不变；建议 Verifier 裁决是否降级/摘除并重跑 GA-25"
+  }
+ ]
+}
