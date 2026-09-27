@@ -190,8 +190,11 @@ def main() -> int:
 
     p = ROOT / "data/compendium_rag/reports/_lex_channel_full_scan.json"
     p.write_text(json.dumps({
-        "selected_on_300cn": {"w_lex": best[0], "hit": best[1], "n": best[2]},
-        "holdout_blind": {str(w): {"hit": v["hit"], "n": v["n"]} for w, v in outb.items()},
+        "selected_on_300cn": {"w_lex": best[0], "hit": best[1],
+                              "n": len(cases300), "rate": round(best[1] / len(cases300), 4)},
+        "holdout_blind": {str(w): {"hit": v["hit"], "n": v["n"],
+                                   "rate": round(v["hit"] / v["n"], 4)}
+                          for w, v in outb.items()},
         "holdout_delta_pt": round(delta, 2),
         "holdout_up": sorted(up), "holdout_down": sorted(dn),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
