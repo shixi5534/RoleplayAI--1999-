@@ -1,0 +1,2411 @@
+{
+ "meta": {
+  "test": "相遇测试（多跳可达性 + 时间标注）",
+  "date": "2026-09-27",
+  "seed": 20260927,
+  "graph_fingerprint": "7dc29bf90681a3f7",
+  "graph_schema": "compendium_rag.graph/v1",
+  "n_entities": 7034,
+  "n_edges": 29959,
+  "pool": {
+   "criteria": "type=='角色' 且 len(chunk_ids)>=3",
+   "size": 840
+  },
+  "sampling": {
+   "algorithm": "rng=random.Random(20260927); pool 按 eid 排序后 rng.shuffle; 组大小依次 rng.randint(3,5) 抽得 [3, 4, 4, 4, 5, 3, 5, 4]; 依次从洗牌后队列连续取成员",
+   "group_sizes": [
+    3,
+    4,
+    4,
+    4,
+    5,
+    3,
+    5,
+    4
+   ]
+  },
+  "definitions": {
+   "同场相遇": "组内所有成员共享 ≥1 个 chunk（实体 chunk_ids 全交集非空）",
+   "多跳相遇": "组内成员两两在无向边图上最短距离 ≤2 跳（关系边间接可达）",
+   "组直径": "组内两两最短距离的最大值（不连通对存在时另注）",
+   "跨版本桥接": "相遇边自身的 chunk_ids 覆盖 ≥2 个版本；或 2 跳路径两段边的版本集合不相交",
+   "时间相干相遇": "存在一个相遇点，其涉及的边版本集合有公共版本（可在同一叙事时间点相遇）"
+  },
+  "time_mapping_rule": {
+   "mainline__NNN_标题": {
+    "rule": "主线章节 NNN；版本由章节标题查表",
+    "mapping": {
+     "0": "1.0",
+     "101": "1.0",
+     "102": "1.0",
+     "103": "1.0",
+     "104": "1.0",
+     "105": "1.4",
+     "106": "1.7",
+     "107": "1.9",
+     "108": "2.2",
+     "109": "2.6",
+     "110": "2.8",
+     "111": "3.0",
+     "112": "3.3",
+     "113": "3.7"
+    },
+    "evidence": "compendium_clean_report.json rows(chapter_metadata/project_corpus) 与 huiji_canon.json 版本弧(其他角色一览/V.x)逐一相符；plot_timeline.json version↔name 交叉印证",
+    "confidence": "high"
+   },
+   "activity__XY101_标题(5位)": {
+    "rule": "XY → 版本 X.Y（16101→1.6, 31101→3.1, 21101→2.1…）",
+    "evidence": "18/18 个 5 位 activity 标题与 huiji_canon.json 版本弧相符（如 朔日手记=1.6, 77号往事=2.1, 长夜鸣笛=3.1, 绿松石蛇俱乐部=3.5）；clean_report chapter_metadata 一致",
+    "confidence": "high"
+   },
+   "activity__XY ZQ 01(6位)": {
+    "rule": "联动/特殊活动（305101 翡冷翠之春, 305201 入雅典记, 385101 聚合浪潮）版本未定",
+    "evidence": "clean_report missing_version 亦未解析；本地无版本证据（翡冷翠之春/入雅典记=刺客信条联动，聚合浪潮=Polymerized Dreams）",
+    "confidence": "none"
+   },
+   "character__XYz01_标题": {
+    "rule": "XY → 版本 X.Y 角色个人剧情（16601→1.6, 22911→2.2, 34701→3.4）",
+    "evidence": "clean_report chapter_id_rule 全部一致",
+    "confidence": "high"
+   },
+   "anecdote__19XX_标题": {
+    "rule": "推定 1.9（XX=序号）",
+    "evidence": "clean_report 留空；ID 前缀符合 chapter_id_rule；huiji 轶事页（如 苏芙比·淑女的守则, category=轶事）佐证类型但无本地版本直接证据",
+    "confidence": "low"
+   },
+   "appendix_unbound__NNN_X_Y_标题": {
+    "rule": "X.Y 取自文件名内嵌版本（005_1_6_地牢剧情→1.6）；无内嵌版本者未定（071 S02, 072-074）",
+    "confidence": "high/none"
+   }
+  },
+  "constraints": "只读探针：graph.json/corpus.json/huiji 缓存，零网络，无 Ollama；仅创建本报告两文件"
+ },
+ "summary": {
+  "groups_random_total": 8,
+  "verdict_dist_random": {
+   "全员可遇": 1,
+   "不可达": 5,
+   "部分可遇": 2
+  },
+  "ratio_fully_meetable_random": 0.125,
+  "ratio_meetable_at_all_random": 0.375,
+  "probe_verdict": "部分可遇",
+  "probe_verdict_reason": "4/6 对 ≤2 跳",
+  "pairs_total_all_groups": 56,
+  "pairs_within2": 12,
+  "pairs_meet_with_time_coherent_point": 2,
+  "pairs_meet_cross_version_only": 12,
+  "pair_distance_histogram": {
+   "2": 12,
+   "3": 20,
+   "4": 20,
+   "5": 4
+  },
+  "disconnected_members_in_groups": [],
+  "unreachable_members": [],
+  "pool_zero_edge_entities": [
+   "学生Ⅲ",
+   "男孩Ⅲ",
+   "记者Ⅰ",
+   "门槛旁的乞丐",
+   "阿曼达",
+   "首相"
+  ],
+  "zero_degree_characters_all": {
+   "count": 176,
+   "examples": [
+    "万尼亚少校",
+    "上一代6",
+    "与会人员Ⅳ",
+    "与会人员Ⅴ",
+    "乌佐",
+    "仪式学家",
+    "伊冯娜",
+    "伊曼纽尔",
+    "传讯员",
+    "保洁员",
+    "偷袭者Ⅱ",
+    "克劳迪娅",
+    "军人",
+    "军人Ⅱ",
+    "军舰士兵Ⅰ",
+    "军舰士兵Ⅱ",
+    "切·格瓦拉",
+    "初级研究员Ⅱ",
+    "剃刀”小队",
+    "助理研究员Ⅰ"
+   ]
+  },
+  "cross_version_bridges_in_meetings": 31,
+  "cross_version_edges_graphwide": 199,
+  "edges_no_versioned_chunk_graphwide": 1243
+ },
+ "groups": [
+  {
+   "label": "随机组1",
+   "members": [
+    {
+     "eid": "职员菲娜",
+     "name": "职员菲娜",
+     "type": "角色",
+     "degree": 8,
+     "n_chunks": 5,
+     "chunk_versions": [
+      "2.0"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "诺谛卡",
+     "name": "诺谛卡",
+     "type": "角色",
+     "degree": 48,
+     "n_chunks": 65,
+     "chunk_versions": [
+      "2.8",
+      "3.0",
+      "3.2",
+      "3.6",
+      "3.7"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "冬",
+     "name": "冬",
+     "type": "角色",
+     "degree": 24,
+     "n_chunks": 15,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "职员菲娜",
+      "b": "诺谛卡",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "J",
+        "hop1": {
+         "relation": "问候",
+         "confidence": 0.95,
+         "evidence": "这里是圣洛夫基金会办事处，请问您需要什么帮助？",
+         "chunks": [
+          {
+           "chunk": "activity__20101_飞驰_明日之城:2.0.1",
+           "version": "2.0",
+           "chapter": "2.0活动《飞驰_明日之城》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "2.0"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "救助",
+         "confidence": 0.8,
+         "evidence": "从坠落中幸存的人们纷纷爬下诺谛卡的身躯",
+         "chunks": [
+          {
+           "chunk": "mainline__113_他者的悲哀:16.0.0",
+           "version": "3.7",
+           "chapter": "主线113《他者的悲哀》〔版本 3.7〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.7"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     },
+     {
+      "a": "职员菲娜",
+      "b": "冬",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "圣洛夫基金会",
+        "hop1": {
+         "relation": "陈述",
+         "confidence": 0.95,
+         "evidence": "我们经历了数百场无功而返的实验",
+         "chunks": [
+          {
+           "chunk": "activity__20101_飞驰_明日之城:2.0.2",
+           "version": "2.0",
+           "chapter": "2.0活动《飞驰_明日之城》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "2.0"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "登记",
+         "confidence": 0.95,
+         "evidence": "他于次月完成登记，附加内容仅有‘继续留驻岛上’一条",
+         "chunks": [
+          {
+           "chunk": "anecdote__1906_重返人间:7.0.0",
+           "version": "1.9",
+           "chapter": "1.9(推定)角色轶事《重返人间》",
+           "ver_conf": "low"
+          }
+         ],
+         "versions": [
+          "1.9"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     },
+     {
+      "a": "诺谛卡",
+      "b": "冬",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "十四行诗",
+        "hop1": {
+         "relation": "会合",
+         "confidence": 0.95,
+         "evidence": "双手紧紧相握，曾经分开的伙伴们终于在空中再度会合",
+         "chunks": [
+          {
+           "chunk": "mainline__110_复乐园:21.1.0",
+           "version": "2.8",
+           "chapter": "主线110《复乐园》〔版本 2.8〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "2.8"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "求教",
+         "confidence": 0.95,
+         "evidence": "您是我认识的人当中，对诗歌意象了解最为广泛的",
+         "chunks": [
+          {
+           "chunk": "anecdote__1906_重返人间:0.0.0",
+           "version": "1.9",
+           "chapter": "1.9(推定)角色轶事《重返人间》",
+           "ver_conf": "low"
+          }
+         ],
+         "versions": [
+          "1.9"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     }
+    ],
+    "n_pairs": 3,
+    "n_within2": 3,
+    "group_diameter": 2,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 6,
+   "unreachable_members": [],
+   "verdict": "全员可遇",
+   "verdict_reason": "所有成员对 ≤2 跳"
+  },
+  {
+   "label": "随机组2",
+   "members": [
+    {
+     "eid": "菲尔格特",
+     "name": "菲尔格特",
+     "type": "角色",
+     "degree": 6,
+     "n_chunks": 6,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "蓝白巨虎",
+     "name": "蓝白巨虎",
+     "type": "角色",
+     "degree": 7,
+     "n_chunks": 6,
+     "chunk_versions": [
+      "3.4"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "吉尔特老大",
+     "name": "吉尔特老大",
+     "type": "角色",
+     "degree": 4,
+     "n_chunks": 4,
+     "chunk_versions": [
+      "2.3"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "梅花教小妖",
+     "name": "梅花教小妖",
+     "type": "角色",
+     "degree": 7,
+     "n_chunks": 9,
+     "chunk_versions": [
+      "3.4"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "菲尔格特",
+      "b": "蓝白巨虎",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "菲尔格特",
+      "b": "吉尔特老大",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "菲尔格特",
+      "b": "梅花教小妖",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "蓝白巨虎",
+      "b": "吉尔特老大",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "蓝白巨虎",
+      "b": "梅花教小妖",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "吉尔特老大",
+      "b": "梅花教小妖",
+      "dist": 5,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(5跳)"
+     }
+    ],
+    "n_pairs": 6,
+    "n_within2": 0,
+    "group_diameter": 5,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 0,
+   "unreachable_members": [],
+   "verdict": "不可达",
+   "verdict_reason": "连通但所有成员对 >2 跳（最短 3 跳）"
+  },
+  {
+   "label": "随机组3",
+   "members": [
+    {
+     "eid": "假扮医生者",
+     "name": "假扮医生者",
+     "type": "角色",
+     "degree": 6,
+     "n_chunks": 3,
+     "chunk_versions": [
+      "2.5"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "祖母",
+     "name": "祖母",
+     "type": "角色",
+     "degree": 2,
+     "n_chunks": 3,
+     "chunk_versions": [
+      "1.9",
+      "2.3",
+      "2.4"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "闪光”莱安娜",
+     "name": "闪光”莱安娜",
+     "type": "角色",
+     "degree": 5,
+     "n_chunks": 6,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "小队成员Ⅱ",
+     "name": "小队成员Ⅱ",
+     "type": "角色",
+     "degree": 4,
+     "n_chunks": 4,
+     "chunk_versions": [
+      "2.0"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "假扮医生者",
+      "b": "祖母",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "假扮医生者",
+      "b": "闪光”莱安娜",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "假扮医生者",
+      "b": "小队成员Ⅱ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "祖母",
+      "b": "闪光”莱安娜",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "祖母",
+      "b": "小队成员Ⅱ",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "闪光”莱安娜",
+      "b": "小队成员Ⅱ",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     }
+    ],
+    "n_pairs": 6,
+    "n_within2": 0,
+    "group_diameter": 4,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 0,
+   "unreachable_members": [],
+   "verdict": "不可达",
+   "verdict_reason": "连通但所有成员对 >2 跳（最短 3 跳）"
+  },
+  {
+   "label": "随机组4",
+   "members": [
+    {
+     "eid": "野木蓝",
+     "name": "野木蓝",
+     "type": "角色",
+     "degree": 41,
+     "n_chunks": 28,
+     "chunk_versions": [
+      "3.5"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "佳琳娜夫人",
+     "name": "佳琳娜夫人",
+     "type": "角色",
+     "degree": 7,
+     "n_chunks": 7,
+     "chunk_versions": [
+      "3.3"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "拉普拉斯研究员Ⅰ",
+     "name": "拉普拉斯研究员Ⅰ",
+     "type": "角色",
+     "degree": 5,
+     "n_chunks": 4,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "卡戎",
+     "name": "卡戎",
+     "type": "角色",
+     "degree": 42,
+     "n_chunks": 67,
+     "chunk_versions": [
+      "3.0",
+      "3.3",
+      "3.7"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "野木蓝",
+      "b": "佳琳娜夫人",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "暴雨",
+        "hop1": {
+         "relation": "承认",
+         "confidence": 0.95,
+         "evidence": "我确实越过了“暴雨”，我从未否认过这点",
+         "chunks": [
+          {
+           "chunk": "activity__35101_绿松石蛇俱乐部:18.0.0",
+           "version": "3.5",
+           "chapter": "3.5活动《绿松石蛇俱乐部》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.5"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "回溯",
+         "confidence": 0.95,
+         "evidence": "被第一场“暴雨”回溯了",
+         "chunks": [
+          {
+           "chunk": "mainline__112_远征记:13.0.1",
+           "version": "3.3",
+           "chapter": "主线112《远征记》〔版本 3.3〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.3"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     },
+     {
+      "a": "野木蓝",
+      "b": "拉普拉斯研究员Ⅰ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "野木蓝",
+      "b": "卡戎",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "重塑之手",
+        "hop1": {
+         "relation": "脱离",
+         "confidence": 0.95,
+         "evidence": "为了完成这一切，我们脱离了重塑之手",
+         "chunks": [
+          {
+           "chunk": "activity__35101_绿松石蛇俱乐部:18.0.1",
+           "version": "3.5",
+           "chapter": "3.5活动《绿松石蛇俱乐部》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.5"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "残害",
+         "confidence": 0.95,
+         "evidence": "重塑之手怎么能做出这种事",
+         "chunks": [
+          {
+           "chunk": "mainline__112_远征记:11.0.0",
+           "version": "3.3",
+           "chapter": "主线112《远征记》〔版本 3.3〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.3"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     },
+     {
+      "a": "佳琳娜夫人",
+      "b": "拉普拉斯研究员Ⅰ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "佳琳娜夫人",
+      "b": "卡戎",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "梅蕾尔",
+        "hop1": {
+         "relation": "认得",
+         "confidence": 0.95,
+         "evidence": "我在红柳树村见过你",
+         "chunks": [
+          {
+           "chunk": "mainline__112_远征记:14.0.1",
+           "version": "3.3",
+           "chapter": "主线112《远征记》〔版本 3.3〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.3"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "同行",
+         "confidence": 0.95,
+         "evidence": "要不要和我们车队一起走",
+         "chunks": [
+          {
+           "chunk": "mainline__111_行于漫漫长路上:13.0.1",
+           "version": "3.0",
+           "chapter": "主线111《行于漫漫长路上》〔版本 3.0〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.0"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       },
+       {
+        "hops": 2,
+        "bridge": "别列格勒",
+        "hop1": {
+         "relation": "赴援",
+         "confidence": 0.95,
+         "evidence": "去看看能帮上什么忙——去给这个时代留下些烙印",
+         "chunks": [
+          {
+           "chunk": "mainline__112_远征记:14.0.3",
+           "version": "3.3",
+           "chapter": "主线112《远征记》〔版本 3.3〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.3"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "驰来",
+         "confidence": 0.95,
+         "evidence": "黑马上的骑士蒙着白布，握着一把染血的镖枪",
+         "chunks": [
+          {
+           "chunk": "mainline__112_远征记:10.2.0",
+           "version": "3.3",
+           "chapter": "主线112《远征记》〔版本 3.3〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.3"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": false
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": true,
+      "n_bridges": 2,
+      "verdict": "相遇"
+     },
+     {
+      "a": "拉普拉斯研究员Ⅰ",
+      "b": "卡戎",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     }
+    ],
+    "n_pairs": 6,
+    "n_within2": 3,
+    "group_diameter": 3,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 6,
+   "unreachable_members": [],
+   "verdict": "部分可遇",
+   "verdict_reason": "3/6 对 ≤2 跳"
+  },
+  {
+   "label": "随机组5",
+   "members": [
+    {
+     "eid": "管理人",
+     "name": "管理人",
+     "type": "角色",
+     "degree": 4,
+     "n_chunks": 5,
+     "chunk_versions": [
+      "2.3"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "观察员",
+     "name": "观察员",
+     "type": "角色",
+     "degree": 2,
+     "n_chunks": 3,
+     "chunk_versions": [
+      "3.0"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "拉文德",
+     "name": "拉文德",
+     "type": "角色",
+     "degree": 11,
+     "n_chunks": 13,
+     "chunk_versions": [
+      "3.7"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "断指",
+     "name": "断指",
+     "type": "角色",
+     "degree": 14,
+     "n_chunks": 11,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "俱乐部巡逻者Ⅱ",
+     "name": "俱乐部巡逻者Ⅱ",
+     "type": "角色",
+     "degree": 10,
+     "n_chunks": 3,
+     "chunk_versions": [
+      "3.5"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "管理人",
+      "b": "观察员",
+      "dist": 5,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(5跳)"
+     },
+     {
+      "a": "管理人",
+      "b": "拉文德",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "管理人",
+      "b": "断指",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "管理人",
+      "b": "俱乐部巡逻者Ⅱ",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "观察员",
+      "b": "拉文德",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "观察员",
+      "b": "断指",
+      "dist": 5,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(5跳)"
+     },
+     {
+      "a": "观察员",
+      "b": "俱乐部巡逻者Ⅱ",
+      "dist": 5,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(5跳)"
+     },
+     {
+      "a": "拉文德",
+      "b": "断指",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "拉文德",
+      "b": "俱乐部巡逻者Ⅱ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "断指",
+      "b": "俱乐部巡逻者Ⅱ",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     }
+    ],
+    "n_pairs": 10,
+    "n_within2": 0,
+    "group_diameter": 5,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 0,
+   "unreachable_members": [],
+   "verdict": "不可达",
+   "verdict_reason": "连通但所有成员对 >2 跳（最短 3 跳）"
+  },
+  {
+   "label": "随机组6",
+   "members": [
+    {
+     "eid": "鬃毛沙砾",
+     "name": "鬃毛沙砾",
+     "type": "角色",
+     "degree": 29,
+     "n_chunks": 38,
+     "chunk_versions": [
+      "1.3"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "临时工人Ⅰ",
+     "name": "临时工人Ⅰ",
+     "type": "角色",
+     "degree": 5,
+     "n_chunks": 4,
+     "chunk_versions": [
+      "3.8"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "阿尔古斯",
+     "name": "阿尔古斯",
+     "type": "角色",
+     "degree": 31,
+     "n_chunks": 39,
+     "chunk_versions": [
+      "1.9",
+      "2.1"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "鬃毛沙砾",
+      "b": "临时工人Ⅰ",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "鬃毛沙砾",
+      "b": "阿尔古斯",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "临时工人Ⅰ",
+      "b": "阿尔古斯",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     }
+    ],
+    "n_pairs": 3,
+    "n_within2": 0,
+    "group_diameter": 4,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 0,
+   "unreachable_members": [],
+   "verdict": "不可达",
+   "verdict_reason": "连通但所有成员对 >2 跳（最短 3 跳）"
+  },
+  {
+   "label": "随机组7",
+   "members": [
+    {
+     "eid": "普通镇民",
+     "name": "普通镇民",
+     "type": "角色",
+     "degree": 6,
+     "n_chunks": 5,
+     "chunk_versions": [
+      "1.8"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "埃菲",
+     "name": "埃菲",
+     "type": "角色",
+     "degree": 6,
+     "n_chunks": 15,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "总参谋部",
+     "name": "总参谋部",
+     "type": "角色",
+     "degree": 2,
+     "n_chunks": 5,
+     "chunk_versions": [
+      "3.0"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "加莱亚诺",
+     "name": "加莱亚诺",
+     "type": "角色",
+     "degree": 2,
+     "n_chunks": 9,
+     "chunk_versions": [
+      "2.2"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "重塑·信徒",
+     "name": "重塑·信徒",
+     "type": "角色",
+     "degree": 16,
+     "n_chunks": 24,
+     "chunk_versions": [
+      "1.0",
+      "1.1",
+      "1.9",
+      "2.0",
+      "2.8",
+      "3.7"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "普通镇民",
+      "b": "埃菲",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "普通镇民",
+      "b": "总参谋部",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "普通镇民",
+      "b": "加莱亚诺",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "普通镇民",
+      "b": "重塑·信徒",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "埃菲",
+      "b": "总参谋部",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "埃菲",
+      "b": "加莱亚诺",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "埃菲",
+      "b": "重塑·信徒",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "十四行诗",
+        "hop1": {
+         "relation": "认出",
+         "confidence": 0.95,
+         "evidence": "那不是我们的优秀毕业生，十四行诗小姐吗？！",
+         "chunks": [
+          {
+           "chunk": "anecdote__1904_埃里克角色故事:3.0.1",
+           "version": "1.9",
+           "chapter": "1.9(推定)角色轶事《埃里克角色故事》",
+           "ver_conf": "low"
+          }
+         ],
+         "versions": [
+          "1.9"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "击倒",
+         "confidence": 0.95,
+         "evidence": "它倒下了。维尔汀，贝弗利，你们可以过来了",
+         "chunks": [
+          {
+           "chunk": "mainline__113_他者的悲哀:6.2.0",
+           "version": "3.7",
+           "chapter": "主线113《他者的悲哀》〔版本 3.7〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.7"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       },
+       {
+        "hops": 2,
+        "bridge": "玛蒂尔达",
+        "hop1": {
+         "relation": "释放",
+         "confidence": 0.95,
+         "evidence": "这位纪律辅员迅速甩开手臂，放开了埃菲",
+         "chunks": [
+          {
+           "chunk": "anecdote__1904_埃里克角色故事:1.3.0",
+           "version": "1.9",
+           "chapter": "1.9(推定)角色轶事《埃里克角色故事》",
+           "ver_conf": "low"
+          }
+         ],
+         "versions": [
+          "1.9"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "责问",
+         "confidence": 0.95,
+         "evidence": "你们为何侵扰他人的欢愉！",
+         "chunks": [
+          {
+           "chunk": "activity__20101_飞驰_明日之城:13.1.2",
+           "version": "2.0",
+           "chapter": "2.0活动《飞驰_明日之城》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "2.0"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 2,
+      "verdict": "相遇"
+     },
+     {
+      "a": "总参谋部",
+      "b": "加莱亚诺",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "总参谋部",
+      "b": "重塑·信徒",
+      "dist": 2,
+      "meeting_points": [
+       {
+        "hops": 2,
+        "bridge": "重塑之手",
+        "hop1": {
+         "relation": "否认",
+         "confidence": 0.9,
+         "evidence": "我们倾向于认为，这个团体只是你们为了实现某些目的而杜撰的假想敌",
+         "chunks": [
+          {
+           "chunk": "mainline__111_行于漫漫长路上:3.2.0",
+           "version": "3.0",
+           "chapter": "主线111《行于漫漫长路上》〔版本 3.0〕",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "3.0"
+         ],
+         "cross_version": false
+        },
+        "hop2": {
+         "relation": "显露",
+         "confidence": 0.95,
+         "evidence": "在他不经意露出的脖颈处，是一个熟悉的图案",
+         "chunks": [
+          {
+           "chunk": "activity__20101_飞驰_明日之城:5.1.1",
+           "version": "2.0",
+           "chapter": "2.0活动《飞驰_明日之城》",
+           "ver_conf": "high"
+          },
+          {
+           "chunk": "activity__20101_飞驰_明日之城:5.1.2",
+           "version": "2.0",
+           "chapter": "2.0活动《飞驰_明日之城》",
+           "ver_conf": "high"
+          }
+         ],
+         "versions": [
+          "2.0"
+         ],
+         "cross_version": false
+        },
+        "hop_versions_disjoint": true
+       }
+      ],
+      "cross_version": true,
+      "time_coherent_meeting": false,
+      "n_bridges": 1,
+      "verdict": "相遇"
+     },
+     {
+      "a": "加莱亚诺",
+      "b": "重塑·信徒",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     }
+    ],
+    "n_pairs": 10,
+    "n_within2": 2,
+    "group_diameter": 4,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 6,
+   "unreachable_members": [],
+   "verdict": "部分可遇",
+   "verdict_reason": "2/10 对 ≤2 跳"
+  },
+  {
+   "label": "随机组8",
+   "members": [
+    {
+     "eid": "小刀\"麦高芬",
+     "name": "小刀\"麦高芬",
+     "type": "角色",
+     "degree": 15,
+     "n_chunks": 13,
+     "chunk_versions": [
+      "1.9"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "书商",
+     "name": "书商",
+     "type": "角色",
+     "degree": 7,
+     "n_chunks": 3,
+     "chunk_versions": [],
+     "component_size": 5786
+    },
+    {
+     "eid": "启明会”信众Ⅰ",
+     "name": "启明会”信众Ⅰ",
+     "type": "角色",
+     "degree": 4,
+     "n_chunks": 4,
+     "chunk_versions": [
+      "2.1"
+     ],
+     "component_size": 5786
+    },
+    {
+     "eid": "小叶尼塞",
+     "name": "小叶尼塞",
+     "type": "角色",
+     "degree": 59,
+     "n_chunks": 71,
+     "chunk_versions": [
+      "1.6"
+     ],
+     "component_size": 5786
+    }
+   ],
+   "same_scene": {
+    "verdict": false,
+    "chunks": [],
+    "pairwise_shared_pairs": []
+   },
+   "multihop": {
+    "pairs": [
+     {
+      "a": "小刀\"麦高芬",
+      "b": "书商",
+      "dist": 4,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(4跳)"
+     },
+     {
+      "a": "小刀\"麦高芬",
+      "b": "启明会”信众Ⅰ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "小刀\"麦高芬",
+      "b": "小叶尼塞",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "书商",
+      "b": "启明会”信众Ⅰ",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "书商",
+      "b": "小叶尼塞",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     },
+     {
+      "a": "启明会”信众Ⅰ",
+      "b": "小叶尼塞",
+      "dist": 3,
+      "meeting_points": [],
+      "cross_version": false,
+      "time_coherent_meeting": false,
+      "verdict": "过远(3跳)"
+     }
+    ],
+    "n_pairs": 6,
+    "n_within2": 0,
+    "group_diameter": 4,
+    "diameter_complete": true
+   },
+   "cross_version_bridge_count": 0,
+   "unreachable_members": [],
+   "verdict": "不可达",
+   "verdict_reason": "连通但所有成员对 >2 跳（最短 3 跳）"
+  }
+ ],
+ "probe_group": {
+  "label": "修复探针组",
+  "members": [
+   {
+    "eid": "探险家别斯米尔",
+    "name": "探险家别斯米尔",
+    "type": "角色",
+    "degree": 55,
+    "n_chunks": 70,
+    "chunk_versions": [
+     "1.6",
+     "2.8"
+    ],
+    "component_size": 5786
+   },
+   {
+    "eid": "兀尔德",
+    "name": "兀尔德",
+    "type": "角色",
+    "degree": 50,
+    "n_chunks": 109,
+    "chunk_versions": [
+     "1.4",
+     "1.9",
+     "2.0",
+     "2.1",
+     "2.2",
+     "2.6",
+     "2.8",
+     "3.0",
+     "3.3",
+     "3.5"
+    ],
+    "component_size": 5786
+   },
+   {
+    "eid": "玛尔塔",
+    "name": "玛尔塔",
+    "type": "角色",
+    "degree": 7,
+    "n_chunks": 9,
+    "chunk_versions": [
+     "1.7",
+     "1.9",
+     "2.8"
+    ],
+    "component_size": 5786
+   },
+   {
+    "eid": "卡卡尼亚",
+    "name": "卡卡尼亚",
+    "type": "角色",
+    "degree": 80,
+    "n_chunks": 118,
+    "chunk_versions": [
+     "1.7",
+     "1.9",
+     "2.6",
+     "3.6"
+    ],
+    "component_size": 5786
+   }
+  ],
+  "same_scene": {
+   "verdict": false,
+   "chunks": [],
+   "pairwise_shared_pairs": [
+    {
+     "a": "探险家别斯米尔",
+     "b": "兀尔德",
+     "n": 1
+    },
+    {
+     "a": "探险家别斯米尔",
+     "b": "玛尔塔",
+     "n": 1
+    },
+    {
+     "a": "兀尔德",
+     "b": "玛尔塔",
+     "n": 1
+    },
+    {
+     "a": "兀尔德",
+     "b": "卡卡尼亚",
+     "n": 1
+    },
+    {
+     "a": "玛尔塔",
+     "b": "卡卡尼亚",
+     "n": 1
+    }
+   ]
+  },
+  "multihop": {
+   "pairs": [
+    {
+     "a": "探险家别斯米尔",
+     "b": "兀尔德",
+     "dist": 3,
+     "meeting_points": [],
+     "cross_version": false,
+     "time_coherent_meeting": false,
+     "shared_chunks": [
+      {
+       "chunk": "mainline__110_复乐园:19.0.1",
+       "version": "2.8",
+       "chapter": "主线110《复乐园》〔版本 2.8〕",
+       "ver_conf": "high"
+      }
+     ],
+     "verdict": "过远(3跳)"
+    },
+    {
+     "a": "探险家别斯米尔",
+     "b": "玛尔塔",
+     "dist": 3,
+     "meeting_points": [],
+     "cross_version": false,
+     "time_coherent_meeting": false,
+     "shared_chunks": [
+      {
+       "chunk": "mainline__110_复乐园:19.0.1",
+       "version": "2.8",
+       "chapter": "主线110《复乐园》〔版本 2.8〕",
+       "ver_conf": "high"
+      }
+     ],
+     "verdict": "过远(3跳)"
+    },
+    {
+     "a": "探险家别斯米尔",
+     "b": "卡卡尼亚",
+     "dist": 2,
+     "meeting_points": [
+      {
+       "hops": 2,
+       "bridge": "神秘术",
+       "hop1": {
+        "relation": "论述",
+        "confidence": 0.95,
+        "evidence": "从枯寂中复现丰润的大地上，我们仍能窥见",
+        "chunks": [
+         {
+          "chunk": "activity__16101_朔日手记:0.0.1",
+          "version": "1.6",
+          "chapter": "1.6活动《朔日手记》",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.6"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "失能",
+        "confidence": 0.95,
+        "evidence": "我已经不能、也无法再使用我的神秘术了",
+        "chunks": [
+         {
+          "chunk": "character__19603_犹在镜中:0.0.2",
+          "version": "1.9",
+          "chapter": "1.9角色剧情《犹在镜中》",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.9"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      }
+     ],
+     "cross_version": true,
+     "time_coherent_meeting": false,
+     "n_bridges": 1,
+     "verdict": "相遇"
+    },
+    {
+     "a": "兀尔德",
+     "b": "玛尔塔",
+     "dist": 2,
+     "meeting_points": [
+      {
+       "hops": 2,
+       "bridge": "苏菲亚",
+       "hop1": {
+        "relation": "证实",
+        "confidence": 0.9,
+        "evidence": "德洛丝女士凭借她的意志到达了这里",
+        "chunks": [
+         {
+          "chunk": "mainline__110_复乐园:18.2.1",
+          "version": "2.8",
+          "chapter": "主线110《复乐园》〔版本 2.8〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "2.8"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "询问",
+        "confidence": 0.95,
+        "evidence": "你不去找37吗？",
+        "chunks": [
+         {
+          "chunk": "mainline__107_孤独之歌:3.0.1",
+          "version": "1.9",
+          "chapter": "主线107《孤独之歌》〔版本 1.9〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.9"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      },
+      {
+       "hops": 2,
+       "bridge": "十四行诗",
+       "hop1": {
+        "relation": "捕捉",
+        "confidence": 0.95,
+        "evidence": "司辰，她提到了德洛丝女士！",
+        "chunks": [
+         {
+          "chunk": "mainline__109_疯癫与文明:0.2.0",
+          "version": "2.6",
+          "chapter": "主线109《疯癫与文明》〔版本 2.6〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "2.6"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "咨询",
+        "confidence": 0.95,
+        "evidence": "我咨询过玛尔塔女士",
+        "chunks": [
+         {
+          "chunk": "mainline__107_孤独之歌:6.1.1",
+          "version": "1.9",
+          "chapter": "主线107《孤独之歌》〔版本 1.9〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.9"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      },
+      {
+       "hops": 2,
+       "bridge": "维尔汀",
+       "hop1": {
+        "relation": "打听",
+        "confidence": 0.95,
+        "evidence": "1999年，是否有一位名叫兀尔德的传记作家来过这里？",
+        "chunks": [
+         {
+          "chunk": "mainline__105_洞穴的囚徒:5.1.0",
+          "version": "1.4",
+          "chapter": "主线105《洞穴的囚徒》〔版本 1.4〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.4"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "告知",
+        "confidence": 0.95,
+        "evidence": "您的努力并非他们所关心的",
+        "chunks": [
+         {
+          "chunk": "mainline__106_今夜星光灿烂:12.0.0",
+          "version": "1.7",
+          "chapter": "主线106《今夜星光灿烂》〔版本 1.7〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.7"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      }
+     ],
+     "cross_version": true,
+     "time_coherent_meeting": false,
+     "shared_chunks": [
+      {
+       "chunk": "mainline__110_复乐园:19.0.1",
+       "version": "2.8",
+       "chapter": "主线110《复乐园》〔版本 2.8〕",
+       "ver_conf": "high"
+      }
+     ],
+     "n_bridges": 3,
+     "verdict": "相遇"
+    },
+    {
+     "a": "兀尔德",
+     "b": "卡卡尼亚",
+     "dist": 2,
+     "meeting_points": [
+      {
+       "hops": 2,
+       "bridge": "圣洛夫基金会",
+       "hop1": {
+        "relation": "承诺",
+        "confidence": 0.95,
+        "evidence": "基金会给了我一样的承诺",
+        "chunks": [
+         {
+          "chunk": "mainline__112_远征记:9.0.4",
+          "version": "3.3",
+          "chapter": "主线112《远征记》〔版本 3.3〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "3.3"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "自愿",
+        "confidence": 0.95,
+        "evidence": "我自愿接受基金会的证人传唤，配合“暴雨”研究",
+        "chunks": [
+         {
+          "chunk": "character__19603_犹在镜中:1.0.2",
+          "version": "1.9",
+          "chapter": "1.9角色剧情《犹在镜中》",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.9"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      },
+      {
+       "hops": 2,
+       "bridge": "十四行诗",
+       "hop1": {
+        "relation": "捕捉",
+        "confidence": 0.95,
+        "evidence": "司辰，她提到了德洛丝女士！",
+        "chunks": [
+         {
+          "chunk": "mainline__109_疯癫与文明:0.2.0",
+          "version": "2.6",
+          "chapter": "主线109《疯癫与文明》〔版本 2.6〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "2.6"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "告知",
+        "confidence": 0.85,
+        "evidence": "卡卡尼亚小姐曾告诉过我",
+        "chunks": [
+         {
+          "chunk": "mainline__109_疯癫与文明:7.0.3",
+          "version": "2.6",
+          "chapter": "主线109《疯癫与文明》〔版本 2.6〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "2.6"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": false
+      },
+      {
+       "hops": 2,
+       "bridge": "阿尔卡纳",
+       "hop1": {
+        "relation": "需要",
+        "confidence": 0.95,
+        "evidence": "阿尔卡纳需要兀尔德完成复活的仪式",
+        "chunks": [
+         {
+          "chunk": "mainline__112_远征记:7.0.2",
+          "version": "3.3",
+          "chapter": "主线112《远征记》〔版本 3.3〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "3.3"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "质问",
+        "confidence": 0.95,
+        "evidence": "又是谁发起了试炼，又是谁决定了拣选的标准？",
+        "chunks": [
+         {
+          "chunk": "mainline__106_今夜星光灿烂:15.0.0",
+          "version": "1.7",
+          "chapter": "主线106《今夜星光灿烂》〔版本 1.7〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.7"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      }
+     ],
+     "cross_version": true,
+     "time_coherent_meeting": true,
+     "shared_chunks": [
+      {
+       "chunk": "mainline__109_疯癫与文明:7.0.3",
+       "version": "2.6",
+       "chapter": "主线109《疯癫与文明》〔版本 2.6〕",
+       "ver_conf": "high"
+      }
+     ],
+     "n_bridges": 3,
+     "verdict": "相遇"
+    },
+    {
+     "a": "玛尔塔",
+     "b": "卡卡尼亚",
+     "dist": 2,
+     "meeting_points": [
+      {
+       "hops": 2,
+       "bridge": "十四行诗",
+       "hop1": {
+        "relation": "咨询",
+        "confidence": 0.95,
+        "evidence": "我咨询过玛尔塔女士",
+        "chunks": [
+         {
+          "chunk": "mainline__107_孤独之歌:6.1.1",
+          "version": "1.9",
+          "chapter": "主线107《孤独之歌》〔版本 1.9〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "1.9"
+        ],
+        "cross_version": false
+       },
+       "hop2": {
+        "relation": "告知",
+        "confidence": 0.85,
+        "evidence": "卡卡尼亚小姐曾告诉过我",
+        "chunks": [
+         {
+          "chunk": "mainline__109_疯癫与文明:7.0.3",
+          "version": "2.6",
+          "chapter": "主线109《疯癫与文明》〔版本 2.6〕",
+          "ver_conf": "high"
+         }
+        ],
+        "versions": [
+         "2.6"
+        ],
+        "cross_version": false
+       },
+       "hop_versions_disjoint": true
+      }
+     ],
+     "cross_version": true,
+     "time_coherent_meeting": false,
+     "shared_chunks": [
+      {
+       "chunk": "mainline__107_孤独之歌:26.0.4",
+       "version": "1.9",
+       "chapter": "主线107《孤独之歌》〔版本 1.9〕",
+       "ver_conf": "high"
+      }
+     ],
+     "n_bridges": 1,
+     "verdict": "相遇"
+    }
+   ],
+   "n_pairs": 6,
+   "n_within2": 4,
+   "group_diameter": 3,
+   "diameter_complete": true
+  },
+  "cross_version_bridge_count": 13,
+  "unreachable_members": [],
+  "verdict": "部分可遇",
+  "verdict_reason": "4/6 对 ≤2 跳",
+  "requested_names": [
+   "别斯米尔",
+   "兀尔德",
+   "玛尔塔",
+   "德洛丝",
+   "克拉拉"
+  ],
+  "resolution": {
+   "别斯米尔": "探险家别斯米尔",
+   "兀尔德": "兀尔德",
+   "玛尔塔": "玛尔塔",
+   "德洛丝": "兀尔德",
+   "克拉拉": "卡卡尼亚"
+  },
+  "note": "德洛丝与兀尔德为同一实体(别名)；克拉拉为卡卡尼亚别名；别斯米尔=探险家别斯米尔(另存在1-chunk碎片实体\"旅行队的别斯米尔\"待合并)"
+ },
+ "cross_version_edges": {
+  "count_graphwide": 199,
+  "top_examples": [
+   {
+    "src": "APPLe",
+    "dst": "星锑",
+    "relation": "报告",
+    "confidence": 0.95,
+    "evidence": "我们身后多了一只漆黑的大船。它正在向我们炮击",
+    "versions": [
+     "1.0",
+     "1.1"
+    ],
+    "chunks": [
+     "mainline__000_此即明日:0.0.0",
+     "activity__11101_雷米特杯失窃案:2.0.0",
+     "activity__11101_雷米特杯失窃案:3.1.1"
+    ]
+   },
+   {
+    "src": "十四行诗",
+    "dst": "圣洛夫基金会",
+    "relation": "隶属于",
+    "confidence": 0.95,
+    "evidence": "回到调研中心",
+    "versions": [
+     "1.0",
+     "2.6"
+    ],
+    "chunks": [
+     "mainline__000_此即明日:1.0.0",
+     "mainline__000_此即明日:2.0.0",
+     "mainline__000_此即明日:2.1.0"
+    ]
+   },
+   {
+    "src": "维尔汀",
+    "dst": "圣洛夫基金会",
+    "relation": "隶属于",
+    "confidence": 0.95,
+    "evidence": "我与你遇到的那群调查员来自同一个机构——圣洛夫基金会",
+    "versions": [
+     "1.0",
+     "2.6"
+    ],
+    "chunks": [
+     "mainline__000_此即明日:5.1.0",
+     "mainline__000_此即明日:5.3.0",
+     "mainline__109_疯癫与文明:2.1.0"
+    ]
+   },
+   {
+    "src": "星锑",
+    "dst": "圣洛夫基金会",
+    "relation": "加入",
+    "confidence": 0.95,
+    "evidence": "星锑将加入基金会成为我们的同僚",
+    "versions": [
+     "1.0",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__101_在我们的时代里:1.0.0",
+     "mainline__101_在我们的时代里:15.0.0",
+     "mainline__104_老虎的金黄:5.0.0"
+    ]
+   },
+   {
+    "src": "十四行诗",
+    "dst": "星锑",
+    "relation": "赠予",
+    "confidence": 0.95,
+    "evidence": "十四行诗给了我一张软盘",
+    "versions": [
+     "1.0",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__101_在我们的时代里:3.1.0",
+     "anecdote__1920_最佳乐队:3.0.1"
+    ]
+   },
+   {
+    "src": "十四行诗",
+    "dst": "维尔汀",
+    "relation": "掩护",
+    "confidence": 0.95,
+    "evidence": "一分钟后，我会掩护你们朝相反方向行动",
+    "versions": [
+     "1.0",
+     "2.8"
+    ],
+    "chunks": [
+     "mainline__101_在我们的时代里:6.2.0",
+     "mainline__110_复乐园:18.1.2",
+     "mainline__110_复乐园:18.2.0"
+    ]
+   },
+   {
+    "src": "维尔汀",
+    "dst": "暴雨",
+    "relation": "宣告",
+    "confidence": 0.95,
+    "evidence": "“暴雨”来了……",
+    "versions": [
+     "1.0",
+     "1.9",
+     "2.4"
+    ],
+    "chunks": [
+     "mainline__102_夜色温柔:14.0.1",
+     "mainline__107_孤独之歌:1.0.2",
+     "activity__24101_地球上最后的夜晚:12.1.2"
+    ]
+   },
+   {
+    "src": "Z",
+    "dst": "康斯坦丁",
+    "relation": "提议",
+    "confidence": 0.95,
+    "evidence": "我认为，应该授予她更独立的编制与自主权",
+    "versions": [
+     "1.0",
+     "3.7"
+    ],
+    "chunks": [
+     "mainline__103_故事一无所有:3.0.0",
+     "mainline__113_他者的悲哀:22.0.4"
+    ]
+   },
+   {
+    "src": "红弩箭",
+    "dst": "飞行扫帚",
+    "relation": "驾驶",
+    "confidence": 0.95,
+    "evidence": "总算放我的宝贝Su-01ве出来兜风了",
+    "versions": [
+     "1.0",
+     "3.0"
+    ],
+    "chunks": [
+     "mainline__103_故事一无所有:7.0.1",
+     "mainline__111_行于漫漫长路上:2.0.0"
+    ]
+   },
+   {
+    "src": "Z",
+    "dst": "维尔汀",
+    "relation": "提议",
+    "confidence": 0.95,
+    "evidence": "你想成为司辰吗？",
+    "versions": [
+     "1.0",
+     "1.2"
+    ],
+    "chunks": [
+     "mainline__103_故事一无所有:15.0.0",
+     "activity__12101_绿湖噩梦:16.0.0"
+    ]
+   },
+   {
+    "src": "X",
+    "dst": "星锑",
+    "relation": "赠予",
+    "confidence": 0.9,
+    "evidence": "差点忘了X送的一箱好东西",
+    "versions": [
+     "1.0",
+     "3.7"
+    ],
+    "chunks": [
+     "mainline__104_老虎的金黄:6.0.1",
+     "mainline__113_他者的悲哀:13.1.0"
+    ]
+   },
+   {
+    "src": "APPLe",
+    "dst": "星锑",
+    "relation": "提醒",
+    "confidence": 0.95,
+    "evidence": "请小口小口喝，不要对食道造成太大的压力",
+    "versions": [
+     "1.0",
+     "1.1",
+     "1.9",
+     "2.4"
+    ],
+    "chunks": [
+     "mainline__104_老虎的金黄:21.0.0",
+     "activity__11101_雷米特杯失窃案:8.0.0",
+     "activity__24101_地球上最后的夜晚:1.0.0"
+    ]
+   },
+   {
+    "src": "十四行诗",
+    "dst": "维尔汀",
+    "relation": "报告",
+    "confidence": 0.95,
+    "evidence": "左舱进水60%，右舱进水75%",
+    "versions": [
+     "1.4",
+     "1.9",
+     "2.4",
+     "2.6"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:0.0.0",
+     "mainline__109_疯癫与文明:1.0.0",
+     "activity__24101_地球上最后的夜晚:20.0.1"
+    ]
+   },
+   {
+    "src": "Z",
+    "dst": "维尔汀",
+    "relation": "递交",
+    "confidence": 0.95,
+    "evidence": "基金会的正式任命书",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:1.0.0",
+     "appendix_unbound__011_1_9_去往新世界_Z:0.1.0"
+    ]
+   },
+   {
+    "src": "6",
+    "dst": "星锑",
+    "relation": "拒绝",
+    "confidence": 0.95,
+    "evidence": "无理数不能上岛。——把她扔到海里去!",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:5.2.0",
+     "anecdote__1917_乘法轴上的一天:7.0.0"
+    ]
+   },
+   {
+    "src": "37",
+    "dst": "教典",
+    "relation": "信奉",
+    "confidence": 0.95,
+    "evidence": "教典说，打扰别人做证明，是和吃豆子一样的重罪",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:6.1.1",
+     "anecdote__1917_乘法轴上的一天:2.0.4"
+    ]
+   },
+   {
+    "src": "APPLe",
+    "dst": "星锑",
+    "relation": "追随",
+    "confidence": 0.95,
+    "evidence": "不行，APPLe某得跟过去",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:7.2.0",
+     "anecdote__1920_最佳乐队:3.0.2"
+    ]
+   },
+   {
+    "src": "37",
+    "dst": "维尔汀",
+    "relation": "要求",
+    "confidence": 0.95,
+    "evidence": "那么——维尔汀，你做好辩论的准备了吗？",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:10.0.1",
+     "mainline__107_孤独之歌:3.0.2"
+    ]
+   },
+   {
+    "src": "37",
+    "dst": "维尔汀",
+    "relation": "引导",
+    "confidence": 0.95,
+    "evidence": "走吧，维尔汀。公民大会要开始了",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:10.0.1",
+     "mainline__105_洞穴的囚徒:19.0.0",
+     "mainline__107_孤独之歌:6.1.1"
+    ]
+   },
+   {
+    "src": "37",
+    "dst": "维尔汀",
+    "relation": "宣告",
+    "confidence": 0.95,
+    "evidence": "维尔汀是数字0",
+    "versions": [
+     "1.4",
+     "1.9"
+    ],
+    "chunks": [
+     "mainline__105_洞穴的囚徒:11.2.0",
+     "mainline__107_孤独之歌:26.0.0"
+    ]
+   }
+  ]
+ },
+ "unknown_version_docs": {
+  "activity__385101_聚合浪潮": 1320,
+  "activity__305101_翡冷翠之春": 522,
+  "activity__305201_入雅典记": 331,
+  "appendix_unbound__073_雷米特杯兑换活动": 119,
+  "appendix_unbound__074_雷米特杯赛季活动": 117,
+  "appendix_unbound__072_第十章10_25": 40,
+  "appendix_unbound__071_S02_啁啾表_收藏品": 24
+ }
+}
