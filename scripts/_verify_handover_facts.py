@@ -75,9 +75,12 @@ g = json.loads(b.decode("utf-8"))
 chk("entities", len(g["entities"]), 7033)
 chk("edges", len(g["edges"]), 30269)
 chk("graph sha16", hashlib.sha256(b).hexdigest()[:16], "4bbefd9eba577c01")
-n = subprocess.run(["git", "rev-list", "--count", "2f9d966..HEAD"],
-                   capture_output=True, text=True).stdout.strip()
-chk("session commits", n, "14")
+n = int(subprocess.run(["git", "rev-list", "--count", "2f9d966..HEAD"],
+                       capture_output=True, text=True).stdout.strip())
+# 提交数会随每次新提交增长，故只断言「≥15 笔」（交接文档落盘时的值），并如实打印
+print(f"  [{'OK ' if n >= 15 else 'BAD'}] session commits >= 15: got={n}")
+if n < 15:
+    FAILS.append("session commits")
 tags = subprocess.run(["git", "tag", "-l"], capture_output=True, text=True).stdout.split()
 chk("tag count", len(tags), 5)
 
