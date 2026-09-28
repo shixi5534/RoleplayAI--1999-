@@ -1,6 +1,6 @@
 """剧情语料层（PlotCorpus）：B站机器转写文案 → **独立于 lore 向量库**的切块语料。
 
-定位（docs/GRAPHRAG加强计划书.md §16 剧情图谱层）：
+定位（docs/roleplay-core/architecture/GRAPHRAG加强计划书.md §16 剧情图谱层）：
 - 只吃 ``data/lore/<cid>/视频文案/`` 下的机器转写产物，供剧情图谱（PlotGraph）
   做证据溯源与词法兜底检索；
 - **不写入** ``lore_<cid>`` 命名空间、**不依赖** KnowledgeBase 与嵌入器，

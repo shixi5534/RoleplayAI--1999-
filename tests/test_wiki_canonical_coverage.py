@@ -1,6 +1,6 @@
 """灰机 wiki 正典覆盖率回归测试。
 
-用灰机 wiki 查证得到的权威设定（deliverables/wiki-r1999-relation-reference-20260909.md
+用灰机 wiki 查证得到的权威设定（docs/plot-graph-rag/graph-governance/wiki-r1999-relation-reference-20260909.md
 第 2.1 节阵营关系、第 3 节核心人物关系）反向检验知识图谱。
 
 基线（2026-09-09 首次实测）：

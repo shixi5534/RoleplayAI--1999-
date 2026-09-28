@@ -1,6 +1,6 @@
 """GraphStore：角色知识图谱（GraphRAG 数据底座）。
 
-设计（docs/GRAPHRAG加强计划书.md §3，决策编号见 §2.3）：
+设计（docs/roleplay-core/architecture/GRAPHRAG加强计划书.md §3，决策编号见 §2.3）：
 - 纯 JSON 邻接表落盘（graph_<cid>.json），零第三方图依赖（D1）；
 - 实体 id 由 canonical 名派生（sha1 确定性），alias_index 冗余落盘供 O(1) 精确链接；
 - 边挂 evidence = [{ns, doc_id, hash}]（D3：chunk 文本 sha1 稳定；KB 重建后

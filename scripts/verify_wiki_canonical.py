@@ -3,7 +3,7 @@
 """
 正典覆盖率审计：用灰机 wiki 查证得到的权威设定，反向检验知识图谱。
 
-数据来源：deliverables/wiki-r1999-relation-reference-20260909.md
+数据来源：docs/plot-graph-rag/graph-governance/wiki-r1999-relation-reference-20260909.md
   - 第 2.1 节 阵营敌对/合作关系（置信度 高）
   - 第 3 节   核心人物关系表（以无名者为中心）
 

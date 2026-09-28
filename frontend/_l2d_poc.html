@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta http-equiv="Pragma" content="no-cache">
+<title>L2D dual-queue POC</title>
+<style>html,body{margin:0;background:#1a1d24;color:#eee;font:14px monospace}#stage{width:520px;height:720px}#hud{position:fixed;top:8px;left:540px;width:360px;white-space:pre-wrap}button{font:14px monospace;margin:2px}</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="hud">loading...</div>
+<div style="position:fixed;bottom:8px;left:540px">
+  <button id="b1">1 idle</button>
+  <button id="b2">2 body:b_shanzi</button>
+  <button id="b3">3 +talk:bizui</button>
+  <button id="b4">4 reset</button>
+</div>
+<script src="assets/lib/pixi.min.js"></script>
+<script src="assets/lib/live2dcubismcore.min.js"></script>
+<script src="assets/lib/pixi-live2d-display-cubism4.min.js"></script>
+<script>
+(async () => {
+  const L = window.live2d || PIXI.live2d;
+  const hud = document.getElementById('hud');
+  const MODEL_DIR = 'assets/live2d/wmz/314701/';
+  const MODEL3 = MODEL_DIR + 'v3a7_314701_wmz.model3.json';
+  const log = (m) => { hud.textContent += '\n' + m; console.log(m); };
+  window.__pocBuild = 'v3-oneshot-body+dtnow-contract';
+  hud.textContent = 'lib: ' + (L ? 'ok' : 'MISSING') + ' | BUILD ' + window.__pocBuild;
+  if (!L) return;
+
+  const app = new PIXI.Application({ width: 520, height: 720, backgroundAlpha: 0, autoDensity: true, resolution: window.devicePixelRatio || 1 });
+  document.getElementById('stage').appendChild(app.view);
+  window.__pocApp = app;
+
+  const model = await L.Live2DModel.from(MODEL3, { autoInteract: false });
+  app.stage.addChild(model);
+  model.scale.set(0.052); model.anchor.set(0.5); model.x = 250; model.y = 430;
+  window.__pocModel = model;
+  const im = model.internalModel;
+  const cm = im.coreModel;
+  const T = cm._model.parameters;
+  const pids = Array.from(T.ids);
+  const defaults = []; for (let i = 0; i < cm.getParameterCount(); i++) defaults.push(cm.getParameterDefaultValue(i));
+  log('params: ' + cm.getParameterCount());
+
+  const { CubismMotion, CubismMotionQueueManager } = L;
+  const qBody = new CubismMotionQueueManager();
+  const qTalk = new CubismMotionQueueManager();
+  let owned = new Set(); // params animated by our queues
+  let tBody = 0, tTalk = 0, lastMs = 0;
+  let mBody = null, mTalk = null;
+
+  async function loadMotion(group, loop) {
+    const file = im.settings.motions[group][0].File;
+    const json = await fetch(MODEL_DIR + file).then(r => r.json());
+    const mo = CubismMotion.create(json);
+    // NOTE: every asset's Meta.Loop is true (demo-viewer convention) — do NOT trust it.
+    // Production semantics: body = one-shot gesture, talk = mouth loop while speaking.
+    mo.setIsLoop(loop);
+    const params = (json.Curves || []).filter(c => c.Target === 'Parameter').map(c => c.Id);
+    return { mo, params };
+  }
+  async function playBody(group) { const x = await loadMotion(group, false); mBody = x; owned = new Set([...mBody.params, ...(mTalk ? mTalk.params : [])]); qBody.startMotion(x.mo, true, 0); }
+  async function playTalk(group) { const x = await loadMotion(group, true); mTalk = x; owned = new Set([...(mBody ? mBody.params : []), ...x.params]); qTalk.startMotion(x.mo, true, 0); }
+  function resetAll() { qBody.stopAllMotions(); qTalk.stopAllMotions(); mBody = mTalk = null; owned = new Set(); }
+
+  // dual-queue pipeline (UTTU pattern), manually pumpable for headless testing
+  // focus/breath disabled for deterministic layering (A/B test: NOT the jitter source —
+  // the real one was Meta.Loop=true on every asset, see loadMotion). eyeBlink kept.
+  im.updateFocus = () => {};
+  im.updateNaturalMovements = () => {};
+  const origUpdate = im.update.bind(im);
+  let lastAt = 0;
+  // Library contract (verified in minified _render): internalModel.update(deltaTimeMS, elapsedTimeMS)
+  // — 1st arg feeds eyeBlink/natural-movements as dt, 2nd feeds motionManager as monotonic now.
+  function step(ms) {
+    tBody += ms / 1000; tTalk += ms / 1000;
+    for (let i = 0; i < pids.length; i++) if (!owned.has(pids[i])) cm.setParameterValueByIndex(i, defaults[i]);
+    if (!qBody.isFinished()) qBody.doUpdateMotion(cm, tBody);
+    else if (mBody) { mBody = null; owned = new Set(mTalk ? mTalk.params : []); } // one-shot done → release params
+    if (!qTalk.isFinished()) qTalk.doUpdateMotion(cm, tTalk);
+    origUpdate(ms, performance.now());
+  }
+  im.update = function (dtMs) {
+    const d = (dtMs > 0 && dtMs < 1000) ? Math.min(dtMs, 100) : (lastAt ? Math.min(performance.now() - lastAt, 100) : 16);
+    lastAt = performance.now();
+    step(d);
+  };
+  window.__pocPump = (frames, dt = 16) => { for (let i = 0; i < frames; i++) step(dt); app.render(); };
+  window.__pocPlay = { playBody, playTalk, resetAll };
+
+  document.getElementById('b1').onclick = resetAll;
+  document.getElementById('b2').onclick = () => playBody('b_shanzi').then(() => log('body: b_shanzi'));
+  document.getElementById('b3').onclick = () => playTalk('t_weixiao_bizui').then(() => log('talk: t_weixiao_bizui'));
+  document.getElementById('b4').onclick = () => { resetAll(); log('reset'); };
+
+  window.__probe = {
+    params(names) { const o = {}; for (const n of names) { const i = pids.indexOf(n); o[n] = i >= 0 ? +cm.getParameterValueById(n).toFixed(3) : null; } return o; },
+    bodyParams: () => mBody ? mBody.params.slice(0, 6) : [],
+    mouthIds: pids.filter(p => /Mouth/i.test(p)),
+    allMouth() { const o = {}; for (const n of this.mouthIds) o[n] = +cm.getParameterValueById(n).toFixed(3); return o; },
+    frame() { return { tBody: +tBody.toFixed(2), tTalk: +tTalk.toFixed(2), mouth: this.allMouth(), body: this.params(this.bodyParams()) }; },
+  };
+  log('READY');
+})();
+</script>
+</body>
+</html>

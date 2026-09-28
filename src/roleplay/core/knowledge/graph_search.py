@@ -4,7 +4,7 @@
 证据回查走 **KnowledgeBase**（按 chunk 文本 sha1 反查原文块），实体链接在别名
 精确匹配之外多了「实体名向量 top-m」兜底（复用 EmbedderPort，查询侧一次嵌入）。
 
-链路（docs/GRAPHRAG加强计划书.md §3 在线检索层）：
+链路（docs/roleplay-core/architecture/GRAPHRAG加强计划书.md §3 在线检索层）：
     query ──► ① 实体链接（别名精确 / 实体名向量）
           ──► ② PPR 展开激活（graph_ppr，边权 = confidence × importance）
           ──► ③ 证据收集（边上的 evidence hash → KnowledgeBase 原文块）

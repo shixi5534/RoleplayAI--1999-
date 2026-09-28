@@ -37,7 +37,7 @@ OUT = ROOT / "data" / "knowledge" / "_audit" / "alias_governance.json"
 _CJK = re.compile(r"[\u4e00-\u9fff]")
 
 # 人工裁决保留的别名：**自动桥一律不得改指**。
-# 依据 `docs/剧情别名与抽取裁决记录.md`（决策人：用户）——
+# 依据 `docs/plot-graph-rag/corpus/剧情别名与抽取裁决记录.md`（决策人：用户）——
 #   裁决 1：凯拉 / 塞西莉 / 莉莉保留为「无名者」的直接别名。
 # 本轮灰机会话确实产出了 `Kayla += 凯拉`（另有一个 NPC 也叫 Kayla），
 # 若照单执行会在重建时把「凯拉」从无名者改指到 Kayla 节点——

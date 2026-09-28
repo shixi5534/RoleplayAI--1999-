@@ -19,7 +19,7 @@
 ⚠️ 2026-09-16 字段语义修正：
   「题干限定词」**不再写进 evidence**，改放独立的 ``scenario_hints``。
   原因：严格评分口径要求覆盖 evidence 的**每一组**，而限定词（章节名/载具/同场景
-  人物）并非回答所必需，混入后导致 20 道题假失败（详见 docs/题集证据组复核.md）。
+  人物）并非回答所必需，混入后导致 20 道题假失败（详见 docs/plot-graph-rag/eval/题集证据组复核.md）。
   evidence 现在只承载「答案证据」；scenario_hints 保留设计意图但不参与判定。
 
 由 gen_rag_testset_300.py import 使用；本文件不产生任何副作用（只读语料表）。
@@ -1646,7 +1646,7 @@ for _cand in SEEDS + HAND:
         # Sotheby 来自船上点唱机歌名《Please Please Sotheby》，源剧情里并无苏芙比在场
         # （用户核对确认）。实测该类题共 43 道，其中 20 道纯粹因这个机制 FAIL。
         # 故改为独立字段 scenario_hints：保留设计意图（场景锚点可供分析/可选校验），
-        # 但不再参与 PASS 判定。详见 docs/题集证据组复核.md。
+        # 但不再参与 PASS 判定。详见 docs/plot-graph-rag/eval/题集证据组复核.md。
         _cand["scenario_hints"] = list(_extra)
 
 

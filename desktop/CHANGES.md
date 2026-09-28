@@ -26,7 +26,7 @@
 - **开发态无法从网页直接拉起桌面端**：仅靠 `roleplaypet://` 协议在未注册/未安装时不可用。
    新增本地后端兜底 `POST /api/desktop-pet/launch`：网页按钮在协议失败后由同机 FastAPI
    直接 `npm start` 拉起 Electron 壳；同时新增本地文档路由，安装引导直接打开仓库内
-   `docs/DESKTOP_PET_DESIGN.md`，不再跳转外部地址。
+   `docs/voice-desktop/pet-design/DESKTOP_PET_DESIGN.md`，不再跳转外部地址。
 
 ### 优化
 

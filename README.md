@@ -24,7 +24,7 @@
 - **渠道隔离**：`channels/` 只做协议收发，人设 / RAG / 情感 / 记忆全部复用 `ChatOrchestrator`，Web / QQ 双入口共用同一个大脑。
 - **可替换**：`mock`（测试）/ `openai` / `deepseek` / `ollama` 通过配置切换，无需改业务代码。
 - **可测试**：所有外部依赖都是接口，单测用内存/ Mock 实现即可。
-- 完整架构图与逐文件架构表见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。
+- 完整架构图与逐文件架构表见 [`docs/roleplay-core/architecture/ARCHITECTURE.md`](docs/roleplay-core/architecture/ARCHITECTURE.md)。
 
 ## 快速开始
 
@@ -97,7 +97,7 @@ ROLEPLAY_WHISPER_MODEL_PATH=C:/Users/<你>/fw_model   # 推荐：本地模型目
 
 - STT 全链路平均相似度约 **88.8%**（6 句测试），含 VAD 预过滤、推理参数抑制、后处理幻觉过滤三层防御。
 - 语音合成带 LRU 音频缓存（100 条），重复文本命中缓存仅 **0.0001s**。
-- 详细迭代过程见 `VOICE_ITERATION_REPORT.md`。
+- 详细迭代过程见 `docs/voice-desktop/voice/VOICE_ITERATION_REPORT.md`。
 
 ## 目录结构
 
@@ -105,7 +105,7 @@ ROLEPLAY_WHISPER_MODEL_PATH=C:/Users/<你>/fw_model   # 推荐：本地模型目
 roleplay-ai/
 ├── pyproject.toml
 ├── .env.example
-├── docs/ARCHITECTURE.md       # 架构设计文档（含逐文件代码架构表）
+├── docs/roleplay-core/architecture/ARCHITECTURE.md       # 架构设计文档（含逐文件代码架构表）
 ├── src/roleplay/              # 后端源码（分层：api / core / errors / models）
 ├── frontend/                  # Web 表现层（聊天 / Live2D / 语音 / 模型切换 / 知识库 / 宠物页）
 ├── desktop/                   # Electron 桌面宠物薄壳（主进程 / preload / renderer）
@@ -114,7 +114,7 @@ roleplay-ai/
 └── tests/                     # 镜像 src 的测试
 ```
 
-详见 `docs/ARCHITECTURE.md`。
+详见 `docs/roleplay-core/architecture/ARCHITECTURE.md`。
 
 ## 角色设定标准化（自动）
 
@@ -165,4 +165,4 @@ npm run dist       # 打包 NSIS 安装包（注册 roleplaypet:// 协议，网�
 
 - 功能：拖拽（惯性回弹）、随机漫步、待机动作、气泡对话（强制 Ollama）、本地语音输入/输出、
   屏幕识别评论（截图 + 本地 OCR + Ollama 点评）、后端探活自动拉起。
-- 设计文档：`docs/DESKTOP_PET_DESIGN.md`；桌面端说明：`desktop/README.md`。
+- 设计文档：`docs/voice-desktop/pet-design/DESKTOP_PET_DESIGN.md`；桌面端说明：`desktop/README.md`。

@@ -171,9 +171,13 @@ def create_app() -> FastAPI:
         return {"status": "ok"}
 
     # 本地说明文档：让安装引导可以直接打开仓库内 docs 文件（避免跳到外部 GitHub）。
+    # ⚠ URL 路径（/docs/DESKTOP_PET_DESIGN.md）与前端 `frontend/js/desktop-pet.js` 的
+    #   `./docs/DESKTOP_PET_DESIGN.md` 必须保持一致，**不随磁盘目录调整而改**；
+    #   只有下面的磁盘路径跟随文档分类（docs/voice-desktop/pet-design/）。
     @app.get("/docs/DESKTOP_PET_DESIGN.md", include_in_schema=False)
     async def desktop_pet_docs():
-        docs_file = Path(__file__).resolve().parent.parent.parent / "docs" / "DESKTOP_PET_DESIGN.md"
+        docs_file = (Path(__file__).resolve().parent.parent.parent
+                     / "docs" / "voice-desktop" / "pet-design" / "DESKTOP_PET_DESIGN.md")
         if docs_file.is_file():
             return FileResponse(str(docs_file), media_type="text/markdown; charset=utf-8")
         return PlainTextResponse("未找到本地说明文件", status_code=404)

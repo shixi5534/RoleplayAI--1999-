@@ -13,7 +13,7 @@
 用法（项目根目录）：
   .venv/Scripts/python.exe -X utf8 scripts/acceptance_service.py
   .venv/Scripts/python.exe -X utf8 scripts/acceptance_service.py --port 8123
-产物：docs/剧情图谱验收报告-服务层.md
+产物：docs/plot-graph-rag/acceptance/剧情图谱验收报告-服务层.md
 """
 from __future__ import annotations
 

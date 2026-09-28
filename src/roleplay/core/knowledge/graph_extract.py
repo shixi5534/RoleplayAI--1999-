@@ -1,6 +1,6 @@
 """实体/关系抽取器（GraphRAG 离线索引层）。
 
-设计（docs/GRAPHRAG加强计划书.md §4）：
+设计（docs/roleplay-core/architecture/GRAPHRAG加强计划书.md §4）：
 - GraphExtractor：LLM 按 chunk 抽取实体与关系，三级 JSON 解析兜底、永不抛出
   （复用 event_extractor 的健壮范式）；抽取/对话分模型配置（D5，
   照搬 LightRAG「抽取用非思考快速模型」建议）。
@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 # 抽取提示词（计划书附录 A）：canonical 名 + 别名收编 + 置信度纪律 + 严格 JSON。
 # 关系谓语受控词表（relation_vocab）直接枚举在提示词里——源头约束，见
-# docs/GRAPHRAG加强计划书.md 关系命名治理章节：模型只能从词表里选谓语，
+# docs/roleplay-core/architecture/GRAPHRAG加强计划书.md 关系命名治理章节：模型只能从词表里选谓语，
 # 选不出就丢弃；归一化层（canonicalize_relation）再兜一道底。
 EXTRACT_SYSTEM_PROMPT = (
     "你是知识图谱构建助手。从下面的角色设定/剧情文本中抽取实体与关系，只输出单行 JSON："

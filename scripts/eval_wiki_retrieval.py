@@ -10,7 +10,7 @@
 评测链路（复刻 GraphSearcher.retrieve 前半段，不依赖 kb/向量库）：
     实体链接 link(query) → PPR 激活 → 按 score 取 top 边
 
-事实来源：deliverables/wiki-r1999-relation-reference-20260909.md
+事实来源：docs/plot-graph-rag/graph-governance/wiki-r1999-relation-reference-20260909.md
 
 用法：
   .venv/Scripts/python.exe -X utf8 scripts/eval_wiki_retrieval.py [--json] [--top-k 12]

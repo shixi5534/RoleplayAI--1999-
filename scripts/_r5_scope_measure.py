@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """R5 立项前范围测量（只读）：同 chunk 共现的「同场」边规模与 PPR 稀释风险。
 
-R5 目标（docs/RAG接入生产使用方案_20260926.md §92）：
+R5 目标（docs/compendium-rag/ranking/RAG接入生产使用方案_20260926.md §92）：
   scene 级共现表 —— 同一 part.scene.chunk 内共现的实体补「同场」边并锚定版本，
   直击相遇测试暴露的「同场相遇=0」与 2 跳稀缺。范围：≥2 角色实体共现的 chunk。
 

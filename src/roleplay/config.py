@@ -336,7 +336,7 @@ class Settings(BaseSettings):
     plot_min_semantic_kept: int = Field(0, ge=0, le=8)
     plot_min_chapter_kept: int = Field(0, ge=0, le=8)
     # 召回率修复（60 题 never_candidate 专项）：融合后「语义补位重排」。
-    # 诊断链（2026-09-17，详见 docs/RAG召回_60题专项与补位重排_20260917.md）：
+    # 诊断链（2026-09-17，详见 docs/plot-graph-rag/eval/RAG召回_60题专项与补位重排_20260917.md）：
     #   失败 105 题里 60 题的正解块**从未进入任何通道候选池**；这些正解块 100% 存在
     #   于语义索引（全库排名 p50=54），且 60/60 的块文本含真阳实体名——本该被 mention
     #   通道取到。把 mention 截断放大（5/10 → 20/50）后 19 题的 gold 进了池，
@@ -503,7 +503,7 @@ class Settings(BaseSettings):
     qq_allow_from: str = ""  # 私聊白名单 QQ 号（逗号分隔；空=允许所有人）
 
     # ---- QQ 语音回复（情感命中时以角色原声切片回复；默认全关，零回归） ----
-    # 详见 docs/QQ语音回复方案.md。P0 仅原声切片链路；TTS 兜底 / 随机概率 /
+    # 详见 docs/qq/QQ语音回复方案.md。P0 仅原声切片链路；TTS 兜底 / 随机概率 /
     # 文本净化 / 启动自检为 P1，对应配置项随实现一并加入。
     qq_voice_enabled: bool = False  # 总开关（!voice on/off 可按会话覆盖）
     qq_voice_lang: Literal["zh", "en"] = "zh"  # 全局默认配音（!lang zh/en 可按会话覆盖）

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-"""核验总交接文档（docs/交接_20260928_总_39全战役.md）中的数字与磁盘证据是否一致。"""
+"""核验总交接文档（docs/compendium-rag/handover/交接_20260928_总_39全战役.md）中的数字与磁盘证据是否一致。"""
 import hashlib
 import json
 import re
 import subprocess
 from pathlib import Path
 
-DOC = Path("docs/交接_20260928_总_39全战役.md")
+DOC = Path("docs/compendium-rag/handover/交接_20260928_总_39全战役.md")
 R = Path("data/compendium_rag/reports")
 FAILS = []
 
@@ -34,8 +34,15 @@ print(f"  [{'OK ' if n >= 25 else 'BAD'}] total session commits >= 25: got={n}")
 if n < 25:
     FAILS.append("total session commits")
 tags = subprocess.run(["git", "tag", "-l"], capture_output=True, text=True).stdout.split()
-chk("tags", sorted(tags), ["baseline-v2", "baseline-v3", "baseline-v4",
-                           "baseline-v5", "baseline-v6"])
+# 断言「v6 时代的标签均在库」而非**精确等于**该列表：
+# 之后新增 baseline-v7 / backup-* 属正常演进，精确相等会让核验在演进后必然失败
+# （与 v7 核验脚本改用自洽性断言同一教训）。
+want_tags = ["baseline-v2", "baseline-v3", "baseline-v4", "baseline-v5", "baseline-v6"]
+missing_tags = [t for t in want_tags if t not in tags]
+print(f"  [{'OK ' if not missing_tags else 'BAD'}] tags 含 v2–v6: "
+      f"missing={missing_tags} (现有 {len(tags)} 个)")
+if missing_tags:
+    FAILS.append("tags")
 
 print("\n=== §4 双口径总账 ===")
 
@@ -97,8 +104,8 @@ if p.exists():
     chk("v6 grounded", B6["secondary_300cn"]["safety_unanswerable"]["grounded_rate"], 1.0)
 
 print("\n=== 文档提到的关键文件存在性 ===")
-for rel in ("docs/BASELINE_v6_20260928.md",
-            "docs/目标①_收口报告_20260928.md",
+for rel in ("docs/compendium-rag/baseline/BASELINE_v6_20260928.md",
+            "docs/compendium-rag/recall/目标①_收口报告_20260928.md",
             "data/knowledge/_audit/testset_300cn_gold_defects.json",
             "data/compendium_rag/backups/graph.json.prev.r5",
             "scripts/_accept_all_phases.py",

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""交接文档事实核验（v7）：逐条比对 docs/交接_20260928_召回率85收口_RRF_k常数.md 与磁盘证据。
+"""交接文档事实核验（v7）：逐条比对 docs/compendium-rag/handover/交接_20260928_召回率85收口_RRF_k常数.md 与磁盘证据。
 
 纪律（继承 §9.7）：交接文档必须自校验 —— 不是"数字出现在文中"，而是
 **数字与磁盘工件自洽**（含分子/分母、口径、SHA 锚点）。
@@ -14,8 +14,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOC = ROOT / "docs/交接_20260928_召回率85收口_RRF_k常数.md"
-B7 = ROOT / "docs/BASELINE_v7_20260928.md"
+DOC = ROOT / "docs/compendium-rag/handover/交接_20260928_召回率85收口_RRF_k常数.md"
+B7 = ROOT / "docs/compendium-rag/baseline/BASELINE_v7_20260928.md"
 DATA = ROOT / "data/compendium_rag"
 R = DATA / "reports"
 FAILS: list[str] = []

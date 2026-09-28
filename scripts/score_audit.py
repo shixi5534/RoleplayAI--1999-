@@ -7,7 +7,7 @@
 
 输出：
   data/knowledge/_audit/report.json            机读指标
-  docs/剧情图谱抽取质量审计.md                  可读报告
+  docs/plot-graph-rag/audit/剧情图谱抽取质量审计.md                  可读报告
 
 判定口径（以云端重抽为参考答案、人工 verdict 为最终裁决）：
   - 实体精确率 = 云端也抽到的本地实体 / 本地实体总数

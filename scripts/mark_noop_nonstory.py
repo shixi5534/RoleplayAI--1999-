@@ -46,7 +46,7 @@ def is_ui(text: str) -> bool:
 # 背景（2026-09-20 compendium 正典入库后复核）：补齐 5 226 块抽取后，验收 R10 仍有
 # 差集 6 块。逐块人工复核确认它们**抽取为空且确实无剧情实体可抽**——不是「漏抽」，
 # 而是题记/诗引/标题卡这类非剧情内容。审计的 empty 指标只应反映「剧情块没抽出来」，
-# 故按本文件的既定语义登记为 NOOP。复核明细见 docs/compendium正典入库报告.md。
+# 故按本文件的既定语义登记为 NOOP。复核明细见 docs/compendium-rag/extraction/compendium正典入库报告.md。
 EPIGRAPH_REVIEWED = {
     "41a87d00beb17c2d": "洞穴的囚徒·题记（「三种人/奥林匹克」引文，非本作事件）",
     "a4cbbd7c68cf9530": "在我们的时代里·里尔克诗引（德语原文＋中译）",

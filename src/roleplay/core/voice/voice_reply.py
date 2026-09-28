@@ -1,6 +1,6 @@
 """QQ 语音回复决策器：判定"本轮要不要出声、出什么声"（渠道无关，纯业务）。
 
-链路定位（docs/QQ语音回复方案.md §3.1）：
+链路定位（docs/qq/QQ语音回复方案.md §3.1）：
 
     channels/qq_onebot.py ──► voice_reply.decide() ──► clip_store.pick()（P0）
                                               └──► tts（P1 兜底，未接）

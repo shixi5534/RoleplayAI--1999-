@@ -48,7 +48,7 @@ ANNOTATION = {
     ),
     "frozen_artifacts_status": "本文件 7 个 SHA-16 均可由 git blob 重算命中（含 graph_live=c021f0a0bc7a0dce），冻结件本身自洽。",
     "replacement": "修复后的确定值记入 BASELINE_v5（R5 落盘时一并锁定）；本基线不重锁。",
-    "reference": "docs/核验报告_20260927_分支A复验与R4差异归因.md；docs/图谱修复作战书_预注册_20260926.md §4bis",
+    "reference": "docs/compendium-rag/baseline-repairs/核验报告_20260927_分支A复验与R4差异归因.md；docs/compendium-rag/baseline-repairs/图谱修复作战书_预注册_20260926.md §4bis",
 }
 
 

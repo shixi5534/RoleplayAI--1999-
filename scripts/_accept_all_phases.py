@@ -73,7 +73,7 @@ check("rebuild_indexes 写前自动备份", "_backup_existing" in ri and "shutil
 gi = (W / ".gitignore").read_text(encoding="utf-8")
 check(".gitignore 挡 safetensors", "*.safetensors" in gi)
 check(".gitignore 挡 bge-reranker 目录", "bge-reranker-v2-m3/" in gi)
-z = (W / "docs/图谱修复作战书_预注册_20260926.md").read_text(encoding="utf-8")
+z = (W / "docs/compendium-rag/baseline-repairs/图谱修复作战书_预注册_20260926.md").read_text(encoding="utf-8")
 check("作战书 §4bis 四条硬规则", "## 4bis." in z and "冷启动" in z and "显式次级键" in z)
 
 print("\n[Phase 4] BASELINE_v4 暖/冷双口径加注")
@@ -81,7 +81,7 @@ check("caliber_annotation 存在", "caliber_annotation" in L)
 ca = L.get("caliber_annotation", {})
 check("warm_vs_cold 记录双口径", "warm_vs_cold" in ca)
 check("r4_gain_attribution 记为暖态", "暖态" in str(ca.get("r4_gain_attribution", "")))
-doc = (W / "docs/BASELINE_v4_20260927.md").read_text(encoding="utf-8")
+doc = (W / "docs/compendium-rag/baseline/BASELINE_v4_20260927.md").read_text(encoding="utf-8")
 check("BASELINE_v4.md 有口径补注表", "冷启动可复现" in doc)
 
 print("\n[Phase 5] R5 评估 + R4 重放链路")
@@ -94,9 +94,9 @@ n_rm = sum(1 for e in P["entries"] if e.get("type") == "remove_alias")
 check("remove_alias 条数 = 77（与 994→917 对账）", n_rm == 77, str(n_rm))
 ap = (W / "scripts/_graph_apply_repairs.py").read_text(encoding="utf-8")
 check("Applier 落盘 CRLF（与 save/冻结件一致）", '\\r\\n' in ap)
-check("R5 评估报告在库", (W / "docs/R5立项前评估_20260927_scene共现边.md").exists())
-check("Phase5 重放报告在库", (W / "docs/核验报告Phase5_20260927_R4重放链路修复.md").exists())
-check("Phase2 核验报告在库", (W / "docs/核验报告Phase2_20260927_插入序根因闭合与tiebreak修复.md").exists())
+check("R5 评估报告在库", (W / "docs/compendium-rag/baseline-repairs/R5立项前评估_20260927_scene共现边.md").exists())
+check("Phase5 重放报告在库", (W / "docs/compendium-rag/baseline-repairs/核验报告Phase5_20260927_R4重放链路修复.md").exists())
+check("Phase2 核验报告在库", (W / "docs/compendium-rag/baseline-repairs/核验报告Phase2_20260927_插入序根因闭合与tiebreak修复.md").exists())
 
 print("\n[Phase 5] R5 落盘（定向补桥）")
 b5p = D / "reports/baseline_v5.json"
@@ -116,7 +116,7 @@ if b5p.exists():
     bad5 = [k for k, r in m5.items() if sha16(D / r) != locks5[k]]
     check("BASELINE_v5 锁命中（5/5 可复算）", not bad5, str(bad5))
 check("R5 提案在库（312 add_edge）", (D / "repairs_v5/proposal.json").exists())
-check("R5 落盘报告在库", (W / "docs/R5落盘报告_20260927_定向补桥.md").exists())
+check("R5 落盘报告在库", (W / "docs/compendium-rag/baseline-repairs/R5落盘报告_20260927_定向补桥.md").exists())
 check("相遇测试复测报告在库", (D / "reports/meetability_test_after_r5.json").exists())
 
 print("\n[Phase 6] 召回率 85% 目标 + 盲测验收 + BASELINE_v6")
@@ -146,8 +146,8 @@ check("盲测 206 题留出集在库", bq.exists())
 if bq.exists():
     n_cases = len(json.loads(bq.read_text(encoding="utf-8"))["cases"])
     check("盲测题数 = 206", n_cases == 206, str(n_cases))
-check("目标① 干预报告在库", (W / "docs/目标①_池内miss干预报告_20260928.md").exists())
-check("BASELINE_v6 报告在库", (W / "docs/BASELINE_v6_20260928.md").exists())
+check("目标① 干预报告在库", (W / "docs/compendium-rag/recall/目标①_池内miss干预报告_20260928.md").exists())
+check("BASELINE_v6 报告在库", (W / "docs/compendium-rag/baseline/BASELINE_v6_20260928.md").exists())
 
 print("\n[Phase 7] RRF k 常数收口 —— 四集裸检索全 ≥0.85 + BASELINE_v7")
 b7p = D / "reports/baseline_v7.json"
@@ -193,9 +193,9 @@ check("pipeline 传递 rrf_k=s.rrf_k", "rrf_k=s.rrf_k" in
       (W / "src/compendium_rag/pipeline.py").read_text(encoding="utf-8"))
 check("v7 锁复算脚本在库", (W / "scripts/_verify_v7_locks.py").exists())
 check("v7 事实核验脚本在库", (W / "scripts/_verify_v7_handover.py").exists())
-check("BASELINE_v7 报告在库", (W / "docs/BASELINE_v7_20260928.md").exists())
+check("BASELINE_v7 报告在库", (W / "docs/compendium-rag/baseline/BASELINE_v7_20260928.md").exists())
 check("v7 交接文档在库",
-      (W / "docs/交接_20260928_召回率85收口_RRF_k常数.md").exists())
+      (W / "docs/compendium-rag/handover/交接_20260928_召回率85收口_RRF_k常数.md").exists())
 check("rrf_k 回归测试在库", (W / "scripts/_rrf_k_regression.py").exists())
 check("gold 审计旁挂在库（未改题集）",
       (W / "data/knowledge/_audit/_85_gold_audit.json").exists())

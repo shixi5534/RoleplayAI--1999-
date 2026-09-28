@@ -11,7 +11,7 @@
 用法：
   .venv/Scripts/python.exe -X utf8 scripts/report_p0_acceptance.py \
       --pytest "956 passed, 1 skipped" \
-      --out deliverables/plot-graph-rag-p0-acceptance.md
+      --out docs/plot-graph-rag/audit/plot-graph-rag-p0-acceptance.md
 """
 from __future__ import annotations
 
@@ -517,7 +517,7 @@ def main() -> int:
     add("# ⑥ 生成本报告（不手抄任何数字；schema 门禁不过则退出码 4）")
     add(".venv/Scripts/python.exe -X utf8 scripts/report_p0_acceptance.py \\")
     add('    --pytest "959 passed, 1 skipped" \\')
-    add("    --out deliverables/plot-graph-rag-p0-acceptance.md")
+    add("    --out docs/plot-graph-rag/audit/plot-graph-rag-p0-acceptance.md")
     add("```")
     add("")
     add("> **串行**执行 ①②：本项目的延迟判据是 p95 增量 ≤100ms，并发两轮会互相抢 "

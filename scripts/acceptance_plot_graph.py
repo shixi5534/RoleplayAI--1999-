@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """剧情图谱验收测试（数据层，R1–R14）。
 
-依据见 `docs/剧情图谱验收标准.md`（Microsoft GraphRAG v3.1.1 / Ragas /
+依据见 `docs/plot-graph-rag/acceptance/剧情图谱验收标准.md`（Microsoft GraphRAG v3.1.1 / Ragas /
 AIIA-T 0294-2026 / 大模型国标）。每条需求独立判定 PASS/FAIL 并留证据。
 
 用法（项目根目录）：
   .venv/Scripts/python.exe -X utf8 scripts/acceptance_plot_graph.py
   .venv/Scripts/python.exe -X utf8 scripts/acceptance_plot_graph.py --skip-r14  # 跳过重建
-产物：docs/剧情图谱验收报告.md
+产物：docs/plot-graph-rag/acceptance/剧情图谱验收报告.md
 """
 from __future__ import annotations
 

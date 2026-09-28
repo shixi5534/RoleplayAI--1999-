@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""合并多档 top-k 评测结果，输出最终报告 docs/剧情图谱100题评测报告.md。"""
+"""合并多档 top-k 评测结果，输出最终报告 docs/plot-graph-rag/acceptance/剧情图谱100题评测报告.md。"""
 from __future__ import annotations
 
 import json

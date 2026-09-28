@@ -1,6 +1,6 @@
 """剧情图谱层（PlotGraph）测试：语料隔离 / 语言处理 / 图谱检索 / 编排器零回归。
 
-对应 docs/GRAPHRAG加强计划书.md §16：新 GraphRAG 与现有 lore 向量 RAG 相互独立，
+对应 docs/roleplay-core/architecture/GRAPHRAG加强计划书.md §16：新 GraphRAG 与现有 lore 向量 RAG 相互独立，
 故重点验证「隔离」与「关闭时不回退/不污染」两件事。
 """
 from __future__ import annotations

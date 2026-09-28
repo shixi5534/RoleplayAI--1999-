@@ -156,7 +156,7 @@ def read_timeline_versions() -> dict[str, str]:
 def rule_chapter_id_version(cid: int | None) -> str | None:
     """5 位 chapter_id 确定性编码版本号：``11101 -> 1.1``。
 
-    已验证（docs/剧情文件清洗清单.md 同类口径）：
+    已验证（docs/plot-graph-rag/corpus/剧情文件清洗清单.md 同类口径）：
       - 对 16 个已知正确映射 14/14 命中，0 反例；
       - 与独立来源 ``story_canonical.json`` 交叉核对 59/59 一致，0 分歧。
     仅适用于活动/角色剧情的 5 位 id；6 位（联动版本）与主线/轶事 id 不适用——**不猜**。

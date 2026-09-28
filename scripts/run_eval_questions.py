@@ -9,7 +9,7 @@
 
 用法（项目根目录）：
   .venv/Scripts/python.exe -X utf8 scripts/run_eval_questions.py
-产物：docs/剧情图谱100题评测报告.md + data/knowledge/_audit/eval_result.json
+产物：docs/plot-graph-rag/acceptance/剧情图谱100题评测报告.md + data/knowledge/_audit/eval_result.json
 """
 from __future__ import annotations
 
