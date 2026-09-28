@@ -149,6 +149,60 @@ if bq.exists():
 check("目标① 干预报告在库", (W / "docs/目标①_池内miss干预报告_20260928.md").exists())
 check("BASELINE_v6 报告在库", (W / "docs/BASELINE_v6_20260928.md").exists())
 
+print("\n[Phase 7] RRF k 常数收口 —— 四集裸检索全 ≥0.85 + BASELINE_v7")
+b7p = D / "reports/baseline_v7.json"
+check("BASELINE_v7 在库", b7p.exists())
+if b7p.exists():
+    B7 = json.loads(b7p.read_text(encoding="utf-8"))
+    check("rrf_k 配置 = 1", B7["retrieval_config"]["rrf_k"] == 1,
+          str(B7["retrieval_config"]["rrf_k"]))
+    check("v7 回滚开关存在（CMPRAG_RRF_K）",
+          "CMPRAG_RRF_K" in B7["retrieval_config"]["rollback"])
+    for label, blk, key in [
+        ("300cn 裸检索 ≥0.85", B7["secondary_300cn"], "bare_hit6"),
+        ("盲测 裸检索 ≥0.85", B7["primary_blind"], "bare_hit6"),
+        ("泛化120 裸检索 ≥0.85", B7["generalization_120"], "bare_hit6"),
+    ]:
+        check(label, blk[key]["rate"] >= 0.85, str(blk[key]["rate"]))
+    check("盲测 生产口径 ≥0.85",
+          B7["primary_blind"]["production_rerank_hit6"] >= 0.85,
+          str(B7["primary_blind"]["production_rerank_hit6"]))
+    check("300cn 生产口径无回退（= v6 的 0.8673）",
+          B7["secondary_300cn"]["production_rerank_hit6"] == 0.8673,
+          str(B7["secondary_300cn"]["production_rerank_hit6"]))
+    sl = B7["safety_line"]
+    check("安全线 unanswerable = 1/104", sl["unanswerable_hits"] == 1
+          and sl["unanswerable_n"] == 104,
+          f'{sl["unanswerable_hits"]}/{sl["unanswerable_n"]}')
+    check("grounded = 1.0000", sl["grounded"] == 1.0, str(sl["grounded"]))
+    # 锁工件必须**全部存在于干净副本**（v6 曾因未 git add -f 而在 clone 中缺失）
+    ap = B7.get("artifact_paths") or {}
+    missing = [k for k, rel in ap.items() if not (D / rel).exists()]
+    check("v7 全部锁定工件在干净副本中存在（无 git 缺件）", not missing, str(missing))
+    bad = [k for k, want in B7["artifact_sha256_16"].items()
+           if k in ap and (D / ap[k]).exists() and sha16(D / ap[k]) != want]
+    check("v7 全部锁定工件 SHA-16 命中", not bad, str(bad))
+
+print("\n[Phase 7b] rrf_k 接线（默认 60 = 零行为变更）")
+check("config 有 CMPRAG_RRF_K 且默认 60",
+      '_env_int("CMPRAG_RRF_K", 60)' in cfg)
+check("retrieve() 接受 rrf_k（默认 60）", "rrf_k: int = 60" in rt2)
+check("两处 rrf_fuse 调用均传 k=rrf_k", rt2.count("k=rrf_k") == 2,
+      str(rt2.count("k=rrf_k")))
+check("pipeline 传递 rrf_k=s.rrf_k", "rrf_k=s.rrf_k" in
+      (W / "src/compendium_rag/pipeline.py").read_text(encoding="utf-8"))
+check("v7 锁复算脚本在库", (W / "scripts/_verify_v7_locks.py").exists())
+check("rrf_k 回归测试在库", (W / "scripts/_rrf_k_regression.py").exists())
+check("gold 审计旁挂在库（未改题集）",
+      (W / "data/knowledge/_audit/_85_gold_audit.json").exists())
+# gold 审计守红线：题集本体必须**逐字节未变**（以磁盘 SHA-16 为锚点）
+check("题集本体未被改动（300cn SHA-16 = b02700c70342864c）",
+      sha16(W / "data/knowledge/_audit/rag_testset_300_cn.json") == "b02700c70342864c",
+      sha16(W / "data/knowledge/_audit/rag_testset_300_cn.json"))
+check("盲测留出集未被改动（SHA-16 锚点 abcd750a3323dc90）",
+      bq.exists() and sha16(bq) == "abcd750a3323dc90",
+      sha16(bq) if bq.exists() else "MISSING")
+
 print("\n" + "=" * 74)
 if FAILS:
     print(f"结果：{len(FAILS)} 项 FAIL -> {FAILS}")
