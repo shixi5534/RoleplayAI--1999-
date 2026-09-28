@@ -29,7 +29,10 @@ chk("edges", len(g["edges"]), 30269)
 chk("graph sha16", hashlib.sha256(b).hexdigest()[:16], "4bbefd9eba577c01")
 n = int(subprocess.run(["git", "rev-list", "--count", "2535325..HEAD"],
                        capture_output=True, text=True).stdout.strip())
-chk("total session commits", n, 24)
+# 提交数随每次新提交增长；本文落盘时为 25，故只断言 >= 25 并如实打印
+print(f"  [{'OK ' if n >= 25 else 'BAD'}] total session commits >= 25: got={n}")
+if n < 25:
+    FAILS.append("total session commits")
 tags = subprocess.run(["git", "tag", "-l"], capture_output=True, text=True).stdout.split()
 chk("tags", sorted(tags), ["baseline-v2", "baseline-v3", "baseline-v4",
                            "baseline-v5", "baseline-v6"])
