@@ -105,7 +105,12 @@ ROLEPLAY_WHISPER_MODEL_PATH=C:/Users/<你>/fw_model   # 推荐：本地模型目
 roleplay-ai/
 ├── pyproject.toml
 ├── .env.example
-├── docs/roleplay-core/architecture/ARCHITECTURE.md       # 架构设计文档（含逐文件代码架构表）
+├── docs/                      # 文档，按子系统分类（见 docs/README.md 索引）
+│   ├── compendium-rag/        #   正典图谱 RAG（当前主线）
+│   ├── plot-graph-rag/        #   剧情图谱 RAG（前身/并行，原 PLAN/ 亦并入此处）
+│   ├── roleplay-core/         #   核心系统（架构 / lore 向量层 / 画像 / 提示词）
+│   ├── voice-desktop/         #   语音与桌面宠物
+│   └── qq/                    #   QQ 通道
 ├── src/roleplay/              # 后端源码（分层：api / core / errors / models）
 ├── frontend/                  # Web 表现层（聊天 / Live2D / 语音 / 模型切换 / 知识库 / 宠物页）
 ├── desktop/                   # Electron 桌面宠物薄壳（主进程 / preload / renderer）
@@ -113,6 +118,9 @@ roleplay-ai/
 ├── scripts/                   # 运维与验证脚本（入库 / 迁移 / E2E）
 └── tests/                     # 镜像 src 的测试
 ```
+
+> 📚 **文档导航**：本仓库并存三套 RAG/系统，文档已按子系统分类，入口见
+> [`docs/README.md`](docs/README.md)（含各类判别指纹与「哪两份不可混用指标」的警示）。
 
 详见 `docs/roleplay-core/architecture/ARCHITECTURE.md`。
 
