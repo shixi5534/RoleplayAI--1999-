@@ -484,7 +484,7 @@ class GraphRetriever:
                  entity_vec_hits: list[tuple[str, str, float]] | None = None,
                  vector_top: int = 30, weights: dict[str, float] | None = None,
                  lex_weight: float = 0.0, lex_top: int = 30,
-                 lex_first: int = 0,
+                 lex_first: int = 0, rrf_k: int = 60,
                  ) -> RetrievalResult:
         """端到端检索。
 
@@ -514,7 +514,8 @@ class GraphRetriever:
             res.note = "实体链接零命中，图谱通道为空"
             if channels:
                 # 零种子但有词面候选：直接以词面通道出结果（原先只能空手或靠向量兜底）
-                evs = self.rrf_fuse(channels, weights=weights, top_n=max(top_k * 4, 24))
+                evs = self.rrf_fuse(channels, k=rrf_k, weights=weights,
+                                    top_n=max(top_k * 4, 24))
                 res.evidence = evs
                 res.note += "；已回落词面通道"
         else:
@@ -525,7 +526,8 @@ class GraphRetriever:
             channels["mention"] = self.mention_channel(seeds)
             if qvec is not None:
                 channels["vector"] = self.vector_channel(qvec, vector_top)
-            evs = self.rrf_fuse(channels, weights=weights, top_n=max(top_k * 4, 24))
+            evs = self.rrf_fuse(channels, k=rrf_k, weights=weights,
+                                top_n=max(top_k * 4, 24))
             ppr_map, _ = self.graph_channel(seeds)
             for e in evs:
                 e.ppr = ppr_map.get(e.chunk_id, 0.0)

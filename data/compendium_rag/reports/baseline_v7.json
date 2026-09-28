@@ -1,0 +1,109 @@
+{
+  "baseline": "BASELINE_v7",
+  "frozen_at": "2026-09-28",
+  "supersedes": "BASELINE_v6",
+  "freeze_scope": "在 v6（词面通道 lex_weight=1.0）之上，追加 RRF 排名折扣常数 CMPRAG_RRF_K=1（v6/v5 为历史默认 k=60）。图与题集均未改动。",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "note": "rrf_k 是**唯一**新旋钮。k 越小，各通道头部名次的相对权重越大：k=60 时 rank1/rank6 仅差 1/61 vs 1/66（+8%），k=1 时为 1/2 vs 1/7（3.5×），即在多个通道都排前列的候选显著胜出。前序会话只扫过通道权重（w_lex 1→16）而从未扫 k。k 在 300cn 上选（k=1 与 k=2 同分，取更小者），盲测 206 为留出集。",
+    "rollback": "CMPRAG_RRF_K=60 即回到 BASELINE_v6 口径；再置 CMPRAG_LEX_WEIGHT=0 回到 v5"
+  },
+  "graph": {
+    "entities": 7033,
+    "edges": 30269,
+    "sha256_16": "4bbefd9eba577c01",
+    "note": "v7 未改图（与 v6 同一图）"
+  },
+  "primary_blind": {
+    "caliber": "子代理盲写 206 题留出集（无泄题、与 300cn 零重叠）",
+    "bare_hit6": {
+      "hits": 184,
+      "n": 206,
+      "rate": 0.8932
+    },
+    "bare_hit6_graph_only": {
+      "hits": 174,
+      "n": 206,
+      "rate": 0.8447
+    },
+    "production_rerank_hit6": 0.9175,
+    "production_caliber": "full + 冻结重排（权重在 300cn 上拟合，未在盲测重拟合）",
+    "up": 17,
+    "down": 5,
+    "target_line": 0.85,
+    "verdict": "PASS",
+    "prev_v6": {
+      "bare_hit6": 0.835,
+      "production_rerank_hit6": 0.8786
+    }
+  },
+  "secondary_300cn": {
+    "bare_hit6": {
+      "hits": 167,
+      "n": 196,
+      "rate": 0.852
+    },
+    "bare_hit6_graph_only": {
+      "hits": 157,
+      "n": 196,
+      "rate": 0.801
+    },
+    "production_rerank_hit6": 0.8673,
+    "up": 6,
+    "down": 4,
+    "target_line": 0.85,
+    "verdict": "PASS",
+    "prev_v6": {
+      "bare_hit6": 0.8418,
+      "production_rerank_hit6": 0.8673
+    }
+  },
+  "generalization_120": {
+    "bare_hit6": {
+      "hits": 118,
+      "n": 120,
+      "rate": 0.9833
+    },
+    "bare_hit6_graph_only": {
+      "hits": 116,
+      "n": 120,
+      "rate": 0.9667
+    },
+    "prev_v6": {
+      "bare_hit6": 0.9083
+    }
+  },
+  "safety_line": {
+    "unanswerable_hits": 1,
+    "unanswerable_n": 104,
+    "grounded": 1.0,
+    "note": "与 v6 完全相同（1/104、1.0000），无新增虚假命中"
+  },
+  "caveats": [
+    "300cn 的 31 道 miss 中有 15 道经独立审计为 gold 缺陷（见 data/knowledge/_audit/_85_gold_audit.json）；该审计**未用于**抬分，题集本体未改动，仅作诊断背景。",
+    "rrf_k=1 使 RRF 分数尺度从 ~1/61 变为 ~1/2。冻结重排对 orig(RRF分) 的权重实测为 0.0，故不扭曲权重；已在 k=1 池上实测生产口径无回退（300cn 0.8673）。",
+    "所有数字为冷启动产出（PYTHONHASHSEED=0，独立进程）。"
+  ],
+  "artifact_sha256_16": {
+    "graph_live": "4bbefd9eba577c01",
+    "baseline_v6": "567acc0bf7f5d270",
+    "eval_300cn_v7": "16ff29c6790be4c6",
+    "eval_blind_v7": "f14b65f521b04644",
+    "eval_gen120_v7": "01d908f9d63c3847",
+    "rank_collect_300cn_v7": "f68a0346c61fd134",
+    "rank_collect_blind_v7": "2f466cce0a4d37f9"
+  },
+  "artifact_paths": {
+    "graph_live": "graph.json",
+    "baseline_v6": "reports/baseline_v6.json",
+    "eval_300cn_v7": "reports/eval_300cn_k1.json",
+    "eval_blind_v7": "reports/eval_blind_k1.json",
+    "eval_gen120_v7": "reports/eval_gen120_k1.json",
+    "rank_collect_300cn_v7": "reports/rank_collect_k1c300_top30.json",
+    "rank_collect_blind_v7": "reports/rank_collect_k1blind_top30.json"
+  },
+  "unfreeze": "R6 或 P4 StaticReranker 接线前冻结；落盘后以 BASELINE_v8 取代"
+}

@@ -146,6 +146,12 @@ class Settings:
     # 经 300cn 选定的值为 **3**：裸检索 300cn 0.8316->0.8469、盲测 0.8301->0.9126。
     # ⚠ 与冻结重排的交互是集合相关的，启用需冷启动重新校准（§4bis）。
     lex_first: int = field(default_factory=lambda: _env_int("CMPRAG_LEX_FIRST", 0))
+    # RRF 的排名折扣常数 k（score = Σ w/(k+rank)）。默认 60 = 历史行为（逐位可复现）。
+    # k 越小，各通道**头部名次**的相对权重越大：k=60 时 rank1 与 rank6 只差
+    # 1/61 vs 1/66（+8%），而 k=1 时是 1/2 vs 1/7（3.5×）——
+    # 即小 k 让"在多个通道都排前列"的候选显著胜出，压过"只在单通道霸榜"的候选。
+    # 前序会话只扫过**通道权重**（w_lex 1→16）而从未扫过 k，故这是未探索的杠杆。
+    rrf_k: int = field(default_factory=lambda: _env_int("CMPRAG_RRF_K", 60))
     context_max_chars: int = field(
         default_factory=lambda: _env_int("CMPRAG_CONTEXT_MAX_CHARS", 3000))
 

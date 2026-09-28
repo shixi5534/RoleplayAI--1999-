@@ -1,0 +1,1254 @@
+{
+  "kind": "gold_defect_audit",
+  "audit": "_85",
+  "testset": "data/knowledge/_audit/rag_testset_300_cn.json",
+  "scope": "the 31 questions still missed by the current system on the 300cn set",
+  "method": "For each gold keyword, count chunks/occurrences over the official blob (text + chapter_title + scene_title + part_title); for keywords with <=5 chunks, print and judge ~110 chars of surrounding context. Verdicts hand-judged from that context.",
+  "policy": "只读审计：不修改 rag_testset_300_cn.json 或任何既有题集；本文件为唯一新增侧车文件。",
+  "summary": {
+    "n_audited": 31,
+    "valid": 16,
+    "defective": 15,
+    "defective_qids": [
+      "R005",
+      "R012",
+      "R030",
+      "R043",
+      "R045",
+      "R073",
+      "R127",
+      "R166",
+      "R170",
+      "R171",
+      "R180",
+      "R183",
+      "R273",
+      "R297",
+      "R298"
+    ],
+    "valid_qids": [
+      "R001",
+      "R011",
+      "R080",
+      "R090",
+      "R094",
+      "R110",
+      "R142",
+      "R201",
+      "R229",
+      "R242",
+      "R244",
+      "R248",
+      "R263",
+      "R288",
+      "R292",
+      "R300"
+    ],
+    "borderline_qids": [
+      "R001",
+      "R011",
+      "R073",
+      "R142",
+      "R297",
+      "R298"
+    ],
+    "note": "有效题中的英文 gold（Charlotte/Tooth Fairy/Doris/Ulrich/Zero/…）几乎全部 0 命中——语料为纯中文，英文原名不存在；这类 0 命中关键词是噪声而非独立缺陷，只要同题存在有效中文锚点即仍判有效。"
+  },
+  "cases": [
+    {
+      "qid": "R001",
+      "q": "薇洛的真名是什么？",
+      "keywords": [
+        "Charlotte",
+        "夏洛蒂",
+        "夏洛特",
+        "奥哈根"
+      ],
+      "verdict": "valid",
+      "confidence": "medium",
+      "evidence": "夏洛特 是有效 gold：23101:3.2.1「躲在十字街古宅中的女巫……还有什么比这些更适合夏洛特·奥黑根？」、23101:6.0.1「还是，你更习惯夏洛特·奥黑根这个名字？」——与 ref「Charlotte O'Hagan（伦敦十字街女巫）」同一人。但 4 个 gold 中 3 个语料 0 命中：Charlotte 为英文原形、夏洛蒂 为异译、奥哈根 为错字（语料固定写作 奥黑根，12 块/22 次）；题干主语「薇洛」在语料中亦 0 次，属别名缺口。 || 语料计数: Charlotte=0块/0次; 夏洛蒂=0块/0次; 夏洛特=47块/369次; 奥哈根=0块/0次",
+      "suggested_correct_gold": [
+        "夏洛特",
+        "奥黑根"
+      ],
+      "suggested_gold_counts": {
+        "夏洛特": {
+          "chunks": 47,
+          "occurrences": 369
+        },
+        "奥黑根": {
+          "chunks": 12,
+          "occurrences": 22
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "Charlotte",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "夏洛蒂",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "夏洛特",
+          "chunks": 47,
+          "occurrences": 369,
+          "snippets": []
+        },
+        {
+          "keyword": "奥哈根",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R005",
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "keywords": [
+        "Rockin",
+        "ship",
+        "号船"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "沿用既有侧车结论并复核：Rockin 与 ship 语料 0 次；「号船」唯一命中是 activity__24101:16.0.1「没人比老道的前 APPLe 号船长更了解广播室的布局了！」——子串巧合，并非载具名。真实载具在语料中写作「APPLe号」（11 块），『摇滚苹果号』0 次。 || 语料计数: Rockin=0块/0次; ship=0块/0次; 号船=1块/1次",
+      "suggested_correct_gold": [
+        "APPLe号"
+      ],
+      "suggested_gold_counts": {
+        "APPLe号": {
+          "chunks": 11,
+          "occurrences": 11
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "Rockin",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "ship",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "号船",
+          "chunks": 1,
+          "occurrences": 1,
+          "snippets": [
+            {
+              "chunk": "activity__24101_地球上最后的夜晚:16.0.1",
+              "context": "，或是陷入某种不可控的危险，至少有人能够通过它来确认你的坐标。 | **乌尔里希**：…… | **乌尔里希**：这是份宝贵的援助，司辰。 | **维尔汀**：祝你成功，乌尔里希组长。 | **星锑**：放心吧，没人比老道的前APPLe号船长更了解广播室的布局了！ | 维尔汀点了点头，目送拉普拉斯的二人没入黑暗中。 | **维尔汀**：其余人和我一起返回大厅，我们需要率先控制住那些被面具侵蚀的平民。 | **维尔汀**：十四行诗，我们还有多少昏睡幻剂？ | **十四行诗*"
+            }
+          ]
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R011",
+      "q": "在洞穴的囚徒篇里负责照看乘客健康的牙医英文名叫什么？",
+      "keywords": [
+        "Tooth Fairy",
+        "牙仙",
+        "ship",
+        "Rockin"
+      ],
+      "verdict": "valid",
+      "confidence": "medium",
+      "evidence": "牙仙 真实指代答案人物（ref Tooth Fairy）：牙仙女士即负责照看/牙科的医生，语料中大量以「牙仙女士」「医生」称之。但第二个 evidence 组 ['ship','Rockin'] 语料 0 次，与本题毫不相干（与 R005 的载具关键词同形，疑为串题污染）；英文写法 Tooth Fairy 在语料中 0 次（语料只有中文「牙仙」），故「英文名」在语料内无法直接命中。gold 仍存在有效中文锚点，题目可答，故判为有效（低区分度噪声关键词已标出）。 || 语料计数: Tooth Fairy=0块/0次; 牙仙=81块/628次; ship=0块/0次; Rockin=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Tooth Fairy",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "牙仙",
+          "chunks": 81,
+          "occurrences": 628,
+          "snippets": []
+        },
+        {
+          "keyword": "ship",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Rockin",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R012",
+      "q": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+      "keywords": [
+        "Zanetta",
+        "standkeeper",
+        "管理员",
+        "Rockin"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Zanetta / standkeeper / Rockin 语料均 0 次；唯一有命中的「管理员」6 块/10 次全部是无关同名：103/113 的图书馆管理员、25101 的仓库管理员、17703 的灯塔管理员、109 的科马拉文化管理员——没有任何一块与「苏芙比买船 / 扎内塔职务」相关。语料中『摇滚苹果号』『苹果号』『扎内塔』『看塔人』全部 0 次，只有『APPLe号』（11 块，属星锑）。答案实体在语料中不存在。 || 语料计数: Zanetta=0块/0次; standkeeper=0块/0次; 管理员=6块/10次; Rockin=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Zanetta",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "standkeeper",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "管理员",
+          "chunks": 6,
+          "occurrences": 10,
+          "snippets": []
+        },
+        {
+          "keyword": "Rockin",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R030",
+      "q": "多里斯医生的英文名是什么？",
+      "keywords": [
+        "Doris",
+        "多里斯",
+        "Vienna",
+        "维也纳"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Doris 与 多里斯 语料均 0 次——语料没有「多里斯医生」这个人。唯一有命中的 gold 是地点词「维也纳」（122 块/222 次），它是篇章背景（1.7 维也纳），与题目所问的「英文名」无关，属不相干关键词造成的假可答。语料中的医生是 德洛丝医生（69 块/243 次，盲眼医生/作家兀尔德）与 施瓦茨医生（106 维也纳篇）。 || 语料计数: Doris=0块/0次; 多里斯=0块/0次; Vienna=0块/0次; 维也纳=122块/222次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Doris",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "多里斯",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Vienna",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "维也纳",
+          "chunks": 122,
+          "occurrences": 222,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R043",
+      "q": "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？",
+      "keywords": [
+        "Ulrich",
+        "37"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Ulrich 语料 0 次（语料只有中文「乌尔里希」，125 块/781 次）。第二个 gold『37』是 孤独之歌 的另一位角色（数字人 37），并且作为纯数字串在语料命中 182 块/1407 次（37岁、37次、37%……），既不指代乌尔里希，也不指代其英文名——是数字子串巧合，不构成答案关键词。 || 语料计数: Ulrich=0块/0次; 37=182块/1407次",
+      "suggested_correct_gold": [
+        "乌尔里希"
+      ],
+      "suggested_gold_counts": {
+        "乌尔里希": {
+          "chunks": 125,
+          "occurrences": 781
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "Ulrich",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "37",
+          "chunks": 182,
+          "occurrences": 1407,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R045",
+      "q": "孤独之歌篇里零号概念的讲解围绕数字几展开？",
+      "keywords": [
+        "Zero",
+        "Apeiron",
+        "阿派朗"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Zero 与 Apeiron 语料 0 次；唯一有命中的『阿派朗』（35 块/44 次）是学派/岛屿之名（107:3.0.0「阿派朗学派传授的真理是理智化的」），不是题目所问的「数字几」。『零号』语料 0 次，答案数字 0 在 gold 中完全没有对应关键词；「阿派朗，无限定者，万物的本源」出现在 105:19.0.0，与『零号概念』无关。 || 语料计数: Zero=0块/0次; Apeiron=0块/0次; 阿派朗=35块/44次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Zero",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Apeiron",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "阿派朗",
+          "chunks": 35,
+          "occurrences": 44,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R073",
+      "q": "绿湖噩梦篇里的巨怪居住在什么地方？",
+      "keywords": [
+        "暗林",
+        "woods",
+        "forest",
+        "森林深处"
+      ],
+      "verdict": "defective",
+      "confidence": "medium",
+      "evidence": "暗林 / woods / forest 语料 0 次——真正的专名答案「暗林」在语料中不存在。唯一有命中的『森林深处』8 块/9 次是跨篇章的通用方位短语（101、12101、20101、1901、1915），12101 内的 3 次全部只是「望向森林深处」「消失在森林深处」「看向森林深处」，没有任何一块说明巨怪居住在何处；语料对这只怪只写『巨大魔精』（12101 内 4 块）、『爬回巢穴里去了』（7.1.0）与标题『苔藓山洞』。 || 语料计数: 暗林=0块/0次; woods=0块/0次; forest=0块/0次; 森林深处=8块/9次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "暗林",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "woods",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "forest",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "森林深处",
+          "chunks": 8,
+          "occurrences": 9,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R080",
+      "q": "绿湖噩梦篇的故事发生在哪一年？",
+      "keywords": [
+        "1971",
+        "Green Lake",
+        "camp"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "1971 仅 1 块/1 次，且正是答案句：activity__12101_绿湖噩梦:0.0.1「那是在1971年的一个夜晚，雨水从天上降下来」（恐怖通讲述绿湖营地事件）。另两个 gold（Green Lake / camp）语料 0 次，是英文缺失噪声，不影响有效性。 || 语料计数: 1971=1块/1次; Green Lake=0块/0次; camp=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "1971",
+          "chunks": 1,
+          "occurrences": 1,
+          "snippets": [
+            {
+              "chunk": "activity__12101_绿湖噩梦:0.0.1",
+              "context": "好，十四行诗小姐。 | **恐怖通**：但现在它们都是旧故事了——这不怪你，你太久没回基金会，没听到第一手消息。 | **恐怖通**：现在，关于绿湖营地，我们有了全新的消息。 | 恐怖通神色晦暗，压低了声音。 | **恐怖通**：那是在1971年的一个夜晚，雨水从天上降下来。 | **恐怖通**：它浓密、急迫，像是一道屏障，将那片森林与外界隔绝开来。 | 在那一夜的雨中，芝诺的联络中心失去了绿湖营地的通讯信号。 | **维尔汀**：那是普通的雨吗？ | **恐怖通**：那是普"
+            }
+          ]
+        },
+        {
+          "keyword": "Green Lake",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "camp",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R090",
+      "q": "在中央塔里自囚的医生是谁？",
+      "keywords": [
+        "阿莱夫",
+        "Aleph",
+        "中央塔",
+        "自囚",
+        "central tower"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "阿莱夫 43 块/218 次真实指代答案（109:13.0.0「您就是阿莱夫，监狱的控制者？」）；自囚 1 块/1 次且正是答案自述（109:11.0.1「我不过是一名选择自囚于此的囚徒罢了」），并经 109:13.0.1 与 8.0.4 确认狱医/梅林是阿莱夫的人格之一。Aleph / central tower 0 次；『中央塔』2 块均在 mainline__113 他者的悲哀（气象鸽基座），与科马拉的瞭望塔/巨塔无关，是无效关键词（不改变有效性）。 || 语料计数: 阿莱夫=43块/218次; Aleph=0块/0次; 中央塔=2块/2次; 自囚=1块/1次; central tower=0块/0次",
+      "suggested_correct_gold": [
+        "阿莱夫",
+        "自囚",
+        "狱医"
+      ],
+      "suggested_gold_counts": {
+        "阿莱夫": {
+          "chunks": 43,
+          "occurrences": 218
+        },
+        "自囚": {
+          "chunks": 1,
+          "occurrences": 1
+        },
+        "狱医": {
+          "chunks": 32,
+          "occurrences": 156
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "阿莱夫",
+          "chunks": 43,
+          "occurrences": 218,
+          "snippets": []
+        },
+        {
+          "keyword": "Aleph",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "中央塔",
+          "chunks": 2,
+          "occurrences": 2,
+          "snippets": [
+            {
+              "chunk": "mainline__113_他者的悲哀:5.1.1",
+              "context": "乱糟糟的念头一口气冲上大脑表层，又在肾上腺素的帮助下一条条排列整齐。 | **梅蕾尔**：先把玛蒂尔达藏好，然后去拿备用的气象鸽，以免在撤离的路上就染上暴雨症候…… | **梅蕾尔**：之后带玛蒂尔达去中央塔或者图书馆……最后只要撑到救援抵达就行了——就、就这样办！ | 滚烫的血液在危机中泵入四肢，加快的心跳强而有力。 | 颤抖被深呼吸抑制，此刻，大脑对全身的命令仿佛比任何时候都要更加高效和精准。 | **梅蕾尔**：我可以做到，我受过"
+            },
+            {
+              "chunk": "mainline__113_他者的悲哀:19.1.1",
+              "context": "唔—— | 她把涌上喉头的呕吐感咽了回去。 | 这份冷静让她自己也吓了一跳。 | **梅蕾尔**：我……才不要在这种时候掉链子。 | 第一防线学校在“暴雨”中最后的倚仗脱离了基座，血迹和伤痕将洁白的鸽子斜斜切分成两截。 | **梅蕾尔**：中央塔的气象鸽果然也已经……没关系，还有备用的…… | 她蹲下身，推开一具尸体，试图在基座下找到一些完好的备用气象鸽。 | **梅蕾尔**：不，不至于……我不会害怕…… | **梅蕾尔**：我和卡戎一起去过更可怕的地方……这样的场面我早就"
+            }
+          ]
+        },
+        {
+          "keyword": "自囚",
+          "chunks": 1,
+          "occurrences": 1,
+          "snippets": [
+            {
+              "chunk": "mainline__109_疯癫与文明:11.0.1",
+              "context": "**阿莱夫**：敬爱的兀尔德女士： | **阿莱夫**：恐怕这些猜测都不准确，我不过是一名选择自囚于此的囚徒罢了。然而，既然您有疑问，我确实可以作答。 | **阿莱夫**：且允许我先指出一项事实：您的身份并不如您自称那般普通。您是科马拉的囚犯，也是重塑之手的客人。是什么让您对监狱中的一切起了兴趣？ | **维尔汀**：德洛丝"
+            }
+          ]
+        },
+        {
+          "keyword": "central tower",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R094",
+      "q": "Noire 的中文译名是什么？",
+      "keywords": [
+        "菲林士多",
+        "Noire"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "菲林士多 53 块/408 次真实指代答案：25101:1.2.2「梁月：菲林士多。」即《神秘警探C07》导演之名，25101:3.2.2「您是说……菲林士多导演？」。Noire 语料 0 次（英文源串缺失，属噪声）。 || 语料计数: 菲林士多=53块/408次; Noire=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "菲林士多",
+          "chunks": 53,
+          "occurrences": 408,
+          "snippets": []
+        },
+        {
+          "keyword": "Noire",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R110",
+      "q": "金伯利女郎指的是谁？",
+      "keywords": [
+        "Kimberly",
+        "Anjo",
+        "Nala",
+        "天使娜娜"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "天使娜娜 14 块/63 次真实指代答案：108:12.0.2「娜娜，娜娜·哈丽。热情之家的……天使娜娜。」即金伯利女郎的本名；108:16.x 全程以「天使娜娜」称呼她。Kimberly / Anjo / Nala 均 0 次（英文缺失噪声）。 || 语料计数: Kimberly=0块/0次; Anjo=0块/0次; Nala=0块/0次; 天使娜娜=14块/63次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Kimberly",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Anjo",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Nala",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "天使娜娜",
+          "chunks": 14,
+          "occurrences": 63,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R127",
+      "q": "福格先生发明的大型装置是什么？",
+      "keywords": [
+        "purifier",
+        "净化机",
+        "purification"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "沿用既有侧车结论并复核：purifier 与 净化机 语料 0 次；purification 仅 1 次，出现在 mainline__105:13.0.0 的英文哲学引文「The greatest purification of all is, therefore, science」，与「装置」无关。真实答案写作「雾气净化器」（activity__23101_圣火纪行_东区黎明 5 块）。 || 语料计数: purifier=0块/0次; 净化机=0块/0次; purification=1块/1次",
+      "suggested_correct_gold": [
+        "雾气净化器",
+        "净化器"
+      ],
+      "suggested_gold_counts": {
+        "雾气净化器": {
+          "chunks": 5,
+          "occurrences": 6
+        },
+        "净化器": {
+          "chunks": 6,
+          "occurrences": 7
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "purifier",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "净化机",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "purification",
+          "chunks": 1,
+          "occurrences": 1,
+          "snippets": [
+            {
+              "chunk": "mainline__105_洞穴的囚徒:13.0.0",
+              "context": "些的是参赛者。 | Best of all, however, are those who come to look on (θεωρεῖν).  | 而这三种人中境界最高的，是那些置身事外的观察者。 | The greatest purification of all is, therefore, science,  | 万物中最为崇高的，莫过于追求纯粹的智识。 | and it is the man who devotes himself to that, the true "
+            }
+          ]
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R142",
+      "q": "绿松石蛇俱乐部篇里发生的命案中文叫什么？",
+      "keywords": [
+        "谋杀案",
+        "murder"
+      ],
+      "verdict": "valid",
+      "confidence": "medium",
+      "evidence": "谋杀案 9 块/11 次，其中 3 块确在 activity__35101_绿松石蛇俱乐部：6.0.1「接连五起的神秘学谋杀案……和这起连环案件有关」、11.2.3「而是那起轰动的连环谋杀案」、14.0.4「画作是谋杀案的关键」——确实指本案，故判有效。但需注意两点（borderline）：(1) 它是通用名词，本案在语料中更常称「神秘学连环案件 / 连环命案」；(2) 其余 6 块分布在 mainline__109（疯癫与文明）与 appendix_unbound__005（佩希塔的三十起谋杀案），而官方 hit 测试不限篇章，存在跨篇章假阳性风险。 || 语料计数: 谋杀案=9块/11次; murder=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "谋杀案",
+          "chunks": 9,
+          "occurrences": 11,
+          "snippets": []
+        },
+        {
+          "keyword": "murder",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R166",
+      "q": "九方是朔日手记篇里的什么？",
+      "keywords": [
+        "九方",
+        "地点"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "九方 语料 0 次——答案实体在语料中根本不存在。唯一有命中的『地点』是通用名词（191 块/206 次，遍布全书），与「九方」毫无关系，是典型的不相干关键词造成假可答。朔日手记篇真实地名是 沛城（27 块/35 次，16101 内 12 块）、折罗漫关、玉门关；若原意为「沛城」应改 gold。 || 语料计数: 九方=0块/0次; 地点=191块/206次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "九方",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "地点",
+          "chunks": 191,
+          "occurrences": 206,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R170",
+      "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+      "keywords": [
+        "玩具盒",
+        "toy box"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "沿用既有侧车结论并复核：玩具盒 唯一命中 activity__27101_1987宇宙组曲:17.1.0 是比喻句「再一次眨眼后，宇宙在她眼前展开，如同……玩具盒子。」；toy box 语料 0 次。真实答案写作「玩具箱」（33 块，含 activity__36101_人们向何处去 多块）。 || 语料计数: 玩具盒=1块/1次; toy box=0块/0次",
+      "suggested_correct_gold": [
+        "玩具箱"
+      ],
+      "suggested_gold_counts": {
+        "玩具箱": {
+          "chunks": 34,
+          "occurrences": 76
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "玩具盒",
+          "chunks": 1,
+          "occurrences": 1,
+          "snippets": [
+            {
+              "chunk": "activity__27101_1987宇宙组曲:17.1.0",
+              "context": "器**：记住，轻拿轻放！ | 她尽量扶稳身旁的监测器，拉下把手，在舱门打开前深呼吸。 | 一片黑暗。 | 没有前后、上下、远近，没有声音和光线。只有隔着航天服传来的坚实触感。 | 【标题卡】宇宙 | 再一次眨眼后，宇宙在她眼前展开，如同……玩具盒子。 | **库珀花环**：——！ | **库珀花环**：……报告，确认观测到“暴雨”影响。 | 没有回应。她不知道自己是否准确传达了这一结果。 | 她感到头晕目眩，也感到自己的心脏就要冲出胸腔。 | 这些星球以令人恐惧的美丽回报了她的勇气"
+            }
+          ]
+        },
+        {
+          "keyword": "toy box",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R171",
+      "q": "他者的悲哀篇里出现的学园缩写是什么？",
+      "keywords": [
+        "SPDM",
+        "初级防御学园",
+        "委外合约人才管理组织"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "SPDM（以及 spdm / S.P.D.M 各写法）与「初级防御学园」「防御学园」「学园」在语料中全部 0 次。唯一有命中的『委外合约人才管理组织』（9 块/15 次）是组织机构名（106:1.0.1「更多内部人员愿意根据职能称其为『历史维护小组』」），既不是学园也不是缩写，且在题目所指的 mainline__113_他者的悲哀 中 0 次。语料中的学校是『第一防线学校』（72 块/104 次），但全书没有任何缩写形式（『缩写』仅 1 块，指 107 的琼斯多项式）。 || 语料计数: SPDM=0块/0次; 初级防御学园=0块/0次; 委外合约人才管理组织=9块/15次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "SPDM",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "初级防御学园",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "委外合约人才管理组织",
+          "chunks": 9,
+          "occurrences": 15,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R180",
+      "q": "无名者幼年被植入的、能生成人格与记忆的装置叫什么？",
+      "keywords": [
+        "clockwork",
+        "发条"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "clockwork 语料 0 次；『发条』16 块/25 次全部是『发条玩具』（14 块）——金伯利/天使娜娜的封印物：108:15.1.1「一个丑陋的发条玩具……这是金伯利的封印物，拿着这个，她不能违抗你」、108:17.2.0「发条玩具已经被打坏了」。它与「无名者幼年被植入的、能生成人格与记忆的装置」无关：含『无名者』且含『发条』的块数为 0；语料中「植入」5 块全在 activity__385101_聚合浪潮（思想控制器），与无名者无涉。属与 R127/R170 同族的「答案词被无关同族实体占用」缺陷。 || 语料计数: clockwork=0块/0次; 发条=16块/25次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "clockwork",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "发条",
+          "chunks": 16,
+          "occurrences": 25,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R183",
+      "q": "玛蒂尔达的英文名是什么？",
+      "keywords": [
+        "Matilda",
+        "Bouanich",
+        "Boaniche",
+        "Sonnet",
+        "十四行诗"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Matilda / Bouanich / Boaniche / Sonnet 语料全部 0 次；唯一有命中的『十四行诗』（384 块/2346 次）是另一个角色（第一助手 Sonnet），与玛蒂尔达是两个人：103:0.0.0 教员先点「玛蒂尔达」、随后说「十四行诗的回答是正确的」；103:3.0.0 两人迎面相撞。27 块同时出现、118 块只有玛蒂尔达（她本人 145 块/1116 次）。用一个不同角色的名字做 gold，是「不相干人名」型缺陷。 || 语料计数: Matilda=0块/0次; Bouanich=0块/0次; Boaniche=0块/0次; Sonnet=0块/0次; 十四行诗=384块/2346次",
+      "suggested_correct_gold": [
+        "玛蒂尔达"
+      ],
+      "suggested_gold_counts": {
+        "玛蒂尔达": {
+          "chunks": 145,
+          "occurrences": 1116
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "Matilda",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Bouanich",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Boaniche",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Sonnet",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "十四行诗",
+          "chunks": 384,
+          "occurrences": 2346,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R201",
+      "q": "Enigma 是谁？",
+      "keywords": [
+        "Enigma",
+        "哑谜"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "哑谜 109 块/1025 次真实指代答案（ref Enigma（哑谜））：107:4.0.0 起「哑谜」即研究员阿德勒的代号，25101:20.0.2 等亦沿用。Enigma 语料 0 次（英文缺失噪声）。 || 语料计数: Enigma=0块/0次; 哑谜=109块/1025次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Enigma",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "哑谜",
+          "chunks": 109,
+          "occurrences": 1025,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R229",
+      "q": "Melania 与 Pickles 同属哪一起案件？",
+      "keywords": [
+        "Melania",
+        "雷米特杯失窃案",
+        "梅兰妮",
+        "皮克勒斯",
+        "Pickles"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "雷米特杯失窃案 40 块命中，但全部只出现在标题字段（chapter_title/part_title），正文 .text 内 0 次——按官方 hit 口径（blob 含标题）仍属有效 gold，且它正是答案案名。梅兰妮 28 块/303 次、皮克勒斯 48 块/366 次均真实指代答案角色。Melania / Pickles 英文 0 次（噪声）。 || 语料计数: Melania=0块/0次; 雷米特杯失窃案=40块/40次; 梅兰妮=28块/303次; 皮克勒斯=48块/366次; Pickles=0块/0次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Melania",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "雷米特杯失窃案",
+          "chunks": 40,
+          "occurrences": 40,
+          "snippets": []
+        },
+        {
+          "keyword": "梅兰妮",
+          "chunks": 28,
+          "occurrences": 303,
+          "snippets": []
+        },
+        {
+          "keyword": "皮克勒斯",
+          "chunks": 48,
+          "occurrences": 366,
+          "snippets": []
+        },
+        {
+          "keyword": "Pickles",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R242",
+      "q": "乔·布朗的义妹、原基金会调查员是谁？",
+      "keywords": [
+        "Paulina",
+        "保利娜"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "保利娜 19 块/73 次真实指代答案：20101:2.0.1「她的名字叫作保利娜·勒萨奇」、2.0.2「圣洛夫基金会所有的殉职人员……都在这里」「而保利娜……就在你们眼前」；乔·布朗（J）自称「来找我的妹妹」（乔·布朗 5 块/6 次），与题干「乔·布朗的义妹」对应（语料用「妹妹」，『义妹』本身 0 次）。Paulina 语料 0 次（英文缺失噪声）。 || 语料计数: Paulina=0块/0次; 保利娜=19块/73次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Paulina",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "保利娜",
+          "chunks": 19,
+          "occurrences": 73,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R244",
+      "q": "救走斯奈德姐姐的行动发生在哪座城市？",
+      "keywords": [
+        "Chicago",
+        "芝加哥"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "芝加哥 10 块/18 次真实指代答案：101:2.0.0【标题卡】芝加哥营救＋副标题「1929年2月14日，芝加哥的爱侣们在钟声中拥吻」；斯奈德的义姐玛丽安正是在该篇章（101:13.1.0）被救出；104:17.2.0「斯奈德……我们在芝加哥认识的朋友」。Chicago 语料 0 次（英文缺失噪声）。 || 语料计数: Chicago=0块/0次; 芝加哥=10块/18次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Chicago",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "芝加哥",
+          "chunks": 10,
+          "occurrences": 18,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R248",
+      "q": "海因里希效忠的重塑之手首领是谁？",
+      "keywords": [
+        "Arcana",
+        "阿尔卡纳"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "阿尔卡纳 99 块/382 次真实指代答案：102:1.0.0「你可以称呼我为阿尔卡纳」「『重塑之手』的幕后领导者」；海因里希（106）为重塑之手成员，其效忠对象即阿尔卡纳。Arcana 语料 0 次（英文缺失噪声）。 || 语料计数: Arcana=0块/0次; 阿尔卡纳=99块/382次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Arcana",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "阿尔卡纳",
+          "chunks": 99,
+          "occurrences": 382,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R263",
+      "q": "在 1987 宇宙组曲篇的太空任务里，跨越星海、远赴外层空间的旅人是谁？",
+      "keywords": [
+        "Voyager",
+        "远旅"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "远旅 20 块/42 次真实指代答案：27101:4.0.0「『漫长的旅程』和『旅行』，合并起来——『远旅』」、4.0.1「远旅：远旅。」（角色以旅行者号命名）。Voyager 语料 0 次（英文缺失噪声）。 || 语料计数: Voyager=0块/0次; 远旅=20块/42次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Voyager",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "远旅",
+          "chunks": 20,
+          "occurrences": 42,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R273",
+      "q": "有位少女教师用神秘术守护村庄，而这座村庄以矿业为生，这座村庄是哪里？",
+      "keywords": [
+        "Ryashki",
+        "Vila",
+        "维拉"
+      ],
+      "verdict": "defective",
+      "confidence": "high",
+      "evidence": "Ryashki 与 Vila 语料 0 次；唯一有命中的『维拉』（91 块/816 次）是题干里的那位少女教师本人（18101:2.0.2「您能像维拉老师一样，为我们讲课吗？」、27101:5.1.0「教师的脚边……维拉」），是题目的主语而不是答案。真正的答案『来亚什基』（99 块/337 次，18101 内 99 块；0.1.1 明写「咱们给芝诺卢恩矿石」、0.1.2「卢恩矿石几乎开采殆尽了」）完全不在 gold 中——gold 只覆盖了问句主语，漏掉了问句主体（村庄）。 || 语料计数: Ryashki=0块/0次; Vila=0块/0次; 维拉=91块/816次",
+      "suggested_correct_gold": [
+        "来亚什基",
+        "卢恩矿石"
+      ],
+      "suggested_gold_counts": {
+        "来亚什基": {
+          "chunks": 99,
+          "occurrences": 337
+        },
+        "卢恩矿石": {
+          "chunks": 19,
+          "occurrences": 27
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "Ryashki",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "Vila",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "维拉",
+          "chunks": 91,
+          "occurrences": 816,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R288",
+      "q": "一位怀疑神秘学家终将被淘汰的精神科医生坚持在康复中心工作，她是谁？",
+      "keywords": [
+        "Mesmer",
+        "小梅斯梅尔"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "小梅斯梅尔 131 块/871 次真实指代答案：103:1.0.0【标题卡】拉普拉斯康复中心，「所有出现应激障碍的患者都需要康复中心的治疗」；1918 亦为康复中心职员；她确为精神科医生。Mesmer 语料 0 次（英文缺失噪声）。附注（属题干质量问题而非 gold 缺陷）：「怀疑神秘学家终将被淘汰」在语料中查无实据——含『小梅斯梅尔』且含『淘汰』的块数为 0。 || 语料计数: Mesmer=0块/0次; 小梅斯梅尔=131块/871次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Mesmer",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "小梅斯梅尔",
+          "chunks": 131,
+          "occurrences": 871,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R292",
+      "q": "一位随维尔汀行动的女演员最终开枪杀死了一名重塑之手成员，她是谁？",
+      "keywords": [
+        "Isolde",
+        "伊索尔德",
+        "Heinrich",
+        "海因里希"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "伊索尔德（98 块/770 次）与海因里希（53 块/199 次）均真实指代答案且关系被语料直接证实：106:21.0.1「一条弹道，两条人命。伊索尔德的子弹同时贯穿了霍夫曼和海因里希」，106:20.1.1 海因里希招募马库斯「通过这场筛选，加入我们吧」即重塑之手成员。Isolde / Heinrich 英文 0 次（英文缺失噪声）。 || 语料计数: Isolde=0块/0次; 伊索尔德=98块/770次; Heinrich=0块/0次; 海因里希=53块/199次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "Isolde",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "伊索尔德",
+          "chunks": 98,
+          "occurrences": 770,
+          "snippets": []
+        },
+        {
+          "keyword": "Heinrich",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "海因里希",
+          "chunks": 53,
+          "occurrences": 199,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    },
+    {
+      "qid": "R297",
+      "q": "维尔汀在第一防线学校时是多少岁策划学生出逃的？",
+      "keywords": [
+        "twelve",
+        "12岁",
+        "12 years"
+      ],
+      "verdict": "defective",
+      "confidence": "medium",
+      "evidence": "twelve 与 12 years 语料 0 次；唯一有命中的『12岁』只有 2 块，且两块都与维尔汀无关：anecdote__1904_埃里克角色故事:0.0.0「我本以为一位12岁的神秘学家，会更加温和」（说的是埃里克）、anecdote__1917_乘法轴上的一天:5.0.0「专门为12岁以下儿童设置的体验区」。维尔汀的年龄在语料中写作 103:5.0.0 校长「你入校的时候，岁数才刚满一个月……现在，你已经在学校里度过了快十二年」，是「快十二年」而非「12岁」——gold 与环境中的数字巧合，非真实表述。 || 语料计数: twelve=0块/0次; 12岁=2块/2次; 12 years=0块/0次",
+      "suggested_correct_gold": [
+        "十二年"
+      ],
+      "suggested_gold_counts": {
+        "十二年": {
+          "chunks": 13,
+          "occurrences": 15
+        }
+      },
+      "keyword_detail": [
+        {
+          "keyword": "twelve",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        },
+        {
+          "keyword": "12岁",
+          "chunks": 2,
+          "occurrences": 2,
+          "snippets": [
+            {
+              "chunk": "anecdote__1904_埃里克角色故事:0.0.0",
+              "context": "**埃里克**：放——开我！ | **埃里克**：你们这些该死的绑匪，吃、吃我一脚！ | 女孩够不着地面的双脚，直挺挺地往两人戳去。 | 但就像拴了绳的小狗，目标始终遥不可及。 | **十四行诗**：抱歉，是我预估的失误……我本以为一位12岁的神秘学家，会更加温和以及……可控。 | **维尔汀**：这是我们都难以预料的。 | **十四行诗**：是的。下次我会将神秘学能力也列入考量因素里。 | **“伟大”讲述者**：此刻，我们的主角——英勇、聪慧的俘虏不动声色，眯着眼睛"
+            },
+            {
+              "chunk": "anecdote__1917_乘法轴上的一天:5.0.0",
+              "context": "个B区，再走另一条通路进入C区。 | **37**：那些专门寻找休息区的人也有更优先的选择：通往办公区的走廊占用了空间，这导致这个休息区没有盥洗室。 | **37**：带着儿童的参观者是冰淇淋店的重要客户群，但这个休息区和专门为12岁以下儿童设置的体验区几乎是两个截然相反的方向…… | **37**：——诸如此类。我发现了数字后面的东西，得到了数字给我们的提示。 | **37**：数字的后面是人。人们的各种习惯、想法、下意识的行动导致了这个结果。 | **37*"
+            }
+          ]
+        },
+        {
+          "keyword": "12 years",
+          "chunks": 0,
+          "occurrences": 0,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R298",
+      "q": "雷米特杯失窃案发生在哪一年？",
+      "keywords": [
+        "1966"
+      ],
+      "verdict": "defective",
+      "confidence": "medium",
+      "evidence": "1966 在题目所指的 activity__11101_雷米特杯失窃案 中 0 次（该篇正文与标题都没有任何四位年份，只写「四年前被巴西队赢走」「数年前」）。8 块命中全部是别的语境：000:0.0.0「1966英国伦敦」（序章）、105:15.2.0、106:20.1.1、110:11.1.2（第六次「暴雨」）、13101:1.1.0「1966 摩卢旁卡火车站」、24101:3.2.0/3.2.1（奥尔德堡音乐节）、1916:5.0.2。1966 属现实世界知识（世界杯史）而非语料陈述。borderline：序章 000 与本案同为「1966 伦敦」同一时代，若接受跨篇章时代推断则可视为弱有效。 || 语料计数: 1966=8块/9次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "1966",
+          "chunks": 8,
+          "occurrences": 9,
+          "snippets": []
+        }
+      ],
+      "borderline": true
+    },
+    {
+      "qid": "R300",
+      "q": "维尔汀首次登场的年份是哪一年？",
+      "keywords": [
+        "1966"
+      ],
+      "verdict": "valid",
+      "confidence": "high",
+      "evidence": "1966 与维尔汀同块出现于 mainline__000_此即明日:0.0.0——该块同时含「【标题卡】1966英国伦敦」与「您的名字是维尔汀？」，正是维尔汀首次登场处，gold 直接锚定答案，属有效。 || 语料计数: 1966=8块/9次",
+      "suggested_correct_gold": null,
+      "suggested_gold_counts": {},
+      "keyword_detail": [
+        {
+          "keyword": "1966",
+          "chunks": 8,
+          "occurrences": 9,
+          "snippets": []
+        }
+      ],
+      "borderline": false
+    }
+  ]
+}
