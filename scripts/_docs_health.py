@@ -82,7 +82,9 @@ def broken_now() -> set[str]:
     SCAN = ("src/**/*.py", "scripts/**/*.py", "tests/**/*.py",
             "frontend/**/*.js", "docs/**/*.md", "*.md", "desktop/**/*.md")
     EXCL = {"scripts/_docs_reorg_plan.py", "scripts/_docs_fix_refs.py",
-            "scripts/_docs_preview_map.py", "scripts/_docs_health.py"}
+            "scripts/_docs_preview_map.py", "scripts/_docs_health.py",
+            # 该脚本**故意**以旧路径为测试数据（核对"移动前既存断链"），不是漏改
+            "scripts/_docs_check_prebroken.py"}
     files: list[Path] = []
     for g in SCAN:
         files += [p for p in ROOT.glob(g)
