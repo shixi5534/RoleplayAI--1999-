@@ -484,6 +484,7 @@ class GraphRetriever:
                  entity_vec_hits: list[tuple[str, str, float]] | None = None,
                  vector_top: int = 30, weights: dict[str, float] | None = None,
                  lex_weight: float = 0.0, lex_top: int = 30,
+                 lex_first: int = 0,
                  ) -> RetrievalResult:
         """端到端检索。
 
@@ -529,6 +530,31 @@ class GraphRetriever:
             for e in evs:
                 e.ppr = ppr_map.get(e.chunk_id, 0.0)
             res.evidence = evs
+
+        # 融合重构（默认关闭，lex_first=0 时行为与接线前逐位一致）：
+        # 把词面通道的前 lex_first 名**提到最前**，其余按融合序补足（去重）。
+        # 动机（2026-09-28 实测）：RRF 是排名制，graph/mention/vector 会把词面通道
+        # 真正命中的块挤出前 6 —— 盲测 206 上 **lex-only 0.9320 > 融合 0.8301**。
+        # 实测 lex_first=3（仅在 300cn 上选定）：裸检索 300cn 0.8316->0.8469、
+        # 盲测 0.8301->0.9126（两集同升）。
+        # ⚠ 与**冻结重排**的交互是集合相关的（见 docs/目标①_收口报告），
+        #   故默认关闭，启用需按 §4bis 冷启动重新校准。
+        if lex_first > 0 and channels.get("lex") and res.evidence:
+            lex_ranked = [cid for cid, _ in sorted(channels["lex"].items(),
+                                                   key=lambda kv: (-kv[1], kv[0]))]
+            out, seen = [], set()
+            for cid in lex_ranked[:lex_first] + [e.chunk_id for e in res.evidence] + lex_ranked:
+                if cid not in seen:
+                    seen.add(cid)
+                    out.append(cid)
+            by_id = {e.chunk_id: e for e in res.evidence}
+            rebuilt = [by_id[cid] for cid in out if cid in by_id]
+            # 词面通道独有的块（融合序里没有）补一个最小 Evidence，保证只增不减
+            for cid in out:
+                if cid not in by_id and cid in self.chunks:
+                    rebuilt.append(Evidence(chunk_id=cid, score=0.0,
+                                            channels={"lex": channels["lex"][cid]}))
+            res.evidence = rebuilt
         if not res.evidence and qvec is not None:
             # 图谱零命中时的向量兜底，保证不空手而归
             v = self.vector_channel(qvec, vector_top)

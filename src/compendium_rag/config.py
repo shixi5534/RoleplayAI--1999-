@@ -142,6 +142,10 @@ class Settings:
     lex_weight: float = field(
         default_factory=lambda: _env_float("CMPRAG_LEX_WEIGHT", 0.0))
     lex_top: int = field(default_factory=lambda: _env_int("CMPRAG_LEX_TOP", 30))
+    # 融合重构：把词面通道前 N 名提到最前（0=关闭，保持历史行为）。
+    # 经 300cn 选定的值为 **3**：裸检索 300cn 0.8316->0.8469、盲测 0.8301->0.9126。
+    # ⚠ 与冻结重排的交互是集合相关的，启用需冷启动重新校准（§4bis）。
+    lex_first: int = field(default_factory=lambda: _env_int("CMPRAG_LEX_FIRST", 0))
     context_max_chars: int = field(
         default_factory=lambda: _env_int("CMPRAG_CONTEXT_MAX_CHARS", 3000))
 

@@ -1,0 +1,74 @@
+{
+  "lex_first": 3,
+  "pool": 30,
+  "300cn": {
+    "pool_hit6": 0.8469,
+    "rerank_hit6": 0.8724,
+    "fold_check": 0.8469
+  },
+  "blind206": {
+    "pool_hit6": 0.9126,
+    "rerank_hit6": 0.7427,
+    "hit10": 0.835,
+    "up": 2,
+    "down": 37,
+    "up_qids": [
+      "BA-007",
+      "BA-028"
+    ],
+    "down_qids": [
+      "BA-012",
+      "BA-015",
+      "BA-021",
+      "BA-023",
+      "BA-024",
+      "BA-026",
+      "BA-029",
+      "BA-038",
+      "BA-041",
+      "BA-042",
+      "BA-045",
+      "BA-046",
+      "BA-050",
+      "BB-003",
+      "BB-022",
+      "BB-030",
+      "BB-033",
+      "BB-034",
+      "BB-047",
+      "BC1-001",
+      "BC1-002",
+      "BC1-004",
+      "BC1-010",
+      "BC1-011",
+      "BC1-016"
+    ]
+  },
+  "chosen": {
+    "name": "full_topN[eq]a=0.45",
+    "policy": "full_topN",
+    "params": {
+      "a": 0.45
+    },
+    "weights": {
+      "cos": 1.0,
+      "lex": 1.0,
+      "lex_idf": 1.0,
+      "lex_title": 1.0,
+      "orig": 1.0,
+      "ppr": 1.0,
+      "has_vec": 1.0,
+      "seed": 1.0,
+      "chunk_len": 1.0,
+      "log_deg": 1.0
+    }
+  },
+  "prev": {
+    "300cn": 0.8673,
+    "blind206": 0.8786
+  },
+  "verdict": {
+    "300cn_no_regress": true,
+    "blind_no_regress": false
+  }
+}
