@@ -192,6 +192,10 @@ check("两处 rrf_fuse 调用均传 k=rrf_k", rt2.count("k=rrf_k") == 2,
 check("pipeline 传递 rrf_k=s.rrf_k", "rrf_k=s.rrf_k" in
       (W / "src/compendium_rag/pipeline.py").read_text(encoding="utf-8"))
 check("v7 锁复算脚本在库", (W / "scripts/_verify_v7_locks.py").exists())
+check("v7 事实核验脚本在库", (W / "scripts/_verify_v7_handover.py").exists())
+check("BASELINE_v7 报告在库", (W / "docs/BASELINE_v7_20260928.md").exists())
+check("v7 交接文档在库",
+      (W / "docs/交接_20260928_召回率85收口_RRF_k常数.md").exists())
 check("rrf_k 回归测试在库", (W / "scripts/_rrf_k_regression.py").exists())
 check("gold 审计旁挂在库（未改题集）",
       (W / "data/knowledge/_audit/_85_gold_audit.json").exists())
