@@ -1,0 +1,86 @@
+{
+  "kind": "gold_defect_sidecar",
+  "testset": "data/knowledge/_audit/rag_testset_300_cn.json",
+  "generated_at": "2026-09-28",
+  "policy": "**不修改题集本体**（项目红线 SESSION2 §5.5）。本文件仅供评测脚本单独统计 / 人工复核；引用指标时须注明「已剔除 N 道 gold 缺陷题」。",
+  "n_defects": 3,
+  "impact": "300cn full 口径池内 miss 14 -> 有效 11（另 3 道为 gold 缺陷）",
+  "defects": {
+    "R005": {
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "gold": [
+        "Rockin",
+        "ship",
+        "号船"
+      ],
+      "defect_type": "substring_coincidence",
+      "problem": "'号船' 的唯一语料命中是 activity__24101_地球上最后的夜晚:16.0.1 中的「前 APPLe **号船**长」—— 子串巧合，并非载具；'Rockin' 与 '摇滚苹果号' 在语料层均 0 次命中。",
+      "evidence_chunk": "activity__24101_地球上最后的夜晚:16.0.1",
+      "corrected_keywords": [
+        "APPLe号",
+        "摇滚苹果号",
+        "Rockin"
+      ],
+      "note": "正字需人工确认（语料无 Rockin/摇滚苹果号 字样，可能答案写作 APPLe号）。",
+      "corrected_keywords_verified": {
+        "APPLe号": 11,
+        "摇滚苹果号": 0,
+        "Rockin": 0
+      },
+      "original_gold_in_corpus": {
+        "Rockin": 0,
+        "ship": 0,
+        "号船": 1
+      },
+      "case_present": true
+    },
+    "R127": {
+      "q": "福格先生发明的大型装置是什么？",
+      "gold": [
+        "purifier",
+        "净化机",
+        "purification"
+      ],
+      "defect_type": "unrelated_quote",
+      "problem": "'purifier' 与 '净化机' 在语料层 0 次命中；'purification' 仅 1 次，出现在英文哲学引文 'The greatest purification of all is, therefore, science'（mainline__105_洞穴的囚徒:13.0.0），与「装置」无关。",
+      "evidence_chunk": "mainline__105_洞穴的囚徒:13.0.0",
+      "corrected_keywords": [
+        "雾气净化器",
+        "净化器"
+      ],
+      "note": "真实答案写作「雾气净化器」，在 activity__23101_圣火纪行_东区黎明 有 5 块。另有别名缺口：'福格先生' 与图中 '福葛先生'（属主 雾行者）差一字。",
+      "corrected_keywords_verified": {
+        "雾气净化器": 5,
+        "净化器": 6
+      },
+      "original_gold_in_corpus": {
+        "purifier": 0,
+        "净化机": 0,
+        "purification": 1
+      },
+      "case_present": true
+    },
+    "R170": {
+      "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+      "gold": [
+        "玩具盒",
+        "toy box"
+      ],
+      "defect_type": "metaphor",
+      "problem": "'玩具盒' 的唯一命中 activity__27101_1987宇宙组曲:17.1.0 是比喻句「宇宙在她眼前展开，如同……玩具盒子。」；'toy box' 0 次命中。",
+      "evidence_chunk": "activity__27101_1987宇宙组曲:17.1.0",
+      "corrected_keywords": [
+        "玩具箱"
+      ],
+      "note": "正字写作「玩具箱」，有 33 块（含 activity__36101_人们向何处去 多块）。",
+      "corrected_keywords_verified": {
+        "玩具箱": 33
+      },
+      "original_gold_in_corpus": {
+        "玩具盒": 1,
+        "toy box": 0
+      },
+      "case_present": true
+    }
+  }
+}
