@@ -119,6 +119,36 @@ check("R5 提案在库（312 add_edge）", (D / "repairs_v5/proposal.json").exis
 check("R5 落盘报告在库", (W / "docs/R5落盘报告_20260927_定向补桥.md").exists())
 check("相遇测试复测报告在库", (D / "reports/meetability_test_after_r5.json").exists())
 
+print("\n[Phase 6] 召回率 85% 目标 + 盲测验收 + BASELINE_v6")
+b6p = D / "reports/baseline_v6.json"
+check("BASELINE_v6 在库", b6p.exists())
+if b6p.exists():
+    B6 = json.loads(b6p.read_text(encoding="utf-8"))
+    pb = B6["primary_blind"]
+    check("盲测生产口径 ≥0.85（目标②）",
+          pb["production_rerank_hit6"] >= 0.85,
+          str(pb["production_rerank_hit6"]))
+    check("盲测 verdict = PASS", pb["verdict"] == "PASS", pb["verdict"])
+    su = B6["secondary_300cn"]["safety_unanswerable"]
+    check("安全线 unanswerable ≤1/104（目标③）", su["hits"] <= 1,
+          f'{su["hits"]}/{su["n"]}')
+    check("grounded = 1.0000", su["grounded_rate"] == 1.0, str(su["grounded_rate"]))
+# 词面通道接线（默认关闭）
+cfg = (W / "src/compendium_rag/config.py").read_text(encoding="utf-8")
+check("词面通道配置存在（默认 0.0）",
+      '_env_float("CMPRAG_LEX_WEIGHT", 0.0)' in cfg)
+rt2 = (W / "src/compendium_rag/retriever.py").read_text(encoding="utf-8")
+check("LexicalIndex 已实现", "class LexicalIndex" in rt2)
+check("rrf_fuse 已加次级键", "(-e.score, e.chunk_id)" in rt2)
+# 盲测题集
+bq = W / "data/knowledge/_audit/blind_v1/questions_strict.json"
+check("盲测 206 题留出集在库", bq.exists())
+if bq.exists():
+    n_cases = len(json.loads(bq.read_text(encoding="utf-8"))["cases"])
+    check("盲测题数 = 206", n_cases == 206, str(n_cases))
+check("目标① 干预报告在库", (W / "docs/目标①_池内miss干预报告_20260928.md").exists())
+check("BASELINE_v6 报告在库", (W / "docs/BASELINE_v6_20260928.md").exists())
+
 print("\n" + "=" * 74)
 if FAILS:
     print(f"结果：{len(FAILS)} 项 FAIL -> {FAILS}")
