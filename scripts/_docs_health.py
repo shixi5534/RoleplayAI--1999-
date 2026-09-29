@@ -100,6 +100,9 @@ def broken_now() -> set[str]:
         files += [p for p in ROOT.glob(g)
                   if p.is_file() and ".venv" not in p.parts
                   and "node_modules" not in p.parts and "__pycache__" not in p.parts]
+    # ⚠ scripts/_archive/ 存放**已被取代**的一次性脚本（含当年的旧路径字面量），
+    #   它们不是活代码，扫描它们必然产生"断链"噪声 —— 排除。
+    files = [p for p in files if "_archive" not in p.parts]
     rx = re.compile(r"(?<![\w/\\.-])((?:docs|deliverables|PLAN)/"
                     r"[^\s`\)\]，。、；：\"'*{]+\.(?:md|txt|mermaid))")
     for p in sorted(set(files)):
