@@ -345,7 +345,9 @@ check("项目体检 RESULT: ALL OK", "RESULT: ALL OK" in (_pj.stdout or ""),
       (_pj.stdout or "").strip().splitlines()[-1] if _pj.stdout else "无输出")
 # 根目录不得有未登记散落文件
 ROOT_OK = {".env", ".env.example", ".gitattributes", ".gitignore",
-           "pyproject.toml", "README.md", "requirements.txt", "start_server.bat"}
+           "pyproject.toml", "README.md", "requirements.txt", "start_server.bat",
+           # worktree 下 .git 是文件（指向真实 gitdir），非目录
+           ".git"}
 IGNORED_OK = {".env.env.bak.20260831_232917", "_shuzhi_extract.txt",
               "_tmp_pron_edges.txt"}
 _root_extra = sorted(p.name for p in W.iterdir()

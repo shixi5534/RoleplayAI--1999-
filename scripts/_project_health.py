@@ -34,6 +34,9 @@ print("=" * 88)
 ROOT_OK = {
     ".env", ".env.example", ".gitattributes", ".gitignore",
     "pyproject.toml", "README.md", "requirements.txt", "start_server.bat",
+    # ⚠ git worktree 下 `.git` 是**文件**（指向真实 gitdir），非目录 —— 必须放行，
+    #   否则本检查在干净副本（worktree）里必然误报。
+    ".git",
 }
 # 已由 .gitignore 显式声明的本机产物（存在也合规，但必须被忽略）
 IGNORED_OK = {
