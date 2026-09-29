@@ -114,7 +114,16 @@ if b5p.exists():
           "rank_rerank_lab_300cn_r5": "reports/rank_rerank_lab_300cn_r5.json",
           "meetability_after_r5": "reports/meetability_test_after_r5.json"}
     bad5 = [k for k, r in m5.items() if sha16(D / r) != locks5[k]]
-    check("BASELINE_v5 锁命中（5/5 可复算）", not bad5, str(bad5))
+    # graph_live 是活图锚点：R6（2026-09-28）演进图谱后按设计失效
+    # （历史惯例：v4 的判据即「除 live 外 6/6」）。其余锁必须全中。
+    bad5_nonlive = [k for k in bad5 if k != "graph_live"]
+    check("BASELINE_v5 锁命中（除活图外可复算）", not bad5_nonlive, str(bad5_nonlive))
+    if "graph_live" in bad5:
+        # v5 记录的活图（4bbefd9eba577c01，R5 补桥后）== R6 改图前的状态，
+        # 即 backups/graph.json.prev.r6（R6 的备份就是它取代的那张图）。
+        check("  v5 活图锚点可由 prev.r6 复原",
+              sha16(D / "backups/graph.json.prev.r6") == locks5["graph_live"],
+              locks5["graph_live"])
 check("R5 提案在库（312 add_edge）", (D / "repairs_v5/proposal.json").exists())
 check("R5 落盘报告在库", (W / "docs/compendium-rag/baseline-repairs/R5落盘报告_20260927_定向补桥.md").exists())
 check("相遇测试复测报告在库", (D / "reports/meetability_test_after_r5.json").exists())
@@ -181,7 +190,13 @@ if b7p.exists():
     check("v7 全部锁定工件在干净副本中存在（无 git 缺件）", not missing, str(missing))
     bad = [k for k, want in B7["artifact_sha256_16"].items()
            if k in ap and (D / ap[k]).exists() and sha16(D / ap[k]) != want]
-    check("v7 全部锁定工件 SHA-16 命中", not bad, str(bad))
+    # 同 v5：graph_live 为活图锚点，R6 后按设计失效；其余锁必须全中。
+    bad_nonlive = [k for k in bad if k != "graph_live"]
+    check("v7 非活图锁全部命中（历史可重建）", not bad_nonlive, str(bad_nonlive))
+    if "graph_live" in bad:
+        check("  v7 活图锚点可由 prev.r6 复原",
+              sha16(D / "backups/graph.json.prev.r6")
+              == B7["artifact_sha256_16"]["graph_live"])
 
 print("\n[Phase 7b] rrf_k 接线（默认 60 = 零行为变更）")
 check("config 有 CMPRAG_RRF_K 且默认 60",
@@ -206,6 +221,79 @@ check("题集本体未被改动（300cn SHA-16 = b02700c70342864c）",
 check("盲测留出集未被改动（SHA-16 锚点 abcd750a3323dc90）",
       bq.exists() and sha16(bq) == "abcd750a3323dc90",
       sha16(bq) if bq.exists() else "MISSING")
+
+print("\n[Phase 8] R4-K01 收口（新批次 R6）+ BASELINE_v8")
+v8p = D / "reports/baseline_v8.json"
+check("BASELINE_v8 在库", v8p.exists())
+if v8p.exists():
+    B8 = json.loads(v8p.read_text(encoding="utf-8"))
+    # 检索配置必须与 v7 相同（本轮未改检索逻辑）
+    rc = B8["retrieval_config"]
+    check("v8 检索配置不变（lex_weight=1.0, rrf_k=1）",
+          rc["lex_weight"] == 1.0 and rc["rrf_k"] == 1,
+          f"lex_weight={rc['lex_weight']} rrf_k={rc['rrf_k']}")
+    # 指标零变化
+    m = B8["metrics"]
+    check("v8 300cn 裸 = 167/196", (m["300cn_bare_hit6"]["hits"],
+                                    m["300cn_bare_hit6"]["n"]) == (167, 196))
+    check("v8 盲测 裸 = 184/206", (m["blind206_bare_hit6"]["hits"],
+                                   m["blind206_bare_hit6"]["n"]) == (184, 206))
+    check("v8 泛化 裸 = 118/120", (m["gen120_bare_hit6"]["hits"],
+                                   m["gen120_bare_hit6"]["n"]) == (118, 120))
+    check("v8 安全线 = 1/104", m["safety_unanswerable"]["hits"] == 1)
+    check("R4-K01 = APPLIED", "APPLIED" in B8["r4_k01_status"]["state"])
+    # 图锚点
+    check("v8 graph_live = 026b41699f021db2",
+          B8["graph"]["sha256_16"] == "026b41699f021db2",
+          B8["graph"]["sha256_16"])
+    check("v8 图规模 7033/30269",
+          B8["graph"]["entities"] == 7033 and B8["graph"]["edges"] == 30269)
+    check("v8 回滚锚点 prev.r6 = 4bbefd9eba577c01",
+          B8["graph"]["prev"].startswith("4bbefd9eba577c01"),
+          B8["graph"]["prev"])
+    # 锁工件全部存在且在干净副本中可复算
+    ap8 = B8.get("artifact_paths") or {}
+    miss8 = [k for k, rel in ap8.items() if not (D / rel).exists()]
+    check("v8 全部锁定工件在干净副本中存在", not miss8, str(miss8))
+    bad8 = [k for k, want in B8["artifact_sha256_16"].items()
+            if k in ap8 and (D / ap8[k]).exists() and sha16(D / ap8[k]) != want]
+    check("v8 全部锁定工件 SHA-16 命中", not bad8, str(bad8))
+
+# R6 提案与落盘核验脚本
+check("R6 提案在库（新批次，未改 v4）",
+      (D / "repairs_v6/proposal.json").exists())
+b4 = json.loads((D / "repairs_v4/proposal.json").read_text(encoding="utf-8"))
+k01b = [e for e in b4["entries"] if e.get("id") == "R4-K01"][0]
+check("v4 的 R4-K01 仍为 keep_with_note（重放链未破）",
+      k01b["type"] == "keep_with_note", k01b["type"])
+check("R6 提案条数 = 1",
+      len(json.loads((D / "repairs_v6/proposal.json")
+                     .read_text(encoding="utf-8"))["entries"]) == 1)
+check("R6 落盘回滚锚点 prev.r6 在库",
+      (D / "backups/graph.json.prev.r6").exists())
+check("R6 核验脚本在库", (W / "scripts/_decide_verify_r6.py").exists())
+check("零变化证明脚本在库", (W / "scripts/_decide_r6_no_change.py").exists())
+
+print("\n[Phase 8b] gold 缺陷统一登记表（双口径）")
+regp = W / "data/knowledge/_audit/gold_defects_registry.json"
+check("统一登记表在库", regp.exists())
+if regp.exists():
+    RG = json.loads(regp.read_text(encoding="utf-8"))
+    check("登记表版本化", RG.get("version") == 1, str(RG.get("version")))
+    check("保守豁免 = 12 道", len(RG["exempt_qids_conservative"]) == 12,
+          str(len(RG["exempt_qids_conservative"])))
+    check("宽松豁免 = 15 道", len(RG["exempt_qids_inclusive"]) == 15,
+          str(len(RG["exempt_qids_inclusive"])))
+    check("声明取代两份旧 sidecar",
+          len(RG.get("supersedes") or []) == 2)
+    check("双口径脚本在库", (W / "scripts/_decide_eval_dual.py").exists())
+
+print("\n[Phase 8c] 待决 5 项裁决记录在库")
+check("裁决记录在库",
+      (W / "docs/compendium-rag/recall/待决裁决记录_20260928.md").exists())
+for s in ("_decide_r4k01_gate.py", "_decide_r4k01_scope.py", "_decide_p3p4.py",
+          "_decide_lexfirst_prod.py", "_decide_lock_v8.py"):
+    check(f"{s} 在库", (W / "scripts" / s).exists())
 
 print("\n" + "=" * 74)
 if FAILS:

@@ -96,9 +96,17 @@ print("=" * 80)
 sl = v7["safety_line"]
 ck("unanswerable = 1/104", sl["unanswerable_hits"] == 1 and sl["unanswerable_n"] == 104)
 ck("grounded = 1.0", sl["grounded"] == 1.0)
-ck("图未改：7033/30269/4bbefd9eba577c01",
-   v7["graph"]["entities"] == 7033 and v7["graph"]["edges"] == 30269
-   and sha16(DATA / "graph.json") == "4bbefd9eba577c01")
+ck("图规模未变：7033/30269（v7 时点）",
+   v7["graph"]["entities"] == 7033 and v7["graph"]["edges"] == 30269)
+# 图 SHA 分两层：v7 记录的**时点**活图锚点，与**当前**活图。
+# R6（2026-09-28）摘除死别名后活图演进为 026b41699f021db2，属预期。
+ck("v7 记录的活图锚点 = 4bbefd9eba577c01（时点事实）",
+   v7["graph"]["sha256_16"] == "4bbefd9eba577c01", v7["graph"]["sha256_16"])
+cur_graph = sha16(DATA / "graph.json")
+ck("当前活图 = 026b41699f021db2（R6 之后，见 BASELINE_v8）",
+   cur_graph == "026b41699f021db2", cur_graph)
+ck("回滚锚点 prev.r6 可从 git 复原 v7 时的活图",
+   sha16(DATA / "backups/graph.json.prev.r6") == "4bbefd9eba577c01")
 
 print()
 print("=" * 80)
@@ -153,7 +161,14 @@ for k, rel in ap.items():
 ck("v7 全部锁定工件存在且已入库", not missing, str(missing))
 bad = [k for k, want in v7["artifact_sha256_16"].items()
        if (DATA / ap[k]).exists() and sha16(DATA / ap[k]) != want]
-ck("v7 全部锁定工件 SHA-16 命中", not bad, str(bad))
+# graph_live 是**活图**锚点，R6 后按设计失效；其余锁必须全中（历史可重建判据）。
+bad_nonlive = [k for k in bad if k != "graph_live"]
+ck("v7 非活图锁全部命中（历史可重建）", not bad_nonlive, str(bad_nonlive))
+if bad:
+    ck("唯一失配项仅为 graph_live（R6 演进，属预期）",
+       bad == ["graph_live"], str(bad))
+    ck("  其历史值可由 prev.r6 复原",
+       sha16(DATA / "backups/graph.json.prev.r6") == v7["artifact_sha256_16"]["graph_live"])
 
 print()
 print("=" * 80)

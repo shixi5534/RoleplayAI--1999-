@@ -1,0 +1,369 @@
+{
+  "kind": "gold_defects_registry",
+  "version": 1,
+  "testset": "data/knowledge/_audit/rag_testset_300_cn.json",
+  "generated_at": "2026-09-28",
+  "supersedes": [
+    "data/knowledge/_audit/testset_300cn_gold_defects.json (3 道，已并入)",
+    "data/knowledge/_audit/_85_gold_audit.json (31 道审计，defective 已并入)"
+  ],
+  "policy": "**不修改题集本体**（红线）。本表供评测脚本按 `qid` 单独统计；引用任何指标时须注明「已剔除 N 道 gold 缺陷题」。",
+  "counting_rule": "两种口径，评测脚本须**同时报告**，不得只报有利者：\n  · 保守口径（默认）= defective 且 borderline=false，n=12；\n  · 宽松口径        = 全部 defective，n=15。\nborderline 的 3 道（['R073', 'R297', 'R298']）判定理由已注明，采信与否应由人工复核决定。",
+  "n_defective": 12,
+  "n_defective_plus_borderline": 15,
+  "n_borderline": 3,
+  "exempt_qids_conservative": [
+    "R005",
+    "R012",
+    "R030",
+    "R043",
+    "R045",
+    "R127",
+    "R166",
+    "R170",
+    "R171",
+    "R180",
+    "R183",
+    "R273"
+  ],
+  "exempt_qids_inclusive": [
+    "R005",
+    "R012",
+    "R030",
+    "R043",
+    "R045",
+    "R127",
+    "R166",
+    "R170",
+    "R171",
+    "R180",
+    "R183",
+    "R273",
+    "R073",
+    "R297",
+    "R298"
+  ],
+  "defective_qids": [
+    "R005",
+    "R012",
+    "R030",
+    "R043",
+    "R045",
+    "R127",
+    "R166",
+    "R170",
+    "R171",
+    "R180",
+    "R183",
+    "R273"
+  ],
+  "borderline_qids": [
+    "R073",
+    "R297",
+    "R298"
+  ],
+  "defects": {
+    "R005": {
+      "qid": "R005",
+      "source": "legacy_sidecar_20260928",
+      "q": "洞穴的囚徒篇的故事主要发生在什么载具上？",
+      "gold": [
+        "Rockin",
+        "ship",
+        "号船"
+      ],
+      "defect_type": "substring_coincidence",
+      "problem": "'号船' 的唯一语料命中是 activity__24101_地球上最后的夜晚:16.0.1 中的「前 APPLe **号船**长」—— 子串巧合，并非载具；'Rockin' 与 '摇滚苹果号' 在语料层均 0 次命中。",
+      "evidence_chunk": "activity__24101_地球上最后的夜晚:16.0.1",
+      "corrected_keywords": [
+        "APPLe号",
+        "摇滚苹果号",
+        "Rockin"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R012": {
+      "qid": "R012",
+      "source": "_85_gold_audit_20260928",
+      "q": "苏芙比买下摇滚苹果号后，船上由扎内塔担任什么职务？",
+      "gold": [
+        "Zanetta",
+        "standkeeper",
+        "管理员",
+        "Rockin"
+      ],
+      "defect_type": null,
+      "problem": "Zanetta / standkeeper / Rockin 语料均 0 次；唯一有命中的「管理员」6 块/10 次全部是无关同名：103/113 的图书馆管理员、25101 的仓库管理员、17703 的灯塔管理员、109 的科马拉文化管理员——没有任何一块与「苏芙比买船 / 扎内塔职务」相关。语料中『摇滚苹果号』『苹果号』『扎内塔』『看塔人』全部 0 次，只有『APPLe号』（11 块，属星锑）。答案实体在语料中不存在。 || 语料计数: Zanetta=0块/0次; standkeeper=0块/0次; 管理员=6块/10次; Rockin=0块/0次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R030": {
+      "qid": "R030",
+      "source": "_85_gold_audit_20260928",
+      "q": "多里斯医生的英文名是什么？",
+      "gold": [
+        "Doris",
+        "多里斯",
+        "Vienna",
+        "维也纳"
+      ],
+      "defect_type": null,
+      "problem": "Doris 与 多里斯 语料均 0 次——语料没有「多里斯医生」这个人。唯一有命中的 gold 是地点词「维也纳」（122 块/222 次），它是篇章背景（1.7 维也纳），与题目所问的「英文名」无关，属不相干关键词造成的假可答。语料中的医生是 德洛丝医生（69 块/243 次，盲眼医生/作家兀尔德）与 施瓦茨医生（106 维也纳篇）。 || 语料计数: Doris=0块/0次; 多里斯=0块/0次; Vienna=0块/0次; 维也纳=122块/222次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R043": {
+      "qid": "R043",
+      "source": "_85_gold_audit_20260928",
+      "q": "孤独之歌篇里阿派朗岛的研究者乌尔里希的英文名是什么？",
+      "gold": [
+        "Ulrich",
+        "37"
+      ],
+      "defect_type": null,
+      "problem": "Ulrich 语料 0 次（语料只有中文「乌尔里希」，125 块/781 次）。第二个 gold『37』是 孤独之歌 的另一位角色（数字人 37），并且作为纯数字串在语料命中 182 块/1407 次（37岁、37次、37%……），既不指代乌尔里希，也不指代其英文名——是数字子串巧合，不构成答案关键词。 || 语料计数: Ulrich=0块/0次; 37=182块/1407次",
+      "evidence_chunk": null,
+      "corrected_keywords": [
+        "乌尔里希"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R045": {
+      "qid": "R045",
+      "source": "_85_gold_audit_20260928",
+      "q": "孤独之歌篇里零号概念的讲解围绕数字几展开？",
+      "gold": [
+        "Zero",
+        "Apeiron",
+        "阿派朗"
+      ],
+      "defect_type": null,
+      "problem": "Zero 与 Apeiron 语料 0 次；唯一有命中的『阿派朗』（35 块/44 次）是学派/岛屿之名（107:3.0.0「阿派朗学派传授的真理是理智化的」），不是题目所问的「数字几」。『零号』语料 0 次，答案数字 0 在 gold 中完全没有对应关键词；「阿派朗，无限定者，万物的本源」出现在 105:19.0.0，与『零号概念』无关。 || 语料计数: Zero=0块/0次; Apeiron=0块/0次; 阿派朗=35块/44次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R073": {
+      "qid": "R073",
+      "source": "_85_gold_audit_20260928",
+      "q": "绿湖噩梦篇里的巨怪居住在什么地方？",
+      "gold": [
+        "暗林",
+        "woods",
+        "forest",
+        "森林深处"
+      ],
+      "defect_type": null,
+      "problem": "暗林 / woods / forest 语料 0 次——真正的专名答案「暗林」在语料中不存在。唯一有命中的『森林深处』8 块/9 次是跨篇章的通用方位短语（101、12101、20101、1901、1915），12101 内的 3 次全部只是「望向森林深处」「消失在森林深处」「看向森林深处」，没有任何一块说明巨怪居住在何处；语料对这只怪只写『巨大魔精』（12101 内 4 块）、『爬回巢穴里去了』（7.1.0）与标题『苔藓山洞』。 || 语料计数: 暗林=0块/0次; woods=0块/0次; forest=0块/0次; 森林深处=8块/9次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "medium",
+      "borderline": true,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R127": {
+      "qid": "R127",
+      "source": "legacy_sidecar_20260928",
+      "q": "福格先生发明的大型装置是什么？",
+      "gold": [
+        "purifier",
+        "净化机",
+        "purification"
+      ],
+      "defect_type": "unrelated_quote",
+      "problem": "'purifier' 与 '净化机' 在语料层 0 次命中；'purification' 仅 1 次，出现在英文哲学引文 'The greatest purification of all is, therefore, science'（mainline__105_洞穴的囚徒:13.0.0），与「装置」无关。",
+      "evidence_chunk": "mainline__105_洞穴的囚徒:13.0.0",
+      "corrected_keywords": [
+        "雾气净化器",
+        "净化器"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R166": {
+      "qid": "R166",
+      "source": "_85_gold_audit_20260928",
+      "q": "九方是朔日手记篇里的什么？",
+      "gold": [
+        "九方",
+        "地点"
+      ],
+      "defect_type": null,
+      "problem": "九方 语料 0 次——答案实体在语料中根本不存在。唯一有命中的『地点』是通用名词（191 块/206 次，遍布全书），与「九方」毫无关系，是典型的不相干关键词造成假可答。朔日手记篇真实地名是 沛城（27 块/35 次，16101 内 12 块）、折罗漫关、玉门关；若原意为「沛城」应改 gold。 || 语料计数: 九方=0块/0次; 地点=191块/206次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R170": {
+      "qid": "R170",
+      "source": "legacy_sidecar_20260928",
+      "q": "人们向何处去篇里拉普拉斯的重要装置是什么？",
+      "gold": [
+        "玩具盒",
+        "toy box"
+      ],
+      "defect_type": "metaphor",
+      "problem": "'玩具盒' 的唯一命中 activity__27101_1987宇宙组曲:17.1.0 是比喻句「宇宙在她眼前展开，如同……玩具盒子。」；'toy box' 0 次命中。",
+      "evidence_chunk": "activity__27101_1987宇宙组曲:17.1.0",
+      "corrected_keywords": [
+        "玩具箱"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R171": {
+      "qid": "R171",
+      "source": "_85_gold_audit_20260928",
+      "q": "他者的悲哀篇里出现的学园缩写是什么？",
+      "gold": [
+        "SPDM",
+        "初级防御学园",
+        "委外合约人才管理组织"
+      ],
+      "defect_type": null,
+      "problem": "SPDM（以及 spdm / S.P.D.M 各写法）与「初级防御学园」「防御学园」「学园」在语料中全部 0 次。唯一有命中的『委外合约人才管理组织』（9 块/15 次）是组织机构名（106:1.0.1「更多内部人员愿意根据职能称其为『历史维护小组』」），既不是学园也不是缩写，且在题目所指的 mainline__113_他者的悲哀 中 0 次。语料中的学校是『第一防线学校』（72 块/104 次），但全书没有任何缩写形式（『缩写』仅 1 块，指 107 的琼斯多项式）。 || 语料计数: SPDM=0块/0次; 初级防御学园=0块/0次; 委外合约人才管理组织=9块/15次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R180": {
+      "qid": "R180",
+      "source": "_85_gold_audit_20260928",
+      "q": "无名者幼年被植入的、能生成人格与记忆的装置叫什么？",
+      "gold": [
+        "clockwork",
+        "发条"
+      ],
+      "defect_type": null,
+      "problem": "clockwork 语料 0 次；『发条』16 块/25 次全部是『发条玩具』（14 块）——金伯利/天使娜娜的封印物：108:15.1.1「一个丑陋的发条玩具……这是金伯利的封印物，拿着这个，她不能违抗你」、108:17.2.0「发条玩具已经被打坏了」。它与「无名者幼年被植入的、能生成人格与记忆的装置」无关：含『无名者』且含『发条』的块数为 0；语料中「植入」5 块全在 activity__385101_聚合浪潮（思想控制器），与无名者无涉。属与 R127/R170 同族的「答案词被无关同族实体占用」缺陷。 || 语料计数: clockwork=0块/0次; 发条=16块/25次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R183": {
+      "qid": "R183",
+      "source": "_85_gold_audit_20260928",
+      "q": "玛蒂尔达的英文名是什么？",
+      "gold": [
+        "Matilda",
+        "Bouanich",
+        "Boaniche",
+        "Sonnet",
+        "十四行诗"
+      ],
+      "defect_type": null,
+      "problem": "Matilda / Bouanich / Boaniche / Sonnet 语料全部 0 次；唯一有命中的『十四行诗』（384 块/2346 次）是另一个角色（第一助手 Sonnet），与玛蒂尔达是两个人：103:0.0.0 教员先点「玛蒂尔达」、随后说「十四行诗的回答是正确的」；103:3.0.0 两人迎面相撞。27 块同时出现、118 块只有玛蒂尔达（她本人 145 块/1116 次）。用一个不同角色的名字做 gold，是「不相干人名」型缺陷。 || 语料计数: Matilda=0块/0次; Bouanich=0块/0次; Boaniche=0块/0次; Sonnet=0块/0次; 十四行诗=384块/2346次",
+      "evidence_chunk": null,
+      "corrected_keywords": [
+        "玛蒂尔达"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R273": {
+      "qid": "R273",
+      "source": "_85_gold_audit_20260928",
+      "q": "有位少女教师用神秘术守护村庄，而这座村庄以矿业为生，这座村庄是哪里？",
+      "gold": [
+        "Ryashki",
+        "Vila",
+        "维拉"
+      ],
+      "defect_type": null,
+      "problem": "Ryashki 与 Vila 语料 0 次；唯一有命中的『维拉』（91 块/816 次）是题干里的那位少女教师本人（18101:2.0.2「您能像维拉老师一样，为我们讲课吗？」、27101:5.1.0「教师的脚边……维拉」），是题目的主语而不是答案。真正的答案『来亚什基』（99 块/337 次，18101 内 99 块；0.1.1 明写「咱们给芝诺卢恩矿石」、0.1.2「卢恩矿石几乎开采殆尽了」）完全不在 gold 中——gold 只覆盖了问句主语，漏掉了问句主体（村庄）。 || 语料计数: Ryashki=0块/0次; Vila=0块/0次; 维拉=91块/816次",
+      "evidence_chunk": null,
+      "corrected_keywords": [
+        "来亚什基",
+        "卢恩矿石"
+      ],
+      "confidence": "high",
+      "borderline": false,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R297": {
+      "qid": "R297",
+      "source": "_85_gold_audit_20260928",
+      "q": "维尔汀在第一防线学校时是多少岁策划学生出逃的？",
+      "gold": [
+        "twelve",
+        "12岁",
+        "12 years"
+      ],
+      "defect_type": null,
+      "problem": "twelve 与 12 years 语料 0 次；唯一有命中的『12岁』只有 2 块，且两块都与维尔汀无关：anecdote__1904_埃里克角色故事:0.0.0「我本以为一位12岁的神秘学家，会更加温和」（说的是埃里克）、anecdote__1917_乘法轴上的一天:5.0.0「专门为12岁以下儿童设置的体验区」。维尔汀的年龄在语料中写作 103:5.0.0 校长「你入校的时候，岁数才刚满一个月……现在，你已经在学校里度过了快十二年」，是「快十二年」而非「12岁」——gold 与环境中的数字巧合，非真实表述。 || 语料计数: twelve=0块/0次; 12岁=2块/2次; 12 years=0块/0次",
+      "evidence_chunk": null,
+      "corrected_keywords": [
+        "十二年"
+      ],
+      "confidence": "medium",
+      "borderline": true,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    },
+    "R298": {
+      "qid": "R298",
+      "source": "_85_gold_audit_20260928",
+      "q": "雷米特杯失窃案发生在哪一年？",
+      "gold": [
+        "1966"
+      ],
+      "defect_type": null,
+      "problem": "1966 在题目所指的 activity__11101_雷米特杯失窃案 中 0 次（该篇正文与标题都没有任何四位年份，只写「四年前被巴西队赢走」「数年前」）。8 块命中全部是别的语境：000:0.0.0「1966英国伦敦」（序章）、105:15.2.0、106:20.1.1、110:11.1.2（第六次「暴雨」）、13101:1.1.0「1966 摩卢旁卡火车站」、24101:3.2.0/3.2.1（奥尔德堡音乐节）、1916:5.0.2。1966 属现实世界知识（世界杯史）而非语料陈述。borderline：序章 000 与本案同为「1966 伦敦」同一时代，若接受跨篇章时代推断则可视为弱有效。 || 语料计数: 1966=8块/9次",
+      "evidence_chunk": null,
+      "corrected_keywords": null,
+      "confidence": "medium",
+      "borderline": true,
+      "applies_to_testset": [
+        "300cn"
+      ]
+    }
+  }
+}
