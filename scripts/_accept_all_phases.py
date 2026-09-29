@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -294,6 +295,47 @@ check("裁决记录在库",
 for s in ("_decide_r4k01_gate.py", "_decide_r4k01_scope.py", "_decide_p3p4.py",
           "_decide_lexfirst_prod.py", "_decide_lock_v8.py"):
     check(f"{s} 在库", (W / "scripts" / s).exists())
+
+print("\n[Phase 9] 文档精简（历史过程档 → 编年史）")
+# 每个子系统应有一份 CHRONICLE.md，且 docs 总量已精简
+for sub in ("compendium-rag", "plot-graph-rag", "roleplay-core",
+            "voice-desktop", "qq"):
+    ck = W / "docs" / sub / "CHRONICLE.md"
+    check(f"{sub} 编年史在库", ck.exists())
+    if ck.exists():
+        t = ck.read_text(encoding="utf-8")
+        n = sum(1 for ln in t.splitlines() if ln.startswith("## "))
+        ns = sum(1 for ln in t.splitlines() if ln.startswith("- 来源："))
+        check(f"  {sub} 编年史条目与来源数一致", n == ns and n > 0, f"{n}/{ns}")
+# docs 总量控制（精简后应 < 90，历史 140）
+n_docs = len([p for p in (W / "docs").rglob("*") if p.is_file()])
+check("docs 文件数已精简（< 90，历史 140）", n_docs < 90, str(n_docs))
+# 合并前的快照标签（可找回原文）
+tags9 = subprocess.run(["git", "tag", "-l"], cwd=str(W),
+                       capture_output=True, text=True,
+                       encoding="utf-8", errors="replace").stdout.split()
+check("合并前快照标签存在（原文可找回）",
+      "backup-pre-testdocs-cleanup" in tags9)
+# 当前权威文档未被误合并（抽查关键几份）
+for must in ("docs/compendium-rag/baseline/BASELINE_v7_20260928.md",
+             "docs/roleplay-core/architecture/ARCHITECTURE.md",
+             "docs/voice-desktop/pet-design/DESKTOP_PET_DESIGN.md",
+             "docs/plot-graph-rag/acceptance/剧情图谱验收标准.md"):
+    check(f"当前权威保留：{must.split('/')[-1]}", (W / must).exists())
+# QA 测试已合并为一份
+check("QA 测试已合并为 test_qa_verification.py",
+      (W / "tests/test_qa_verification.py").exists())
+for gone in ("tests/test_qa_profile_verify.py",
+             "tests/test_qa_profile_r2_verify.py",
+             "tests/test_qa_independent_verify.py",
+             "tests/test_qa_scratch_max.py"):
+    check(f"  已合并源不存在：{gone.split('/')[-1]}", not (W / gone).exists())
+# 未被 pytest 收集的零引用文件已删
+for gone in ("tests/voice_repro/repro.py", "tests/qa_consistency_check.py"):
+    check(f"  已删未收集文件：{gone.split('/')[-1]}", not (W / gone).exists())
+# 一次性产物已清理
+n_d = len([p for p in (D).iterdir() if p.is_file()])
+check("data/compendium_rag 顶层文件已精简（历史 1398）", n_d < 200, str(n_d))
 
 print("\n" + "=" * 74)
 if FAILS:

@@ -26,7 +26,16 @@ b = Path("data/compendium_rag/graph.json").read_bytes()
 g = json.loads(b.decode("utf-8"))
 chk("entities", len(g["entities"]), 7033)
 chk("edges", len(g["edges"]), 30269)
-chk("graph sha16", hashlib.sha256(b).hexdigest()[:16], "4bbefd9eba577c01")
+# 本文（v6 时代）记录的是**当时**的活图 4bbefd9eba577c01。
+# R6（2026-09-28）摘除死别名后活图演进为 026b41699f021db2 —— 该锚点按设计失效，
+# 与 v4「除 live 外全部命中」的历史惯例一致。故分两层断言：
+#   ① 本文记载的历史值可由 prev.r6 复原；② 当前活图应为 v8 的值。
+_prev6 = Path("data/compendium_rag/backups/graph.json.prev.r6")
+chk("graph sha16 (本文历史值可由 prev.r6 复原)",
+    hashlib.sha256(_prev6.read_bytes()).hexdigest()[:16] if _prev6.exists() else "MISSING",
+    "4bbefd9eba577c01")
+chk("graph sha16 (当前活图 = v8)",
+    hashlib.sha256(b).hexdigest()[:16], "026b41699f021db2")
 n = int(subprocess.run(["git", "rev-list", "--count", "2535325..HEAD"],
                        capture_output=True, text=True).stdout.strip())
 # 提交数随每次新提交增长；本文落盘时为 25，故只断言 >= 25 并如实打印
