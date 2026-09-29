@@ -10,7 +10,8 @@
 > `graph_search.py` 实体链接+PPR+证据回查、`scripts/build_graph.py` 离线 CLI、
 > `persona_prompt.build_graph_context` 关系脉络块、`/api/knowledge/graph/*` 调试接口）。
 > P2（对话三元组增量写图）/P3（社区摘要）/P4（A/B 评估 `--graph`）仍未开始。
-> 审计报告与修复清单：`docs/roleplay-core/audit/rag-graphrag-audit-20260908.md`
+> 审计报告与修复清单：已并入 `CHRONICLE.md`（2026-09-08 条目）；
+> 原文可由 git 标签 `backup-pre-testdocs-cleanup` 下的 audit/ 目录找回。
 
 ---
 

@@ -44,6 +44,10 @@ broken: list[str] = []
 n_links = 0
 for p in ROOT.glob("docs/**/*.md"):
     rel = str(p.relative_to(ROOT)).replace("\\", "/")
+    # ⚠ CHRONICLE.md 是**编年史**：它刻意引用**已被合并删除**的原始文档路径，
+    #   作为"该条目出自哪份原文"的可追溯锚点（配合 backup 标签可复原）。
+    #   这些不是断链，而是归档引用 —— 单独统计，不计入失败。
+    is_chronicle = p.name == "CHRONICLE.md"
     t = p.read_text(encoding="utf-8", errors="replace")
     for label, tgt in re.findall(r"\[([^\]]*)\]\(([^)\s]+)\)", t):
         if tgt.startswith(("http://", "https://", "#", "mailto:")):
@@ -54,9 +58,12 @@ for p in ROOT.glob("docs/**/*.md"):
         n_links += 1
         resolved = posixpath.normpath(posixpath.join(posixpath.dirname(rel), tt))
         if not (ROOT / resolved).exists():
+            if is_chronicle:
+                continue          # 归档引用，不计失败
             broken.append(f"{rel}  ->  {tgt}")
-ck(f"docs/ 内 {n_links} 个相对链接全部可解析", not broken,
-   f"{len(broken)} 断链")
+    # 编年史里的 `- 来源：\`path\`` 反引号引用同样属归档锚点，跳过检查
+ck(f"docs/ 内 {n_links} 个相对链接（编年史归档引用除外）全部可解析",
+   not broken, f"{len(broken)} 断链")
 for b in broken[:15]:
     print(f"        ✗ {b}")
 
@@ -84,7 +91,10 @@ def broken_now() -> set[str]:
     EXCL = {"scripts/_docs_reorg_plan.py", "scripts/_docs_fix_refs.py",
             "scripts/_docs_preview_map.py", "scripts/_docs_health.py",
             # 该脚本**故意**以旧路径为测试数据（核对"移动前既存断链"），不是漏改
-            "scripts/_docs_check_prebroken.py"}
+            "scripts/_docs_check_prebroken.py",
+            # 编年史生成器把被合并的原始路径写入 CHRONICLE.md，属**归档引用**
+            "scripts/_cleanup_build_chronicle.py",
+            "scripts/_cleanup_docs_plan.py"}
     files: list[Path] = []
     for g in SCAN:
         files += [p for p in ROOT.glob(g)
@@ -95,6 +105,10 @@ def broken_now() -> set[str]:
     for p in sorted(set(files)):
         rel = str(p.relative_to(ROOT)).replace("\\", "/")
         if rel in EXCL:
+            continue
+        # ⚠ CHRONICLE.md 刻意引用**已合并删除**的原始路径（归档锚点，可经
+        #   backup 标签复原），不是断链 —— 跳过，避免把归档引用误报为回归。
+        if p.name == "CHRONICLE.md":
             continue
         t = p.read_text(encoding="utf-8", errors="replace")
         for ref in set(rx.findall(t)):

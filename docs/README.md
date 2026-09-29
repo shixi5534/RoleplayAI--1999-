@@ -71,9 +71,8 @@
 | [`audit/`](plot-graph-rag/audit/) | 架构审查、抽取质量审计、灰机事实核对 |
 | [`corpus/`](plot-graph-rag/corpus/) | 语料清洗清单、**术语对照词表**、时间轴、别名裁决 |
 | [`eval/`](plot-graph-rag/eval/) | 300 题评测、召回诊断、测试集文档 |
-| [`graph-governance/`](plot-graph-rag/graph-governance/) | 关系命名治理、灰机正典参考 |
-| [`summary/`](plot-graph-rag/summary/) | GraphRAG 阶段计划与审计 |
-| [`CHRONICLE.md`](plot-graph-rag/CHRONICLE.md) | 历史编年史（49 条） |
+| [`graph-governance/`](plot-graph-rag/graph-governance/) | 灰机正典参考（关系治理报告已并入编年史） |
+| [`CHRONICLE.md`](plot-graph-rag/CHRONICLE.md) | 历史编年史（49 条，含 summary/ 阶段计划与审计） |
 
 > ⚠️ `plan/` 内文档原标注「**待办，除用户明确指定外不执行**」。
 
