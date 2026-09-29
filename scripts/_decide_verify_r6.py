@@ -7,8 +7,13 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-A = ROOT / "data/compendium_rag/backups/pre-r4k01/graph.json"
+# 基线用 **Applier 自己写出的官方回滚锚点** prev.r6（已入库），
+# 而非临时副本 —— 保证本脚本在干净副本（clone/worktree）中同样可跑。
+A = ROOT / "data/compendium_rag/backups/graph.json.prev.r6"
 B = ROOT / "data/compendium_rag/graph.json"
+if not A.exists():
+    print(f"[FATAL] 缺少回滚锚点 {A.relative_to(ROOT)}")
+    raise SystemExit(2)
 
 a = json.loads(A.read_text(encoding="utf-8"))
 b = json.loads(B.read_text(encoding="utf-8"))
