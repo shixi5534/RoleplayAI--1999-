@@ -337,6 +337,33 @@ for gone in ("tests/voice_repro/repro.py", "tests/qa_consistency_check.py"):
 n_d = len([p for p in (D).iterdir() if p.is_file()])
 check("data/compendium_rag 顶层文件已精简（历史 1398）", n_d < 200, str(n_d))
 
+print("\n[Phase 9c] 项目结构整理（根目录 / 忽略规则 / 归档 / 依赖一致）")
+_pj = subprocess.run([sys.executable, str(W / "scripts/_project_health.py")],
+                     cwd=str(W), capture_output=True, text=True,
+                     encoding="utf-8", errors="replace")
+check("项目体检 RESULT: ALL OK", "RESULT: ALL OK" in (_pj.stdout or ""),
+      (_pj.stdout or "").strip().splitlines()[-1] if _pj.stdout else "无输出")
+# 根目录不得有未登记散落文件
+ROOT_OK = {".env", ".env.example", ".gitattributes", ".gitignore",
+           "pyproject.toml", "README.md", "requirements.txt", "start_server.bat"}
+IGNORED_OK = {".env.env.bak.20260831_232917", "_shuzhi_extract.txt",
+              "_tmp_pron_edges.txt"}
+_root_extra = sorted(p.name for p in W.iterdir()
+                     if p.is_file() and p.name not in ROOT_OK | IGNORED_OK)
+check("根级无未登记散落文件", not _root_extra, str(_root_extra))
+# 一次性产物已归档
+check("scripts/_archive/ 在库", (W / "scripts/_archive").is_dir())
+check("src/data 已移出代码树", not (W / "src/data").exists())
+# 依赖清单不再漏项
+_rq = (W / "requirements.txt").read_text(encoding="utf-8")
+check("requirements.txt 含 fastapi 与 python-multipart",
+      "fastapi" in _rq and "python-multipart" in _rq)
+# .gitignore 防复发规则
+_gi = (W / ".gitignore").read_text(encoding="utf-8")
+for pat in (".pytest_bt/", "pytest-of-Lenovo/", "roleplay_test_qenmhfwr/",
+            "_poc_shots/"):
+    check(f".gitignore 含 {pat}", pat in _gi)
+
 print("\n" + "=" * 74)
 if FAILS:
     print(f"结果：{len(FAILS)} 项 FAIL -> {FAILS}")

@@ -83,3 +83,17 @@ desktop/dist/
 desktop/out/
 #   运行期检索埋点（M-11）：默认关；开启时按轮追加，属运行产物不入库
 data/knowledge/_audit/retrieval_trace/
+
+# ── 本机运行残留（2026-09-29 整理补充）──────────────────────────────
+# 下列目录由 pytest / conftest 在本机生成，属「沙箱产物」，不入库。
+# 历史上它们未列入 .gitignore，会持续污染 `git status`。
+.pytest_bt/
+.pytest_ws/
+.pytest_tmp*/
+pytest-of-Lenovo/
+roleplay_test_qenmhfwr/
+_poc_shots/
+
+#   根级一次性探针（已归档到 scripts/_archive/，防复发）
+/_cue_feasibility.py
+/_strip_test.js
