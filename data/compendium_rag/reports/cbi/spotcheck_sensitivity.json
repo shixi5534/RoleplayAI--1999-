@@ -1,0 +1,126 @@
+{
+ "schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+ "n_random_rows": 50,
+ "machine_soft_in_sample": 1,
+ "machine_soft_full": 3,
+ "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。",
+ "grid": [
+  {
+   "human_soft_in_sample": 0,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.98,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 0
+  },
+  {
+   "human_soft_in_sample": 1,
+   "overlap_with_machine": 0,
+   "kappa": -0.0204,
+   "observed_agreement": 0.96,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 1
+  },
+  {
+   "human_soft_in_sample": 1,
+   "overlap_with_machine": 1,
+   "kappa": 1.0,
+   "observed_agreement": 1.0,
+   "degenerate": false,
+   "gate_kappa": true,
+   "human_extra_vs_machine": 0
+  },
+  {
+   "human_soft_in_sample": 2,
+   "overlap_with_machine": 0,
+   "kappa": -0.0274,
+   "observed_agreement": 0.94,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 2
+  },
+  {
+   "human_soft_in_sample": 2,
+   "overlap_with_machine": 1,
+   "kappa": 0.6575,
+   "observed_agreement": 0.98,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 1
+  },
+  {
+   "human_soft_in_sample": 3,
+   "overlap_with_machine": 0,
+   "kappa": -0.0309,
+   "observed_agreement": 0.92,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 3
+  },
+  {
+   "human_soft_in_sample": 3,
+   "overlap_with_machine": 1,
+   "kappa": 0.4845,
+   "observed_agreement": 0.96,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 2
+  },
+  {
+   "human_soft_in_sample": 4,
+   "overlap_with_machine": 0,
+   "kappa": -0.0331,
+   "observed_agreement": 0.9,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 4
+  },
+  {
+   "human_soft_in_sample": 4,
+   "overlap_with_machine": 1,
+   "kappa": 0.3802,
+   "observed_agreement": 0.94,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 3
+  },
+  {
+   "human_soft_in_sample": 5,
+   "overlap_with_machine": 0,
+   "kappa": -0.0345,
+   "observed_agreement": 0.88,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 5
+  },
+  {
+   "human_soft_in_sample": 5,
+   "overlap_with_machine": 1,
+   "kappa": 0.3103,
+   "observed_agreement": 0.92,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 4
+  },
+  {
+   "human_soft_in_sample": 6,
+   "overlap_with_machine": 0,
+   "kappa": -0.0355,
+   "observed_agreement": 0.86,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 6
+  },
+  {
+   "human_soft_in_sample": 6,
+   "overlap_with_machine": 1,
+   "kappa": 0.2604,
+   "observed_agreement": 0.9,
+   "degenerate": false,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 5
+  }
+ ]
+}

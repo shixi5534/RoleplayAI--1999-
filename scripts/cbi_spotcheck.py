@@ -37,6 +37,8 @@ SEED = 42
 PER_TYPE = 10                      # 5 类 × 10 = 50 条 = 500 的 10%
 STAGE = os.environ.get("CBI_STAGE", "plan")
 MAP = {"clean": 0, "soft_leak": 1, "hard_leak": 2}
+SOFT_MAX = 5                         # 用户给的子标准（500 样本口径）
+N_TOTAL = 500
 REV = {v: k for k, v in MAP.items()}
 
 
@@ -188,8 +190,94 @@ def compute_kappa() -> int:
     return 0
 
 
+def sensitivity() -> int:
+    """标注之前先把"结论函数"交出来：给定人工标出 k 条 soft，κ 是多少、子标准会不会翻。
+
+    为什么这条值得先算：人工那一臂不是"走个过场"。抽检单是 50 条随机行，
+    机判在这 50 条里只报了 m0 条非 clean；如果人比机多抓出 1 条，
+    按 ×10 外推到 500 就足以把 `soft ≤ 5` 子标准打穿 —— 也就是说
+    **这一臂的真正风险方向是"机判漏报"，不是"机判误报"**。
+    """
+    sheet = json.loads(SHEET_JSON.read_text(encoding="utf-8"))
+    rows = [r for r in sheet["rows"] if r["tier"] == "随机"]
+    n = len(rows)
+    jrows = [json.loads(l) for l in JUDGE.read_text(encoding="utf-8").splitlines()]
+    m_full = sum(1 for r in jrows if r["verdict"] != "clean")
+    mach = [MAP[r["machine_verdict"]] for r in rows]
+    m0 = sum(1 for x in mach if x != 0)
+    out = []
+    for k in range(0, 7):                                  # 人标 k 条 soft
+        for ov in range(max(0, k - (n - m0)), min(k, m0) + 1):   # 其中 ov 条与机判重合
+            hum = [0] * n                                  # 人工臂从零开始：先全 clean
+            for i in [j for j, v in enumerate(mach) if v != 0][:ov]:
+                hum[i] = 1
+            for i in [j for j, v in enumerate(mach) if v == 0][:k - ov]:
+                hum[i] = 1
+            if sum(hum) != k:
+                raise SystemExit(f"[FATAL] 敏感性场景构造错了：k={k} 实得 {sum(hum)}")
+            c = cohen(list(zip(mach, hum)))
+            out.append({
+                "human_soft_in_sample": k, "overlap_with_machine": ov,
+                "kappa": c["kappa"], "observed_agreement": c["observed_agreement"],
+                "degenerate": c["degenerate"],
+                "gate_kappa": (not c["degenerate"]) and c["kappa"] >= 0.80,
+                "human_extra_vs_machine": k - ov,
+            })
+    res = {"schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+           "n_random_rows": n, "machine_soft_in_sample": m0,
+           "machine_soft_full": m_full,
+           "prevalence_note": ("本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。"
+                               "50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。"),
+           "grid": out}
+    (CBI / "spotcheck_sensitivity.json").write_text(
+        json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    L = ["# κ 的结论函数（在你标注之前算好）", "",
+         f"- 随机行 **{n}** 条，机判在其中报非 clean **{m0}** 条"
+         f"（全量 {N_TOTAL} 条里机判报 {m_full} 条）",
+         "- 读法：**k = 人工在这 50 条里标出几条 soft**（人工臂从零开始标，不是「在机判上加几条」）；"
+         "ov = 其中几条与机判重合。",
+         "",
+         "| 人标 k | 重合 ov | κ | 观测一致率 | κ≥0.80 | 人工比机判多抓 |",
+         "| --- | --- | --- | --- | --- | --- |"]
+    for r in out:
+        L.append(f"| {r['human_soft_in_sample']} | {r['overlap_with_machine']} | {r['kappa']} | "
+                 f"{r['observed_agreement']} | "
+                 f"{'✅' if r['gate_kappa'] else ('退化⇒不判' if r['degenerate'] else '❌')} | "
+                 f"{r['human_soft_in_sample'] - r['overlap_with_machine']} |")
+    L += ["",
+          "## 这张表能定什么、不能定什么",
+          "",
+          f"- **能定 κ**：只有 `k={m0} 且 ov={m0}`（人工完全同意机判）这一行给 κ=1.0；"
+          "人工每多标一条、且不与机判重合，κ 就往下掉 —— "
+          "`k=2 ov=1` 已经只剩 0.6575，**低于 0.80 的闸门**。"
+          "换句话说：这台判分器只要被人工纠正一次，κ 就过不了线。",
+          f"- **不能定 `soft ≤ 5`**：全量 N_soft 以 500 条机判实测（{m_full} 条）为准。"
+          "50 行抽样的正例率不能反过来覆盖总体计数 —— "
+          "机判总体 3 条、抽样里恰含 1 条，×10 外推会得到 10>5 这种纯属抽样噪声的结论。"
+          "抽检的用途是**一致性**，不是**流行率**。",
+          "- **若人工在抽检里抓到机判漏报**（多标的 Soft 与机判不重合），正确动作不是外推数字，"
+          "而是：把该情形写成 rubric 的一条判例 ⇒ 用统一尺子**重判全量 500 条**（25 批），"
+          "两版读数一起报。这与 pass 1/pass 2 那次同源。",
+          "",
+          "> 附：机-机噪声底已实测（`cbi_spotcheck_machine.json`）—— 同一把尺、独立盲代理重判同样 52 条，"
+          "一致率 94.2%，3 条分歧恰好就是机判报 soft 的那三条。"
+          "所以发布读数一直按区间 **CBI ∈ [0.9844, 0.9874]** 报，而不是单点。"]
+    p = CBI / "spotcheck_sensitivity.md"
+    p.write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(f"[OK] 结论函数 → {p.name}")
+    for r in out[:8]:
+        print(f"     k={r['human_soft_in_sample']} ov={r['overlap_with_machine']} "
+              f"κ={r['kappa']} 一致率={r['observed_agreement']} "
+              f"闸门={'过' if r['gate_kappa'] else ('退化不判' if r['degenerate'] else '不过')}")
+    return 0
+
+
 def main() -> int:
-    return compute_kappa() if STAGE == "kappa" else build_sheet()
+    if STAGE == "kappa":
+        return compute_kappa()
+    if STAGE == "sens":
+        return sensitivity()
+    return build_sheet()
 
 
 if __name__ == "__main__":
