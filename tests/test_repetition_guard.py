@@ -155,13 +155,24 @@ BANNED = "窗外的蛾子又往亮处扑了，很蠢，也很像人"
 
 
 def _build_orch(llm, monkeypatch, *, guard_enabled=True, max_retries=1, memory=None):
-    """构造编排器：monkeypatch 掉 run()/stream() 内部的 LLM 构建，强制使用替身。"""
+    """构造编排器，强制使用替身 LLM。
+
+    QA 2026-09-29 修正：本辅助函数此前构造时传的是 ``llm=MockLLMProvider()``，
+    而把真正的替身 ``llm`` 交给 monkeypatch 的工厂返回。这在修复前"碰巧能用"，
+    因为它依赖了一个真实缺陷——``ChatOrchestrator.run()/stream()`` 当时会
+    **忽略构造函数注入的 LLM**、无条件调用 ``build_llm_from_config``，所以工厂替身获胜。
+
+    该缺陷修复后（注入优先），构造函数注入的 ``MockLLMProvider`` 才是实际生效者，
+    断言便全部落空。正确写法是直接把替身注入构造函数——这也是 ``ChatOrchestrator``
+    本来的契约。monkeypatch 保留作为兜底：若将来有用例携带请求级 ``llm`` override，
+    工厂仍返回该替身而非真实客户端。
+    """
     monkeypatch.setattr(
         "roleplay.core.orchestrator.build_llm_from_config",
         lambda s, override=None: (llm, False),
     )
     orch = ChatOrchestrator(
-        llm=MockLLMProvider(),
+        llm=llm,
         emotion=KeywordEmotionDetector(),
         rag=InMemoryVectorStore(),
         session_memory=memory or SessionMemory(Path(tempfile.mkdtemp(prefix="rg_"))),

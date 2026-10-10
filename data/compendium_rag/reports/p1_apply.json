@@ -1,0 +1,372 @@
+{
+  "schema": "compendium_rag.p1_apply/v1",
+  "mode": "apply",
+  "input_graph": {
+    "path": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\graph.json",
+    "sha256_16": "026b41699f021db2",
+    "fingerprint": "7dc29bf90681a3f7",
+    "normalizer": ""
+  },
+  "normalizer_version": "n2",
+  "tables": {
+    "overrides": 6728,
+    "watch": 10,
+    "inverse_pairs": 6,
+    "swap": {
+      "师从": "指导"
+    },
+    "same_direction": [
+      "从属",
+      "代表",
+      "属于",
+      "源自",
+      "隶属于"
+    ]
+  },
+  "before": {
+    "edges": 30269,
+    "distinct_predicates": 8353,
+    "strict_canonical_rate": 0.067594,
+    "singleton_predicates": 5400,
+    "singleton_rate": 0.646474,
+    "top10_edge_coverage": 0.080875,
+    "top10": [
+      {
+        "relation": "自陈",
+        "edges": 367
+      },
+      {
+        "relation": "同场",
+        "edges": 312
+      },
+      {
+        "relation": "询问",
+        "edges": 291
+      },
+      {
+        "relation": "说明",
+        "edges": 263
+      },
+      {
+        "relation": "告知",
+        "edges": 236
+      },
+      {
+        "relation": "追问",
+        "edges": 229
+      },
+      {
+        "relation": "断言",
+        "edges": 227
+      },
+      {
+        "relation": "提及",
+        "edges": 199
+      },
+      {
+        "relation": "质疑",
+        "edges": 174
+      },
+      {
+        "relation": "提议",
+        "edges": 150
+      }
+    ]
+  },
+  "after": {
+    "edges": 27151,
+    "distinct_predicates": 1610,
+    "strict_canonical_rate": 0.843137,
+    "singleton_predicates": 1111,
+    "singleton_rate": 0.690062,
+    "top10_edge_coverage": 0.364775,
+    "top10": [
+      {
+        "relation": "告知",
+        "edges": 2803
+      },
+      {
+        "relation": "询问",
+        "edges": 955
+      },
+      {
+        "relation": "发现",
+        "edges": 928
+      },
+      {
+        "relation": "提及",
+        "edges": 915
+      },
+      {
+        "relation": "请求",
+        "edges": 913
+      },
+      {
+        "relation": "指责",
+        "edges": 767
+      },
+      {
+        "relation": "给予",
+        "edges": 755
+      },
+      {
+        "relation": "怀疑",
+        "edges": 629
+      },
+      {
+        "relation": "前往",
+        "edges": 626
+      },
+      {
+        "relation": "知晓",
+        "edges": 613
+      }
+    ]
+  },
+  "isolated_before": {
+    "entities": 7033,
+    "isolated": 1121,
+    "isolated_ratio": 0.159391
+  },
+  "codes": {
+    "override": 15316,
+    "synonym": 7834,
+    "kept:review:unmapped": 4258,
+    "canonical": 2046,
+    "rule": 574,
+    "drop:negation": 146,
+    "same_direction": 92,
+    "kept:direction_blocked": 1,
+    "swap": 1,
+    "drop:junk": 1
+  },
+  "dropped": {
+    "drop:negation": 146,
+    "drop:junk": 1
+  },
+  "edges_merged": 2971,
+  "direction_blocked": [
+    {
+      "raw": "被称为",
+      "canonical": "称呼",
+      "edges": 1
+    }
+  ],
+  "top_rewritten": [
+    {
+      "raw": "自陈",
+      "canonical": "告知",
+      "edges": 367
+    },
+    {
+      "raw": "说明",
+      "canonical": "告知",
+      "edges": 263
+    },
+    {
+      "raw": "追问",
+      "canonical": "询问",
+      "edges": 229
+    },
+    {
+      "raw": "断言",
+      "canonical": "告知",
+      "edges": 227
+    },
+    {
+      "raw": "质疑",
+      "canonical": "怀疑",
+      "edges": 174
+    },
+    {
+      "raw": "提议",
+      "canonical": "指导",
+      "edges": 150
+    },
+    {
+      "raw": "质问",
+      "canonical": "询问",
+      "edges": 149
+    },
+    {
+      "raw": "推断",
+      "canonical": "怀疑",
+      "edges": 148
+    },
+    {
+      "raw": "承诺",
+      "canonical": "约定",
+      "edges": 144
+    },
+    {
+      "raw": "解释",
+      "canonical": "告知",
+      "edges": 144
+    },
+    {
+      "raw": "宣告",
+      "canonical": "告知",
+      "edges": 135
+    },
+    {
+      "raw": "拒绝",
+      "canonical": "对立",
+      "edges": 129
+    },
+    {
+      "raw": "讲述",
+      "canonical": "告知",
+      "edges": 125
+    },
+    {
+      "raw": "评价",
+      "canonical": "指责",
+      "edges": 118
+    },
+    {
+      "raw": "致谢",
+      "canonical": "感谢",
+      "edges": 100
+    },
+    {
+      "raw": "指认",
+      "canonical": "告知",
+      "edges": 95
+    },
+    {
+      "raw": "抱怨",
+      "canonical": "指责",
+      "edges": 95
+    },
+    {
+      "raw": "介绍",
+      "canonical": "告知",
+      "edges": 94
+    },
+    {
+      "raw": "赠予",
+      "canonical": "给予",
+      "edges": 90
+    },
+    {
+      "raw": "许诺",
+      "canonical": "约定",
+      "edges": 83
+    },
+    {
+      "raw": "催促",
+      "canonical": "请求",
+      "edges": 82
+    },
+    {
+      "raw": "指出",
+      "canonical": "告知",
+      "edges": 82
+    },
+    {
+      "raw": "转述",
+      "canonical": "告知",
+      "edges": 82
+    },
+    {
+      "raw": "通报",
+      "canonical": "告知",
+      "edges": 78
+    },
+    {
+      "raw": "认出",
+      "canonical": "发现",
+      "edges": 77
+    },
+    {
+      "raw": "确认",
+      "canonical": "研究",
+      "edges": 77
+    },
+    {
+      "raw": "安抚",
+      "canonical": "帮助",
+      "edges": 77
+    },
+    {
+      "raw": "置身",
+      "canonical": "位于",
+      "edges": 77
+    },
+    {
+      "raw": "提醒",
+      "canonical": "警告",
+      "edges": 74
+    },
+    {
+      "raw": "劝阻",
+      "canonical": "阻止",
+      "edges": 73
+    },
+    {
+      "raw": "主张",
+      "canonical": "告知",
+      "edges": 73
+    },
+    {
+      "raw": "追忆",
+      "canonical": "知晓",
+      "edges": 73
+    },
+    {
+      "raw": "报告",
+      "canonical": "告知",
+      "edges": 71
+    },
+    {
+      "raw": "判断",
+      "canonical": "知晓",
+      "edges": 70
+    },
+    {
+      "raw": "点破",
+      "canonical": "发现",
+      "edges": 68
+    },
+    {
+      "raw": "宣布",
+      "canonical": "告知",
+      "edges": 66
+    },
+    {
+      "raw": "辨认",
+      "canonical": "发现",
+      "edges": 66
+    },
+    {
+      "raw": "邀请",
+      "canonical": "请求",
+      "edges": 65
+    },
+    {
+      "raw": "讥讽",
+      "canonical": "指责",
+      "edges": 65
+    },
+    {
+      "raw": "回忆",
+      "canonical": "知晓",
+      "edges": 65
+    }
+  ],
+  "n_rewritten_predicates": 6657,
+  "gates": {
+    "input_sha_matches_anchor": true,
+    "entities_untouched": true,
+    "fingerprint_n2": "14daf1bbfa407388",
+    "fingerprint_preregistered": "14daf1bbfa407388",
+    "fingerprint_matches_preregistration": true,
+    "backup_present_and_identical": true,
+    "all_ok": true
+  },
+  "isolated_after": {
+    "entities": 7033,
+    "isolated": 1128,
+    "isolated_ratio": 0.160387
+  }
+}

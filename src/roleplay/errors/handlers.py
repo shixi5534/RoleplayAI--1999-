@@ -19,6 +19,8 @@ _SENSITIVE_VALUE_RE = re.compile(
     r"(?i:api[_-]?key|token|secret|password|passwd)[\"':=\s]+[^\s,}\"']+)",
     re.IGNORECASE,
 )
+# 超过深度上限的层级统一折叠为该占位符（S2b：绝不原样输出原始内容）
+_DEPTH_LIMIT_PLACEHOLDER = "[深度超限已隐藏]"
 
 
 def _sanitize(value: object, *, depth: int = 0) -> object:
@@ -27,10 +29,25 @@ def _sanitize(value: object, *, depth: int = 0) -> object:
     - 字符串：正则扫描常见凭据形态（Authorization 头、sk- 开头的 API key 等）；
     - dict：敏感键名的值直接打码，其余键递归处理；
     - list：逐元素递归。
-    depth 上限 10 防极端深嵌套。
+    - 超深嵌套（depth > 10）：**降级为打码，绝不原样输出**。
+
+    S2b 修复背景：原先 ``depth > 10`` 时直接 ``return str(value)[:200]``，
+    即「深度超限 = 跳过脱敏」——实测 12 层嵌套的 ``{"api_key": "sk-..."}``
+    会原样穿透到错误响应/日志。现在超限层降级为固定占位符 ``"[深度超限已隐藏]"``：
+    既不泄漏任何值，也保留「此处有嵌套」的结构信息；字典仍按键名判定，
+    敏感键（api_key 等）在任何深度都只输出 ``***``。
     """
     if depth > 10:
-        return str(value)[:200] if value is not None else value
+        # 降级策略（不再原样输出内容）：
+        # 1) 标量/容器一律折叠为固定占位符——不保留任何原始字符，
+        #    深层 api_key 无论藏在哪一层都无法穿透；
+        # 2) 若该层恰是 dict，先按**键名**打码，保证敏感键位可见且值为 ***。
+        if isinstance(value, dict):
+            return {
+                str(k): ("***" if str(k).lower() in _SENSITIVE_KEYS else _DEPTH_LIMIT_PLACEHOLDER)
+                for k in value
+            }
+        return _DEPTH_LIMIT_PLACEHOLDER
     if isinstance(value, dict):
         return {
             k: ("***" if str(k).lower() in _SENSITIVE_KEYS else _sanitize(v, depth=depth + 1))
@@ -78,6 +95,10 @@ def register_exception_handlers(app: FastAPI) -> None:
 
     @app.exception_handler(HTTPException)
     async def _handle_http(_: Request, exc: HTTPException) -> JSONResponse:
+        # S2a 修复：透传 exc.headers，保留 Retry-After 等协议头。
+        # 此前丢弃 headers，导致限流 429（rate_limit 显式带 Retry-After）的退避
+        # 提示消失，客户端只能盲目重试（放大压垮服务）。
+        # 安全：仅透传框架/业务显式声明的头，不反射请求头，无凭据泄漏面。
         return JSONResponse(
             status_code=exc.status_code,
             content={
@@ -87,6 +108,7 @@ def register_exception_handlers(app: FastAPI) -> None:
                     "details": None,
                 }
             },
+            headers=exc.headers,
         )
 
     @app.exception_handler(RequestValidationError)

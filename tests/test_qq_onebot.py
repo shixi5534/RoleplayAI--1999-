@@ -472,3 +472,110 @@ async def test_e2e_low_emotion_still_gets_text_reply(tmp_path):
                 pass
 
     assert received and "角色回复: 收到" in received[0]
+
+
+# ── S3：重连日志不得泄漏 access_token ──
+def test_redact_url_masks_token():
+    from roleplay.channels.qq_onebot import _redact_url
+
+    assert (
+        _redact_url("ws://h/x?access_token=SECRET123&y=1", "SECRET123")
+        == "ws://h/x?access_token=***&y=1"
+    )
+    # 异常对象（非字符串）也要脱敏
+    assert "SECRET123" not in _redact_url(ValueError("boom SECRET123"), "SECRET123")
+    # 形态兜底：token 值与配置字面不同（URL 编码/拼接差异）时仍按键名打码
+    assert "OTHER" not in _redact_url("ws://h/?access_token=OTHER#f", "SECRET123")
+
+
+def test_redact_url_empty_token_is_noop():
+    """token 为空时绝不做 replace（否则会变成灾难性逐字符替换）。"""
+    from roleplay.channels.qq_onebot import _redact_url
+
+    raw = "ws://127.0.0.1:3001"
+    assert _redact_url(raw, "") == raw
+    assert _redact_url(None, "") == ""
+    # 空 token 不得把正常文本撑大
+    assert len(_redact_url("abc", "")) == 3
+
+
+async def test_reconnect_log_does_not_leak_token(caplog):
+    """★S3 核心★ 连接异常分支（InvalidURI 携带完整 URL+token）必须脱敏。
+
+    修复前：logger.warning("...：%s", exc) 直接输出异常文本，而 websockets 的
+    InvalidURI 会原样回显 ws://host/?access_token=<真 token>，凭据进 server.log。
+    """
+    import logging
+
+    from roleplay.channels.qq_onebot import QQChannel
+
+    ch = _make_channel(qq_ws_token="SECRET123")
+    original = QQChannel._connect_loop
+
+    async def once():
+        await original(ch)
+
+    ch._connect_loop = once
+    ch.settings.qq_napcat_ws_url = "not-a-scheme://h/x"  # 触发 InvalidURI
+
+    with caplog.at_level(logging.WARNING, logger="roleplay.channels.qq_onebot"):
+        task = asyncio.create_task(ch.start())
+        try:
+            for _ in range(100):
+                if caplog.records:
+                    break
+                await asyncio.sleep(0.05)
+        finally:
+            ch.stop()
+            task.cancel()
+            try:
+                await task
+            except (asyncio.CancelledError, Exception):  # noqa: BLE001
+                pass
+
+    text = "\n".join(r.getMessage() for r in caplog.records)
+    assert text, "未捕获到重连告警日志（用例未覆盖异常分支）"
+    assert "SECRET123" not in text, f"重连日志泄漏了 access_token：{text}"
+    assert "access_token=***" in text
+
+
+async def test_connect_log_masks_token(caplog):
+    """成功路径的 info 日志也不得泄漏 token（回归保护）。"""
+    import logging
+
+    import roleplay.channels.qq_onebot as mod
+
+    ch = _make_channel(qq_ws_token="SECRET123")
+    seen = {}
+
+    class _FakeWS:
+        async def __aenter__(self):
+            ch._stop.set()
+            return self
+
+        async def __aexit__(self, *a):
+            return False
+
+        def __aiter__(self):
+            return self
+
+        async def __anext__(self):
+            raise StopAsyncIteration
+
+    def fake_connect(url, **kw):
+        seen["url"] = url
+        return _FakeWS()
+
+    original = mod.ws_connect
+    mod.ws_connect = fake_connect
+    try:
+        with caplog.at_level(logging.INFO, logger="roleplay.channels.qq_onebot"):
+            await ch._connect_loop()
+    finally:
+        mod.ws_connect = original
+
+    # 真实连接 URL 仍带 token（协议需要），但日志里必须是 ***
+    assert "SECRET123" in seen["url"]
+    text = "\n".join(r.getMessage() for r in caplog.records)
+    assert "SECRET123" not in text, f"连接日志泄漏了 access_token：{text}"
+    assert "access_token=***" in text

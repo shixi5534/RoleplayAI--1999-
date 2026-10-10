@@ -153,8 +153,12 @@ GOOD = "嗯，我在。"
 
 
 def _use_scripted_llm(monkeypatch, scripted):
-    """run()/stream() 走「请求级 LLM 构建」（build_llm_from_config），
-    不用构造器注入的 self._llm —— 测试里把该工厂指到脚本化桩上。"""
+    """把请求级 LLM 工厂指向脚本化桩（兜底）。
+
+    QA 2026-09-29 更新：主路径现在走构造函数注入的 ``self._llm``（见 ``_make_orch``），
+    只有带 ``req.llm`` override 时才会调 ``build_llm_from_config``。
+    因此本 monkeypatch 不再是必经之路，保留仅为覆盖 override 分支。
+    """
     import roleplay.core.orchestrator as orch_mod
 
     monkeypatch.setattr(

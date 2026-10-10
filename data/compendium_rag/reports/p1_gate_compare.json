@@ -1,0 +1,89 @@
+{
+  "schema": "compendium_rag.p1_gate_compare/v1",
+  "mode": "read-only",
+  "rule": "三主数（同口径同子集，mode=full）v9 不得低于 v8；缺任一产物不得宣布通过",
+  "verdict": "PASS",
+  "gates": [
+    {
+      "gate": "300cn_bare_hit6",
+      "mode": "full",
+      "subset": "answerable",
+      "n_v8": 196,
+      "n_v9": 196,
+      "hit6_v8": 0.852041,
+      "hit6_v9": 0.852041,
+      "prereg_floor": 0.852,
+      "caliber_matches_prereg": true,
+      "mrr_v8": 0.664456,
+      "mrr_v9": 0.66165,
+      "paired_up": 0,
+      "paired_down": 0,
+      "down_qids": [],
+      "corpus_v8": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 30269
+      },
+      "corpus_v9": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 27151
+      },
+      "status": "PASS"
+    },
+    {
+      "gate": "blind206_bare_hit6",
+      "mode": "full",
+      "subset": "all",
+      "n_v8": 206,
+      "n_v9": 206,
+      "hit6_v8": 0.893204,
+      "hit6_v9": 0.898058,
+      "prereg_floor": 0.8932,
+      "caliber_matches_prereg": true,
+      "mrr_v8": 0.676214,
+      "mrr_v9": 0.677346,
+      "paired_up": 1,
+      "paired_down": 0,
+      "down_qids": [],
+      "corpus_v8": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 30269
+      },
+      "corpus_v9": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 27151
+      },
+      "status": "PASS"
+    },
+    {
+      "gate": "gen120_bare_hit6",
+      "mode": "full",
+      "subset": "all",
+      "n_v8": 120,
+      "n_v9": 120,
+      "hit6_v8": 0.983333,
+      "hit6_v9": 0.991667,
+      "prereg_floor": 0.9833,
+      "caliber_matches_prereg": true,
+      "mrr_v8": 0.825278,
+      "mrr_v9": 0.820694,
+      "paired_up": 1,
+      "paired_down": 0,
+      "down_qids": [],
+      "corpus_v8": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 30269
+      },
+      "corpus_v9": {
+        "chunks": 3695,
+        "entities": 7033,
+        "edges": 27151
+      },
+      "status": "PASS"
+    }
+  ]
+}

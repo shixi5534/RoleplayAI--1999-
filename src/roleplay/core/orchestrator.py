@@ -837,6 +837,35 @@ class ChatOrchestrator:
             except Exception as exc:  # noqa: BLE001
                 logger.warning("用户画像提取失败（不影响主流程）：%s", exc)
 
+    def _resolve_llm(self, req: ChatRequest) -> tuple[LLMPort, bool]:
+        """决定本轮生成用哪个 LLM 客户端：DI 注入优先，请求级 override 次之。
+
+        语义与既有约定一致（见 :669 / :708 的 ``gen = llm or self._llm``）：
+
+        - ``req.llm`` 为 None 或全字段缺省 → **直接用构造函数注入的 self._llm**，
+          不经过工厂（避免被全局 build_llm 抢占，DI 失效）；返回
+          needs_aclose=False，调用方不得 aclose 长生命周期实例。
+        - 仅当 ``req.llm`` 确有字段时（前端「模型切换」），才交由
+          ``build_llm_from_config`` 重建；其 needs_aclose=True 表示一次性客户端
+          （含请求级 api_key），调用方**必须**在 finally 中 aclose，否则泄漏
+          httpx 连接池。
+        - 未注入 ``self._llm``（少数脚本以 llm=None 构造）时回退工厂，保持旧行为。
+        """
+        override = req.llm
+        has_override = override is not None and any(
+            v is not None
+            for v in (
+                override.provider,
+                override.model,
+                override.base_url,
+                override.api_key,
+                override.timeout,
+            )
+        )
+        if has_override or self._llm is None:
+            return build_llm_from_config(get_settings(), override)
+        return self._llm, False
+
     async def run(self, req: ChatRequest) -> OrchestratorResult:
         """非流式入口（POST /chat 与 QQ 通道主路径）。
 
@@ -848,8 +877,8 @@ class ChatOrchestrator:
         )
         # 复读抑制需要角色卡示例句：轻量同步重取（_prepare 未返回 card_obj）
         _, _, card_obj = self._resolve_context(req)
-        # 请求级 LLM override：前端模型切换
-        llm, needs_aclose = build_llm_from_config(get_settings(), req.llm)
+        # 请求级 LLM override：前端模型切换；无 override 时用 DI 注入的 self._llm
+        llm, needs_aclose = self._resolve_llm(req)
         try:
             async with self._session_lock(req.session_id):
                 history = (
@@ -1044,8 +1073,8 @@ class ChatOrchestrator:
             plot_chunks,
             graph_chunks,
         )
-        # 请求级 LLM override：前端模型切换
-        llm, needs_aclose = build_llm_from_config(get_settings(), req.llm)
+        # 请求级 LLM override：前端模型切换；无 override 时用 DI 注入的 self._llm
+        llm, needs_aclose = self._resolve_llm(req)
         try:
             async with self._session_lock(req.session_id):
                 history = (

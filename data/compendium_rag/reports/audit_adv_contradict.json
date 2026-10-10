@@ -1,0 +1,311 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP5",
+  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "injected": 28,
+    "detected": 28,
+    "detection_rate": 1.0,
+    "probe_chunk_own": 10,
+    "probe_skipped_no_later": 2,
+    "timeline_ranked_chunks": 944
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L5.4 知识矛盾探测 检测器召回",
+      "target": "≥0.90",
+      "actual": 1.0,
+      "verdict": "PASS",
+      "reason": "注入 28 个「已死仍存活」实体（每条注入块都取 story_rank 严格大于状态变更点的块，10 条用本人更晚篇章、18 条借用全局更晚块；另有 2 个实体的状态变更点已是时间线最晚，无法构造真矛盾、不入分母），temporal 扫描在内存副本上报出 28 个",
+      "root_cause_bucket": "数据层"
+    }
+  ],
+  "per_case": [
+    {
+      "entity": "混血种",
+      "eid": "混血种",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "重塑军官",
+      "eid": "重塑军官",
+      "kill_rank": 9,
+      "inject_chunk": "mainline__113_他者的悲哀:17.0.0",
+      "inject_rank": 11,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "五号楼",
+      "eid": "五号楼",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "游灵",
+      "eid": "游灵",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__101_在我们的时代里:5.0.1",
+      "inject_rank": 12,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "暴雨症候",
+      "eid": "暴雨症候",
+      "kill_rank": 8,
+      "inject_chunk": "mainline__102_夜色温柔:5.1.0",
+      "inject_rank": 13,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "重塑·信徒",
+      "eid": "重塑·信徒",
+      "kill_rank": 1,
+      "inject_chunk": "mainline__110_复乐园:15.0.0",
+      "inject_rank": 24,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "发条玩具",
+      "eid": "发条玩具",
+      "kill_rank": 18,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "海因里希",
+      "eid": "海因里希",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "暴雨",
+      "eid": "暴雨",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:3.0.1",
+      "inject_rank": 24,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "毕达哥拉斯",
+      "eid": "毕达哥拉斯",
+      "kill_rank": 8,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "西奥菲尔",
+      "eid": "西奥菲尔",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "西南瞭望塔",
+      "eid": "西南瞭望塔",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "卡戎",
+      "eid": "卡戎",
+      "kill_rank": 10,
+      "inject_chunk": "mainline__113_他者的悲哀:0.0.1",
+      "inject_rank": 11,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "格鲁托夫",
+      "eid": "格鲁托夫",
+      "kill_rank": 10,
+      "inject_chunk": "mainline__113_他者的悲哀:8.0.3",
+      "inject_rank": 11,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "阿尔卡纳",
+      "eid": "阿尔卡纳",
+      "kill_rank": 18,
+      "inject_chunk": "mainline__110_复乐园:2.0.1",
+      "inject_rank": 24,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "手枪",
+      "eid": "手枪",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__108_忧郁的热带:16.2.0",
+      "inject_rank": 18,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "黑色立方体",
+      "eid": "黑色立方体",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "芝诺士兵",
+      "eid": "芝诺士兵",
+      "kill_rank": 18,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "暴雨气象稳定鸽",
+      "eid": "暴雨气象稳定鸽",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "圣洛夫基金会驻维也纳分部",
+      "eid": "圣洛夫基金会驻维也纳分部",
+      "kill_rank": 7,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "奥斯本",
+      "eid": "奥斯本",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "科尔腾",
+      "eid": "科尔腾",
+      "kill_rank": 9,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "乌尔里希",
+      "eid": "乌尔里希",
+      "kill_rank": 24,
+      "inject_chunk": null,
+      "inject_rank": null,
+      "chunk_source": "skipped-no-later-chunk",
+      "detected": null
+    },
+    {
+      "entity": "阿尼姆斯",
+      "eid": "阿尼姆斯",
+      "kill_rank": 24,
+      "inject_chunk": null,
+      "inject_rank": null,
+      "chunk_source": "skipped-no-later-chunk",
+      "detected": null
+    },
+    {
+      "entity": "沙堡",
+      "eid": "沙堡",
+      "kill_rank": 8,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "破产贵族",
+      "eid": "破产贵族",
+      "kill_rank": 13,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "教众Ⅱ",
+      "eid": "教众Ⅱ",
+      "kill_rank": 8,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "重塑·门徒",
+      "eid": "重塑·门徒",
+      "kill_rank": 11,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    },
+    {
+      "entity": "托勒密",
+      "eid": "托勒密",
+      "kill_rank": 10,
+      "inject_chunk": "mainline__110_复乐园:22.1.1",
+      "inject_rank": 24,
+      "chunk_source": "own",
+      "detected": true
+    },
+    {
+      "entity": "亚当·埃耶尔",
+      "eid": "亚当·埃耶尔",
+      "kill_rank": 12,
+      "inject_chunk": "mainline__110_复乐园:0.0.0",
+      "inject_rank": 24,
+      "chunk_source": "global",
+      "detected": true
+    }
+  ],
+  "artifacts": []
+}

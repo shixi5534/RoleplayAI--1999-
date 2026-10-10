@@ -14,6 +14,13 @@ from pathlib import Path
 os.environ["ROLEPLAY_LLM_PROVIDER"] = "mock"
 os.environ["ROLEPLAY_RAG_IMPL"] = "memory"
 os.environ["ROLEPLAY_EMBEDDER"] = "hashing"
+# 离线硬约束（QA 2026-09-29 补充）：此前只固定了 provider，未固定 base_url/模型，
+# 于是任何「带 llm override 但缺 base_url」的用例都会回退到本机 .env 的全局网关
+# 并真发 HTTP 请求（实测拿到 401 → 502），测试结果随本机 .env 漂移。
+# 这里显式钉死为本地 mock，保证「离线、零外部依赖」的承诺在任何机器上都成立。
+os.environ["ROLEPLAY_LLM_MODEL"] = "mock-model"
+os.environ["ROLEPLAY_LLM_BASE_URL"] = "http://127.0.0.1:9/v1"  # 保留端口，不可能连上
+os.environ["ROLEPLAY_LLM_API_KEY"] = ""
 os.environ["ROLEPLAY_ENABLE_EMOTION"] = "true"
 os.environ["ROLEPLAY_ENABLE_LIVE2D"] = "false"
 os.environ["ROLEPLAY_ENABLE_WEB"] = "false"  # 测试不联网，避免网络超时拖慢/挂起

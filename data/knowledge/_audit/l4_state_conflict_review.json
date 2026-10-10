@@ -1,0 +1,27 @@
+{
+ "schema": "audit.l4_state_conflict_review/v1",
+ "reviews": [
+  {
+   "eid": "海因里希",
+   "entity": "海因里希",
+   "verdict": "false_positive_extraction",
+   "why": "「转变」抽自 relation=更换，原文是霍夫曼宣布『此次调查任务的主要目标更换为海因里希』，改变的是任务目标而非海因里希自身的状态；「杀死」抽自 relation=决定杀害，原文『我会去杀了海因里希，这样就公平了』只是伊索尔德的意图宣告，该块以『——再见，海因里希。』+TO BE CONTINUED 收尾，击杀在本篇章内并未被断言完成，两条谓语从未对同一实体同一时点断言互斥状态。",
+   "evidence_quote": "此次调查任务的主要目标更换为海因里希"
+  },
+  {
+   "eid": "格鲁托夫",
+   "entity": "格鲁托夫",
+   "verdict": "false_positive_extraction",
+   "why": "「摧毁」抽自 relation=重创，原文谓语『我们成功摧毁了敌军后方的指挥部』的宾语是敌军指挥部而非格鲁托夫本人，且同块明确格鲁托夫『只是受了点脑震荡』生还；「转变」抽自 relation=堕落，证据『与他们牵扯过深的人最终都会成为牺牲品』是伊戈尔针对重塑之手的泛指旁白，并未断言格鲁托夫自身进入终结态。21.1.0 中格鲁托夫遭灼伤重创但仍存活（『需要吗啡吗，格鲁托夫上尉？』），重创与堕落转变本可并存，两条谓语从未对同一实体同一时点断言互斥状态，属抽错宾语/泛指旁白的抽取误报。",
+   "evidence_quote": "我们成功摧毁了敌军后方的指挥部"
+  }
+ ],
+ "summary": {
+  "n": 2,
+  "true_conflict": 0,
+  "false_positive_extraction": 2,
+  "false_positive_narrative": 0,
+  "undecidable": 0,
+  "status": "done"
+ }
+}

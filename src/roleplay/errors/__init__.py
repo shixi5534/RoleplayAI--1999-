@@ -32,6 +32,19 @@ class ConfigurationError(RoleplayError):
     status_code = 500
 
 
+class EndpointNotAllowedError(RoleplayError):
+    """请求级 LLM base_url 被 SSRF 防护拒绝（S1 修复）。
+
+    status_code=422（与 api 层既有校验器的 ``HTTPException(422)`` 对齐），
+    使 ``/chat`` 的 override 被拦截时返回同样的 422 语义，而不是 500。
+    code 沿用 ``validation_error``，与 RequestValidationError 的对外契约一致，
+    前端无需新增分支。
+    """
+
+    code = "validation_error"
+    status_code = 422
+
+
 class ProviderError(RoleplayError):
     """LLM / 外部服务调用失败。"""
 

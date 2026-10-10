@@ -7,6 +7,8 @@
 原有的 ``plot_*`` / ``graph_*`` 体系完全不受影响。
 """
 from .chunker import Chunk, chunk_corpus, chunks_stats
+from .compose import (ANSWER_SYSTEM_PROMPT, answer, compose, render_prompt,
+                      render_role_card)
 from .config import Settings, get_settings
 from .corpus import Chapter, Turn, load_corpus, corpus_stats
 from .embedder import OllamaEmbedder, cosine
@@ -25,6 +27,8 @@ __all__ = [
     "GraphStore", "Entity", "Edge", "fingerprint_of",
     "GraphRetriever", "ChunkIndex", "EntityVectorIndex",
     "Evidence", "RetrievalResult", "Seed", "personalized_pagerank",
+    "ANSWER_SYSTEM_PROMPT", "compose", "answer", "render_role_card",
+    "render_prompt",
 ]
 
 __version__ = "0.1.0"

@@ -1,0 +1,570 @@
+{
+  "schema": "audit.p6_repair_proposals/v1",
+  "graph_sha16": "7cac5867e8c80879",
+  "graph_bytes": 11588326,
+  "graph_fingerprint": "14daf1bbfa407388",
+  "graph_normalizer": "n2",
+  "edges_total": 27151,
+  "entities_total": 7033,
+  "l45": {
+    "source": [
+      "data/knowledge/_audit/l4_multiscene/ms_b01_review.json",
+      "data/knowledge/_audit/l4_multiscene/ms_b02_review.json",
+      "data/knowledge/_audit/l4_multiscene/ms_b03_review.json"
+    ],
+    "blocks_examined": 60,
+    "score_before": 3.9333,
+    "score_after_if_all_apply": 4.0,
+    "sum_before": 236,
+    "sum_after_if_all_apply": 240,
+    "n_mismatch_total": 23,
+    "n_located": 23,
+    "n_not_located": 0,
+    "coherence2_blocks": [
+      "activity__11101_雷米特杯失窃案:11.0.0",
+      "activity__12101_绿湖噩梦:0.0.2",
+      "activity__12101_绿湖噩梦:1.2.0",
+      "activity__12101_绿湖噩梦:11.1.0"
+    ],
+    "classification_counts": {
+      "delete_edge": 16,
+      "delete+add": 6,
+      "needs_human": 1
+    },
+    "entries": [
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:0.1.0",
+        "coherence": 3,
+        "review_surface_triple": "艾弗森-[提及]->崔斯特",
+        "graph_canonical_triple": "艾弗森-[提及]->崔斯特",
+        "graph_edge_index": 4336,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-001"
+        ],
+        "basis_from_review_why": "艾弗森所指为拉米雷斯（神秘学家企业），通篇未提崔斯特；正确关系已有 edge[4333]"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:1.2.1",
+        "coherence": 3,
+        "review_surface_triple": "梅兰妮-[祝愿]->皮克勒斯",
+        "graph_canonical_triple": "梅兰妮-[希望]->皮克勒斯",
+        "graph_edge_index": 4421,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-019",
+          "R7-L45-024"
+        ],
+        "basis_from_review_why": "祝愿对象是查尔顿（「愿上帝保佑你早日找到你的小皮克勒斯～」），皮克勒斯是句中宾语"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:11.0.0",
+        "coherence": 2,
+        "review_surface_triple": "挖掘艺术-[宣告]->游客",
+        "graph_canonical_triple": "挖掘艺术-[告知]->游客",
+        "graph_edge_index": 4692,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-002"
+        ],
+        "basis_from_review_why": "是回答艾弗森的追问，受话人为艾弗森；正确关系已有 edge[4567]"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:11.0.0",
+        "coherence": 2,
+        "review_surface_triple": "皮克勒斯-[推搡]->查尔顿",
+        "graph_canonical_triple": "皮克勒斯-[攻击]->查尔顿",
+        "graph_edge_index": 4697,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-003"
+        ],
+        "basis_from_review_why": "原文是唤醒熟睡主人，非攻击；「推搡/唤醒」图上谓词 0 条，不新增谓词"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:12.1.0",
+        "coherence": 3,
+        "review_surface_triple": "梅兰妮-[说明]->安保机器人",
+        "graph_canonical_triple": "梅兰妮-[告知]->安保机器人",
+        "graph_edge_index": 4708,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-004"
+        ],
+        "basis_from_review_why": "受话人是艾西且机器人已瘫痪；正确关系已有 edge[4372]（chunk_ids 已含 12.1.0）"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:12.1.1",
+        "coherence": 3,
+        "review_surface_triple": "挖掘艺术-[被缚]->星锑",
+        "graph_canonical_triple": "挖掘艺术-[控制]->星锑",
+        "graph_edge_index": 4728,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-005"
+        ],
+        "basis_from_review_why": "绑人的是艾弗森一方的机器人，星锑只是举证并致意"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:15.0.0",
+        "coherence": 3,
+        "review_surface_triple": "皮克勒斯-[淹没]->温迪",
+        "graph_canonical_triple": "皮克勒斯-[摧毁]->温迪",
+        "graph_edge_index": 4777,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-006"
+        ],
+        "basis_from_review_why": "被淹没的是皮克勒斯的求救声，与温迪无关，主客颠倒"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:3.1.1",
+        "coherence": 3,
+        "review_surface_triple": "警察-[通报]->威廉警长",
+        "graph_canonical_triple": "警察-[告知]->威廉警长",
+        "graph_edge_index": 4466,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-020",
+          "R7-L45-025"
+        ],
+        "basis_from_review_why": "讯息自威廉警长传来，方向反，听者是现场同僚"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:7.1.0",
+        "coherence": 3,
+        "review_surface_triple": "梅兰妮-[警告]->安保机器人",
+        "graph_canonical_triple": "梅兰妮-[警告]->安保机器人",
+        "graph_edge_index": 4586,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-021",
+          "R7-L45-026"
+        ],
+        "basis_from_review_why": "「小心它的探测仪」是提醒同伴（本块唯一同伴艾西），机器人称「它」"
+      },
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:9.0.0",
+        "coherence": 3,
+        "review_surface_triple": "纳尔森-[围拢]->皮克勒斯",
+        "graph_canonical_triple": "纳尔森-[攻击]->皮克勒斯",
+        "graph_edge_index": 4636,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-022",
+          "R7-L45-027"
+        ],
+        "basis_from_review_why": "同伴小狗亲昵围观（「他一向是最受欢迎的小狗」），敌意无据；取同证据的 edge[4635] 范式"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:0.0.2",
+        "coherence": 2,
+        "review_surface_triple": "恐怖通-[描述]->巡警",
+        "graph_canonical_triple": "恐怖通-[提及]->巡警",
+        "graph_edge_index": 4810,
+        "alias_resolution_used": true,
+        "alias_resolution_note": "边[4810] 的 dst 实体 `巡警` 的 aliases=['布鲁诺']，证据句指少年军布鲁诺，属别名误焊（定位本身仍走 exact eid）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-007"
+        ],
+        "basis_from_review_why": "⚠证据句讲「开朗的布鲁诺」；实体 巡警 的 aliases=['布鲁诺'] → 别名误焊（根因），别名问题另列 needs_human"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:0.0.2",
+        "coherence": 2,
+        "review_surface_triple": "十四行诗-[惊惧]->恐怖通",
+        "graph_canonical_triple": "十四行诗-[惊惧]->恐怖通",
+        "graph_edge_index": 4813,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-008",
+          "R7-L45-023"
+        ],
+        "basis_from_review_why": "说话人是维尔汀、对象是十四行诗 → 改为 维尔汀-[惊惧]->十四行诗"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:1.2.0",
+        "coherence": 2,
+        "review_surface_triple": "牙仙-[宣告]->疯癫的老人",
+        "graph_canonical_triple": "牙仙-[告知]->疯癫的老人",
+        "graph_edge_index": 4856,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-009"
+        ],
+        "basis_from_review_why": "只向维尔汀陈述，老人已昏迷；正确关系已有 edge[4857]（chunk_ids 已含 1.2.0）"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:1.2.0",
+        "coherence": 2,
+        "review_surface_triple": "坎贝尔先生-[投保]->牙仙",
+        "graph_canonical_triple": "坎贝尔先生-[投保]->牙仙",
+        "graph_edge_index": 4861,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-010"
+        ],
+        "basis_from_review_why": "本块无坎贝尔先生发言，投保人是牙仙的弟弟（旁白记述）；全图「投保」谓词仅此 1 条"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:10.1.1",
+        "coherence": 3,
+        "review_surface_triple": "安妮-[紧握]->金蜜儿",
+        "graph_canonical_triple": "安妮-[持有]->金蜜儿",
+        "graph_edge_index": 5135,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-011"
+        ],
+        "basis_from_review_why": "安妮握的是自己的拳头，并未持有金蜜儿"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:10.2.0",
+        "coherence": 3,
+        "review_surface_triple": "恐怖通-[示警]->怪物集群",
+        "graph_canonical_triple": "恐怖通-[警告]->怪物集群",
+        "graph_edge_index": 5149,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-012"
+        ],
+        "basis_from_review_why": "向在场同伴喊怪物将至；正确关系已有 edge[5100]（chunk_ids 已含 10.2.0）"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:11.1.0",
+        "coherence": 2,
+        "review_surface_triple": "恐怖通-[示范]->鬼新娘",
+        "graph_canonical_triple": "恐怖通-[指导]->鬼新娘",
+        "graph_edge_index": 5165,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-013"
+        ],
+        "basis_from_review_why": "向同伴讲解戒指召来新娘，非对新娘指导；该对删后无边"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:11.1.0",
+        "coherence": 2,
+        "review_surface_triple": "恐怖通-[应对]->维尔汀",
+        "graph_canonical_triple": "恐怖通-[对抗]->维尔汀",
+        "graph_edge_index": 5169,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-014"
+        ],
+        "basis_from_review_why": "是回答提问（「近乎百分之百」）；正确关系已有 edge[4796]（chunk_ids 已含 11.1.0）"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:11.2.0",
+        "coherence": 3,
+        "review_surface_triple": "十四行诗-[解释]->安妮",
+        "graph_canonical_triple": "十四行诗-[告知]->安妮",
+        "graph_edge_index": 5180,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-015"
+        ],
+        "basis_from_review_why": "该句由安妮说出；正确关系已有 edge[5179]（同一块 11.2.0）"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:14.0.0",
+        "coherence": 3,
+        "review_surface_triple": "牙仙-[归因]->安妮",
+        "graph_canonical_triple": "牙仙-[导致]->安妮",
+        "graph_edge_index": 5239,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete+add",
+        "proposal_entry_ids": [
+          "R7-L45-016",
+          "R7-L45-028"
+        ],
+        "basis_from_review_why": "「来自于你」指金蜜儿 → 改为 牙仙-[导致]->金蜜儿"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:15.1.0",
+        "coherence": 3,
+        "review_surface_triple": "恐怖通-[提议]->安妮",
+        "graph_canonical_triple": "恐怖通-[指导]->安妮",
+        "graph_edge_index": 5247,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-017"
+        ],
+        "basis_from_review_why": "提议时洁西卡尚未到场（「哦——她来了」在后）；洁西卡=安妮 的 alias 属正典揭示，错在受话人"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:17.0.0",
+        "coherence": 3,
+        "review_surface_triple": "Z-[叮嘱]->安洁",
+        "graph_canonical_triple": "Z-[告知]->安洁",
+        "graph_edge_index": 5322,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "needs_human",
+        "proposal_entry_ids": [],
+        "basis_from_review_why": "该边 chunk_ids 含 17.0.0+17.0.1；17.0.1 中 Z 确实点名交办安洁，删除会连带损失真关系，工具无法拆分 chunk_ids"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:2.0.0",
+        "coherence": 3,
+        "review_surface_triple": "十四行诗-[宣告]->巨大魔精",
+        "graph_canonical_triple": "十四行诗-[告知]->巨大魔精",
+        "graph_edge_index": 4875,
+        "alias_resolution_used": false,
+        "alias_resolution_note": "无（src/dst 均为 exact eid，未用别名兜底）",
+        "classification": "delete_edge",
+        "proposal_entry_ids": [
+          "R7-L45-018"
+        ],
+        "basis_from_review_why": "「很好，它被困住了」是向同伴宣告，非对魔精宣告"
+      }
+    ],
+    "proposal_file": "data/compendium_rag/repairs_v7/proposal.json",
+    "proposal_entry_count": 28,
+    "expected_edges_after": 27135,
+    "side_effects": {
+      "cross_chunk_impact": "22 条可执行目标边的 chunk_ids 长度均为 1（逐条实测），删除不波及其它块。",
+      "exception": "edge[5322] Z-[告知]->安洁 chunk_ids=['…:17.0.0','…:17.0.1'] 长度 2 → 单列 needs_human，不删。",
+      "existing_edges_covering_correct_relation": [
+        "edge[4333] 艾弗森-[指责]->拉米雷斯（chunk_ids 含 0.1.0）",
+        "edge[4567] 挖掘艺术-[告知]->艾弗森（故 4692 只删不补，避免 add 重复校验）",
+        "edge[4372] 梅兰妮-[告知]->艾西（chunk_ids 含 12.1.0）",
+        "edge[4857] 牙仙-[告知]->维尔汀（chunk_ids 含 1.2.0）",
+        "edge[5100] 恐怖通-[警告]->金蜜儿（chunk_ids 含 10.2.0）",
+        "edge[4796] 恐怖通-[告知]->维尔汀（chunk_ids 含 11.1.0）",
+        "edge[5179] 安妮-[告知]->十四行诗（同一块 11.2.0）"
+      ],
+      "predicate_set": "6 条 add_edge 全部使用图上既有谓词（希望 352 / 告知 2803 / 警告 395 / 参与 140 / 惊惧 12 / 导致 107），不新增谓词。"
+    },
+    "needs_human": [
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:17.0.0",
+        "edge": "Z-[告知]->安洁",
+        "graph_edge_index": 5322,
+        "reason": "该边 count=3、chunk_ids 含 17.0.0（Z 的电话应答「我会叮嘱他们的」）与 17.0.1（Z 点名交办安洁，真关系）；删除会连带损失 17.0.1 的正确关系，而工具无「拆分边 chunk_ids」条目（move_edge 仅在端点==weld_owner 时改端点，本批 weld_owner=None）",
+        "options": [
+          "保留该边并接受 17.0.0 的 mismatch",
+          "人工裁决后再决定是否删/拆分"
+        ]
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:0.0.2",
+        "edge": "实体 `巡警` 的别名 `布鲁诺`",
+        "graph_edge_index": null,
+        "reason": "alias 把少年军布鲁诺焊到巡警上（eid=巡警 name=巡警 aliases=['布鲁诺'] type=角色 chunks=3），是 edge[4810] mismatch 的根因；remove_alias 不会重指已有边，且会牵动该实体另 2 个 chunk 的引用",
+        "options": [
+          "人工裁决该别名是否应移除/拆分为两个实体"
+        ]
+      }
+    ]
+  },
+  "l44": {
+    "source": [
+      "data/knowledge/_audit/l4_worldview_review.json",
+      "data/knowledge/_audit/l4_worldview_candidates.json"
+    ],
+    "score_before": 0.9425,
+    "threshold": 0.95,
+    "n_judged": 87,
+    "n_consistent": 82,
+    "mutually_exclusive": [
+      {
+        "concept": "亡灵节",
+        "constraint_risk": 0.4,
+        "core_edge_pair": [
+          "edge[14342] 诸灵节-[是]->亡灵节",
+          "edge[14360] 亡灵节-[是]->诸灵节"
+        ],
+        "minimal_change": "删 edge[14342]（chunk 仅 15.2.0）或删 edge[14360]（chunks 15.2.1+16.1.1）之一，或改谓语为「隶属/同日」（须 delete+add）",
+        "proposal_entry_id": "R7-L44-001",
+        "needs_human": true
+      },
+      {
+        "concept": "诸灵节",
+        "constraint_risk": 0.4,
+        "core_edge_pair": [
+          "edge[14342]",
+          "edge[14360]"
+        ],
+        "minimal_change": "同 R7-L44-001；另需人工改写 desc（「迎接成年亡灵的祭典；迎接成年亡灵的明晚」自身含矛盾）",
+        "proposal_entry_id": "R7-L44-002",
+        "needs_human": true
+      },
+      {
+        "concept": "迷思海",
+        "constraint_risk": 0.6,
+        "core_edge_pair": [
+          "edge[14466] 迷思海-[是]->集体潜意识",
+          "edge[14483] 集体潜意识-[包含]->迷思海"
+        ],
+        "minimal_change": "删 edge[14483]（chunk 仅 activity__35101_绿松石蛇俱乐部:17.1.1），**同时消解迷思海+集体潜意识两条互斥**",
+        "proposal_entry_id": "R7-L44-003",
+        "needs_human": true
+      },
+      {
+        "concept": "陪伴与教育的训示",
+        "constraint_risk": 0.4,
+        "core_edge_pair": [
+          "desc 与 edge[26002] 冲突（非两条边互斥）"
+        ],
+        "minimal_change": "人工改写 desc（desc 抽到了坦南特引述并否定的引语「陪伴与教育，这是引导魔精成长的必要过程。」）；工具无改 desc 类型。退而求其次可删 edge[26002]",
+        "proposal_entry_id": "R7-L44-005",
+        "needs_human": true
+      },
+      {
+        "concept": "集体潜意识",
+        "constraint_risk": 0.6,
+        "core_edge_pair": [
+          "edge[14466]",
+          "edge[14483]"
+        ],
+        "minimal_change": "同 R7-L44-003：删 edge[14483]",
+        "proposal_entry_id": "R7-L44-004",
+        "needs_human": true
+      }
+    ],
+    "insufficient": [
+      {
+        "concept": "与居民共同留守的计划",
+        "edges": [
+          "edge[16587] 回声谣-[隶属]->与居民共同留守的计划"
+        ],
+        "minimal_change": "删 edge[16587]（chunk 仅 activity__38101_世纪末尺度:20.0.1）或撤销该概念；同句证据另被挂在 edge[16604] 回声谣-[隶属]->诺瓦米奇",
+        "proposal_entry_id": "R7-L44-006",
+        "needs_human": true
+      },
+      {
+        "concept": "猩红咒语",
+        "edges": [
+          "edge[25402] 塞梅尔维斯-[是]->猩红咒语"
+        ],
+        "minimal_change": "改边为 塞梅尔维斯-[念诵]->猩红咒语 之类（须 delete+add）或改写 desc（「首次念诵的咒语」）；须裁决",
+        "proposal_entry_id": "R7-L44-007",
+        "needs_human": true
+      },
+      {
+        "concept": "能量",
+        "edges": [
+          "edge[18819] 能量-[影响]->新纪元集市"
+        ],
+        "minimal_change": "改写 desc（「灰白的哀嚎」）或删 edge[18819]（chunk 仅 character__20603_第一千夜:1.0.2）；「能量」原文只是口语称呼",
+        "proposal_entry_id": "R7-L44-008",
+        "needs_human": true
+      }
+    ],
+    "candidates": {
+      "file": "data/knowledge/_audit/l4_worldview_candidates.json",
+      "n_items": 101,
+      "registered": [
+        {
+          "concept": "诸灵之夜",
+          "verdict": "consistent",
+          "edges": [
+            "edge[14358] 诸灵之夜-[隶属]->亡灵节"
+          ],
+          "note": "非互斥但处于 edge[14342]/[14360] 同链同证据，裁决时需一并复核",
+          "proposal_entry_id": "R7-L44-009",
+          "needs_human": true
+        }
+      ]
+    },
+    "special_recheck_collective_unconscious": {
+      "edge": "集体潜意识-[包含]->迷思海",
+      "graph_edge_index": 14483,
+      "evidence": "人类集体潜意识，是人格的最底层，也是一切的原型与起点",
+      "chunk_ids": [
+        "activity__35101_绿松石蛇俱乐部:17.1.1"
+      ],
+      "chunk_id_in_task_brief": "activity__32101_迁流的盛宴:17.1.1",
+      "chunk_id_exists": false,
+      "chunk_id_note": "任务书给的 activity__32101_迁流的盛宴:17.1.1 在本仓库 data/compendium_rag/chunks.json(3695 块) 中不存在；实际归属为 activity__35101_绿松石蛇俱乐部:17.1.1",
+      "lead_judgement": "证据句在定义「集体潜意识」，并未断言「集体潜意识包含迷思海」，证据与谓语不匹配",
+      "verified": true,
+      "verification_basis": "17.1.1 说话人穆列尔三连：「我用它制成了一种特殊的…颜料」「人类集体潜意识，是人格的最底层，也是一切的原型与起点。」「在我们所身处的这片水域，迷思之海中，我会为你重新构建属于特蕾莎的一切。」图把第 2 句单独抽为该边；同块另有「越深入迷思海…」「你的意识有可能会彻底地消融在迷思海之中」",
+      "resolves_both": true,
+      "resolves": [
+        "迷思海（conflicting idx0 等同 + idx1 被包含）",
+        "集体潜意识（conflicting idx0 等同 + idx1 包含）"
+      ],
+      "effect_if_deleted": "5 互斥 → 3 互斥；0.9425 → 0.9655（≥0.95 达标）",
+      "apply_in_this_batch": false,
+      "reason_not_applied": "正典裁决事项（也可能是谓语应改为「是/位于」）；任务书要求 L4.4 批全部 needs_human，不写成可 apply 条目"
+    },
+    "proposal_file": "data/compendium_rag/repairs_v7/proposal_worldview.json",
+    "proposal_entry_count": 9,
+    "needs_human": true
+  },
+  "dryrun": {
+    "command": ".venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v7/proposal.json --version-tag p6_dryrun",
+    "exit_code": 0,
+    "stdout_tail": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 28 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27151 -> 27135\n[DRY-RUN] 全绿。加 --apply 才写盘。",
+    "all_green": true,
+    "extra_dryruns": [
+      {
+        "command": "… --proposal data/compendium_rag/repairs_v7/proposal_worldview.json --version-tag p6_dryrun_wv",
+        "exit_code": 0,
+        "tail": "条目: 9 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27151 -> 27151\n[DRY-RUN] 全绿。加 --apply 才写盘。",
+        "note": "全 NOOP，边数不变，证明 L4.4 文件不可 apply"
+      },
+      {
+        "command": "… --proposal …/proposal.json --proposal …/proposal_worldview.json --version-tag p6_dryrun_both",
+        "exit_code": 0,
+        "tail": "条目: 37 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27151 -> 27135\n[DRY-RUN] 全绿。加 --apply 才写盘。"
+      }
+    ]
+  },
+  "apply_executed": false,
+  "graph_sha16_after": "7cac5867e8c80879",
+  "graph_bytes_after": 11588326,
+  "backup_created": false,
+  "backup_check": "data/compendium_rag/backups/ 下无 graph.json.prev.p6_dryrun / _wv / _both（已用 Test-Path 验证为 False）",
+  "red_lines_respected": [
+    "未 --apply",
+    "未修改 data/compendium_rag/graph.json",
+    "未修改 scripts/_graph_apply_repairs.py",
+    "未运行 cli rebuild / cli extract，无任何云端/LLM/嵌入调用",
+    "未执行任何 git add/commit/stash/checkout",
+    "data/knowledge/_audit/ 下产物仅读取",
+    "写面仅限 data/compendium_rag/repairs_v7/ 与 data/compendium_rag/reports/p6_repair_proposals.{json,md}"
+  ]
+}

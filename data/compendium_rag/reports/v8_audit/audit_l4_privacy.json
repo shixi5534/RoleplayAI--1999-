@@ -1,0 +1,1321 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP4-privacy",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "n_anchors": 80,
+    "n_co_present": 1,
+    "n_denominator": 79,
+    "n_leak": 17,
+    "leak_rate": 0.2152,
+    "gold_anchors": 80
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L4.3 私密信息跨角色泄漏率（检索层口径）",
+      "target": "≤0.02",
+      "actual": 0.2152,
+      "verdict": "FAIL",
+      "reason": "锚点=子代理从角色本人 character 篇章挖出的独家事实；题面只点名另一角色（不点名锚点主人），锚点块进入 top-6 记一次泄漏；提问者姓名/别名已出现在锚点原文的 1 条判为可公开、移出分母；答案层复核在 WP5-confuse",
+      "root_cause_bucket": "检索层"
+    }
+  ],
+  "per_case": [
+    {
+      "anchor_id": "0:维尔汀",
+      "character": "维尔汀",
+      "asker": "十四行诗",
+      "chunk_id": "character__19603_犹在镜中:7.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "mainline__105_洞穴的囚徒:11.1.0",
+        "mainline__110_复乐园:24.0.1",
+        "activity__12101_绿湖噩梦:1.1.1",
+        "mainline__000_此即明日:1.1.0",
+        "appendix_unbound__003_1_4_回归活动:1.1.1"
+      ]
+    },
+    {
+      "anchor_id": "1:维尔汀",
+      "character": "维尔汀",
+      "asker": "星锑",
+      "chunk_id": "character__19603_犹在镜中:7.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "activity__15101_复兴_乌卢鲁运动会:7.0.0",
+        "anecdote__1904_埃里克角色故事:1.2.3",
+        "mainline__000_此即明日:4.0.1",
+        "activity__15101_复兴_乌卢鲁运动会:7.0.1",
+        "activity__21101_77号往事:7.0.0"
+      ]
+    },
+    {
+      "anchor_id": "2:维尔汀",
+      "character": "维尔汀",
+      "asker": "红弩箭",
+      "chunk_id": "character__19603_犹在镜中:7.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__103_故事一无所有:14.1.1",
+        "activity__21101_77号往事:1.0.0",
+        "anecdote__1910_风吹乌哈拉:5.2.1",
+        "mainline__112_远征记:0.1.1",
+        "mainline__104_老虎的金黄:12.1.0",
+        "mainline__103_故事一无所有:14.1.2"
+      ]
+    },
+    {
+      "anchor_id": "3:37",
+      "character": "37",
+      "asker": "APPLe",
+      "chunk_id": "character__19101_漫漫之夜行迹:3.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__11101_雷米特杯失窃案:12.2.0",
+        "activity__305101_翡冷翠之春:4.2.0",
+        "appendix_unbound__009_1_9_去往新世界_APPLe:0.1.0",
+        "character__20603_第一千夜:1.0.2",
+        "mainline__000_此即明日:0.0.0",
+        "activity__11101_雷米特杯失窃案:2.0.0"
+      ]
+    },
+    {
+      "anchor_id": "4:37",
+      "character": "37",
+      "asker": "X",
+      "chunk_id": "character__19101_漫漫之夜行迹:6.1.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "activity__385101_聚合浪潮:1.0.3",
+        "mainline__000_此即明日:1.0.0",
+        "mainline__101_在我们的时代里:12.0.0",
+        "mainline__112_远征记:24.0.3",
+        "character__19101_漫漫之夜行迹:6.1.1",
+        "activity__385101_聚合浪潮:11.0.2"
+      ]
+    },
+    {
+      "anchor_id": "5:37",
+      "character": "37",
+      "asker": "塞梅尔维斯",
+      "chunk_id": "character__19101_漫漫之夜行迹:3.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__31101_长夜鸣笛:10.2.0",
+        "anecdote__1912_塞梅尔维斯:1.0.4",
+        "appendix_unbound__057_2_4_地牢剧情:0.1.0",
+        "character__19101_漫漫之夜行迹:0.0.0",
+        "anecdote__1912_塞梅尔维斯:1.0.3",
+        "activity__31101_长夜鸣笛:10.2.1"
+      ]
+    },
+    {
+      "anchor_id": "6:37",
+      "character": "37",
+      "asker": "苏芙比",
+      "chunk_id": "character__19101_漫漫之夜行迹:3.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1913_淑女的守则:2.0.0",
+        "activity__305101_翡冷翠之春:3.2.0",
+        "anecdote__1913_淑女的守则:3.2.0",
+        "mainline__101_在我们的时代里:5.0.0",
+        "anecdote__1913_淑女的守则:3.1.1",
+        "mainline__101_在我们的时代里:9.1.0"
+      ]
+    },
+    {
+      "anchor_id": "7:北方哨歌",
+      "character": "北方哨歌",
+      "asker": "苏芙比",
+      "chunk_id": "character__18603_银线结:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__305101_翡冷翠之春:3.2.0",
+        "anecdote__1913_淑女的守则:4.1.0",
+        "anecdote__1913_淑女的守则:3.2.0",
+        "anecdote__1914_只有泉水知道:3.0.0",
+        "mainline__101_在我们的时代里:5.0.0",
+        "mainline__101_在我们的时代里:9.1.0"
+      ]
+    },
+    {
+      "anchor_id": "8:北方哨歌",
+      "character": "北方哨歌",
+      "asker": "玛蒂尔达",
+      "chunk_id": "character__18603_银线结:6.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__13101_行至摩卢旁卡:1.2.0",
+        "activity__13101_行至摩卢旁卡:2.0.2",
+        "activity__13101_行至摩卢旁卡:1.1.1",
+        "activity__13101_行至摩卢旁卡:3.2.0",
+        "mainline__102_夜色温柔:13.1.0",
+        "activity__13101_行至摩卢旁卡:1.2.1"
+      ]
+    },
+    {
+      "anchor_id": "9:北方哨歌",
+      "character": "北方哨歌",
+      "asker": "小梅斯梅尔",
+      "chunk_id": "character__18603_银线结:6.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__103_故事一无所有:1.0.0",
+        "anecdote__1904_埃里克角色故事:5.0.0",
+        "activity__385101_聚合浪潮:1.0.0",
+        "activity__385101_聚合浪潮:4.1.0",
+        "anecdote__1917_乘法轴上的一天:0.0.2",
+        "anecdote__1917_乘法轴上的一天:0.0.1"
+      ]
+    },
+    {
+      "anchor_id": "10:北方哨歌",
+      "character": "北方哨歌",
+      "asker": "乌尔里希",
+      "chunk_id": "character__18603_银线结:3.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__109_疯癫与文明:15.1.0",
+        "activity__24101_地球上最后的夜晚:8.0.2",
+        "appendix_unbound__067_3_4_雨前漫游:0.1.1",
+        "mainline__107_孤独之歌:4.0.0",
+        "mainline__110_复乐园:8.1.1",
+        "activity__24101_地球上最后的夜晚:3.2.1"
+      ]
+    },
+    {
+      "anchor_id": "11:卡卡尼亚",
+      "character": "卡卡尼亚",
+      "asker": "北方哨歌",
+      "chunk_id": "character__19603_犹在镜中:1.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__18101_再见_来亚什基:1.2.1",
+        "character__18603_银线结:5.0.4",
+        "activity__18101_再见_来亚什基:1.1.0",
+        "character__18601_黎明依旧到来:5.0.1",
+        "character__18603_银线结:5.0.3",
+        "activity__18101_再见_来亚什基:1.2.0"
+      ]
+    },
+    {
+      "anchor_id": "12:卡卡尼亚",
+      "character": "卡卡尼亚",
+      "asker": "伊戈尔",
+      "chunk_id": "character__19603_犹在镜中:4.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__108_忧郁的热带:0.0.0",
+        "mainline__108_忧郁的热带:0.0.1",
+        "mainline__112_远征记:7.0.3",
+        "activity__12101_绿湖噩梦:7.2.0",
+        "mainline__112_远征记:24.0.2",
+        "mainline__108_忧郁的热带:22.0.2"
+      ]
+    },
+    {
+      "anchor_id": "13:卡卡尼亚",
+      "character": "卡卡尼亚",
+      "asker": "伊戈尔",
+      "chunk_id": "character__19603_犹在镜中:0.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:21.1.0",
+        "mainline__112_远征记:8.0.0",
+        "mainline__108_忧郁的热带:0.0.0",
+        "mainline__113_他者的悲哀:10.2.1",
+        "mainline__108_忧郁的热带:0.0.1",
+        "mainline__108_忧郁的热带:14.1.0"
+      ]
+    },
+    {
+      "anchor_id": "14:卡卡尼亚",
+      "character": "卡卡尼亚",
+      "asker": "露西",
+      "chunk_id": "character__19603_犹在镜中:6.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__19603_犹在镜中:2.0.1",
+        "mainline__107_孤独之歌:12.1.1",
+        "character__19603_犹在镜中:5.0.0",
+        "activity__32101_迁流的盛宴:11.2.0",
+        "character__19603_犹在镜中:0.0.0",
+        "character__19603_犹在镜中:4.0.0"
+      ]
+    },
+    {
+      "anchor_id": "15:卡卡尼亚",
+      "character": "卡卡尼亚",
+      "asker": "马库斯",
+      "chunk_id": "character__19603_犹在镜中:7.0.2",
+      "leak_retrieval": false,
+      "co_present": true,
+      "top_ids": [
+        "character__17703_灯塔集:0.0.1",
+        "mainline__106_今夜星光灿烂:1.0.2",
+        "activity__36101_人们向何处去:0.0.0",
+        "character__17703_灯塔集:1.0.3",
+        "activity__36101_人们向何处去:0.0.1",
+        "character__17703_灯塔集:0.0.0"
+      ]
+    },
+    {
+      "anchor_id": "16:伊戈尔",
+      "character": "伊戈尔",
+      "asker": "哑谜",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:8.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__107_孤独之歌:5.1.1",
+        "mainline__107_孤独之歌:29.0.1",
+        "activity__36101_人们向何处去:0.0.1",
+        "mainline__107_孤独之歌:4.0.1",
+        "appendix_unbound__013_1_9_去往新世界_哑谜:1.1.0",
+        "appendix_unbound__063_3_1_雨前漫游:1.1.0"
+      ]
+    },
+    {
+      "anchor_id": "17:伊戈尔",
+      "character": "伊戈尔",
+      "asker": "兀尔德",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:8.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:10.1.0",
+        "mainline__112_远征记:2.2.2",
+        "mainline__105_洞穴的囚徒:5.1.0",
+        "activity__20101_飞驰_明日之城:3.0.0",
+        "mainline__112_远征记:9.0.3",
+        "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0"
+      ]
+    },
+    {
+      "anchor_id": "18:伊戈尔",
+      "character": "伊戈尔",
+      "asker": "伊索尔德",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:8.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__106_今夜星光灿烂:10.0.0",
+        "mainline__106_今夜星光灿烂:11.0.1",
+        "mainline__106_今夜星光灿烂:10.0.1",
+        "anecdote__1904_埃里克角色故事:2.0.1",
+        "mainline__112_远征记:7.0.2",
+        "mainline__106_今夜星光灿烂:13.2.1"
+      ]
+    },
+    {
+      "anchor_id": "19:伊戈尔",
+      "character": "伊戈尔",
+      "asker": "阿尔卡纳",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:8.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__102_夜色温柔:1.0.0",
+        "mainline__113_他者的悲哀:16.0.2",
+        "mainline__105_洞穴的囚徒:13.0.2",
+        "mainline__113_他者的悲哀:20.1.2",
+        "appendix_unbound__017_1_9_去往新世界_槲寄生:0.1.0",
+        "appendix_unbound__017_1_9_去往新世界_槲寄生:1.1.0"
+      ]
+    },
+    {
+      "anchor_id": "20:露西",
+      "character": "露西",
+      "asker": "Z",
+      "chunk_id": "character__19601_飞渡往日:7.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "activity__12101_绿湖噩梦:16.0.0",
+        "activity__385101_聚合浪潮:8.0.1",
+        "character__19601_飞渡往日:7.0.0",
+        "mainline__112_远征记:2.2.3",
+        "mainline__101_在我们的时代里:0.4.0"
+      ]
+    },
+    {
+      "anchor_id": "21:露西",
+      "character": "露西",
+      "asker": "J",
+      "chunk_id": "character__19601_飞渡往日:2.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__19601_飞渡往日:2.0.0",
+        "character__20601_旧金山小子:7.0.1",
+        "character__19601_飞渡往日:1.0.0",
+        "activity__20101_飞驰_明日之城:10.0.0",
+        "mainline__113_他者的悲哀:7.2.0",
+        "activity__20101_飞驰_明日之城:12.2.1"
+      ]
+    },
+    {
+      "anchor_id": "22:露西",
+      "character": "露西",
+      "asker": "苏菲亚",
+      "chunk_id": "character__19601_飞渡往日:5.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__105_洞穴的囚徒:16.0.0",
+        "mainline__105_洞穴的囚徒:10.0.0",
+        "anecdote__1908_齿轮的意志:3.0.0",
+        "anecdote__1917_乘法轴上的一天:1.0.1",
+        "mainline__110_复乐园:18.2.1",
+        "mainline__105_洞穴的囚徒:7.1.0"
+      ]
+    },
+    {
+      "anchor_id": "23:马库斯",
+      "character": "马库斯",
+      "asker": "梁月",
+      "chunk_id": "character__17703_灯塔集:7.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__25101_唐人街影话:11.2.0",
+        "activity__25101_唐人街影话:0.0.0",
+        "activity__25101_唐人街影话:1.2.2",
+        "activity__25101_唐人街影话:19.0.3",
+        "activity__25101_唐人街影话:0.0.2",
+        "activity__25101_唐人街影话:10.1.0"
+      ]
+    },
+    {
+      "anchor_id": "24:马库斯",
+      "character": "马库斯",
+      "asker": "梅蕾尔",
+      "chunk_id": "character__17703_灯塔集:4.0.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:6.2.2",
+        "appendix_unbound__068_3_7_周年赠送十连:0.1.0",
+        "anecdote__1909_致温妮弗雷德:4.0.2",
+        "character__17703_灯塔集:4.0.1",
+        "mainline__113_他者的悲哀:18.0.1",
+        "mainline__113_他者的悲哀:18.0.0"
+      ]
+    },
+    {
+      "anchor_id": "25:马库斯",
+      "character": "马库斯",
+      "asker": "洛佩拉",
+      "chunk_id": "character__17703_灯塔集:1.0.3",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__22911_洛佩拉玩法剧情:5.0.2",
+        "character__22911_洛佩拉玩法剧情:5.0.3",
+        "mainline__108_忧郁的热带:0.0.0",
+        "character__22911_洛佩拉玩法剧情:1.0.0",
+        "mainline__109_疯癫与文明:16.0.0",
+        "character__22911_洛佩拉玩法剧情:2.1.0"
+      ]
+    },
+    {
+      "anchor_id": "26:马库斯",
+      "character": "马库斯",
+      "asker": "曲娘",
+      "chunk_id": "character__17703_灯塔集:7.0.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "activity__16101_朔日手记:19.0.0",
+        "activity__16101_朔日手记:8.1.0",
+        "character__16601_曲香蒙求:3.0.2",
+        "character__17703_灯塔集:7.0.1",
+        "activity__16101_朔日手记:8.2.0",
+        "activity__16101_朔日手记:18.1.2"
+      ]
+    },
+    {
+      "anchor_id": "27:伊索尔德",
+      "character": "伊索尔德",
+      "asker": "笃笃骨",
+      "chunk_id": "character__17701_小房间:5.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__23101_圣火纪行_东区黎明:11.1.0",
+        "activity__23101_圣火纪行_东区黎明:3.1.0",
+        "activity__23101_圣火纪行_东区黎明:5.0.1",
+        "activity__23101_圣火纪行_东区黎明:3.2.0",
+        "activity__23101_圣火纪行_东区黎明:3.2.1",
+        "activity__23101_圣火纪行_东区黎明:11.2.0"
+      ]
+    },
+    {
+      "anchor_id": "28:伊索尔德",
+      "character": "伊索尔德",
+      "asker": "霍夫曼",
+      "chunk_id": "character__17701_小房间:5.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__36101_人们向何处去:4.2.0",
+        "activity__36101_人们向何处去:0.0.0",
+        "mainline__106_今夜星光灿烂:1.0.2",
+        "mainline__106_今夜星光灿烂:3.1.1",
+        "mainline__106_今夜星光灿烂:3.2.0",
+        "mainline__106_今夜星光灿烂:16.0.0"
+      ]
+    },
+    {
+      "anchor_id": "29:伊索尔德",
+      "character": "伊索尔德",
+      "asker": "无名者",
+      "chunk_id": "character__17701_小房间:6.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "appendix_unbound__022_1_9_地牢剧情:1.1.2",
+        "mainline__106_今夜星光灿烂:9.0.2",
+        "mainline__106_今夜星光灿烂:9.0.1",
+        "appendix_unbound__022_1_9_地牢剧情:1.1.1",
+        "mainline__106_今夜星光灿烂:0.0.1",
+        "mainline__106_今夜星光灿烂:0.0.2"
+      ]
+    },
+    {
+      "anchor_id": "30:伊索尔德",
+      "character": "伊索尔德",
+      "asker": "维拉",
+      "chunk_id": "character__17701_小房间:2.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__17701_小房间:0.0.4",
+        "character__17701_小房间:0.0.6",
+        "activity__18101_再见_来亚什基:0.1.0",
+        "activity__21101_77号往事:16.2.0",
+        "character__17701_小房间:0.0.1",
+        "character__17701_小房间:5.0.2"
+      ]
+    },
+    {
+      "anchor_id": "31:J",
+      "character": "J",
+      "asker": "雾行者",
+      "chunk_id": "character__20601_旧金山小子:0.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1901_雾行者角色故事:2.0.0",
+        "anecdote__1901_雾行者角色故事:2.0.1",
+        "anecdote__1901_雾行者角色故事:1.0.1",
+        "anecdote__1901_雾行者角色故事:5.0.0",
+        "activity__23101_圣火纪行_东区黎明:0.1.1",
+        "character__20601_旧金山小子:0.0.0"
+      ]
+    },
+    {
+      "anchor_id": "32:J",
+      "character": "J",
+      "asker": "牙仙",
+      "chunk_id": "character__20601_旧金山小子:3.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__12101_绿湖噩梦:0.0.2",
+        "activity__12101_绿湖噩梦:6.0.1",
+        "activity__12101_绿湖噩梦:6.0.2",
+        "activity__12101_绿湖噩梦:0.0.3",
+        "activity__12101_绿湖噩梦:1.1.0",
+        "activity__23101_圣火纪行_东区黎明:16.0.1"
+      ]
+    },
+    {
+      "anchor_id": "33:J",
+      "character": "J",
+      "asker": "利伯蒂",
+      "chunk_id": "character__20601_旧金山小子:4.0.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__23601_夜游十字街:1.0.2",
+        "activity__23101_圣火纪行_东区黎明:0.1.2",
+        "activity__23101_圣火纪行_东区黎明:11.1.0",
+        "character__20601_旧金山小子:4.0.1",
+        "mainline__108_忧郁的热带:7.0.1",
+        "activity__23101_圣火纪行_东区黎明:0.1.3"
+      ]
+    },
+    {
+      "anchor_id": "34:苏菲亚",
+      "character": "苏菲亚",
+      "asker": "虚构集",
+      "chunk_id": "character__19101_漫漫之夜行迹:1.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__24101_地球上最后的夜晚:13.2.0",
+        "mainline__109_疯癫与文明:14.1.1",
+        "mainline__109_疯癫与文明:0.1.0",
+        "character__19101_漫漫之夜行迹:6.1.1",
+        "activity__35101_绿松石蛇俱乐部:20.0.1",
+        "mainline__109_疯癫与文明:0.1.1"
+      ]
+    },
+    {
+      "anchor_id": "35:苏菲亚",
+      "character": "苏菲亚",
+      "asker": "兔毛手袋",
+      "chunk_id": "character__19101_漫漫之夜行迹:1.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1917_乘法轴上的一天:2.0.2",
+        "mainline__106_今夜星光灿烂:1.0.0",
+        "appendix_unbound__030_2_2_荒原经营驯化_兔毛手袋:2.0.0",
+        "activity__36101_人们向何处去:2.0.0",
+        "character__20603_第一千夜:6.0.1",
+        "appendix_unbound__030_2_2_荒原经营驯化_兔毛手袋:0.0.0"
+      ]
+    },
+    {
+      "anchor_id": "36:苏菲亚",
+      "character": "苏菲亚",
+      "asker": "小叶尼塞",
+      "chunk_id": "character__19101_漫漫之夜行迹:1.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__16101_朔日手记:0.0.2",
+        "activity__16101_朔日手记:2.0.0",
+        "activity__16101_朔日手记:0.0.0",
+        "activity__16101_朔日手记:11.2.0",
+        "activity__16101_朔日手记:14.0.1",
+        "activity__16101_朔日手记:0.0.1"
+      ]
+    },
+    {
+      "anchor_id": "37:苏菲亚",
+      "character": "苏菲亚",
+      "asker": "探险家别斯米尔",
+      "chunk_id": "character__19101_漫漫之夜行迹:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__16101_朔日手记:0.0.2",
+        "activity__16101_朔日手记:5.0.0",
+        "activity__16101_朔日手记:1.1.0",
+        "activity__16101_朔日手记:20.0.0",
+        "activity__16101_朔日手记:0.0.0",
+        "activity__16101_朔日手记:21.0.1"
+      ]
+    },
+    {
+      "anchor_id": "38:洛佩拉",
+      "character": "洛佩拉",
+      "asker": "环状水星",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:2.1.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1919_黄金与悲喜剧:7.0.1",
+        "character__20603_第一千夜:6.0.1",
+        "character__20603_第一千夜:5.0.1",
+        "anecdote__1919_黄金与悲喜剧:6.0.2",
+        "activity__20101_飞驰_明日之城:0.1.2",
+        "anecdote__1919_黄金与悲喜剧:3.0.1"
+      ]
+    },
+    {
+      "anchor_id": "39:洛佩拉",
+      "character": "洛佩拉",
+      "asker": "冷周六",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:5.0.3",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__27101_1987宇宙组曲:2.0.1",
+        "activity__27101_1987宇宙组曲:9.0.1",
+        "activity__27101_1987宇宙组曲:1.0.0",
+        "activity__27101_1987宇宙组曲:11.0.0",
+        "appendix_unbound__006_1_6_赛季剧情:2.1.3",
+        "activity__27101_1987宇宙组曲:13.0.0"
+      ]
+    },
+    {
+      "anchor_id": "40:洛佩拉",
+      "character": "洛佩拉",
+      "asker": "奠基石",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:5.0.3",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__38101_世纪末尺度:0.0.3",
+        "activity__38101_世纪末尺度:1.0.0",
+        "activity__38101_世纪末尺度:13.0.1",
+        "activity__38101_世纪末尺度:16.2.1",
+        "activity__38101_世纪末尺度:21.0.0",
+        "activity__38101_世纪末尺度:2.1.0"
+      ]
+    },
+    {
+      "anchor_id": "41:洛佩拉",
+      "character": "洛佩拉",
+      "asker": "槲寄生",
+      "chunk_id": "character__22911_洛佩拉玩法剧情:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__113_他者的悲哀:9.2.1",
+        "mainline__102_夜色温柔:10.2.0",
+        "mainline__104_老虎的金黄:10.2.0",
+        "appendix_unbound__003_1_4_回归活动:1.1.0",
+        "appendix_unbound__017_1_9_去往新世界_槲寄生:1.1.0",
+        "appendix_unbound__017_1_9_去往新世界_槲寄生:0.1.0"
+      ]
+    },
+    {
+      "anchor_id": "42:曲娘",
+      "character": "曲娘",
+      "asker": "玛尔纱",
+      "chunk_id": "character__16601_曲香蒙求:0.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:10.2.0",
+        "mainline__111_行于漫漫长路上:3.1.0",
+        "mainline__112_远征记:4.2.1",
+        "mainline__111_行于漫漫长路上:1.1.1",
+        "mainline__111_行于漫漫长路上:1.1.2",
+        "mainline__111_行于漫漫长路上:3.2.0"
+      ]
+    },
+    {
+      "anchor_id": "43:曲娘",
+      "character": "曲娘",
+      "asker": "卡戎",
+      "chunk_id": "character__16601_曲香蒙求:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__111_行于漫漫长路上:1.1.2",
+        "character__30601_三重赋格:0.0.2",
+        "activity__15101_复兴_乌卢鲁运动会:2.1.3",
+        "mainline__111_行于漫漫长路上:1.1.0",
+        "character__30601_三重赋格:5.0.0",
+        "character__30601_三重赋格:5.1.0"
+      ]
+    },
+    {
+      "anchor_id": "44:曲娘",
+      "character": "曲娘",
+      "asker": "阿黛拉",
+      "chunk_id": "character__16601_曲香蒙求:2.0.4",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__16601_曲香蒙求:2.0.4",
+        "activity__32101_迁流的盛宴:16.1.0",
+        "activity__32101_迁流的盛宴:0.0.0",
+        "activity__32101_迁流的盛宴:1.0.2",
+        "activity__32101_迁流的盛宴:12.0.0",
+        "character__16601_曲香蒙求:2.0.0"
+      ]
+    },
+    {
+      "anchor_id": "45:曲娘",
+      "character": "曲娘",
+      "asker": "命名日",
+      "chunk_id": "character__16601_曲香蒙求:6.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__18101_再见_来亚什基:18.0.0",
+        "activity__385101_聚合浪潮:14.0.2",
+        "activity__27101_1987宇宙组曲:12.0.1",
+        "character__18601_黎明依旧到来:3.0.2",
+        "activity__35101_绿松石蛇俱乐部:20.0.1",
+        "activity__27101_1987宇宙组曲:12.0.3"
+      ]
+    },
+    {
+      "anchor_id": "46:曲娘",
+      "character": "曲娘",
+      "asker": "爱兹拉",
+      "chunk_id": "character__16601_曲香蒙求:6.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__15101_复兴_乌卢鲁运动会:2.1.2",
+        "activity__15101_复兴_乌卢鲁运动会:2.1.0",
+        "activity__15101_复兴_乌卢鲁运动会:5.1.1",
+        "activity__15101_复兴_乌卢鲁运动会:2.1.1",
+        "activity__15101_复兴_乌卢鲁运动会:2.1.3",
+        "activity__15101_复兴_乌卢鲁运动会:12.2.0"
+      ]
+    },
+    {
+      "anchor_id": "47:笃笃骨",
+      "character": "笃笃骨",
+      "asker": "诺谛卡",
+      "chunk_id": "character__23501_太阳的背面:0.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__23101_圣火纪行_东区黎明:3.2.1",
+        "mainline__110_复乐园:1.1.0",
+        "mainline__110_复乐园:20.2.0",
+        "activity__23101_圣火纪行_东区黎明:5.0.0",
+        "activity__23101_圣火纪行_东区黎明:14.1.0",
+        "mainline__113_他者的悲哀:16.0.0"
+      ]
+    },
+    {
+      "anchor_id": "48:笃笃骨",
+      "character": "笃笃骨",
+      "asker": "康斯坦丁",
+      "chunk_id": "character__23501_太阳的背面:0.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__23501_太阳的背面:0.0.0",
+        "character__23501_太阳的背面:2.0.0",
+        "character__23501_太阳的背面:2.0.1",
+        "mainline__104_老虎的金黄:21.0.1",
+        "mainline__106_今夜星光灿烂:23.1.1",
+        "mainline__103_故事一无所有:11.0.0"
+      ]
+    },
+    {
+      "anchor_id": "49:笃笃骨",
+      "character": "笃笃骨",
+      "asker": "维尔汀",
+      "chunk_id": "character__23501_太阳的背面:7.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__23501_太阳的背面:1.1.0",
+        "mainline__000_此即明日:1.0.0",
+        "anecdote__1917_乘法轴上的一天:0.0.1",
+        "mainline__112_远征记:24.0.3",
+        "character__23501_太阳的背面:2.0.0",
+        "character__23501_太阳的背面:2.0.1"
+      ]
+    },
+    {
+      "anchor_id": "50:笃笃骨",
+      "character": "笃笃骨",
+      "asker": "十四行诗",
+      "chunk_id": "character__23501_太阳的背面:3.1.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "activity__12101_绿湖噩梦:1.1.1",
+        "anecdote__1917_乘法轴上的一天:7.0.2",
+        "appendix_unbound__003_1_4_回归活动:1.1.1",
+        "mainline__000_此即明日:1.1.0",
+        "mainline__113_他者的悲哀:24.1.0"
+      ]
+    },
+    {
+      "anchor_id": "51:笃笃骨",
+      "character": "笃笃骨",
+      "asker": "星锑",
+      "chunk_id": "character__23501_太阳的背面:7.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "activity__15101_复兴_乌卢鲁运动会:7.0.1",
+        "activity__15101_复兴_乌卢鲁运动会:7.0.0",
+        "activity__23101_圣火纪行_东区黎明:3.1.0",
+        "character__23601_夜游十字街:2.1.0",
+        "mainline__000_此即明日:0.0.0"
+      ]
+    },
+    {
+      "anchor_id": "52:霍夫曼",
+      "character": "霍夫曼",
+      "asker": "红弩箭",
+      "chunk_id": "character__17703_灯塔集:5.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:9.0.1",
+        "mainline__103_故事一无所有:14.1.2",
+        "mainline__103_故事一无所有:14.1.1",
+        "activity__21101_77号往事:1.0.0",
+        "mainline__112_远征记:0.1.1",
+        "mainline__112_远征记:7.0.0"
+      ]
+    },
+    {
+      "anchor_id": "53:霍夫曼",
+      "character": "霍夫曼",
+      "asker": "APPLe",
+      "chunk_id": "character__17703_灯塔集:5.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__11101_雷米特杯失窃案:3.2.0",
+        "activity__305101_翡冷翠之春:0.2.1",
+        "mainline__000_此即明日:0.0.0",
+        "activity__11101_雷米特杯失窃案:12.2.0",
+        "mainline__000_此即明日:1.1.0",
+        "activity__11101_雷米特杯失窃案:2.0.0"
+      ]
+    },
+    {
+      "anchor_id": "54:霍夫曼",
+      "character": "霍夫曼",
+      "asker": "X",
+      "chunk_id": "character__17703_灯塔集:7.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1908_齿轮的意志:6.0.1",
+        "activity__385101_聚合浪潮:1.0.3",
+        "anecdote__1919_黄金与悲喜剧:7.0.0",
+        "mainline__101_在我们的时代里:12.0.0",
+        "activity__385101_聚合浪潮:11.0.2",
+        "anecdote__1905_庸碌喜剧:4.0.0"
+      ]
+    },
+    {
+      "anchor_id": "55:维拉",
+      "character": "维拉",
+      "asker": "塞梅尔维斯",
+      "chunk_id": "character__18601_黎明依旧到来:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__31101_长夜鸣笛:10.2.0",
+        "anecdote__1912_塞梅尔维斯:1.0.3",
+        "appendix_unbound__061_2_6_地牢剧情:1.1.0",
+        "mainline__106_今夜星光灿烂:21.0.1",
+        "activity__31101_长夜鸣笛:10.2.1",
+        "anecdote__1912_塞梅尔维斯:3.0.2"
+      ]
+    },
+    {
+      "anchor_id": "56:维拉",
+      "character": "维拉",
+      "asker": "37",
+      "chunk_id": "character__18601_黎明依旧到来:0.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__105_洞穴的囚徒:10.0.1",
+        "mainline__105_洞穴的囚徒:5.1.0",
+        "anecdote__1917_乘法轴上的一天:0.0.1",
+        "activity__34101_不老春:12.1.0",
+        "anecdote__1917_乘法轴上的一天:0.0.2",
+        "anecdote__1917_乘法轴上的一天:4.0.0"
+      ]
+    },
+    {
+      "anchor_id": "57:维拉",
+      "character": "维拉",
+      "asker": "苏芙比",
+      "chunk_id": "character__18601_黎明依旧到来:1.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1913_淑女的守则:4.1.0",
+        "activity__305101_翡冷翠之春:3.2.0",
+        "activity__305101_翡冷翠之春:6.1.0",
+        "mainline__101_在我们的时代里:5.0.0",
+        "activity__305101_翡冷翠之春:3.1.1",
+        "mainline__101_在我们的时代里:9.1.0"
+      ]
+    },
+    {
+      "anchor_id": "58:维拉",
+      "character": "维拉",
+      "asker": "玛蒂尔达",
+      "chunk_id": "character__18601_黎明依旧到来:1.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__13101_行至摩卢旁卡:1.2.0",
+        "mainline__104_老虎的金黄:9.2.0",
+        "activity__13101_行至摩卢旁卡:1.1.1",
+        "activity__20101_飞驰_明日之城:17.1.0",
+        "activity__20101_飞驰_明日之城:4.0.1",
+        "mainline__102_夜色温柔:13.1.0"
+      ]
+    },
+    {
+      "anchor_id": "59:维拉",
+      "character": "维拉",
+      "asker": "小梅斯梅尔",
+      "chunk_id": "character__18601_黎明依旧到来:1.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__103_故事一无所有:1.0.0",
+        "activity__385101_聚合浪潮:4.2.0",
+        "activity__385101_聚合浪潮:1.0.0",
+        "activity__385101_聚合浪潮:11.0.1",
+        "mainline__112_远征记:22.0.1",
+        "activity__385101_聚合浪潮:1.0.3"
+      ]
+    },
+    {
+      "anchor_id": "60:利伯蒂",
+      "character": "利伯蒂",
+      "asker": "乌尔里希",
+      "chunk_id": "character__23601_夜游十字街:0.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__24101_地球上最后的夜晚:3.2.1",
+        "mainline__109_疯癫与文明:15.1.0",
+        "mainline__110_复乐园:11.1.2",
+        "character__30601_三重赋格:1.0.0",
+        "activity__24101_地球上最后的夜晚:8.0.2",
+        "activity__24101_地球上最后的夜晚:13.1.1"
+      ]
+    },
+    {
+      "anchor_id": "61:利伯蒂",
+      "character": "利伯蒂",
+      "asker": "北方哨歌",
+      "chunk_id": "character__23601_夜游十字街:1.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "activity__18101_再见_来亚什基:1.2.1",
+        "character__23601_夜游十字街:1.0.0",
+        "activity__18101_再见_来亚什基:3.1.1",
+        "activity__18101_再见_来亚什基:1.1.0",
+        "character__18603_银线结:4.0.2",
+        "activity__18101_再见_来亚什基:1.2.0"
+      ]
+    },
+    {
+      "anchor_id": "62:利伯蒂",
+      "character": "利伯蒂",
+      "asker": "卡卡尼亚",
+      "chunk_id": "character__23601_夜游十字街:1.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__19603_犹在镜中:5.0.1",
+        "character__19603_犹在镜中:7.0.2",
+        "character__23601_夜游十字街:1.0.0",
+        "mainline__106_今夜星光灿烂:10.0.0",
+        "mainline__106_今夜星光灿烂:16.0.1",
+        "appendix_unbound__022_1_9_地牢剧情:1.1.2"
+      ]
+    },
+    {
+      "anchor_id": "63:利伯蒂",
+      "character": "利伯蒂",
+      "asker": "伊戈尔",
+      "chunk_id": "character__23601_夜游十字街:6.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__108_忧郁的热带:0.0.0",
+        "mainline__108_忧郁的热带:14.1.0",
+        "mainline__112_远征记:7.0.2",
+        "mainline__108_忧郁的热带:22.0.2",
+        "mainline__112_远征记:13.0.1",
+        "mainline__108_忧郁的热带:0.0.1"
+      ]
+    },
+    {
+      "anchor_id": "64:利伯蒂",
+      "character": "利伯蒂",
+      "asker": "露西",
+      "chunk_id": "character__23601_夜游十字街:6.0.4",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__23601_夜游十字街:6.0.4",
+        "character__23601_夜游十字街:1.0.3",
+        "activity__24101_地球上最后的夜晚:8.0.0",
+        "mainline__106_今夜星光灿烂:1.0.0",
+        "character__23601_夜游十字街:2.1.1",
+        "activity__35101_绿松石蛇俱乐部:13.2.1"
+      ]
+    },
+    {
+      "anchor_id": "65:环状水星",
+      "character": "环状水星",
+      "asker": "马库斯",
+      "chunk_id": "character__20603_第一千夜:0.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "character__30601_三重赋格:4.0.1",
+        "mainline__107_孤独之歌:18.0.0",
+        "mainline__106_今夜星光灿烂:5.1.2",
+        "character__20603_第一千夜:2.0.0",
+        "character__17703_灯塔集:0.0.2",
+        "character__19603_犹在镜中:7.0.2"
+      ]
+    },
+    {
+      "anchor_id": "66:环状水星",
+      "character": "环状水星",
+      "asker": "哑谜",
+      "chunk_id": "character__20603_第一千夜:3.0.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__36101_人们向何处去:0.0.1",
+        "anecdote__1923_海风的往事:7.0.0",
+        "character__20603_第一千夜:1.0.2",
+        "character__20603_第一千夜:4.0.0",
+        "character__23601_夜游十字街:3.0.2",
+        "activity__36101_人们向何处去:3.1.0"
+      ]
+    },
+    {
+      "anchor_id": "67:环状水星",
+      "character": "环状水星",
+      "asker": "兀尔德",
+      "chunk_id": "character__20603_第一千夜:4.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__112_远征记:10.1.0",
+        "mainline__112_远征记:9.0.3",
+        "activity__20101_飞驰_明日之城:3.0.0",
+        "appendix_unbound__015_1_9_去往新世界_无线电小姐:0.1.0",
+        "mainline__105_洞穴的囚徒:5.1.0",
+        "mainline__112_远征记:23.0.0"
+      ]
+    },
+    {
+      "anchor_id": "68:环状水星",
+      "character": "环状水星",
+      "asker": "伊索尔德",
+      "chunk_id": "character__20603_第一千夜:6.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__106_今夜星光灿烂:11.0.2",
+        "mainline__106_今夜星光灿烂:10.0.0",
+        "anecdote__1904_埃里克角色故事:2.0.1",
+        "mainline__112_远征记:9.0.3",
+        "mainline__106_今夜星光灿烂:10.0.1",
+        "mainline__106_今夜星光灿烂:9.0.1"
+      ]
+    },
+    {
+      "anchor_id": "69:环状水星",
+      "character": "环状水星",
+      "asker": "阿尔卡纳",
+      "chunk_id": "character__20603_第一千夜:6.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__102_夜色温柔:1.0.0",
+        "mainline__113_他者的悲哀:20.1.2",
+        "mainline__106_今夜星光灿烂:15.0.0",
+        "appendix_unbound__017_1_9_去往新世界_槲寄生:1.1.0",
+        "mainline__113_他者的悲哀:20.2.0",
+        "mainline__102_夜色温柔:2.1.0"
+      ]
+    },
+    {
+      "anchor_id": "70:卡戎",
+      "character": "卡戎",
+      "asker": "Z",
+      "chunk_id": "character__30601_三重赋格:5.1.1",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "mainline__000_此即明日:1.0.0",
+        "appendix_unbound__022_1_9_地牢剧情:1.1.3",
+        "activity__12101_绿湖噩梦:16.0.0",
+        "mainline__101_在我们的时代里:8.0.0",
+        "activity__21101_77号往事:18.0.2",
+        "mainline__101_在我们的时代里:0.4.0"
+      ]
+    },
+    {
+      "anchor_id": "71:卡戎",
+      "character": "卡戎",
+      "asker": "J",
+      "chunk_id": "character__30601_三重赋格:1.0.0",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__30601_三重赋格:1.0.0",
+        "character__30601_三重赋格:0.0.2",
+        "activity__20101_飞驰_明日之城:10.0.0",
+        "character__20601_旧金山小子:6.0.1",
+        "character__30601_三重赋格:0.0.1",
+        "anecdote__1917_乘法轴上的一天:5.0.4"
+      ]
+    },
+    {
+      "anchor_id": "72:卡戎",
+      "character": "卡戎",
+      "asker": "苏菲亚",
+      "chunk_id": "character__30601_三重赋格:1.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "appendix_unbound__004_1_4_赛季剧情:2.1.0",
+        "mainline__105_洞穴的囚徒:16.0.0",
+        "anecdote__1908_齿轮的意志:3.0.0",
+        "anecdote__1917_乘法轴上的一天:1.0.1",
+        "character__19101_漫漫之夜行迹:1.0.2",
+        "mainline__107_孤独之歌:19.2.0"
+      ]
+    },
+    {
+      "anchor_id": "73:卡戎",
+      "character": "卡戎",
+      "asker": "梁月",
+      "chunk_id": "character__30601_三重赋格:4.0.2",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__30601_三重赋格:4.0.2",
+        "activity__25101_唐人街影话:0.0.0",
+        "activity__25101_唐人街影话:1.2.2",
+        "activity__25101_唐人街影话:13.0.3",
+        "activity__25101_唐人街影话:14.0.3",
+        "activity__25101_唐人街影话:10.2.0"
+      ]
+    },
+    {
+      "anchor_id": "74:卡戎",
+      "character": "卡戎",
+      "asker": "梅蕾尔",
+      "chunk_id": "character__30601_三重赋格:6.0.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__30601_三重赋格:1.0.0",
+        "mainline__112_远征记:22.0.1",
+        "character__30601_三重赋格:0.0.2",
+        "character__30601_三重赋格:6.0.1",
+        "mainline__111_行于漫漫长路上:13.0.1",
+        "character__30601_三重赋格:1.0.1"
+      ]
+    },
+    {
+      "anchor_id": "75:命名日",
+      "character": "命名日",
+      "asker": "洛佩拉",
+      "chunk_id": "character__18601_黎明依旧到来:4.0.2",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__18601_黎明依旧到来:4.0.1",
+        "character__22911_洛佩拉玩法剧情:4.0.0",
+        "character__22911_洛佩拉玩法剧情:1.0.0",
+        "character__18601_黎明依旧到来:4.0.2",
+        "character__22911_洛佩拉玩法剧情:5.0.1",
+        "character__22911_洛佩拉玩法剧情:5.0.2"
+      ]
+    },
+    {
+      "anchor_id": "76:命名日",
+      "character": "命名日",
+      "asker": "曲娘",
+      "chunk_id": "character__18601_黎明依旧到来:5.0.0",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "appendix_unbound__006_1_6_赛季剧情:1.1.1",
+        "activity__16101_朔日手记:19.0.0",
+        "activity__16101_朔日手记:18.1.2",
+        "activity__16101_朔日手记:8.1.0",
+        "activity__16101_朔日手记:8.2.0",
+        "activity__16101_朔日手记:8.2.1"
+      ]
+    },
+    {
+      "anchor_id": "77:命名日",
+      "character": "命名日",
+      "asker": "笃笃骨",
+      "chunk_id": "character__18601_黎明依旧到来:5.0.1",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "character__18601_黎明依旧到来:5.0.1",
+        "activity__23101_圣火纪行_东区黎明:11.1.0",
+        "activity__23101_圣火纪行_东区黎明:3.1.0",
+        "activity__18101_再见_来亚什基:0.1.0",
+        "activity__23101_圣火纪行_东区黎明:17.0.1",
+        "activity__23101_圣火纪行_东区黎明:3.2.0"
+      ]
+    },
+    {
+      "anchor_id": "78:命名日",
+      "character": "命名日",
+      "asker": "霍夫曼",
+      "chunk_id": "character__18601_黎明依旧到来:3.0.2",
+      "leak_retrieval": false,
+      "co_present": false,
+      "top_ids": [
+        "activity__36101_人们向何处去:0.0.0",
+        "anecdote__1904_埃里克角色故事:0.0.1",
+        "mainline__106_今夜星光灿烂:22.0.0",
+        "mainline__106_今夜星光灿烂:3.1.1",
+        "activity__36101_人们向何处去:4.2.0",
+        "activity__36101_人们向何处去:11.0.0"
+      ]
+    },
+    {
+      "anchor_id": "79:命名日",
+      "character": "命名日",
+      "asker": "无名者",
+      "chunk_id": "character__18601_黎明依旧到来:3.0.2",
+      "leak_retrieval": true,
+      "co_present": false,
+      "top_ids": [
+        "anecdote__1909_致温妮弗雷德:6.0.1",
+        "character__18601_黎明依旧到来:3.0.2",
+        "mainline__107_孤独之歌:1.0.2",
+        "appendix_unbound__057_2_4_地牢剧情:1.1.0",
+        "anecdote__1909_致温妮弗雷德:7.0.0",
+        "anecdote__1912_塞梅尔维斯:0.0.2"
+      ]
+    }
+  ],
+  "artifacts": []
+}

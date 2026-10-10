@@ -30,21 +30,40 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
   opacity: 0;
   pointer-events: none;
+  /* 排版修复 P0：英文行可能长达数百字符，长句不得横向溢出、纵向裁切或
+     长高到盖住角色与底部参数 HUD。
+     - 文本行自身换行（见 .sub-zh/.sub-en 的 overflow-wrap）
+     - 面板加 max-height 兜底：超出时纵向滚动（保留全部文本可读，
+       不做 -webkit-line-clamp 截断——用户抱怨的正是"读不到"）
+     - 聊天页由 JS 写入 --sub-maxh = 舞台高 - lift - 顶部安全边距，
+       保证"永远不碰 HUD、也不超出舞台"；宠物页/未实测时回退 40% */
+  max-height: var(--sub-maxh, 40%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
   transition: opacity 260ms ease, transform 260ms ease, bottom 260ms ease;
   font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN",
     "STZhongsong", "SimSun", serif;
 }
 #pet-subtitle.show {
   opacity: 1;
-  bottom: 64px; /* P1-12：显示时上移，避让宠物脚部区域 */
+  /* P1-12：显示时上移，避让宠物脚部区域。
+     聊天页由 --sub-lift 覆盖（见下方 .stage 规则），这里保留宠物页基线 */
+  bottom: var(--sub-lift, 64px);
   transform: translateY(0);
   pointer-events: auto;   /* 显示时允许点击语言徽章 */
 }
 
 /* 聊天页适配：字幕/徽章挂在 .stage 内（index.html），显示时再抬高，
-   避开舞台底部的参数 HUD（两行 ~80px 高 + 12px 底距 + 间距余量） */
+   避开舞台底部的参数 HUD。
+   排版修复 P0：原来写死 bottom:134px（HUD 两行 ~80px + 12px 底距 + 余量），
+   但 .stage 高度随视口变化很大（1440x950 下 ~857px，800x600 下仅 ~240px），
+   固定值在矮舞台上会把字幕顶到几乎贴着舞台顶部、可用行数只剩两三行。
+   改为由 pet-subtitle.js 实测 HUD 高度后写入 --sub-lift：
+       lift = HUD 高度 + HUD 底距(12px) + 12px 间距，并夹在 [64, 40%舞台高]
+   未能实测时（JS 未跑/HUD 不存在）回退到 134px，保持原有观感。 */
 .stage #pet-subtitle.show {
-  bottom: 134px;
+  bottom: var(--sub-lift, 134px);
 }
 
 /* 顶部装饰角线（游戏字幕条上缘的双线金饰） */
@@ -64,6 +83,11 @@
   line-height: 1.45;
   letter-spacing: 0.02em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  /* 排版修复：中文长句/无空格长串必须换行，不横向溢出 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  min-width: 0;
 }
 #pet-subtitle .sub-en {
   color: #c9b78c;                       /* 英文弱化为浅金 */
@@ -73,6 +97,13 @@
   font-style: italic;
   margin-top: 2px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+  /* 排版修复 P0：英文行可能是整段几百字符、甚至单个无空格超长单词
+     （overlap 时 break-word 的回退在部分场景不生效，故用 anywhere 兜底），
+     保证 scrollWidth 不超出 clientWidth（不静默截断） */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  min-width: 0;
 }
 #pet-subtitle .sub-en:empty { display: none; }
 

@@ -1,0 +1,74 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP4-group",
+  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "unique_predicates": 1609,
+    "tail_unique": 1465,
+    "tail_edges": 4122,
+    "tail_edges_mapped": 4122,
+    "coverage_edge_rate": 0.8448,
+    "method_distribution": {
+      "llm": 6090,
+      "llm:no_match": 826,
+      "canonical": 77,
+      "synonym": 40,
+      "rule": 1
+    },
+    "batches_run": 0,
+    "batches_total": 30,
+    "usage": {},
+    "tail_remaining_after_run": 0,
+    "blind_review": {
+      "n": 300,
+      "keep": 240,
+      "change": 54,
+      "reject": 6,
+      "disagreement_rate": 0.2
+    }
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L4 基础设施 谓语归组完备性",
+      "target": "尾巴 ≥80% 拿到判定且零未判定谓语",
+      "actual": {
+        "tail_mapped": 6916,
+        "tail_total": 1465,
+        "still_unmapped": 0,
+        "edge_coverage": 0.8448
+      },
+      "verdict": "PASS",
+      "reason": "归组率<80% 或仍有 0 个谓语未判定 → 先修基础设施再谈 L4 读数可信度（未判定谓语在对称性/时序口径里按 null 剔除）",
+      "root_cause_bucket": "基础设施"
+    },
+    {
+      "gate": "L4.1 谓语归组盲评分歧率",
+      "target": "≤0.15",
+      "actual": 0.2,
+      "verdict": "FAIL",
+      "reason": "独立子代理（A4）对 10% 分层抽样盲评，仅凭 predicate+examples 裁决：keep 240 / change 54 / reject 6；change+reject 记分歧。分歧>15% 说明归组本身不可信，L4 对称性读数须打折",
+      "root_cause_bucket": "数据层"
+    }
+  ],
+  "per_case": [],
+  "artifacts": [
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\predicate_grouping_v1.json",
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_group_review_sample.json",
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_group_review_result.json"
+  ]
+}

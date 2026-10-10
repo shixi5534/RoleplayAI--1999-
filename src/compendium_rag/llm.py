@@ -7,6 +7,11 @@
 - 三级 JSON 解析（直接 / 剥代码围栏 / 括号配平截取）+ 常见畸形修复；
 - 显式识别「推理模型把 max_tokens 全烧在 reasoning_content、content 为空」
   这一实测故障（deepseek-v4.x 系列），判为可重试错误而不是静默返回空。
+
+两条调用路径（P4 起）：
+- :meth:`CloudLLM.complete_json` —— 抽取期用，结构化输出 + JSON 容错解析；
+- :meth:`CloudLLM.complete_text` —— 作答期用，**自由文本、不解析 JSON、不发
+  ``response_format``**。两者共用传输/重试/额度熔断骨架，区别只在「怎么判成功」。
 """
 from __future__ import annotations
 
@@ -446,6 +451,84 @@ class CloudLLM:
                     return parsed, meta
                 last = LLMTruncated(f"finish={finish} 且 JSON 解析失败") \
                     if finish == "length" else LLMError("JSON 解析失败")
+                await self._backoff(attempt, str(last))
+
+            async with self._lock:
+                self.usage["failures"] += 1
+            raise LLMError(f"重试 {self.max_retries} 次仍失败：{last}")
+
+    async def complete_text(self, messages: list[dict] | str, user: str | None = None,
+                            max_tokens: int | None = None) -> tuple[str, LLMResult]:
+        """**文本模式**调用：不解析 JSON，也不向网关发 ``response_format``。
+
+        与 :meth:`complete_json` 共用传输与重试骨架，区别只在「怎么判成功」：
+        文本回答没有信封可解析，因此**只有空 content 才重试**；
+        ``finish_reason == "length"`` 的截断结果照样返回（调用方看 ``meta`` 自行处置），
+        因为截断的答案对作答通路仍是可用的证据输出，丢掉它反而制造静默失败。
+
+        ``messages`` 既接受 OpenAI 风格的消息列表（:func:`compendium_rag.compose.compose`
+        的产物），也接受 ``complete_text(system, user)`` 的旧式两参写法。
+
+        为什么不复用 ``complete_json``：那条路径会对回答做 JSON 容错解析，
+        而作答是自由文本；强行套用会把正常答案判成「解析失败」并白烧重试
+        （与抽取期的静默降级是同一类故障）。
+        """
+        assert self._sem is not None, "请用 async with CloudLLM(...) 使用"
+        if isinstance(messages, str):
+            payload_messages = [{"role": "system", "content": messages},
+                                {"role": "user", "content": user or ""}]
+        else:
+            payload_messages = list(messages)
+        last: Exception | None = None
+
+        async with self._sem:
+            for attempt in range(1, self.max_retries + 1):
+                if self.quota_dead:
+                    raise LLMQuotaExhausted("额度已用尽（本次运行已标记，跳过后续调用）")
+                if self.gateway_dead:
+                    raise LLMGatewayUnreachable(
+                        "网关不可达（本次运行已标记，跳过后续调用）")
+                try:
+                    j = await self._post(payload_messages, max_tokens=max_tokens,
+                                         json_mode=False)
+                except LLMQuotaExhausted:
+                    raise
+                except Exception as exc:  # noqa: BLE001
+                    # 与 complete_json 同因：httpx.ConnectError 的 str() 是空串，
+                    # 不并看 repr() 则网关不可达检测永不触发。
+                    blob = f"{exc!s} {exc!r}"
+                    if any(m in blob for m in GATEWAY_DOWN_MARKERS):
+                        self.gateway_dead = True
+                        raise LLMGatewayUnreachable(
+                            f"网关不可达：{blob.strip()[:120]}") from exc
+                    last = exc
+                    await self._backoff(attempt, f"transport: {blob[:120]}")
+                    continue
+
+                usage = j.get("usage") or {}
+                async with self._lock:
+                    self.usage["calls"] += 1
+                    self.usage["prompt_tokens"] += int(usage.get("prompt_tokens") or 0)
+                    self.usage["completion_tokens"] += int(usage.get("completion_tokens") or 0)
+
+                ch = (j.get("choices") or [{}])[0]
+                msg = ch.get("message") or {}
+                content = msg.get("content") or ""
+                finish = ch.get("finish_reason") or ""
+                meta = LLMResult(
+                    text=content, model=j.get("model", self.model),
+                    prompt_tokens=int(usage.get("prompt_tokens") or 0),
+                    completion_tokens=int(usage.get("completion_tokens") or 0),
+                    attempts=attempt, finish_reason=finish)
+
+                if content.strip():
+                    if finish == "length":
+                        logger.warning("作答被 max_tokens 截断：%s", self.model)
+                    return content, meta
+
+                last = LLMEmptyContent(
+                    f"content 为空 (finish={finish}, "
+                    f"reasoning={len(msg.get('reasoning_content') or '')}ch)")
                 await self._backoff(attempt, str(last))
 
             async with self._lock:

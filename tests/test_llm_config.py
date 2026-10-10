@@ -117,13 +117,18 @@ class TestLLMTest:
 
 class TestChatRequestLLMOverride:
     def test_llm_override_embedded_in_chat_request(self, client):
-        # llm 覆盖字段随聊天请求发送：后端应能解析（此处 mock provider，不真连网）
+        # llm 覆盖字段随聊天请求发送：后端应能解析（mock provider，不真连网）
+        #
+        # 回归修复（QA 2026-09-29）：原先 payload 传 provider="ollama" 且**未传 base_url**，
+        # 与「不真连网」的意图矛盾——override 回退到全局 base_url，真发出 HTTP 请求拿 401 → 502，
+        # 用例因此失败。此处对齐注释意图改用 mock；ollama/云端的 override 构客户端行为
+        # 已由 tests/test_llm_override.py 逐条覆盖（那里每例都显式传 base_url）。
         resp = client.post(
             "/chat",
             json={
                 "session_id": "test-llm-override",
                 "message": "你好",
-                "llm": {"provider": "ollama", "model": "qwen2.5:1.5b"},
+                "llm": {"provider": "mock", "model": "mock-model"},
             },
         )
         assert resp.status_code == 200

@@ -1,0 +1,493 @@
+{
+  "schema": "compendium_rag.p6_apply_r8/v1",
+  "generated_at": "2026-10-09T21:28:44.498887+08:00",
+  "task": "P6 图谱修复落盘：apply data/compendium_rag/repairs_v7/proposal.json 的 28 条 L4.5 修边提案（version-tag r8）",
+  "executor": "子代理（只读取证 + 逐步执行；未跑 cli rebuild/extract，未联网，未调云端 LLM）",
+  "env": {
+    "cwd": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai",
+    "python": ".venv/Scripts/python.exe",
+    "pythonpath": "src",
+    "python_flag": "-X utf8",
+    "retrieval_env": {
+      "CMPRAG_LEX_WEIGHT": "1.0",
+      "CMPRAG_RRF_K": "1",
+      "CMPRAG_LEX_FIRST": "0",
+      "PYTHONHASHSEED": "0"
+    },
+    "network": "none"
+  },
+  "steps": {
+    "1_precondition": {
+      "status": "PASS",
+      "exit_code": 0,
+      "expected": {
+        "sha16": "7cac5867e8c80879",
+        "bytes": 11588326
+      },
+      "actual": {
+        "sha16": "7cac5867e8c80879",
+        "bytes": 11588326,
+        "sha256_full": "7cac5867e8c8087977f89aabd51cdde78d0e54103e7692fe64be37eb369091f8"
+      },
+      "note": "与断言完全一致"
+    },
+    "2_dry_run": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v7/proposal.json",
+      "stdout": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 28 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27151 -> 27135\n[DRY-RUN] 全绿。加 --apply 才写盘。",
+      "stdout_expected_lines_matched": [
+        "条目: 28 | 预检错误: 0 | 警告: 0 | 后检错误: 0",
+        "实体: 7033 -> 7033 | 边: 27151 -> 27135",
+        "[DRY-RUN] 全绿。加 --apply 才写盘。"
+      ]
+    },
+    "3_apply": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v7/proposal.json --apply --version-tag r8",
+      "stdout": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 28 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27151 -> 27135\n[APPLIED] 备份 -> C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\backups\\graph.json.prev.r8；新图 -> C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\graph.json\n          落盘 SHA16 = 56507b18ac2113b6（格式 indent=2 + CRLF，与 GraphStore.save 一致）",
+      "backup": {
+        "path": "data/compendium_rag/backups/graph.json.prev.r8",
+        "bytes": 11588326,
+        "sha16": "7cac5867e8c80879",
+        "note": "= 修复前状态，自洽（sha16 7cac5867e8c80879 / 11588326）"
+      }
+    },
+    "4_new_state": {
+      "status": "PASS",
+      "after_sha16": "56507b18ac2113b6",
+      "after_bytes": 11583580,
+      "after_entities": 7033,
+      "after_edges": 27135,
+      "after_fingerprint": "14daf1bbfa407388",
+      "fingerprint_unchanged_reason": "fingerprint_of() 只吃 SCHEMA_VERSION/corpus_fp/llm_model/PROMPT_VERSION/chunk_chars/NORMALIZER_VERSION，与边集无关；修边不改指纹",
+      "fingerprint_inputs": {
+        "corpus_fp": "46f876462e7a8c01",
+        "chunk_chars": 900,
+        "llm_model": "cn:kimi-k2.6",
+        "PROMPT_VERSION": "v3",
+        "NORMALIZER_VERSION": "n2"
+      },
+      "graph_top_level_keys": [
+        "schema",
+        "fingerprint",
+        "normalizer",
+        "entities",
+        "edges"
+      ],
+      "graph_meta": {},
+      "graph_normalizer": "n2"
+    },
+    "5_audit_common_update": {
+      "status": "PASS",
+      "file": "scripts/audit_common.py",
+      "before_lines_33_38": [
+        "V8_GRAPH_SHA16 = \"026b41699f021db2\"",
+        "V9P1_GRAPH_SHA16 = \"7cac5867e8c80879\"",
+        "FROZEN_GRAPH_SHA16 = V9P1_GRAPH_SHA16"
+      ],
+      "after_lines": [
+        "V8_GRAPH_SHA16 = \"026b41699f021db2\"",
+        "V9P1_GRAPH_SHA16 = \"7cac5867e8c80879\"",
+        "# v9-P2 r8：L4.5 修边提案落盘（28 条，边 27151->27135，实体 7033 不变）。",
+        "V9P2_GRAPH_SHA16 = \"56507b18ac2113b6\"",
+        "FROZEN_GRAPH_SHA16 = V9P2_GRAPH_SHA16"
+      ],
+      "scope": "仅新增 V9P2 常量、新增 1 行注释、把 FROZEN 指向 V9P2；V8_GRAPH_SHA16 与 V9P1_GRAPH_SHA16 原样保留；未改其它任何内容",
+      "import_check": {
+        "V8": "026b41699f021db2",
+        "V9P1": "7cac5867e8c80879",
+        "V9P2": "56507b18ac2113b6",
+        "FROZEN": "56507b18ac2113b6"
+      },
+      "V8_SELFCHECK_unchanged": {
+        "300cn": {
+          "artifact": "eval_300cn_k1.json",
+          "tier": "answerable",
+          "hits": 167,
+          "n": 196,
+          "rate": 0.852
+        },
+        "blind206": {
+          "artifact": "eval_blind_k1.json",
+          "tier": "all",
+          "hits": 184,
+          "n": 206,
+          "rate": 0.8932
+        },
+        "gen120": {
+          "artifact": "eval_gen120_k1.json",
+          "tier": "all",
+          "hits": 118,
+          "n": 120,
+          "rate": 0.9833
+        }
+      }
+    },
+    "6_l4_audits": {
+      "multiscene": {
+        "exit_code": 0,
+        "stdout": "WP4-multiscene：实评 60 块，均值 3.9333\n  [FAIL] L4.5 多角色场景关系互洽性: 3.9333\n  [N/A] L4.5b 多角色同场运行时生成一致性: None",
+        "report": "data/compendium_rag/reports/audit_l4_multiscene.json",
+        "frozen_graph_sha": "56507b18ac2113b6",
+        "n": 60,
+        "mean": 3.9333,
+        "gate": "FAIL (阈值 >=4.0)",
+        "low_scores": [
+          "activity__11101_雷米特杯失窃案:11.0.0",
+          "activity__12101_绿湖噩梦:0.0.2",
+          "activity__12101_绿湖噩梦:1.2.0",
+          "activity__12101_绿湖噩梦:11.1.0"
+        ]
+      },
+      "worldview": {
+        "exit_code": 0,
+        "stdout": "WP4-worldview：候选概念 101 -> data\\knowledge\\_audit\\l4_worldview_candidates.json",
+        "report": "data/compendium_rag/reports/audit_l4_worldview.json",
+        "frozen_graph_sha": "56507b18ac2113b6",
+        "unity": 0.9425,
+        "reviewed": 90,
+        "insufficient": 3,
+        "judged": 87,
+        "n_excl": 5,
+        "concepts_high_degree": 101,
+        "gate": "L4.4 世界观定义统一性 FAIL（0.9425，与修复前完全一致）",
+        "note": "L4.4 提案全部为 needs_human / NOOP，未 apply，本次不动；符合预期"
+      },
+      "symmetry": {
+        "exit_code": 0,
+        "stdout": "  [FAIL] L4.1a 方向对成对完整率: 0.0379\n  [PASS] L4.1b 互斥谓语共存率: 0.0247",
+        "report": "data/compendium_rag/reports/audit_l4_symmetry.json",
+        "L4.1a_inverse": 0.0379,
+        "L4.1b_exclusive": 0.0247,
+        "n_edges": 27135,
+        "note": "L4.1a 与修复前 0.0379 完全相同（FAIL）；L4.1b 修复前 0.0244 -> 0.0247（PASS）"
+      },
+      "group_report_only": {
+        "exit_code": 0,
+        "needs_api_key": false,
+        "cloud_called": false,
+        "stdout": "唯一谓语 1609：规则可解析 119，drop 0，LLM 尾巴 1490（覆盖边 22929/27135）\n续跑：已有映射 6916\n--report-only：跳过云端，只用现有 progress/sidecar 重出报告（未映射尾巴 0）\n[PASS] L4 基础设施 谓语归组完备性: {'tail_mapped': 6916, 'tail_total': 1490, 'still_unmapped': 0, 'edge_coverage': 0.845}\n[FAIL] L4.1 谓语归组盲评分歧率: 0.2",
+        "report": "data/compendium_rag/reports/audit_l4_group.json",
+        "tail_mapped": 6916,
+        "tail_total": 1490,
+        "still_unmapped": 0,
+        "edge_coverage": 0.845,
+        "L4_1_disagreement": 0.2,
+        "note": "--report-only 不需要 CMPRAG_LLM_API_KEY；未调云端、未联网"
+      }
+    },
+    "7_sample_pool_check": {
+      "consistent": false,
+      "verdict": "样本池前后不一致（如实回报，未修改采样代码）",
+      "mechanism": "scripts/audit_l4.py:788-792 先 rng.shuffle(cand) 再 sorted(cand)[:60]；候选集长度一变，抽中的 60 个整体重排",
+      "params": {
+        "MULTISCENE_N": 60,
+        "SEED": 42,
+        "dir": "data/knowledge/_audit/l4_multiscene"
+      },
+      "candidate_set_size": {
+        "v9p1": 2793,
+        "r8": 2792
+      },
+      "pools": {
+        "v8_graph_backup": {
+          "n": 60,
+          "雷米特杯": 35,
+          "绿湖": 25
+        },
+        "v9p1_graph_backup": {
+          "n": 60,
+          "雷米特杯": 34,
+          "绿湖": 26
+        },
+        "r8_graph_live": {
+          "n": 60,
+          "雷米特杯": 34,
+          "绿湖": 26
+        },
+        "on_disk_reviewed_input": {
+          "n": 60,
+          "雷米特杯": 35,
+          "绿湖": 25,
+          "note": "与 V8 池逐块完全相同（set 相等）"
+        }
+      },
+      "prep_report": {
+        "path": "data/compendium_rag/reports/audit_l4_multiscene_prep.json",
+        "frozen_graph_sha": "026b41699f021db2",
+        "metrics": {
+          "n_items": 60,
+          "n_batches": 3
+        },
+        "note": "prep 记录的锁是 V8 锁 026b41699f021db2，即磁盘上的评分输入来自 v8 图，而非用户口径所述 v9p1"
+      },
+      "diffs": {
+        "v8_to_v9p1": {
+          "dropped": [
+            "activity__11101_雷米特杯失窃案:2.0.1"
+          ],
+          "added": [
+            "activity__12101_绿湖噩梦:2.0.1"
+          ]
+        },
+        "v9p1_to_r8": {
+          "dropped": [
+            "activity__12101_绿湖噩梦:1.2.0"
+          ],
+          "added": [
+            "activity__12101_绿湖噩梦:2.0.2"
+          ]
+        },
+        "disk_vs_r8": {
+          "only_on_disk": [
+            "activity__11101_雷米特杯失窃案:2.0.1",
+            "activity__12101_绿湖噩梦:1.2.0"
+          ],
+          "only_in_r8": [
+            "activity__12101_绿湖噩梦:2.0.1",
+            "activity__12101_绿湖噩梦:2.0.2"
+          ]
+        }
+      },
+      "user_stated_baseline_conflict": "用户口径称『修复前 60 块 = 雷米特杯 34 + 绿湖 26』；磁盘实际为 35 + 25，且对应 V8 图",
+      "cause_of_绿湖1.2.0_drop": "R7-L45-009 与 R7-L45-010 两条 delete_edge 使该块角色端点数 4->2，跌出 >=3 阈值"
+    },
+    "8_three_main_numbers": {
+      "script": "scripts/audit_wp0_env.py",
+      "exit_code": 1,
+      "report": "data/compendium_rag/reports/audit_wp0_env.json",
+      "frozen_graph_sha": "56507b18ac2113b6",
+      "readings": {
+        "300cn": {
+          "hits": 167,
+          "n": 196,
+          "rate": 0.852
+        },
+        "blind206": {
+          "hits": 185,
+          "n": 206,
+          "rate": 0.8981
+        },
+        "gen120": {
+          "hits": 119,
+          "n": 120,
+          "rate": 0.9917
+        },
+        "safety_unanswerable": {
+          "hits": 1,
+          "n": 104
+        }
+      },
+      "v8_baseline": {
+        "300cn": {
+          "hits": 167,
+          "n": 196,
+          "rate": 0.852
+        },
+        "blind206": {
+          "hits": 184,
+          "n": 206,
+          "rate": 0.8932
+        },
+        "gen120": {
+          "hits": 118,
+          "n": 120,
+          "rate": 0.9833
+        },
+        "safety_unanswerable": {
+          "hits": 1,
+          "n": 104
+        }
+      },
+      "vs_v8": {
+        "300cn": "持平 (167/196)",
+        "blind206": "+1 (185 vs 184)",
+        "gen120": "+1 (119 vs 118)",
+        "safety": "持平 (1/104)"
+      },
+      "below_v8_baseline": false,
+      "conclusion": "三主数均不低于 v8 基线；300cn 持平，blind206 +1，gen120 +1，safety 持平",
+      "gate_verdicts": [
+        {
+          "gate": "graph_sha_vs_v8",
+          "actual": "56507b18ac2113b6",
+          "verdict": "FAIL",
+          "why": "该门硬编码比对 V8_GRAPH_SHA16，r8 落盘后必然 FAIL；非数据回退"
+        },
+        {
+          "gate": "graph_fingerprint",
+          "actual": "ok",
+          "verdict": "PASS"
+        },
+        {
+          "gate": "gateway_available",
+          "actual": 200,
+          "verdict": "PASS"
+        },
+        {
+          "gate": "ollama_available",
+          "actual": 1024,
+          "verdict": "PASS"
+        },
+        {
+          "gate": "qid_whitelist_counts",
+          "actual": {
+            "300cn_all": 300,
+            "300cn_answerable": 196,
+            "300cn_unanswerable": 104,
+            "blind_all": 206,
+            "gen_all": 120
+          },
+          "verdict": "PASS"
+        },
+        {
+          "gate": "v8_three_main_numbers",
+          "verdict": "FAIL",
+          "why": "逐题差：blind206 got 185/206 != lock 184/206；gen120 got 119/120 != lock 118/120（均为正向 +1，非回退）"
+        }
+      ],
+      "authoritative_p1_gate_compare": {
+        "path": "data/compendium_rag/reports/p1_gate_compare.json",
+        "verdict": "PASS",
+        "300cn_hit6_v9": 0.852041,
+        "300cn_v8": 0.852041,
+        "blind206_hit6_v9": 0.898058,
+        "blind206_v8": 0.893204,
+        "gen120_hit6_v9": 0.991667,
+        "gen120_v8": 0.983333,
+        "note": "本次实测 blind206 0.8981 / gen120 0.9917 与 P1 更正后权威值 0.898058 / 0.991667 一致"
+      }
+    }
+  },
+  "before": {
+    "sha16": "7cac5867e8c80879",
+    "bytes": 11588326,
+    "entities": 7033,
+    "edges": 27151,
+    "fingerprint": "14daf1bbfa407388"
+  },
+  "after": {
+    "sha16": "56507b18ac2113b6",
+    "bytes": 11583580,
+    "entities": 7033,
+    "edges": 27135,
+    "fingerprint": "14daf1bbfa407388"
+  },
+  "proposal_verification": {
+    "entries": 28,
+    "delete_edge": 22,
+    "add_edge": 6,
+    "delete_edge_all_removed": true,
+    "add_edge_all_landed": true,
+    "add_edge_landings": [
+      {
+        "id": "R7-L45-023",
+        "triple": [
+          "维尔汀",
+          "惊惧",
+          "十四行诗"
+        ],
+        "pre": 0,
+        "post": 1
+      },
+      {
+        "id": "R7-L45-024",
+        "triple": [
+          "梅兰妮",
+          "希望",
+          "查尔顿"
+        ],
+        "pre": 0,
+        "post": 1
+      },
+      {
+        "id": "R7-L45-025",
+        "triple": [
+          "威廉警长",
+          "告知",
+          "警察"
+        ],
+        "pre": 0,
+        "post": 1
+      },
+      {
+        "id": "R7-L45-026",
+        "triple": [
+          "梅兰妮",
+          "警告",
+          "艾西"
+        ],
+        "pre": 0,
+        "post": 1
+      },
+      {
+        "id": "R7-L45-027",
+        "triple": [
+          "纳尔森",
+          "参与",
+          "皮克勒斯"
+        ],
+        "pre": 0,
+        "post": 1
+      },
+      {
+        "id": "R7-L45-028",
+        "triple": [
+          "牙仙",
+          "导致",
+          "金蜜儿"
+        ],
+        "pre": 0,
+        "post": 1
+      }
+    ]
+  },
+  "l45_expectation_analysis": {
+    "proposal_expected_L45": "3.9333 -> 4.0",
+    "actual_L45": 3.9333,
+    "met_expectation": false,
+    "root_cause": "scripts/audit_l4.py:829-857 的非 --prep 分支只 glob 读 data/knowledge/_audit/l4_multiscene/ms_b*_review.json 的 coherence 字段求均值（第 836 行 scores=[float(r['coherence']) for r in rv ...]），不从图重算；r8 修边无法改变已存在的评分产物",
+    "review_files_mtime": "2026-10-08 20:38–20:43（早于 r8 落盘 2026-10-09 20:52）",
+    "conclusion": "L4.5 仍 FAIL（3.9333）；修边正确落盘但需要重新盲评才能反映到分数。未自动重评（红线：不联网、不调 LLM）"
+  },
+  "files_written": {
+    "tool": [
+      "data/compendium_rag/graph.json",
+      "data/compendium_rag/backups/graph.json.prev.r8"
+    ],
+    "hand_edited": [
+      "scripts/audit_common.py（仅第 5 步那几行）"
+    ],
+    "script_byproducts": [
+      "data/compendium_rag/reports/audit_l4_multiscene.json",
+      "data/compendium_rag/reports/audit_l4_worldview.json",
+      "data/compendium_rag/reports/audit_l4_symmetry.json",
+      "data/compendium_rag/reports/audit_l4_group.json",
+      "data/compendium_rag/reports/audit_wp0_env.json",
+      "data/knowledge/_audit/l4_worldview_candidates.json",
+      "data/knowledge/_audit/predicate_grouping_v1.json",
+      "data/knowledge/_audit/audit_qid_whitelist.json"
+    ],
+    "note_byproducts": "后三个为审计脚本自身副作用（非我手写）；其中 predicate_grouping_v1.json 与 v8 备份 e5bce5d104f1e1c3 不同（600089B / 0e9ff97963c683af vs 715515B / e5bce5d104f1e1c3）。audit_qid_whitelist.json / l4_worldview_candidates.json / predicate_grouping_v1.json 均未被 git 跟踪"
+  },
+  "not_done": [
+    "未执行 cli rebuild / cli extract（红线）",
+    "未联网、未调用任何云端 LLM / API（含 L4 group 的 --report-only 未触发云端打分）",
+    "未执行 git add / commit / stash / checkout",
+    "未修改 data/compendium_rag/repairs_v7/proposal.json 或其 worldview 姊妹件",
+    "未 apply 任何 L4.4 世界观提案（全部 needs_human / NOOP）",
+    "未自动重跑 L4.5 盲评（需子代理打分，属红线禁止的 LLM 调用）",
+    "未修改 scripts/audit_l4.py 的采样代码（样本池差异仅如实回报）",
+    "未自行回退 r8（三主数未低于 v8 基线）",
+    "未清理任何临时文件"
+  ],
+  "deviations": [
+    "步骤 7 取证时曾误把临时文件 _pre_ids_tmp.txt 写到仓库根，已立即删除并确认不存在；仓库根其它 _tmp_* 文件均为先前既有，未触碰",
+    "用户口径『修复前 60 块 = 雷米特杯 34 + 绿湖 26』与磁盘实际 35 + 25（且对应 V8 图）不符，差异已在步骤 7 逐块列出",
+    "L4.5 未达提案预期的 4.0（仍 3.9333），原因为评分读缓存而非修边失效",
+    "审计脚本副产物改写了 data/knowledge/_audit/predicate_grouping_v1.json（非我手写，脚本副作用）",
+    "data/knowledge/_audit/l4_multiscene_r8/ 目录（r8 重新盲评输入 + 4 份部分 review，mtime 2026-10-09 21:20-21:26）为并发其它会话所建，非本次执行产物，我未写入、未修改"
+  ]
+}

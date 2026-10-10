@@ -1,0 +1,361 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP1-structure",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "graph": {
+      "entities": 7033,
+      "edges": 30269,
+      "role_entities": 2023,
+      "isolated_entities": 1121,
+      "isolated_ratio": 0.1594,
+      "avg_degree": 8.608,
+      "components_total": 1172,
+      "components_nontrivial": 51,
+      "largest_cc_nodes": 5802,
+      "largest_cc_ratio": 0.825
+    },
+    "relation_vocab": {
+      "unique_predicates": 8353,
+      "strict_canonical_rate": 0.0676,
+      "classifiable_rate": 0.3484,
+      "reason_distribution": {
+        "review:unmapped": 19575,
+        "synonym": 7926,
+        "canonical": 2046,
+        "rule": 575,
+        "drop:negation": 146,
+        "drop:junk": 1
+      },
+      "top_relations": [
+        [
+          "自陈",
+          367
+        ],
+        [
+          "同场",
+          312
+        ],
+        [
+          "询问",
+          291
+        ],
+        [
+          "说明",
+          263
+        ],
+        [
+          "告知",
+          236
+        ],
+        [
+          "追问",
+          229
+        ],
+        [
+          "断言",
+          227
+        ],
+        [
+          "提及",
+          199
+        ],
+        [
+          "质疑",
+          174
+        ],
+        [
+          "提议",
+          150
+        ],
+        [
+          "质问",
+          149
+        ],
+        [
+          "推断",
+          148
+        ],
+        [
+          "承诺",
+          144
+        ],
+        [
+          "解释",
+          144
+        ],
+        [
+          "宣告",
+          135
+        ],
+        [
+          "拒绝",
+          129
+        ],
+        [
+          "讲述",
+          125
+        ],
+        [
+          "发现",
+          121
+        ],
+        [
+          "评价",
+          118
+        ],
+        [
+          "警告",
+          110
+        ]
+      ]
+    }
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L1.3 孤立节点占比",
+      "target": "≤0.10",
+      "actual": 0.1594,
+      "verdict": "FAIL",
+      "reason": "根因=数据层：抽取缓存补名与实体名不落地（CHRONICLE 2026-09-26 记 1089/7033 实体名不落地）",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.3 平均度数",
+      "target": "≥2.5",
+      "actual": 8.608,
+      "verdict": "PASS",
+      "reason": "",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.3 连通分量数≤1.5×角色数",
+      "target": "≤1.5×2023",
+      "actual": {
+        "components_total": 1172,
+        "nontrivial": 51,
+        "largest_cc_ratio": 0.825
+      },
+      "verdict": "N/A",
+      "reason": "原门槛为『每角色一子图』架构设计；本库是单张连通大图，1172 分量中 1121 个是孤立点，该门槛无判别力。以最大分量覆盖率+非平凡分量数为替代读数（不设门槛），最终裁决留用户。",
+      "root_cause_bucket": "口径替代"
+    },
+    {
+      "gate": "L1.1 实体类型合规",
+      "target": "=1.00（6 类受控）",
+      "actual": {
+        "violation": 0,
+        "types": {
+          "角色": 2023,
+          "物品": 2004,
+          "概念": 1207,
+          "地点": 1134,
+          "组织": 338,
+          "事件": 327
+        }
+      },
+      "verdict": "PASS",
+      "reason": "extract._norm_type 构造保证收敛（非抽样结论）",
+      "root_cause_bucket": ""
+    },
+    {
+      "gate": "L1.2 关系类型合规率（严格：原文谓语∈77 canonical）",
+      "target": "≥1.00",
+      "actual": 0.0676,
+      "verdict": "FAIL",
+      "reason": "根因=数据层：extract.py SYSTEM_PROMPT 允许 2~6 字自由谓语（规则 5），未接入受控词表。修复方向=提示词接 vocab_prompt_block/RELATION_RULES_PROMPT 后 rebuild（审查期不执行）。",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.4 层级分配准确率",
+      "target": "≥0.90",
+      "actual": null,
+      "verdict": "N/A",
+      "reason": "compendium 图为单层平坦结构，无 世界→全局角色→局部场景→个人记忆 tier；对不存在的结构判负=惩罚未做的设计决策，判正=伪造覆盖。豁免并从 L1 分母剔除；信息量由实体类型分类准确率（WP1-pr）替代。",
+      "root_cause_bucket": "结构不存在"
+    }
+  ],
+  "per_case": [
+    {
+      "sample": "relation_review_examples",
+      "items": [
+        {
+          "relation": "炮击",
+          "chunk_id": "mainline__000_此即明日:0.0.0"
+        },
+        {
+          "relation": "临近",
+          "chunk_id": "mainline__000_此即明日:0.0.0"
+        },
+        {
+          "relation": "传送",
+          "chunk_id": "mainline__000_此即明日:1.0.0"
+        },
+        {
+          "relation": "捉走",
+          "chunk_id": "mainline__000_此即明日:1.0.0"
+        },
+        {
+          "relation": "临近",
+          "chunk_id": "mainline__000_此即明日:1.0.0"
+        },
+        {
+          "relation": "伏击",
+          "chunk_id": "mainline__000_此即明日:2.0.0"
+        },
+        {
+          "relation": "以康利庭收唱片",
+          "chunk_id": "mainline__000_此即明日:2.1.0"
+        },
+        {
+          "relation": "遗落",
+          "chunk_id": "mainline__000_此即明日:2.1.0"
+        },
+        {
+          "relation": "叫卖",
+          "chunk_id": "mainline__000_此即明日:3.0.0"
+        },
+        {
+          "relation": "指引",
+          "chunk_id": "mainline__000_此即明日:3.0.0"
+        },
+        {
+          "relation": "被改编为荧幕故事",
+          "chunk_id": "mainline__000_此即明日:3.0.0"
+        },
+        {
+          "relation": "点单",
+          "chunk_id": "mainline__000_此即明日:3.0.0"
+        },
+        {
+          "relation": "推入箱中",
+          "chunk_id": "mainline__000_此即明日:4.0.1"
+        },
+        {
+          "relation": "越过",
+          "chunk_id": "mainline__000_此即明日:4.0.1"
+        },
+        {
+          "relation": "兜售",
+          "chunk_id": "mainline__000_此即明日:5.2.0"
+        },
+        {
+          "relation": "崇拜",
+          "chunk_id": "mainline__000_此即明日:5.2.0"
+        },
+        {
+          "relation": "隔绝",
+          "chunk_id": "mainline__000_此即明日:5.3.0"
+        },
+        {
+          "relation": "试验于",
+          "chunk_id": "mainline__000_此即明日:5.3.0"
+        },
+        {
+          "relation": "缠绕",
+          "chunk_id": "mainline__101_在我们的时代里:0.3.0"
+        },
+        {
+          "relation": "传送",
+          "chunk_id": "mainline__101_在我们的时代里:0.4.0"
+        },
+        {
+          "relation": "搬走",
+          "chunk_id": "mainline__101_在我们的时代里:2.0.0"
+        },
+        {
+          "relation": "还原",
+          "chunk_id": "mainline__101_在我们的时代里:3.1.0"
+        },
+        {
+          "relation": "遗落",
+          "chunk_id": "mainline__101_在我们的时代里:4.2.0"
+        },
+        {
+          "relation": "服侍",
+          "chunk_id": "mainline__101_在我们的时代里:5.0.0"
+        },
+        {
+          "relation": "出行",
+          "chunk_id": "mainline__101_在我们的时代里:5.0.0"
+        },
+        {
+          "relation": "巡演于",
+          "chunk_id": "mainline__101_在我们的时代里:5.0.0"
+        },
+        {
+          "relation": "撰稿于",
+          "chunk_id": "mainline__101_在我们的时代里:5.0.0"
+        },
+        {
+          "relation": "击倒",
+          "chunk_id": "mainline__101_在我们的时代里:6.2.0"
+        },
+        {
+          "relation": "留守",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.0"
+        },
+        {
+          "relation": "受雇于",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.1"
+        },
+        {
+          "relation": "养女于",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.1"
+        },
+        {
+          "relation": "义姐于",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.1"
+        },
+        {
+          "relation": "问候",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.1"
+        },
+        {
+          "relation": "调配",
+          "chunk_id": "mainline__101_在我们的时代里:9.1.0"
+        },
+        {
+          "relation": "喂服",
+          "chunk_id": "mainline__101_在我们的时代里:9.1.0"
+        },
+        {
+          "relation": "背负",
+          "chunk_id": "mainline__101_在我们的时代里:9.2.0"
+        },
+        {
+          "relation": "研制",
+          "chunk_id": "mainline__101_在我们的时代里:10.1.2"
+        },
+        {
+          "relation": "调制",
+          "chunk_id": "mainline__101_在我们的时代里:10.1.2"
+        },
+        {
+          "relation": "迎战",
+          "chunk_id": "mainline__101_在我们的时代里:10.1.3"
+        },
+        {
+          "relation": "投奔",
+          "chunk_id": "mainline__101_在我们的时代里:10.2.0"
+        }
+      ]
+    }
+  ],
+  "artifacts": []
+}

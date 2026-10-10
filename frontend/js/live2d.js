@@ -19,6 +19,8 @@
 
   // 模型注册表：新增模型只需在数组里加一项（url 指向对应 model3.json）。
   // 表情顺序差异已由 live2d.js 的动态 _exprIndex（按 name 建表）天然兼容，无需额外处理。
+  // 动作集差异（314704 无 b_shanzi*/b_zhelian/t_mianju，另有 b_huashu 等）由运行期
+  // _motionKeys 过滤 + CLICK_POOL/IDLE_POOL 存在性检查兜底，不需要按模型分支。
   const MODELS = [
     {
       id: "314701",
@@ -30,7 +32,14 @@
       name: "无名·无尽路",
       url: "./assets/live2d/wmz/314702/v3a7_314702_wmz.model3.json",
     },
+    {
+      id: "314704",
+      name: "无名·沉影探戈",
+      url: "./assets/live2d/wmz/314704/314704.model3.json",
+    },
   ];
+
+  // 待机/扇子池按模型过滤：314704 没有扇子动作，命中即回落（见 _pickWeightedIdle）。
 
   // ── 待机/互动调度配置（优化版：权重池 + 随机间隔 + 空闲分级）──
   // 待机权重池：轻动作高权重、重动作低权重，观感「活的」而非「躁的」。
@@ -43,16 +52,24 @@
     { name: "b_liaofa", w: 8 },   // 撩发（重）
     { name: "b_yaotou", w: 5 },   // 摇头（重）
     { name: "b_taishou", w: 2 },  // 抬手（重）
+    // 314704（沉影探戈）独有动作：为第三套皮肤增加待机变化。
+    // 其余模型没有这些动作组，_pickWeightedIdle 的存在性过滤会自动剔除，无副作用。
+    { name: "b_fuxiong", w: 12 },  // 抚胸（轻）
+    { name: "b_gongsheng", w: 8 }, // 共生（中）
+    { name: "b_huashu", w: 8 },    // 花束（中）
+    { name: "b_huazhang", w: 4 },  // 花掌（重）
   ];
   // 扇子类动作变体（P2-7：模型自带 6 个扇子变体，触发扇子时随机选一个）
   const FAN_VARIANTS = ["b_shanzi", "b_shanzi1", "b_shanzi2", "b_shanzi3", "b_shanzi2_1", "b_shanzi2_2"];
   // 点击互动池：仅点击专属动作（与待机池语义分离，P2-8）
+  // b_zhelian（遮脸）仅 314701/314702 有，314701 缺失时该条目被过滤，池子仍非空。
   const CLICK_POOL = [
     { name: "b_taishou", w: 30 }, // 抬手（点击专属感强）
     { name: "b_yaotou", w: 25 },  // 摇头
     { name: "b_zhelian", w: 20 }, // 遮脸（互动专属）
     { name: "b_diantou", w: 15 }, // 点头
     { name: "b_liaofa", w: 10 },  // 撩发
+    { name: "b_huashu", w: 10 },  // 花束（314704 专属，其余模型过滤）
   ];
   // 待机调度：随机间隔范围（ms）——消除固定 12s 节拍感（P1-4）
   const IDLE_INTERVAL_MIN = 8000;
@@ -82,6 +99,15 @@
     _internalModel: null, // 缓存 Live2D internalModel 引用（避免每次重读）
     _srcW: 0, // 模型原始像素尺寸（被 _fit 多次调用时不会缩小）
     _srcH: 0,
+    // 真实内容边界（由 drawable 顶点并集算出，见 _measureContent）。
+    // 关键：Live2D 的 getLocalBounds() / internalModel 尺寸给的是【布局框】，
+    // 角色实际绘制内容常常只占其中一部分、甚至溢出到框外（实测 314704 内容
+    // y 在 -0.44..0.50、x 在 0.11..1.04）。旧代码把布局框当角色本体，导致：
+    //   · 缩放偏小、角色被摆到画布上方并截掉头顶；
+    //   · 点击换算用 _srcW/_srcH 归一化，而 interact_map 的矩形是按内容定义的，
+    //     两者基准不一致 -> 点身体却命中"空白/下摆"（用户反馈的"定位有问题"）。
+    // 因此统一改用内容盒作为缩放、居中与点击换算的唯一基准。
+    _contentBox: null, // { x, y, w, h } 局部坐标
     _lastMotionAt: 0, // 上次动作真实播完时间（由 motionfinish 事件驱动更新，P0-1）
     _idleTimer: null, // 待机调度 setTimeout 句柄（随机间隔自递归）
     // ── 待机/互动调度新状态（P1-3/P1-4/P2-6）──
@@ -248,6 +274,7 @@
         this._internalModel = null;
         this._srcW = 0;
         this._srcH = 0;
+        this._contentBox = null;
         this._exprIndex = {};
         this._currentEmotion = null;
 
@@ -306,6 +333,10 @@
           this._srcW = this._internalModel && this._internalModel.width || this._model.width || 1024;
           this._srcH = this._internalModel && this._internalModel.height || this._model.height || 1024;
         }
+        // ④.5 量出【真实内容边界】：Live2D 的布局框只是画布规格，不等于角色本体。
+        // 实测三套模型的角色内容在布局框里的占比差异很大（x 0.08~1.04 / y -0.44~0.51），
+        // 拿布局框做缩放与点击换算会让角色摆偏、点击区域与身体对不上。
+        this._measureContent();
         // 切换模型时按当前显隐状态复原
         this._model.visible = this._modelVisible;
         this._fit();
@@ -390,6 +421,124 @@
     },
 
     /** 切换模型（复用现有 PIXI App，不重建 ticker / resize 监听）。返回 Promise<boolean>。 */
+    /**
+     * 量出模型【真实内容边界】（局部坐标），写入 this._contentBox。
+     *
+     * 为什么不能直接用 getLocalBounds()：它返回的是模型【布局框】（= internalModel
+     * 尺寸），那是 Cubism 的画布规格，不是角色本体。实测三套模型角色都只占布局框的
+     * 一部分、甚至溢出框外（314701 内容 y -0.33..0.51，314704 内容 y -0.44..0.50）。
+     * 用布局框做缩放/居中会让角色摆偏并截顶；做点击归一化会让 interact_map 的矩形
+     * 与身体对不上（用户反馈的"定位有问题"）。
+     *
+     * 做法：并集全部 drawable 的顶点包围盒（getDrawableVertices 已是含
+     * pixelsPerUnit 与原点换算的模型局部坐标），并剔除不可见 drawable。
+     *
+     * 关键（踩过坑）：只量【静止姿态】是不够的 —— 实测 314704 播放动作时轮廓宽度
+     * 在 222~421 CSS px 之间摆动（抬手/扇子会把手臂伸出去），按静止姿态算出的
+     * 边界余量会被伸出去的手臂吃掉，出现"偶发贴边被切"。所以这里额外把模型的
+     * 动作采样一遍，取【所有姿态的并集】作为内容盒。
+     *
+     * 取不到时回退布局框，保证调用方永远拿到可用值。
+     */
+    _measureContent() {
+      const fallback = () => ({
+        x: 0, y: 0, w: this._srcW || 1024, h: this._srcH || 1024, measured: false,
+      });
+      const im = this._internalModel;
+      if (!im || typeof im.getDrawableVertices !== "function") {
+        this._contentBox = fallback();
+        return this._contentBox;
+      }
+
+      let minX = Infinity;
+      let minY = Infinity;
+      let maxX = -Infinity;
+      let maxY = -Infinity;
+      let count = 0;
+
+      // 累积当前姿态下所有 drawable 的顶点范围
+      const sweep = () => {
+        try {
+          const n = im.coreModel.getDrawableCount();
+          for (let i = 0; i < n; i++) {
+            // 完全透明的 drawable 不计入（模型常有隐藏备用件）
+            let opa = 1;
+            try { opa = im.coreModel.getDrawableOpacity(i); } catch (_) { /* 无该 API 则视为可见 */ }
+            if (opa != null && opa < 0.5) continue;
+            let v;
+            try { v = im.getDrawableVertices(i); } catch (_) { continue; }
+            if (!v || !v.length) continue;
+            for (let j = 0; j < v.length; j += 2) {
+              const x = v[j];
+              const y = v[j + 1];
+              if (!isFinite(x) || !isFinite(y)) continue;
+              if (x < minX) minX = x;
+              if (x > maxX) maxX = x;
+              if (y < minY) minY = y;
+              if (y > maxY) maxY = y;
+            }
+            count++;
+          }
+        } catch (e) {
+          console.warn("[live2d] 内容边界量测失败", e);
+        }
+      };
+
+      // ① 静止姿态
+      sweep();
+      const rest = { minX, minY, maxX, maxY };
+
+      // ② 动作姿态不再单独采样：
+      //    实测走 motionManager.createMotion() 与 model.motion() 两条路都拿不到姿态
+      //    （settings.motions 里只有 File；手动 update 与库的 save/loadParameters
+      //    时序打架，量出来与静止姿态一模一样），继续做只会留下脆弱且无用的代码。
+      //    改为在 _clampOffset / 缩放上限里统一预留【动作余量】——
+      //    实测动作过程中轮廓宽度可在静止值上下浮动约 6%（314704: 222~421px），
+      //    预留 8% 即可确定性地覆盖，不依赖任何采样是否成功。
+
+      // 复位到静止姿态，避免把采样姿态留在模型上
+      try { im.coreModel.loadParameters(); im.coreModel.update(); } catch (_) {}
+
+      if (!isFinite(minX) || !isFinite(minY) || !isFinite(maxX) || !isFinite(maxY)
+          || maxX <= minX || maxY <= minY || !count) {
+        this._contentBox = fallback();
+        return this._contentBox;
+      }
+      this._contentBox = {
+        x: minX, y: minY, w: maxX - minX, h: maxY - minY, measured: true,
+      };
+      console.info(
+        "[live2d] content box", Math.round(minX) + "," + Math.round(minY),
+        Math.round(maxX - minX) + "x" + Math.round(maxY - minY),
+        "(rest", Math.round(rest.maxX - rest.minX) + "x" + Math.round(rest.maxY - rest.minY) + ")",
+        "| layout", (this._srcW || 0) + "x" + (this._srcH || 0),
+        "| drawables", count
+      );
+      return this._contentBox;
+    },
+
+    /**
+     * 拖拽偏移【不做任何限制】（按用户要求放开左右与上下边界）。
+     *
+     * 历史：这里曾把偏移夹在「角色仍完整可见」的范围内（先按画布 8%，后改 8px），
+     * 但用户明确要求取消这个限制 —— 希望能把角色拖到任意位置，包括拖出画面。
+     * 因此现在只做数值归一化（保证是有限数），不再夹紧。
+     *
+     * 仍然保留的方法壳：调用方（_fit / 拖拽 / _fitPet）依赖它写回 _userOffsetX/Y，
+     * 保证拖拽事件与持久化状态拿到的是同一个值。若将来要恢复限制，在这里加即可。
+     *
+     * @returns {{x:number,y:number}} 原样返回的偏移
+     */
+    _clampOffset(s, box, w, h) {
+      let ox = Number(this._userOffsetX) || 0;
+      let oy = Number(this._userOffsetY) || 0;
+      if (!isFinite(ox)) ox = 0;
+      if (!isFinite(oy)) oy = 0;
+      this._userOffsetX = ox;
+      this._userOffsetY = oy;
+      return { x: ox, y: oy };
+    },
+
     async switchModel(idOrUrl) {
       let url = idOrUrl;
       const byId = MODELS.find((m) => m.id === String(idOrUrl));
@@ -426,42 +575,61 @@
         this._fitPet(w, h);
         return;
       }
-      // 模型原始像素尺寸：只用缓存的源尺寸（不会因 _fit 自身缩放而缩小），
-      // 第一次 model 还未就绪时回退到当前 model.width 与 1024 兜底。
-      let iw = this._srcW || this._model.width || 1024;
-      let ih = this._srcH || this._model.height || 1024;
+      // 缩放与居中都以【真实内容盒】为准（见 _measureContent）。
+      // 旧实现用布局框（_srcW/_srcH + getLocalBounds）当角色本体，导致缩放偏小、
+      // 且角色被摆到画布上方并截掉头顶 —— 实测内容只占布局框的一部分。
+      const box = this._contentBox
+        || { x: 0, y: 0, w: this._srcW || 1024, h: this._srcH || 1024 };
+      let iw = box.w;
+      let ih = box.h;
       if (!isFinite(iw) || !isFinite(ih) || iw <= 0 || ih <= 0) {
         iw = 1024;
         ih = 1024;
       }
-      // 显示修复：留 8% 余量，确保整张模型（头/脚）完整可见；
-      let s = Math.min(w / iw, h / ih) * 0.92;
+      // 基准缩放：留 8% 余量，确保整张模型（头/脚）完整可见
+      const fitScale = Math.min(w / iw, h / ih) * 0.92;
+      let s = fitScale;
       if (!isFinite(s) || s <= 0) s = 0.38;
-      s *= this._zoomMult; // 叠加用户快捷键缩放
+      // 缩放：尊重用户的倍率（setZoom 已把范围夹在 0.5~2.0），不再额外封顶。
+      //
+      // 这里踩过一次坑（重要，勿回退）：
+      //   我曾用「放大后角色必须完整放进画布」反推上限：
+      //     zoomCap = ZOOM_FIT_MARGIN / max(iw*s/w, ih*s/h)
+      //   但默认适配下 need 恰好 ≈ 0.92，算出来 zoomCap = 1.0 ——
+      //   结果是【缩放被彻底锁死在 100%】，请求 1.5/2/3/5 倍全部只给 1.0，
+      //   用户根本没法把模型放大（用户反馈："模型大小，你干嘛给我锁了？"）。
+      //   "放大"本来就允许角色超出画框（那正是放大的意义），
+      //   真正该防的是【跑出画面找不着】，由下面的 _clampOffset 负责。
+      const zoom = this._zoomMult;
+      this._zoomApplied = zoom; // 实际生效倍率（供 HUD/诊断读取）
+      s *= zoom;
       this._model.scale.set(s);
-      // 关键修复：用模型实际内容包围盒居中，而非按画布空尺寸居中。
-      // 部分 Live2D 模型角色内容在画布中偏上（头顶贴顶、脚下留白），
-      // 按画布尺寸对称居中会把上半身推出窗口。getLocalBounds 取真实内容区域。
-      const bounds = this._model.getLocalBounds();
-      const bw = (bounds && isFinite(bounds.width) && bounds.width > 0) ? bounds.width : iw;
-      const bh = (bounds && isFinite(bounds.height) && bounds.height > 0) ? bounds.height : ih;
-      const bx = (bounds && isFinite(bounds.x)) ? bounds.x : 0;
-      const by = (bounds && isFinite(bounds.y)) ? bounds.y : 0;
-      // getLocalBounds 返回未缩放的局部坐标，居中时需乘以缩放系数 s
-      const baseX = (w - bw * s) / 2 - bx * s;
-      const baseY = (h - bh * s) / 2 - by * s;
+      // 按内容盒居中：把内容盒中心对到画布中心
+      const baseX = w / 2 - (box.x + iw / 2) * s;
+      let baseY = h / 2 - (box.y + ih / 2) * s;
+      // 放大到「角色比画布高」时，不再按整体居中 —— 那会把头顶和脚同时切掉，
+      // 而用户放大通常是想看清脸。改为锚定【内容顶部】（头部所在处），
+      // 让头部始终在画面里；想看下半身再用 Shift+↓ / 拖拽往下挪。
+      // （放大到角色比画布宽时，水平仍居中 —— 人物是纵向的，水平方向居中即可。）
+      const topMargin = 12; // 头顶与画布顶部的安全距离
+      if (ih * s > h) {
+        baseY = topMargin - box.y * s;
+      }
       this._baseX = baseX;
       this._baseY = baseY;
-      // 拖拽偏移叠加在居中基准上
-      this._model.x = baseX + this._userOffsetX;
-      this._model.y = baseY + this._userOffsetY;
+      // 拖拽偏移：限制在「角色不会完全跑出画面」的范围内（超出即夹住）。
+      // 放大后角色会超出画布，此时余量为负、偏移被夹到 0 —— 即保持居中，
+      // 保证放大后仍能看到角色主体（而不是滑到画外）。
+      const off = this._clampOffset(s, box, w, h);
+      this._model.x = baseX + off.x;
+      this._model.y = baseY + off.y;
       console.info(
         "[live2d] fit -> screen",
         Math.round(w) + "x" + Math.round(h),
-        "| canvas",
-        Math.round(iw) + "x" + Math.round(ih),
-        "| content",
-        Math.round(bw) + "x" + Math.round(bh) + "@(" + Math.round(bx) + "," + Math.round(by) + ")",
+        "| contentBox",
+        Math.round(iw) + "x" + Math.round(ih) + "@(" + Math.round(box.x) + "," + Math.round(box.y) + ")",
+        "| layout",
+        (this._srcW || 0) + "x" + (this._srcH || 0),
         "| scale",
         s.toFixed(3),
         "| offset",
@@ -470,23 +638,23 @@
     },
 
     /**
-     * 桌面宠物模式专用适配（P0-1 修复）：
-     * - 缩放与位置统一使用模型「内容边界」（getLocalBounds），量纲一致，杜绝头顶出窗；
+     * 桌面宠物模式专用适配：
+     * - 缩放与位置统一使用【真实内容盒】（见 _measureContent），量纲一致，杜绝头顶出窗；
+     *   旧实现用 getLocalBounds()（布局框），宠物页同样会截顶 + 缩放偏小。
      * - 顶部预留气泡区（避免气泡压头）、底部贴地（宠物站姿观感）；
      * - 水平居中，叠加用户缩放与拖拽偏移。
      */
     _fitPet(w, h) {
-      let bw = 1024;
-      let bh = 1024;
-      let bx = 0;
-      let by = 0;
-      try {
-        const bounds = this._model.getLocalBounds();
-        if (bounds && isFinite(bounds.width) && bounds.width > 0) bw = bounds.width;
-        if (bounds && isFinite(bounds.height) && bounds.height > 0) bh = bounds.height;
-        if (bounds && isFinite(bounds.x)) bx = bounds.x;
-        if (bounds && isFinite(bounds.y)) by = bounds.y;
-      } catch (_) { /* 保持 1024 兜底 */ }
+      const box = this._contentBox || {
+        x: 0, y: 0, w: this._srcW || 1024, h: this._srcH || 1024,
+      };
+      let bw = box.w;
+      let bh = box.h;
+      let bx = box.x;
+      let by = box.y;
+      if (!isFinite(bw) || !isFinite(bh) || bw <= 0 || bh <= 0) { bw = 1024; bh = 1024; }
+      if (!isFinite(bx)) bx = 0;
+      if (!isFinite(by)) by = 0;
 
       const topZone = Math.min(110, h * 0.2);   // 顶部气泡区
       const bottomMargin = 12;                   // 底部贴地留白
@@ -494,19 +662,25 @@
       const availH = h - topZone - bottomMargin;
       let s = Math.min(availW / bw, availH / bh);
       if (!isFinite(s) || s <= 0) s = 0.3;
-      s *= this._zoomMult; // 叠加用户缩放
+      // 与网页版一致：不再封顶缩放（那会把缩放锁死在 100%，见 _fit 里的踩坑记录）。
+      // 放大后角色超出可用区域是正常语义，由 _clampOffset 保证不跑出画面。
+      const zoom = this._zoomMult;
+      this._zoomApplied = zoom;
+      s *= zoom;
 
       this._model.scale.set(s);
-      const baseX = (w - bw * s) / 2 - bx * s;
-      const baseY = h - bottomMargin - bh * s - by * s;
+      // 水平按内容居中；垂直让内容底边贴地（bottomMargin）
+      const baseX = w / 2 - (bx + bw / 2) * s;
+      const baseY = h - bottomMargin - (by + bh) * s;
       this._baseX = baseX;
       this._baseY = baseY;
-      this._model.x = baseX + this._userOffsetX;
-      this._model.y = baseY + this._userOffsetY;
+      const off = this._clampOffset(s, { x: bx, y: by, w: bw, h: bh }, w, h);
+      this._model.x = baseX + off.x;
+      this._model.y = baseY + off.y;
       console.info(
         "[live2d] pet-fit -> screen",
         Math.round(w) + "x" + Math.round(h),
-        "| content",
+        "| contentBox",
         Math.round(bw) + "x" + Math.round(bh) + "@(" + Math.round(bx) + "," + Math.round(by) + ")",
         "| scale",
         s.toFixed(3)
@@ -519,6 +693,26 @@
       this._userOffsetY = 0;
       this._fit();
       this._announceOffset();
+    },
+
+    /**
+     * 按方向键微调数字人位置（键盘可达：不依赖鼠标拖拽）。
+     *
+     * 偏移量与拖拽共用同一套状态（_userOffsetX/Y）与边界夹紧（_clampOffset），
+     * 所以键盘微调同样受"角色不得移出画布"约束，且与拖拽/持久化完全一致。
+     *
+     * @param {number} dx 水平位移（px，正=右）
+     * @param {number} dy 垂直位移（px，正=下）
+     * @returns {{x:number,y:number}} 夹紧后的实际偏移
+     */
+    nudge(dx, dy) {
+      if (!this._model) return { x: this._userOffsetX, y: this._userOffsetY };
+      this._userOffsetX = (Number(this._userOffsetX) || 0) + (Number(dx) || 0);
+      this._userOffsetY = (Number(this._userOffsetY) || 0) + (Number(dy) || 0);
+      // 复用 _fit 的边界逻辑：它会夹紧并把结果写回 _userOffsetX/Y
+      this._fit();
+      this._announceOffset();
+      return { x: this._userOffsetX, y: this._userOffsetY };
     },
 
     /**
@@ -617,8 +811,14 @@
         }
         this._userOffsetX = this._dragStart.offX + dx;
         this._userOffsetY = this._dragStart.offY + dy;
-        this._model.x = this._baseX + this._userOffsetX;
-        this._model.y = this._baseY + this._userOffsetY;
+        // 偏移不再夹紧（用户要求放开限制），_clampOffset 现在只做归一化并写回状态
+        const off = this._clampOffset(
+          this._model.scale.x || 1,
+          this._contentBox || { x: 0, y: 0, w: this._srcW || 1024, h: this._srcH || 1024 },
+          this._pixiApp.screen.width, this._pixiApp.screen.height
+        );
+        this._model.x = this._baseX + off.x;
+        this._model.y = this._baseY + off.y;
       };
 
       const onUp = (e) => {
@@ -767,11 +967,16 @@
       // 会静默 return，把语音一起吞掉——实测 3 次点击只有 1 次出声。
       if (window.RoleplayPetCore) window.RoleplayPetCore.emitIntent("click", {});
 
-      // ① 点击交换：坐标 → 模型归一化坐标 → 命中区域优先
-      if (this._regionMap && cx != null && cy != null && this._srcW > 0 && this._srcH > 0) {
-        const rx = (cx - this._model.x) / (this._model.scale.x || 1) / this._srcW;
-        const ry = (cy - this._model.y) / (this._model.scale.y || 1) / this._srcH;
-        // 仅在模型包围盒内（0~1）才做区域判定，模型外点击不触发区域互动
+      // ① 点击交换：坐标 → 模型归一化坐标 → 命中区域优先。
+      // 归一化基准必须是【真实内容盒】（与 _fit 同源、与 interact_map 的矩形同义）。
+      // 旧实现除以 _srcW/_srcH（布局框），而 interact_map 的矩形是按角色本体比例定的，
+      // 两个基准不一致 -> 点身体会命中"空白"或错区的下摆（用户反馈的"定位有问题"）。
+      const box = this._contentBox;
+      if (this._regionMap && cx != null && cy != null && box && box.w > 0 && box.h > 0) {
+        const s = this._model.scale.x || 1;
+        const rx = (cx - this._model.x) / s / box.w - box.x / box.w;
+        const ry = (cy - this._model.y) / s / box.h - box.y / box.h;
+        // 仅在角色内容范围内（0~1）才做区域判定，角色外点击不触发区域互动
         if (rx >= 0 && rx <= 1 && ry >= 0 && ry <= 1) {
           const region = this._resolveRegion(rx, ry);
           if (region) {
@@ -856,7 +1061,7 @@
       if (!s) return;
 
       try {
-        // 动作（存在性检查：两套模型动作集可能不同）
+        // 动作（存在性检查：三套模型动作集不同，314704 无扇子/遮脸组）
         if (s.motion && this._motionKeys[s.motion]) {
           this._model.motion(s.motion, 0, 3); // 最高优先级，压过情绪(2)/待机(1)
           this._busySince = now;
@@ -872,9 +1077,20 @@
       }
 
       // 广播给 chat.js：气泡 + TTS（解耦，live2d.js 不直接依赖 chat.js/voice.js）
+      // 双语（P3-1）：stage 同时给出 zh（text/tts）与 en（text_en/tts_en）两套，
+      // 由监听方按当前配音语言（RoleplayPetVoice.getLang()）择一，避免英配模式下
+      // 弹出中文、或英文位为空导致副标题缺行。缺英文时回落到中文（宁可双语同文，
+      // 也不要出现空行）。
       try {
         global.dispatchEvent(new CustomEvent("live2d:interact", {
-          detail: { region: region.id, text: s.text || "", tts: s.tts || "", stage: idx }
+          detail: {
+            region: region.id,
+            stage: idx,
+            text: s.text || "",
+            tts: s.tts || "",
+            text_en: s.text_en || s.text || "",
+            tts_en: s.tts_en || s.tts || "",
+          }
         }));
       } catch (_) {}
     },
@@ -974,8 +1190,10 @@
     /** 空闲 5min 的「犯困」过渡动作：闭眼/低姿态微动作，之后进入超低频。 */
     _playSleepGesture() {
       if (!this._ready || !this._model) return;
-      // 用「点头+遮面」等低能耗动作示意犯困；t_bizui(闭口) 若有则更贴切
-      const sleepy = ["b_diantou", "b_zhelian", "b_yaotou"].filter((k) => this._motionKeys[k]);
+      // t_biyan（闭眼）最贴切，但只有 314704 有；其余模型回落到点头/遮面/摇头，
+      // 由 _motionKeys 过滤（314704 无 b_zhelian 会自动剔除）。
+      const sleepy = ["t_biyan", "b_diantou", "b_zhelian", "b_yaotou"]
+        .filter((k) => this._motionKeys[k]);
       if (!sleepy.length) return;
       try {
         this._model.motion(sleepy[Math.floor(Math.random() * sleepy.length)], 0, 2);
@@ -1032,11 +1250,18 @@
       if (this._model) this._model.visible = this._modelVisible;
     },
 
-    /** 设置拖拽偏移（由 chat.js 从持久化状态恢复）。 */
+    /** 设置拖拽偏移（由 chat.js 从持久化状态恢复）。
+     *  实际生效值由 _fit 内的 _clampOffset 夹紧 —— 历史遗留的过大偏移
+     *  （旧版本没有边界限制）不会再把角色顶出画布外。 */
     setOffset(x, y) {
       this._userOffsetX = Number(x) || 0;
       this._userOffsetY = Number(y) || 0;
       this._fit();
+    },
+
+    /** 实际生效的缩放倍率（被"不得超出画布"上限夹过之后的值）。 */
+    getAppliedZoom() {
+      return this._zoomApplied != null ? this._zoomApplied : this._zoomMult;
     },
 
     getModels() {

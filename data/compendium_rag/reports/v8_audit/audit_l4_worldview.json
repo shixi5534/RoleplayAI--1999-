@@ -1,0 +1,42 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP4-worldview",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "reviewed": 90,
+    "insufficient": 3,
+    "judged": 87,
+    "concepts_high_degree": 101,
+    "exclusive_concepts": 5,
+    "unity": 0.9425
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L4.4 世界观定义统一性",
+      "target": "≥0.95",
+      "actual": 0.9425,
+      "verdict": "FAIL",
+      "reason": "高 degree 概念实体的 是/象征/包含 边 + desc 送审；复核 90 条、可判 87 条（3 条证据不足移出分母），互斥 5 条",
+      "root_cause_bucket": "数据层"
+    }
+  ],
+  "per_case": [],
+  "artifacts": [
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_worldview_candidates.json"
+  ]
+}

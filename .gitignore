@@ -97,3 +97,34 @@ _poc_shots/
 #   根级一次性探针（已归档到 scripts/_archive/，防复发）
 /_cue_feasibility.py
 /_strip_test.js
+
+# ── 提交前清理（2026-10-10 提交 P4–P7 时核验补充）────────────────────
+# 背景：P4–P7 的 `git status` 累积 200 项，其中混有大量本机运行残留。
+# 裸 `git add -A` 会一次吞下 201.9 MB / 2166 个文件（含 747 个垃圾条目），
+# 且多为 Electron 缓存与 pytest 临时目录，全部可再生。故在此显式排除。
+#
+#   Electron 冒烟/截图脚本的产物目录（77 MB 缓存 + 截图，可再生）
+desktop/scripts/out/
+#   Electron 用户数据与实例缓存（同上，_29524 等随机后缀）
+desktop/scripts/out/**/.electron-*/
+#   DSH/子代理探查落地目录（本机沙箱产物）
+.agent_tmp/
+#   pytest basetemp 套件目录（含 20 MB corpus.json 与 .npz，测试可再生）
+.bt_suite/
+#   一次性探针目录与根级作业清单（P4–P7 派工残留）
+/dsh_probe_x/
+/_jobs.json
+/_jobs2.json
+/_p7_jobs.json
+/_p7_plan.json
+/p4_diag2.py
+#   QA 巡检中间日志（结论已汇总进 deliverables/qa_reports/*.md）
+deliverables/qa_reports/_logs/
+deliverables/qa_reports/_probe.txt
+deliverables/qa_reports/_tmpfix_plugin.py
+
+#   派生的重复文本（由已入库的批次 json 经 scripts 摊平/切页生成，可重建）
+data/knowledge/_audit/*/_flatten/
+data/knowledge/_audit/*/_jl/
+data/knowledge/_audit/*/_tmp_*/
+data/knowledge/_audit/*/l3_answers/_parts/

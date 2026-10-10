@@ -1,0 +1,232 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP5",
+  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "injected_edges": 60,
+    "injected_pairs": 30,
+    "detected": 30,
+    "detection_rate": 1.0,
+    "surfaced_rate": 0.0,
+    "questions": 30,
+    "injected_edges_surfaced": 0
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L5.1 冲突注入 检测器捕获率",
+      "target": "≥0.80",
+      "actual": 1.0,
+      "verdict": "PASS",
+      "reason": "注入互斥谓语对 30 个实体对，WP4-symmetry 互斥扫描在注入图（内存副本，graph.json 未改）上捕获 30",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L5.1b 冲突注入 检索未标注同现率",
+      "target": "=0（双方同时进 top-6 且无标注）",
+      "actual": 0.0,
+      "verdict": "PASS",
+      "reason": "0/30 次提问把矛盾双方同时送进上下文；本系统无矛盾标注通路，故只要同现即记失",
+      "root_cause_bucket": "检索层"
+    }
+  ],
+  "per_case": [
+    {
+      "entity": "维尔汀",
+      "partner": "重塑·门徒",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "十四行诗",
+      "partner": "剃刀",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "星锑",
+      "partner": "IDM计算机",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "红弩箭",
+      "partner": "贝托尔特",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "APPLe",
+      "partner": "天堂使徒",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "X",
+      "partner": "拉普拉斯信纸",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "塞梅尔维斯",
+      "partner": "巧克力",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "37",
+      "partner": "印加人",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "苏芙比",
+      "partner": "四脚兽",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "玛蒂尔达",
+      "partner": "占卜妖精",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "小梅斯梅尔",
+      "partner": "死者血样",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "乌尔里希",
+      "partner": "术式",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "北方哨歌",
+      "partner": "保卫队员Ⅰ",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "卡卡尼亚",
+      "partner": "伊索尔德",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "伊戈尔",
+      "partner": "卡洛斯将军",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "露西",
+      "partner": "小梅斯梅尔",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "马库斯",
+      "partner": "托斯卡",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "哑谜",
+      "partner": "玩具箱研究小组",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "兀尔德",
+      "partner": "维尔汀",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "伊索尔德",
+      "partner": "伊索尔德之母",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "阿尔卡纳",
+      "partner": "真空弹",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "Z",
+      "partner": "哑谜",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "J",
+      "partner": "雷诺",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "苏菲亚",
+      "partner": "苏菲亚的父亲",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "梁月",
+      "partner": "祭器",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "梅蕾尔",
+      "partner": "谢尔盖",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "洛佩拉",
+      "partner": "林中村落",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "曲娘",
+      "partner": "金市",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "笃笃骨",
+      "partner": "澳大利亚",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    },
+    {
+      "entity": "霍夫曼",
+      "partner": "弗兰南群岛史",
+      "both_in_top6": false,
+      "injected_edges_surfaced": 0
+    }
+  ],
+  "artifacts": [
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\inverse_predicate_map.json"
+  ]
+}

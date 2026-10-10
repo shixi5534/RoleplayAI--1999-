@@ -15,6 +15,7 @@ import asyncio
 import base64
 import json
 import logging
+import re
 from typing import Any
 
 from websockets.asyncio.client import connect as ws_connect
@@ -28,6 +29,36 @@ from ..models.chat import ChatRequest, EmotionInfo
 logger = logging.getLogger(__name__)
 
 _ACTION_ID = 0  # OneBot 动作自增 id（回协用）
+
+_REDACTED = "***"
+
+# access_token=xxx（到分隔符/空白为止）→ access_token=***
+_REPLACE_ACCESS_TOKEN_RE = re.compile(r"access_token=[^&\s\"'>]*")
+
+
+def _redact_url(text: str, token: str = "") -> str:
+    """日志脱敏：把文本里出现的 access_token 值替换为 '***'。
+
+    S3 修复背景：异常分支原先直接 ``logger.warning(..., exc)``，而 websockets 的
+    ``InvalidURI`` 等异常会**原样携带完整 URL（含 access_token）**，导致重连日志
+    泄漏 QQ WS 凭据。所有可能输出 URL/凭据的日志路径统一走本函数。
+
+    实现要点：
+    - ``token`` 为空串时**直接返回原文**：避免 ``str.replace("", "***")``
+      在每个字符间插入 3 个星号（灾难性替换，实测会把日志撑爆）。
+    - ``text`` 可能不是字符串（异常对象），统一 ``str()`` 后再脱敏。
+    - 除精确 token 外，再按 ``access_token=<值>`` 形态兜底脱敏：覆盖 token 经
+      URL 编码/拼接后与配置值字面不等的情形，双保险。
+    - 仅做替换、不抛异常：脱敏本身绝不能让日志路径失败。
+    """
+    if text is None:
+        return ""
+    text = text if isinstance(text, str) else str(text)
+    if not text:
+        return text
+    if token:
+        text = text.replace(token, _REDACTED)
+    return _REPLACE_ACCESS_TOKEN_RE.sub(rf"access_token={_REDACTED}", text)
 
 
 class QQChannel:
@@ -59,8 +90,13 @@ class QQChannel:
                 # 任务被取消：直接退出主循环（上下文管理器会关闭 WS）
                 break
             except Exception as exc:  # noqa: BLE001
+                # S3 修复：异常文本必须脱敏后再落日志。
+                # websockets 的 InvalidURI 等异常会原样携带**含 access_token 的完整
+                # URL**；此处原先直接输出 %s(exc)，等于把 QQ WS 凭据写进 server.log。
                 logger.warning(
-                    "QQ 渠道连接异常，%ss 后重连：%s", self._reconnect_delay, exc
+                    "QQ 渠道连接异常，%ss 后重连：%s",
+                    self._reconnect_delay,
+                    _redact_url(exc, self.settings.qq_ws_token),
                 )
             if self._stop.is_set():
                 break
@@ -79,7 +115,8 @@ class QQChannel:
         if token:
             sep = "&" if "?" in url else "?"
             url = f"{url}{sep}access_token={token}"
-            display_url = url.replace(f"access_token={token}", "access_token=***")
+            # 统一走 _redact_url（token 为空时不进入本分支；非空时精确替换 + 形态兜底）
+            display_url = _redact_url(url, token)
         logger.info("QQ 渠道连接 NapCat：%s", display_url)
         async with ws_connect(
             url, ping_interval=20, ping_timeout=20, close_timeout=10
@@ -108,7 +145,12 @@ class QQChannel:
                 )
                 raise
             except Exception as exc:  # noqa: BLE001
-                logger.warning("QQ WS 读取异常，已收消息=%d：%s", msg_count, exc)
+                # 同样脱敏：读取期异常（含 InvalidURI/握手失败回显）也可能带完整 URL
+                logger.warning(
+                    "QQ WS 读取异常，已收消息=%d：%s",
+                    msg_count,
+                    _redact_url(exc, token),
+                )
                 raise
 
     # ── 事件分发 ──

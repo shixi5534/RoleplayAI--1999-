@@ -1,0 +1,414 @@
+{
+  "meta": {
+    "author": "p6-repair-proposals（子代理，只读取证 + 提案）",
+    "timestamp": "2026-07-27T16:45:03+08:00",
+    "batch": "p6（L4.4 世界观互斥登记——全部 needs_human，**不含任何可 apply 条目**）",
+    "network": "none（零网络）",
+    "graph_state": {
+      "entities": 7033,
+      "edges": 27151,
+      "fingerprint": "14daf1bbfa407388",
+      "sha16": "7cac5867e8c80879"
+    },
+    "why_new_batch": "L4 记分卡 L4.4 世界观互斥=0.9425（5 互斥 / 87 可判），门槛 ≥0.95（最多 4 条互斥）。本文件把 5 条互斥 + 3 条 insufficient 各自涉及的边逐条列出，全部标 needs_human，仅在 rationale 记录「若要修，最小改动是哪条边」。",
+    "precondition_gate": "**本文件不可 apply**：全部条目为 keep_with_note（NOOP，工具只校验引用不落图）。未 --apply，graph.json 不变。",
+    "scope_proof": "5 互斥（亡灵节 / 诸灵节 / 迷思海 / 陪伴与教育的训示 / 集体潜意识）+ 3 insufficient（与居民共同留守的计划 / 猩红咒语 / 能量）共 8 条，逐条回查 l4_worldview_candidates.json 的 definition_edges 并在 graph.json 定位，8/8 命中且 eid 精确匹配。",
+    "expected": {
+      "entities": "不变",
+      "edges": "不变（本文件不含任何 delete_edge / add_edge）",
+      "alias_total": "不变",
+      "metrics_change": {
+        "L4.4": "若采纳最小改法（删 edge[14483] 同时解 迷思海 + 集体潜意识 两条互斥）= 3 互斥 / 87 → 0.9655 ≥ 0.95 达标；若采纳 R7-L44-001 的最小改法（删 14342 或 14360）= 4 互斥 → 0.9540 达标。两者都需正典裁决后才可写入 p7 批。"
+      }
+    }
+  },
+  "entries": [
+    {
+      "id": "R7-L44-001",
+      "type": "keep_with_note",
+      "target": "亡灵节",
+      "concept": "亡灵节",
+      "verdict": "mutually_exclusive",
+      "constraint_risk": 0.4,
+      "desc": "将至的亡灵纪念节日",
+      "conflicting_edges": [
+        {
+          "idx": 2,
+          "why": "称诸灵节为其次日即二者不同日"
+        },
+        {
+          "idx": 3,
+          "why": "又称亡灵节即是诸灵节即二者相同"
+        }
+      ],
+      "edges": [
+        {
+          "edge": [
+            "诸灵节",
+            "是",
+            "亡灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.0"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14342]；与 14360 语义冲突"
+        },
+        {
+          "edge": [
+            "诸灵之夜",
+            "隶属",
+            "亡灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.0"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14358]"
+        },
+        {
+          "edge": [
+            "亡灵节",
+            "是",
+            "诸灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.1",
+            "activity__35101_绿松石蛇俱乐部:16.1.1"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14360]；与 14342 语义冲突"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：正典裁决】互斥核心是 edge[14342]（诸灵节-[是]->亡灵节，15.2.0）与 edge[14360]（亡灵节-[是]->诸灵节，15.2.1+16.1.1）两条边的**双向「是」**。若要让评测不再判互斥，最小改动是**删掉其中一条**；但原文 15.2.0 野木蓝「今夜是亡灵节的第二日，诸灵之夜」是**同日包含**语义（诸灵之夜=亡灵节第二日），而非「诸灵节=亡灵节」，即两条边的 evidence 都不足以支撑谓语「是」。删 14360 会连带 lose 16.1.1（穆列尔「勇士的灵魂，在亡灵节的今夜」）的上位关系；删 14342 会让 15.2.0 丢失一条边。**哪条更接近正典需裁决**，故本批不改。",
+      "minimal_change_if_any": "删 edge[14342] 诸灵节-[是]->亡灵节（chunk 仅 15.2.0），或改其谓语为「隶属/同日」——工具无改谓语类型，须 delete+add 成对。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-002",
+      "type": "keep_with_note",
+      "target": "诸灵节",
+      "concept": "诸灵节",
+      "verdict": "mutually_exclusive",
+      "constraint_risk": 0.4,
+      "desc": "迎接成年亡灵的祭典；迎接成年亡灵的明晚",
+      "conflicting_edges": [
+        {
+          "idx": 0,
+          "why": "称诸灵节即是亡灵节即等同"
+        },
+        {
+          "idx": 1,
+          "why": "又称亡灵节次日为诸灵节即异日"
+        }
+      ],
+      "edges": [
+        {
+          "edge": [
+            "诸灵节",
+            "是",
+            "亡灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.0"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14342]"
+        },
+        {
+          "edge": [
+            "亡灵节",
+            "是",
+            "诸灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.1",
+            "activity__35101_绿松石蛇俱乐部:16.1.1"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14360]"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：正典裁决】与 R7-L44-001 共享同一对边（14342 / 14360），是从「诸灵节」一侧看到的同一互斥。注意 `诸灵节` 的 desc 自身已含矛盾（「迎接成年亡灵的祭典；迎接成年亡灵的明晚」——既等同又次日），工具不支持改 desc，故即便删边，desc 层矛盾仍在。",
+      "minimal_change_if_any": "同 R7-L44-001；另需人工改写 `诸灵节`.desc 消歧。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-003",
+      "type": "keep_with_note",
+      "target": "迷思海",
+      "concept": "迷思海",
+      "verdict": "mutually_exclusive",
+      "constraint_risk": 0.6,
+      "desc": "有太多称呼的那个所在",
+      "conflicting_edges": [
+        {
+          "idx": 0,
+          "why": "与集体潜意识等同为一物"
+        },
+        {
+          "idx": 1,
+          "why": "又被集体潜意识包含层级有别"
+        }
+      ],
+      "edges": [
+        {
+          "edge": [
+            "迷思海",
+            "是",
+            "集体潜意识"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:17.1.0"
+          ],
+          "evidence": "我们发现了人类集体潜意识之海——迷思海的存在",
+          "note": "edge[14466]；等同断言"
+        },
+        {
+          "edge": [
+            "集体潜意识",
+            "包含",
+            "迷思海"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:17.1.1"
+          ],
+          "evidence": "人类集体潜意识，是人格的最底层，也是一切的原型与起点",
+          "note": "edge[14483]；层级断言——**经复核 evidence 不含「包含」语义**"
+        },
+        {
+          "edge": [
+            "迷思海",
+            "包含",
+            "起死回生的知识"
+          ],
+          "chunk_ids": [
+            "appendix_unbound__069_3_7_地牢剧情:0.1.1"
+          ],
+          "evidence": "在你完全掌握起死回生的知识前",
+          "note": "edge[26627]；与本互斥无关，仅登记"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：正典裁决】互斥核心是 edge[14466]（迷思海-[是]->集体潜意识）与 edge[14483]（集体潜意识-[包含]->迷思海）构成「等同 + 真包含」层级环。**专项复核结论**：edge[14483] 的 chunk_ids=['activity__35101_绿松石蛇俱乐部:17.1.1']（任务书写的 activity__32101_迁流的盛宴:17.1.1 在本仓库 chunks.json 中不存在），evidence=「人类集体潜意识，是人格的最底层，也是一切的原型与起点」——该句只定义「集体潜意识是人格最底层/原型起点」，**并未断言「集体潜意识包含迷思海」**，证据与谓语不匹配；同块相邻句「在我们所身处的这片水域，迷思之海中，我会为你重新构建属于特蕾莎的一切」才是「迷思海」的语境。⇒ **删 edge[14483] 会同时消解「迷思海」与「集体潜意识」两条互斥的各自两条 conflicting**，即一处 delete_edge 可把 5 互斥降到 3（0.9425 → 更高）。但这是正典判断（也可能是谓语该改为「是/位于」），故本批**不改**。",
+      "minimal_change_if_any": "删 edge[14483] 集体潜意识-[包含]->迷思海（chunk 仅 17.1.1）——估计可同时清掉 2 条互斥；或改为「集体潜意识-[是]->迷思海」（须 delete+add 成对，但会与 14466 形成反向重复语义，需裁决）。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-004",
+      "type": "keep_with_note",
+      "target": "集体潜意识",
+      "concept": "集体潜意识",
+      "verdict": "mutually_exclusive",
+      "constraint_risk": 0.6,
+      "desc": "所有人共有的意识之湖",
+      "conflicting_edges": [
+        {
+          "idx": 0,
+          "why": "与迷思海等同为一物"
+        },
+        {
+          "idx": 1,
+          "why": "又包含迷思海造成层级环"
+        }
+      ],
+      "edges": [
+        {
+          "edge": [
+            "迷思海",
+            "是",
+            "集体潜意识"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:17.1.0"
+          ],
+          "evidence": "我们发现了人类集体潜意识之海——迷思海的存在",
+          "note": "edge[14466]"
+        },
+        {
+          "edge": [
+            "集体潜意识",
+            "包含",
+            "迷思海"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:17.1.1"
+          ],
+          "evidence": "人类集体潜意识，是人格的最底层，也是一切的原型与起点",
+          "note": "edge[14483]；**复核：evidence 不含「包含」**"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：正典裁决】与 R7-L44-003 是同一层级环的另一侧视图（同两条边 14466 / 14483）。已复核：删 edge[14483] 可**同时**消解「迷思海」与「集体潜意识」两条互斥（等效 5 互斥 → 3）。其余涉及「集体潜意识」的边（edge[14523] 拉莫纳-[研究]->集体潜意识、edge[14465]/[14476] 罗西教授-[发现]->迷思海、edge[14532] 拉莫纳-[研究]->迷思海）均无互斥语义。",
+      "minimal_change_if_any": "同 R7-L44-003：删 edge[14483]。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-005",
+      "type": "keep_with_note",
+      "target": "陪伴与教育的训示",
+      "concept": "陪伴与教育的训示",
+      "verdict": "mutually_exclusive",
+      "constraint_risk": 0.4,
+      "desc": "陪伴与教育乃成长的必要过程",
+      "conflicting_edges": [
+        {
+          "idx": 0,
+          "why": "边判其为你情我愿的谎言"
+        }
+      ],
+      "edges": [
+        {
+          "edge": [
+            "陪伴与教育的训示",
+            "是",
+            "你情我愿的谎言"
+          ],
+          "chunk_ids": [
+            "appendix_unbound__032_2_2_荒原经营驯化_坦南特:0.0.0"
+          ],
+          "evidence": "这只是你情我愿的谎言",
+          "note": "edge[26002]；触发互斥的边"
+        },
+        {
+          "edge": [
+            "坦南特",
+            "发现",
+            "你情我愿的谎言"
+          ],
+          "chunk_ids": [
+            "appendix_unbound__032_2_2_荒原经营驯化_坦南特:0.0.0"
+          ],
+          "evidence": "很可惜，这只是你情我愿的谎言",
+          "note": "edge[26001]；同块同证据，登记备查"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：正典裁决】本条的互斥**不是两条边互相冲突**，而是**实体 desc 与出边冲突**：desc「陪伴与教育乃成长的必要过程」取自原文中坦南特**引述并随即否定**的那句——原句「“陪伴与教育，这是引导魔精成长的必要过程。”很可惜，这只是你情我愿的谎言。」⇒ desc 抽到了被否定的引语。**最小改动应是改写 desc**（改引语为「被坦南特否定为谎言的训示」），但工具**没有改实体 desc 的条目类型**；只删 edge[26002] 只是让评测看不见冲突，并不会修正 desc，属治标。故本批不改，交由正典裁决。",
+      "minimal_change_if_any": "人工改写 `陪伴与教育的训示`.desc（工具不支持）；退而求其次可删 edge[26002]（chunk 仅 0.0.0），但 desc 错误仍在。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-006",
+      "type": "keep_with_note",
+      "target": "与居民共同留守的计划",
+      "concept": "与居民共同留守的计划",
+      "verdict": "insufficient",
+      "constraint_risk": null,
+      "desc": "以身验证留守的实验",
+      "edges": [
+        {
+          "edge": [
+            "回声谣",
+            "隶属",
+            "与居民共同留守的计划"
+          ],
+          "chunk_ids": [
+            "activity__38101_世纪末尺度:20.0.1"
+          ],
+          "evidence": "我的归属，从来都不是明天",
+          "note": "edge[16587]；单边证据不涉该概念"
+        },
+        {
+          "edge": [
+            "回声谣",
+            "隶属",
+            "诺瓦米奇"
+          ],
+          "chunk_ids": [
+            "activity__38101_世纪末尺度:20.0.1"
+          ],
+          "evidence": "我的归属，从来都不是明天",
+          "note": "edge[16604]；**同一句证据同时挂到另一对象**"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：不可判】该概念只有 1 条边（edge[16587]），而其 evidence 是回声谣「我的归属，从来都不是明天……是那个刚刚结束，却又尚未开始的年代」，**与「与居民共同留守的计划」无关**；同一句话还被复用到 edge[16604] 回声谣-[隶属]->诺瓦米奇。⇒ 证据与概念不匹配（review 判 insufficient，notes=「单边的归属证据与概念无关」）。工具无「改实体 desc / 改边谓语」类型，且不确定该概念是否应存在，故不改。",
+      "minimal_change_if_any": "删 edge[16587]（chunk 仅 20.0.1）可消除错误挂靠，但会让该概念成为零度节点；是否保留该概念须裁决。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-007",
+      "type": "keep_with_note",
+      "target": "猩红咒语",
+      "concept": "猩红咒语",
+      "verdict": "insufficient",
+      "constraint_risk": null,
+      "desc": "首次念诵的咒语",
+      "edges": [
+        {
+          "edge": [
+            "塞梅尔维斯",
+            "是",
+            "猩红咒语"
+          ],
+          "chunk_ids": [
+            "appendix_unbound__022_1_9_地牢剧情:3.1.4"
+          ],
+          "evidence": "看来，似乎是失败了",
+          "note": "edge[25402]；单边且方向反"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：不可判】「猩红咒语」在图上**不是实体名**；唯一相关边 edge[25402] 塞梅尔维斯-[是]->猩红咒语 的 evidence 是旁白式失败记述「……看来，似乎是失败了。」，**不构成对咒语的定义**（review notes=「单边为失败旁白证据不定义」）。实体 desc「首次念诵的咒语」与边证据同样不匹配。工具不支持改 desc/改谓语，故不改。",
+      "minimal_change_if_any": "（若该概念本就应存在）把 edge[25402] 改为 塞梅尔维斯-[念诵]->猩红咒语／[导致]->失败 之类，须 delete+add 成对，且需裁决。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-008",
+      "type": "keep_with_note",
+      "target": "能量",
+      "concept": "能量",
+      "verdict": "insufficient",
+      "constraint_risk": null,
+      "desc": "灰白的哀嚎",
+      "edges": [
+        {
+          "edge": [
+            "能量",
+            "影响",
+            "新纪元集市"
+          ],
+          "chunk_ids": [
+            "character__20603_第一千夜:1.0.2"
+          ],
+          "evidence": "整个集市都有着你的痕迹，大家都感受到了",
+          "note": "edge[18819]；单边证据未涉该概念"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【needs_human：不可判】唯一边 edge[18819] 能量-[影响]->新纪元集市 的 evidence=「整个集市都有着你的痕迹，大家都感受到了」，原文中「能量」是环状水星对德克斯特**精神外溢的口语称呼**（「你的精神，你的……能量。你感觉不到吗？」），并非一个被定义的概念（review notes=「单边证据未涉该概念」）。实体 desc「灰白的哀嚎」与边证据无对应。工具不支持改 desc，故不改。",
+      "minimal_change_if_any": "删除该概念或重写 desc；亦可删 edge[18819]（chunk 仅 1.0.2），但会留下零度节点。须裁决。",
+      "arbitration_status": "needs_canon_arbitration"
+    },
+    {
+      "id": "R7-L44-009",
+      "type": "keep_with_note",
+      "target": "诸灵之夜",
+      "concept": "诸灵之夜",
+      "verdict": "consistent",
+      "constraint_risk": null,
+      "desc": "烛光绚烂的亡魂之夜",
+      "edges": [
+        {
+          "edge": [
+            "诸灵之夜",
+            "隶属",
+            "亡灵节"
+          ],
+          "chunk_ids": [
+            "activity__35101_绿松石蛇俱乐部:15.2.0"
+          ],
+          "evidence": "今夜是亡灵节的第二日，诸灵之夜",
+          "note": "edge[14358]；review 判 consistent（note=单边隶属亡灵节）"
+        }
+      ],
+      "needs_human": true,
+      "rationale": "【登记，非互斥】review 判 consistent，但它是 edge[14342]/[14360] 同链上的第三个节点（同一 chunk 15.2.0 / 同句证据），若裁决 R7-L44-001 时改动了 14342/14360，需一并复核 14358 的方向。故此条只登记，不做修改。",
+      "minimal_change_if_any": "无独立改动；随 R7-L44-001 一并复核。",
+      "arbitration_status": "needs_canon_arbitration"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP3-prepare",
+  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "n_questions": 679,
+    "n_batches": 28,
+    "subset": {
+      "mode": "full",
+      "n_requested": null,
+      "sample_seed": 20261008,
+      "limit": null,
+      "n_selected": 679,
+      "n_all": 679
+    },
+    "by_set": {
+      "300cn": 196,
+      "unanswerable": 104,
+      "blind": 206,
+      "gen": 120,
+      "negative": 53
+    },
+    "prompt_mode": "compose_v1",
+    "role_card_mode": "empty",
+    "history": "none",
+    "allocator": "v2_perblock",
+    "system_prompt_sha16": "a034e0f3f5113190",
+    "top_k": 6,
+    "batch_size": 25,
+    "batch_dir": "data\\knowledge\\_audit\\p4_harness_r10\\l3_batches",
+    "manifest": "data\\knowledge\\_audit\\p4_harness_r10\\l3_batches\\manifest.json",
+    "state_dir": "data\\knowledge\\_audit\\p4_harness_r10",
+    "n_blocks_in_window_mean": 2.2239,
+    "n_blocks_in_window_min": 1,
+    "n_blocks_in_window_max": 4,
+    "n_zero_block_questions": 0,
+    "n_window_fallback_questions": 0,
+    "n_evidence_retrieved_mean": 24.0,
+    "n_blocks_noncontiguous": 0,
+    "mean_blocks_in_window": 2.2239,
+    "min_blocks_in_window": 1,
+    "max_blocks_in_window": 4,
+    "n_fallback_questions": 0,
+    "mean_evidence_retrieved": 24.0
+  },
+  "gate_verdicts": [],
+  "per_case": [],
+  "artifacts": [
+    "data\\knowledge\\_audit\\p4_harness_r10\\l3_batches\\manifest.json",
+    "data\\knowledge\\_audit\\p4_harness_r10\\l3_gold_map.json"
+  ]
+}

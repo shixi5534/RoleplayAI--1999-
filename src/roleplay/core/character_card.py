@@ -85,6 +85,47 @@ def _compress_card(card: CharacterCard, band: int) -> CharacterCard:
     return card.model_copy(update=update)
 
 
+def _apply_template(tpl: str, value: str, field: str) -> str:
+    """把值套进模板 —— **绝不抛异常**（模板是外部可控输入）。
+
+    为什么不用裸 ``str.format``：``custom_templates`` 来自外部输入（第三方导入的
+    卡片 / API 传入的 card_json）。模板里任何非 ``{value}`` 的花括号——例如
+    ``"你是{name}，很冷静"``——都会让 ``format`` 抛 ``KeyError('name')``，
+    整个请求 500。三级策略：
+
+    1. 含 ``{value}`` 字面量 → ``str.replace`` 直换：对未知花括号**天然免疫**，
+       且与 ``format`` 在 ``{value}`` 这一唯一约定用法上逐字节等价。
+    2. 不含 ``{value}`` 但 ``format`` 能成功（如 ``{value!r}`` / ``{value:>8}``
+       / 纯常量文案）→ 保留 ``format`` 结果以兼容既有写法，并记 warning
+       （此路径下值可能未被注入，属配置方笔误，必须可排查）。
+    3. ``format`` 失败（未知占位符 ``{name}``、位置占位符 ``{0}`` 等）
+       → **回落该字段的默认模板**，记 warning。选择回落而非「原样返回」，
+       是为了不让字段值被静默丢弃——外部卡片写错模板时模型仍能看到人设。
+    """
+    if "{value}" in tpl:
+        return tpl.replace("{value}", value)
+    try:
+        rendered = tpl.format(value=value)
+    except Exception as exc:  # noqa: BLE001 — KeyError/IndexError/ValueError/AttributeError…
+        default = _DEFAULT_TEMPLATES.get(field)
+        logger.warning(
+            "custom_templates[%s] 模板含非法占位符（%s: %s），已回落默认模板：%r",
+            field,
+            type(exc).__name__,
+            exc,
+            tpl[:200],
+        )
+        if default is not None:
+            return default.replace("{value}", value)
+        return tpl
+    logger.warning(
+        "custom_templates[%s] 未使用 {value} 占位符，字段值未被注入：%r",
+        field,
+        tpl[:200],
+    )
+    return rendered
+
+
 def _render_field(card: CharacterCard, field: str, cfg: PromptConfig) -> str | None:
     """渲染单个字段：取值 → 套模板（自定义优先）→ 空值返回 None。
 
@@ -96,12 +137,12 @@ def _render_field(card: CharacterCard, field: str, cfg: PromptConfig) -> str | N
         if not value:
             return None
         tpl = cfg.custom_templates.get(field) or _DEFAULT_TEMPLATES[field]
-        return tpl.format(value=value)
+        return _apply_template(tpl, value, field)
     value = getattr(card, field, "").strip()
     if not value:
         return None
     tpl = cfg.custom_templates.get(field) or _DEFAULT_TEMPLATES[field]
-    return tpl.format(value=value)
+    return _apply_template(tpl, value, field)
 
 
 def _render_behavior_rules(

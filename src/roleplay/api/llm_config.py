@@ -240,78 +240,23 @@ async def ollama_models(
 
 
 def _validate_base_url(provider: str, base_url: str, api_key: str = "") -> None:
-    """SSRF 防护：校验 base_url 合法性（/test 与 /switch 共用）。
+    """SSRF 防护：校验 base_url 合法性（/models、/test 与 /switch 共用）。
 
-    base_url 来自前端可任意指定，若不约束，可借接口探测内网
-    （127.0.0.1、云元数据 169.254.169.254、内网网段等）。规则：
-      - scheme 仅允许 http/https，拒绝其它（file/gopher 等）；
-      - host 为 IP 字面量：静态判定（零网络开销、不阻塞事件循环），
-        仅放行环回 + RFC1918 内网 + IPv6 本地（Ollama 本地/内网部署场景）；
-      - host 为域名：仅放行 localhost 与云端预设白名单主机
-        （openai/deepseek 官方地址，需 https + 非空 api_key）。
-        不做 DNS 解析——避免内网主机名探测与 getaddrinfo 同步阻塞，
-        内网部署请直接填 IP 字面量。
-      云元数据 169.254.169.254、共享地址 100.64/10、公网非白名单一律拒绝。
+    QA 2026-09-29 接线：策略实现已**下沉**到 ``core/llm/endpoint_guard.py``，
+    由 core 层（``factory.build_llm_from_config``，即 ``/chat`` 的 ``req.llm`` 路径）
+    与本层共用同一份实现——此前这里有一份**副本**，而 /chat 路径完全没有校验，
+    导致请求体可把 base_url 指向 169.254.169.254 等地址（云元数据 SSRF）。
+
+    本函数保留为薄封装：维持既有调用点与「抛 HTTPException(422)」的边界语义，
+    策略本身不再在本文件重复（避免两份实现漂移）。放行策略与原实现逐条一致——
+    环回 + RFC1918 内网**刻意放行**（本地/内网 Ollama 部署依赖它）。
     """
-    import ipaddress
-    import urllib.parse
+    from ..core.llm.endpoint_guard import validate_llm_base_url
 
-    from ..core.llm.openai_like import _DEFAULT_BASE_URLS
-
-    _LLM_ALLOWED_PRIVATE = [
-        ipaddress.ip_network("127.0.0.0/8"),     # 环回（Ollama localhost）
-        ipaddress.ip_network("10.0.0.0/8"),      # RFC1918
-        ipaddress.ip_network("172.16.0.0/12"),   # RFC1918
-        ipaddress.ip_network("192.168.0.0/16"),  # RFC1918
-        ipaddress.ip_network("::1/128"),         # IPv6 环回
-        ipaddress.ip_network("fc00::/7"),        # IPv6 唯一本地
-    ]
-
-    parsed = urllib.parse.urlparse(base_url)
-    if parsed.scheme not in ("http", "https"):
-        raise HTTPException(status_code=422, detail="base_url 仅允许 http/https 协议")
-    host = (parsed.hostname or "").lower()
-    if not host:
-        raise HTTPException(status_code=422, detail="base_url 缺少主机名")
-
-    def _is_allowed_private(ip_str: str) -> bool:
-        try:
-            ip = ipaddress.ip_address(ip_str)
-        except ValueError:
-            return False
-        return any(ip in net for net in _LLM_ALLOWED_PRIVATE)
-
-    # localhost 域名：环回，直接放行（Ollama 默认地址）
-    if host == "localhost" or host.endswith(".localhost"):
-        return
-
-    # IP 字面量：静态判定（零网络开销）
     try:
-        ipaddr = ipaddress.ip_address(host)
-    except ValueError:
-        ipaddr = None
-    if ipaddr is not None:
-        if _is_allowed_private(host):
-            return
-        raise HTTPException(
-            status_code=422,
-            detail="非本机/内网 IP 地址的 base_url 仅支持云端预设白名单（https）",
-        )
-
-    # 域名：必须 https + 云端预设白名单 + 非空 api_key（不做 DNS 解析）
-    if parsed.scheme != "https":
-        raise HTTPException(status_code=422, detail="非本机/内网地址的 base_url 必须使用 https")
-    allow_hosts = {
-        urllib.parse.urlparse(u).hostname for u in _DEFAULT_BASE_URLS.values()
-    }
-    allow_hosts.discard(None)
-    if host not in allow_hosts:
-        raise HTTPException(
-            status_code=422,
-            detail=f"base_url 主机不在允许列表（{sorted(allow_hosts)}），仅支持官方云端地址",
-        )
-    if not api_key:
-        raise HTTPException(status_code=422, detail="云端 provider 需要 api_key")
+        validate_llm_base_url(provider, base_url, api_key)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
 @router.post("/test", response_model=LLMTestResponse)

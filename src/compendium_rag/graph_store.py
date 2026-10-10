@@ -168,8 +168,9 @@ def canonical_pick(members: list[str],
 class GraphStore:
     """实体关系图（内存 + JSON 落盘）。"""
 
-    def __init__(self, fingerprint: str = "") -> None:
+    def __init__(self, fingerprint: str = "", normalizer: str = "") -> None:
         self.fingerprint = fingerprint
+        self.normalizer = normalizer
         self.entities: dict[str, Entity] = {}
         self.edges: list[Edge] = []
         self.alias_index: dict[str, str] = {}   # 任意写法 -> eid
@@ -334,16 +335,22 @@ class GraphStore:
     # ── 持久化 ──
 
     def to_dict(self) -> dict:
-        return {
+        d = {
             "schema": f"compendium_rag.graph/v{SCHEMA_VERSION}",
             "fingerprint": self.fingerprint,
-            "entities": [e.to_dict() for e in self.entities.values()],
-            "edges": [e.to_dict() for e in self.edges],
         }
+        # 仅在有值时写 normalizer：保持旧图（无该字段）经 load→save 后逐字节不变，
+        # 否则 repairs 工具重放会平白改动冻结锚点的 SHA。
+        if self.normalizer:
+            d["normalizer"] = self.normalizer
+        d["entities"] = [e.to_dict() for e in self.entities.values()]
+        d["edges"] = [e.to_dict() for e in self.edges]
+        return d
 
     @staticmethod
     def from_dict(d: dict) -> "GraphStore":
-        g = GraphStore(fingerprint=d.get("fingerprint", ""))
+        g = GraphStore(fingerprint=d.get("fingerprint", ""),
+                       normalizer=d.get("normalizer", ""))
         # 两遍构造，消除插入序依赖（#39 核验，2026-09-27）：
         #   ① 实体名一律登记（规范名唯一，不存在冲突）；
         #   ② 别名冲突按**确定性规则**裁决 —— 先到者不再靠 dict 顺序，
@@ -434,11 +441,20 @@ class GraphStore:
 
 
 def fingerprint_of(corpus_fp: str, model: str, prompt_version: str,
-                   chunk_chars: int) -> str:
-    """图谱身份指纹：任一要素变化即失效。"""
+                   chunk_chars: int, normalizer_version: str | None = None) -> str:
+    """图谱身份指纹：任一要素变化即失效。
+
+    ``normalizer_version=None``  reproduces the pre-n2 legacy hash byte-for-byte,
+    so frozen graphs written before归一化版本入指纹 still verify.  Pass the real
+    NORMALIZER_VERSION for anything built from now on: 归一化是本地后处理，改它
+    不改语料/提示词，若不入指纹则「图变了但指纹没变」——审查期实测过这个盲区。
+    """
     import hashlib
     h = hashlib.sha256()
-    for part in (SCHEMA_VERSION, corpus_fp, model, prompt_version, str(chunk_chars)):
+    parts = [SCHEMA_VERSION, corpus_fp, model, prompt_version, str(chunk_chars)]
+    if normalizer_version is not None:
+        parts.append(normalizer_version)
+    for part in parts:
         h.update(part.encode("utf-8"))
         h.update(b"|")
     return h.hexdigest()[:16]

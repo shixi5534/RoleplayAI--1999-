@@ -1,0 +1,110 @@
+{
+  "schema": "compendium_rag.p6_apply_r10_dryrun/v1",
+  "task": "r10 批次 L4.5 多角色互洽修边提案——**仅干跑验证，不落盘图**",
+  "executor": "子代理（只读取证 + 构建提案 + 干跑；未加 --apply，未跑 cli rebuild/extract，未跑 compendium_rag_p1_apply.py，未联网、未调云端 LLM，未做 git 操作）",
+  "generated_at": "2026-10-10T21:45:00+08:00",
+  "env": {
+    "cwd": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai",
+    "python": ".venv/Scripts/python.exe",
+    "pythonpath": "src",
+    "python_flag": "-X utf8",
+    "network": "none"
+  },
+  "inputs": {
+    "proposal": {
+      "path": "data/compendium_rag/repairs_v9/proposal.json",
+      "bytes": 18467,
+      "entries": 7,
+      "types": {
+        "delete_edge": 6,
+        "keep_with_note": 1
+      },
+      "meta_batch": "r10",
+      "meta_graph_state": {
+        "entities": 7033,
+        "edges": 27117,
+        "fingerprint": "14daf1bbfa407388",
+        "sha16": "329671bba0988c68"
+      }
+    },
+    "graph_before": {
+      "path": "data/compendium_rag/graph.json",
+      "bytes": 11577960,
+      "sha16": "329671bba0988c68",
+      "sha256_full": "329671bba0988c68584d9809b21013d8cea5b57384cd3cd3419973a12ca6dfab",
+      "entities": 7033,
+      "edges": 27117,
+      "fingerprint": "14daf1bbfa407388",
+      "normalizer": "n2",
+      "schema": "compendium_rag.graph/v1"
+    }
+  },
+  "dry_run": {
+    "apply_flag_present": false,
+    "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v9/proposal.json",
+    "exit_code": 0,
+    "stdout": "加载 chunk 文本（管线同源分块）…\r\nchunks: 3695\r\n焊主（数据驱动推断）: None\r\n\r\n条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0\r\n实体: 7033 -> 7033 | 边: 27117 -> 27111\r\n[DRY-RUN] 全绿。加 --apply 才写盘。\r\n",
+    "stderr": "",
+    "stdout_verbatim_lines": [
+      "加载 chunk 文本（管线同源分块）…",
+      "chunks: 3695",
+      "焊主（数据驱动推断）: None",
+      "条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0",
+      "实体: 7033 -> 7033 | 边: 27117 -> 27111",
+      "[DRY-RUN] 全绿。加 --apply 才写盘。"
+    ],
+    "parsed": {
+      "chunks": "chunks: 3695",
+      "weld_owner": "焊主（数据驱动推断）: None",
+      "counts_line": "条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0",
+      "entries": 7,
+      "precheck_errors": 0,
+      "warnings": 0,
+      "postcheck_errors": 0,
+      "entity_count_line": "实体: 7033 -> 7033 | 边: 27117 -> 27111",
+      "entities_before": 7033,
+      "entities_after": 7033,
+      "edges_before": 27117,
+      "edges_after": 27111,
+      "green_line": "[DRY-RUN] 全绿。加 --apply 才写盘。",
+      "is_all_green": true,
+      "wrote_to_disk": false
+    },
+    "expected_lines_matched": {
+      "条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0": true,
+      "实体: 7033 -> 7033 | 边: 27117 -> 27111": true,
+      "[DRY-RUN] 全绿。加 --apply 才写盘。": true
+    },
+    "verdict": "PASS（exit 0，预检/后检错误 0，警告 0，全绿，且未写盘）"
+  },
+  "graph_after_dry_run": {
+    "path": "data/compendium_rag/graph.json",
+    "bytes": 11577960,
+    "sha16": "329671bba0988c68",
+    "sha256_full": "329671bba0988c68584d9809b21013d8cea5b57384cd3cd3419973a12ca6dfab",
+    "entities": 7033,
+    "edges": 27117,
+    "fingerprint": "14daf1bbfa407388",
+    "normalizer": "n2",
+    "schema": "compendium_rag.graph/v1",
+    "sha16_unchanged": true,
+    "bytes_unchanged": true,
+    "entities_unchanged": true,
+    "edges_unchanged": true,
+    "fingerprint_unchanged": true,
+    "note": "红线核验：干跑后 graph.json sha16 仍为 329671bba0988c68，字节数仍为 11577960，未被写入。"
+  },
+  "redline_check": {
+    "apply_used": false,
+    "graph_json_written": false,
+    "graph_sha16_after": "329671bba0988c68",
+    "graph_bytes_after": 11577960,
+    "backups_created": false,
+    "forbidden_cmds_run": [],
+    "files_written": [
+      "data/compendium_rag/repairs_v9/proposal.json",
+      "data/compendium_rag/reports/p6_r10_proposal_dryrun.json"
+    ],
+    "delete_apis_used": false
+  }
+}

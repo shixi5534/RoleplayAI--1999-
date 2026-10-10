@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "author": "p6-repair-proposal（子代理，r10 提案构建 + 干跑验证）",
+    "timestamp": "2026-10-10T21:40:00+08:00",
+    "batch": "r10",
+    "network": "offline",
+    "graph_state": {
+      "entities": 7033,
+      "edges": 27117,
+      "fingerprint": "14daf1bbfa407388",
+      "sha16": "329671bba0988c68"
+    },
+    "why_new_batch": "R9（18 条 L4.5 修边）落盘后重做盲评（l4_multiscene_r9，图状态 sha16=329671bba0988c68，rubric 与历轮逐字节一致），报出 7 条 review-mismatch。本批逐条回 chunks.json 逐字取证后裁决：6 条（报童-告知->贪婪杰克 / 报童-告知->佩恩 / 小鹿手偶-前往->金蜜儿 / 安妮-转变->小鹿手偶 / 安妮-指责->恐怖通 / 恐怖通-指责->安妮）原文可断定边不成立 ⇒ delete_edge；第 7 条 Z-[告知]->安洁 仅 evidence 句错引、边本身在 17.0.0+17.0.1 均成立 ⇒ 按『宁删勿猜』登记 keep_with_note + needs_human，不删。**出处更正**：本批 7 条并非 r8b 轮确认——l4_multiscene_r8b 对同 6 个块（0.1.0 / 13.0.1 / 15.1.1 / 2.0.1 / 17.0.0 / 17.0.1）判 n_mismatch 全为 0（判词多为『谓语偏泛，方向与对象不误』，15.1.1 更明写『小鹿姑娘是否等同小鹿手偶存疑未计错』）；把 7 条判为 mismatch 的是 l4_multiscene_r9 的 ms_b01（雷米特杯 0.1.0，coh 2/2 条）与 ms_b04（绿湖 13.0.1、15.1.1、2.0.1、17.0.0）。其判词与任务简报中的措辞一致，故采信 r9 轮；r8/r9 两轮对 13.0.1、15.1.1、2.0.1 亦已判过同一批过错（r8b 未计属口径差）。",
+    "precondition_gate": "干跑与（若有）落盘前必须 7 条**三元组**全部命中：graph.json 的 sha16 == 329671bba0988c68、bytes == 11577960、entities == 7033、edges == 27117、fingerprint == 14daf1bbfa407388、normalizer == n2；且下列 7 条 (src, relation, dst) 在 graph.json 中各**恰有 1 条**边：报童-[告知]->贪婪杰克 / 报童-[告知]->佩恩 / 小鹿手偶-[前往]->金蜜儿 / 安妮-[转变]->小鹿手偶 / 安妮-[指责]->恐怖通 / 恐怖通-[指责]->安妮 / Z-[告知]->安洁。任一条不命中即中止，不写盘。**闸门按三元组而非索引**（索引随图位移）；下表索引仅为取证时的定位快照：4325 / 4326 / 5223 / 5224 / 5201 / 4856 / 5282。",
+    "scope_proof": "本批 7 条，覆盖 5 个 chunk：activity__11101_雷米特杯失窃案:0.1.0（2 条）、activity__12101_绿湖噩梦:15.1.1（2 条）、activity__12101_绿湖噩梦:13.0.1（1 条）、activity__12101_绿湖噩梦:2.0.1（1 条）、activity__12101_绿湖噩梦:17.0.0+17.0.1（1 条，no-op）。类型分布：delete_edge 6 条 + keep_with_note 1 条；无 add_edge / add_entity / remove_alias / add_alias / merge_entities / reassign_chunk / move_edge ⇒ 实体数 7033 不动、别名表不动。6 条待删边每条 chunk_ids 长度均为 1（不跨块，删除只影响该块）；唯一跨块边为 Z-[告知]->安洁（chunk_ids 长度 2），但该条判为 keep_with_note（no-op），故本批**无实际跨块副作用**；其潜在副作用已在 R10-L45-007 的 after 中登记。端点实体 报童/贪婪杰克/佩恩/小鹿手偶/金蜜儿/安妮/恐怖通/Z/安洁 均在 entities 中；『小鹿姑娘』『洁西卡』均非实体（洁西卡是 安妮 的别名），故 5223/5224 只删不补、不造实体。同块内仍有同模式的其它边（如 报童-[告知]->新人类 / 报童-[告知]->伦敦之心）未被 r9 盲评列入 mismatch，不在本批 scope。",
+    "expected": {
+      "entities": "7033 -> 7033（本批无 add_entity / merge_entities）",
+      "edges": "27117 -> 27111（6 条纯 delete_edge 净 -6；add_edge 0 条；Z-[告知]->安洁 为 no-op 不相抵）",
+      "alias_total": "不变（本批无 remove_alias / add_alias）",
+      "metrics_change": "仅 4 个块的 L4.5 coherence 预期上升；fingerprint 不变（fingerprint_of 只吃 SCHEMA_VERSION/corpus_fp/llm_model/PROMPT_VERSION/chunk_chars/NORMALIZER_VERSION，与边集无关）"
+    }
+  },
+  "entries": [
+    {
+      "id": "R10-L45-001",
+      "type": "delete_edge",
+      "target": "报童",
+      "edges": [
+        {
+          "edge": [
+            "报童",
+            "告知",
+            "贪婪杰克"
+          ],
+          "how": "受话人错张：贪婪杰克全程不在场，只是报童播报中被点名的『已失手被捕』的大盗之一，不是受话人"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:0.1.0",
+          "quote": "据可靠消息透露，已有数人失手被捕，其中包括“贪婪杰克”、雌雄大盗佩恩与崔斯特等知名大盗。"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b01（图状态 sha16 329671bba0988c68）该块 coherence=2 / n_mismatch=2，判词『原文里贪婪杰克全程不在场，只是报童播报中“已失手被捕”的大盗之一，不是受话人，报童与他无关系』。逐字复核该块原文：**报童**在街头叫卖新闻，念完这条后立即转向在场的黑衣女士（『——噢！您好，您好！』『请别急着走，这位身着黑衣的美丽女士』），受话人是在场路人/女士，贪婪杰克只是被点名者。同块既有 报童-[提及]->挖掘艺术 与 报童-[提及]->星锑 即『点名而非对话』的正确范式。本批只删不补（沿 R9 批既定口径）：若判定应改为 报童-[提及]->贪婪杰克（提及 为图上既有谓词，913 条；两端实体均在），留待人工/重抽另批补建。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b01_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "报童-[告知]->贪婪杰克（edge[4325]，chunk_ids=[activity__11101_雷米特杯失窃案:0.1.0]，confidence=0.95，count=1，ev=「已有数人失手被捕，其中包括“贪婪杰克”」）",
+      "after": "删除该边；本块 n_edges 14->13（该块 r9 盲评 2 条 mismatch，本条为第 1 条）",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:0.1.0 的 2 条 mismatch 清零（r9 口径 coherence 2 -> 4/5，标尺见 l4_multiscene_r9/INSTRUCTIONS.md）"
+    },
+    {
+      "id": "R10-L45-002",
+      "type": "delete_edge",
+      "target": "报童",
+      "edges": [
+        {
+          "edge": [
+            "报童",
+            "告知",
+            "佩恩"
+          ],
+          "how": "受话人错张：佩恩同样只是播报中被点名的『雌雄大盗』之一，不在场、不是受话人"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:0.1.0",
+          "quote": "据可靠消息透露，已有数人失手被捕，其中包括“贪婪杰克”、雌雄大盗佩恩与崔斯特等知名大盗。"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b01 同块第 2 条，判词『原文里佩恩同样只是播报中被提及的“雌雄大盗”之一，不在场、不是受话人，报童并未告知他』。与 R10-L45-001 同一句式、同一受话人错张机制；两处均为新闻播报名单（『其中包括“贪婪杰克”、雌雄大盗佩恩与崔斯特等知名大盗』）。本批只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b01_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "报童-[告知]->佩恩（edge[4326]，chunk_ids=[activity__11101_雷米特杯失窃案:0.1.0]，confidence=0.95，count=1，ev=「雌雄大盗佩恩与崔斯特等知名大盗」）",
+      "after": "删除该边；本块 n_edges 14->12（连同上条）",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:0.1.0 的 2 条 mismatch 同时清零（r9 口径 coherence 2 -> 4/5）"
+    },
+    {
+      "id": "R10-L45-003",
+      "type": "delete_edge",
+      "target": "小鹿手偶",
+      "edges": [
+        {
+          "edge": [
+            "小鹿手偶",
+            "前往",
+            "金蜜儿"
+          ],
+          "how": "实体错挂 + 谓语不符：逼近者为『小鹿姑娘』（洁西卡/安妮的兽形现身），不是对白中那只『倾听珍妮弗故事的小鹿手偶』；且『一步步逼近过来』并非『前往』"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:15.1.1",
+          "quote": "小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来。"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b04 该块 coherence=2 / n_mismatch=2，判词『逼近金蜜儿的是小鹿姑娘（洁西卡/安妮），不是小鹿手偶』。逐字复核：块 15.1.1 全文仅 5 行，无『小鹿手偶』字样，只有旁白『小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来。』；而实体『小鹿手偶』的 desc='倾听珍妮弗故事的小鹿手偶'，其在 13.0.0 中是与珍妮弗对话的手偶（另一物）。且『小鹿姑娘』不是图谱实体（entities 全表无此人名，也不存在于任何实体的 aliases；『洁西卡』是实体 安妮 的别名，非独立实体）⇒ 无法 delete+add 改挂到安妮，亦不得造实体，只能删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "小鹿手偶-[前往]->金蜜儿（edge[5223]，chunk_ids=[activity__12101_绿湖噩梦:15.1.1]，confidence=0.95，count=1，ev=「小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来」）",
+      "after": "删除该边；本块 n_edges 3->2（该块 r9 盲评 2 条 mismatch，本条为第 1 条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:15.1.1 的 2 条 mismatch 清零（r9 口径 coherence 2 -> 4/5）"
+    },
+    {
+      "id": "R10-L45-004",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "转变",
+            "小鹿手偶"
+          ],
+          "how": "原文查无：所引证据句只描写『小鹿姑娘』的位置与逼近，全块没有任何『安妮转变成某物』的表述；dst（手偶）亦为错挂"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:15.1.1",
+          "quote": "小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来。"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b04 同块第 2 条，判词『原文只写小鹿姑娘处于漩涡中心，无『转变』关系』；r8 轮 ms_b04 对同一三元组亦判『原文只有「小鹿姑娘身处于漩涡中心，带着一双绿眼睛，一步步逼近过来」这一句描写，全文没有任何安妮转变成小鹿手偶的表述』。复核块 15.1.1：三行洁西卡台词（『我已经不想再等待你了』等）+ 两行旁白，无变身/转变陈述。且小鹿姑娘非实体 ⇒ 无法改挂，只能删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[转变]->小鹿手偶（edge[5224]，chunk_ids=[activity__12101_绿湖噩梦:15.1.1]，confidence=0.95，count=1，ev=「小鹿姑娘身处于漩涡中心」）",
+      "after": "删除该边；本块 n_edges 3->1（连同上条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:15.1.1 两条 mismatch 同时清零（r9 口径 coherence 2 -> 4/5）"
+    },
+    {
+      "id": "R10-L45-005",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "指责",
+            "恐怖通"
+          ],
+          "how": "情绪极性反：原文是欣赏/好感（『他们都很有趣』『我也开始喜欢他们了』），不是指责；且该段为洁西卡独白列举，恐怖通并不在场受话"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:13.0.1",
+          "quote": "懂得恐怖故事的男人、冷静的女人、奇怪的女人与有着小狗气味儿的女人，他们都很有趣。"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b04 该块 coherence=3 / n_mismatch=1，判词『1 条把称赞记为对恐怖通的指责』＝『原文是称赞『他们都很有趣』，非指责；恐怖通该块未出场』。r8 轮 ms_b04 亦判『原文「懂得恐怖故事的男人……他们都很有趣」是洁西卡在夸赞他们有趣，属欣赏，与『指责』极性相反』（注：r8b 轮以『谓语偏泛』为由未计错，属口径差，本批采信 r9/r8 的极性判定）。逐字复核：紧邻句『我想我也开始喜欢他们了，他们与过去那些很快就哭着喊着晕过去的人不一样。』确认极性为正。正确关系若为 安妮-[称赞]->恐怖通（称赞 为图上既有谓词，57 条）现不存在，本批不补边，留待人工/重抽。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[指责]->恐怖通（edge[5201]，chunk_ids=[activity__12101_绿湖噩梦:13.0.1]，confidence=0.95，count=1，ev=「懂得恐怖故事的男人……他们都很有趣」）",
+      "after": "删除该边；本块 n_edges 12->11",
+      "expected_effect": "块 activity__12101_绿湖噩梦:13.0.1 coherence 3 -> 4/5（mismatch 清零）"
+    },
+    {
+      "id": "R10-L45-006",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "指责",
+            "安妮"
+          ],
+          "how": "情绪极性反：原文是恐怖通见到凶案现场后的兴奋感叹，不是对安妮的指责；下一句维尔汀即下令『保护受害者，准备攻击』"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:2.0.1",
+          "quote": "杀人狂？学生野营者？哦，这儿可比我想的有意思多啦！"
+        }
+      ],
+      "rationale": "l4_multiscene_r9 盲评 ms_b04 该块 coherence=3 / n_mismatch=1，判词『11 条互洽，1 条把兴奋感叹记为指责』＝『原文是兴致勃勃的感叹『这儿可比我想的有意思多啦』，无指责』；r8 轮 ms_b04 同判，并指出下一句由维尔汀下令『保护受害者，准备攻击』，可见语境是发现血腥现场的兴奋，而非指责安妮。逐字复核该块：安妮此时正被屠夫追杀、与出场的十四行诗对话，恐怖通并未与安妮发生指责关系。信息不全失：既有 恐怖通-[提及]->安妮 仍在，本批不动。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[指责]->安妮（edge[4856]，chunk_ids=[activity__12101_绿湖噩梦:2.0.1]，confidence=0.95，count=1，ev=「这儿可比我想的有意思多啦！」）",
+      "after": "删除该边；本块 n_edges 19->18",
+      "expected_effect": "块 activity__12101_绿湖噩梦:2.0.1 coherence 3 -> 4/5（mismatch 清零）"
+    },
+    {
+      "id": "R10-L45-007",
+      "type": "keep_with_note",
+      "target": "Z",
+      "edges": [
+        {
+          "edge": [
+            "Z",
+            "告知",
+            "安洁"
+          ],
+          "how": "【登记，不改图】r9 盲评只把 17.0.0 块判为 mismatch，且判词针对的是所登记的 evidence 句错引；逐字复核两块原文后确认该边本身成立 ⇒ 不删，转 needs_human"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:17.0.0",
+          "quote": "好的，明白了，我会叮嘱他们的。是的……感谢你的建议，再见。"
+        },
+        {
+          "src": "activity__12101_绿湖噩梦:17.0.1",
+          "quote": "抱歉，安洁，请你帮我通知第七小队与第五小队集合待命。随时准备出发。"
+        }
+      ],
+      "rationale": "『宁删勿猜』。l4_multiscene_r9 盲评 ms_b04 在块 17.0.0 记 coherence=3 / n_mismatch=1，判词『『我会叮嘱他们的』是Z对电话里说的，此时安洁尚未进屋，受话人错张』——即**证据句错引**，不等于**边本身不成立**。逐字复核两块原文：(1) 17.0.0 中 Z 挂断电话后立即『安洁，进来吧。』并把『这是司辰本次提交的“暴雨”相关信息，麻烦你交给研究部门。』交办给她（应答者标注为『女性调查员』）；(2) 17.0.1 中 Z 直接点名『抱歉，安洁，请你帮我通知第七小队与第五小队集合待命。随时准备出发。』并部署其小队下月赴北美任务 ⇒ Z-[告知]->安洁 在两块中均成立。工具 _graph_apply_repairs.py 无 update_edge，删除会连带抹掉两块中成立的关系，故登记 keep_with_note + needs_human，建议人工把该边 evidence 从电话线（17.0.0『我会叮嘱他们的』）重挂到室内交办句。跨块登记：chunk_ids 长度 2（17.0.0 + 17.0.1），本条为 no-op 不改图；若日后人工判删，两块将同时丢失该 告知（count=3）。附带观察（不属本批、勿据此改图）：17.0.0/17.0.1 的应答发言人标签为『女性调查员』，且图上另有独立实体『女性调查员』（mentions=1，chunk_ids=[activity__12101_绿湖噩梦:0.0.0]），与『安洁』（mentions=4，含 17.0.0/17.0.1）疑为同一角色被重复建实体，建议另案仲裁。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r9/ms_b04_review.json",
+      "arbitration_status": "needs_human",
+      "before": "Z-[告知]->安洁（edge[5282]，chunk_ids=[activity__12101_绿湖噩梦:17.0.0, activity__12101_绿湖噩梦:17.0.1]，confidence=0.95，count=3，ev=「我会叮嘱他们的」；登记索引 5282）",
+      "after": "不改图（keep_with_note 为 no-op：不删边、不改边、不动实体与别名表；实图 边 27117 保持不变）",
+      "expected_effect": "无图变更；避免误删 17.0.0/17.0.1 中确实成立的 Z→安洁 告知，同时把错引的 evidence 转为人工复核项"
+    }
+  ]
+}

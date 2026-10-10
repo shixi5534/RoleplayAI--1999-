@@ -45,7 +45,14 @@ def build_orchestrator(
         Path(s.character_card_path) if s.character_card_path else None
     )
     session_memory = (
-        SessionMemory(Path(s.session_memory_dir)) if s.enable_session_memory else None
+        SessionMemory(
+            Path(s.session_memory_dir),
+            # 字符预算闸：mock/长对话下防历史指数膨胀（QA 2026-09-29 修复 P0-2）。
+            # 类默认值与配置默认值同为 120_000；这里显式接线，使 .env 覆盖真正生效。
+            max_total_chars=s.session_memory_max_chars,
+        )
+        if s.enable_session_memory
+        else None
     )
     return ChatOrchestrator(
         llm=build_llm(s),

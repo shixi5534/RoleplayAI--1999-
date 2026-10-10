@@ -1,0 +1,238 @@
+{
+  "schema": "compendium_rag.p1_control_rebuild/v1",
+  "note": "只读对照：未写 graph.json / cache；零云端调用",
+  "chunks": 3695,
+  "chunks_missing_cache": 0,
+  "v8_backup": {
+    "path": "data\\compendium_rag\\backups\\graph.json.v8_frozen_026b41699f021db2",
+    "sha256_16": "026b41699f021db2",
+    "fingerprint": "7dc29bf90681a3f7",
+    "normalizer": ""
+  },
+  "fingerprints": {
+    "v8": "7dc29bf90681a3f7",
+    "control_n1": "14daf1bbfa407388",
+    "treatment_n2": "14daf1bbfa407388"
+  },
+  "snapshots": {
+    "v8": {
+      "entities": 7033,
+      "edges": 30269,
+      "distinct_predicates": 8353,
+      "by_type": {
+        "角色": 2023,
+        "物品": 2004,
+        "概念": 1207,
+        "地点": 1134,
+        "组织": 338,
+        "事件": 327
+      },
+      "isolated_entities": 1121,
+      "isolated_rate": 0.159391,
+      "top_predicates": [
+        {
+          "relation": "自陈",
+          "edges": 367
+        },
+        {
+          "relation": "同场",
+          "edges": 312
+        },
+        {
+          "relation": "询问",
+          "edges": 291
+        },
+        {
+          "relation": "说明",
+          "edges": 263
+        },
+        {
+          "relation": "告知",
+          "edges": 236
+        },
+        {
+          "relation": "追问",
+          "edges": 229
+        },
+        {
+          "relation": "断言",
+          "edges": 227
+        },
+        {
+          "relation": "提及",
+          "edges": 199
+        },
+        {
+          "relation": "质疑",
+          "edges": 174
+        },
+        {
+          "relation": "提议",
+          "edges": 150
+        }
+      ]
+    },
+    "control_n1": {
+      "entities": 7033,
+      "edges": 29967,
+      "distinct_predicates": 8352,
+      "by_type": {
+        "角色": 2023,
+        "物品": 2005,
+        "概念": 1206,
+        "地点": 1134,
+        "组织": 338,
+        "事件": 327
+      },
+      "isolated_entities": 1124,
+      "isolated_rate": 0.159818,
+      "top_predicates": [
+        {
+          "relation": "自陈",
+          "edges": 367
+        },
+        {
+          "relation": "询问",
+          "edges": 292
+        },
+        {
+          "relation": "说明",
+          "edges": 263
+        },
+        {
+          "relation": "告知",
+          "edges": 238
+        },
+        {
+          "relation": "追问",
+          "edges": 229
+        },
+        {
+          "relation": "断言",
+          "edges": 227
+        },
+        {
+          "relation": "提及",
+          "edges": 199
+        },
+        {
+          "relation": "质疑",
+          "edges": 174
+        },
+        {
+          "relation": "提议",
+          "edges": 150
+        },
+        {
+          "relation": "质问",
+          "edges": 150
+        }
+      ]
+    },
+    "treatment_n2": {
+      "entities": 7033,
+      "edges": 26853,
+      "distinct_predicates": 1609,
+      "by_type": {
+        "角色": 2023,
+        "物品": 2005,
+        "概念": 1206,
+        "地点": 1134,
+        "组织": 338,
+        "事件": 327
+      },
+      "isolated_entities": 1131,
+      "isolated_rate": 0.160813,
+      "top_predicates": [
+        {
+          "relation": "告知",
+          "edges": 2806
+        },
+        {
+          "relation": "询问",
+          "edges": 959
+        },
+        {
+          "relation": "发现",
+          "edges": 928
+        },
+        {
+          "relation": "提及",
+          "edges": 915
+        },
+        {
+          "relation": "请求",
+          "edges": 914
+        },
+        {
+          "relation": "指责",
+          "edges": 768
+        },
+        {
+          "relation": "给予",
+          "edges": 755
+        },
+        {
+          "relation": "怀疑",
+          "edges": 629
+        },
+        {
+          "relation": "前往",
+          "edges": 626
+        },
+        {
+          "relation": "知晓",
+          "edges": 614
+        }
+      ]
+    }
+  },
+  "gate_control_reproduces_v8": {
+    "entities_only_in_a": 4,
+    "entities_only_in_b": 4,
+    "sample_entities_only_in_a": [
+      "兀尔德",
+      "店主米拉",
+      "玛尔塔",
+      "玩具盒"
+    ],
+    "sample_entities_only_in_b": [
+      "传记作家兀尔德",
+      "伦敦煤烟污染勘察与清除大使",
+      "旅行队的别斯米尔",
+      "暴雨小组组长乌尔里希"
+    ],
+    "edges_only_in_a": 690,
+    "edges_only_in_b": 388,
+    "edges_shared": 29579
+  },
+  "delta_p1": {
+    "entities_only_in_a": 0,
+    "entities_only_in_b": 0,
+    "sample_entities_only_in_a": [],
+    "sample_entities_only_in_b": [],
+    "edges_only_in_a": 23970,
+    "edges_only_in_b": 20856,
+    "edges_shared": 5997
+  },
+  "delta_vs_v8": {
+    "entities_only_in_a": 4,
+    "entities_only_in_b": 4,
+    "sample_entities_only_in_a": [
+      "兀尔德",
+      "店主米拉",
+      "玛尔塔",
+      "玩具盒"
+    ],
+    "sample_entities_only_in_b": [
+      "传记作家兀尔德",
+      "伦敦煤烟污染勘察与清除大使",
+      "旅行队的别斯米尔",
+      "暴雨小组组长乌尔里希"
+    ],
+    "edges_only_in_a": 24344,
+    "edges_only_in_b": 20928,
+    "edges_shared": 5925
+  },
+  "gate_control_ok": false
+}

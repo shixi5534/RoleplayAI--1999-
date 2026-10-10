@@ -20,6 +20,7 @@ from pathlib import Path
 from .chunker import Chunk
 from .corpus import is_generic_speaker
 from .llm import CloudLLM
+from .relation_norm import map_relation
 
 logger = logging.getLogger(__name__)
 
@@ -248,8 +249,12 @@ def _norm_type(t: str) -> str:
     return "概念"
 
 
-def normalize(chunk: Chunk, raw: dict) -> Extraction:
-    """把模型原始输出归一化成受控词表 + 去噪 + 关系端点合法性校验。"""
+def normalize(chunk: Chunk, raw: dict, *, map_relations: bool = True) -> Extraction:
+    """把模型原始输出归一化成受控词表 + 去噪 + 关系端点合法性校验。
+
+    ``map_relations=False`` 只给审计脚本用（量「谓语受控化前后」的对照），
+    生产链路一律走 True。
+    """
     names: dict[str, str] = {}     # 归一化名 -> 首次出现形式
     alias_map: dict[str, set[str]] = {}
     types: dict[str, str] = {}
@@ -330,6 +335,13 @@ def normalize(chunk: Chunk, raw: dict) -> Extraction:
                 lookup[x] = x
         if skip:
             continue
+        if map_relations:
+            # 谓语受控化：同义合并后同一条边可能重复出现，所以映射必须在
+            # 下面的三元组去重**之前**，否则合并的收益会被 per-chunk 去重吃掉。
+            m = map_relation(s, rel, d)
+            if not m.relation:
+                continue          # 否定式 / 黑名单：谓语本身不成立，边不留
+            s, rel, d = m.src, m.relation, m.dst
         key = (s, rel, d)
         if key in seen_rel:
             continue
@@ -349,7 +361,9 @@ def normalize(chunk: Chunk, raw: dict) -> Extraction:
 # 归一化逻辑版本。与 PROMPT_VERSION 分开：提示词变了必须重新问模型，
 # 而归一化（去噪/词表映射/端点校验）只是**本地后处理**——缓存里存的是模型
 # 原始输出，改归一化只要重跑本地代码即可，**无需再花云端调用**。
-NORMALIZER_VERSION = "n1"
+#   n1 = 去噪 + 端点校验（v8 冻结图谱）
+#   n2 = 叠加谓语受控化（vendor 词表 + 归组 sidecar + 方向裁决表）
+NORMALIZER_VERSION = "n2"
 
 
 def cache_key(chunk: Chunk, model: str, prompt_version: str) -> str:

@@ -1,0 +1,790 @@
+{
+  "meta": {
+    "author": "p6-repair-proposals（子代理，只读取证 + 提案）",
+    "timestamp": "2026-07-27T16:45:03+08:00",
+    "batch": "p6（L4.5 多角色互洽修边提案）",
+    "network": "none（零网络）",
+    "graph_state": {
+      "entities": 7033,
+      "edges": 27151,
+      "fingerprint": "14daf1bbfa407388",
+      "sha16": "7cac5867e8c80879"
+    },
+    "why_new_batch": "L4 记分卡 L4.5=3.9333/5（门槛 ≥4.0）FAIL。三份评测产物 ms_b01/02/03_review.json 共 60 块、23 条 mismatch；4 块 coherence=2（雷米特杯:11.0.0、绿湖:0.0.2、绿湖:1.2.0、绿湖:11.1.0），各自修掉全部 mismatch 即 4 块各 +1 → sum 240 → 均值 4.0。",
+    "precondition_gate": "本批**未** --apply，graph.json 保持 11588326 bytes / sha16 7cac5867e8c80879 不变；dry-run 由 Lead 复核后再决定是否落盘。",
+    "scope_proof": "23 条 mismatch 全部用 (chunk_id, src, 表层谓词, dst) 回查输入批 ms_b0*.json 的 canonical，再在 graph.json 定位，23/23 命中且 eid 精确匹配。22 条目标边的 chunk_ids 长度均为 1（唯一例外 edge[5322] Z-[告知]->安洁 长度 2，故单列 needs_human 不删）。",
+    "expected": {
+      "entities": "7033 -> 7033（本批无 add_entity/merge_entities）",
+      "edges": "27151 -> 27135（22 条 delete_edge 中 6 条与 6 条 add_edge 成对相抵，余 16 条为纯删 → 净 -16）",
+      "alias_total": "不变（本批无 remove_alias/add_alias）",
+      "metrics_change": {
+        "L4.5": "3.9333 -> 4.0（sum 236 -> 240；4 块 coh=2 全部 +1；另 15 条 coh=3 mismatch 一并消解可再抬高均值）",
+        "L4.4": "不受本批影响（L4.4 条目全部 needs_human，见 proposal_worldview.json）"
+      }
+    }
+  },
+  "entries": [
+    {
+      "id": "R7-L45-001",
+      "type": "delete_edge",
+      "target": "艾弗森",
+      "edges": [
+        {
+          "edge": [
+            "艾弗森",
+            "提及",
+            "崔斯特"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:0.1.0",
+          "quote": "他们从不制定安保计划，不运用枪械与武力"
+        }
+      ],
+      "rationale": "review ms_b01 判「艾弗森所指被错挂到崔斯特」，mismatch.why=「原文里艾弗森这句斥的是拉米雷斯那家神秘学家企业，通篇未提崔斯特，对象错张」。原文该句为艾弗森反驳威廉警告长「您怎么能把我们与一家“神秘学家企业”相提并论呢？」，指向拉米雷斯；正确关系图上已有 edge[4333]「艾弗森-[指责]->拉米雷斯」（chunk_ids 已含本块 0.1.0），故只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "艾弗森-[提及]->崔斯特（edge[4336]，chunk_ids=[…:0.1.0]，ev=「他们从不制定安保计划，不运用枪械与武力」）",
+      "after": "删除该边；同块正确关系由既有 edge[4333] 承载，本块 n_edges 7→6",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:0.1.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-002",
+      "type": "delete_edge",
+      "target": "挖掘艺术",
+      "edges": [
+        {
+          "edge": [
+            "挖掘艺术",
+            "告知",
+            "游客"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:11.0.0",
+          "quote": "准确来说，这是一场艺术变革"
+        }
+      ],
+      "rationale": "review ms_b01 coh=2 块，mismatch.why=「原文这句是回答艾弗森的追问，宣告对象是艾弗森，不是游客」。上文艾弗森「站住！你搞了什么鬼？这些乱七八糟的泡泡究竟是什么？」。正确关系「挖掘艺术-[告知]->艾弗森」已存在 edge[4567]（chunk_ids 仅 6.2.0），若 add 会触发工具的「与既有边重复」校验，且该关系确已建边，故只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "挖掘艺术-[告知]->游客（edge[4692]，chunk_ids=[…:11.0.0]）",
+      "after": "删除该边；同块另有 edge[4695] 挖掘艺术-[询问]->游客 承载面向游客的发话",
+      "expected_effect": "块 …:11.0.0 coherence 2→3（该块共 2 条 mismatch，本条第 1 条）"
+    },
+    {
+      "id": "R7-L45-003",
+      "type": "delete_edge",
+      "target": "皮克勒斯",
+      "edges": [
+        {
+          "edge": [
+            "皮克勒斯",
+            "攻击",
+            "查尔顿"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:11.0.0",
+          "quote": "皮克勒斯用爪子推了推旁边仍在呼呼大睡的查尔顿，而后者毫无反应"
+        }
+      ],
+      "rationale": "review 同块第 2 条，mismatch.why=「原文是狗想叫醒熟睡的主人，被归一为「攻击」，凭空造出同伴间的对立关系」。图为逐块抽取，同对关系只有 4424 告知 / 4427 离开 / 4716 离开，「攻击」无据；「推搡/唤醒」在图上谓词词表中均为 0 条，本批不新增谓词，故只删不补，正确关系留待重抽或人工裁决。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "皮克勒斯-[攻击]->查尔顿（edge[4697]，chunk_ids=[…:11.0.0]）",
+      "after": "删除该边；本块 n_edges 7→6",
+      "expected_effect": "块 …:11.0.0 coherence 2→3（该块第 2 条 mismatch，两条同时修掉才 +1）"
+    },
+    {
+      "id": "R7-L45-004",
+      "type": "delete_edge",
+      "target": "梅兰妮",
+      "edges": [
+        {
+          "edge": [
+            "梅兰妮",
+            "告知",
+            "安保机器人"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:12.1.0",
+          "quote": "现在大部分的机器人都已经陷入了瘫痪"
+        }
+      ],
+      "rationale": "review ms_b01，mismatch.why=「原文这句是对艾西说的，且机器人此刻已瘫痪，并非被告知对象」。原文前句「**梅兰妮**：艾西老师，我们剩下的时间不多了。」受话人为艾西；且「梅兰妮-[告知]->艾西」已存在 edge[4372]，其 chunk_ids **已含本块 12.1.0**，无需 add。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "梅兰妮-[告知]->安保机器人（edge[4708]，chunk_ids=[…:12.1.0]）",
+      "after": "删除该边；正确关系由既有 edge[4372] 承载，本块 n_edges 12→11",
+      "expected_effect": "块 …:12.1.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-005",
+      "type": "delete_edge",
+      "target": "挖掘艺术",
+      "edges": [
+        {
+          "edge": [
+            "挖掘艺术",
+            "控制",
+            "星锑"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:12.1.1",
+          "quote": "被五花大绑的挖掘艺术本人显然是最好的证据"
+        }
+      ],
+      "rationale": "review ms_b01，mismatch.why=「原文里绑走挖掘艺术的是艾弗森一方的机器人，星锑只是把他当证据并致意，二者无控制关系」。上文即艾弗森下令「把他绑起来，注射哑口无言剂」（12.1.0），控制方非星锑；同对另有 edge[4729] 星锑-[感谢]->挖掘艺术，「控制」无据。本批不新增谓词/实体，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "挖掘艺术-[控制]->星锑（edge[4728]，chunk_ids=[…:12.1.1]）",
+      "after": "删除该边；本块 n_edges 8→7",
+      "expected_effect": "块 …:12.1.1 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-006",
+      "type": "delete_edge",
+      "target": "皮克勒斯",
+      "edges": [
+        {
+          "edge": [
+            "皮克勒斯",
+            "摧毁",
+            "温迪"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:15.0.0",
+          "quote": "皮克勒斯的挣扎与求救声被淹没在愈发高涨的庆祝氛围里"
+        }
+      ],
+      "rationale": "review ms_b01，mismatch.why=「原文是皮克勒斯求救声被庆祝氛围淹没，与温迪无关，主客颠倒」。句中「被淹没」的主语是「挣扎与求救声」，客体是「庆祝氛围」，温迪未出现在该句；同对仅有 4424 告知 / 4427 离开，无摧毁关系。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "皮克勒斯-[摧毁]->温迪（edge[4777]，chunk_ids=[…:15.0.0]）",
+      "after": "删除该边；本块 n_edges 11→10",
+      "expected_effect": "块 …:15.0.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-007",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "提及",
+            "巡警"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:0.0.2",
+          "quote": "开朗的布鲁诺少言寡语"
+        }
+      ],
+      "rationale": "review ms_b02 coh=2 块，mismatch.why=「证据句讲的是“开朗的布鲁诺”，原文通篇无巡警这个角色」。⚠ 根因已查明：实体 `巡警` 的 aliases=['布鲁诺']（type=角色，mention 3 块），抽取期把少年军**布鲁诺**焊到了**巡警**上，本条是别名误焊的下游产物。真正的根治修法是 remove_alias 布鲁诺@巡警，但那会牵动该实体另 2 个 chunk 的既有引用，且本提案不重指已有边，故本条只做 delete_edge，别名问题另列 needs_human（见附注）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[提及]->巡警（edge[4810]，chunk_ids=[…:0.0.2]）",
+      "after": "删除该边；该实体（巡警）仍保留，别名问题不由此条目处理，本块 n_edges 8→7",
+      "expected_effect": "块 …:0.0.2 coherence 2→3（该块 2 条 mismatch 之 1）"
+    },
+    {
+      "id": "R7-L45-008",
+      "type": "delete_edge",
+      "target": "十四行诗",
+      "edges": [
+        {
+          "edge": [
+            "十四行诗",
+            "惊惧",
+            "恐怖通"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:0.0.2",
+          "quote": "你的术杖看起来快要被折断了"
+        }
+      ],
+      "rationale": "review 同块第 2 条，mismatch.why=「“术杖快被折断”是维尔汀对十四行诗说的话，被错记成她对恐怖通」。原文为「**维尔汀**：十四行诗，放松。你的术杖看起来快要被折断了。」说话人与受话人**双错**：情绪主体是维尔汀，对象是十四行诗。故 delete+add 改为 维尔汀-[惊惧]->十四行诗（「惊惧」谓词图上已有 12 条；该三元组实测不存在，不触发重复校验）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "十四行诗-[惊惧]->恐怖通（edge[4813]，chunk_ids=[…:0.0.2]）",
+      "after": "删除该边并由随附 add_edge 补 维尔汀-[惊惧]->十四行诗；本块 n_edges 8→8",
+      "expected_effect": "块 …:0.0.2 coherence 2→3（该块第 2 条 mismatch）"
+    },
+    {
+      "id": "R7-L45-009",
+      "type": "delete_edge",
+      "target": "牙仙",
+      "edges": [
+        {
+          "edge": [
+            "牙仙",
+            "告知",
+            "疯癫的老人"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:1.2.0",
+          "quote": "他晕过去了。这里的问题解决了"
+        }
+      ],
+      "rationale": "review ms_b03 coh=2 块，mismatch.why=「原文只向维尔汀陈述，老人已昏迷，是被谈对象非受话人」。本块全文证实：**牙仙**：「他晕过去了。这里的问题解决了。」「第二个问题是，我的车坏了…」／**维尔汀**：「没问题，牙仙女士。我在下车前带走了地图……」⇒ 受话人为维尔汀，老人是被谈对象。正确关系「牙仙-[告知]->维尔汀」已存在 edge[4857] 且 chunk_ids **已含 1.2.0**，无需 add。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "牙仙-[告知]->疯癫的老人（edge[4856]，chunk_ids=[…:1.2.0]）",
+      "after": "删除该边；正确关系由既有 edge[4857] 承载，本块 n_edges 6→5",
+      "expected_effect": "块 …:1.2.0 coherence 2→3（该块 2 条 mismatch 之 1）"
+    },
+    {
+      "id": "R7-L45-010",
+      "type": "delete_edge",
+      "target": "坎贝尔先生",
+      "edges": [
+        {
+          "edge": [
+            "坎贝尔先生",
+            "投保",
+            "牙仙"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:1.2.0",
+          "quote": "那些业务员会打电话给他的"
+        }
+      ],
+      "rationale": "review 同块第 2 条，mismatch.why=「原文本块无坎贝尔先生发言，投保人是牙仙的弟弟」。原文该段说话人为牙仙（「我弟弟为它买了保险。那些业务员会打电话给他的。」），「坎贝尔先生」并未在本块发言；同对仅有 edge[4835] 牙仙-[告知]->坎贝尔先生、edge[4842] 牙仙-[知晓]->坎贝尔先生，本边为唯一「投保」边（全图「投保」谓词仅 1 条）。本批不新增谓词/不新增实体，直接删除即可消解 mismatch。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "坎贝尔先生-[投保]->牙仙（edge[4861]，chunk_ids=[…:1.2.0]）",
+      "after": "删除该边；本块 n_edges 6→4（连同上条），全图谓词集减少 1（投保 1→0）",
+      "expected_effect": "块 …:1.2.0 coherence 2→3（该块第 2 条 mismatch，两条同时删才 +1）"
+    },
+    {
+      "id": "R7-L45-011",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "持有",
+            "金蜜儿"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:10.1.1",
+          "quote": "安妮伸出手，握成拳头"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「原文是安妮伸出手握成自己的拳头，并未持有金蜜儿」。证据句无「金蜜儿」为宾语；同对另有 edge[5119] 金蜜儿-[对话]->安妮 ev=「你能先松开我的手吗？」属另一处情节。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[持有]->金蜜儿（edge[5135]，chunk_ids=[…:10.1.1]）",
+      "after": "删除该边；本块 n_edges 5→4",
+      "expected_effect": "块 …:10.1.1 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-012",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "警告",
+            "怪物集群"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:10.2.0",
+          "quote": "她的眼泪能叫来更多怪物，他们要从泥土下爬出来了"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「恐怖通是向同伴喊出怪物将至，并非向怪物示警」。上文即「**恐怖通**：嘿！金发妞！如果你还想要命的话，就别戴那枚戒指！」，受话人为在场同伴金蜜儿。正确关系「恐怖通-[警告]->金蜜儿」已存在 edge[5100] 且 chunk_ids **已含 10.2.0**，无需 add。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[警告]->怪物集群（edge[5149]，chunk_ids=[…:10.2.0]）",
+      "after": "删除该边；正确关系由既有 edge[5100] 承载，本块 n_edges 14→13",
+      "expected_effect": "块 …:10.2.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-013",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "指导",
+            "鬼新娘"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.1.0",
+          "quote": "一枚戒指，把一个浑身腐烂的新娘带到了我们面前"
+        }
+      ],
+      "rationale": "review ms_b03 coh=2 块，mismatch.why=「他向同伴讲解戒指召来新娘，未对新娘示范或指导」。原文该句后紧接「…但如果我们反过来利用它——」／**维尔汀**：「不是等待怪物来，而是把它们“叫到”我们身边来。」属对同伴讲解；同对仅此 1 条边。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[指导]->鬼新娘（edge[5165]，chunk_ids=[…:11.1.0]）",
+      "after": "删除该边；该对（恐怖通↔鬼新娘）删除后无边，本块 n_edges 8→7",
+      "expected_effect": "块 …:11.1.0 coherence 2→3（该块 2 条 mismatch 之 1）"
+    },
+    {
+      "id": "R7-L45-014",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "对抗",
+            "维尔汀"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.1.0",
+          "quote": "近乎百分之百"
+        }
+      ],
+      "rationale": "review 同块第 2 条，mismatch.why=「原文是回答维尔汀的提问（近乎百分之百），并非对抗」。原文：**维尔汀**：「恐怖通，你有几成把握可以猜准怪物的弱点。」／**恐怖通**：「近乎百分之百。」正确关系「恐怖通-[告知]->维尔汀」已存在 edge[4796] 且 chunk_ids **已含 11.1.0**，无需 add。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[对抗]->维尔汀（edge[5169]，chunk_ids=[…:11.1.0]）",
+      "after": "删除该边；正确关系由既有 edge[4796] 承载，本块 n_edges 8→6",
+      "expected_effect": "块 …:11.1.0 coherence 2→3（该块第 2 条 mismatch，两条同时删才 +1）"
+    },
+    {
+      "id": "R7-L45-015",
+      "type": "delete_edge",
+      "target": "十四行诗",
+      "edges": [
+        {
+          "edge": [
+            "十四行诗",
+            "告知",
+            "安妮"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.2.0",
+          "quote": "她说她过去没能好好尝这颗糖果的味道"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「原文这句解释由安妮说出，不是十四行诗向安妮解释」。原文：**安妮**：「牙仙女士想要各式各样的魔精牙齿，十四行诗小姐则是……／则是想要一颗太妃糖。她说她过去没能好好尝这颗糖果的味道，想要再试一次。」⇒ 说话人为安妮。正确关系「安妮-[告知]->十四行诗」已存在 edge[5179] 且 chunk_ids 为**同一块 11.2.0**，无需 add。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "十四行诗-[告知]->安妮（edge[5180]，chunk_ids=[…:11.2.0]）",
+      "after": "删除该边；正确关系由既有 edge[5179] 承载，本块 n_edges 14→13",
+      "expected_effect": "块 …:11.2.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-016",
+      "type": "delete_edge",
+      "target": "牙仙",
+      "edges": [
+        {
+          "edge": [
+            "牙仙",
+            "导致",
+            "安妮"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:14.0.0",
+          "quote": "湖底诞生的怪物来自于你，屠夫来自于你"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「原文“来自于你”指金蜜儿，怪物被错写成源自安妮」。原文**牙仙**：「冷静下来，金蜜儿。冷静。」「湖底诞生的怪物来自于你，屠夫来自于你，凄惨的新娘也来自于你。」⇒ 对象全程为金蜜儿。故 delete+add 改为 牙仙-[导致]->金蜜儿（「导致」谓词图上已有 107 条；该三元组实测不存在，不触发重复校验；与既有 edge[5240] 牙仙-[发现]->金蜜儿 不重复）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "牙仙-[导致]->安妮（edge[5239]，chunk_ids=[…:14.0.0]）",
+      "after": "删除该边并由随附 add_edge 补 牙仙-[导致]->金蜜儿；本块 n_edges 8→8",
+      "expected_effect": "块 …:14.0.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-017",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "指导",
+            "安妮"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:15.1.0",
+          "quote": "我们就不能打点儿感情牌吗？"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「提议打感情牌时洁西卡尚未到场（“哦——她来了”）」。原文顺序：「**恐怖通**：我们就不能打点儿感情牌吗？」→「**恐怖通**：哦——她来了。」→「**洁西卡**：和我想的一样，你们做到了！」⇒ 发话时受话人为在场同伴（金蜜儿），对象错张。注：`洁西卡` 是实体 `安妮` 的 alias（本案正典内身份揭示，合理），本条错在**受话人**而非实体解析。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[指导]->安妮（edge[5247]，chunk_ids=[…:15.1.0]）",
+      "after": "删除该边；本块 n_edges 12→11",
+      "expected_effect": "块 …:15.1.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-018",
+      "type": "delete_edge",
+      "target": "十四行诗",
+      "edges": [
+        {
+          "edge": [
+            "十四行诗",
+            "告知",
+            "巨大魔精"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:2.0.0",
+          "quote": "很好，它被困住了！"
+        }
+      ],
+      "rationale": "review ms_b03，mismatch.why=「“很好，它被困住了”是向同伴宣告，非对魔精宣告」。上文：**维尔汀**：「用掉那颗子弹，它要抓到你了！」／**恐怖通**：「真可惜…」／**十四行诗**：「很好，它被困住了！」⇒ 受话人为同伴。同对另有 edge[4871] 十四行诗-[提及]->巨大魔精、edge[5018] 知晓，「告知」无据。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "十四行诗-[告知]->巨大魔精（edge[4875]，chunk_ids=[…:2.0.0]）",
+      "after": "删除该边；本块 n_edges 13→12",
+      "expected_effect": "块 …:2.0.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-019",
+      "type": "delete_edge",
+      "target": "梅兰妮",
+      "edges": [
+        {
+          "edge": [
+            "梅兰妮",
+            "希望",
+            "皮克勒斯"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:1.2.1",
+          "quote": "愿上帝保佑你早日找到你的小皮克勒斯"
+        }
+      ],
+      "rationale": "review ms_b01，mismatch.why=「原文“愿上帝保佑你早日找到你的小皮克勒斯”是对查尔顿说的，皮克勒斯是本块唯一未被写出的被提及对象；祝愿的接受者应是查尔顿」。本块全文证实：梅兰妮对查尔顿「愿上帝保佑你早日找到你的小皮克勒斯～」，受话人为查尔顿。⇒ delete+add 梅兰妮-[希望]->查尔顿（图上「祝愿」0 条，取图上既有的近义谓词「希望」，352 条）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "梅兰妮-[希望]->皮克勒斯（edge[4421]，chunk_ids=[…:1.2.1]）",
+      "after": "删除该边并由随附 add_edge 补 梅兰妮-[希望]->查尔顿；本块 n_edges 4→4",
+      "expected_effect": "块 …:1.2.1 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-020",
+      "type": "delete_edge",
+      "target": "警察",
+      "edges": [
+        {
+          "edge": [
+            "警察",
+            "告知",
+            "威廉警长"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:3.1.1",
+          "quote": "根据威廉警长传来的最新讯息，他的印章已确认被盗"
+        }
+      ],
+      "rationale": "review ms_b02，mismatch.why=「原文是讯息自威廉警长传来，方向颠倒，听者是现场同僚」。原文**警察**：「卡纳比街请求支援。」「根据威廉警长传来的最新讯息，他的印章已确认被盗。」⇒ 讯息源自威廉警长，说者为警察，方向反。⇒ delete+add 反向 威廉警长-[告知]->警察（该三元组实测不存在；同对删除后无边）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "警察-[告知]->威廉警长（edge[4466]，chunk_ids=[…:3.1.1]）",
+      "after": "删除该边并由随附 add_edge 补 威廉警长-[告知]->警察；本块 n_edges 11→11",
+      "expected_effect": "块 …:3.1.1 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-021",
+      "type": "delete_edge",
+      "target": "梅兰妮",
+      "edges": [
+        {
+          "edge": [
+            "梅兰妮",
+            "警告",
+            "安保机器人"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:7.1.0",
+          "quote": "小心它的探测仪！"
+        }
+      ],
+      "rationale": "review ms_b02，mismatch.why=「原文“小心它的探测仪”是提醒同伴，机器人称“它”非受话人」。本块 speakers=['梅兰妮','艾西','安保机器人']，唯一同伴为**艾西**（原文「没错，艾西老师！」）。⇒ delete+add 梅兰妮-[警告]->艾西（该三元组实测不存在，「警告」谓词 395 条）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "梅兰妮-[警告]->安保机器人（edge[4586]，chunk_ids=[…:7.1.0]）",
+      "after": "删除该边并由随附 add_edge 补 梅兰妮-[警告]->艾西；本块 n_edges 5→5",
+      "expected_effect": "块 …:7.1.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-022",
+      "type": "delete_edge",
+      "target": "纳尔森",
+      "edges": [
+        {
+          "edge": [
+            "纳尔森",
+            "攻击",
+            "皮克勒斯"
+          ],
+          "how": "chunk-evidence-mismatch（L4.5 多角色互洽复核）"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:9.0.0",
+          "quote": "把皮克勒斯围在了中间"
+        }
+      ],
+      "rationale": "review ms_b02，mismatch.why=「原文是同伴小狗亲昵围观（他最受欢迎），canonical 写成攻击，敌意无据」。原文「有更多的小狗从查尔顿身旁钻出来，把皮克勒斯围在了中间。他一向是最受欢迎的小狗。」⇒ 非攻击。⇒ delete+add 纳尔森-[参与]->皮克勒斯（同证据同块的 edge[4635] 爱丽丝-[参与]->皮克勒斯 可作范式；该三元组实测不存在，「参与」谓词 140 条）。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "纳尔森-[攻击]->皮克勒斯（edge[4636]，chunk_ids=[…:9.0.0]）",
+      "after": "删除该边并由随附 add_edge 补 纳尔森-[参与]->皮克勒斯；本块 n_edges 8→8",
+      "expected_effect": "块 …:9.0.0 coherence 3→4"
+    },
+    {
+      "id": "R7-L45-023",
+      "type": "add_edge",
+      "target": "维尔汀",
+      "edge": {
+        "src": "维尔汀",
+        "dst": "十四行诗",
+        "relation": "惊惧",
+        "confidence": 0.95,
+        "evidence": "你的术杖看起来快要被折断了",
+        "chunk_ids": [
+          "activity__12101_绿湖噩梦:0.0.2"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:0.0.2",
+          "quote": "你的术杖看起来快要被折断了"
+        }
+      ],
+      "rationale": "配合 R7-L45-008：把「十四行诗-[惊惧]->恐怖通」纠正为「维尔汀-[惊惧]->十四行诗」。原文该句由维尔汀说出、对象为十四行诗；「惊惧」为图上既有谓词（12 条）。该三元组实测不存在。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 维尔汀-[惊惧]->十四行诗（chunk_ids=[activity__12101_绿湖噩梦:0.0.2]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    },
+    {
+      "id": "R7-L45-024",
+      "type": "add_edge",
+      "target": "梅兰妮",
+      "edge": {
+        "src": "梅兰妮",
+        "dst": "查尔顿",
+        "relation": "希望",
+        "confidence": 0.95,
+        "evidence": "愿上帝保佑你早日找到你的小皮克勒斯～",
+        "chunk_ids": [
+          "activity__11101_雷米特杯失窃案:1.2.1"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:1.2.1",
+          "quote": "愿上帝保佑你早日找到你的小皮克勒斯～"
+        }
+      ],
+      "rationale": "配合 R7-L45-019：祝愿的接受者是查尔顿而非皮克勒斯。图无「祝愿」谓词，取图上既有近义谓词「希望」（352 条）。该三元组实测不存在。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 梅兰妮-[希望]->查尔顿（chunk_ids=[activity__11101_雷米特杯失窃案:1.2.1]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    },
+    {
+      "id": "R7-L45-025",
+      "type": "add_edge",
+      "target": "威廉警长",
+      "edge": {
+        "src": "威廉警长",
+        "dst": "警察",
+        "relation": "告知",
+        "confidence": 0.95,
+        "evidence": "根据威廉警长传来的最新讯息，他的印章已确认被盗",
+        "chunk_ids": [
+          "activity__11101_雷米特杯失窃案:3.1.1"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:3.1.1",
+          "quote": "根据威廉警长传来的最新讯息，他的印章已确认被盗"
+        }
+      ],
+      "rationale": "配合 R7-L45-020：方向纠正，讯息由威廉警长传向现场警察。该三元组实测不存在；同对删除后无边。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 威廉警长-[告知]->警察（chunk_ids=[activity__11101_雷米特杯失窃案:3.1.1]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    },
+    {
+      "id": "R7-L45-026",
+      "type": "add_edge",
+      "target": "梅兰妮",
+      "edge": {
+        "src": "梅兰妮",
+        "dst": "艾西",
+        "relation": "警告",
+        "confidence": 0.95,
+        "evidence": "小心它的探测仪！",
+        "chunk_ids": [
+          "activity__11101_雷米特杯失窃案:7.1.0"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:7.1.0",
+          "quote": "小心它的探测仪！"
+        }
+      ],
+      "rationale": "配合 R7-L45-021：提醒对象为在场的唯一同伴艾西（原文「没错，艾西老师！」）。该三元组实测不存在。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 梅兰妮-[警告]->艾西（chunk_ids=[activity__11101_雷米特杯失窃案:7.1.0]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    },
+    {
+      "id": "R7-L45-027",
+      "type": "add_edge",
+      "target": "纳尔森",
+      "edge": {
+        "src": "纳尔森",
+        "dst": "皮克勒斯",
+        "relation": "参与",
+        "confidence": 0.95,
+        "evidence": "把皮克勒斯围在了中间",
+        "chunk_ids": [
+          "activity__11101_雷米特杯失窃案:9.0.0"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:9.0.0",
+          "quote": "把皮克勒斯围在了中间"
+        }
+      ],
+      "rationale": "配合 R7-L45-022：同伴小狗亲昵围观，非攻击。同证据同块的 edge[4635] 爱丽丝-[参与]->皮克勒斯 为同范式。该三元组实测不存在。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 纳尔森-[参与]->皮克勒斯（chunk_ids=[activity__11101_雷米特杯失窃案:9.0.0]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    },
+    {
+      "id": "R7-L45-028",
+      "type": "add_edge",
+      "target": "牙仙",
+      "edge": {
+        "src": "牙仙",
+        "dst": "金蜜儿",
+        "relation": "导致",
+        "confidence": 0.95,
+        "evidence": "湖底诞生的怪物来自于你，屠夫来自于你",
+        "chunk_ids": [
+          "activity__12101_绿湖噩梦:14.0.0"
+        ],
+        "count": 1
+      },
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:14.0.0",
+          "quote": "湖底诞生的怪物来自于你，屠夫来自于你"
+        }
+      ],
+      "rationale": "配合 R7-L45-016：怪物的来源被指向金蜜儿而非安妮。该三元组实测不存在；与既有 edge[5240] 牙仙-[发现]->金蜜儿 不重复。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene/ms_b01|b02|b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "该 (src,relation,dst) 图上不存在",
+      "after": "新增 牙仙-[导致]->金蜜儿（chunk_ids=[activity__12101_绿湖噩梦:14.0.0]，confidence=0.95）",
+      "expected_effect": "补齐被错张/方向颠倒后缺失的正确关系"
+    }
+  ]
+}

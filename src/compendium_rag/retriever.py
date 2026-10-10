@@ -38,13 +38,15 @@ class Evidence:
     chunk_id: str
     score: float
     channels: dict[str, float] = field(default_factory=dict)
-    ppr: float = 0.0
+    # 图通道的块分数（= 该块上最强那条边的分数），**不是**节点 PPR。
+    # 原名 `ppr` 是误标：它来自 graph_channel 返回的 chunk_scores（见 retrieve）。
+    graph_score: float = 0.0
     reasons: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {"chunk_id": self.chunk_id, "score": round(self.score, 6),
                 "channels": {k: round(v, 6) for k, v in self.channels.items()},
-                "ppr": round(self.ppr, 6), "reasons": self.reasons}
+                "graph_score": round(self.graph_score, 6), "reasons": self.reasons}
 
 
 @dataclass
@@ -63,7 +65,7 @@ class RetrievalResult:
             "note": self.note,
             "seeds": [{"eid": s.eid, "name": s.name,
                        "score": round(s.score, 6), "how": s.how} for s in self.seeds],
-            "edges": [{"src": s, "relation": r, "dst": d, "ppr": round(p, 6)}
+            "edges": [{"src": s, "relation": r, "dst": d, "edge_score": round(p, 6)}
                       for s, r, d, p in self.edges],
             "evidence": [e.to_dict() for e in self.evidence],
         }
@@ -334,6 +336,57 @@ class LexicalIndex:
         return out[:top_k]
 
 
+# ── 上下文预算分配（P4.0）──
+
+# 分配器版本标：审计报告必须回写此标，`v1_tailcut` 与 `v2_perblock` 的读数
+# **不得混表**（v8/v9 不混表纪律的延伸）。v1_tailcut = `out[:max_chars]` 整体尾切
+# （历史行为，代码路径已从本模块移除，冻结参考实现只存在于
+# `scripts/compendium_rag_p4_allocator_ab.py`）；v2_perblock = 按块分配预算、禁止半块。
+CONTEXT_ALLOCATOR = "v2_perblock"
+CONTEXT_ALLOCATOR_LEGACY = "v1_tailcut"
+# R4 保底标记：一块都装不下时，取排序第一块**截断**注入并显式标此记号。
+# 它是可观测的（报告据此单列 `fallback_truncated`），绝不允许静默丢证据。
+FALLBACK_MARK = "[节选]"
+
+
+def plan_block_window(costs: list[int], budget: int) -> tuple[list[int], int]:
+    """按块预算分配：均分份额 → 超份额块整块跳过 → 释放份额回收给更短的块。
+
+    规则（P4.0 预登记，不许放宽）：
+    - **R1 禁止半块**：入选即整块渲染，落选即整块不渲染，绝不出现截断正文。
+    - **R3 均分 + 余量回收**：份额 = 剩余预算 // 剩余块数；成本超份额的块整块跳过，
+      其份额自动并入剩余预算供后面的短块使用；迭代至稳定（至多 ``len(costs)`` 轮）。
+      收尾再做一轮「按排序贪心填充」，把整除余数等零头预算用掉。
+      目的：一块 1206 字长块不得吃掉其余五块的份额。
+
+    返回 ``(入选下标列表（升序 = 窗口顺序）, 未用尽预算)``。
+    不变量：``sum(costs[i] for i in 入选) <= max(0, budget)``（份额判定保证不越界）。
+    """
+    remaining = list(range(len(costs)))
+    picked: list[int] = []
+    left = max(0, int(budget))
+    rounds = 0
+    cap = len(costs)
+    while remaining and rounds < cap:
+        share = left // len(remaining)
+        fits = [i for i in remaining if costs[i] <= share]
+        if not fits:
+            break
+        picked.extend(fits)
+        for i in fits:
+            left -= costs[i]
+        taken = set(fits)
+        remaining = [i for i in remaining if i not in taken]
+        rounds += 1
+    # 余量回收的第二步：零头预算按**排序**给还能整块装下的块（同样不切正文）。
+    for i in list(remaining):
+        if costs[i] <= left:
+            picked.append(i)
+            left -= costs[i]
+    picked.sort()
+    return picked, left
+
+
 class GraphRetriever:
     """Compendium 图谱检索器。全部数据在内存，查询毫秒级。"""
 
@@ -485,6 +538,8 @@ class GraphRetriever:
                  vector_top: int = 30, weights: dict[str, float] | None = None,
                  lex_weight: float = 0.0, lex_top: int = 30,
                  lex_first: int = 0, rrf_k: int = 60,
+                 ppr_damping: float = 0.85, ppr_max_iter: int = 50,
+                 graph_max_edges: int = 30,
                  ) -> RetrievalResult:
         """端到端检索。
 
@@ -520,7 +575,8 @@ class GraphRetriever:
                 res.note += "；已回落词面通道"
         else:
             g_chunks, edges = self.graph_channel(
-                seeds, damping=0.85, max_iter=50)
+                seeds, damping=ppr_damping, max_iter=ppr_max_iter,
+                max_edges=graph_max_edges)
             res.edges = edges
             channels["graph"] = g_chunks
             channels["mention"] = self.mention_channel(seeds)
@@ -528,9 +584,11 @@ class GraphRetriever:
                 channels["vector"] = self.vector_channel(qvec, vector_top)
             evs = self.rrf_fuse(channels, k=rrf_k, weights=weights,
                                 top_n=max(top_k * 4, 24))
-            ppr_map, _ = self.graph_channel(seeds)
+            # 这里原先是**再跑一遍** graph_channel 只为取同一个 chunk 分数 map：
+            # 默认 damping/max_iter 与上面完全相同，两次返回值逐位相等（2026-10-09 实测
+            # 24 条证据 0 处不一致），而单次调用要 1.5–2.1 s，等于每题白烧 22–36% 墙钟。
             for e in evs:
-                e.ppr = ppr_map.get(e.chunk_id, 0.0)
+                e.graph_score = g_chunks.get(e.chunk_id, 0.0)
             res.evidence = evs
 
         # 融合重构（默认关闭，lex_first=0 时行为与接线前逐位一致）：
@@ -566,7 +624,16 @@ class GraphRetriever:
 
     def context(self, res: RetrievalResult, top_k: int = 6,
                 max_chars: int = 3000) -> str:
-        """把检索结果渲染成可注入 LLM 的上下文（含实体卡与关系路径）。"""
+        """把检索结果渲染成可注入 LLM 的上下文（含实体卡与关系路径）。
+
+        P4.0：尾切改成**按块预算分配**（``CONTEXT_ALLOCATOR`` = ``v2_perblock``）。
+        v1 的整体尾切（``out[:max_chars]``）会把最后一块**从中间切断**，模型拿到的
+        半块既不能当依据也不能被引用（P3 步骤3 实测 144 块里 20 块半块、53.5% 整块
+        掉出窗外）。现在的规则是：先扣头段（【图谱实体】+【关系脉络】+分隔符）实测
+        长度，余量在 ``top_k`` 块之间均分，超出份额的块**整块跳过**并把份额让给
+        更短的块，**任何情况下都不切正文**。
+        """
+        sep = "\n\n"
         parts: list[str] = []
         if res.seeds:
             lines = ["【图谱实体】"]
@@ -583,16 +650,77 @@ class GraphRetriever:
             for s, r, d, _ in res.edges[:15]:
                 lines.append(f"- {s} —{r}→ {d}")
             parts.append("\n".join(lines))
-        if res.evidence:
-            lines = ["【原文证据】"]
-            for e in res.evidence[:top_k]:
-                c = self.chunks.get(e.chunk_id)
-                if not c:
-                    continue
-                loc = f"{c.chapter_title}"
-                if c.scene_title:
-                    loc += f" / {c.scene_title}"
-                lines.append(f"[{loc}] {c.text}")
-            parts.append("\n\n".join(lines))
-        out = "\n\n".join(parts)
-        return out[:max_chars]
+
+        # R2 头段先扣：头段与它的分隔符都从预算里出，余量才是证据段预算。
+        head = sep.join(parts)
+        blocks = self._collect_evidence_blocks(res, top_k)
+
+        if not blocks:
+            return head[:max_chars]
+
+        # 成本按**最终窗口宽度**上界计（S1 与 S10 差一位），保证入选块渲染后
+        # 逐字完整、绝不被末尾 `out[:max_chars]` 碰到（R1）。
+        width = len(str(len(blocks)))
+        costs = [b.cost(width) for b in blocks]
+        budget = max_chars - len(head) - len(sep) - len("【原文证据】")
+        selected, _left = plan_block_window(costs, max(0, budget))
+        lines = ["【原文证据】"]
+        if selected:
+            # R5 编号跟**窗口顺序**走（不是原排序号）：i 从 1 连续、不留空号，
+            # 「引用 S2」必须能回查到窗口里第 2 块（P4 compose 的引用契约）。
+            for i, bi in enumerate(selected, 1):
+                lines.append(blocks[bi].render(i))
+        else:
+            # R4 保底：一块都装不下（短窗口或超长块）。取**排序第一块**截断注入，
+            # 显式打 [节选] 标记，绝不静默丢证据。三集真实数据上该次数应为 0。
+            # ⚠ 标记本身要**先扣**：它拼在截断正文之后，若不留位就会被末尾
+            #   `out[:max_chars]` 切掉半截（变成"[节"），保底路径反而变成静默的。
+            avail = (max_chars - len(head) - len(sep) - len("【原文证据】")
+                     - len(sep) - len(FALLBACK_MARK))
+            lines.append(f"{blocks[0].truncate(avail)}{FALLBACK_MARK}")
+        if len(lines) > 1:
+            parts.append(sep.join(lines))
+        return sep.join(parts)[:max_chars]
+
+    def _collect_evidence_blocks(self, res: RetrievalResult, top_k: int
+                                 ) -> list["_EvidenceBlock"]:
+        """按排序渲染证据块（含溯源头与定位），返回可重编号的块对象。
+
+        溯源头：`S{i}` 是 P4「只准引用带编号片段」的引用锚点，chunk/doc/cat 让每条
+        引用能被逐条回查到原文（2026-10-09 P3）。`i` 在这里**不写死**——它在
+        ``context()`` 里按**窗口顺序**填入（R5），否则块一旦被整块跳过就会留空号。
+        """
+        out: list[_EvidenceBlock] = []
+        for e in res.evidence[:top_k]:
+            c = self.chunks.get(e.chunk_id)
+            if not c:
+                continue
+            loc = f"{c.chapter_title}"
+            if c.scene_title:
+                loc += f" / {c.scene_title}"
+            meta = " ".join(f"{k}={v}" for k, v in
+                            (("chunk", c.chunk_id), ("doc", c.doc_id),
+                             ("cat", c.category)) if v)
+            out.append(_EvidenceBlock(meta, loc, c.text))
+        return out
+
+
+@dataclass(frozen=True)
+class _EvidenceBlock:
+    """一条证据块的未编号渲染件（编号在入选后按窗口顺序填）。"""
+
+    meta: str          # `chunk=… doc=… cat=…`
+    loc: str           # `篇名 / 场景名`
+    text: str          # 块正文（原样，绝不改写）
+
+    def render(self, index: int) -> str:
+        return f"[S{index} {self.meta}] [{self.loc}] {self.text}"
+
+    def cost(self, width: int) -> int:
+        """整块成本 = 块文本 + 块间分隔符；``width`` = 编号位宽上界。"""
+        return len(self.render(10 ** (width - 1))) + 2      # "\n\n"
+
+    def truncate(self, avail: int) -> str:
+        """R4 保底专用：显式截断（只在这一条路径上允许出现半块）。"""
+        full = self.render(1)
+        return full if avail >= len(full) else full[:max(0, avail)]

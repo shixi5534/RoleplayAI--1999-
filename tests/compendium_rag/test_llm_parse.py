@@ -251,3 +251,95 @@ def test_quota_dead_flag_short_circuits():
             return False
 
     assert asyncio.run(run()) is True
+
+
+# ── 文本模式（P4 作答通路）：与 JSON 模式的边界必须钉死 ──
+
+def _mock_client(handler):
+    """把 CloudLLM 的 httpx 客户端换成 MockTransport（零网络）。
+
+    不走 ``async with``，直接把 ``_sem`` / ``_client`` 装上——用例要测的是
+    两条调用路径的**报文差异**，不需要真实客户端生命周期。
+    """
+    import asyncio
+
+    import httpx
+
+    from compendium_rag.llm import CloudLLM
+
+    client = CloudLLM(base_url="http://mock.local/v1", api_key="k", model="m",
+                      concurrency=1, max_retries=1, temperature=0.0)
+    client._sem = asyncio.Semaphore(1)
+    client._client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    return client
+
+
+def test_complete_json_still_sends_json_mode_and_parses():
+    """回归守卫：``complete_text`` 是**新增**路径，JSON 模式行为必须逐项不变。
+
+    这是「只允许新增、不得改动 complete_json」这条写面约束的可执行版本——
+    少了它，某次重构把两条路径合并就会静默改变抽取期行为。
+    """
+    import asyncio
+    import json
+
+    import httpx
+
+    seen: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.update(json.loads(request.content.decode("utf-8")))
+        return httpx.Response(200, json={
+            "model": "mock-model",
+            "choices": [{"message": {"content": '{"entities":[{"name":"A","type":"角色"}],'
+                                                '"relations":[]}'},
+                         "finish_reason": "stop"}],
+        })
+
+    client = _mock_client(handler)
+
+    async def run():
+        try:
+            return await client.complete_json("sys", "usr")
+        finally:
+            await client._client.aclose()
+
+    parsed, meta = asyncio.run(run())
+    assert seen["response_format"] == {"type": "json_object"}
+    assert seen["messages"] == [{"role": "system", "content": "sys"},
+                                {"role": "user", "content": "usr"}]
+    assert isinstance(parsed, dict) and len(parsed["entities"]) == 1
+    assert meta.finish_reason == "stop"
+
+
+def test_complete_text_shares_transport_but_not_parser():
+    """文本模式：同一份 messages 直接透传，且不要求网关返回 JSON。"""
+    import asyncio
+    import json
+
+    import httpx
+
+    seen: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.update(json.loads(request.content.decode("utf-8")))
+        return httpx.Response(200, json={
+            "model": "mock-model",
+            "choices": [{"message": {"content": "纯文本答案"}, "finish_reason": "stop"}],
+        })
+
+    client = _mock_client(handler)
+    msgs = [{"role": "system", "content": "s"}, {"role": "user", "content": "u"}]
+
+    async def run():
+        try:
+            return await client.complete_text(msgs)
+        finally:
+            await client._client.aclose()
+
+    text, meta = asyncio.run(run())
+    assert text == "纯文本答案"
+    assert isinstance(text, str)
+    assert "response_format" not in seen
+    assert seen["messages"] == msgs
+    assert meta.model == "mock-model"

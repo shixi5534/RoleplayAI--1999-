@@ -15,9 +15,10 @@ from __future__ import annotations
 import logging
 
 from ...config import Settings, get_settings
-from ...errors import ConfigurationError
+from ...errors import ConfigurationError, EndpointNotAllowedError
 from ...models.chat import LLMOverride
 from .base import LLMPort
+from .endpoint_guard import validate_llm_base_url
 from .mock import MockLLMProvider
 from .openai_like import OpenAILikeProvider, _DEFAULT_BASE_URLS
 
@@ -113,6 +114,31 @@ def build_llm_from_config(
     base_url = override.base_url or s.llm_base_url or _DEFAULT_BASE_URLS.get(provider, "")
     timeout = override.timeout or 30.0
     api_key = override.api_key
+
+    # ── S1 修复：SSRF 防护（请求体可控的 base_url 必须过校验）──
+    # 此前 factory 从不校验，请求体里填 http://169.254.169.254/latest/meta-data
+    # 会被直接构建成客户端并发起请求（云元数据窃取）。校验逻辑复用 core 层
+    # 下沉实现 core/llm/endpoint_guard.py（与 api/llm_config._validate_base_url
+    # 同一策略；api 层由主代理改为复用同一函数，避免两份策略漂移）。
+    #
+    # 触发条件 = 「端点由**本次请求**决定」：
+    #   - override.base_url 非空（去空白后）：客户端可任填地址，必须校验；
+    #   - provider 与全局不同：base_url 可能因此回退到另一 provider 的默认地址。
+    # 仅当 override 未指定 base_url 且 provider 与全局一致时，有效地址完全由
+    # 服务端 frozen Settings 决定（可信、且已由 /switch 侧校验），沿用旧行为
+    # 以免误伤合法本地/内网 Ollama 部署（127.0.0.1:11434、192.168.x）。
+    #
+    # require_api_key=False：缺 key 的云端 override 由 ProviderError 在 generate
+    # 时显式报错（tests/test_llm_override.py 锁定的既有语义），此处只判地址安全。
+    override_url_given = bool((override.base_url or "").strip())
+    if override_url_given or provider != s.llm_provider:
+        try:
+            validate_llm_base_url(provider, base_url, api_key or "", require_api_key=False)
+        except ValueError as exc:
+            raise EndpointNotAllowedError(
+                f"base_url 不被允许：{exc}",
+                details={"provider": provider, "reason": str(exc)},
+            ) from exc
 
     # 与全局配置完全一致且不带请求级 key → 直接复用全局缓存实例。
     # 前端 buildOverride() 已做同类判断，但直接调用 API 的客户端可能仍传同值 override，

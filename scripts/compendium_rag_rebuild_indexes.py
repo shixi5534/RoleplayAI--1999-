@@ -34,10 +34,8 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from compendium_rag import pipeline as P  # noqa: E402
 from compendium_rag.config import get_settings  # noqa: E402
-from compendium_rag.corpus import corpus_fingerprint  # noqa: E402
 from compendium_rag.embedder import OllamaEmbedder  # noqa: E402
-from compendium_rag.extract import PROMPT_VERSION  # noqa: E402
-from compendium_rag.graph_store import GraphStore, fingerprint_of  # noqa: E402
+from compendium_rag.graph_store import GraphStore  # noqa: E402
 from compendium_rag.retriever import ChunkIndex, EntityVectorIndex  # noqa: E402
 
 logger = logging.getLogger("rebuild_indexes")
@@ -83,14 +81,12 @@ async def run() -> int:
     # ── 1. 指纹守卫 ──
     graph = GraphStore.load(s.graph_path)
     chunks = P.load_chunks(s)
-    fp = fingerprint_of(corpus_fingerprint(P.load_chapters(s)),
-                        s.llm_model, PROMPT_VERSION, s.chunk_chars)
-    ok, why = graph.check_fingerprint(fp)
+    ok, why = P.verify_fingerprint(s, graph)
     if not ok:
         logger.error("指纹失配，拒绝建索引：%s", why)
         logger.error("graph.json 不是当前语料/配置的产物；先跑 `rebuild` 重建图谱。")
         return 2
-    logger.info("指纹校验通过；块=%d 实体=%d 边=%d",
+    logger.info("指纹校验通过（%s）；块=%d 实体=%d 边=%d", why,
                 len(chunks), len(graph.entities), len(graph.edges))
 
     # ── 2. 本地嵌入 + 落盘 ──

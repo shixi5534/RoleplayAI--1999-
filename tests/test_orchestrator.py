@@ -239,3 +239,71 @@ def test_build_roleplay_prompt_orders_blocks():
     assert "【用户资料】" in prompt
     assert "【角色资料库" in prompt
     assert prompt.index("【用户资料】") < prompt.index("【角色资料库")
+
+
+# ─────────────── 回归：DI 注入的 LLM 必须真正用于主对话生成 ───────────────
+# 缺陷：run()/stream() 曾无条件 build_llm_from_config(settings, req.llm)，
+# req.llm 为 None 时回退全局 mock，注入实例调用次数为 0（DI 形同虚设）。
+# 断言「注入 LLM 的独有输出」出现在回复里，才能捕获该缺陷——注入
+# MockLLMProvider 与全局 mock 同类，失效时依旧全绿。
+_INJECTED_MARKER = "【INJECTED-LLM-MARKER】"
+
+
+class _MarkerLLM(MockLLMProvider):
+    """输出唯一标记的注入 LLM：只要主路径用了它，标记必现。
+
+    ``__init__`` 不调用 super()，故自带 ``calls`` 计数。
+    """
+
+    def __init__(self):
+        self.calls = 0
+
+    @property
+    def model_name(self) -> str:
+        return "marker-injected"
+
+    async def generate(self, **kwargs) -> str:
+        self.calls += 1
+        return f"{_INJECTED_MARKER}收到：{kwargs.get('user', '')}"
+
+
+    async def generate_stream(self, **kwargs):
+        # 派发回子类 generate，计入 calls，保证 stream 路径同样被观测。
+        yield await self.generate(**kwargs)
+
+
+async def test_run_uses_injected_llm_not_global_mock():
+    """run() 无请求级 override 时必须走构造函数注入的 self._llm。"""
+    llm = _MarkerLLM()
+    orch = ChatOrchestrator(
+        llm=llm,
+        emotion=KeywordEmotionDetector(enabled=False),
+        rag=InMemoryVectorStore(),
+        enable_emotion=False,
+        enable_longterm=False,
+    )
+    res = await orch.run(ChatRequest(session_id="di-run", message="你好"))
+    assert _INJECTED_MARKER in res.response.reply
+    assert llm.calls > 0
+
+
+async def test_stream_uses_injected_llm_not_global_mock():
+    """stream() 无请求级 override 时必须走构造函数注入的 self._llm。"""
+    llm = _MarkerLLM()
+    orch = ChatOrchestrator(
+        llm=llm,
+        emotion=KeywordEmotionDetector(enabled=False),
+        rag=InMemoryVectorStore(),
+        enable_emotion=False,
+        enable_longterm=False,
+    )
+    text = "".join(
+        [
+            ev["text"]
+            async for ev in orch.stream(ChatRequest(session_id="di-stream", message="你好"))
+            if ev.get("type") == "chunk"
+        ]
+    )
+    assert _INJECTED_MARKER in text
+    assert llm.calls > 0
+

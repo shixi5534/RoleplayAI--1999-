@@ -228,13 +228,13 @@ async def _query(args) -> int:
         print("  （无）")
     print("\n关系脉络：")
     for e in res["edges"][:14]:
-        print(f"  {e['src']} —{e['relation']}→ {e['dst']}  ppr={e['ppr']:.3f}")
+        print(f"  {e['src']} —{e['relation']}→ {e['dst']}  edge_score={e['edge_score']:.3f}")
     print("\n证据块：")
     for e in res["evidence"][:args.top_k]:
         c = kb.retriever.chunks.get(e["chunk_id"])
         loc = f"{c.chapter_title}/{c.scene_title}" if c else "?"
         print(f"  [{e['chunk_id']}] score={e['score']:.5f} "
-              f"channels={e['channels']} ppr={e['ppr']:.3f}")
+              f"channels={e['channels']} graph_score={e['graph_score']:.3f}")
         print(f"      {loc}")
         if c:
             print("      " + c.text[:180].replace("\n", " / "))

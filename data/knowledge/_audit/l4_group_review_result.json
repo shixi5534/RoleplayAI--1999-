@@ -1,0 +1,1812 @@
+{
+ "schema": "audit.l4_group_review/v1",
+ "reviews": [
+  {
+   "predicate": "倒出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "倾倒动作词表无对应，判null合理"
+  },
+  {
+   "predicate": "表现为",
+   "verdict": "change",
+   "canonical_if_change": "是",
+   "why": "表现为即等同判断，应归是"
+  },
+  {
+   "predicate": "头槌",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "头槌是攻击方式，可抽象一层"
+  },
+  {
+   "predicate": "宣世",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "非谓语语义，词表无项"
+  },
+  {
+   "predicate": "揭名",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "揭示别名即披露告知"
+  },
+  {
+   "predicate": "督促",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "催促指令，抽象为命令可接受"
+  },
+  {
+   "predicate": "召请",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "召唤词表已并入命令"
+  },
+  {
+   "predicate": "署名",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "署名即登记记载"
+  },
+  {
+   "predicate": "远播于",
+   "verdict": "change",
+   "canonical_if_change": "知晓",
+   "why": "名声传开指众人知晓，非影响"
+  },
+  {
+   "predicate": "索价",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "索要价钱属请求"
+  },
+  {
+   "predicate": "区别于",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "表差异非敌对，词表无相异关系"
+  },
+  {
+   "predicate": "后怕",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "恐惧状态，词表同类状态归经历"
+  },
+  {
+   "predicate": "联营",
+   "verdict": "change",
+   "canonical_if_change": "同伴",
+   "why": "两方合营是平等合作非隶属"
+  },
+  {
+   "predicate": "闻流言",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "听闻即知晓"
+  },
+  {
+   "predicate": "泄密",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "泄露即披露告知"
+  },
+  {
+   "predicate": "监听",
+   "verdict": "change",
+   "canonical_if_change": "追踪",
+   "why": "监视类词表统一归追踪"
+  },
+  {
+   "predicate": "宣言",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "宣告即告知"
+  },
+  {
+   "predicate": "要挟",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "要挟属威胁"
+  },
+  {
+   "predicate": "承揽",
+   "verdict": "change",
+   "canonical_if_change": "担任",
+   "why": "承揽是接手职责非帮忙"
+  },
+  {
+   "predicate": "递送",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "递送即给予"
+  },
+  {
+   "predicate": "见闻",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "见闻指所知信息"
+  },
+  {
+   "predicate": "受托解析",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "解析属研究"
+  },
+  {
+   "predicate": "助其传声",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "助力传声属帮助"
+  },
+  {
+   "predicate": "酿成",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "酿成即导致"
+  },
+  {
+   "predicate": "输血",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "证据原文即给血"
+  },
+  {
+   "predicate": "彻悟",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "彻悟即明白知晓"
+  },
+  {
+   "predicate": "独舞",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "舞蹈无对应关系"
+  },
+  {
+   "predicate": "丢失",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "词表失去已归经历，丢失同义"
+  },
+  {
+   "predicate": "给定",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "给出期限可归给予"
+  },
+  {
+   "predicate": "诿过",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "推诿归责属指责"
+  },
+  {
+   "predicate": "击落",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "击落是攻击行为"
+  },
+  {
+   "predicate": "瞄准",
+   "verdict": "change",
+   "canonical_if_change": "威胁",
+   "why": "瞄准未击中，是威胁非攻击"
+  },
+  {
+   "predicate": "惊讶",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "状态被归成动作发现"
+  },
+  {
+   "predicate": "装饰",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "装设制作类可归制造"
+  },
+  {
+   "predicate": "略去",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "略去事实即隐瞒隐藏"
+  },
+  {
+   "predicate": "指示",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "下达指示即命令"
+  },
+  {
+   "predicate": "吓唬",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "吓唬即恐吓威胁"
+  },
+  {
+   "predicate": "惊走",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "受惊离去归离开"
+  },
+  {
+   "predicate": "作战",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "作战即战斗对抗"
+  },
+  {
+   "predicate": "唱歌",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "歌唱词表无合适项"
+  },
+  {
+   "predicate": "担祸",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "承受灾祸归经历"
+  },
+  {
+   "predicate": "关键素材为",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "为即判断词"
+  },
+  {
+   "predicate": "捏持",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "捏在手中即持有"
+  },
+  {
+   "predicate": "征引",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "征引即引用提及"
+  },
+  {
+   "predicate": "确信",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "确信即知晓"
+  },
+  {
+   "predicate": "组装",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "组装属制造"
+  },
+  {
+   "predicate": "创制",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "创制即制作"
+  },
+  {
+   "predicate": "护佑",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "护佑即庇护保护"
+  },
+  {
+   "predicate": "归于",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "证据在光里支持位于"
+  },
+  {
+   "predicate": "附加条件",
+   "verdict": "change",
+   "canonical_if_change": "需要",
+   "why": "证据即需要更专业的工厂"
+  },
+  {
+   "predicate": "奇其所得",
+   "verdict": "change",
+   "canonical_if_change": "关注",
+   "why": "好奇是关注非询问行为"
+  },
+  {
+   "predicate": "寒暄",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "寒暄属交谈对话"
+  },
+  {
+   "predicate": "回想",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "回忆词表归知晓"
+  },
+  {
+   "predicate": "低视",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "低头看见归发现"
+  },
+  {
+   "predicate": "踢击",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "踢击是攻击方式"
+  },
+  {
+   "predicate": "载送",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "送往同类词表已归前往"
+  },
+  {
+   "predicate": "自名",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "自名即自称称呼"
+  },
+  {
+   "predicate": "催长",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "促使生长属影响"
+  },
+  {
+   "predicate": "拉上",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "证据是上骡，撑不住帮助"
+  },
+  {
+   "predicate": "起疑",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "起疑即怀疑"
+  },
+  {
+   "predicate": "慰藉",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "安慰对方属帮助"
+  },
+  {
+   "predicate": "举荐为警犬",
+   "verdict": "change",
+   "canonical_if_change": "担任",
+   "why": "举荐的是职务身份非帮助"
+  },
+  {
+   "predicate": "自喻小船",
+   "verdict": "change",
+   "canonical_if_change": "象征",
+   "why": "自比比喻词表已归象征"
+  },
+  {
+   "predicate": "录有",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "记录含有可归记载"
+  },
+  {
+   "predicate": "斥命运傲慢",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "斥即谴责指责"
+  },
+  {
+   "predicate": "逃走",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "逃走即逃离离开"
+  },
+  {
+   "predicate": "失能",
+   "verdict": "change",
+   "canonical_if_change": "阻止",
+   "why": "使丧失能力非免疫抗性"
+  },
+  {
+   "predicate": "重提",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "重提即再次提及"
+  },
+  {
+   "predicate": "旁白",
+   "verdict": "change",
+   "canonical_if_change": "告知",
+   "why": "旁白即解说讲述属告知"
+  },
+  {
+   "predicate": "依偎",
+   "verdict": "change",
+   "canonical_if_change": "位于",
+   "why": "依偎是身旁位置非定居"
+  },
+  {
+   "predicate": "惊报",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "惊报即示警"
+  },
+  {
+   "predicate": "读骨",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "解读骨头属研究鉴定"
+  },
+  {
+   "predicate": "串案",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "案件相串联即关联"
+  },
+  {
+   "predicate": "觅机",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "寻觅机会归寻找"
+  },
+  {
+   "predicate": "应和",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "应和酬答属对话"
+  },
+  {
+   "predicate": "朗诵",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "朗诵即讲述告知"
+  },
+  {
+   "predicate": "清洁",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "清洁养护可归修复"
+  },
+  {
+   "predicate": "劝行",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "劝人出行属请求"
+  },
+  {
+   "predicate": "泄愤",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "泄愤施暴归攻击"
+  },
+  {
+   "predicate": "免责",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "免责声明词表无项"
+  },
+  {
+   "predicate": "死护",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "死守护卫即保护"
+  },
+  {
+   "predicate": "推介",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "推介即介绍告知"
+  },
+  {
+   "predicate": "想回",
+   "verdict": "change",
+   "canonical_if_change": "返回",
+   "why": "归前往丢失了回的方向"
+  },
+  {
+   "predicate": "盼存",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "盼其存活属希望"
+  },
+  {
+   "predicate": "惊破",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "惊醒察觉可归发现"
+  },
+  {
+   "predicate": "水淹",
+   "verdict": "change",
+   "canonical_if_change": "摧毁",
+   "why": "淹没词表已归摧毁"
+  },
+  {
+   "predicate": "负伤",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "受伤同类归经历"
+  },
+  {
+   "predicate": "狡辩",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "辩驳属对话类"
+  },
+  {
+   "predicate": "喜欢",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "词表喜爱族统一归希望"
+  },
+  {
+   "predicate": "安装",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "装置装配归制造"
+  },
+  {
+   "predicate": "择位",
+   "verdict": "change",
+   "canonical_if_change": "位于",
+   "why": "选定地点即位置关系"
+  },
+  {
+   "predicate": "啃食",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "食用词表已归使用"
+  },
+  {
+   "predicate": "打飞",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "打击类归攻击"
+  },
+  {
+   "predicate": "称其为音符",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "称其为即称呼"
+  },
+  {
+   "predicate": "睡过",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "沉睡归经历状态"
+  },
+  {
+   "predicate": "催动",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "催动术法可归使用"
+  },
+  {
+   "predicate": "提旧托",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "提起旧托付属提及"
+  },
+  {
+   "predicate": "惊恐",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "恐惧状态非怀疑"
+  },
+  {
+   "predicate": "灼烫",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "灼热作用于人归影响"
+  },
+  {
+   "predicate": "邀",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "邀请词表已归请求"
+  },
+  {
+   "predicate": "倒卧",
+   "verdict": "change",
+   "canonical_if_change": "位于",
+   "why": "倒卧于地即位置关系"
+  },
+  {
+   "predicate": "念出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "念出姓名咒语属说出告知"
+  },
+  {
+   "predicate": "悬置",
+   "verdict": "change",
+   "canonical_if_change": "等待",
+   "why": "搁置待定非许可"
+  },
+  {
+   "predicate": "率队",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "率领即指挥"
+  },
+  {
+   "predicate": "举剑",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "举剑发力可归使用"
+  },
+  {
+   "predicate": "抄近",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "取道穿行归前往"
+  },
+  {
+   "predicate": "弃绝",
+   "verdict": "change",
+   "canonical_if_change": "对立",
+   "why": "摒弃拒绝非位移，词表拒绝归对立"
+  },
+  {
+   "predicate": "工作于",
+   "verdict": "change",
+   "canonical_if_change": "位于",
+   "why": "工作场所是位置非定居"
+  },
+  {
+   "predicate": "擒获",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "擒获含制服归击败"
+  },
+  {
+   "predicate": "寻友",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "寻访友人归寻找"
+  },
+  {
+   "predicate": "引据",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "引证援引可归提及"
+  },
+  {
+   "predicate": "紧抱",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "紧抱即持有"
+  },
+  {
+   "predicate": "探囊",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "囊中摸索归寻找"
+  },
+  {
+   "predicate": "揪问",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "揪住盘问即询问"
+  },
+  {
+   "predicate": "说项",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "为人美言属帮助"
+  },
+  {
+   "predicate": "舍弃",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "舍弃即离弃"
+  },
+  {
+   "predicate": "索见",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "求见某人归寻找"
+  },
+  {
+   "predicate": "与闻",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "参与听闻即知晓"
+  },
+  {
+   "predicate": "保守秘密",
+   "verdict": "change",
+   "canonical_if_change": "隐藏",
+   "why": "隐瞒词表已归隐藏"
+  },
+  {
+   "predicate": "玉碎",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "身亡状态归经历"
+  },
+  {
+   "predicate": "疑点",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "存疑即怀疑"
+  },
+  {
+   "predicate": "吐烟",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "喷烟动作词表无对应"
+  },
+  {
+   "predicate": "叫喊",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "喊话传信归告知"
+  },
+  {
+   "predicate": "斥逆",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "斥责即指责"
+  },
+  {
+   "predicate": "围堵",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "围堵拦路即阻止"
+  },
+  {
+   "predicate": "协作",
+   "verdict": "change",
+   "canonical_if_change": "同伴",
+   "why": "合作协同词表归同伴"
+  },
+  {
+   "predicate": "发作",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "病症发作作用于人"
+  },
+  {
+   "predicate": "冲撞",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "冲撞撞击归攻击"
+  },
+  {
+   "predicate": "贬低",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "贬损讥讽归指责"
+  },
+  {
+   "predicate": "系着",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "穿戴系缚归持有"
+  },
+  {
+   "predicate": "窥梦",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "窥探梦境获知信息"
+  },
+  {
+   "predicate": "背负",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "背负即携带持有"
+  },
+  {
+   "predicate": "退场",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "退场即退出离开"
+  },
+  {
+   "predicate": "带出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "带离某地归离开"
+  },
+  {
+   "predicate": "惩戒",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "教训拳脚归攻击"
+  },
+  {
+   "predicate": "哭诉",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "哭说倾诉属对话"
+  },
+  {
+   "predicate": "推理",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "推析研判归研究"
+  },
+  {
+   "predicate": "任教官于",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "任即担任"
+  },
+  {
+   "predicate": "来电",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "通话沟通归对话"
+  },
+  {
+   "predicate": "宣战",
+   "verdict": "change",
+   "canonical_if_change": "对抗",
+   "why": "宣战是开启冲突非恐吓"
+  },
+  {
+   "predicate": "笑许",
+   "verdict": "change",
+   "canonical_if_change": "许可",
+   "why": "笑而应允即许可"
+  },
+  {
+   "predicate": "打断指控",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "打断即阻止"
+  },
+  {
+   "predicate": "感其热情",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "感受得知词表归知晓"
+  },
+  {
+   "predicate": "争执",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "争吵对抗可归对立"
+  },
+  {
+   "predicate": "亮械",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "亮出兵器仍属持有"
+  },
+  {
+   "predicate": "封堵",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "封堵断路即阻止"
+  },
+  {
+   "predicate": "劝玩",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "证据是劝阻非劝玩"
+  },
+  {
+   "predicate": "换子",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "交换词表已归给予"
+  },
+  {
+   "predicate": "宣告终结",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "宣告即告知"
+  },
+  {
+   "predicate": "饲养",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "畜养留存归持有"
+  },
+  {
+   "predicate": "议价",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "讨价商谈属对话"
+  },
+  {
+   "predicate": "潜入",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "潜过进入词表归前往"
+  },
+  {
+   "predicate": "报出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "报出名称即告知"
+  },
+  {
+   "predicate": "责正",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "纠责评判归指责"
+  },
+  {
+   "predicate": "搀扶",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "扶掖相助即帮助"
+  },
+  {
+   "predicate": "置身",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "置身即位于"
+  },
+  {
+   "predicate": "囤冰",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "囤积存放归持有"
+  },
+  {
+   "predicate": "搭臂",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "挽臂同行可归同伴"
+  },
+  {
+   "predicate": "诱问",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "诱导发问属询问"
+  },
+  {
+   "predicate": "徒劳",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "形容性谓语难成关系"
+  },
+  {
+   "predicate": "逼问",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "逼迫追问归询问"
+  },
+  {
+   "predicate": "肩负",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "肩负其责即担任"
+  },
+  {
+   "predicate": "陈旧",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "属性描述词表无对应"
+  },
+  {
+   "predicate": "选定",
+   "verdict": "change",
+   "canonical_if_change": "许可",
+   "why": "选定批准，词表选出已归许可"
+  },
+  {
+   "predicate": "须做",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "须即需要"
+  },
+  {
+   "predicate": "重复",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "重复无对应关系"
+  },
+  {
+   "predicate": "借走",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "借走取得归获得"
+  },
+  {
+   "predicate": "异议",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "异议反对归对立"
+  },
+  {
+   "predicate": "泼洒",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "泼撒动作给予撑不住"
+  },
+  {
+   "predicate": "诘问",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "诘问即质询"
+  },
+  {
+   "predicate": "直认欺瞒",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "坦承披露归告知"
+  },
+  {
+   "predicate": "翻书",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "翻检寻索归寻找"
+  },
+  {
+   "predicate": "评论",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "评说谈及可归提及"
+  },
+  {
+   "predicate": "诞下",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "生育归亲属"
+  },
+  {
+   "predicate": "开瓶",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "开瓶饮用归使用"
+  },
+  {
+   "predicate": "承认决意",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "确认知晓对方心意"
+  },
+  {
+   "predicate": "寻至",
+   "verdict": "change",
+   "canonical_if_change": "发现",
+   "why": "寻而至即找到，词表找到归发现"
+  },
+  {
+   "predicate": "霸占",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "霸占矿区即控制"
+  },
+  {
+   "predicate": "问起",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "问起即询问"
+  },
+  {
+   "predicate": "站立",
+   "verdict": "change",
+   "canonical_if_change": "位于",
+   "why": "站立之处即位置关系"
+  },
+  {
+   "predicate": "放过",
+   "verdict": "change",
+   "canonical_if_change": "许可",
+   "why": "放行情形词表已归许可"
+  },
+  {
+   "predicate": "疑惧",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "疑虑为主可归怀疑"
+  },
+  {
+   "predicate": "慰劳",
+   "verdict": "change",
+   "canonical_if_change": "关注",
+   "why": "慰问关切非帮助行为"
+  },
+  {
+   "predicate": "谢力",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "谢其助力即感谢"
+  },
+  {
+   "predicate": "号召",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "号召召唤词表归命令"
+  },
+  {
+   "predicate": "赠自",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "赠自某人即给予来源"
+  },
+  {
+   "predicate": "索要",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "索要即要求请求"
+  },
+  {
+   "predicate": "欲往",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "欲往即前往"
+  },
+  {
+   "predicate": "排解",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "排解打断冲突归阻止"
+  },
+  {
+   "predicate": "留人",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "挽留即请求留下"
+  },
+  {
+   "predicate": "逐出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "逐出即使之离开"
+  },
+  {
+   "predicate": "发作于",
+   "verdict": "change",
+   "canonical_if_change": "发生于",
+   "why": "带于字处所应归发生于"
+  },
+  {
+   "predicate": "搅乱",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "搅乱打乱归阻止"
+  },
+  {
+   "predicate": "辨明非",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "含否定语义发现边会失真"
+  },
+  {
+   "predicate": "寻来",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "寻访而来归寻找"
+  },
+  {
+   "predicate": "按枪",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "证据明言阻止您"
+  },
+  {
+   "predicate": "改术",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "改换战术归转变"
+  },
+  {
+   "predicate": "围猎",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "围猎围攻归攻击"
+  },
+  {
+   "predicate": "排拒",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "排拒驱逐归阻止"
+  },
+  {
+   "predicate": "投保",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "投保无对应关系项"
+  },
+  {
+   "predicate": "嘱咐",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "嘱咐即吩咐命令"
+  },
+  {
+   "predicate": "手持",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "手持即持有"
+  },
+  {
+   "predicate": "致其自戕",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "致使对方自尽归导致"
+  },
+  {
+   "predicate": "并重",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "注重即关注"
+  },
+  {
+   "predicate": "辞称",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "称呼叫道人归称呼"
+  },
+  {
+   "predicate": "敬慕",
+   "verdict": "change",
+   "canonical_if_change": "关注",
+   "why": "仰慕是推崇非信任"
+  },
+  {
+   "predicate": "代办",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "代为办事属帮助"
+  },
+  {
+   "predicate": "斥为疯子",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "斥即指责"
+  },
+  {
+   "predicate": "围坐",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "围坐于树下即位于"
+  },
+  {
+   "predicate": "邀听",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "邀请听曲归请求"
+  },
+  {
+   "predicate": "摇晃",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "摆动动作词表无对应"
+  },
+  {
+   "predicate": "自首",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "投案语义词表无项"
+  },
+  {
+   "predicate": "挪款",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "款项转付归给予"
+  },
+  {
+   "predicate": "衔取",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "衔住即持于口"
+  },
+  {
+   "predicate": "惊醒",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "证据为骤觉警情归发现"
+  },
+  {
+   "predicate": "失物",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "失物是丢失状态非寻找"
+  },
+  {
+   "predicate": "蔑视",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "蔑视敌意归对立"
+  },
+  {
+   "predicate": "惜苗子",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "爱惜在意归关注"
+  },
+  {
+   "predicate": "成功",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "结果评价难成关系"
+  },
+  {
+   "predicate": "陈说利害",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "陈说即告知"
+  },
+  {
+   "predicate": "提上",
+   "verdict": "change",
+   "canonical_if_change": "前往",
+   "why": "被提上后座是位移非持有"
+  },
+  {
+   "predicate": "倡议",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "倡议呼吁归请求"
+  },
+  {
+   "predicate": "诱发",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "诱发即引起导致"
+  },
+  {
+   "predicate": "刺痛",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "刺痛作用于人归影响"
+  },
+  {
+   "predicate": "赞成",
+   "verdict": "change",
+   "canonical_if_change": "许可",
+   "why": "赞成即同意，词表同意归许可"
+  },
+  {
+   "predicate": "登临",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "登临即攀抵前往"
+  },
+  {
+   "predicate": "解析",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "解析属研究"
+  },
+  {
+   "predicate": "误投",
+   "verdict": "reject",
+   "canonical_if_change": "",
+   "why": "证据未见投递给予"
+  },
+  {
+   "predicate": "备考",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "备考死记属学习"
+  },
+  {
+   "predicate": "献愿",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "许愿祈祷归希望"
+  },
+  {
+   "predicate": "划桨",
+   "verdict": "change",
+   "canonical_if_change": "使用",
+   "why": "划桨驾舟，词表驾驶归使用"
+  },
+  {
+   "predicate": "引出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "引出即引起导致"
+  },
+  {
+   "predicate": "勘问",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "勘问即审问"
+  },
+  {
+   "predicate": "按下",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "按按钮即操作使用"
+  },
+  {
+   "predicate": "识得",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "识得即认识知晓"
+  },
+  {
+   "predicate": "验尸",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "尸检鉴定归研究"
+  },
+  {
+   "predicate": "威逼",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "威逼即胁迫威胁"
+  },
+  {
+   "predicate": "道别",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "告别词表已归离开"
+  },
+  {
+   "predicate": "旁听",
+   "verdict": "change",
+   "canonical_if_change": "参与",
+   "why": "列席旁听，词表列席归参与"
+  },
+  {
+   "predicate": "效仿",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "效法模仿属学习"
+  },
+  {
+   "predicate": "备档",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "存档归记载"
+  },
+  {
+   "predicate": "混迹",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "乔装混入可归隐藏"
+  },
+  {
+   "predicate": "编织",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "编织即制作"
+  },
+  {
+   "predicate": "集齐",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "收集齐备归获得"
+  },
+  {
+   "predicate": "布防",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "部署防务归指挥"
+  },
+  {
+   "predicate": "捍卫",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "捍卫即守护保护"
+  },
+  {
+   "predicate": "指明",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "指明即告知"
+  },
+  {
+   "predicate": "忆昔",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "回忆归知晓"
+  },
+  {
+   "predicate": "供能",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "供给能量归给予"
+  },
+  {
+   "predicate": "应承代问",
+   "verdict": "change",
+   "canonical_if_change": "约定",
+   "why": "应承是承诺非自己请求"
+  },
+  {
+   "predicate": "视作寻常",
+   "verdict": "change",
+   "canonical_if_change": "是",
+   "why": "视作一词表已归是"
+  },
+  {
+   "predicate": "觊觎",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "觊觎即贪欲希望"
+  },
+  {
+   "predicate": "乞食",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "乞讨属请求"
+  },
+  {
+   "predicate": "拟形",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "证据即以是字成形"
+  },
+  {
+   "predicate": "徒耗体力",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "耗损作用于人归影响"
+  },
+  {
+   "predicate": "敬仰",
+   "verdict": "change",
+   "canonical_if_change": "关注",
+   "why": "崇敬仰慕非信任"
+  },
+  {
+   "predicate": "认其已选",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "认出即知晓"
+  },
+  {
+   "predicate": "配偶",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "妻子归亲属"
+  },
+  {
+   "predicate": "疗伤",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "治疗归修复"
+  },
+  {
+   "predicate": "采自",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "采自即取自来自"
+  },
+  {
+   "predicate": "指认肇事",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "指认归责属指责"
+  },
+  {
+   "predicate": "离场",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "离场即离开"
+  },
+  {
+   "predicate": "接替",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "接替职务归担任"
+  },
+  {
+   "predicate": "揭短",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "揭人短处归指责"
+  },
+  {
+   "predicate": "押解",
+   "verdict": "change",
+   "canonical_if_change": "前往",
+   "why": "押解是押送位移非下令"
+  },
+  {
+   "predicate": "代宣",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "代宣即宣告告知"
+  },
+  {
+   "predicate": "装于",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "内装记录归包含"
+  },
+  {
+   "predicate": "吸纳",
+   "verdict": "change",
+   "canonical_if_change": "隶属",
+   "why": "扩招纳员是收编隶属"
+  },
+  {
+   "predicate": "拾得名刺",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "拾得即获得"
+  },
+  {
+   "predicate": "阐释",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "阐释即解释告知"
+  },
+  {
+   "predicate": "腹痛",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "病痛状态词表归经历"
+  },
+  {
+   "predicate": "迫近",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "迫近即靠近前往"
+  },
+  {
+   "predicate": "终将被洗",
+   "verdict": "change",
+   "canonical_if_change": "影响",
+   "why": "说的是被冲刷影响非预言"
+  },
+  {
+   "predicate": "自罚",
+   "verdict": "change",
+   "canonical_if_change": "指责",
+   "why": "证据是自责自省非惩罚"
+  },
+  {
+   "predicate": "得意",
+   "verdict": "change",
+   "canonical_if_change": "经历",
+   "why": "自得情绪同激动归经历"
+  },
+  {
+   "predicate": "声援",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "声援即支援帮助"
+  },
+  {
+   "predicate": "排演",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "排期安排归计划"
+  },
+  {
+   "predicate": "受派",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "受派遣对组织即隶属"
+  },
+  {
+   "predicate": "拟报",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "拟报即报道告知"
+  },
+  {
+   "predicate": "悟解",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "悟解即明白知晓"
+  },
+  {
+   "predicate": "赌于",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "打赌词表无对应项"
+  },
+  {
+   "predicate": "发射",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "子弹射出归攻击"
+  },
+  {
+   "predicate": "阻留",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "阻留即阻拦阻止"
+  },
+  {
+   "predicate": "踢倒",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "踢击归攻击"
+  },
+  {
+   "predicate": "著作",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "著述记述归记载"
+  },
+  {
+   "predicate": "驳斥",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "驳斥交锋归对抗"
+  },
+  {
+   "predicate": "欲归",
+   "verdict": "change",
+   "canonical_if_change": "返回",
+   "why": "归即回，归前往丢方向"
+  },
+  {
+   "predicate": "惊闻",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "听闻即知晓"
+  },
+  {
+   "predicate": "理由",
+   "verdict": "change",
+   "canonical_if_change": "关联",
+   "why": "理由动机类名词表归关联"
+  },
+  {
+   "predicate": "受寄",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "收到寄送归获得"
+  },
+  {
+   "predicate": "笼罩",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "笼罩施加影响"
+  },
+  {
+   "predicate": "取道",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "取道通行归前往"
+  },
+  {
+   "predicate": "察其违规",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "察即察觉发现"
+  },
+  {
+   "predicate": "搁置",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "搁置待定归等待"
+  },
+  {
+   "predicate": "问其所为",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "发问即询问"
+  },
+  {
+   "predicate": "同席",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "同席作陪归同伴"
+  },
+  {
+   "predicate": "掷出",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "投掷攻击归攻击"
+  },
+  {
+   "predicate": "辩解",
+   "verdict": "change",
+   "canonical_if_change": "对话",
+   "why": "辩解即分辩交谈"
+  },
+  {
+   "predicate": "支开",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "支开下属即下令"
+  },
+  {
+   "predicate": "消化",
+   "verdict": "keep",
+   "canonical_if_change": "",
+   "why": "被消化即致死杀死"
+  }
+ ],
+ "summary": {
+  "n": 300,
+  "keep": 240,
+  "change": 54,
+  "reject": 6,
+  "disagreement_rate": 0.2
+ }
+}

@@ -408,9 +408,12 @@ class ScriptedLLM:
 def _orch(llm, monkeypatch, **kw) -> ChatOrchestrator:
     """构造编排器，并把请求级 LLM 覆盖固定为注入的桩。
 
-    run()/stream() 内部会调 build_llm_from_config(settings, req.llm) 现取客户端，
-    不走构造函数注入的 self._llm，所以必须替换该函数才能用脚本化 LLM 断言调用次数
-    与收到的分层参数。
+    QA 2026-09-29 更新：``run()/stream()`` 现在**优先使用构造函数注入的 self._llm**，
+    仅在请求携带 ``req.llm`` 覆盖或 ``self._llm is None`` 时才调 ``build_llm_from_config``。
+    （此前它们会无条件调工厂、忽略注入，属已修复的缺陷。）
+
+    这里仍保留 monkeypatch 作为兜底：若某用例带 ``req.llm`` override，
+    工厂会返回同一个桩而非真实客户端。断言脚本化 LLM 的调用次数与分层参数由此成立。
     """
     monkeypatch.setattr(
         orchestrator_module, "build_llm_from_config", lambda settings, override: (llm, False)

@@ -1,0 +1,16 @@
+{
+  "schema": "compendium_rag.vendor_record/v1",
+  "module": "src/compendium_rag/relation_vocab.py",
+  "source": "src/roleplay/core/knowledge/relation_vocab.py",
+  "source_commit": "1800946e0874b1eb5d9547d338a22e1fea7a20df",
+  "vendored_at": "2026-10-08",
+  "reason": "config.py:4-6 独立性契约禁止 compendium_rag import roleplay.*；受控词表按 D1 裁决以 vendor 副本落地",
+  "sha256_source": "cffa569d947cf4a7ac2c685af7a600164f1c62aa0750e6a66754b5fd2365646b",
+  "sha256_vendored": "cffa569d947cf4a7ac2c685af7a600164f1c62aa0750e6a66754b5fd2365646b",
+  "byte_identical": true,
+  "drift_check": "scripts/compendium_rag_vocab_drift.py（只报告，不自动改）",
+  "extension_tables": {
+    "predicate_grouping_v1.json": "审查期 sidecar 归组（v9 图 7cac5867e8c80879：7034 条映射 / 1610 唯一谓语 / 边覆盖 0.845；v8 历史：8313 / 8353 / 0.8545）",
+    "inverse_predicate_map.json": "方向对/对称对/互斥对/方向丢失观察表（人工拟定）"
+  }
+}

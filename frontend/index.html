@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <title>RoleplayAI · 无名者</title>
   <link rel="stylesheet" href="./css/index.css?v=2">
-  <link rel="stylesheet" href="./css/pet-subtitle.css?v=4">
+  <link rel="stylesheet" href="./css/pet-subtitle.css?v=5">
 </head>
 <body data-theme="dark">
   <!-- 全屏主视觉背景 + 暗化遮罩 + 胶片颗粒 + 雨滴(暴雨母题) -->
@@ -81,6 +81,7 @@
         <div class="model-tabs" role="tablist" aria-label="选择模型">
           <button class="model-tab" type="button" role="tab" data-model="314701" aria-selected="true">无名·初见</button>
           <button class="model-tab" type="button" role="tab" data-model="314702" aria-selected="false">无名·无尽路</button>
+          <button class="model-tab" type="button" role="tab" data-model="314704" aria-selected="false">无名·沉影探戈</button>
         </div>
         <button class="reset-pos-btn" id="reset-pos-btn" type="button" title="重置位置 (F / 双击舞台)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
@@ -95,7 +96,7 @@
         <span class="hud-chip"><span class="k">速度</span><span class="v" id="hud-speed">5×</span><kbd>, / .</kbd></span>
         <span class="hud-chip"><span class="k">缩放</span><span class="v" id="hud-zoom">100%</span><kbd>( / )</kbd></span>
         <span class="hud-chip"><span class="k">数字人</span><span class="v" id="hud-model">显示</span><kbd>M</kbd></span>
-        <span class="hud-chip"><span class="k">模型</span><span class="v" id="hud-model-name">无名·初见</span><kbd>1 / 2</kbd></span>
+        <span class="hud-chip"><span class="k">模型</span><span class="v" id="hud-model-name">无名·初见</span><kbd>1 / 2 / 3</kbd></span>
         <span class="hud-chip"><span class="k">位置</span><span class="v" id="hud-pos">居中</span><kbd>F</kbd></span>
         <span class="hud-chip"><span class="k">LLM</span><span class="v" id="hud-llm">加载中…</span></span>
         <span class="hud-chip"><span class="k">主题</span><span class="v" id="hud-theme">暗</span><kbd>T</kbd></span>
@@ -259,8 +260,9 @@
 
       <div class="help-group-title">模型与角色</div>
       <div class="help-row"><span class="desc">模型切换(本地 Ollama ↔ 云端)</span><span class="help-keys"><kbd class="key">顶栏模型按钮</kbd></span></div>
-      <div class="help-row"><span class="desc">切换 Live2D 模型</span><span class="help-keys"><kbd class="key">1</kbd><kbd class="key">2</kbd></span></div>
+      <div class="help-row"><span class="desc">切换 Live2D 模型(初见 / 无尽路 / 沉影探戈)</span><span class="help-keys"><kbd class="key">1</kbd><kbd class="key">2</kbd><kbd class="key">3</kbd></span></div>
       <div class="help-row"><span class="desc">重置数字人位置</span><span class="help-keys"><kbd class="key">F</kbd><kbd class="key">Shift + R</kbd></span></div>
+      <div class="help-row"><span class="desc">微调数字人位置(上下左右)</span><span class="help-keys"><kbd class="key">Shift + ↑/↓/←/→</kbd></span></div>
       <div class="help-row"><span class="desc">拖动数字人(拖动后双击复位)</span><span class="help-keys"><kbd class="key">鼠标拖拽</kbd></span></div>
       <div class="help-row"><span class="desc">点击数字人:头部/身体/下摆触发不同互动,连点递进;空白处随机互动</span><span class="help-keys"><kbd class="key">单击</kbd></span></div>
 
@@ -285,7 +287,7 @@
   <script src="./assets/lib/pixi.min.js?v=7"></script>
   <script src="./assets/lib/pixi-live2d-display-cubism4.min.js?v=7"></script>
   <script src="./js/rain.js?v=1"></script>
-  <script src="./js/live2d.js?v=9"></script>
+  <script src="./js/live2d.js?v=11"></script>
   <script src="./js/voice.js?v=7"></script>
   <!-- 模型切换(本地 Ollama ↔ 云端):在 chat.js 之前加载,chat.js 依赖 window.RoleplayLLM -->
   <script src="./js/llm-switch.js?v=3"></script>
@@ -294,8 +296,8 @@
   <!-- P3：桌面宠物共享动作库/意图事件（Web 聊天页与 pet.html 同源复用） -->
   <script src="./shared/pet-core.js?v=1"></script>
   <script src="./js/pet-voice.js?v=6"></script>
-  <script src="./js/pet-subtitle.js?v=4"></script>
-  <script src="./js/chat.js?v=9"></script>
+  <script src="./js/pet-subtitle.js?v=5"></script>
+  <script src="./js/chat.js?v=11"></script>
   <!-- 知识库管理弹层(独立外置文件以符合 CSP script-src 'self') -->
   <script src="./js/knowledge.js?v=1"></script>
   <!-- 桌面宠物桥接(顶栏按钮:探测/唤起) -->

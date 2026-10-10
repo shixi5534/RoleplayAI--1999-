@@ -16,6 +16,11 @@ httpx==0.28.1
 starlette==0.40.0
 python-multipart>=0.0.6
 
+# numpy 是运行时基线依赖（`compendium_rag/retriever.py:21` 与
+# `roleplay/core/knowledge/plot_semantic.py:28` 均为模块顶层 import）。
+# 此前只挂在 pyproject 的 extras.emotion，属归类错误 —— 已同步补入两份清单。
+numpy>=1.26
+
 # QQ 渠道（NapCatQQ / OneBot v11 WebSocket 客户端）
 #   注：pyproject 未列此项，但它是 QQ 通道的运行时依赖，故保留在本清单。
 websockets>=12.0

@@ -1,0 +1,522 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP4-symmetry",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "inverse": 0.0379,
+    "inverse_raw_floor": 0.0064,
+    "exclusive": 0.0244,
+    "exclusive_raw_floor": 0.0,
+    "direction_loss_unique": 595,
+    "direction_loss_edges": 1711,
+    "direction_loss_top": [
+      {
+        "predicate": "自陈",
+        "canonical": "告知",
+        "edges": 367
+      },
+      {
+        "predicate": "隶属于",
+        "canonical": "隶属",
+        "edges": 45
+      },
+      {
+        "predicate": "指向",
+        "canonical": "关联",
+        "edges": 38
+      },
+      {
+        "predicate": "自述",
+        "canonical": "告知",
+        "edges": 37
+      },
+      {
+        "predicate": "自嘲",
+        "canonical": "提及",
+        "edges": 37
+      },
+      {
+        "predicate": "自责",
+        "canonical": "指责",
+        "edges": 35
+      },
+      {
+        "predicate": "属于",
+        "canonical": "隶属",
+        "edges": 27
+      },
+      {
+        "predicate": "反对",
+        "canonical": "对立",
+        "edges": 23
+      },
+      {
+        "predicate": "接受",
+        "canonical": "许可",
+        "edges": 23
+      },
+      {
+        "predicate": "自问",
+        "canonical": "询问",
+        "edges": 22
+      },
+      {
+        "predicate": "自称",
+        "canonical": "称呼",
+        "edges": 20
+      },
+      {
+        "predicate": "自介",
+        "canonical": "告知",
+        "edges": 20
+      },
+      {
+        "predicate": "自荐",
+        "canonical": "请求",
+        "edges": 20
+      },
+      {
+        "predicate": "向往",
+        "canonical": "希望",
+        "edges": 18
+      },
+      {
+        "predicate": "针对",
+        "canonical": "对抗",
+        "edges": 18
+      },
+      {
+        "predicate": "自比",
+        "canonical": "象征",
+        "edges": 13
+      },
+      {
+        "predicate": "坐落于",
+        "canonical": "位于",
+        "edges": 12
+      },
+      {
+        "predicate": "受命",
+        "canonical": "服从",
+        "edges": 12
+      },
+      {
+        "predicate": "扑向",
+        "canonical": "攻击",
+        "edges": 12
+      },
+      {
+        "predicate": "出自",
+        "canonical": "来自",
+        "edges": 12
+      },
+      {
+        "predicate": "藏于",
+        "canonical": "隐藏",
+        "edges": 11
+      },
+      {
+        "predicate": "比对",
+        "canonical": "象征",
+        "edges": 11
+      },
+      {
+        "predicate": "现身于",
+        "canonical": "位于",
+        "edges": 10
+      },
+      {
+        "predicate": "受托",
+        "canonical": "请求",
+        "edges": 10
+      },
+      {
+        "predicate": "自语",
+        "canonical": "对话",
+        "edges": 10
+      },
+      {
+        "predicate": "源自",
+        "canonical": "来自",
+        "edges": 9
+      },
+      {
+        "predicate": "奔向",
+        "canonical": "前往",
+        "edges": 9
+      },
+      {
+        "predicate": "对应",
+        "canonical": "关联",
+        "edges": 8
+      },
+      {
+        "predicate": "困于",
+        "canonical": "封印",
+        "edges": 8
+      },
+      {
+        "predicate": "受困",
+        "canonical": "位于",
+        "edges": 8
+      },
+      {
+        "predicate": "对比",
+        "canonical": "象征",
+        "edges": 7
+      },
+      {
+        "predicate": "走向",
+        "canonical": "前往",
+        "edges": 7
+      },
+      {
+        "predicate": "自白",
+        "canonical": "告知",
+        "edges": 7
+      },
+      {
+        "predicate": "自请",
+        "canonical": "请求",
+        "edges": 7
+      },
+      {
+        "predicate": "自报",
+        "canonical": "告知",
+        "edges": 7
+      },
+      {
+        "predicate": "自励",
+        "canonical": "希望",
+        "edges": 7
+      },
+      {
+        "predicate": "自疑",
+        "canonical": "怀疑",
+        "edges": 7
+      },
+      {
+        "predicate": "自证",
+        "canonical": "告知",
+        "edges": 7
+      },
+      {
+        "predicate": "对峙",
+        "canonical": "对立",
+        "edges": 6
+      },
+      {
+        "predicate": "供职于",
+        "canonical": "隶属",
+        "edges": 6
+      },
+      {
+        "predicate": "自任",
+        "canonical": "担任",
+        "edges": 6
+      },
+      {
+        "predicate": "自解",
+        "canonical": "告知",
+        "edges": 6
+      },
+      {
+        "predicate": "任职于",
+        "canonical": "担任",
+        "edges": 5
+      },
+      {
+        "predicate": "源于",
+        "canonical": "来自",
+        "edges": 5
+      },
+      {
+        "predicate": "应对",
+        "canonical": "对抗",
+        "edges": 5
+      },
+      {
+        "predicate": "用于",
+        "canonical": "使用",
+        "edges": 5
+      },
+      {
+        "predicate": "居于",
+        "canonical": "居住",
+        "edges": 5
+      },
+      {
+        "predicate": "受阻",
+        "canonical": "阻止",
+        "edges": 5
+      },
+      {
+        "predicate": "自承",
+        "canonical": "告知",
+        "edges": 5
+      },
+      {
+        "predicate": "施于",
+        "canonical": "影响",
+        "edges": 5
+      },
+      {
+        "predicate": "自我介绍",
+        "canonical": "告知",
+        "edges": 4
+      },
+      {
+        "predicate": "供给",
+        "canonical": "给予",
+        "edges": 4
+      },
+      {
+        "predicate": "感受",
+        "canonical": "知晓",
+        "edges": 4
+      },
+      {
+        "predicate": "服务于",
+        "canonical": "帮助",
+        "edges": 4
+      },
+      {
+        "predicate": "自喻",
+        "canonical": "是",
+        "edges": 4
+      },
+      {
+        "predicate": "系于",
+        "canonical": "持有",
+        "edges": 4
+      },
+      {
+        "predicate": "冲向",
+        "canonical": "前往",
+        "edges": 4
+      },
+      {
+        "predicate": "望向",
+        "canonical": "关注",
+        "edges": 4
+      },
+      {
+        "predicate": "受雇",
+        "canonical": "隶属",
+        "edges": 4
+      },
+      {
+        "predicate": "领受",
+        "canonical": "获得",
+        "edges": 4
+      }
+    ],
+    "detail": {
+      "grouped": {
+        "inverse_pairs": {
+          "给予↔获得": {
+            "edges_a": 755,
+            "paired": 10,
+            "rate": 0.0132
+          },
+          "指挥↔服从": {
+            "edges_a": 138,
+            "paired": 2,
+            "rate": 0.0145
+          },
+          "命令↔服从": {
+            "edges_a": 433,
+            "paired": 25,
+            "rate": 0.0577
+          },
+          "包含↔隶属": {
+            "edges_a": 161,
+            "paired": 2,
+            "rate": 0.0124
+          },
+          "告知↔知晓": {
+            "edges_a": 2803,
+            "paired": 115,
+            "rate": 0.041
+          },
+          "派遣↔服从": {
+            "edges_a": 169,
+            "paired": 15,
+            "rate": 0.0888
+          }
+        },
+        "inverse_rate": 0.0379,
+        "exclusive_detail": {
+          "信任⊥背叛": {
+            "pairs_with_either": 203,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "同伴⊥对立": {
+            "pairs_with_either": 330,
+            "conflicts": 11,
+            "rate": 0.0333
+          },
+          "同伴⊥对抗": {
+            "pairs_with_either": 290,
+            "conflicts": 6,
+            "rate": 0.0207
+          },
+          "亲属⊥对立": {
+            "pairs_with_either": 255,
+            "conflicts": 4,
+            "rate": 0.0157
+          },
+          "信任⊥对立": {
+            "pairs_with_either": 385,
+            "conflicts": 12,
+            "rate": 0.0312
+          },
+          "攻击⊥帮助": {
+            "pairs_with_either": 938,
+            "conflicts": 35,
+            "rate": 0.0373
+          },
+          "杀死⊥保护": {
+            "pairs_with_either": 322,
+            "conflicts": 4,
+            "rate": 0.0124
+          },
+          "摧毁⊥修复": {
+            "pairs_with_either": 311,
+            "conflicts": 6,
+            "rate": 0.0193
+          },
+          "指挥⊥服从": {
+            "pairs_with_either": 239,
+            "conflicts": 2,
+            "rate": 0.0084
+          }
+        },
+        "exclusive_rate": 0.0244
+      },
+      "raw": {
+        "inverse_pairs": {
+          "给予↔获得": {
+            "edges_a": 4,
+            "paired": 0,
+            "rate": 0.0
+          },
+          "指挥↔服从": {
+            "edges_a": 14,
+            "paired": 0,
+            "rate": 0.0
+          },
+          "命令↔服从": {
+            "edges_a": 37,
+            "paired": 0,
+            "rate": 0.0
+          },
+          "包含↔隶属": {
+            "edges_a": 7,
+            "paired": 0,
+            "rate": 0.0
+          },
+          "告知↔知晓": {
+            "edges_a": 236,
+            "paired": 1,
+            "rate": 0.0042
+          },
+          "派遣↔服从": {
+            "edges_a": 16,
+            "paired": 1,
+            "rate": 0.0625
+          }
+        },
+        "inverse_rate": 0.0064,
+        "exclusive_detail": {
+          "信任⊥背叛": {
+            "pairs_with_either": 25,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "同伴⊥对立": {
+            "pairs_with_either": 0,
+            "conflicts": 0,
+            "rate": null
+          },
+          "同伴⊥对抗": {
+            "pairs_with_either": 4,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "亲属⊥对立": {
+            "pairs_with_either": 0,
+            "conflicts": 0,
+            "rate": null
+          },
+          "信任⊥对立": {
+            "pairs_with_either": 20,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "攻击⊥帮助": {
+            "pairs_with_either": 12,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "杀死⊥保护": {
+            "pairs_with_either": 23,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "摧毁⊥修复": {
+            "pairs_with_either": 16,
+            "conflicts": 0,
+            "rate": 0.0
+          },
+          "指挥⊥服从": {
+            "pairs_with_either": 17,
+            "conflicts": 0,
+            "rate": 0.0
+          }
+        },
+        "exclusive_rate": 0.0
+      }
+    },
+    "n_edges": 30269
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L4.1a 方向对成对完整率",
+      "target": "≥0.95",
+      "actual": 0.0379,
+      "verdict": "FAIL",
+      "reason": "归组口径 inverse_pairs=[['给予', '获得'], ['指挥', '服从'], ['命令', '服从'], ['包含', '隶属'], ['告知', '知晓'], ['派遣', '服从']]；原始谓语下限 0.0064",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L4.1b 互斥谓语共存率",
+      "target": "≤0.05",
+      "actual": 0.0244,
+      "verdict": "PASS",
+      "reason": "同一实体对上同时挂互斥谓语；原始谓语下限 0.0",
+      "root_cause_bucket": "数据层"
+    }
+  ],
+  "per_case": [],
+  "artifacts": [
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\inverse_predicate_map.json",
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\predicate_grouping_v1.json"
+  ]
+}

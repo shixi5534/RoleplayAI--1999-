@@ -125,6 +125,11 @@ class Settings:
     # ── 检索 ──
     ppr_damping: float = field(default_factory=lambda: _env_float("CMPRAG_PPR_DAMPING", 0.85))
     ppr_max_iter: int = field(default_factory=lambda: _env_int("CMPRAG_PPR_MAX_ITER", 50))
+    # 图通道保留的边数上限。2026-10-09 前是 retriever 里的字面量 30，**从未被观测过**：
+    # P3 步骤1 抽样 24 题里 23 题有种子，这 23 题的返回边数**全部正好等于 30**
+    # （触顶率 23/23 = 100%），即这个截断在每题上都在切东西。接成参数 ≠ 调参数——
+    # 默认值必须仍是 30；真要改就得按 §4bis 冷启动重校准，并两档同报。
+    graph_max_edges: int = field(default_factory=lambda: _env_int("CMPRAG_GRAPH_MAX_EDGES", 30))
     top_k: int = field(default_factory=lambda: _env_int("CMPRAG_TOP_K", 6))
     entity_link_top: int = field(default_factory=lambda: _env_int("CMPRAG_ENTITY_LINK_TOP", 6))
     seed_score_threshold: float = field(

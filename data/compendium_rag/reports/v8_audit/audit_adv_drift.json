@@ -1,0 +1,98 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP5",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "characters": 8,
+    "degraded": [
+      {
+        "character": "37",
+        "turn1": 4.2,
+        "turn50": 3.0
+      },
+      {
+        "character": "APPLe",
+        "turn1": 5.0,
+        "turn50": 3.0
+      },
+      {
+        "character": "X",
+        "turn1": 4.2,
+        "turn50": 3.6
+      },
+      {
+        "character": "十四行诗",
+        "turn1": 4.4,
+        "turn50": 3.4
+      },
+      {
+        "character": "塞梅尔维斯",
+        "turn1": 5.0,
+        "turn50": 3.4
+      },
+      {
+        "character": "星锑",
+        "turn1": 5.0,
+        "turn50": 3.6
+      },
+      {
+        "character": "维尔汀",
+        "turn1": 5.0,
+        "turn50": 3.4
+      }
+    ],
+    "degradation_rate": 0.875,
+    "n_judged": 120,
+    "checkpoint_mean_persona": {
+      "1": 4.65,
+      "25": 3.8,
+      "50": 3.425
+    },
+    "checkpoint_n": {
+      "1": 40,
+      "25": 40,
+      "50": 40
+    },
+    "checkpoints": [
+      "1",
+      "25",
+      "50"
+    ],
+    "characters_comparable": 8
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L5.2 角色漂移退化率（50 轮长上下文回放代理）",
+      "target": "≤0.10",
+      "actual": 0.875,
+      "verdict": "FAIL",
+      "reason": "第 50 轮探针 persona 较第 1 轮跌幅>10% 的角色占比；可比角色 8/8（须同时有 1 与 50 两轮判分）。人设卡（档案+已知关系）在三个检查点**完全同文**，只有 history 长度在变，否则第 1 轮信息量本就少于第 50 轮，比的是喂了多少材料而不是漂移。**注意**：src/roleplay 与 compendium_rag 之间没有运行时通路，本项是「长上下文回放」代理口径，不是真·多轮运行时漂移",
+      "root_cause_bucket": "生成层"
+    },
+    {
+      "gate": "L5.2b 真·运行时多轮漂移",
+      "target": "≥50 轮在线会话",
+      "actual": "无通路",
+      "verdict": "N/A",
+      "reason": "src/roleplay 零 import compendium_rag，正典库未接入对话运行时；登记豁免并从层分母剔除",
+      "root_cause_bucket": "生成层"
+    }
+  ],
+  "per_case": [],
+  "artifacts": []
+}

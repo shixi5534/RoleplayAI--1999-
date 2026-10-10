@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="margin:0"><div id="stage"></div>
+<script src="./assets/lib/pixi.min.js"></script>
+<script src="./assets/lib/live2dcubismcore.min.js"></script>
+<script src="./assets/lib/pixi-live2d-display-cubism4.min.js"></script>
+<script>
+window.__ready=false; window.__err=null;
+(async () => {
+ try {
+  const L=window.PIXI.live2d; L.startUpCubism4();
+  const app=new PIXI.Application({width:700,height:700,backgroundAlpha:0,antialias:false,autoDensity:true,resolution:1});
+  document.getElementById("stage").appendChild(app.view);
+  window.__app=app;
+  window.__ready=true;
+ } catch(e){ window.__err=String(e&&e.stack||e); }
+})();
+
+window.__load = async (url) => {
+  const L=window.PIXI.live2d;
+  if (window.__model) { try{ window.__app.stage.removeChild(window.__model); window.__model.destroy(); }catch(e){} }
+  const model = await L.Live2DModel.from(url,{autoInteract:false});
+  window.__app.stage.addChild(model);
+  const im=model.internalModel, cm=im.coreModel;
+  window.__model=model; window.__im=im; window.__cm=cm;
+  window.__ids=Array.from(cm._model.parameters.ids);
+  window.__defs=[]; for(let i=0;i<window.__ids.length;i++) window.__defs.push(cm.getParameterDefaultValue(i));
+  model.anchor.set(0,0); model.cullable=false; model.autoUpdate=false;
+  im.updateFocus=()=>{}; im.updateNaturalMovements=()=>{};
+  try{ im.physics=null; }catch(e){}
+  try{ im.pose=null; }catch(e){}
+  try{ im.motionManager.stopAllMotions(); }catch(e){}
+  try{ im.expressionManager=null; }catch(e){}
+
+  // 从 model3.json 读回 EyeBlink / LipSync 组（这正是本次修复的内容）
+  const m3 = await (await fetch(url)).json();
+  const groups = {};
+  for (const g of (m3.Groups||[])) groups[g.Name] = g.Ids;
+  window.__groups = groups;
+
+  // 内容包围盒 + 头部特写取景
+  im.update(16.7, 0);
+  let minX=1e18,minY=1e18,maxX=-1e18,maxY=-1e18;
+  const n=cm.getDrawableCount();
+  for(let i=0;i<n;i++){ let v; try{ v=im.getDrawableVertices(i);}catch(e){continue;}
+    if(!v||!v.length) continue;
+    for(let j=0;j<v.length;j+=2){ const x=v[j],y=v[j+1];
+      if(x<minX)minX=x; if(x>maxX)maxX=x; if(y<minY)minY=y; if(y>maxY)maxY=y; } }
+  const c=[minX,minY,maxX-minX,maxY-minY];
+  const scale = 700 / (c[3]*0.55);      // 头部约 55% 高度铺满画布
+  model.scale.set(scale);
+  model.x = (700 - c[2]*scale)/2 - c[0]*scale;
+  model.y = 40 - c[1]*scale;
+  window.__resetParams();
+  return { groups, scale:+scale.toFixed(4), content:c.map(Math.round), drawables:n };
+};
+
+window.__resetParams=()=>{ const cm=window.__cm;
+  for(let i=0;i<window.__ids.length;i++) cm.setParameterValueByIndex(i, window.__defs[i]);
+  window.__im.update(16.7, 0); };
+
+/** 复刻库的眨眼帧，并可选地强制覆盖参数。
+ *  时序（两个坑都在这里）：
+ *   1) coreModel 每帧 saveParameters() → 各子系统 → cm.update() → loadParameters()，
+ *      末尾的 loadParameters 会还原成快照值；
+ *   2) 眨眼子系统自己也会写 EyeBlink.Ids —— 若覆盖值写在它之前，会被它冲掉
+ *      （实测：参数回读是 0，但画面与睁眼完全一致）。
+ *  因此覆盖必须放在【所有子系统之后、cm.update() 之前】，才能左右本帧绘制。 */
+window.__blinkStep=(dtMs, override)=>{
+  const im=window.__im, cm=window.__cm;
+  const ran = !im.motionManager.isFinished();
+  cm.saveParameters();
+  let used = false;
+  if(!ran && im.eyeBlink){ im.eyeBlink.updateParameters(cm, dtMs/1000); used = true; }
+  im.updateFocus(); im.updateNaturalMovements(dtMs, 0);
+  if(im.physics) im.physics.evaluate(cm, dtMs/1000);
+  if(im.pose) im.pose.updateParameters(cm, dtMs/1000);
+  // 覆盖点：必须在 cm.update() 之前、所有子系统之后
+  if(override) for(const [id,v] of override){ const i=window.__ids.indexOf(id); if(i>=0) cm.setParameterValueByIndex(i,v); }
+  cm.update(); cm.loadParameters();
+  return used;
+};
+window.__blinkVals=()=>{ const g=window.__groups.EyeBlink||[]; const cm=window.__cm; const o={};
+  for(const id of g) o[id]=+cm.getParameterValueById(id).toFixed(3); return o; };
+window.__lipVals=()=>{ const g=window.__groups.LipSync||[]; const cm=window.__cm; const o={};
+  for(const id of g) o[id]=+cm.getParameterValueById(id).toFixed(3); return o; };
+window.__png=()=>{
+  window.__app.renderer.render(window.__app.stage);
+  const gl=window.__app.renderer.gl,w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;
+  const pix=new Uint8Array(w*h*4); gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,pix);
+  const c=document.createElement("canvas"); c.width=w; c.height=h;
+  const ctx=c.getContext("2d"); const img=ctx.createImageData(w,h);
+  for(let y=0;y<h;y++) for(let x=0;x<w;x++){
+    const src=((h-1-y)*w+x)*4, dst=(y*w+x)*4;
+    img.data[dst]=pix[src]; img.data[dst+1]=pix[src+1]; img.data[dst+2]=pix[src+2]; img.data[dst+3]=pix[src+3]; }
+  ctx.putImageData(img,0,0); return c.toDataURL("image/png");
+};
+</script></body></html>

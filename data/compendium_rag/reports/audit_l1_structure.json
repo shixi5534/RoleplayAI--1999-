@@ -1,0 +1,373 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP1-structure",
+  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "graph": {
+      "entities": 7033,
+      "edges": 27111,
+      "role_entities": 2023,
+      "isolated_entities": 1133,
+      "isolated_ratio": 0.1611,
+      "avg_degree": 7.71,
+      "components_total": 1184,
+      "components_nontrivial": 51,
+      "largest_cc_nodes": 5790,
+      "largest_cc_ratio": 0.8233
+    },
+    "isolation_attribution": {
+      "status": "unavailable",
+      "graph_sha256_16": "fb7322dd4f558e7c",
+      "landing": "stale:7cac5867e8c80879",
+      "cache_rel": "stale:7cac5867e8c80879"
+    },
+    "relation_vocab": {
+      "unique_predicates": 1609,
+      "strict_canonical_rate": 0.8429,
+      "classifiable_rate": 0.848,
+      "reason_distribution": {
+        "canonical": 22853,
+        "review:unmapped": 4122,
+        "synonym": 132,
+        "rule": 4
+      },
+      "top_relations": [
+        [
+          "告知",
+          2784
+        ],
+        [
+          "询问",
+          955
+        ],
+        [
+          "发现",
+          927
+        ],
+        [
+          "提及",
+          913
+        ],
+        [
+          "请求",
+          911
+        ],
+        [
+          "指责",
+          765
+        ],
+        [
+          "给予",
+          755
+        ],
+        [
+          "怀疑",
+          629
+        ],
+        [
+          "前往",
+          625
+        ],
+        [
+          "知晓",
+          613
+        ],
+        [
+          "帮助",
+          600
+        ],
+        [
+          "研究",
+          598
+        ],
+        [
+          "离开",
+          444
+        ],
+        [
+          "阻止",
+          439
+        ],
+        [
+          "命令",
+          431
+        ],
+        [
+          "攻击",
+          417
+        ],
+        [
+          "警告",
+          394
+        ],
+        [
+          "指导",
+          392
+        ],
+        [
+          "使用",
+          366
+        ],
+        [
+          "约定",
+          356
+        ]
+      ],
+      "concentration": {
+        "singleton_predicates": 1110,
+        "singleton_rate_of_predicates": 0.689869,
+        "singleton_edges": 1110,
+        "top10_edge_coverage": 0.364317,
+        "unmapped_edges": 4122,
+        "unmapped_distinct": 1465
+      }
+    }
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L1.3 孤立节点占比",
+      "target": "≤0.10",
+      "actual": 0.1611,
+      "verdict": "FAIL",
+      "reason": "根因**不是**『名不落地』——v9-P2 前置诊断实测：孤立 1133 个里名字逐字在语料的占 未测，名不落地的孤点只有 未测 个；另有 未测 个（占孤点 未测）在抽取缓存里**从未进过任何关系三元组**——图上没有它们是无依据的，补边=造事实，删点=改分母，两条都是禁手。故 ≤0.10 在 Track 1（零云端、不造边）下结构性不可达，按 D3 先例维持原口径判 FAIL 并报结构上界；原表述『1089/7033 名不落地是孤立率主因』已被实测推翻，那条读数治的是 name-key 死键与实体精确率，不是连通性。",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.3 平均度数",
+      "target": "≥2.5",
+      "actual": 7.71,
+      "verdict": "PASS",
+      "reason": "",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.3 连通分量数≤1.5×角色数",
+      "target": "≤1.5×2023",
+      "actual": {
+        "components_total": 1184,
+        "nontrivial": 51,
+        "largest_cc_ratio": 0.8233
+      },
+      "verdict": "N/A",
+      "reason": "原门槛为『每角色一子图』架构设计；本库是单张连通大图，1184 分量中 1133 个是孤立点，该门槛无判别力。以最大分量覆盖率+非平凡分量数为替代读数（不设门槛），最终裁决留用户。",
+      "root_cause_bucket": "口径替代"
+    },
+    {
+      "gate": "L1.1 实体类型合规",
+      "target": "=1.00（6 类受控）",
+      "actual": {
+        "violation": 0,
+        "types": {
+          "角色": 2023,
+          "物品": 2004,
+          "概念": 1207,
+          "地点": 1134,
+          "组织": 338,
+          "事件": 327
+        }
+      },
+      "verdict": "PASS",
+      "reason": "extract._norm_type 构造保证收敛（非抽样结论）",
+      "root_cause_bucket": ""
+    },
+    {
+      "gate": "L1.2 关系类型合规率（严格：原文谓语∈77 canonical）",
+      "target": "≥1.00",
+      "actual": 0.8429,
+      "verdict": "FAIL",
+      "reason": "根因=数据层：extract.py SYSTEM_PROMPT 允许 2~6 字自由谓语（规则 5）。v9-P1 已接入谓语受控化（relation_norm + p1_apply 就地落盘），0.0676→0.8429；剩余缺口是 1465 种未映射长尾（占边 0.1520），把长尾逐个提拔进 canonical 只会把自由文本换个形式重造，故不追此指标。不可刷的第二口径见 metrics.relation_vocab.concentration。",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L1.4 层级分配准确率",
+      "target": "≥0.90",
+      "actual": null,
+      "verdict": "N/A",
+      "reason": "compendium 图为单层平坦结构，无 世界→全局角色→局部场景→个人记忆 tier；对不存在的结构判负=惩罚未做的设计决策，判正=伪造覆盖。豁免并从 L1 分母剔除；信息量由实体类型分类准确率（WP1-pr）替代。",
+      "root_cause_bucket": "结构不存在"
+    }
+  ],
+  "per_case": [
+    {
+      "sample": "relation_review_examples",
+      "items": [
+        {
+          "relation": "搬走",
+          "chunk_id": "mainline__101_在我们的时代里:2.0.0"
+        },
+        {
+          "relation": "问候",
+          "chunk_id": "mainline__101_在我们的时代里:7.0.1"
+        },
+        {
+          "relation": "被灌服",
+          "chunk_id": "mainline__101_在我们的时代里:13.1.0"
+        },
+        {
+          "relation": "选拔",
+          "chunk_id": "mainline__101_在我们的时代里:15.0.0"
+        },
+        {
+          "relation": "以神秘术留存",
+          "chunk_id": "mainline__102_夜色温柔:5.1.1"
+        },
+        {
+          "relation": "抉择",
+          "chunk_id": "mainline__102_夜色温柔:7.2.0"
+        },
+        {
+          "relation": "试毒于",
+          "chunk_id": "mainline__102_夜色温柔:10.2.0"
+        },
+        {
+          "relation": "携来",
+          "chunk_id": "mainline__102_夜色温柔:13.1.0"
+        },
+        {
+          "relation": "继承",
+          "chunk_id": "mainline__102_夜色温柔:14.0.0"
+        },
+        {
+          "relation": "反驳",
+          "chunk_id": "mainline__103_故事一无所有:0.0.0"
+        },
+        {
+          "relation": "核验",
+          "chunk_id": "mainline__103_故事一无所有:2.0.0"
+        },
+        {
+          "relation": "反驳",
+          "chunk_id": "mainline__103_故事一无所有:3.0.1"
+        },
+        {
+          "relation": "选中",
+          "chunk_id": "mainline__103_故事一无所有:5.0.0"
+        },
+        {
+          "relation": "畏惧",
+          "chunk_id": "mainline__103_故事一无所有:5.0.2"
+        },
+        {
+          "relation": "继承",
+          "chunk_id": "mainline__103_故事一无所有:13.0.0"
+        },
+        {
+          "relation": "引开",
+          "chunk_id": "mainline__103_故事一无所有:14.1.0"
+        },
+        {
+          "relation": "留门",
+          "chunk_id": "mainline__103_故事一无所有:14.1.1"
+        },
+        {
+          "relation": "撒下",
+          "chunk_id": "mainline__104_老虎的金黄:1.0.0"
+        },
+        {
+          "relation": "应允",
+          "chunk_id": "mainline__104_老虎的金黄:3.2.0"
+        },
+        {
+          "relation": "意见一致于",
+          "chunk_id": "mainline__104_老虎的金黄:3.2.1"
+        },
+        {
+          "relation": "悬起",
+          "chunk_id": "mainline__104_老虎的金黄:5.0.2"
+        },
+        {
+          "relation": "统计",
+          "chunk_id": "mainline__104_老虎的金黄:10.1.0"
+        },
+        {
+          "relation": "载走",
+          "chunk_id": "mainline__104_老虎的金黄:20.2.0"
+        },
+        {
+          "relation": "题写",
+          "chunk_id": "mainline__104_老虎的金黄:22.0.0"
+        },
+        {
+          "relation": "触怒",
+          "chunk_id": "mainline__105_洞穴的囚徒:6.1.1"
+        },
+        {
+          "relation": "打翻",
+          "chunk_id": "mainline__105_洞穴的囚徒:6.1.1"
+        },
+        {
+          "relation": "反驳",
+          "chunk_id": "mainline__105_洞穴的囚徒:10.0.0"
+        },
+        {
+          "relation": "反驳",
+          "chunk_id": "mainline__105_洞穴的囚徒:11.1.0"
+        },
+        {
+          "relation": "反驳",
+          "chunk_id": "mainline__105_洞穴的囚徒:11.1.1"
+        },
+        {
+          "relation": "泄露",
+          "chunk_id": "mainline__105_洞穴的囚徒:12.0.0"
+        },
+        {
+          "relation": "泄露",
+          "chunk_id": "mainline__105_洞穴的囚徒:12.0.1"
+        },
+        {
+          "relation": "否认",
+          "chunk_id": "mainline__105_洞穴的囚徒:13.0.2"
+        },
+        {
+          "relation": "停用",
+          "chunk_id": "mainline__105_洞穴的囚徒:15.1.0"
+        },
+        {
+          "relation": "称颂",
+          "chunk_id": "mainline__105_洞穴的囚徒:16.0.1"
+        },
+        {
+          "relation": "界定",
+          "chunk_id": "mainline__105_洞穴的囚徒:16.0.2"
+        },
+        {
+          "relation": "扣费",
+          "chunk_id": "mainline__106_今夜星光灿烂:1.0.0"
+        },
+        {
+          "relation": "切开",
+          "chunk_id": "mainline__106_今夜星光灿烂:2.1.0"
+        },
+        {
+          "relation": "迟到",
+          "chunk_id": "mainline__106_今夜星光灿烂:2.1.0"
+        },
+        {
+          "relation": "被施",
+          "chunk_id": "mainline__106_今夜星光灿烂:2.2.0"
+        },
+        {
+          "relation": "忙碌于",
+          "chunk_id": "mainline__106_今夜星光灿烂:2.2.1"
+        }
+      ]
+    }
+  ],
+  "artifacts": []
+}

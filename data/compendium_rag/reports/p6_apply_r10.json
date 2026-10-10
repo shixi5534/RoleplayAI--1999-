@@ -1,0 +1,136 @@
+{
+  "schema": "compendium_rag.p6_apply_r10/v1",
+  "generated_at": "2026-10-09T22:40:00+08:00",
+  "task": "P6 图谱修复落盘：apply data/compendium_rag/repairs_v9/proposal.json 的 r10 批（6 条 L4.5 delete_edge + 1 条 keep_with_note），version-tag r10",
+  "executor": "Lead（主窗口直接执行；未跑 cli rebuild/extract，未联网，未调云端 LLM，无 git 写操作）",
+  "env": {
+    "cwd": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai",
+    "python": ".venv/Scripts/python.exe",
+    "pythonpath": "src",
+    "python_flag": "-X utf8",
+    "network": "none"
+  },
+  "steps": {
+    "1_precondition": {
+      "status": "PASS",
+      "expected": {
+        "sha16": "329671bba0988c68",
+        "bytes": 11577960,
+        "entities": 7033,
+        "edges": 27117,
+        "fingerprint": "14daf1bbfa407388",
+        "normalizer": "n2"
+      },
+      "actual": {
+        "sha16": "329671bba0988c68",
+        "bytes": 11577960,
+        "entities": 7033,
+        "edges": 27117,
+        "fingerprint": "14daf1bbfa407388",
+        "normalizer": "n2"
+      },
+      "note": "修复前实测 sha16/字节/实体/边/指纹/归一化器 六项与提案 meta.graph_state 完全一致；Lead 亲测，非引用子代理自述。"
+    },
+    "2_dry_run": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v9/proposal.json",
+      "stdout_key_lines": [
+        "条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0",
+        "实体: 7033 -> 7033 | 边: 27117 -> 27111",
+        "[DRY-RUN] 全绿。加 --apply 才写盘。"
+      ],
+      "report": "data/compendium_rag/reports/p6_r10_proposal_dryrun.json"
+    },
+    "3_apply": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v9/proposal.json --apply --version-tag r10",
+      "stdout": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 7 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27117 -> 27111\n[APPLIED] 备份 -> ...backups\\graph.json.prev.r10；新图 -> ...graph.json\n          落盘 SHA16 = fb7322dd4f558e7c（格式 indent=2 + CRLF，与 GraphStore.save 一致）",
+      "backup": {
+        "path": "data/compendium_rag/backups/graph.json.prev.r10",
+        "exists": true,
+        "bytes": 11577960,
+        "sha16": "329671bba0988c68",
+        "note": "= 修复前状态，与步骤 1 实测互相印证"
+      }
+    },
+    "4_new_state": {
+      "status": "PASS",
+      "after_sha16": "fb7322dd4f558e7c",
+      "after_bytes": 11576178,
+      "after_entities": 7033,
+      "after_edges": 27111,
+      "after_fingerprint": "14daf1bbfa407388",
+      "after_normalizer": "n2",
+      "delta_edges": -6,
+      "format_check": {
+        "crlf_lines": 405074,
+        "lone_lf": 0,
+        "note": "indent=2 + CRLF 保持，无 LF 混入（历史事故：只写 LF 曾把 12299423→11865337 字节）"
+      },
+      "edge_set_diff_vs_prev": {
+        "removed": 6,
+        "added": 0,
+        "note": "Lead 独立做边集 diff（非引用报告）：与提案 6 条 delete_edge 一一对应，无附带增删。"
+      },
+      "all_6_gone": true,
+      "deleted_triples": [
+        "报童-[告知]->贪婪杰克",
+        "报童-[告知]->佩恩",
+        "小鹿手偶-[前往]->金蜜儿",
+        "安妮-[转变]->小鹿手偶",
+        "安妮-[指责]->恐怖通",
+        "恐怖通-[指责]->安妮"
+      ],
+      "keep_with_note_kept": {
+        "triple": "Z-[告知]->安洁",
+        "still_present": true,
+        "note": "R10-L45-007 为 no-op，落盘后确认仍在图中"
+      },
+      "fingerprint_unchanged_reason": "fingerprint_of() 只吃 SCHEMA_VERSION/corpus_fp/llm_model/PROMPT_VERSION/chunk_chars/NORMALIZER_VERSION，与边集无关；修边不动指纹。"
+    },
+    "5_audit_common_update": {
+      "status": "PASS",
+      "file": "scripts/audit_common.py",
+      "change": "新增 V9P4_GRAPH_SHA16 = \"fb7322dd4f558e7c\"（含 2 行注释），并把 FROZEN_GRAPH_SHA16 从 V9P3 改指 V9P4；V8_GRAPH_SHA16 / V9P1 / V9P2 / V9P3 四个历史锚点均未改动。"
+    }
+  },
+  "blind_review_provenance": {
+    "source_panel": "data/knowledge/_audit/l4_multiscene_r9",
+    "arm_map_graph_sha16": "329671bba0988c68",
+    "mismatch_edges_in_proposal": 6,
+    "excluded": 1,
+    "note": "r10 的 6 条删除对应 l4_multiscene_r9 面板报出的 mismatch；第 7 条 Z-[告知]->安洁 因『原文成立、仅 evidence 句错引』按宁删勿猜登记 keep_with_note + needs_human。"
+  },
+  "cross_panel_corroboration": {
+    "note": "Lead 实测（非引用）：这 6 条边中的 4 条在不同轮次、不同判分者、边集不同的面板上被独立重复报出，r9 并非孤证。",
+    "evidence": {
+      "安妮-[指责]->恐怖通": "在 l4_multiscene_p1base、l4_multiscene_r8、l4_multiscene_r9 三个面板均报 mismatch（欣常误判为指责）",
+      "恐怖通-[指责]->安妮": "在 l4_multiscene_p1base、l4_multiscene_r8、l4_multiscene_r9 三个面板均报 mismatch（兴奋感叹误判为指责）",
+      "安妮-[转变]->小鹿手偶": "在 l4_multiscene_r8、l4_multiscene_r9 两个面板报 mismatch",
+      "报童-[告知]->贪婪杰克 / 佩恩": "r9 报出；l4_multiscene（v8 期）报的是同块另一条 艾弗森-[提及]->崔斯特",
+      "Z-[告知]->安洁": "l4_multiscene（v8 期）与 r9 均指出 evidence 句错引（『我会叮嘱他们的』出自电话段）；r8b 明写『证据偏弱但方向对象不误』者判 4 分未计错 ⇒ 故 keep"
+    }
+  },
+  "l45_expectation_analysis": {
+    "expected_direction": "6 条删除应使受影响块的 n_mismatch 下降（:0.1.0 2->0、:15.1.1 2->0、:13.0.1 1->0、:2.0.1 1->0、:17.0.0 1->0）",
+    "not_measured": "未重新盲评（红线：不联网、不调云端 LLM），L4.5 分数未在本报告中重新计量，需另派判分面板。",
+    "gate_status": "L4.5 门槛 4.0 未在本批变更后重测；l4_multiscene_r9 面板读数为 ALL 3.9355（FAIL，落在 ±0.16~0.21 判分噪声内）"
+  },
+  "regression_note": {
+    "three_main_numbers": "本批为纯删边，三主数与 r9 一致（300cn 167/196、blind206 185/206、gen120 119/120）；未在本报告内重跑，依据是 6 条被删边均不参与 hit@6 打分路径（谓词只在渲染时读）。",
+    "audit_wp0_env": "scripts/audit_wp0_env.py 的 graph_sha_vs_v8 硬编 AC.V8_GRAPH_SHA16、v8_three_main_numbers 对比 v8 自锁数字，故在任何 v9 图上必然 FAIL；**不能当 P6/P7 回归门**。"
+  },
+  "deviations": [
+    "任务交办原写『r10 提案待裁决』；实际 Lead 在执行前先收到子代理 b4caf79b 的关键更正（7 条出处是 l4_multiscene_r9 而非 r8b），并独立复核了该更正，确认为真。",
+    "R10-L45-007 未删：删它会抹掉在 17.0.0 与 17.0.1 均成立的 Z->安洁 关系；工具无 update_edge，故只能 keep_with_note。",
+    "附带观察（未据此改图）：图上另有独立实体『女性调查员』（mentions=1，仅 0.0.0），与『安洁』（mentions=4，含 17.0.0/17.0.1）疑为同一角色重复建实体，可能是该边被反复判错张的根因，建议另案仲裁。"
+  ],
+  "files_written": [
+    "data/compendium_rag/graph.json（就地改写）",
+    "data/compendium_rag/backups/graph.json.prev.r10（新建）",
+    "scripts/audit_common.py（手改，+4 行 -0 行）",
+    "data/compendium_rag/reports/p6_apply_r10.json（本文件）"
+  ]
+}

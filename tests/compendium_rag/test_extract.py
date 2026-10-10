@@ -274,7 +274,9 @@ def test_extraction_roundtrip():
     back = Extraction.from_dict(ex.to_dict())
     assert len(back.entities) == len(ex.entities)
     assert len(back.relations) == len(ex.relations)
-    assert back.relations[0].relation == "隶属于"
+    # n2 起 normalize 会把「隶属于」并成 canonical「隶属」，这里只验落盘往返保真
+    assert ex.relations[0].relation == "隶属"
+    assert back.relations[0].relation == ex.relations[0].relation
 
 
 # ── 提示词与缓存 ──

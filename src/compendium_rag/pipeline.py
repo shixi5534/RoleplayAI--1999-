@@ -18,8 +18,8 @@ from .config import Settings, get_settings
 from .corpus import (corpus_fingerprint, corpus_stats, load_corpus,
                      load_corpus_json, save_corpus)
 from .embedder import OllamaEmbedder
-from .extract import (PROMPT_VERSION, Extraction, ExtractionCache, cache_key,
-                      extract_chunk_raw, normalize)
+from .extract import (NORMALIZER_VERSION, PROMPT_VERSION, Extraction,
+                      ExtractionCache, cache_key, extract_chunk_raw, normalize)
 from .graph_store import GraphStore, fingerprint_of
 from .llm import CloudLLM
 from .retriever import ChunkIndex, EntityVectorIndex, GraphRetriever
@@ -202,8 +202,9 @@ def extraction_summary(results: dict[str, Extraction]) -> dict:
 def build_graph(settings: Settings, chunks: list[Chunk],
                 results: dict[str, Extraction]) -> tuple[GraphStore, dict]:
     fp = fingerprint_of(corpus_fingerprint(load_chapters(settings)),
-                        settings.llm_model, PROMPT_VERSION, settings.chunk_chars)
-    g = GraphStore(fingerprint=fp)
+                        settings.llm_model, PROMPT_VERSION, settings.chunk_chars,
+                        NORMALIZER_VERSION)
+    g = GraphStore(fingerprint=fp, normalizer=NORMALIZER_VERSION)
     per_chunk = [(c.chunk_id, results.get(c.chunk_id)) for c in chunks]
     stats = g.build_from_extractions(
         per_chunk, min_confidence=settings.edge_min_confidence)
@@ -335,7 +336,8 @@ class KnowledgeBase:
             weights={"graph": s.graph_weight, "mention": 1.0,
                      "vector": s.vector_weight},
             lex_weight=s.lex_weight, lex_top=s.lex_top, lex_first=s.lex_first,
-            rrf_k=s.rrf_k)
+            rrf_k=s.rrf_k, ppr_damping=s.ppr_damping, ppr_max_iter=s.ppr_max_iter,
+            graph_max_edges=s.graph_max_edges)
         return res.to_dict()
 
     def context(self, query_res: dict, top_k: int | None = None) -> str:
@@ -343,11 +345,11 @@ class KnowledgeBase:
         rr = RetrievalResult(query=query_res.get("query", ""))
         rr.seeds = [Seed(s["eid"], s["name"], s["score"], s["how"])
                     for s in query_res.get("seeds", [])]
-        rr.edges = [(e["src"], e["relation"], e["dst"], e["ppr"])
+        rr.edges = [(e["src"], e["relation"], e["dst"], e["edge_score"])
                     for e in query_res.get("edges", [])]
         from .retriever import Evidence
         rr.evidence = [Evidence(e["chunk_id"], e["score"], e.get("channels", {}),
-                                e.get("ppr", 0.0), e.get("reasons", []))
+                                e.get("graph_score", 0.0), e.get("reasons", []))
                        for e in query_res.get("evidence", [])]
         s = self.settings
         return self.retriever.context(rr, top_k=top_k or s.top_k,
@@ -369,10 +371,18 @@ def load_kb(settings: Settings | None = None) -> KnowledgeBase:
 
 
 def verify_fingerprint(settings: Settings, graph: GraphStore) -> tuple[bool, str]:
-    chunks = load_chunks(settings)
-    fp = fingerprint_of(corpus_fingerprint(load_chapters(settings)),
-                        settings.llm_model, PROMPT_VERSION, settings.chunk_chars)
+    corpus_fp = corpus_fingerprint(load_chapters(settings))
+    fp = fingerprint_of(corpus_fp, settings.llm_model, PROMPT_VERSION,
+                        settings.chunk_chars, NORMALIZER_VERSION)
     ok, why = graph.check_fingerprint(fp)
-    if ok and chunks:
-        pass
-    return ok, why
+    if ok:
+        return True, why
+    # 归一化版本入指纹之前落盘的旧图：用 legacy 四要素指纹放行，但必须**说出来**。
+    # 否则 n1 图与 n2 图会被当成同一张——审查期实测过这个盲区（改归一化、图内容
+    # 全变、指纹不动）。
+    legacy = fingerprint_of(corpus_fp, settings.llm_model, PROMPT_VERSION,
+                            settings.chunk_chars)
+    if not graph.normalizer and graph.fingerprint == legacy:
+        return True, (f"ok（legacy 指纹：该图落盘于 NORMALIZER_VERSION 入指纹之前，"
+                      f"归一化版本未知；重建后将标记为 {NORMALIZER_VERSION}）")
+    return False, why

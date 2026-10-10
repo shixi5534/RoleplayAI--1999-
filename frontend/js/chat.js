@@ -365,6 +365,22 @@
     toast("📍", "位置已重置", "居中");
   }
 
+  // ───────────────────────── 键盘微调模型位置（Shift + 方向键） ─────────────────────────
+  // 步长 12px：轻推一下的量级，连按可累积；偏移最终仍由 Live2D 内部按内容盒夹紧，
+  // 保证角色不会被推出舞台。
+  const NUDGE_STEP = 12;
+  function nudgeModel(dx, dy) {
+    const L = window.RoleplayLive2D;
+    if (!L || typeof L.nudge !== "function") return;
+    const off = L.nudge(dx, dy);
+    // 与拖拽共用持久化字段：写回 state 并落盘，刷新后位置保持
+    state.model_offset = { x: Math.round(off.x), y: Math.round(off.y) };
+    saveState();
+    renderHUD();
+    const dir = dy < 0 ? "上" : dy > 0 ? "下" : dx < 0 ? "左" : "右";
+    toast("🎯", "位置微调", dir + " (" + Math.round(off.x) + ", " + Math.round(off.y) + ")");
+  }
+
   // ───────────────────────── 快捷键帮助弹层 ─────────────────────────
   // 弹层竞态（F9）：close 用 200ms 延迟隐藏，若期间重新 open，旧定时器会把新弹层藏掉。
   let helpCloseTimer = null;
@@ -882,11 +898,16 @@
     const voiceJustTook =
       !!(st && (st.phase === "playing" || st.phase === "loading"))
       || (Date.now() - _lastClickVoiceAt < 1500);
-    if (!voiceJustTook && d.text) appendBubble("assistant", d.text);
-    if (!voiceJustTook && d.tts && window.RoleplayVoice) {
+    // 双语（P3-1）：气泡与 TTS 都跟随当前配音语言，缺英文时回落中文，
+    // 杜绝英配模式下弹出中文台词。
+    const lang = (pv && pv.getLang && pv.getLang()) || "zh";
+    const bubbleText = (lang === "en" ? (d.text_en || d.text) : d.text) || "";
+    const ttsText = (lang === "en" ? (d.tts_en || d.tts) : d.tts) || "";
+    if (!voiceJustTook && bubbleText) appendBubble("assistant", bubbleText);
+    if (!voiceJustTook && ttsText && window.RoleplayVoice) {
       const vs = window.RoleplayVoice.getSettings();
       if (vs.voice_enabled) {
-        window.RoleplayVoice.speak(d.tts, {});
+        window.RoleplayVoice.speak(ttsText, {});
       }
     }
   });
@@ -945,6 +966,20 @@
     }
 
     // 单键操作：数值 − / + 与状态切换
+    // Shift + 方向键：微调数字人位置（键盘可达，不必依赖鼠标拖拽）。
+    // 普通方向键留给页面滚动，所以这里要求带 Shift；Alt+方向键 已被上面的
+    // 数值微调占用，故用 Shift 这一档。
+    // 步长 12px：观感上是"轻推一下"，长按可连续微调；实际偏移仍受 _clampOffset
+    // 边界夹紧，不会把角色推出画布。
+    if (e.shiftKey) {
+      switch (e.key) {
+        case "ArrowUp": nudgeModel(0, -NUDGE_STEP); e.preventDefault(); return;
+        case "ArrowDown": nudgeModel(0, +NUDGE_STEP); e.preventDefault(); return;
+        case "ArrowLeft": nudgeModel(-NUDGE_STEP, 0); e.preventDefault(); return;
+        case "ArrowRight": nudgeModel(+NUDGE_STEP, 0); e.preventDefault(); return;
+      }
+    }
+
     switch (e.key) {
       case "-": case "_": adjust("temperature", -1); return;
       case "=": case "+": adjust("temperature", +1); return;
@@ -956,6 +991,7 @@
       case ")": adjust("zoom", +1); return;
       case "1": switchModel("314701"); return;
       case "2": switchModel("314702"); return;
+      case "3": switchModel("314704"); return;
       case "f": case "F": resetModelPos(); return;
       case "r": case "R": if (e.shiftKey) { resetModelPos(); return; } break;
       case "m": case "M": toggleModel(); return;

@@ -1,0 +1,1225 @@
+{
+  "schema": "compendium_rag.p1_vocab_dryrun/v1",
+  "note": "只读试算：未写 graph.json / cache；零云端调用",
+  "prompt_version": "v3",
+  "chunks": 3695,
+  "chunks_missing_cache": 0,
+  "tables": {
+    "overrides": 6728,
+    "watch": [
+      "从属",
+      "代表",
+      "出生于",
+      "受制于",
+      "属于",
+      "师从",
+      "死于",
+      "源自",
+      "被称为",
+      "隶属于"
+    ],
+    "inverse_pairs": [
+      [
+        "包含",
+        "隶属"
+      ],
+      [
+        "告知",
+        "知晓"
+      ],
+      [
+        "命令",
+        "服从"
+      ],
+      [
+        "指挥",
+        "服从"
+      ],
+      [
+        "服从",
+        "派遣"
+      ],
+      [
+        "给予",
+        "获得"
+      ]
+    ],
+    "swap": {
+      "师从": "指导"
+    },
+    "same_direction": [
+      "从属",
+      "代表",
+      "属于",
+      "源自",
+      "隶属于"
+    ]
+  },
+  "before": {
+    "edges": 31610,
+    "canonical_edges": 2298,
+    "rate": 0.072699,
+    "distinct_predicates": 8352
+  },
+  "after": {
+    "edges": 31458,
+    "canonical_edges": 27362,
+    "rate": 0.869795,
+    "distinct_predicates": 1609
+  },
+  "after_dedup": {
+    "edges": 26854,
+    "canonical_edges": 22906,
+    "rate": 0.852983,
+    "distinct_predicates": 1609
+  },
+  "wiring_check": {
+    "note": "生产 normalize() 的产物必须与本试算逐条相同，否则试算白做",
+    "production_dedup_edges": 26854,
+    "ordered_identical": true,
+    "same_edge_set": true,
+    "first_diff": null
+  },
+  "concentration": {
+    "before_dedup": {
+      "edges": 29968,
+      "distinct_predicates": 8352,
+      "singleton_predicates": 5400,
+      "singleton_rate": 0.646552,
+      "singleton_edges": 5400,
+      "top10_edge_coverage": 0.076381,
+      "top10": [
+        {
+          "predicate": "自陈",
+          "edges": 367
+        },
+        {
+          "predicate": "询问",
+          "edges": 292
+        },
+        {
+          "predicate": "说明",
+          "edges": 263
+        },
+        {
+          "predicate": "告知",
+          "edges": 238
+        },
+        {
+          "predicate": "追问",
+          "edges": 229
+        },
+        {
+          "predicate": "断言",
+          "edges": 227
+        },
+        {
+          "predicate": "提及",
+          "edges": 199
+        },
+        {
+          "predicate": "质疑",
+          "edges": 174
+        },
+        {
+          "predicate": "提议",
+          "edges": 150
+        },
+        {
+          "predicate": "质问",
+          "edges": 150
+        }
+      ]
+    },
+    "after_dedup": {
+      "edges": 26854,
+      "distinct_predicates": 1609,
+      "singleton_predicates": 1111,
+      "singleton_rate": 0.690491,
+      "singleton_edges": 1111,
+      "top10_edge_coverage": 0.369181,
+      "top10": [
+        {
+          "predicate": "告知",
+          "edges": 2806
+        },
+        {
+          "predicate": "询问",
+          "edges": 959
+        },
+        {
+          "predicate": "发现",
+          "edges": 928
+        },
+        {
+          "predicate": "提及",
+          "edges": 915
+        },
+        {
+          "predicate": "请求",
+          "edges": 914
+        },
+        {
+          "predicate": "指责",
+          "edges": 768
+        },
+        {
+          "predicate": "给予",
+          "edges": 755
+        },
+        {
+          "predicate": "怀疑",
+          "edges": 629
+        },
+        {
+          "predicate": "前往",
+          "edges": 626
+        },
+        {
+          "predicate": "知晓",
+          "edges": 614
+        }
+      ]
+    }
+  },
+  "before_dedup_edges": 29968,
+  "edge_merge_delta": -3114,
+  "codes": {
+    "override": 15989,
+    "synonym": 8365,
+    "kept:review:unmapped": 4095,
+    "canonical": 2298,
+    "rule": 599,
+    "drop:negation": 151,
+    "same_direction": 110,
+    "kept:direction_blocked": 1,
+    "swap": 1,
+    "drop:junk": 1
+  },
+  "dropped": {
+    "drop:negation": 151,
+    "drop:junk": 1
+  },
+  "top_rewritten": [
+    {
+      "raw": "自陈",
+      "canonical": "告知",
+      "edges": 439
+    },
+    {
+      "raw": "说明",
+      "canonical": "告知",
+      "edges": 296
+    },
+    {
+      "raw": "追问",
+      "canonical": "询问",
+      "edges": 264
+    },
+    {
+      "raw": "断言",
+      "canonical": "告知",
+      "edges": 260
+    },
+    {
+      "raw": "质疑",
+      "canonical": "怀疑",
+      "edges": 192
+    },
+    {
+      "raw": "推断",
+      "canonical": "怀疑",
+      "edges": 173
+    },
+    {
+      "raw": "质问",
+      "canonical": "询问",
+      "edges": 169
+    },
+    {
+      "raw": "承诺",
+      "canonical": "约定",
+      "edges": 160
+    },
+    {
+      "raw": "提议",
+      "canonical": "指导",
+      "edges": 160
+    },
+    {
+      "raw": "解释",
+      "canonical": "告知",
+      "edges": 155
+    },
+    {
+      "raw": "宣告",
+      "canonical": "告知",
+      "edges": 154
+    },
+    {
+      "raw": "拒绝",
+      "canonical": "对立",
+      "edges": 143
+    },
+    {
+      "raw": "讲述",
+      "canonical": "告知",
+      "edges": 135
+    },
+    {
+      "raw": "评价",
+      "canonical": "指责",
+      "edges": 125
+    },
+    {
+      "raw": "致谢",
+      "canonical": "感谢",
+      "edges": 110
+    },
+    {
+      "raw": "指认",
+      "canonical": "告知",
+      "edges": 102
+    },
+    {
+      "raw": "赠予",
+      "canonical": "给予",
+      "edges": 98
+    },
+    {
+      "raw": "抱怨",
+      "canonical": "指责",
+      "edges": 97
+    },
+    {
+      "raw": "介绍",
+      "canonical": "告知",
+      "edges": 95
+    },
+    {
+      "raw": "许诺",
+      "canonical": "约定",
+      "edges": 88
+    },
+    {
+      "raw": "转述",
+      "canonical": "告知",
+      "edges": 88
+    },
+    {
+      "raw": "报告",
+      "canonical": "告知",
+      "edges": 87
+    },
+    {
+      "raw": "催促",
+      "canonical": "请求",
+      "edges": 87
+    },
+    {
+      "raw": "指出",
+      "canonical": "告知",
+      "edges": 84
+    },
+    {
+      "raw": "提醒",
+      "canonical": "警告",
+      "edges": 84
+    },
+    {
+      "raw": "通报",
+      "canonical": "告知",
+      "edges": 83
+    },
+    {
+      "raw": "安抚",
+      "canonical": "帮助",
+      "edges": 83
+    },
+    {
+      "raw": "置身",
+      "canonical": "位于",
+      "edges": 81
+    },
+    {
+      "raw": "认出",
+      "canonical": "发现",
+      "edges": 79
+    },
+    {
+      "raw": "确认",
+      "canonical": "研究",
+      "edges": 79
+    },
+    {
+      "raw": "追忆",
+      "canonical": "知晓",
+      "edges": 78
+    },
+    {
+      "raw": "劝阻",
+      "canonical": "阻止",
+      "edges": 77
+    },
+    {
+      "raw": "主张",
+      "canonical": "告知",
+      "edges": 77
+    },
+    {
+      "raw": "下令",
+      "canonical": "命令",
+      "edges": 76
+    },
+    {
+      "raw": "点破",
+      "canonical": "发现",
+      "edges": 75
+    },
+    {
+      "raw": "邀请",
+      "canonical": "请求",
+      "edges": 73
+    },
+    {
+      "raw": "判断",
+      "canonical": "知晓",
+      "edges": 73
+    },
+    {
+      "raw": "援引",
+      "canonical": "提及",
+      "edges": 71
+    },
+    {
+      "raw": "告诫",
+      "canonical": "警告",
+      "edges": 69
+    },
+    {
+      "raw": "讥讽",
+      "canonical": "指责",
+      "edges": 68
+    }
+  ],
+  "direction_blocked": [
+    {
+      "raw": "被称为",
+      "canonical": "称呼",
+      "edges": 1
+    }
+  ],
+  "n_rewritten_predicates": 6657,
+  "unmapped_summary": {
+    "edges": 4095,
+    "distinct": 1531,
+    "cumulative_coverage_of_unmapped_edges": {
+      "top50": 0.37,
+      "top100": 0.4774,
+      "top200": 0.5929,
+      "top400": 0.7133
+    }
+  },
+  "top_unmapped": [
+    {
+      "predicate": "否认",
+      "edges": 117
+    },
+    {
+      "predicate": "致歉",
+      "edges": 86
+    },
+    {
+      "predicate": "打趣",
+      "edges": 79
+    },
+    {
+      "predicate": "反驳",
+      "edges": 68
+    },
+    {
+      "predicate": "承认",
+      "edges": 64
+    },
+    {
+      "predicate": "称赞",
+      "edges": 61
+    },
+    {
+      "predicate": "惊呼",
+      "edges": 58
+    },
+    {
+      "predicate": "坚持",
+      "edges": 56
+    },
+    {
+      "predicate": "辩解",
+      "edges": 48
+    },
+    {
+      "predicate": "呼喊",
+      "edges": 47
+    },
+    {
+      "predicate": "应允",
+      "edges": 43
+    },
+    {
+      "predicate": "赞许",
+      "edges": 43
+    },
+    {
+      "predicate": "决意",
+      "edges": 43
+    },
+    {
+      "predicate": "现身",
+      "edges": 41
+    },
+    {
+      "predicate": "问候",
+      "edges": 39
+    },
+    {
+      "predicate": "困惑",
+      "edges": 38
+    },
+    {
+      "predicate": "回绝",
+      "edges": 29
+    },
+    {
+      "predicate": "自辩",
+      "edges": 25
+    },
+    {
+      "predicate": "自省",
+      "edges": 23
+    },
+    {
+      "predicate": "忧虑",
+      "edges": 23
+    },
+    {
+      "predicate": "肯定",
+      "edges": 22
+    },
+    {
+      "predicate": "误认",
+      "edges": 21
+    },
+    {
+      "predicate": "评断",
+      "edges": 21
+    },
+    {
+      "predicate": "比拟",
+      "edges": 20
+    },
+    {
+      "predicate": "惋惜",
+      "edges": 19
+    },
+    {
+      "predicate": "婉拒",
+      "edges": 19
+    },
+    {
+      "predicate": "论断",
+      "edges": 19
+    },
+    {
+      "predicate": "定性",
+      "edges": 19
+    },
+    {
+      "predicate": "受训于",
+      "edges": 19
+    },
+    {
+      "predicate": "畏惧",
+      "edges": 18
+    },
+    {
+      "predicate": "表态",
+      "edges": 18
+    },
+    {
+      "predicate": "赞同",
+      "edges": 17
+    },
+    {
+      "predicate": "附和",
+      "edges": 17
+    },
+    {
+      "predicate": "自谦",
+      "edges": 17
+    },
+    {
+      "predicate": "自认",
+      "edges": 16
+    },
+    {
+      "predicate": "欢呼",
+      "edges": 16
+    },
+    {
+      "predicate": "认同",
+      "edges": 15
+    },
+    {
+      "predicate": "旁观",
+      "edges": 14
+    },
+    {
+      "predicate": "保证",
+      "edges": 14
+    },
+    {
+      "predicate": "评点",
+      "edges": 14
+    },
+    {
+      "predicate": "界定",
+      "edges": 13
+    },
+    {
+      "predicate": "点评",
+      "edges": 13
+    },
+    {
+      "predicate": "总结",
+      "edges": 13
+    },
+    {
+      "predicate": "厌恶",
+      "edges": 13
+    },
+    {
+      "predicate": "应承",
+      "edges": 13
+    },
+    {
+      "predicate": "追念",
+      "edges": 13
+    },
+    {
+      "predicate": "误解",
+      "edges": 13
+    },
+    {
+      "predicate": "评述",
+      "edges": 13
+    },
+    {
+      "predicate": "评议",
+      "edges": 13
+    },
+    {
+      "predicate": "戒备",
+      "edges": 12
+    },
+    {
+      "predicate": "呓语",
+      "edges": 12
+    },
+    {
+      "predicate": "自夸",
+      "edges": 12
+    },
+    {
+      "predicate": "惊惧",
+      "edges": 12
+    },
+    {
+      "predicate": "梦见",
+      "edges": 12
+    },
+    {
+      "predicate": "让步",
+      "edges": 11
+    },
+    {
+      "predicate": "赞扬",
+      "edges": 11
+    },
+    {
+      "predicate": "自贬",
+      "edges": 11
+    },
+    {
+      "predicate": "凝视",
+      "edges": 11
+    },
+    {
+      "predicate": "苏醒",
+      "edges": 11
+    },
+    {
+      "predicate": "自诩",
+      "edges": 11
+    },
+    {
+      "predicate": "拥抱",
+      "edges": 10
+    },
+    {
+      "predicate": "聆听",
+      "edges": 10
+    },
+    {
+      "predicate": "痛惜",
+      "edges": 10
+    },
+    {
+      "predicate": "否决",
+      "edges": 10
+    },
+    {
+      "predicate": "揶揄",
+      "edges": 10
+    },
+    {
+      "predicate": "盛赞",
+      "edges": 10
+    },
+    {
+      "predicate": "释然",
+      "edges": 10
+    },
+    {
+      "predicate": "取笑",
+      "edges": 10
+    },
+    {
+      "predicate": "搪塞",
+      "edges": 10
+    },
+    {
+      "predicate": "嘲讽",
+      "edges": 9
+    },
+    {
+      "predicate": "摩挲",
+      "edges": 9
+    },
+    {
+      "predicate": "哀叹",
+      "edges": 9
+    },
+    {
+      "predicate": "赞赏",
+      "edges": 9
+    },
+    {
+      "predicate": "抚摸",
+      "edges": 9
+    },
+    {
+      "predicate": "推诿",
+      "edges": 8
+    },
+    {
+      "predicate": "震惊",
+      "edges": 8
+    },
+    {
+      "predicate": "失控",
+      "edges": 8
+    },
+    {
+      "predicate": "失效",
+      "edges": 8
+    },
+    {
+      "predicate": "失联",
+      "edges": 8
+    },
+    {
+      "predicate": "庆幸",
+      "edges": 8
+    },
+    {
+      "predicate": "自况",
+      "edges": 8
+    },
+    {
+      "predicate": "沉默",
+      "edges": 8
+    },
+    {
+      "predicate": "担责",
+      "edges": 8
+    },
+    {
+      "predicate": "对照",
+      "edges": 8
+    },
+    {
+      "predicate": "统计",
+      "edges": 7
+    },
+    {
+      "predicate": "悼念",
+      "edges": 7
+    },
+    {
+      "predicate": "拒答",
+      "edges": 7
+    },
+    {
+      "predicate": "夺冠",
+      "edges": 7
+    },
+    {
+      "predicate": "自许",
+      "edges": 7
+    },
+    {
+      "predicate": "戏弄",
+      "edges": 7
+    },
+    {
+      "predicate": "归类",
+      "edges": 7
+    },
+    {
+      "predicate": "追悔",
+      "edges": 7
+    },
+    {
+      "predicate": "失望",
+      "edges": 7
+    },
+    {
+      "predicate": "吐出",
+      "edges": 7
+    },
+    {
+      "predicate": "祝贺",
+      "edges": 7
+    },
+    {
+      "predicate": "体谅",
+      "edges": 7
+    },
+    {
+      "predicate": "譬喻",
+      "edges": 7
+    },
+    {
+      "predicate": "感怀",
+      "edges": 7
+    },
+    {
+      "predicate": "列举读者",
+      "edges": 7
+    },
+    {
+      "predicate": "核验",
+      "edges": 6
+    },
+    {
+      "predicate": "迟到",
+      "edges": 6
+    },
+    {
+      "predicate": "决断",
+      "edges": 6
+    },
+    {
+      "predicate": "目送",
+      "edges": 6
+    },
+    {
+      "predicate": "计时",
+      "edges": 6
+    },
+    {
+      "predicate": "标记",
+      "edges": 6
+    },
+    {
+      "predicate": "摔倒",
+      "edges": 6
+    },
+    {
+      "predicate": "比较",
+      "edges": 6
+    },
+    {
+      "predicate": "权衡",
+      "edges": 6
+    },
+    {
+      "predicate": "道歉",
+      "edges": 6
+    },
+    {
+      "predicate": "自豪",
+      "edges": 6
+    },
+    {
+      "predicate": "起舞",
+      "edges": 6
+    },
+    {
+      "predicate": "撇清",
+      "edges": 6
+    },
+    {
+      "predicate": "偏好",
+      "edges": 6
+    },
+    {
+      "predicate": "遗忘",
+      "edges": 6
+    },
+    {
+      "predicate": "炫耀",
+      "edges": 6
+    },
+    {
+      "predicate": "旁白",
+      "edges": 6
+    },
+    {
+      "predicate": "诵祷",
+      "edges": 6
+    },
+    {
+      "predicate": "选择",
+      "edges": 5
+    },
+    {
+      "predicate": "旁听",
+      "edges": 5
+    },
+    {
+      "predicate": "展开",
+      "edges": 5
+    },
+    {
+      "predicate": "恐惧",
+      "edges": 5
+    },
+    {
+      "predicate": "掳走",
+      "edges": 5
+    },
+    {
+      "predicate": "叹惋",
+      "edges": 5
+    },
+    {
+      "predicate": "崩溃",
+      "edges": 5
+    },
+    {
+      "predicate": "幻觉",
+      "edges": 5
+    },
+    {
+      "predicate": "惧怕",
+      "edges": 5
+    },
+    {
+      "predicate": "放弃",
+      "edges": 5
+    },
+    {
+      "predicate": "侦察",
+      "edges": 5
+    },
+    {
+      "predicate": "转移",
+      "edges": 5
+    },
+    {
+      "predicate": "想念",
+      "edges": 5
+    },
+    {
+      "predicate": "处置",
+      "edges": 5
+    },
+    {
+      "predicate": "查验",
+      "edges": 5
+    },
+    {
+      "predicate": "诵咒",
+      "edges": 5
+    },
+    {
+      "predicate": "关闭",
+      "edges": 5
+    },
+    {
+      "predicate": "激励",
+      "edges": 5
+    },
+    {
+      "predicate": "自愿",
+      "edges": 5
+    },
+    {
+      "predicate": "惊叫",
+      "edges": 5
+    },
+    {
+      "predicate": "遗憾",
+      "edges": 5
+    },
+    {
+      "predicate": "欣喜",
+      "edges": 5
+    },
+    {
+      "predicate": "恭维",
+      "edges": 5
+    },
+    {
+      "predicate": "懊悔",
+      "edges": 5
+    },
+    {
+      "predicate": "欣慰",
+      "edges": 5
+    },
+    {
+      "predicate": "庆贺",
+      "edges": 5
+    },
+    {
+      "predicate": "惊愕",
+      "edges": 5
+    },
+    {
+      "predicate": "喜爱",
+      "edges": 5
+    },
+    {
+      "predicate": "演奏",
+      "edges": 5
+    },
+    {
+      "predicate": "鼓舞",
+      "edges": 5
+    },
+    {
+      "predicate": "自信",
+      "edges": 5
+    },
+    {
+      "predicate": "错愕",
+      "edges": 5
+    },
+    {
+      "predicate": "喝彩",
+      "edges": 5
+    },
+    {
+      "predicate": "淡化",
+      "edges": 5
+    },
+    {
+      "predicate": "相邀",
+      "edges": 5
+    },
+    {
+      "predicate": "讳言",
+      "edges": 5
+    },
+    {
+      "predicate": "叩门",
+      "edges": 5
+    },
+    {
+      "predicate": "品评",
+      "edges": 5
+    },
+    {
+      "predicate": "讶异",
+      "edges": 5
+    },
+    {
+      "predicate": "抉择",
+      "edges": 4
+    },
+    {
+      "predicate": "携来",
+      "edges": 4
+    },
+    {
+      "predicate": "继承",
+      "edges": 4
+    },
+    {
+      "predicate": "引开",
+      "edges": 4
+    },
+    {
+      "predicate": "泄露",
+      "edges": 4
+    },
+    {
+      "predicate": "称颂",
+      "edges": 4
+    },
+    {
+      "predicate": "赞誉",
+      "edges": 4
+    },
+    {
+      "predicate": "后悔",
+      "edges": 4
+    },
+    {
+      "predicate": "升起",
+      "edges": 4
+    },
+    {
+      "predicate": "留置",
+      "edges": 4
+    },
+    {
+      "predicate": "收殓",
+      "edges": 4
+    },
+    {
+      "predicate": "忏悔",
+      "edges": 4
+    },
+    {
+      "predicate": "死于",
+      "edges": 4
+    },
+    {
+      "predicate": "巡检",
+      "edges": 4
+    },
+    {
+      "predicate": "解除",
+      "edges": 4
+    },
+    {
+      "predicate": "收拢",
+      "edges": 4
+    },
+    {
+      "predicate": "触摸",
+      "edges": 4
+    },
+    {
+      "predicate": "合上",
+      "edges": 4
+    },
+    {
+      "predicate": "意外",
+      "edges": 4
+    },
+    {
+      "predicate": "抓握",
+      "edges": 4
+    },
+    {
+      "predicate": "纠缠",
+      "edges": 4
+    },
+    {
+      "predicate": "仰望",
+      "edges": 4
+    },
+    {
+      "predicate": "掀开",
+      "edges": 4
+    },
+    {
+      "predicate": "开价",
+      "edges": 4
+    },
+    {
+      "predicate": "假设",
+      "edges": 4
+    },
+    {
+      "predicate": "错认",
+      "edges": 4
+    },
+    {
+      "predicate": "谎称",
+      "edges": 4
+    },
+    {
+      "predicate": "愕然",
+      "edges": 4
+    },
+    {
+      "predicate": "叹息",
+      "edges": 4
+    },
+    {
+      "predicate": "握手",
+      "edges": 4
+    },
+    {
+      "predicate": "犹豫",
+      "edges": 4
+    },
+    {
+      "predicate": "告罪",
+      "edges": 4
+    },
+    {
+      "predicate": "忧急",
+      "edges": 4
+    },
+    {
+      "predicate": "抱起",
+      "edges": 4
+    },
+    {
+      "predicate": "偏爱",
+      "edges": 4
+    },
+    {
+      "predicate": "推辞",
+      "edges": 4
+    },
+    {
+      "predicate": "诧异",
+      "edges": 4
+    },
+    {
+      "predicate": "自评",
+      "edges": 4
+    },
+    {
+      "predicate": "祝酒",
+      "edges": 4
+    },
+    {
+      "predicate": "借口",
+      "edges": 4
+    },
+    {
+      "predicate": "夸耀",
+      "edges": 4
+    },
+    {
+      "predicate": "羡慕",
+      "edges": 4
+    },
+    {
+      "predicate": "失措",
+      "edges": 4
+    },
+    {
+      "predicate": "分食",
+      "edges": 4
+    }
+  ]
+}

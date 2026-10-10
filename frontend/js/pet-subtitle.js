@@ -21,6 +21,28 @@
   "use strict";
 
   const HIDE_EXTRA_MS = 1600;   // 音频结束后字幕多停留的时间
+  const HUD_GAP_PX = 12;        // 字幕与 HUD 之间的最小间距
+  const TOP_SAFE_PX = 12;       // 字幕顶部与舞台顶部的安全边距
+  const MIN_LIFT_PX = 64;       // 抬升量下限（不得贴到底边）
+  const LIFT_MAX_RATIO = 0.4;   // 抬升量上限：不超过舞台高的 40%
+
+  // 字幕可读性下限（用户反馈「英语读不完」）
+  const MIN_DWELL_MS = 2200;    // 最短停留：再短也让人看不清
+  const READ_CPS_ZH = 6;        // 中文阅读速度（字/秒，保守）
+  const READ_CPS_EN = 14;       // 英文阅读速度（字符/秒，保守）
+  const READ_SLACK = 1.15;      // 宽放系数：留出扫视与反应时间
+  const MAX_DWELL_MS = 20000;   // 上限：避免长句霸屏太久
+
+  /**
+   * 估算读完整条字幕所需秒数。
+   * 字幕同时显示中英两行，取更慢的那一行（两行都要读），再乘宽放系数。
+   * 不计空格以外的复杂度：这是保守下界，够用来兜住"读不完"。
+   */
+  function readingSeconds(zh, en) {
+    const secZh = ((zh || "").length) / READ_CPS_ZH;
+    const secEn = ((en || "").length) / READ_CPS_EN;
+    return Math.max(secZh, secEn) * READ_SLACK;
+  }
 
   let el = null;
   let elZh = null;
@@ -87,9 +109,59 @@
     try { elBadge.setAttribute("aria-pressed", lang === "en" ? "true" : "false"); } catch (_) {}
   }
 
+  /*
+   * 排版修复（P0）：让字幕条在任意舞台尺寸下都"不碰 HUD、不出舞台"。
+   *
+   * 原来 bottom 写死 134px（按 HUD 两行 ~80px 估算），但 .stage 高度随视口
+   * 变化极大（1440x950 ≈ 857px；800x600 ≈ 240px），固定值在矮舞台上会把
+   * 字幕顶到贴着顶部，长文本几乎没有可用行数。
+   *
+   * 这里实测 HUD 与舞台尺寸，把两个结果写进 CSS 变量：
+   *   --sub-lift : 字幕底边距舞台底部的距离 = HUD 高 + 底距 + 间距（夹紧）
+   *   --sub-maxh : 字幕最大高度 = 舞台高 - lift - 顶部安全边距
+   * 都不满足时（无 .stage / 无 HUD / 元素不可见）直接移除变量，回退 CSS 默认值。
+   */
+  function syncGeometry() {
+    if (!el) return;
+    const stage = el.parentElement;
+    if (!stage || !stage.classList || !stage.classList.contains("stage")) {
+      el.style.removeProperty("--sub-lift");
+      el.style.removeProperty("--sub-maxh");
+      return;
+    }
+    const stageH = stage.clientHeight;
+    if (!stageH) return;
+    const hud = stage.querySelector(".stage-hud") || stage.querySelector("#stage-hud");
+    let lift = MIN_LIFT_PX;
+    if (hud) {
+      const hudRect = hud.getBoundingClientRect();
+      const stageRect = stage.getBoundingClientRect();
+      // HUD 底边距舞台底部的距离 + HUD 高 + 间距 = 字幕底边应处的抬升量
+      const hudBottomGap = stageRect.bottom - hudRect.bottom;
+      lift = hudRect.height + Math.max(0, hudBottomGap) + HUD_GAP_PX;
+      if (!hudRect.height) lift = MIN_LIFT_PX;   // HUD 折叠/隐藏时用下限
+    }
+    // 夹紧：不低于下限，也不超过舞台高的 40%（矮舞台上避免顶到顶部）
+    lift = Math.max(MIN_LIFT_PX, Math.min(lift, stageH * LIFT_MAX_RATIO));
+    const maxH = Math.max(40, stageH - lift - TOP_SAFE_PX);
+    // 写 CSS 变量即可：`.stage #pet-subtitle.show { bottom: var(--sub-lift) }` 会消费它。
+    //
+    // 排查记录（重要，避免后人重复踩坑）：在【隐藏的 headless 窗口】里量测时，
+    // computed bottom 恒为基线 6px，看起来像"变量没生效"。真实原因是 CSS 里
+    // `transition: ... bottom 260ms` —— 隐藏窗口没有合成器帧，过渡永不推进，
+    // 于是 bottom 被钉在起始值。把 transition 关掉后立刻读到 117px（正确）。
+    // 也就是说：这是【无头测量假象】，不是产品缺陷。真实浏览器里过渡正常完成。
+    // 因此这里不要为了"让测量数字好看"去叠加 transform 之类的二次抬升 ——
+    // 那会在真实环境里造成双倍位移（实测 bottom 511 而非 622）。
+    el.style.setProperty("--sub-lift", Math.round(lift) + "px");
+    el.style.setProperty("--sub-maxh", Math.round(maxH) + "px");
+  }
+
   function hide() {
     if (!el) return;
     el.classList.remove("show");
+    // 隐藏时保留变量即可（下次 show 会重算）；这里只清类，避免残留内联定位。
+    el.style.removeProperty("transform");
   }
 
   function show(subtitle, durSec, opts) {
@@ -101,14 +173,29 @@
     elZh.textContent = zh;
     elEn.textContent = en;
     elEn.style.display = en ? "" : "none";
+    syncGeometry();               // 先按当前舞台/HUD 实测尺寸夹紧几何
     el.classList.add("show");
+    syncGeometry();               // 显示后（bottom 生效）再校正一次
     // 状态样式：loading 半透明（正在加载音频）、replay 冷却回显（弱化闪现）
     el.classList.toggle("is-loading", !!o.loading);
     el.classList.toggle("is-replay", !!o.replay);
     try { el.setAttribute("aria-busy", o.loading ? "true" : "false"); } catch (_) {}
     if (hideTimer) clearTimeout(hideTimer);
-    const ms = Math.max(o.replay ? 700 : 2200,
-                        (durSec || 4) * 1000 + HIDE_EXTRA_MS);
+    // 停留时长必须同时满足两件事：
+    //   1) 至少覆盖音频播放（dur + 尾巴），否则话没说完字幕就消失了；
+    //   2) 至少够把字读完 —— 这是用户反馈「英语读不完」的直接成因。
+    //      实测：en_78 音频 0.92s 却显示 19 字英文 + 大量中文，旧逻辑取
+    //      max(2200, 0.92*1000+1600) = 2200ms，根本读不完。
+    // 阅读速度取保守值：中文 6 字/秒、英文 14 字符/秒；字幕同时显示两行，
+    // 以更慢的那行为准，再乘一个宽放系数避免边缘情况。
+    const readSec = readingSeconds(zh, en);
+    let ms = o.replay
+      ? 700
+      : Math.max(MIN_DWELL_MS, (durSec || 4) * 1000 + HIDE_EXTRA_MS, readSec * 1000);
+    // 上限：个别片段显示的是整段台词（如 zh_44 显示 281 字英文），
+    // 若完全按阅读速度给时间会算出 60s+ 的停留，明显霸屏。
+    // 这种情况靠"缩短显示文本"根治（见 manifest 片段化），这里只做兜底夹紧。
+    ms = Math.min(ms, MAX_DWELL_MS);
     hideTimer = setTimeout(hide, ms);
   }
 
@@ -172,6 +259,27 @@
 
   window.addEventListener("pet:voice-lang", () => refreshLangBadge());
 
+  // 窗口/舞台尺寸变化（含分栏拖拽）→ 重新夹紧字幕几何，避免字幕压住 HUD
+  window.addEventListener("resize", () => { if (el && el.classList.contains("show")) syncGeometry(); });
+
+  /*
+   * HUD 折叠/展开（#hud-toggle）也会改变 HUD 高度，而它不触发 resize。
+   * 用 ResizeObserver 盯住 HUD 与舞台，任何尺寸变化都重新夹紧——这样
+   * 用户折叠 HUD 后字幕会自然下移贴合，展开后自动让开，不会压住它。
+   */
+  function observeGeometry() {
+    if (typeof ResizeObserver !== "function") return;
+    const host = (el && el.parentElement) || document.querySelector(".stage");
+    if (!host) return;
+    const ro = new ResizeObserver(() => {
+      if (el && el.classList.contains("show")) syncGeometry();
+    });
+    const hud = host.querySelector(".stage-hud") || host.querySelector("#stage-hud");
+    if (hud) ro.observe(hud);
+    ro.observe(host);
+  }
+
   // DOM 就绪即注入容器（pet.html 引入位置在 body 末尾，body 必已存在）
   build();
+  observeGeometry();
 })();

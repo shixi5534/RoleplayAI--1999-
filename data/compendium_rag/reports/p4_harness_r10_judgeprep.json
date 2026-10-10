@@ -1,0 +1,32 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP3-judge-prep",
+  "frozen_graph_sha": "",
+  "retrieval_config": {},
+  "metrics": {
+    "n_questions": 679,
+    "n_answered": 679,
+    "n_main_batches": 34,
+    "n_repeat_batches": 7,
+    "n_repeat_qids": 136,
+    "subset": {
+      "mode": "full",
+      "n_requested": null,
+      "sample_seed": 20261008,
+      "limit": null,
+      "n_selected": 679,
+      "n_all": 679
+    },
+    "prompt_mode": "compose_v1",
+    "allocator": "v2_perblock",
+    "batch_dir": "data\\knowledge\\_audit\\p4_harness_r10\\l3_batches",
+    "judge_in_dir": "data\\knowledge\\_audit\\p4_harness_r10\\l3_judge_in",
+    "state_dir": "data\\knowledge\\_audit\\p4_harness_r10"
+  },
+  "gate_verdicts": [],
+  "per_case": [],
+  "artifacts": [
+    "data\\knowledge\\_audit\\p4_harness_r10\\l3_judge_in",
+    "data\\compendium_rag\\reports\\p4_harness_r10.json"
+  ]
+}

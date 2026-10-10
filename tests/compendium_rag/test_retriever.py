@@ -13,7 +13,8 @@ from compendium_rag.corpus import Turn
 from compendium_rag.extract import ExtractedEntity, ExtractedRelation, Extraction
 from compendium_rag.graph_store import GraphStore
 from compendium_rag.retriever import (ChunkIndex, EntityVectorIndex, Evidence,
-                                      GraphRetriever, build_adjacency,
+                                      FALLBACK_MARK, GraphRetriever,
+                                      build_adjacency,
                                       personalized_pagerank)
 
 
@@ -321,6 +322,19 @@ def test_context_contains_entities_edges_and_evidence():
     assert "A —认识→ B" in ctx
 
 
+def test_context_tags_evidence_with_citable_provenance():
+    """P4 的引用契约：每条证据块带可解析的 `S{i}` 溯源头（chunk/doc/category）。"""
+    chunks = [_mk_chunk("c1", "A与B相识于伦敦"),
+              _mk_chunk("c2", "C在柏林目击了同一幕")]
+    r = _retriever([("A", "认识", "B", "c1", 0.9), ("C", "目击", "B", "c2", 0.8)],
+                   chunks)
+    ctx = r.context(r.retrieve("A"), top_k=2)
+    assert "[S1 chunk=c1 doc=d cat=mainline] " in ctx
+    assert "[S2 chunk=c2 doc=d cat=mainline] " in ctx
+    # 编号跟排序走，不跟 chunk_id 走——P4 提示词里「引用 S2」必须能回查到第 2 块
+    assert ctx.index("[S1 ") < ctx.index("[S2 ")
+
+
 def test_context_respects_max_chars():
     chunks = [_mk_chunk("c1", "内容" * 2000)]
     r = _retriever([("A", "认识", "B", "c1", 0.9)], chunks)
@@ -332,3 +346,142 @@ def test_context_empty_result():
     r = _retriever([("A", "认识", "B", "c1", 0.9)], [])
     from compendium_rag.retriever import RetrievalResult
     assert r.context(RetrievalResult(query="q")) == ""
+
+
+# ── P4.0 按块预算分配（禁止半块）──
+#
+# v1 是 `out[:max_chars]` 整体尾切：最后一块会被**从中间切断**，模型拿到半块。
+# 下面这些用例把 v2 的四条预登记规则钉死：R1 禁止半块、R2 头段先扣、
+# R3 均分+余量回收、R4 保底可见、R5 编号跟窗口顺序。
+
+def _mk_long_chunks(spec):
+    """spec: [(cid, text_len)] → chunk 列表（正文用可判别的定长串）。"""
+    return [_mk_chunk(cid, f"<{cid}>" + "字" * (n - len(cid) - 2))
+            for cid, n in spec]
+
+
+def _evidence_blocks_of(ctx):
+    """从渲染串里取每条证据块的 (编号, 溯源头, 正文)，供零半块判定。"""
+    out = []
+    for seg in ctx.split("\n\n"):
+        if not seg.startswith("[S"):
+            continue
+        head, _, body = seg.partition("] ")
+        _, _, body = body.partition("] ")      # 去掉 [篇名 / 场景]
+        num = int(head.split()[0][2:])
+        out.append((num, head, body))
+    return out
+
+
+def test_context_never_emits_half_block():
+    """R1：入选块必须**整段逐字**出现；任何截断都算失败（核心回归）。"""
+    spec = [(f"c{i}", 700) for i in range(1, 6)]
+    chunks = _mk_long_chunks(spec)
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9)])
+    r = GraphRetriever(g, chunks)
+    from compendium_rag.retriever import Evidence, RetrievalResult
+    res = RetrievalResult(query="q")
+    res.evidence = [Evidence(cid, 1.0 - i * 0.1, {}, 0.0, [])
+                    for i, (cid, _) in enumerate(spec)]
+    ctx = r.context(res, top_k=5, max_chars=3000)
+    assert FALLBACK_MARK not in ctx
+    blocks = _evidence_blocks_of(ctx)
+    assert blocks, "至少应有一块进窗"
+    for _num, _head, body in blocks:
+        assert body in [c.text for c in chunks], "出现半块（正文被切断）"
+    assert len(ctx) <= 3000
+
+
+def test_context_head_counts_against_budget():
+    """R2：头段（实体卡+关系脉络）占用预算，证据段只能用余量。"""
+    chunks = _mk_long_chunks([("c1", 2000)])
+    long_desc = "描" * 300
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9)], entities={"A": "角色"})
+    g.entities["A"].desc = long_desc
+    r = GraphRetriever(g, chunks)
+    from compendium_rag.retriever import Evidence, RetrievalResult
+    res = RetrievalResult(query="q")
+    res.evidence = [Evidence("c1", 1.0, {}, 0.0, [])]
+    tight = r.context(res, top_k=1, max_chars=500)
+    assert len(tight) <= 500
+    # 头段吃掉大半预算 → 2000 字的块装不下 → 走 R4 保底并打标
+    assert FALLBACK_MARK in tight
+    roomy = r.context(res, top_k=1, max_chars=3000)
+    assert chunks[0].text in roomy and FALLBACK_MARK not in roomy
+
+
+def test_context_skips_oversized_block_and_recycles_share():
+    """R3：超份额的长块整块跳过，其份额回收给后面的短块。
+
+    1 块 1400 字 + 4 块 300 字、预算 2000：均分份额 400 → 长块跳过，
+    释放的份额让后面至少 3 块短块进窗（v1 尾切只会给 1 全 + 1 半）。
+    """
+    spec = [("c1", 1400)] + [(f"c{i}", 300) for i in range(2, 6)]
+    chunks = _mk_long_chunks(spec)
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9)])
+    r = GraphRetriever(g, chunks)
+    from compendium_rag.retriever import Evidence, RetrievalResult
+    res = RetrievalResult(query="q")
+    res.evidence = [Evidence(cid, 1.0, {}, 0.0, []) for cid, _ in spec]
+    ctx = r.context(res, top_k=5, max_chars=2000)
+    blocks = _evidence_blocks_of(ctx)
+    kept = {head.split("chunk=")[1].split("]")[0] for _n, head, _b in blocks}
+    assert "c1" not in kept, "1400 字长块超出份额应整块跳过"
+    assert len(kept) >= 3, f"短块份额未被回收：{kept}"
+    for _num, _head, body in blocks:
+        assert body in [c.text for c in chunks], "出现半块"
+
+
+def test_context_costs_use_final_window_width():
+    """R1/边界：编号位宽变化（S1→S10）不得把最后一块挤出或切半。"""
+    spec = [(f"c{i}", 120) for i in range(1, 13)]
+    chunks = _mk_long_chunks(spec)
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9)])
+    r = GraphRetriever(g, chunks)
+    from compendium_rag.retriever import Evidence, RetrievalResult
+    res = RetrievalResult(query="q")
+    res.evidence = [Evidence(cid, 1.0, {}, 0.0, []) for cid, _ in spec]
+    ctx = r.context(res, top_k=12, max_chars=1600)
+    blocks = _evidence_blocks_of(ctx)
+    assert len(blocks) >= 5
+    assert [n for n, _h, _b in blocks] == list(range(1, len(blocks) + 1))
+    for _num, _head, body in blocks:
+        assert body in [c.text for c in chunks], "出现半块"
+    assert len(ctx) <= 1600
+
+
+def test_context_numbers_follow_window_order_no_gaps():
+    """R5：编号从 1 连续、跟窗口顺序走，跳过的块不留空号。"""
+    spec = [("c1", 1400)] + [(f"c{i}", 300) for i in range(2, 6)]
+    chunks = _mk_long_chunks(spec)
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9)])
+    r = GraphRetriever(g, chunks)
+    from compendium_rag.retriever import Evidence, RetrievalResult
+    res = RetrievalResult(query="q")
+    res.evidence = [Evidence(cid, 1.0, {}, 0.0, []) for cid, _ in spec]
+    ctx = r.context(res, top_k=5, max_chars=2000)
+    nums = [n for n, _h, _b in _evidence_blocks_of(ctx)]
+    assert nums == list(range(1, len(nums) + 1)), f"编号有空洞：{nums}"
+
+
+def test_plan_block_window_is_order_preserving_and_bounded():
+    """分配器纯函数：入选下标升序、总成本不超预算、拒绝负预算。"""
+    from compendium_rag.retriever import plan_block_window
+    # 6 块争 900 字：均分份额 150 谁也放不下 1200 的长块与 300 的短块，
+    # 首轮直接落空 → 零头贪心把 3 块短块装满（长块整块跳过，绝不切半）。
+    picked, left = plan_block_window([1200, 300, 300, 300, 300, 300], 900)
+    assert 0 not in picked, "1200 字长块超出可用预算应整块跳过"
+    assert picked == [1, 2, 3], picked
+    assert left == 0
+    assert sum([1200, 300, 300, 300, 300, 300][i] for i in picked) <= 900
+    assert plan_block_window([100, 100], 50) == ([], 50)
+    assert plan_block_window([], 500) == ([], 500)
+    assert plan_block_window([100], -10) == ([], 0)
+
+
+def test_context_allocator_version_is_declared():
+    """R7：版本标必须可读，报告据此分表（v1_tailcut / v2_perblock）。"""
+    from compendium_rag.retriever import (CONTEXT_ALLOCATOR,
+                                          CONTEXT_ALLOCATOR_LEGACY)
+    assert CONTEXT_ALLOCATOR == "v2_perblock"
+    assert CONTEXT_ALLOCATOR_LEGACY == "v1_tailcut"

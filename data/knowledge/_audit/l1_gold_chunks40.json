@@ -1,0 +1,2541 @@
+{
+ "schema": "audit.l1_gold/v1",
+ "n_chunks": 40,
+ "meta": {
+  "entity_total": 193,
+  "relation_total": 142,
+  "cache_empty_chunks": 8,
+  "half1": {
+   "n_chunks": 16,
+   "entity_agree": 91,
+   "entity_a_only": 5,
+   "entity_b_only": 4,
+   "entity_dropped": 4,
+   "relation_agree": 35,
+   "relation_added_single": 38,
+   "relation_dropped": 13,
+   "notes": [
+    "最主要的一类误抽是泛称与纯职务称谓：单边实体被弃 4 项（神秘学家×2、护卫兵、行动队长），其中 3 项同时让以它们为端点的单边关系作废；文本里的？？？、病人、研究员、仪式术士、走私犯Ⅲ、除灵师等无名或职务指代双方均未立点。",
+    "单边关系共弃 13 条，其余 10 条的原因是：读错句子对象 2 条（玛蒂尔达担忧十四行诗、斯奈德向瓦尔登湖呼救）、台词面向“先生们/大家”群体而端点不确指 2 条、语证据相反 1 条（莫莉德尔隶属于重塑之手，原文称对立阵营）、无原句支撑的泛化关联 3 条（含史蒂文先生→血腥玛丽、蓝钻→塔沃尼尔的诅咒、格鲁托夫→哥萨克）、端点写法与规范名不一致 1 条（安妮小姐）、与已收端点对重复 1 条（卡戎质问格鲁托夫）。",
+    "端点去重按 (src,dst) 有序对执行：同一有序对的同义改写只留一条并取较正式或双方一致的谓语（告诫与训导→告诫、隐瞒与掩盖→隐瞒、结识与相识→相识、限制与施展术法→影响、取得与获取→取得）；仅互为镜像的同一事实合并为一条（维尔汀是上司↔十四行诗隶属、Z↔Z女士），语义不同的反向端点对（救助↔相识、协助↔同行、持有↔纠缠）各保留一条。",
+    "类型分歧按原文语证据裁决：阿马尔菲塔诺判地点（“再也无法回到故乡”“从阿马尔菲塔诺到科马拉”），荣军院判地点（“你不是在荣军院？”），州立青藤判组织（“一所不错的大学”），瓦尔登湖按两块语境分别判组织/地点；科马拉与科马拉监狱分指城邦与监狱，保留两个独立地点实体。",
+    "规范名以本块原文写法为准：101:9.2.0 只出现“司辰”故用司辰（弃 A 的全名维尔汀），101:10.1.1 只出现“Z女士”，报纸取全称《“暴雨”将改变世界：基金会掩盖真相》；唱片、水晶球、吐真剂等按规则 10 的正例口径保留为物品。"
+   ]
+  },
+  "half2": {
+   "n_chunks": 16,
+   "entity_agree": 86,
+   "entity_a_only": 2,
+   "entity_b_only": 5,
+   "entity_dropped": 16,
+   "relation_agree": 41,
+   "relation_added_single": 28,
+   "relation_dropped": 34,
+   "notes": [
+    "纯职务/描述性标签一律弃收：病人、教练、店主、审讯官Ⅱ、意识唤醒者（规则6/9）。",
+    "无专名通名物品单边弃收：金牌、飞行翼、手镜、红丝线、百合花、宝物；双方一致的相片盒项链、三清铃、成长魔药、思想控制器则按规则1收。",
+    "金门大桥非原文逐字（正文仅“大桥”+“金门海峡”，需先验），弃；乔·布朗经判读并入J的别名，不重复列。",
+    "共误抽/先验补边弃：《弗兰南群岛史》刊载于《白日梦邮报》(实为新专栏)、维尔汀打倒阿尔卡纳(选项句且被质疑)、阿尔卡纳比作毕达哥拉斯树(原文比作“规律”)、塞梅尔维斯位于维也纳(否定语境)。",
+    "同端点对不同谓语按规则4合并取最正式一个：赠予/帮助、命令/拒绝命令、庇护/倚重、制作/配制、寻找/寻回等。"
+   ]
+  }
+ },
+ "chunks": [
+  {
+   "chunk_id": "appendix_unbound__074_雷米特杯赛季活动:3.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__011_1_9_去往新世界_Z:0.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__006_1_6_赛季剧情:3.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__025_2_2_荒原经营引导剧情:0.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__022_1_9_地牢剧情:8.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__022_1_9_地牢剧情:5.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__012_1_9_去往新世界_十四行诗:1.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "appendix_unbound__010_1_9_去往新世界_X:1.0.0",
+   "entities": [],
+   "relations": []
+  },
+  {
+   "chunk_id": "mainline__111_行于漫漫长路上:8.0.2",
+   "entities": [
+    {
+     "name": "帕拉维扬",
+     "type": "角色",
+     "aliases": [
+      "“警官”"
+     ],
+     "desc": "以警官身份与玛尔纱并肩作战"
+    },
+    {
+     "name": "玛尔纱",
+     "type": "角色",
+     "aliases": [],
+     "desc": "身着盔甲的骑士团成员"
+    },
+    {
+     "name": "刻雷乌斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "称实战是最好的训练的长官"
+    },
+    {
+     "name": "梅蕾尔",
+     "type": "角色",
+     "aliases": [
+      "“乌鸫”"
+     ],
+     "desc": "受过训练却未能适应战争"
+    },
+    {
+     "name": "蒙佩",
+     "type": "地点",
+     "aliases": [],
+     "desc": "玛尔纱曾见到梅蕾尔之地"
+    },
+    {
+     "name": "南极",
+     "type": "地点",
+     "aliases": [],
+     "desc": "梅蕾尔曾待且始终担惊受怕处"
+    },
+    {
+     "name": "骑士团",
+     "type": "组织",
+     "aliases": [],
+     "desc": "有冻结情绪的神秘术训练传统"
+    },
+    {
+     "name": "重塑之手",
+     "type": "组织",
+     "aliases": [],
+     "desc": "玛尔纱自认了解不多的组织"
+    }
+   ],
+   "relations": [
+    {
+     "src": "帕拉维扬",
+     "relation": "隶属",
+     "dst": "骑士团",
+     "evidence": "骑士团有一套独特的传统神秘术训练方法",
+     "confidence": 0.6
+    },
+    {
+     "src": "刻雷乌斯",
+     "relation": "告诫",
+     "dst": "帕拉维扬",
+     "evidence": "刻雷乌斯长官对我说，实战才是最好的训练",
+     "confidence": 0.85
+    },
+    {
+     "src": "帕拉维扬",
+     "relation": "认识",
+     "dst": "梅蕾尔",
+     "evidence": "这就像“乌鸫”——也就是梅蕾尔",
+     "confidence": 0.65
+    },
+    {
+     "src": "梅蕾尔",
+     "relation": "位于",
+     "dst": "蒙佩",
+     "evidence": "你在蒙佩见过她的",
+     "confidence": 0.6
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__112_远征记:3.0.3",
+   "entities": [
+    {
+     "name": "格鲁托夫",
+     "type": "角色",
+     "aliases": [],
+     "desc": "统领营地军队、主宰草原"
+    },
+    {
+     "name": "卡戎",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被术士符号禁锢的亡者"
+    },
+    {
+     "name": "顿河",
+     "type": "地点",
+     "aliases": [],
+     "desc": "粮食不足以供众人过冬之地"
+    },
+    {
+     "name": "重塑之手",
+     "type": "组织",
+     "aliases": [],
+     "desc": "欲拆解卡戎研究其神秘术"
+    },
+    {
+     "name": "哥萨克",
+     "type": "组织",
+     "aliases": [],
+     "desc": "草原上凶狠野蛮的武装群体"
+    }
+   ],
+   "relations": [
+    {
+     "src": "格鲁托夫",
+     "relation": "招募",
+     "dst": "卡戎",
+     "evidence": "留在我身边，为我的军队服务",
+     "confidence": 0.85
+    },
+    {
+     "src": "卡戎",
+     "relation": "拒绝",
+     "dst": "格鲁托夫",
+     "evidence": "我既不是你的敌人，也不是你的盟友",
+     "confidence": 0.8
+    },
+    {
+     "src": "重塑之手",
+     "relation": "敌视",
+     "dst": "卡戎",
+     "evidence": "他们非常希望把你一点点拆成碎片",
+     "confidence": 0.7
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__113_他者的悲哀:16.0.0",
+   "entities": [
+    {
+     "name": "佩德拉",
+     "type": "角色",
+     "aliases": [],
+     "desc": "感叹神秘学家保护基金会的成员"
+    },
+    {
+     "name": "伊里内伊",
+     "type": "角色",
+     "aliases": [],
+     "desc": "议事厅中悲观好辩的成员"
+    },
+    {
+     "name": "康斯坦丁",
+     "type": "角色",
+     "aliases": [
+      "副会长"
+     ],
+     "desc": "依会长指令组织避险的副会长"
+    },
+    {
+     "name": "Z",
+     "type": "角色",
+     "aliases": [],
+     "desc": "出面调停争辩的委员会人物"
+    },
+    {
+     "name": "诺谛卡",
+     "type": "角色",
+     "aliases": [],
+     "desc": "坠落后接住众人而力竭"
+    },
+    {
+     "name": "小春雀儿",
+     "type": "角色",
+     "aliases": [],
+     "desc": "神秘术受限的神秘学家"
+    },
+    {
+     "name": "J",
+     "type": "角色",
+     "aliases": [],
+     "desc": "拒绝被排除在战斗之外"
+    },
+    {
+     "name": "“剃刀”",
+     "type": "角色",
+     "aliases": [],
+     "desc": "号召人类保护神秘学家"
+    },
+    {
+     "name": "阿尔卡纳",
+     "type": "角色",
+     "aliases": [],
+     "desc": "施术切断灵性通道之人"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "受神秘学家冒险保护"
+    },
+    {
+     "name": "委员会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "成员在楼内抵御沦陷"
+    },
+    {
+     "name": "共融院",
+     "type": "组织",
+     "aliases": [],
+     "desc": "与委员会并列的机构"
+    },
+    {
+     "name": "委员会大楼",
+     "type": "地点",
+     "aliases": [],
+     "desc": "第三层沦陷、第四层为前线"
+    }
+   ],
+   "relations": [
+    {
+     "src": "J",
+     "relation": "感谢",
+     "dst": "诺谛卡",
+     "evidence": "谢谢，诺谛卡，还好有你在",
+     "confidence": 0.9
+    },
+    {
+     "src": "佩德拉",
+     "relation": "争执",
+     "dst": "伊里内伊",
+     "evidence": "你又想把错误归咎给谁呢？",
+     "confidence": 0.8
+    },
+    {
+     "src": "康斯坦丁",
+     "relation": "隶属于",
+     "dst": "委员会",
+     "evidence": "所有确认生还的委员会与共融院成员都已经到齐了",
+     "confidence": 0.7
+    },
+    {
+     "src": "阿尔卡纳",
+     "relation": "影响",
+     "dst": "小春雀儿",
+     "evidence": "阿尔卡纳的术法也许只对神秘学家有效",
+     "confidence": 0.6
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__109_疯癫与文明:16.0.3",
+   "entities": [
+    {
+     "name": "阿莱夫",
+     "type": "角色",
+     "aliases": [],
+     "desc": "困于幻境的戴面具囚徒"
+    },
+    {
+     "name": "虚构集",
+     "type": "角色",
+     "aliases": [],
+     "desc": "自天堂归来的青年作家"
+    },
+    {
+     "name": "十四行诗",
+     "type": "角色",
+     "aliases": [],
+     "desc": "迎接虚构集回归的基金会成员"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "警觉幻境崩塌并提醒众人"
+    },
+    {
+     "name": "阿马尔菲塔诺",
+     "type": "地点",
+     "aliases": [],
+     "desc": "已消逝、与科马拉一体的故乡"
+    },
+    {
+     "name": "科马拉监狱",
+     "type": "地点",
+     "aliases": [],
+     "desc": "在精神水流中瓦解的监狱"
+    },
+    {
+     "name": "天堂",
+     "type": "地点",
+     "aliases": [
+      "“天堂”"
+     ],
+     "desc": "藏有无尽历史与奥秘的图书馆之境"
+    },
+    {
+     "name": "《理性家族的崛起与衰落》",
+     "type": "物品",
+     "aliases": [],
+     "desc": "阿莱夫称为好故事的文本"
+    },
+    {
+     "name": "科马拉",
+     "type": "地点",
+     "aliases": [],
+     "desc": "与阿马尔菲塔诺同属一个整体"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "女孩们所属的组织"
+    }
+   ],
+   "relations": [
+    {
+     "src": "阿莱夫",
+     "relation": "导致瓦解",
+     "dst": "科马拉监狱",
+     "evidence": "是阿莱夫主动让科马拉监狱的一切瓦解了",
+     "confidence": 0.9
+    },
+    {
+     "src": "虚构集",
+     "relation": "点醒",
+     "dst": "阿莱夫",
+     "evidence": "事情并非如你所想的那样，阿莱夫",
+     "confidence": 0.7
+    },
+    {
+     "src": "十四行诗",
+     "relation": "问候",
+     "dst": "虚构集",
+     "evidence": "虚构集……？你回来了？！",
+     "confidence": 0.7
+    },
+    {
+     "src": "阿莱夫",
+     "relation": "引述",
+     "dst": "《理性家族的崛起与衰落》",
+     "evidence": "《理性家族的崛起与衰落》是一个好故事",
+     "confidence": 0.8
+    },
+    {
+     "src": "虚构集",
+     "relation": "位于",
+     "dst": "天堂",
+     "evidence": "在藏有无尽人类历史与奥秘的“天堂”中",
+     "confidence": 0.7
+    },
+    {
+     "src": "十四行诗",
+     "relation": "隶属于",
+     "dst": "基金会",
+     "evidence": "来自基金会的女孩们松了口气",
+     "confidence": 0.6
+    },
+    {
+     "src": "维尔汀",
+     "relation": "隶属于",
+     "dst": "基金会",
+     "evidence": "来自基金会的女孩们松了口气",
+     "confidence": 0.6
+    },
+    {
+     "src": "阿莱夫",
+     "relation": "谈及",
+     "dst": "阿马尔菲塔诺",
+     "evidence": "阿马尔菲塔诺消失了，一切都结束了",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__103_故事一无所有:4.1.0",
+   "entities": [
+    {
+     "name": "玛蒂尔达",
+     "type": "角色",
+     "aliases": [],
+     "desc": "自称要打倒第一名的教员"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "尚未醒来、十四行诗的上司"
+    },
+    {
+     "name": "十四行诗",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被玛蒂尔达挂念的下级"
+    },
+    {
+     "name": "水晶球",
+     "type": "物品",
+     "aliases": [],
+     "desc": "玛蒂尔达占卜所用的球"
+    },
+    {
+     "name": "深梦境",
+     "type": "地点",
+     "aliases": [],
+     "desc": "玛蒂尔达所在的梦境区域"
+    }
+   ],
+   "relations": [
+    {
+     "src": "十四行诗",
+     "relation": "隶属于",
+     "dst": "维尔汀",
+     "evidence": "现在还是十四行诗的上司",
+     "confidence": 0.85
+    },
+    {
+     "src": "玛蒂尔达",
+     "relation": "持有",
+     "dst": "水晶球",
+     "evidence": "你看，这是我的水晶球",
+     "confidence": 0.9
+    },
+    {
+     "src": "玛蒂尔达",
+     "relation": "担忧",
+     "dst": "维尔汀",
+     "evidence": "不知道维尔汀什么时候才能醒过来呢",
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__110_复乐园:11.1.3",
+   "entities": [
+    {
+     "name": "乌尔里希",
+     "type": "角色",
+     "aliases": [
+      "组长",
+      "磁流体"
+     ],
+     "desc": "重获唱片后离开的组长"
+    },
+    {
+     "name": "莫莉德尔",
+     "type": "角色",
+     "aliases": [
+      "中尉"
+     ],
+     "desc": "提出登山方案的对立阵营中尉"
+    },
+    {
+     "name": "阿尔卡纳",
+     "type": "角色",
+     "aliases": [],
+     "desc": "已死，其死后重塑之手改弦出击"
+    },
+    {
+     "name": "重塑之手",
+     "type": "组织",
+     "aliases": [],
+     "desc": "以不同名号四处出击的组织"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "被重塑之手分散注意力的一方"
+    },
+    {
+     "name": "暴雨",
+     "type": "事件",
+     "aliases": [
+      "“暴雨”"
+     ],
+     "desc": "莫莉德尔直言不喜欢的灾变"
+    },
+    {
+     "name": "唱片",
+     "type": "物品",
+     "aliases": [],
+     "desc": "被收缴后物归原主的唱片"
+    }
+   ],
+   "relations": [
+    {
+     "src": "莫莉德尔",
+     "relation": "厌恶",
+     "dst": "暴雨",
+     "evidence": "我更加不喜欢“暴雨”",
+     "confidence": 0.9
+    },
+    {
+     "src": "重塑之手",
+     "relation": "牵制",
+     "dst": "基金会",
+     "evidence": "分散着基金会方面的注意力",
+     "confidence": 0.85
+    },
+    {
+     "src": "莫莉德尔",
+     "relation": "归还",
+     "dst": "唱片",
+     "evidence": "将先前收缴的唱片物归原主",
+     "confidence": 0.9
+    },
+    {
+     "src": "阿尔卡纳",
+     "relation": "统领",
+     "dst": "重塑之手",
+     "evidence": "阿尔卡纳死后，重塑之手以不同的名号四处出击",
+     "confidence": 0.6
+    },
+    {
+     "src": "乌尔里希",
+     "relation": "感谢",
+     "dst": "莫莉德尔",
+     "evidence": "无论如何，还是谢谢你",
+     "confidence": 0.8
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__108_忧郁的热带:5.0.1",
+   "entities": [
+    {
+     "name": "加莱亚诺",
+     "type": "角色",
+     "aliases": [],
+     "desc": "河边垂钓并出声示警者"
+    },
+    {
+     "name": "洛佩拉",
+     "type": "角色",
+     "aliases": [],
+     "desc": "自上游漂来的落难者"
+    },
+    {
+     "name": "邓肯先生",
+     "type": "角色",
+     "aliases": [
+      "老邓肯",
+      "邓肯"
+     ],
+     "desc": "荣军院的老头，救人者"
+    },
+    {
+     "name": "苏芙比",
+     "type": "角色",
+     "aliases": [],
+     "desc": "自鱼腹脱险的小淑女"
+    },
+    {
+     "name": "卡森先生",
+     "type": "角色",
+     "aliases": [
+      "卡森",
+      "“卡森管家”"
+     ],
+     "desc": "相框中人，被苏芙比认错"
+    },
+    {
+     "name": "荣军院",
+     "type": "地点",
+     "aliases": [],
+     "desc": "邓肯所属、洛佩拉疑惑之处"
+    }
+   ],
+   "relations": [
+    {
+     "src": "洛佩拉",
+     "relation": "相识",
+     "dst": "邓肯先生",
+     "evidence": "这老家伙是邓肯，荣军院的邓肯，我认识他很久了",
+     "confidence": 0.9
+    },
+    {
+     "src": "苏芙比",
+     "relation": "误认",
+     "dst": "邓肯先生",
+     "evidence": "卡森先生！真的是你吗！",
+     "confidence": 0.85
+    },
+    {
+     "src": "邓肯先生",
+     "relation": "位于",
+     "dst": "荣军院",
+     "evidence": "这老家伙是邓肯，荣军院的邓肯",
+     "confidence": 0.75
+    },
+    {
+     "src": "洛佩拉",
+     "relation": "相识",
+     "dst": "苏芙比",
+     "evidence": "洛佩拉爬向同伴，抱住她的后背",
+     "confidence": 0.8
+    },
+    {
+     "src": "加莱亚诺",
+     "relation": "相识",
+     "dst": "邓肯先生",
+     "evidence": "邓肯，不对劲，有条蛇过去了",
+     "confidence": 0.65
+    },
+    {
+     "src": "邓肯先生",
+     "relation": "救助",
+     "dst": "洛佩拉",
+     "evidence": "他抛出一根荨麻藤，落水的友人抓住这根长藤",
+     "confidence": 0.8
+    },
+    {
+     "src": "邓肯先生",
+     "relation": "救助",
+     "dst": "苏芙比",
+     "evidence": "一把将小淑女提出河岸的软泥堆",
+     "confidence": 0.8
+    },
+    {
+     "src": "苏芙比",
+     "relation": "相识",
+     "dst": "卡森先生",
+     "evidence": "卡森先生！真的是你吗！",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__101_在我们的时代里:10.1.1",
+   "entities": [
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "心怀不好预感、调队进场"
+    },
+    {
+     "name": "Z女士",
+     "type": "角色",
+     "aliases": [],
+     "desc": "维尔汀开口求助的对象"
+    },
+    {
+     "name": "瓦尔登湖",
+     "type": "组织",
+     "aliases": [
+      "“瓦尔登湖”"
+     ],
+     "desc": "将办决斗观赏赛的团体"
+    },
+    {
+     "name": "勇者决斗观赏赛",
+     "type": "事件",
+     "aliases": [],
+     "desc": "今晚举行、涉巨额奖金的赛事"
+    }
+   ],
+   "relations": [
+    {
+     "src": "维尔汀",
+     "relation": "求助",
+     "dst": "Z女士",
+     "evidence": "能让你向Z女士开口求助，情况想必不简单",
+     "confidence": 0.85
+    },
+    {
+     "src": "瓦尔登湖",
+     "relation": "举办",
+     "dst": "勇者决斗观赏赛",
+     "evidence": "他们将在今晚举行一场勇者决斗观赏赛",
+     "confidence": 0.9
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__101_在我们的时代里:9.2.0",
+   "entities": [
+    {
+     "name": "十四行诗",
+     "type": "角色",
+     "aliases": [],
+     "desc": "察觉墙缝异状的调查少女"
+    },
+    {
+     "name": "苏芙比",
+     "type": "角色",
+     "aliases": [],
+     "desc": "熟悉瓦尔登湖并带路的女孩"
+    },
+    {
+     "name": "斯奈德",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被虚空中声音呼唤的名字"
+    },
+    {
+     "name": "瓦尔登湖",
+     "type": "地点",
+     "aliases": [
+      "“瓦尔登湖”"
+     ],
+     "desc": "囚禁人类的神秘术酒吧"
+    },
+    {
+     "name": "司辰",
+     "type": "角色",
+     "aliases": [],
+     "desc": "十四行诗欲上报的对象"
+    },
+    {
+     "name": "弗迪",
+     "type": "角色",
+     "aliases": [],
+     "desc": "由十四行诗背着前进的伤者"
+    },
+    {
+     "name": "吐真剂",
+     "type": "物品",
+     "aliases": [],
+     "desc": "自墙缝流出的液体"
+    }
+   ],
+   "relations": [
+    {
+     "src": "十四行诗",
+     "relation": "上报",
+     "dst": "司辰",
+     "evidence": "得赶紧报告给司辰才行",
+     "confidence": 0.85
+    },
+    {
+     "src": "十四行诗",
+     "relation": "背负",
+     "dst": "弗迪",
+     "evidence": "弗迪……交给我了。我来背着他前进",
+     "confidence": 0.9
+    },
+    {
+     "src": "十四行诗",
+     "relation": "委托",
+     "dst": "苏芙比",
+     "evidence": "就由你来带路吧",
+     "confidence": 0.75
+    },
+    {
+     "src": "苏芙比",
+     "relation": "熟悉",
+     "dst": "瓦尔登湖",
+     "evidence": "苏芙比小姐看起来对“瓦尔登湖”比较了解",
+     "confidence": 0.85
+    },
+    {
+     "src": "苏芙比",
+     "relation": "带路",
+     "dst": "十四行诗",
+     "evidence": "已经知道方向了——！跟着苏芙比的脚步",
+     "confidence": 0.7
+    },
+    {
+     "src": "十四行诗",
+     "relation": "发现",
+     "dst": "吐真剂",
+     "evidence": "这个是……吐真剂？",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "mainline__103_故事一无所有:6.0.1",
+   "entities": [
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "念出暴雨传闻的学生"
+    },
+    {
+     "name": "“圈环”",
+     "type": "角色",
+     "aliases": [
+      "圈环"
+     ],
+     "desc": "从教员办公室取报的同伴"
+    },
+    {
+     "name": "暴雨",
+     "type": "事件",
+     "aliases": [
+      "“暴雨”"
+     ],
+     "desc": "被报纸称将改变世界的气象"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "被指隐瞒真相的组织"
+    },
+    {
+     "name": "重塑之手",
+     "type": "组织",
+     "aliases": [],
+     "desc": "报纸末尾欢迎加入的团体"
+    },
+    {
+     "name": "《“暴雨”将改变世界：基金会掩盖真相》",
+     "type": "物品",
+     "aliases": [],
+     "desc": "揭露基金会掩盖真相的报纸"
+    }
+   ],
+   "relations": [
+    {
+     "src": "基金会",
+     "relation": "隐瞒",
+     "dst": "暴雨",
+     "evidence": "而基金会在隐瞒事实",
+     "confidence": 0.9
+    },
+    {
+     "src": "“圈环”",
+     "relation": "取得",
+     "dst": "《“暴雨”将改变世界：基金会掩盖真相》",
+     "evidence": "这是我从教员办公室里拿到的",
+     "confidence": 0.9
+    },
+    {
+     "src": "维尔汀",
+     "relation": "阅读",
+     "dst": "《“暴雨”将改变世界：基金会掩盖真相》",
+     "evidence": "《“暴雨”将改变世界：基金会掩盖真相》？",
+     "confidence": 0.8
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__21101_77号往事:2.2.1",
+   "entities": [
+    {
+     "name": "蓝手帕",
+     "type": "角色",
+     "aliases": [],
+     "desc": "迎接旅人的旅馆主人"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "随蓝手帕前往旅馆的访客"
+    },
+    {
+     "name": "蓝手帕旅馆",
+     "type": "地点",
+     "aliases": [],
+     "desc": "楝树掩映下的汽车旅馆"
+    }
+   ],
+   "relations": [
+    {
+     "src": "蓝手帕",
+     "relation": "经营",
+     "dst": "蓝手帕旅馆",
+     "evidence": "孩子们，欢迎来到蓝手帕旅馆",
+     "confidence": 0.85
+    },
+    {
+     "src": "维尔汀",
+     "relation": "抵达",
+     "dst": "蓝手帕旅馆",
+     "evidence": "欢迎来到蓝手帕旅馆",
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__21101_77号往事:11.1.1",
+   "entities": [
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [
+      "老板"
+     ],
+     "desc": "镜前被阿尔古斯护住的老板"
+    },
+    {
+     "name": "阿尔古斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "举猎枪对准镜子的雇佣兵"
+    },
+    {
+     "name": "凯拉",
+     "type": "角色",
+     "aliases": [
+      "小凯拉"
+     ],
+     "desc": "农场里被众人疼爱的女孩"
+    },
+    {
+     "name": "史蒂文先生",
+     "type": "角色",
+     "aliases": [
+      "史蒂文"
+     ],
+     "desc": "被幽灵骗后患癔症的典型"
+    },
+    {
+     "name": "血腥玛丽",
+     "type": "概念",
+     "aliases": [
+      "“血腥玛丽”"
+     ],
+     "desc": "午夜镜中幽灵夺魂的怪谈"
+    }
+   ],
+   "relations": [
+    {
+     "src": "阿尔古斯",
+     "relation": "保护",
+     "dst": "维尔汀",
+     "evidence": "她站在了维尔汀的身前，将枪管对准了那面镜子",
+     "confidence": 0.9
+    },
+    {
+     "src": "阿尔古斯",
+     "relation": "怀念",
+     "dst": "凯拉",
+     "evidence": "小凯拉是农场里的珍宝",
+     "confidence": 0.7
+    },
+    {
+     "src": "维尔汀",
+     "relation": "推测",
+     "dst": "凯拉",
+     "evidence": "——她是凯拉？",
+     "confidence": 0.6
+    },
+    {
+     "src": "阿尔古斯",
+     "relation": "讲述",
+     "dst": "血腥玛丽",
+     "evidence": "一种类似于“血腥玛丽”的怪谈",
+     "confidence": 0.7
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__32101_迁流的盛宴:18.0.1",
+   "entities": [
+    {
+     "name": "贝丽尔",
+     "type": "角色",
+     "aliases": [],
+     "desc": "知晓暴雨将至的占卜师"
+    },
+    {
+     "name": "阿黛拉",
+     "type": "角色",
+     "aliases": [],
+     "desc": "蓝钻的所有者，求带离此地"
+    },
+    {
+     "name": "费利西安",
+     "type": "角色",
+     "aliases": [],
+     "desc": "已经消失、盼其归来的故人"
+    },
+    {
+     "name": "蓝钻",
+     "type": "物品",
+     "aliases": [],
+     "desc": "如影随形纠缠所有者的诅咒之钻"
+    },
+    {
+     "name": "塔沃尼尔的诅咒",
+     "type": "概念",
+     "aliases": [],
+     "desc": "阿黛拉喊话后或许触发的诅咒"
+    },
+    {
+     "name": "暴雨",
+     "type": "事件",
+     "aliases": [
+      "“暴雨”"
+     ],
+     "desc": "即将落下清洗一切的灾变"
+    }
+   ],
+   "relations": [
+    {
+     "src": "阿黛拉",
+     "relation": "恳求",
+     "dst": "贝丽尔",
+     "evidence": "请您带上我。告诉我该怎么躲过您口中的“暴雨”",
+     "confidence": 0.9
+    },
+    {
+     "src": "阿黛拉",
+     "relation": "追查",
+     "dst": "暴雨",
+     "evidence": "“暴雨”的真相。",
+     "confidence": 0.85
+    },
+    {
+     "src": "阿黛拉",
+     "relation": "期望找回",
+     "dst": "费利西安",
+     "evidence": "让我的朋友和……费利西安回来",
+     "confidence": 0.8
+    },
+    {
+     "src": "贝丽尔",
+     "relation": "知晓",
+     "dst": "暴雨",
+     "evidence": "告诉我该怎么躲过您口中的“暴雨”",
+     "confidence": 0.65
+    },
+    {
+     "src": "阿黛拉",
+     "relation": "持有",
+     "dst": "蓝钻",
+     "evidence": "钻石的棱角刺痛了手指",
+     "confidence": 0.8
+    },
+    {
+     "src": "阿黛拉",
+     "relation": "触发",
+     "dst": "塔沃尼尔的诅咒",
+     "evidence": "塔沃尼尔的诅咒或许已经触发",
+     "confidence": 0.65
+    },
+    {
+     "src": "蓝钻",
+     "relation": "纠缠",
+     "dst": "阿黛拉",
+     "evidence": "纠缠着它的所有者，成为一个如影随形的诅咒",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__36101_人们向何处去:11.0.2",
+   "entities": [
+    {
+     "name": "哑谜",
+     "type": "角色",
+     "aliases": [],
+     "desc": "观测模拟生成密码的研究员"
+    }
+   ],
+   "relations": []
+  },
+  {
+   "chunk_id": "activity__12101_绿湖噩梦:4.2.1",
+   "entities": [
+    {
+     "name": "恐怖通",
+     "type": "角色",
+     "aliases": [],
+     "desc": "基金会的调查员"
+    },
+    {
+     "name": "金蜜儿",
+     "type": "角色",
+     "aliases": [
+      "珍妮弗"
+     ],
+     "desc": "导演系学生，厌恶被称神秘学家"
+    },
+    {
+     "name": "杰森",
+     "type": "角色",
+     "aliases": [],
+     "desc": "挑衅金蜜儿的同窗"
+    },
+    {
+     "name": "安妮",
+     "type": "角色",
+     "aliases": [],
+     "desc": "劝阻争吵的小镇居民"
+    },
+    {
+     "name": "牙仙",
+     "type": "角色",
+     "aliases": [],
+     "desc": "喝止众人内讧的领队"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "询问安妮来历的人"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "豢养打手、派出调查员的组织"
+    },
+    {
+     "name": "州立青藤",
+     "type": "组织",
+     "aliases": [],
+     "desc": "两人就读导演系的大学"
+    }
+   ],
+   "relations": [
+    {
+     "src": "恐怖通",
+     "relation": "隶属于",
+     "dst": "基金会",
+     "evidence": "另一侧，基金会的调查员加入战局",
+     "confidence": 0.85
+    },
+    {
+     "src": "金蜜儿",
+     "relation": "就读于",
+     "dst": "州立青藤",
+     "evidence": "州立青藤本应是一所不错的大学",
+     "confidence": 0.8
+    },
+    {
+     "src": "金蜜儿",
+     "relation": "攻击",
+     "dst": "杰森",
+     "evidence": "她用力地撕扯着杰森的头发与耳朵",
+     "confidence": 0.9
+    },
+    {
+     "src": "维尔汀",
+     "relation": "询问",
+     "dst": "金蜜儿",
+     "evidence": "金蜜儿小姐，安妮也是你雇来的演员吗",
+     "confidence": 0.85
+    },
+    {
+     "src": "杰森",
+     "relation": "挑衅",
+     "dst": "金蜜儿",
+     "evidence": "而且你发疯的样子看起来像个神秘学家",
+     "confidence": 0.8
+    },
+    {
+     "src": "安妮",
+     "relation": "劝阻",
+     "dst": "杰森",
+     "evidence": "杰森先生！珍妮弗小姐正在努力地完成自己的电影",
+     "confidence": 0.75
+    },
+    {
+     "src": "牙仙",
+     "relation": "管教",
+     "dst": "杰森",
+     "evidence": "我不会允许你们在我的眼前打架",
+     "confidence": 0.5
+    },
+    {
+     "src": "牙仙",
+     "relation": "喝止",
+     "dst": "金蜜儿",
+     "evidence": "如果你们继续胡闹，我会让你们全都变成哑巴",
+     "confidence": 0.65
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__35101_绿松石蛇俱乐部:10.1.0",
+   "entities": [
+    {
+     "name": "拉莫纳",
+     "type": "角色",
+     "aliases": [],
+     "desc": "推理仪式术法的除灵师"
+    },
+    {
+     "name": "空脑袋",
+     "type": "角色",
+     "aliases": [
+      "莱瑟姆",
+      "莱瑟姆小姐"
+     ],
+     "desc": "同行推理的机械少女"
+    },
+    {
+     "name": "绿松石蛇俱乐部",
+     "type": "组织",
+     "aliases": [],
+     "desc": "发生谋杀拍卖会的俱乐部"
+    },
+    {
+     "name": "执夜队",
+     "type": "组织",
+     "aliases": [
+      "执夜人"
+     ],
+     "desc": "追查受害者线索的队伍"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "被走私犯指欲控制地下市场"
+    },
+    {
+     "name": "墨西哥城",
+     "type": "地点",
+     "aliases": [],
+     "desc": "其地下神秘学材料市场被觊觎"
+    }
+   ],
+   "relations": [
+    {
+     "src": "绿松石蛇俱乐部",
+     "relation": "位于",
+     "dst": "墨西哥城",
+     "evidence": "你们想要控制墨西哥城的地下神秘学材料市场",
+     "confidence": 0.6
+    },
+    {
+     "src": "执夜队",
+     "relation": "调查",
+     "dst": "绿松石蛇俱乐部",
+     "evidence": "如此明显的线索，执夜队不可能没有发现",
+     "confidence": 0.7
+    },
+    {
+     "src": "空脑袋",
+     "relation": "协助",
+     "dst": "拉莫纳",
+     "evidence": "一路上，我可帮了你不少的忙",
+     "confidence": 0.8
+    },
+    {
+     "src": "拉莫纳",
+     "relation": "隶属",
+     "dst": "基金会",
+     "evidence": "是你们下的手吧，基金会的人",
+     "confidence": 0.5
+    },
+    {
+     "src": "空脑袋",
+     "relation": "隶属",
+     "dst": "基金会",
+     "evidence": "基金会的人们当然不是——",
+     "confidence": 0.5
+    },
+    {
+     "src": "拉莫纳",
+     "relation": "同行",
+     "dst": "空脑袋",
+     "evidence": "莱瑟姆，我果然不该带上你",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__20101_飞驰_明日之城:11.0.3",
+   "entities": [
+    {
+     "name": "莱格斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "放弃文凭继承兄长王国的弟弟"
+    },
+    {
+     "name": "环状水星",
+     "type": "角色",
+     "aliases": [],
+     "desc": "谎称众人仍在故乡的随行机械"
+    },
+    {
+     "name": "西西里",
+     "type": "地点",
+     "aliases": [],
+     "desc": "兄弟魂牵的故乡"
+    },
+    {
+     "name": "矮子肯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被带出做事已回乡的踏实小子"
+    },
+    {
+     "name": "小拇指杰瑞",
+     "type": "角色",
+     "aliases": [],
+     "desc": "与矮子肯一同回乡的伙计"
+    },
+    {
+     "name": "美国",
+     "type": "地点",
+     "aliases": [],
+     "desc": "兄弟俩没能成行的目的地"
+    }
+   ],
+   "relations": [
+    {
+     "src": "莱格斯",
+     "relation": "出身",
+     "dst": "西西里",
+     "evidence": "让我们把腿扎进西西里的土壤里",
+     "confidence": 0.7
+    }
+   ]
+  },
+  {
+   "chunk_id": "activity__385101_聚合浪潮:2.3.1",
+   "entities": [
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "主张谨慎对待聚合实验的人"
+    },
+    {
+     "name": "小梅斯梅尔",
+     "type": "角色",
+     "aliases": [],
+     "desc": "保管危险试剂的研究员"
+    },
+    {
+     "name": "X",
+     "type": "角色",
+     "aliases": [
+      "X博士"
+     ],
+     "desc": "自行注射救赎以潜入聚合实验的博士"
+    },
+    {
+     "name": "谢切诺夫",
+     "type": "角色",
+     "aliases": [],
+     "desc": "推广思想控制器、开启大集体2.0的博士"
+    },
+    {
+     "name": "马克西姆",
+     "type": "角色",
+     "aliases": [],
+     "desc": "当众质疑大集体2.0安全性的提问者"
+    },
+    {
+     "name": "思想控制器",
+     "type": "物品",
+     "aliases": [
+      "“思想”控制器"
+     ],
+     "desc": "贴于太阳穴、只对聚合者起作用的装置"
+    },
+    {
+     "name": "救赎",
+     "type": "物品",
+     "aliases": [],
+     "desc": "使人聚合的透明注射药剂"
+    },
+    {
+     "name": "瘟疫",
+     "type": "事件",
+     "aliases": [],
+     "desc": "多数科学家曾经历并已被聚合的事件"
+    },
+    {
+     "name": "大集体1.0",
+     "type": "概念",
+     "aliases": [],
+     "desc": "曾将民众救出泥沼的旧方案"
+    },
+    {
+     "name": "大集体2.0",
+     "type": "概念",
+     "aliases": [],
+     "desc": "谢切诺夫推行的思想聚合方案"
+    }
+   ],
+   "relations": [
+    {
+     "src": "X",
+     "relation": "注射",
+     "dst": "救赎",
+     "evidence": "给自己注射了“救赎”",
+     "confidence": 0.95
+    },
+    {
+     "src": "X",
+     "relation": "使用",
+     "dst": "思想控制器",
+     "evidence": "将“思想”控制器靠近头侧，吸盘自动吸附",
+     "confidence": 0.9
+    },
+    {
+     "src": "谢切诺夫",
+     "relation": "开启",
+     "dst": "大集体2.0",
+     "evidence": "再次激进地……开启了“大集体2.0”",
+     "confidence": 0.9
+    },
+    {
+     "src": "谢切诺夫",
+     "relation": "推广",
+     "dst": "思想控制器",
+     "evidence": "同志们，尝试使用“思想”控制器",
+     "confidence": 0.8
+    },
+    {
+     "src": "马克西姆",
+     "relation": "质疑",
+     "dst": "谢切诺夫",
+     "evidence": "谢切诺夫博士！请允许我提问！",
+     "confidence": 0.9
+    },
+    {
+     "src": "小梅斯梅尔",
+     "relation": "保管",
+     "dst": "救赎",
+     "evidence": "这两支危险的可疑试剂先由我保管了",
+     "confidence": 0.6
+    },
+    {
+     "src": "小梅斯梅尔",
+     "relation": "同僚",
+     "dst": "X",
+     "evidence": "不断犯错的同僚耸了耸肩",
+     "confidence": 0.7
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__23501_太阳的背面:7.0.1",
+   "entities": [
+    {
+     "name": "夏洛特",
+     "type": "角色",
+     "aliases": [],
+     "desc": "与教练对话、失去友情的断腿女孩"
+    },
+    {
+     "name": "苏利丝",
+     "type": "角色",
+     "aliases": [],
+     "desc": "夏洛特口中自己的朋友"
+    },
+    {
+     "name": "笃笃骨",
+     "type": "角色",
+     "aliases": [
+      "女巫小姐"
+     ],
+     "desc": "以蜗牛赛跑制润滑脂的女巫"
+    },
+    {
+     "name": "纸信圈儿",
+     "type": "角色",
+     "aliases": [],
+     "desc": "每周为女巫送蜗牛的孩子"
+    },
+    {
+     "name": "澳大利亚",
+     "type": "地点",
+     "aliases": [],
+     "desc": "笃笃骨计划远行的目的地"
+    }
+   ],
+   "relations": [
+    {
+     "src": "纸信圈儿",
+     "relation": "侍奉",
+     "dst": "笃笃骨",
+     "evidence": "女巫小姐，这是这周的蜗牛",
+     "confidence": 0.8
+    },
+    {
+     "src": "笃笃骨",
+     "relation": "前往",
+     "dst": "澳大利亚",
+     "evidence": "澳大利亚……那里的太阳很厉害",
+     "confidence": 0.8
+    },
+    {
+     "src": "夏洛特",
+     "relation": "友谊",
+     "dst": "苏利丝",
+     "evidence": "苏利丝是我的朋友",
+     "confidence": 0.9
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__20601_旧金山小子:7.0.1",
+   "entities": [
+    {
+     "name": "J",
+     "type": "角色",
+     "aliases": [
+      "乔·布朗"
+     ],
+     "desc": "餐馆老板，为伙计谋出路的旧金山小子"
+    },
+    {
+     "name": "布莱克汉警长",
+     "type": "角色",
+     "aliases": [
+      "布莱克汉"
+     ],
+     "desc": "发放徽章、答应放人的警长"
+    },
+    {
+     "name": "贝克特",
+     "type": "角色",
+     "aliases": [],
+     "desc": "扎车胎惹事的伙计"
+    },
+    {
+     "name": "霍利克",
+     "type": "角色",
+     "aliases": [],
+     "desc": "与贝克特一同被捞出的伙计"
+    },
+    {
+     "name": "保利娜",
+     "type": "角色",
+     "aliases": [],
+     "desc": "J的妹妹，爱做体面事"
+    },
+    {
+     "name": "海特街警局",
+     "type": "地点",
+     "aliases": [],
+     "desc": "众人领取徽章的警局"
+    },
+    {
+     "name": "金门海峡",
+     "type": "地点",
+     "aliases": [],
+     "desc": "大桥横跨的海峡"
+    }
+   ],
+   "relations": [
+    {
+     "src": "J",
+     "relation": "指挥",
+     "dst": "贝克特",
+     "evidence": "走，贝克特，去把霍利克也叫上",
+     "confidence": 0.85
+    },
+    {
+     "src": "J",
+     "relation": "指挥",
+     "dst": "霍利克",
+     "evidence": "他要是在睡觉，你就把他踹起来",
+     "confidence": 0.6
+    },
+    {
+     "src": "J",
+     "relation": "协助",
+     "dst": "布莱克汉警长",
+     "evidence": "我早看那群混蛋不爽了，多亏了J",
+     "confidence": 0.8
+    },
+    {
+     "src": "J",
+     "relation": "兄长",
+     "dst": "保利娜",
+     "evidence": "J不由得想起了妹妹，那个喜欢做体面事的保利娜",
+     "confidence": 0.85
+    },
+    {
+     "src": "布莱克汉警长",
+     "relation": "任职于",
+     "dst": "海特街警局",
+     "evidence": "【标题卡】海特街警局",
+     "confidence": 0.8
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__19601_飞渡往日:4.0.2",
+   "entities": [
+    {
+     "name": "露西",
+     "type": "角色",
+     "aliases": [
+      "机械女士"
+     ],
+     "desc": "驾银翼飞行翼试飞落水的机械飞翼者"
+    },
+    {
+     "name": "维克多",
+     "type": "角色",
+     "aliases": [],
+     "desc": "为飞行翼拉投资最终绝望的工程师"
+    },
+    {
+     "name": "查尔斯河",
+     "type": "地点",
+     "aliases": [],
+     "desc": "飞行翼试飞坠落的河面"
+    }
+   ],
+   "relations": [
+    {
+     "src": "露西",
+     "relation": "合作",
+     "dst": "维克多",
+     "evidence": "这套强行拼凑连接的核心系统没有意义",
+     "confidence": 0.85
+    },
+    {
+     "src": "露西",
+     "relation": "飞越",
+     "dst": "查尔斯河",
+     "evidence": "展开银翼，向着查尔斯河一跃而下",
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__17703_灯塔集:5.0.0",
+   "entities": [
+    {
+     "name": "马库斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "《弗兰南群岛史》专栏作者"
+    },
+    {
+     "name": "霍夫曼",
+     "type": "角色",
+     "aliases": [],
+     "desc": "为观测项目上岛的基金会成员"
+    },
+    {
+     "name": "圣洛夫基金会",
+     "type": "组织",
+     "aliases": [
+      "基金会"
+     ],
+     "desc": "申请征用试验点的机构"
+    },
+    {
+     "name": "拉普拉斯科算中心",
+     "type": "组织",
+     "aliases": [
+      "科算中心"
+     ],
+     "desc": "联合运行理线学观测项目的机构"
+    },
+    {
+     "name": "弗兰南群岛",
+     "type": "地点",
+     "aliases": [],
+     "desc": "被征用为备用试验点的群岛"
+    },
+    {
+     "name": "理线学",
+     "type": "概念",
+     "aliases": [],
+     "desc": "科算中心刊登的新兴神秘学理论"
+    },
+    {
+     "name": "《时代前沿》",
+     "type": "物品",
+     "aliases": [],
+     "desc": "刊登理线学基础介绍的期刊"
+    },
+    {
+     "name": "《弗兰南群岛史》",
+     "type": "物品",
+     "aliases": [],
+     "desc": "马库斯连载至今的历史专栏"
+    },
+    {
+     "name": "《白日梦邮报》",
+     "type": "物品",
+     "aliases": [],
+     "desc": "刊登马库斯新专栏的报纸"
+    },
+    {
+     "name": "埃利安锡尔",
+     "type": "地点",
+     "aliases": [],
+     "desc": "设有基金会办事处可提异议之地"
+    }
+   ],
+   "relations": [
+    {
+     "src": "霍夫曼",
+     "relation": "隶属于",
+     "dst": "圣洛夫基金会",
+     "evidence": "您也是从基金会来的",
+     "confidence": 0.85
+    },
+    {
+     "src": "圣洛夫基金会",
+     "relation": "联合",
+     "dst": "拉普拉斯科算中心",
+     "evidence": "由圣洛夫基金会与拉普拉斯科算中心联合运行",
+     "confidence": 0.9
+    },
+    {
+     "src": "拉普拉斯科算中心",
+     "relation": "研究",
+     "dst": "理线学",
+     "evidence": "科算中心将它刊登在《时代前沿》",
+     "confidence": 0.65
+    },
+    {
+     "src": "马库斯",
+     "relation": "居住于",
+     "dst": "弗兰南群岛",
+     "evidence": "考察弗兰南群岛，而非调查在外的神秘学家",
+     "confidence": 0.6
+    },
+    {
+     "src": "马库斯",
+     "relation": "创作",
+     "dst": "《弗兰南群岛史》",
+     "evidence": "连载至今的《弗兰南群岛史》专栏",
+     "confidence": 0.9
+    },
+    {
+     "src": "《时代前沿》",
+     "relation": "刊载",
+     "dst": "理线学",
+     "evidence": "刊登在《时代前沿》期刊的第二版",
+     "confidence": 0.85
+    },
+    {
+     "src": "圣洛夫基金会",
+     "relation": "征用",
+     "dst": "弗兰南群岛",
+     "evidence": "基金会将征用弗兰南群岛的一小块区域",
+     "confidence": 0.9
+    },
+    {
+     "src": "圣洛夫基金会",
+     "relation": "驻于",
+     "dst": "埃利安锡尔",
+     "evidence": "向基金会驻埃利安锡尔办事处提出异议",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__19603_犹在镜中:1.0.0",
+   "entities": [
+    {
+     "name": "卡卡尼亚",
+     "type": "角色",
+     "aliases": [],
+     "desc": "既不能也不愿用神秘术的心理医生"
+    },
+    {
+     "name": "泽姆菲拉",
+     "type": "角色",
+     "aliases": [],
+     "desc": "赠卡卡尼亚手镜的友人"
+    },
+    {
+     "name": "伊索尔德",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被卡卡尼亚挂念、欲助之人"
+    },
+    {
+     "name": "维也纳",
+     "type": "地点",
+     "aliases": [],
+     "desc": "卡卡尼亚与其河畔漫步之地"
+    },
+    {
+     "name": "温格勒家族",
+     "type": "组织",
+     "aliases": [],
+     "desc": "相传镜面神秘术的家族"
+    },
+    {
+     "name": "镜面神秘术",
+     "type": "概念",
+     "aliases": [],
+     "desc": "温格勒家族相传、映出心中所想的术法"
+    }
+   ],
+   "relations": [
+    {
+     "src": "卡卡尼亚",
+     "relation": "帮助",
+     "dst": "伊索尔德",
+     "evidence": "只有我能帮助她",
+     "confidence": 0.85
+    },
+    {
+     "src": "温格勒家族",
+     "relation": "传承",
+     "dst": "镜面神秘术",
+     "evidence": "温格勒家族相传的镜面神秘术",
+     "confidence": 0.9
+    },
+    {
+     "src": "泽姆菲拉",
+     "relation": "赠予",
+     "dst": "卡卡尼亚",
+     "evidence": "这是一份礼物，收下它",
+     "confidence": 0.85
+    },
+    {
+     "src": "卡卡尼亚",
+     "relation": "使用",
+     "dst": "镜面神秘术",
+     "evidence": "温格勒家族相传的镜面神秘术——看着镜子吧",
+     "confidence": 0.75
+    },
+    {
+     "src": "泽姆菲拉",
+     "relation": "游历于",
+     "dst": "维也纳",
+     "evidence": "我能与你漫步在维也纳河畔",
+     "confidence": 0.65
+    },
+    {
+     "src": "卡卡尼亚",
+     "relation": "漫步于",
+     "dst": "维也纳",
+     "evidence": "我能与你漫步在维也纳河畔",
+     "confidence": 0.6
+    }
+   ]
+  },
+  {
+   "chunk_id": "character__20603_第一千夜:5.0.1",
+   "entities": [
+    {
+     "name": "比安卡",
+     "type": "角色",
+     "aliases": [
+      "塔罗师比安卡"
+     ],
+     "desc": "在交换商店找回德克斯特项链的占卜师"
+    },
+    {
+     "name": "环状水星",
+     "type": "角色",
+     "aliases": [],
+     "desc": "伴比安卡挑裙取项链的机械同伴"
+    },
+    {
+     "name": "德克斯特",
+     "type": "角色",
+     "aliases": [],
+     "desc": "遗失相片盒项链十个月之人"
+    },
+    {
+     "name": "相片盒项链",
+     "type": "物品",
+     "aliases": [
+      "项链"
+     ],
+     "desc": "链条生锈、被当赠品留店的旧项链"
+    }
+   ],
+   "relations": [
+    {
+     "src": "比安卡",
+     "relation": "相识",
+     "dst": "德克斯特",
+     "evidence": "这是德克斯特的项链！",
+     "confidence": 0.8
+    },
+    {
+     "src": "比安卡",
+     "relation": "寻回",
+     "dst": "相片盒项链",
+     "evidence": "我居然在这里看到了德克斯特丢失了十个月的项链",
+     "confidence": 0.85
+    },
+    {
+     "src": "比安卡",
+     "relation": "同行",
+     "dst": "环状水星",
+     "evidence": "听到了比安卡的惊呼，环状水星也走了过来",
+     "confidence": 0.8
+    },
+    {
+     "src": "德克斯特",
+     "relation": "持有过",
+     "dst": "相片盒项链",
+     "evidence": "德克斯特丢失了十个月的项链",
+     "confidence": 0.8
+    }
+   ]
+  },
+  {
+   "chunk_id": "anecdote__1914_只有泉水知道:4.0.2",
+   "entities": [
+    {
+     "name": "雾行者",
+     "type": "角色",
+     "aliases": [],
+     "desc": "再提举手表决方案者"
+    },
+    {
+     "name": "X",
+     "type": "角色",
+     "aliases": [],
+     "desc": "招募清理船试验者的询问者"
+    },
+    {
+     "name": "洋葱头",
+     "type": "角色",
+     "aliases": [],
+     "desc": "疾呼众人接近故事核心的神秘学家"
+    },
+    {
+     "name": "X-301号海绵型清理船",
+     "type": "物品",
+     "aliases": [],
+     "desc": "寻找试验者的清理船"
+    }
+   ],
+   "relations": [
+    {
+     "src": "雾行者",
+     "relation": "同行",
+     "dst": "洋葱头",
+     "evidence": "朋友们，等等！我们就快抵达故事真正的核心",
+     "confidence": 0.5
+    }
+   ]
+  },
+  {
+   "chunk_id": "anecdote__1901_雾行者角色故事:3.0.0",
+   "entities": [
+    {
+     "name": "雾行者",
+     "type": "角色",
+     "aliases": [
+      "奥利弗"
+     ],
+     "desc": "惧雾的伦敦雾气处理者"
+    },
+    {
+     "name": "未锈铠",
+     "type": "角色",
+     "aliases": [],
+     "desc": "扮作会说话的树守护雾行者"
+    },
+    {
+     "name": "海布里球场",
+     "type": "地点",
+     "aliases": [],
+     "desc": "雾行者儿时远征目的地"
+    },
+    {
+     "name": "阿森纳",
+     "type": "组织",
+     "aliases": [],
+     "desc": "伦敦最火热的球队"
+    },
+    {
+     "name": "伦敦",
+     "type": "地点",
+     "aliases": [],
+     "desc": "雾行者负责处理雾气之城"
+    }
+   ],
+   "relations": [
+    {
+     "src": "未锈铠",
+     "relation": "保护",
+     "dst": "雾行者",
+     "evidence": "你是来保护我的？",
+     "confidence": 0.85
+    },
+    {
+     "src": "雾行者",
+     "relation": "效力于",
+     "dst": "伦敦",
+     "evidence": "负责处理伦敦雾气的雾行者",
+     "confidence": 0.85
+    },
+    {
+     "src": "雾行者",
+     "relation": "渴望加入",
+     "dst": "阿森纳",
+     "evidence": "加入成为他们的一员",
+     "confidence": 0.85
+    },
+    {
+     "src": "阿森纳",
+     "relation": "驻于",
+     "dst": "海布里球场",
+     "evidence": "身披阿森纳的队服在海布里球场驰骋",
+     "confidence": 0.8
+    },
+    {
+     "src": "雾行者",
+     "relation": "憧憬",
+     "dst": "海布里球场",
+     "evidence": "我的目的地是海布里球场",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "anecdote__1910_风吹乌哈拉:0.0.1",
+   "entities": [
+    {
+     "name": "贝托尔特",
+     "type": "角色",
+     "aliases": [],
+     "desc": "派新兵赴战区、安抚红弩箭的军官"
+    },
+    {
+     "name": "红弩箭",
+     "type": "角色",
+     "aliases": [
+      "隼崽儿"
+     ],
+     "desc": "替阿历克塞担忧、受审的新兵"
+    },
+    {
+     "name": "阿历克塞",
+     "type": "角色",
+     "aliases": [
+      "阿历克塞·费奥多罗维奇·雷列耶夫"
+     ],
+     "desc": "搜救任务中枪杀战友的列兵"
+    },
+    {
+     "name": "芝诺军备学院",
+     "type": "组织",
+     "aliases": [
+      "芝诺",
+      "芝诺总部"
+     ],
+     "desc": "残破、向战区派遣人员的机构"
+    },
+    {
+     "name": "乌哈拉",
+     "type": "地点",
+     "aliases": [],
+     "desc": "郊外发生枪杀案的战区"
+    },
+    {
+     "name": "暴雨",
+     "type": "事件",
+     "aliases": [],
+     "desc": "使该部损失惨重的那场灾变"
+    }
+   ],
+   "relations": [
+    {
+     "src": "贝托尔特",
+     "relation": "隶属于",
+     "dst": "芝诺军备学院",
+     "evidence": "我们才会被派到战区去干活儿",
+     "confidence": 0.7
+    },
+    {
+     "src": "红弩箭",
+     "relation": "隶属于",
+     "dst": "芝诺军备学院",
+     "evidence": "别拿学院里那套做派往这儿放",
+     "confidence": 0.65
+    },
+    {
+     "src": "红弩箭",
+     "relation": "听命于",
+     "dst": "贝托尔特",
+     "evidence": "去吧，隼崽儿，记得我跟你说的话",
+     "confidence": 0.8
+    },
+    {
+     "src": "红弩箭",
+     "relation": "熟识",
+     "dst": "阿历克塞",
+     "evidence": "那阿历克塞会不会死？",
+     "confidence": 0.7
+    },
+    {
+     "src": "贝托尔特",
+     "relation": "关照",
+     "dst": "阿历克塞",
+     "evidence": "他也许会被监禁三年，然后减刑、特赦",
+     "confidence": 0.7
+    },
+    {
+     "src": "阿历克塞",
+     "relation": "作案于",
+     "dst": "乌哈拉",
+     "evidence": "在乌哈拉郊外执行搜救任务时枪杀了一位协从军战友",
+     "confidence": 0.8
+    },
+    {
+     "src": "暴雨",
+     "relation": "重创",
+     "dst": "贝托尔特",
+     "evidence": "“暴雨”让我们损失惨重",
+     "confidence": 0.65
+    }
+   ]
+  },
+  {
+   "chunk_id": "anecdote__1921_鬼马探灵记:3.2.1",
+   "entities": [
+    {
+     "name": "李安安",
+     "type": "角色",
+     "aliases": [],
+     "desc": "入井解红线而被水冲出昏厥的女孩"
+    },
+    {
+     "name": "盲眼算命师",
+     "type": "角色",
+     "aliases": [],
+     "desc": "救起李安安、未见她手中花的算命师"
+    },
+    {
+     "name": "陈半仙",
+     "type": "角色",
+     "aliases": [],
+     "desc": "喃喃不信女孩成功的男人"
+    },
+    {
+     "name": "三清铃",
+     "type": "物品",
+     "aliases": [
+      "铃铛"
+     ],
+     "desc": "水下摇不响、随女孩被冲出的铃"
+    }
+   ],
+   "relations": [
+    {
+     "src": "李安安",
+     "relation": "师从",
+     "dst": "盲眼算命师",
+     "evidence": "救、救命啊师父！",
+     "confidence": 0.8
+    },
+    {
+     "src": "陈半仙",
+     "relation": "质疑",
+     "dst": "李安安",
+     "evidence": "……怎么，怎么可能……",
+     "confidence": 0.7
+    },
+    {
+     "src": "李安安",
+     "relation": "持有",
+     "dst": "三清铃",
+     "evidence": "三清铃徒劳地晃荡，在水下发不出任何声音",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "appendix_unbound__022_1_9_地牢剧情:9.1.2",
+   "entities": [
+    {
+     "name": "剃刀",
+     "type": "角色",
+     "aliases": [
+      "“剃刀”小队"
+     ],
+     "desc": "带队追击、庇护塞梅尔维斯的队长"
+    },
+    {
+     "name": "塞梅尔维斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "被琳赛宣布叛逃的基金会调查员"
+    },
+    {
+     "name": "琳赛女士",
+     "type": "角色",
+     "aliases": [],
+     "desc": "要求肃清塞梅尔维斯的冷峻者"
+    },
+    {
+     "name": "罗蕾莱",
+     "type": "角色",
+     "aliases": [],
+     "desc": "以歌声使躁动士兵安静的歌者"
+    },
+    {
+     "name": "安杰罗",
+     "type": "角色",
+     "aliases": [],
+     "desc": "躺在地上的剃刀部下"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "剃刀与塞梅尔维斯同属的组织"
+    },
+    {
+     "name": "奥匈帝国",
+     "type": "组织",
+     "aliases": [],
+     "desc": "曾珍藏失窃宝物的帝国"
+    },
+    {
+     "name": "暴雨",
+     "type": "事件",
+     "aliases": [],
+     "desc": "司辰早已发布其预警"
+    }
+   ],
+   "relations": [
+    {
+     "src": "剃刀",
+     "relation": "隶属于",
+     "dst": "基金会",
+     "evidence": "我都会如实地向基金会汇报",
+     "confidence": 0.85
+    },
+    {
+     "src": "塞梅尔维斯",
+     "relation": "隶属于",
+     "dst": "基金会",
+     "evidence": "她仍旧是我们基金会的同僚",
+     "confidence": 0.85
+    },
+    {
+     "src": "琳赛女士",
+     "relation": "命令",
+     "dst": "剃刀",
+     "evidence": "站在你面前的是肃清对象，请你立即执行命令",
+     "confidence": 0.75
+    },
+    {
+     "src": "剃刀",
+     "relation": "庇护",
+     "dst": "塞梅尔维斯",
+     "evidence": "你的包庇行为会为基金会带来额外的风险",
+     "confidence": 0.85
+    },
+    {
+     "src": "罗蕾莱",
+     "relation": "帮助",
+     "dst": "剃刀",
+     "evidence": "我又怎么会让罗蕾莱帮助你的下属呢",
+     "confidence": 0.6
+    },
+    {
+     "src": "塞梅尔维斯",
+     "relation": "借助",
+     "dst": "罗蕾莱",
+     "evidence": "我又怎么会让罗蕾莱帮助你的下属呢",
+     "confidence": 0.7
+    },
+    {
+     "src": "琳赛女士",
+     "relation": "指控",
+     "dst": "塞梅尔维斯",
+     "evidence": "塞梅尔维斯已经叛逃，站在你面前的是肃清对象",
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "chunk_id": "appendix_unbound__022_1_9_地牢剧情:2.1.0",
+   "entities": [
+    {
+     "name": "塞梅尔维斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "在诊所醒来的马库斯同僚"
+    },
+    {
+     "name": "卡卡尼亚",
+     "type": "角色",
+     "aliases": [],
+     "desc": "以镜诊察灵性的心理医生"
+    },
+    {
+     "name": "马库斯",
+     "type": "角色",
+     "aliases": [],
+     "desc": "塞梅尔维斯所称善于阅读的朋友"
+    },
+    {
+     "name": "维也纳",
+     "type": "地点",
+     "aliases": [],
+     "desc": "文中提及的曾有吵闹人群之城"
+    }
+   ],
+   "relations": [
+    {
+     "src": "卡卡尼亚",
+     "relation": "诊断",
+     "dst": "塞梅尔维斯",
+     "evidence": "从刚刚的诊疗之中，我看出您面临严重的精神疾病威胁",
+     "confidence": 0.85
+    },
+    {
+     "src": "塞梅尔维斯",
+     "relation": "友于",
+     "dst": "马库斯",
+     "evidence": "哦！原来您是马库斯的朋友？",
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "chunk_id": "appendix_unbound__008_1_9_去往新世界_37:1.1.0",
+   "entities": [
+    {
+     "name": "37",
+     "type": "角色",
+     "aliases": [],
+     "desc": "信奉数字与本质、即将离岛的学派之人"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "与37道别的对话者"
+    },
+    {
+     "name": "苏菲亚",
+     "type": "角色",
+     "aliases": [],
+     "desc": "37期待一起研究课题的同伴"
+    }
+   ],
+   "relations": [
+    {
+     "src": "37",
+     "relation": "对话",
+     "dst": "维尔汀",
+     "evidence": "你提前了我们再见的时间，维尔汀",
+     "confidence": 0.9
+    },
+    {
+     "src": "37",
+     "relation": "在意",
+     "dst": "苏菲亚",
+     "evidence": "苏菲亚也一定会喜欢这个课题",
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "chunk_id": "appendix_unbound__017_1_9_去往新世界_槲寄生:0.1.0",
+   "entities": [
+    {
+     "name": "槲寄生",
+     "type": "角色",
+     "aliases": [
+      "德鲁伊"
+     ],
+     "desc": "战后倾听树木、评议阿尔卡纳的德鲁伊"
+    },
+    {
+     "name": "维尔汀",
+     "type": "角色",
+     "aliases": [],
+     "desc": "与槲寄生交谈、指认毕达哥拉斯树者"
+    },
+    {
+     "name": "阿尔卡纳",
+     "type": "角色",
+     "aliases": [],
+     "desc": "目的难明、被比作规律之人"
+    },
+    {
+     "name": "重塑之手",
+     "type": "组织",
+     "aliases": [],
+     "desc": "目的可被槲寄生理解的组织"
+    },
+    {
+     "name": "苏芙比",
+     "type": "角色",
+     "aliases": [],
+     "desc": "留下成长魔药的神秘学家"
+    },
+    {
+     "name": "基金会",
+     "type": "组织",
+     "aliases": [],
+     "desc": "评估植被威胁、分析魔药的机构"
+    },
+    {
+     "name": "毕达哥拉斯树",
+     "type": "概念",
+     "aliases": [],
+     "desc": "体现数学家理念的树木修剪结构"
+    },
+    {
+     "name": "成长魔药",
+     "type": "物品",
+     "aliases": [],
+     "desc": "苏芙比留下、被基金会分析的魔药"
+    }
+   ],
+   "relations": [
+    {
+     "src": "苏芙比",
+     "relation": "配制",
+     "dst": "成长魔药",
+     "evidence": "苏芙比小姐留下的成长魔药",
+     "confidence": 0.85
+    },
+    {
+     "src": "基金会",
+     "relation": "分析",
+     "dst": "成长魔药",
+     "evidence": "还分析了苏芙比小姐留下的成长魔药",
+     "confidence": 0.85
+    },
+    {
+     "src": "槲寄生",
+     "relation": "理解",
+     "dst": "重塑之手",
+     "evidence": "我可以理解重塑之手的目的",
+     "confidence": 0.85
+    },
+    {
+     "src": "槲寄生",
+     "relation": "交谈",
+     "dst": "维尔汀",
+     "evidence": "确实如你所说，这里有着一片值得期待的森林",
+     "confidence": 0.85
+    },
+    {
+     "src": "维尔汀",
+     "relation": "指认",
+     "dst": "毕达哥拉斯树",
+     "evidence": "这被叫作毕达哥拉斯树",
+     "confidence": 0.8
+    },
+    {
+     "src": "槲寄生",
+     "relation": "评价",
+     "dst": "阿尔卡纳",
+     "evidence": "在我看来，阿尔卡纳就像是一条规律",
+     "confidence": 0.8
+    }
+   ]
+  }
+ ]
+}

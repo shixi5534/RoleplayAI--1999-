@@ -1,0 +1,21 @@
+{
+  "schema": "audit.l4_worldview_review/v1",
+  "batch": "b04",
+  "items": [
+    {"concept": "石像鬼", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.25, "notes": "两条隶属边同向（哨兵/拉蒂斯），无环"},
+    {"concept": "神秘学家", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.4, "notes": "罗蕾莱兼有是/隶属/象征；个体属范畴非等同，不判环"},
+    {"concept": "神秘学家感染种", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.2, "notes": "感染种是神秘学家、塞梅尔维斯是感染种，仅链式"},
+    {"concept": "神秘学术式", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.05, "notes": "单边包含边证据与desc逐字对应"},
+    {"concept": "神秘术", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "十边对象各异，包含/隶属方向杂但无同一对环"},
+    {"concept": "祥瑞", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.2, "notes": "单边证据“庇护一方的祥瑞”直指该概念"},
+    {"concept": "科学的训练方式", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.15, "notes": "两条影响边同向，证据即“科学的训练方式”"},
+    {"concept": "穆姆", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边隶属魔精，证据述呼吸角生雾，与desc合"},
+    {"concept": "罗蕾莱的歌声", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.15, "notes": "八条均为影响边，对象各异，无对立定义"},
+    {"concept": "罗蕾莱的预言", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "单边“洪水即暴雨”语气存疑，但方向明确单一"},
+    {"concept": "能量", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "唯一边证据述集市感应痕迹，与影响边同向"},
+    {"concept": "艺术品拍卖会", "verdict": "insufficient", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "唯一边证据只讲引燃蜡烛复制仪式，与拍卖会无关"},
+    {"concept": "萤火虫", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.35, "notes": "单边证据按实光虫描写，与“误认”有张力但不互斥"},
+    {"concept": "血食怪", "verdict": "mutually_exclusive", "conflicting_edges": [{"index": 3, "why": "「血食怪是瓦伦缇娜」把它等同个体"}, {"index": 4, "why": "「瓦伦缇娜隶属血食怪」又是真包含"}], "constraint_risk": 0.75, "notes": "边3“是”+边4“隶属”构成等同+真包含层级环"},
+    {"concept": "血食怪的把戏", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边隶属血食怪，证据即“独属于血食怪的把戏”"}
+  ]
+}

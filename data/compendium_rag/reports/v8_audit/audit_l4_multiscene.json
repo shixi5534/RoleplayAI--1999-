@@ -1,0 +1,134 @@
+{
+  "schema": "compendium_rag.audit/v1",
+  "wp": "WP4-multiscene",
+  "frozen_graph_sha": "026b41699f021db2",
+  "retrieval_config": {
+    "lex_weight": 1.0,
+    "lex_top": 30,
+    "lex_first": 0,
+    "rrf_k": 1,
+    "top_k": 6,
+    "ppr_damping": 0.85,
+    "graph_weight": 1.0,
+    "vector_weight": 1.0,
+    "entity_link_top": 6,
+    "seed_score_threshold": 0.34,
+    "llm_model": "cn:kimi-k2.6",
+    "embed_model": "bge-m3",
+    "pythonhashseed": "0"
+  },
+  "metrics": {
+    "n_reviewed": 60,
+    "mean_coherence": 3.9333,
+    "low_scores": [
+      {
+        "chunk_id": "activity__11101_雷米特杯失窃案:11.0.0",
+        "coherence": 2,
+        "n_edges": 7,
+        "n_mismatch": 2,
+        "mismatch": [
+          {
+            "src": "挖掘艺术",
+            "relation": "宣告",
+            "dst": "游客",
+            "why": "原文这句「准确来说，这是一场艺术变革」是回答艾弗森的追问，宣告对象是艾弗森，不是游客"
+          },
+          {
+            "src": "皮克勒斯",
+            "relation": "推搡",
+            "dst": "查尔顿",
+            "why": "原文是狗想叫醒熟睡的主人，被归一为「攻击」，凭空造出同伴间的对立关系"
+          }
+        ],
+        "why": "两条实质错：宣告对象错张、把唤改成攻击；余五条尚可"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:0.0.2",
+        "coherence": 2,
+        "n_edges": 8,
+        "n_mismatch": 2,
+        "mismatch": [
+          {
+            "src": "恐怖通",
+            "relation": "描述",
+            "dst": "巡警",
+            "why": "证据句讲的是“开朗的布鲁诺”，原文通篇无巡警这个角色"
+          },
+          {
+            "src": "十四行诗",
+            "relation": "惊惧",
+            "dst": "恐怖通",
+            "why": "“术杖快被折断”是维尔汀对十四行诗说的话，被错记成她对恐怖通"
+          }
+        ],
+        "why": "安娜奎尼、牙仙线有据，但两条实体与说话人错置"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:1.2.0",
+        "coherence": 2,
+        "n_edges": 6,
+        "n_mismatch": 2,
+        "mismatch": [
+          {
+            "src": "牙仙",
+            "relation": "宣告",
+            "dst": "疯癫的老人",
+            "why": "原文只向维尔汀陈述，老人已昏迷，是被谈对象非受话人"
+          },
+          {
+            "src": "坎贝尔先生",
+            "relation": "投保",
+            "dst": "牙仙",
+            "why": "原文本块无坎贝尔先生发言，投保人是牙仙的弟弟"
+          }
+        ],
+        "why": "牙仙与维尔汀四条互洽，两处对象/角色凭空"
+      },
+      {
+        "chunk_id": "activity__12101_绿湖噩梦:11.1.0",
+        "coherence": 2,
+        "n_edges": 8,
+        "n_mismatch": 2,
+        "mismatch": [
+          {
+            "src": "恐怖通",
+            "relation": "示范",
+            "dst": "鬼新娘",
+            "why": "他向同伴讲解戒指召来新娘，未对新娘示范或指导"
+          },
+          {
+            "src": "恐怖通",
+            "relation": "应对",
+            "dst": "维尔汀",
+            "why": "原文是回答维尔汀的提问（近乎百分之百），并非对抗"
+          }
+        ],
+        "why": "同盟商议被写成对鬼新娘指导、对维尔汀对抗"
+      }
+    ]
+  },
+  "gate_verdicts": [
+    {
+      "gate": "L4.5 多角色场景关系互洽性",
+      "target": "≥4.0/5",
+      "actual": 3.9333,
+      "verdict": "FAIL",
+      "reason": "口径：随机抽 60 个含 ≥3 角色实体的场景块，子代理逐块核对图谱关系陈述与原文是否互洽（1~5）；实评 60 块",
+      "root_cause_bucket": "数据层"
+    },
+    {
+      "gate": "L4.5b 多角色同场运行时生成一致性",
+      "target": "≥4.0/5",
+      "actual": null,
+      "verdict": "N/A",
+      "reason": "src/roleplay 与 compendium_rag 之间零 import、无运行时通路，正典库未接入多角色同场对话生成；对不存在的通路判负=惩罚未做的设计决策。豁免并从 L4 分母剔除",
+      "root_cause_bucket": "通路不存在"
+    }
+  ],
+  "per_case": [],
+  "artifacts": [
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_multiscene\\ms_b01_review.json",
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_multiscene\\ms_b02_review.json",
+    "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\knowledge\\_audit\\l4_multiscene\\ms_b03_review.json"
+  ]
+}

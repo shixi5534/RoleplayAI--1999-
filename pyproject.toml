@@ -15,12 +15,19 @@ dependencies = [
     "httpx==0.28.1",
     "starlette==0.40.0",
     "python-multipart>=0.0.6",
+    # numpy：`compendium_rag/retriever.py` 与 `roleplay/core/knowledge/plot_semantic.py`
+    # 都是**模块顶层** import，属一等公民包的硬依赖（向量索引数学），
+    # 与「情感」特性无关。此前仅挂在 extras.emotion，导致按 README 的
+    # `pip install -e ".[dev]"` 装完后 `import compendium_rag` 直接 ImportError。
+    "numpy>=1.26",
 ]
 
 [project.optional-dependencies]
 rag = ["chromadb>=0.5"]
 docs = ["pypdf>=4.0", "python-docx>=1.1"]
 voice = ["edge-tts>=6.1", "faster-whisper>=1.0"]
+# numpy 已是基线依赖（见上）；保留此项仅为兼容既有的 `pip install roleplay-ai[emotion]`
+# 安装命令，install 后不会额外引入任何包。
 emotion = ["numpy>=1.26"]
 dev = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "httpx==0.28.1"]
 

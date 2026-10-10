@@ -1,0 +1,511 @@
+{
+  "meta": {
+    "author": "p6-repair-apply（子代理，r9 落盘执行）",
+    "timestamp": "2026-10-09T22:00:37+08:00",
+    "batch": "r9",
+    "network": "offline",
+    "graph_state": {
+      "entities": 7033,
+      "edges": 27135,
+      "fingerprint": "14daf1bbfa407388",
+      "sha16": "56507b18ac2113b6"
+    },
+    "why_new_batch": "R8（28 条 L4.5 修边）落盘后重做盲评（l4_multiscene_r8b，62 块 / 4 批，rubric 与首轮逐字节一致），得到 19 条 review-mismatch-confirmed。其中 18 条为纯 delete_edge，构成 r9 本批；第 19 条 `牙仙-[导致]->金蜜儿`（chunk activity__12101_绿湖噩梦:14.0.0，edge[27134]）因需仲裁而**排除**，不在本批。",
+    "precondition_gate": "落盘前必须 18/18 三元组全部命中：graph.json 的 sha16 == 56507b18ac2113b6、entities == 7033、edges == 27135、fingerprint == 14daf1bbfa407388；且 18 条 (src, relation, dst) 逐一存在且其 edge 索引与提案登记的 pre-r9 index 完全相等（4823/4825/5158/5159/5160/5266/5269/4344/4761/4777/4519/4633/4788/4801/5128/5231/5282/4881）。任一条不命中即中止，不写盘。",
+    "scope_proof": "本批只有这 18 条边、覆盖 15 个 chunk：绿湖:1.1.0 / 11.2.0 / 16.0.0 / 0.0.0 / 0.0.3 / 0.0.2 / 10.2.0 / 15.1.0 / 16.0.1 / 2.0.2（10 块）+ 雷米特杯:0.1.1 / 14.0.0 / 15.0.0 / 5.0.0 / 9.0.1（5 块）。全部为 delete_edge，无 add_edge / add_entity / remove_alias / merge_entities / reassign_chunk / move_edge，故实体数与别名表不动。18 条三元组（src, 表层谓词, dst）在 graph.json 中各有且仅有 1 条边，逐条 eid 精确匹配；两条边带多 chunk_ids（#13 含 0.0.0+0.0.3，共 2 块；#18 含 2.0.2+11.2.0+15.1.0+15.2.0+15.1.1，共 5 块），删除即整体移除该边及其全部 chunk 归属——side effect 已在两条目的 after 中登记。",
+    "expected": {
+      "entities": "7033 -> 7033（本批无 add_entity / merge_entities）",
+      "edges": "27135 -> 27117（18 条纯 delete_edge，净 -18；无 add_edge 相抵）",
+      "alias_total": "不变（本批无 remove_alias / add_alias）",
+      "fingerprint": "不变 14daf1bbfa407388（只吃 SCHEMA_VERSION/corpus_fp/llm_model/PROMPT_VERSION/chunk_chars/NORMALIZER_VERSION，与边集无关）"
+    }
+  },
+  "entries": [
+    {
+      "id": "R9-L45-001",
+      "type": "delete_edge",
+      "target": "牙仙",
+      "edges": [
+        {
+          "edge": [
+            "牙仙",
+            "告知",
+            "坎贝尔先生"
+          ],
+          "how": "受话人错张：坎贝尔先生只是被谈论的对象（牙仙自陈「坎贝尔是我的兄弟」），他不在场、不是受话人"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:1.1.0",
+          "quote": "坎贝尔是我的兄弟。因为我也是一个坎贝尔"
+        }
+      ],
+      "rationale": "review ms_b03（l4_multiscene_r8b）coherence=2 块，mismatch.why=「原文是牙仙向十四行诗等人讲述，坎贝尔先生不在场」。该块原文证实：**十四行诗**：「坎贝尔先生？请问他是谁，他的身上发生了什么事儿？」／**牙仙**：「坎贝尔是我的兄弟。因为我也是一个坎贝尔。我是坎贝尔小姐，而他是坎贝尔先生。」⇒ 受话人为在场的十四行诗/恐怖通，坎贝尔先生是被谈对象。兄妹事实另由既有关系承载，本条只删「告知」。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "牙仙-[告知]->坎贝尔先生（edge[4823]，chunk_ids=[activity__12101_绿湖噩梦:1.1.0]，ev=「坎贝尔是我的兄弟。因为我也是一个坎贝尔」）",
+      "after": "删除该边；本块 n_edges 10->9（该块共 2 条 mismatch，本条为第 1 条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:1.1.0 coherence 2->3（两条同时修掉才 +1）"
+    },
+    {
+      "id": "R9-L45-002",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "告知",
+            "坎贝尔先生"
+          ],
+          "how": "受话人错张：恐怖通向同行者转述坎贝尔的遭遇，坎贝尔先生不在场"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:1.1.0",
+          "quote": "他的牙齿在转眼之间消失无踪"
+        }
+      ],
+      "rationale": "review ms_b03 同块第 2 条，mismatch.why=「原文是恐怖通向同行者讲述坎贝尔遭遇，对方非受话人」。原文**恐怖通**：「在这一点上，我们都得感谢坎贝尔先生。」「他在牙仙女士身边被偷去了所有牙齿……」⇒ 受话人为车内同伴（牙仙/十四行诗），坎贝尔先生是被讲述的第三方。本批不新增谓词、不补边，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[告知]->坎贝尔先生（edge[4825]，chunk_ids=[activity__12101_绿湖噩梦:1.1.0]，ev=「他的牙齿在转眼之间消失无踪」）",
+      "after": "删除该边；本块 n_edges 10->8（连同上条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:1.1.0 coherence 2->3（该块第 2 条 mismatch，两条同时删才 +1）"
+    },
+    {
+      "id": "R9-L45-003",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "告知",
+            "恐怖通"
+          ],
+          "how": "受话人错张：安妮在向维尔汀逐一列举同伴想要什么，恐怖通只是被提及者"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.2.0",
+          "quote": "恐怖通先生想要一杯咖啡或者一块口香糖"
+        }
+      ],
+      "rationale": "review ms_b03 coherence=2 块，mismatch.why=「原文是安妮回答维尔汀，恐怖通只是被提及者」。原文**维尔汀**发问后，**安妮**逐条列举「牙仙女士想要……／十四行诗小姐则是想要……／恐怖通先生想要一杯咖啡或者一块口香糖」⇒ 受话人为维尔汀，三条 dst 均为列举对象。正确关系「安妮-[告知]->维尔汀」若图上已有则无需 add；本批不新增谓词，只删三条。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[告知]->恐怖通（edge[5158]，chunk_ids=[activity__12101_绿湖噩梦:11.2.0]，ev=「恐怖通先生想要一杯咖啡或者一块口香糖」）",
+      "after": "删除该边；本块 n_edges 7->6（该块共 3 条 mismatch，本条为第 1 条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:11.2.0 coherence 2->3（三条同时删才 +1）"
+    },
+    {
+      "id": "R9-L45-004",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "告知",
+            "牙仙"
+          ],
+          "how": "受话人错张：安妮在向维尔汀列举同伴想要什么，牙仙只是被提及者"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.2.0",
+          "quote": "牙仙女士想要各式各样的魔精牙齿"
+        }
+      ],
+      "rationale": "review ms_b03 同块第 2 条，mismatch.why=「原文是安妮回答维尔汀，牙仙只是被提及者」。同 R9-L45-003 的列举句式，dst 为被列举对象而非受话人。只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[告知]->牙仙（edge[5159]，chunk_ids=[activity__12101_绿湖噩梦:11.2.0]，ev=「牙仙女士想要各式各样的魔精牙齿」）",
+      "after": "删除该边；本块 n_edges 7->6（含本条在内 3 条删除后为 7->4）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:11.2.0 coherence 2->3（该块第 2 条 mismatch）"
+    },
+    {
+      "id": "R9-L45-005",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "告知",
+            "十四行诗"
+          ],
+          "how": "受话人错张：安妮在向维尔汀列举同伴想要什么，十四行诗只是被提及者"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:11.2.0",
+          "quote": "十四行诗小姐则是想要一颗太妃糖"
+        }
+      ],
+      "rationale": "review ms_b03 同块第 3 条，mismatch.why=「原文是安妮回答维尔汀，十四行诗只是被提及者」。同列举句式；注意「安妮-[告知]->十四行诗」与该块内既有「十四行诗-[告知]->安妮」方向互补，本条删的是被列举方向的错边。只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[告知]->十四行诗（edge[5160]，chunk_ids=[activity__12101_绿湖噩梦:11.2.0]，ev=「十四行诗小姐则是想要一颗太妃糖」）",
+      "after": "删除该边；本块 n_edges 7->4（三条同时删）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:11.2.0 coherence 2->3（该块第 3 条 mismatch，三条同时删才 +1）"
+    },
+    {
+      "id": "R9-L45-006",
+      "type": "delete_edge",
+      "target": "Z",
+      "edges": [
+        {
+          "edge": [
+            "Z",
+            "命令",
+            "约书亚"
+          ],
+          "how": "受话人错张 + 行为无据：Z 是向牙仙谈约书亚的处分，约书亚本人不在场，未受任何命令"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:16.0.0",
+          "quote": "他的职位会进行下调，他本人还要面对三到五个月的禁足"
+        }
+      ],
+      "rationale": "review ms_b04 coherence=2 块，mismatch.why=「原文是Z对牙仙谈约书亚的处分，约书亚本人不在场，未受任何命令」。该句是 Z 对牙仙陈述一项已成事实的问责结果（「他的职位会进行下调……禁足」），非对约书亚发出的指令；受话人为牙仙。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "Z-[命令]->约书亚（edge[5266]，chunk_ids=[activity__12101_绿湖噩梦:16.0.0]，ev=「他的职位会进行下调，他本人还要面对三到五个月的禁足」）",
+      "after": "删除该边；本块 n_edges 12->11（该块共 2 条 mismatch，本条为第 1 条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:16.0.0 coherence 2->3（两条同时删才 +1）"
+    },
+    {
+      "id": "R9-L45-007",
+      "type": "delete_edge",
+      "target": "Z",
+      "edges": [
+        {
+          "edge": [
+            "Z",
+            "告知",
+            "安妮"
+          ],
+          "how": "受话人错张：Z 是对牙仙评价安妮，安妮在后座睡着，不是受话人"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:16.0.0",
+          "quote": "按修订版的神秘学家安全性评估量表结果显示，这小女孩是个危险分子"
+        }
+      ],
+      "rationale": "review ms_b04 同块第 2 条，mismatch.why=「原文是Z对牙仙说这小女孩是危险分子，安妮在后座睡着，不是受话人」。第三人称「这小女孩」表明安妮是被评价对象而非对听话人；受话人为牙仙。只删不补。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "Z-[告知]->安妮（edge[5269]，chunk_ids=[activity__12101_绿湖噩梦:16.0.0]，ev=「按修订版的神秘学家安全性评估量表结果显示，这小女孩是个危险分子」）",
+      "after": "删除该边；本块 n_edges 12->10（连同上条）",
+      "expected_effect": "块 activity__12101_绿湖噩梦:16.0.0 coherence 2->3（该块第 2 条 mismatch，两条同时删才 +1）"
+    },
+    {
+      "id": "R9-L45-008",
+      "type": "delete_edge",
+      "target": "艾弗森",
+      "edges": [
+        {
+          "edge": [
+            "艾弗森",
+            "告知",
+            "安保机器人"
+          ],
+          "how": "受话人错张：艾弗森回答的是威廉警长，安保机器人只是被谈论的话题"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:0.1.1",
+          "quote": "它们从不出错"
+        }
+      ],
+      "rationale": "review ms_b01（r8b），mismatch.why=「原文里其实是艾弗森回答在场者威廉警长『它故障了吗？』，受话人是警长，机器人只是被谈论的话题」。第三人称「它们」表明机器人为被谈对象；受话人为威廉警长。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b01_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "艾弗森-[告知]->安保机器人（edge[4344]，chunk_ids=[activity__11101_雷米特杯失窃案:0.1.1]，ev=「它们从不出错」）",
+      "after": "删除该边；本块 n_edges 13->12",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:0.1.1 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-009",
+      "type": "delete_edge",
+      "target": "梅兰妮",
+      "edges": [
+        {
+          "edge": [
+            "梅兰妮",
+            "发现",
+            "皮克勒斯"
+          ],
+          "how": "方向颠倒：原文是皮克勒斯发现梅兰妮（「竟然有人找到了我」），主客写反"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:14.0.0",
+          "quote": "竟然有人找到了我，是我的行迹泄露了吗？"
+        }
+      ],
+      "rationale": "review ms_b02（r8b），mismatch.why=「原文是皮克勒斯找到了梅兰妮（竟然有人找到了我），方向颠倒」。该句由梅兰妮以第一人称说出，「有人找到了我」⇒ 发现者为皮克勒斯，被找到者为梅兰妮。本批只做方向纠正的删除；反向边若需补建留待重抽/人工裁决，本批不 add_edge。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b02_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "梅兰妮-[发现]->皮克勒斯（edge[4761]，chunk_ids=[activity__11101_雷米特杯失窃案:14.0.0]，ev=「竟然有人找到了我，是我的行迹泄露了吗？」）",
+      "after": "删除该边；本块 n_edges 5->4",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:14.0.0 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-010",
+      "type": "delete_edge",
+      "target": "UTTU讲述者",
+      "edges": [
+        {
+          "edge": [
+            "UTTU讲述者",
+            "告知",
+            "皮克勒斯"
+          ],
+          "how": "受话人错张：原话受话人是《UTTU》的读者们，皮克勒斯不在受话位"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:15.0.0",
+          "quote": "这是我所遇到的其中一个故事，《UTTU》的读者们"
+        }
+      ],
+      "rationale": "review ms_b02（r8b），mismatch.why=「原话受话人是《UTTU》的读者们，皮克勒斯不在受话位，受话人错张」。原文呼语逐字为「《UTTU》的读者们」⇒ 受话人为读者群体（叙述框架的听者），皮克勒斯是被讲述故事中的角色。本批不新增实体/谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b02_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "UTTU讲述者-[告知]->皮克勒斯（edge[4777]，chunk_ids=[activity__11101_雷米特杯失窃案:15.0.0]，ev=「这是我所遇到的其中一个故事，《UTTU》的读者们」）",
+      "after": "删除该边；本块 n_edges 10->9",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:15.0.0 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-011",
+      "type": "delete_edge",
+      "target": "APPLe",
+      "edges": [
+        {
+          "edge": [
+            "APPLe",
+            "告知",
+            "安保机器人"
+          ],
+          "how": "受话人错张：APPLe 向星锑介绍机器人功能，机器人是被介绍的话题"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:5.0.0",
+          "quote": "安保机器人们拥有屏蔽信号，影响局部空间磁场的功能"
+        }
+      ],
+      "rationale": "review ms_b02（r8b），mismatch.why=「原文APPLe向星锑介绍机器人功能，受话人是星锑，受话人错张」。该句以第三人称陈述机器人属性，属向同伴讲解；受话人为星锑。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b02_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "APPLe-[告知]->安保机器人（edge[4519]，chunk_ids=[activity__11101_雷米特杯失窃案:5.0.0]，ev=「安保机器人们拥有屏蔽信号，影响局部空间磁场的功能」）",
+      "after": "删除该边；本块 n_edges 10->9",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:5.0.0 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-012",
+      "type": "delete_edge",
+      "target": "安保犬",
+      "edges": [
+        {
+          "edge": [
+            "安保犬",
+            "离开",
+            "皮克勒斯"
+          ],
+          "how": "方向颠倒：原文里离开的是皮克勒斯，安保犬一直留在门口未离开"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__11101_雷米特杯失窃案:9.0.1",
+          "quote": "呜……呜呜～"
+        }
+      ],
+      "rationale": "review ms_b03（r8b），mismatch.why=「原文里离开的是皮克勒斯，安保犬一直留在门口未离开」。该块唯一证据是一声犬吠，无离开语义；主体方向反。本批只删该边，不新增谓词、不补反向边。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安保犬-[离开]->皮克勒斯（edge[4633]，chunk_ids=[activity__11101_雷米特杯失窃案:9.0.1]，ev=「呜……呜呜～」）",
+      "after": "删除该边；本块 n_edges 7->6",
+      "expected_effect": "块 activity__11101_雷米特杯失窃案:9.0.1 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-013",
+      "type": "delete_edge",
+      "target": "十四行诗",
+      "edges": [
+        {
+          "edge": [
+            "十四行诗",
+            "告知",
+            "恐怖通"
+          ],
+          "how": "受话人错张：十四行诗是向维尔汀介绍恐怖通，受话人是维尔汀"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:0.0.0",
+          "quote": "正是他获得了“年度突出贡献”的奖励徽章"
+        }
+      ],
+      "rationale": "review ms_b03（r8b），mismatch.why=「原文是十四行诗向维尔汀介绍恐怖通，受话人是维尔汀」。该句以第三人称介绍恐怖通的履历，属向维尔汀作介绍；恐怖通是被介绍对象。⚠ **多 chunk side effect**：该边 chunk_ids 覆盖 activity__12101_绿湖噩梦:0.0.0 与 activity__12101_绿湖噩梦:0.0.3 两块（count=2），删除会同时移除 :0.0.3 对该边的归属（:0.0.3 的其他边不受影响）。本批不补边。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "十四行诗-[告知]->恐怖通（edge[4788]，chunk_ids=[activity__12101_绿湖噩梦:0.0.0, activity__12101_绿湖噩梦:0.0.3]，count=2，ev=「正是他获得了“年度突出贡献”的奖励徽章」）",
+      "after": "删除该边（整条，含 :0.0.0 与 :0.0.3 两个 chunk 归属）；块 :0.0.0 n_edges 11->10，块 :0.0.3 n_edges 8->8 中该边不再计入",
+      "expected_effect": "块 activity__12101_绿湖噩梦:0.0.0 coherence 3->4；activity__12101_绿湖噩梦:0.0.3 因少一条错边亦不降"
+    },
+    {
+      "id": "R9-L45-014",
+      "type": "delete_edge",
+      "target": "恐怖通",
+      "edges": [
+        {
+          "edge": [
+            "恐怖通",
+            "告知",
+            "小德利斯"
+          ],
+          "how": "受话人错张：恐怖通向维尔汀等人讲述，小德利斯只是故事里的人"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:0.0.2",
+          "quote": "一年级新生小德利斯在梦中惊醒"
+        }
+      ],
+      "rationale": "review ms_b03（r8b），mismatch.why=「原文是恐怖通向维尔汀等人讲述，小德利斯只是故事里的人」。原文为**恐怖通**的长篇转述（「他们声称自己刚从雨林中回来……」「直到一个深夜，芝诺军备学院的一年级新生小德利斯在梦中惊醒……」），小德利斯是叙述内的人物，非受话人。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "恐怖通-[告知]->小德利斯（edge[4801]，chunk_ids=[activity__12101_绿湖噩梦:0.0.2]，ev=「一年级新生小德利斯在梦中惊醒」）",
+      "after": "删除该边；本块 n_edges 7->6",
+      "expected_effect": "块 activity__12101_绿湖噩梦:0.0.2 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-015",
+      "type": "delete_edge",
+      "target": "十四行诗",
+      "edges": [
+        {
+          "edge": [
+            "十四行诗",
+            "请求",
+            "金蜜儿"
+          ],
+          "how": "受话人错张：十四行诗是催同伴去救金蜜儿，被请求者不是金蜜儿"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:10.2.0",
+          "quote": "她被鬼新娘推倒了——我们得赶快去救她！"
+        }
+      ],
+      "rationale": "review ms_b03（r8b），mismatch.why=「原文是十四行诗催同伴去救金蜜儿，被请求者不是金蜜儿」。该句以第三人称「她」指金蜜儿，呼语为「我们得赶快去救她！」⇒ 受话人为在场同伴，金蜜儿是被救援对象。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b03_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "十四行诗-[请求]->金蜜儿（edge[5128]，chunk_ids=[activity__12101_绿湖噩梦:10.2.0]，ev=「她被鬼新娘推倒了——我们得赶快去救她！」）",
+      "after": "删除该边；本块 n_edges 12->11",
+      "expected_effect": "块 activity__12101_绿湖噩梦:10.2.0 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-016",
+      "type": "delete_edge",
+      "target": "金蜜儿",
+      "edges": [
+        {
+          "edge": [
+            "金蜜儿",
+            "请求",
+            "杰森"
+          ],
+          "how": "受话人错张：金蜜儿对洁西卡说请她放杰森等人走，杰森是被要求释放的对象"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:15.1.0",
+          "quote": "那就放所有人走。包括杰森、弗莱迪和迈克尔"
+        }
+      ],
+      "rationale": "review ms_b04（r8b），mismatch.why=「原文是金蜜儿对洁西卡说，请她放杰森等人走，受话人不是杰森」。该句为祈使句「放所有人走」，宾语为杰森/弗莱迪/迈克尔 ⇒ 受话人为洁西卡，三人是被释放对象。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "金蜜儿-[请求]->杰森（edge[5231]，chunk_ids=[activity__12101_绿湖噩梦:15.1.0]，ev=「那就放所有人走。包括杰森、弗莱迪和迈克尔」）",
+      "after": "删除该边；本块 n_edges 7->6",
+      "expected_effect": "块 activity__12101_绿湖噩梦:15.1.0 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-017",
+      "type": "delete_edge",
+      "target": "Z",
+      "edges": [
+        {
+          "edge": [
+            "Z",
+            "命令",
+            "安妮"
+          ],
+          "how": "受话人错张 + 行为无据：Z 是向牙仙讲述小鹿姑娘的来历，对安妮并无任何指令"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:16.0.1",
+          "quote": "那个小鹿姑娘正是他们搬家时的疏忽"
+        }
+      ],
+      "rationale": "review ms_b04（r8b），mismatch.why=「原文是Z向牙仙讲述小鹿姑娘的来历，对安妮并无任何指令」。该句是叙述句而非祈使句，受话人为牙仙，安妮未受指令。本批不新增谓词，只删。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "Z-[命令]->安妮（edge[5282]，chunk_ids=[activity__12101_绿湖噩梦:16.0.1]，ev=「那个小鹿姑娘正是他们搬家时的疏忽」）",
+      "after": "删除该边；本块 n_edges 7->6",
+      "expected_effect": "块 activity__12101_绿湖噩梦:16.0.1 coherence 3->4（该块唯一 mismatch）"
+    },
+    {
+      "id": "R9-L45-018",
+      "type": "delete_edge",
+      "target": "安妮",
+      "edges": [
+        {
+          "edge": [
+            "安妮",
+            "告知",
+            "金蜜儿"
+          ],
+          "how": "受话人错张：安妮回答的是维尔汀的「电影？」追问，受话人不是金蜜儿"
+        }
+      ],
+      "evidence": [
+        {
+          "src": "activity__12101_绿湖噩梦:2.0.2",
+          "quote": "我们在拍电影，一部恐怖电影"
+        }
+      ],
+      "rationale": "review ms_b04（r8b），mismatch.why=「原文是安妮回答维尔汀的『电影？』追问，受话人不是金蜜儿」。该句为对同一块内**维尔汀**追问的应答；受话人为维尔汀。⚠ **多 chunk side effect**：该边 chunk_ids 覆盖 5 块（activity__12101_绿湖噩梦:2.0.2 / :11.2.0 / :15.1.0 / :15.2.0 / :15.1.1，count=6），删除会同时移除这 5 块对该边的归属。本批不补边。",
+      "arbitration_ref": "data/knowledge/_audit/l4_multiscene_r8b/ms_b04_review.json",
+      "arbitration_status": "review-mismatch-confirmed",
+      "before": "安妮-[告知]->金蜜儿（edge[4881]，chunk_ids=[activity__12101_绿湖噩梦:2.0.2, activity__12101_绿湖噩梦:11.2.0, activity__12101_绿湖噩梦:15.1.0, activity__12101_绿湖噩梦:15.2.0, activity__12101_绿湖噩梦:15.1.1]，count=6，ev=「我们在拍电影，一部恐怖电影」）",
+      "after": "删除该边（整条，含 5 个 chunk 归属）；块 :2.0.2 n_edges 8->7",
+      "expected_effect": "块 activity__12101_绿湖噩梦:2.0.2 coherence 3->4；其余 4 块因少一条错边亦不降"
+    }
+  ]
+}

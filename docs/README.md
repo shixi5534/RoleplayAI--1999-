@@ -96,6 +96,7 @@
 |---|---|
 | [`pet-design/`](voice-desktop/pet-design/) | 桌宠设计 v0.2/v0.3（呈现规范、视觉风格板、实施方案、索引） |
 | [`voice/`](voice-desktop/voice/) | 语音台词集、点击交互设计、情绪检测升级 |
+| [`排查-桌面宠物唤不起来-Low完整性标签.md`](voice-desktop/排查-桌面宠物唤不起来-Low完整性标签.md) | **排障文档**：点按钮无反应的真因（文件完整性标签→进程降权），含自查命令与两次误诊教训 |
 | [`CHRONICLE.md`](voice-desktop/CHRONICLE.md) | 历史编年史（2 条） |
 
 > ⚠️ **运行时依赖**：`src/roleplay/main.py` 通过 HTTP 端点 `/docs/DESKTOP_PET_DESIGN.md`

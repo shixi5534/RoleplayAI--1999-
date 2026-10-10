@@ -1,0 +1,493 @@
+{
+  "schema": "audit.p6_l45_r8/v1",
+  "graph_sha16": "56507b18ac2113b6",
+  "pool_size_r8": 2792,
+  "n_union": 62,
+  "n_reviewed": 62,
+  "arm_a": {
+    "n": 60,
+    "n_reviewed": 60,
+    "missing": [],
+    "mean": 3.4333,
+    "dist": {
+      "2": 12,
+      "3": 15,
+      "4": 28,
+      "5": 5
+    },
+    "gate": 4.0,
+    "verdict": "FAIL",
+    "pre_r8_mean": 3.9333,
+    "delta_vs_pre_r8": -0.5
+  },
+  "arm_b": {
+    "n": 60,
+    "n_reviewed": 60,
+    "missing": [],
+    "mean": 3.4,
+    "dist": {
+      "2": 12,
+      "3": 17,
+      "4": 26,
+      "5": 5
+    },
+    "verdict": "FAIL"
+  },
+  "common_with_pre_r8": {
+    "n": 60,
+    "n_up": 13,
+    "n_down": 29,
+    "n_same": 18,
+    "up": [
+      "activity__11101_雷米特杯失窃案:0.1.0",
+      "activity__11101_雷米特杯失窃案:0.2.0",
+      "activity__11101_雷米特杯失窃案:1.2.1",
+      "activity__11101_雷米特杯失窃案:11.0.0",
+      "activity__11101_雷米特杯失窃案:12.1.0",
+      "activity__11101_雷米特杯失窃案:12.1.1",
+      "activity__11101_雷米特杯失窃案:12.2.0",
+      "activity__11101_雷米特杯失窃案:3.1.1",
+      "activity__11101_雷米特杯失窃案:7.1.0",
+      "activity__11101_雷米特杯失窃案:9.0.0",
+      "activity__12101_绿湖噩梦:1.2.0",
+      "activity__12101_绿湖噩梦:17.0.0",
+      "activity__12101_绿湖噩梦:2.0.0"
+    ],
+    "down": [
+      "activity__11101_雷米特杯失窃案:1.1.0",
+      "activity__11101_雷米特杯失窃案:1.1.1",
+      "activity__11101_雷米特杯失窃案:1.2.0",
+      "activity__11101_雷米特杯失窃案:10.1.0",
+      "activity__11101_雷米特杯失窃案:10.1.1",
+      "activity__11101_雷米特杯失窃案:10.2.0",
+      "activity__11101_雷米特杯失窃案:11.0.1",
+      "activity__11101_雷米特杯失窃案:2.0.0",
+      "activity__11101_雷米特杯失窃案:3.1.0",
+      "activity__11101_雷米特杯失窃案:5.0.0",
+      "activity__11101_雷米特杯失窃案:7.2.0",
+      "activity__11101_雷米特杯失窃案:7.2.1",
+      "activity__11101_雷米特杯失窃案:8.0.0",
+      "activity__11101_雷米特杯失窃案:9.0.1",
+      "activity__12101_绿湖噩梦:0.0.0",
+      "activity__12101_绿湖噩梦:0.0.1",
+      "activity__12101_绿湖噩梦:1.1.0",
+      "activity__12101_绿湖噩梦:1.1.1",
+      "activity__12101_绿湖噩梦:10.2.0",
+      "activity__12101_绿湖噩梦:11.2.0",
+      "activity__12101_绿湖噩梦:12.0.0",
+      "activity__12101_绿湖噩梦:12.0.1",
+      "activity__12101_绿湖噩梦:13.0.1",
+      "activity__12101_绿湖噩梦:15.1.1",
+      "activity__12101_绿湖噩梦:15.2.0",
+      "activity__12101_绿湖噩梦:15.2.1",
+      "activity__12101_绿湖噩梦:16.0.0",
+      "activity__12101_绿湖噩梦:16.0.1",
+      "activity__12101_绿湖噩梦:17.0.1"
+    ]
+  },
+  "arm_a_detail": {
+    "activity__11101_雷米特杯失窃案:0.1.0": {
+      "coherence": 4,
+      "n_edges": 6,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:0.1.1": {
+      "coherence": 4,
+      "n_edges": 13,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:0.1.2": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:0.2.0": {
+      "coherence": 5,
+      "n_edges": 8,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:1.1.0": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:1.1.1": {
+      "coherence": 4,
+      "n_edges": 6,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:1.2.0": {
+      "coherence": 4,
+      "n_edges": 6,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:1.2.1": {
+      "coherence": 4,
+      "n_edges": 3,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:10.1.0": {
+      "coherence": 3,
+      "n_edges": 10,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:10.1.1": {
+      "coherence": 4,
+      "n_edges": 7,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:10.2.0": {
+      "coherence": 3,
+      "n_edges": 6,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:11.0.0": {
+      "coherence": 4,
+      "n_edges": 4,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 2
+    },
+    "activity__11101_雷米特杯失窃案:11.0.1": {
+      "coherence": 2,
+      "n_edges": 6,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:12.1.0": {
+      "coherence": 4,
+      "n_edges": 9,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:12.1.1": {
+      "coherence": 4,
+      "n_edges": 6,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:12.1.2": {
+      "coherence": 5,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:12.2.0": {
+      "coherence": 5,
+      "n_edges": 1,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:13.1.0": {
+      "coherence": 5,
+      "n_edges": 7,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:13.2.0": {
+      "coherence": 4,
+      "n_edges": 1,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:14.0.0": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:15.0.0": {
+      "coherence": 3,
+      "n_edges": 10,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:2.0.0": {
+      "coherence": 3,
+      "n_edges": 9,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:2.0.1": {
+      "coherence": 4,
+      "n_edges": 4,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:3.1.0": {
+      "coherence": 4,
+      "n_edges": 9,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:3.1.1": {
+      "coherence": 4,
+      "n_edges": 10,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:3.2.0": {
+      "coherence": 5,
+      "n_edges": 3,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:4.2.0": {
+      "coherence": 4,
+      "n_edges": 3,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:5.0.0": {
+      "coherence": 2,
+      "n_edges": 10,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:6.1.0": {
+      "coherence": 4,
+      "n_edges": 7,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__11101_雷米特杯失窃案:7.1.0": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:7.2.0": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:7.2.1": {
+      "coherence": 3,
+      "n_edges": 9,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:8.0.0": {
+      "coherence": 2,
+      "n_edges": 9,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 5
+    },
+    "activity__11101_雷米特杯失窃案:9.0.0": {
+      "coherence": 4,
+      "n_edges": 8,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__11101_雷米特杯失窃案:9.0.1": {
+      "coherence": 2,
+      "n_edges": 7,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:0.0.0": {
+      "coherence": 2,
+      "n_edges": 11,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:0.0.1": {
+      "coherence": 4,
+      "n_edges": 4,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:0.0.2": {
+      "coherence": 2,
+      "n_edges": 7,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 2
+    },
+    "activity__12101_绿湖噩梦:0.0.3": {
+      "coherence": 4,
+      "n_edges": 8,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:1.1.0": {
+      "coherence": 2,
+      "n_edges": 10,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:1.1.1": {
+      "coherence": 3,
+      "n_edges": 9,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:1.2.0": {
+      "coherence": 4,
+      "n_edges": 4,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 2
+    },
+    "activity__12101_绿湖噩梦:10.1.1": {
+      "coherence": 3,
+      "n_edges": 3,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:10.2.0": {
+      "coherence": 2,
+      "n_edges": 12,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:11.1.0": {
+      "coherence": 2,
+      "n_edges": 5,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 2
+    },
+    "activity__12101_绿湖噩梦:11.2.0": {
+      "coherence": 2,
+      "n_edges": 7,
+      "n_mismatch": 5,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:12.0.0": {
+      "coherence": 3,
+      "n_edges": 4,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:12.0.1": {
+      "coherence": 4,
+      "n_edges": 3,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:13.0.0": {
+      "coherence": 4,
+      "n_edges": 8,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:13.0.1": {
+      "coherence": 3,
+      "n_edges": 8,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:14.0.0": {
+      "coherence": 3,
+      "n_edges": 3,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:15.1.0": {
+      "coherence": 3,
+      "n_edges": 7,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:15.1.1": {
+      "coherence": 3,
+      "n_edges": 3,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:15.2.0": {
+      "coherence": 3,
+      "n_edges": 6,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:15.2.1": {
+      "coherence": 3,
+      "n_edges": 12,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:16.0.0": {
+      "coherence": 2,
+      "n_edges": 12,
+      "n_mismatch": 3,
+      "pre_r8_coherence": 5
+    },
+    "activity__12101_绿湖噩梦:16.0.1": {
+      "coherence": 2,
+      "n_edges": 7,
+      "n_mismatch": 2,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:17.0.0": {
+      "coherence": 4,
+      "n_edges": 5,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    },
+    "activity__12101_绿湖噩梦:17.0.1": {
+      "coherence": 3,
+      "n_edges": 7,
+      "n_mismatch": 1,
+      "pre_r8_coherence": 4
+    },
+    "activity__12101_绿湖噩梦:2.0.0": {
+      "coherence": 4,
+      "n_edges": 10,
+      "n_mismatch": 0,
+      "pre_r8_coherence": 3
+    }
+  },
+  "still_le2_in_arm_a": {
+    "activity__11101_雷米特杯失窃案:11.0.1": 2,
+    "activity__11101_雷米特杯失窃案:5.0.0": 2,
+    "activity__11101_雷米特杯失窃案:8.0.0": 2,
+    "activity__11101_雷米特杯失窃案:9.0.1": 2,
+    "activity__12101_绿湖噩梦:0.0.0": 2,
+    "activity__12101_绿湖噩梦:0.0.2": 2,
+    "activity__12101_绿湖噩梦:1.1.0": 2,
+    "activity__12101_绿湖噩梦:10.2.0": 2,
+    "activity__12101_绿湖噩梦:11.1.0": 2,
+    "activity__12101_绿湖噩梦:11.2.0": 2,
+    "activity__12101_绿湖噩梦:16.0.0": 2,
+    "activity__12101_绿湖噩梦:16.0.1": 2
+  },
+  "mismatch_blocks_in_arm_a": {
+    "activity__11101_雷米特杯失窃案:10.1.0": 1,
+    "activity__11101_雷米特杯失窃案:10.2.0": 1,
+    "activity__11101_雷米特杯失窃案:11.0.1": 2,
+    "activity__11101_雷米特杯失窃案:15.0.0": 1,
+    "activity__11101_雷米特杯失窃案:2.0.0": 1,
+    "activity__11101_雷米特杯失窃案:5.0.0": 2,
+    "activity__11101_雷米特杯失窃案:7.2.1": 1,
+    "activity__11101_雷米特杯失窃案:8.0.0": 2,
+    "activity__11101_雷米特杯失窃案:9.0.1": 2,
+    "activity__12101_绿湖噩梦:0.0.0": 2,
+    "activity__12101_绿湖噩梦:0.0.2": 2,
+    "activity__12101_绿湖噩梦:1.1.0": 2,
+    "activity__12101_绿湖噩梦:1.1.1": 1,
+    "activity__12101_绿湖噩梦:10.1.1": 1,
+    "activity__12101_绿湖噩梦:10.2.0": 2,
+    "activity__12101_绿湖噩梦:11.1.0": 2,
+    "activity__12101_绿湖噩梦:11.2.0": 5,
+    "activity__12101_绿湖噩梦:12.0.0": 1,
+    "activity__12101_绿湖噩梦:13.0.1": 1,
+    "activity__12101_绿湖噩梦:14.0.0": 1,
+    "activity__12101_绿湖噩梦:15.1.0": 1,
+    "activity__12101_绿湖噩梦:15.1.1": 1,
+    "activity__12101_绿湖噩梦:15.2.0": 1,
+    "activity__12101_绿湖噩梦:15.2.1": 1,
+    "activity__12101_绿湖噩梦:16.0.0": 3,
+    "activity__12101_绿湖噩梦:16.0.1": 2,
+    "activity__12101_绿湖噩梦:17.0.1": 1
+  }
+}

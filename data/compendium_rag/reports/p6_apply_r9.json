@@ -1,0 +1,292 @@
+{
+  "schema": "compendium_rag.p6_apply_r9/v1",
+  "generated_at": "2026-10-09T22:00:37+08:00",
+  "task": "P6 图谱修复落盘：apply data/compendium_rag/repairs_v8/proposal.json 的 18 条 L4.5 修边提案（version-tag r9）",
+  "executor": "子代理（只读取证 + 逐步执行；未跑 cli rebuild/extract，未联网，未调云端 LLM）",
+  "env": {
+    "cwd": "C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai",
+    "python": ".venv/Scripts/python.exe",
+    "pythonpath": "src",
+    "python_flag": "-X utf8",
+    "retrieval_env": {
+      "CMPRAG_LEX_WEIGHT": "1.0",
+      "CMPRAG_RRF_K": "1",
+      "CMPRAG_LEX_FIRST": "0"
+    },
+    "network": "none"
+  },
+  "steps": {
+    "1_precondition": {
+      "status": "PASS",
+      "exit_code": 0,
+      "expected": {
+        "sha16": "56507b18ac2113b6",
+        "bytes": 11583580,
+        "entities": 7033,
+        "edges": 27135,
+        "fingerprint": "14daf1bbfa407388",
+        "normalizer": "n2"
+      },
+      "actual": {
+        "sha16": "56507b18ac2113b6",
+        "bytes": 11583580,
+        "entities": 7033,
+        "edges": 27135,
+        "fingerprint": "14daf1bbfa407388",
+        "normalizer": "n2"
+      },
+      "triple_lookup": "18/18 三元组在 graph.json 中命中，且 eid/索引与提案登记的 pre-r9 index 逐一相等（4823 / 4825 / 5158 / 5159 / 5160 / 5266 / 5269 / 4344 / 4761 / 4777 / 4519 / 4633 / 4788 / 4801 / 5128 / 5231 / 5282 / 4881）",
+      "note": "与断言完全一致"
+    },
+    "2_dry_run": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v8/proposal.json",
+      "stdout": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 18 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27135 -> 27117\n[DRY-RUN] 全绿。加 --apply 才写盘。\n",
+      "stdout_expected_lines_matched": [
+        "条目: 18 | 预检错误: 0 | 警告: 0 | 后检错误: 0",
+        "实体: 7033 -> 7033 | 边: 27135 -> 27117",
+        "[DRY-RUN] 全绿。加 --apply 才写盘。"
+      ]
+    },
+    "3_apply": {
+      "status": "PASS",
+      "exit_code": 0,
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/_graph_apply_repairs.py --proposal data/compendium_rag/repairs_v8/proposal.json --apply --version-tag r9",
+      "stdout": "加载 chunk 文本（管线同源分块）…\nchunks: 3695\n焊主（数据驱动推断）: None\n\n条目: 18 | 预检错误: 0 | 警告: 0 | 后检错误: 0\n实体: 7033 -> 7033 | 边: 27135 -> 27117\n[APPLIED] 备份 -> C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\backups\\graph.json.prev.r9；新图 -> C:\\Users\\Lenovo\\WorkBuddy\\2026-07-27-16-45-03\\roleplay-ai\\data\\compendium_rag\\graph.json\n          落盘 SHA16 = 329671bba0988c68（格式 indent=2 + CRLF，与 GraphStore.save 一致）\n",
+      "backup": {
+        "path": "data/compendium_rag/backups/graph.json.prev.r9",
+        "exists": true,
+        "bytes": 11583580,
+        "sha16": "56507b18ac2113b6",
+        "note": "= 修复前状态，自洽（sha16 56507b18ac2113b6 / 11583580 bytes）"
+      }
+    },
+    "4_new_state": {
+      "status": "PASS",
+      "after_sha16": "329671bba0988c68",
+      "after_sha256_full": "329671bba0988c68584d9809b21013d8cea5b57384cd3cd3419973a12ca6dfab",
+      "after_bytes": 11577960,
+      "after_entities": 7033,
+      "after_edges": 27117,
+      "after_fingerprint": "14daf1bbfa407388",
+      "after_normalizer": "n2",
+      "after_schema": "compendium_rag.graph/v1",
+      "delta_edges": -18,
+      "format_check": {
+        "crlf_lines": 405140,
+        "lone_lf": 0,
+        "note": "indent=2 + CRLF 保持与 GraphStore.save 及历史冻结件一致（未出现 LF 混入）"
+      },
+      "fingerprint_unchanged_reason": "fingerprint_of() 只吃 SCHEMA_VERSION/corpus_fp/llm_model/PROMPT_VERSION/chunk_chars/NORMALIZER_VERSION，与边集无关；修边不改指纹",
+      "all_18_gone": true,
+      "excluded_kept": {
+        "triple": ["牙仙", "导致", "金蜜儿"],
+        "still_present": true,
+        "edge_index_pre_r9": 27134,
+        "chunk_id": "activity__12101_绿湖噩梦:14.0.0",
+        "note": "按指示排除、待仲裁；落盘后确认仍在图中"
+      }
+    },
+    "5_audit_common_update": {
+      "status": "PASS",
+      "file": "scripts/audit_common.py",
+      "change": "新增常量 V9P3_GRAPH_SHA16 = \"329671bba0988c68\"（含 1 行注释），并把 FROZEN_GRAPH_SHA16 从 V9P2 改指 V9P3；V8_GRAPH_SHA16 / V9P1_GRAPH_SHA16 / V9P2_GRAPH_SHA16 / V8_SELFCHECK / V8_SAFETY / V8_TOP_K 原样保留",
+      "scope": "唯二改动：新增 V9P3 常量行 + FROZEN 指向。未改其它任何内容。",
+      "import_check": {
+        "V8": "026b41699f021db2",
+        "V9P1": "7cac5867e8c80879",
+        "V9P2": "56507b18ac2113b6",
+        "V9P3": "329671bba0988c68",
+        "FROZEN": "329671bba0988c68"
+      },
+      "V8_SELFCHECK_unchanged": {
+        "300cn": {"artifact": "eval_300cn_k1.json", "tier": "answerable", "hits": 167, "n": 196, "rate": 0.852},
+        "blind206": {"artifact": "eval_blind_k1.json", "tier": "all", "hits": 184, "n": 206, "rate": 0.8932},
+        "gen120": {"artifact": "eval_gen120_k1.json", "tier": "all", "hits": 118, "n": 120, "rate": 0.9833}
+      }
+    },
+    "6_regression_gate": {
+      "script": "scripts/audit_wp0_env.py",
+      "cmd": "PYTHONPATH=src .venv/Scripts/python.exe -X utf8 scripts/audit_wp0_env.py",
+      "exit_code": 1,
+      "report": "data/compendium_rag/reports/audit_wp0_env.json",
+      "frozen_graph_sha": "329671bba0988c68",
+      "gate_verdicts": [
+        {"gate": "graph_sha_vs_v8", "actual": "329671bba0988c68", "verdict": "FAIL", "why": "该门硬编码比对 V8_GRAPH_SHA16=026b41699f021db2，r9 落盘后必然 FAIL；非数据回退（预期内，与 r8 落盘时同一现象）"},
+        {"gate": "graph_fingerprint", "actual": "ok", "verdict": "PASS"},
+        {"gate": "gateway_available", "actual": "200", "verdict": "PASS"},
+        {"gate": "ollama_available", "actual": "1024", "verdict": "PASS"},
+        {"gate": "qid_whitelist_counts", "actual": "{300cn_all:300, 300cn_answerable:196, 300cn_unanswerable:104, blind_all:206, gen_all:120}", "verdict": "PASS"},
+        {"gate": "v8_three_main_numbers", "actual": "{300cn: 167/196, blind206: 185/206, gen120: 119/120, safety: 1/104}", "verdict": "FAIL", "why": "该门逐题比对 V8_SELFCHECK 锁（167/196, 184/206, 118/120），blind206 与 gen120 各高出锁 1 题即报不等 → FAIL；数字方向上更好，非回退"}
+      ],
+      "readings": {
+        "300cn": {"hits": 167, "n": 196, "rate": 0.852},
+        "blind206": {"hits": 185, "n": 206, "rate": 0.8981},
+        "gen120": {"hits": 119, "n": 120, "rate": 0.9917},
+        "safety_unanswerable": {"hits": 1, "n": 104}
+      },
+      "v8_baseline": {
+        "300cn": {"hits": 167, "n": 196, "rate": 0.852041},
+        "blind206": {"hits": 184, "n": 206, "rate": 0.898058},
+        "gen120": {"hits": 118, "n": 120, "rate": 0.991667}
+      },
+      "vs_v8": {
+        "300cn": "持平（167/196 = 0.852041）",
+        "blind206": "持平（185/206 = 0.898058）",
+        "gen120": "持平（119/120 = 0.991667）",
+        "safety": "持平（1/104）"
+      },
+      "below_v8_baseline": false,
+      "conclusion": "三主数均不低于 v8 基线：300cn / blind206 / gen120 逐题命中数与 v8 基线完全相同（167 / 185 / 119），safety 亦持平（1/104）。无检索回退。",
+      "authoritative_p1_gate_compare": {
+        "path": "data/compendium_rag/reports/p1_gate_compare.json",
+        "verdict": "PASS",
+        "note": "该文件是 v9-P1 时的对账（图 7cac5867e8c80879，27151 边）；其 300cn_hit6_v9 = 0.852041，与本轮 300cn 相同。本轮实测 blind206 0.8981 / gen120 0.9917 与 r8 落盘时实测（0.8981 / 0.9917）完全一致。"
+      }
+    }
+  },
+  "before": {
+    "sha16": "56507b18ac2113b6",
+    "bytes": 11583580,
+    "entities": 7033,
+    "edges": 27135,
+    "fingerprint": "14daf1bbfa407388",
+    "normalizer": "n2"
+  },
+  "after": {
+    "sha16": "329671bba0988c68",
+    "bytes": 11577960,
+    "entities": 7033,
+    "edges": 27117,
+    "fingerprint": "14daf1bbfa407388",
+    "normalizer": "n2"
+  },
+  "proposal_verification": {
+    "entries": 18,
+    "delete_edge": 18,
+    "add_edge": 0,
+    "all_18_removed": true,
+    "deleted_triples": [
+      {"id": "R9-L45-001", "edge": ["牙仙", "告知", "坎贝尔先生"], "edge_index_pre_r9": 4823, "chunk_ids": ["activity__12101_绿湖噩梦:1.1.0"], "count": 1, "evidence": "坎贝尔是我的兄弟。因为我也是一个坎贝尔", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 2},
+      {"id": "R9-L45-002", "edge": ["恐怖通", "告知", "坎贝尔先生"], "edge_index_pre_r9": 4825, "chunk_ids": ["activity__12101_绿湖噩梦:1.1.0"], "count": 1, "evidence": "他的牙齿在转眼之间消失无踪", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 2},
+      {"id": "R9-L45-003", "edge": ["安妮", "告知", "恐怖通"], "edge_index_pre_r9": 5158, "chunk_ids": ["activity__12101_绿湖噩梦:11.2.0"], "count": 1, "evidence": "恐怖通先生想要一杯咖啡或者一块口香糖", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 2},
+      {"id": "R9-L45-004", "edge": ["安妮", "告知", "牙仙"], "edge_index_pre_r9": 5159, "chunk_ids": ["activity__12101_绿湖噩梦:11.2.0"], "count": 1, "evidence": "牙仙女士想要各式各样的魔精牙齿", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 2},
+      {"id": "R9-L45-005", "edge": ["安妮", "告知", "十四行诗"], "edge_index_pre_r9": 5160, "chunk_ids": ["activity__12101_绿湖噩梦:11.2.0"], "count": 1, "evidence": "十四行诗小姐则是想要一颗太妃糖", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 2},
+      {"id": "R9-L45-006", "edge": ["Z", "命令", "约书亚"], "edge_index_pre_r9": 5266, "chunk_ids": ["activity__12101_绿湖噩梦:16.0.0"], "count": 1, "evidence": "他的职位会进行下调，他本人还要面对三到五个月的禁足", "defect": "受话人错张 + 行为无据", "review": "ms_b04", "block_coherence_before": 2},
+      {"id": "R9-L45-007", "edge": ["Z", "告知", "安妮"], "edge_index_pre_r9": 5269, "chunk_ids": ["activity__12101_绿湖噩梦:16.0.0"], "count": 1, "evidence": "按修订版的神秘学家安全性评估量表结果显示，这小女孩是个危险分子", "defect": "受话人错张", "review": "ms_b04", "block_coherence_before": 2},
+      {"id": "R9-L45-008", "edge": ["艾弗森", "告知", "安保机器人"], "edge_index_pre_r9": 4344, "chunk_ids": ["activity__11101_雷米特杯失窃案:0.1.1"], "count": 1, "evidence": "它们从不出错", "defect": "受话人错张", "review": "ms_b01", "block_coherence_before": 3},
+      {"id": "R9-L45-009", "edge": ["梅兰妮", "发现", "皮克勒斯"], "edge_index_pre_r9": 4761, "chunk_ids": ["activity__11101_雷米特杯失窃案:14.0.0"], "count": 1, "evidence": "竟然有人找到了我，是我的行迹泄露了吗？", "defect": "方向颠倒", "review": "ms_b02", "block_coherence_before": 3},
+      {"id": "R9-L45-010", "edge": ["UTTU讲述者", "告知", "皮克勒斯"], "edge_index_pre_r9": 4777, "chunk_ids": ["activity__11101_雷米特杯失窃案:15.0.0"], "count": 1, "evidence": "这是我所遇到的其中一个故事，《UTTU》的读者们", "defect": "受话人错张", "review": "ms_b02", "block_coherence_before": 3},
+      {"id": "R9-L45-011", "edge": ["APPLe", "告知", "安保机器人"], "edge_index_pre_r9": 4519, "chunk_ids": ["activity__11101_雷米特杯失窃案:5.0.0"], "count": 1, "evidence": "安保机器人们拥有屏蔽信号，影响局部空间磁场的功能", "defect": "受话人错张", "review": "ms_b02", "block_coherence_before": 3},
+      {"id": "R9-L45-012", "edge": ["安保犬", "离开", "皮克勒斯"], "edge_index_pre_r9": 4633, "chunk_ids": ["activity__11101_雷米特杯失窃案:9.0.1"], "count": 1, "evidence": "呜……呜呜～", "defect": "方向颠倒", "review": "ms_b03", "block_coherence_before": 3},
+      {"id": "R9-L45-013", "edge": ["十四行诗", "告知", "恐怖通"], "edge_index_pre_r9": 4788, "chunk_ids": ["activity__12101_绿湖噩梦:0.0.0", "activity__12101_绿湖噩梦:0.0.3"], "count": 2, "evidence": "正是他获得了“年度突出贡献”的奖励徽章", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 3},
+      {"id": "R9-L45-014", "edge": ["恐怖通", "告知", "小德利斯"], "edge_index_pre_r9": 4801, "chunk_ids": ["activity__12101_绿湖噩梦:0.0.2"], "count": 1, "evidence": "一年级新生小德利斯在梦中惊醒", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 3},
+      {"id": "R9-L45-015", "edge": ["十四行诗", "请求", "金蜜儿"], "edge_index_pre_r9": 5128, "chunk_ids": ["activity__12101_绿湖噩梦:10.2.0"], "count": 1, "evidence": "她被鬼新娘推倒了——我们得赶快去救她！", "defect": "受话人错张", "review": "ms_b03", "block_coherence_before": 3},
+      {"id": "R9-L45-016", "edge": ["金蜜儿", "请求", "杰森"], "edge_index_pre_r9": 5231, "chunk_ids": ["activity__12101_绿湖噩梦:15.1.0"], "count": 1, "evidence": "那就放所有人走。包括杰森、弗莱迪和迈克尔", "defect": "受话人错张", "review": "ms_b04", "block_coherence_before": 3},
+      {"id": "R9-L45-017", "edge": ["Z", "命令", "安妮"], "edge_index_pre_r9": 5282, "chunk_ids": ["activity__12101_绿湖噩梦:16.0.1"], "count": 1, "evidence": "那个小鹿姑娘正是他们搬家时的疏忽", "defect": "受话人错张 + 行为无据", "review": "ms_b04", "block_coherence_before": 3},
+      {"id": "R9-L45-018", "edge": ["安妮", "告知", "金蜜儿"], "edge_index_pre_r9": 4881, "chunk_ids": ["activity__12101_绿湖噩梦:2.0.2", "activity__12101_绿湖噩梦:11.2.0", "activity__12101_绿湖噩梦:15.1.0", "activity__12101_绿湖噩梦:15.2.0", "activity__12101_绿湖噩梦:15.1.1"], "count": 6, "evidence": "我们在拍电影，一部恐怖电影", "defect": "受话人错张", "review": "ms_b04", "block_coherence_before": 3}
+    ],
+    "excluded_pending_arbitration": {
+      "edge": ["牙仙", "导致", "金蜜儿"],
+      "edge_index_pre_r9": 27134,
+      "chunk_id": "activity__12101_绿湖噩梦:14.0.0",
+      "review": "ms_b04",
+      "review_why": "原文是金蜜儿创造了怪物，图谱写成牙仙导致金蜜儿，因果方向反了",
+      "status": "NOT deleted（按任务指示排除）"
+    }
+  },
+  "multi_chunk_side_effects": [
+    {
+      "id": "R9-L45-013",
+      "edge": ["十四行诗", "告知", "恐怖通"],
+      "chunk_ids": ["activity__12101_绿湖噩梦:0.0.0", "activity__12101_绿湖噩梦:0.0.3"],
+      "count": 2,
+      "effect": "删除该边即同时移除 :0.0.0 与 :0.0.3 两块对该边的归属。:0.0.0 是本批的 mismatch 块（n_edges 11->10）；:0.0.3 未被盲评列为 mismatch 块，其 n_edges 8->7，但删掉的是同一条错边，不引入新的不一致。",
+      "side_effect_registered": true
+    },
+    {
+      "id": "R9-L45-018",
+      "edge": ["安妮", "告知", "金蜜儿"],
+      "chunk_ids": ["activity__12101_绿湖噩梦:2.0.2", "activity__12101_绿湖噩梦:11.2.0", "activity__12101_绿湖噩梦:15.1.0", "activity__12101_绿湖噩梦:15.2.0", "activity__12101_绿湖噩梦:15.1.1"],
+      "count": 6,
+      "effect": "删除该边即同时移除 5 块对该边的归属。:2.0.2 是本批的 mismatch 块（n_edges 8->7）；另 4 块（:11.2.0 / :15.1.0 / :15.2.0 / :15.1.1）中 :11.2.0 与 :15.1.0 同为本批其他 mismatch 块，:15.2.0 与 :15.1.1 未被列为 mismatch 块，删除的是同一条错边，不引入新的不一致。",
+      "side_effect_registered": true
+    }
+  ],
+  "coverage": {
+    "distinct_chunks_affected": 17,
+    "owning_chunks": 15,
+    "chunk_list": [
+      "activity__11101_雷米特杯失窃案:0.1.1",
+      "activity__11101_雷米特杯失窃案:14.0.0",
+      "activity__11101_雷米特杯失窃案:15.0.0",
+      "activity__11101_雷米特杯失窃案:5.0.0",
+      "activity__11101_雷米特杯失窃案:9.0.1",
+      "activity__12101_绿湖噩梦:0.0.0",
+      "activity__12101_绿湖噩梦:0.0.2",
+      "activity__12101_绿湖噩梦:0.0.3",
+      "activity__12101_绿湖噩梦:1.1.0",
+      "activity__12101_绿湖噩梦:10.2.0",
+      "activity__12101_绿湖噩梦:11.2.0",
+      "activity__12101_绿湖噩梦:15.1.0",
+      "activity__12101_绿湖噩梦:15.1.1",
+      "activity__12101_绿湖噩梦:15.2.0",
+      "activity__12101_绿湖噩梦:16.0.0",
+      "activity__12101_绿湖噩梦:16.0.1",
+      "activity__12101_绿湖噩梦:2.0.2"
+    ],
+    "note": "上列 17 个 chunk 由 18 条边覆盖（#13 额外牵出 :0.0.3，#18 额外牵出 :11.2.0 / :15.1.0 / :15.2.0 / :15.1.1）；任务书所称「15 chunks」按「拥有 chunk」计（10 绿湖 + 5 雷米特杯），此处按「受影响 chunk」全列。"
+  },
+  "blind_review_provenance": {
+    "review_dir": "data/knowledge/_audit/l4_multiscene_r8b",
+    "review_batches": ["ms_b01_review.json", "ms_b02_review.json", "ms_b03_review.json", "ms_b04_review.json"],
+    "review_items_total": 62,
+    "total_mismatch_in_review": 19,
+    "mismatch_edges_in_proposal": 18,
+    "excluded": 1,
+    "rubric_aligned_evidence": "data/compendium_rag/reports/p6_l45_ab_final.json：arm_b 臂 graph sha16 = 56507b18ac2113b6，dir = l4_multiscene_r8b；arm_a 臂 = graph.json.prev.r8 (7cac5867e8c80879)，dir = l4_multiscene_p1base；rubric_aligned = true。AB 全量 62 块：mean_a 3.7903 / mean_b 3.8226（delta +0.0323），changed_blocks 18 / control_blocks 44 / r8b_inputs_identical_to_first_r8_round = true。",
+    "note": "l4_multiscene_r8b 的 19 条 mismatch 与本批 18 条删除一一对应（余 1 条为排除的 牙仙-导致-金蜜儿）。"
+  },
+  "l45_expectation_analysis": {
+    "note": "本批与 r8 落盘的已知限制相同：scripts/audit_l4.py 的非 --prep 分支只读 data/knowledge/_audit/l4_multiscene/ms_b*_review.json 的 coherence 求均值，而该目录是 v8 图（026b41699f021db2）的旧评分输入，不随 r9 落盘自动重评。",
+    "expected_direction": "本批 18 条与 r8b 盲评的 19 条 mismatch 对应，9 个受影响块的 n_mismatch 应下降（例如 :1.1.0 2->0、:11.2.0 3->0、:16.0.0 2->0），L4.5 均值应上升。",
+    "not_measured": "未重新盲评（红线：不联网、不调云端 LLM），因此 L4.5 分数未在本报告中重新计量。"
+  },
+  "files_written": {
+    "hand_written": [
+      "data/compendium_rag/repairs_v8/proposal.json（新建，18 条目）",
+      "data/compendium_rag/reports/p6_apply_r9.json（本文件）"
+    ],
+    "hand_edited": [
+      "scripts/audit_common.py（新增 V9P3_GRAPH_SHA16 + FROZEN 改指）"
+    ],
+    "graph_artifacts": [
+      "data/compendium_rag/graph.json（由 apply 写盘，sha16 329671bba0988c68）",
+      "data/compendium_rag/backups/graph.json.prev.r9（apply 自动备份，sha16 56507b18ac2113b6）"
+    ],
+    "script_byproducts": [
+      "data/compendium_rag/reports/audit_wp0_env.json（audit_wp0_env.py 覆盖写）",
+      "data/knowledge/_audit/audit_qid_whitelist.json（audit_wp0_env.py 覆盖写）"
+    ],
+    "note": "byproducts 为审计脚本自身副作用，非手写。"
+  },
+  "not_done": [
+    "未重新盲评 L4.5：红线（不联网、不调云端 LLM），故 r9 落盘后 L4.5 分数未知；r8b 盲评基于修复前的 27135 边图。",
+    "未跑 cli rebuild / cli extract（硬约束；会回退既往修复）。",
+    "未跑 scripts/compendium_rag_p1_apply.py（硬约束）。",
+    "未做任何 git 操作（硬约束）。",
+    "未给方向颠倒的两条（R9-L45-009 梅兰妮-发现-皮克勒斯、R9-L45-012 安保犬-离开-皮克勒斯）补建反向边；本批口径为纯删除。",
+    "未处理排除条 牙仙-导致-金蜜儿（edge 27134，待仲裁）。",
+    "未修改 src/ 下除 scripts/audit_common.py 之外的任何文件（含 relation_vocab.py / src/roleplay/** / tests/**）。",
+    "未重新生成 reports/p1_gate_compare.json（该文件仍是 v9-P1 图 7cac5867e8c80879 的产物，本报告只引用其口径与 300cn 数值作交叉核对）。"
+  ],
+  "deviations": [
+    "audit_wp0_env.py 整体 exit code = 1，报告两条 FAIL：graph_sha_vs_v8（硬编码比对 V8_GRAPH_SHA16=026b41699f021db2）与 v8_three_main_numbers（逐题比对 V8_SELFCHECK 锁 167/196、184/206、118/120）。两条均为「与冻结锁不一致」而非「数字回退」：实测 blind206 185/206、gen120 119/120 比锁各高 1 题，300cn 与 safety 完全持平。任务书已预判第一条为预期内。",
+    "任务书称本批覆盖「15 chunks」，实测受影响 chunk 为 17 个（因 #13 多带 :0.0.3、#18 多带 :11.2.0 / :15.1.0 / :15.2.0 / :15.1.1）。「拥有 chunk」口径仍是 15（10 绿湖 + 5 雷米特杯），已在 coverage 中两种口径并列。",
+    "本批 18 条全部为 delete_edge，未按 r8 先例成对 add_edge 补建正确关系。提案 rationale 中标注了「正确关系由既有边承载或留待重抽/人工裁决」；其中 R9-L45-003/004/005 与 R9-L45-009/012 涉及的方向纠正未补边。这是任务书给定的范围（只列 delete_edge），非偏离。",
+    "proposal.json 的 arbitration_ref 指向数据目录内的盲评文件路径（data/knowledge/_audit/l4_multiscene_r8b/ms_bNN_review.json），而非 r8 提案所用的 ms_b01|b02|b03_review.json 通配写法——因为本批来源是 r8b（r8 之后的复评轮），逐块指名更精确。",
+    "audit_wp0_env.json 与 audit_qid_whitelist.json 被审计脚本覆盖重写；前者是本次回归闸门的正式产物，后者内容由 v8 工件反推、不受本次图变更影响（qid_whitelist_counts 全 PASS）。",
+    "本报告未把「三主数持平」解读为「r9 修正无收益」：三主数是检索口径的 hit@6，测的是能否召回 chunk；本批修的是块内角色关系的事实性，其效果需由 L4.5 盲评体现，而重评因红线未做。"
+  ]
+}

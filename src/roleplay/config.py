@@ -435,6 +435,13 @@ class Settings(BaseSettings):
     character_card_path: str = ""  # 留空则使用内置默认角色卡（无名者）
     enable_session_memory: bool = True  # 跨轮次/跨会话记住对话
     session_memory_dir: str = "./data/sessions"  # 记忆持久化目录
+    # 会话历史的**字符预算**（P0-B）——与 SessionMemory 内部条数上限（40 轮/80 条）
+    # 并行的第二道闸：条数上限挡不住「单条 MB 级回复」，实测默认 mock 的自我复制
+    # 会让 52 轮会话涨到 7.77 亿字符（单次响应 872MB、进程内存 7.3GB）。
+    # 取值依据见 session_memory._CHAR_BUDGET：
+    #   40 轮 × 每轮 ~3000 字（云端档 max_tokens=2048）≈ 120_000 → 不误伤正常会话；
+    #   又比故障量级低 4 个数量级 → 立刻切断膨胀。<=0 表示关闭该闸（仅留条数上限）。
+    session_memory_max_chars: int = Field(120_000, ge=0, le=100_000_000)
     prompt_config_path: str = ""  # 全局提示词拼装配置 JSON（留空=默认，输出与改造前一致）
 
     # ---- 复读抑制（repetition guard，动态负向提示 + 生成后校验） ----

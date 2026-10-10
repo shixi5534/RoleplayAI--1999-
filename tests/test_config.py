@@ -29,6 +29,7 @@ from roleplay.config import Settings
         ("max_message_length", 0),
         ("max_tokens_per_reply", 0),
         ("history_summary_threshold", 1),
+        ("session_memory_max_chars", -1),
         ("voice_request_timeout", 0.0),
     ],
 )
@@ -44,3 +45,6 @@ def test_settings_defaults_still_valid():
     assert s.llm_temperature == 0.6
     assert s.chunk_size == 600
     assert s.static_no_cache is True
+    # P0-B：会话历史字符预算（默认 120_000）。依据见 session_memory._CHAR_BUDGET：
+    # 40 轮 × 每轮 ~3000 字（云端档 max_tokens=2048）≈ 120k，不误伤正常会话。
+    assert s.session_memory_max_chars == 120_000
