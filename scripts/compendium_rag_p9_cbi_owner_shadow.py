@@ -24,6 +24,7 @@ gold 也算成跨域（project-p3-rolefilter-shadow-verdict），所以过滤必
 from __future__ import annotations
 
 import json
+import os
 from collections import Counter
 from pathlib import Path
 
@@ -35,6 +36,9 @@ RETRIEVAL = CBI / "retrieval_cc.jsonl"
 CHUNKS = ROOT / "data" / "compendium_rag" / "chunks.json"
 OUT_JSON = CBI / "owner_shadow.json"
 OUT_MD = CBI / "owner_shadow.md"
+SCOPE_JSON = CBI / "owner_edge_scope.json"
+SCOPE_MD = CBI / "owner_edge_scope.md"
+GRAPH = ROOT / "data" / "compendium_rag" / "graph.json"
 
 EXPECT_LEAKS = 21          # cbi_calculator 的 control 口径读数
 TOP = 6                    # 检索通道取的就是 top-6
@@ -209,5 +213,99 @@ def main() -> int:
     return 0
 
 
+CROWD = ("Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "职员", "学生", "市民", "居民", "听众", "观众")
+
+
+def scope() -> int:
+    """数清"给私密块打归属边"到底要写多少条 —— 批准一个写图动作前先给出规模。
+
+    用的是图上**已有**的 `entities[].chunk_ids`（接地关系，不是新造的边），
+    所以这里量的是"若把这条既有关系升格成带方向的 owner 边，写面有多大、
+    有多少块的归属不唯一"。零写图。
+    """
+    g = json.loads(GRAPH.read_text(encoding="utf-8"))
+    ents = g["entities"] if isinstance(g["entities"], list) else list(g["entities"].values())
+    roles = [e for e in ents if e.get("type") == "角色"]
+    chunks = {c["chunk_id"]: c for c in
+              json.loads((ROOT / "data" / "compendium_rag" / "chunks.json")
+                         .read_text(encoding="utf-8"))["chunks"]}
+    owners: dict[str, set] = {}
+    pairs = 0
+    orphan_roles = 0
+    crowd_eids = {e["eid"] for e in roles
+                  if any(m in (e.get("name") or "") for m in CROWD)
+                  or (e.get("name") or "").isdigit()}
+    crowd_pairs = 0
+    for e in roles:
+        cids = [c for c in (e.get("chunk_ids") or []) if c in chunks]
+        if not cids:
+            orphan_roles += 1
+        for cid in cids:
+            owners.setdefault(cid, set()).add(e["eid"])
+            pairs += 1
+            if e["eid"] in crowd_eids:
+                crowd_pairs += 1
+    dist = Counter(len(v) for v in owners.values())
+    by_cat = {}
+    for cid, s in owners.items():
+        d = by_cat.setdefault(chunks[cid].get("category") or "?",
+                              {"chunks": 0, "edges": 0, "multi": 0})
+        d["chunks"] += 1
+        d["edges"] += len(s)
+        d["multi"] += len(s) > 1
+    cat_total = Counter(c.get("category") or "?" for c in chunks.values())
+    for k, d in by_cat.items():
+        d["share_of_category"] = round(d["chunks"] / cat_total[k], 4) if cat_total[k] else None
+        d["edges_per_chunk"] = round(d["edges"] / d["chunks"], 3)
+    crowd_edges = sum(len(v) for cid, v in owners.items()
+                      if any(x in (chunks[cid].get("chapter_title") or "") for x in ()))
+    res = {
+        "schema": "compendium_rag.p10_owner_edge_scope/v1",
+        "embedded_fingerprint": g.get("fingerprint"),   # 注意：该指纹对边集与别名不敏感，别当图身份用
+        "basis": "entities[].chunk_ids（图上既有接地关系）升格成 owner 边的规模",
+        "n_roles": len(roles), "roles_without_chunks": orphan_roles,
+        "n_chunks": len(chunks), "chunks_attributed": len(owners),
+        "attribution_rate": round(len(owners) / len(chunks), 4),
+        "edges_full_write": pairs,
+        "edges_primary_owner_only": len(owners),
+        "crowd_roles": len(crowd_eids), "crowd_edges": crowd_pairs,
+        "owners_per_chunk_dist": {str(k): v for k, v in sorted(dist.items())[:8]},
+        "multi_owner_chunks": sum(v for k, v in dist.items() if k > 1),
+        "max_owners_one_chunk": max(dist) if dist else 0,
+        "by_category": by_cat,
+        "crowd_marker": list(CROWD),
+        "note": ("归属不唯一的块必须先用优先级规则（说话人频次？场景主角色？）定一个 primary owner，"
+                 "否则可见性语义会退化成「谁都不可见」。编号群演（P9① 实测 146 簇里 136 个）"
+                 "若进边集，会造出大量「人人可见即无人可见」的空边，建议排除。"),
+    }
+    SCOPE_JSON.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    L = ["# P10·R2 写图规模：owner 边要加多少条（只读，数图上已有的接地关系）", "",
+         f"- 角色实体 **{len(roles)}**（其中 {orphan_roles} 个没有任何已索引块），"
+         f"块 **{len(chunks)}**，可归属块 **{len(owners)}**（{res['attribution_rate']:.1%}）",
+         f"- 全量边 **{pairs}** 条；只定 primary owner 则 **{len(owners)}** 条",
+         f"- 其中来自群演式名字的边 **{crowd_pairs}** 条（{len(crowd_eids)} 个角色，"
+         f"判据：名字含 {list(CROWD)[:6]} 之一或纯数字）",
+         f"- 归属不唯一的块 **{res['multi_owner_chunks']}** 个；单块最多 {res['max_owners_one_chunk']} 个角色",
+         f"- 每块角色数分布（前 8 档）：{res['owners_per_chunk_dist']}", "",
+         "| 类别 | 可归属块 | 占该类 | 边数 | 每块均边 | 多主块 |",
+         "| --- | --- | --- | --- | --- | --- |"]
+    for k, d in sorted(by_cat.items(), key=lambda x: -x[1]["edges"]):
+        L.append(f"| {k} | {d['chunks']} | {d['share_of_category']:.1%} | {d['edges']} | "
+                 f"{d['edges_per_chunk']} | {d['multi']} |")
+    L += ["", "决策含义：批准 R2 之前要先定两件事 —— "
+          "**① primary owner 的优先级规则**（多主块占了几成，没有规则就只能整块不设限），"
+          "**② 群演式名字是否排除**（P9① 实测编号群演占 146 簇里的 136 个，"
+          "给它们打归属边等于把「人人可见」再写一遍）。",
+          "",
+          f"> 内嵌指纹 `{res['embedded_fingerprint']}` 对边集与别名不敏感，"
+          "不能当图身份用；本表是**只读数**，写图前后的身份核对一律用 sha256[:16]。"]
+    SCOPE_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(f"[OK] 写图规模 → {SCOPE_JSON.name} / {SCOPE_MD.name}")
+    print(f"     角色 {len(roles)}｜可归属块 {len(owners)}/{len(chunks)}"
+          f"（{res['attribution_rate']:.1%}）｜全量边 {pairs}｜primary 边 {len(owners)}"
+          f"｜多主块 {res['multi_owner_chunks']}")
+    return 0
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(scope() if os.environ.get("CBI_STAGE") == "scope" else main())

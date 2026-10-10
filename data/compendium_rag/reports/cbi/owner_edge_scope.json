@@ -1,0 +1,77 @@
+{
+ "schema": "compendium_rag.p10_owner_edge_scope/v1",
+ "embedded_fingerprint": "14daf1bbfa407388",
+ "basis": "entities[].chunk_ids（图上既有接地关系）升格成 owner 边的规模",
+ "n_roles": 2023,
+ "roles_without_chunks": 0,
+ "n_chunks": 3695,
+ "chunks_attributed": 3589,
+ "attribution_rate": 0.9713,
+ "edges_full_write": 16383,
+ "edges_primary_owner_only": 3589,
+ "crowd_roles": 393,
+ "crowd_edges": 1196,
+ "owners_per_chunk_dist": {
+  "1": 137,
+  "2": 365,
+  "3": 709,
+  "4": 718,
+  "5": 652,
+  "6": 426,
+  "7": 272,
+  "8": 148
+ },
+ "multi_owner_chunks": 3452,
+ "max_owners_one_chunk": 19,
+ "by_category": {
+  "mainline": {
+   "chunks": 943,
+   "edges": 4634,
+   "multi": 935,
+   "share_of_category": 0.9989,
+   "edges_per_chunk": 4.914
+  },
+  "character": {
+   "chunks": 451,
+   "edges": 1801,
+   "multi": 443,
+   "share_of_category": 1.0,
+   "edges_per_chunk": 3.993
+  },
+  "anecdote": {
+   "chunks": 530,
+   "edges": 2301,
+   "multi": 528,
+   "share_of_category": 1.0,
+   "edges_per_chunk": 4.342
+  },
+  "appendix_unbound": {
+   "chunks": 291,
+   "edges": 915,
+   "multi": 186,
+   "share_of_category": 0.7348,
+   "edges_per_chunk": 3.144
+  },
+  "activity": {
+   "chunks": 1374,
+   "edges": 6726,
+   "multi": 1360,
+   "share_of_category": 1.0,
+   "edges_per_chunk": 4.895
+  }
+ },
+ "crowd_marker": [
+  "Ⅰ",
+  "Ⅱ",
+  "Ⅲ",
+  "Ⅳ",
+  "Ⅴ",
+  "职员",
+  "学生",
+  "市民",
+  "居民",
+  "听众",
+  "观众"
+ ],
+ "note": "归属不唯一的块必须先用优先级规则（说话人频次？场景主角色？）定一个 primary owner，否则可见性语义会退化成「谁都不可见」。编号群演（P9① 实测 146 簇里 136 个）若进边集，会造出大量「人人可见即无人可见」的空边，建议排除。"
+}

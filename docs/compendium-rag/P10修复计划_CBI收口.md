@@ -35,6 +35,22 @@
 2. Canon/Fandom 双轨标签，注入式冲突陈述永远归 Fandom 轨，检索按轨隔离；
 3. 检索路径加"禁跨 owner"一跳限制（只影响 `category=="character"` 的块）。
 
+**写图规模已数清（只读，`scripts/compendium_rag_p9_cbi_owner_shadow.py` 的 `CBI_STAGE=scope`
+→ `reports/cbi/owner_edge_scope.md`；用的就是图上已有的 `entities[].chunk_ids`，不新做 NLP）**：
+
+| 量 | 读数 |
+| --- | --- |
+| 块总数 / 可归属块 | 3695 / **3589（97.1%）** |
+| 全量 owner 边（每个在场角色一条） | **16383** 条 |
+| 只定 primary owner 的边 | 3589 条 |
+| **归属不唯一的块** | **3452 / 3589 = 96.2%**（单块最多 19 个角色，均 4.6） |
+| 群演式名字贡献的边 | 1196 条（393 个角色） |
+
+⇒ **"一块一主"这种 owner 模型在本语料上基本不成立**：96% 的块要靠前设规则硬定一个主，
+而定错的代价就是 MRR 误伤。可行的形态是**多主可见集**（块对所有在场角色可见），
+也就是下面 MRR 影子里 `scene` 那一档 —— 反过来，strict 那档等价于"给 96% 的块随机选一个主人"。
+批准时要定的不是"要不要打边"，而是**①可见集语义取哪一档 ②群演式名字是否排除**。
+
 **全是写图操作**：需要你对 task #4（8 条 `merge_entities` 提案 → r12）与
 task #5（边界标注干预实验）逐次点头，且必须走 `_graph_apply_repairs.py` 的
 备份 + 默认 dry-run 路径，**不许 `cli rebuild`**（会把 P1 修复打回，见 project-rebuild-reverts-graph-only-repairs）。
@@ -61,6 +77,10 @@ task #5（边界标注干预实验）逐次点头，且必须走 `_graph_apply_r
 风险：可见性过滤是跨域过滤的一种，P3 的角色域影子实验已经判负一次
 （`project-p3-rolefilter-shadow-verdict`：owners 尺子把 17–30% 的转述 gold 也算成跨域），
 所以**必须先在 300cn/blind206/gen120 三套 MRR 上量误伤**，MRR 掉超过 0.02 就回退。
+**判据先登记**：0.02 这条回退线写在本册上面几行之内，早于影子脚本运行；
+脚本里 `DELTABUDGET = 0.02` 与它同值，跑完不改判据（`scripts/compendium_rag_p10_visibility_shadow.py`，
+主体判据取 seeds 里第一个 `type=="角色"` 实体，与 L2.3 同口径；过滤在 top-30 上做并回填到 top-10，
+所以报的是重排后的读数而不是"删掉就少几条"）。
 **这一套题集的 gold 是转述块**，正好是名形式代理最容易误伤的地方，
 所以上表 v2 的 16% 才是该拿去做决策的那个数。
 
