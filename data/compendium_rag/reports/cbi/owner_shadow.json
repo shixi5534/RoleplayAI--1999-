@@ -1,0 +1,35 @@
+{
+ "schema": "compendium_rag.cbi_owner_shadow/v1",
+ "graph_sha": "911bb538160db80e",
+ "attribution": "名形式代理（speakers_text+text），非图上 owner 边",
+ "definitional_warning": "金标块按构造就是「含 B 名、不含 A 名」的独占块（选对阶段的双向独占约束），所以 blockable_free_of_a 与 leak_rate_after=0 都是同义反复，**不构成 R2 的收益证据**。本表只有 drop_rate 两项有经验含量。",
+ "n_rows": 500,
+ "n_leak_rows": 21,
+ "leak_repro_ok": true,
+ "leak_by_query_type": {
+  "multi_role": 16,
+  "inductive": 2,
+  "multi_turn": 2,
+  "style_probe": 1
+ },
+ "leaked_chunk_in_top": 12,
+ "blockable_free_of_a": 21,
+ "blockable_needs_a_sacrifice": 0,
+ "slots_total": 3000,
+ "filter_v1_blacklist_B": {
+  "dropped_slots": 107,
+  "drop_rate": 0.0357,
+  "of_which_gold": 12,
+  "collateral_non_gold_slots": 95,
+  "collateral_rate": 0.0317,
+  "rows_left_leaky": 0,
+  "leak_rate_after": 0.0
+ },
+ "filter_v2_whitelist_A_only": {
+  "dropped_slots": 479,
+  "drop_rate": 0.1597
+ },
+ "leak_rows_starved_after_v1": 2,
+ "chunks_missing_from_index": 0,
+ "caveat": "转述场景（A 的私事由别人说出）在名形式代理下被算成「归 B」，所以 v1 的 drop_rate 是**误伤上界**；反向地，若泄漏块里 A 与 B 同桌，v1 挡不住它 —— 但按构造这种情况不存在，见 definitional_warning。"
+}
