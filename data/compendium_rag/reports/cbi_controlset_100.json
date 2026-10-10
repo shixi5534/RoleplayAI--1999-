@@ -1,0 +1,2427 @@
+{
+ "schema": "compendium_rag.cbi_controlset/v1",
+ "made_at": "2026-10-10T21:49:22",
+ "graph_sha": "911bb538160db80e",
+ "seed": 42,
+ "n_samples": 100,
+ "purpose": "与主集同判据、只把题面换成「问 A 自己的私事」，用来分离「检索能力正常命中」与「边界真的失守」",
+ "samples": [
+  {
+   "sample_id": "CTL-001",
+   "pair": {
+    "a_eid": "霍夫曼",
+    "a_name": "霍夫曼",
+    "b_eid": "露西",
+    "b_name": "露西"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替霍夫曼整理自己的档案）霍夫曼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "霍夫曼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18603_银线结:7.0.2",
+    "b_name_forms": [
+     "机械女士",
+     "露西",
+     "露西女士"
+    ],
+    "a_name_forms": [
+     "格蕾塔",
+     "格蕾塔·霍夫曼",
+     "霍夫曼",
+     "霍夫曼女士",
+     "霍夫曼老师"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-002",
+   "pair": {
+    "a_eid": "伊索尔德",
+    "a_name": "伊索尔德",
+    "b_eid": "海因里希",
+    "b_name": "海因里希"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊索尔德整理自己的档案）伊索尔德本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊索尔德",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:3.0.0",
+    "b_name_forms": [
+     "海因里希"
+    ],
+    "a_name_forms": [
+     "伊索尔德",
+     "伊索尔德·冯·迪塔斯多夫",
+     "伊索尔德小姐",
+     "女演员伊索尔德",
+     "迪塔斯多夫小姐",
+     "齐格琳德小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-003",
+   "pair": {
+    "a_eid": "塔罗师比安卡",
+    "a_name": "塔罗师比安卡",
+    "b_eid": "父亲",
+    "b_name": "父亲"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替塔罗师比安卡整理自己的档案）塔罗师比安卡本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "塔罗师比安卡",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23601_夜游十字街:0.0.0",
+    "b_name_forms": [
+     "父亲"
+    ],
+    "a_name_forms": [
+     "塔罗师比安卡"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-004",
+   "pair": {
+    "a_eid": "伊索尔德",
+    "a_name": "伊索尔德",
+    "b_eid": "西奥菲尔",
+    "b_name": "西奥菲尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊索尔德整理自己的档案）伊索尔德本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊索尔德",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:0.0.0",
+    "b_name_forms": [
+     "西奥菲尔",
+     "西奥菲尔·冯·迪塔斯多夫",
+     "齐格蒙德"
+    ],
+    "a_name_forms": [
+     "伊索尔德",
+     "伊索尔德·冯·迪塔斯多夫",
+     "伊索尔德小姐",
+     "女演员伊索尔德",
+     "迪塔斯多夫小姐",
+     "齐格琳德小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-005",
+   "pair": {
+    "a_eid": "北方哨歌",
+    "a_name": "北方哨歌",
+    "b_eid": "露西",
+    "b_name": "露西"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替北方哨歌整理自己的档案）北方哨歌本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "北方哨歌",
+   "retrieval_gold": {
+    "b_private_chunk": "character__19601_飞渡往日:0.0.0",
+    "b_name_forms": [
+     "机械女士",
+     "露西",
+     "露西女士"
+    ],
+    "a_name_forms": [
+     "北方哨歌",
+     "瓦莲京娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-006",
+   "pair": {
+    "a_eid": "洛佩拉",
+    "a_name": "洛佩拉",
+    "b_eid": "苏菲亚",
+    "b_name": "苏菲亚"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替洛佩拉整理自己的档案）洛佩拉本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "洛佩拉",
+   "retrieval_gold": {
+    "b_private_chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "b_name_forms": [
+     "传道者",
+     "传道者·苏菲亚",
+     "苏菲亚",
+     "苏菲亚小姐"
+    ],
+    "a_name_forms": [
+     "亲爱的妹妹",
+     "圣保罗的洛佩拉",
+     "小赌徒",
+     "洛佩拉",
+     "洛佩拉小姐",
+     "那孩子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-007",
+   "pair": {
+    "a_eid": "葛天",
+    "a_name": "葛天",
+    "b_eid": "里正",
+    "b_name": "里正"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替葛天整理自己的档案）葛天本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "葛天",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16601_曲香蒙求:0.0.0",
+    "b_name_forms": [
+     "里正"
+    ],
+    "a_name_forms": [
+     "燕平",
+     "葛天",
+     "葛天先生",
+     "鸟人",
+     "鸟先生"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-008",
+   "pair": {
+    "a_eid": "利伯蒂",
+    "a_name": "利伯蒂",
+    "b_eid": "教练",
+    "b_name": "教练"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替利伯蒂整理自己的档案）利伯蒂本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "利伯蒂",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23501_太阳的背面:0.0.0",
+    "b_name_forms": [
+     "教练"
+    ],
+    "a_name_forms": [
+     "利伯蒂",
+     "利伯蒂·格罗夫",
+     "纸信圈儿"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-009",
+   "pair": {
+    "a_eid": "洛佩拉",
+    "a_name": "洛佩拉",
+    "b_eid": "维尔汀",
+    "b_name": "维尔汀"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替洛佩拉整理自己的档案）洛佩拉本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "洛佩拉",
+   "retrieval_gold": {
+    "b_private_chunk": "character__19603_犹在镜中:7.0.2",
+    "b_name_forms": [
+     "司辰",
+     "司辰小姐",
+     "小维尔汀",
+     "政府老爷",
+     "维尔汀",
+     "维尔汀博士",
+     "维尔汀小姐",
+     "越狱头子"
+    ],
+    "a_name_forms": [
+     "亲爱的妹妹",
+     "圣保罗的洛佩拉",
+     "小赌徒",
+     "洛佩拉",
+     "洛佩拉小姐",
+     "那孩子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-010",
+   "pair": {
+    "a_eid": "卡洛琳",
+    "a_name": "卡洛琳",
+    "b_eid": "记者",
+    "b_name": "记者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡洛琳整理自己的档案）卡洛琳本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡洛琳",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:6.0.2",
+    "b_name_forms": [
+     "记者"
+    ],
+    "a_name_forms": [
+     "卡洛琳",
+     "白天鹅"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-011",
+   "pair": {
+    "a_eid": "维尔汀",
+    "a_name": "维尔汀",
+    "b_eid": "记者",
+    "b_name": "记者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替维尔汀整理自己的档案）维尔汀本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "维尔汀",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:6.0.2",
+    "b_name_forms": [
+     "记者"
+    ],
+    "a_name_forms": [
+     "司辰",
+     "司辰小姐",
+     "小维尔汀",
+     "政府老爷",
+     "维尔汀",
+     "维尔汀博士",
+     "维尔汀小姐",
+     "越狱头子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-012",
+   "pair": {
+    "a_eid": "北方哨歌",
+    "a_name": "北方哨歌",
+    "b_eid": "阿夫西维",
+    "b_name": "阿夫西维"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替北方哨歌整理自己的档案）北方哨歌本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "北方哨歌",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:0.0.1",
+    "b_name_forms": [
+     "小阿夫西维",
+     "阿夫西维"
+    ],
+    "a_name_forms": [
+     "北方哨歌",
+     "瓦莲京娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-013",
+   "pair": {
+    "a_eid": "卡洛琳",
+    "a_name": "卡洛琳",
+    "b_eid": "教练",
+    "b_name": "教练"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡洛琳整理自己的档案）卡洛琳本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡洛琳",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23501_太阳的背面:0.0.0",
+    "b_name_forms": [
+     "教练"
+    ],
+    "a_name_forms": [
+     "卡洛琳",
+     "白天鹅"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-014",
+   "pair": {
+    "a_eid": "伊索尔德",
+    "a_name": "伊索尔德",
+    "b_eid": "露西",
+    "b_name": "露西"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊索尔德整理自己的档案）伊索尔德本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊索尔德",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18603_银线结:7.0.2",
+    "b_name_forms": [
+     "机械女士",
+     "露西",
+     "露西女士"
+    ],
+    "a_name_forms": [
+     "伊索尔德",
+     "伊索尔德·冯·迪塔斯多夫",
+     "伊索尔德小姐",
+     "女演员伊索尔德",
+     "迪塔斯多夫小姐",
+     "齐格琳德小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-015",
+   "pair": {
+    "a_eid": "伊文洁琳",
+    "a_name": "伊文洁琳",
+    "b_eid": "西奥菲尔",
+    "b_name": "西奥菲尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊文洁琳整理自己的档案）伊文洁琳本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊文洁琳",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:0.0.0",
+    "b_name_forms": [
+     "西奥菲尔",
+     "西奥菲尔·冯·迪塔斯多夫",
+     "齐格蒙德"
+    ],
+    "a_name_forms": [
+     "伊文洁琳"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-016",
+   "pair": {
+    "a_eid": "卡卡尼亚",
+    "a_name": "卡卡尼亚",
+    "b_eid": "维尔汀",
+    "b_name": "维尔汀"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡卡尼亚整理自己的档案）卡卡尼亚本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡卡尼亚",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:8.0.2",
+    "b_name_forms": [
+     "司辰",
+     "司辰小姐",
+     "小维尔汀",
+     "政府老爷",
+     "维尔汀",
+     "维尔汀博士",
+     "维尔汀小姐",
+     "越狱头子"
+    ],
+    "a_name_forms": [
+     "克拉拉",
+     "克拉拉·温格勒",
+     "克拉拉女士",
+     "克拉拉小姐",
+     "卡卡尼亚",
+     "卡卡尼亚医生",
+     "卡卡尼亚小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-017",
+   "pair": {
+    "a_eid": "曲娘",
+    "a_name": "曲娘",
+    "b_eid": "里正",
+    "b_name": "里正"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替曲娘整理自己的档案）曲娘本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "曲娘",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16603_天下有风:0.0.0",
+    "b_name_forms": [
+     "里正"
+    ],
+    "a_name_forms": [
+     "乞儿",
+     "小九",
+     "曲娘",
+     "曲娘子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-018",
+   "pair": {
+    "a_eid": "叶甫根尼",
+    "a_name": "叶甫根尼",
+    "b_eid": "帕索诺",
+    "b_name": "帕索诺"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替叶甫根尼整理自己的档案）叶甫根尼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "叶甫根尼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:2.0.0",
+    "b_name_forms": [
+     "帕索诺"
+    ],
+    "a_name_forms": [
+     "叶甫根尼"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-019",
+   "pair": {
+    "a_eid": "卡卡尼亚",
+    "a_name": "卡卡尼亚",
+    "b_eid": "海因里希",
+    "b_name": "海因里希"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡卡尼亚整理自己的档案）卡卡尼亚本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡卡尼亚",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:2.0.4",
+    "b_name_forms": [
+     "海因里希"
+    ],
+    "a_name_forms": [
+     "克拉拉",
+     "克拉拉·温格勒",
+     "克拉拉女士",
+     "克拉拉小姐",
+     "卡卡尼亚",
+     "卡卡尼亚医生",
+     "卡卡尼亚小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-020",
+   "pair": {
+    "a_eid": "环状水星",
+    "a_name": "环状水星",
+    "b_eid": "贝克特",
+    "b_name": "贝克特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替环状水星整理自己的档案）环状水星本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "环状水星",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.1",
+    "b_name_forms": [
+     "贝克特"
+    ],
+    "a_name_forms": [
+     "环状水星"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-021",
+   "pair": {
+    "a_eid": "杜卡特",
+    "a_name": "杜卡特",
+    "b_eid": "马歇尔",
+    "b_name": "马歇尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替杜卡特整理自己的档案）杜卡特本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "杜卡特",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:4.0.2",
+    "b_name_forms": [
+     "马歇尔"
+    ],
+    "a_name_forms": [
+     "杜卡特"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-022",
+   "pair": {
+    "a_eid": "叶甫根尼",
+    "a_name": "叶甫根尼",
+    "b_eid": "彼得森",
+    "b_name": "彼得森"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替叶甫根尼整理自己的档案）叶甫根尼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "叶甫根尼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:0.0.1",
+    "b_name_forms": [
+     "彼得森"
+    ],
+    "a_name_forms": [
+     "叶甫根尼"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-023",
+   "pair": {
+    "a_eid": "利伯蒂",
+    "a_name": "利伯蒂",
+    "b_eid": "灯倌",
+    "b_name": "灯倌"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替利伯蒂整理自己的档案）利伯蒂本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "利伯蒂",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23601_夜游十字街:2.0.0",
+    "b_name_forms": [
+     "灯倌"
+    ],
+    "a_name_forms": [
+     "利伯蒂",
+     "利伯蒂·格罗夫",
+     "纸信圈儿"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-024",
+   "pair": {
+    "a_eid": "命名日",
+    "a_name": "命名日",
+    "b_eid": "葛天",
+    "b_name": "葛天"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替命名日整理自己的档案）命名日本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "命名日",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16603_天下有风:0.0.0",
+    "b_name_forms": [
+     "燕平",
+     "葛天",
+     "葛天先生",
+     "鸟人",
+     "鸟先生"
+    ],
+    "a_name_forms": [
+     "列昂尼德",
+     "命名日",
+     "那家伙"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-025",
+   "pair": {
+    "a_eid": "北方哨歌",
+    "a_name": "北方哨歌",
+    "b_eid": "彼得森",
+    "b_name": "彼得森"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替北方哨歌整理自己的档案）北方哨歌本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "北方哨歌",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:0.0.1",
+    "b_name_forms": [
+     "彼得森"
+    ],
+    "a_name_forms": [
+     "北方哨歌",
+     "瓦莲京娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-026",
+   "pair": {
+    "a_eid": "母亲",
+    "a_name": "母亲",
+    "b_eid": "程和光",
+    "b_name": "程和光"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替母亲整理自己的档案）母亲本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "母亲",
+   "retrieval_gold": {
+    "b_private_chunk": "character__34701_打虎记:0.0.1",
+    "b_name_forms": [
+     "程和光"
+    ],
+    "a_name_forms": [
+     "母亲"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-027",
+   "pair": {
+    "a_eid": "伊文洁琳",
+    "a_name": "伊文洁琳",
+    "b_eid": "卡卡尼亚",
+    "b_name": "卡卡尼亚"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊文洁琳整理自己的档案）伊文洁琳本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊文洁琳",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:3.0.1",
+    "b_name_forms": [
+     "克拉拉",
+     "克拉拉·温格勒",
+     "克拉拉女士",
+     "克拉拉小姐",
+     "卡卡尼亚",
+     "卡卡尼亚医生",
+     "卡卡尼亚小姐"
+    ],
+    "a_name_forms": [
+     "伊文洁琳"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-028",
+   "pair": {
+    "a_eid": "海因里希",
+    "a_name": "海因里希",
+    "b_eid": "马库斯",
+    "b_name": "马库斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替海因里希整理自己的档案）海因里希本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "海因里希",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:0.0.0",
+    "b_name_forms": [
+     "四级调查员马库斯小姐",
+     "基金会的那位小姐",
+     "安杰罗提",
+     "安杰罗提小姐",
+     "政府小姐",
+     "马库斯",
+     "马库斯小姐",
+     "马库斯职员",
+     "马库斯调查员"
+    ],
+    "a_name_forms": [
+     "海因里希"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-029",
+   "pair": {
+    "a_eid": "伊戈尔",
+    "a_name": "伊戈尔",
+    "b_eid": "桑德罗",
+    "b_name": "桑德罗"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊戈尔整理自己的档案）伊戈尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊戈尔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "b_name_forms": [
+     "桑德罗"
+    ],
+    "a_name_forms": [
+     "伊戈尔",
+     "伊戈尔将军",
+     "养父",
+     "叛变的伊戈尔",
+     "老东西",
+     "老爹"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-030",
+   "pair": {
+    "a_eid": "苏菲亚",
+    "a_name": "苏菲亚",
+    "b_eid": "莫莉德尔",
+    "b_name": "莫莉德尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替苏菲亚整理自己的档案）苏菲亚本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "苏菲亚",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "b_name_forms": [
+     "副官女士",
+     "莫莉",
+     "莫莉德尔",
+     "莫莉德尔中尉",
+     "莫莉德尔副官",
+     "莫莉德尔姐姐"
+    ],
+    "a_name_forms": [
+     "传道者",
+     "传道者·苏菲亚",
+     "苏菲亚",
+     "苏菲亚小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-031",
+   "pair": {
+    "a_eid": "卡尔",
+    "a_name": "卡尔",
+    "b_eid": "马库斯",
+    "b_name": "马库斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡尔整理自己的档案）卡尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡尔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:0.0.0",
+    "b_name_forms": [
+     "四级调查员马库斯小姐",
+     "基金会的那位小姐",
+     "安杰罗提",
+     "安杰罗提小姐",
+     "政府小姐",
+     "马库斯",
+     "马库斯小姐",
+     "马库斯职员",
+     "马库斯调查员"
+    ],
+    "a_name_forms": [
+     "卡尔",
+     "卡尔先生",
+     "卡尔部长",
+     "老卡尔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-032",
+   "pair": {
+    "a_eid": "伊戈尔",
+    "a_name": "伊戈尔",
+    "b_eid": "苏菲亚",
+    "b_name": "苏菲亚"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊戈尔整理自己的档案）伊戈尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊戈尔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "b_name_forms": [
+     "传道者",
+     "传道者·苏菲亚",
+     "苏菲亚",
+     "苏菲亚小姐"
+    ],
+    "a_name_forms": [
+     "伊戈尔",
+     "伊戈尔将军",
+     "养父",
+     "叛变的伊戈尔",
+     "老东西",
+     "老爹"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-033",
+   "pair": {
+    "a_eid": "母亲",
+    "a_name": "母亲",
+    "b_eid": "父亲",
+    "b_name": "父亲"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替母亲整理自己的档案）母亲本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "母亲",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23601_夜游十字街:0.0.0",
+    "b_name_forms": [
+     "父亲"
+    ],
+    "a_name_forms": [
+     "母亲"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-034",
+   "pair": {
+    "a_eid": "保利娜",
+    "a_name": "保利娜",
+    "b_eid": "帮派打手",
+    "b_name": "帮派打手"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替保利娜整理自己的档案）保利娜本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "保利娜",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:0.0.2",
+    "b_name_forms": [
+     "帮派打手"
+    ],
+    "a_name_forms": [
+     "保利娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-035",
+   "pair": {
+    "a_eid": "帮派打手",
+    "a_name": "帮派打手",
+    "b_eid": "贝克特",
+    "b_name": "贝克特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替帮派打手整理自己的档案）帮派打手本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "帮派打手",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.3",
+    "b_name_forms": [
+     "贝克特"
+    ],
+    "a_name_forms": [
+     "帮派打手"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-036",
+   "pair": {
+    "a_eid": "保利娜",
+    "a_name": "保利娜",
+    "b_eid": "莱格斯",
+    "b_name": "莱格斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替保利娜整理自己的档案）保利娜本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "保利娜",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:0.0.0",
+    "b_name_forms": [
+     "死人莱格斯",
+     "莱格斯"
+    ],
+    "a_name_forms": [
+     "保利娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-037",
+   "pair": {
+    "a_eid": "霍夫曼",
+    "a_name": "霍夫曼",
+    "b_eid": "马歇尔",
+    "b_name": "马歇尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替霍夫曼整理自己的档案）霍夫曼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "霍夫曼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:1.0.2",
+    "b_name_forms": [
+     "马歇尔"
+    ],
+    "a_name_forms": [
+     "格蕾塔",
+     "格蕾塔·霍夫曼",
+     "霍夫曼",
+     "霍夫曼女士",
+     "霍夫曼老师"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-038",
+   "pair": {
+    "a_eid": "利伯蒂",
+    "a_name": "利伯蒂",
+    "b_eid": "卡洛琳",
+    "b_name": "卡洛琳"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替利伯蒂整理自己的档案）利伯蒂本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "利伯蒂",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23501_太阳的背面:3.0.0",
+    "b_name_forms": [
+     "卡洛琳",
+     "白天鹅"
+    ],
+    "a_name_forms": [
+     "利伯蒂",
+     "利伯蒂·格罗夫",
+     "纸信圈儿"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-039",
+   "pair": {
+    "a_eid": "木头小人",
+    "a_name": "木头小人",
+    "b_eid": "许娘子",
+    "b_name": "许娘子"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替木头小人整理自己的档案）木头小人本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "木头小人",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16601_曲香蒙求:0.0.0",
+    "b_name_forms": [
+     "许三娘子",
+     "许娘子"
+    ],
+    "a_name_forms": [
+     "木头小人"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-040",
+   "pair": {
+    "a_eid": "保利娜",
+    "a_name": "保利娜",
+    "b_eid": "先驱者",
+    "b_name": "先驱者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替保利娜整理自己的档案）保利娜本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "保利娜",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.0",
+    "b_name_forms": [
+     "假人先生",
+     "先驱者"
+    ],
+    "a_name_forms": [
+     "保利娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-041",
+   "pair": {
+    "a_eid": "帮派打手",
+    "a_name": "帮派打手",
+    "b_eid": "霍利克",
+    "b_name": "霍利克"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替帮派打手整理自己的档案）帮派打手本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "帮派打手",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.3",
+    "b_name_forms": [
+     "霍利克"
+    ],
+    "a_name_forms": [
+     "帮派打手"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-042",
+   "pair": {
+    "a_eid": "先驱者",
+    "a_name": "先驱者",
+    "b_eid": "环状水星",
+    "b_name": "环状水星"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替先驱者整理自己的档案）先驱者本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "先驱者",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:0.0.0",
+    "b_name_forms": [
+     "环状水星"
+    ],
+    "a_name_forms": [
+     "假人先生",
+     "先驱者"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-043",
+   "pair": {
+    "a_eid": "先驱者",
+    "a_name": "先驱者",
+    "b_eid": "莱格斯",
+    "b_name": "莱格斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替先驱者整理自己的档案）先驱者本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "先驱者",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:0.0.0",
+    "b_name_forms": [
+     "死人莱格斯",
+     "莱格斯"
+    ],
+    "a_name_forms": [
+     "假人先生",
+     "先驱者"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-044",
+   "pair": {
+    "a_eid": "安东尼",
+    "a_name": "安东尼",
+    "b_eid": "温妮弗雷德",
+    "b_name": "温妮弗雷德"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替安东尼整理自己的档案）安东尼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "安东尼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:2.0.1",
+    "b_name_forms": [
+     "温妮弗雷德"
+    ],
+    "a_name_forms": [
+     "安东尼"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-045",
+   "pair": {
+    "a_eid": "杜卡特",
+    "a_name": "杜卡特",
+    "b_eid": "霍夫曼",
+    "b_name": "霍夫曼"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替杜卡特整理自己的档案）杜卡特本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "杜卡特",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:4.0.2",
+    "b_name_forms": [
+     "格蕾塔",
+     "格蕾塔·霍夫曼",
+     "霍夫曼",
+     "霍夫曼女士",
+     "霍夫曼老师"
+    ],
+    "a_name_forms": [
+     "杜卡特"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-046",
+   "pair": {
+    "a_eid": "桑德罗",
+    "a_name": "桑德罗",
+    "b_eid": "罗德里戈",
+    "b_name": "罗德里戈"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替桑德罗整理自己的档案）桑德罗本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "桑德罗",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "b_name_forms": [
+     "罗德里戈",
+     "老罗德里戈"
+    ],
+    "a_name_forms": [
+     "桑德罗"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-047",
+   "pair": {
+    "a_eid": "环状水星",
+    "a_name": "环状水星",
+    "b_eid": "霍利克",
+    "b_name": "霍利克"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替环状水星整理自己的档案）环状水星本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "环状水星",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.1",
+    "b_name_forms": [
+     "霍利克"
+    ],
+    "a_name_forms": [
+     "环状水星"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-048",
+   "pair": {
+    "a_eid": "笃笃骨",
+    "a_name": "笃笃骨",
+    "b_eid": "记者",
+    "b_name": "记者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替笃笃骨整理自己的档案）笃笃骨本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "笃笃骨",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:6.0.2",
+    "b_name_forms": [
+     "记者"
+    ],
+    "a_name_forms": [
+     "夏洛特",
+     "夏洛特·奥黑根",
+     "笃笃骨"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-049",
+   "pair": {
+    "a_eid": "灯倌",
+    "a_name": "灯倌",
+    "b_eid": "父亲",
+    "b_name": "父亲"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替灯倌整理自己的档案）灯倌本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "灯倌",
+   "retrieval_gold": {
+    "b_private_chunk": "character__23601_夜游十字街:0.0.0",
+    "b_name_forms": [
+     "父亲"
+    ],
+    "a_name_forms": [
+     "灯倌"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-050",
+   "pair": {
+    "a_eid": "许娘子",
+    "a_name": "许娘子",
+    "b_eid": "里正",
+    "b_name": "里正"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替许娘子整理自己的档案）许娘子本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "许娘子",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16601_曲香蒙求:3.0.3",
+    "b_name_forms": [
+     "里正"
+    ],
+    "a_name_forms": [
+     "许三娘子",
+     "许娘子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-051",
+   "pair": {
+    "a_eid": "商贩梅克卢",
+    "a_name": "商贩梅克卢",
+    "b_eid": "塔罗师比安卡",
+    "b_name": "塔罗师比安卡"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替商贩梅克卢整理自己的档案）商贩梅克卢本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "商贩梅克卢",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:1.0.0",
+    "b_name_forms": [
+     "塔罗师比安卡"
+    ],
+    "a_name_forms": [
+     "商贩梅克卢"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-052",
+   "pair": {
+    "a_eid": "安东尼",
+    "a_name": "安东尼",
+    "b_eid": "霍利克",
+    "b_name": "霍利克"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替安东尼整理自己的档案）安东尼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "安东尼",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.1",
+    "b_name_forms": [
+     "霍利克"
+    ],
+    "a_name_forms": [
+     "安东尼"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-053",
+   "pair": {
+    "a_eid": "翠斯特",
+    "a_name": "翠斯特",
+    "b_eid": "西奥菲尔",
+    "b_name": "西奥菲尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替翠斯特整理自己的档案）翠斯特本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "翠斯特",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:2.0.4",
+    "b_name_forms": [
+     "西奥菲尔",
+     "西奥菲尔·冯·迪塔斯多夫",
+     "齐格蒙德"
+    ],
+    "a_name_forms": [
+     "翠斯特"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-054",
+   "pair": {
+    "a_eid": "命名日",
+    "a_name": "命名日",
+    "b_eid": "阿夫西维",
+    "b_name": "阿夫西维"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替命名日整理自己的档案）命名日本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "命名日",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:1.0.0",
+    "b_name_forms": [
+     "小阿夫西维",
+     "阿夫西维"
+    ],
+    "a_name_forms": [
+     "列昂尼德",
+     "命名日",
+     "那家伙"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-055",
+   "pair": {
+    "a_eid": "秀郎中",
+    "a_name": "秀郎中",
+    "b_eid": "鹭鸶剪",
+    "b_name": "鹭鸶剪"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替秀郎中整理自己的档案）秀郎中本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "秀郎中",
+   "retrieval_gold": {
+    "b_private_chunk": "character__34701_打虎记:7.0.2",
+    "b_name_forms": [
+     "鹭鸶剪"
+    ],
+    "a_name_forms": [
+     "秀郎中"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-056",
+   "pair": {
+    "a_eid": "莱格斯",
+    "a_name": "莱格斯",
+    "b_eid": "贝克特",
+    "b_name": "贝克特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替莱格斯整理自己的档案）莱格斯本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "莱格斯",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20601_旧金山小子:1.0.1",
+    "b_name_forms": [
+     "贝克特"
+    ],
+    "a_name_forms": [
+     "死人莱格斯",
+     "莱格斯"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-057",
+   "pair": {
+    "a_eid": "木头小人",
+    "a_name": "木头小人",
+    "b_eid": "法曹",
+    "b_name": "法曹"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替木头小人整理自己的档案）木头小人本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "木头小人",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16601_曲香蒙求:0.0.0",
+    "b_name_forms": [
+     "法曹"
+    ],
+    "a_name_forms": [
+     "木头小人"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-058",
+   "pair": {
+    "a_eid": "克努特大叔",
+    "a_name": "克努特大叔",
+    "b_eid": "叶甫根尼",
+    "b_name": "叶甫根尼"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替克努特大叔整理自己的档案）克努特大叔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "克努特大叔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:1.0.0",
+    "b_name_forms": [
+     "叶甫根尼"
+    ],
+    "a_name_forms": [
+     "克努特",
+     "克努特大叔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-059",
+   "pair": {
+    "a_eid": "伊文洁琳",
+    "a_name": "伊文洁琳",
+    "b_eid": "翠斯特",
+    "b_name": "翠斯特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊文洁琳整理自己的档案）伊文洁琳本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊文洁琳",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:0.0.0",
+    "b_name_forms": [
+     "翠斯特"
+    ],
+    "a_name_forms": [
+     "伊文洁琳"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-060",
+   "pair": {
+    "a_eid": "尼娜",
+    "a_name": "尼娜",
+    "b_eid": "彼得森",
+    "b_name": "彼得森"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替尼娜整理自己的档案）尼娜本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "尼娜",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:0.0.2",
+    "b_name_forms": [
+     "彼得森"
+    ],
+    "a_name_forms": [
+     "尼娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-061",
+   "pair": {
+    "a_eid": "伊戈尔",
+    "a_name": "伊戈尔",
+    "b_eid": "罗德里戈",
+    "b_name": "罗德里戈"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替伊戈尔整理自己的档案）伊戈尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "伊戈尔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "b_name_forms": [
+     "罗德里戈",
+     "老罗德里戈"
+    ],
+    "a_name_forms": [
+     "伊戈尔",
+     "伊戈尔将军",
+     "养父",
+     "叛变的伊戈尔",
+     "老东西",
+     "老爹"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-062",
+   "pair": {
+    "a_eid": "曲娘",
+    "a_name": "曲娘",
+    "b_eid": "葛天",
+    "b_name": "葛天"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替曲娘整理自己的档案）曲娘本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "曲娘",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16603_天下有风:0.0.0",
+    "b_name_forms": [
+     "燕平",
+     "葛天",
+     "葛天先生",
+     "鸟人",
+     "鸟先生"
+    ],
+    "a_name_forms": [
+     "乞儿",
+     "小九",
+     "曲娘",
+     "曲娘子"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-063",
+   "pair": {
+    "a_eid": "厉晦锋",
+    "a_name": "厉晦锋",
+    "b_eid": "鹭鸶剪",
+    "b_name": "鹭鸶剪"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替厉晦锋整理自己的档案）厉晦锋本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "厉晦锋",
+   "retrieval_gold": {
+    "b_private_chunk": "character__34701_打虎记:7.0.1",
+    "b_name_forms": [
+     "鹭鸶剪"
+    ],
+    "a_name_forms": [
+     "厉守备",
+     "厉晦锋"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-064",
+   "pair": {
+    "a_eid": "命名日",
+    "a_name": "命名日",
+    "b_eid": "维拉",
+    "b_name": "维拉"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替命名日整理自己的档案）命名日本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "命名日",
+   "retrieval_gold": {
+    "b_private_chunk": "character__18601_黎明依旧到来:0.0.0",
+    "b_name_forms": [
+     "维拉"
+    ],
+    "a_name_forms": [
+     "列昂尼德",
+     "命名日",
+     "那家伙"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-065",
+   "pair": {
+    "a_eid": "商贩梅克卢",
+    "a_name": "商贩梅克卢",
+    "b_eid": "德克斯特",
+    "b_name": "德克斯特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替商贩梅克卢整理自己的档案）商贩梅克卢本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "商贩梅克卢",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:0.0.2",
+    "b_name_forms": [
+     "倒霉蛋德克斯特",
+     "德克斯特"
+    ],
+    "a_name_forms": [
+     "商贩梅克卢"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-066",
+   "pair": {
+    "a_eid": "塔罗师比安卡",
+    "a_name": "塔罗师比安卡",
+    "b_eid": "德克斯特",
+    "b_name": "德克斯特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替塔罗师比安卡整理自己的档案）塔罗师比安卡本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "塔罗师比安卡",
+   "retrieval_gold": {
+    "b_private_chunk": "character__20603_第一千夜:0.0.1",
+    "b_name_forms": [
+     "倒霉蛋德克斯特",
+     "德克斯特"
+    ],
+    "a_name_forms": [
+     "塔罗师比安卡"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-067",
+   "pair": {
+    "a_eid": "唐纳德",
+    "a_name": "唐纳德",
+    "b_eid": "马歇尔",
+    "b_name": "马歇尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替唐纳德整理自己的档案）唐纳德本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "唐纳德",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17703_灯塔集:2.0.0",
+    "b_name_forms": [
+     "马歇尔"
+    ],
+    "a_name_forms": [
+     "唐纳德"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-068",
+   "pair": {
+    "a_eid": "母亲",
+    "a_name": "母亲",
+    "b_eid": "秀郎中",
+    "b_name": "秀郎中"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替母亲整理自己的档案）母亲本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "母亲",
+   "retrieval_gold": {
+    "b_private_chunk": "character__34701_打虎记:0.0.1",
+    "b_name_forms": [
+     "秀郎中"
+    ],
+    "a_name_forms": [
+     "母亲"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-069",
+   "pair": {
+    "a_eid": "法曹",
+    "a_name": "法曹",
+    "b_eid": "许娘子",
+    "b_name": "许娘子"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替法曹整理自己的档案）法曹本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "法曹",
+   "retrieval_gold": {
+    "b_private_chunk": "character__16601_曲香蒙求:1.0.0",
+    "b_name_forms": [
+     "许三娘子",
+     "许娘子"
+    ],
+    "a_name_forms": [
+     "法曹"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-070",
+   "pair": {
+    "a_eid": "卡尔",
+    "a_name": "卡尔",
+    "b_eid": "翠斯特",
+    "b_name": "翠斯特"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡尔整理自己的档案）卡尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡尔",
+   "retrieval_gold": {
+    "b_private_chunk": "character__17701_小房间:0.0.0",
+    "b_name_forms": [
+     "翠斯特"
+    ],
+    "a_name_forms": [
+     "卡尔",
+     "卡尔先生",
+     "卡尔部长",
+     "老卡尔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-071",
+   "pair": {
+    "a_eid": "杰瑞·威尔逊",
+    "a_name": "杰瑞·威尔逊",
+    "b_eid": "铅玻璃",
+    "b_name": "铅玻璃"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替杰瑞·威尔逊整理自己的档案）杰瑞·威尔逊本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "杰瑞·威尔逊",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1913_淑女的守则:0.0.3",
+    "b_name_forms": [
+     "铅玻璃"
+    ],
+    "a_name_forms": [
+     "杰瑞·威尔逊"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-072",
+   "pair": {
+    "a_eid": "APPLe",
+    "a_name": "APPLe",
+    "b_eid": "爱兹拉",
+    "b_name": "爱兹拉"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替APPLe整理自己的档案）APPLe本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "APPLe",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1917_乘法轴上的一天:0.0.0",
+    "b_name_forms": [
+     "爱兹拉"
+    ],
+    "a_name_forms": [
+     "APPLe",
+     "APPLe先生",
+     "APPLe某",
+     "苹果先生"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-073",
+   "pair": {
+    "a_eid": "十四行诗",
+    "a_name": "十四行诗",
+    "b_eid": "莫莉德尔",
+    "b_name": "莫莉德尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替十四行诗整理自己的档案）十四行诗本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "十四行诗",
+   "retrieval_gold": {
+    "b_private_chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "b_name_forms": [
+     "副官女士",
+     "莫莉",
+     "莫莉德尔",
+     "莫莉德尔中尉",
+     "莫莉德尔副官",
+     "莫莉德尔姐姐"
+    ],
+    "a_name_forms": [
+     "优等生",
+     "助手",
+     "十四行诗",
+     "十四行诗小姐",
+     "橘发姑娘",
+     "第一助手"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-074",
+   "pair": {
+    "a_eid": "十四行诗",
+    "a_name": "十四行诗",
+    "b_eid": "星锑",
+    "b_name": "星锑"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替十四行诗整理自己的档案）十四行诗本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "十四行诗",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1908_齿轮的意志:0.0.0",
+    "b_name_forms": [
+     "唱片骑师",
+     "摇滚海盗",
+     "星锑",
+     "星锑船长",
+     "本海盗",
+     "船长R",
+     "隐形人"
+    ],
+    "a_name_forms": [
+     "优等生",
+     "助手",
+     "十四行诗",
+     "十四行诗小姐",
+     "橘发姑娘",
+     "第一助手"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-075",
+   "pair": {
+    "a_eid": "十四行诗",
+    "a_name": "十四行诗",
+    "b_eid": "哈拉尔",
+    "b_name": "哈拉尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替十四行诗整理自己的档案）十四行诗本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "十四行诗",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1904_埃里克角色故事:1.2.0",
+    "b_name_forms": [
+     "哈拉尔"
+    ],
+    "a_name_forms": [
+     "优等生",
+     "助手",
+     "十四行诗",
+     "十四行诗小姐",
+     "橘发姑娘",
+     "第一助手"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-076",
+   "pair": {
+    "a_eid": "兔毛手袋",
+    "a_name": "兔毛手袋",
+    "b_eid": "小梅斯梅尔",
+    "b_name": "小梅斯梅尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替兔毛手袋整理自己的档案）兔毛手袋本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "兔毛手袋",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1904_埃里克角色故事:5.0.0",
+    "b_name_forms": [
+     "人工梦游治疗师",
+     "小梅斯梅尔"
+    ],
+    "a_name_forms": [
+     "兔毛手袋"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-077",
+   "pair": {
+    "a_eid": "佩德拉",
+    "a_name": "佩德拉",
+    "b_eid": "小梅斯梅尔",
+    "b_name": "小梅斯梅尔"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替佩德拉整理自己的档案）佩德拉本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "佩德拉",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1904_埃里克角色故事:5.0.0",
+    "b_name_forms": [
+     "人工梦游治疗师",
+     "小梅斯梅尔"
+    ],
+    "a_name_forms": [
+     "佩德拉",
+     "佩德拉·保罗·冈萨雷斯·罗萨",
+     "和平主义者",
+     "委员Ⅰ"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-078",
+   "pair": {
+    "a_eid": "沙丝绒",
+    "a_name": "沙丝绒",
+    "b_eid": "芭妮芭妮",
+    "b_name": "芭妮芭妮"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替沙丝绒整理自己的档案）沙丝绒本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "沙丝绒",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1905_庸碌喜剧:1.0.1",
+    "b_name_forms": [
+     "兔子小姐",
+     "芭妮芭妮"
+    ],
+    "a_name_forms": [
+     "沙丝绒"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-079",
+   "pair": {
+    "a_eid": "挖掘艺术",
+    "a_name": "挖掘艺术",
+    "b_eid": "皮克勒斯",
+    "b_name": "皮克勒斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替挖掘艺术整理自己的档案）挖掘艺术本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "挖掘艺术",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1919_黄金与悲喜剧:0.0.0",
+    "b_name_forms": [
+     "皮克勒斯",
+     "英雄小狗"
+    ],
+    "a_name_forms": [
+     "挖掘艺术",
+     "泡泡先生"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-080",
+   "pair": {
+    "a_eid": "星锑",
+    "a_name": "星锑",
+    "b_eid": "槲寄生",
+    "b_name": "槲寄生"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替星锑整理自己的档案）星锑本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "星锑",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1919_黄金与悲喜剧:0.0.0",
+    "b_name_forms": [
+     "槲寄生",
+     "槲寄生小姐",
+     "韦耶豪瑟小姐"
+    ],
+    "a_name_forms": [
+     "唱片骑师",
+     "摇滚海盗",
+     "星锑",
+     "星锑船长",
+     "本海盗",
+     "船长R",
+     "隐形人"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-081",
+   "pair": {
+    "a_eid": "APPLe",
+    "a_name": "APPLe",
+    "b_eid": "芭卡洛儿",
+    "b_name": "芭卡洛儿"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替APPLe整理自己的档案）APPLe本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "APPLe",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1923_海风的往事:1.0.1",
+    "b_name_forms": [
+     "芭卡洛儿"
+    ],
+    "a_name_forms": [
+     "APPLe",
+     "APPLe先生",
+     "APPLe某",
+     "苹果先生"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-082",
+   "pair": {
+    "a_eid": "小梅斯梅尔",
+    "a_name": "小梅斯梅尔",
+    "b_eid": "红弩箭",
+    "b_name": "红弩箭"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替小梅斯梅尔整理自己的档案）小梅斯梅尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "小梅斯梅尔",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1910_风吹乌哈拉:0.0.0",
+    "b_name_forms": [
+     "中队长",
+     "红弩箭",
+     "红弩箭中尉",
+     "红弩箭小姐",
+     "莉莉娅",
+     "隼崽儿",
+     "飞行女巫"
+    ],
+    "a_name_forms": [
+     "人工梦游治疗师",
+     "小梅斯梅尔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-083",
+   "pair": {
+    "a_eid": "星锑",
+    "a_name": "星锑",
+    "b_eid": "芭卡洛儿",
+    "b_name": "芭卡洛儿"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替星锑整理自己的档案）星锑本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "星锑",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1923_海风的往事:1.0.1",
+    "b_name_forms": [
+     "芭卡洛儿"
+    ],
+    "a_name_forms": [
+     "唱片骑师",
+     "摇滚海盗",
+     "星锑",
+     "星锑船长",
+     "本海盗",
+     "船长R",
+     "隐形人"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-084",
+   "pair": {
+    "a_eid": "APPLe",
+    "a_name": "APPLe",
+    "b_eid": "皮克勒斯",
+    "b_name": "皮克勒斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替APPLe整理自己的档案）APPLe本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "APPLe",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1919_黄金与悲喜剧:0.0.0",
+    "b_name_forms": [
+     "皮克勒斯",
+     "英雄小狗"
+    ],
+    "a_name_forms": [
+     "APPLe",
+     "APPLe先生",
+     "APPLe某",
+     "苹果先生"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-085",
+   "pair": {
+    "a_eid": "槲寄生",
+    "a_name": "槲寄生",
+    "b_eid": "玛蒂尔达",
+    "b_name": "玛蒂尔达"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替槲寄生整理自己的档案）槲寄生本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "槲寄生",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1904_埃里克角色故事:1.2.2",
+    "b_name_forms": [
+     "布翁尼小姐",
+     "玛蒂尔达",
+     "玛蒂尔达·布翁尼",
+     "玛蒂尔达·布翁尼小姐"
+    ],
+    "a_name_forms": [
+     "槲寄生",
+     "槲寄生小姐",
+     "韦耶豪瑟小姐"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-086",
+   "pair": {
+    "a_eid": "夏利",
+    "a_name": "夏利",
+    "b_eid": "雾行者",
+    "b_name": "雾行者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替夏利整理自己的档案）夏利本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "夏利",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "b_name_forms": [
+     "奥利弗",
+     "奥利弗·福尔摩斯",
+     "奥利弗·福葛",
+     "福葛",
+     "福葛伙计",
+     "福葛先生",
+     "雾行者",
+     "骑士奥利弗"
+    ],
+    "a_name_forms": [
+     "夏利"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-087",
+   "pair": {
+    "a_eid": "星之眼",
+    "a_name": "星之眼",
+    "b_eid": "雾行者",
+    "b_name": "雾行者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替星之眼整理自己的档案）星之眼本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "星之眼",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "b_name_forms": [
+     "奥利弗",
+     "奥利弗·福尔摩斯",
+     "奥利弗·福葛",
+     "福葛",
+     "福葛伙计",
+     "福葛先生",
+     "雾行者",
+     "骑士奥利弗"
+    ],
+    "a_name_forms": [
+     "星之眼"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-088",
+   "pair": {
+    "a_eid": "瓦伦缇娜",
+    "a_name": "瓦伦缇娜",
+    "b_eid": "贝拉",
+    "b_name": "贝拉"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替瓦伦缇娜整理自己的档案）瓦伦缇娜本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "瓦伦缇娜",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1912_塞梅尔维斯:3.0.3",
+    "b_name_forms": [
+     "贝拉"
+    ],
+    "a_name_forms": [
+     "瓦伦缇娜"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-089",
+   "pair": {
+    "a_eid": "莫桑女士",
+    "a_name": "莫桑女士",
+    "b_eid": "铅玻璃",
+    "b_name": "铅玻璃"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替莫桑女士整理自己的档案）莫桑女士本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "莫桑女士",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1913_淑女的守则:0.0.3",
+    "b_name_forms": [
+     "铅玻璃"
+    ],
+    "a_name_forms": [
+     "莫桑女士",
+     "莫桑小姐",
+     "莫桑老师"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-090",
+   "pair": {
+    "a_eid": "兔毛手袋",
+    "a_name": "兔毛手袋",
+    "b_eid": "马库斯",
+    "b_name": "马库斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替兔毛手袋整理自己的档案）兔毛手袋本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "兔毛手袋",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1921_鬼马探灵记:7.0.1",
+    "b_name_forms": [
+     "四级调查员马库斯小姐",
+     "基金会的那位小姐",
+     "安杰罗提",
+     "安杰罗提小姐",
+     "政府小姐",
+     "马库斯",
+     "马库斯小姐",
+     "马库斯职员",
+     "马库斯调查员"
+    ],
+    "a_name_forms": [
+     "兔毛手袋"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-091",
+   "pair": {
+    "a_eid": "皮克勒斯",
+    "a_name": "皮克勒斯",
+    "b_eid": "阿尔古斯",
+    "b_name": "阿尔古斯"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替皮克勒斯整理自己的档案）皮克勒斯本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "皮克勒斯",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1919_黄金与悲喜剧:7.0.3",
+    "b_name_forms": [
+     "阿尔古斯"
+    ],
+    "a_name_forms": [
+     "皮克勒斯",
+     "英雄小狗"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-092",
+   "pair": {
+    "a_eid": "警察",
+    "a_name": "警察",
+    "b_eid": "雾行者",
+    "b_name": "雾行者"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替警察整理自己的档案）警察本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "警察",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "b_name_forms": [
+     "奥利弗",
+     "奥利弗·福尔摩斯",
+     "奥利弗·福葛",
+     "福葛",
+     "福葛伙计",
+     "福葛先生",
+     "雾行者",
+     "骑士奥利弗"
+    ],
+    "a_name_forms": [
+     "警察"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-093",
+   "pair": {
+    "a_eid": "苏芙比",
+    "a_name": "苏芙比",
+    "b_eid": "铅玻璃",
+    "b_name": "铅玻璃"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替苏芙比整理自己的档案）苏芙比本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "苏芙比",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1918_长夜未逝:0.1.0",
+    "b_name_forms": [
+     "铅玻璃"
+    ],
+    "a_name_forms": [
+     "大小姐",
+     "小淑女",
+     "苏芙比",
+     "苏芙比小姐",
+     "苏芙比术士"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-094",
+   "pair": {
+    "a_eid": "可燃点",
+    "a_name": "可燃点",
+    "b_eid": "芭妮芭妮",
+    "b_name": "芭妮芭妮"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替可燃点整理自己的档案）可燃点本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "可燃点",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1905_庸碌喜剧:1.0.1",
+    "b_name_forms": [
+     "兔子小姐",
+     "芭妮芭妮"
+    ],
+    "a_name_forms": [
+     "可燃点",
+     "小火"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-095",
+   "pair": {
+    "a_eid": "卡穆塔",
+    "a_name": "卡穆塔",
+    "b_eid": "塞洛尼",
+    "b_name": "塞洛尼"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替卡穆塔整理自己的档案）卡穆塔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "卡穆塔",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1923_海风的往事:3.0.0",
+    "b_name_forms": [
+     "塞洛尼"
+    ],
+    "a_name_forms": [
+     "卡穆塔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-096",
+   "pair": {
+    "a_eid": "恐怖通",
+    "a_name": "恐怖通",
+    "b_eid": "金蜜儿",
+    "b_name": "金蜜儿"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替恐怖通整理自己的档案）恐怖通本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "恐怖通",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1915_起火点:0.1.0",
+    "b_name_forms": [
+     "金蜜儿"
+    ],
+    "a_name_forms": [
+     "恐怖通"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-097",
+   "pair": {
+    "a_eid": "哈拉尔",
+    "a_name": "哈拉尔",
+    "b_eid": "玛蒂尔达",
+    "b_name": "玛蒂尔达"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替哈拉尔整理自己的档案）哈拉尔本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "哈拉尔",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1904_埃里克角色故事:1.3.0",
+    "b_name_forms": [
+     "布翁尼小姐",
+     "玛蒂尔达",
+     "玛蒂尔达·布翁尼",
+     "玛蒂尔达·布翁尼小姐"
+    ],
+    "a_name_forms": [
+     "哈拉尔"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-098",
+   "pair": {
+    "a_eid": "未锈铠",
+    "a_name": "未锈铠",
+    "b_eid": "泥鯭的士",
+    "b_name": "泥鯭的士"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替未锈铠整理自己的档案）未锈铠本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "未锈铠",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1907_第九条美德:1.0.1",
+    "b_name_forms": [
+     "安安",
+     "安安小姐",
+     "李安安",
+     "泥鯭的士",
+     "豆丁"
+    ],
+    "a_name_forms": [
+     "未锈铠"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-099",
+   "pair": {
+    "a_eid": "勿忘我",
+    "a_name": "勿忘我",
+    "b_eid": "芭卡洛儿",
+    "b_name": "芭卡洛儿"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替勿忘我整理自己的档案）勿忘我本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "勿忘我",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1923_海风的往事:1.0.1",
+    "b_name_forms": [
+     "芭卡洛儿"
+    ],
+    "a_name_forms": [
+     "勿忘我",
+     "勿忘我先生",
+     "勿忘我老爷"
+    ]
+   }
+  },
+  {
+   "sample_id": "CTL-100",
+   "pair": {
+    "a_eid": "槲寄生",
+    "a_name": "槲寄生",
+    "b_eid": "苏芙比",
+    "b_name": "苏芙比"
+   },
+   "query_type": "own_business",
+   "prompt": "（你在替槲寄生整理自己的档案）槲寄生本人私下不为人知的那件事，正典里是怎么写的？",
+   "perspective": "槲寄生",
+   "retrieval_gold": {
+    "b_private_chunk": "anecdote__1901_雾行者角色故事:0.0.1",
+    "b_name_forms": [
+     "大小姐",
+     "小淑女",
+     "苏芙比",
+     "苏芙比小姐",
+     "苏芙比术士"
+    ],
+    "a_name_forms": [
+     "槲寄生",
+     "槲寄生小姐",
+     "韦耶豪瑟小姐"
+    ]
+   }
+  }
+ ]
+}
