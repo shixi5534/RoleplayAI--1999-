@@ -1,0 +1,5155 @@
+{
+ "schema": "compendium_rag.p9_entity_census/v2",
+ "done_at": "2026-10-10T20:23:13",
+ "graph_sha": "911bb538160db80e",
+ "read_only": true,
+ "reproduce": {
+  "role_questions": 225,
+  "leak_questions": 35,
+  "rate": 0.1556,
+  "expected": [
+   225,
+   35,
+   0.1556
+  ],
+  "exact": true,
+  "source": "p8_roleiso_jsonl 三集 full 模式 522 行，离线复算 leak_check"
+ },
+ "counts": {
+  "entities": 7033,
+  "edges": 27110,
+  "rows_scanned": 522,
+  "role_domain": 225,
+  "leaking": 35,
+  "a1_generic_role_entities": 6,
+  "a2_unresolved_speakers": 6,
+  "b_clusters": 146,
+  "b_clusters_with_both_seeded_evidence": 1,
+  "c_diff_true_collisions": 39,
+  "attribution": {
+   "A2": 15,
+   "C_same": 3,
+   "C_diff": 21,
+   "B": 3,
+   "none": 8
+  }
+ },
+ "probe_generic_words_named_by_user": [
+  {
+   "probe": "会长",
+   "n_entities": 1,
+   "entities": [
+    {
+     "eid": "会长",
+     "type": "角色",
+     "n_chunk_ids": 8
+    }
+   ],
+   "exact_entity_named": true,
+   "is_named_role_anchor": true,
+   "generic_criteria": [],
+   "n_chunks_with_speaker": 9
+  },
+  {
+   "probe": "上级",
+   "n_entities": 1,
+   "entities": [
+    {
+     "eid": "上级",
+     "type": "角色",
+     "n_chunk_ids": 1
+    }
+   ],
+   "exact_entity_named": true,
+   "is_named_role_anchor": true,
+   "generic_criteria": [],
+   "n_chunks_with_speaker": 0
+  },
+  {
+   "probe": "孩子们",
+   "n_entities": 1,
+   "entities": [
+    {
+     "eid": "孩子们",
+     "type": "角色",
+     "n_chunk_ids": 2
+    }
+   ],
+   "exact_entity_named": true,
+   "is_named_role_anchor": true,
+   "generic_criteria": [],
+   "n_chunks_with_speaker": 4
+  },
+  {
+   "probe": "管理员",
+   "n_entities": 1,
+   "entities": [
+    {
+     "eid": "管理员",
+     "type": "角色",
+     "n_chunk_ids": 2
+    }
+   ],
+   "exact_entity_named": true,
+   "is_named_role_anchor": true,
+   "generic_criteria": [],
+   "n_chunks_with_speaker": 2
+  },
+  {
+   "probe": "黑鹮的副手",
+   "n_entities": 1,
+   "entities": [
+    {
+     "eid": "黑鹮的副手",
+     "type": "角色",
+     "n_chunk_ids": 10
+    }
+   ],
+   "exact_entity_named": true,
+   "is_named_role_anchor": true,
+   "generic_criteria": [],
+   "n_chunks_with_speaker": 0
+  }
+ ],
+ "list_a1_generic_role_entities": [
+  {
+   "eid": "重塑·信徒",
+   "name": "重塑·信徒",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 4,
+   "n_chunk_ids": 24,
+   "degree": 38,
+   "is_named_role_anchor": true
+  },
+  {
+   "eid": "重塑·门徒",
+   "name": "重塑·门徒",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 0,
+   "n_chunk_ids": 21,
+   "degree": 39,
+   "is_named_role_anchor": true
+  },
+  {
+   "eid": "重塑·门徒Ⅰ",
+   "name": "重塑·门徒Ⅰ",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 0,
+   "n_chunk_ids": 2,
+   "degree": 2,
+   "is_named_role_anchor": true
+  },
+  {
+   "eid": "重塑·门徒Ⅱ",
+   "name": "重塑·门徒Ⅱ",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 0,
+   "n_chunk_ids": 2,
+   "degree": 1,
+   "is_named_role_anchor": true
+  },
+  {
+   "eid": "重塑·门徒Ⅲ",
+   "name": "重塑·门徒Ⅲ",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 0,
+   "n_chunk_ids": 1,
+   "degree": 1,
+   "is_named_role_anchor": true
+  },
+  {
+   "eid": "重塑·门徒Ⅳ",
+   "name": "重塑·门徒Ⅳ",
+   "criteria": [
+    "GENERIC_ROLE_SUFFIX"
+   ],
+   "n_aliases": 0,
+   "n_chunk_ids": 1,
+   "degree": 1,
+   "is_named_role_anchor": true
+  }
+ ],
+ "list_a2_unresolved_speakers_in_leaked_chunks": [
+  {
+   "speaker": "？？？",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [
+    "GENERIC_SPEAKER"
+   ],
+   "n_leaking_qids": 5,
+   "n_leaked_chunks": 7,
+   "leak_qids": [
+    "BA-053",
+    "GB-06",
+    "GB-08",
+    "R200",
+    "R242"
+   ]
+  },
+  {
+   "speaker": "口口口",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [],
+   "n_leaking_qids": 5,
+   "n_leaked_chunks": 2,
+   "leak_qids": [
+    "BC3-006",
+    "BD-034",
+    "GB-20",
+    "R179",
+    "R180"
+   ]
+  },
+  {
+   "speaker": "女孩",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [
+    "GENERIC_PERSON_NOUNS"
+   ],
+   "n_leaking_qids": 2,
+   "n_leaked_chunks": 2,
+   "leak_qids": [
+    "GB-06",
+    "GB-20"
+   ]
+  },
+  {
+   "speaker": "小孩Ⅰ",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [],
+   "n_leaking_qids": 1,
+   "n_leaked_chunks": 1,
+   "leak_qids": [
+    "GB-08"
+   ]
+  },
+  {
+   "speaker": "小孩Ⅱ",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [],
+   "n_leaking_qids": 1,
+   "n_leaked_chunks": 1,
+   "leak_qids": [
+    "GB-08"
+   ]
+  },
+  {
+   "speaker": "迪塔斯多夫",
+   "resolvable_to_role_entity": false,
+   "generic_criteria": [],
+   "n_leaking_qids": 1,
+   "n_leaked_chunks": 1,
+   "leak_qids": [
+    "BA-053"
+   ]
+  }
+ ],
+ "list_b_unmerged_same_character": [
+  {
+   "cluster_id": "施瓦茨",
+   "core": "施瓦茨",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "施瓦茨",
+     "name": "施瓦茨",
+     "n_chunk_ids": 7,
+     "canonical_zh": "Schwartz"
+    },
+    {
+     "eid": "施瓦茨医生",
+     "name": "施瓦茨医生",
+     "n_chunk_ids": 8,
+     "canonical_zh": "Schwartz"
+    }
+   ],
+   "cross_lang": false,
+   "leak_qids_both_seeded": [
+    "GA-47",
+    "R036",
+    "R247"
+   ],
+   "leak_qids_any_seeded": [
+    "GA-47",
+    "R036",
+    "R247"
+   ]
+  },
+  {
+   "cluster_id": "调查员",
+   "core": "调查员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "调查员",
+     "name": "调查员",
+     "n_chunk_ids": 6,
+     "canonical_zh": "调查员"
+    },
+    {
+     "eid": "调查员Ⅰ",
+     "name": "调查员Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "调查员Ⅰ"
+    },
+    {
+     "eid": "调查员Ⅱ",
+     "name": "调查员Ⅱ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "调查员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": [
+    "BD-034",
+    "R242"
+   ]
+  },
+  {
+   "cluster_id": "拉普拉斯研究员",
+   "core": "拉普拉斯研究员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "拉普拉斯研究员",
+     "name": "拉普拉斯研究员",
+     "n_chunk_ids": 1,
+     "canonical_zh": "拉普拉斯研究员"
+    },
+    {
+     "eid": "拉普拉斯研究员Ⅰ",
+     "name": "拉普拉斯研究员Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "拉普拉斯研究员Ⅰ"
+    },
+    {
+     "eid": "拉普拉斯研究员Ⅱ",
+     "name": "拉普拉斯研究员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "拉普拉斯研究员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": [
+    "BB-031"
+   ]
+  },
+  {
+   "cluster_id": "刘医生",
+   "core": "刘",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "刘医生",
+     "name": "刘医生",
+     "n_chunk_ids": 6,
+     "canonical_zh": "刘医生"
+    },
+    {
+     "eid": "刘老师",
+     "name": "刘老师",
+     "n_chunk_ids": 1,
+     "canonical_zh": "刘老师"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": [
+    "BD-047"
+   ]
+  },
+  {
+   "cluster_id": "基金会女职员",
+   "core": "基金会女职员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "基金会女职员",
+     "name": "基金会女职员",
+     "n_chunk_ids": 4,
+     "canonical_zh": "基金会女职员"
+    },
+    {
+     "eid": "基金会女职员Ⅱ",
+     "name": "基金会女职员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "基金会女职员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": [
+    "R242"
+   ]
+  },
+  {
+   "cluster_id": "城中居民",
+   "core": "城中居民",
+   "n_entities": 8,
+   "members": [
+    {
+     "eid": "城中居民",
+     "name": "城中居民",
+     "n_chunk_ids": 1,
+     "canonical_zh": "城中居民"
+    },
+    {
+     "eid": "城中居民Ⅰ",
+     "name": "城中居民Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "城中居民Ⅰ"
+    },
+    {
+     "eid": "城中居民Ⅱ",
+     "name": "城中居民Ⅱ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "城中居民Ⅱ"
+    },
+    {
+     "eid": "城中居民Ⅲ",
+     "name": "城中居民Ⅲ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "城中居民Ⅲ"
+    },
+    {
+     "eid": "城中居民Ⅳ",
+     "name": "城中居民Ⅳ",
+     "n_chunk_ids": 7,
+     "canonical_zh": "城中居民Ⅳ"
+    },
+    {
+     "eid": "城中居民Ⅴ",
+     "name": "城中居民Ⅴ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "城中居民Ⅴ"
+    },
+    {
+     "eid": "城中居民Ⅵ",
+     "name": "城中居民Ⅵ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "城中居民Ⅵ"
+    },
+    {
+     "eid": "城中居民Ⅶ",
+     "name": "城中居民Ⅶ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "城中居民Ⅶ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "圣殿骑士Ⅰ",
+   "core": "圣殿骑士",
+   "n_entities": 6,
+   "members": [
+    {
+     "eid": "圣殿骑士Ⅰ",
+     "name": "圣殿骑士Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "圣殿骑士Ⅰ"
+    },
+    {
+     "eid": "圣殿骑士Ⅱ",
+     "name": "圣殿骑士Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "圣殿骑士Ⅱ"
+    },
+    {
+     "eid": "圣殿骑士Ⅲ",
+     "name": "圣殿骑士Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "圣殿骑士Ⅲ"
+    },
+    {
+     "eid": "圣殿骑士Ⅳ",
+     "name": "圣殿骑士Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "圣殿骑士Ⅳ"
+    },
+    {
+     "eid": "圣殿骑士Ⅴ",
+     "name": "圣殿骑士Ⅴ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "圣殿骑士Ⅴ"
+    },
+    {
+     "eid": "圣殿骑士Ⅵ",
+     "name": "圣殿骑士Ⅵ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "圣殿骑士Ⅵ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "教众",
+   "core": "教众",
+   "n_entities": 6,
+   "members": [
+    {
+     "eid": "教众",
+     "name": "教众",
+     "n_chunk_ids": 5,
+     "canonical_zh": "教众"
+    },
+    {
+     "eid": "教众Ⅰ",
+     "name": "教众Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "教众Ⅰ"
+    },
+    {
+     "eid": "教众Ⅱ",
+     "name": "教众Ⅱ",
+     "n_chunk_ids": 12,
+     "canonical_zh": "教众Ⅱ"
+    },
+    {
+     "eid": "教众Ⅲ",
+     "name": "教众Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "教众Ⅲ"
+    },
+    {
+     "eid": "教众Ⅳ",
+     "name": "教众Ⅳ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "教众Ⅳ"
+    },
+    {
+     "eid": "教众Ⅴ",
+     "name": "教众Ⅴ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "教众Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "科学家Ⅰ",
+   "core": "科学家",
+   "n_entities": 6,
+   "members": [
+    {
+     "eid": "科学家Ⅰ",
+     "name": "科学家Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "科学家Ⅰ"
+    },
+    {
+     "eid": "科学家Ⅱ",
+     "name": "科学家Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "科学家Ⅱ"
+    },
+    {
+     "eid": "科学家Ⅲ",
+     "name": "科学家Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "科学家Ⅲ"
+    },
+    {
+     "eid": "科学家Ⅴ",
+     "name": "科学家Ⅴ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "科学家Ⅴ"
+    },
+    {
+     "eid": "科学家Ⅵ",
+     "name": "科学家Ⅵ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "科学家Ⅵ"
+    },
+    {
+     "eid": "科学家Ⅷ",
+     "name": "科学家Ⅷ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "科学家Ⅷ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "重塑·信徒",
+   "core": "重塑",
+   "n_entities": 6,
+   "members": [
+    {
+     "eid": "重塑·信徒",
+     "name": "重塑·信徒",
+     "n_chunk_ids": 24,
+     "canonical_zh": "重塑·信徒"
+    },
+    {
+     "eid": "重塑·门徒",
+     "name": "重塑·门徒",
+     "n_chunk_ids": 21,
+     "canonical_zh": "重塑·门徒"
+    },
+    {
+     "eid": "重塑·门徒Ⅰ",
+     "name": "重塑·门徒Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "重塑·门徒Ⅰ"
+    },
+    {
+     "eid": "重塑·门徒Ⅱ",
+     "name": "重塑·门徒Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "重塑·门徒Ⅱ"
+    },
+    {
+     "eid": "重塑·门徒Ⅲ",
+     "name": "重塑·门徒Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "重塑·门徒Ⅲ"
+    },
+    {
+     "eid": "重塑·门徒Ⅳ",
+     "name": "重塑·门徒Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "重塑·门徒Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "与会人员Ⅰ",
+   "core": "与会人员",
+   "n_entities": 5,
+   "members": [
+    {
+     "eid": "与会人员Ⅰ",
+     "name": "与会人员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "与会人员Ⅰ"
+    },
+    {
+     "eid": "与会人员Ⅱ",
+     "name": "与会人员Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "与会人员Ⅱ"
+    },
+    {
+     "eid": "与会人员Ⅲ",
+     "name": "与会人员Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "与会人员Ⅲ"
+    },
+    {
+     "eid": "与会人员Ⅳ",
+     "name": "与会人员Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "与会人员Ⅳ"
+    },
+    {
+     "eid": "与会人员Ⅴ",
+     "name": "与会人员Ⅴ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "与会人员Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "俱乐部巡逻者Ⅰ",
+   "core": "俱乐部巡逻者",
+   "n_entities": 5,
+   "members": [
+    {
+     "eid": "俱乐部巡逻者Ⅰ",
+     "name": "俱乐部巡逻者Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "俱乐部巡逻者Ⅰ"
+    },
+    {
+     "eid": "俱乐部巡逻者Ⅱ",
+     "name": "俱乐部巡逻者Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "俱乐部巡逻者Ⅱ"
+    },
+    {
+     "eid": "俱乐部巡逻者Ⅲ",
+     "name": "俱乐部巡逻者Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "俱乐部巡逻者Ⅲ"
+    },
+    {
+     "eid": "俱乐部巡逻者Ⅳ",
+     "name": "俱乐部巡逻者Ⅳ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "俱乐部巡逻者Ⅳ"
+    },
+    {
+     "eid": "俱乐部巡逻者Ⅴ",
+     "name": "俱乐部巡逻者Ⅴ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "俱乐部巡逻者Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "客人Ⅰ",
+   "core": "客人",
+   "n_entities": 5,
+   "members": [
+    {
+     "eid": "客人Ⅰ",
+     "name": "客人Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "客人Ⅰ"
+    },
+    {
+     "eid": "客人Ⅱ",
+     "name": "客人Ⅱ",
+     "n_chunk_ids": 9,
+     "canonical_zh": "客人Ⅱ"
+    },
+    {
+     "eid": "客人Ⅲ",
+     "name": "客人Ⅲ",
+     "n_chunk_ids": 7,
+     "canonical_zh": "客人Ⅲ"
+    },
+    {
+     "eid": "客人Ⅳ",
+     "name": "客人Ⅳ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "客人Ⅳ"
+    },
+    {
+     "eid": "客人Ⅴ",
+     "name": "客人Ⅴ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "客人Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "研究员Ⅰ",
+   "core": "研究员",
+   "n_entities": 5,
+   "members": [
+    {
+     "eid": "研究员Ⅰ",
+     "name": "研究员Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "研究员Ⅰ"
+    },
+    {
+     "eid": "研究员Ⅲ",
+     "name": "研究员Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "研究员Ⅲ"
+    },
+    {
+     "eid": "研究员Ⅳ",
+     "name": "研究员Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "研究员Ⅳ"
+    },
+    {
+     "eid": "研究员Ⅴ",
+     "name": "研究员Ⅴ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "研究员Ⅴ"
+    },
+    {
+     "eid": "研究员Ⅵ",
+     "name": "研究员Ⅵ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "研究员Ⅵ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "赛场观众Ⅰ",
+   "core": "赛场观众",
+   "n_entities": 5,
+   "members": [
+    {
+     "eid": "赛场观众Ⅰ",
+     "name": "赛场观众Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "赛场观众Ⅰ"
+    },
+    {
+     "eid": "赛场观众Ⅱ",
+     "name": "赛场观众Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "赛场观众Ⅱ"
+    },
+    {
+     "eid": "赛场观众Ⅲ",
+     "name": "赛场观众Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "赛场观众Ⅲ"
+    },
+    {
+     "eid": "赛场观众Ⅳ",
+     "name": "赛场观众Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "赛场观众Ⅳ"
+    },
+    {
+     "eid": "赛场观众Ⅴ",
+     "name": "赛场观众Ⅴ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "赛场观众Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "乘客Ⅰ",
+   "core": "乘客",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "乘客Ⅰ",
+     "name": "乘客Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "乘客Ⅰ"
+    },
+    {
+     "eid": "乘客Ⅱ",
+     "name": "乘客Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "乘客Ⅱ"
+    },
+    {
+     "eid": "乘客Ⅲ",
+     "name": "乘客Ⅲ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "乘客Ⅲ"
+    },
+    {
+     "eid": "乘客Ⅳ",
+     "name": "乘客Ⅳ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "乘客Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "参与者Ⅱ",
+   "core": "参与者",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "参与者Ⅱ",
+     "name": "参与者Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "参与者Ⅱ"
+    },
+    {
+     "eid": "参与者Ⅲ",
+     "name": "参与者Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参与者Ⅲ"
+    },
+    {
+     "eid": "参与者Ⅳ",
+     "name": "参与者Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参与者Ⅳ"
+    },
+    {
+     "eid": "参与者Ⅴ",
+     "name": "参与者Ⅴ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参与者Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "司机",
+   "core": "司机",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "司机",
+     "name": "司机",
+     "n_chunk_ids": 1,
+     "canonical_zh": "司机"
+    },
+    {
+     "eid": "司机Ⅰ",
+     "name": "司机Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "司机Ⅰ"
+    },
+    {
+     "eid": "司机Ⅱ",
+     "name": "司机Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "司机Ⅱ"
+    },
+    {
+     "eid": "司机Ⅲ",
+     "name": "司机Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "司机Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "抗议者Ⅰ",
+   "core": "抗议者",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "抗议者Ⅰ",
+     "name": "抗议者Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "抗议者Ⅰ"
+    },
+    {
+     "eid": "抗议者Ⅱ",
+     "name": "抗议者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "抗议者Ⅱ"
+    },
+    {
+     "eid": "抗议者Ⅲ",
+     "name": "抗议者Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "抗议者Ⅲ"
+    },
+    {
+     "eid": "抗议者Ⅳ",
+     "name": "抗议者Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "抗议者Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "沙龙宾客Ⅰ",
+   "core": "沙龙宾客",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "沙龙宾客Ⅰ",
+     "name": "沙龙宾客Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "沙龙宾客Ⅰ"
+    },
+    {
+     "eid": "沙龙宾客Ⅱ",
+     "name": "沙龙宾客Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "沙龙宾客Ⅱ"
+    },
+    {
+     "eid": "沙龙宾客Ⅲ",
+     "name": "沙龙宾客Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "沙龙宾客Ⅲ"
+    },
+    {
+     "eid": "沙龙宾客Ⅳ",
+     "name": "沙龙宾客Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "沙龙宾客Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "游客",
+   "core": "游客",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "游客",
+     "name": "游客",
+     "n_chunk_ids": 5,
+     "canonical_zh": "游客"
+    },
+    {
+     "eid": "游客Ⅰ",
+     "name": "游客Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "游客Ⅰ"
+    },
+    {
+     "eid": "游客Ⅱ",
+     "name": "游客Ⅱ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "游客Ⅱ"
+    },
+    {
+     "eid": "游客Ⅲ",
+     "name": "游客Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "游客Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "罢工群众Ⅰ",
+   "core": "罢工群众",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "罢工群众Ⅰ",
+     "name": "罢工群众Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "罢工群众Ⅰ"
+    },
+    {
+     "eid": "罢工群众Ⅱ",
+     "name": "罢工群众Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "罢工群众Ⅱ"
+    },
+    {
+     "eid": "罢工群众Ⅲ",
+     "name": "罢工群众Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "罢工群众Ⅲ"
+    },
+    {
+     "eid": "罢工群众Ⅳ",
+     "name": "罢工群众Ⅳ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "罢工群众Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "记者",
+   "core": "记者",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "记者",
+     "name": "记者",
+     "n_chunk_ids": 18,
+     "canonical_zh": "记者"
+    },
+    {
+     "eid": "记者Ⅰ",
+     "name": "记者Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "记者Ⅰ"
+    },
+    {
+     "eid": "记者Ⅱ",
+     "name": "记者Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "记者Ⅱ"
+    },
+    {
+     "eid": "记者Ⅲ",
+     "name": "记者Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "记者Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "诺瓦米奇的居民Ⅰ",
+   "core": "诺瓦米奇的居民",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "诺瓦米奇的居民Ⅰ",
+     "name": "诺瓦米奇的居民Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "诺瓦米奇的居民Ⅰ"
+    },
+    {
+     "eid": "诺瓦米奇的居民Ⅱ",
+     "name": "诺瓦米奇的居民Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "诺瓦米奇的居民Ⅱ"
+    },
+    {
+     "eid": "诺瓦米奇的居民Ⅲ",
+     "name": "诺瓦米奇的居民Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "诺瓦米奇的居民Ⅲ"
+    },
+    {
+     "eid": "诺瓦米奇的居民Ⅳ",
+     "name": "诺瓦米奇的居民Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "诺瓦米奇的居民Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "贪吃鬼Ⅰ",
+   "core": "贪吃鬼",
+   "n_entities": 4,
+   "members": [
+    {
+     "eid": "贪吃鬼Ⅰ",
+     "name": "贪吃鬼Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "贪吃鬼Ⅰ"
+    },
+    {
+     "eid": "贪吃鬼Ⅱ",
+     "name": "贪吃鬼Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "贪吃鬼Ⅱ"
+    },
+    {
+     "eid": "贪吃鬼Ⅲ",
+     "name": "贪吃鬼Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "贪吃鬼Ⅲ"
+    },
+    {
+     "eid": "贪吃鬼Ⅳ",
+     "name": "贪吃鬼Ⅳ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "贪吃鬼Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "信徒Ⅰ",
+   "core": "信徒",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "信徒Ⅰ",
+     "name": "信徒Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "信徒Ⅰ"
+    },
+    {
+     "eid": "信徒Ⅱ",
+     "name": "信徒Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "信徒Ⅱ"
+    },
+    {
+     "eid": "信徒Ⅲ",
+     "name": "信徒Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "信徒Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "偷袭者",
+   "core": "偷袭者",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "偷袭者",
+     "name": "偷袭者",
+     "n_chunk_ids": 1,
+     "canonical_zh": "偷袭者"
+    },
+    {
+     "eid": "偷袭者Ⅰ",
+     "name": "偷袭者Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "偷袭者Ⅰ"
+    },
+    {
+     "eid": "偷袭者Ⅱ",
+     "name": "偷袭者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "偷袭者Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "军人",
+   "core": "军人",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "军人",
+     "name": "军人",
+     "n_chunk_ids": 1,
+     "canonical_zh": "军人"
+    },
+    {
+     "eid": "军人Ⅰ",
+     "name": "军人Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "军人Ⅰ"
+    },
+    {
+     "eid": "军人Ⅱ",
+     "name": "军人Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "军人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "剧院观众Ⅰ",
+   "core": "剧院观众",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "剧院观众Ⅰ",
+     "name": "剧院观众Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "剧院观众Ⅰ"
+    },
+    {
+     "eid": "剧院观众Ⅱ",
+     "name": "剧院观众Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "剧院观众Ⅱ"
+    },
+    {
+     "eid": "剧院观众Ⅲ",
+     "name": "剧院观众Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "剧院观众Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "参会者Ⅰ",
+   "core": "参会者",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "参会者Ⅰ",
+     "name": "参会者Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "参会者Ⅰ"
+    },
+    {
+     "eid": "参会者Ⅱ",
+     "name": "参会者Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "参会者Ⅱ"
+    },
+    {
+     "eid": "参会者Ⅲ",
+     "name": "参会者Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参会者Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "参观者Ⅰ",
+   "core": "参观者",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "参观者Ⅰ",
+     "name": "参观者Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参观者Ⅰ"
+    },
+    {
+     "eid": "参观者Ⅱ",
+     "name": "参观者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参观者Ⅱ"
+    },
+    {
+     "eid": "参观者Ⅲ",
+     "name": "参观者Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参观者Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "参赛人员Ⅰ",
+   "core": "参赛人员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "参赛人员Ⅰ",
+     "name": "参赛人员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "参赛人员Ⅰ"
+    },
+    {
+     "eid": "参赛人员Ⅱ",
+     "name": "参赛人员Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "参赛人员Ⅱ"
+    },
+    {
+     "eid": "参赛人员Ⅲ",
+     "name": "参赛人员Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "参赛人员Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "囚犯",
+   "core": "囚犯",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "囚犯",
+     "name": "囚犯",
+     "n_chunk_ids": 1,
+     "canonical_zh": "囚犯"
+    },
+    {
+     "eid": "囚犯Ⅰ",
+     "name": "囚犯Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "囚犯Ⅰ"
+    },
+    {
+     "eid": "囚犯Ⅱ",
+     "name": "囚犯Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "囚犯Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "围观群众",
+   "core": "围观群众",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "围观群众",
+     "name": "围观群众",
+     "n_chunk_ids": 1,
+     "canonical_zh": "围观群众"
+    },
+    {
+     "eid": "围观群众Ⅰ",
+     "name": "围观群众Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "围观群众Ⅰ"
+    },
+    {
+     "eid": "围观群众Ⅱ",
+     "name": "围观群众Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "围观群众Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "圣洛夫基金会职员",
+   "core": "圣洛夫基金会职员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "圣洛夫基金会职员",
+     "name": "圣洛夫基金会职员",
+     "n_chunk_ids": 2,
+     "canonical_zh": "圣洛夫基金会职员"
+    },
+    {
+     "eid": "圣洛夫基金会职员Ⅰ",
+     "name": "圣洛夫基金会职员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "圣洛夫基金会职员Ⅰ"
+    },
+    {
+     "eid": "圣洛夫基金会职员Ⅱ",
+     "name": "圣洛夫基金会职员Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "圣洛夫基金会职员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "城镇警卫Ⅰ",
+   "core": "城镇警卫",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "城镇警卫Ⅰ",
+     "name": "城镇警卫Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "城镇警卫Ⅰ"
+    },
+    {
+     "eid": "城镇警卫Ⅱ",
+     "name": "城镇警卫Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "城镇警卫Ⅱ"
+    },
+    {
+     "eid": "城镇警卫Ⅲ",
+     "name": "城镇警卫Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "城镇警卫Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "基金会安保",
+   "core": "基金会安保",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "基金会安保",
+     "name": "基金会安保",
+     "n_chunk_ids": 8,
+     "canonical_zh": "基金会安保"
+    },
+    {
+     "eid": "基金会安保Ⅰ",
+     "name": "基金会安保Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "基金会安保Ⅰ"
+    },
+    {
+     "eid": "基金会安保Ⅱ",
+     "name": "基金会安保Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "基金会安保Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "基金会职员",
+   "core": "基金会职员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "基金会职员",
+     "name": "基金会职员",
+     "n_chunk_ids": 6,
+     "canonical_zh": "基金会职员"
+    },
+    {
+     "eid": "基金会职员Ⅰ",
+     "name": "基金会职员Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "基金会职员Ⅰ"
+    },
+    {
+     "eid": "基金会职员Ⅱ",
+     "name": "基金会职员Ⅱ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "基金会职员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "学生Ⅰ",
+   "core": "学生",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "学生Ⅰ",
+     "name": "学生Ⅰ",
+     "n_chunk_ids": 10,
+     "canonical_zh": "学生Ⅰ"
+    },
+    {
+     "eid": "学生Ⅱ",
+     "name": "学生Ⅱ",
+     "n_chunk_ids": 10,
+     "canonical_zh": "学生Ⅱ"
+    },
+    {
+     "eid": "学生Ⅲ",
+     "name": "学生Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "学生Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "孩童",
+   "core": "孩童",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "孩童",
+     "name": "孩童",
+     "n_chunk_ids": 2,
+     "canonical_zh": "孩童"
+    },
+    {
+     "eid": "孩童Ⅰ",
+     "name": "孩童Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "孩童Ⅰ"
+    },
+    {
+     "eid": "孩童Ⅱ",
+     "name": "孩童Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "孩童Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "审讯官Ⅰ",
+   "core": "审讯官",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "审讯官Ⅰ",
+     "name": "审讯官Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "审讯官Ⅰ"
+    },
+    {
+     "eid": "审讯官Ⅱ",
+     "name": "审讯官Ⅱ",
+     "n_chunk_ids": 7,
+     "canonical_zh": "审讯官Ⅱ"
+    },
+    {
+     "eid": "审讯官Ⅲ",
+     "name": "审讯官Ⅲ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "审讯官Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "宪兵",
+   "core": "宪兵",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "宪兵",
+     "name": "宪兵",
+     "n_chunk_ids": 3,
+     "canonical_zh": "宪兵"
+    },
+    {
+     "eid": "宪兵Ⅰ",
+     "name": "宪兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "宪兵Ⅰ"
+    },
+    {
+     "eid": "宪兵Ⅱ",
+     "name": "宪兵Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "宪兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "小孩",
+   "core": "小孩",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "小孩",
+     "name": "小孩",
+     "n_chunk_ids": 6,
+     "canonical_zh": "小孩"
+    },
+    {
+     "eid": "小孩Ⅲ",
+     "name": "小孩Ⅲ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "小孩Ⅲ"
+    },
+    {
+     "eid": "小孩Ⅳ",
+     "name": "小孩Ⅳ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "小孩Ⅳ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "小狗",
+   "core": "小狗",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "小狗",
+     "name": "小狗",
+     "n_chunk_ids": 4,
+     "canonical_zh": "小狗"
+    },
+    {
+     "eid": "小狗Ⅰ",
+     "name": "小狗Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "小狗Ⅰ"
+    },
+    {
+     "eid": "小狗Ⅱ",
+     "name": "小狗Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "小狗Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "小蛇Ⅰ",
+   "core": "小蛇",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "小蛇Ⅰ",
+     "name": "小蛇Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "小蛇Ⅰ"
+    },
+    {
+     "eid": "小蛇Ⅴ",
+     "name": "小蛇Ⅴ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "小蛇Ⅴ"
+    },
+    {
+     "eid": "小蛇Ⅷ",
+     "name": "小蛇Ⅷ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "小蛇Ⅷ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "小贩",
+   "core": "小贩",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "小贩",
+     "name": "小贩",
+     "n_chunk_ids": 3,
+     "canonical_zh": "小贩"
+    },
+    {
+     "eid": "小贩Ⅰ",
+     "name": "小贩Ⅰ",
+     "n_chunk_ids": 8,
+     "canonical_zh": "小贩Ⅰ"
+    },
+    {
+     "eid": "小贩Ⅱ",
+     "name": "小贩Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "小贩Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "工人",
+   "core": "工人",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "工人",
+     "name": "工人",
+     "n_chunk_ids": 2,
+     "canonical_zh": "工人"
+    },
+    {
+     "eid": "工人Ⅰ",
+     "name": "工人Ⅰ",
+     "n_chunk_ids": 8,
+     "canonical_zh": "工人Ⅰ"
+    },
+    {
+     "eid": "工人Ⅱ",
+     "name": "工人Ⅱ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "工人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "平民",
+   "core": "平民",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "平民",
+     "name": "平民",
+     "n_chunk_ids": 1,
+     "canonical_zh": "平民"
+    },
+    {
+     "eid": "平民Ⅰ",
+     "name": "平民Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "平民Ⅰ"
+    },
+    {
+     "eid": "平民Ⅱ",
+     "name": "平民Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "平民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "执政官Ⅰ",
+   "core": "执政官",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "执政官Ⅰ",
+     "name": "执政官Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "执政官Ⅰ"
+    },
+    {
+     "eid": "执政官Ⅱ",
+     "name": "执政官Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "执政官Ⅱ"
+    },
+    {
+     "eid": "执政官Ⅲ",
+     "name": "执政官Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "执政官Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "护士Ⅰ",
+   "core": "护士",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "护士Ⅰ",
+     "name": "护士Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "护士Ⅰ"
+    },
+    {
+     "eid": "护士Ⅱ",
+     "name": "护士Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "护士Ⅱ"
+    },
+    {
+     "eid": "护士小姐",
+     "name": "护士小姐",
+     "n_chunk_ids": 1,
+     "canonical_zh": "护士小姐"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "拉普拉斯职员Ⅰ",
+   "core": "拉普拉斯职员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "拉普拉斯职员Ⅰ",
+     "name": "拉普拉斯职员Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "拉普拉斯职员Ⅰ"
+    },
+    {
+     "eid": "拉普拉斯职员Ⅱ",
+     "name": "拉普拉斯职员Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "拉普拉斯职员Ⅱ"
+    },
+    {
+     "eid": "拉普拉斯职员Ⅲ",
+     "name": "拉普拉斯职员Ⅲ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "拉普拉斯职员Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "招工市民Ⅰ",
+   "core": "招工市民",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "招工市民Ⅰ",
+     "name": "招工市民Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "招工市民Ⅰ"
+    },
+    {
+     "eid": "招工市民Ⅱ",
+     "name": "招工市民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "招工市民Ⅱ"
+    },
+    {
+     "eid": "招工市民Ⅲ",
+     "name": "招工市民Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "招工市民Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "村民",
+   "core": "村民",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "村民",
+     "name": "村民",
+     "n_chunk_ids": 3,
+     "canonical_zh": "村民"
+    },
+    {
+     "eid": "村民Ⅰ",
+     "name": "村民Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "村民Ⅰ"
+    },
+    {
+     "eid": "村民Ⅱ",
+     "name": "村民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "村民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "棋子Ⅰ",
+   "core": "棋子",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "棋子Ⅰ",
+     "name": "棋子Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "棋子Ⅰ"
+    },
+    {
+     "eid": "棋子Ⅱ",
+     "name": "棋子Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "棋子Ⅱ"
+    },
+    {
+     "eid": "棋子Ⅲ",
+     "name": "棋子Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "棋子Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "流浪汉",
+   "core": "流浪汉",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "流浪汉",
+     "name": "流浪汉",
+     "n_chunk_ids": 2,
+     "canonical_zh": "流浪汉"
+    },
+    {
+     "eid": "流浪汉Ⅰ",
+     "name": "流浪汉Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "流浪汉Ⅰ"
+    },
+    {
+     "eid": "流浪汉Ⅱ",
+     "name": "流浪汉Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "流浪汉Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "演员",
+   "core": "演员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "演员",
+     "name": "演员",
+     "n_chunk_ids": 1,
+     "canonical_zh": "演员"
+    },
+    {
+     "eid": "演员Ⅰ",
+     "name": "演员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "演员Ⅰ"
+    },
+    {
+     "eid": "演员Ⅱ",
+     "name": "演员Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "演员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "理线师Ⅰ",
+   "core": "理线师",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "理线师Ⅰ",
+     "name": "理线师Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "理线师Ⅰ"
+    },
+    {
+     "eid": "理线师Ⅱ",
+     "name": "理线师Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "理线师Ⅱ"
+    },
+    {
+     "eid": "理线师Ⅲ",
+     "name": "理线师Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "理线师Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "电台主播",
+   "core": "电台主播",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "电台主播",
+     "name": "电台主播",
+     "n_chunk_ids": 1,
+     "canonical_zh": "电台主播"
+    },
+    {
+     "eid": "电台主播Ⅰ",
+     "name": "电台主播Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "电台主播Ⅰ"
+    },
+    {
+     "eid": "电台主播Ⅱ",
+     "name": "电台主播Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "电台主播Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "男孩Ⅰ",
+   "core": "男孩",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "男孩Ⅰ",
+     "name": "男孩Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "男孩Ⅰ"
+    },
+    {
+     "eid": "男孩Ⅱ",
+     "name": "男孩Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "男孩Ⅱ"
+    },
+    {
+     "eid": "男孩Ⅲ",
+     "name": "男孩Ⅲ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "男孩Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "画师Ⅰ",
+   "core": "画师",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "画师Ⅰ",
+     "name": "画师Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "画师Ⅰ"
+    },
+    {
+     "eid": "画师Ⅱ",
+     "name": "画师Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "画师Ⅱ"
+    },
+    {
+     "eid": "画师Ⅲ",
+     "name": "画师Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "画师Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "病人",
+   "core": "病人",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "病人",
+     "name": "病人",
+     "n_chunk_ids": 2,
+     "canonical_zh": "病人"
+    },
+    {
+     "eid": "病人Ⅰ",
+     "name": "病人Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "病人Ⅰ"
+    },
+    {
+     "eid": "病人Ⅱ",
+     "name": "病人Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "病人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "神教教徒Ⅰ",
+   "core": "神教教徒",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "神教教徒Ⅰ",
+     "name": "神教教徒Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "神教教徒Ⅰ"
+    },
+    {
+     "eid": "神教教徒Ⅱ",
+     "name": "神教教徒Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "神教教徒Ⅱ"
+    },
+    {
+     "eid": "神教教徒Ⅲ",
+     "name": "神教教徒Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "神教教徒Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "神秘学警察",
+   "core": "神秘学警察",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "神秘学警察",
+     "name": "神秘学警察",
+     "n_chunk_ids": 2,
+     "canonical_zh": "神秘学警察"
+    },
+    {
+     "eid": "神秘学警察Ⅰ",
+     "name": "神秘学警察Ⅰ",
+     "n_chunk_ids": 9,
+     "canonical_zh": "神秘学警察Ⅰ"
+    },
+    {
+     "eid": "神秘学警察Ⅱ",
+     "name": "神秘学警察Ⅱ",
+     "n_chunk_ids": 8,
+     "canonical_zh": "神秘学警察Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "米尔内驻军Ⅰ",
+   "core": "米尔内驻军",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "米尔内驻军Ⅰ",
+     "name": "米尔内驻军Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "米尔内驻军Ⅰ"
+    },
+    {
+     "eid": "米尔内驻军Ⅱ",
+     "name": "米尔内驻军Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "米尔内驻军Ⅱ"
+    },
+    {
+     "eid": "米尔内驻军Ⅲ",
+     "name": "米尔内驻军Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "米尔内驻军Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "联络员",
+   "core": "联络员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "联络员",
+     "name": "联络员",
+     "n_chunk_ids": 1,
+     "canonical_zh": "联络员"
+    },
+    {
+     "eid": "联络员Ⅰ",
+     "name": "联络员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "联络员Ⅰ"
+    },
+    {
+     "eid": "联络员Ⅱ",
+     "name": "联络员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "联络员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "船员",
+   "core": "船员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "船员",
+     "name": "船员",
+     "n_chunk_ids": 2,
+     "canonical_zh": "船员"
+    },
+    {
+     "eid": "船员Ⅰ",
+     "name": "船员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "船员Ⅰ"
+    },
+    {
+     "eid": "船员Ⅱ",
+     "name": "船员Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "船员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "行动队员",
+   "core": "行动队员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "行动队员",
+     "name": "行动队员",
+     "n_chunk_ids": 1,
+     "canonical_zh": "行动队员"
+    },
+    {
+     "eid": "行动队员Ⅰ",
+     "name": "行动队员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "行动队员Ⅰ"
+    },
+    {
+     "eid": "行动队员Ⅱ",
+     "name": "行动队员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "行动队员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "行动队长",
+   "core": "行动",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "行动队长",
+     "name": "行动队长",
+     "n_chunk_ids": 12,
+     "canonical_zh": "行动队长"
+    },
+    {
+     "eid": "行动队长Ⅰ",
+     "name": "行动队长Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "行动队长Ⅰ"
+    },
+    {
+     "eid": "行动队长Ⅱ",
+     "name": "行动队长Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "行动队长Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "警卫士兵",
+   "core": "警卫士兵",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "警卫士兵",
+     "name": "警卫士兵",
+     "n_chunk_ids": 1,
+     "canonical_zh": "警卫士兵"
+    },
+    {
+     "eid": "警卫士兵Ⅰ",
+     "name": "警卫士兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "警卫士兵Ⅰ"
+    },
+    {
+     "eid": "警卫士兵Ⅱ",
+     "name": "警卫士兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "警卫士兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "警员",
+   "core": "警员",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "警员",
+     "name": "警员",
+     "n_chunk_ids": 2,
+     "canonical_zh": "警员"
+    },
+    {
+     "eid": "警员Ⅰ",
+     "name": "警员Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "警员Ⅰ"
+    },
+    {
+     "eid": "警员Ⅱ",
+     "name": "警员Ⅱ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "警员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "警察",
+   "core": "警察",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "警察",
+     "name": "警察",
+     "n_chunk_ids": 17,
+     "canonical_zh": "警察"
+    },
+    {
+     "eid": "警察Ⅰ",
+     "name": "警察Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "警察Ⅰ"
+    },
+    {
+     "eid": "警察Ⅱ",
+     "name": "警察Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "警察Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "诗社囚犯Ⅰ",
+   "core": "诗社囚犯",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "诗社囚犯Ⅰ",
+     "name": "诗社囚犯Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "诗社囚犯Ⅰ"
+    },
+    {
+     "eid": "诗社囚犯Ⅱ",
+     "name": "诗社囚犯Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "诗社囚犯Ⅱ"
+    },
+    {
+     "eid": "诗社囚犯Ⅲ",
+     "name": "诗社囚犯Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "诗社囚犯Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "诺瓦米奇的应聘市民Ⅰ",
+   "core": "诺瓦米奇的应聘市民",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "诺瓦米奇的应聘市民Ⅰ",
+     "name": "诺瓦米奇的应聘市民Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "诺瓦米奇的应聘市民Ⅰ"
+    },
+    {
+     "eid": "诺瓦米奇的应聘市民Ⅱ",
+     "name": "诺瓦米奇的应聘市民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "诺瓦米奇的应聘市民Ⅱ"
+    },
+    {
+     "eid": "诺瓦米奇的应聘市民Ⅲ",
+     "name": "诺瓦米奇的应聘市民Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "诺瓦米奇的应聘市民Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "路人Ⅰ",
+   "core": "路人",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "路人Ⅰ",
+     "name": "路人Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "路人Ⅰ"
+    },
+    {
+     "eid": "路人Ⅱ",
+     "name": "路人Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "路人Ⅱ"
+    },
+    {
+     "eid": "路人Ⅲ",
+     "name": "路人Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "路人Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "边防士兵Ⅰ",
+   "core": "边防士兵",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "边防士兵Ⅰ",
+     "name": "边防士兵Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "边防士兵Ⅰ"
+    },
+    {
+     "eid": "边防士兵Ⅱ",
+     "name": "边防士兵Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "边防士兵Ⅱ"
+    },
+    {
+     "eid": "边防士兵Ⅲ",
+     "name": "边防士兵Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "边防士兵Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "追随者",
+   "core": "追随者",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "追随者",
+     "name": "追随者",
+     "n_chunk_ids": 4,
+     "canonical_zh": "追随者"
+    },
+    {
+     "eid": "追随者Ⅰ",
+     "name": "追随者Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "追随者Ⅰ"
+    },
+    {
+     "eid": "追随者Ⅱ",
+     "name": "追随者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "追随者Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "逃兵",
+   "core": "逃兵",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "逃兵",
+     "name": "逃兵",
+     "n_chunk_ids": 4,
+     "canonical_zh": "逃兵"
+    },
+    {
+     "eid": "逃兵Ⅰ",
+     "name": "逃兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "逃兵Ⅰ"
+    },
+    {
+     "eid": "逃兵Ⅱ",
+     "name": "逃兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "逃兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "酒神节路人Ⅰ",
+   "core": "酒神节路人",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "酒神节路人Ⅰ",
+     "name": "酒神节路人Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒神节路人Ⅰ"
+    },
+    {
+     "eid": "酒神节路人Ⅱ",
+     "name": "酒神节路人Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒神节路人Ⅱ"
+    },
+    {
+     "eid": "酒神节路人Ⅲ",
+     "name": "酒神节路人Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒神节路人Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "酒馆居民Ⅰ",
+   "core": "酒馆居民",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "酒馆居民Ⅰ",
+     "name": "酒馆居民Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "酒馆居民Ⅰ"
+    },
+    {
+     "eid": "酒馆居民Ⅱ",
+     "name": "酒馆居民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒馆居民Ⅱ"
+    },
+    {
+     "eid": "酒馆居民Ⅲ",
+     "name": "酒馆居民Ⅲ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒馆居民Ⅲ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "重塑追随者",
+   "core": "重塑追随者",
+   "n_entities": 3,
+   "members": [
+    {
+     "eid": "重塑追随者",
+     "name": "重塑追随者",
+     "n_chunk_ids": 6,
+     "canonical_zh": "重塑追随者"
+    },
+    {
+     "eid": "重塑追随者Ⅰ",
+     "name": "重塑追随者Ⅰ",
+     "n_chunk_ids": 9,
+     "canonical_zh": "重塑追随者Ⅰ"
+    },
+    {
+     "eid": "重塑追随者Ⅱ",
+     "name": "重塑追随者Ⅱ",
+     "n_chunk_ids": 7,
+     "canonical_zh": "重塑追随者Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "ONiON",
+   "core": "ONiON",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "ONiON",
+     "name": "ONiON",
+     "n_chunk_ids": 1,
+     "canonical_zh": "洋葱头"
+    },
+    {
+     "eid": "洋葱头",
+     "name": "洋葱头",
+     "n_chunk_ids": 19,
+     "canonical_zh": "洋葱头"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "临时工人Ⅰ",
+   "core": "临时工人",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "临时工人Ⅰ",
+     "name": "临时工人Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "临时工人Ⅰ"
+    },
+    {
+     "eid": "临时工人Ⅱ",
+     "name": "临时工人Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "临时工人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "仆人Ⅰ",
+   "core": "仆人",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "仆人Ⅰ",
+     "name": "仆人Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "仆人Ⅰ"
+    },
+    {
+     "eid": "仆人Ⅱ",
+     "name": "仆人Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "仆人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "伯纳德",
+   "core": "伯纳德",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "伯纳德",
+     "name": "伯纳德",
+     "n_chunk_ids": 4,
+     "canonical_zh": "Bernard"
+    },
+    {
+     "eid": "伯纳德先生",
+     "name": "伯纳德先生",
+     "n_chunk_ids": 4,
+     "canonical_zh": "伯纳德先生"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "保卫队员Ⅰ",
+   "core": "保卫队员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "保卫队员Ⅰ",
+     "name": "保卫队员Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "保卫队员Ⅰ"
+    },
+    {
+     "eid": "保卫队员Ⅱ",
+     "name": "保卫队员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "保卫队员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "偷渡乘客Ⅰ",
+   "core": "偷渡乘客",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "偷渡乘客Ⅰ",
+     "name": "偷渡乘客Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "偷渡乘客Ⅰ"
+    },
+    {
+     "eid": "偷渡乘客Ⅱ",
+     "name": "偷渡乘客Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "偷渡乘客Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "僵尸Ⅰ",
+   "core": "僵尸",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "僵尸Ⅰ",
+     "name": "僵尸Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "僵尸Ⅰ"
+    },
+    {
+     "eid": "僵尸Ⅱ",
+     "name": "僵尸Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "僵尸Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "军官Ⅰ",
+   "core": "军官",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "军官Ⅰ",
+     "name": "军官Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "军官Ⅰ"
+    },
+    {
+     "eid": "军官Ⅱ",
+     "name": "军官Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "军官Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "军舰士兵Ⅰ",
+   "core": "军舰士兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "军舰士兵Ⅰ",
+     "name": "军舰士兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "军舰士兵Ⅰ"
+    },
+    {
+     "eid": "军舰士兵Ⅱ",
+     "name": "军舰士兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "军舰士兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "初级研究员Ⅰ",
+   "core": "初级研究员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "初级研究员Ⅰ",
+     "name": "初级研究员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "初级研究员Ⅰ"
+    },
+    {
+     "eid": "初级研究员Ⅱ",
+     "name": "初级研究员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "初级研究员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "剃刀”小队队员Ⅰ",
+   "core": "剃刀”小队队员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "剃刀”小队队员Ⅰ",
+     "name": "剃刀”小队队员Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "剃刀”小队队员Ⅰ"
+    },
+    {
+     "eid": "剃刀”小队队员Ⅱ",
+     "name": "剃刀”小队队员Ⅱ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "剃刀”小队队员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "剧团成员Ⅰ",
+   "core": "剧团成员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "剧团成员Ⅰ",
+     "name": "剧团成员Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "剧团成员Ⅰ"
+    },
+    {
+     "eid": "剧团成员Ⅱ",
+     "name": "剧团成员Ⅱ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "剧团成员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "努库泰澳人Ⅰ",
+   "core": "努库泰澳人",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "努库泰澳人Ⅰ",
+     "name": "努库泰澳人Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "努库泰澳人Ⅰ"
+    },
+    {
+     "eid": "努库泰澳人Ⅱ",
+     "name": "努库泰澳人Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "努库泰澳人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "努库泰澳信徒Ⅰ",
+   "core": "努库泰澳信徒",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "努库泰澳信徒Ⅰ",
+     "name": "努库泰澳信徒Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "努库泰澳信徒Ⅰ"
+    },
+    {
+     "eid": "努库泰澳信徒Ⅱ",
+     "name": "努库泰澳信徒Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "努库泰澳信徒Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "参赛选手Ⅰ",
+   "core": "参赛选手",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "参赛选手Ⅰ",
+     "name": "参赛选手Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参赛选手Ⅰ"
+    },
+    {
+     "eid": "参赛选手Ⅱ",
+     "name": "参赛选手Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "参赛选手Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "同学Ⅰ",
+   "core": "同学",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "同学Ⅰ",
+     "name": "同学Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "同学Ⅰ"
+    },
+    {
+     "eid": "同学Ⅱ",
+     "name": "同学Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "同学Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "启明会”信众Ⅰ",
+   "core": "启明会”信众",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "启明会”信众Ⅰ",
+     "name": "启明会”信众Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "启明会”信众Ⅰ"
+    },
+    {
+     "eid": "启明会”信众Ⅱ",
+     "name": "启明会”信众Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "启明会”信众Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "围观新闻的基金会职员Ⅰ",
+   "core": "围观新闻的基金会职员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "围观新闻的基金会职员Ⅰ",
+     "name": "围观新闻的基金会职员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "围观新闻的基金会职员Ⅰ"
+    },
+    {
+     "eid": "围观新闻的基金会职员Ⅱ",
+     "name": "围观新闻的基金会职员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "围观新闻的基金会职员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "地痞Ⅰ",
+   "core": "地痞",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "地痞Ⅰ",
+     "name": "地痞Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "地痞Ⅰ"
+    },
+    {
+     "eid": "地痞Ⅱ",
+     "name": "地痞Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "地痞Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "基金会分部成员Ⅰ",
+   "core": "基金会分部成员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "基金会分部成员Ⅰ",
+     "name": "基金会分部成员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "基金会分部成员Ⅰ"
+    },
+    {
+     "eid": "基金会分部成员Ⅱ",
+     "name": "基金会分部成员Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "基金会分部成员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "基金会年轻职员Ⅰ",
+   "core": "基金会年轻职员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "基金会年轻职员Ⅰ",
+     "name": "基金会年轻职员Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "基金会年轻职员Ⅰ"
+    },
+    {
+     "eid": "基金会年轻职员Ⅱ",
+     "name": "基金会年轻职员Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "基金会年轻职员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "士兵Ⅰ",
+   "core": "士兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "士兵Ⅰ",
+     "name": "士兵Ⅰ",
+     "n_chunk_ids": 11,
+     "canonical_zh": "士兵Ⅰ"
+    },
+    {
+     "eid": "士兵Ⅱ",
+     "name": "士兵Ⅱ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "士兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "失败的选民Ⅰ",
+   "core": "失败的选民",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "失败的选民Ⅰ",
+     "name": "失败的选民Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "失败的选民Ⅰ"
+    },
+    {
+     "eid": "失败的选民Ⅱ",
+     "name": "失败的选民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "失败的选民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "女仆Ⅰ",
+   "core": "女仆",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "女仆Ⅰ",
+     "name": "女仆Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "女仆Ⅰ"
+    },
+    {
+     "eid": "女仆Ⅱ",
+     "name": "女仆Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "女仆Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "孩子Ⅰ",
+   "core": "孩子",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "孩子Ⅰ",
+     "name": "孩子Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "孩子Ⅰ"
+    },
+    {
+     "eid": "孩子Ⅱ",
+     "name": "孩子Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "孩子Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "守卫Ⅰ",
+   "core": "守卫",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "守卫Ⅰ",
+     "name": "守卫Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "守卫Ⅰ"
+    },
+    {
+     "eid": "守卫Ⅱ",
+     "name": "守卫Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "守卫Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "安保人员Ⅰ",
+   "core": "安保人员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "安保人员Ⅰ",
+     "name": "安保人员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "安保人员Ⅰ"
+    },
+    {
+     "eid": "安保人员Ⅱ",
+     "name": "安保人员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "安保人员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "宾客迈克",
+   "core": "宾客迈克",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "宾客迈克",
+     "name": "宾客迈克",
+     "n_chunk_ids": 1,
+     "canonical_zh": "宾客迈克"
+    },
+    {
+     "eid": "宾客迈克先生",
+     "name": "宾客迈克先生",
+     "n_chunk_ids": 1,
+     "canonical_zh": "宾客迈克先生"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "小队成员Ⅰ",
+   "core": "小队成员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "小队成员Ⅰ",
+     "name": "小队成员Ⅰ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "小队成员Ⅰ"
+    },
+    {
+     "eid": "小队成员Ⅱ",
+     "name": "小队成员Ⅱ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "小队成员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "巡逻士兵Ⅰ",
+   "core": "巡逻士兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "巡逻士兵Ⅰ",
+     "name": "巡逻士兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "巡逻士兵Ⅰ"
+    },
+    {
+     "eid": "巡逻士兵Ⅱ",
+     "name": "巡逻士兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "巡逻士兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "巡逻警察Ⅰ",
+   "core": "巡逻警察",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "巡逻警察Ⅰ",
+     "name": "巡逻警察Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "巡逻警察Ⅰ"
+    },
+    {
+     "eid": "巡逻警察Ⅱ",
+     "name": "巡逻警察Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "巡逻警察Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "成功的选民Ⅰ",
+   "core": "成功的选民",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "成功的选民Ⅰ",
+     "name": "成功的选民Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "成功的选民Ⅰ"
+    },
+    {
+     "eid": "成功的选民Ⅱ",
+     "name": "成功的选民Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "成功的选民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "投机者Ⅰ",
+   "core": "投机者",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "投机者Ⅰ",
+     "name": "投机者Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "投机者Ⅰ"
+    },
+    {
+     "eid": "投机者Ⅱ",
+     "name": "投机者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "投机者Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "拥趸Ⅰ",
+   "core": "拥趸",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "拥趸Ⅰ",
+     "name": "拥趸Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "拥趸Ⅰ"
+    },
+    {
+     "eid": "拥趸Ⅱ",
+     "name": "拥趸Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "拥趸Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "指针的旧组员Ⅰ",
+   "core": "指针的旧组员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "指针的旧组员Ⅰ",
+     "name": "指针的旧组员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "指针的旧组员Ⅰ"
+    },
+    {
+     "eid": "指针的旧组员Ⅱ",
+     "name": "指针的旧组员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "指针的旧组员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "沛城商贩Ⅰ",
+   "core": "沛城商贩",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "沛城商贩Ⅰ",
+     "name": "沛城商贩Ⅰ",
+     "n_chunk_ids": 4,
+     "canonical_zh": "沛城商贩Ⅰ"
+    },
+    {
+     "eid": "沛城商贩Ⅱ",
+     "name": "沛城商贩Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "沛城商贩Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "沛城居民Ⅰ",
+   "core": "沛城居民",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "沛城居民Ⅰ",
+     "name": "沛城居民Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "沛城居民Ⅰ"
+    },
+    {
+     "eid": "沛城居民Ⅱ",
+     "name": "沛城居民Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "沛城居民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "海军士兵Ⅰ",
+   "core": "海军士兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "海军士兵Ⅰ",
+     "name": "海军士兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "海军士兵Ⅰ"
+    },
+    {
+     "eid": "海军士兵Ⅱ",
+     "name": "海军士兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "海军士兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "混混Ⅰ",
+   "core": "混混",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "混混Ⅰ",
+     "name": "混混Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "混混Ⅰ"
+    },
+    {
+     "eid": "混混Ⅱ",
+     "name": "混混Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "混混Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "游行的信徒Ⅰ",
+   "core": "游行的信徒",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "游行的信徒Ⅰ",
+     "name": "游行的信徒Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "游行的信徒Ⅰ"
+    },
+    {
+     "eid": "游行的信徒Ⅱ",
+     "name": "游行的信徒Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "游行的信徒Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "牙医”Ⅰ",
+   "core": "牙医”",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "牙医”Ⅰ",
+     "name": "牙医”Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "牙医”Ⅰ"
+    },
+    {
+     "eid": "牙医”Ⅱ",
+     "name": "牙医”Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "牙医”Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "狐狸",
+   "core": "狐狸",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "狐狸",
+     "name": "狐狸",
+     "n_chunk_ids": 1,
+     "canonical_zh": "狐狸"
+    },
+    {
+     "eid": "狐狸先生",
+     "name": "狐狸先生",
+     "n_chunk_ids": 1,
+     "canonical_zh": "狐狸先生"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "琼斯",
+   "core": "琼斯",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "琼斯",
+     "name": "琼斯",
+     "n_chunk_ids": 20,
+     "canonical_zh": "琼斯"
+    },
+    {
+     "eid": "琼斯先生",
+     "name": "琼斯先生",
+     "n_chunk_ids": 1,
+     "canonical_zh": "琼斯先生"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "瓦伦缇娜",
+   "core": "瓦伦缇娜",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "瓦伦缇娜",
+     "name": "瓦伦缇娜",
+     "n_chunk_ids": 27,
+     "canonical_zh": "瓦伦缇娜"
+    },
+    {
+     "eid": "瓦伦缇娜小姐",
+     "name": "瓦伦缇娜小姐",
+     "n_chunk_ids": 1,
+     "canonical_zh": "瓦伦缇娜小姐"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "破译员Ⅲ",
+   "core": "破译员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "破译员Ⅲ",
+     "name": "破译员Ⅲ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "破译员Ⅲ"
+    },
+    {
+     "eid": "破译员Ⅴ",
+     "name": "破译员Ⅴ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "破译员Ⅴ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "神秘学犯罪科警员Ⅰ",
+   "core": "神秘学犯罪科警员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "神秘学犯罪科警员Ⅰ",
+     "name": "神秘学犯罪科警员Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "神秘学犯罪科警员Ⅰ"
+    },
+    {
+     "eid": "神秘学犯罪科警员Ⅱ",
+     "name": "神秘学犯罪科警员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "神秘学犯罪科警员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "租客",
+   "core": "租客",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "租客",
+     "name": "租客",
+     "n_chunk_ids": 1,
+     "canonical_zh": "租客"
+    },
+    {
+     "eid": "租客Ⅱ",
+     "name": "租客Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "租客Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "童子军Ⅰ",
+   "core": "童子军",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "童子军Ⅰ",
+     "name": "童子军Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "童子军Ⅰ"
+    },
+    {
+     "eid": "童子军Ⅱ",
+     "name": "童子军Ⅱ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "童子军Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "考察队员Ⅰ",
+   "core": "考察队员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "考察队员Ⅰ",
+     "name": "考察队员Ⅰ",
+     "n_chunk_ids": 6,
+     "canonical_zh": "考察队员Ⅰ"
+    },
+    {
+     "eid": "考察队员Ⅱ",
+     "name": "考察队员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "考察队员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "考评员Ⅰ",
+   "core": "考评员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "考评员Ⅰ",
+     "name": "考评员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "考评员Ⅰ"
+    },
+    {
+     "eid": "考评员Ⅱ",
+     "name": "考评员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "考评员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "舞厅男孩Ⅰ",
+   "core": "舞厅男孩",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "舞厅男孩Ⅰ",
+     "name": "舞厅男孩Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "舞厅男孩Ⅰ"
+    },
+    {
+     "eid": "舞厅男孩Ⅱ",
+     "name": "舞厅男孩Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "舞厅男孩Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "舰长Ⅰ",
+   "core": "舰长",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "舰长Ⅰ",
+     "name": "舰长Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "舰长Ⅰ"
+    },
+    {
+     "eid": "舰长Ⅱ",
+     "name": "舰长Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "舰长Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "街坊Ⅰ",
+   "core": "街坊",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "街坊Ⅰ",
+     "name": "街坊Ⅰ",
+     "n_chunk_ids": 5,
+     "canonical_zh": "街坊Ⅰ"
+    },
+    {
+     "eid": "街坊Ⅱ",
+     "name": "街坊Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "街坊Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "裁判组成员Ⅰ",
+   "core": "裁判组成员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "裁判组成员Ⅰ",
+     "name": "裁判组成员Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "裁判组成员Ⅰ"
+    },
+    {
+     "eid": "裁判组成员Ⅱ",
+     "name": "裁判组成员Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "裁判组成员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "见习执夜Ⅰ",
+   "core": "见习执夜",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "见习执夜Ⅰ",
+     "name": "见习执夜Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "见习执夜Ⅰ"
+    },
+    {
+     "eid": "见习执夜Ⅱ",
+     "name": "见习执夜Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "见习执夜Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "贵妇人Ⅰ",
+   "core": "贵妇人",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "贵妇人Ⅰ",
+     "name": "贵妇人Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "贵妇人Ⅰ"
+    },
+    {
+     "eid": "贵妇人Ⅱ",
+     "name": "贵妇人Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "贵妇人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "车厢里的逃兵Ⅰ",
+   "core": "车厢里的逃兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "车厢里的逃兵Ⅰ",
+     "name": "车厢里的逃兵Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "车厢里的逃兵Ⅰ"
+    },
+    {
+     "eid": "车厢里的逃兵Ⅱ",
+     "name": "车厢里的逃兵Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "车厢里的逃兵Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "追踪警员",
+   "core": "追踪警员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "追踪警员",
+     "name": "追踪警员",
+     "n_chunk_ids": 1,
+     "canonical_zh": "追踪警员"
+    },
+    {
+     "eid": "追踪警员Ⅱ",
+     "name": "追踪警员Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "追踪警员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "酒吧客人Ⅰ",
+   "core": "酒吧客人",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "酒吧客人Ⅰ",
+     "name": "酒吧客人Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒吧客人Ⅰ"
+    },
+    {
+     "eid": "酒吧客人Ⅱ",
+     "name": "酒吧客人Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "酒吧客人Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "重塑士兵",
+   "core": "重塑士兵",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "重塑士兵",
+     "name": "重塑士兵",
+     "n_chunk_ids": 3,
+     "canonical_zh": "重塑士兵"
+    },
+    {
+     "eid": "重塑士兵Ⅰ",
+     "name": "重塑士兵Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "重塑士兵Ⅰ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "镇民Ⅰ",
+   "core": "镇民",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "镇民Ⅰ",
+     "name": "镇民Ⅰ",
+     "n_chunk_ids": 8,
+     "canonical_zh": "镇民Ⅰ"
+    },
+    {
+     "eid": "镇民Ⅱ",
+     "name": "镇民Ⅱ",
+     "n_chunk_ids": 8,
+     "canonical_zh": "镇民Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "队员Ⅰ",
+   "core": "队员",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "队员Ⅰ",
+     "name": "队员Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "队员Ⅰ"
+    },
+    {
+     "eid": "队员Ⅱ",
+     "name": "队员Ⅱ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "队员Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "集市守门者Ⅰ",
+   "core": "集市守门者",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "集市守门者Ⅰ",
+     "name": "集市守门者Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "集市守门者Ⅰ"
+    },
+    {
+     "eid": "集市守门者Ⅱ",
+     "name": "集市守门者Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "集市守门者Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "骑士Ⅰ",
+   "core": "骑士",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "骑士Ⅰ",
+     "name": "骑士Ⅰ",
+     "n_chunk_ids": 2,
+     "canonical_zh": "骑士Ⅰ"
+    },
+    {
+     "eid": "骑士Ⅱ",
+     "name": "骑士Ⅱ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "骑士Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "高级理线师Ⅰ",
+   "core": "高级理线师",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "高级理线师Ⅰ",
+     "name": "高级理线师Ⅰ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "高级理线师Ⅰ"
+    },
+    {
+     "eid": "高级理线师Ⅱ",
+     "name": "高级理线师Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "高级理线师Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  },
+  {
+   "cluster_id": "黑帮手下Ⅰ",
+   "core": "黑帮手下",
+   "n_entities": 2,
+   "members": [
+    {
+     "eid": "黑帮手下Ⅰ",
+     "name": "黑帮手下Ⅰ",
+     "n_chunk_ids": 3,
+     "canonical_zh": "黑帮手下Ⅰ"
+    },
+    {
+     "eid": "黑帮手下Ⅱ",
+     "name": "黑帮手下Ⅱ",
+     "n_chunk_ids": 1,
+     "canonical_zh": "黑帮手下Ⅱ"
+    }
+   ],
+   "cross_lang": true,
+   "leak_qids_both_seeded": [],
+   "leak_qids_any_seeded": []
+  }
+ ],
+ "attribution_per_leaking_question": [
+  {
+   "set": "300cn",
+   "qid": "R018",
+   "role": "伙计",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": []
+  },
+  {
+   "set": "300cn",
+   "qid": "R036",
+   "role": "施瓦茨",
+   "families": [
+    "B",
+    "C_same",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "施瓦茨",
+     "b": "施瓦茨医生",
+     "shared": 3,
+     "same_reference": true
+    },
+    {
+     "a": "施瓦布",
+     "b": "施瓦茨",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "施瓦布",
+     "b": "施瓦茨医生",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R048",
+   "role": "索菲亚",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "苏菲亚",
+     "b": "苏菲亚的母亲",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "苏菲",
+     "b": "苏菲亚",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "苏菲亚",
+     "b": "苏菲亚的父亲",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "苏菲",
+     "b": "苏菲亚的母亲",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "苏菲亚的母亲",
+     "b": "苏菲亚的父亲",
+     "shared": 4,
+     "same_reference": false
+    },
+    {
+     "a": "苏菲",
+     "b": "苏菲亚的父亲",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R051",
+   "role": "37",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "37",
+     "b": "37之母",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37",
+     "b": "37的计算",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37",
+     "b": "37的课题",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37之母",
+     "b": "37的计算",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37之母",
+     "b": "37的课题",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37的计算",
+     "b": "37的课题",
+     "shared": 3,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R127",
+   "role": "福格尔",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "300cn",
+   "qid": "R179",
+   "role": "无名者",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "无名之人",
+     "b": "无名者",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R180",
+   "role": "无名者",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "无名之人",
+     "b": "无名者",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "记忆",
+     "b": "记忆灌入实验",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R200",
+   "role": "查尔顿",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "查尔斯",
+     "b": "查尔顿",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "卡戎",
+     "b": "卡戎之名",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R242",
+   "role": "基金会调查员",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "基金会调查员",
+     "b": "基金会调查官琼斯",
+     "shared": 5,
+     "same_reference": false
+    },
+    {
+     "a": "基金会女职员",
+     "b": "基金会调查员",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "基金会女职员",
+     "b": "基金会调查官琼斯",
+     "shared": 3,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R244",
+   "role": "斯奈德",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "300cn",
+   "qid": "R247",
+   "role": "施瓦茨医生",
+   "families": [
+    "B",
+    "C_same",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "施瓦茨",
+     "b": "施瓦茨医生",
+     "shared": 3,
+     "same_reference": true
+    },
+    {
+     "a": "维也纳",
+     "b": "维也纳综合医院",
+     "shared": 3,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "300cn",
+   "qid": "R282",
+   "role": "会长",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "会长",
+     "b": "会长办公室",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BA-014",
+   "role": "卡森先生",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BA-020",
+   "role": "莫莉德尔",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "莫莉德尔",
+     "b": "莫莉德尔之父",
+     "shared": 4,
+     "same_reference": false
+    },
+    {
+     "a": "洛佩拉",
+     "b": "洛佩拉的父亲",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "洛佩拉",
+     "b": "洛佩拉的期待",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "洛佩拉的期待",
+     "b": "洛佩拉的父亲",
+     "shared": 4,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BA-049",
+   "role": "伊索尔德",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "伊索尔德",
+     "b": "伊索尔德之母",
+     "shared": 4,
+     "same_reference": false
+    },
+    {
+     "a": "父亲",
+     "b": "父亲留下的小机器人",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BA-052",
+   "role": "伊索尔德",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "苹果",
+     "b": "苹果卷",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BA-053",
+   "role": "卡尔",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BB-021",
+   "role": "佳琳娜夫人",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BB-031",
+   "role": "磁流体",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "暴雨",
+     "b": "暴雨研究小组",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "拉普拉斯实验室",
+     "b": "拉普拉斯研究员",
+     "shared": 4,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BC1-002",
+   "role": "上级",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "传送用软盘",
+     "b": "传送软盘",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BC2-002",
+   "role": "巨鸟",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 4,
+   "prefix_pairs": [
+    {
+     "a": "小女孩",
+     "b": "小女孩的母亲",
+     "shared": 3,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BC2-005",
+   "role": "孩子们",
+   "families": [],
+   "n_leaked_chunks": 3,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BC3-006",
+   "role": "黑鹮的副手",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BD-005",
+   "role": "37",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "37",
+     "b": "37的计算",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37",
+     "b": "37的课题",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "37的计算",
+     "b": "37的课题",
+     "shared": 3,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BD-007",
+   "role": "毕达哥拉斯",
+   "families": [
+    "C_diff"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": [
+    {
+     "a": "毕达哥拉斯",
+     "b": "毕达哥拉斯树",
+     "shared": 5,
+     "same_reference": false
+    },
+    {
+     "a": "毕达哥拉斯",
+     "b": "毕达哥拉斯学派",
+     "shared": 5,
+     "same_reference": false
+    },
+    {
+     "a": "毕达哥拉斯学派",
+     "b": "毕达哥拉斯树",
+     "shared": 5,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "blind",
+   "qid": "BD-034",
+   "role": "调查员Ⅱ",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "blind",
+   "qid": "BD-047",
+   "role": "刘医生",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "gen",
+   "qid": "GA-20",
+   "role": "玛尔塔",
+   "families": [],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": []
+  },
+  {
+   "set": "gen",
+   "qid": "GA-44",
+   "role": "兀尔德",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  },
+  {
+   "set": "gen",
+   "qid": "GA-47",
+   "role": "施瓦茨医生",
+   "families": [
+    "B",
+    "C_same",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 4,
+   "prefix_pairs": [
+    {
+     "a": "施瓦茨",
+     "b": "施瓦茨医生",
+     "shared": 3,
+     "same_reference": true
+    },
+    {
+     "a": "施瓦布",
+     "b": "施瓦茨医生",
+     "shared": 2,
+     "same_reference": false
+    },
+    {
+     "a": "施瓦布",
+     "b": "施瓦茨",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "gen",
+   "qid": "GB-01",
+   "role": "洛佩拉",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": [
+    {
+     "a": "洛佩拉",
+     "b": "洛佩拉的期待",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "洛佩拉",
+     "b": "洛佩拉的父亲",
+     "shared": 3,
+     "same_reference": false
+    },
+    {
+     "a": "洛佩拉的期待",
+     "b": "洛佩拉的父亲",
+     "shared": 4,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "gen",
+   "qid": "GB-06",
+   "role": "灯倌",
+   "families": [
+    "A2"
+   ],
+   "n_leaked_chunks": 2,
+   "prefix_pairs": []
+  },
+  {
+   "set": "gen",
+   "qid": "GB-08",
+   "role": "玛蒂尔达",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 4,
+   "prefix_pairs": [
+    {
+     "a": "玛蒂尔达",
+     "b": "玛蒂尔达的资料",
+     "shared": 4,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "gen",
+   "qid": "GB-20",
+   "role": "管理员",
+   "families": [
+    "A2",
+    "C_diff"
+   ],
+   "n_leaked_chunks": 4,
+   "prefix_pairs": [
+    {
+     "a": "管理人",
+     "b": "管理员",
+     "shared": 2,
+     "same_reference": false
+    }
+   ]
+  },
+  {
+   "set": "gen",
+   "qid": "GC-07",
+   "role": "莱格斯",
+   "families": [],
+   "n_leaked_chunks": 1,
+   "prefix_pairs": []
+  }
+ ],
+ "list_c_diff_true_collisions": [
+  {
+   "name_a": "37",
+   "name_b": "37的计算",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "37",
+   "name_b": "37的课题",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "37的计算",
+   "name_b": "37的课题",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "施瓦布",
+   "name_b": "施瓦茨",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "施瓦布",
+   "name_b": "施瓦茨医生",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "无名之人",
+   "name_b": "无名者",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "洛佩拉",
+   "name_b": "洛佩拉的期待",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "洛佩拉",
+   "name_b": "洛佩拉的父亲",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "洛佩拉的期待",
+   "name_b": "洛佩拉的父亲",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 2
+  },
+  {
+   "name_a": "37",
+   "name_b": "37之母",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "37之母",
+   "name_b": "37的计算",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "37之母",
+   "name_b": "37的课题",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "伊索尔德",
+   "name_b": "伊索尔德之母",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "会长",
+   "name_b": "会长办公室",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "传送用软盘",
+   "name_b": "传送软盘",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "卡戎",
+   "name_b": "卡戎之名",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "基金会女职员",
+   "name_b": "基金会调查员",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "基金会女职员",
+   "name_b": "基金会调查官琼斯",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "基金会调查员",
+   "name_b": "基金会调查官琼斯",
+   "shared_prefix_len": 5,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "小女孩",
+   "name_b": "小女孩的母亲",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "拉普拉斯实验室",
+   "name_b": "拉普拉斯研究员",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "暴雨",
+   "name_b": "暴雨研究小组",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "查尔斯",
+   "name_b": "查尔顿",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "毕达哥拉斯",
+   "name_b": "毕达哥拉斯学派",
+   "shared_prefix_len": 5,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "毕达哥拉斯",
+   "name_b": "毕达哥拉斯树",
+   "shared_prefix_len": 5,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "毕达哥拉斯学派",
+   "name_b": "毕达哥拉斯树",
+   "shared_prefix_len": 5,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "父亲",
+   "name_b": "父亲留下的小机器人",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "玛蒂尔达",
+   "name_b": "玛蒂尔达的资料",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "管理人",
+   "name_b": "管理员",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "维也纳",
+   "name_b": "维也纳综合医院",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲",
+   "name_b": "苏菲亚",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲",
+   "name_b": "苏菲亚的母亲",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲",
+   "name_b": "苏菲亚的父亲",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲亚",
+   "name_b": "苏菲亚的母亲",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲亚",
+   "name_b": "苏菲亚的父亲",
+   "shared_prefix_len": 3,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苏菲亚的母亲",
+   "name_b": "苏菲亚的父亲",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "苹果",
+   "name_b": "苹果卷",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "莫莉德尔",
+   "name_b": "莫莉德尔之父",
+   "shared_prefix_len": 4,
+   "co_occur_leaking": 1
+  },
+  {
+   "name_a": "记忆",
+   "name_b": "记忆灌入实验",
+   "shared_prefix_len": 2,
+   "co_occur_leaking": 1
+  }
+ ],
+ "control_base_rates": {
+  "unresolved_speaker": {
+   "leaking": "15/35",
+   "rate_leaking": 0.4286,
+   "non_leaking": "21/190",
+   "rate_non_leaking": 0.1105,
+   "lift": 3.879,
+   "discriminative": true
+  },
+  "generic_role_speaker": {
+   "leaking": "0/35",
+   "rate_leaking": 0.0,
+   "non_leaking": "0/190",
+   "rate_non_leaking": 0.0,
+   "lift": null,
+   "discriminative": false
+  },
+  "b_pair_seeded": {
+   "leaking": "3/35",
+   "rate_leaking": 0.0857,
+   "non_leaking": "1/190",
+   "rate_non_leaking": 0.0053,
+   "lift": 16.17,
+   "discriminative": true
+  },
+  "prefix_same": {
+   "leaking": "3/35",
+   "rate_leaking": 0.0857,
+   "non_leaking": "1/190",
+   "rate_non_leaking": 0.0053,
+   "lift": 16.17,
+   "discriminative": true
+  },
+  "prefix_diff": {
+   "leaking": "21/35",
+   "rate_leaking": 0.6,
+   "non_leaking": "126/190",
+   "rate_non_leaking": 0.6632,
+   "lift": 0.905,
+   "discriminative": false
+  }
+ },
+ "hypothesis_verdicts": {
+  "泛称角色名导致跨角色泄漏（裁决1 的 ②之一）": {
+   "verdict": "证伪（在本判据下）",
+   "evidence": "generic_role_speaker 漏题 0/35、对照 0/190；用户点名的 ['会长', '上级', '孩子们', '管理员', '黑鹮的副手'] 全是合法角色节点，但从未出现在角色域题 top-10 的 character 块 speakers 里"
+  },
+  "同角色多实体未归并（裁决1 的 ②之二）": {
+   "verdict": "成立但量极小",
+   "evidence": "b_pair_seeded 漏题 3/35 / 对照 1/190，lift 16.17；信号干净但只能解释 3 题，146 簇里只有 1 簇带双 seed 证据"
+  },
+  "种子名近形碰撞（本脚本 v1 新增假设）": {
+   "verdict": "判负 —— 无判别力",
+   "evidence": "prefix_diff 漏题 21/35 vs 对照 126/190，lift 0.905 < 1：中文角色名共享首字在不漏题上更常见，该启发式是噪声不是信号"
+  },
+  "未落名 speakers（角色边界标注路线）": {
+   "verdict": "相关，但未证明因果",
+   "evidence": "unresolved_speaker lift 3.879（15/35 vs 21/190），主体是占位符类说话人（？？？/口口口）与「女孩/小孩Ⅰ」；⚠ 与泄漏判据存在机械相关风险，见 limitations"
+  }
+ },
+ "limitations": [
+  "判据只认首 seed（D3/D4 维持原口径）：种子通道选错角色时泄漏判定跟着错，A/B/C 三张表在这类题上是**下界**。",
+  "B 的核名剥离是词法规则（成员编号 / 敬称 / 泛称尾 / plot_aliases 中英表），同簇**不等于该合并** —— `卡卡尼亚之母 ⊃ 卡卡尼亚` 这类异指反例照样进簇；必须走盲评 + 对称 DROP_MAP 纪律（`优化计划_v9_2026-10-08.md:138,162`），不可自动合并。",
+  "C-diff 的前缀共现只证明「两个名字在同一条漏题里抢过种子」，不证明谁错。",
+  "A2 的 speakers 未落名里混有真·专名写法差异（引号、全半角），已按 generic_criteria 命中标注，未命中的需逐条人看。",
+  "P2 已交过 587 组修饰语前缀候选（`reports/p2_landing_diag.md`）；本表的 B 是**按漏题证据重排**的同指候选，不是那份清单的替代品，两者须并读。",
+  "⚠ **A2 有机械相关风险**：L2.3 判据是「块内不含所问角色任一名号」，而未落名 speakers 占多数的块天然更可能不含角色名 —— 所以 lift 3.88 只证明**相关**，不证明「标注 speakers」就能压住泄漏。要定因果得做干预实验（就地补标后重算），那属于改数据，本轮未做。",
+  "对照组的 190 道是**同判据下的不漏题**，不是随机题；因此 lift 只对「本判据」负责，换成分层判据（D4：检索层 0.08 / 答案层 0.03）后这些族的相关性需要重算。"
+ ]
+}
