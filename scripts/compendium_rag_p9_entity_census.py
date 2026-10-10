@@ -194,9 +194,16 @@ def build_clusters(graph, alias_map):
             continue
         zh_names = {n for n in (e.name for e in ents) if en2zh.get(n) == n or n not in en2zh}
         alias_names = {n for n in (e.name for e in ents) if en2zh.get(n) != n}
+        # 编号族（`圣殿骑士Ⅰ..Ⅵ`、`教众Ⅰ/Ⅱ`）：**罗马数字/尾号本身就是消歧标记**，
+        # 盲裁决实测 10/10 判不同指 —— 它们不是「同角色多实体未归并」，别混进候选。
+        bare = {RE_MEMBER_INDEX.sub("", e.name) for e in ents}
+        is_numbering = len(bare) == 1 and any(RE_MEMBER_INDEX.search(e.name) for e in ents)
         clusters.append({
             "cluster_id": root, "core": strip_core(ents[0].name),
             "n_entities": len(ents),
+            "family_kind": ("numbering" if is_numbering
+                            else "cross_lang_alias" if (zh_names and alias_names)
+                            else "honorific_or_modifier"),
             "members": [{"eid": e.eid, "name": e.name, "n_chunk_ids": len(e.chunk_ids),
                          "canonical_zh": en2zh.get(e.name, e.name)} for e in ents],
             # 真·跨语种只有在「同一簇里既有中文主名形态又有别名表形态」时才成立
@@ -420,6 +427,7 @@ def main() -> int:
                    "a1_generic_role_entities": len(a1),
                    "a2_unresolved_speakers": len(a2),
                    "b_clusters": len(clusters),
+                   "b_family_kinds": dict(Counter(x["family_kind"] for x in clusters)),
                    "b_clusters_with_both_seeded_evidence":
                        sum(1 for c in clusters if c["leak_qids_both_seeded"]),
                    "c_diff_true_collisions": len(c_diff),
@@ -531,12 +539,16 @@ def render(rep: dict) -> str:
     for r in rep["list_a2_unresolved_speakers_in_leaked_chunks"][:30]:
         ln.append(f"- `{r['speaker']}` → 漏题 {r['n_leaking_qids']} / 泄漏块 "
                   f"{r['n_leaked_chunks']}｜判据 {r['generic_criteria'] or '未命中(需人看)'}")
-    ln += ["", f"## B 同角色多实体未归并（{c['b_clusters']} 簇，"
-               f"其中 {c['b_clusters_with_both_seeded_evidence']} 簇有「双节点同进 seed」漏题证据）", ""]
+    ln += ["", f"## B 同角色多实体候选（{c['b_clusters']} 簇，族型 "
+               f"{c['b_family_kinds']}；其中 {c['b_clusters_with_both_seeded_evidence']} 簇有"
+               f"「双节点同进 seed」漏题证据）", "",
+           "> ⚠ `numbering` 族（`圣殿骑士Ⅰ..Ⅵ`、`教众Ⅰ/Ⅱ` 这类）**不是**「同角色多实体未归并」——"
+           "尾号本就是消歧标记。w1 盲裁决 10 簇给出 8 different_reference / 1 partial_same / "
+           "1 insufficient（铁证：同一摘录里 教众Ⅰ 与 教众Ⅱ 作为两个说话人先后发言），"
+           "故裁决批次只送 `cross_lang_alias` 与 `honorific_or_modifier` 两族。", ""]
     for r in rep["list_b_unmerged_same_character"][:20]:
         mem = " / ".join(f"`{m['name']}`({m['n_chunk_ids']}块)" for m in r["members"])
-        ln.append(f"- **{r['core']}** · {r['n_entities']} 节点"
-                  f"{' · 真跨语种' if r['cross_lang'] else ''}：{mem}")
+        ln.append(f"- **{r['core']}** · {r['n_entities']} 节点 · {r['family_kind']}：{mem}")
         if r["leak_qids_both_seeded"]:
             ln.append(f"  - 双节点同进 seed 的漏题 {r['leak_qids_both_seeded']}")
     ln += ["", f"## C-diff 真种子名碰撞（{c['c_diff_true_collisions']} 对，异指：归并不是解药）", ""]

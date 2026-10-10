@@ -1,0 +1,193 @@
+{
+ "schema": "compendium_rag.p9_fanout_manifest/v1",
+ "tag": "w1-adjud",
+ "planned_at": "2026-10-10T20:24:36",
+ "graph_sha": "911bb538160db80e",
+ "qid_key": "cluster_id",
+ "n_batches": 8,
+ "n_qids_total": 40,
+ "batches": [
+  {
+   "batch_id": "adj_b01",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b01.json",
+   "n_qids": 5,
+   "qids": [
+    "城中居民",
+    "圣殿骑士Ⅰ",
+    "教众",
+    "科学家Ⅰ",
+    "重塑·信徒"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b01_verdict.json"
+  },
+  {
+   "batch_id": "adj_b02",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b02.json",
+   "n_qids": 5,
+   "qids": [
+    "与会人员Ⅰ",
+    "俱乐部巡逻者Ⅰ",
+    "客人Ⅰ",
+    "研究员Ⅰ",
+    "赛场观众Ⅰ"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b02_verdict.json"
+  },
+  {
+   "batch_id": "adj_b03",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b03.json",
+   "n_qids": 5,
+   "qids": [
+    "乘客Ⅰ",
+    "参与者Ⅱ",
+    "司机",
+    "抗议者Ⅰ",
+    "沙龙宾客Ⅰ"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b03_verdict.json"
+  },
+  {
+   "batch_id": "adj_b04",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b04.json",
+   "n_qids": 5,
+   "qids": [
+    "游客",
+    "罢工群众Ⅰ",
+    "记者",
+    "诺瓦米奇的居民Ⅰ",
+    "贪吃鬼Ⅰ"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b04_verdict.json"
+  },
+  {
+   "batch_id": "adj_b05",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b05.json",
+   "n_qids": 5,
+   "qids": [
+    "信徒Ⅰ",
+    "偷袭者",
+    "军人",
+    "剧院观众Ⅰ",
+    "参会者Ⅰ"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b05_verdict.json"
+  },
+  {
+   "batch_id": "adj_b06",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b06.json",
+   "n_qids": 5,
+   "qids": [
+    "参观者Ⅰ",
+    "参赛人员Ⅰ",
+    "囚犯",
+    "围观群众",
+    "圣洛夫基金会职员"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b06_verdict.json"
+  },
+  {
+   "batch_id": "adj_b07",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b07.json",
+   "n_qids": 5,
+   "qids": [
+    "城镇警卫Ⅰ",
+    "基金会安保",
+    "基金会职员",
+    "学生Ⅰ",
+    "孩童"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b07_verdict.json"
+  },
+  {
+   "batch_id": "adj_b08",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b08.json",
+   "n_qids": 5,
+   "qids": [
+    "审讯官Ⅰ",
+    "宪兵",
+    "小孩",
+    "小狗",
+    "小蛇Ⅰ"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b08_verdict.json"
+  }
+ ],
+ "write_scope": [
+  "data/compendium_rag/reports/p9_fanout/w1-adjud.heartbeat.txt",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b01_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b02_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b03_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b04_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b05_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b06_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b07_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out/adj_b08_verdict.json"
+ ],
+ "protected_roots": [
+  "data/compendium_rag/graph.json",
+  "data/compendium_rag/reports/p9_entity_census.json",
+  "data/compendium_rag/reports/p9_fanout/w1/in"
+ ],
+ "protected": [
+  {
+   "path": "data/compendium_rag/graph.json",
+   "sha16": "911bb538160db80e",
+   "bytes": 11575840,
+   "mtime": "2026-10-10T09:46:00"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_entity_census.json",
+   "sha16": "dd76606e778103fa",
+   "bytes": 112225,
+   "mtime": "2026-10-10T20:23:13"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b01.json",
+   "sha16": "ad474f869cb4505e",
+   "bytes": 12959,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b02.json",
+   "sha16": "9bb8762b597b3bad",
+   "bytes": 12899,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b03.json",
+   "sha16": "25f84e7d164a3e4b",
+   "bytes": 11168,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b04.json",
+   "sha16": "f70a466fb22dcca1",
+   "bytes": 13572,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b05.json",
+   "sha16": "366087dc5a3f967b",
+   "bytes": 4000,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b06.json",
+   "sha16": "3e6690ed64f0a76f",
+   "bytes": 7856,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b07.json",
+   "sha16": "bc7da5e380661f4b",
+   "bytes": 8270,
+   "mtime": "2026-10-10T20:24:36"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/in/adj_b08.json",
+   "sha16": "8f5249a4b2dc4e96",
+   "bytes": 9254,
+   "mtime": "2026-10-10T20:24:36"
+  }
+ ]
+}

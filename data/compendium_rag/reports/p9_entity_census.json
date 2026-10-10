@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.p9_entity_census/v2",
- "done_at": "2026-10-10T20:23:13",
+ "done_at": "2026-10-10T20:29:19",
  "graph_sha": "911bb538160db80e",
  "read_only": true,
  "reproduce": {
@@ -24,12 +24,17 @@
   "a1_generic_role_entities": 6,
   "a2_unresolved_speakers": 6,
   "b_clusters": 146,
+  "b_family_kinds": {
+   "honorific_or_modifier": 1,
+   "numbering": 136,
+   "cross_lang_alias": 9
+  },
   "b_clusters_with_both_seeded_evidence": 1,
   "c_diff_true_collisions": 39,
   "attribution": {
    "A2": 15,
-   "C_same": 3,
    "C_diff": 21,
+   "C_same": 3,
    "B": 3,
    "none": 8
   }
@@ -259,6 +264,7 @@
    "cluster_id": "施瓦茨",
    "core": "施瓦茨",
    "n_entities": 2,
+   "family_kind": "honorific_or_modifier",
    "members": [
     {
      "eid": "施瓦茨",
@@ -289,6 +295,7 @@
    "cluster_id": "调查员",
    "core": "调查员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "调查员",
@@ -320,6 +327,7 @@
    "cluster_id": "拉普拉斯研究员",
    "core": "拉普拉斯研究员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "拉普拉斯研究员",
@@ -350,6 +358,7 @@
    "cluster_id": "刘医生",
    "core": "刘",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "刘医生",
@@ -374,6 +383,7 @@
    "cluster_id": "基金会女职员",
    "core": "基金会女职员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "基金会女职员",
@@ -398,6 +408,7 @@
    "cluster_id": "城中居民",
    "core": "城中居民",
    "n_entities": 8,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "城中居民",
@@ -456,6 +467,7 @@
    "cluster_id": "圣殿骑士Ⅰ",
    "core": "圣殿骑士",
    "n_entities": 6,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "圣殿骑士Ⅰ",
@@ -502,6 +514,7 @@
    "cluster_id": "教众",
    "core": "教众",
    "n_entities": 6,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "教众",
@@ -548,6 +561,7 @@
    "cluster_id": "科学家Ⅰ",
    "core": "科学家",
    "n_entities": 6,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "科学家Ⅰ",
@@ -594,6 +608,7 @@
    "cluster_id": "重塑·信徒",
    "core": "重塑",
    "n_entities": 6,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "重塑·信徒",
@@ -640,6 +655,7 @@
    "cluster_id": "与会人员Ⅰ",
    "core": "与会人员",
    "n_entities": 5,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "与会人员Ⅰ",
@@ -680,6 +696,7 @@
    "cluster_id": "俱乐部巡逻者Ⅰ",
    "core": "俱乐部巡逻者",
    "n_entities": 5,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "俱乐部巡逻者Ⅰ",
@@ -720,6 +737,7 @@
    "cluster_id": "客人Ⅰ",
    "core": "客人",
    "n_entities": 5,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "客人Ⅰ",
@@ -760,6 +778,7 @@
    "cluster_id": "研究员Ⅰ",
    "core": "研究员",
    "n_entities": 5,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "研究员Ⅰ",
@@ -800,6 +819,7 @@
    "cluster_id": "赛场观众Ⅰ",
    "core": "赛场观众",
    "n_entities": 5,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "赛场观众Ⅰ",
@@ -840,6 +860,7 @@
    "cluster_id": "乘客Ⅰ",
    "core": "乘客",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "乘客Ⅰ",
@@ -874,6 +895,7 @@
    "cluster_id": "参与者Ⅱ",
    "core": "参与者",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "参与者Ⅱ",
@@ -908,6 +930,7 @@
    "cluster_id": "司机",
    "core": "司机",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "司机",
@@ -942,6 +965,7 @@
    "cluster_id": "抗议者Ⅰ",
    "core": "抗议者",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "抗议者Ⅰ",
@@ -976,6 +1000,7 @@
    "cluster_id": "沙龙宾客Ⅰ",
    "core": "沙龙宾客",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "沙龙宾客Ⅰ",
@@ -1010,6 +1035,7 @@
    "cluster_id": "游客",
    "core": "游客",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "游客",
@@ -1044,6 +1070,7 @@
    "cluster_id": "罢工群众Ⅰ",
    "core": "罢工群众",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "罢工群众Ⅰ",
@@ -1078,6 +1105,7 @@
    "cluster_id": "记者",
    "core": "记者",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "记者",
@@ -1112,6 +1140,7 @@
    "cluster_id": "诺瓦米奇的居民Ⅰ",
    "core": "诺瓦米奇的居民",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "诺瓦米奇的居民Ⅰ",
@@ -1146,6 +1175,7 @@
    "cluster_id": "贪吃鬼Ⅰ",
    "core": "贪吃鬼",
    "n_entities": 4,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "贪吃鬼Ⅰ",
@@ -1180,6 +1210,7 @@
    "cluster_id": "信徒Ⅰ",
    "core": "信徒",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "信徒Ⅰ",
@@ -1208,6 +1239,7 @@
    "cluster_id": "偷袭者",
    "core": "偷袭者",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "偷袭者",
@@ -1236,6 +1268,7 @@
    "cluster_id": "军人",
    "core": "军人",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "军人",
@@ -1264,6 +1297,7 @@
    "cluster_id": "剧院观众Ⅰ",
    "core": "剧院观众",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "剧院观众Ⅰ",
@@ -1292,6 +1326,7 @@
    "cluster_id": "参会者Ⅰ",
    "core": "参会者",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "参会者Ⅰ",
@@ -1320,6 +1355,7 @@
    "cluster_id": "参观者Ⅰ",
    "core": "参观者",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "参观者Ⅰ",
@@ -1348,6 +1384,7 @@
    "cluster_id": "参赛人员Ⅰ",
    "core": "参赛人员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "参赛人员Ⅰ",
@@ -1376,6 +1413,7 @@
    "cluster_id": "囚犯",
    "core": "囚犯",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "囚犯",
@@ -1404,6 +1442,7 @@
    "cluster_id": "围观群众",
    "core": "围观群众",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "围观群众",
@@ -1432,6 +1471,7 @@
    "cluster_id": "圣洛夫基金会职员",
    "core": "圣洛夫基金会职员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "圣洛夫基金会职员",
@@ -1460,6 +1500,7 @@
    "cluster_id": "城镇警卫Ⅰ",
    "core": "城镇警卫",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "城镇警卫Ⅰ",
@@ -1488,6 +1529,7 @@
    "cluster_id": "基金会安保",
    "core": "基金会安保",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "基金会安保",
@@ -1516,6 +1558,7 @@
    "cluster_id": "基金会职员",
    "core": "基金会职员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "基金会职员",
@@ -1544,6 +1587,7 @@
    "cluster_id": "学生Ⅰ",
    "core": "学生",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "学生Ⅰ",
@@ -1572,6 +1616,7 @@
    "cluster_id": "孩童",
    "core": "孩童",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "孩童",
@@ -1600,6 +1645,7 @@
    "cluster_id": "审讯官Ⅰ",
    "core": "审讯官",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "审讯官Ⅰ",
@@ -1628,6 +1674,7 @@
    "cluster_id": "宪兵",
    "core": "宪兵",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "宪兵",
@@ -1656,6 +1703,7 @@
    "cluster_id": "小孩",
    "core": "小孩",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "小孩",
@@ -1684,6 +1732,7 @@
    "cluster_id": "小狗",
    "core": "小狗",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "小狗",
@@ -1712,6 +1761,7 @@
    "cluster_id": "小蛇Ⅰ",
    "core": "小蛇",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "小蛇Ⅰ",
@@ -1740,6 +1790,7 @@
    "cluster_id": "小贩",
    "core": "小贩",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "小贩",
@@ -1768,6 +1819,7 @@
    "cluster_id": "工人",
    "core": "工人",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "工人",
@@ -1796,6 +1848,7 @@
    "cluster_id": "平民",
    "core": "平民",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "平民",
@@ -1824,6 +1877,7 @@
    "cluster_id": "执政官Ⅰ",
    "core": "执政官",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "执政官Ⅰ",
@@ -1852,6 +1906,7 @@
    "cluster_id": "护士Ⅰ",
    "core": "护士",
    "n_entities": 3,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "护士Ⅰ",
@@ -1880,6 +1935,7 @@
    "cluster_id": "拉普拉斯职员Ⅰ",
    "core": "拉普拉斯职员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "拉普拉斯职员Ⅰ",
@@ -1908,6 +1964,7 @@
    "cluster_id": "招工市民Ⅰ",
    "core": "招工市民",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "招工市民Ⅰ",
@@ -1936,6 +1993,7 @@
    "cluster_id": "村民",
    "core": "村民",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "村民",
@@ -1964,6 +2022,7 @@
    "cluster_id": "棋子Ⅰ",
    "core": "棋子",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "棋子Ⅰ",
@@ -1992,6 +2051,7 @@
    "cluster_id": "流浪汉",
    "core": "流浪汉",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "流浪汉",
@@ -2020,6 +2080,7 @@
    "cluster_id": "演员",
    "core": "演员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "演员",
@@ -2048,6 +2109,7 @@
    "cluster_id": "理线师Ⅰ",
    "core": "理线师",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "理线师Ⅰ",
@@ -2076,6 +2138,7 @@
    "cluster_id": "电台主播",
    "core": "电台主播",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "电台主播",
@@ -2104,6 +2167,7 @@
    "cluster_id": "男孩Ⅰ",
    "core": "男孩",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "男孩Ⅰ",
@@ -2132,6 +2196,7 @@
    "cluster_id": "画师Ⅰ",
    "core": "画师",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "画师Ⅰ",
@@ -2160,6 +2225,7 @@
    "cluster_id": "病人",
    "core": "病人",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "病人",
@@ -2188,6 +2254,7 @@
    "cluster_id": "神教教徒Ⅰ",
    "core": "神教教徒",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "神教教徒Ⅰ",
@@ -2216,6 +2283,7 @@
    "cluster_id": "神秘学警察",
    "core": "神秘学警察",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "神秘学警察",
@@ -2244,6 +2312,7 @@
    "cluster_id": "米尔内驻军Ⅰ",
    "core": "米尔内驻军",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "米尔内驻军Ⅰ",
@@ -2272,6 +2341,7 @@
    "cluster_id": "联络员",
    "core": "联络员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "联络员",
@@ -2300,6 +2370,7 @@
    "cluster_id": "船员",
    "core": "船员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "船员",
@@ -2328,6 +2399,7 @@
    "cluster_id": "行动队员",
    "core": "行动队员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "行动队员",
@@ -2356,6 +2428,7 @@
    "cluster_id": "行动队长",
    "core": "行动",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "行动队长",
@@ -2384,6 +2457,7 @@
    "cluster_id": "警卫士兵",
    "core": "警卫士兵",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "警卫士兵",
@@ -2412,6 +2486,7 @@
    "cluster_id": "警员",
    "core": "警员",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "警员",
@@ -2440,6 +2515,7 @@
    "cluster_id": "警察",
    "core": "警察",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "警察",
@@ -2468,6 +2544,7 @@
    "cluster_id": "诗社囚犯Ⅰ",
    "core": "诗社囚犯",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "诗社囚犯Ⅰ",
@@ -2496,6 +2573,7 @@
    "cluster_id": "诺瓦米奇的应聘市民Ⅰ",
    "core": "诺瓦米奇的应聘市民",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "诺瓦米奇的应聘市民Ⅰ",
@@ -2524,6 +2602,7 @@
    "cluster_id": "路人Ⅰ",
    "core": "路人",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "路人Ⅰ",
@@ -2552,6 +2631,7 @@
    "cluster_id": "边防士兵Ⅰ",
    "core": "边防士兵",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "边防士兵Ⅰ",
@@ -2580,6 +2660,7 @@
    "cluster_id": "追随者",
    "core": "追随者",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "追随者",
@@ -2608,6 +2689,7 @@
    "cluster_id": "逃兵",
    "core": "逃兵",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "逃兵",
@@ -2636,6 +2718,7 @@
    "cluster_id": "酒神节路人Ⅰ",
    "core": "酒神节路人",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "酒神节路人Ⅰ",
@@ -2664,6 +2747,7 @@
    "cluster_id": "酒馆居民Ⅰ",
    "core": "酒馆居民",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "酒馆居民Ⅰ",
@@ -2692,6 +2776,7 @@
    "cluster_id": "重塑追随者",
    "core": "重塑追随者",
    "n_entities": 3,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "重塑追随者",
@@ -2720,6 +2805,7 @@
    "cluster_id": "ONiON",
    "core": "ONiON",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "ONiON",
@@ -2742,6 +2828,7 @@
    "cluster_id": "临时工人Ⅰ",
    "core": "临时工人",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "临时工人Ⅰ",
@@ -2764,6 +2851,7 @@
    "cluster_id": "仆人Ⅰ",
    "core": "仆人",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "仆人Ⅰ",
@@ -2786,6 +2874,7 @@
    "cluster_id": "伯纳德",
    "core": "伯纳德",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "伯纳德",
@@ -2808,6 +2897,7 @@
    "cluster_id": "保卫队员Ⅰ",
    "core": "保卫队员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "保卫队员Ⅰ",
@@ -2830,6 +2920,7 @@
    "cluster_id": "偷渡乘客Ⅰ",
    "core": "偷渡乘客",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "偷渡乘客Ⅰ",
@@ -2852,6 +2943,7 @@
    "cluster_id": "僵尸Ⅰ",
    "core": "僵尸",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "僵尸Ⅰ",
@@ -2874,6 +2966,7 @@
    "cluster_id": "军官Ⅰ",
    "core": "军官",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "军官Ⅰ",
@@ -2896,6 +2989,7 @@
    "cluster_id": "军舰士兵Ⅰ",
    "core": "军舰士兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "军舰士兵Ⅰ",
@@ -2918,6 +3012,7 @@
    "cluster_id": "初级研究员Ⅰ",
    "core": "初级研究员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "初级研究员Ⅰ",
@@ -2940,6 +3035,7 @@
    "cluster_id": "剃刀”小队队员Ⅰ",
    "core": "剃刀”小队队员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "剃刀”小队队员Ⅰ",
@@ -2962,6 +3058,7 @@
    "cluster_id": "剧团成员Ⅰ",
    "core": "剧团成员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "剧团成员Ⅰ",
@@ -2984,6 +3081,7 @@
    "cluster_id": "努库泰澳人Ⅰ",
    "core": "努库泰澳人",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "努库泰澳人Ⅰ",
@@ -3006,6 +3104,7 @@
    "cluster_id": "努库泰澳信徒Ⅰ",
    "core": "努库泰澳信徒",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "努库泰澳信徒Ⅰ",
@@ -3028,6 +3127,7 @@
    "cluster_id": "参赛选手Ⅰ",
    "core": "参赛选手",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "参赛选手Ⅰ",
@@ -3050,6 +3150,7 @@
    "cluster_id": "同学Ⅰ",
    "core": "同学",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "同学Ⅰ",
@@ -3072,6 +3173,7 @@
    "cluster_id": "启明会”信众Ⅰ",
    "core": "启明会”信众",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "启明会”信众Ⅰ",
@@ -3094,6 +3196,7 @@
    "cluster_id": "围观新闻的基金会职员Ⅰ",
    "core": "围观新闻的基金会职员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "围观新闻的基金会职员Ⅰ",
@@ -3116,6 +3219,7 @@
    "cluster_id": "地痞Ⅰ",
    "core": "地痞",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "地痞Ⅰ",
@@ -3138,6 +3242,7 @@
    "cluster_id": "基金会分部成员Ⅰ",
    "core": "基金会分部成员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "基金会分部成员Ⅰ",
@@ -3160,6 +3265,7 @@
    "cluster_id": "基金会年轻职员Ⅰ",
    "core": "基金会年轻职员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "基金会年轻职员Ⅰ",
@@ -3182,6 +3288,7 @@
    "cluster_id": "士兵Ⅰ",
    "core": "士兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "士兵Ⅰ",
@@ -3204,6 +3311,7 @@
    "cluster_id": "失败的选民Ⅰ",
    "core": "失败的选民",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "失败的选民Ⅰ",
@@ -3226,6 +3334,7 @@
    "cluster_id": "女仆Ⅰ",
    "core": "女仆",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "女仆Ⅰ",
@@ -3248,6 +3357,7 @@
    "cluster_id": "孩子Ⅰ",
    "core": "孩子",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "孩子Ⅰ",
@@ -3270,6 +3380,7 @@
    "cluster_id": "守卫Ⅰ",
    "core": "守卫",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "守卫Ⅰ",
@@ -3292,6 +3403,7 @@
    "cluster_id": "安保人员Ⅰ",
    "core": "安保人员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "安保人员Ⅰ",
@@ -3314,6 +3426,7 @@
    "cluster_id": "宾客迈克",
    "core": "宾客迈克",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "宾客迈克",
@@ -3336,6 +3449,7 @@
    "cluster_id": "小队成员Ⅰ",
    "core": "小队成员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "小队成员Ⅰ",
@@ -3358,6 +3472,7 @@
    "cluster_id": "巡逻士兵Ⅰ",
    "core": "巡逻士兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "巡逻士兵Ⅰ",
@@ -3380,6 +3495,7 @@
    "cluster_id": "巡逻警察Ⅰ",
    "core": "巡逻警察",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "巡逻警察Ⅰ",
@@ -3402,6 +3518,7 @@
    "cluster_id": "成功的选民Ⅰ",
    "core": "成功的选民",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "成功的选民Ⅰ",
@@ -3424,6 +3541,7 @@
    "cluster_id": "投机者Ⅰ",
    "core": "投机者",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "投机者Ⅰ",
@@ -3446,6 +3564,7 @@
    "cluster_id": "拥趸Ⅰ",
    "core": "拥趸",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "拥趸Ⅰ",
@@ -3468,6 +3587,7 @@
    "cluster_id": "指针的旧组员Ⅰ",
    "core": "指针的旧组员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "指针的旧组员Ⅰ",
@@ -3490,6 +3610,7 @@
    "cluster_id": "沛城商贩Ⅰ",
    "core": "沛城商贩",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "沛城商贩Ⅰ",
@@ -3512,6 +3633,7 @@
    "cluster_id": "沛城居民Ⅰ",
    "core": "沛城居民",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "沛城居民Ⅰ",
@@ -3534,6 +3656,7 @@
    "cluster_id": "海军士兵Ⅰ",
    "core": "海军士兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "海军士兵Ⅰ",
@@ -3556,6 +3679,7 @@
    "cluster_id": "混混Ⅰ",
    "core": "混混",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "混混Ⅰ",
@@ -3578,6 +3702,7 @@
    "cluster_id": "游行的信徒Ⅰ",
    "core": "游行的信徒",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "游行的信徒Ⅰ",
@@ -3600,6 +3725,7 @@
    "cluster_id": "牙医”Ⅰ",
    "core": "牙医”",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "牙医”Ⅰ",
@@ -3622,6 +3748,7 @@
    "cluster_id": "狐狸",
    "core": "狐狸",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "狐狸",
@@ -3644,6 +3771,7 @@
    "cluster_id": "琼斯",
    "core": "琼斯",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "琼斯",
@@ -3666,6 +3794,7 @@
    "cluster_id": "瓦伦缇娜",
    "core": "瓦伦缇娜",
    "n_entities": 2,
+   "family_kind": "cross_lang_alias",
    "members": [
     {
      "eid": "瓦伦缇娜",
@@ -3688,6 +3817,7 @@
    "cluster_id": "破译员Ⅲ",
    "core": "破译员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "破译员Ⅲ",
@@ -3710,6 +3840,7 @@
    "cluster_id": "神秘学犯罪科警员Ⅰ",
    "core": "神秘学犯罪科警员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "神秘学犯罪科警员Ⅰ",
@@ -3732,6 +3863,7 @@
    "cluster_id": "租客",
    "core": "租客",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "租客",
@@ -3754,6 +3886,7 @@
    "cluster_id": "童子军Ⅰ",
    "core": "童子军",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "童子军Ⅰ",
@@ -3776,6 +3909,7 @@
    "cluster_id": "考察队员Ⅰ",
    "core": "考察队员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "考察队员Ⅰ",
@@ -3798,6 +3932,7 @@
    "cluster_id": "考评员Ⅰ",
    "core": "考评员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "考评员Ⅰ",
@@ -3820,6 +3955,7 @@
    "cluster_id": "舞厅男孩Ⅰ",
    "core": "舞厅男孩",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "舞厅男孩Ⅰ",
@@ -3842,6 +3978,7 @@
    "cluster_id": "舰长Ⅰ",
    "core": "舰长",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "舰长Ⅰ",
@@ -3864,6 +4001,7 @@
    "cluster_id": "街坊Ⅰ",
    "core": "街坊",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "街坊Ⅰ",
@@ -3886,6 +4024,7 @@
    "cluster_id": "裁判组成员Ⅰ",
    "core": "裁判组成员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "裁判组成员Ⅰ",
@@ -3908,6 +4047,7 @@
    "cluster_id": "见习执夜Ⅰ",
    "core": "见习执夜",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "见习执夜Ⅰ",
@@ -3930,6 +4070,7 @@
    "cluster_id": "贵妇人Ⅰ",
    "core": "贵妇人",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "贵妇人Ⅰ",
@@ -3952,6 +4093,7 @@
    "cluster_id": "车厢里的逃兵Ⅰ",
    "core": "车厢里的逃兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "车厢里的逃兵Ⅰ",
@@ -3974,6 +4116,7 @@
    "cluster_id": "追踪警员",
    "core": "追踪警员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "追踪警员",
@@ -3996,6 +4139,7 @@
    "cluster_id": "酒吧客人Ⅰ",
    "core": "酒吧客人",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "酒吧客人Ⅰ",
@@ -4018,6 +4162,7 @@
    "cluster_id": "重塑士兵",
    "core": "重塑士兵",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "重塑士兵",
@@ -4040,6 +4185,7 @@
    "cluster_id": "镇民Ⅰ",
    "core": "镇民",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "镇民Ⅰ",
@@ -4062,6 +4208,7 @@
    "cluster_id": "队员Ⅰ",
    "core": "队员",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "队员Ⅰ",
@@ -4084,6 +4231,7 @@
    "cluster_id": "集市守门者Ⅰ",
    "core": "集市守门者",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "集市守门者Ⅰ",
@@ -4106,6 +4254,7 @@
    "cluster_id": "骑士Ⅰ",
    "core": "骑士",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "骑士Ⅰ",
@@ -4128,6 +4277,7 @@
    "cluster_id": "高级理线师Ⅰ",
    "core": "高级理线师",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "高级理线师Ⅰ",
@@ -4150,6 +4300,7 @@
    "cluster_id": "黑帮手下Ⅰ",
    "core": "黑帮手下",
    "n_entities": 2,
+   "family_kind": "numbering",
    "members": [
     {
      "eid": "黑帮手下Ⅰ",

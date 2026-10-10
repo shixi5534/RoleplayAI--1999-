@@ -1,0 +1,86 @@
+{
+ "schema": "compendium_rag.p9_fanout_manifest/v1",
+ "tag": "w2-adjud",
+ "planned_at": "2026-10-10T20:29:35",
+ "graph_sha": "911bb538160db80e",
+ "qid_key": "cluster_id",
+ "n_batches": 2,
+ "n_qids_total": 10,
+ "batches": [
+  {
+   "batch_id": "adj_b01",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w2/in/adj_b01.json",
+   "n_qids": 5,
+   "qids": [
+    "重塑·信徒",
+    "护士Ⅰ",
+    "ONiON",
+    "伯纳德",
+    "刘医生"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w2/out/adj_b01_verdict.json"
+  },
+  {
+   "batch_id": "adj_b02",
+   "input_path": "data/compendium_rag/reports/p9_fanout/w2/in/adj_b02.json",
+   "n_qids": 5,
+   "qids": [
+    "宾客迈克",
+    "狐狸",
+    "琼斯",
+    "瓦伦缇娜",
+    "施瓦茨"
+   ],
+   "output_path": "data/compendium_rag/reports/p9_fanout/w2/out/adj_b02_verdict.json"
+  }
+ ],
+ "write_scope": [
+  "data/compendium_rag/reports/p9_fanout/w2-adjud.heartbeat.txt",
+  "data/compendium_rag/reports/p9_fanout/w2/out/adj_b01_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/w2/out/adj_b02_verdict.json"
+ ],
+ "protected_roots": [
+  "data/compendium_rag/graph.json",
+  "data/compendium_rag/reports/p9_entity_census.json",
+  "data/compendium_rag/reports/p9_fanout/w1/out",
+  "data/compendium_rag/reports/p9_fanout/w2/in"
+ ],
+ "protected": [
+  {
+   "path": "data/compendium_rag/graph.json",
+   "sha16": "911bb538160db80e",
+   "bytes": 11575840,
+   "mtime": "2026-10-10T09:46:00"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_entity_census.json",
+   "sha16": "17eb47f58a7f0e45",
+   "bytes": 117081,
+   "mtime": "2026-10-10T20:29:19"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b01_verdict.json",
+   "sha16": "e0833d3ff881b90f",
+   "bytes": 4213,
+   "mtime": "2026-10-10T20:27:20"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w1/out/adj_b02_verdict.json",
+   "sha16": "1484d8151c6a1082",
+   "bytes": 3866,
+   "mtime": "2026-10-10T20:27:17"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w2/in/adj_b01.json",
+   "sha16": "24dd31c575099f20",
+   "bytes": 5484,
+   "mtime": "2026-10-10T20:29:20"
+  },
+  {
+   "path": "data/compendium_rag/reports/p9_fanout/w2/in/adj_b02.json",
+   "sha16": "7789b8d4205281f3",
+   "bytes": 4225,
+   "mtime": "2026-10-10T20:29:20"
+  }
+ ]
+}
