@@ -50,8 +50,11 @@ ANSWER_RULE = (
 STAGE = os.environ.get("CBI_STAGE", "answers")
 PROBE_DIR = OUT_DIR.parent                       # reports/cbi/probe
 CBI_DIR = PROBE_DIR.parent                       # reports/cbi
-JIN = PROBE_DIR / "jin"
+# 判分批与答案分批的宽度各自独立：答案一份 10 条（含 6 块正文，60 KB 级），
+# 判分一条只带「答案 + 两句注入陈述」，放大到 20 条能把 500 样本压成 25 个代理。
+JIN = PROBE_DIR / os.environ.get("CBI_JIN_DIR", "jin")
 JOUT = PROBE_DIR / "jout"
+JPB = int(os.environ.get("CBI_JUDGE_PER_BATCH", str(PER_BATCH)))
 
 
 def load_answers() -> dict[str, dict]:
@@ -78,9 +81,9 @@ def build_judge_batches() -> int:
     ids = [i for i in samples if i in ans]
     JIN.mkdir(parents=True, exist_ok=True)
     n = 0
-    for bi in range(0, len(ids), PER_BATCH):
+    for bi in range(0, len(ids), JPB):
         items = []
-        for sid in ids[bi:bi + PER_BATCH]:
+        for sid in ids[bi:bi + JPB]:
             sm, a = samples[sid], ans[sid]
             items.append({
                 "sample_id": sid, "role": sm["perspective"],
@@ -96,7 +99,7 @@ def build_judge_batches() -> int:
         longest = max(len(ln) for ln in body.splitlines())
         if longest > MAX_LINE:
             raise SystemExit(f"[FATAL] 判分批超长行 {longest}")
-        f = JIN / f"jdg_b{bi // PER_BATCH + 1:02d}.json"
+        f = JIN / f"jdg_b{bi // JPB + 1:02d}.json"
         f.write_text(body, encoding="utf-8")
         json.loads(f.read_text(encoding="utf-8"))
         n += 1

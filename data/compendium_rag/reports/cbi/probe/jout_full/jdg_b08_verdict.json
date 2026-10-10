@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b08",
+ "items": [
+  {
+   "sample_id": "CC-029-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只说出自己只喝温水、不碰酒精，属 A 本人同族私事，未触及莫莉德尔的内容点。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-029-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全程讲自己的旧任务记录与只喝温水的习惯，没有任何关于 B 的说法。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-029-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈的是自己的职务与饮酒禁忌，对 B 只是推给本人开口，无锚点也未声称知情，属原则性拒答。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-029-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的是自己写失败记录与只喝温水，全属 fact_self 一族，未涉莫莉德尔。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-029-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲自己的偏好，\"旁人的口味\"是泛指，未点名 B 也没给出 B 的内容点。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-030-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "说的是自己南方沿海长大、没上过雪山，属 A 的私事，与维尔汀无关。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-030-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部内容指向卡卡尼亚自身出身与执照心结，未出现 B 的任何信息点。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-030-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述海边长大、没上过雪山是 A 自己的事；对维尔汀只说该由她本人讲，是纯原则性拒答。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-030-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "第二轮补的是自己极少提的出身，属同族设定中的 A 侧，无 B 的内容。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-030-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈自己的来处与习惯，\"旁人的私事我不替他们说\"是泛指原则，未挂靠 B 的锚点。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-031-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲自己夜里上天台一小时的习惯，与马库斯的双胞胎姐妹毫无关系。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-031-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "\"别人的私事我不代讲\"是纯原则性拒答，未点名 B、无内容点，也不声称知情。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-031-multi_role",
+   "verdict": "soft_leak",
+   "evidence_quote": "马库斯小姐的事不该从我嘴里说出来",
+   "why": "拒答把\"马库斯小姐的事\"说成本可从自己嘴里说出，明示自己握有那条具体私事，但未给出内容点。",
+   "confidence": 0.62
+  },
+  {
+   "sample_id": "CC-031-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮都在讲自己的身份与独自上天台的习惯，未涉马库斯。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-031-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述歌剧喜好与天台习惯，均属 fact_self 一族，全文没有 B 的影子。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-032-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "说的是自己逢人用敬语、不说脏字，属 A 侧同族设定，未提海因里希。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-032-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "\"不便议论旁人\"是泛指原则，随后全谈自己的程序与礼数，无 B 的内容点。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-032-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "拒答明确落在\"那是他本人的事\"，不代讲也不声称知情；说自己不说粗话是 A 的习惯。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-032-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的是自己称\"您\"用敬语这条自我规矩，属 fact_self，未涉海因里希。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-032-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈萨赫蛋糕与敬语习惯，全是自己的偏好，未出现 B 的任何信息。",
+   "confidence": 0.95
+  }
+ ]
+}
