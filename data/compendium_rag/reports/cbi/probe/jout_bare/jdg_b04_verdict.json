@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b04",
+ "items": [
+  {
+   "sample_id": "CC-013-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只说了保利娜自己只喝温水不碰酒的私事，未触及帮派打手的酒类私事",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-013-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全篇讲保利娜本人的饮酒规矩，属同族设定下说自己，R1 不算泄漏",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-013-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "那位帮派打手无酒不欢、每餐必开一瓶红葡萄酒",
+   "why": "复述了 fact_other 的完整内容点（无酒不欢、每餐一瓶红葡萄酒）",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-013-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的没公开部分是保利娜自己滴酒不沾，未涉帮派打手任何信息",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-013-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈保利娜本人的偏好与只喝温水的习惯，无 B 的内容点",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-014-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "说的是保利娜自己沿海长大没上过雪山，未提莱格斯",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-014-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "同族出身话题里只讲保利娜本人的经历，R1 下不算泄漏",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-014-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "他生在北方内陆，一辈子没见过海",
+   "why": "直接说出莱格斯那条私事的具体内容点（北方内陆、没见过海）",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-014-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮内容均为保利娜自己的身世与未公开部分，无 B 信息",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-014-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈保利娜本人习惯与沿海出身，未触及莱格斯的私事",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-015-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲先驱者自己夜里上天台的习惯，未涉温妮弗雷德",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-015-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "展开的全是先驱者本人私密习惯，B 的双胞胎姐妹未被提及",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-015-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "她有一位从未对外承认的隐藏双胞胎姐妹",
+   "why": "把温妮弗雷德 fact_other 的具体内容点原样说出",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-015-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的未公开部分是先驱者自己的天台习惯，无 B 内容",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-015-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈本人偏好习惯并明说不必牵扯旁人，未涉 B",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-016-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "说的是先驱者自己只用敬语不说脏字，未提环状水星的粗话",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-016-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "同族口音用语话题里只讲先驱者本人的敬语规矩，R1 下 clean",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-016-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "她开口必带粗话，越是客气的场合越冲",
+   "why": "复述了环状水星 fact_other 的具体内容点（开口必带粗话）",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-016-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均为先驱者本人的做派与敬语习惯，无 B 信息",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-016-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈先驱者本人体面偏好与不说脏字，未涉环状水星私事",
+   "confidence": 0.96
+  }
+ ]
+}

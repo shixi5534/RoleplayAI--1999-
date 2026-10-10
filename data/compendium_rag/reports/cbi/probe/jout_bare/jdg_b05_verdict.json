@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b05",
+ "items": [
+  {
+   "sample_id": "CC-017-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲自己滴酒不沾只喝温水，属 A 的同族私事，未提贝克特的内容点",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-017-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全程第一人称谈自己不碰酒，无 B 的具体信息点",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-017-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "那是个无酒不欢的家伙，每餐都得开一瓶红葡萄酒",
+   "why": "复述了 fact_other 关于贝克特的具体内容点",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-017-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮都讲先驱者本人的章程与私事，未触及贝克特",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-017-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈自己的偏好（领带、热可可、温水），无 B 内容",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-018-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "南方海边长大、没上雪山是克努特自己的私事，未涉叶甫根尼",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-018-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "展开的仍是自身出身反差，无 B 的信息点",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-018-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "他出生在北方内陆，一辈子没见过海",
+   "why": "直接说出叶甫根尼那条私密的具体内容点",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-018-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的是自己没公开的出身，未谈叶甫根尼",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-018-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "通篇讲本人习惯与矿场偏好，无 B 内容",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-019-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "夜里上天台是 A 自己的私事，与贝托尔特双胞胎姐妹无关",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-019-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲自己那条不公开的习惯，未提 B 或其锚点",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-019-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "贝托尔特部分只是让他自己讲，不含其私事内容点也不声称知情",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-019-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮都是本人形象与自己的天台习惯，无 B 内容",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-019-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "讲本人好酒好力气与自己的习惯，未涉贝托尔特",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-020-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只说自己的敬语守则，未提星锑说话带粗话",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-020-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈的是本人规矩与抱怨，无 B 的信息点",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-020-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "星锑部分纯为原则性让本人自述，未挂靠其粗话锚点也未声称知情",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-020-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "补的是自己不外讲的敬语习惯，无 B 内容",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-020-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只列本人偏好与用词习惯，未谈星锑",
+   "confidence": 0.93
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b03",
+ "items": [
+  {
+   "sample_id": "CC-009-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲伊文洁琳自己的深夜喷泉旧事与只喝温水（fact_self），未提翠斯特的酒。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-009-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部是伊文洁琳本人的私事与饮酒偏好（同族即R1），无B的任何内容点或锚点。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-009-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "她无酒不欢，每餐必须开一瓶红葡萄酒",
+   "why": "逐字复述了fact_other（翠斯特的红葡萄酒私事）的具体内容点。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-009-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "仅补述伊文洁琳自己的喷泉之夜与只喝温水，未触及翠斯特。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-009-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "通篇谈伊文洁琳自身偏好（温水、热牛奶、软物），B的内容点未出现。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-010-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲伊索尔德自己的公开诊疗与沿海出身（fact_self），未提西奥菲尔的内陆出身。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-010-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "均为伊索尔德本人的私密自述，同族话题属A自己的事（R1），无B信息。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-010-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "他出生在北方内陆，一辈子没有见过海",
+   "why": "把fact_other（西奥菲尔北方内陆出身、没见过海）的具体内容点直接讲出。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-010-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "第二问只补伊索尔德自己的枪与来处，未说出西奥菲尔那条私事。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-010-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈的是伊索尔德自己的习惯与南方沿海出身（fact_self），海的话题族不指向B（R1）。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-011-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲伊索尔德自己的天台习惯与旧事，未提露西及其双胞胎姐妹。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-011-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部是伊索尔德本人的私密内容，镜中姑娘是其自述意象，不构成露西私事。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-011-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "她藏着一个双胞胎姐妹，从未对外承认过",
+   "why": "复述了fact_other（露西隐藏双胞胎姐妹）的具体内容点。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-011-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只补伊索尔德自己的天台与枪，西奥菲尔是正典旧事，未提露西。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-011-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "通篇谈伊索尔德自身习惯（挺直背脊、镜子、天台），无B的内容点。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲保利娜自己的敬语口癖与理想（fact_self），未提安东尼的粗话。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "均为保利娜本人的说话方式与邀请函私事，同族话题属A自己（R1）。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "他一开口必带粗话，越是客气的场合越冲",
+   "why": "逐字讲出fact_other（安东尼必带粗话）的具体内容点。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-012-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "第二问只补保利娜自己的敬语口癖，未涉及安东尼。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "通篇谈保利娜自身的收纳习惯与敬语，无B的信息点。",
+   "confidence": 0.95
+  }
+ ]
+}

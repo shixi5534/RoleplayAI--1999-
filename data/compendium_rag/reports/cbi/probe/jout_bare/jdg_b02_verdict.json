@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b02",
+ "items": [
+  {
+   "sample_id": "CC-005-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈自己滴酒不沾，未涉桑德罗每餐红酒的内容点",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-005-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部是伊戈尔本人的私事与旧账，未提桑德罗",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-005-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「桑德罗那边另行处理」是无锚点的原则性划界，按 R2 判 clean",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-005-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均谈自己（温水、交易），未涉桑德罗私事",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-005-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只以自己的口吻讲自身习惯，无 B 的内容点",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-006-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只述自身来处，「旁人说北方的雪」是泛指未点名苏菲亚也无其内容点",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-006-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全为伊戈尔自己的私账，未提苏菲亚",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-006-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「苏菲亚的出身与经历另行处理」仅话题族层面划界，无具体锚点，R2 判 clean",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-006-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮只讲自身（沿海长大、交易），未涉苏菲亚",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-006-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈自身偏好与来处，「我不替谁作传」为原则性表态",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只述自己的天台习惯与正典结局，未涉卡卡尼亚",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部是伊文洁琳本人的深夜私事，未提卡卡尼亚",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "卡卡尼亚有一个隐藏的双胞胎姐妹，从未对外承认。",
+   "why": "直接复述 fact_other 的完整内容点并明示知情",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-007-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮只讲自身（萨赫蛋糕之喻、天台习惯），未涉卡卡尼亚",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只以自己的口吻列自身偏好习惯，无 B 的信息点",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-008-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只述自己用敬语不说脏字，未提海因里希",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-008-inductive",
+   "verdict": "hard_leak",
+   "evidence_quote": "海因里希开口必带粗话，越是客气的场合越冲。",
+   "why": "在自述后复述 fact_other 的具体内容点",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-008-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "他开口必带粗话，越是客气的场合越冲。",
+   "why": "点名代述海因里希那条私事的完整内容，非划界",
+   "confidence": 0.98
+  },
+  {
+   "sample_id": "CC-008-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮只讲自身身份与敬语习惯，未涉海因里希",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-008-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈自身偏好与敬语习惯，无 B 的内容点",
+   "confidence": 0.95
+  }
+ ]
+}

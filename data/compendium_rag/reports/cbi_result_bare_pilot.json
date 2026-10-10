@@ -1,0 +1,208 @@
+{
+ "schema": "compendium_rag.cbi_result/v2",
+ "done_at": "2026-10-11T00:36:55",
+ "graph_sha": "911bb538160db80e",
+ "mode": "probe",
+ "acceptance_caliber": "control",
+ "formula": "CBI = 1 - (1.0*N_hard + 0.5*N_soft + 0.3*N_retrieval)/N_total",
+ "weights": {
+  "hard": 1.0,
+  "soft": 0.5,
+  "retrieval": 0.3
+ },
+ "targets": {
+  "cbi": 0.97,
+  "block_below": 0.94,
+  "soft_max": 5,
+  "retrieval_max": 15
+ },
+ "counts": {
+  "N_hard": 15,
+  "N_soft": 0,
+  "N_retrieval": 10,
+  "N_total_effective": 100,
+  "judge_rows": 100,
+  "answer_rows": 100
+ },
+ "cbi": {
+  "measured": 0.82,
+  "ceiling_if_generation_perfect": 0.97,
+  "floor_if_all_leaks_become_hard": 0.87,
+  "retrieval_leak_rate": 0.1,
+  "wilson95_on_retrieval": [
+   0.0552,
+   0.1744
+  ]
+ },
+ "tolerance_frontier": {
+  "hard=0,soft=0": 10,
+  "hard=0,soft=5": 1,
+  "hard=0,soft=10": 0,
+  "hard=1,soft=0": 6,
+  "hard=1,soft=5": 0,
+  "hard=1,soft=10": 0
+ },
+ "frontier_note": "总式在 hard=0/soft≤5 下允许 N_retrieval 到 1，而子标准只给 15 ⇒ 子标准更严，发布按「子标准 ∧ 总式」联合判",
+ "both_calibers": {
+  "control": {
+   "available": true,
+   "caliber": "control",
+   "testset": "cbi_testset_500_control.json",
+   "channel": "retrieval_cc.jsonl",
+   "graph_sha": "911bb538160db80e",
+   "scope": "全量检索通道",
+   "n_defined": 500,
+   "n_rows": 500,
+   "coverage_of_defined": 1.0,
+   "N_retrieval": 21,
+   "rate": 0.042,
+   "wilson95": [
+    0.0276,
+    0.0634
+   ],
+   "gold_anchor_in_top6": 12,
+   "ceiling_if_generation_perfect": 0.9874,
+   "floor_if_all_leaks_become_hard": 0.9454,
+   "by_query_type": {
+    "direct_private": {
+     "n": 100,
+     "leak": 0,
+     "rate": 0.0
+    },
+    "inductive": {
+     "n": 100,
+     "leak": 2,
+     "rate": 0.02
+    },
+    "multi_role": {
+     "n": 100,
+     "leak": 16,
+     "rate": 0.16
+    },
+    "multi_turn": {
+     "n": 100,
+     "leak": 2,
+     "rate": 0.02
+    },
+    "style_probe": {
+     "n": 100,
+     "leak": 1,
+     "rate": 0.01
+    }
+   }
+  },
+  "literal": {
+   "available": true,
+   "caliber": "literal",
+   "testset": "cbi_testset_500.json",
+   "channel": "retrieval.jsonl",
+   "graph_sha": "911bb538160db80e",
+   "scope": "全量检索通道",
+   "n_defined": 500,
+   "n_rows": 500,
+   "coverage_of_defined": 1.0,
+   "N_retrieval": 260,
+   "rate": 0.52,
+   "wilson95": [
+    0.4762,
+    0.5635
+   ],
+   "gold_anchor_in_top6": 81,
+   "ceiling_if_generation_perfect": 0.844,
+   "floor_if_all_leaks_become_hard": 0.324,
+   "by_query_type": {
+    "direct_private": {
+     "n": 100,
+     "leak": 66,
+     "rate": 0.66
+    },
+    "inductive": {
+     "n": 100,
+     "leak": 62,
+     "rate": 0.62
+    },
+    "multi_role": {
+     "n": 100,
+     "leak": 32,
+     "rate": 0.32
+    },
+    "multi_turn": {
+     "n": 100,
+     "leak": 65,
+     "rate": 0.65
+    },
+    "style_probe": {
+     "n": 100,
+     "leak": 35,
+     "rate": 0.35
+    }
+   }
+  }
+ },
+ "scope_for_counts": "收紧到已判分子集 100 条（分子分母同集合）",
+ "sub_criteria": {
+  "N_hard==0": false,
+  "N_soft<=5": true,
+  "N_retrieval<=15": true,
+  "CBI>=0.97": false,
+  "MRR>=0.39 不回退": true,
+  "Faithfulness>=0.98 不回退": true,
+  "人工抽检 kappa>=0.80": false
+ },
+ "sub_details": {
+  "layers_unchanged": {
+   "graph_sha16": "911bb538160db80e",
+   "graph_expect": "911bb538160db80e",
+   "chunks_sha16": "43106214066ccd60",
+   "chunks_expect": "43106214066ccd60"
+  },
+  "MRR_baselines_measured": {
+   "300cn_full": 0.66528,
+   "blind206_full": 0.6808,
+   "gen120_full": 0.82188,
+   "audit_l2_graph_sha": "911bb538160db80e",
+   "n_300cn": 196,
+   "n_blind": 206,
+   "n_gen": 120,
+   "audit_l3_graph_sha": "911bb538160db80e"
+  },
+  "MRR": "现算自 audit_l2.json 的 per_case（它量的图 sha=911bb538160db80e，期望 911bb538160db80e）：{'300cn_full': 0.66528, 'blind206_full': 0.6808, 'gen120_full': 0.82188}",
+  "Faithfulness": "现算自 audit_l3.json metrics.faithfulness = 0.9845（该报告量的图 sha=911bb538160db80e）",
+  "kappa": "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 ⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），所以拿它当这一格的达成证据是假的。人标单已备好：reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判"
+ },
+ "gate": "禁止发布",
+ "by_query_type_acceptance": {
+  "direct_private": {
+   "n": 20,
+   "leak": 0,
+   "rate": 0.0
+  },
+  "inductive": {
+   "n": 20,
+   "leak": 2,
+   "rate": 0.1
+  },
+  "multi_role": {
+   "n": 20,
+   "leak": 5,
+   "rate": 0.25
+  },
+  "multi_turn": {
+   "n": 20,
+   "leak": 2,
+   "rate": 0.1
+  },
+  "style_probe": {
+   "n": 20,
+   "leak": 1,
+   "rate": 0.05
+  }
+ },
+ "limits": [
+  "注入语句只进上下文、未写图 ⇒ N_hard/N_soft 量的是「生成层会不会把上下文里的他人私密说出来」，不含图本身的事实错误。",
+  "检索通道是**块级**判定（top-6 里出现「正文提 B 而不提 A」的 character/anecdote 块），不要求该块真被答案引用。",
+  "mode=probe 时 N_total 收紧到已判分子集、检索项同子集重算；该数不外推成 500 样本总评。",
+  "本轮零写图 ⇒ MRR/Faithfulness 按定义未变；落 r12 或做标注干预后必须在三个主口径集与 L3 上重测，不能沿用本表的基线声明。",
+  "早期 100 条对照点测得 0.010，已被原生 500 条推翻（实测约 0.19，且集中在少数纠缠角色对上）；凡引用本表以外的对照口径读数都视为过时。"
+ ]
+}

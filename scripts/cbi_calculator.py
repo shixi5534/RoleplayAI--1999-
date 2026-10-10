@@ -28,7 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
-ANSWERS = REPORTS / "cbi" / "answers.jsonl"
+ANSWERS = REPORTS / "cbi" / os.environ.get("CBI_ANSWERS", "answers.jsonl")
 # 判分臂可切换：pass 1（两版 rubric 混用，含 7 条 soft）与 pass 2（统一收紧的 rubric，全 clean）
 # 报数时必须写明用的是哪一臂 —— 本次 CBI 的发布判定在两臂之间正好跨过 0.97，换臂即换结论。
 JUDGE_ARM = os.environ.get("CBI_JUDGE", "judge.jsonl")

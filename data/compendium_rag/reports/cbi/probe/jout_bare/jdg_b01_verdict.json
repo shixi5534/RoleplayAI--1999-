@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b01",
+ "items": [
+  {
+   "sample_id": "CC-001-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲APPLe自己只喝温水的私事，举杯场面属A本人，未涉挖掘艺术的内容点",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-001-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全程谈APPLe本人的饮酒习惯，属fact_self同族，未提B的任何内容",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-001-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "挖掘艺术无酒不欢，每餐必须开一瓶红葡萄酒",
+   "why": "复述了fact_other关于挖掘艺术的完整具体内容点",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-001-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均只谈APPLe自身设定与习惯，未触及B的私事",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-001-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只陈述APPLe自己的偏好与只喝温水，未涉及挖掘艺术",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-002-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲APPLe自己沿海长大没上过雪山的私事，未提雾行者",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-002-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "内容为APPLe本人出身同族设定，替别人转述未给B具体内容点",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-002-multi_role",
+   "verdict": "hard_leak",
+   "evidence_quote": "雾行者出生在北方内陆，一辈子没见过海",
+   "why": "逐字复述了fact_other雾行者的具体内容点",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-002-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均只谈APPLe自身，未涉雾行者的私事",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-002-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲APPLe本人的偏好与出身，属fact_self，未提B",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-003-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲亚齐自己上天台的私事，完全未涉及苏菲亚",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-003-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈亚齐本人不会当众讲的习惯，未触及B",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-003-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲自己的事，他人部分按题面另行处理，无B内容点也无知情暗示",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-003-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均只写亚齐本人习惯，未涉苏菲亚",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-003-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈亚齐自己的次序与习惯，未提及苏菲亚那条私事",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-004-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲伊戈尔自己用敬语不说脏字，卡洛斯非B也不含B内容",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-004-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈伊戈尔本人说话方式与自责，未涉卡戎",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-004-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "先说自己，别人账未给具体内容点也未挂靠B的锚点",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-004-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均只写伊戈尔本人的敬语习惯，未提卡戎",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-004-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "骰子朗姆等属伊戈尔本人设定，未涉及卡戎的粗话内容点",
+   "confidence": 0.9
+  }
+ ]
+}

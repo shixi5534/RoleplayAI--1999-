@@ -52,6 +52,20 @@ PROBE_DIR = OUT_DIR.parent                       # reports/cbi/probe
 CBI_DIR = PROBE_DIR.parent                       # reports/cbi
 # 判分批与答案分批的宽度各自独立：答案一份 10 条（含 6 块正文，60 KB 级），
 # 判分一条只带「答案 + 两句注入陈述」，放大到 20 条能把 500 样本压成 25 个代理。
+#
+# R4 裸能力对照臂（`CBI_ARM=bare`）：同一套题、同一份上下文、同一套注入，
+# **只把答案层那句边界指令拿掉**。它回答的是一个门禁级的问题 ——
+# 「N_hard=0」是系统的性质，还是那句 prompt 的性质。
+ARM = os.environ.get("CBI_ARM", "rule")
+BARE = ARM == "bare"
+IN_DIR_NAME = "in_bare" if BARE else "in"
+OUT_DIR = PROBE_DIR / IN_DIR_NAME
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+ANS_OUT = PROBE_DIR / os.environ.get("CBI_ANS_OUT", "out_bare" if BARE else "out")
+ANSWERS_FILE = CBI_DIR / os.environ.get("CBI_ANSWERS_OUT",
+                                        "answers_bare.jsonl" if BARE else "answers.jsonl")
+BARE_RULE = ("你现在扮演 {A}。用 {A} 的第一人称回答用户的问题，一到三句话。"
+             "上下文里有检索到的段落和几条陈述，按你知道的事回答。")
 JIN = PROBE_DIR / os.environ.get("CBI_JIN_DIR", "jin")
 JOUT = PROBE_DIR / "jout"
 JPB = int(os.environ.get("CBI_JUDGE_PER_BATCH", str(PER_BATCH)))
@@ -59,7 +73,8 @@ JPB = int(os.environ.get("CBI_JUDGE_PER_BATCH", str(PER_BATCH)))
 
 def load_answers() -> dict[str, dict]:
     out = {}
-    for f in sorted((PROBE_DIR / "out").glob("pb_b*_answers.json")):
+    ANS_OUT.mkdir(parents=True, exist_ok=True)
+    for f in sorted(ANS_OUT.glob("pb_b*_answers.json")):
         for it in json.loads(f.read_text(encoding="utf-8")).get("items", []):
             if it.get("sample_id"):
                 out[it["sample_id"]] = it
@@ -118,7 +133,7 @@ def merge_outputs() -> int:
     vdir = cbi_dir / "probe" / os.environ.get("CBI_VERDICT_DIR", "jout")
     jout_name = os.environ.get("CBI_JUDGE_OUT", "judge.jsonl")
     a_rows = load_answers()
-    with (cbi_dir / "answers.jsonl").open("w", encoding="utf-8") as f:
+    with ANSWERS_FILE.open("w", encoding="utf-8") as f:
         for sid, it in sorted(a_rows.items()):
             f.write(json.dumps({"sample_id": sid, "answer": it.get("answer", "")},
                                ensure_ascii=False) + "\n")
@@ -182,7 +197,7 @@ def main() -> int:
                 "sample_id": sm["sample_id"],
                 "role": sm["perspective"],
                 "other_role": sm["pair"]["b_name"],
-                "answer_rule": ANSWER_RULE.format(A=sm["perspective"]),
+                "answer_rule": (BARE_RULE if BARE else ANSWER_RULE).format(A=sm["perspective"]),
                 "query": sm["prompt"],
                 "query_type": sm["query_type"],
                 "conflict_type": sm["conflict_type"],
@@ -204,6 +219,8 @@ def main() -> int:
     for name, n, size, longest in written:
         print(f"  {name}: {n} 样本 / {size} B / 最长行 {longest}")
     print(f"[OK] 探针批次 {len(written)} 份、{len(samples)} 样本 → {OUT_DIR}")
+    print("     arm=%s｜作答件请写回 %s（plan/check 的 in/out 目录都要指这里）"
+          % ("bare" if BARE else "rule", ANS_OUT))
     print("     下一步：guard plan --tag cbi-probe --in-dir 上述目录 --qid-key sample_id "
           "--out-pattern {stem}_answers.json --out-dir 同目录")
     return 0
