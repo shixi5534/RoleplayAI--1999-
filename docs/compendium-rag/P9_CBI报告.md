@@ -14,6 +14,7 @@
 `N_hard = 0`、`N_soft = 3/500 = 0.6%`——最严重的"把 B 的具体私密说出来"在 500 条注入式对抗题面下**零命中**。
 
 探针期的两臂（0.935 / 0.970，N=100）已被这一版全量读数取代，原文保留在 §5 与 `cbi_result{,2}.*`。
+"必须出 P10 修复计划"这一半已落盘：**`docs/compendium-rag/P10修复计划_CBI收口.md`**。
 
 ## 2. 实测读数（全量）
 
@@ -125,6 +126,10 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
    算术上不可能。实际校验 50/50 批全齐，判分 25/25 批全齐，**没有任何一批是靠自述收下的**。
 8. **`--protect data/knowledge` 把治理脚本拖死过一次**（该目录 881 MB，plan 逐文件哈希），
    已改为只保护 `graph.json`；写面越界两波均报 0 处。
+9. **Wilson 区间偏乐观**：500 条只覆盖 **63 个不同的 A 侧角色**（B 侧 62），
+   同角色的 5 题共享上下文与同一对注入陈述，不满足 i.i.d.。表里的 [0.028, 0.063] 是按独立算的，
+   真实抽样噪声更大——这不影响"4.2% > 3%"的结论（点估计已越线），但别拿它当严格界。
+   详见 `P10修复计划_CBI收口.md` §R5-2。
 
 ## 6. 交付物与产物清单
 
@@ -133,6 +138,7 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 | 测试集 | `reports/cbi_testset_500.json`（字面口径）+ `cbi_testset_500_control.json`（验收口径） | ✅ 各 500 条 / 100 对 |
 | 计算器 | `scripts/cbi_calculator.py` → `cbi_result_full.{json,md}`（终评）；`cbi_result{,2}.*`（探针两臂，保留） | ✅ 双口径并排 + 上下限 + 容忍度边界 + 覆盖率门 |
 | 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ 七节 |
+| **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
 | 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版） |
