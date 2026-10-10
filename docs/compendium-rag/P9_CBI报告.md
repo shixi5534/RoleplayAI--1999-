@@ -48,7 +48,9 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 
 ### 2.2 答案通道（500 样本全量，`mode=full`）
 
-分子分母同集合：500 条作答 + 500 条判分，检索项也在这 500 条上取（=21 条）。
+分母与分子**同集合**，这条现在是查过的：测试集 / 答案件 / 判分件 / 检索件四者的
+`sample_id` 集合**逐一相等**（各 500，缺 0 多 0），第二臂的 52 条是其真子集。
+所以 CBI 的分子分母来自同一个 500 条集合，没有"100 的分子去除 500"那种混集合。
 
 | 量 | 读数 | 子标准 | 判 |
 | --- | --- | --- | --- |
@@ -157,13 +159,15 @@ Faithfulness 同样改成从 `audit_l3.json metrics.faithfulness` 现读（0.984
 1. **人标 50 条随机行** ⇒ 补上 κ 这一格（本轮唯一还缺的闸门）。
 2. **把 N_retrieval 从 21 压到 ≤15**，且要压得有意义 ⇒ 只能动检索侧的访问控制：
    `owner`/`visibility` 边标注 + Canon/Fandom 双轨隔离（预注册册 §5 的 B1–B4）。
-   **这条路今天实测判负**（判定书 `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md`）：
-   300cn 集全量 196 题跑满，角色域 **Δ MRR@10 = −0.1296**（全集 −0.1012），是预注册
-   0.02 回退线的 5–6.5 倍；误伤全部来自**转述型金标**（占角色域题 56.2%，那批 −0.2424，
-   非转述型 +0.0151 不受损），每题平均挡掉 5.34/10 槽、39 题从命中掉到零命中；
-   "该章出现过即可见"的松键只好 0.018 ⇒ **键选错了，不是参数没调好**。
-   与 P3 角色域影子判负同向且更严（两次独立证据），所以我不建议再试第三种代理键，
-   也不建议现在批准这项写图。
+   **这条路今天实测判负**（判定书 `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md`，三套题集全量跑满）：
+   角色域 **Δ MRR@10 = 300cn −0.1296 ／ blind206 −0.0993 ／ gen120 +0.0016**，平均 **−0.0834**，
+   最差集越预注册 0.02 回退线 **4–6.5 倍**；误伤**只来自转述型金标**
+   （三套同向：−0.2424 ／ −0.4006 ／ −0.1506，非转述型一律 ≈ +0.02），
+   "该章出现过即可见"的松键只挽回 0.014–0.025 ⇒ **键选错了，不是参数没调好**。
+   gen120 的近零**不是翻案证据**：它的 hit 从 1.0 掉到 0.9573（5 题被挡到零命中），
+   只是转述占比最低（22.2%）—— 损害与转述占比单调相关。
+   三套 base MRR 与 `audit_l2.json` 的 r11 读数逐位相同 ⇒ 同口径复现，不是换了尺子。
+   与 P3 角色域影子判负同向（两次独立证据）⇒ 不建议再试第三种代理键，也不建议现在批准这项写图。
    **这些全是写图操作，需逐次批准**（task #4 的 8 条 `merge_entities`、task #5 的边界标注干预实验都还挂着）。
    压不下去的替代路径是承认该子标准在当前量具下把"检索能力"记成了缺陷——那要改的是判据定义，
    而改判据必须先像你 2026-10-10 的裁决那样**先分口径**，不是把 3% 改成 5%。
@@ -234,7 +238,9 @@ Faithfulness 同样改成从 `audit_l3.json metrics.faithfulness` 现读（0.984
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
 | 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标 |
 | 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
-| R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 代价读数 16.0% 丢槽 |
+| R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}`、`owner_edge_scope.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 写图规模 96.2% 多主 |
+| R2 误伤判定书 | `scripts/compendium_rag_p10_visibility_shadow.py` → `reports/cbi/visibility_shadow.{json,md}` ＋ `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md` | ✅ 三套全量 522/522，strict/scene **均判负**（最差 ΔMRR −0.1296） |
+| 硬泄漏机械校查 | `scripts/cbi_hardleak_screen.py` → `reports/cbi/hardleak_screen.{json,md}` | ✅ 跑完；功率自查 0/500 ⇒ `usable_as_evidence=false`，**不作** `N_hard=0` 的佐证 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版） |
 | 通道产物 | `reports/cbi/retrieval{,_cc}.jsonl`、`probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验 |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐 |
