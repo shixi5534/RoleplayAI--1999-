@@ -287,6 +287,22 @@ PRIV_GOLD = AUDIT_DIR / "l4_privacy_gold.json"
 CONFUSE_N = 30
 DRIFT_CHARACTERS = 8
 DRIFT_TURNS = 50
+# pi=6/7 card-only 身份探针的逐角色 <对象>。r11 实测：这些对象在 card 内有关系，
+# 但自己三个检查点的 history 里查不到（见
+# docs/compendium-rag/audit/P8_P5判定书修正方案_20261010.md §2.2）。
+# 必须避开（history 里出现过，会污染 card-only 性）：第一防线学校／图书馆／
+# 康斯坦丁／洛伦兹研究所／教典／便携式软盘（软盘）／唱片／巴特锡公园。
+CARD_ONLY_REL_OBJECTS = {
+    "维尔汀": "牛津街书店", "十四行诗": "联合委员会", "星锑": "康利庭",
+    "红弩箭": "圣洛夫基金会", "APPLe": "天堂使徒", "X": "戈德堡机械",
+    "塞梅尔维斯": "七十七行动小队", "37": "咖啡豆",
+}
+# deflection_rate 的推脱话术（判定书 L26-27 的豁免口径）。只在判分器没给
+# `deflect` 0/1 时作兜底：判词文本命中任一话术记 1，判词存在但无话术视为不可判。
+DEFLECT_MARKERS = ("记不清", "不便说", "不知道", "没这回事", "不太清楚",
+                   "想不起来", "无可奉告", "说不准")
+# 每角色每检查点的 card-only 身份探针数（pi=6 别名保真 + pi=7 关系保真）
+ANCHOR_PROBES_PER_CHAR = 2
 
 
 def mode_confuse(args) -> int:
@@ -432,8 +448,31 @@ def _drift_card(graph, eid: str, name: str) -> str:
     return "\n".join(lines)
 
 
+def _anchor_flags(row: dict) -> tuple[int, int | None]:
+    """探针 6/7 的两个 0/1 读数（判定端写法见 JUDGE_INSTRUCTIONS.md）。
+
+    `anchor_hit`：判定端显式给了 0/1 就用它；否则从 `drift` 判词里找正/负向
+    措辞兜底；判词缺失视为**未命中**（0）——这是防放水的保守口径。
+    `deflect`：判定端显式给了 0/1 就用它；否则在 `drift` 判词里匹配推脱话术，
+    判词存在但无话术 → 记 0（正常作答）；判词缺失 → None（不可判，见
+    `deflection_unknown_n`）。本函数只做读数，不影响 persona 分档。
+    """
+    note = str(row.get("drift") or "")
+    hit = row.get("anchor_hit")
+    if not isinstance(hit, (int, float, bool)):
+        neg = ("查无出处", "无出处", "没有出处", "未答", "答不出", "不一致")
+        pos = ("有出处", "命中", "一致", "相符", "正确")
+        hit = 0 if any(w in note for w in neg) else (
+            1 if any(w in note for w in pos) else 0)
+    defl = row.get("deflect")
+    if not isinstance(defl, (int, float, bool)):
+        defl = (1 if any(w in note for w in DEFLECT_MARKERS)
+                else (0 if note else None))
+    return (1 if hit else 0), (None if defl is None else (1 if defl else 0))
+
+
 def mode_drift(args) -> int:
-    """角色漂移：50 轮长上下文回放 + 第 1/25/50 轮末各 5 道人设探针。"""
+    """角色漂移：50 轮长上下文回放 + 第 1/25/50 轮末各 7 道人设探针。"""
     from compendium_rag import pipeline as P
     s, rep, kb = _base_kb()
     graph = kb.graph
@@ -442,11 +481,16 @@ def mode_drift(args) -> int:
 
     if args.prep:
         chars = L4._top_characters(graph)[:DRIFT_CHARACTERS]
+        # pi=1..5 原有探针一字不改，保证与 v8 的 qid 逐位可比；
+        # pi=6/7 是 card-only 身份探针，不进 persona，走独立读数（见 collect）。
         probes = ["你是谁？用一句话说清自己的立场。",
                   "你最在意的人是谁？为什么？",
                   "你所属的组织或阵营是？你和它的关系如何？",
                   "你经历过最沉重的一件事是什么？",
-                  "现在的你，最想做的一件事是什么？"]
+                  "现在的你，最想做的一件事是什么？",
+                  "你的档案里记着好几个称法。请把它们逐个说清楚：别人怎么称呼你，"
+                  "正典档案又是怎么记的？",
+                  "关系册上记着你和「{obj}」之间有往来。那是什么？请按档案说。"]
         n_items, n_chars = 0, 0
         for e in chars:
             lines = []
@@ -462,13 +506,14 @@ def mode_drift(args) -> int:
             card = _drift_card(graph, e.eid, e.name)
             if not card:
                 continue
+            obj = CARD_ONLY_REL_OBJECTS.get(e.name, "")
             n_chars += 1
             for cp in (1, 25, 50):
                 items = [{"qid": f"dr-{e.name}-{cp}-{pi}",
                           "checkpoint": cp,
                           "card": card,
                           "history": "\n".join(turns[:cp]),
-                          "query": pr}
+                          "query": pr.format(obj=obj)}
                          for pi, pr in enumerate(probes, 1)]
                 p = DRIFT_DIR / f"dr_{e.name}_{cp:02d}.json"
                 p.write_text(json.dumps({"character": e.name,
@@ -476,7 +521,7 @@ def mode_drift(args) -> int:
                                          indent=1), encoding="utf-8")
                 n_items += len(items)
         print(f"drift prepare：{n_items} 题（{n_chars} 角色 × 3 检查点 "
-              f"× 5 探针，人设卡三检查点同文）→ {DRIFT_DIR}")
+              f"× 7 探针，人设卡三检查点同文）→ {DRIFT_DIR}")
         return 0
 
     if args.judge_prep:
@@ -499,7 +544,7 @@ def mode_drift(args) -> int:
                          "history_chars": len(a["history"]),
                          "query": a["query"], "answer": got["answer"]})
             rows[-1]["_grp"] = m
-        # 一批 = 一个角色×一个检查点（5 题），judge 只看同组，避免跨角色串味
+        # 一批 = 一个角色×一个检查点（7 题），judge 只看同组，避免跨角色串味
         groups: dict[str, list] = {}
         for r in rows:
             groups.setdefault(r.pop("_grp"), []).append(r)
@@ -516,6 +561,11 @@ def mode_drift(args) -> int:
         return 0
 
     scores: dict[str, dict[str, list]] = {}
+    anchor_hits, anchor_n = 0, 0       # 命中数 / 实际判到的探针 6+7 题数（覆盖率）
+    deflect_yes, deflect_known = 0, 0  # 推脱题数 / 可判推脱的题数
+    anchor_by_char: dict[str, dict[str, int]] = {}
+    # 口径分母（P8 方案 §2.1）：8 角色 × 3 检查点 × 2 题 = 48
+    anchor_expected = DRIFT_CHARACTERS * 3 * ANCHOR_PROBES_PER_CHAR
     for p in sorted(DRIFT_DIR.glob("jdg_*.json")):
         for r in json.loads(p.read_text(encoding="utf-8")).get("items", []):
             qid = r["qid"]                      # dr-<角色>-<检查点>-<探针>
@@ -523,6 +573,26 @@ def mode_drift(args) -> int:
             if len(parts) < 4:
                 continue
             _pre, name, cp, _pi = parts[0], "-".join(parts[1:-2]), parts[-2], parts[-1]
+            try:
+                pi = int(_pi)
+            except ValueError:
+                continue
+            if pi >= 6:
+                # card-only 身份探针：独立读数，**绝不**进 scores/degraded，
+                # 否则 persona 均值会被这两题的分数拉偏。
+                h, d = _anchor_flags(r)
+                anchor_n += 1
+                anchor_hits += h
+                if d is not None:
+                    deflect_known += 1
+                    deflect_yes += d
+                st = anchor_by_char.setdefault(
+                    name, {"n": 0, "hits": 0, "deflect": 0, "deflect_known": 0})
+                st["n"] += 1
+                st["hits"] += h
+                st["deflect_known"] += 0 if d is None else 1
+                st["deflect"] += 0 if d is None else d
+                continue
             if not isinstance(r.get("persona"), (int, float)):
                 continue
             scores.setdefault(name, {}).setdefault(cp, []).append(
@@ -554,6 +624,31 @@ def mode_drift(args) -> int:
     n_complete = sum(1 for cps in scores.values()
                      if cps.get("1") and cps.get("50"))
     rep["metrics"]["characters_comparable"] = n_complete
+    # card-only 身份探针的独立读数（口径见 P8 方案 §2.1；不进 persona）。
+    # 向后兼容：本代批文件里没有 pi>=6 的题时两个读数均为 None，不报错。
+    # 分子/分母写成显式整数，便于报告里逐项核对：
+    #   hit_rate        = card_only_probe_hits / card_only_probe_n
+    #                     （n=48 为满格；n<48 说明本代批文件缺这些题或未被判分）
+    #   deflection_rate = deflection_n / deflection_known_n
+    rep["metrics"]["card_only_probe_hit_rate"] = (
+        round(anchor_hits / anchor_n, 4) if anchor_n else None)
+    rep["metrics"]["deflection_rate"] = (
+        round(deflect_yes / deflect_known, 4) if deflect_known else None)
+    rep["metrics"]["card_only_probe_n"] = anchor_n
+    rep["metrics"]["card_only_probe_hits"] = anchor_hits
+    rep["metrics"]["card_only_probe_expected_n"] = anchor_expected
+    rep["metrics"]["deflection_n"] = deflect_yes
+    rep["metrics"]["deflection_known_n"] = deflect_known
+    # 满格应判 48 题里有几题没能作为「推脱 0/1」参与分母：既含完全没判的题，
+    # 也含判了但判词为空、无法从话术兜底判定的题。此数 >0 时 deflection_rate
+    # 只覆盖可判子集，报告须与 card_only_probe_expected_n 并排读。
+    rep["metrics"]["deflection_unknown_n"] = anchor_expected - deflect_known
+    rep["metrics"]["anchor_by_character"] = {
+        k: {"n": v["n"], "hits": v["hits"],
+            "hit_rate": round(v["hits"] / v["n"], 4) if v["n"] else None,
+            "deflection_rate": (round(v["deflect"] / v["deflect_known"], 4)
+                                if v["deflect_known"] else None)}
+        for k, v in sorted(anchor_by_char.items())}
     g = rep["gate_verdicts"]
     g.append(AC.gate_verdict(
         "L5.2 角色漂移退化率（50 轮长上下文回放代理）", "≤0.10", rate,
@@ -571,6 +666,15 @@ def mode_drift(args) -> int:
         "正典库未接入对话运行时；登记豁免并从层分母剔除", "生成层"))
     AC.write_report(REPORTS_DIR / "audit_adv_drift.json", rep)
     print(f"drift collect：{len(scores)} 角色，退化 {len(degraded)} → {rate}")
+    _ahr = rep["metrics"]["card_only_probe_hit_rate"]
+    _dfl = rep["metrics"]["deflection_rate"]
+    if _ahr is None and _dfl is None:
+        print(f"card-only 探针：本代批文件无 pi>=6 的题 → 两读数 N/A（0/0）")
+    else:
+        print(f"card-only 探针：命中 {rep['metrics']['card_only_probe_hits']}"
+              f"/{rep['metrics']['card_only_probe_n']}"
+              f" → hit_rate {_ahr}；推脱 {rep['metrics']['deflection_n']}"
+              f"/{rep['metrics']['deflection_known_n']} → {_dfl}")
     return 0
 
 

@@ -1,0 +1,363 @@
+{
+ "schema": "audit.l4_worldview_review_input/v1",
+ "task": "逐概念判定其 desc 与 definition_edges 是否互斥/自相矛盾",
+ "batch": "b06",
+ "items": [
+  {
+   "concept": "阿其翁",
+   "type": "概念",
+   "desc": "规矩之岛上会咬人的生物",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "重塑之手",
+     "evidence": "刚刚的阿其翁，真身就是重塑之手",
+     "chunk_id": "mainline__105_洞穴的囚徒:19.0.1"
+    }
+   ]
+  },
+  {
+   "concept": "阿兹特克",
+   "type": "概念",
+   "desc": "举行新火仪式的古老文明",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "《混沌能量》的作者洛伦兹蝴蝶",
+     "evidence": "在阿兹特克神话传说中，蝴蝶与蜂鸟，是死亡与重生的象征",
+     "chunk_id": "activity__35101_绿松石蛇俱乐部:18.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "阿兹特克神话",
+   "type": "概念",
+   "desc": "决定灵魂来世的古老信仰",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "墨西哥神话大型壁画",
+     "evidence": "这十只环绕在画面上的蜂鸟与蝴蝶，代表着十个复生的灵魂",
+     "chunk_id": "activity__35101_绿松石蛇俱乐部:18.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "险道兽",
+   "type": "概念",
+   "desc": "被方相氏降伏并更名的神兽",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "强梁",
+     "evidence": "你的“险道兽强梁”",
+     "chunk_id": "activity__25101_唐人街影话:10.2.1"
+    }
+   ]
+  },
+  {
+   "concept": "陪伴与教育的训示",
+   "type": "概念",
+   "desc": "陪伴与教育乃成长的必要过程",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "你情我愿的谎言",
+     "evidence": "这只是你情我愿的谎言",
+     "chunk_id": "appendix_unbound__032_2_2_荒原经营驯化_坦南特:0.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "集体潜意识",
+   "type": "概念",
+   "desc": "所有人共有的意识之湖",
+   "aliases": [
+    "可收集意识"
+   ],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "迷思海",
+     "evidence": "我们发现了人类集体潜意识之海——迷思海的存在",
+     "chunk_id": "activity__35101_绿松石蛇俱乐部:17.1.0"
+    }
+   ]
+  },
+  {
+   "concept": "霍伊图克",
+   "type": "概念",
+   "desc": "明黄质地脉痕迹的掘矿魔精",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "北方哨歌",
+     "evidence": "它们的触觉比霍伊图克敏锐得多了",
+     "chunk_id": "activity__18101_再见_来亚什基:8.2.0"
+    }
+   ]
+  },
+  {
+   "concept": "非对称核素R",
+   "type": "概念",
+   "desc": "与暴雨水滴成分一致、呈分叉结构的核素",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "术式核心",
+     "evidence": "这些区域的神秘学波动与霍夫曼结生效时的波动类似",
+     "chunk_id": "activity__36101_人们向何处去:12.2.0"
+    }
+   ]
+  },
+  {
+   "concept": "风之系结",
+   "type": "概念",
+   "desc": "使风静止的异常凝滞点",
+   "aliases": [
+    "风结"
+   ],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "芦草结",
+     "evidence": "风从她的身边呼啸而过，被牵引着汇往未知的远处",
+     "chunk_id": "activity__34101_不老春:3.0.2"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "风的网络",
+     "evidence": "难怪城里会有风网扰动",
+     "chunk_id": "activity__34101_不老春:20.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "风的网络",
+   "type": "概念",
+   "desc": "会因异常而迟滞的风之网络",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "风之系结",
+     "evidence": "难怪城里会有风网扰动",
+     "chunk_id": "activity__34101_不老春:20.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "风网",
+   "type": "概念",
+   "desc": "乐团维系之物",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "歌唱家的管风琴",
+     "evidence": "它不仅仅是个风网的组件，还是无数天赋最后的和鸣",
+     "chunk_id": "appendix_unbound__069_3_7_地牢剧情:1.1.0"
+    }
+   ]
+  },
+  {
+   "concept": "鬼",
+   "type": "概念",
+   "desc": "只是一种集体想象和癔症",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "红丝线",
+     "evidence": "两只拇指被一根红线紧紧缠住",
+     "chunk_id": "anecdote__1921_鬼马探灵记:3.2.0"
+    }
+   ]
+  },
+  {
+   "concept": "魔精",
+   "type": "概念",
+   "desc": "需要被引导成长的魔精",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "穆姆",
+     "evidence": "在受到惊吓时，会从头部的呼吸角产生一种形似于雾的气体",
+     "chunk_id": "activity__21101_77号往事:1.0.1"
+    },
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "连环密室命案",
+     "evidence": "他被自己违法饲养的魔精撕成了碎片",
+     "chunk_id": "activity__35101_绿松石蛇俱乐部:14.0.4"
+    },
+    {
+     "dir": "out",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "新巴别塔魔精公司",
+     "evidence": "我们的魔精能够协助我们生产出许多东西",
+     "chunk_id": "appendix_unbound__025_2_2_荒原经营引导剧情:1.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "魔精糖果",
+     "evidence": "糖果能够将不同种类的魔精吸引到你身边",
+     "chunk_id": "appendix_unbound__025_2_2_荒原经营引导剧情:3.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "魔精的教典",
+     "evidence": "这是属于魔精的教典吗？",
+     "chunk_id": "appendix_unbound__026_2_2_荒原经营驯化_37:0.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "6",
+     "evidence": "就像海岛的鸟儿。",
+     "chunk_id": "appendix_unbound__027_2_2_荒原经营驯化_6:1.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "命运的缰绳",
+     "evidence": "同命运牵引我们每个人的并无不同。",
+     "chunk_id": "appendix_unbound__027_2_2_荒原经营驯化_6:2.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "魔精的体重",
+     "evidence": "你的体重已经比我重好几十倍了。",
+     "chunk_id": "appendix_unbound__028_2_2_荒原经营驯化_APPLe:1.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "更大胆的想法",
+     "evidence": "我们还需要一些更大胆的想法",
+     "chunk_id": "appendix_unbound__046_2_2_荒原经营驯化_温妮弗雷德:2.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "科学的训练方式",
+     "evidence": "一种科学的训练方式",
+     "chunk_id": "appendix_unbound__055_2_2_荒原经营驯化_露西:1.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "北方哨歌的坚持",
+     "evidence": "坚持下去！",
+     "chunk_id": "appendix_unbound__059_2_5_荒原经营驯化_北方哨歌:2.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "兔毛手袋",
+     "evidence": "只要有什么跟暴雨沾上边了，他们会像魔精一样冒出来",
+     "chunk_id": "appendix_unbound__063_3_1_雨前漫游:1.1.0"
+    }
+   ]
+  },
+  {
+   "concept": "鹿蜀",
+   "type": "概念",
+   "desc": "小叶尼塞所化之物",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "绘鹿蜀的陶杯",
+     "evidence": "上面画的是鹿蜀，一种祥瑞",
+     "chunk_id": "activity__16101_朔日手记:10.0.1"
+    },
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "红鬃马驹",
+     "evidence": "那并非是“马”，而是鹿蜀。至少，它的形貌是",
+     "chunk_id": "activity__16101_朔日手记:15.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "曲娘",
+     "evidence": "没有比鹿蜀更快的了",
+     "chunk_id": "character__16601_曲香蒙求:5.0.1"
+    }
+   ]
+  },
+  {
+   "concept": "黑雾",
+   "type": "概念",
+   "desc": "几乎摧毁一座医院的黑雾",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "培养皿",
+     "evidence": "一小团黑雾，比我之前亲眼所见的要更弱小",
+     "chunk_id": "activity__23101_圣火纪行_东区黎明:13.0.0"
+    }
+   ]
+  }
+ ]
+}

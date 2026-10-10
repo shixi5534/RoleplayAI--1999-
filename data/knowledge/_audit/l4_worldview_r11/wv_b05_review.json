@@ -1,0 +1,21 @@
+{
+  "schema": "audit.l4_worldview_review/v1",
+  "batch": "b05",
+  "reviews": [
+    {"concept": "血食怪的转化", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.35, "notes": "仅单边是把罗蕾莱当转化本体，属关系稀疏非互斥"},
+    {"concept": "被诅咒的胶片", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.05, "notes": "单边隶属，证据称三燕归巢即一张此类胶片，与desc相符"},
+    {"concept": "语言异化症", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "三边各指不同对象，只述蔓延与表现，无A与非A并存"},
+    {"concept": "诸灵之夜", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边隶属亡灵节，证据第二日之说与desc的亡魂之夜相符"},
+    {"concept": "诸灵节", "verdict": "mutually_exclusive", "conflicting_edges": [{"index": 0, "why": "把诸灵节等同于亡灵节，原文只称其为第二日夜晚"}], "constraint_risk": 0.55, "notes": "是边主张与亡灵节同一，desc却作其次夜祭典，身份与次日冲突"},
+    {"concept": "超自然者", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.15, "notes": "同一对象上隶属与是语义相容，均指其为该类一员"},
+    {"concept": "趋光性定律", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.3, "notes": "单边影响边，证据言其用于操控身份，与忠诚控制相符"},
+    {"concept": "转念即至", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边包含边，软盘内写有此咒语，与desc所述咒语相符"},
+    {"concept": "迷思海", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.2, "notes": "三条边分述其所是、所含、所灌，彼此独立无对立定义"},
+    {"concept": "邪祟", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.15, "notes": "单边影响，祭器嗅到外溢邪祟气息，与自胶片外溢相符"},
+    {"concept": "金丹术", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.5, "notes": "是边把白马派当本体属抽取失真，两目标不同，非互斥"},
+    {"concept": "金色丝线", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.35, "notes": "单边包含且证据仅旁白缠结，关系稀疏但无相反定义"},
+    {"concept": "金色饥荒", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边影响欧洲致饥饿，与麦不结穗之灾相符"},
+    {"concept": "镜面肥皂泡", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.1, "notes": "单边影响卡纳比街致交通瘫痪，与镜面泡泡自身不冲突"},
+    {"concept": "长生之法", "verdict": "consistent", "conflicting_edges": [], "constraint_risk": 0.4, "notes": "单边影响，县民被劝修行该法，与desc法门定性不矛盾"}
+  ]
+}

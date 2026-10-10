@@ -1,7 +1,7 @@
 {
   "schema": "compendium_rag.audit/v1",
   "wp": "WP1-structure",
-  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "frozen_graph_sha": "911bb538160db80e",
   "retrieval_config": {
     "lex_weight": 1.0,
     "lex_top": 30,
@@ -20,11 +20,11 @@
   "metrics": {
     "graph": {
       "entities": 7033,
-      "edges": 27111,
+      "edges": 27110,
       "role_entities": 2023,
       "isolated_entities": 1133,
       "isolated_ratio": 0.1611,
-      "avg_degree": 7.71,
+      "avg_degree": 7.709,
       "components_total": 1184,
       "components_nontrivial": 51,
       "largest_cc_nodes": 5790,
@@ -32,7 +32,7 @@
     },
     "isolation_attribution": {
       "status": "unavailable",
-      "graph_sha256_16": "fb7322dd4f558e7c",
+      "graph_sha256_16": "911bb538160db80e",
       "landing": "stale:7cac5867e8c80879",
       "cache_rel": "stale:7cac5867e8c80879"
     },
@@ -41,7 +41,7 @@
       "strict_canonical_rate": 0.8429,
       "classifiable_rate": 0.848,
       "reason_distribution": {
-        "canonical": 22853,
+        "canonical": 22852,
         "review:unmapped": 4122,
         "synonym": 132,
         "rule": 4
@@ -132,7 +132,7 @@
         "singleton_predicates": 1110,
         "singleton_rate_of_predicates": 0.689869,
         "singleton_edges": 1110,
-        "top10_edge_coverage": 0.364317,
+        "top10_edge_coverage": 0.364331,
         "unmapped_edges": 4122,
         "unmapped_distinct": 1465
       }
@@ -150,7 +150,7 @@
     {
       "gate": "L1.3 平均度数",
       "target": "≥2.5",
-      "actual": 7.71,
+      "actual": 7.709,
       "verdict": "PASS",
       "reason": "",
       "root_cause_bucket": "数据层"

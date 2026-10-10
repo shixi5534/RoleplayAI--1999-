@@ -40,9 +40,16 @@ V9P3_GRAPH_SHA16 = "329671bba0988c68"
 # v9-P4 r10：L4.5 三轮盲评交叉确认的 6 条纯 delete_edge 落盘（边 27117->27111，实体 7033 不变）。
 # R10-L45-007（Z-[告知]->安洁）按「原文成立、仅 evidence 句错引」判 keep_with_note，未删。
 V9P4_GRAPH_SHA16 = "fb7322dd4f558e7c"
+# v9-P5 r11：L4.4 正典裁决修边落盘（1 条 delete_edge：集体潜意识-[包含]->迷思海，
+# 边 27111->27110，实体 7033 不变）。依据 = 用户 2026-10-10 裁决「批准删除」
+# （P7 全量复审报告 §9 待裁决第④条）；提案 data/compendium_rag/repairs_v10/proposal.json，
+# 取证 chunk activity__35101_绿松石蛇俱乐部:17.1.1 全文无「包含」。
+V9P5_GRAPH_SHA16 = "911bb538160db80e"
 # 现行审查锚点。**v8/v9 不得混用**：拿旧图跑新闸门、或拿新图对旧基线，
 # 都会把「图谱变了」误读成「检索/生成变了」。要比 v8 就显式传 expect=V8_GRAPH_SHA16。
-FROZEN_GRAPH_SHA16 = V9P4_GRAPH_SHA16
+# 注意：P4–P7 四份验收报告与 2026-10-10 记分卡绑的是 V9P4（fb7322dd…），
+# 它们记录的是 r11 落盘前的图状态，属历史，不得与 r11 之后的读数混表。
+FROZEN_GRAPH_SHA16 = V9P5_GRAPH_SHA16
 V8_RETRIEVAL_ENV = {
     "CMPRAG_LEX_WEIGHT": "1.0",
     "CMPRAG_RRF_K": "1",

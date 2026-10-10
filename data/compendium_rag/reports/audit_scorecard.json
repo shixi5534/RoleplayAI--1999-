@@ -1,9 +1,9 @@
 {
   "schema": "compendium_rag.audit.scorecard/v1",
-  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "frozen_graph_sha": "911bb538160db80e",
   "graph_sha_state": "single",
   "graph_sha_seen": [
-    "fb7322dd4f558e7c"
+    "911bb538160db80e"
   ],
   "all_reports_same_graph": true,
   "all_reports_same_config": true,
@@ -43,16 +43,16 @@
     },
     "L4": {
       "n_gates": 9,
-      "pass": 3,
-      "fail": 5,
+      "pass": 4,
+      "fail": 4,
       "na": 1,
-      "score": 37.5,
+      "score": 50.0,
       "na_gates": [
         "L4.5b 多角色同场运行时生成一致性"
       ]
     }
   },
-  "weighted_total_pct": 46.73,
+  "weighted_total_pct": 50.48,
   "grade": "C",
   "n_unlayered_gates": 2,
   "unlayered": [
@@ -84,7 +84,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -111,7 +111,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -119,8 +119,8 @@
       "wp": "WP5",
       "gate": "L5.2 角色漂移退化率（50 轮长上下文回放代理）",
       "target": "≤0.10",
-      "actual": 0.875,
-      "verdict": "FAIL",
+      "actual": 0.0,
+      "verdict": "PASS",
       "reason": "第 50 轮探针 persona 较第 1 轮跌幅>10% 的角色占比；可比角色 8/8（须同时有 1 与 50 两轮判分）。人设卡（档案+已知关系）在三个检查点**完全同文**，只有 history 长度在变，否则第 1 轮信息量本就少于第 50 轮，比的是喂了多少材料而不是漂移。**注意**：src/roleplay 与 compendium_rag 之间没有运行时通路，本项是「长上下文回放」代理口径，不是真·多轮运行时漂移",
       "declared_bucket": "生成层",
       "config": {
@@ -138,7 +138,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -165,7 +165,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -192,7 +192,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -219,7 +219,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     }
   ],
@@ -244,7 +244,7 @@
       "diagnostic_form": "raw（原始谓语）方向对成对完整率",
       "target": "≥0.95",
       "verdict_at_primary": "FAIL",
-      "n_edges": 27111,
+      "n_edges": 27110,
       "direction_loss_unique": 424,
       "reading": "归组把成对率从 raw 抬到 grouped（约 6 倍），但两者都远低于 0.95：缺口主因是原文谓语本身不成对（抽取层），归并只能部分补偿。"
     }
@@ -274,7 +274,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -301,7 +301,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -328,7 +328,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -355,7 +355,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -382,7 +382,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -409,7 +409,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -417,7 +417,7 @@
       "wp": "WP1-structure",
       "gate": "L1.3 平均度数",
       "target": "≥2.5",
-      "actual": 7.71,
+      "actual": 7.709,
       "verdict": "PASS",
       "reason": "",
       "declared_bucket": "数据层",
@@ -436,7 +436,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -467,7 +467,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "口径替代"
     },
     {
@@ -504,7 +504,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "-"
     },
     {
@@ -531,7 +531,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -558,7 +558,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "结构不存在"
     },
     {
@@ -585,7 +585,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -612,7 +612,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -639,7 +639,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -666,7 +666,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -693,7 +693,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -720,7 +720,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -747,7 +747,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -774,7 +774,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -801,7 +801,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -828,7 +828,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -855,7 +855,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -882,7 +882,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -909,7 +909,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "生成层"
     },
     {
@@ -936,7 +936,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "评测方法"
     },
     {
@@ -968,7 +968,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "基础设施"
     },
     {
@@ -995,7 +995,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1022,7 +1022,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1049,7 +1049,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "通路不存在"
     },
     {
@@ -1076,7 +1076,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "检索层"
     },
     {
@@ -1103,7 +1103,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1130,7 +1130,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1157,7 +1157,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1184,7 +1184,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     },
     {
@@ -1192,9 +1192,9 @@
       "wp": "WP4-worldview",
       "gate": "L4.4 世界观定义统一性",
       "target": "≥0.95",
-      "actual": 0.9425,
-      "verdict": "FAIL",
-      "reason": "高 degree 概念实体的 是/象征/包含 边 + desc 送审；复核 90 条、可判 87 条（3 条证据不足移出分母），互斥 5 条",
+      "actual": 0.9744,
+      "verdict": "PASS",
+      "reason": "高 degree 概念实体的 是/象征/包含 边 + desc 送审；复核 90 条、可判 78 条（12 条证据不足移出分母），互斥 2 条",
       "declared_bucket": "数据层",
       "config": {
         "lex_weight": 1.0,
@@ -1211,7 +1211,7 @@
         "embed_model": "bge-m3",
         "pythonhashseed": "0"
       },
-      "graph_sha": "fb7322dd4f558e7c",
+      "graph_sha": "911bb538160db80e",
       "bucket": "数据层"
     }
   ]

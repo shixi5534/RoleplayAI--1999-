@@ -1,7 +1,7 @@
 {
   "schema": "compendium_rag.audit/v1",
   "wp": "WP5",
-  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "frozen_graph_sha": "911bb538160db80e",
   "retrieval_config": {
     "lex_weight": 1.0,
     "lex_top": 30,
@@ -19,49 +19,13 @@
   },
   "metrics": {
     "characters": 8,
-    "degraded": [
-      {
-        "character": "37",
-        "turn1": 4.2,
-        "turn50": 3.0
-      },
-      {
-        "character": "APPLe",
-        "turn1": 5.0,
-        "turn50": 3.0
-      },
-      {
-        "character": "X",
-        "turn1": 4.2,
-        "turn50": 3.6
-      },
-      {
-        "character": "十四行诗",
-        "turn1": 4.4,
-        "turn50": 3.4
-      },
-      {
-        "character": "塞梅尔维斯",
-        "turn1": 5.0,
-        "turn50": 3.4
-      },
-      {
-        "character": "星锑",
-        "turn1": 5.0,
-        "turn50": 3.6
-      },
-      {
-        "character": "维尔汀",
-        "turn1": 5.0,
-        "turn50": 3.4
-      }
-    ],
-    "degradation_rate": 0.875,
+    "degraded": [],
+    "degradation_rate": 0.0,
     "n_judged": 120,
     "checkpoint_mean_persona": {
-      "1": 4.65,
-      "25": 3.8,
-      "50": 3.425
+      "1": 4.6,
+      "25": 4.875,
+      "50": 4.825
     },
     "checkpoint_n": {
       "1": 40,
@@ -73,14 +37,72 @@
       "25",
       "50"
     ],
-    "characters_comparable": 8
+    "characters_comparable": 8,
+    "card_only_probe_hit_rate": 1.0,
+    "deflection_rate": 0.0625,
+    "card_only_probe_n": 48,
+    "card_only_probe_hits": 48,
+    "card_only_probe_expected_n": 48,
+    "deflection_n": 3,
+    "deflection_known_n": 48,
+    "deflection_unknown_n": 0,
+    "anchor_by_character": {
+      "37": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "APPLe": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "X": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "十四行诗": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "塞梅尔维斯": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "星锑": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.5
+      },
+      "红弩箭": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      },
+      "维尔汀": {
+        "n": 6,
+        "hits": 6,
+        "hit_rate": 1.0,
+        "deflection_rate": 0.0
+      }
+    }
   },
   "gate_verdicts": [
     {
       "gate": "L5.2 角色漂移退化率（50 轮长上下文回放代理）",
       "target": "≤0.10",
-      "actual": 0.875,
-      "verdict": "FAIL",
+      "actual": 0.0,
+      "verdict": "PASS",
       "reason": "第 50 轮探针 persona 较第 1 轮跌幅>10% 的角色占比；可比角色 8/8（须同时有 1 与 50 两轮判分）。人设卡（档案+已知关系）在三个检查点**完全同文**，只有 history 长度在变，否则第 1 轮信息量本就少于第 50 轮，比的是喂了多少材料而不是漂移。**注意**：src/roleplay 与 compendium_rag 之间没有运行时通路，本项是「长上下文回放」代理口径，不是真·多轮运行时漂移",
       "root_cause_bucket": "生成层"
     },

@@ -1,0 +1,548 @@
+{
+ "schema": "audit.l4_worldview_review_input/v1",
+ "task": "逐概念判定其 desc 与 definition_edges 是否互斥/自相矛盾",
+ "batch": "b04",
+ "items": [
+  {
+   "concept": "石像鬼",
+   "type": "概念",
+   "desc": "狙击手之族裔",
+   "aliases": [
+    "族裔",
+    "神秘学家族裔"
+   ],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "哨兵",
+     "evidence": "那名狙击手应该是一个石像鬼",
+     "chunk_id": "mainline__111_行于漫漫长路上:5.0.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "拉蒂斯",
+     "evidence": "我们是流淌着恶魔之血的族裔",
+     "chunk_id": "mainline__111_行于漫漫长路上:8.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "神秘学家",
+   "type": "概念",
+   "desc": "曾被称作哲学家、占卜师、医生并被驱逐者",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "新纪元集市",
+     "evidence": "无辜的神秘学家们受到蛊惑",
+     "chunk_id": "activity__20101_飞驰_明日之城:1.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "暴雨症候群",
+     "evidence": "他们大多是基金会任职的神秘学家",
+     "chunk_id": "anecdote__1918_长夜未逝:1.0.0"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "第一防线学校",
+     "evidence": "神秘学家的血统会伴随激素水平与情绪水平等因素，对孩子产生潜移默化的影响",
+     "chunk_id": "anecdote__1918_长夜未逝:1.0.4"
+    },
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "塞梅尔维斯",
+     "evidence": "忘了告诉你一件事情，我也是神秘学家",
+     "chunk_id": "appendix_unbound__005_1_6_地牢剧情:5.1.2"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "帝国的登记政策",
+     "evidence": "只会让那些安分守己的神秘学家在臃肿的官僚机构之中疲于奔命",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:0.1.2"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "卡卡尼亚",
+     "evidence": "她注意到了一道身影——来自那群神秘学家抗议者团体",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:1.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "罗蕾莱",
+     "evidence": "又怎么会前来寻找那个名为“罗蕾莱”的神秘学家呢",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:1.1.3"
+    },
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "神秘学家感染种",
+     "evidence": "极少量在疾病之中存活下来的神秘学家则会被称为",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:3.1.3"
+    },
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "罗蕾莱",
+     "evidence": "人类和神秘学家都是这个世界的孩子，我们都是一组节拍里的相同构成",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.4"
+    },
+    {
+     "dir": "in",
+     "relation": "象征",
+     "canonical": "象征",
+     "counterpart": "罗蕾莱",
+     "evidence": "就像神秘学家和人类，同样可以相处融洽",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.6"
+    }
+   ]
+  },
+  {
+   "concept": "神秘学家感染种",
+   "type": "概念",
+   "desc": "转化后的真正身份",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "神秘学家",
+     "evidence": "极少量在疾病之中存活下来的神秘学家则会被称为",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:3.1.3"
+    },
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "塞梅尔维斯",
+     "evidence": "一名活着的感染种，一名拥有着独特神秘术的神秘学家",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:10.1.0"
+    }
+   ]
+  },
+  {
+   "concept": "神秘学术式",
+   "type": "概念",
+   "desc": "旅行者2号上搭载的神秘学术式",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "旅行者2号",
+     "evidence": "旅行者2号上搭载了空间传送的神秘学术式",
+     "chunk_id": "anecdote__1917_乘法轴上的一天:5.0.2"
+    }
+   ]
+  },
+  {
+   "concept": "神秘术",
+   "type": "概念",
+   "desc": "融入表演之力",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "伊戈尔",
+     "evidence": "重塑之手的神秘术干扰让我的传送目的地发生了一些错误",
+     "chunk_id": "mainline__113_他者的悲哀:10.2.1"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "小叶尼塞",
+     "evidence": "它似乎能使人语言相通",
+     "chunk_id": "activity__16101_朔日手记:4.2.0"
+    },
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "沛霖川",
+     "evidence": "那条河里蕴藏着不可思议的神秘术",
+     "chunk_id": "activity__25101_唐人街影话:5.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "希梅娜",
+     "evidence": "我的家族以前都在船上干活，用神秘术预测风向和海况",
+     "chunk_id": "character__19601_飞渡往日:2.0.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "正骨",
+     "evidence": "中医，神秘术，想怎么叫都可以",
+     "chunk_id": "character__20601_旧金山小子:1.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "收容表格",
+     "evidence": "神秘术：_____________",
+     "chunk_id": "anecdote__1922_最后的电影:0.0.0"
+    },
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "血食怪",
+     "evidence": "我还可以将那些独属于血食怪的神秘术传授于你",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:4.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "罗蕾莱的海螺",
+     "evidence": "它似乎在……增幅神秘术的效果",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:9.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "灼热心脏",
+     "evidence": "为每个委外小队成员准备的神秘术",
+     "chunk_id": "appendix_unbound__057_2_4_地牢剧情:0.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "致意亚琛",
+     "evidence": "受到神秘术的作用",
+     "chunk_id": "appendix_unbound__057_2_4_地牢剧情:0.1.1"
+    }
+   ]
+  },
+  {
+   "concept": "祥瑞",
+   "type": "概念",
+   "desc": "葛天否认所属",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "曲娘的母亲",
+     "evidence": "你母亲，是庇护一方的祥瑞",
+     "chunk_id": "activity__16101_朔日手记:19.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "科学的训练方式",
+   "type": "概念",
+   "desc": "她认可的科学习练之法",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "魔精",
+     "evidence": "一种科学的训练方式",
+     "chunk_id": "appendix_unbound__055_2_2_荒原经营驯化_露西:1.0.0"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "荒原经营驯化",
+     "evidence": "它的效率值得肯定",
+     "chunk_id": "appendix_unbound__055_2_2_荒原经营驯化_露西:1.0.0"
+    }
+   ]
+  },
+  {
+   "concept": "穆姆",
+   "type": "概念",
+   "desc": "产生雾气的黑白相间魔精",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "魔精",
+     "evidence": "在受到惊吓时，会从头部的呼吸角产生一种形似于雾的气体",
+     "chunk_id": "activity__21101_77号往事:1.0.1"
+    }
+   ]
+  },
+  {
+   "concept": "罗蕾莱的歌声",
+   "type": "概念",
+   "desc": "令人归于平静的旋律；令人归于平静的歌声",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "暴雨症候",
+     "evidence": "睡意取代了原本的狂热，厮杀的人群逐渐平息，陷入到沉睡之中",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "罗蕾莱",
+     "evidence": "歌声宛若河流与礁石激起的朵朵浪花，让人情不自禁地归于平静",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.0"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "门外的军人",
+     "evidence": "睡意取代了原本的狂热，厮杀的人群逐渐平息",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.0"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "宪兵Ⅱ",
+     "evidence": "不可阻挡的睡意，悄无声息地冲垮了他们对于战争的狂热",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.1"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "塞梅尔维斯的幻象",
+     "evidence": "歌声如同落入水面的巨石一般，掀起了幻象的涟漪",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:7.1.0"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "塞梅尔维斯",
+     "evidence": "塞梅尔维斯也突然感受到自己耳畔的歌声发生了改变",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:9.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "罗蕾莱的海螺",
+     "evidence": "它似乎在……增幅神秘术的效果？",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:9.1.1"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "安杰罗",
+     "evidence": "安杰罗的狂热症状……被抑制了？",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:9.1.1"
+    }
+   ]
+  },
+  {
+   "concept": "罗蕾莱的预言",
+   "type": "概念",
+   "desc": "河谷与洪水的说法",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "暴雨",
+     "evidence": "罗蕾莱口中的“洪水”……莫非指的是“暴雨”",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:0.1.3"
+    }
+   ]
+  },
+  {
+   "concept": "能量",
+   "type": "概念",
+   "desc": "灰白的哀嚎",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "新纪元集市",
+     "evidence": "整个集市都有着你的痕迹，大家都感受到了",
+     "chunk_id": "character__20603_第一千夜:1.0.2"
+    }
+   ]
+  },
+  {
+   "concept": "艺术品拍卖会",
+   "type": "概念",
+   "desc": "密信宣告的年度盛事",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "彩蜡烛",
+     "evidence": "当某处的仪式开启时，只要引燃蜡烛，它就会在这里重现相同的效用",
+     "chunk_id": "activity__35101_绿松石蛇俱乐部:7.2.0"
+    }
+   ]
+  },
+  {
+   "concept": "萤火虫",
+   "type": "概念",
+   "desc": "对光点的误认",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "利伯蒂",
+     "evidence": "萤火虫微弱的光芒短暂地照亮四周",
+     "chunk_id": "character__23601_夜游十字街:4.0.1"
+    }
+   ]
+  },
+  {
+   "concept": "血食怪",
+   "type": "概念",
+   "desc": "传说中的吸血怪物",
+   "aliases": [
+    "无影灵"
+   ],
+   "definition_edges": [
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "色雷斯解放阵线",
+     "evidence": "无视血统，无视种族，所有人都一样",
+     "chunk_id": "activity__31101_长夜鸣笛:11.0.1"
+    },
+    {
+     "dir": "in",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "鲍里斯",
+     "evidence": "成为一名真正的血食怪",
+     "chunk_id": "activity__31101_长夜鸣笛:14.0.3"
+    },
+    {
+     "dir": "out",
+     "relation": "影响",
+     "canonical": "影响",
+     "counterpart": "车站守军",
+     "evidence": "边境站的驻军已经被血食怪感染了，军队带走了不少乘客。",
+     "chunk_id": "activity__31101_长夜鸣笛:16.2.1"
+    },
+    {
+     "dir": "out",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "瓦伦缇娜",
+     "evidence": "便是导致她落入如此境遇的罪魁祸首",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:3.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "瓦伦缇娜",
+     "evidence": "吸血鬼、血食怪、无影灵",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:3.1.2"
+    },
+    {
+     "dir": "out",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "神秘术",
+     "evidence": "我还可以将那些独属于血食怪的神秘术传授于你",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:4.1.1"
+    },
+    {
+     "dir": "in",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "血食怪的把戏",
+     "evidence": "不过是一些独属于血食怪的小小把戏而已",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.5"
+    },
+    {
+     "dir": "out",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "塞梅尔维斯",
+     "evidence": "你已经迈出了第一步，血食怪的血脉正在成为你的一部分",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:7.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "是",
+     "canonical": "是",
+     "counterpart": "塞梅尔维斯",
+     "evidence": "血食怪的身体轻盈而有力",
+     "chunk_id": "appendix_unbound__061_2_6_地牢剧情:2.1.0"
+    },
+    {
+     "dir": "in",
+     "relation": "包含",
+     "canonical": "包含",
+     "counterpart": "血食怪下午茶话会",
+     "evidence": "目前与会者只有我和你",
+     "chunk_id": "appendix_unbound__061_2_6_地牢剧情:3.1.1"
+    }
+   ]
+  },
+  {
+   "concept": "血食怪的把戏",
+   "type": "概念",
+   "desc": "化身虚影的把戏",
+   "aliases": [],
+   "definition_edges": [
+    {
+     "dir": "out",
+     "relation": "隶属",
+     "canonical": "隶属",
+     "counterpart": "血食怪",
+     "evidence": "不过是一些独属于血食怪的小小把戏而已",
+     "chunk_id": "appendix_unbound__022_1_9_地牢剧情:6.1.5"
+    }
+   ]
+  }
+ ]
+}

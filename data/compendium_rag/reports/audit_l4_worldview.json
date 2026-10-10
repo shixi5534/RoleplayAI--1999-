@@ -1,7 +1,7 @@
 {
   "schema": "compendium_rag.audit/v1",
   "wp": "WP4-worldview",
-  "frozen_graph_sha": "fb7322dd4f558e7c",
+  "frozen_graph_sha": "911bb538160db80e",
   "retrieval_config": {
     "lex_weight": 1.0,
     "lex_top": 30,
@@ -19,19 +19,19 @@
   },
   "metrics": {
     "reviewed": 90,
-    "insufficient": 3,
-    "judged": 87,
+    "insufficient": 12,
+    "judged": 78,
     "concepts_high_degree": 101,
-    "exclusive_concepts": 5,
-    "unity": 0.9425
+    "exclusive_concepts": 2,
+    "unity": 0.9744
   },
   "gate_verdicts": [
     {
       "gate": "L4.4 世界观定义统一性",
       "target": "≥0.95",
-      "actual": 0.9425,
-      "verdict": "FAIL",
-      "reason": "高 degree 概念实体的 是/象征/包含 边 + desc 送审；复核 90 条、可判 87 条（3 条证据不足移出分母），互斥 5 条",
+      "actual": 0.9744,
+      "verdict": "PASS",
+      "reason": "高 degree 概念实体的 是/象征/包含 边 + desc 送审；复核 90 条、可判 78 条（12 条证据不足移出分母），互斥 2 条",
       "root_cause_bucket": "数据层"
     }
   ],
