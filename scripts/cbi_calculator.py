@@ -18,6 +18,7 @@ Wilson 95% CI 自查抽样噪声（规格写的 ±4.4% 是原始比例近似半�
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import os
 import sys
@@ -49,6 +50,31 @@ SOFT_MAX, RETR_MAX = 5, 15       # 用户给的子标准
 MRR_FLOOR, FAITH_FLOOR = 0.39, 0.98
 BASE_MRR = {"300cn_full": 0.66165, "blind206_full": 0.677346, "gen120_full": 0.820694}
 BASE_FAITH = 0.9845              # L3.3，r11 记分卡
+R11_SHA = "911bb538160db80e"     # 冻结图 r11
+CHUNKS_SHA = "43106214066ccd60"  # KB 的另一半输入
+GRAPH_P = ROOT / "data" / "compendium_rag" / "graph.json"
+CHUNKS_P = ROOT / "data" / "compendium_rag" / "chunks.json"
+
+
+def sha16(p: Path) -> str:
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for blk in iter(lambda: f.read(1 << 20), b""):
+            h.update(blk)
+    return h.hexdigest()[:16]
+
+
+def layers_unchanged() -> tuple[bool, dict]:
+    """实测"检索层与生成层的输入逐位未变"，而不是引用一句基线。
+
+    为什么要实测：MRR / Faithfulness 这两格的"不回退"以前只是抄 r11 的数，
+    下一轮只要有人写过图，这句话就自动变成假话而闸门照旧绿灯。
+    现在写过 ⇒ `unchanged=False` ⇒ 两格直接判 False，必须回三个主口径重量才能重新声明。
+    """
+    g, c = sha16(GRAPH_P), sha16(CHUNKS_P)
+    return (g == R11_SHA and c == CHUNKS_SHA), {
+        "graph_sha16": g, "graph_expect": R11_SHA,
+        "chunks_sha16": c, "chunks_expect": CHUNKS_SHA}
 
 
 def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
@@ -142,17 +168,29 @@ def main() -> int:
     # MRR / Faithfulness 必须是**真布尔**：早先版本往这里塞了一句说明文字，于是
     # `all(v is True)` 永远不成立 —— 「发布」那一档在代码里静默不可达，跟本项目
     # 已经吃过教训的「数学上不可达闸门」是同一类错。基线值放到 details 里说。
-    mrr_ok = all(v >= MRR_FLOOR for v in BASE_MRR.values())
-    faith_ok = BASE_FAITH >= FAITH_FLOOR
+    # 而且"不回退"不能靠引用基线自证：这里在运行时**实测**图与抽取缓存是否逐位未变，
+    # 一旦变过就判 False，逼着回三个主口径重量，而不是继续拿 r11 的数字顶。
+    unchanged, evid = layers_unchanged()
+    mrr_ok = unchanged and all(v >= MRR_FLOOR for v in BASE_MRR.values())
+    faith_ok = unchanged and BASE_FAITH >= FAITH_FLOOR
     sub = {"N_hard==0": n_hard == 0, f"N_soft<={SOFT_MAX}": n_soft <= SOFT_MAX,
            f"N_retrieval<={RETR_MAX}": n_retr <= RETR_MAX, "CBI>=0.97": cbi >= TARGET,
            "MRR>=0.39 不回退": mrr_ok, "Faithfulness>=0.98 不回退": faith_ok,
            "人工抽检 kappa>=0.80": False}
     details = {
-        "MRR": f"本轮零写图，三个主口径仍为 r11 基线 {BASE_MRR}",
-        "Faithfulness": f"本轮零改生成层，L3.3 仍为 {BASE_FAITH}",
-        "kappa": ("未达成 —— 机判对机判的 Cohen κ 在 pass2 全 clean 时退化（期望一致率="
-                  "观测一致率 ⇒ κ=0），必须由人标 7 条争议项（=10% 抽检体量）才能算真 κ"),
+        "layers_unchanged": evid,
+        "MRR": (f"实测：graph sha16={evid['graph_sha16']}、chunks sha16={evid['chunks_sha16']} "
+                f"两个输入逐位未变 ⇒ KB 与检索代码未动，三个主口径沿用 r11 基线 {BASE_MRR}"
+                if unchanged else
+                f"[!] KB 输入已变（graph={evid['graph_sha16']} vs {evid['graph_expect']}，"
+                f"chunks={evid['chunks_sha16']} vs {evid['chunks_expect']}）："
+                f"必须重量三个主口径才能声明不回退"),
+        "Faithfulness": f"L3.3 = {BASE_FAITH}（同上，仅在 KB 输入未变时可沿用）",
+        "kappa": ("未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 "
+                  "⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），"
+                  "所以拿它当这一格的达成证据是假的。人标单已备好："
+                  "reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），"
+                  "填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判"),
     }
     gate = ("不可判（答案通道缺失）" if mode == "retrieval_only" else
             "发布" if all(v is True for v in sub.values()) else
