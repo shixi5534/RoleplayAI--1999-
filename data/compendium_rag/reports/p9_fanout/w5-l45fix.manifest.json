@@ -1,0 +1,89 @@
+{
+ "schema": "compendium_rag.p9_fanout_manifest/v1",
+ "tag": "w5-l45fix",
+ "planned_at": "2026-10-10T21:02:58",
+ "graph_sha": "911bb538160db80e",
+ "qid_key": "chunk_id",
+ "n_batches": 1,
+ "n_qids_total": 5,
+ "batches": [
+  {
+   "batch_id": "ms_b04_aliasfix",
+   "input_path": "data/knowledge/_audit/l4_multiscene_r11/ms_b04_aliasfix.json",
+   "n_qids": 5,
+   "qids": [
+    "activity__11101_雷米特杯失窃案:0.1.0",
+    "activity__12101_绿湖噩梦:13.0.0",
+    "activity__12101_绿湖噩梦:15.2.1",
+    "activity__12101_绿湖噩梦:16.0.0",
+    "activity__12101_绿湖噩梦:16.0.1"
+   ],
+   "output_path": "data/knowledge/_audit/l4_multiscene_r11/ms_b04_aliasfix_review.json"
+  }
+ ],
+ "write_scope": [
+  "data/compendium_rag/reports/p9_fanout/w5-l45fix.heartbeat.txt",
+  "data/knowledge/_audit/l4_multiscene_r11/ms_b04_aliasfix_review.json"
+ ],
+ "protected_roots": [
+  "data/compendium_rag/graph.json",
+  "data/knowledge/_audit/l4_multiscene",
+  "data/knowledge/_audit/l4_multiscene_r11/ms_b01.json"
+ ],
+ "protected": [
+  {
+   "path": "data/compendium_rag/graph.json",
+   "sha16": "911bb538160db80e",
+   "bytes": 11575840,
+   "mtime": "2026-10-10T09:46:00"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/INSTRUCTIONS.md",
+   "sha16": "421b44e23d349275",
+   "bytes": 2485,
+   "mtime": "2026-10-08T20:28:51"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b01.json",
+   "sha16": "cbc80a5364a88d8a",
+   "bytes": 78272,
+   "mtime": "2026-10-08T20:28:30"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b01_review.json",
+   "sha16": "34f39688617d48a5",
+   "bytes": 6226,
+   "mtime": "2026-10-08T20:38:15"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b02.json",
+   "sha16": "32a6b2b275c79291",
+   "bytes": 92889,
+   "mtime": "2026-10-08T20:28:30"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b02_review.json",
+   "sha16": "08835abec775c50e",
+   "bytes": 5668,
+   "mtime": "2026-10-08T20:43:17"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b03.json",
+   "sha16": "c9f7b9a4f5125035",
+   "bytes": 91987,
+   "mtime": "2026-10-08T20:28:30"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene/ms_b03_review.json",
+   "sha16": "f000aeb6dd1b9118",
+   "bytes": 6277,
+   "mtime": "2026-10-08T20:38:06"
+  },
+  {
+   "path": "data/knowledge/_audit/l4_multiscene_r11/ms_b01.json",
+   "sha16": "e892a1236db79295",
+   "bytes": 78618,
+   "mtime": "2026-10-10T20:52:46"
+  }
+ ]
+}

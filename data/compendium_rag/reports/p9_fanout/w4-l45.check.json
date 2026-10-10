@@ -1,0 +1,53 @@
+{
+ "schema": "compendium_rag.p9_fanout_check/v1",
+ "tag": "w4-l45",
+ "at": "2026-10-10T21:01:25",
+ "graph_sha": "911bb538160db80e",
+ "thresholds": {
+  "stale_min": 18.0,
+  "fresh_min": 3.0
+ },
+ "n_batches": 3,
+ "n_ok": 3,
+ "rows": [
+  {
+   "batch_id": "ms_b01",
+   "want": 20,
+   "output": "data/knowledge/_audit/l4_multiscene_r11/ms_b01_review.json",
+   "mtime_age_min": 3.4,
+   "status": "ok",
+   "have": 20,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "ms_b02",
+   "want": 20,
+   "output": "data/knowledge/_audit/l4_multiscene_r11/ms_b02_review.json",
+   "mtime_age_min": 1.4,
+   "status": "ok",
+   "have": 20,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "ms_b03",
+   "want": 20,
+   "output": "data/knowledge/_audit/l4_multiscene_r11/ms_b03_review.json",
+   "mtime_age_min": 5.8,
+   "status": "ok",
+   "have": 20,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  }
+ ]
+}

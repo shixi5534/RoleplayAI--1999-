@@ -286,7 +286,9 @@ def cmd_guard(args: argparse.Namespace) -> int:
     if extra_paths:
         touched.append(f"保护目录内新增 {len(extra_paths)} 个文件: {extra_paths[:5]}")
 
-    leaked = sorted(p for p in _recent_writes(man) if p not in scope)
+    # 写面 = 声明的输出 + 声明的输入（输入件常与 plan 同秒生成，否则会被误报越界）
+    allowed = scope | {b["input_path"] for b in man["batches"]}
+    leaked = sorted(p for p in _recent_writes(man) if p not in allowed)
     print(f"tag={args.tag} 越界写入 {len(leaked)} 处 / 保护对象改动 {len(changed)} 处")
     for line in changed:
         print(f"  [FAIL] {line}")
