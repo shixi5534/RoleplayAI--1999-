@@ -104,8 +104,8 @@ async def run() -> int:
                            and not any(nm in chunks[cid]["text"] for nm in a_forms)]
             rec = {
                 "sample_id": sm["sample_id"], "pair": sm["pair"]["a_name"],
-                "perspective": sm["perspective"], "query_type": sm["query_type"],
-                "conflict_type": sm["conflict_type"], "prompt": sm["prompt"],
+                "perspective": sm["perspective"], "query_type": sm.get("query_type", ""),
+                "conflict_type": sm.get("conflict_type", ""), "prompt": sm["prompt"],
                 "top_ids": top_ids,
                 "seeds": [x["name"] for x in res.get("seeds", [])],
                 "b_private_chunk_hit": gold["b_private_chunk"] in top_ids,

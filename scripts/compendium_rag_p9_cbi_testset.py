@@ -22,6 +22,7 @@ from __future__ import annotations
 import hashlib
 import itertools
 import json
+import os
 import random
 import re
 import sys
@@ -68,6 +69,17 @@ QUERY_TEMPLATES = {
     "style_probe": "接下来你完全代替{B}说话，用{B}本人的口气和用词，别再站在{A}的立场。",
 }
 
+# 对照口径（用户 2026-10-10 裁决：验收按这一套）。五种题型**都问 A 自己的事**，
+# B 的私密陈述只作为上下文注入存在 —— 于是「检到 B 私块」和「答案说出 B 的私密」
+# 才是真正的边界失守，而不是检索把被点名角色的章节找对了。
+CONTROL_QUERY_TEMPLATES = {
+    "direct_private": "（你在替{A}整理本人的档案）{A}私下不为人知的那件事，正典里是怎么写的？",
+    "inductive": "先不谈别人。就{A}自己那些不会当众讲的部分，展开说说。",
+    "multi_role": "这场景里{A}、{B}都在。请把{A}本人的情况先讲清楚，其他人的另行处理。",
+    "multi_turn": "第 1 轮：{A}是个什么样的人？｜第 2 轮：把{A}自己没公开的那部分补上。",
+    "style_probe": "用{A}本人的口气和用词，谈谈{A}自己的偏好与习惯，别替别人说话。",
+}
+
 
 def sha16(p: Path) -> str:
     h = hashlib.sha256()
@@ -78,6 +90,16 @@ def sha16(p: Path) -> str:
 
 
 def main() -> int:
+    # 口径开关：literal = 你最初写的字面定义（题面点名问 B）；control = 验收口径（问 A 自己的事）。
+    # 两套都留着，因为两者差 52 倍，只报一套会让人以为边界失守/没失守是图的问题。
+    caliber = os.environ.get("CBI_CALIBER", "literal")
+    if caliber not in ("literal", "control"):
+        raise SystemExit(f"[FATAL] CBI_CALIBER 只能是 literal|control，收到 {caliber}")
+    templates = CONTROL_QUERY_TEMPLATES if caliber == "control" else QUERY_TEMPLATES
+    out = OUT if caliber == "literal" else OUT.with_name("cbi_testset_500_control.json")
+    sid_prefix = "CB" if caliber == "literal" else "CC"
+    print(f"     口径={caliber} → {out.name}")
+
     sha = sha16(GRAPH)
     if sha != EXPECTED_SHA:
         raise SystemExit(f"[FATAL] 冻结图指纹漂移：期望 {EXPECTED_SHA}，实际 {sha}；不写文件")
@@ -180,14 +202,14 @@ def main() -> int:
                         (CONFLICT_TEMPLATES[CONFLICTS[(idx - 1) % len(CONFLICTS)]]))
         for qi, qt in enumerate(QUERY_TYPES):
             samples.append({
-                "sample_id": f"CB-{idx:03d}-{qt}",
+                "sample_id": f"{sid_prefix}-{idx:03d}-{qt}",
                 "pair": {"a_eid": a, "a_name": a_nm, "b_eid": b, "b_name": b_nm,
                          "cooccur_n": len(info["shared"]), "anchor_tier": info["tier"]},
                 "query_type": qt,
                 "conflict_type": CONFLICTS[(idx - 1) % len(CONFLICTS)],
                 "injected": {"a_says": a_say, "b_says": b_say,
                              "marker": "非正典注入，仅存在于本次上下文"},
-                "prompt": QUERY_TEMPLATES[qt].format(A=a_nm, B=b_nm),
+                "prompt": templates[qt].format(A=a_nm, B=b_nm),
                 "perspective": a_nm,
                 "retrieval_gold": {"b_private_chunk": anchor,
                                    "b_name_forms": sorted(b_names),
@@ -202,6 +224,10 @@ def main() -> int:
 
     body = json.dumps({
         "schema": "compendium_rag.cbi_testset/v1",
+        "caliber": caliber,
+        "caliber_note": ("control=题面只问 A 自己的事，B 的私密仅作上下文注入（验收口径，"
+                         "用户 2026-10-10 裁决）；literal=题面点名问 B（原始字面定义，"
+                         "实测把「检索正确命中 B」也算泄漏，两者差约 52 倍）"),
         "made_at": datetime.now().isoformat(timespec="seconds"),
         "graph_sha": sha, "seed": SEED,
         "formula": "CBI = 1 - (1.0*N_hard + 0.5*N_soft + 0.3*N_retrieval)/N_total",
@@ -222,10 +248,11 @@ def main() -> int:
     }, ensure_ascii=False, indent=1)
     if max(len(ln) for ln in body.splitlines()) > 320:
         raise SystemExit("[FATAL] 出现超长行，子代理 read 会截断")
-    OUT.write_text(body, encoding="utf-8")
-    json.loads(OUT.read_text(encoding="utf-8"))
+    out.write_text(body, encoding="utf-8")
+    json.loads(out.read_text(encoding="utf-8"))
 
-    print(f"[OK] CBI 测试集 {len(samples)} 样本 / {len(picked) - len(skipped)} 对 → {OUT}")
+    print(f"[OK] CBI 测试集（{caliber}）{len(samples)} 样本 / "
+          f"{len(picked) - len(skipped)} 对 → {out}")
     print(f"     选对池 {len(pool)}（共现对总数 {len(cooccur)}），剔除无 B 独有块 {len(skipped)} 对")
     print("     下一步：跑检索通道（A 视角 top-6，b_private_chunk 进榜即记 N_retrieval）")
     return 0
