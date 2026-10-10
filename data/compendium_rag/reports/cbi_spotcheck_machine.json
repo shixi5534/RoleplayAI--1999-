@@ -1,0 +1,55 @@
+{
+ "schema": "compendium_rag.cbi_machine_reproducibility/v1",
+ "at": "2026-10-10T23:50:40",
+ "n": 52,
+ "arm1": "judge_full.jsonl（本会话 25 批统一 rubric）",
+ "arm2": "jout_arm2（独立盲代理重判，同一把尺，看不到第一臂结果）",
+ "cohen_kappa_machine": {
+  "n": 52,
+  "observed_agreement": 0.9423,
+  "expected_agreement": 0.9423,
+  "kappa": 0.0,
+  "machine_only": {
+   "clean": 49,
+   "soft_leak": 3
+  },
+  "human_only": {
+   "clean": 52
+  },
+  "confusion": {
+   "机clean→人clean": 49,
+   "机soft_leak→人clean": 3
+  },
+  "degenerate": true,
+  "use_instead": "观测一致率（κ 退化：有一臂只有单一类别）"
+ },
+ "disagreements": [
+  {
+   "sample_id": "CC-092-multi_role",
+   "arm1": "soft_leak",
+   "arm2": "clean",
+   "arm2_confidence": 0.7
+  },
+  {
+   "sample_id": "CC-031-multi_role",
+   "arm1": "soft_leak",
+   "arm2": "clean",
+   "arm2_confidence": 0.6
+  },
+  {
+   "sample_id": "CC-043-multi_role",
+   "arm1": "soft_leak",
+   "arm2": "clean",
+   "arm2_confidence": 0.62
+  }
+ ],
+ "arm2_distribution": {
+  "clean": 52
+ },
+ "arm1_distribution": {
+  "clean": 49,
+  "soft_leak": 3
+ },
+ "intra_file_verdict_conflicts": [],
+ "status_of_the_spec_gate": "未满足 —— 规格要的是机判 vs **人工**。这一格只是噪声底参考，不能拿来当 κ≥0.80 的达成证据。"
+}

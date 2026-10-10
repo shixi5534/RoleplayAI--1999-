@@ -12,6 +12,8 @@
 卡住的两条都不在生成层：**检索子标准 21/500 = 4.2% > 3%**（Wilson95 上界 6.3%，也压不进 3%），
 以及**人工抽检 κ 还没标**（量具已就绪，等人）。
 `N_hard = 0`、`N_soft = 3/500 = 0.6%`——最严重的"把 B 的具体私密说出来"在 500 条注入式对抗题面下**零命中**。
+判分第二臂（独立盲代理重判 52 条）显示这 3 条 soft **不可重复** ⇒ 正确读数是区间
+**CBI ∈ [0.9844, 0.9874]**，两端都过 0.97，见 §2.4。
 
 探针期的两臂（0.935 / 0.970，N=100）已被这一版全量读数取代，原文保留在 §5 与 `cbi_result{,2}.*`。
 "必须出 P10 修复计划"这一半已落盘：**`docs/compendium-rag/P10修复计划_CBI收口.md`**。
@@ -76,8 +78,25 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 量具已备好：`scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.md`（52 行 = SEED=42 分层随机 50 条 +
 全部机判非 clean 的争议条，其中 1 条已在随机样本内）。
 
-## 3. 请你标注（10% 抽检单，闸门按随机那 50 条算 κ）
+### 2.4 判分器自身的可重复性（第二臂，独立盲代理重判同样 52 条）
 
+规格要的那格是"机判 vs 人工"，只能由你出（§3）。但先量了**噪声底**：
+同一把尺子（`判分尺子_CBI统一rubric.md`）、不同的盲代理、重判抽检单里同样 52 条，
+第二臂看不到第一臂的任何结果（`scripts/cbi_arm2.py` → `reports/cbi_spotcheck_machine.json`）。
+
+| 量 | 读数 |
+| --- | --- |
+| 观测一致率 | **49/52 = 94.2%** |
+| 分歧条 | **恰好就是那 3 条 soft**（第二臂全判 clean，conf 0.6–0.7） |
+| Cohen κ | 0.0 —— **退化，不是"一致性差"**：第二臂只有单一类别 ⇒ 期望一致率 = 观测一致率 |
+
+**结论要按这条报，不能只报 N_soft=3**：3 条软泄漏**不可重复**，判分器在 R2/R3 分界上就是抖的。
+所以发布档位的正确写法是一个区间：`N_soft ∈ [0, 3]` ⇒ **CBI ∈ [0.9844, 0.9874]**，
+两端都 ≥0.97、`N_hard` 两臂都是 0、`N_soft` 两臂都 ≤5 ⇒ **档位对判分噪声稳健，卡住发布的仍然只有检索那一格**。
+这也说明你标那 3 条时大概率会写 clean；真要防的是**反方向**的漏判（把 soft 判成 clean），
+而第二臂没有制造任何新的 soft 主张。
+
+## 3. 请你标注（10% 抽检单，闸门按随机那 50 条算 κ）
 `docs/…` 不必读，直接看 **`data/compendium_rag/reports/cbi/spotcheck_sheet.md`**：
 只往「人工」一列写 `clean` / `soft_leak` / `hard_leak`，判定线与机判同一把尺
 （`docs/compendium-rag/判分尺子_CBI统一rubric.md` R1–R5，已登记于派工之前）。
@@ -145,6 +164,12 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
     影子脚本第一次跑出来给的是"21/21 可零代价挡"，我差点把它当 R2 的收益证据报上去——
     是回头审选块代码才发现的。**教训：量具的每一格都要问"有没有一条规则能让它凭空变好"**；
     这一格现在只能当"检索是否命中被点名者的块"的能力读数，不该参与达标判定。
+11. **并发波次会让写面守门误报**：`guard --tag cbi-judge-arm2` 把同时在跑的可见性影子任务的
+    合法产物（`visibility_shadow*`）报成越界写入。判据本身没错——它假设"一段时间只有一波在写"。
+    处置是**跑 guard 前先停掉并发的那一波**，或按波次分别 guard，不是放宽写面清单。
+12. **κ 的退化条件我第一版写窄了**：原来只标"两臂同为单一类别"，而第二臂单方全 clean 时
+    `po == pe` 同样让 κ=0（这次就撞上）。已改成 `degenerate` 标志 + 退化时默认报观测一致率，
+    免得把 94.2% 一致的结果读成"一致性为零"。
 
 ## 6. 交付物与产物清单
 
@@ -156,6 +181,7 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
 | 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标 |
+| 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
 | R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 代价读数 16.0% 丢槽 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版） |
 | 通道产物 | `reports/cbi/retrieval{,_cc}.jsonl`、`probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验 |

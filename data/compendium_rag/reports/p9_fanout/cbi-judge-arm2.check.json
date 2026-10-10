@@ -1,0 +1,53 @@
+{
+ "schema": "compendium_rag.p9_fanout_check/v1",
+ "tag": "cbi-judge-arm2",
+ "at": "2026-10-10T23:50:02",
+ "graph_sha": "911bb538160db80e",
+ "thresholds": {
+  "stale_min": 18.0,
+  "fresh_min": 3.0
+ },
+ "n_batches": 3,
+ "n_ok": 3,
+ "rows": [
+  {
+   "batch_id": "jdg2_b01",
+   "want": 20,
+   "output": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b01_verdict.json",
+   "mtime_age_min": 1.6,
+   "status": "ok",
+   "have": 20,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "jdg2_b02",
+   "want": 20,
+   "output": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b02_verdict.json",
+   "mtime_age_min": 1.0,
+   "status": "ok",
+   "have": 20,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "jdg2_b03",
+   "want": 12,
+   "output": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b03_verdict.json",
+   "mtime_age_min": 0.9,
+   "status": "ok",
+   "have": 12,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  }
+ ]
+}

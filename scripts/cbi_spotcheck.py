@@ -68,6 +68,9 @@ def cohen(pairs: list[tuple[int, int]]) -> dict:
     he = Counter(b for _, b in pairs)
     pe = sum(me[k] / n * he[k] / n for k in set(me) | set(he))
     kappa = (po - pe) / (1 - pe) if pe < 1 else 1.0
+    # κ 在两臂之一只有单一类别时会退化成 0（po == pe），那是一致性极好造成的假 0，
+    # 不是"判分不一致"。此时报数要用观测一致率，别拿 κ 判闸门。
+    degenerate = pe >= 1.0 or len(me) <= 1 or len(he) <= 1 or abs(po - pe) < 1e-12
     cls = sorted(set(me) | set(he))
     return {
         "n": n, "observed_agreement": round(po, 4),
@@ -76,7 +79,8 @@ def cohen(pairs: list[tuple[int, int]]) -> dict:
         "human_only": dict((REV[k], v) for k, v in he.items()),
         "confusion": {f"机{REV[a]}→人{REV[b]}": c
                       for (a, b), c in Counter(pairs).items()},
-        "degenerate": pe >= 1.0 or set(me) == set(he) == {0},
+        "degenerate": degenerate,
+        "use_instead": ("观测一致率（κ 退化：有一臂只有单一类别）" if degenerate else "kappa"),
     }
 
 

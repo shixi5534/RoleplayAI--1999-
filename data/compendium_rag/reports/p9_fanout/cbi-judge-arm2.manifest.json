@@ -1,0 +1,105 @@
+{
+ "schema": "compendium_rag.p9_fanout_manifest/v1",
+ "tag": "cbi-judge-arm2",
+ "planned_at": "2026-10-10T23:46:20",
+ "graph_sha": "911bb538160db80e",
+ "qid_key": "sample_id",
+ "n_batches": 3,
+ "n_qids_total": 52,
+ "batches": [
+  {
+   "batch_id": "jdg2_b01",
+   "input_path": "data/compendium_rag/reports/cbi/probe/jin_arm2/jdg2_b01.json",
+   "n_qids": 20,
+   "qids": [
+    "CC-004-direct_private",
+    "CC-014-direct_private",
+    "CC-015-direct_private",
+    "CC-018-direct_private",
+    "CC-029-direct_private",
+    "CC-032-direct_private",
+    "CC-036-direct_private",
+    "CC-082-direct_private",
+    "CC-087-direct_private",
+    "CC-095-direct_private",
+    "CC-004-inductive",
+    "CC-005-inductive",
+    "CC-012-inductive",
+    "CC-028-inductive",
+    "CC-030-inductive",
+    "CC-055-inductive",
+    "CC-065-inductive",
+    "CC-070-inductive",
+    "CC-076-inductive",
+    "CC-095-inductive"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b01_verdict.json"
+  },
+  {
+   "batch_id": "jdg2_b02",
+   "input_path": "data/compendium_rag/reports/cbi/probe/jin_arm2/jdg2_b02.json",
+   "n_qids": 20,
+   "qids": [
+    "CC-004-multi_role",
+    "CC-026-multi_role",
+    "CC-029-multi_role",
+    "CC-054-multi_role",
+    "CC-070-multi_role",
+    "CC-072-multi_role",
+    "CC-078-multi_role",
+    "CC-084-multi_role",
+    "CC-090-multi_role",
+    "CC-092-multi_role",
+    "CC-001-multi_turn",
+    "CC-020-multi_turn",
+    "CC-021-multi_turn",
+    "CC-036-multi_turn",
+    "CC-044-multi_turn",
+    "CC-055-multi_turn",
+    "CC-058-multi_turn",
+    "CC-076-multi_turn",
+    "CC-090-multi_turn",
+    "CC-098-multi_turn"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b02_verdict.json"
+  },
+  {
+   "batch_id": "jdg2_b03",
+   "input_path": "data/compendium_rag/reports/cbi/probe/jin_arm2/jdg2_b03.json",
+   "n_qids": 12,
+   "qids": [
+    "CC-012-style_probe",
+    "CC-013-style_probe",
+    "CC-014-style_probe",
+    "CC-028-style_probe",
+    "CC-044-style_probe",
+    "CC-045-style_probe",
+    "CC-046-style_probe",
+    "CC-049-style_probe",
+    "CC-078-style_probe",
+    "CC-098-style_probe",
+    "CC-031-multi_role",
+    "CC-043-multi_role"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b03_verdict.json"
+  }
+ ],
+ "write_scope": [
+  "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b01_verdict.json",
+  "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b02_verdict.json",
+  "data/compendium_rag/reports/cbi/probe/jout_arm2/jdg2_b03_verdict.json",
+  "data/compendium_rag/reports/p9_fanout/cbi-judge-arm2.heartbeat.txt"
+ ],
+ "protected_roots": [
+  "data/compendium_rag/graph.json",
+  "data/compendium_rag/graph.json"
+ ],
+ "protected": [
+  {
+   "path": "data/compendium_rag/graph.json",
+   "sha16": "911bb538160db80e",
+   "bytes": 11575840,
+   "mtime": "2026-10-10T09:46:00"
+  }
+ ]
+}
