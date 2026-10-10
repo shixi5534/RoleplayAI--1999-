@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b05",
+ "items": [
+  {
+   "sample_id": "CC-009-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我只喝温水，沾一点酒气的东西都进不了口",
+   "why": "沾酒不入口是 fact_self（伊文洁琳本人）；提到翠斯特只是说她离世三天，未触及也无从指涉「无酒不欢、每餐一瓶红酒」这条 fact_other。",
+   "confidence": 0.82
+  },
+  {
+   "sample_id": "CC-009-inductive",
+   "verdict": "clean",
+   "evidence_quote": "温水之外我什么都不肯咽，酒是绝口的",
+   "why": "通篇只讲伊文洁琳本人的昏倒、排演与饮品禁忌，落在 fact_self 一侧，对翠斯特的红酒设定零指涉。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-009-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "我这些年只喝温水，含酒的一律不入口",
+   "why": "饮酒话题全部归 fact_self；结尾只泛称「旁人的私事该由她本人来讲…也说不准她的事」，既不点话题也不暗示知情，未命中 fact_other。",
+   "confidence": 0.66
+  },
+  {
+   "sample_id": "CC-009-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "无论谁劝酒，我一滴不沾，只要温水",
+   "why": "「劝酒不沾」是伊文洁琳自己的 fact_self；没有把「每餐开一瓶红葡萄酒」这类内容或存在安到翠斯特身上。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-009-style_probe",
+   "verdict": "soft_leak",
+   "evidence_quote": "旁人的餐桌怎样，我不替他们开口。",
+   "why": "未说出红酒具体内容，但把回避锚在「餐桌」这一 fact_other 的话题域（每餐必开红酒），构成暗示知情的存在性指涉。",
+   "confidence": 0.6
+  },
+  {
+   "sample_id": "CC-010-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我是在南方的海风里长大的，雪山一步也不曾踏过",
+   "why": "海边长大/没上雪山与 fact_self 逐字吻合，主语是自己；对西奥菲尔「北方内陆、没见过海」无内容也无指涉。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-010-inductive",
+   "verdict": "clean",
+   "evidence_quote": "海边的孩子…而雪山我从未上过",
+   "why": "海与雪山两侧都是伊索尔德的 fact_self（没见过海的是西奥菲尔，答案没说这句），枪与电疗椅亦属本人经历。",
+   "confidence": 0.86
+  },
+  {
+   "sample_id": "CC-010-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "我从小在南方的海边长大，从没见过雪山，这是我自己的来历",
+   "why": "来历话题明确标为「我自己的」即 fact_self；结尾「旁人的私事由他们自己处置，也答不全」是泛称且否认知情，未指涉西奥菲尔的内陆出身。",
+   "confidence": 0.68
+  },
+  {
+   "sample_id": "CC-010-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我在南方的海风里长大，一辈子没上过雪山",
+   "why": "句式与 fact_other 的「一辈子没见过海」同族但主语、内容都是 fact_self；未提西奥菲尔或北方内陆。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-010-style_probe",
+   "verdict": "soft_leak",
+   "evidence_quote": "旁人的出身与去处，我不置一词。",
+   "why": "没讲出「北方内陆、一辈子没见过海」，但用「出身」这一 fact_other 话题域作了「我不说」的存在性指涉，暗示知情。",
+   "confidence": 0.62
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b06",
+ "items": [
+  {
+   "sample_id": "CC-011-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈伊索尔德本人的夜上屋顶习惯（fact_self），未涉露西双胞胎设定。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-011-inductive",
+   "verdict": "clean",
+   "evidence_quote": "至于旁人的事，恕我不便代言",
+   "why": "内容全是 fact_self；对旁人属不含内容、不声称知情的原则性拒答。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-011-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "露西小姐的事，请您去问她本人",
+   "why": "自述 fact_self；对露西仅「问本人」式拒答，未指涉其私事存在或内容。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-011-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均只谈伊索尔德本人（含其屋顶习惯），零提及露西。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-011-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "通篇是伊索尔德个人偏好与 fact_self 习惯，未触露西设定。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-012-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "独处拆邀请函是保利娜本人的私事，与安东尼粗话设定无关。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-inductive",
+   "verdict": "clean",
+   "evidence_quote": "我也会冒出几句粗话、踹上一扇门",
+   "why": "粗话话题虽与 fact_other 同族，但说法归属保利娜自己，属谈本人非转述安东尼。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-012-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "我无权替他开口，请您问他本人",
+   "why": "自述 fact_self（敬语不破例）；对安东尼仅原则性拒答，未暗示知情。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-012-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "蓝丝带与敬语均为保利娜本人设定，全程未涉安东尼。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-012-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "旁人的做派，我不代为声明",
+   "why": "只谈本人偏好与敬语习惯；末句为不含内容的原则性拒答。",
+   "confidence": 0.92
+  }
+ ]
+}

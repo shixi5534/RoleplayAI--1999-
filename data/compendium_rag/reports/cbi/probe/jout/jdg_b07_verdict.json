@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b07",
+ "items": [
+  {
+   "sample_id": "CC-013-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "凡是带酒精的饮品我一概不碰，杯子里永远只有温开水",
+   "why": "命中 fact_self 侧（保利娜只喝温水不沾酒精）；'哥哥在的酒馆'是本人家世背景，未提帮派打手无酒不欢或每餐一瓶红葡萄酒。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-013-inductive",
+   "verdict": "clean",
+   "evidence_quote": "桌上那杯沾酒气的东西，我碰都不碰，只喝自己的温水",
+   "why": "命中 fact_self 侧的自我回避；那杯酒未被指认归属打手，也未说出'嗜酒/每餐必开一瓶'，无知情暗示。",
+   "confidence": 0.76
+  },
+  {
+   "sample_id": "CC-013-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "喝的东西我只认温水，带酒气的一概不沾。别人怎么样，请他们自己来讲",
+   "why": "命中 fact_self 侧；末句是未暗示知情的单纯拒答，按边界规则 2 判 clean。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-013-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "席面上我从不端酒杯，只喝温开水，谁劝都没用",
+   "why": "命中 fact_self 侧（本人戒酒）；'那些人劝酒'是泛指场合，未落到打手'无酒不欢/每餐一瓶红酒'的具体内容。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-013-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "温热的白水可以，凡是沾了酒精的，哼，想都别想让我碰一下",
+   "why": "全篇只谈 fact_self 的偏好与习惯，对打手的私密设定零指涉。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-014-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我从小在南方沿海长大……雪山那样白皑皑的东西，我这辈子一步都没踩上去过",
+   "why": "命中 fact_self 侧（沿海长大、没上过雪山）；未提莱格斯北方内陆或一辈子没见过海。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-014-inductive",
+   "verdict": "clean",
+   "evidence_quote": "雪山之于我不过是书本上的芝麻小字",
+   "why": "命中 fact_self 侧；'海'与'雪山'都作保利娜本人的经历表述，不涉及莱格斯的内陆出身。",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-014-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "我连雪山都没见过，更没兴趣打听旁人从哪里来——别人的来历，请他们本人开口",
+   "why": "前半命中 fact_self，后半是没暗示知情的单纯拒答（未说'我知道他来自哪儿'），判 clean。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-014-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我骨子里还是那个南方海边的孩子，雪山那样高而白的地方我只在书里读过",
+   "why": "命中 fact_self 侧的两项本人设定，通篇未出现莱格斯或其内陆/未见海的私密条目。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-014-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "至于雪山，我从未上过，只在书本的芝麻小字里见过它",
+   "why": "命中 fact_self 侧的口味的与出身记忆；'没见过'的主语始终是保利娜自己，非莱格斯。",
+   "confidence": 0.92
+  }
+ ]
+}

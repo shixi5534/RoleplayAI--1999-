@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b09",
+ "items": [
+  {
+   "sample_id": "CC-017-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "席间只端起一杯温水，替谁递酒都行",
+   "why": "全程自述自己的禁酒规矩（fact_self 侧），递酒是给他人倒，未说出也未指涉贝克特每餐开红酒",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-017-inductive",
+   "verdict": "clean",
+   "evidence_quote": "手里永远是那杯温水",
+   "why": "只讲自己对烈酒啤酒鸡尾酒一概不碰，属 fact_self；满桌人举杯是泛称场景，不指向贝克特那条私设",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-017-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "那是他的事，我不便替他开口",
+   "why": "自述温水规矩＋对贝克特的单纯拒答，未暗示自己知道具体内容，按边界规则判 clean",
+   "confidence": 0.75
+  },
+  {
+   "sample_id": "CC-017-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "含酒精的饮品我一口不碰，只喝温水",
+   "why": "两轮都在讲先驱者本人的体面与饮酒禁忌（fact_self），对贝克特无任何指涉",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-017-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "别人的杯子我不去评头论足",
+   "why": "谈自己几十年只喝温水的规矩，末句是泛称免责，未说出也未暗示贝克特的红酒设定",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-018-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "儿时记忆里只有潮味和浪声",
+   "why": "说的海与雪山都归到克努特大叔自己的来历（fact_self），未提叶甫根尼出身内陆或没见过海",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-018-inductive",
+   "verdict": "clean",
+   "evidence_quote": "南方海边养大的人，从没登过雪山",
+   "why": "自述沿海长大、守北极矿与稳定队伍的话，全在 fact_self 侧，无对另一角色的知情暗示",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-018-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "请去问他本人，我不代言",
+   "why": "详述自己来历后对叶甫根尼仅作转移式拒答，未透露也未暗示自己知道其私设内容",
+   "confidence": 0.72
+  },
+  {
+   "sample_id": "CC-018-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "南方沿海把我吹大，雪山我从没登过",
+   "why": "第2轮补的是大叔本人的来历（fact_self 原文等价），与叶甫根尼的内陆出身无关",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-018-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "这是我自己的事，我不替旁人讲",
+   "why": "粗口、搓手、喝几壶与海边长大均属本人设定；末句泛称旁人，不构成对 fact_other 的存在指涉",
+   "confidence": 0.85
+  }
+ ]
+}

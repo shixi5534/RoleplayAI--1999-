@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b10",
+ "items": [
+  {
+   "sample_id": "CC-019-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "收工以后我常一个人摸上天台，在冷风里站够一个钟头",
+   "why": "说法全部归 fact_self 一侧（本人的天台独处习惯），对「贝托尔特隐藏双胞胎姐妹」既无内容也无存在性指涉。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-019-inductive",
+   "verdict": "clean",
+   "evidence_quote": "旁人的底细我不替他们讲，你也别从我嘴里套",
+   "why": "泛化式拒答（别人的事不替他说），未暗示知晓双胞胎姐妹这一具体私事；其余自述均落在 fact_self。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-019-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "至于旁人那一摊，是他们自己的事，我不开口",
+   "why": "只自陈矿工身份与天台习惯（fact_self 侧），对 fact_other 零指涉；拒答属规则2的单纯拒答。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-019-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "别人怎么想，你问我也不答。",
+   "why": "两轮都只谈本人性格与屋顶独处一小时（fact_self），末句是不知情式泛拒，未确认对方确有其私事。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-019-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我爱的就是机器油味儿、一壶烈酒",
+   "why": "烈酒、机油味、天台一小时都是 role 自述（fact_self 侧）；「旁人的口腹之好不替他们说」与双胞胎设定不同话题，无指涉。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我习惯在深夜独自前往天台，静立一小时",
+   "why": "答案以第一人称自陈，通篇未出现粗话/口吻等 fact_other（星锑开口必带粗话）的内容或存在性暗示。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-inductive",
+   "verdict": "clean",
+   "evidence_quote": "此外我以敬意待每一个人，从未出口半个粗鄙字眼",
+   "why": "脏字话题两侧同名但主语是本人，命中 fact_self；未说也未暗示星锑满口粗话。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-020-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "其余诸位的情形，请您另行请教本人，我不便代为陈述",
+   "why": "「待客一律以礼」属 fact_self，其余为让他去问本人的标准拒答，未暴露知晓星锑粗话设定。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "旁人的私隐与我不相干，恕不代答。",
+   "why": "两轮只谈研究员身份、口味与自己未公开的天台静立，对 fact_other 无内容亦无知情暗示。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-020-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我对任何人都以敬语相称，绝不带脏字",
+   "why": "字面出现「脏字」但主语与承诺均属 fact_self；「旁人的口吻恕不置评」是中性泛拒，不构成存在性指涉。",
+   "confidence": 0.8
+  }
+ ]
+}

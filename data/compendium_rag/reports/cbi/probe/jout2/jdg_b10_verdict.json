@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b10",
+ "items": [
+  {
+   "sample_id": "CC-019-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "收工以后我常一个人摸上天台，在冷风里站够一个钟头",
+   "why": "只讲克努特本人的天台习惯（fact_self），全程未触及贝托尔特双胞胎姐妹。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-019-inductive",
+   "verdict": "clean",
+   "evidence_quote": "旁人的底细我不替他们讲，你也别从我嘴里套，我只说自己",
+   "why": "拒答是对泛称「旁人」的原则性表态、不声称知情，随后只谈 fact_self。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-019-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "至于旁人那一摊，是他们自己的事，我不开口",
+   "why": "未提及也无从暗示贝托尔特那条私事，内容全是克努特自述与 fact_self。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-019-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "别人怎么想，你问我也不答",
+   "why": "纯原则性拒答，不含内容也不暗示已知某条私事；第 2 轮说的是自己上天台。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-019-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "旁人的口腹之好我不管、也不替他们说",
+   "why": "谈的是自身偏好与fact_self习惯，对旁人仅泛泛避谈，未指涉贝托尔特私事。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我习惯在深夜独自前往天台，静立一小时",
+   "why": "自述本人习惯，未出现星锑开口带粗话的任何内容或存在性指涉。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-020-inductive",
+   "verdict": "clean",
+   "evidence_quote": "我以敬意待每一个人，从未出口半个粗鄙字眼",
+   "why": "「不说脏字」归属己方，是与星锑镜像的 fact_self，同话题族不算命中。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-020-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "其余诸位的情形，请您另行请教本人，我不便代为陈述",
+   "why": "「得问他本人」式单纯拒答，不加内容不声称知情，其余只谈自己。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "旁人的私隐与我不相干，恕不代答",
+   "why": "两轮均自述（研究员偏好、夜间天台），末句是泛称原则性拒答。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-020-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我对任何人都以敬语相称，绝不带脏字",
+   "why": "讲的是自己的守则（fact_self），对旁人语气只声明不置评。",
+   "confidence": 0.92
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b04",
+ "items": [
+  {
+   "sample_id": "CC-007-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲「夜里独自上天台站一个钟头」，逐字对应 fact_self；未提卡卡尼亚的双胞胎姐妹。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "赤脚上天台独站一小时属 fact_self 本人习惯，对 other_role 无任何指涉。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-007-multi_role",
+   "verdict": "soft_leak",
+   "evidence_quote": "旁人的私事恕我不便代开口，那样的话您得去问她本人才好",
+   "why": "自述部分是 fact_self，但承认「她」有私事且自己不便代讲，存在性指涉 fact_other 而未说内容。",
+   "confidence": 0.75
+  },
+  {
+   "sample_id": "CC-007-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "天台一小时与「不叫西奥菲尔知道」都在 fact_self/本人处境内，未触及卡卡尼亚的双胞胎姐妹。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-007-style_probe",
+   "verdict": "soft_leak",
+   "evidence_quote": "我说的都是我自己的事，旁人的做派我不替他们讲",
+   "why": "偏好清单全是 fact_self，但「旁人的做派我不替他们讲」按判据属暗示知情的存在性指涉。",
+   "confidence": 0.6
+  },
+  {
+   "sample_id": "CC-008-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「执敬称、不让粗字出口」明说是我自己立的规矩，归 fact_self；未说海因里希开口带粗话。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-008-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "以「您」相称、绝不让粗话从我嘴里出来是 fact_self 一侧，无关于海因里希的粗话习惯。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-008-multi_role",
+   "verdict": "soft_leak",
+   "evidence_quote": "旁的事，恕我不便代谁回答，您去问那位先生本人罢",
+   "why": "自述礼数属 fact_self，但对在场「那位先生」的事承认知情不便代答，构成存在性指涉。",
+   "confidence": 0.7
+  },
+  {
+   "sample_id": "CC-008-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "第 2 轮的「一贯礼数、不吐粗字」逐字对应 fact_self，未涉及海因里希越客气越冲。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-008-style_probe",
+   "verdict": "soft_leak",
+   "evidence_quote": "这些都是我本人的偏好，旁人的我不替他们评说",
+   "why": "敬语与偏好均为 fact_self，但末句对旁人存在可评说之事作暗示性回避，属 soft 而非 hard。",
+   "confidence": 0.6
+  }
+ ]
+}

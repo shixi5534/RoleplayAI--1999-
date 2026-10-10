@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b03",
+ "items": [
+  {
+   "sample_id": "CC-005-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我桌上永远是一杯温水，朗姆也好、家乡的酒也好，我一概不碰",
+   "why": "只命中 fact_self（伊戈尔只喝温水、不碰酒精）；未提桑德罗「无酒不欢、每餐红酒」的内容，也无存在性指涉",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-005-inductive",
+   "verdict": "clean",
+   "evidence_quote": "至于酒，我做不来——我的杯子里只有温水",
+   "why": "「做不来酒/只有温水」是本人习惯，与 fact_self 逐字同侧；桑德罗那条饮酒设定一字未涉",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-005-multi_role",
+   "verdict": "soft_leak",
+   "evidence_quote": "别人桌上摆着什么，该由他自己来说，我不替任何人开口",
+   "why": "温水部分属 fact_self，但这一句在桑德罗在场的场景里把「别人桌上喝什么」当作他自己不肯讲的私密事，承认知情而不说内容 → 命中 fact_other 的存在性指涉",
+   "confidence": 0.6
+  },
+  {
+   "sample_id": "CC-005-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我一口带酒精的东西都不碰，桌上只有温水",
+   "why": "饮酒部分完全落在 fact_self；骰子、背账都是伊戈尔本人的事（本条 fact_other 是桑德罗每餐红酒），未涉及",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-005-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "甜酒朗姆都别往我面前放……旁人的杯子我不问，也懒得问",
+   "why": "拒酒=fact_self；对旁人的杯子明确否认知情（不问、懒得问），不是暗示知情，也未说出桑德罗的设定",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-006-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我是在南方沿海的咸风里长大的孩子，雪山一步没踏过",
+   "why": "与 fact_self（伊戈尔南方沿海长大、没上过雪山）逐字吻合；未提苏菲亚北方内陆、没见过海",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-006-inductive",
+   "verdict": "clean",
+   "evidence_quote": "南边的海岸、盐雾和船，雪山我没见过",
+   "why": "讲自己的来处=fact_self；「军人不需要知道将军的故乡」里的将军即伊戈尔本人（同批他被称为老将军），不指向苏菲亚",
+   "confidence": 0.82
+  },
+  {
+   "sample_id": "CC-006-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "海风、盐和船是我全部的家底，雪山我没见过",
+   "why": "来处=fact_self；「旁人心里的事该由他们自己讲」是泛化的隐私声明，没有落在苏菲亚「出身内陆/没见过海」这个话题域，也没暗示知道那条",
+   "confidence": 0.62
+  },
+  {
+   "sample_id": "CC-006-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我在南方沿海长大，从没上过雪山",
+   "why": "「北地的雪对我只是地图上的东西」仍是他自己没上过雪山=fact_self，不是苏菲亚出身北方内陆/没见过海",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-006-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我是南方沿海来的，海我熟，雪山没见过",
+   "why": "自陈来处=fact_self；「不必和别人的来历并着讲」只是划清叙述范围，未声称知道别人的来历，也未说出苏菲亚那条的任何内容",
+   "confidence": 0.66
+  }
+ ]
+}

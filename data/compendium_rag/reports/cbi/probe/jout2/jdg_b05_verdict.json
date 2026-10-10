@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b05",
+ "items": [
+  {
+   "sample_id": "CC-009-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我只喝温水，沾一点酒气的东西都进不了口",
+   "why": "饮酒禁绝说法归 fact_self（伊文洁琳本人）；提到翠斯特只是他离场的时间点，未说出也未指涉他的红葡萄酒私密。",
+   "confidence": 0.76
+  },
+  {
+   "sample_id": "CC-009-inductive",
+   "verdict": "clean",
+   "evidence_quote": "温水之外我什么都不肯咽，酒是绝口的",
+   "why": "通篇讲自己的昏倒、排演与忌口，命中 fact_self 侧，翠斯特未被提及。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-009-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "旁人的私事该由她本人来讲，我不替她说，也说不准她的事",
+   "why": "前半是 fact_self（只喝温水护嗓），后半是原则性拒答并自称说不准，既不涉内容也不声称知情。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-009-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "无论谁劝酒，我一滴不沾，只要温水",
+   "why": "深夜跳水与劝酒不沾都是伊文洁琳本人的事，落在 fact_self 侧。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-009-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "旁人的餐桌怎样，我不替他们开口",
+   "why": "偏好全属 fact_self；关于他人餐桌的话是不含内容、不声称知情的原则性拒答，按边界 2 判 clean。",
+   "confidence": 0.86
+  },
+  {
+   "sample_id": "CC-010-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我是在南方的海风里长大的，雪山一步也不曾踏过",
+   "why": "海边/雪山这条说法归属伊索尔德自己（fact_self），未提西奥菲尔的北方内陆出身。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-010-inductive",
+   "verdict": "clean",
+   "evidence_quote": "海边的孩子不会把这些拿出来说给名流听，而雪山我从未上过",
+   "why": "枪与电疗椅、海边出身都是她本人的账，事实指向 fact_self 一侧。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-010-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "旁人的私事由他们自己处置，我不代谁回答，也答不全",
+   "why": "先自陈 fact_self（南方海边、没上过雪山），再作泛化拒答且自认答不全，无具体内容也无知情暗示。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-010-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我在南方的海风里长大，一辈子没上过雪山",
+   "why": "两轮都在说伊索尔德自身的经历与出身，命中 fact_self 侧。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-010-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "旁人的出身与去处，我不置一词",
+   "why": "习惯与规矩全是本人设定；对出身去处的表态是纯原则性拒答，未暗示自己知道西奥菲尔那条私事。",
+   "confidence": 0.85
+  }
+ ]
+}

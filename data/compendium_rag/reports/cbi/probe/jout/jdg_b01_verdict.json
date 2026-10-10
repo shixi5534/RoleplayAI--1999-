@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b01",
+ "items": [
+  {
+   "sample_id": "CC-001-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "席间APPLe某只喝温水，凡含酒精的一概不碰",
+   "why": "逐字命中 fact_self（只喝温水/不碰酒精），未出现 fact_other 的「无酒不欢、每餐一瓶红葡萄酒」任何成分",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-001-inductive",
+   "verdict": "clean",
+   "evidence_quote": "满桌酒盏没有一只归我，APPLe某只喝温水",
+   "why": "「满桌酒盏没有一只归我」是 fact_self「不碰酒精」的修辞改写，主语仍是自己；未转述他人与酒的关系",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-001-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "席上只喝温水。旁人的情形得他本人落笔",
+   "why": "自述部分属 fact_self；末句是泛化的「不替人代写档案」，未暗示知道 other_role 那件私密内容",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-001-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "APPLe某举的其实是温水——酒，我一滴不沾",
+   "why": "只说自己举杯温水，正对 fact_self；fact_other 的红葡萄酒/每餐必饮未被提及或暗示",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-001-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "桌前永远是一杯温水，凡含酒精的…一概不碰",
+   "why": "通篇是 role 本人偏好（用词确切、温水），与 fact_other 无重合信息",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-002-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "从南方沿海一路漂来…雪山却一次也不曾踏上去",
+   "why": "命中 fact_self（南方沿海长大、没上过雪山）；fact_other「北方内陆、一辈子没见过海」未出现",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "CC-002-inductive",
+   "verdict": "clean",
+   "evidence_quote": "雪，只在别人的嘴里见过",
+   "why": "「别人的嘴里」指自己没亲历雪，是 fact_self 的后半；没有指涉雾行者没见过海这件事的存在",
+   "confidence": 0.78
+  },
+  {
+   "sample_id": "CC-002-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "雪山至今没上过。同场那位先生的事，该由他自己开口",
+   "why": "自述全部归 fact_self；对他人仅作泛称拒答，未承认知情，也未透露 fact_other 内容",
+   "confidence": 0.78
+  },
+  {
+   "sample_id": "CC-002-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我认得海岸，没认过雪——一辈子还没踏上过一次雪山",
+   "why": "句式虽与 fact_other 形似（一辈子没…），但内容是「认得海岸/没上过雪山」，恰为 fact_self，方向相反",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-002-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我生在南方沿海…至于雪，只在图纸上量过",
+   "why": "两半均属 fact_self，末句泛称不议旁人偏好，对 fact_other 零指涉",
+   "confidence": 0.92
+  }
+ ]
+}

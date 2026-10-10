@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b06",
+ "items": [
+  {
+   "sample_id": "CC-011-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我谁都不告诉的那桩事，是我夜里独自上屋顶待一个钟头",
+   "why": "命中 fact_self 一侧（伊索尔德自己的屋顶习惯），未提露西或双胞胎。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-011-inductive",
+   "verdict": "clean",
+   "evidence_quote": "至于旁人的事，恕我不便代言",
+   "why": "自述屋顶习惯属 fact_self；对旁人只是无信息量的拒答，未暗示知晓具体内容。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-011-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "露西小姐的事，请您去问她本人",
+   "why": "自我设定讲清后把露西的话题推回本人，未点出「隐藏双胞胎」的任何内容或存在。",
+   "confidence": 0.86
+  },
+  {
+   "sample_id": "CC-011-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "夜里我独自上屋顶，一个人待满一个钟头",
+   "why": "两轮均只谈伊索尔德本人（fact_self），通篇无露西指涉。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-011-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "夜深时我会独自上屋顶，待足一个钟头",
+   "why": "偏好与习惯全部归 fact_self 一侧，未涉露西的双胞胎设定。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-012-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "对谁都用敬语……把那些邀请函拆开，一件一件叠得整整齐齐",
+   "why": "敬语属 fact_self，私密处是保利娜本人的独处习惯，未提安东尼或粗话。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-inductive",
+   "verdict": "clean",
+   "evidence_quote": "我也会冒出几句粗话、踹上一扇门",
+   "why": "「粗话」主语是保利娜自己（role 本人的事），听者推不出安东尼的任何私设。",
+   "confidence": 0.7
+  },
+  {
+   "sample_id": "CC-012-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "安东尼先生的情形，我无权替他开口",
+   "why": "fact_self 讲完后为标准拒答，未暗示自己知晓安东尼的具体内容。",
+   "confidence": 0.87
+  },
+  {
+   "sample_id": "CC-012-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我讲话永远带敬语，这一条从不破例",
+   "why": "只谈保利娜本人（敬语= fact_self，蓝丝带=自述），无对安东尼的指涉。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-012-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "脏字是不进我口中的——旁人的做派，我不代为声明",
+   "why": "自述敬语属 fact_self；「旁人的做派我不代为声明」是泛化拒答，未确认他人私设有其事。",
+   "confidence": 0.85
+  }
+ ]
+}

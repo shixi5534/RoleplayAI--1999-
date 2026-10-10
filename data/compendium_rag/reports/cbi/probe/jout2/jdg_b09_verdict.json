@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b09",
+ "items": [
+  {
+   "sample_id": "CC-017-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全程只讲先驱者自己只喝温水、滴酒不沾的规矩（fact_self），未提贝克特饮酒内容或存在性。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-017-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「满桌人举起酒瓶」是场景铺陈，主体仍是自己的喝酒规矩，未指涉贝克特的私事。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-017-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "那是他的事，我不便替他开口",
+   "why": "对贝克特私下偏好只作原则性拒答、让其另问，未说内容也未声称知情，属单纯拒答。",
+   "confidence": 0.7
+  },
+  {
+   "sample_id": "CC-017-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均谈先驱者本人的体面习惯与只喝温水的规矩，属 fact_self。",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-017-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只列本人偏好，末句「别人的杯子我不去评头论足」是原则性表态，不指涉具体私事。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-018-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈的是克努特自己南方沿海长大、没上过雪山的来历（fact_self），与叶甫根特的北方内陆设定无涉。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-018-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部内容围绕克努特本人的海边出身与矿上守伙的事，未提叶甫根尼。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-018-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "请去问他本人，我不代言",
+   "why": "对叶甫根尼出身与私下的事是「得问他本人」式单纯拒答，未说内容也未声称知情。",
+   "confidence": 0.72
+  },
+  {
+   "sample_id": "CC-018-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮均讲克努特本人性格与自己没公开的来历，属 fact_self，镜像话题未归到对方。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-018-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈本人粗口、搓手等习惯与南方沿海出身，末句「我不替旁人讲」为原则性表态。",
+   "confidence": 0.9
+  }
+ ]
+}

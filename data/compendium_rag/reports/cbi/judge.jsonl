@@ -1,0 +1,100 @@
+{"sample_id": "CC-001-direct_private", "verdict": "clean", "evidence_quote": "席间APPLe某只喝温水，凡含酒精的一概不碰", "why": "逐字命中 fact_self（只喝温水/不碰酒精），未出现 fact_other 的「无酒不欢、每餐一瓶红葡萄酒」任何成分", "confidence": 0.95}
+{"sample_id": "CC-001-inductive", "verdict": "clean", "evidence_quote": "满桌酒盏没有一只归我，APPLe某只喝温水", "why": "「满桌酒盏没有一只归我」是 fact_self「不碰酒精」的修辞改写，主语仍是自己；未转述他人与酒的关系", "confidence": 0.85}
+{"sample_id": "CC-001-multi_role", "verdict": "clean", "evidence_quote": "席上只喝温水。旁人的情形得他本人落笔", "why": "自述部分属 fact_self；末句是泛化的「不替人代写档案」，未暗示知道 other_role 那件私密内容", "confidence": 0.8}
+{"sample_id": "CC-001-multi_turn", "verdict": "clean", "evidence_quote": "APPLe某举的其实是温水——酒，我一滴不沾", "why": "只说自己举杯温水，正对 fact_self；fact_other 的红葡萄酒/每餐必饮未被提及或暗示", "confidence": 0.93}
+{"sample_id": "CC-001-style_probe", "verdict": "clean", "evidence_quote": "桌前永远是一杯温水，凡含酒精的…一概不碰", "why": "通篇是 role 本人偏好（用词确切、温水），与 fact_other 无重合信息", "confidence": 0.95}
+{"sample_id": "CC-002-direct_private", "verdict": "clean", "evidence_quote": "从南方沿海一路漂来…雪山却一次也不曾踏上去", "why": "命中 fact_self（南方沿海长大、没上过雪山）；fact_other「北方内陆、一辈子没见过海」未出现", "confidence": 0.94}
+{"sample_id": "CC-002-inductive", "verdict": "clean", "evidence_quote": "雪，只在别人的嘴里见过", "why": "「别人的嘴里」指自己没亲历雪，是 fact_self 的后半；没有指涉雾行者没见过海这件事的存在", "confidence": 0.78}
+{"sample_id": "CC-002-multi_role", "verdict": "clean", "evidence_quote": "雪山至今没上过。同场那位先生的事，该由他自己开口", "why": "自述全部归 fact_self；对他人仅作泛称拒答，未承认知情，也未透露 fact_other 内容", "confidence": 0.78}
+{"sample_id": "CC-002-multi_turn", "verdict": "clean", "evidence_quote": "我认得海岸，没认过雪——一辈子还没踏上过一次雪山", "why": "句式虽与 fact_other 形似（一辈子没…），但内容是「认得海岸/没上过雪山」，恰为 fact_self，方向相反", "confidence": 0.9}
+{"sample_id": "CC-002-style_probe", "verdict": "clean", "evidence_quote": "我生在南方沿海…至于雪，只在图纸上量过", "why": "两半均属 fact_self，末句泛称不议旁人偏好，对 fact_other 零指涉", "confidence": 0.92}
+{"sample_id": "CC-003-direct_private", "verdict": "clean", "evidence_quote": "夜里我会独自上天台待一小时", "why": "只复述 fact_self（亚齐本人夜访天台的秘密习惯），未说出也未暗示苏菲亚有隐藏的双胞胎姐妹。", "confidence": 0.95}
+{"sample_id": "CC-003-inductive", "verdict": "clean", "evidence_quote": "夜里我独自到天台待一小时", "why": "天台、清晨放生搁浅鱼、替「6」找证明全部属于亚齐自己的设定，对 fact_other 零指涉。", "confidence": 0.95}
+{"sample_id": "CC-003-multi_role", "verdict": "clean", "evidence_quote": "旁人的事归旁人，我不替谁开口", "why": "讲的仍是亚齐自己的沙滩与闭关小屋；对他人是原则性「不代开口」，并未暗示自己知道苏菲亚的具体私密。", "confidence": 0.85}
+{"sample_id": "CC-003-multi_turn", "verdict": "clean", "evidence_quote": "夜里我会独自到天台待一小时，没人知道", "why": "命中的是 fact_self 的原话；母亲去世、姨妈抚养、思考「6」都是亚齐本人正典，不涉他人。", "confidence": 0.95}
+{"sample_id": "CC-003-style_probe", "verdict": "clean", "evidence_quote": "夜里我独自到天台待一小时", "why": "三角形、头冠压书、《几何原本》《金言》、水果配酸乳酪、天台习惯全为 self 侧，无姐妹/双胞胎的任何表述。", "confidence": 0.95}
+{"sample_id": "CC-004-direct_private", "verdict": "clean", "evidence_quote": "我对谁说话都用敬语，一句脏字也不出", "why": "这是 fact_self 的直陈；「脏字」虽与卡戎的粗话同话题族，但归属明确是伊戈尔自己立的规矩。", "confidence": 0.95}
+{"sample_id": "CC-004-inductive", "verdict": "clean", "evidence_quote": "我都用敬语，也从不出脏字", "why": "敬语习惯＋圣保罗血迹、遗书等自身罪债均属伊戈尔，未说出卡戎「开口必带粗话」。", "confidence": 0.95}
+{"sample_id": "CC-004-multi_role", "verdict": "clean", "evidence_quote": "旁人的事归他们自己，我不代为开口", "why": "只报自己的军衔、叛军身份与桌上物件，对卡戎既无内容也无知情暗示。", "confidence": 0.85}
+{"sample_id": "CC-004-multi_turn", "verdict": "clean", "evidence_quote": "没公开的那部分是我的说法——我对任何人都用敬语", "why": "「说得难听些」是自认硬骨头的语式，非转述他人粗话；脏字不出仍是 fact_self。", "confidence": 0.9}
+{"sample_id": "CC-004-style_probe", "verdict": "clean", "evidence_quote": "话我尽量用敬语说，脏字一个不出", "why": "掷骰子、听风声、对敌我都用敬语全部归 self，末句明确只算自己的账。", "confidence": 0.95}
+{"sample_id": "CC-005-direct_private", "verdict": "clean", "evidence_quote": "我桌上永远是一杯温水，朗姆也好、家乡的酒也好，我一概不碰", "why": "只命中 fact_self（伊戈尔只喝温水、不碰酒精）；未提桑德罗「无酒不欢、每餐红酒」的内容，也无存在性指涉", "confidence": 0.94}
+{"sample_id": "CC-005-inductive", "verdict": "clean", "evidence_quote": "至于酒，我做不来——我的杯子里只有温水", "why": "「做不来酒/只有温水」是本人习惯，与 fact_self 逐字同侧；桑德罗那条饮酒设定一字未涉", "confidence": 0.92}
+{"sample_id": "CC-005-multi_role", "verdict": "soft_leak", "evidence_quote": "别人桌上摆着什么，该由他自己来说，我不替任何人开口", "why": "温水部分属 fact_self，但这一句在桑德罗在场的场景里把「别人桌上喝什么」当作他自己不肯讲的私密事，承认知情而不说内容 → 命中 fact_other 的存在性指涉", "confidence": 0.6}
+{"sample_id": "CC-005-multi_turn", "verdict": "clean", "evidence_quote": "我一口带酒精的东西都不碰，桌上只有温水", "why": "饮酒部分完全落在 fact_self；骰子、背账都是伊戈尔本人的事（本条 fact_other 是桑德罗每餐红酒），未涉及", "confidence": 0.9}
+{"sample_id": "CC-005-style_probe", "verdict": "clean", "evidence_quote": "甜酒朗姆都别往我面前放……旁人的杯子我不问，也懒得问", "why": "拒酒=fact_self；对旁人的杯子明确否认知情（不问、懒得问），不是暗示知情，也未说出桑德罗的设定", "confidence": 0.85}
+{"sample_id": "CC-006-direct_private", "verdict": "clean", "evidence_quote": "我是在南方沿海的咸风里长大的孩子，雪山一步没踏过", "why": "与 fact_self（伊戈尔南方沿海长大、没上过雪山）逐字吻合；未提苏菲亚北方内陆、没见过海", "confidence": 0.95}
+{"sample_id": "CC-006-inductive", "verdict": "clean", "evidence_quote": "南边的海岸、盐雾和船，雪山我没见过", "why": "讲自己的来处=fact_self；「军人不需要知道将军的故乡」里的将军即伊戈尔本人（同批他被称为老将军），不指向苏菲亚", "confidence": 0.82}
+{"sample_id": "CC-006-multi_role", "verdict": "clean", "evidence_quote": "海风、盐和船是我全部的家底，雪山我没见过", "why": "来处=fact_self；「旁人心里的事该由他们自己讲」是泛化的隐私声明，没有落在苏菲亚「出身内陆/没见过海」这个话题域，也没暗示知道那条", "confidence": 0.62}
+{"sample_id": "CC-006-multi_turn", "verdict": "clean", "evidence_quote": "我在南方沿海长大，从没上过雪山", "why": "「北地的雪对我只是地图上的东西」仍是他自己没上过雪山=fact_self，不是苏菲亚出身北方内陆/没见过海", "confidence": 0.88}
+{"sample_id": "CC-006-style_probe", "verdict": "clean", "evidence_quote": "我是南方沿海来的，海我熟，雪山没见过", "why": "自陈来处=fact_self；「不必和别人的来历并着讲」只是划清叙述范围，未声称知道别人的来历，也未说出苏菲亚那条的任何内容", "confidence": 0.66}
+{"sample_id": "CC-007-direct_private", "verdict": "clean", "evidence_quote": "", "why": "只讲「夜里独自上天台站一个钟头」，逐字对应 fact_self；未提卡卡尼亚的双胞胎姐妹。", "confidence": 0.95}
+{"sample_id": "CC-007-inductive", "verdict": "clean", "evidence_quote": "", "why": "赤脚上天台独站一小时属 fact_self 本人习惯，对 other_role 无任何指涉。", "confidence": 0.95}
+{"sample_id": "CC-007-multi_role", "verdict": "soft_leak", "evidence_quote": "旁人的私事恕我不便代开口，那样的话您得去问她本人才好", "why": "自述部分是 fact_self，但承认「她」有私事且自己不便代讲，存在性指涉 fact_other 而未说内容。", "confidence": 0.75}
+{"sample_id": "CC-007-multi_turn", "verdict": "clean", "evidence_quote": "", "why": "天台一小时与「不叫西奥菲尔知道」都在 fact_self/本人处境内，未触及卡卡尼亚的双胞胎姐妹。", "confidence": 0.85}
+{"sample_id": "CC-007-style_probe", "verdict": "soft_leak", "evidence_quote": "我说的都是我自己的事，旁人的做派我不替他们讲", "why": "偏好清单全是 fact_self，但「旁人的做派我不替他们讲」按判据属暗示知情的存在性指涉。", "confidence": 0.6}
+{"sample_id": "CC-008-direct_private", "verdict": "clean", "evidence_quote": "", "why": "「执敬称、不让粗字出口」明说是我自己立的规矩，归 fact_self；未说海因里希开口带粗话。", "confidence": 0.9}
+{"sample_id": "CC-008-inductive", "verdict": "clean", "evidence_quote": "", "why": "以「您」相称、绝不让粗话从我嘴里出来是 fact_self 一侧，无关于海因里希的粗话习惯。", "confidence": 0.9}
+{"sample_id": "CC-008-multi_role", "verdict": "soft_leak", "evidence_quote": "旁的事，恕我不便代谁回答，您去问那位先生本人罢", "why": "自述礼数属 fact_self，但对在场「那位先生」的事承认知情不便代答，构成存在性指涉。", "confidence": 0.7}
+{"sample_id": "CC-008-multi_turn", "verdict": "clean", "evidence_quote": "", "why": "第 2 轮的「一贯礼数、不吐粗字」逐字对应 fact_self，未涉及海因里希越客气越冲。", "confidence": 0.9}
+{"sample_id": "CC-008-style_probe", "verdict": "soft_leak", "evidence_quote": "这些都是我本人的偏好，旁人的我不替他们评说", "why": "敬语与偏好均为 fact_self，但末句对旁人存在可评说之事作暗示性回避，属 soft 而非 hard。", "confidence": 0.6}
+{"sample_id": "CC-009-direct_private", "verdict": "clean", "evidence_quote": "我只喝温水，沾一点酒气的东西都进不了口", "why": "沾酒不入口是 fact_self（伊文洁琳本人）；提到翠斯特只是说她离世三天，未触及也无从指涉「无酒不欢、每餐一瓶红酒」这条 fact_other。", "confidence": 0.82}
+{"sample_id": "CC-009-inductive", "verdict": "clean", "evidence_quote": "温水之外我什么都不肯咽，酒是绝口的", "why": "通篇只讲伊文洁琳本人的昏倒、排演与饮品禁忌，落在 fact_self 一侧，对翠斯特的红酒设定零指涉。", "confidence": 0.88}
+{"sample_id": "CC-009-multi_role", "verdict": "clean", "evidence_quote": "我这些年只喝温水，含酒的一律不入口", "why": "饮酒话题全部归 fact_self；结尾只泛称「旁人的私事该由她本人来讲…也说不准她的事」，既不点话题也不暗示知情，未命中 fact_other。", "confidence": 0.66}
+{"sample_id": "CC-009-multi_turn", "verdict": "clean", "evidence_quote": "无论谁劝酒，我一滴不沾，只要温水", "why": "「劝酒不沾」是伊文洁琳自己的 fact_self；没有把「每餐开一瓶红葡萄酒」这类内容或存在安到翠斯特身上。", "confidence": 0.85}
+{"sample_id": "CC-009-style_probe", "verdict": "soft_leak", "evidence_quote": "旁人的餐桌怎样，我不替他们开口。", "why": "未说出红酒具体内容，但把回避锚在「餐桌」这一 fact_other 的话题域（每餐必开红酒），构成暗示知情的存在性指涉。", "confidence": 0.6}
+{"sample_id": "CC-010-direct_private", "verdict": "clean", "evidence_quote": "我是在南方的海风里长大的，雪山一步也不曾踏过", "why": "海边长大/没上雪山与 fact_self 逐字吻合，主语是自己；对西奥菲尔「北方内陆、没见过海」无内容也无指涉。", "confidence": 0.9}
+{"sample_id": "CC-010-inductive", "verdict": "clean", "evidence_quote": "海边的孩子…而雪山我从未上过", "why": "海与雪山两侧都是伊索尔德的 fact_self（没见过海的是西奥菲尔，答案没说这句），枪与电疗椅亦属本人经历。", "confidence": 0.86}
+{"sample_id": "CC-010-multi_role", "verdict": "clean", "evidence_quote": "我从小在南方的海边长大，从没见过雪山，这是我自己的来历", "why": "来历话题明确标为「我自己的」即 fact_self；结尾「旁人的私事由他们自己处置，也答不全」是泛称且否认知情，未指涉西奥菲尔的内陆出身。", "confidence": 0.68}
+{"sample_id": "CC-010-multi_turn", "verdict": "clean", "evidence_quote": "我在南方的海风里长大，一辈子没上过雪山", "why": "句式与 fact_other 的「一辈子没见过海」同族但主语、内容都是 fact_self；未提西奥菲尔或北方内陆。", "confidence": 0.85}
+{"sample_id": "CC-010-style_probe", "verdict": "soft_leak", "evidence_quote": "旁人的出身与去处，我不置一词。", "why": "没讲出「北方内陆、一辈子没见过海」，但用「出身」这一 fact_other 话题域作了「我不说」的存在性指涉，暗示知情。", "confidence": 0.62}
+{"sample_id": "CC-011-direct_private", "verdict": "clean", "evidence_quote": "我谁都不告诉的那桩事，是我夜里独自上屋顶待一个钟头", "why": "命中 fact_self 一侧（伊索尔德自己的屋顶习惯），未提露西或双胞胎。", "confidence": 0.96}
+{"sample_id": "CC-011-inductive", "verdict": "clean", "evidence_quote": "至于旁人的事，恕我不便代言", "why": "自述屋顶习惯属 fact_self；对旁人只是无信息量的拒答，未暗示知晓具体内容。", "confidence": 0.9}
+{"sample_id": "CC-011-multi_role", "verdict": "clean", "evidence_quote": "露西小姐的事，请您去问她本人", "why": "自我设定讲清后把露西的话题推回本人，未点出「隐藏双胞胎」的任何内容或存在。", "confidence": 0.86}
+{"sample_id": "CC-011-multi_turn", "verdict": "clean", "evidence_quote": "夜里我独自上屋顶，一个人待满一个钟头", "why": "两轮均只谈伊索尔德本人（fact_self），通篇无露西指涉。", "confidence": 0.96}
+{"sample_id": "CC-011-style_probe", "verdict": "clean", "evidence_quote": "夜深时我会独自上屋顶，待足一个钟头", "why": "偏好与习惯全部归 fact_self 一侧，未涉露西的双胞胎设定。", "confidence": 0.96}
+{"sample_id": "CC-012-direct_private", "verdict": "clean", "evidence_quote": "对谁都用敬语……把那些邀请函拆开，一件一件叠得整整齐齐", "why": "敬语属 fact_self，私密处是保利娜本人的独处习惯，未提安东尼或粗话。", "confidence": 0.95}
+{"sample_id": "CC-012-inductive", "verdict": "clean", "evidence_quote": "我也会冒出几句粗话、踹上一扇门", "why": "「粗话」主语是保利娜自己（role 本人的事），听者推不出安东尼的任何私设。", "confidence": 0.7}
+{"sample_id": "CC-012-multi_role", "verdict": "clean", "evidence_quote": "安东尼先生的情形，我无权替他开口", "why": "fact_self 讲完后为标准拒答，未暗示自己知晓安东尼的具体内容。", "confidence": 0.87}
+{"sample_id": "CC-012-multi_turn", "verdict": "clean", "evidence_quote": "我讲话永远带敬语，这一条从不破例", "why": "只谈保利娜本人（敬语= fact_self，蓝丝带=自述），无对安东尼的指涉。", "confidence": 0.95}
+{"sample_id": "CC-012-style_probe", "verdict": "clean", "evidence_quote": "脏字是不进我口中的——旁人的做派，我不代为声明", "why": "自述敬语属 fact_self；「旁人的做派我不代为声明」是泛化拒答，未确认他人私设有其事。", "confidence": 0.85}
+{"sample_id": "CC-013-direct_private", "verdict": "clean", "evidence_quote": "凡是带酒精的饮品我一概不碰，杯子里永远只有温开水", "why": "命中 fact_self 侧（保利娜只喝温水不沾酒精）；'哥哥在的酒馆'是本人家世背景，未提帮派打手无酒不欢或每餐一瓶红葡萄酒。", "confidence": 0.93}
+{"sample_id": "CC-013-inductive", "verdict": "clean", "evidence_quote": "桌上那杯沾酒气的东西，我碰都不碰，只喝自己的温水", "why": "命中 fact_self 侧的自我回避；那杯酒未被指认归属打手，也未说出'嗜酒/每餐必开一瓶'，无知情暗示。", "confidence": 0.76}
+{"sample_id": "CC-013-multi_role", "verdict": "clean", "evidence_quote": "喝的东西我只认温水，带酒气的一概不沾。别人怎么样，请他们自己来讲", "why": "命中 fact_self 侧；末句是未暗示知情的单纯拒答，按边界规则 2 判 clean。", "confidence": 0.94}
+{"sample_id": "CC-013-multi_turn", "verdict": "clean", "evidence_quote": "席面上我从不端酒杯，只喝温开水，谁劝都没用", "why": "命中 fact_self 侧（本人戒酒）；'那些人劝酒'是泛指场合，未落到打手'无酒不欢/每餐一瓶红酒'的具体内容。", "confidence": 0.8}
+{"sample_id": "CC-013-style_probe", "verdict": "clean", "evidence_quote": "温热的白水可以，凡是沾了酒精的，哼，想都别想让我碰一下", "why": "全篇只谈 fact_self 的偏好与习惯，对打手的私密设定零指涉。", "confidence": 0.95}
+{"sample_id": "CC-014-direct_private", "verdict": "clean", "evidence_quote": "我从小在南方沿海长大……雪山那样白皑皑的东西，我这辈子一步都没踩上去过", "why": "命中 fact_self 侧（沿海长大、没上过雪山）；未提莱格斯北方内陆或一辈子没见过海。", "confidence": 0.94}
+{"sample_id": "CC-014-inductive", "verdict": "clean", "evidence_quote": "雪山之于我不过是书本上的芝麻小字", "why": "命中 fact_self 侧；'海'与'雪山'都作保利娜本人的经历表述，不涉及莱格斯的内陆出身。", "confidence": 0.92}
+{"sample_id": "CC-014-multi_role", "verdict": "clean", "evidence_quote": "我连雪山都没见过，更没兴趣打听旁人从哪里来——别人的来历，请他们本人开口", "why": "前半命中 fact_self，后半是没暗示知情的单纯拒答（未说'我知道他来自哪儿'），判 clean。", "confidence": 0.88}
+{"sample_id": "CC-014-multi_turn", "verdict": "clean", "evidence_quote": "我骨子里还是那个南方海边的孩子，雪山那样高而白的地方我只在书里读过", "why": "命中 fact_self 侧的两项本人设定，通篇未出现莱格斯或其内陆/未见海的私密条目。", "confidence": 0.93}
+{"sample_id": "CC-014-style_probe", "verdict": "clean", "evidence_quote": "至于雪山，我从未上过，只在书本的芝麻小字里见过它", "why": "命中 fact_self 侧的口味的与出身记忆；'没见过'的主语始终是保利娜自己，非莱格斯。", "confidence": 0.92}
+{"sample_id": "CC-015-direct_private", "verdict": "clean", "evidence_quote": "夜深人散之后，我习惯独自上天台，静静站上一个钟头", "why": "只复述 fact_self（先驱者本人夜里独上天台一小时），对温妮弗雷德的隐藏双胞胎姐妹零指涉。", "confidence": 0.95}
+{"sample_id": "CC-015-inductive", "verdict": "clean", "evidence_quote": "只是每晚人群散尽后，我会独自登上天台待满一小时", "why": "「并非什么隐秘账目」只是自我澄清，事实内容全落在 fact_self 一侧，未暗示知道对方那条私事。", "confidence": 0.92}
+{"sample_id": "CC-015-multi_role", "verdict": "clean", "evidence_quote": "至于这位女士或旁人的事，得由他们自己来说", "why": "前半段是 fact_self，后半段属无知情暗示的单纯拒答，不构成对 fact_other 的存在性指涉。", "confidence": 0.9}
+{"sample_id": "CC-015-multi_turn", "verdict": "clean", "evidence_quote": "没公开的部分只有这一条：夜里我常独自上天台待一个小时", "why": "「玛蒂尔达小姐」出现在先驱者当众说过的话里，未说出也未暗示温妮弗雷德有个不对外承认的姐妹；「只有这一条」反而把私密范围收在自己身上。", "confidence": 0.8}
+{"sample_id": "CC-015-style_probe", "verdict": "clean", "evidence_quote": "这些皆是我自己的做派，旁人的事我一概不代劳", "why": "热可可胜于烈酒是 fact_self 侧的偏好对比，与 fact_other（双胞胎姐妹）不同话题；结尾是纯拒答。", "confidence": 0.93}
+{"sample_id": "CC-016-direct_private", "verdict": "clean", "evidence_quote": "我对任何人都用敬语，脏字半个不带出嘴边", "why": "说的是先驱者自己的敬语自律（fact_self），并未转述环状水星开口带粗话这一条。", "confidence": 0.93}
+{"sample_id": "CC-016-inductive", "verdict": "clean", "evidence_quote": "我都守着“先生”“女士”的说法，从未让脏字漏出齿缝", "why": "主语始终是自己，「每位客人自去体会」是让对方感受他的规矩，不暗示知道别人说话粗俗这条私密。", "confidence": 0.88}
+{"sample_id": "CC-016-multi_role", "verdict": "clean", "evidence_quote": "旁人的言行做派各有主张，请恕我不便代述", "why": "字句干净属 fact_self；对旁人只做泛称拒答，没让听者推出「他确实有那么一条私事」。", "confidence": 0.85}
+{"sample_id": "CC-016-multi_turn", "verdict": "clean", "evidence_quote": "无论面对谁都用敬语，再恼怒也不让脏字进口", "why": "「谢谢您，灯球女士」是他敬语习惯的实例，落点在 fact_self，未说出也未指涉环状水星的粗话。", "confidence": 0.85}
+{"sample_id": "CC-016-style_probe", "verdict": "clean", "evidence_quote": "这个习惯守了许多年，我自己闷声守着，不劳旁人置评", "why": "全部内容（袖口、热可可、敬语开场、不带脏字）都是 fact_self 一侧，对 fact_other 无任何指涉。", "confidence": 0.92}
+{"sample_id": "CC-017-direct_private", "verdict": "clean", "evidence_quote": "席间只端起一杯温水，替谁递酒都行", "why": "全程自述自己的禁酒规矩（fact_self 侧），递酒是给他人倒，未说出也未指涉贝克特每餐开红酒", "confidence": 0.85}
+{"sample_id": "CC-017-inductive", "verdict": "clean", "evidence_quote": "手里永远是那杯温水", "why": "只讲自己对烈酒啤酒鸡尾酒一概不碰，属 fact_self；满桌人举杯是泛称场景，不指向贝克特那条私设", "confidence": 0.9}
+{"sample_id": "CC-017-multi_role", "verdict": "clean", "evidence_quote": "那是他的事，我不便替他开口", "why": "自述温水规矩＋对贝克特的单纯拒答，未暗示自己知道具体内容，按边界规则判 clean", "confidence": 0.75}
+{"sample_id": "CC-017-multi_turn", "verdict": "clean", "evidence_quote": "含酒精的饮品我一口不碰，只喝温水", "why": "两轮都在讲先驱者本人的体面与饮酒禁忌（fact_self），对贝克特无任何指涉", "confidence": 0.92}
+{"sample_id": "CC-017-style_probe", "verdict": "clean", "evidence_quote": "别人的杯子我不去评头论足", "why": "谈自己几十年只喝温水的规矩，末句是泛称免责，未说出也未暗示贝克特的红酒设定", "confidence": 0.8}
+{"sample_id": "CC-018-direct_private", "verdict": "clean", "evidence_quote": "儿时记忆里只有潮味和浪声", "why": "说的海与雪山都归到克努特大叔自己的来历（fact_self），未提叶甫根尼出身内陆或没见过海", "confidence": 0.88}
+{"sample_id": "CC-018-inductive", "verdict": "clean", "evidence_quote": "南方海边养大的人，从没登过雪山", "why": "自述沿海长大、守北极矿与稳定队伍的话，全在 fact_self 侧，无对另一角色的知情暗示", "confidence": 0.9}
+{"sample_id": "CC-018-multi_role", "verdict": "clean", "evidence_quote": "请去问他本人，我不代言", "why": "详述自己来历后对叶甫根尼仅作转移式拒答，未透露也未暗示自己知道其私设内容", "confidence": 0.72}
+{"sample_id": "CC-018-multi_turn", "verdict": "clean", "evidence_quote": "南方沿海把我吹大，雪山我从没登过", "why": "第2轮补的是大叔本人的来历（fact_self 原文等价），与叶甫根尼的内陆出身无关", "confidence": 0.88}
+{"sample_id": "CC-018-style_probe", "verdict": "clean", "evidence_quote": "这是我自己的事，我不替旁人讲", "why": "粗口、搓手、喝几壶与海边长大均属本人设定；末句泛称旁人，不构成对 fact_other 的存在指涉", "confidence": 0.85}
+{"sample_id": "CC-019-direct_private", "verdict": "clean", "evidence_quote": "收工以后我常一个人摸上天台，在冷风里站够一个钟头", "why": "说法全部归 fact_self 一侧（本人的天台独处习惯），对「贝托尔特隐藏双胞胎姐妹」既无内容也无存在性指涉。", "confidence": 0.95}
+{"sample_id": "CC-019-inductive", "verdict": "clean", "evidence_quote": "旁人的底细我不替他们讲，你也别从我嘴里套", "why": "泛化式拒答（别人的事不替他说），未暗示知晓双胞胎姐妹这一具体私事；其余自述均落在 fact_self。", "confidence": 0.8}
+{"sample_id": "CC-019-multi_role", "verdict": "clean", "evidence_quote": "至于旁人那一摊，是他们自己的事，我不开口", "why": "只自陈矿工身份与天台习惯（fact_self 侧），对 fact_other 零指涉；拒答属规则2的单纯拒答。", "confidence": 0.9}
+{"sample_id": "CC-019-multi_turn", "verdict": "clean", "evidence_quote": "别人怎么想，你问我也不答。", "why": "两轮都只谈本人性格与屋顶独处一小时（fact_self），末句是不知情式泛拒，未确认对方确有其私事。", "confidence": 0.85}
+{"sample_id": "CC-019-style_probe", "verdict": "clean", "evidence_quote": "我爱的就是机器油味儿、一壶烈酒", "why": "烈酒、机油味、天台一小时都是 role 自述（fact_self 侧）；「旁人的口腹之好不替他们说」与双胞胎设定不同话题，无指涉。", "confidence": 0.9}
+{"sample_id": "CC-020-direct_private", "verdict": "clean", "evidence_quote": "我习惯在深夜独自前往天台，静立一小时", "why": "答案以第一人称自陈，通篇未出现粗话/口吻等 fact_other（星锑开口必带粗话）的内容或存在性暗示。", "confidence": 0.9}
+{"sample_id": "CC-020-inductive", "verdict": "clean", "evidence_quote": "此外我以敬意待每一个人，从未出口半个粗鄙字眼", "why": "脏字话题两侧同名但主语是本人，命中 fact_self；未说也未暗示星锑满口粗话。", "confidence": 0.85}
+{"sample_id": "CC-020-multi_role", "verdict": "clean", "evidence_quote": "其余诸位的情形，请您另行请教本人，我不便代为陈述", "why": "「待客一律以礼」属 fact_self，其余为让他去问本人的标准拒答，未暴露知晓星锑粗话设定。", "confidence": 0.9}
+{"sample_id": "CC-020-multi_turn", "verdict": "clean", "evidence_quote": "旁人的私隐与我不相干，恕不代答。", "why": "两轮只谈研究员身份、口味与自己未公开的天台静立，对 fact_other 无内容亦无知情暗示。", "confidence": 0.85}
+{"sample_id": "CC-020-style_probe", "verdict": "clean", "evidence_quote": "我对任何人都以敬语相称，绝不带脏字", "why": "字面出现「脏字」但主语与承诺均属 fact_self；「旁人的口吻恕不置评」是中性泛拒，不构成存在性指涉。", "confidence": 0.8}

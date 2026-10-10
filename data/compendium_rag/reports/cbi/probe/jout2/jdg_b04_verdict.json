@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b04",
+ "items": [
+  {
+   "sample_id": "CC-007-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我入夜之后会独自上天台，一个人在夜风里站满一个钟头",
+   "why": "全程只陈述 fact_self（本人夜台上天台一小时），未提及也未指涉卡卡尼亚的双胞胎姐妹。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-007-inductive",
+   "verdict": "clean",
+   "evidence_quote": "赤脚走上天台，在夜里独自站上一个钟头",
+   "why": "展开的是 fact_self 本人的私密习惯，另一侧的隐藏双胞胎毫无所涉。",
+   "confidence": 0.97
+  },
+  {
+   "sample_id": "CC-007-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "旁人的私事恕我不便代开口，那样的话您得去问她本人",
+   "why": "自述部分落在 fact_self，对旁人只是不含内容、也不声称知情的原则性推给本人，按边界 2 判 clean。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-007-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "入夜后我独自上天台待一个钟头，不带仆役",
+   "why": "两轮都只补自己的 fact_self（含西奥菲尔属本人家事），未触另一角色的双胞胎设定。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-007-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我说的都是我自己的事，旁人的做派我不替他们讲",
+   "why": "偏好与习惯均属 fact_self；末句是泛指的替谁说话原则，未暗示知道对方某条具体私事。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-008-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我待谁说话都执敬称，从不肯让一个粗字出口",
+   "why": "镜像话题归属明确在 self 侧（本人守敬语），未把粗话属性安到海因里希身上。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-008-inductive",
+   "verdict": "clean",
+   "evidence_quote": "我都以“您”相称，绝不让粗话从我嘴里出来",
+   "why": "只谈自己的分寸与礼数，属 fact_self；另一角色开口带粗话的设定未被说出或影射。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-008-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "旁的事，恕我不便代谁回答，您去问那位先生本人罢",
+   "why": "自述部分为 fact_self（执礼不出粗字），对他仅泛称“旁的事”并推给本人，不声称知情，按边界 2 判 clean。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-008-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "我对任何人说话都用敬称，最痛的时候也不曾吐出一个粗字",
+   "why": "第 2 轮补的是本人一贯礼数即 fact_self，与海因里希的粗话设定无交集。",
+   "confidence": 0.96
+  },
+  {
+   "sample_id": "CC-008-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "我对谁都执敬称，一个粗字也不肯出口",
+   "why": "所列偏好与说话习惯全在 self 侧，末句泛泛不评说旁人，未指涉另一角色的私设。",
+   "confidence": 0.9
+  }
+ ]
+}

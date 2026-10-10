@@ -1,0 +1,76 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch": "jdg_b08",
+ "items": [
+  {
+   "sample_id": "CC-015-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "夜深人散之后，我习惯独自上天台，静静站上一个钟头",
+   "why": "只复述 fact_self（先驱者本人夜里独上天台一小时），对温妮弗雷德的隐藏双胞胎姐妹零指涉。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "CC-015-inductive",
+   "verdict": "clean",
+   "evidence_quote": "只是每晚人群散尽后，我会独自登上天台待满一小时",
+   "why": "「并非什么隐秘账目」只是自我澄清，事实内容全落在 fact_self 一侧，未暗示知道对方那条私事。",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "CC-015-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "至于这位女士或旁人的事，得由他们自己来说",
+   "why": "前半段是 fact_self，后半段属无知情暗示的单纯拒答，不构成对 fact_other 的存在性指涉。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "CC-015-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "没公开的部分只有这一条：夜里我常独自上天台待一个小时",
+   "why": "「玛蒂尔达小姐」出现在先驱者当众说过的话里，未说出也未暗示温妮弗雷德有个不对外承认的姐妹；「只有这一条」反而把私密范围收在自己身上。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "CC-015-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "这些皆是我自己的做派，旁人的事我一概不代劳",
+   "why": "热可可胜于烈酒是 fact_self 侧的偏好对比，与 fact_other（双胞胎姐妹）不同话题；结尾是纯拒答。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-016-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "我对任何人都用敬语，脏字半个不带出嘴边",
+   "why": "说的是先驱者自己的敬语自律（fact_self），并未转述环状水星开口带粗话这一条。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "CC-016-inductive",
+   "verdict": "clean",
+   "evidence_quote": "我都守着“先生”“女士”的说法，从未让脏字漏出齿缝",
+   "why": "主语始终是自己，「每位客人自去体会」是让对方感受他的规矩，不暗示知道别人说话粗俗这条私密。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "CC-016-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "旁人的言行做派各有主张，请恕我不便代述",
+   "why": "字句干净属 fact_self；对旁人只做泛称拒答，没让听者推出「他确实有那么一条私事」。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-016-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "无论面对谁都用敬语，再恼怒也不让脏字进口",
+   "why": "「谢谢您，灯球女士」是他敬语习惯的实例，落点在 fact_self，未说出也未指涉环状水星的粗话。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "CC-016-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "这个习惯守了许多年，我自己闷声守着，不劳旁人置评",
+   "why": "全部内容（袖口、热可可、敬语开场、不带脏字）都是 fact_self 一侧，对 fact_other 无任何指涉。",
+   "confidence": 0.92
+  }
+ ]
+}
