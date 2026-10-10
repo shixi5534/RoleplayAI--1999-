@@ -1,0 +1,77 @@
+{
+ "schema": "compendium_rag.p10_visibility_shadow/v1",
+ "at": "2026-10-10T23:52:42",
+ "graph_sha": "911bb538160db80e",
+ "top_k": 10,
+ "deep": 30,
+ "n_rows": 209,
+ "n_role_domain": 165,
+ "per_set": {
+  "300cn": {
+   "n": 196,
+   "n_role_domain": 153,
+   "n_non_role": 43,
+   "base_mrr": 0.66528,
+   "strict_mrr": 0.56409,
+   "scene_mrr": 0.57823,
+   "d_mrr_role": -0.12963,
+   "d_mrr_role_scene": -0.11151,
+   "hit_base_role": 0.8824,
+   "hit_strict_role": 0.634,
+   "hit_scene_role": 0.6667,
+   "narration_gold_rows": 86,
+   "starved_strict": 39
+  },
+  "blind": {
+   "n": 10,
+   "n_role_domain": 9,
+   "n_non_role": 1,
+   "base_mrr": 0.68333,
+   "strict_mrr": 0.75,
+   "scene_mrr": 0.75,
+   "d_mrr_role": 0.07407,
+   "d_mrr_role_scene": 0.07407,
+   "hit_base_role": 0.8889,
+   "hit_strict_role": 0.8889,
+   "hit_scene_role": 0.8889,
+   "narration_gold_rows": 1,
+   "starved_strict": 0
+  },
+  "gen": {
+   "n": 3,
+   "n_role_domain": 3,
+   "n_non_role": 0,
+   "base_mrr": 0.77778,
+   "strict_mrr": 0.77778,
+   "scene_mrr": 0.77778,
+   "d_mrr_role": 0.0,
+   "d_mrr_role_scene": 0.0,
+   "hit_base_role": 1,
+   "hit_strict_role": 1,
+   "hit_scene_role": 1,
+   "narration_gold_rows": 0,
+   "starved_strict": 0
+  }
+ },
+ "mean_delta_strict_role": -0.11616,
+ "mean_delta_scene_role": -0.09936,
+ "worst_set_delta_strict": -0.12963,
+ "coverage": {
+  "300cn": [
+   196,
+   196
+  ],
+  "blind": [
+   10,
+   206
+  ],
+  "gen": [
+   3,
+   120
+  ]
+ },
+ "coverage_complete": false,
+ "verdict": "不给判：覆盖不全，先跑完采集",
+ "budget": 0.02,
+ "caveat": "主体由 seeds 的第一个「角色」实体推断，与 L2.3 的口径一致；过滤作用在 top-30 候选上并回填到 10，所以这不是「删了就少几条」，而是重排后的真实读数。名形式判据与图上的 owner 边不等价 —— 真边标注能标注「别人转述 A 的事也归 A」，名字代理不能。"
+}
