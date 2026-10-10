@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-10T23:57:22",
+ "done_at": "2026-10-11T00:04:32",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -156,8 +156,18 @@
    "chunks_sha16": "43106214066ccd60",
    "chunks_expect": "43106214066ccd60"
   },
-  "MRR": "实测：graph sha16=911bb538160db80e、chunks sha16=43106214066ccd60 两个输入逐位未变 ⇒ KB 与检索代码未动，三个主口径沿用 r11 基线 {'300cn_full': 0.66165, 'blind206_full': 0.677346, 'gen120_full': 0.820694}",
-  "Faithfulness": "L3.3 = 0.9845（同上，仅在 KB 输入未变时可沿用）",
+  "MRR_baselines_measured": {
+   "300cn_full": 0.66528,
+   "blind206_full": 0.6808,
+   "gen120_full": 0.82188,
+   "audit_l2_graph_sha": "911bb538160db80e",
+   "n_300cn": 196,
+   "n_blind": 206,
+   "n_gen": 120,
+   "audit_l3_graph_sha": "911bb538160db80e"
+  },
+  "MRR": "现算自 audit_l2.json 的 per_case（它量的图 sha=911bb538160db80e，期望 911bb538160db80e）：{'300cn_full': 0.66528, 'blind206_full': 0.6808, 'gen120_full': 0.82188}",
+  "Faithfulness": "现算自 audit_l3.json metrics.faithfulness = 0.9845（该报告量的图 sha=911bb538160db80e）",
   "kappa": "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 ⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），所以拿它当这一格的达成证据是假的。人标单已备好：reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判"
  },
  "gate": "有条件发布 + 必须出 P10 修复计划",
