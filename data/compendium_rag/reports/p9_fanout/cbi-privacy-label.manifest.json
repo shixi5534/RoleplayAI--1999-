@@ -1,0 +1,87 @@
+{
+ "schema": "compendium_rag.p9_fanout_manifest/v1",
+ "tag": "cbi-privacy-label",
+ "planned_at": "2026-10-11T00:22:39",
+ "graph_sha": "911bb538160db80e",
+ "qid_key": "pair_id",
+ "n_batches": 3,
+ "n_qids_total": 34,
+ "batches": [
+  {
+   "batch_id": "plw_b01",
+   "input_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b01.json",
+   "n_qids": 16,
+   "qids": [
+    "P000",
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b01_labels.json"
+  },
+  {
+   "batch_id": "plw_b02",
+   "input_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b02.json",
+   "n_qids": 16,
+   "qids": [
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b02_labels.json"
+  },
+  {
+   "batch_id": "plw_b03",
+   "input_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b03.json",
+   "n_qids": 2,
+   "qids": [
+    "P032",
+    "P033"
+   ],
+   "output_path": "data/compendium_rag/reports/cbi/privacy_label/plw_b03_labels.json"
+  }
+ ],
+ "write_scope": [
+  "data/compendium_rag/reports/cbi/privacy_label/plw_b01_labels.json",
+  "data/compendium_rag/reports/cbi/privacy_label/plw_b02_labels.json",
+  "data/compendium_rag/reports/cbi/privacy_label/plw_b03_labels.json",
+  "data/compendium_rag/reports/p9_fanout/cbi-privacy-label.heartbeat.txt"
+ ],
+ "protected_roots": [
+  "data/compendium_rag/graph.json",
+  "data/compendium_rag/graph.json"
+ ],
+ "protected": [
+  {
+   "path": "data/compendium_rag/graph.json",
+   "sha16": "911bb538160db80e",
+   "bytes": 11575840,
+   "mtime": "2026-10-10T09:46:00"
+  }
+ ]
+}

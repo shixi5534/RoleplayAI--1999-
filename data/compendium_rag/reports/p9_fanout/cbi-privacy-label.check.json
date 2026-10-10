@@ -1,0 +1,53 @@
+{
+ "schema": "compendium_rag.p9_fanout_check/v1",
+ "tag": "cbi-privacy-label",
+ "at": "2026-10-11T00:27:19",
+ "graph_sha": "911bb538160db80e",
+ "thresholds": {
+  "stale_min": 18.0,
+  "fresh_min": 3.0
+ },
+ "n_batches": 3,
+ "n_ok": 3,
+ "rows": [
+  {
+   "batch_id": "plw_b01",
+   "want": 16,
+   "output": "data/compendium_rag/reports/cbi/privacy_label/plw_b01_labels.json",
+   "mtime_age_min": 1.5,
+   "status": "ok",
+   "have": 16,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "plw_b02",
+   "want": 16,
+   "output": "data/compendium_rag/reports/cbi/privacy_label/plw_b02_labels.json",
+   "mtime_age_min": 0.9,
+   "status": "ok",
+   "have": 16,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  },
+  {
+   "batch_id": "plw_b03",
+   "want": 2,
+   "output": "data/compendium_rag/reports/cbi/privacy_label/plw_b03_labels.json",
+   "mtime_age_min": 3.8,
+   "status": "ok",
+   "have": 2,
+   "missing": [],
+   "extra": [],
+   "dup": [],
+   "blank": [],
+   "liveness": "done"
+  }
+ ]
+}
