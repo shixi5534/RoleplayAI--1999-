@@ -103,7 +103,10 @@ async def run() -> int:
                            and any(nm in chunks[cid]["text"] for nm in b_forms)
                            and not any(nm in chunks[cid]["text"] for nm in a_forms)]
             rec = {
-                "sample_id": sm["sample_id"], "pair": sm["pair"]["a_name"],
+                "sample_id": sm["sample_id"],
+                # 字段名别再叫 pair：这里存的是**视角角色 A**，写 pair 会让读日志的人
+                # 把它当成 B（本会话就误读过一次）
+                "a_name": sm["pair"]["a_name"], "b_name": sm["pair"]["b_name"],
                 "perspective": sm["perspective"], "query_type": sm.get("query_type", ""),
                 "conflict_type": sm.get("conflict_type", ""), "prompt": sm["prompt"],
                 "top_ids": top_ids,
