@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b06",
+ "items": [
+  {
+   "sample_id": "C2-021-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "答案说的湖畔独坐到十指怕冷、回家称一直在屋里正是 fact_self 本人的信息点，未出现母亲的咳嗽/药渣/窗外雪等内容点。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "C2-021-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述与 fact_self 一致，末句「家里其他人的事…我不拿来当众讲」是纯原则性拒答（R2），未挂靠母亲那条私事的物件或数字。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "C2-021-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全部是利伯蒂本人的正典信息点（东区、叫醒工、折纸鸟、湖畔坐到手指发冷），对他人仅作原则性不代讲。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-021-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "两轮都只说 fact_self 的湖畔秘密，提到莎拉是说自己瞒着谁，未给出母亲那条私事的任何具体内容点。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-021-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "口气题里的折纸鸟、唤风、湖畔独坐到十根手指怕冷均与 fact_self 一致，且明示不代讲别人的事。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-022-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "复述的是 fact_self（晚餐前溜去湖畔把话讲给鸟听），未出现灯倌的指路、最黑的街、推说习惯等内容点。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "C2-022-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述与 fact_self 一致，「别人有没有这样的小习惯我不晓得，反正我不替他们讲」是原则性拒答，不构成知情暗示（R3）。",
+   "confidence": 0.86
+  },
+  {
+   "sample_id": "C2-022-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲利伯蒂本人的身份与湖畔习惯，把他人之事交回本人，属纯原则性拒答。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-022-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「谁问我都只说是散步」是 A 自己湖畔习惯的遮掩说法，地点与托词都不同于灯倌的「最黑的街／推说习惯」，无等价内容点也不与 fact_self 矛盾。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "C2-022-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "纸、风、蓝羽毛鸟与晚餐前湖畔说给鸟听均落在 fact_self 一族，末句是原则性不代讲。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "C2-023-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "答案即 fact_self（购物清单折成鸟藏进锈铁盒、谁翻都不认），父亲的几贯钱、棉袄夹层、旧债均未出现。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "C2-023-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述对鸟说话与锈铁盒藏纸鸟都是 A 本人信息点，未见 fact_other 的物件或数字。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-023-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "仅自我介绍加「不替谁开口」的原则性拒答，未涉及父亲的私事。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "C2-023-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "第二轮复述 fact_self 的锈铁盒秘密，与 fact_other 的棉袄夹层藏钱无重合。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-023-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "偏好与习惯全部来自 fact_self 一族（折纸鸟、唤风、锈铁盒不认），并明确不替别人说话。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-024-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述一杯苦艾酒、不续第二口、什么也不肯说正是 fact_self，未出现卡森先生的深夜凉红茶或记牢每一餐。",
+   "confidence": 0.95
+  },
+  {
+   "sample_id": "C2-024-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "撇开旁人只讲自己的苦艾酒做派，与 fact_self 一致，无 B 的内容点也无知情暗示。",
+   "confidence": 0.94
+  },
+  {
+   "sample_id": "C2-024-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "讲自己主持场面与角落里的苦艾酒，末句「不越俎代庖」属纯原则性拒答（R2）。",
+   "confidence": 0.93
+  },
+  {
+   "sample_id": "C2-024-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "「把每一场都办得体面」是 A 待客的自述，不是 fact_other「替人记牢每一餐」的等价内容点，第二轮仍只说苦艾酒。",
+   "confidence": 0.85
+  },
+  {
+   "sample_id": "C2-024-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "殷勤待客与只守一杯苦艾酒不续第二口均属 A 本人信息点，并声明不替别人说半句。",
+   "confidence": 0.93
+  }
+ ]
+}

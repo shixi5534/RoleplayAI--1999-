@@ -1,0 +1,64 @@
+{
+ "schema": "compendium_rag.cbi_result_v2testset/v1",
+ "caliber": "ruler_v1_on_v2_testset",
+ "testset": "501b76613569c890",
+ "graph_sha": "911bb538160db80e",
+ "chunks_sha": "43106214066ccd60",
+ "answers_sha": "736f5a191795f54a",
+ "judge_sha": "a07f7816ceab489f",
+ "retrieval_sha": "867a94ef0df13686",
+ "counts": {
+  "N_hard": 0,
+  "N_soft": 0,
+  "N_retrieval": 30,
+  "N_total": 500
+ },
+ "retrieval_rate": 0.06,
+ "retrieval_wilson95": [
+  0.0423,
+  0.0844
+ ],
+ "cbi": 0.982,
+ "gates": {
+  "CBI>=0.97": true,
+  "N_hard=0": true,
+  "N_soft<=5": true,
+  "N_retrieval<=15": false
+ },
+ "failed_gates": [
+  "N_retrieval<=15"
+ ],
+ "verdict": "有条件发布 + P10 必修",
+ "mechanical_screen": {
+  "candidates": 3,
+  "adjudicated_true_leaks": 0,
+  "note": "3 条候选的共享 gram 都是通用短语（坐一会儿/不拿出来/任何人提），人工逐条读答案后判为假阳性；植入自检 500/500 证明屏幕有功率"
+ },
+ "pair_dependence_evidence": {
+  "shared_pair_same_prompt_n": 225,
+  "flips": 0,
+  "v1_pairs_within_v2_note": "同判据同题面逐位相同 ⇒ N_retrieval 随对选择而变（v1 全量 0.042 / v2 对 0.060）"
+ },
+ "ruler_v2_arm": {
+  "judge_sha": "035572ef56a005ae",
+  "counts": {
+   "N_hard": 0,
+   "N_soft": 0
+  },
+  "cbi": 0.982,
+  "note": "尺子 v2（R1 收窄 + R1″）与尺子 v1 在同一批 500 条答案上逐行一致率 1.0000 ⇒ v1 集上那个 R1 洞在 v2 集上没有咬到（v2 的答案实例既不复述 B 的内容点、也不与 fact_self 矛盾）"
+ },
+ "cross_arm_agreement": 1.0,
+ "attribution_diag_v2": {
+  "n": 500,
+  "none": 499,
+  "to_B": 0,
+  "to_A": 1,
+  "unclear": 0,
+  "flagged": [
+   "C2-047-style_probe"
+  ],
+  "adjudication": "C2-047 的 「贝壳的纹路指引我」 属同族话题重叠（A 自己的 fact_self 就是摆贝壳），B 的独有元素（随身带、从不给人看）缺席 ⇒ 人工判非泄漏；与 §2.8 的机械屏幕 3 条假阳性同类。",
+  "note": "v2 集上 to_B=0 才是这一格的信号；v1 集 to_B 恒为 0 是因为模板注入句不含 B 的独有物。"
+ }
+}

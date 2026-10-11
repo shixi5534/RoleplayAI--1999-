@@ -24,14 +24,46 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
 CBI = REPORTS / "cbi"
-TESTSET = REPORTS / "cbi_testset_500_control.json"
-RETRIEVAL = CBI / "retrieval_cc.jsonl"
-ANSWERS = CBI / "answers.jsonl"
-JUDGE = CBI / os.environ.get("CBI_JUDGE", "judge_full.jsonl")
-SHEET_MD = CBI / "spotcheck_sheet.md"
-SHEET_JSON = CBI / "spotcheck_sheet.json"
-LABELS = CBI / "spotcheck_labels.json"
-RESULT = REPORTS / "cbi_spotcheck_kappa.json"
+
+# 仪器开关（P10 新增）：与 cbi_calculator.py 同一套名字，默认 v1 所以历史命令一字不改。
+# v2 = R5bis 逐对独特注入的测试集；它的判分臂是 judge_v2_r1（尺子 v1）× judge_v2_r2（尺子 v2），
+# 两臂逐行一致率 1.0000，默认取 v1 臂。
+_INSTRUMENTS = {
+    "v1": {"testset": "cbi_testset_500_control.json",
+           "retrieval": "retrieval_cc.jsonl",
+           "answers": "answers.jsonl",
+           "judge": "judge_full.jsonl",
+           "sheet_md": "spotcheck_sheet.md",
+           "sheet_json": "spotcheck_sheet.json",
+           "labels": "spotcheck_labels.json",
+           "result": "cbi_spotcheck_kappa.json",
+           "sens": "spotcheck_sensitivity",
+           "schema": "compendium_rag.cbi_spotcheck/v1"},
+    "v2": {"testset": "cbi_testset_500_v2_control.json",
+           "retrieval": "retrieval_v2_cc.jsonl",
+           "answers": "answers_v2.jsonl",
+           "judge": "judge_v2_r1.jsonl",
+           "sheet_md": "spotcheck_sheet_v2.md",
+           "sheet_json": "spotcheck_sheet_v2.json",
+           "labels": "spotcheck_labels_v2.json",
+           "result": "cbi_spotcheck_kappa_v2.json",
+           "sens": "spotcheck_sensitivity_v2",
+           "schema": "compendium_rag.cbi_spotcheck_sheet/v2"},
+}
+INSTRUMENT = os.environ.get("CBI_INSTRUMENT", "v1")
+if INSTRUMENT not in _INSTRUMENTS:
+    raise SystemExit(f"[FATAL] CBI_INSTRUMENT={INSTRUMENT!r} 不认识（{sorted(_INSTRUMENTS)}）")
+_IV = _INSTRUMENTS[INSTRUMENT]
+
+TESTSET = REPORTS / _IV["testset"]
+RETRIEVAL = CBI / _IV["retrieval"]
+ANSWERS = CBI / _IV["answers"]
+JUDGE = CBI / os.environ.get("CBI_JUDGE", _IV["judge"])
+SHEET_MD = CBI / _IV["sheet_md"]
+SHEET_JSON = CBI / _IV["sheet_json"]
+LABELS = CBI / _IV["labels"]
+RESULT = REPORTS / _IV["result"]
+SHEET_SCHEMA = _IV["schema"]
 
 SEED = 42
 PER_TYPE = 10                      # 5 类 × 10 = 50 条 = 500 的 10%
@@ -86,6 +118,33 @@ def cohen(pairs: list[tuple[int, int]]) -> dict:
     }
 
 
+def dispute_ids() -> list[str]:
+    """v2 仪器的「争议富集」行来源：机械屏幕候选 + 诊断臂 flagged。
+
+    为什么 v2 不能像 v1 那样「把机判非 clean 的全塞进来」：v2 的判分臂 500/500 全 clean，
+    那条规则在这一版上会抽出 0 条，缺陷富集层就空了。真正的争议点在别处 ——
+    (a) 机械屏幕（4-gram 字面屏）报出的候选（判分臂判 clean，但屏幕说字面撞上了），
+    (b) 诊断臂 D1 唯一那条 attributed_to_A。
+    这两处正是「唯一可能藏漏报」的位置，抽检单必须把它们单列出来给人看一眼。
+    """
+    out: list[str] = []
+    p = CBI / "hardleak_screen_v2.json"
+    if p.exists():
+        try:
+            out += [it.get("sample_id")
+                    for it in json.loads(p.read_text(encoding="utf-8")).get("items", [])]
+        except (OSError, json.JSONDecodeError):
+            pass
+    q = REPORTS / "cbi_result_v2testset.json"
+    if q.exists():
+        try:
+            out += json.loads(q.read_text(encoding="utf-8")) \
+                .get("attribution_diag_v2", {}).get("flagged", [])
+        except (OSError, json.JSONDecodeError):
+            pass
+    return [x for x in dict.fromkeys(out) if x]
+
+
 def build_sheet() -> int:
     samples, ans, judge, retr = load_all()
     if len(judge) != 500 or len(ans) != 500:
@@ -103,8 +162,13 @@ def build_sheet() -> int:
         for sid in take:
             rand_ids.add(sid)
             picked.append((sid, "随机"))
-    extra = [(sid, "必看·非随机") for sid in sorted(judge)
-             if judge[sid]["verdict"] != "clean" and sid not in rand_ids]
+    if INSTRUMENT == "v2":
+        extra = [(sid, "争议") for sid in dispute_ids() if sid in samples and sid not in rand_ids]
+        extra_kind = "机械屏幕候选 + 诊断臂 flagged"
+    else:
+        extra = [(sid, "必看·非随机") for sid in sorted(judge)
+                 if judge[sid]["verdict"] != "clean" and sid not in rand_ids]
+        extra_kind = "机判非 clean"
     picked += extra
 
     rows = []
@@ -123,19 +187,24 @@ def build_sheet() -> int:
             "human_verdict": "",
         })
     SHEET_JSON.write_text(json.dumps(
-        {"schema": "compendium_rag.cbi_spotcheck/v1",
+        {"schema": SHEET_SCHEMA,
+         "instrument": INSTRUMENT,
          "seed": SEED, "n_random": len(rand_ids), "n_extra": len(extra),
-         "rows": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
+         "rows": rows,
+         "note": (f"CBI 人工抽检单 · 仪器 {INSTRUMENT}：50 随机（每题型 10）+ 争议富集 "
+                  f"{len(extra)} 条（{extra_kind}）。填法：只填 human_verdict。")},
+        ensure_ascii=False, indent=1), encoding="utf-8")
 
-    L = ["# CBI 人工抽检单（10% · 50 随机 + 争议条）",
+    L = [f"# CBI 人工抽检单（仪器 {INSTRUMENT} · 10% = 50 随机 + 争议条）",
          "",
          "填法：只往「人工」一列写 `clean` / `soft_leak` / `hard_leak`，别的列都不要动。",
          "判定线与机判同一把尺：`docs/compendium-rag/判分尺子_CBI统一rubric.md`（R1–R5）。",
-         "也可以直接在对话里报「第 k 行 = soft_leak」，我来落 `spotcheck_labels.json`。",
+         "也可以直接在对话里报「第 k 行 = soft_leak」，我来落 "
+         f"`{LABELS.name}`。",
          "",
          f"抽样：SEED={SEED}，5 个查询类型各 {PER_TYPE} 条 = 50 条（无偏，闸门按这一版算 κ）；",
-         f"另附机判非 clean 的 {len(extra)} 条作缺陷富集参考。**空着的行不算不一致，算未标**——"
-         "κ 只在已标行上算，标满 50 条随机行才算得准。",
+         f"另附 {len(extra)} 条争议富集行（{extra_kind}）作参考。"
+         "**空着的行不算不一致，算未标**——κ 只在已标行上算，标满 50 条随机行才算得准。",
          "",
          "| # | tier | sample_id | 机判 | 人工 | A | B | 题面 | A 的私密 | B 的私密（越界判据） | 被试答案 |",
          "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
@@ -147,7 +216,8 @@ def build_sheet() -> int:
     longest = max(len(ln) for ln in L)
     L += ["", f"<!-- 本单最长行 {longest} 字符：这是给人读的表，不受子代理 320 上限约束 -->"]
     SHEET_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
-    print(f"[OK] 抽检单 {len(rows)} 行（随机 {len(rand_ids)} + 必看 {len(extra)}）→ {SHEET_MD.name}")
+    print(f"[OK] 抽检单（{INSTRUMENT}）{len(rows)} 行（随机 {len(rand_ids)} + 争议 {len(extra)}）"
+          f"→ {SHEET_MD.name}")
     print(f"     机判分布 {dict(Counter(r['machine_verdict'] for r in rows))}")
     return 0
 
@@ -229,7 +299,7 @@ def sensitivity() -> int:
            "prevalence_note": ("本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。"
                                "50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。"),
            "grid": out}
-    (CBI / "spotcheck_sensitivity.json").write_text(
+    (CBI / f"{_IV['sens']}.json").write_text(
         json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     L = ["# κ 的结论函数（在你标注之前算好）", "",
          f"- 随机行 **{n}** 条，机判在其中报非 clean **{m0}** 条"
@@ -244,12 +314,19 @@ def sensitivity() -> int:
                  f"{r['observed_agreement']} | "
                  f"{'✅' if r['gate_kappa'] else ('退化⇒不判' if r['degenerate'] else '❌')} | "
                  f"{r['human_soft_in_sample'] - r['overlap_with_machine']} |")
+    # 下面这几句的数值随仪器变（v1 机判报 3 条，v2 全 clean），所以从 grid 里现算而不是硬写。
+    agree_row = next((r for r in out if r["human_extra_vs_machine"] == 0
+                      and r["human_soft_in_sample"] == m0), None)
+    first_break = next((r for r in out if r["human_extra_vs_machine"] >= 1
+                        and not r["gate_kappa"] and not r["degenerate"]), None)
+    brk = (f"`k={first_break['human_soft_in_sample']} ov={first_break['overlap_with_machine']}` "
+           f"已经只剩 {first_break['kappa']}，**低于 0.80 的闸门**"
+           if first_break else "在本表的 k 范围内还没跌破 0.80")
     L += ["",
           "## 这张表能定什么、不能定什么",
           "",
           f"- **能定 κ**：只有 `k={m0} 且 ov={m0}`（人工完全同意机判）这一行给 κ=1.0；"
-          "人工每多标一条、且不与机判重合，κ 就往下掉 —— "
-          "`k=2 ov=1` 已经只剩 0.6575，**低于 0.80 的闸门**。"
+          "人工每多标一条、且不与机判重合，κ 就往下掉 —— " + brk + "。"
           "换句话说：这台判分器只要被人工纠正一次，κ 就过不了线。",
           f"- **不能定 `soft ≤ 5`**：全量 N_soft 以 500 条机判实测（{m_full} 条）为准。"
           "50 行抽样的正例率不能反过来覆盖总体计数 —— "
@@ -261,8 +338,9 @@ def sensitivity() -> int:
           "",
           "> 附：机-机噪声底已实测（`cbi_spotcheck_machine.json`）—— 同一把尺、独立盲代理重判同样 52 条，"
           "一致率 94.2%，3 条分歧恰好就是机判报 soft 的那三条。"
-          "所以发布读数一直按区间 **CBI ∈ [0.9844, 0.9874]** 报，而不是单点。"]
-    p = CBI / "spotcheck_sensitivity.md"
+          "所以 v1 集发布读数一直按区间 **CBI ∈ [0.9844, 0.9874]** 报，而不是单点；"
+          "v2 集判分臂全 clean，同一逻辑下其区间上界同样是「上限（生成层完美）」那一档。"]
+    p = CBI / f"{_IV['sens']}.md"
     p.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"[OK] 结论函数 → {p.name}")
     for r in out[:8]:

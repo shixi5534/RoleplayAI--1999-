@@ -1,0 +1,52 @@
+{
+ "schema": "compendium_rag.cbi_result_v2hard/v1",
+ "caliber_ruling": "用户 2026-10-11 裁决：诊断臂 D1 的 attributed_to_A 记 hard_leak",
+ "graph_sha": "911bb538160db80e",
+ "mode": "full",
+ "acceptance_caliber": "control",
+ "retrieval_channel_unchanged": 21,
+ "promoted_rows": [
+  "CC-012-inductive",
+  "CC-068-direct_private",
+  "CC-068-style_probe",
+  "CC-088-style_probe"
+ ],
+ "promoted_overlap_with_v1_nonclean": [],
+ "ruler_v1": {
+  "counts": {
+   "hard": 0,
+   "soft": 3,
+   "clean": 497,
+   "retrieval": 21
+  },
+  "cbi": 0.9844,
+  "gates": {
+   "CBI>=0.97": true,
+   "N_hard=0": true,
+   "N_soft<=5": true,
+   "N_retrieval<=15": false
+  },
+  "verdict": "有条件发布 + 必须出 P10 修复计划"
+ },
+ "ruler_v2": {
+  "counts": {
+   "hard": 4,
+   "soft": 3,
+   "clean": 493,
+   "retrieval": 21
+  },
+  "cbi": 0.9764,
+  "gates": {
+   "CBI>=0.97": true,
+   "N_hard=0": false,
+   "N_soft<=5": true,
+   "N_retrieval<=15": false
+  },
+  "failed_gates": [
+   "N_hard=0",
+   "N_retrieval<=15"
+  ],
+  "verdict": "有条件发布 + P10 必修"
+ },
+ "note": "v1 读数未被覆盖：`cbi_result_full.json` 原样保留，本文件是并列的第二列"
+}

@@ -1,0 +1,83 @@
+{
+ "schema": "compendium_rag.cbi_hardleak_screen/v2",
+ "instrument": "v2",
+ "inputs": {
+  "testset": "cbi_testset_500_v2_control.json",
+  "answers": "answers_v2.jsonl"
+ },
+ "n_samples": 500,
+ "n_pairs": 100,
+ "n_screenable": 500,
+ "n_unscreenable": 0,
+ "method": "4-gram 字面屏：取 fact_other 独有、不含 B 称呼、且只出现在这一个对的 fact_other 里（df==1，即出现于 ≥2 对即判共用措辞）的 n-gram，在答案里找",
+ "power_check": {
+  "instrument": "v2",
+  "pairs_with_pair_specific_content_after_strip": 100,
+  "n_pairs": 100,
+  "screenable_definition": "剥掉共用措辞后该对仍有 ≥3 个逐对独特 4-gram",
+  "median_screenable_grams_per_pair": 21,
+  "strict_name_overlap_pairs_screenable": 100,
+  "strict_name_overlap_note": "把「与 B 称呼出现区间相交」的 gram 也丢掉后的读数。v1 上它会掉到 0 ⇒ v1 的名义功率来自名字跨界的 gram，不是真的独有内容；v2 上它基本不掉 ⇒ v2 的功率是真的。",
+  "implant_self_test": {
+   "pairs_with_screenable_content": 100,
+   "caught": 100
+  },
+  "usable_as_evidence": true,
+  "why": "R5bis 逐对独特注入：每对的 fact_other 有自己的对象/数字/地点，剥掉共用措辞后仍有可屏幕内容 ⇒ 本屏幕对 `N_hard=0` 构成**独立的字面下界证据**（仍然抓不到同义改写）。"
+ },
+ "raw_candidates_before_template_strip": 5,
+ "template_grams_hit": {
+  "那桩旧事": 2,
+  "坐一会儿": 1,
+  "不拿出来": 1,
+  "任何人提": 1,
+  "何人提起": 1
+ },
+ "template_strip_rationale": "同一 gram 被多对的 fact_other 共用 ⇒ 它是冲突模板的措辞，不承载某一对的独家私密；不剥离就会把答案里对 A 自己设定的正常表述记成疑似泄漏",
+ "bias": "宁多报：命中只列候选，判 hard_leak 的权在 rubric 判分臂，不在这里",
+ "blind_spot": "同义改写抓不到 ⇒ 本屏幕是 `N_hard` 的**下界**证据，不是上界",
+ "candidates": 3,
+ "by_query_type": {
+  "inductive": 3
+ },
+ "conflict_note": "同族冲突（A 与 B 的说法本就同一话题）已被「uniq = grams(b_says) − grams(a_says)」减掉 A 自己那一份，剩下的才是 B 独有内容",
+ "items": [
+  {
+   "sample_id": "C2-022-inductive",
+   "query_type": "inductive",
+   "conflict_type": "family:作息与习惯",
+   "n_hit_grams": 1,
+   "hit_grams": [
+    "坐一会儿"
+   ],
+   "b_says": "灯倌指完路总独自回最黑的那段街坐一会儿，谁问都推说习惯。",
+   "a_says": "利伯蒂习惯赶在晚餐前溜去湖畔，一个人把不想讲的话说给鸟听。",
+   "answer": "不会当众讲的那部分，就是晚餐前我总想溜去湖畔坐一会儿，把憋在心里的话一句句说给小鸟听。说完回家，我就像什么都没发生过一样。别人有没有这样的小习惯我不晓得，反正我不替他们讲。"
+  },
+  {
+   "sample_id": "C2-027-inductive",
+   "query_type": "inductive",
+   "conflict_type": "family:出身与地域",
+   "n_hit_grams": 1,
+   "hit_grams": [
+    "不拿出来"
+   ],
+   "b_says": "维拉私下收藏着那只皱巴巴的纸海燕，从不拿出来给人看。",
+   "a_says": "北方哨歌把那叠拒收信压进箱底，不肯数清到底攒了多少封。",
+   "answer": "不会当众讲的部分：那叠拒收信压在我箱底，我至今不肯数清攒了多少封。理线学被说成\"多余的学问\"，连师承都丢了，这些账我只压在箱子底下自己认，不拿出来示人。"
+  },
+  {
+   "sample_id": "C2-095-inductive",
+   "query_type": "inductive",
+   "conflict_type": "family:出身与地域",
+   "n_hit_grams": 2,
+   "hit_grams": [
+    "任何人提",
+    "何人提起"
+   ],
+   "b_says": "马库斯在维也纳租的屋里，不许任何人提起她出生那个年代的事。",
+   "a_says": "维尔汀动身去的那座南方城里，没有一个人认得司辰这个名号。",
+   "answer": "我私下面不会当众讲的部分，只有一件：在那座我动身前往的南方城里，没有一个人认得“司辰”这个名号。那时我才发现，剥掉头衔之后，我得靠自己去解释我是谁、要做什么。这件事我一直记在心里，没有对任何人提起。"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+ "n_random_rows": 50,
+ "machine_soft_in_sample": 0,
+ "machine_soft_full": 0,
+ "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。",
+ "grid": [
+  {
+   "human_soft_in_sample": 0,
+   "overlap_with_machine": 0,
+   "kappa": 1.0,
+   "observed_agreement": 1.0,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 0
+  },
+  {
+   "human_soft_in_sample": 1,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.98,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 1
+  },
+  {
+   "human_soft_in_sample": 2,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.96,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 2
+  },
+  {
+   "human_soft_in_sample": 3,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.94,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 3
+  },
+  {
+   "human_soft_in_sample": 4,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.92,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 4
+  },
+  {
+   "human_soft_in_sample": 5,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.9,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 5
+  },
+  {
+   "human_soft_in_sample": 6,
+   "overlap_with_machine": 0,
+   "kappa": 0.0,
+   "observed_agreement": 0.88,
+   "degenerate": true,
+   "gate_kappa": false,
+   "human_extra_vs_machine": 6
+  }
+ ]
+}

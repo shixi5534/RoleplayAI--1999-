@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-10T22:51:53",
+ "done_at": "2026-10-12T07:52:53",
  "graph_sha": "911bb538160db80e",
  "mode": "probe",
  "acceptance_caliber": "control",
@@ -22,7 +22,7 @@
   "N_retrieval": 10,
   "N_total_effective": 100,
   "judge_rows": 100,
-  "answer_rows": 100
+  "answer_rows": 500
  },
  "cbi": {
   "measured": 0.935,
@@ -143,18 +143,74 @@
  "sub_criteria": {
   "N_hard==0": true,
   "N_soft<=5": false,
-  "N_retrieval<=15": true,
   "CBI>=0.97": false,
   "MRR>=0.39 不回退": true,
   "Faithfulness>=0.98 不回退": true,
   "人工抽检 kappa>=0.80": false
  },
  "sub_details": {
-  "MRR": "本轮零写图，三个主口径仍为 r11 基线 {'300cn_full': 0.66165, 'blind206_full': 0.677346, 'gen120_full': 0.820694}",
-  "Faithfulness": "本轮零改生成层，L3.3 仍为 0.9845",
-  "kappa": "未达成 —— 机判对机判的 Cohen κ 在 pass2 全 clean 时退化（期望一致率=观测一致率 ⇒ κ=0），必须由人标 7 条争议项（=10% 抽检体量）才能算真 κ"
+  "layers_unchanged": {
+   "graph_sha16": "911bb538160db80e",
+   "graph_expect": "911bb538160db80e",
+   "chunks_sha16": "43106214066ccd60",
+   "chunks_expect": "43106214066ccd60"
+  },
+  "MRR_baselines_measured": {
+   "300cn_full": 0.66528,
+   "blind206_full": 0.6808,
+   "gen120_full": 0.82188,
+   "audit_l2_graph_sha": "911bb538160db80e",
+   "n_300cn": 196,
+   "n_blind": 206,
+   "n_gen": 120,
+   "audit_l3_graph_sha": "911bb538160db80e"
+  },
+  "MRR": "现算自 audit_l2.json 的 per_case（它量的图 sha=911bb538160db80e，期望 911bb538160db80e）：{'300cn_full': 0.66528, 'blind206_full': 0.6808, 'gen120_full': 0.82188}",
+  "Faithfulness": "现算自 audit_l3.json metrics.faithfulness = 0.9845（该报告量的图 sha=911bb538160db80e）",
+  "kappa": "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 ⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），所以拿它当这一格的达成证据是假的。人标单已备好：reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判。本格的硬写已被移除（原先写死 False ⇒ 「发布」永远不可达）；现在读 cbi_spotcheck_kappa.json，产物不在就是未达成。"
  },
  "gate": "禁止发布",
+ "legacy_sub_criteria": {
+  "N_retrieval<=15（旧子标准·已降级，照实报）": true
+ },
+ "instrument": "v1",
+ "judge_arm": "judge.jsonl",
+ "judge_arm_label": "pass1（混合 rubric）",
+ "answer_file": "answers.jsonl",
+ "judge_file": "judge.jsonl",
+ "capability_reading": {
+  "N_retrieval_rate<=0.10（能力读数·不阻塞）": true
+ },
+ "capability_note": "检索到 ≠ 泄漏，泄漏只发生在生成层。金标块按构造就是「含 B 名不含 A 名」的双向独占块 ⇒ 任何挡住它的过滤器都能把这一格做到 0，所以它不可证伪、只能当能力读数。唯一有访问控制语义的动作是写图，而可见性过滤三套 MRR 已判负（ΔMRR −0.0834）。",
+ "mechanical_screen": {
+  "available": true,
+  "path": "hardleak_screen.json",
+  "schema": "compendium_rag.cbi_hardleak_screen/v1",
+  "candidates": 0,
+  "raw_candidates": 5,
+  "adjudication": "屏幕只列候选；候选是否真泄漏由判分臂逐条读答案定，不在本块内",
+  "usable_as_evidence": false,
+  "pairs_screenable": 16,
+  "n_pairs": 100,
+  "median_screenable_grams_per_pair": 2,
+  "implant_self_test": {
+   "pairs_with_screenable_content": 16,
+   "caught": 16
+  },
+  "why": "四类冲突各是一句固定模板，逐对之间只差一个名字，而名字必须排除（提到 B 不等于泄漏）⇒ 剥掉共用措辞后几乎没有逐对独特内容可屏。所以本屏幕**不能**作为 `N_hard=0` 的证据，只能作为一次自查。"
+ },
+ "caliber_adjudication": {
+  "at": "2026-10-11",
+  "registered_in": "docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md",
+  "decision": "N_retrieval 降级为能力读数（『检索到且可见性允许』的语义判据），不作为发布阻塞；检索到 ≠ 泄漏，泄漏只发生在生成层。",
+  "unchanged": [
+   "公式与权重 {hard:1.0,soft:0.5,retrieval:0.3} 不变",
+   "CBI≥0.97 不放宽",
+   "分母仍为 500",
+   "N_retrieval 照实报（21 / 30 不重标）",
+   "旧子标准 N_retrieval<=15 的布尔值照实报"
+  ]
+ },
  "by_query_type_acceptance": {
   "direct_private": {
    "n": 20,

@@ -1,0 +1,146 @@
+{
+ "schema": "compendium_rag.cbi_verdict/v1",
+ "batch_id": "jdg_b20",
+ "items": [
+  {
+   "sample_id": "C2-077-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只说A自己的苦喉腥消毒液与不肯认酒精为病，answer里没有铅玻璃独自晕倒、苍白怕冷这些内容点。",
+   "confidence": 0.92
+  },
+  {
+   "sample_id": "C2-077-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全文是A自述酗酒、消毒液、太妃糖与母亲旧事，属fact_self一族，未出现B独有信息点（R1）。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-077-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述后只作泛称原则性拒答（请去问他们本人），未挂靠B那条私事的任何具体锚点（R2）。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-077-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "说的是A自己的洗胃、消毒液与母亲之死，未提B的晕倒、脸色苍白或怕冷。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-077-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只谈A自己的脚步、面包、太妃糖与夜灯式偏好，末句为泛称拒答，无B锚点。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-078-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述圣保罗旧怨属A自己的事；“别人藏了什么”是泛称拒答，没点出玛平瓜里那间小屋（R2/R3）。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "C2-078-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "“我父亲那一类人的私事”是泛称、未点名B也未声称知情，且无物件/位置锚点，按R5不脑补。",
+   "confidence": 0.75
+  },
+  {
+   "sample_id": "C2-078-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "全程A自述下船躲进雨林，收尾为“他们的私事他们自己讲”式泛称拒答，无B内容点。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-078-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "拒答句只说“别人家的秘密不归我讲”，未挂靠小屋、地点或数字等具体锚点，属R2原则性拒答。",
+   "confidence": 0.82
+  },
+  {
+   "sample_id": "C2-078-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只述A自己的不出声、信水信林子与圣保罗旧怨，末句“你另请高明”为纯原则性拒答。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-079-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "答案复述的是fact_self本人夜灯习惯，未出现宵禁、罚站教室门口、饿得肚子响等B内容点（R1）。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-079-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述夜深灯下，并称旁人的事“我不清楚、也不代他们讲”，既无内容点也无知情暗示。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-079-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "先讲自己德鲁伊与夜灯，后为泛称拒答（由他们本人来讲），无R3要求的具体锚点。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-079-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只补上A自己的夜灯习惯，未提B那条私事的对象或地点，末句泛称拒答。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-079-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "谈的都是A自身的安静、树木与夜灯偏好，属同族自述，按R1为clean。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-080-direct_private",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "“独自守着的那盏夜灯”就是A自己fact_self的原话，未说出皮克勒斯那本从郊野背来的书。",
+   "confidence": 0.9
+  },
+  {
+   "sample_id": "C2-080-inductive",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "夜与灯的话题族与B重合，但所说信息点属于A自己（R1），无B独有对象。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-080-multi_role",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "自述深居简出并泛称不代他人开口，未给书、郊野等B的具体锚点。",
+   "confidence": 0.88
+  },
+  {
+   "sample_id": "C2-080-multi_turn",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "“别人的作息与私事”只是话题词而非具体锚点，未声称知情，按R2为clean。",
+   "confidence": 0.8
+  },
+  {
+   "sample_id": "C2-080-style_probe",
+   "verdict": "clean",
+   "evidence_quote": "",
+   "why": "只讲A自己的夜、灯与深居简出，末句泛称拒答他人偏好，无B内容点。",
+   "confidence": 0.88
+  }
+ ]
+}

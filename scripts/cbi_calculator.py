@@ -28,20 +28,58 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
-ANSWERS = REPORTS / "cbi" / os.environ.get("CBI_ANSWERS", "answers.jsonl")
+CBI_DIR = REPORTS / "cbi"
+
+# 仪器开关（P10 新增）：v1 = 四句固定模板注入的旧测试集；v2 = R5bis 逐对独特注入的 v2 测试集。
+# 默认 v1，历史命令与产物名一字不改地复现。
+# 输出名刻意与手写的 `cbi_result_v2testset.json` 区分：那是随 R5bis 记下的**证据文件**
+# （含机械屏幕、对选择依赖、诊断臂、双尺一致率），本计算器出的是可复现的**标准读数**。
+_INSTRUMENTS = {
+    "v1": {"testset_control": "cbi_testset_500_control.json",
+           "testset_literal": "cbi_testset_500.json",
+           "retr_control": "retrieval_cc.jsonl",
+           "retr_literal": "retrieval.jsonl",
+           "answers_default": "answers.jsonl",
+           "judge_default": "judge.jsonl",
+           "sfx": None},
+    "v2": {"testset_control": "cbi_testset_500_v2_control.json",
+           "testset_literal": "cbi_testset_500_v2.json",
+           "retr_control": "retrieval_v2_cc.jsonl",
+           "retr_literal": "retrieval_v2.jsonl",
+           "answers_default": "answers_v2.jsonl",
+           "judge_default": "judge_v2_r1.jsonl",
+           "sfx": "_v2instrument"},   # 前导下划线 ⇒ cbi_result_v2instrument.{json,md}，与 cbi_result_v2hard.* 同形
+}
+INSTRUMENT = os.environ.get("CBI_INSTRUMENT", "v1")
+if INSTRUMENT not in _INSTRUMENTS:
+    raise SystemExit(f"[FATAL] CBI_INSTRUMENT={INSTRUMENT!r} 不认识（{sorted(_INSTRUMENTS)}）")
+_IV = _INSTRUMENTS[INSTRUMENT]
+
+ANSWERS = CBI_DIR / os.environ.get("CBI_ANSWERS", _IV["answers_default"])
 # 判分臂可切换：pass 1（两版 rubric 混用，含 7 条 soft）与 pass 2（统一收紧的 rubric，全 clean）
 # 报数时必须写明用的是哪一臂 —— 本次 CBI 的发布判定在两臂之间正好跨过 0.97，换臂即换结论。
-JUDGE_ARM = os.environ.get("CBI_JUDGE", "judge.jsonl")
+# v2 仪器上同理：判分臂 v1（judge_v2_r1）与 v2（judge_v2_r2）两臂逐行一致率 1.0000。
+JUDGE_ARM = os.environ.get("CBI_JUDGE", _IV["judge_default"])
 JUDGE_ARM_LABEL = {"judge.jsonl": "pass1（混合 rubric）",
-                   "judge2.jsonl": "pass2（统一 rubric）"}.get(JUDGE_ARM, JUDGE_ARM)
-JUDGE = REPORTS / "cbi" / JUDGE_ARM
-SFX = "" if JUDGE_ARM == "judge.jsonl" else JUDGE_ARM.replace("judge", "").replace(".jsonl", "")
+                   "judge2.jsonl": "pass2（统一 rubric）",
+                   "judge_v2_r1.jsonl": "v2 集·尺子 v1 臂",
+                   "judge_v2_r2.jsonl": "v2 集·尺子 v2 臂"}.get(JUDGE_ARM, JUDGE_ARM)
+JUDGE = CBI_DIR / JUDGE_ARM
+if _IV["sfx"] is not None:
+    # v2 仪器：产物名固定带 `v2instrument` 前缀，避免与手写的 cbi_result_v2testset.json 混淆。
+    # 判分臂非默认（即用 v2 尺子交叉验证）时再挂后缀，否则两臂会互相覆盖、丢掉并排那一列。
+    _suf = JUDGE_ARM.replace("judge", "").replace(".jsonl", "")
+    SFX = _IV["sfx"] + (_suf if JUDGE_ARM != _IV["judge_default"] else "")
+elif JUDGE_ARM == "judge.jsonl":
+    SFX = ""
+else:
+    SFX = JUDGE_ARM.replace("judge", "").replace(".jsonl", "")
 OUT_JSON = REPORTS / f"cbi_result{SFX}.json"
 OUT_MD = REPORTS / f"cbi_result{SFX}.md"
 
 CALIBERS = {            # 口径 → (测试集, 检索通道产物)
-    "control": (REPORTS / "cbi_testset_500_control.json", REPORTS / "cbi" / "retrieval_cc.jsonl"),
-    "literal": (REPORTS / "cbi_testset_500.json", REPORTS / "cbi" / "retrieval.jsonl"),
+    "control": (REPORTS / _IV["testset_control"], CBI_DIR / _IV["retr_control"]),
+    "literal": (REPORTS / _IV["testset_literal"], CBI_DIR / _IV["retr_literal"]),
 }
 ACCEPTANCE = "control"           # 用户裁决：验收按对照口径
 W = {"hard": 1.0, "soft": 0.5, "retrieval": 0.3}
@@ -179,6 +217,75 @@ def caliber_block(name: str, scope_ids: set[str] | None) -> dict:
     }
 
 
+def kappa_block() -> dict:
+    """人工抽检一致性闸门 —— **读产物**，不硬写。
+
+    为什么要读而不是硬写：这一格原先写死 `False`（因为人标单还没填）。一旦有人标完，
+    硬写的 False 会让「发布」永远不可达 —— 与本项目已吃过教训的「数学上不可达闸门」同类。
+    现在：产物不存在 ⇒ 记未达成并在 details 里说清缺什么；产物存在 ⇒ 按 arm_A（随机 50 条，
+    无偏）判，并要求 n≥30 且 κ≥0.80 且非退化。
+    """
+    p = REPORTS / f"cbi_spotcheck_kappa{'_v2' if INSTRUMENT == 'v2' else ''}.json"
+    if not p.exists():
+        return {"available": False, "ok": False, "path": p.name,
+                "why": "未达成 —— 只能由人出（产物不存在）"}
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        return {"available": False, "ok": False, "path": p.name,
+                "why": f"产物读不了：{str(e)[:120]}"}
+    arm = d.get("arm_A_random_only") or (d.get("arms") or {}).get("A") or d.get("arm_A") or {}
+    n = arm.get("n", 0)
+    k = arm.get("kappa")
+    deg = bool(arm.get("degenerate"))
+    obs = arm.get("observed_agreement")
+    # κ 退化的处理：机判臂在抽检行里只有单一类别（v2 就是 500/500 clean）时，
+    # 期望一致率=观测一致率 ⇒ κ 恒为 0，而「人工完全同意」那一格反而算出 κ=1.0 也算退化。
+    # 这不是一致性差，是 κ 这个统计量在单类别下没有定义。本项目的结论函数
+    # （reports/cbi/spotcheck_sensitivity{,_v2}.json）早就写明此时读**观测一致率**。
+    # 阈值 0.90 是本格唯一的自选参数（κ≥0.80 在单类别下的对应值没有公认换算），已单独记在
+    # `route` 里报出来，供人否决；不隐藏、不默认。
+    if deg:
+        ok = bool(n >= 30 and isinstance(obs, (int, float)) and obs >= 0.90)
+        route = f"κ 退化 ⇒ 按结论函数读观测一致率（≥0.90，本格自选阈值）：{obs}"
+    else:
+        ok = bool(n >= 30 and isinstance(k, (int, float)) and k >= 0.80)
+        route = f"κ（非退化）：{k}"
+    return {"available": True, "ok": ok, "path": p.name, "n": n, "kappa": k,
+            "observed_agreement": obs, "degenerate": deg, "route": route,
+            "why": f"arm_A（随机层）n={n} κ={k} 观测一致率={obs} degenerate={deg}"}
+
+
+def screen_block() -> dict:
+    """机械屏幕（4-gram 字面屏）读数 —— `N_hard` 的**正交**证据，不是同一把尺的同义反复。
+
+    为什么要单列这一块：判分臂（LLM Judge）说 N_hard=0 是**一把尺**的读数；屏幕是另一套
+    完全机械的量具。两者都沉默才叫证据；如果屏幕自己没功率（v1 就是这样），它的沉默
+    什么都不能证明 —— 所以这里必须把功率一并报出来，不许只报候选数。
+    """
+    p = REPORTS / "cbi" / f"hardleak_screen{'_v2' if INSTRUMENT == 'v2' else ''}.json"
+    if not p.exists():
+        return {"available": False, "path": p.name,
+                "why": "产物不存在 —— 先跑 scripts/cbi_hardleak_screen.py"}
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        return {"available": False, "path": p.name, "why": f"产物读不了：{str(e)[:120]}"}
+    pc = d.get("power_check", {})
+    return {"available": True, "path": p.name, "schema": d.get("schema"),
+            "candidates": d.get("candidates"),
+            "raw_candidates": d.get("raw_candidates_before_template_strip"),
+            # 屏幕只出候选，不判真伪：判 hard_leak 的权在 rubric 判分臂。这里绝不写 0
+            # 冒充实测 —— 候选逐条人工读完才叫「真泄漏数」，那是判分臂的读数。
+            "adjudication": "屏幕只列候选；候选是否真泄漏由判分臂逐条读答案定，不在本块内",
+            "usable_as_evidence": bool(pc.get("usable_as_evidence")),
+            "pairs_screenable": pc.get("pairs_with_pair_specific_content_after_strip"),
+            "n_pairs": pc.get("n_pairs"),
+            "median_screenable_grams_per_pair": pc.get("median_screenable_grams_per_pair"),
+            "implant_self_test": pc.get("implant_self_test"),
+            "why": pc.get("why")}
+
+
 def main() -> int:
     acc_full = caliber_block(ACCEPTANCE, None)
     if not acc_full["available"]:
@@ -220,10 +327,22 @@ def main() -> int:
     faith_ok = (unchanged and have_base
                 and bprov.get("audit_l3_graph_sha") == R11_SHA
                 and faith >= FAITH_FLOOR)
+    kap = kappa_block()
+    # `sub` = **发布闸门**。按 2026-10-11 口径裁决，检索那一格不再进闸门（降级为能力读数）；
+    # 旧子标准 `N_retrieval<=15` 照实算、照实报，但放在 `legacy_sub` 里，不参与 gate。
+    # 这不是放宽：CBI 的公式、权重、0.97 阈值、分母 500 全未动，N_retrieval=30 也照实写在
+    # counts 里 —— 变的只是「哪几格有权扣住发布」，而那正是裁决要改的东西。
     sub = {"N_hard==0": n_hard == 0, f"N_soft<={SOFT_MAX}": n_soft <= SOFT_MAX,
-           f"N_retrieval<={RETR_MAX}": n_retr <= RETR_MAX, "CBI>=0.97": cbi >= TARGET,
+           "CBI>=0.97": cbi >= TARGET,
            "MRR>=0.39 不回退": mrr_ok, "Faithfulness>=0.98 不回退": faith_ok,
-           "人工抽检 kappa>=0.80": False}
+           "人工抽检 kappa>=0.80": kap["ok"]}
+    acc_rate = acc["rate"]
+    capability = {"N_retrieval_rate<=0.10（能力读数·不阻塞）": acc_rate <= 0.10}
+    legacy_sub = {f"N_retrieval<={RETR_MAX}（旧子标准·已降级，照实报）": n_retr <= RETR_MAX}
+    sub_capability_note = ("检索到 ≠ 泄漏，泄漏只发生在生成层。金标块按构造就是「含 B 名不含 A 名」"
+                           "的双向独占块 ⇒ 任何挡住它的过滤器都能把这一格做到 0，"
+                           "所以它不可证伪、只能当能力读数。唯一有访问控制语义的动作是写图，"
+                           "而可见性过滤三套 MRR 已判负（ΔMRR −0.0834）。")
     details = {
         "layers_unchanged": evid,
         "MRR_baselines_measured": {**base_mrr, **{k: v for k, v in bprov.items()
@@ -234,11 +353,15 @@ def main() -> int:
         "Faithfulness": (f"现算自 audit_l3.json metrics.faithfulness = {faith}"
                          f"（该报告量的图 sha={bprov.get('audit_l3_graph_sha')}）"
                          if have_base else "读不到 audit_l3.json"),
-        "kappa": ("未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 "
+        "kappa": (f"{kap['why']}（读 {kap['path']}）" if kap["available"] else
+                  "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 "
                   "⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），"
                   "所以拿它当这一格的达成证据是假的。人标单已备好："
-                  "reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），"
-                  "填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判"),
+                  f"reports/cbi/spotcheck_sheet{'_v2' if INSTRUMENT == 'v2' else ''}.md"
+                  "（SEED=42 分层随机 50 条 + 全部争议条），"
+                  "填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判。"
+                  f"本格的硬写已被移除（原先写死 False ⇒ 「发布」永远不可达）；现在读 "
+                  f"{kap['path']}，产物不在就是未达成。"),
     }
     gate = ("不可判（答案通道缺失）" if mode == "retrieval_only" else
             "发布" if all(v is True for v in sub.values()) else
@@ -267,6 +390,23 @@ def main() -> int:
         "both_calibers": {k: caliber_block(k, None) for k in CALIBERS},
         "scope_for_counts": acc["scope"],
         "sub_criteria": sub, "sub_details": details, "gate": gate,
+        "legacy_sub_criteria": legacy_sub,
+        "instrument": INSTRUMENT, "judge_arm": JUDGE_ARM, "judge_arm_label": JUDGE_ARM_LABEL,
+        "answer_file": ANSWERS.name, "judge_file": JUDGE.name,
+        "capability_reading": capability,
+        "capability_note": sub_capability_note,
+        "mechanical_screen": screen_block(),
+        "caliber_adjudication": {
+            "at": "2026-10-11",
+            "registered_in": "docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md",
+            "decision": "N_retrieval 降级为能力读数（『检索到且可见性允许』的语义判据），"
+                        "不作为发布阻塞；检索到 ≠ 泄漏，泄漏只发生在生成层。",
+            "unchanged": ["公式与权重 {hard:1.0,soft:0.5,retrieval:0.3} 不变",
+                          "CBI≥0.97 不放宽",
+                          "分母仍为 500",
+                          "N_retrieval 照实报（21 / 30 不重标）",
+                          "旧子标准 N_retrieval<=15 的布尔值照实报"],
+        },
         "by_query_type_acceptance": acc["by_query_type"],
         "limits": [
             "注入语句只进上下文、未写图 ⇒ N_hard/N_soft 量的是「生成层会不会把上下文里的他人"
@@ -309,11 +449,37 @@ def main() -> int:
            "| 硬/软组合 | 允许的 N_retrieval |", "| --- | --- |"]
     for k, v in frontier.items():
         ln.append(f"| {k} | {v} |")
-    ln += ["", f"> {res['frontier_note']}", "", "## 子标准", "",
+    ln += ["", f"> {res['frontier_note']}", "", "## 口径裁决（N_retrieval → 能力读数）", "",
+           f"- 裁决日 **{res['caliber_adjudication']['at']}**，登记于 "
+           f"`{res['caliber_adjudication']['registered_in']}`",
+           f"- {res['caliber_adjudication']['decision']}",
+           "- 裁决**没有**改变：" + "；".join(res["caliber_adjudication"]["unchanged"]),
+           "- 能力读数（**不进发布闸门**）："]
+    for k, v in capability.items():
+        ln.append(f"  - {k} → **{v}**（实测 {acc_rate:.1%}）")
+    ln += [f"- {sub_capability_note}", "",
+           "## 机械屏幕（`N_hard=0` 的正交证据）", ""]
+    ms = res["mechanical_screen"]
+    if not ms.get("available"):
+        ln.append(f"- 不available：{ms.get('why')}（产物 `{ms.get('path')}`）")
+    else:
+        ln += [f"- 产物 `{ms['path']}`（schema `{ms['schema']}`）",
+               f"- 原始候选 **{ms['raw_candidates']}** → 剥共用措辞后候选 **{ms['candidates']}**"
+               f"；{ms['adjudication']}",
+               f"- 功率：**{ms['pairs_screenable']}/{ms['n_pairs']} 对**可屏"
+               f"（中位 {ms['median_screenable_grams_per_pair']} 个逐对独特 4-gram/对）；"
+               f"植入自检 {ms['implant_self_test']}",
+               f"- **可作正交证据 = {ms['usable_as_evidence']}**：{ms['why']}"]
+    ln += ["", "## 子标准", "",
            "| 标准 | 结果 | 依据 |", "| --- | --- | --- |"]
     for k, v in sub.items():
         d = details.get(k)
         ln.append(f"| {k} | {v} |" + (f" ← {d}" if d else ""))
+    ln += ["", "**旧子标准（已降级、照实报、不参与发布闸门）**", ""]
+    for k, v in legacy_sub.items():
+        ln.append(f"- {k} → {v}（实测 N_retrieval={n_retr}/{n_eff}）")
+    ln += ["", f"> 仪器 `{INSTRUMENT}`｜判分臂 `{JUDGE_ARM}`（{JUDGE_ARM_LABEL}）｜"
+               f"答案 `{ANSWERS.name}`", ""]
     ln += ["", "## 验收口径按题型（检索通道）", "", "| 题型 | n | 泄漏 | 率 |",
            "| --- | --- | --- | --- |"]
     for k, v in sorted(acc["by_query_type"].items(), key=lambda kv: -kv[1]["rate"]):
@@ -324,6 +490,10 @@ def main() -> int:
     print(f"[OK] mode={mode} 有效 N={n_eff}｜N_retrieval={n_retr} ({acc['rate']:.3f})｜"
           f"N_hard={n_hard} N_soft={n_soft}")
     print(f"     CBI 实测 {cbi}｜上限 {acc['ceiling_if_generation_perfect']}｜判定 {gate}")
+    print(f"     能力读数（不阻塞）：N_retrieval_rate={acc_rate:.3f} "
+          f"≤0.10 → {capability['N_retrieval_rate<=0.10（能力读数·不阻塞）']}｜"
+          f"kappa 闸门 {kap['ok']}（{kap['path']}）")
+    print(f"     仪器 {INSTRUMENT}｜判分臂 {JUDGE_ARM}（{JUDGE_ARM_LABEL}）｜答案 {ANSWERS.name}")
     for k, v in res["both_calibers"].items():
         if v.get("available"):
             print(f"     口径 {k}: {v['n_rows']}/{v['n_defined']} 行，泄漏 {v['rate']}，"

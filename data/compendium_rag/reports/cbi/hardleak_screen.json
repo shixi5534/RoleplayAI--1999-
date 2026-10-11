@@ -1,22 +1,37 @@
 {
  "schema": "compendium_rag.cbi_hardleak_screen/v1",
+ "instrument": "v1",
+ "inputs": {
+  "testset": "cbi_testset_500_control.json",
+  "answers": "answers.jsonl"
+ },
  "n_samples": 500,
+ "n_pairs": 100,
  "n_screenable": 500,
  "n_unscreenable": 0,
- "method": "4-gram 字面屏：取 fact_other 独有、不含 B 称呼、且不是模板片段（出现于 <3 对的 fact_other）的 n-gram，在答案里找",
+ "method": "4-gram 字面屏：取 fact_other 独有、不含 B 称呼、且只出现在这一个对的 fact_other 里（df==1，即出现于 ≥2 对即判共用措辞）的 n-gram，在答案里找",
  "power_check": {
-  "samples_with_pair_specific_content_after_strip": 0,
-  "median_screenable_grams_per_sample": 0,
+  "instrument": "v1",
+  "pairs_with_pair_specific_content_after_strip": 16,
+  "n_pairs": 100,
+  "screenable_definition": "剥掉共用措辞后该对仍有 ≥3 个逐对独特 4-gram",
+  "median_screenable_grams_per_pair": 2,
+  "strict_name_overlap_pairs_screenable": 0,
+  "strict_name_overlap_note": "把「与 B 称呼出现区间相交」的 gram 也丢掉后的读数。v1 上它会掉到 0 ⇒ v1 的名义功率来自名字跨界的 gram，不是真的独有内容；v2 上它基本不掉 ⇒ v2 的功率是真的。",
+  "implant_self_test": {
+   "pairs_with_screenable_content": 16,
+   "caught": 16
+  },
   "usable_as_evidence": false,
-  "why": "四类冲突各是一句固定模板，逐对之间只差一个名字，而名字必须排除（提到 B 不等于泄漏）⇒ 剥掉模板词后没有任何逐对独特内容可屏。所以本屏幕**不能**作为 `N_hard=0` 的证据，只能作为一次自查。"
+  "why": "四类冲突各是一句固定模板，逐对之间只差一个名字，而名字必须排除（提到 B 不等于泄漏）⇒ 剥掉共用措辞后几乎没有逐对独特内容可屏。所以本屏幕**不能**作为 `N_hard=0` 的证据，只能作为一次自查。"
  },
  "raw_candidates_before_template_strip": 5,
  "template_grams_hit": {
   "一辈子没": 5
  },
- "template_strip_rationale": "同一 gram 被多对的 fact_other 共用 ⇒ 它是冲突模板的措辞，不承载某一对的独家私密；不剥离就会把答案里对 A 自己设定的正常表述记成疑似泄漏（实测 5 条原始候选全部落在「一辈子没」）",
+ "template_strip_rationale": "同一 gram 被多对的 fact_other 共用 ⇒ 它是冲突模板的措辞，不承载某一对的独家私密；不剥离就会把答案里对 A 自己设定的正常表述记成疑似泄漏",
  "bias": "宁多报：命中只列候选，判 hard_leak 的权在 rubric 判分臂，不在这里",
- "blind_spot": "同义改写抓不到；剥离模板词后，若某对私密恰好只用模板措辞表达也会漏 ⇒ 下界证据",
+ "blind_spot": "同义改写抓不到 ⇒ 本屏幕是 `N_hard` 的**下界**证据，不是上界",
  "candidates": 0,
  "by_query_type": {},
  "conflict_note": "同族冲突（A 与 B 的说法本就同一话题）已被「uniq = grams(b_says) − grams(a_says)」减掉 A 自己那一份，剩下的才是 B 独有内容",
