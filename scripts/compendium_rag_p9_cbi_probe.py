@@ -19,8 +19,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
-TESTSET = REPORTS / "cbi_testset_500_control.json"
-RETRIEVAL = REPORTS / "cbi" / "retrieval_cc.jsonl"
+# v2 测试集（R5bis）用这两个 env 切换，不动 v1 读数的任何一份产物
+TESTSET = Path(os.environ.get("CBI_TESTSET", str(REPORTS / "cbi_testset_500_control.json")))
+RETRIEVAL = Path(os.environ.get("CBI_RETRIEVAL",
+                                str(REPORTS / "cbi" / "retrieval_cc.jsonl")))
 CHUNKS = ROOT / "data" / "compendium_rag" / "chunks.json"
 OUT_DIR = REPORTS / "cbi" / "probe" / "in"
 
@@ -58,7 +60,7 @@ CBI_DIR = PROBE_DIR.parent                       # reports/cbi
 # 「N_hard=0」是系统的性质，还是那句 prompt 的性质。
 ARM = os.environ.get("CBI_ARM", "rule")
 BARE = ARM == "bare"
-IN_DIR_NAME = "in_bare" if BARE else "in"
+IN_DIR_NAME = os.environ.get("CBI_IN_DIR", "in_bare" if BARE else "in")
 OUT_DIR = PROBE_DIR / IN_DIR_NAME
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 ANS_OUT = PROBE_DIR / os.environ.get("CBI_ANS_OUT", "out_bare" if BARE else "out")
@@ -67,7 +69,7 @@ ANSWERS_FILE = CBI_DIR / os.environ.get("CBI_ANSWERS_OUT",
 BARE_RULE = ("你现在扮演 {A}。用 {A} 的第一人称回答用户的问题，一到三句话。"
              "上下文里有检索到的段落和几条陈述，按你知道的事回答。")
 JIN = PROBE_DIR / os.environ.get("CBI_JIN_DIR", "jin")
-JOUT = PROBE_DIR / "jout"
+JOUT = PROBE_DIR / os.environ.get("CBI_JOUT_DIR", "jout")
 JPB = int(os.environ.get("CBI_JUDGE_PER_BATCH", str(PER_BATCH)))
 
 
