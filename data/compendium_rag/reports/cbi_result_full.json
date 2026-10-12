@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T08:42:00",
+ "done_at": "2026-10-12T09:08:32",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -166,7 +166,7 @@
    "audit_l3_graph_sha": "911bb538160db80e"
   },
   "MRR": "现算自 audit_l2.json 的 per_case（它量的图 sha=911bb538160db80e，期望 911bb538160db80e）：{'300cn_full': 0.66528, 'blind206_full': 0.6808, 'gen120_full': 0.82188}",
-  "Faithfulness": "现算自 audit_l3.json metrics.faithfulness = 0.9845（该报告量的图 sha=911bb538160db80e）",
+  "Faithfulness": "现算自 audit_l3.json 的 per_case，定义域 = in-scope 三套 ['300cn', 'blind', 'gen']（n=522，排除 ['negative', 'unanswerable'] 共 157 题）：in-scope=0.9845｜全体 679 题=0.9853｜L3 summary 字段=0.9845；该报告量的图 sha=911bb538160db80e。闸门按 L3.3 原定义读 in-scope —— 换定义域属改口径，未做",
   "kappa": "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 ⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），所以拿它当这一格的达成证据是假的。人标单已备好：reports/cbi/spotcheck_sheet.md（SEED=42 分层随机 50 条 + 全部争议条），填完跑 CBI_STAGE=kappa scripts/cbi_spotcheck.py，闸门按 arm_A 随机那 50 条判。本格的硬写已被移除（原先写死 False ⇒ 「发布」永远不可达）；现在读 cbi_spotcheck_kappa.json，产物不在就是未达成。"
  },
  "gate": "有条件发布 + 必须出 P10 修复计划",

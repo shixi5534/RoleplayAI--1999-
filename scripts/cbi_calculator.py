@@ -91,7 +91,12 @@ MRR_FLOOR, FAITH_FLOOR = 0.39, 0.98
 # 那是 `baseline_v9_plan.json` 里的 `mrr_v9`（v9 时代），被我当 "r11 基线" 引用进了报告。
 AUDIT_L2 = REPORTS / "audit_l2.json"
 SET_KEYS = {"300cn": "300cn_full", "blind": "blind206_full", "gen": "gen120_full"}
-BASE_FAITH = 0.9845              # L3.3，r11 记分卡
+BASE_FAITH = 0.9845              # L3.3 的 in-scope 读数（= 现算 522 条均值，见 baselines()）
+# L3.3 Faithfulness 的**定义域**（2026-10-12 现算核对出来的，原先报告与产物都没写）：
+# `metrics.faithfulness = 0.9845` 是 **in-scope 三套（300cn 196 / blind 206 / gen 120 = 522 题）**
+# 的均值；把 negative(53) 与 unanswerable(104) 也并进来是 0.9853（679 题）。
+# 闸门继续按 L3.3 的原定义读（in-scope），换定义域=改口径，我不自己动；两个数一并报出来。
+FAITH_IN_SCOPE_SETS = ("300cn", "blind", "gen")
 R11_SHA = "911bb538160db80e"     # 冻结图 r11
 CHUNKS_SHA = "43106214066ccd60"  # KB 的另一半输入
 GRAPH_P = ROOT / "data" / "compendium_rag" / "graph.json"
@@ -132,11 +137,30 @@ def baselines() -> tuple[dict, dict]:
     try:
         l3 = json.loads((REPORTS / "audit_l3.json").read_text(encoding="utf-8"))
         prov["audit_l3_graph_sha"] = l3.get("frozen_graph_sha")
-        f = l3.get("metrics", {}).get("faithfulness")
-        if isinstance(f, dict):
-            f = f.get("faithfulness")
-        prov["faithfulness"] = f
-        prov["faithfulness_path"] = "metrics.faithfulness"
+        summary = l3.get("metrics", {}).get("faithfulness")
+        if isinstance(summary, dict):              # 老结构里它曾被包过一层
+            summary = summary.get("faithfulness")
+        rows = l3.get("per_case") or []
+        fvals = [(r.get("set"), r.get("faithfulness")) for r in rows
+                 if isinstance(r.get("faithfulness"), (int, float))]
+        ins = [v for s, v in fvals if s in FAITH_IN_SCOPE_SETS]
+        derived = round(sum(ins) / len(ins), 4) if ins else None
+        # **现算优先**：与 MRR 同一把规矩 —— 读 summary 字段等于引用，引用不会在换代理时报错。
+        prov["faithfulness"] = derived if derived is not None else summary
+        prov["faithfulness_derived"] = derived is not None
+        prov["faithfulness_source"] = "per_case 现算（in-scope 三套）" if derived is not None else "summary 字段（per_case 缺失）"
+        prov["faithfulness_population"] = {
+            "in_scope_sets": list(FAITH_IN_SCOPE_SETS), "n_in_scope": len(ins),
+            "n_all_rows": len(fvals),
+            "n_out_of_scope": len(fvals) - len(ins),
+            "out_of_scope_sets": sorted({s for s, _ in fvals} - set(FAITH_IN_SCOPE_SETS)),
+            "faithfulness_in_scope": derived,
+            "faithfulness_all_rows": round(sum(v for _, v in fvals) / len(fvals), 4) if fvals else None,
+            "l3_summary_field": summary}
+        if derived is not None and summary is not None and abs(derived - summary) > 0.0005:
+            prov["faithfulness_disagreement"] = (
+                f"现算 in-scope={derived} 与 summary={summary} 差超过 0.0005 ⇒ "
+                f"L3.3 的定义域可能变了（换题集/换聚合口径），必须先弄清定义域再引用这一格")
     except (OSError, json.JSONDecodeError, AttributeError) as e:
         prov["audit_l3_error"] = str(e)[:120]
     return out, prov
@@ -438,8 +462,30 @@ def main() -> int:
               and all(v >= MRR_FLOOR for v in base_mrr.values()))
     faith_ok = (unchanged and have_base
                 and bprov.get("audit_l3_graph_sha") == R11_SHA
+                # 只剩 summary 字段可读时不许打 ✅：引用一个数不会在换题集/换聚合口径时报错，
+                # 与 §5-14（硬写 mrr_v9 当 r11 基线）同一类错 ⇒ 这一格必须**现算得出**才算证据。
+                and bool(bprov.get("faithfulness_derived"))
+                and not bprov.get("faithfulness_disagreement")
                 and faith >= FAITH_FLOOR)
     kap = kappa_block()
+    fp = bprov.get("faithfulness_population") or {}
+    if not have_base:
+        faith_detail = "读不到 audit_l3.json"
+    elif bprov.get("faithfulness_derived"):
+        faith_detail = (
+            f"现算自 audit_l3.json 的 per_case，定义域 = in-scope 三套 {list(FAITH_IN_SCOPE_SETS)}"
+            f"（n={fp.get('n_in_scope')}，排除 {fp.get('out_of_scope_sets')} 共 {fp.get('n_out_of_scope')} 题）："
+            f"in-scope={fp.get('faithfulness_in_scope')}｜全体 {fp.get('n_all_rows')} 题"
+            f"={fp.get('faithfulness_all_rows')}｜L3 summary 字段={fp.get('l3_summary_field')}；")
+    else:
+        faith_detail = (
+            f"[!] audit_l3.json 的 per_case 读不到 ⇒ 只剩 summary 字段可引用（summary="
+            f"{fp.get('l3_summary_field')}）；这一格因此判 False —— 引用不会在换题集或换聚合口径时"
+            "报错，见 §5-14 那条同类事故；")
+    faith_detail += (f"该报告量的图 sha={bprov.get('audit_l3_graph_sha')}。"
+                     "闸门按 L3.3 原定义读 in-scope —— 换定义域属改口径，未做")
+    if bprov.get("faithfulness_disagreement"):
+        faith_detail += f"；[!] {bprov['faithfulness_disagreement']}"
     # `sub` = **发布闸门**。按 2026-10-11 口径裁决，检索那一格不再进闸门（降级为能力读数）；
     # 旧子标准 `N_retrieval<=15` 照实算、照实报，但放在 `legacy_sub` 里，不参与 gate。
     # 这不是放宽：CBI 的公式、权重、0.97 阈值、分母 500 全未动，N_retrieval=30 也照实写在
@@ -462,9 +508,7 @@ def main() -> int:
         "MRR": (f"现算自 audit_l2.json 的 per_case（它量的图 sha={bprov.get('audit_l2_graph_sha')}，"
                 f"期望 {R11_SHA}）：{base_mrr}"
                 if have_base else f"[!] 读不到 audit_l2.json 的 per_case：{bprov}"),
-        "Faithfulness": (f"现算自 audit_l3.json metrics.faithfulness = {faith}"
-                         f"（该报告量的图 sha={bprov.get('audit_l3_graph_sha')}）"
-                         if have_base else "读不到 audit_l3.json"),
+        "Faithfulness": faith_detail,
         "kappa": (f"{kap['why']}（读 {kap['path']}）" if kap["available"] else
                   "未达成 —— 只能由人出。机判对机判会退化（第二臂单一类别时 期望一致率=观测一致率 "
                   "⇒ κ=0，实测一致率却是 94.2%，见 reports/cbi_spotcheck_machine.json），"
