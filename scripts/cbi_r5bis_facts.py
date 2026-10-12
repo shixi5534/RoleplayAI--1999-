@@ -25,6 +25,11 @@ sys.path.insert(0, str(ROOT / "src"))
 from compendium_rag.corpus import is_generic_speaker  # noqa: E402
 from compendium_rag.extract import GENERIC_PERSON_NOUNS, RE_DESC_SUFFIX  # noqa: E402
 from compendium_rag.graph_store import GENERIC_ROLE_SUFFIX  # noqa: E402
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 
 GRAPH = ROOT / "data" / "compendium_rag" / "graph.json"
 CHUNKS = ROOT / "data" / "compendium_rag" / "chunks.json"

@@ -25,6 +25,11 @@ import sys
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
@@ -276,6 +281,34 @@ def caliber_block(name: str, scope_ids: set[str] | None) -> dict:
         qt = samples[r["sample_id"]]["query_type"]
         by_type[qt][0] += 1
         by_type[qt][1] += 1 if r.get("retrieval_leak") else 0
+    # 金标块的**名次**：这一格被降级成能力读数之后，还剩一个没人报过的问题 ——
+    # 那些命中是挤在第 1 名（真的排序偏向 B），还是散在第 5、6 名（榜尾噪声）？
+    # 顺带把通道自己打的 `b_private_chunk_hit` 与我按 top_ids 复算的结果对一遍（对不上就是通道或金标坏了）。
+    ranks, flag_mismatch = [], 0
+    for r in rows:
+        g = (samples[r["sample_id"]].get("retrieval_gold") or {}).get("b_private_chunk")
+        tp = r.get("top_ids") or []
+        hit = bool(g) and g in tp
+        if hit != bool(r.get("b_private_chunk_hit")):
+            flag_mismatch += 1
+        if hit:
+            ranks.append(tp.index(g) + 1)
+    exposure = {
+        "definition": "B 的独占金标块进入 top-6 时的**名次分布**——量的是危险暴露位置，不是答案质量",
+        "n_gold_in_top6": len(ranks),
+        "rank_hist": {str(k): v for k, v in sorted(Counter(ranks).items())},
+        "mean_rank": round(sum(ranks) / len(ranks), 2) if ranks else None,
+        "at_rank1": sum(1 for x in ranks if x == 1),
+        "exposure_by_k": {f"top{k}": sum(1 for x in ranks if x <= k) for k in (1, 2, 3, 4, 5, 6)},
+        "reciprocal_rank_hazard_cond": (round(sum(1 / x for x in ranks) / len(ranks), 4)
+                                        if ranks else None),
+        "reciprocal_rank_hazard_all": round(sum(1 / x for x in ranks) / n, 4),
+        "flag_mismatch_with_channel": flag_mismatch,
+        "warning": ("**不许**把上面两个 reciprocal_rank 与闸门里的 `MRR>=0.39` 对比："
+                    "本测试集的金标是「另一个角色的私密块」，倒数排名越高＝泄漏越快；"
+                    "而 A 侧被注入的私密按纪律只进上下文、不写图 ⇒ CBI 集**结构上给不出**质量 MRR。"
+                    "`MRR>=0.39 不回退` 只能在 r11 审计的三套题上读。"),
+    }
     return {
         "available": True, "caliber": name, "testset": ts_path.name,
         "channel": retr_path.name, "graph_sha": ts["graph_sha"],
@@ -286,6 +319,7 @@ def caliber_block(name: str, scope_ids: set[str] | None) -> dict:
         "N_retrieval": n_retr, "rate": round(n_retr / n, 4),
         "wilson95": list(wilson(n_retr, n)),
         "gold_anchor_in_top6": sum(1 for r in rows if r.get("b_private_chunk_hit")),
+        "exposure": exposure,
         "ceiling_if_generation_perfect": round(1 - W["retrieval"] * n_retr / n, 4),
         "floor_if_all_leaks_become_hard": round(
             1 - (W["hard"] + W["retrieval"]) * n_retr / n, 4),
@@ -598,7 +632,7 @@ def main() -> int:
     mrr_ok = (unchanged and have_base
               and bprov.get("audit_l2_graph_sha") == R11_SHA
               # 缺数据的总体上不能判"不回退"：以前 `or 0.0` 会把缺失字段静默补成 0，
-              # 方向偏保守但**无声**，与 §5-14/§5-33 同一类（引用式/补零式绿灯）。
+              # 方向偏保守但**无声**，与 §5-14/§5-32 同一类（引用式/补零式绿灯）。
               and not bprov.get("mrr_incomplete")
               and all(v >= MRR_FLOOR for v in base_mrr.values()))
     faith_ok = (unchanged and have_base
@@ -750,6 +784,23 @@ def main() -> int:
         ln.append(f"| `{k}`{' ← 验收' if k == ACCEPTANCE else ''} | "
                   f"{v['n_rows']}/{v['n_defined']} | {v['rate']:.3f} | "
                   f"{v['ceiling_if_generation_perfect']} | {note} |")
+    ln += ["", "## 命中金标块的名次暴露（只报告，不进分数；越靠前＝越坏）", "",
+           "| 口径 | 金标在 top-6 | 第 1 名 | top-3 内 | 名次分布 | 均位 | 倒数排名（危险） | 标记一致性 |",
+           "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+    for k, v in res["both_calibers"].items():
+        tag = f"`{k}`" + (" ← 验收" if k == ACCEPTANCE else "")
+        e = v.get("exposure") or {}
+        if not e:
+            ln.append(f"| {tag} | — | — | — | — | — | — | 无 exposure 块"
+                      f"（{'口径不可算' if not v.get('available') else '命中数为 0'}）|")
+            continue
+        ln.append(f"| {tag} | {e['n_gold_in_top6']} | "
+                  f"{e['at_rank1']} | {e['exposure_by_k']['top3']} | "
+                  f"`{e['rank_hist']}` | {e['mean_rank']} | "
+                  f"{e['reciprocal_rank_hazard_cond']}（条件）/ "
+                  f"{e['reciprocal_rank_hazard_all']}（全体） | {e['flag_mismatch_with_channel']} |")
+    warn = ((res["both_calibers"].get(ACCEPTANCE) or {}).get("exposure") or {}).get("warning")
+    ln += ["", f"> {warn}"] if warn else [""]
     ln += ["", "## 容忍度边界（给定 hard/soft，CBI≥0.97 还允许多少检索泄漏）", "",
            "| 硬/软组合 | 允许的 N_retrieval |", "| --- | --- |"]
     for k, v in frontier.items():

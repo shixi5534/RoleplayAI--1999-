@@ -23,6 +23,11 @@ import cbi_r5bis_facts as F  # noqa: E402
 from compendium_rag_p9_cbi_testset import (CONTROL_QUERY_TEMPLATES,  # noqa: E402
                                            QUERY_TEMPLATES, QUERY_TYPES)
 
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 REP = ROOT / "data" / "compendium_rag" / "reports"
 R5 = REP / "cbi" / "r5bis"
 OUT_LITERAL = REP / "cbi_testset_500_v2.json"

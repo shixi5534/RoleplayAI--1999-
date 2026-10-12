@@ -9,6 +9,12 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+import sys
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 
 ROOT = Path(os.environ.get("ROLEPLAY_ROOT", ".")).resolve()
 REP = ROOT / "data" / "compendium_rag" / "reports"

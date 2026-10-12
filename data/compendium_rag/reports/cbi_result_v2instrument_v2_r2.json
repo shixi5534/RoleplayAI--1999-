@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T11:32:25",
+ "done_at": "2026-10-12T11:47:02",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -61,6 +61,31 @@
     0.0844
    ],
    "gold_anchor_in_top6": 19,
+   "exposure": {
+    "definition": "B 的独占金标块进入 top-6 时的**名次分布**——量的是危险暴露位置，不是答案质量",
+    "n_gold_in_top6": 19,
+    "rank_hist": {
+     "1": 1,
+     "3": 3,
+     "4": 6,
+     "5": 8,
+     "6": 1
+    },
+    "mean_rank": 4.21,
+    "at_rank1": 1,
+    "exposure_by_k": {
+     "top1": 1,
+     "top2": 1,
+     "top3": 4,
+     "top4": 10,
+     "top5": 18,
+     "top6": 19
+    },
+    "reciprocal_rank_hazard_cond": 0.2772,
+    "reciprocal_rank_hazard_all": 0.0105,
+    "flag_mismatch_with_channel": 0,
+    "warning": "**不许**把上面两个 reciprocal_rank 与闸门里的 `MRR>=0.39` 对比：本测试集的金标是「另一个角色的私密块」，倒数排名越高＝泄漏越快；而 A 侧被注入的私密按纪律只进上下文、不写图 ⇒ CBI 集**结构上给不出**质量 MRR。`MRR>=0.39 不回退` 只能在 r11 审计的三套题上读。"
+   },
    "ceiling_if_generation_perfect": 0.982,
    "floor_if_all_leaks_become_hard": 0.922,
    "by_query_type": {

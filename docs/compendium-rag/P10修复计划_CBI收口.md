@@ -505,6 +505,18 @@ R2 未获批准前，CBI 的最高可达读数就是今天的 0.9844（子标准
 **MRR 与 Faithfulness 不在它的字段里** —— 那两条是三个仪器读数共用的基线，引用叠加列时别顺手替它答。
 ⇒ **除了那条叠加列，剩下三列的每一个闸门都已经绿，只差人工 κ 这一格。**
 
+**"MRR 不回退"这一格的适用域要说死**（它比看上去窄）：三列里的 true 来自 **r11 审计的三套题**
+（300cn 196 / blind 206 / gen 120，定义域 = `audit_l2.per_case` 的 answerable 行）
+加上"三个输入指纹未变"（图 `911bb538160db80e` / 块 `43106214066ccd60` / src `da22eba5bb399313`），
+**不是** CBI 这 500 条测出来的 —— 而且这 500 条**结构上给不出**质量 MRR：
+集合里唯一的检索金标是"B 的私密块"（不希望被找到的东西），A 侧注入又按纪律只进上下文不写图，
+所以这里没有可答题。报告 §2.13 新增的 `exposure` 块（名次分布 / `reciprocal_rank_hazard_*`）
+是**危险度**，方向与 0.39 相反，读数是 v1 控制 12 命中（0 条第 1 名、均位 4.33、倒数排名 0.2542）、
+v1 字面 81 命中（**22 条第 1 名**、均位 3.41、0.4636）、v2 控制 19 命中（1 条第 1 名、4.21、0.2772）；
+它**只报告、不进分数**（`cbi_exposure_negtest.py` 有一条专门的断言：把金标挪到第 1 名时
+`N_retrieval`/Wilson/上下限/`by_query_type` 必须逐字段不动），
+引用它时不许与 0.39 并列。收紧 k 也不是修法：`retrieval_leak` 是通道在固定 k=6 上打的标。
+
 **⚠ 先登记一个会咬人的命名冲突**：`cbi_result_v2hard.json` 里的 `ruler_v2` 指的是
 "**v1 集 + R8 叠加口径**"（把 D1 的 4 条 `attributed_to_A` 记 hard），而
 `cbi_result_v2instrument_v2_r2.json` 指的是"**v2 集 + 正式尺子 v2**"（R1 收窄后全量重判）。
@@ -628,3 +640,53 @@ top-6 六块的 owner 集合**两图逐字相同**，变动块 owners（伊文�
   但那是**代理键**的读数，不是**人工标注**的读数——没做过，故不能引用前者否定后者。
 - **(二) 只写规则不写边**：把 `owner`/`visibility` 记为"当前语料上不可自动推导"的登记项，
   P10 不落边，只留 `entity_disambiguation_rules.md` §5/§8 的约束（现状即此）。
+
+## R14 P10 第 6 项 compendium 侧 Fandom 隔离：**独立复核确认"空枪"**（2026-10-12，只读）
+
+plot 侧的来源派生字段已在 `P10_Fandom来源隔离_plot侧派生.md` 落盘（311 条含 analysis 证据的边
+加 `evidence_source_kinds` / `has_analysis_evidence`）。**compendium 侧此前只有断言、没有实测**，
+本轮用 `scripts/_probe_cmpr_fandom_survey.py` 与 `scripts/_probe_plot_corpus_kind.py` 补齐。
+
+### A. compendium 语料（`data/compendium_rag/chunks.json`）
+
+| 量 | 读数 |
+| --- | --- |
+| 块数 | **3695** |
+| 块键集合 | 3695 条全同：`['category','chapter_id','chapter_title','chunk_id','content_key','doc_id','part_title','scene_title','script_id','speakers','speakers_text','text']` |
+| `doc_id` 前缀（5 类，与 `category` 一一对应） | `activity` 1374 / `mainline` 944 / `anecdote` 530 / `character` 451 / `appendix_unbound` 396 |
+| 含 `source`/`provenance`/`origin`/`tier`/`visibility`/`owner` 任一字段的块 | **0** |
+
+宽口径关键词全文扫描（**故意放宽以找"最坏情况"**）：
+
+| 关键词 | 命中块 | 判读 |
+| --- | --- | --- |
+| `分析` | 80 | 全是**剧中对白**（「病情分析」「背景分析报告」），非来源标签 |
+| `解读` | 15 | 全是台词（「希望的解读」「要解读的就是这个」） |
+| `视频` | 15 | 全是**舞台指示**（「视频结束」「视频3结束」） |
+| `解说` | 3 | 剧中「解说者」角色名 |
+| `UP主` / `攻略` / `二创` / `评测` / `玩家` / `灰机` / `wiki` | **各 0** | — |
+| `官方` | 45 | 台词用词（「官方人员」「官方答案」） |
+
+### B. 图侧（`data/compendium_rag/graph.json`，7033 实体 / 27110 边）
+
+- `edge.evidence` 命中：`分析` 21 / `官方` 9 / `视频` 3 / `解读` 1 / `同人` 1 —— **逐条读全是正片对白**
+  （如「我不中意同人为敌」「直接对目标进行解读」），即 plot 侧已登记过的那类**正片常用词落进词表**的假阳性。
+- `entity.desc` 命中：`灰机` **2** 条 —— `兀尔德`（desc 内含「灰机：兀尔德/Urd，2.8复乐园独立NPC」）、
+  `玛尔塔`（desc 内含「灰机：Marta」）。这两条是 **repairs_v1 的 R1-E01/E02 建实体时**写进去的
+  外部来源注记，指向**灰机 wiki 的中文正典**，不是 UP 主考据。
+- ⇒ 按**来源语义**口径（UP 主分析文案）命中 **0 条**；按**字面**口径命中 2 条，且既非 edge 也非 UP 主来源。
+
+### C. plot 语料的权威来源字段（`data/knowledge/plot_corpus_wu_ming_zhe.json`）
+
+`chunks` 14247 条，`source_kind` 分布：`canon` 8293 / `canon_zh` 5889 / `analysis` **63** / `official` 2。
+`analysis` 例（`doc_id=BV196ReBxEq9`：「30分钟七条惊天伏笔线…」）即 UP 主考据文案
+⇒ **Fandom 污染的实体承载在 plot 语料（63 条 chunk），不在 compendium 语料。**
+
+### ⇒ 结论与交付判定
+
+1. **compendium 侧"空枪"判定成立，且这次有块级/边级/字段级三层证据**（此前只有一句断言）。
+2. **第 6 项的可落地部分全部落在 plot 侧，且已完成**（311 条边已标注；`source_kind` 权威在语料层）。
+3. **未做的仍是"禁止跨角色传播"的执行面**（plot 侧 S2：检索默认只取 canon、analysis 降权）。
+   当前新字段**没有任何代码消费**——只标注、不改行为。这一条要不要在 P10 内实施，**须你裁**：
+   (i) 只保留标注（现状，零风险，但"禁令"是纸面的）；(ii) 实施 S2 并重跑取证（会动检索行为，
+   必须按新指纹重跑 MRR/Faithfulness）。
