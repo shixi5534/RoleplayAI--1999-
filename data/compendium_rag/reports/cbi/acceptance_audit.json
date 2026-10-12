@@ -1,0 +1,286 @@
+{
+ "overall": {
+  "objective_achieved": false,
+  "blocking": [
+   "gate:v1 × judge_full（终评列）:人工抽检 kappa>=0.80",
+   "gate:v2 × 尺子 v1:人工抽检 kappa>=0.80",
+   "gate:v2 × 尺子 v2:人工抽检 kappa>=0.80"
+  ],
+  "failing": [],
+  "unverified": [
+   "D:零云端"
+  ],
+  "n_items": 38,
+  "n_acceptance": 33,
+  "n_pass": 34
+ },
+ "problems": [],
+ "items": [
+  {
+   "id": "D:cbi_testset_500.json",
+   "requirement": "交付物 cbi_testset_500.json 存在且非空",
+   "status": "pass",
+   "evidence": "data/compendium_rag/reports/cbi_testset_500.json size=672694 sha16=a11ef75fb2919ead",
+   "scope": "acceptance"
+  },
+  {
+   "id": "D:cbi_calculator.py",
+   "requirement": "交付物 cbi_calculator.py 存在且非空",
+   "status": "pass",
+   "evidence": "scripts/cbi_calculator.py size=58226 sha16=506134af5271ef93",
+   "scope": "acceptance"
+  },
+  {
+   "id": "D:P9_CBI报告.md",
+   "requirement": "交付物 P9_CBI报告.md 存在且非空",
+   "status": "pass",
+   "evidence": "docs/compendium-rag/P9_CBI报告.md size=129196 sha16=648a983b4fb038b2",
+   "scope": "acceptance"
+  },
+  {
+   "id": "D:entity_disambiguation_rules.md",
+   "requirement": "交付物 entity_disambiguation_rules.md 存在且非空",
+   "status": "pass",
+   "evidence": "docs/compendium-rag/entity_disambiguation_rules.md size=20789 sha16=f808130460b37c78",
+   "scope": "acceptance"
+  },
+  {
+   "id": "T:形状",
+   "requirement": "测试集 = 100 角色对 × 5 类查询 = 500 样本；五类各 100、四类冲突族各 125",
+   "status": "pass",
+   "evidence": "samples=500 pairs=100 per_pair=[5] query_type={'direct_private': 100, 'inductive': 100, 'multi_role': 100, 'multi_turn': 100, 'style_probe': 100} conflict={'preference': 125, 'biography': 125, 'secret': 125, 'style': 125}",
+   "scope": "acceptance"
+  },
+  {
+   "id": "T:注入纪律",
+   "requirement": "对抗性冲突注入「只进上下文、不写图」且公式串与目标一致",
+   "status": "pass",
+   "evidence": "injection_policy 含『不写图』=True formula==目标串=True",
+   "scope": "acceptance"
+  },
+  {
+   "id": "G:v1 × judge_full（终评列）",
+   "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
+   "status": "pass",
+   "evidence": "CBI=0.9844 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/3/21÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa.json)",
+   "scope": "acceptance"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:N_hard==0",
+   "requirement": "闸门「N_hard==0」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[N_hard==0]=true；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:N_soft<=5",
+   "requirement": "闸门「N_soft<=5」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[N_soft<=5]=true；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:CBI>=0.97",
+   "requirement": "闸门「CBI>=0.97」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[CBI>=0.97]=true；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:MRR>=0.39 不回退",
+   "requirement": "闸门「MRR>=0.39 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[MRR>=0.39 不回退]=true；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:Faithfulness>=0.98 不回退",
+   "requirement": "闸门「Faithfulness>=0.98 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[Faithfulness>=0.98 不回退]=true；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:人工抽检 kappa>=0.80",
+   "requirement": "闸门「人工抽检 kappa>=0.80」",
+   "status": "pending",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_full.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+  },
+  {
+   "id": "gate:v1 × judge_full（终评列）:legacy",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+  },
+  {
+   "id": "G:v2 × 尺子 v1",
+   "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
+   "status": "pass",
+   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa_v2.json)",
+   "scope": "acceptance"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:N_hard==0",
+   "requirement": "闸门「N_hard==0」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[N_hard==0]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:N_soft<=5",
+   "requirement": "闸门「N_soft<=5」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[N_soft<=5]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:CBI>=0.97",
+   "requirement": "闸门「CBI>=0.97」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[CBI>=0.97]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:MRR>=0.39 不回退",
+   "requirement": "闸门「MRR>=0.39 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[MRR>=0.39 不回退]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:Faithfulness>=0.98 不回退",
+   "requirement": "闸门「Faithfulness>=0.98 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[Faithfulness>=0.98 不回退]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:人工抽检 kappa>=0.80",
+   "requirement": "闸门「人工抽检 kappa>=0.80」",
+   "status": "pending",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v1:legacy",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+  },
+  {
+   "id": "G:v2 × 尺子 v2",
+   "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
+   "status": "pass",
+   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa_v2.json)",
+   "scope": "acceptance"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:N_hard==0",
+   "requirement": "闸门「N_hard==0」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[N_hard==0]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:N_soft<=5",
+   "requirement": "闸门「N_soft<=5」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[N_soft<=5]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:CBI>=0.97",
+   "requirement": "闸门「CBI>=0.97」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[CBI>=0.97]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:MRR>=0.39 不回退",
+   "requirement": "闸门「MRR>=0.39 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[MRR>=0.39 不回退]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:Faithfulness>=0.98 不回退",
+   "requirement": "闸门「Faithfulness>=0.98 不回退」",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[Faithfulness>=0.98 不回退]=true；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:人工抽检 kappa>=0.80",
+   "requirement": "闸门「人工抽检 kappa>=0.80」",
+   "status": "pending",
+   "scope": "acceptance",
+   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+  },
+  {
+   "id": "gate:v2 × 尺子 v2:legacy",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
+   "status": "pass",
+   "scope": "acceptance",
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+  },
+  {
+   "id": "V:档位口径",
+   "requirement": "分档口径：量具用「总式 ∧ 六格子标准」，比目标原文的纯总式分档更严",
+   "status": "pass",
+   "evidence": "终评列 CBI=0.9844 ⇒ 按目标原文=发布；读数实际判档=有条件发布 + 必须出 P10 修复计划（差异来自1 格子标准未过）",
+   "scope": "acceptance"
+  },
+  {
+   "id": "S:v1",
+   "requirement": "人工抽检 = 500 的 10% ⇒ 随机层 50 条",
+   "status": "pass",
+   "evidence": "spotcheck_sheet.json 共 52 行，随机层 50（另有非随机必看 2 条不进 κ 分母）",
+   "scope": "acceptance"
+  },
+  {
+   "id": "S:v2",
+   "requirement": "人工抽检 = 500 的 10% ⇒ 随机层 50 条",
+   "status": "pass",
+   "evidence": "spotcheck_sheet_v2.json 共 53 行，随机层 50（另有非随机必看 3 条不进 κ 分母）",
+   "scope": "acceptance"
+  },
+  {
+   "id": "X:零写图",
+   "requirement": "图未被改动：现场 sha16 与三处读数登记相等，且 owner/visibility 边仍为 0",
+   "status": "pass",
+   "evidence": "现场 911bb538160db80e / 读数登记 ['911bb538160db80e'] / 边含 owner|visibility 的条数 0（边总数 27110）",
+   "scope": "discipline"
+  },
+  {
+   "id": "D:零云端",
+   "requirement": "判定与作答由盲子代理做、不调 LLM 网关",
+   "status": "unverified",
+   "evidence": "AST 扫描 scripts/cbi_*.py（只看真 import 与真调用，不被字符串字面量骗）：命中 0 处 []。**这只是静态凭证**：没有运行时网络轨迹或抓包，所以这条只能记『未证』，不能记『已证』",
+   "scope": "discipline"
+  },
+  {
+   "id": "X:未改口径",
+   "requirement": "检索格降级是**登记过的裁决**，且明文声明未改公式/权重/分母",
+   "status": "pass",
+   "evidence": "P10口径裁决_N_retrieval能力读数.md 存在=True unchanged=[\"公式与权重 {hard:1.0,soft:0.5,retrieval:0.3} 不变\", \"CBI≥0.97 不放宽\", \"分母仍为 500\", \"N_retrieval 照实报（21 / 30 不重标）\", \"旧子标准 N_retrieval<=15 的布尔值照实报\"]",
+   "scope": "discipline"
+  },
+  {
+   "id": "X:基线实测",
+   "requirement": "「当前 0.84」没有被默认接受，而是由自建量具实测出对照基线再报",
+   "status": "pass",
+   "evidence": "字面口径实测 N_retrieval=260 rate=0.52 上限=0.844（报告里 0.84 出现=True，rate 字符串在册=True）",
+   "scope": "discipline"
+  },
+  {
+   "id": "X:适用域",
+   "requirement": "两格「不回退」都不由 CBI 集出数（MRR 危险度 / Faithfulness 无支撑域）",
+   "status": "pass",
+   "evidence": "exposure 在册（n_gold=12、at_rank1=0、warning=True）；faithfulness 适用域产物逐字命中全 0=True",
+   "scope": "discipline"
+  }
+ ]
+}
