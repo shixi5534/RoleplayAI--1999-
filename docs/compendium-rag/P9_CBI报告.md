@@ -6,8 +6,9 @@
 §2.16 目标→证据的验收审计（五条「故意能红」的防线 + 一条诚实挂着的 unverified）/
 §2.2 门面闸门表交给机器核（MRR/Faithfulness 从审计件现算复算、联合判定要逐字一致）/
 §3 落标改成机检 + 标哪张表清哪一列 /
-§5-28~38 十一处我自己的缺陷入账（含 §5-35 把本表编号写错三处、§5-36 一列恒 0 的自证格子、
-§5-37 验收审计里的恒绿判档与自我误伤扫描器、§5-38 把审计产物的「快照脏了」读成内容回归）/ §4 指向 P10 §R11 闸门矩阵）·
+§5-28~39 十二处我自己的缺陷入账（含 §5-35 把本表编号写错三处、§5-36 一列恒 0 的自证格子、
+§5-37 验收审计里的恒绿判档与自我误伤扫描器、§5-38 把审计产物的「快照脏了」读成内容回归、
+§5-39 一个 κ 文件名撑三个闸门格（跨臂凭证能清掉不属于它的那一列））/ §4 指向 P10 §R11 闸门矩阵）·
 冻结图 r11 `911bb538160db80e`（7033 实体 / 27110 边，本报告全程未改动）·
 **全程零写图、零云端**（作答与判分均由盲子代理做，波次按 manifest 的 qid 集合校验，非按自述）。
 公式：`CBI = 1 − (1.0·N_hard + 0.5·N_soft + 0.3·N_retrieval)/N_total`
@@ -296,7 +297,7 @@ B 的独有元素（随身带着、从不给人看）不在答案里 ⇒ **同�
 ① **机械屏幕块**连同它的**功率**一起报（v1 仪器 `usable_as_evidence=false`：四句模板剥掉共用措辞后
 几乎无逐对独特内容可屏 ⇒ 它的沉默什么也不能证明；v2 仪器 100/100 对可屏、中位 21 个独有 gram，
 `usable_as_evidence=true`）；
-② **人工 κ 改成读产物**（`cbi_spotcheck_kappa{,_v2}.json` 不存在 ⇒ 报"未达成，只能由人出"）。
+② **人工 κ 改成读产物**（`cbi_spotcheck_kappa_<仪器>_<判分臂>.json` 不存在 ⇒ 报"未达成，只能由人出"）。
 原先这里**硬写 False**，一旦人标完也永远 False —— 与本项目已吃过教训的"数学上不可达闸门"同类，已修；
 κ 在机判单类别时（v2 就是 500/500 clean）退化，此时按 §3 的结论函数读**观测一致率**，
 阈值 0.90 是本块唯一的自选参数，已单独报出来供你否决。
@@ -306,10 +307,16 @@ SEED=42、5 个题型各 10 条 = 50 条无偏随机 + 3 条争议富集
 （机械屏幕 3 条假阳性候选里的 2 条 + 上面那条 `to_A`；另 1 条已落在随机行里），
 填法与 v1 单相同（只填 `human_verdict` 一列）。
 
-**你标完之后只需一条命令**（我这边不用再动）：
+**你标完之后是一条命令 × 判分臂，而不是一条**（10-12 改：κ 产物现在按 **(仪器, 判分臂)** 两维落盘）：
 `CBI_INSTRUMENT=v2 CBI_STAGE=kappa .venv/Scripts/python.exe scripts/cbi_spotcheck.py`
-→ 出 **`reports/cbi_spotcheck_kappa_v2.json`**（注意在 `reports/` 根，不在 `reports/cbi/`），
-计算器下一跑就自动读它、把 κ 那一格翻成 ✅/❌
+→ 出 **`reports/cbi_spotcheck_kappa_v2_judge_v2_r1.json`**（注意在 `reports/` 根，不在 `reports/cbi/`），
+清的是 **v2×尺子 v1** 那一列；
+`CBI_INSTRUMENT=v2 CBI_JUDGE=judge_v2_r2.jsonl CBI_STAGE=plan -> cards -> kappa`（同一台机器三条命令，我这边执行）
+→ 出 **`reports/cbi_spotcheck_kappa_v2_judge_v2_r2.json`**，清的是 **v2×尺子 v2** 那一列。
+**你只需要标一次**：随机 50 行是按 SEED 抽的、与判分臂无关，人工列也存在 `reports/cbi/spotcheck_labels_v2.json` 里，
+换臂重出单子不会覆盖你的判定。
+计算器下一跑自动按**它自己那一列的臂**去找对应文件，找不到就报"未达成"（失败关闭），
+把 κ 那一格翻成 ✅/❌
 （v2 上机判臂只有 clean 一类 ⇒ 走"观测一致率 ≥0.90"那条退化路线，见上面 §2.8 与 `spotcheck_sensitivity_v2.md`）。
 `cohen()` 的算术我在内存里做过自检（单类别 ⇒ `degenerate=true`、κ 无定义；双类别 95% 一致 ⇒ κ=0.6396），
 但**没有**为跑通流程去伪造一份人工标注 —— κ 这一格的定义就是"人怎么判"，我造一份就等于把闸门自己糊上。
@@ -708,7 +715,7 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 `scripts/cbi_acceptance_audit.py` 把目标里每一条明文要求映射到具体证据字段，
 产出 `reports/cbi/acceptance_audit.{json,md}`（**38 条：验收 33 + 纪律 5**），
 当前状态是 **pass 31 / pending 3 / 🚩 waived 3 / fail 0 / unverified 1**，三条 pending 全部是三列读数的
-`人工抽检 kappa>=0.80`。它自己也有负向套件（`cbi_acceptance_audit_negtest.py`，**33 条断言**）。
+`人工抽检 kappa>=0.80`。它自己也有负向套件（`cbi_acceptance_audit_negtest.py`，**42 条断言**）。
 
 这个审计里有五处是**故意设计成能变红的**，而且四处都是这一轮自己踩出来之后才改成这样的：
 
@@ -720,11 +727,19 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 | **待测 ≠ 测了不过** | κ 产物不存在 ⇒ `pending`；产物存在但 `gate_pass=false` ⇒ **`fail`** | 一个永远"等人来出"的格子是洗不掉失败的，也是永远不绿的借口 |
 | **放行 ≠ 通过** | 目标原文的 `检索泄漏<=15` 那格实际是 `false` ⇒ 只许记 `waived`，且 `waived` 的前提是**那次裁决的登记件还在**；登记件一旦被删就自动退回 `fail` | 把"当时批过"洗成永久免检 —— 而且第一版这里写成 `not list(leg.values())`，那是"字典非空即为假"的真值陷阱，**三列全被印成 pass**（这一处是完成审计时抓到的，见 §5-37③） |
 
-另外两条值得单独说：
+另外三条值得单独说：
 - **旧读数配新产物不许过**（负向 N10a）：把 κ 产物补上、`sub_criteria` 也改成 true，
   但读数的 `gate` 还是重跑之前的 ⇒ 判档复刻立刻不一致 ⇒ 三条 fail。
   只有 N10b（连 `gate` 一起更新，等价于"真的重跑过"）才允许审计说"达成"。
   这就是我拿来做完成审计的那条纪律本身：**没有重跑过的绿不算绿**。
+- **凭证必须属于它自己那一列**（10-12 加，§3 与 §5-39）：三列读数各有一格 `人工抽检`，但 κ 产物原先
+  只按**仪器**命名 —— v2 那台仪器有两把尺子共用一个文件，后跑的臂覆盖前一次，而产物里只有 `instrument`
+  字段。于是"v2×尺子 v2"这一列会被**属于尺子 v1 的 κ** 清成绿：一个文件名撑三个闸门格。
+  现在 ① κ 产物按 **(仪器, 判分臂)** 两维命名，三列三个文件；② 产物自报 `judge_arm` / `result_path`；
+  ③ 计算器与审计都只认臂对得上的凭证，**对不上判"不符"而不是"等人"**（`fail`，不是 `pending`）；
+  ④ `compute_kappa` 在算之前逐条核对抽检单的机判列确实出自这把尺子，对不上拒绝出数（写在盘之前）。
+  命名这条规则在抽检脚本、计算器、审计里各写一遍，由负向套件 N21 断言**三方逐字相等**，
+  并带一个"退回旧命名就会撞名"的反例 —— 分叉的后果是计算器找不到文件，即**失败关闭**。
 - **有一条诚实挂着**：`零云端` 只有**静态凭证**（AST 扫描没有任何网关/HTTP 调用），
   没有运行时网络轨迹，所以状态记 `unverified` 而不是 `pass`。
   要补凭证只能在下一次跑批时包一层 socket/连接审计 —— 那属于新的执行动作，
@@ -761,16 +776,20 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 > 别拿 κ=0 当判分器坏的证据。也就是说 v2 这一臂对"人工纠正"的容忍度是**按条数**给的，
 > 而不是像 v1 那样一条就翻车。
 
-**标哪一张表，清哪一列闸门**（这条依赖很容易看漏，所以单独立一段；键值取自
-`cbi_calculator.kappa_block()` 第 350 行的产物路径逻辑，不是我另写的一份规则）：
+**标哪一张表，清哪一列闸门**（这条依赖很容易看漏，所以单独立一段；产物名取自
+`cbi_calculator.kappa_artifact_path()` / `cbi_spotcheck.kappa_result_path()` 这**一条**规则，不是我另写的一份）：
 
-| 你标的表 | 落标后生成的产物 | 会被它清掉的读数 | 不会被它清掉的读数 |
+| 你标的表 | 落标后生成的产物（一列一个） | 会被它清掉的读数 | 不会被它清掉的读数 |
 | --- | --- | --- | --- |
-| `spotcheck_sheet_v2.md` / `_v2_cards.md`（53 行，随机层 50） | `reports/cbi_spotcheck_kappa_v2.json` | `cbi_result_v2instrument.*`、`cbi_result_v2instrument_v2_r2.*`（v2×尺 v1、v2×尺 v2 两列 0.9820） | `cbi_result_full.*`（v1×判分臂 full 那列 **0.9844**，也是§2.2 终评引用的那一列） |
-| `spotcheck_sheet.md` / `_cards.md`（52 行，随机层 50） | `reports/cbi_spotcheck_kappa.json` | `cbi_result_full.*` 与探针 `cbi_result.*` | 两列 v2 读数 |
-| **两张都标** | 两个产物 | §R11 闸门矩阵**全部四行** | — |
+| `spotcheck_sheet_v2.md` / `_v2_cards.md`（53 行，随机层 50） | `reports/cbi_spotcheck_kappa_v2_judge_v2_r1.json`（默认臂一跑即出）<br>`reports/cbi_spotcheck_kappa_v2_judge_v2_r2.json`（要我再带 `CBI_JUDGE` 跑一遍） | 第一件清 `cbi_result_v2instrument.*`，第二件清 `cbi_result_v2instrument_v2_r2.*` —— **两列、两次 kappa，一次标注** | `cbi_result_full.*`（v1×判分臂 full 那列 **0.9844**，也是§2.2 终评引用的那一列） |
+| `spotcheck_sheet.md` / `_cards.md`（52 行，随机层 50） | `reports/cbi_spotcheck_kappa_v1_judge_full.json` | `cbi_result_full.*` 与探针 `cbi_result.*` | 两列 v2 读数 |
+| **两张都标** | 三件产物（三列读数一列一件） | §R11 闸门矩阵**全部四行** | — |
 
 ⇒ 只标一张的话，另一张仪器的那一列仍会照实报"未达成"，计算器不会替我把它算过。
+⇒ **一件凭证只清一列**：这一条 10-12 才立起来。旧命名是 `cbi_spotcheck_kappa_<仪器>.json`（只按仪器），
+一台仪器两把尺子共用一个文件 ⇒ 后跑的臂覆盖前一次，而产物里只有 `instrument` 字段，
+"v2×尺子 v2"那一列会被**属于尺子 v1 的 κ** 清成绿。现在命名两维化 + 产物自报 `judge_arm`/`result_path`，
+计算器与审计都只认**臂对得上**的凭证，对不上就判"未达成/不符"，不判过（见 §2.16 与 §5-39）。
 命令按仪器分开跑（`CBI_INSTRUMENT=v1|v2`），产物名不同、互不覆盖。
 
 ⇒ **这一臂大概率会失败，但不是判分器坏，而是低流行率下 κ 这个指标本身不稳**
@@ -800,7 +819,7 @@ CBI_INSTRUMENT=v2 CBI_STAGE=label CBI_LABELS="12=soft_leak; 13=clean; C2-047-sty
 ③落盘后**逐条回显 `行号 <-> sample_id <-> 你给的 verdict`** 让你核对，并附随机层已标数（`n≥30` 才给判）。
 分批发也行：后一批与前一批**合并**，只有同键才覆盖；旧标注里不在这张表上的 sid 会丢弃但**大声 WARN**，不静默。
 然后 `CBI_INSTRUMENT=v2 CBI_STAGE=kappa .venv/Scripts/python.exe scripts/cbi_spotcheck.py`
-→ `reports/cbi_spotcheck_kappa_v2.json`，计算器自动读它。
+→ `reports/cbi_spotcheck_kappa_v2_judge_v2_r1.json`，计算器自动读它（第二列要带 `CBI_JUDGE=judge_v2_r2.jsonl` 再跑一遍，见上面"标哪张表清哪一列"）。
 
 **还有一个更好读的视图，以及一种更省事的交回方式**（10-12 加）：
 `CBI_INSTRUMENT=v2 CBI_STAGE=cards` 出 **`reports/cbi/spotcheck_sheet_v2_cards.md`** ——
@@ -1237,6 +1256,21 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
     下一次我就会（正确地）怀疑它，或（错误地）把它当成回归提交。
     **修法**：把判读规则写进产物页脚 —— 重跑后 diff，**只有 `status`/`overall`/闸门数值跟着动才算回归**，
     只有 sha16/size 在动是"请重跑我"。这条本身不需要负向测试，因为它的失败模式不是"算错"，是"读错"。
+39. **一个文件名撑三个闸门格 —— 我是给"最后那步人工"写说明书时才发现的**（§2.16、§3）：
+    κ 产物原先按**仪器**命名（`cbi_spotcheck_kappa_v2.json`），而终评表上有三列读数、
+    三列各有一格 `人工抽检`；v2 这台仪器恰好有两把尺子。后果有三层，一层比一层隐蔽：
+    ① 两臂的 κ 互相**静默覆盖**，仓库里永远只有一份；
+    ② 产物里只有 `instrument` 没有 `judge_arm` ⇒ 事后无法证明这份凭证是拿哪把尺子算的；
+    ③ 审计件里我自己抄的那张 `label -> κ 文件` 表把两个 label 指向同一个文件，
+    于是"v2×尺子 v2"那一列可以被**属于尺子 v1 的 κ** 清成绿 —— 这是 §6 规则 8（跨字段同源）的另一种形态：
+    不是两个字段同源，而是**一个凭证被两格共用**。
+    **修法**：命名两维化（仪器 + 判分臂）；产物自报 `judge_arm`/`result_path`；
+    计算器与审计只认臂对得上的凭证，对不上记 `fail` 而不是 `pending`；
+    `compute_kappa` 先逐条核对抽检单的机判列确实出自这把尺子，不符就**在写盘之前**拒绝出数。
+    验证：负向套件 N9b/N9c（错臂凭证、命名分叉各一例行必须红）、N21（三方命名逐字相等 +
+    "退回旧命名就撞名"的反例）、κ 链预检 [4]（两臂共存、字节级不覆盖、跨臂取不到）与 [5]（臂与单子不符）。
+    **教训**：把"人该怎么标、标完清哪一格"写成说明书这件事，本身就是对量具的一次审计 ——
+    这一条不是跑数跑出来的，是写流程写出来的。
 
 ## 6. 交付物与产物清单
 
@@ -1248,7 +1282,7 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | 规则表事实核对 | `scripts/cbi_rules_doc_facts.py` + `scripts/cbi_rules_doc_facts_negtest.py`（只读；产物破坏打在临时副本上） | ✅ 表里引用的簇数 146、族分布 136/9/1、提案数 8（tier_A 3 / tier_B 5）+ 13 拦截、spec **12 项**与 v1 **12/12**、v2 **11/12**、两把尺子文件存在 —— 全部与产物逐字段相等；负向 7 例（3 例改正文 + **3 例改产物副本** + 原件两次全绿）全部符合预期。这一轮就靠它抓到本表两处过期数字（"11 项规格断言 / 8 例人为破坏"，实为 12 项 / 14 例）|
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
-| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`reports/cbi_spotcheck_kappa{,_v2}.json` | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过、仓库内 labels 文件计数自证为 0）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 目前**两个仪器都不存在**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
+| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`reports/cbi_spotcheck_kappa_<仪器>_<判分臂>.json`（**两维命名**：一台仪器两把尺子 ⇒ 三列读数三个文件，谁也不覆盖谁，见 §5-39） | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过、仓库内 labels 文件计数自证为 0）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 目前**一列都没有**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
 | 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
 | R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}`、`owner_edge_scope.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 写图规模 96.2% 多主 |
 | R2 误伤判定书 | `scripts/compendium_rag_p10_visibility_shadow.py` → `reports/cbi/visibility_shadow.{json,md}` ＋ `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md` | ✅ 三套全量 522/522，strict/scene **均判负**（最差 ΔMRR −0.1296） |
@@ -1266,14 +1300,14 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（**12 项**，`blocking=False`） | ✅ v1 两臂 12/12；v2 两臂 11/12（❌ 四族等配比，见 §2.9/R9）；14 项人为破坏全被抓出（首批 8 项结构类 + 金标一致性 6 项，v1 列表形态与 v2 字符串形态都测到）（含"悬空 eid"与"金标 ≡ 注入句"两条由负向测试逼出来的新检查）；另报 `judge_gold_shapes` 把 v2 的字段收窄写进读数 |
 | 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读，**7 项**：截断 / 断列 / 人工列预填 / **血缘 12 字段×四原始件** / **读数独立重算 + 判分臂同源** / **卡片：行号同源 + 答案全文 + 机判理由逐字在册 + 引句子句逐字比对且条数 == json** / **答题块：序号恰为 1..n + 每张卡『人工』行索引与自身行号同源 + 一条都不许预填**） | ✅ v1 52 行、v2 53 行全绿：证据单元格与 json 逐格等价、人工列全为占位符、血缘 0 处不一致、金标 ≡ 注入 52/52 与 53/53、独立重算 `0/3/21⇒0.9844`、`0/0/30⇒0.9820` 与发布逐位相同、卡片行号序列一致且答案全文；引句条数 v1 **3==3**、v2 **0==0**（v2 那一栏是"空的正当"，见 §5-31）；答题块 v1 **52 项 = 1..52**、v2 **53 项 = 1..53**，卡片内『人工』索引 52/53 处同源，**预填 0 条** |
 | 完整性检查的负向测试 | `scripts/cbi_sheet_integrity_negtest.py`（破坏只打在系统临时目录的副本上） | ✅ 24/24：界面层（截短答案 / 真断列 / 预填人工列 / 只剪行尾 `\|` 的**假破坏不该被抓**）+ 血缘层（表上行被抓、表外行放过而由全量计数抓）+ 重算层（读数手改 / 权重被改 / 公式解析不出 / 判分臂换臂）+ 卡片层**打在 v1 上**（删引句 / 改机判理由 / 无中生有-add 一句引句，三例全红）+ "v2 引句列恒空 ⇒ 该格在 v2 上不可证伪"这条也被写成断言 + **答题块层**（互换两项 / 缺一项 / 预填一条 `3=clean` / 卡片内『人工』索引错位 四例全红，而"只把分隔符写成 `1=?;2=?`"必须**不红**——检查读的是序号语义不是排版）；原件两列全绿 |
-| κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 18/18：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例） |
+| κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 26/26：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例）、**两臂 κ 产物共存且字节级不覆盖**、**跨臂取凭证读不到（失败关闭）**、**单子与尺子不符时在写盘前拒绝出数** |
 | MRR 定义域记账 | `cbi_calculator.baselines()` → 每条读数的 `sub_details.MRR_population`；负向 `scripts/cbi_mrr_population_negtest.py` | ✅ 四个读数的 `MRR_population` 一致：per_set n=196/206/120、真为 0 的行 23/15/0、`answerable_only=true`、缺字段 0；缺字段/非数值不再静默补零（有则 `mrr_incomplete` ⇒ 那一格判 False）；负向 15 例（含"三套值逐位不变"与"整套缺失必须整体拒绝"）全过 |
 | 名次暴露（§2.13，只报告不进分数） | `scripts/cbi_exposure_negtest.py`（18 项）+ `scripts/cbi_exposure_delta_check.py`（四份读数 JSON 树递归比对） | ✅ 三处读数的 `严格` 列与既有 `gold_anchor_in_top6` 逐位相同（12 / 81 / 19），`标记一致性` 三处均 0；负向四例分别证明 `flag_mismatch` 非同源自证、名次计数读 `top_ids`、**名次变化不影响 `N_retrieval`/Wilson/上下限/`by_query_type` 逐字段**、非金标顺序无反应；复算对照除 `done_at` 外**未解释变动 0** |
 | 检索格集中度（§2.14，只读实算） | `scripts/cbi_retrieval_concentration.py` → `reports/cbi/retrieval_concentration.{json,md}`；负向 `scripts/cbi_retrieval_concentration_negtest.py`（**24 项**） | ✅ 三套读数各自与 `exposure.n_gold_in_top6` 对数通过（12 / 81 / 19）；命中块 **100% 是图上多主块**（v1 控制 7/7 声明者 5–12 均 8.43；v1 字面 22/22；v2 控制 9/9）；`hits_where_b_not_a_graph_claimant` = 0（测试集金标 vs 图 `entities[].chunk_ids` 两个独立源交叉）；头号块 `character__17701_小房间:0.0.0` 在三套读数里都是第一（4/10/7 次，lift 11.11× / 4.12× / 6.14×）。负向五类破坏 + 三处"必须仍绿"对照 + "仓库九件与图 sha 未变"：脱钩 / 硬打标记 / 改名使交叉不一致（且**不许把不含该列的正文核对一起带红**）/ **图不可读时必须拒绝出表**（不许把"没测"印成一片 0）/ 改正文一个数。**正文那张表由产出它的脚本每次现算逐格核对**（`doc_check`，含"同一块"指代必须真相同、第一行不许写"同一块"） |
-| 验收审计（§2.16，目标→证据） | `scripts/cbi_acceptance_audit.py` → `reports/cbi/acceptance_audit.{json,md}`；负向 `scripts/cbi_acceptance_audit_negtest.py`（**33 项**） | ✅ 38 条（验收 33 + 纪律 5）：pass 31 / **pending 3（只有三列的人工 κ）** / 🚩 waived 3 / fail 0 / unverified 1。五条防线各有负例：闸门键**双向**相等（少一格即红，`N_retrieval<=15` 那格也在内）、判档**独立复刻且字符串相等**（`in` 会被「发布」⊂「有条件发布」骗过，第一版正是如此）、网络调用走 **AST**（写在字符串字面量里的诱饵不该红，正则版当年就是自我误伤）、`pending` 只在 κ 产物缺失时成立（产物在而不过 ⇒ `fail`，不许记成等人）、**`waived` 只在裁决登记件在册时成立**（抽掉登记件即退回 `fail`；N12 两半都测了 —— 第一版这里写的是 `not list(leg.values())`，字典非空即为假，三列 false 全被印成 pass）。另两条：旧读数配新 κ 产物必须炸（N10a），连 `gate` 一起更新才允许说「达成」（N10b）|
+| 验收审计（§2.16，目标→证据） | `scripts/cbi_acceptance_audit.py` → `reports/cbi/acceptance_audit.{json,md}`；负向 `scripts/cbi_acceptance_audit_negtest.py`（**42 项**） | ✅ 38 条（验收 33 + 纪律 5）：pass 31 / **pending 3（只有三列的人工 κ）** / 🚩 waived 3 / fail 0 / unverified 1。五条防线各有负例：闸门键**双向**相等（少一格即红，`N_retrieval<=15` 那格也在内）、判档**独立复刻且字符串相等**（`in` 会被「发布」⊂「有条件发布」骗过，第一版正是如此）、网络调用走 **AST**（写在字符串字面量里的诱饵不该红，正则版当年就是自我误伤）、`pending` 只在 κ 产物缺失时成立（产物在而不过 ⇒ `fail`，不许记成等人）、**`waived` 只在裁决登记件在册时成立**（抽掉登记件即退回 `fail`；N12 两半都测了 —— 第一版这里写的是 `not list(leg.values())`，字典非空即为假，三列 false 全被印成 pass）。另三条：旧读数配新 κ 产物必须炸（N10a），连 `gate` 一起更新才允许说「达成」（N10b），**κ 凭证出自别的判分臂或自报文件名对不上 ⇒ 记 `fail` 而不是 `pending`、也不许记 `pass`（N9b/N9c），而 κ 命名在抽检/计算器/审计三处必须逐字相等（N21，含"退回旧命名两臂就撞名"的反例）**|
 | Faithfulness 格的适用域（§2.15，只读实算） | `scripts/cbi_faithfulness_applicability.py` → `reports/cbi/faithfulness_applicability.{json,md}`；负向 `scripts/cbi_faithfulness_applicability_negtest.py`（**19 项**） | ✅ 三套读数 `injected.a_says`/`b_says` 整句在 3695 块（3,392,739 字符）语料里逐字出现 **0 / 0**，在该题 top-6 拼接上下文里 **0**；10 字滑窗 A 侧 500/500 零重叠、B 侧 495/500，5 条重叠 = **同一对的 5 个题位**（v1 `CC-099` 角色全名 / v2 `C2-011` anecdote 取材），逐条附片段。⇒ `Faithfulness>=0.98 不回退` 与 MRR 同构，只能在 r11 三套题上读。负向：塞入注入整句必须非零且拒绝出表 / 塞无关文本必须不红 / 塞进该题 top-6 那块必须抓 / 语料读空必须拒绝出表（不许把『没读到』印成『一条都没有』）/ 改正文一个数必须按列名点出；对照断言含『滑窗真的在跑』『通道行 = 500/500/500』两条反空转 |
 | 控制台编码兜底（§5-34） | 19 个 `scripts/cbi_*.py` 同一段四行 `reconfigure(errors="replace")` | ✅ 全套 11 个验证器在 `PYTHONIOENCODING=gbk` 强制下退出码全 0（修前 `cbi_mrr_population_negtest` 崩）；插入过程逐文件 py_compile，一次回滚（`cbi_r5bis_build.py` 跨行 import）后手工补 |
-| 闸门矩阵自检 | `scripts/cbi_r11_matrix_check.py` + `scripts/cbi_r11_matrix_negtest.py`（都只读） | ✅ 正文 §R11 表里四行的 counts/CBI 与四个读数产物逐字段相等；三个仪器读数的断言写成"**除 κ 外没有第二格 false**"（不是"false 的那格等于 κ"，否则 κ 一过它就无端报红，见 §5-30），且 κ 为 false 时详情必须写"未达成"（没测≠测了不过）；叠加列确认不含 MRR/Faithfulness 字段。**§2.13 那张名次暴露表现在也归它管**（`check_expo`）：三行 × 8 格逐格回到 `both_calibers.<口径>.exposure`，`严格` 列还额外要求 `正文 ≡ exposure.n_gold ≡ 通道标记计数` 三源同数，"两臂同"与"不可算"两句话也变成断言。负向 **24 例 = 18 红 + 6 绿**（§R11 侧 6 红 + §2.13 侧 5 红 + **§2.2 侧 7 红**；六例该绿：κ 变 true、只改正文不印的 `exposure.definition`、**只改 §2.2 之外的一个数**、以及首尾原件全绿）全部符合预期。§2.2 那一支的 7 个红各打在不同支路上：Faithfulness 值 / MRR 第三个值 / 含零行数 / 联合判定退回缩写 / 擦掉能力线「≤ 0.10」/ 节锚改名 / κ 产物凭空出现而正文仍写「未标」 |
+| 闸门矩阵自检 | `scripts/cbi_r11_matrix_check.py` + `scripts/cbi_r11_matrix_negtest.py`（都只读） | ✅ 正文 §R11 表里四行的 counts/CBI 与四个读数产物逐字段相等；三个仪器读数的断言写成"**除 κ 外没有第二格 false**"（不是"false 的那格等于 κ"，否则 κ 一过它就无端报红，见 §5-30），且 κ 为 false 时详情必须写"未达成"（没测≠测了不过）；叠加列确认不含 MRR/Faithfulness 字段。**§2.13 那张名次暴露表现在也归它管**（`check_expo`）：三行 × 8 格逐格回到 `both_calibers.<口径>.exposure`，`严格` 列还额外要求 `正文 ≡ exposure.n_gold ≡ 通道标记计数` 三源同数，"两臂同"与"不可算"两句话也变成断言。负向 **18 红 + 5 该绿 + 3 直读断言**（§R11 侧 6 红 + §2.13 侧 5 红 + **§2.2 侧 7 红**；六例该绿：κ 变 true、只改正文不印的 `exposure.definition`、**只改 §2.2 之外的一个数**、以及首尾原件全绿）全部符合预期。§2.2 那一支的 7 个红各打在不同支路上：Faithfulness 值 / MRR 第三个值 / 含零行数 / 联合判定退回缩写 / 擦掉能力线「≤ 0.10」/ 节锚改名 / κ 产物凭空出现而正文仍写「未标」 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
 | 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,cbi-judge-full2,cbi-judge-sprobe,cbi-judge-panel,cbi-diag-d1,cbi-diag-d1b,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐，每个臂都按 qid 集合等值结案 |

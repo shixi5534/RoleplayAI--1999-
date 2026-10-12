@@ -105,6 +105,49 @@ def sha16(p: Path) -> str:
     return hashlib.sha256(p.read_bytes()).hexdigest()[:16]
 
 
+def kappa_name(instrument: str, judge_arm: str) -> str:
+    """κ 产物文件名 = **(仪器, 判分臂)** 两维，与抽检脚本/计算器各写一遍的同一条规则。
+
+    一台仪器可以有两把尺子，而终评表上三列读数各有 `人工抽检` 那一格：只用仪器名的话
+    后跑的臂会覆盖先跑的臂，第三列就能被一份属于第二列的凭证清成绿。
+    三份实现（`cbi_spotcheck.kappa_result_path` / `cbi_calculator.kappa_artifact_path` / 这里）
+    由 `cbi_acceptance_audit_negtest.py` 的 N21 断言**字符串级相等**；命名一旦分叉，
+    计算器找不到凭证、该格判未达成 —— 失败关闭，不是各说各话。
+    """
+    return f"cbi_spotcheck_kappa_{instrument}_{judge_arm.removesuffix('.jsonl')}.json"
+
+
+def spotcheck_registry() -> dict:
+    """从 `cbi_spotcheck.py` 源码里取 `_INSTRUMENTS` 字面量（AST，不是抄一张表）。
+
+    审计要回答「标哪张表清哪一列」，那张表的名字必须来自**出表的脚本**：
+    我这边另抄一份常量的话，表被改名时审计仍然绿 —— 而那正是"核对表与真产物各说各话"。
+    """
+    src = (ROOT / "scripts" / "cbi_spotcheck.py").read_text(encoding="utf-8")
+    for node in ast.parse(src).body:
+        if isinstance(node, ast.Assign) and any(
+                isinstance(t, ast.Name) and t.id == "_INSTRUMENTS" for t in node.targets):
+            return ast.literal_eval(node.value)
+    raise SystemExit("[FATAL] cbi_spotcheck.py 里找不到 _INSTRUMENTS 的字面量赋值")
+
+
+def kappa_applies(kp: Path, arm: str) -> tuple[bool, str]:
+    """这份 κ 产物是不是**这一列**的凭证（判分臂 + 自报文件名都要对得上）。"""
+    try:
+        kd = j(kp)
+    except (OSError, json.JSONDecodeError) as e:
+        return False, f"κ 产物读不了：{str(e)[:80]}"
+    got = str(kd.get("judge_arm") or "")
+    self_name = str(kd.get("result_path") or "")
+    shown = got if got else "（产物没有 judge_arm 字段＝旧 schema，无法归属）"
+    if got != arm:
+        return False, (f"κ 产物登记的判分臂={shown}，本读数的臂={arm}"
+                       f" ⇒ 这份凭证不属于这一列")
+    if self_name != kp.name:
+        return False, f"κ 产物自报文件名={self_name} ≠ 实际 {kp.name} ⇒ 命名分叉"
+    return True, f"κ 产物臂={got}，文件名自报自洽"
+
+
 def band(v: float) -> str:
     """目标原文的分档（只看总式）。"""
     return "发布" if v >= 0.97 else ("0.94–0.97 ⇒ 有条件发布" if v >= 0.94 else "禁止发布")
@@ -174,9 +217,10 @@ def build() -> tuple[list, list]:
         problems.append("注入政策或公式串与目标不符")
 
     # ---- R4/R6 三条判定通道与六格闸门
-    kappa_files = {"v1 × judge_full（终评列）": REPORTS / "cbi_spotcheck_kappa.json",
-                   "v2 × 尺子 v1": REPORTS / "cbi_spotcheck_kappa_v2.json",
-                   "v2 × 尺子 v2": REPORTS / "cbi_spotcheck_kappa_v2.json"}
+    # κ 凭证的文件名从**读数自己登记的** instrument + judge_arm 现推，这里不抄 label->文件 的表：
+    # 原来那张表把两列 v2 都指向 `cbi_spotcheck_kappa_v2.json`，等于"谁后跑谁说了算"，
+    # 第三列能被一份属于第二列的凭证清成绿。
+    REG = spotcheck_registry()
     for label, p in READINGS.items():
         if not p.exists():
             row(items, f"G:{label}", "读数产物存在", "fail", p.name)
@@ -194,30 +238,50 @@ def build() -> tuple[list, list]:
                 and c["N_total_effective"] == 500)
         mine, theirs = verdict(d["mode"], sub, d["cbi"]["measured"]), d["gate"]
         band_ok = mine == theirs
-        kp = kappa_files[label]
-        kap_state = ("已测" if kp.exists() else "未测（无人工标注就没有 κ）")
+        inst, arm = d.get("instrument"), d.get("judge_arm")
+        kp = REPORTS / kappa_name(inst, arm) if inst and arm else None
+        sheet = (REG.get(inst) or {}).get("sheet_md") if inst else None
+        if kp is None:
+            kap_state = "无法归属：读数没登记 instrument/judge_arm"
+        elif not kp.exists():
+            kap_state = f"未测（{kp.name} 不在册，无人工标注就没有这一臂的 κ）"
+        else:
+            ok_ap, why_ap = kappa_applies(kp, arm)
+            kap_state = "已测" if ok_ap else f"在册但不可归属 -> {why_ap}"
         # 「待测」与「测了不过」必须是两种状态：κ 那格只有在**产物不存在**时才算 pending；
         # 产物存在而 false 就是 fail（否则这条闸门永远红不起来，等于把失败洗成等人）。
+        # 产物存在但出自**别的判分臂**同样判 fail：那是别人的凭证，不是"等人来出"。
+        # 反过来说，这一格的 `pass` 也要求凭证可归属 —— 读数里写着 true 但凭证出自另一臂，
+        # 一样不算过（否则"改读数 + 挂一份别的臂的 κ"就能把最后一格洗绿）。
         gates = {}
         for k, v in sub.items():
-            if v:
-                gates[k] = "pass"
-            elif k.startswith("人工抽检") and not kp.exists():
-                gates[k] = "pending"
+            if not k.startswith("人工抽检"):
+                gates[k] = "pass" if v else "fail"
+            elif kp is None or not kp.exists():
+                gates[k] = "pending" if kp is not None else "fail"
             else:
-                gates[k] = "fail"
+                ok_ap, _ = kappa_applies(kp, arm)
+                gates[k] = "pass" if (v and ok_ap) else "fail"
         all_ok = w_ok and not sym and not sym_leg and band_ok
         row(items, f"G:{label}", "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
             "pass" if all_ok else "fail",
             f"CBI={d['cbi']['measured']} 现算档位={mine} 读数档位={theirs} "
             f"双向差={sorted(sym)} legacy 差={sorted(sym_leg)} "
             f"N={c['N_hard']}/{c['N_soft']}/{c['N_retrieval']}÷{c['N_total_effective']} "
-            f"人工抽检={kap_state}({kp.name})")
+            f"人工抽检={kap_state}({kp.name if kp else '推不出文件名'})")
         for k, st in gates.items():
+            ev = (f"读数 {p.name} 的 sub_criteria[{k}]={json.dumps(sub[k])}；"
+                  f"{d['sub_details'].get(k, '')}")
+            if k.startswith("人工抽检"):
+                # κ 这一行的证据列**只写怎么把它清掉**：读数自己的 detail 在 G: 那行里已经全文挂着，
+                # 再拼一遍会把命令截断（这一格是全场唯一还要人出的闸门，截断了就等于没写）。
+                ev = (f"仪器={inst} 判分臂={arm}；κ 凭证={kp.name if kp else '（推不出）'}｜{kap_state}；"
+                      f"要清的表=reports/cbi/{sheet or '（注册表缺该仪器）'}（卡片视图同一批行号）；"
+                      f"标完出数：CBI_INSTRUMENT={inst} CBI_JUDGE={arm} CBI_STAGE=kappa "
+                      f"scripts/cbi_spotcheck.py")
             items.append({"id": f"gate:{label}:{k}", "requirement": f"闸门「{k}」",
                           "status": st, "scope": "acceptance",
-                          "evidence": (f"读数 {p.name} 的 sub_criteria[{k}]="
-                                       f"{json.dumps(sub[k])}；{d['sub_details'].get(k, '')}"[:220])})
+                          "evidence": ev[:330]})
         # legacy 那格：值本身是 false，所以它**永远不该是 pass**。
         # 它现在不计入阻塞，是因为有一条登记过的裁决把它降级成能力读数 ——
         # 那就是 `waived`（放行），不是 `pass`（通过）。裁决登记件一旦不见了就立刻退回 fail，

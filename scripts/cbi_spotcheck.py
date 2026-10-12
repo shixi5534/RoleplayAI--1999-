@@ -20,6 +20,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import random
@@ -52,7 +53,6 @@ _INSTRUMENTS = {
            "sheet_json": "spotcheck_sheet.json",
            "sheet_cards": "spotcheck_sheet_cards.md",
            "labels": "spotcheck_labels.json",
-           "result": "cbi_spotcheck_kappa.json",
            "sens": "spotcheck_sensitivity",
            "schema": "compendium_rag.cbi_spotcheck/v1"},
     "v2": {"testset": "cbi_testset_500_v2_control.json",
@@ -63,7 +63,6 @@ _INSTRUMENTS = {
            "sheet_json": "spotcheck_sheet_v2.json",
            "sheet_cards": "spotcheck_sheet_v2_cards.md",
            "labels": "spotcheck_labels_v2.json",
-           "result": "cbi_spotcheck_kappa_v2.json",
            "sens": "spotcheck_sensitivity_v2",
            "schema": "compendium_rag.cbi_spotcheck_sheet/v2"},
 }
@@ -71,6 +70,25 @@ INSTRUMENT = os.environ.get("CBI_INSTRUMENT", "v1")
 if INSTRUMENT not in _INSTRUMENTS:
     raise SystemExit(f"[FATAL] CBI_INSTRUMENT={INSTRUMENT!r} 不认识（{sorted(_INSTRUMENTS)}）")
 _IV = _INSTRUMENTS[INSTRUMENT]
+
+
+def kappa_result_path(instrument: str, judge_arm: str) -> Path:
+    """κ 产物按 **(仪器, 判分臂)** 两维命名，不依赖任何"默认臂"的概念。
+
+    为什么必须两维：v2 这一台仪器有两把尺子（`judge_v2_r1` / `judge_v2_r2`），而终评表上有
+    **三列**读数，三列各自有 `人工抽检 kappa>=0.80` 这一格。两臂的 κ 若都写进同一个
+    `cbi_spotcheck_kappa_v2.json`，后跑那次会**静默覆盖**前一次，而产物里只有 `instrument`
+    一个字段，谁也证明不了这一列的 κ 是拿哪把尺子算的 ——「人工抽检」那格就会被一份
+    **不属于它的凭证**清掉（第三列跟着第二列一起绿）。
+
+    为什么不按"默认臂不挂后缀"：两个脚本对"默认"并不同意见 —— 计算器 v1 的默认臂是
+    `judge.jsonl`（pass1 混合 rubric），抽检脚本 v1 的默认臂是 `judge_full.jsonl`（终评那一臂）。
+    按默认加后缀会让两边算出**不同的文件名**。两维命名是一句纯字符串规则，两边各实现一遍，
+    靠产物里自报的 `judge_arm` + `result_path` 互检；命名一旦分叉，计算器就找不到文件、
+    该格判"未达成" —— 是**失败关闭**，不是各说各话。
+    """
+    return REPORTS / f"cbi_spotcheck_kappa_{instrument}_{judge_arm.removesuffix('.jsonl')}.json"
+
 
 TESTSET = REPORTS / _IV["testset"]
 RETRIEVAL = CBI / _IV["retrieval"]
@@ -80,7 +98,7 @@ SHEET_MD = CBI / _IV["sheet_md"]
 SHEET_JSON = CBI / _IV["sheet_json"]
 SHEET_CARDS = CBI / _IV["sheet_cards"]
 LABELS = CBI / _IV["labels"]
-RESULT = REPORTS / _IV["result"]
+RESULT = kappa_result_path(INSTRUMENT, JUDGE.name)
 SHEET_SCHEMA = _IV["schema"]
 
 SEED = 42
@@ -232,6 +250,10 @@ def build_sheet() -> int:
     SHEET_JSON.write_text(json.dumps(
         {"schema": SHEET_SCHEMA,
          "instrument": INSTRUMENT,
+         # 单子的机判列出自哪把尺子：换臂重出时这个字段跟着变，
+         # `kappa` 阶段会拿它对着当前臂逐条核（对不上就拒绝出数）。
+         "judge_arm": JUDGE.name,
+         "judge_sha256_16": hashlib.sha256(JUDGE.read_bytes()).hexdigest()[:16],
          "seed": SEED, "n_random": len(rand_ids), "n_extra": len(extra),
          "rows": rows,
          "note": (f"CBI 人工抽检单 · 仪器 {INSTRUMENT}：50 随机（每题型 10）+ 争议富集 "
@@ -341,6 +363,24 @@ def build_cards() -> int:
 
 def compute_kappa() -> int:
     sheet = json.loads(SHEET_JSON.read_text(encoding="utf-8"))
+    # 抽检单里的 machine_verdict 是 **plan 那一刻**按某一把尺子烤进去的常量列。
+    # 换一把尺子（CBI_JUDGE）直接算 κ，比较的两边就来自不同的臂：人工列只有一个来源，
+    # 机判列却是上一把尺子的 —— 那份 κ 不属于这一列读数，却能把它清成绿。
+    # 所以这里逐条核对「单子里的机判列 == 这把尺子的判定」，对不上就拒绝出数。
+    jarm: dict[str, str] = {}
+    for line in JUDGE.read_text(encoding="utf-8").splitlines():
+        r = json.loads(line)
+        jarm[r["sample_id"]] = r["verdict"]
+    drift = [r["sample_id"] for r in sheet["rows"]
+             if r["sample_id"] in jarm and r["machine_verdict"] != jarm[r["sample_id"]]]
+    if drift:
+        raise SystemExit(
+            f"[FATAL] 抽检单的机判列与当前判分臂不符（{len(drift)} 条不一致，如 {drift[:3]}）："
+            f"单子出自别的臂，κ 会拿「人工 vs 上一把尺子」去清这一列的闸门。"
+            f"正确动作是先用这把尺子重出单子（人工标注不会丢：它在 "
+            f"{_IV['labels']} 里，与随机 50 行的选取（SEED={SEED}）都是臂无关的）："
+            f"CBI_INSTRUMENT={INSTRUMENT} CBI_JUDGE={JUDGE.name} CBI_STAGE=plan"
+            f" -> 同一命令再跑 cards -> 然后才跑 kappa")
     lab = json.loads(LABELS.read_text(encoding="utf-8")) if LABELS.exists() else {}
     if isinstance(lab, list):
         lab = {r["sample_id"]: r.get("human_verdict", "") for r in lab}
@@ -366,8 +406,17 @@ def compute_kappa() -> int:
     ok_a, why_a = gate(a)
     ok_b, why_b = gate(b)
     out = {
-        "schema": "compendium_rag.cbi_kappa/v1", "at": datetime.now().isoformat(timespec="seconds"),
+        "schema": "compendium_rag.cbi_kappa/v2",
+        "at": datetime.now().isoformat(timespec="seconds"),
         "instrument": INSTRUMENT,
+        # 血缘三件：这一份 κ 是拿**哪把尺子**、对着**哪张单子**算的。
+        # 读数 json 里有自己的 `judge_arm`，审计件两边一比就知道这份凭证属不属于那一列。
+        "judge_arm": JUDGE.name,
+        "judge_arm_is_registry_default": JUDGE.name == _IV["judge"],
+        "judge_sha256_16": hashlib.sha256(JUDGE.read_bytes()).hexdigest()[:16],
+        "sheet_json": SHEET_JSON.name,
+        "sheet_sha256_16": hashlib.sha256(SHEET_JSON.read_bytes()).hexdigest()[:16],
+        "result_path": RESULT.name,
         "target": TARGET_KAPPA, "target_agreement_self_chosen": TARGET_AGREE,
         "arm_A_random_only": a, "arm_B_with_disputed": b,
         "n_labeled": len(rows), "n_random_labeled": len(grouped[True]),

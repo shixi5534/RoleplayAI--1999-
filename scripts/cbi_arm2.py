@@ -25,6 +25,11 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from cbi_spotcheck import cohen, MAP          # 同一套判定映射与 κ 实现，别另写一份

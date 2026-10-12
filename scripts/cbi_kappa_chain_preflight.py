@@ -52,22 +52,30 @@ def repo_artifacts():
             + len(list(REPORTS.glob("cbi_spotcheck_kappa*"))))
 
 
-def run_chain(sc, calc, inst, n_extra, tmp):
-    """人工 = 照抄机判，再在随机层多标 n_extra 条 soft_leak，走完整链。"""
+def run_chain(sc, calc, inst, n_extra, tmp, arm=None):
+    """人工 = 照抄机判，再在随机层多标 n_extra 条 soft_leak，走完整链。
+
+    `arm` 显式指定判分臂：一台仪器两把尺子时，κ 产物必须各自落盘（见 [4]）。
+    """
     iv = sc._INSTRUMENTS[inst]
+    arm = arm or iv["judge"]
     sc.INSTRUMENT = calc.INSTRUMENT = inst
-    sc.SHEET_JSON, sc.JUDGE = CBI / iv["sheet_json"], CBI / iv["judge"]
+    sc.SHEET_JSON, sc.JUDGE = CBI / iv["sheet_json"], CBI / arm
+    # 计算器侧的两个全局量决定它去哪儿取凭证、以及凭证的臂必须等于什么：
+    # κ 产物文件名 = (仪器, 判分臂) 两维，所以这里必须成对设置，不能只设 INSTRUMENT。
+    calc.JUDGE_ARM = arm
     rows = json.loads(sc.SHEET_JSON.read_text(encoding="utf-8"))["rows"]
     verdict = {r["sample_id"]: r["machine_verdict"] for r in rows}
     for sid in [r["sample_id"] for r in rows if r["tier"] == "随机"][:n_extra]:
         verdict[sid] = "soft_leak"
-    sc.LABELS = tmp / f"labels_{inst}.json"
+    sc.LABELS = tmp / f"labels_{inst}_{arm}.json"
     sc.LABELS.write_text(json.dumps([{"sample_id": k, "human_verdict": v}
                                      for k, v in verdict.items()], ensure_ascii=False),
                          encoding="utf-8")
-    sc.RESULT = tmp / f"cbi_spotcheck_kappa{'_v2' if inst == 'v2' else ''}.json"
+    # 名字由那两维规则现算，但**落盘位置必须在临时目录**：合成标注进仓库 = 自己糊闸门。
+    sc.RESULT = tmp / sc.kappa_result_path(inst, arm).name
     assert sc.compute_kappa() == 0
-    rep = tmp / f"reports_{inst}"
+    rep = tmp / f"reports_{inst}_{arm}"
     rep.mkdir(exist_ok=True)
     shutil.copyfile(sc.RESULT, rep / sc.RESULT.name)
     calc.REPORTS = rep
@@ -110,6 +118,56 @@ def main() -> int:
         check("6 条 ⇒ 一致率 0.88", a6["arm_A_random_only"]["observed_agreement"], 0.88)
         check("6 条 ⇒ 产物不过", a6["gate_pass"], False)
         check("6 条 ⇒ 计算器不过（整链一致）", b6.get("ok"), False)
+
+        print("[4] 一台仪器两把尺子 ⇒ κ 产物按 (仪器, 判分臂) 两维命名，两臂共存、谁也不覆盖谁")
+        art_r1, blk_r1 = run_chain(sc, calc, "v2", 0, tmp, arm="judge_v2_r1.jsonl")
+        rep_r1 = tmp / "reports_v2_judge_v2_r1.jsonl"
+        f_r1 = rep_r1 / art_r1["result_path"]
+        bytes_r1 = f_r1.read_bytes()
+        art_r2, blk_r2 = run_chain(sc, calc, "v2", 0, tmp, arm="judge_v2_r2.jsonl")
+        f_r2 = tmp / "reports_v2_judge_v2_r2.jsonl" / art_r2["result_path"]
+        check("两臂产物不同名", art_r1["result_path"] != art_r2["result_path"], True)
+        check("名字里带着各自的臂",
+              ("judge_v2_r1" in art_r1["result_path"], "judge_v2_r2" in art_r2["result_path"]),
+              (True, True))
+        check("先算的那一臂没有被后算的覆盖（字节级）", f_r1.read_bytes(), bytes_r1)
+        check("两份各自登记了自己的判分臂",
+              (art_r1["judge_arm"], art_r2["judge_arm"]),
+              ("judge_v2_r1.jsonl", "judge_v2_r2.jsonl"))
+        check("两臂的计算器读数都拿到自己的凭证（ok=True 而不是读不到）",
+              (blk_r1.get("ok"), blk_r2.get("ok")), (True, True))
+        # 关键负例：拿 r1 臂的凭证去问 r2 那一列过没过 —— 必须**读不到**，绝不能因为
+        # "同目录里有个 κ 文件"就判过。旧命名（只按仪器）在这一格上会直接给 True。
+        calc.REPORTS = rep_r1
+        calc.JUDGE_ARM = "judge_v2_r2.jsonl"
+        blk_foreign = calc.kappa_block()
+        check("跨臂取凭证 ⇒ available=False、ok=False（失败关闭）",
+              (blk_foreign.get("available"), blk_foreign.get("ok")), (False, False))
+
+        print("[5] 负例 · 抽检单的机判列出自另一把尺子 ⇒ compute_kappa 拒绝出数")
+        # v2 两臂逐行一致率实测 1.0000，真文件里挑不出不一致，所以在临时目录造一把"翻了 1 行"的尺子。
+        # 翻的必须是**单子里真有的那一行**（500 行里只抽了 53 行）：随便翻 lines[0] 有 90% 概率
+        # 翻在单子之外，那时守卫不响是**对的** —— 上一版就是这么"过"不了的。
+        sc.SHEET_JSON = CBI / sc._INSTRUMENTS["v2"]["sheet_json"]   # 这张单子是 r1 臂烤出来的
+        sids = {r["sample_id"] for r in json.loads(sc.SHEET_JSON.read_text(encoding="utf-8"))["rows"]}
+        jlines = (CBI / "judge_v2_r2.jsonl").read_text(encoding="utf-8").splitlines()
+        hit = next(i for i, s in enumerate(jlines)
+                   if json.loads(s)["sample_id"] in sids)
+        flip = json.loads(jlines[hit])
+        flip["verdict"] = "hard_leak" if flip["verdict"] == "clean" else "clean"
+        jlines[hit] = json.dumps(flip, ensure_ascii=False)
+        fake = tmp / "judge_v2_r2_flipped.jsonl"
+        fake.write_text("\n".join(jlines) + "\n", encoding="utf-8")
+        sc.JUDGE = fake
+        sc.RESULT = tmp / "kappa_must_not_be_written.json"
+        fired = ""
+        try:
+            sc.compute_kappa()
+        except SystemExit as e:
+            fired = str(e)
+        check("臂与单子不符 ⇒ 拒绝出数，并说明怎么修（重出 plan）",
+              ("机判列与当前判分臂不符" in fired, "CBI_STAGE=plan" in fired), (True, True))
+        check("守卫在写盘之前：没留下半份 κ 产物", sc.RESULT.exists(), False)
 
     check("运行后仓库里仍然没有人工标注/κ 产物", repo_artifacts(), 0)
     print("\nRESULT:", "全部通过" if not FAILS else "FAIL -> " + ", ".join(FAILS))

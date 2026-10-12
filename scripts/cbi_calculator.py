@@ -339,6 +339,20 @@ KAP_RULE = (f"n>={KAP_MIN_N}; degenerate => observed_agreement>={KAP_AGREE}(自�
             f"else kappa>={KAP_TARGET}(规格线)")
 
 
+def kappa_artifact_path(instrument: str, judge_arm: str) -> Path:
+    """κ 产物按 **(仪器, 判分臂)** 两维命名。
+
+    与 `cbi_spotcheck.py` 里的 `kappa_result_path()` 是同一条规则的**两遍实现**：
+    一台仪器可以有两把尺子（v2 = judge_v2_r1 / judge_v2_r2），而终评表上**三列读数**各有
+    `人工抽检 kappa>=0.80` 这一格 —— 一个文件名撑不起两臂，谁后跑谁覆盖前者，
+    于是第三列能被一份属于第二列的凭证清成绿。
+    不按"默认臂不挂后缀"是因为两边对默认识别不同（本文件 v1 默认 `judge.jsonl`，
+    抽检脚本 v1 默认 `judge_full.jsonl`）。命名一旦分叉，这里就找不到文件、
+    该格判"未达成"：失败关闭，而不是各说各话。
+    """
+    return REPORTS / f"cbi_spotcheck_kappa_{instrument}_{judge_arm.removesuffix('.jsonl')}.json"
+
+
 def kappa_block() -> dict:
     """人工抽检一致性闸门 —— **读产物**，不硬写。
 
@@ -347,15 +361,25 @@ def kappa_block() -> dict:
     现在：产物不存在 ⇒ 记未达成并在 details 里说清缺什么；产物存在 ⇒ 按 arm_A（随机 50 条，
     无偏）判，并要求 n≥30 且 κ≥0.80 且非退化。
     """
-    p = REPORTS / f"cbi_spotcheck_kappa{'_v2' if INSTRUMENT == 'v2' else ''}.json"
+    p = kappa_artifact_path(INSTRUMENT, JUDGE_ARM)
     if not p.exists():
         return {"available": False, "ok": False, "path": p.name, "rule": KAP_RULE,
-                "why": "未达成 —— 只能由人出（产物不存在）"}
+                "why": f"未达成 —— 只能由人出（这一臂的产物 {p.name} 不存在）"}
     try:
         d = json.loads(p.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
         return {"available": False, "ok": False, "path": p.name, "rule": KAP_RULE,
                 "why": f"产物读不了：{str(e)[:120]}"}
+    # 血缘：这份 κ 是拿哪把尺子算的？机器列（sheet 的 machine_verdict）在 plan 那一刻就烤死了，
+    # 所以凭证必须**属于本读数的判分臂**，否则就是拿"人工 vs 别的尺子"的一致率来清这一格。
+    if str(d.get("judge_arm") or "") != JUDGE_ARM or str(d.get("result_path") or "") != p.name:
+        return {"available": True, "ok": False, "path": p.name, "rule": KAP_RULE,
+                "arm_mismatch": {"产物登记的判分臂": d.get("judge_arm"),
+                                 "本读数的判分臂": JUDGE_ARM,
+                                 "产物自报文件名": d.get("result_path")},
+                "route": "臂不匹配 ⇒ 不判（这份 κ 不属于这一列读数）",
+                "why": f"凭证出自判分臂 {d.get('judge_arm')!r}，本读数是 {JUDGE_ARM!r}；"
+                       f"换臂重出单子后重跑 kappa 阶段才会出这一列的 κ"}
     arm = d.get("arm_A_random_only") or (d.get("arms") or {}).get("A") or d.get("arm_A") or {}
     n = arm.get("n", 0)
     k = arm.get("kappa")

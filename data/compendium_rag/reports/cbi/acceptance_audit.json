@@ -32,21 +32,21 @@
    "id": "D:cbi_calculator.py",
    "requirement": "交付物 cbi_calculator.py 存在且非空",
    "status": "pass",
-   "evidence": "scripts/cbi_calculator.py size=58226 sha16=506134af5271ef93",
+   "evidence": "scripts/cbi_calculator.py size=60089 sha16=f33fa5e4f7af3407",
    "scope": "acceptance"
   },
   {
    "id": "D:P9_CBI报告.md",
    "requirement": "交付物 P9_CBI报告.md 存在且非空",
    "status": "pass",
-   "evidence": "docs/compendium-rag/P9_CBI报告.md size=133460 sha16=5f65fa2129e9cb46",
+   "evidence": "docs/compendium-rag/P9_CBI报告.md size=138429 sha16=b9c181ebec99e87d",
    "scope": "acceptance"
   },
   {
    "id": "D:entity_disambiguation_rules.md",
    "requirement": "交付物 entity_disambiguation_rules.md 存在且非空",
    "status": "pass",
-   "evidence": "docs/compendium-rag/entity_disambiguation_rules.md size=20789 sha16=f808130460b37c78",
+   "evidence": "docs/compendium-rag/entity_disambiguation_rules.md size=22310 sha16=8d83a53cca41e815",
    "scope": "acceptance"
   },
   {
@@ -67,7 +67,7 @@
    "id": "G:v1 × judge_full（终评列）",
    "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
    "status": "pass",
-   "evidence": "CBI=0.9844 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/3/21÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa.json)",
+   "evidence": "CBI=0.9844 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/3/21÷500 人工抽检=未测（cbi_spotcheck_kappa_v1_judge_full.json 不在册，无人工标注就没有这一臂的 κ）(cbi_spotcheck_kappa_v1_judge_full.json)",
    "scope": "acceptance"
   },
   {
@@ -110,7 +110,7 @@
    "requirement": "闸门「人工抽检 kappa>=0.80」",
    "status": "pending",
    "scope": "acceptance",
-   "evidence": "读数 cbi_result_full.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+   "evidence": "仪器=v1 判分臂=judge_full.jsonl；κ 凭证=cbi_spotcheck_kappa_v1_judge_full.json｜未测（cbi_spotcheck_kappa_v1_judge_full.json 不在册，无人工标注就没有这一臂的 κ）；要清的表=reports/cbi/spotcheck_sheet.md（卡片视图同一批行号）；标完出数：CBI_INSTRUMENT=v1 CBI_JUDGE=judge_full.jsonl CBI_STAGE=kappa scripts/cbi_spotcheck.py"
   },
   {
    "id": "gate:v1 × judge_full（终评列）:legacy",
@@ -123,7 +123,7 @@
    "id": "G:v2 × 尺子 v1",
    "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
    "status": "pass",
-   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa_v2.json)",
+   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（cbi_spotcheck_kappa_v2_judge_v2_r1.json 不在册，无人工标注就没有这一臂的 κ）(cbi_spotcheck_kappa_v2_judge_v2_r1.json)",
    "scope": "acceptance"
   },
   {
@@ -166,7 +166,7 @@
    "requirement": "闸门「人工抽检 kappa>=0.80」",
    "status": "pending",
    "scope": "acceptance",
-   "evidence": "读数 cbi_result_v2instrument.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+   "evidence": "仪器=v2 判分臂=judge_v2_r1.jsonl；κ 凭证=cbi_spotcheck_kappa_v2_judge_v2_r1.json｜未测（cbi_spotcheck_kappa_v2_judge_v2_r1.json 不在册，无人工标注就没有这一臂的 κ）；要清的表=reports/cbi/spotcheck_sheet_v2.md（卡片视图同一批行号）；标完出数：CBI_INSTRUMENT=v2 CBI_JUDGE=judge_v2_r1.jsonl CBI_STAGE=kappa scripts/cbi_spotcheck.py"
   },
   {
    "id": "gate:v2 × 尺子 v1:legacy",
@@ -179,7 +179,7 @@
    "id": "G:v2 × 尺子 v2",
    "requirement": "六格闸门键集合与目标双向相等 + 权重/目标/分母一致 + 档位独立复算",
    "status": "pass",
-   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（无人工标注就没有 κ）(cbi_spotcheck_kappa_v2.json)",
+   "evidence": "CBI=0.982 现算档位=有条件发布 + 必须出 P10 修复计划 读数档位=有条件发布 + 必须出 P10 修复计划 双向差=[] legacy 差=[] N=0/0/30÷500 人工抽检=未测（cbi_spotcheck_kappa_v2_judge_v2_r2.json 不在册，无人工标注就没有这一臂的 κ）(cbi_spotcheck_kappa_v2_judge_v2_r2.json)",
    "scope": "acceptance"
   },
   {
@@ -222,7 +222,7 @@
    "requirement": "闸门「人工抽检 kappa>=0.80」",
    "status": "pending",
    "scope": "acceptance",
-   "evidence": "读数 cbi_result_v2instrument_v2_r2.json 的 sub_criteria[人工抽检 kappa>=0.80]=false；"
+   "evidence": "仪器=v2 判分臂=judge_v2_r2.jsonl；κ 凭证=cbi_spotcheck_kappa_v2_judge_v2_r2.json｜未测（cbi_spotcheck_kappa_v2_judge_v2_r2.json 不在册，无人工标注就没有这一臂的 κ）；要清的表=reports/cbi/spotcheck_sheet_v2.md（卡片视图同一批行号）；标完出数：CBI_INSTRUMENT=v2 CBI_JUDGE=judge_v2_r2.jsonl CBI_STAGE=kappa scripts/cbi_spotcheck.py"
   },
   {
    "id": "gate:v2 × 尺子 v2:legacy",

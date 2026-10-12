@@ -8,7 +8,10 @@
 **"不可算"那行被填成数字** / **"两臂同"被推翻** / **§2.13 节锚被改名**。
 配三例**该绿**的：κ 变 true（测量完成不该让检查变红）、
 只改 `exposure.definition`（正文不印的字段，证明检查读的是那 8 个格子而不是整块 blob）、
-以及首尾两次原件全绿（证明上面这些不是恒红）。§2.2 那一支又加 8 例（7 红 + 1 该绿），合计 **24 例 = 18 红 + 6 绿**。
+以及首尾两次原件全绿（证明上面这些不是恒红）。§2.2 那一支又加 8 例（7 红 + 1 该绿），
+外加 §5-39 的两例（κ 凭证按 (仪器, 判分臂) 两维命名、旧的单维名不再是任何一列的凭证）。
+**例数不在这里手抄**：结尾的 `[计数]` 一行由 run()/ck_ok() 自己累加 —— 报告 §6 要引用就引那一行
+（§5-35 的教训：手抄的计数会自己漂，漂了没人报）。
 
 用法：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/cbi_r11_matrix_negtest.py`
 """
@@ -31,12 +34,23 @@ spec.loader.exec_module(m)
 
 REAL_LOAD, REAL_P10, REAL_REP = m.load, m.P10, m.REPORT
 fails = []
+TALLY = [0, 0, 0]     # [该红的例, 该绿的例, 不走 m.main() 的直读断言]
+# 三个数都由脚本自己统计并在结尾打印，文档里不再手抄（§5-35 的教训：手抄的计数会自己漂）。
+
+
+def ck_ok(name, cond):
+    """不走 m.main() 的直读断言也计入同一份统计，免得总数又是一句散文。"""
+    TALLY[2] += 1
+    print(("  ok   " if cond else "  FAIL ") + name)
+    if not cond:
+        fails.append(name)
 
 
 def run(name, want_hit, needle=None):
     rc = m.main()
     hit = rc == 1
     ok = hit == want_hit and (needle is None or not needle or True)
+    TALLY[0 if want_hit else 1] += 1
     print(("  ok   " if ok else "  FAIL ") + f"{name}: rc={rc} 期望红={want_hit}")
     if not ok:
         fails.append(name)
@@ -185,18 +199,25 @@ run("sec22-heading-missing", True)
 m.REPORT = REAL_REP
 
 print("[N19] κ 产物凭空出现而 §2.2 仍写「未标」⇒ 该红（门面过期要被抓）")
-_fake = Path(tempfile.mkdtemp(prefix="kappa_fake_")) / "cbi_spotcheck_kappa.json"
+_fake = Path(tempfile.mkdtemp(prefix="kappa_fake_")) / "cbi_spotcheck_kappa_v1_judge_full.json"
 _fake.write_text('{"gate_pass": true}', encoding="utf-8")
-_kap_real = m.KAPPA_FILE_V1
-m.KAPPA_FILE_V1 = _fake
+_kap_real = m.KAPPA_FILE_OVERRIDE
+m.KAPPA_FILE_OVERRIDE = _fake
 run("sec22-kappa-stale", True)
-m.KAPPA_FILE_V1 = _kap_real
-print("     补一句：这一例只动内存里的路径，仓库里仍然不许有 κ 产物或人工标注")
+m.KAPPA_FILE_OVERRIDE = _kap_real
+print("[N19b] 凭证文件名按 (仪器, 判分臂) 两维现推：两臂不许同名，也不许退回旧的单维名")
+_kf = [m.kappa_file_for({"instrument": "v2", "judge_arm": a}).name
+       for a in ("judge_v2_r1.jsonl", "judge_v2_r2.jsonl")]
+ck_ok(f"两臂命名 = {_kf}",
+      len(set(_kf)) == 2 and _kf[0] == "cbi_spotcheck_kappa_v2_judge_v2_r1.json"
+      and _kf[1] == "cbi_spotcheck_kappa_v2_judge_v2_r2.json")
+ck_ok("旧的单维命名已不再是任何一列的凭证",
+      m.kappa_file_for({"instrument": "v1", "judge_arm": "judge_full.jsonl"}).name
+      != "cbi_spotcheck_kappa.json")
+print("     补一句：上面两例都只动内存里的路径/入参，仓库里仍然不许有 κ 产物或人工标注")
 _k = [f.name for f in (ROOT / "data" / "compendium_rag" / "reports").glob("cbi_spotcheck_kappa*")]
 _l = [f.name for f in (ROOT / "data" / "compendium_rag" / "reports" / "cbi").glob("spotcheck_labels*")]
-print(("  ok   " if not _k and not _l else "  FAIL ") + f"仓库内 κ 产物/标注文件计数 = {len(_k)}/{len(_l)}")
-if _k or _l:
-    fails.append("repo-artifact-leak")
+ck_ok(f"仓库内 κ 产物/标注文件计数 = {len(_k)}/{len(_l)}", not _k and not _l)
 
 print("[N20] 只改 §2.2 **之外**的一个数（§2.15 正文里的语料字符数）⇒ 不该红："
       "检查只管门面那张表，做成恒红同样不能采信")
@@ -212,5 +233,7 @@ m.REPORT = REAL_REP
 print("[N21] 恢复原样 ⇒ 必须重新全绿（证明上面这些不是恒红）")
 run("control-again", False)
 
+print(f"\n[计数] 该红 {TALLY[0]} 例｜该绿 {TALLY[1]} 例｜直读断言 {TALLY[2]} 条"
+      "（这一行由 run()/ck_ok() 自己累加，报告 §6 引用它就够了，别再手抄）")
 print("\nRESULT:", "全部符合预期" if not fails else "FAIL -> " + ", ".join(fails))
 sys.exit(1 if fails else 0)

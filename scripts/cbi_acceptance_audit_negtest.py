@@ -65,6 +65,10 @@ def sandbox(tmp: Path, with_graph: bool = True):
                         tmp / "docs" / "compendium-rag" / f)
     shutil.copyfile(ROOT / "scripts" / "cbi_calculator.py",
                     tmp / "scripts" / "cbi_calculator.py")
+    # 审计件里「标哪张表清哪一列」的表名是从这张注册表**现读**的（AST 取字面量），
+    # 所以沙箱必须带上出表的那个脚本本身，否则审计会直接 fatal —— 而不是悄悄用一份旧表。
+    shutil.copyfile(ROOT / "scripts" / "cbi_spotcheck.py",
+                    tmp / "scripts" / "cbi_spotcheck.py")
     if with_graph:
         shutil.copyfile(R / "graph.json", tmp / "graph.json")
     spec = importlib.util.spec_from_file_location(
@@ -191,8 +195,10 @@ def main() -> int:
     print("[N9] κ 产物存在但 gate_pass=false ⇒ 必须是 fail，不许记成『等人』")
     t = Path(tempfile.mkdtemp(prefix="aud_n9_"))
     m9 = sandbox(t)
-    (t / "reports" / "cbi_spotcheck_kappa.json").write_text(
-        json.dumps({"gate_pass": False, "arm_A_random_only": {"kappa": 0.42}}),
+    nm9 = m9.kappa_name("v1", "judge_full.jsonl")
+    (t / "reports" / nm9).write_text(
+        json.dumps({"gate_pass": False, "instrument": "v1", "judge_arm": "judge_full.jsonl",
+                    "result_path": nm9, "arm_A_random_only": {"n": 50, "kappa": 0.42}}),
         encoding="utf-8")
     items9, _, ov9 = result(m9)
     ck("该列 κ 记 fail",
@@ -201,12 +207,56 @@ def main() -> int:
        any(b.endswith("kappa>=0.80") and b.startswith("gate:v1") for b in ov9["blocking"]),
        False)
 
+    print("[N9b] κ 产物在**旧命名**（只按仪器命名）的位置、或出自别的判分臂 ⇒ 这一列不许记 pass，"
+          "也不许记『等人出』；它是别人的凭证")
+    t = Path(tempfile.mkdtemp(prefix="aud_n9b_"))
+    m9b = sandbox(t)
+    wrong = t / "reports" / m9b.kappa_name("v2", "judge_v2_r2.jsonl")
+    wrong.write_text(json.dumps({"gate_pass": True, "instrument": "v2",
+                                 "judge_arm": "judge_v2_r1.jsonl",   # 臂登记成了另一把尺子
+                                 "result_path": wrong.name,
+                                 "arm_A_random_only": {"n": 50, "kappa": 0.9}}),
+                     encoding="utf-8")
+    # 读数里把这一格改成 true（= 有人手抖或用了旧计算器）：审计必须因为凭证不可归属而判 fail
+    patch(m9b.REPORTS / "cbi_result_v2instrument_v2_r2.json",
+          lambda d: d["sub_criteria"].__setitem__("人工抽检 kappa>=0.80", True))
+    items9b, _, ov9b = result(m9b)
+    ck("臂不可归属 ⇒ 第三列不许 pass",
+       any(x["id"] == "gate:v2 × 尺子 v2:人工抽检 kappa>=0.80" and x["status"] == "fail"
+           for x in items9b), True)
+    ck("也不许记成等人（blocking 里没有它）",
+       any(b.startswith("gate:v2 × 尺子 v2:人工抽检") for b in ov9b["blocking"]), False)
+    ck("另一臂那一列不受影响，仍是 pending",
+       any(x["id"] == "gate:v2 × 尺子 v1:人工抽检 kappa>=0.80" and x["status"] == "pending"
+           for x in items9b), True)
+
+    print("[N9c] 凭证自报的文件名与实际不符（命名分叉）⇒ 同样不许过")
+    t = Path(tempfile.mkdtemp(prefix="aud_n9c_"))
+    m9c = sandbox(t)
+    nm9c = m9c.kappa_name("v2", "judge_v2_r1.jsonl")
+    (t / "reports" / nm9c).write_text(
+        json.dumps({"gate_pass": True, "instrument": "v2", "judge_arm": "judge_v2_r1.jsonl",
+                    "result_path": "cbi_spotcheck_kappa_v2.json",   # 自报了个旧名
+                    "arm_A_random_only": {"n": 50, "kappa": 0.9}}), encoding="utf-8")
+    patch(m9c.REPORTS / "cbi_result_v2instrument.json",
+          lambda d: d["sub_criteria"].__setitem__("人工抽检 kappa>=0.80", True))
+    items9c, _, _ = result(m9c)
+    ck("命名分叉 ⇒ fail", any(x["id"] == "gate:v2 × 尺子 v1:人工抽检 kappa>=0.80"
+                              and x["status"] == "fail" for x in items9c), True)
+
     print("[N10a] κ 产物补齐且 sub_criteria 也改了，但**读数没重跑**（gate 仍是旧判档）⇒ 必须炸："
           "这是『拿新产物配旧读数』那种假绿，审计不许让它过")
     t = Path(tempfile.mkdtemp(prefix="aud_n10a_"))
     m10 = sandbox(t)
-    for nm in ("cbi_spotcheck_kappa.json", "cbi_spotcheck_kappa_v2.json"):
-        (t / "reports" / nm).write_text(json.dumps({"gate_pass": True}), encoding="utf-8")
+    for inst, arm, g in (("v1", "judge_full.jsonl", "cbi_result_full.json"),
+                        ("v2", "judge_v2_r1.jsonl", "cbi_result_v2instrument.json"),
+                        ("v2", "judge_v2_r2.jsonl", "cbi_result_v2instrument_v2_r2.json")):
+        nm = m10.kappa_name(inst, arm)
+        (t / "reports" / nm).write_text(
+            json.dumps({"gate_pass": True, "instrument": inst, "judge_arm": arm,
+                        "result_path": nm,
+                        "arm_A_random_only": {"n": 50, "kappa": 0.9, "degenerate": False,
+                                              "observed_agreement": 1.0}}), encoding="utf-8")
 
     def clear_kappa(d):
         d["sub_criteria"]["人工抽检 kappa>=0.80"] = True
@@ -258,6 +308,54 @@ def main() -> int:
     items_c2, prob_c2, ov_c2 = result(sandbox(Path(tempfile.mkdtemp(prefix="aud_c2_"))))
     ck("control-again problems", prob_c2, [])
     ck("control-again blocking 数", len(ov_c2["blocking"]), 3)
+
+    print("[N21] κ 命名三处实现（抽检 / 计算器 / 审计）必须逐字相等，且**同一仪器两臂不许同名**："
+          "命名一分叉，计算器就找不到凭证 -> 失败关闭；同名则第二臂覆盖第一臂")
+
+    def load_mod(mod_name, file_name):
+        spec = importlib.util.spec_from_file_location(mod_name, ROOT / "scripts" / file_name)
+        mm = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mm)
+        return mm
+
+    SPm, CA = load_mod("sp_for_n21", "cbi_spotcheck.py"), load_mod("calc_for_n21", "cbi_calculator.py")
+    combos = [("v1", "judge_full.jsonl"), ("v1", "judge.jsonl"), ("v1", "judge2.jsonl"),
+              ("v2", "judge_v2_r1.jsonl"), ("v2", "judge_v2_r2.jsonl")]
+    ck("三处逐字相等（全部 5 个组合）",
+       {(SPm.kappa_result_path(i, a).name, CA.kappa_artifact_path(i, a).name,
+         m.kappa_name(i, a)) for i, a in combos},
+       {(m.kappa_name(i, a), m.kappa_name(i, a), m.kappa_name(i, a)) for i, a in combos})
+    ck("名字里带着臂：同一仪器两臂不许撞名",
+       len({SPm.kappa_result_path("v2", a).name for a in
+            ("judge_v2_r1.jsonl", "judge_v2_r2.jsonl")}), 2)
+    # 反例（构造得出来才说明上面两条断言有变红的资格）：把计算器那一侧改回"只按仪器命名"，
+    # 两臂就撞在同一个文件名上 —— 只改 tmp 副本，仓库原件一个字节都不动。
+    t = Path(tempfile.mkdtemp(prefix="aud_n21_"))
+    src = (ROOT / "scripts" / "cbi_calculator.py").read_text(encoding="utf-8")
+    OLD = '''f"cbi_spotcheck_kappa_{instrument}_{judge_arm.removesuffix('.jsonl')}.json"'''
+    NEW = '''f"cbi_spotcheck_kappa_{instrument}.json"'''
+    mut = src.replace(OLD, NEW)
+    assert mut != src, "命名变异没落地：原串对不上"
+    (t / "calc_mut.py").write_text(mut, encoding="utf-8")
+    spec = importlib.util.spec_from_file_location("calc_mut_n21", t / "calc_mut.py")
+    CAm = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(CAm)
+    try:
+        ck("把计算器改回旧命名后，两臂确实撞在同一个文件名上",
+           CAm.kappa_artifact_path("v2", "judge_v2_r1.jsonl").name
+           == CAm.kappa_artifact_path("v2", "judge_v2_r2.jsonl").name, True)
+        ck("且改过的命名与真计算器不再相等（所以 N21 第一条断言真的能红）",
+           CAm.kappa_artifact_path("v2", "judge_v2_r2.jsonl").name
+           == CA.kappa_artifact_path("v2", "judge_v2_r2.jsonl").name, False)
+    finally:
+        shutil.rmtree(t, ignore_errors=True)
+    # 变异件是从 tmp 文件按**另一个模块名**加载的：真模块不许被它带跑。
+    # 这一条守的是"负向测试自己污染了被测对象"这类事故（sys.modules 撞名时会发生）。
+    ck("变异件加载后，真计算器的命名仍然与审计/抽检相等",
+       (CA.kappa_artifact_path("v2", "judge_v2_r2.jsonl").name,
+        SPm.kappa_result_path("v2", "judge_v2_r2.jsonl").name,
+        m.kappa_name("v2", "judge_v2_r2.jsonl")),
+       ("cbi_spotcheck_kappa_v2_judge_v2_r2.json",) * 3)
 
     ck("仓库三件原件未被动过",
        [str(p) for p, h in before.items() if sha(p) != h], [])

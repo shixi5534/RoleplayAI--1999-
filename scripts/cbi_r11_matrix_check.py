@@ -25,6 +25,11 @@ import re
 import sys
 from pathlib import Path
 
+# Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "data" / "compendium_rag" / "reports"
 P10 = (ROOT / "docs" / "compendium-rag" / "P10修复计划_CBI收口.md").read_text(encoding="utf-8")
@@ -36,10 +41,23 @@ INSTRUMENT_READINGS = {
     "cbi_result_v2instrument_v2_r2.json": (0, 0, 30, 0.982),
 }
 KAPPA_KEY = "人工抽检 kappa>=0.80"
-KAPPA_FILE_V1 = R / "cbi_spotcheck_kappa.json"      # §2.2 的"未标"这一格的真凭证
+# κ 产物的**真名**不写在这里：它按 (读数登记的 instrument, judge_arm) 两维现推（见 check_22）。
+# 这个变量只是负向测试 N19 的注入点 —— 不写死文件名，是因为写死的文件名会在换臂时看错凭证。
+KAPPA_FILE_OVERRIDE = None
 AUDIT_L2 = R / "audit_l2.json"
 AUDIT_L3 = R / "audit_l3.json"
 FAITH_SETS = ("300cn", "blind", "gen")
+
+
+def kappa_file_for(d: dict) -> Path:
+    """这一列读数的 κ 凭证文件名 = **(读数登记的仪器, 判分臂)** 两维现推。
+
+    与 `cbi_spotcheck.kappa_result_path` / `cbi_calculator.kappa_artifact_path` 同一条规则；
+    写死只按仪器的旧名（`cbi_spotcheck_kappa_v2.json`）在两把尺子之间会看错凭证 ——
+    门面表上「人工 κ」那一格就跟着过期不报。负向套件里 N19b 直接断言这个函数的输出。
+    """
+    return R / f"cbi_spotcheck_kappa_{d['instrument']}_" \
+               f"{str(d['judge_arm']).removesuffix('.jsonl')}.json"
 
 
 def sec_22() -> str:
@@ -128,11 +146,14 @@ def check_22(fails: list) -> None:
         if t not in line:
             fails.append(f"§2.2 的 Faithfulness 行缺现算值 {t!r}（现算 in-scope={f_in}(n={n_in}) "
                          f"全体={f_all}(n={n_all})）")
-    # 「未标」必须与真凭证同步：产物出现了却还写"未标"，就是门面在撒谎
+    # 「未标」必须与真凭证同步：产物出现了却还写"未标"，就是门面在撒谎。
+    # 文件名不写死 —— 从读数自己登记的 (instrument, judge_arm) 现推：
+    # κ 产物按两维命名，一台仪器两把尺子各有各的凭证（写死会在换臂时悄悄看错文件）。
     line = row_of(sec, "人工 κ")
-    if KAPPA_FILE_V1.exists() and "未标" in line:
-        fails.append(f"§2.2 仍写「未标」，但 {KAPPA_FILE_V1.name} 已在册 ⇒ 这张表过期了")
-    if not KAPPA_FILE_V1.exists() and "未标" not in line:
+    kap_v1 = KAPPA_FILE_OVERRIDE or kappa_file_for(d)
+    if kap_v1.exists() and "未标" in line:
+        fails.append(f"§2.2 仍写「未标」，但 {kap_v1.name} 已在册 ⇒ 这张表过期了")
+    if not kap_v1.exists() and "未标" not in line:
         fails.append("§2.2 的 κ 行没写「未标」，可 κ 产物根本不存在（没测不能含糊）")
     if row_of(sec, "联合判定") and d["gate"] not in row_of(sec, "联合判定"):
         fails.append(f"§2.2 的联合判定与读数的 gate 不一致：读数={d['gate']!r}")
