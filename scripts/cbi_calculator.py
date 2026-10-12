@@ -143,15 +143,41 @@ def baselines() -> tuple[dict, dict]:
     except (OSError, json.JSONDecodeError) as e:
         return {}, {"audit_l2_error": str(e)[:120]}
     prov["audit_l2_graph_sha"] = a.get("frozen_graph_sha")
+    # 定义域纪律与 Faithfulness 同一把尺：`*_full` 这个后缀说的是
+    # "把 mrr@10=0 的行也算进均值（不以命中为条件）"，**不是**"整套题目全在均值里"。
+    # audit_l2 的 per_case 结构上只有 answerable=True 的行（300cn 只有 196/300），
+    # 所以这一格的"不回退"是在 answerable 子集上判的 —— 以前只报 n=，没把这件事说穿。
     acc = defaultdict(list)
+    pop, n_missing, n_unans = {}, 0, 0
     for r in a.get("per_case") or []:
-        acc[r.get("set")].append(r.get("mrr@10") or 0.0)
+        s = r.get("set")
+        if not r.get("answerable", True):
+            n_unans += 1
+            continue
+        v = r.get("mrr@10", None)
+        if not isinstance(v, (int, float)):
+            n_missing += 1                       # 缺字段 ≠ 真的 0；绝不静默补零
+            continue
+        acc[s].append(float(v))
+        d = pop.setdefault(s, {"n": 0, "n_mrr_zero": 0})
+        d["n"] += 1
+        d["n_mrr_zero"] += 1 if v == 0 else 0
     for s, key in SET_KEYS.items():
         n = len(acc.get(s) or [])
         if not n:
             return {}, {**prov, "error": f"audit_l2 per_case 缺 {s}"}
         out[key] = round(sum(acc[s]) / n, 5)
         prov[f"n_{s}"] = n
+    prov["mrr_population"] = {
+        "per_set": pop, "answerable_only": n_unans == 0,
+        "n_unanswerable_rows_skipped": n_unans,
+        "n_missing_mrr_field": n_missing,
+        "note": ("均值只在 answerable 行上算（L2 的 per_case 本就只有这类行）；"
+                 "`*_full` 后缀=含 mrr=0 的行，不是全题目数"),
+    }
+    if n_missing:
+        prov["mrr_incomplete"] = (f"per_case 里有 {n_missing} 行 mrr@10 缺失/非数值 —— "
+                                  "在缺数据的总体上不能判「不回退」")
     try:
         l3 = json.loads((REPORTS / "audit_l3.json").read_text(encoding="utf-8"))
         prov["audit_l3_graph_sha"] = l3.get("frozen_graph_sha")
@@ -571,6 +597,9 @@ def main() -> int:
     have_base = len(base_mrr) == 3 and faith is not None
     mrr_ok = (unchanged and have_base
               and bprov.get("audit_l2_graph_sha") == R11_SHA
+              # 缺数据的总体上不能判"不回退"：以前 `or 0.0` 会把缺失字段静默补成 0，
+              # 方向偏保守但**无声**，与 §5-14/§5-33 同一类（引用式/补零式绿灯）。
+              and not bprov.get("mrr_incomplete")
               and all(v >= MRR_FLOOR for v in base_mrr.values()))
     faith_ok = (unchanged and have_base
                 and bprov.get("audit_l3_graph_sha") == R11_SHA
@@ -617,8 +646,14 @@ def main() -> int:
         "layers_unchanged": evid,
         "MRR_baselines_measured": {**base_mrr, **{k: v for k, v in bprov.items()
                                                   if k.startswith(("audit_", "n_"))}},
+        "MRR_population": bprov.get("mrr_population"),
         "MRR": (f"现算自 audit_l2.json 的 per_case（它量的图 sha={bprov.get('audit_l2_graph_sha')}，"
                 f"期望 {R11_SHA}）：{base_mrr}"
+                + f"；定义域 = answerable 子集 "
+                  f"{ {s: d['n'] for s, d in (bprov.get('mrr_population') or {}).get('per_set', {}).items()} }"
+                  "（L2 的 per_case 结构上只有 answerable=True 的行 ⇒ 300cn 那套只含 196/300 题，"
+                  "`*_full` 后缀=「把 mrr@10=0 的行也算进均值、不以命中为条件」，不是「全题目」）"
+                + (f"；[!] {bprov['mrr_incomplete']}" if bprov.get("mrr_incomplete") else "")
                 if have_base else f"[!] 读不到 audit_l2.json 的 per_case：{bprov}"),
         "Faithfulness": faith_detail,
         "kappa": (f"{kap['why']}（读 {kap['path']}）" if kap["available"] else
