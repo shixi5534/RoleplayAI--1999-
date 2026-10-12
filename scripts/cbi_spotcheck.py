@@ -235,8 +235,12 @@ def compute_kappa() -> int:
             r["human_verdict"] = hv
             rows.append(r)
     if not rows:
-        print("[WARN] 一条人工标注都没有 —— κ 算不出。请填 spotcheck_sheet.md 或直接对话里报。")
-        return 1
+        # 文件名必须跟着仪器走：v2 的抽检单不是 spotcheck_sheet.md，指错了人就照着错的表填。
+        raise SystemExit(
+            f"[WARN] 一条人工标注都没有 —— κ 算不出。仪器={INSTRUMENT}："
+            f"在 {CBI.name}/{_IV['sheet_json']} 的 rows[].human_verdict 里填 "
+            f"{'/'.join(MAP)}（随机 50 条必须填满，n<30 不算过闸门），"
+            f"或另存 {CBI.name}/{_IV['labels']}（sample_id + human_verdict 两列）。")
     grouped = defaultdict(list)
     for r in rows:
         grouped[r["tier"] == "随机"].append((MAP[r["machine_verdict"]], MAP[r["human_verdict"]]))
