@@ -3,8 +3,9 @@
 为什么要单独留这个脚本：R11 是**汇总表面**，它是这一轮里最容易被后续改动悄悄带偏的一类文字
 —— 读数重跑一次、子标准多一格，正文不会报错，只有表会开始说谎。所以把三件事变成断言：
   1) 表里四行的 counts / CBI 与产物字段逐一相等（三个仪器读数 + 叠加列的两把尺子）；
-  2) 三个仪器读数里 false 的子标准**只有** "人工抽检 kappa>=0.80"，且 κ 的详情写的是"未达成"
-     （没测 ≠ 测了不过，这条区分是 §R11 的立论前提）；
+  2) 三个仪器读数里 **除 κ 以外没有第二格 false**（刻意不写成"false 的那格必须等于 κ"——
+     那样写会在你标完、κ 变 true 之后无端报红；一条会因为测量完成而失效的检查不是检查），
+     且 κ 为 false 时其详情必须写"未达成"（没测 ≠ 测了不过，这是 §R11 的立论前提）；
   3) 叠加列 `cbi_result_v2hard.json` **不含** MRR / Faithfulness 字段 ——
      那两条是三个仪器读数共用的基线，引用叠加列时不能顺手替它答。
 另外核正文里的四个数字串确实出现在表里（防止脚本与文字各说各话）。
@@ -41,15 +42,20 @@ def main() -> int:
         d = load(name)
         c = d["counts"]
         got = (c["N_hard"], c["N_soft"], c["N_retrieval"], d["cbi"]["measured"])
-        false_only = sorted(k for k, v in d["sub_criteria"].items() if not v)
-        print(f"{name}: {got} == 表值 {expect} 且 false 只有 κ："
-              f"{got == expect and false_only == [KAPPA_KEY]}")
+        sub = d["sub_criteria"]
+        other_false = sorted(k for k, v in sub.items() if not v and k != KAPPA_KEY)
+        kappa_state = "false（未达成）" if not sub.get(KAPPA_KEY, True) else "true"
+        print(f"{name}: {got} == 表值 {expect} 除 κ 外 false 的格子 {other_false} κ={kappa_state}")
         if got != expect:
             fails.append(f"{name} 计数/CBI 与表不符：{got} != {expect}")
-        if false_only != [KAPPA_KEY]:
-            fails.append(f"{name} false 的子标准不止 κ：{false_only}")
-        if "未达成" not in json.dumps(d.get("sub_details"), ensure_ascii=False):
-            fails.append(f"{name} 的 κ 没写成『未达成』（没测与测了不过必须能区分）")
+        # 注意这里断言的是"除 κ 以外不许有第二格 false"，**不是**"false 的那格必须等于 κ"。
+        # 后者会在你标完、κ 变 true 的那一刻起无端报红——一条会因为测量完成而失效的检查，
+        # 本身就不是检查。§R11 的立论"只差人工 κ"在 κ=false(未测) 与 κ=true(已过) 两种状态下都成立。
+        if other_false:
+            fails.append(f"{name} 除 κ 之外还有 false 的子标准：{other_false}")
+        if (not sub.get(KAPPA_KEY, True)
+                and "未达成" not in json.dumps(d.get("sub_details"), ensure_ascii=False)):
+            fails.append(f"{name} 的 κ 是 false 却没写成『未达成』（没测与测了不过必须能区分）")
 
     hv = load("cbi_result_v2hard.json")
     rv2, rv1 = hv["ruler_v2"], hv["ruler_v1"]

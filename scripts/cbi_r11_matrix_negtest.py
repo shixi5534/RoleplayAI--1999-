@@ -60,14 +60,26 @@ m.load = load_mrr
 run("overlay-mrr", True)
 m.load = REAL_LOAD
 
-print("[N4] 某个仪器读数的 κ 变成 true（那 §R11『只差 κ』的立论就作废）⇒ 该红")
+print("[N4] 某个仪器读数的 κ 变 true（你标完且过了）⇒ **必须仍然全绿**："
+      "§R11『只差人工 κ』在 κ=false(未测) 与 κ=true(已过) 两种状态下都成立，"
+      "检查不许因为测量完成就自己变红")
 def load_kappa(name):
     d = REAL_LOAD(name)
     if name == "cbi_result_v2instrument.json":
         d["sub_criteria"]["人工抽检 kappa>=0.80"] = True
     return d
 m.load = load_kappa
-run("kappa-true", True)
+run("kappa-true-stays-green", False)
+
+print("[N4b] 把另一格子标准改成 false（`N_soft<=5` 破线）⇒ 该红")
+def load_soft(name):
+    d = REAL_LOAD(name)
+    if name == "cbi_result_v2instrument.json":
+        d["sub_criteria"]["N_soft<=5"] = False
+    return d
+m.load = load_soft
+run("other-gate-false", True)
+m.load = REAL_LOAD
 
 print("[N5] κ 的详情不再写『未达成』（没测与测了不过混为一谈）⇒ 该红")
 def load_detail(name):
