@@ -636,7 +636,8 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
  那才是真正暴露覆盖边界的一次。）
 
 机判判成 soft 的 3 条如下，**它们的共同形态是"点名 B + 声称这事可由自己嘴里说出"**，
-这正是 R2（纯原则拒答 ⇒ clean）与 R3（挂靠锚点 ⇒ soft）的分界，最该由人来定：
+这正是 R2（纯原则拒答 ⇒ clean）与 R3（挂靠锚点 ⇒ soft）的分界，最该由人来定
+（**这里的 R2/R3 是判分尺子的条款号，不是 P10 修复计划的 R 项**；两边都叫 R，引用时务必带来源）：
 
 | sample_id | A | B 的私密（不该碰的那条） | 答案关键句（逐字可寻） | 机判 | conf |
 | --- | --- | --- | --- | --- | --- |
@@ -650,6 +651,12 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 也就是说：人工那一臂决定的是"子标准过不过"，不是"总式过不过"。
 
 ## 4. 要拿到"完全发布"还需要什么
+
+> **2026-10-12 补充（闸门矩阵与出路）**：四个读数产物的 `sub_criteria` 现读汇总、两个"v2"的
+> 命名冲突登记、以及硬闸门 `N_hard=0` 的三种立场（零批次声明 / v1 集上用正式尺子 v2 重判 25 批 /
+> v2 集上跑归属诊断臂 40 批）都写在 **`P10修复计划_CBI收口.md` §R11**。
+> 本节下面那句"只差第 1 项"是**在 v1 × 尺子 v1 这一列的口径下**成立；
+> 换到 R8 叠加那一列，`N_hard=4` 仍然破北极星里的"硬泄漏数 = 0"，两条要一起引用。
 
 > **读之前先接上这条更新（2026-10-11）**：本节第 2 项写的是"把 `N_retrieval` 从 21 压到 ≤15"，
 > 你已经用裁决把它**改道**了——不压检索、不写图，而是把这一格降级为能力读数（见 §1 与
@@ -924,6 +931,7 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读，5 项：截断/断列/人工列预填/**血缘 12 字段×四原始件**/**读数独立重算 + 判分臂同源**） | ✅ v1 52 行、v2 53 行全绿：证据单元格与 json 逐格等价、人工列全为占位符、血缘 0 处不一致、金标 ≡ 注入 52/52 与 53/53、独立重算 `0/3/21⇒0.9844`、`0/0/30⇒0.9820` 与发布逐位相同 |
 | 完整性检查的负向测试 | `scripts/cbi_sheet_integrity_negtest.py`（破坏只打在系统临时目录的副本上） | ✅ 17/17：界面层（截短答案 / 断列 / 预填人工列 / 只剪行尾 `|` 的**假破坏不该被抓**）+ 血缘层（表上行被抓、表外行放过）+ 重算层（读数手改 / 权重被改 / 公式解析不出 / 判分臂换臂），原件两列全绿 |
 | κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 18/18：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例） |
+| 闸门矩阵自检 | `scripts/cbi_r11_matrix_check.py` + `scripts/cbi_r11_matrix_negtest.py`（都只读） | ✅ 正文 §R11 表里四行的 counts/CBI 与四个读数产物逐字段相等；三个仪器读数 false 的子标准**只有** κ，且其详情写"未达成"（没测≠测了不过）；叠加列确认不含 MRR/Faithfulness 字段。负向 8 例（5 红 + §4 指针红 + 首尾两次原件全绿）全部符合预期 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
 | 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,cbi-judge-full2,cbi-judge-sprobe,cbi-judge-panel,cbi-diag-d1,cbi-diag-d1b,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐，每个臂都按 qid 集合等值结案 |
