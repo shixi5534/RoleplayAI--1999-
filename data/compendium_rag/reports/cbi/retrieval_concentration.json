@@ -1,0 +1,2014 @@
+[
+ {
+  "label": "v1 × 控制",
+  "testset": "cbi_testset_500_control.json",
+  "channel": "retrieval_cc.jsonl",
+  "reading": "cbi_result_full.json",
+  "caliber": "control",
+  "n_rows_aligned": 500,
+  "n_strict_hits": 12,
+  "flag_mismatch_with_channel": 0,
+  "matches_reading_exposure": true,
+  "n_distinct_chunks": 7,
+  "n_distinct_pairs": 8,
+  "n_distinct_chunks_in_testset": 56,
+  "max_slots_per_chunk": 25,
+  "base_hit_rate": 0.024,
+  "hit_chunks_claimed_by_multiple_entities": 7,
+  "hits_where_b_not_a_graph_claimant": 0,
+  "chunk_lift": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 4,
+    "n_slots": 15,
+    "n_entities_claiming": 11,
+    "claimants": [
+     "伊文洁琳(角色)",
+     "伊索尔德(角色)",
+     "小翠斯特(概念)",
+     "维也纳(地点)",
+     "维也纳剧院(地点)",
+     "翠斯特(角色)",
+     "莉莉玛莲(角色)",
+     "菲欧娜(角色)",
+     "西奥菲尔(角色)",
+     "阿尔贝蒂娜台阶(地点)",
+     "降灵会(事件)"
+    ],
+    "hit_rate": 0.2667,
+    "lift_vs_base": 11.11
+   },
+   {
+    "chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "n_hits": 3,
+    "n_slots": 15,
+    "n_entities_claiming": 5,
+    "claimants": [
+     "210(角色)",
+     "37(角色)",
+     "亚齐(角色)",
+     "苏菲亚(角色)",
+     "阿派朗(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 8.33
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 1,
+    "n_slots": 20,
+    "n_entities_claiming": 6,
+    "claimants": [
+     "伦敦(地点)",
+     "未锈铠(角色)",
+     "神秘术(概念)",
+     "维尔汀(角色)",
+     "雾(概念)",
+     "雾行者(角色)"
+    ],
+    "hit_rate": 0.05,
+    "lift_vs_base": 2.08
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 1,
+    "n_slots": 10,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "埃菲(角色)",
+     "埃里克(角色)",
+     "学生Ⅰ(角色)",
+     "学生Ⅱ(角色)",
+     "学生Ⅲ(角色)",
+     "科算中心(组织)",
+     "第一防线学校(地点)",
+     "金钥匙桑丘(角色)",
+     "零食配给(概念)"
+    ],
+    "hit_rate": 0.1,
+    "lift_vs_base": 4.17
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 1,
+    "n_slots": 10,
+    "n_entities_claiming": 12,
+    "claimants": [
+     "卡洛斯将军(角色)",
+     "卡西扬少校(角色)",
+     "圣保罗(地点)",
+     "坩埚(物品)",
+     "天使兄弟会(组织)",
+     "桑德罗(角色)",
+     "洛佩拉(角色)",
+     "索科罗(地点)",
+     "芝诺(组织)",
+     "芝诺基地(地点)",
+     "莫莉德尔(角色)",
+     "街角旅馆房间(地点)"
+    ],
+    "hit_rate": 0.1,
+    "lift_vs_base": 4.17
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "圣保罗(地点)",
+     "外国游客(角色)",
+     "宽吻鳄(概念)",
+     "洛佩拉(角色)",
+     "瓜拿纳果汁(物品)",
+     "罗德里戈(角色)",
+     "观光游船(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 8.33
+   },
+   {
+    "chunk": "character__23601_夜游十字街:0.0.0",
+    "n_hits": 1,
+    "n_slots": 10,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "东区(地点)",
+     "乌卢鲁运动会(事件)",
+     "利伯蒂(角色)",
+     "利伯蒂的家(地点)",
+     "叫醒工(概念)",
+     "同学Ⅰ(角色)",
+     "同学Ⅱ(角色)",
+     "小鸟(角色)",
+     "父亲(角色)"
+    ],
+    "hit_rate": 0.1,
+    "lift_vs_base": 4.17
+   }
+  ],
+  "top_chunk_share": 0.3333,
+  "top3_chunks_share": 0.6667,
+  "top_pair_share": 0.25,
+  "by_query_type": {
+   "multi_role": 7,
+   "inductive": 2,
+   "multi_turn": 2,
+   "style_probe": 1
+  },
+  "by_conflict_type": {
+   "preference": 6,
+   "secret": 4,
+   "biography": 1,
+   "style": 1
+  },
+  "rank_hist": {
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 4,
+   "6": 2
+  },
+  "chunks": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 4,
+    "owner_pairs": [
+     "伊文洁琳→翠斯特",
+     "伊索尔德→西奥菲尔",
+     "卡尔→翠斯特"
+    ],
+    "hit_by_pairs": [
+     "伊文洁琳→翠斯特",
+     "卡尔→翠斯特"
+    ],
+    "ranks": [
+     3,
+     4,
+     5,
+     5
+    ],
+    "query_types": [
+     "inductive",
+     "multi_role",
+     "multi_turn"
+    ],
+    "samples": [
+     "CC-009-inductive",
+     "CC-009-multi_role",
+     "CC-009-multi_turn",
+     "CC-033-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "n_hits": 3,
+    "owner_pairs": [
+     "亚齐→苏菲亚",
+     "伊戈尔→苏菲亚",
+     "洛佩拉→苏菲亚"
+    ],
+    "hit_by_pairs": [
+     "亚齐→苏菲亚"
+    ],
+    "ranks": [
+     4,
+     5,
+     6
+    ],
+    "query_types": [
+     "inductive",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CC-003-inductive",
+     "CC-003-multi_turn",
+     "CC-003-style_probe"
+    ]
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "APPLe→雾行者",
+     "小春雀儿→未锈铠",
+     "芭妮芭妮→雾行者",
+     "警察→雾行者"
+    ],
+    "hit_by_pairs": [
+     "小春雀儿→未锈铠"
+    ],
+    "ranks": [
+     2
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "CC-061-multi_role"
+    ]
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "十四行诗→埃菲",
+     "哈拉尔→埃菲"
+    ],
+    "hit_by_pairs": [
+     "十四行诗→埃菲"
+    ],
+    "ranks": [
+     4
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "CC-027-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "伊戈尔→桑德罗",
+     "十四行诗→莫莉德尔"
+    ],
+    "hit_by_pairs": [
+     "伊戈尔→桑德罗"
+    ],
+    "ranks": [
+     5
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "CC-005-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "桑德罗→罗德里戈"
+    ],
+    "hit_by_pairs": [
+     "桑德罗→罗德里戈"
+    ],
+    "ranks": [
+     3
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "CC-074-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__23601_夜游十字街:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "母亲→父亲",
+     "灯倌→父亲"
+    ],
+    "hit_by_pairs": [
+     "母亲→父亲"
+    ],
+    "ranks": [
+     6
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "CC-076-multi_role"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "pair": "亚齐→苏菲亚",
+    "n_hits": 3
+   },
+   {
+    "pair": "伊文洁琳→翠斯特",
+    "n_hits": 3
+   },
+   {
+    "pair": "伊戈尔→桑德罗",
+    "n_hits": 1
+   },
+   {
+    "pair": "十四行诗→埃菲",
+    "n_hits": 1
+   },
+   {
+    "pair": "卡尔→翠斯特",
+    "n_hits": 1
+   },
+   {
+    "pair": "小春雀儿→未锈铠",
+    "n_hits": 1
+   },
+   {
+    "pair": "桑德罗→罗德里戈",
+    "n_hits": 1
+   },
+   {
+    "pair": "母亲→父亲",
+    "n_hits": 1
+   }
+  ]
+ },
+ {
+  "label": "v1 × 字面",
+  "testset": "cbi_testset_500.json",
+  "channel": "retrieval.jsonl",
+  "reading": "cbi_result_full.json",
+  "caliber": "literal",
+  "n_rows_aligned": 500,
+  "n_strict_hits": 81,
+  "flag_mismatch_with_channel": 0,
+  "matches_reading_exposure": true,
+  "n_distinct_chunks": 22,
+  "n_distinct_pairs": 28,
+  "n_distinct_chunks_in_testset": 56,
+  "max_slots_per_chunk": 25,
+  "base_hit_rate": 0.162,
+  "hit_chunks_claimed_by_multiple_entities": 22,
+  "hits_where_b_not_a_graph_claimant": 0,
+  "chunk_lift": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 10,
+    "n_slots": 15,
+    "n_entities_claiming": 11,
+    "claimants": [
+     "伊文洁琳(角色)",
+     "伊索尔德(角色)",
+     "小翠斯特(概念)",
+     "维也纳(地点)",
+     "维也纳剧院(地点)",
+     "翠斯特(角色)",
+     "莉莉玛莲(角色)",
+     "菲欧娜(角色)",
+     "西奥菲尔(角色)",
+     "阿尔贝蒂娜台阶(地点)",
+     "降灵会(事件)"
+    ],
+    "hit_rate": 0.6667,
+    "lift_vs_base": 4.12
+   },
+   {
+    "chunk": "character__23601_夜游十字街:0.0.0",
+    "n_hits": 9,
+    "n_slots": 10,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "东区(地点)",
+     "乌卢鲁运动会(事件)",
+     "利伯蒂(角色)",
+     "利伯蒂的家(地点)",
+     "叫醒工(概念)",
+     "同学Ⅰ(角色)",
+     "同学Ⅱ(角色)",
+     "小鸟(角色)",
+     "父亲(角色)"
+    ],
+    "hit_rate": 0.9,
+    "lift_vs_base": 5.56
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 8,
+    "n_slots": 20,
+    "n_entities_claiming": 6,
+    "claimants": [
+     "伦敦(地点)",
+     "未锈铠(角色)",
+     "神秘术(概念)",
+     "维尔汀(角色)",
+     "雾(概念)",
+     "雾行者(角色)"
+    ],
+    "hit_rate": 0.4,
+    "lift_vs_base": 2.47
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 8,
+    "n_slots": 10,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "埃菲(角色)",
+     "埃里克(角色)",
+     "学生Ⅰ(角色)",
+     "学生Ⅱ(角色)",
+     "学生Ⅲ(角色)",
+     "科算中心(组织)",
+     "第一防线学校(地点)",
+     "金钥匙桑丘(角色)",
+     "零食配给(概念)"
+    ],
+    "hit_rate": 0.8,
+    "lift_vs_base": 4.94
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 5,
+    "n_slots": 10,
+    "n_entities_claiming": 12,
+    "claimants": [
+     "卡洛斯将军(角色)",
+     "卡西扬少校(角色)",
+     "圣保罗(地点)",
+     "坩埚(物品)",
+     "天使兄弟会(组织)",
+     "桑德罗(角色)",
+     "洛佩拉(角色)",
+     "索科罗(地点)",
+     "芝诺(组织)",
+     "芝诺基地(地点)",
+     "莫莉德尔(角色)",
+     "街角旅馆房间(地点)"
+    ],
+    "hit_rate": 0.5,
+    "lift_vs_base": 3.09
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 5,
+    "n_slots": 5,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "圣保罗(地点)",
+     "外国游客(角色)",
+     "宽吻鳄(概念)",
+     "洛佩拉(角色)",
+     "瓜拿纳果汁(物品)",
+     "罗德里戈(角色)",
+     "观光游船(地点)"
+    ],
+    "hit_rate": 1.0,
+    "lift_vs_base": 6.17
+   },
+   {
+    "chunk": "character__17701_小房间:2.0.4",
+    "n_hits": 4,
+    "n_slots": 15,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "伊文洁琳(角色)",
+     "伊索尔德(角色)",
+     "嗅盐(物品)",
+     "怀表(物品)",
+     "海因里希(角色)",
+     "画室(地点)",
+     "胸针(物品)",
+     "西奥菲尔(角色)",
+     "迪塔斯多夫家(组织)"
+    ],
+    "hit_rate": 0.2667,
+    "lift_vs_base": 1.65
+   },
+   {
+    "chunk": "character__20603_第一千夜:0.0.1",
+    "n_hits": 4,
+    "n_slots": 5,
+    "n_entities_claiming": 11,
+    "claimants": [
+     "商贩梅克卢(角色)",
+     "德克斯特(角色)",
+     "按摩师埃德加多(角色)",
+     "新纪元集市(地点)",
+     "水晶球(物品)",
+     "灵药师菲比(角色)",
+     "环状水星(角色)",
+     "疗愈师库伯(角色)",
+     "篝火(物品)",
+     "至高理性学会(组织)",
+     "饮料桶(物品)"
+    ],
+    "hit_rate": 0.8,
+    "lift_vs_base": 4.94
+   },
+   {
+    "chunk": "character__23501_太阳的背面:0.0.0",
+    "n_hits": 4,
+    "n_slots": 10,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "假肢(物品)",
+     "教练(角色)",
+     "神秘术(概念)",
+     "笃笃骨(角色)",
+     "练习室(地点)",
+     "自由祭祀(概念)",
+     "钢线录音机(物品)"
+    ],
+    "hit_rate": 0.4,
+    "lift_vs_base": 2.47
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:0.0.0",
+    "n_hits": 3,
+    "n_slots": 15,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "曲娘(角色)",
+     "木头小人群(组织)",
+     "沛城(地点)",
+     "法曹(角色)",
+     "祥瑞(概念)",
+     "许娘子(角色)",
+     "酒坊(地点)",
+     "里正(角色)",
+     "金市(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "character__20601_旧金山小子:0.0.0",
+    "n_hits": 3,
+    "n_slots": 5,
+    "n_entities_claiming": 6,
+    "claimants": [
+     "J(角色)",
+     "东青商会(组织)",
+     "安东尼(角色)",
+     "旧金山(地点)",
+     "洪三(角色)",
+     "海特街(地点)"
+    ],
+    "hit_rate": 0.6,
+    "lift_vs_base": 3.7
+   },
+   {
+    "chunk": "character__20603_第一千夜:0.0.2",
+    "n_hits": 3,
+    "n_slots": 5,
+    "n_entities_claiming": 8,
+    "claimants": [
+     "商贩梅克卢(角色)",
+     "德克斯特(角色)",
+     "新纪元集市(地点)",
+     "灵药师菲比(角色)",
+     "环状水星(角色)",
+     "疗愈仪式(概念)",
+     "疗愈师库伯(角色)",
+     "白鼠尾草(物品)"
+    ],
+    "hit_rate": 0.6,
+    "lift_vs_base": 3.7
+   },
+   {
+    "chunk": "character__20603_第一千夜:1.0.0",
+    "n_hits": 3,
+    "n_slots": 5,
+    "n_entities_claiming": 8,
+    "claimants": [
+     "塔罗师比安卡(角色)",
+     "塔罗牌(物品)",
+     "新纪元集市(地点)",
+     "灵占师索拉亚(角色)",
+     "环状水星(角色)",
+     "能量(概念)",
+     "药草束(物品)",
+     "露天式酒吧(地点)"
+    ],
+    "hit_rate": 0.6,
+    "lift_vs_base": 3.7
+   },
+   {
+    "chunk": "character__34701_打虎记:0.0.1",
+    "n_hits": 3,
+    "n_slots": 10,
+    "n_entities_claiming": 14,
+    "claimants": [
+     "严肃的家丁(角色)",
+     "乡民首领(角色)",
+     "冷静的乡民(角色)",
+     "受伤的乡民(角色)",
+     "弓箭(物品)",
+     "忠孝节义牌坊(物品)",
+     "沮丧的乡民(角色)",
+     "盾牌(物品)",
+     "秀郎中(角色)",
+     "程和光(角色)",
+     "羽箭(物品)",
+     "胡家庭院(地点)"
+    ],
+    "hit_rate": 0.3,
+    "lift_vs_base": 1.85
+   },
+   {
+    "chunk": "character__17703_灯塔集:2.0.0",
+    "n_hits": 2,
+    "n_slots": 5,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "丹尼希(角色)",
+     "守塔员失踪事件(事件)",
+     "弗兰南群岛史(物品)",
+     "杜卡特(角色)",
+     "白日梦邮报(组织)",
+     "马库斯(角色)",
+     "马歇尔(角色)"
+    ],
+    "hit_rate": 0.4,
+    "lift_vs_base": 2.47
+   },
+   {
+    "chunk": "anecdote__1916_权利归花儿:0.0.0",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "巴黎警察局(地点)",
+     "律师(角色)",
+     "挖掘艺术(角色)",
+     "神秘术(概念)",
+     "警察Ⅰ(角色)",
+     "警察Ⅱ(角色)",
+     "重塑之手(组织)",
+     "镜面肥皂泡(概念)",
+     "香榭丽舍大街(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "anecdote__1919_黄金与悲喜剧:0.0.0",
+    "n_hits": 1,
+    "n_slots": 15,
+    "n_entities_claiming": 18,
+    "claimants": [
+     "ONiON(角色)",
+     "《headonion》电视节目(组织)",
+     "仪式(事件)",
+     "加油站(地点)",
+     "小刀\"麦高芬(角色)",
+     "槲寄生(角色)",
+     "洋葱头(角色)",
+     "灵体(概念)",
+     "环状水星(角色)",
+     "白茅花(概念)",
+     "皮克勒斯(角色)",
+     "箱中客厅(地点)"
+    ],
+    "hit_rate": 0.0667,
+    "lift_vs_base": 0.41
+   },
+   {
+    "chunk": "anecdote__1923_海风的往事:1.0.1",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 6,
+    "claimants": [
+     "十四行诗(角色)",
+     "图图石子(角色)",
+     "小梅斯梅尔(角色)",
+     "维尔汀(角色)",
+     "船商贸易节(事件)",
+     "芭卡洛儿(角色)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:1.0.0",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 3,
+    "claimants": [
+     "曲娘(角色)",
+     "许娘子(角色)",
+     "酒坊(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:3.0.3",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "县志馆(地点)",
+     "曲娘(角色)",
+     "沛城(地点)",
+     "法曹(角色)",
+     "祥瑞(概念)",
+     "禁酤酒诏(概念)",
+     "里正(角色)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "character__20601_旧金山小子:1.0.3",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "J(角色)",
+     "先驱者(角色)",
+     "刘医生(角色)",
+     "布莱克汉警长(角色)",
+     "海特街(地点)",
+     "街头朋友(角色)",
+     "贝克特(角色)",
+     "都板街(地点)",
+     "霍利克(角色)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   },
+   {
+    "chunk": "character__23601_夜游十字街:2.0.0",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 5,
+    "claimants": [
+     "利伯蒂(角色)",
+     "利伯蒂的名字(概念)",
+     "巴纳赫(角色)",
+     "森林(地点)",
+     "灯倌(角色)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 1.23
+   }
+  ],
+  "top_chunk_share": 0.1235,
+  "top3_chunks_share": 0.3333,
+  "top_pair_share": 0.0617,
+  "by_query_type": {
+   "direct_private": 22,
+   "inductive": 20,
+   "multi_turn": 20,
+   "style_probe": 10,
+   "multi_role": 9
+  },
+  "by_conflict_type": {
+   "biography": 29,
+   "preference": 28,
+   "style": 13,
+   "secret": 11
+  },
+  "rank_hist": {
+   "1": 22,
+   "2": 6,
+   "3": 15,
+   "4": 11,
+   "5": 9,
+   "6": 18
+  },
+  "chunks": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 10,
+    "owner_pairs": [
+     "伊文洁琳→翠斯特",
+     "伊索尔德→西奥菲尔",
+     "卡尔→翠斯特"
+    ],
+    "hit_by_pairs": [
+     "伊文洁琳→翠斯特",
+     "卡尔→翠斯特"
+    ],
+    "ranks": [
+     2,
+     3,
+     3,
+     3,
+     4,
+     4,
+     6,
+     6,
+     6,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-009-direct_private",
+     "CB-009-inductive",
+     "CB-009-multi_role",
+     "CB-009-multi_turn",
+     "CB-009-style_probe",
+     "CB-033-direct_private",
+     "CB-033-inductive",
+     "CB-033-multi_role",
+     "CB-033-multi_turn",
+     "CB-033-style_probe"
+    ]
+   },
+   {
+    "chunk": "character__23601_夜游十字街:0.0.0",
+    "n_hits": 9,
+    "owner_pairs": [
+     "母亲→父亲",
+     "灯倌→父亲"
+    ],
+    "hit_by_pairs": [
+     "母亲→父亲",
+     "灯倌→父亲"
+    ],
+    "ranks": [
+     1,
+     1,
+     4,
+     4,
+     5,
+     5,
+     5,
+     6,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-076-direct_private",
+     "CB-076-inductive",
+     "CB-076-multi_role",
+     "CB-076-multi_turn",
+     "CB-076-style_probe",
+     "CB-082-direct_private",
+     "CB-082-inductive",
+     "CB-082-multi_turn",
+     "CB-082-style_probe"
+    ]
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 8,
+    "owner_pairs": [
+     "APPLe→雾行者",
+     "小春雀儿→未锈铠",
+     "芭妮芭妮→雾行者",
+     "警察→雾行者"
+    ],
+    "hit_by_pairs": [
+     "APPLe→雾行者",
+     "小春雀儿→未锈铠",
+     "芭妮芭妮→雾行者",
+     "警察→雾行者"
+    ],
+    "ranks": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     5,
+     5,
+     5
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-002-direct_private",
+     "CB-061-direct_private",
+     "CB-061-inductive",
+     "CB-061-multi_role",
+     "CB-061-multi_turn",
+     "CB-061-style_probe",
+     "CB-092-direct_private",
+     "CB-097-direct_private"
+    ]
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 8,
+    "owner_pairs": [
+     "十四行诗→埃菲",
+     "哈拉尔→埃菲"
+    ],
+    "hit_by_pairs": [
+     "十四行诗→埃菲",
+     "哈拉尔→埃菲"
+    ],
+    "ranks": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     4
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-027-direct_private",
+     "CB-027-inductive",
+     "CB-027-multi_role",
+     "CB-027-multi_turn",
+     "CB-027-style_probe",
+     "CB-046-direct_private",
+     "CB-046-inductive",
+     "CB-046-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 5,
+    "owner_pairs": [
+     "伊戈尔→桑德罗",
+     "十四行诗→莫莉德尔"
+    ],
+    "hit_by_pairs": [
+     "伊戈尔→桑德罗"
+    ],
+    "ranks": [
+     1,
+     3,
+     4,
+     6,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-005-direct_private",
+     "CB-005-inductive",
+     "CB-005-multi_role",
+     "CB-005-multi_turn",
+     "CB-005-style_probe"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 5,
+    "owner_pairs": [
+     "桑德罗→罗德里戈"
+    ],
+    "hit_by_pairs": [
+     "桑德罗→罗德里戈"
+    ],
+    "ranks": [
+     1,
+     2,
+     2,
+     3,
+     4
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-074-direct_private",
+     "CB-074-inductive",
+     "CB-074-multi_role",
+     "CB-074-multi_turn",
+     "CB-074-style_probe"
+    ]
+   },
+   {
+    "chunk": "character__17701_小房间:2.0.4",
+    "n_hits": 4,
+    "owner_pairs": [
+     "伊文洁琳→海因里希",
+     "卡尔→海因里希",
+     "翠斯特→西奥菲尔"
+    ],
+    "hit_by_pairs": [
+     "翠斯特→西奥菲尔"
+    ],
+    "ranks": [
+     1,
+     1,
+     2,
+     3
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-090-direct_private",
+     "CB-090-inductive",
+     "CB-090-multi_role",
+     "CB-090-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__20603_第一千夜:0.0.1",
+    "n_hits": 4,
+    "owner_pairs": [
+     "塔罗师比安卡→德克斯特"
+    ],
+    "hit_by_pairs": [
+     "塔罗师比安卡→德克斯特"
+    ],
+    "ranks": [
+     1,
+     1,
+     1,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_role",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-054-direct_private",
+     "CB-054-inductive",
+     "CB-054-multi_role",
+     "CB-054-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__23501_太阳的背面:0.0.0",
+    "n_hits": 4,
+    "owner_pairs": [
+     "利伯蒂→笃笃骨",
+     "卡洛琳→教练"
+    ],
+    "hit_by_pairs": [
+     "卡洛琳→教练"
+    ],
+    "ranks": [
+     1,
+     1,
+     1,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "CB-038-direct_private",
+     "CB-038-inductive",
+     "CB-038-multi_turn",
+     "CB-038-style_probe"
+    ]
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:0.0.0",
+    "n_hits": 3,
+    "owner_pairs": [
+     "木头小人→法曹",
+     "木头小人→许娘子",
+     "葛天→里正"
+    ],
+    "hit_by_pairs": [
+     "木头小人→许娘子"
+    ],
+    "ranks": [
+     4,
+     6,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-072-direct_private",
+     "CB-072-inductive",
+     "CB-072-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__20601_旧金山小子:0.0.0",
+    "n_hits": 3,
+    "owner_pairs": [
+     "保利娜→安东尼"
+    ],
+    "hit_by_pairs": [
+     "保利娜→安东尼"
+    ],
+    "ranks": [
+     1,
+     1,
+     1
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-012-direct_private",
+     "CB-012-inductive",
+     "CB-012-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__20603_第一千夜:0.0.2",
+    "n_hits": 3,
+    "owner_pairs": [
+     "商贩梅克卢→德克斯特"
+    ],
+    "hit_by_pairs": [
+     "商贩梅克卢→德克斯特"
+    ],
+    "ranks": [
+     3,
+     5,
+     5
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-051-direct_private",
+     "CB-051-inductive",
+     "CB-051-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__20603_第一千夜:1.0.0",
+    "n_hits": 3,
+    "owner_pairs": [
+     "商贩梅克卢→塔罗师比安卡"
+    ],
+    "hit_by_pairs": [
+     "商贩梅克卢→塔罗师比安卡"
+    ],
+    "ranks": [
+     3,
+     6,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-050-direct_private",
+     "CB-050-inductive",
+     "CB-050-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__34701_打虎记:0.0.1",
+    "n_hits": 3,
+    "owner_pairs": [
+     "母亲→秀郎中",
+     "母亲→程和光"
+    ],
+    "hit_by_pairs": [
+     "母亲→秀郎中"
+    ],
+    "ranks": [
+     4,
+     5,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive",
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-077-direct_private",
+     "CB-077-inductive",
+     "CB-077-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__17703_灯塔集:2.0.0",
+    "n_hits": 2,
+    "owner_pairs": [
+     "唐纳德→马歇尔"
+    ],
+    "hit_by_pairs": [
+     "唐纳德→马歇尔"
+    ],
+    "ranks": [
+     4,
+     6
+    ],
+    "query_types": [
+     "direct_private",
+     "inductive"
+    ],
+    "samples": [
+     "CB-049-direct_private",
+     "CB-049-inductive"
+    ]
+   },
+   {
+    "chunk": "anecdote__1916_权利归花儿:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "APPLe→挖掘艺术"
+    ],
+    "hit_by_pairs": [
+     "APPLe→挖掘艺术"
+    ],
+    "ranks": [
+     4
+    ],
+    "query_types": [
+     "style_probe"
+    ],
+    "samples": [
+     "CB-001-style_probe"
+    ]
+   },
+   {
+    "chunk": "anecdote__1919_黄金与悲喜剧:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "十四行诗→皮克勒斯",
+     "卡森先生→槲寄生",
+     "图图石子→槲寄生"
+    ],
+    "hit_by_pairs": [
+     "十四行诗→皮克勒斯"
+    ],
+    "ranks": [
+     3
+    ],
+    "query_types": [
+     "inductive"
+    ],
+    "samples": [
+     "CB-028-inductive"
+    ]
+   },
+   {
+    "chunk": "anecdote__1923_海风的往事:1.0.1",
+    "n_hits": 1,
+    "owner_pairs": [
+     "塞洛尼→芭卡洛儿"
+    ],
+    "hit_by_pairs": [
+     "塞洛尼→芭卡洛儿"
+    ],
+    "ranks": [
+     2
+    ],
+    "query_types": [
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-055-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:1.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "法曹→许娘子"
+    ],
+    "hit_by_pairs": [
+     "法曹→许娘子"
+    ],
+    "ranks": [
+     3
+    ],
+    "query_types": [
+     "direct_private"
+    ],
+    "samples": [
+     "CB-079-direct_private"
+    ]
+   },
+   {
+    "chunk": "character__16601_曲香蒙求:3.0.3",
+    "n_hits": 1,
+    "owner_pairs": [
+     "许娘子→里正"
+    ],
+    "hit_by_pairs": [
+     "许娘子→里正"
+    ],
+    "ranks": [
+     1
+    ],
+    "query_types": [
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-098-multi_turn"
+    ]
+   },
+   {
+    "chunk": "character__20601_旧金山小子:1.0.3",
+    "n_hits": 1,
+    "owner_pairs": [
+     "帮派打手→霍利克"
+    ],
+    "hit_by_pairs": [
+     "帮派打手→霍利克"
+    ],
+    "ranks": [
+     6
+    ],
+    "query_types": [
+     "inductive"
+    ],
+    "samples": [
+     "CB-063-inductive"
+    ]
+   },
+   {
+    "chunk": "character__23601_夜游十字街:2.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "利伯蒂→灯倌"
+    ],
+    "hit_by_pairs": [
+     "利伯蒂→灯倌"
+    ],
+    "ranks": [
+     6
+    ],
+    "query_types": [
+     "multi_turn"
+    ],
+    "samples": [
+     "CB-021-multi_turn"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "pair": "伊戈尔→桑德罗",
+    "n_hits": 5
+   },
+   {
+    "pair": "伊文洁琳→翠斯特",
+    "n_hits": 5
+   },
+   {
+    "pair": "十四行诗→埃菲",
+    "n_hits": 5
+   },
+   {
+    "pair": "卡尔→翠斯特",
+    "n_hits": 5
+   },
+   {
+    "pair": "小春雀儿→未锈铠",
+    "n_hits": 5
+   },
+   {
+    "pair": "桑德罗→罗德里戈",
+    "n_hits": 5
+   },
+   {
+    "pair": "母亲→父亲",
+    "n_hits": 5
+   },
+   {
+    "pair": "卡洛琳→教练",
+    "n_hits": 4
+   },
+   {
+    "pair": "塔罗师比安卡→德克斯特",
+    "n_hits": 4
+   },
+   {
+    "pair": "灯倌→父亲",
+    "n_hits": 4
+   },
+   {
+    "pair": "翠斯特→西奥菲尔",
+    "n_hits": 4
+   },
+   {
+    "pair": "保利娜→安东尼",
+    "n_hits": 3
+   },
+   {
+    "pair": "哈拉尔→埃菲",
+    "n_hits": 3
+   },
+   {
+    "pair": "商贩梅克卢→塔罗师比安卡",
+    "n_hits": 3
+   },
+   {
+    "pair": "商贩梅克卢→德克斯特",
+    "n_hits": 3
+   },
+   {
+    "pair": "木头小人→许娘子",
+    "n_hits": 3
+   },
+   {
+    "pair": "母亲→秀郎中",
+    "n_hits": 3
+   },
+   {
+    "pair": "唐纳德→马歇尔",
+    "n_hits": 2
+   },
+   {
+    "pair": "APPLe→挖掘艺术",
+    "n_hits": 1
+   },
+   {
+    "pair": "APPLe→雾行者",
+    "n_hits": 1
+   },
+   {
+    "pair": "利伯蒂→灯倌",
+    "n_hits": 1
+   },
+   {
+    "pair": "十四行诗→皮克勒斯",
+    "n_hits": 1
+   },
+   {
+    "pair": "塞洛尼→芭卡洛儿",
+    "n_hits": 1
+   },
+   {
+    "pair": "帮派打手→霍利克",
+    "n_hits": 1
+   },
+   {
+    "pair": "法曹→许娘子",
+    "n_hits": 1
+   },
+   {
+    "pair": "芭妮芭妮→雾行者",
+    "n_hits": 1
+   },
+   {
+    "pair": "警察→雾行者",
+    "n_hits": 1
+   },
+   {
+    "pair": "许娘子→里正",
+    "n_hits": 1
+   }
+  ]
+ },
+ {
+  "label": "v2 × 控制",
+  "testset": "cbi_testset_500_v2_control.json",
+  "channel": "retrieval_v2_cc.jsonl",
+  "reading": "cbi_result_v2instrument.json",
+  "caliber": "control",
+  "n_rows_aligned": 500,
+  "n_strict_hits": 19,
+  "flag_mismatch_with_channel": 0,
+  "matches_reading_exposure": true,
+  "n_distinct_chunks": 9,
+  "n_distinct_pairs": 13,
+  "n_distinct_chunks_in_testset": 60,
+  "max_slots_per_chunk": 30,
+  "base_hit_rate": 0.038,
+  "hit_chunks_claimed_by_multiple_entities": 9,
+  "hits_where_b_not_a_graph_claimant": 0,
+  "chunk_lift": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 7,
+    "n_slots": 30,
+    "n_entities_claiming": 11,
+    "claimants": [
+     "伊文洁琳(角色)",
+     "伊索尔德(角色)",
+     "小翠斯特(概念)",
+     "维也纳(地点)",
+     "维也纳剧院(地点)",
+     "翠斯特(角色)",
+     "莉莉玛莲(角色)",
+     "菲欧娜(角色)",
+     "西奥菲尔(角色)",
+     "阿尔贝蒂娜台阶(地点)",
+     "降灵会(事件)"
+    ],
+    "hit_rate": 0.2333,
+    "lift_vs_base": 6.14
+   },
+   {
+    "chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "n_hits": 3,
+    "n_slots": 5,
+    "n_entities_claiming": 5,
+    "claimants": [
+     "210(角色)",
+     "37(角色)",
+     "亚齐(角色)",
+     "苏菲亚(角色)",
+     "阿派朗(地点)"
+    ],
+    "hit_rate": 0.6,
+    "lift_vs_base": 15.79
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 2,
+    "n_slots": 15,
+    "n_entities_claiming": 9,
+    "claimants": [
+     "埃菲(角色)",
+     "埃里克(角色)",
+     "学生Ⅰ(角色)",
+     "学生Ⅱ(角色)",
+     "学生Ⅲ(角色)",
+     "科算中心(组织)",
+     "第一防线学校(地点)",
+     "金钥匙桑丘(角色)",
+     "零食配给(概念)"
+    ],
+    "hit_rate": 0.1333,
+    "lift_vs_base": 3.51
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 2,
+    "n_slots": 10,
+    "n_entities_claiming": 7,
+    "claimants": [
+     "圣保罗(地点)",
+     "外国游客(角色)",
+     "宽吻鳄(概念)",
+     "洛佩拉(角色)",
+     "瓜拿纳果汁(物品)",
+     "罗德里戈(角色)",
+     "观光游船(地点)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 5.26
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 1,
+    "n_slots": 10,
+    "n_entities_claiming": 6,
+    "claimants": [
+     "伦敦(地点)",
+     "未锈铠(角色)",
+     "神秘术(概念)",
+     "维尔汀(角色)",
+     "雾(概念)",
+     "雾行者(角色)"
+    ],
+    "hit_rate": 0.1,
+    "lift_vs_base": 2.63
+   },
+   {
+    "chunk": "anecdote__1910_风吹乌哈拉:0.0.0",
+    "n_hits": 1,
+    "n_slots": 15,
+    "n_entities_claiming": 13,
+    "claimants": [
+     "乌哈拉(地点)",
+     "审讯官Ⅰ(角色)",
+     "审讯室(地点)",
+     "来亚什基(地点)",
+     "特遣队(组织)",
+     "眼罩(物品)",
+     "第二北方大学(组织)",
+     "红弩箭(角色)",
+     "芝诺(组织)",
+     "警卫(角色)",
+     "贝托尔特(角色)",
+     "锁链(物品)"
+    ],
+    "hit_rate": 0.0667,
+    "lift_vs_base": 1.75
+   },
+   {
+    "chunk": "anecdote__1913_淑女的守则:0.0.3",
+    "n_hits": 1,
+    "n_slots": 10,
+    "n_entities_claiming": 12,
+    "claimants": [
+     "丽莎(角色)",
+     "卟噜噜彩虹糖(物品)",
+     "墙壁(物品)",
+     "小春雀儿(角色)",
+     "父亲(角色)",
+     "玻玻泡精华(物品)",
+     "碳酸钙混合物(物品)",
+     "苏芙比(角色)",
+     "苏芙比房间(地点)",
+     "路易斯(角色)",
+     "跳跳糖爆米花(物品)",
+     "铅玻璃(角色)"
+    ],
+    "hit_rate": 0.1,
+    "lift_vs_base": 2.63
+   },
+   {
+    "chunk": "anecdote__1913_淑女的守则:0.0.4",
+    "n_hits": 1,
+    "n_slots": 5,
+    "n_entities_claiming": 5,
+    "claimants": [
+     "丽莎(角色)",
+     "玉米(概念)",
+     "苏芙比(角色)",
+     "路易斯(角色)",
+     "铅玻璃(角色)"
+    ],
+    "hit_rate": 0.2,
+    "lift_vs_base": 5.26
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 1,
+    "n_slots": 15,
+    "n_entities_claiming": 12,
+    "claimants": [
+     "卡洛斯将军(角色)",
+     "卡西扬少校(角色)",
+     "圣保罗(地点)",
+     "坩埚(物品)",
+     "天使兄弟会(组织)",
+     "桑德罗(角色)",
+     "洛佩拉(角色)",
+     "索科罗(地点)",
+     "芝诺(组织)",
+     "芝诺基地(地点)",
+     "莫莉德尔(角色)",
+     "街角旅馆房间(地点)"
+    ],
+    "hit_rate": 0.0667,
+    "lift_vs_base": 1.75
+   }
+  ],
+  "top_chunk_share": 0.3684,
+  "top3_chunks_share": 0.6316,
+  "top_pair_share": 0.1579,
+  "by_query_type": {
+   "multi_role": 12,
+   "inductive": 3,
+   "multi_turn": 3,
+   "style_probe": 1
+  },
+  "by_conflict_type": {
+   "family:旧事与身份": 5,
+   "family:作息与习惯": 4,
+   "family:亲属与私人关系": 4,
+   "family:财物与物件": 3,
+   "family:言谈与口吻": 1,
+   "family:身体与病": 1,
+   "family:饮食与酒": 1
+  },
+  "rank_hist": {
+   "1": 1,
+   "3": 3,
+   "4": 6,
+   "5": 8,
+   "6": 1
+  },
+  "chunks": [
+   {
+    "chunk": "character__17701_小房间:0.0.0",
+    "n_hits": 7,
+    "owner_pairs": [
+     "伊文洁琳→翠斯特",
+     "伊文洁琳→西奥菲尔",
+     "伊索尔德→翠斯特",
+     "伊索尔德→西奥菲尔",
+     "卡尔→翠斯特",
+     "卡尔→西奥菲尔"
+    ],
+    "hit_by_pairs": [
+     "伊文洁琳→翠斯特",
+     "伊文洁琳→西奥菲尔",
+     "卡尔→翠斯特"
+    ],
+    "ranks": [
+     3,
+     4,
+     4,
+     5,
+     5,
+     5,
+     5
+    ],
+    "query_types": [
+     "inductive",
+     "multi_role",
+     "multi_turn"
+    ],
+    "samples": [
+     "C2-009-inductive",
+     "C2-009-multi_role",
+     "C2-009-multi_turn",
+     "C2-010-inductive",
+     "C2-010-multi_role",
+     "C2-010-multi_turn",
+     "C2-031-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__19101_漫漫之夜行迹:0.0.0",
+    "n_hits": 3,
+    "owner_pairs": [
+     "亚齐→苏菲亚"
+    ],
+    "hit_by_pairs": [
+     "亚齐→苏菲亚"
+    ],
+    "ranks": [
+     4,
+     5,
+     6
+    ],
+    "query_types": [
+     "inductive",
+     "multi_turn",
+     "style_probe"
+    ],
+    "samples": [
+     "C2-004-inductive",
+     "C2-004-multi_turn",
+     "C2-004-style_probe"
+    ]
+   },
+   {
+    "chunk": "anecdote__1904_埃里克角色故事:1.1.0",
+    "n_hits": 2,
+    "owner_pairs": [
+     "十四行诗→埃菲",
+     "哈拉尔→埃菲",
+     "小梅斯梅尔→金钥匙桑丘"
+    ],
+    "hit_by_pairs": [
+     "十四行诗→埃菲",
+     "小梅斯梅尔→金钥匙桑丘"
+    ],
+    "ranks": [
+     3,
+     4
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-028-multi_role",
+     "C2-057-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:1.0.0",
+    "n_hits": 2,
+    "owner_pairs": [
+     "伊戈尔→罗德里戈",
+     "桑德罗→罗德里戈"
+    ],
+    "hit_by_pairs": [
+     "伊戈尔→罗德里戈",
+     "桑德罗→罗德里戈"
+    ],
+    "ranks": [
+     3,
+     4
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-007-multi_role",
+     "C2-078-multi_role"
+    ]
+   },
+   {
+    "chunk": "anecdote__1901_雾行者角色故事:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "APPLe→未锈铠",
+     "苏芙比→雾行者"
+    ],
+    "hit_by_pairs": [
+     "APPLe→未锈铠"
+    ],
+    "ranks": [
+     5
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-002-multi_role"
+    ]
+   },
+   {
+    "chunk": "anecdote__1910_风吹乌哈拉:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "克努特大叔→贝托尔特",
+     "哈桑→贝托尔特",
+     "哈桑→阿历克塞·费奥多罗维奇·雷列耶夫"
+    ],
+    "hit_by_pairs": [
+     "哈桑→阿历克塞·费奥多罗维奇·雷列耶夫"
+    ],
+    "ranks": [
+     1
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-042-multi_role"
+    ]
+   },
+   {
+    "chunk": "anecdote__1913_淑女的守则:0.0.3",
+    "n_hits": 1,
+    "owner_pairs": [
+     "小梅斯梅尔→铅玻璃",
+     "杰瑞·威尔逊→铅玻璃"
+    ],
+    "hit_by_pairs": [
+     "小梅斯梅尔→铅玻璃"
+    ],
+    "ranks": [
+     5
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-058-multi_role"
+    ]
+   },
+   {
+    "chunk": "anecdote__1913_淑女的守则:0.0.4",
+    "n_hits": 1,
+    "owner_pairs": [
+     "小春雀儿→铅玻璃"
+    ],
+    "hit_by_pairs": [
+     "小春雀儿→铅玻璃"
+    ],
+    "ranks": [
+     4
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-055-multi_role"
+    ]
+   },
+   {
+    "chunk": "character__22911_洛佩拉玩法剧情:0.0.0",
+    "n_hits": 1,
+    "owner_pairs": [
+     "伊戈尔→桑德罗",
+     "维尔汀→莫莉德尔",
+     "苏菲亚→莫莉德尔"
+    ],
+    "hit_by_pairs": [
+     "伊戈尔→桑德罗"
+    ],
+    "ranks": [
+     5
+    ],
+    "query_types": [
+     "multi_role"
+    ],
+    "samples": [
+     "C2-006-multi_role"
+    ]
+   }
+  ],
+  "pairs": [
+   {
+    "pair": "亚齐→苏菲亚",
+    "n_hits": 3
+   },
+   {
+    "pair": "伊文洁琳→翠斯特",
+    "n_hits": 3
+   },
+   {
+    "pair": "伊文洁琳→西奥菲尔",
+    "n_hits": 3
+   },
+   {
+    "pair": "APPLe→未锈铠",
+    "n_hits": 1
+   },
+   {
+    "pair": "伊戈尔→桑德罗",
+    "n_hits": 1
+   },
+   {
+    "pair": "伊戈尔→罗德里戈",
+    "n_hits": 1
+   },
+   {
+    "pair": "十四行诗→埃菲",
+    "n_hits": 1
+   },
+   {
+    "pair": "卡尔→翠斯特",
+    "n_hits": 1
+   },
+   {
+    "pair": "哈桑→阿历克塞·费奥多罗维奇·雷列耶夫",
+    "n_hits": 1
+   },
+   {
+    "pair": "小春雀儿→铅玻璃",
+    "n_hits": 1
+   },
+   {
+    "pair": "小梅斯梅尔→金钥匙桑丘",
+    "n_hits": 1
+   },
+   {
+    "pair": "小梅斯梅尔→铅玻璃",
+    "n_hits": 1
+   },
+   {
+    "pair": "桑德罗→罗德里戈",
+    "n_hits": 1
+   }
+  ]
+ }
+]
