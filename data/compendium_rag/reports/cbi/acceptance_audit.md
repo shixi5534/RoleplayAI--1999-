@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- |
 | ✅ pass | acceptance | `D:cbi_testset_500.json` | 交付物 cbi_testset_500.json 存在且非空 | data/compendium_rag/reports/cbi_testset_500.json size=672694 sha16=a11ef75fb2919ead |
 | ✅ pass | acceptance | `D:cbi_calculator.py` | 交付物 cbi_calculator.py 存在且非空 | scripts/cbi_calculator.py size=58226 sha16=506134af5271ef93 |
-| ✅ pass | acceptance | `D:P9_CBI报告.md` | 交付物 P9_CBI报告.md 存在且非空 | docs/compendium-rag/P9_CBI报告.md size=130892 sha16=fe1415c8f4520526 |
+| ✅ pass | acceptance | `D:P9_CBI报告.md` | 交付物 P9_CBI报告.md 存在且非空 | docs/compendium-rag/P9_CBI报告.md size=133460 sha16=5f65fa2129e9cb46 |
 | ✅ pass | acceptance | `D:entity_disambiguation_rules.md` | 交付物 entity_disambiguation_rules.md 存在且非空 | docs/compendium-rag/entity_disambiguation_rules.md size=20789 sha16=f808130460b37c78 |
 | ✅ pass | acceptance | `T:形状` | 测试集 = 100 角色对 × 5 类查询 = 500 样本；五类各 100、四类冲突族各 125 | samples=500 pairs=100 per_pair=[5] query_type={'direct_private': 100, 'inductive': 100, 'multi_role': 100, 'multi_turn': 100, 'style_probe': 100} conflict={'preference': 125, 'biography': 125, 'secret': 125, 'style': 125} |
 | ✅ pass | acceptance | `T:注入纪律` | 对抗性冲突注入「只进上下文、不写图」且公式串与目标一致 | injection_policy 含『不写图』=True formula==目标串=True |
@@ -45,4 +45,5 @@
 | ✅ pass | discipline | `X:适用域` | 两格「不回退」都不由 CBI 集出数（MRR 危险度 / Faithfulness 无支撑域） | exposure 在册（n_gold=12、at_rank1=0、warning=True）；faithfulness 适用域产物逐字命中全 0=True |
 
 > 审计本身绿 ≠ 目标达成：`pending` 是要人出的那一格（人工 κ），`unverified` 是只有静态凭证、没有运行时轨迹的过程条款（零云端）。两者都如实挂在这里：不删、不改判成 pass。
-> 反缩水断言：审计预期的闸门键集合与各读数里实际出现的集合**双向相等**，任何一格从量具里消失或新增而未覆盖都会直接报红。
+> 反缩水断言：审计预期的闸门键集合与各读数里实际出现的集合**双向相等**，任何一格从量具消失或新增而未覆盖都会直接报红。
+> 本件把交付物的 size/sha16 与三处读数的闸门值**快照**在证据列里：所以改了被快照的任何输入（报告、量具脚本、读数）之后 `git status` 会显示本产物变脏——那是「请重跑我」的信号，不是回归；判回归要重跑后看 diff，只有 `status`/`overall` 或闸门数值跟着动才算。
