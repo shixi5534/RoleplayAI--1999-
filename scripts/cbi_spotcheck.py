@@ -338,67 +338,101 @@ def sensitivity() -> int:
             if sum(hum) != k:
                 raise SystemExit(f"[FATAL] 敏感性场景构造错了：k={k} 实得 {sum(hum)}")
             c = cohen(list(zip(mach, hum)))
+            arm = {"n": n, "kappa": c["kappa"], "degenerate": c["degenerate"],
+                   "observed_agreement": c["observed_agreement"]}
+            ok, why = gate(arm)
             out.append({
                 "human_soft_in_sample": k, "overlap_with_machine": ov,
                 "kappa": c["kappa"], "observed_agreement": c["observed_agreement"],
                 "degenerate": c["degenerate"],
                 "gate_kappa": (not c["degenerate"]) and c["kappa"] >= 0.80,
+                # gate_pass/gate_route 走**与 compute_kappa 同一个 `gate()`**：
+                # 结论函数与真闸门不能各说各话（这一版曾经把退化行一律印成"不判"，
+                # 而闸门其实有一条替代线在读观测一致率）。
+                "gate_pass": ok, "gate_route": why,
                 "human_extra_vs_machine": k - ov,
             })
-    res = {"schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+    res = {"schema": "compendium_rag.cbi_kappa_sensitivity/v2",
+           "instrument": INSTRUMENT,
+           "gate_rule": GATE_RULE,
            "n_random_rows": n, "machine_soft_in_sample": m0,
            "machine_soft_full": m_full,
            "prevalence_note": ("本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。"
-                               "50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。"),
+                               "抽样正例率外推会造出纯噪声的结论。"),
            "grid": out}
     (CBI / f"{_IV['sens']}.json").write_text(
         json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     L = ["# κ 的结论函数（在你标注之前算好）", "",
-         f"- 随机行 **{n}** 条，机判在其中报非 clean **{m0}** 条"
+         f"- 仪器 **{INSTRUMENT}** · 随机行 **{n}** 条，机判在其中报非 clean **{m0}** 条"
          f"（全量 {N_TOTAL} 条里机判报 {m_full} 条）",
+         f"- 闸门判据（与 `compute_kappa` 同一个 `gate()`）：`{GATE_RULE}`",
          "- 读法：**k = 人工在这 50 条里标出几条 soft**（人工臂从零开始标，不是「在机判上加几条」）；"
          "ov = 其中几条与机判重合。",
          "",
-         "| 人标 k | 重合 ov | κ | 观测一致率 | κ≥0.80 | 人工比机判多抓 |",
+         "| 人标 k | 重合 ov | κ | 观测一致率 | 闸门（按上面判据） | 人工比机判多抓 |",
          "| --- | --- | --- | --- | --- | --- |"]
     for r in out:
+        mark = "†" if r["degenerate"] else ""
         L.append(f"| {r['human_soft_in_sample']} | {r['overlap_with_machine']} | {r['kappa']} | "
                  f"{r['observed_agreement']} | "
-                 f"{'✅' if r['gate_kappa'] else ('退化⇒不判' if r['degenerate'] else '❌')} | "
-                 f"{r['human_soft_in_sample'] - r['overlap_with_machine']} |")
+                 f"{'✅' if r['gate_pass'] else '❌'} {mark} "
+                 f"({'一致率线' if r['degenerate'] else 'κ线'}) | "
+                 f"{r['human_extra_vs_machine']} |")
     # 下面这几句的数值随仪器变（v1 机判报 3 条，v2 全 clean），所以从 grid 里现算而不是硬写。
-    agree_row = next((r for r in out if r["human_extra_vs_machine"] == 0
-                      and r["human_soft_in_sample"] == m0), None)
+    all_degenerate = all(r["degenerate"] for r in out)
+    extra_pass = [r["human_extra_vs_machine"] for r in out
+                  if r["gate_pass"] and r["overlap_with_machine"] == 0]
+    extra_fail = [r["human_extra_vs_machine"] for r in out
+                  if not r["gate_pass"] and r["overlap_with_machine"] == 0]
+    hi_pass, lo_fail = (max(extra_pass) if extra_pass else None,
+                        min(extra_fail) if extra_fail else None)
     first_break = next((r for r in out if r["human_extra_vs_machine"] >= 1
                         and not r["gate_kappa"] and not r["degenerate"]), None)
     brk = (f"`k={first_break['human_soft_in_sample']} ov={first_break['overlap_with_machine']}` "
-           f"已经只剩 {first_break['kappa']}，**低于 0.80 的闸门**"
-           if first_break else "在本表的 k 范围内还没跌破 0.80")
+           f"已经只剩 κ={first_break['kappa']}，**低于 0.80 的规格线**"
+           if first_break else "在本表的 k 范围内 κ 还没跌破 0.80")
+    scale = N_TOTAL // n
+    if all_degenerate:
+        route = (f"- **这一臂走的是「观测一致率」那条线**（表里打 †）：机判在 {n} 条随机行里一个非 clean "
+                 f"都没报 ⇒ 单一类别 ⇒ κ 无定义。判据是 `一致率 ≥ {TARGET_AGREE}`，"
+                 f"**{TARGET_AGREE} 是我自选的阈值、规格里没有，你随时可以否决**。\n")
+        budget = (f"人工比机判多抓 **≤{hi_pass} 条**仍然 ✅；多抓 **{lo_fail} 条**就 ❌"
+                  if hi_pass is not None and lo_fail is not None else
+                  f"在本表的 k 范围内没有 ❌ 行（多抓 {max(extra_pass) if extra_pass else 0} 条仍过）")
+        kappa_col = (f"- **κ 那一列在这台仪器上不能读**：`k=0` 那行的 1.0 不是测出来的一致，"
+                     f"是 `pe==1` 那支的约定（两边全同一类）；`k≥1` 全是 0.0 —— 这也是**退化**，不是一致性差。"
+                     f"**别把这里的 κ=0 读成『判分器坏』**，它只说明 κ 这个指标在零正例率下失灵。")
+    else:
+        route = (f"- **这一臂走的是「κ ≥ {TARGET_KAPPA}」那条规格线**：机判臂在随机行里有 {m0} 条非 clean，"
+                 f"类别不唯一 ⇒ κ 有定义，不需要退化替代。\n")
+        budget = f"人工每多标一条且不与机判重合，κ 就往下掉；{brk}"
+        kappa_col = (f"- **能定 κ**：只有 `k={m0} 且 ov={m0}`（人工完全同意机判）这一行给 κ=1.0；"
+                     f"{brk}。换句话说：这台判分器只要被人工纠正一次，κ 就可能过不了线。")
     L += ["",
           "## 这张表能定什么、不能定什么",
           "",
-          f"- **能定 κ**：只有 `k={m0} 且 ov={m0}`（人工完全同意机判）这一行给 κ=1.0；"
-          "人工每多标一条、且不与机判重合，κ 就往下掉 —— " + brk + "。"
-          "换句话说：这台判分器只要被人工纠正一次，κ 就过不了线。",
-          f"- **不能定 `soft ≤ 5`**：全量 N_soft 以 500 条机判实测（{m_full} 条）为准。"
-          "50 行抽样的正例率不能反过来覆盖总体计数 —— "
-          "机判总体 3 条、抽样里恰含 1 条，×10 外推会得到 10>5 这种纯属抽样噪声的结论。"
-          "抽检的用途是**一致性**，不是**流行率**。",
-          "- **若人工在抽检里抓到机判漏报**（多标的 Soft 与机判不重合），正确动作不是外推数字，"
+          route + f"  {budget}。",
+          kappa_col,
+          f"- **不能定 `soft ≤ {SOFT_MAX}`**：全量 N_soft 以 {N_TOTAL} 条机判实测（**{m_full} 条**）为准。"
+          f"抽样里机判报 {m0} 条，×{scale} 外推是 {m0 * scale} 条 —— "
+          f"{'这个外推值与总体实测不同，' if m0 * scale != m_full else ''}"
+          "拿它去覆盖总体计数纯属抽样噪声。抽检的用途是**一致性**，不是**流行率**。",
+          "- **若人工在抽检里抓到机判漏报**（多标的 soft 与机判不重合），正确动作不是外推数字，"
           "而是：把该情形写成 rubric 的一条判例 ⇒ 用统一尺子**重判全量 500 条**（25 批），"
           "两版读数一起报。这与 pass 1/pass 2 那次同源。",
           "",
-          "> 附：机-机噪声底已实测（`cbi_spotcheck_machine.json`）—— 同一把尺、独立盲代理重判同样 52 条，"
-          "一致率 94.2%，3 条分歧恰好就是机判报 soft 的那三条。"
-          "所以 v1 集发布读数一直按区间 **CBI ∈ [0.9844, 0.9874]** 报，而不是单点；"
+          "> 附：**v1 集**实测的机-机噪声底（`cbi_spotcheck_machine.json`，同一把尺、独立盲代理重判同样 52 条，"
+          "一致率 94.2%，3 条分歧恰好就是机判报 soft 的那三条）—— 它是噪声底的**出处**，"
+          "不是本机仪器的复测。v1 集发布读数因此按区间 **CBI ∈ [0.9844, 0.9874]** 报而不是单点；"
           "v2 集判分臂全 clean，同一逻辑下其区间上界同样是「上限（生成层完美）」那一档。"]
     p = CBI / f"{_IV['sens']}.md"
     p.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"[OK] 结论函数 → {p.name}")
     for r in out[:8]:
+        line = "一致率线" if r["degenerate"] else "κ线"
         print(f"     k={r['human_soft_in_sample']} ov={r['overlap_with_machine']} "
               f"κ={r['kappa']} 一致率={r['observed_agreement']} "
-              f"闸门={'过' if r['gate_kappa'] else ('退化不判' if r['degenerate'] else '不过')}")
+              f"闸门={'过' if r['gate_pass'] else '不过'}（{line}）")
     return 0
 
 

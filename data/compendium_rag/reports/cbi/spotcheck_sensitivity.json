@@ -1,9 +1,11 @@
 {
- "schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+ "schema": "compendium_rag.cbi_kappa_sensitivity/v2",
+ "instrument": "v1",
+ "gate_rule": "n>=30; degenerate => observed_agreement>=0.9(自选线); else kappa>=0.8(规格线)",
  "n_random_rows": 50,
  "machine_soft_in_sample": 1,
  "machine_soft_full": 3,
- "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。",
+ "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。抽样正例率外推会造出纯噪声的结论。",
  "grid": [
   {
    "human_soft_in_sample": 0,
@@ -12,6 +14,8 @@
    "observed_agreement": 0.98,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.98 vs 自选线 0.9",
    "human_extra_vs_machine": 0
   },
   {
@@ -21,6 +25,8 @@
    "observed_agreement": 0.96,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0204 vs 规格线 0.8",
    "human_extra_vs_machine": 1
   },
   {
@@ -30,6 +36,8 @@
    "observed_agreement": 1.0,
    "degenerate": false,
    "gate_kappa": true,
+   "gate_pass": true,
+   "gate_route": "κ（非退化）= 1.0 vs 规格线 0.8",
    "human_extra_vs_machine": 0
   },
   {
@@ -39,6 +47,8 @@
    "observed_agreement": 0.94,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0274 vs 规格线 0.8",
    "human_extra_vs_machine": 2
   },
   {
@@ -48,6 +58,8 @@
    "observed_agreement": 0.98,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= 0.6575 vs 规格线 0.8",
    "human_extra_vs_machine": 1
   },
   {
@@ -57,6 +69,8 @@
    "observed_agreement": 0.92,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0309 vs 规格线 0.8",
    "human_extra_vs_machine": 3
   },
   {
@@ -66,6 +80,8 @@
    "observed_agreement": 0.96,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= 0.4845 vs 规格线 0.8",
    "human_extra_vs_machine": 2
   },
   {
@@ -75,6 +91,8 @@
    "observed_agreement": 0.9,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0331 vs 规格线 0.8",
    "human_extra_vs_machine": 4
   },
   {
@@ -84,6 +102,8 @@
    "observed_agreement": 0.94,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= 0.3802 vs 规格线 0.8",
    "human_extra_vs_machine": 3
   },
   {
@@ -93,6 +113,8 @@
    "observed_agreement": 0.88,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0345 vs 规格线 0.8",
    "human_extra_vs_machine": 5
   },
   {
@@ -102,6 +124,8 @@
    "observed_agreement": 0.92,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= 0.3103 vs 规格线 0.8",
    "human_extra_vs_machine": 4
   },
   {
@@ -111,6 +135,8 @@
    "observed_agreement": 0.86,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= -0.0355 vs 规格线 0.8",
    "human_extra_vs_machine": 6
   },
   {
@@ -120,6 +146,8 @@
    "observed_agreement": 0.9,
    "degenerate": false,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ（非退化）= 0.2604 vs 规格线 0.8",
    "human_extra_vs_machine": 5
   }
  ]

@@ -1,9 +1,11 @@
 {
- "schema": "compendium_rag.cbi_kappa_sensitivity/v1",
+ "schema": "compendium_rag.cbi_kappa_sensitivity/v2",
+ "instrument": "v2",
+ "gate_rule": "n>=30; degenerate => observed_agreement>=0.9(自选线); else kappa>=0.8(规格线)",
  "n_random_rows": 50,
  "machine_soft_in_sample": 0,
  "machine_soft_full": 0,
- "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。50 行抽样正例率外推会造出纯噪声的结论（k=ov=1 时 ×10 得 10>5）。",
+ "prevalence_note": "本表只算一致性（κ），不算流行率：全量 N_soft 以 500 条机判实测为准。抽样正例率外推会造出纯噪声的结论。",
  "grid": [
   {
    "human_soft_in_sample": 0,
@@ -12,6 +14,8 @@
    "observed_agreement": 1.0,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 1.0 vs 自选线 0.9",
    "human_extra_vs_machine": 0
   },
   {
@@ -21,6 +25,8 @@
    "observed_agreement": 0.98,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.98 vs 自选线 0.9",
    "human_extra_vs_machine": 1
   },
   {
@@ -30,6 +36,8 @@
    "observed_agreement": 0.96,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.96 vs 自选线 0.9",
    "human_extra_vs_machine": 2
   },
   {
@@ -39,6 +47,8 @@
    "observed_agreement": 0.94,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.94 vs 自选线 0.9",
    "human_extra_vs_machine": 3
   },
   {
@@ -48,6 +58,8 @@
    "observed_agreement": 0.92,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.92 vs 自选线 0.9",
    "human_extra_vs_machine": 4
   },
   {
@@ -57,6 +69,8 @@
    "observed_agreement": 0.9,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": true,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.9 vs 自选线 0.9",
    "human_extra_vs_machine": 5
   },
   {
@@ -66,6 +80,8 @@
    "observed_agreement": 0.88,
    "degenerate": true,
    "gate_kappa": false,
+   "gate_pass": false,
+   "gate_route": "κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，两端都无统计含义）⇒ 读观测一致率 0.88 vs 自选线 0.9",
    "human_extra_vs_machine": 6
   }
  ]
