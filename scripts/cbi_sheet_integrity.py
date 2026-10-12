@@ -14,7 +14,10 @@
   5) 独立重算（rederive）：**换个实现**重算发布读数。权重不取计算器的常量，
      而是从读数里登记的那句 formula 文本解析；判分臂/答案件文件名要与抽检单同源。
      注意：v2 那一列 N_hard=N_soft=0 ⇒ 在 v2 上改这两个权重测不出差别，
-     权重守护只有在还有非零项的 v1 列上才可证伪。
+     权重守护只有在还有非零项的 v1 列上才可证伪；
+  6) 卡片视图（cards）：人真正读的那份必须与宽表/json **同一套行号**，
+     且每张卡里的「被试答案」是全文。行号错位 ⇒ `CBI_LABELS="12=…"` 会把
+     人工判断记到另一条样本上，是这一臂最贵的一种失效。
 
 用法：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/cbi_sheet_integrity.py`
 负向测试：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/cbi_sheet_integrity_negtest.py`
@@ -167,6 +170,40 @@ def rederive(inst: str, fails: list[str]) -> None:
           f"judge_arm={rd.get('judge_arm')} answer_file={rd.get('answer_file')}")
 
 
+def cards(inst: str, fails: list[str]) -> None:
+    """第 6 项：卡片视图（人真正读的那份）必须与宽表/json **同一套行号、同一条证据**。
+    行号错位是这一臂最贵的失效模式：`CBI_LABELS="12=soft_leak"` 会按行号落到某一条上，
+    如果卡片与表格的行号不一致，人工判断就被记到了另一条样本上 —— 比不标更糟。
+    """
+    iv = SPOT._INSTRUMENTS[inst]
+    if "sheet_cards" not in iv:
+        fails.append(f"{inst} 仪器表里没有 sheet_cards 键")
+        return
+    cp = CBI / iv["sheet_cards"]
+    if not cp.exists():
+        print(f"[{inst}] 卡片视图尚未生成（跑 CBI_STAGE=cards）⇒ 本项跳过，不算失败")
+        return
+    rows = json.loads((CBI / iv["sheet_json"]).read_text(encoding="utf-8"))["rows"]
+    txt = cp.read_text(encoding="utf-8")
+    pairs = [(int(n), sid) for n, sid in re.findall(r"^### 第 (\d+) 行 · `([^`]+)`", txt, re.M)]
+    want = [(i, r["sample_id"]) for i, r in enumerate(rows, 1)]
+    bad_order = [g for g, e in zip(pairs, want) if g != e] if len(pairs) == len(want) else None
+    print(f"[{inst}] 卡片 {len(pairs)} 张 vs json {len(want)} 行：行号序列一致="
+          f"{pairs == want} 错位张数={bad_order if bad_order is not None else '行数就不等'}")
+    if pairs != want:
+        fails.append(f"{inst} 卡片行号与 json 不同源（这是最贵的一种错位）")
+        return
+    # 每张卡里的「被试答案」必须是全文：拿 json 的 answer 去卡片里逐字找
+    miss = []
+    for (n, sid), r in zip(pairs, rows):
+        seg = txt.split(f"### 第 {n} 行 · `{sid}`", 1)[1].split("\n### ", 1)[0]
+        if r["answer"] not in seg:
+            miss.append((n, sid))
+    print(f"    答案全文未出现在对应卡片里：{len(miss)} 张 {miss[:3]}")
+    if miss:
+        fails.append(f"{inst} 有 {len(miss)} 张卡片的答案不是全文")
+
+
 def main() -> int:
     fails: list[str] = []
     check("v1", "spotcheck_sheet.json", "spotcheck_sheet.md", fails)
@@ -174,7 +211,8 @@ def main() -> int:
     for inst in ("v1", "v2"):
         lineage(inst, fails)
         rederive(inst, fails)
-    print("\nRESULT:", "全部通过（界面未被截短、人工列干净、血缘接得上、读数能独立重算）"
+        cards(inst, fails)
+    print("\nRESULT:", "全部通过（界面未被截短、人工列干净、血缘接得上、读数能独立重算、卡片行号同源）"
           if not fails else "FAIL -> " + " | ".join(fails))
     return 1 if fails else 0
 

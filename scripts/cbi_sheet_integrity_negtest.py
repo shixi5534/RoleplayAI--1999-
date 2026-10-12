@@ -29,13 +29,14 @@ SRC_R = ROOT / "data/compendium_rag/reports"
 SRC_C = SRC_R / "cbi"
 SET = {
     "v2": {"top": ["cbi_testset_500_v2_control.json", "cbi_result_v2instrument.json"],
-           "cbi": ["spotcheck_sheet_v2.json", "spotcheck_sheet_v2.md", "answers_v2.jsonl",
-                   "judge_v2_r1.jsonl", "retrieval_v2_cc.jsonl"],
+           "cbi": ["spotcheck_sheet_v2.json", "spotcheck_sheet_v2.md",
+                   "spotcheck_sheet_v2_cards.md", "answers_v2.jsonl", "judge_v2_r1.jsonl",
+                   "retrieval_v2_cc.jsonl"],
            "read": "cbi_result_v2instrument.json", "sheet": "spotcheck_sheet_v2.json",
            "md": "spotcheck_sheet_v2.md", "judge": "judge_v2_r1.jsonl"},
     "v1": {"top": ["cbi_testset_500_control.json", "cbi_result_full.json"],
-           "cbi": ["spotcheck_sheet.json", "spotcheck_sheet.md", "answers.jsonl",
-                   "judge_full.jsonl", "retrieval_cc.jsonl"],
+           "cbi": ["spotcheck_sheet.json", "spotcheck_sheet.md", "spotcheck_sheet_cards.md",
+                   "answers.jsonl", "judge_full.jsonl", "retrieval_cc.jsonl"],
            "read": "cbi_result_full.json", "sheet": "spotcheck_sheet.json",
            "md": "spotcheck_sheet.md", "judge": "judge_full.jsonl"},
 }
@@ -90,6 +91,7 @@ with tempfile.TemporaryDirectory(prefix="cbi_integ_") as t:
         fs = []
         m.lineage(inst, fs)
         m.rederive(inst, fs)
+        m.cards(inst, fs)
         print(("  ok   " if not fs else "  FAIL ") + f"control {inst} -> {fs[:2]}")
         if fs:
             fails.append("control-" + inst)
@@ -227,6 +229,37 @@ with tempfile.TemporaryDirectory(prefix="cbi_integ_") as t:
         cs[:4] + ["clean"] + cs[5:]) + " |")
     expect_fail("人工列被预填", lambda fs: m.check("v2", SET["v2"]["sheet"], SET["v2"]["md"], fs),
                  "人工列")
+
+    print("[N12] 卡片视图里把两张卡的行号互换 ⇒ cards() 必须抓到（这是最贵的错位）")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    txt = cp.read_text(encoding="utf-8")
+    txt = txt.replace("### 第 7 行", "@@TMP@@", 1).replace("### 第 8 行", "### 第 7 行", 1)\
+             .replace("@@TMP@@", "### 第 8 行", 1)
+    cp.write_text(txt, encoding="utf-8")
+    expect_fail("卡片行号错位", lambda fs: m.cards("v2", fs), "行号")
+
+    print("[N13] 卡片里把某张的答案截短 ⇒ 必须抓到『答案不是全文』")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    lines = cp.read_text(encoding="utf-8").split("\n")
+    for i, ln in enumerate(lines):
+        if ln.startswith("- 被试答案"):
+            lines[i] = ln[:len(ln) - 15] + "…"
+            break
+    cp.write_text("\n".join(lines), encoding="utf-8")
+    expect_fail("卡片答案被截", lambda fs: m.cards("v2", fs), "答案不是全文")
+
+    print("[N14] 卡片里加一行说明文字（不改行号也不改答案）⇒ **不该**抓到")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    cp.write_text(cp.read_text(encoding="utf-8") + "\n<!-- 附注：本视图与宽表同源 -->\n",
+                  encoding="utf-8")
+    fs = []
+    m.cards("v2", fs)
+    print(("  ok   " if not fs else "  FAIL ") + f"无害增补不被抓 -> {fs[:1]}")
+    if fs:
+        fails.append("N14-cosmetic")
 
 print("\nRESULT:", "全部符合预期" if not fails else "FAIL -> " + ", ".join(fails))
 sys.exit(1 if fails else 0)

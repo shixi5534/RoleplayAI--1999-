@@ -3,11 +3,14 @@
 为什么不能拿第二遍机判顶：全 clean 的单一类别里 Cohen κ 的期望一致率等于观测一致率，
 κ=0 属于退化而非一致性差（`P9_CBI报告.md` §2.3）。
 
-三个 stage（STAGE 环境变量）：
+三个 stage（STAGE 环境变量）＋两个辅助 stage：
     plan    随机分层抽 50 条（5 个查询类型各 10，SEED=42）+ 追加全部机判非 clean 条，
             写 `reports/cbi/spotcheck_sheet.{md,json}` 给人标；
+    cards   同一批行换成**卡片视图** `spotcheck_sheet_*_cards.md`：行号与 json 同源，
+            并补上宽表放不下的 `machine_why` / `machine_evidence`，文末附可整段粘回的答题块；
     label   把人工给的标注**机械地**落成 `spotcheck_labels.json`，不靠手抄 JSON：
             `CBI_LABELS="行号或 sample_id=verdict;…"`，非法条目整批不写；
+            值写 `?` / `tbd` / `none` = 未填，跳过并**报出条数**（键仍照样校验）；
     kappa   读回 `reports/cbi/spotcheck_labels.json`，报两版 κ：
             A=只用随机 50 条（无偏，闸门按这一版判），B=含争议条（缺陷富集，只作参考）；
     sens    敏感性分析：人工标注在「只随机 50 / 含争议 / 只非 clean」三种口径下 κ 怎么动。
@@ -47,6 +50,7 @@ _INSTRUMENTS = {
            "judge": "judge_full.jsonl",
            "sheet_md": "spotcheck_sheet.md",
            "sheet_json": "spotcheck_sheet.json",
+           "sheet_cards": "spotcheck_sheet_cards.md",
            "labels": "spotcheck_labels.json",
            "result": "cbi_spotcheck_kappa.json",
            "sens": "spotcheck_sensitivity",
@@ -57,6 +61,7 @@ _INSTRUMENTS = {
            "judge": "judge_v2_r1.jsonl",
            "sheet_md": "spotcheck_sheet_v2.md",
            "sheet_json": "spotcheck_sheet_v2.json",
+           "sheet_cards": "spotcheck_sheet_v2_cards.md",
            "labels": "spotcheck_labels_v2.json",
            "result": "cbi_spotcheck_kappa_v2.json",
            "sens": "spotcheck_sensitivity_v2",
@@ -73,6 +78,7 @@ ANSWERS = CBI / _IV["answers"]
 JUDGE = CBI / os.environ.get("CBI_JUDGE", _IV["judge"])
 SHEET_MD = CBI / _IV["sheet_md"]
 SHEET_JSON = CBI / _IV["sheet_json"]
+SHEET_CARDS = CBI / _IV["sheet_cards"]
 LABELS = CBI / _IV["labels"]
 RESULT = REPORTS / _IV["result"]
 SHEET_SCHEMA = _IV["schema"]
@@ -255,6 +261,72 @@ def build_sheet() -> int:
     SHEET_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"[OK] 抽检单（{INSTRUMENT}）{len(rows)} 行（随机 {len(rand_ids)} + 争议 {len(extra)}）"
           f"→ {SHEET_MD.name}")
+    print(f"     机判分布 {dict(Counter(r['machine_verdict'] for r in rows))}")
+    return 0
+
+
+def build_cards() -> int:
+    """把同一张抽检单**换成每行一张卡**输出，行号与宽表/json 完全同一份 enumerate。
+
+    为什么要第二种视图：闸门只差人工那一格，而差的就是"标起来太费劲"。
+    宽表一行最长 337 字符，横向扫五列证据很容易看串行；更关键的是宽表**放不下**
+    `machine_why` 与 `machine_evidence` —— 而人要做终裁，最该看的就是判分臂"为什么这么判"
+    与它引的那句原文。卡片视图把这两条补上，并附一段可直接粘回对话的答题块。
+
+    答题块里的 `n=?` 是**未填**的意思（`apply_labels` 会跳过并把跳过条数打出来），
+    所以你可以整段粘回来，不必先删掉没定的那些行。
+    """
+    if not SHEET_JSON.exists():
+        raise SystemExit(f"[FATAL] 没有 {SHEET_JSON.name}：先跑 CBI_STAGE=plan")
+    sheet = json.loads(SHEET_JSON.read_text(encoding="utf-8"))
+    rows = sheet["rows"]
+    L = [f"# CBI 人工抽检单 · 卡片视图（仪器 {INSTRUMENT}，共 {len(rows)} 行）",
+         "",
+         f"与 `{SHEET_MD.name}` / `{SHEET_JSON.name}` **同一批行、同一套行号**"
+         "（都由同一个 `enumerate(rows, 1)` 生成；`cbi_sheet_integrity.py` 会核这一点）。",
+         "判定线与机判同一把尺：`docs/compendium-rag/判分尺子_CBI统一rubric.md`（R1–R5）。",
+         "verdict ∈ `clean` / `soft_leak` / `hard_leak`。",
+         "",
+         "> 卡片视图**多给了两栏宽表放不下的东西**：机判的理由原文（`why`）与它引的那句证据"
+         "（`evidence_quote`）。人做终裁时最该看的就是这两条 —— 你判的不是「答案好不好」，"
+         "而是「判分臂这次有没有越界」。",
+         ""]
+    for i, r in enumerate(rows, 1):
+        L += [f"### 第 {i} 行 · `{r['sample_id']}` · {r['tier']} · {r['query_type']}",
+              f"- A（被试视角）：**{r['a_role']}** ｜ B（不该碰的那个人）：**{r['b_role']}**"
+              f" ｜ 冲突族：{r.get('conflict_type') or '—'}"
+              f" ｜ 检索那一格命中：{'是' if r.get('retrieval_leak') else '否'}",
+              f"- 题面：{r['prompt']}",
+              f"- A 自己的私密（可以说）：{r['a_private_fact']}",
+              f"- **B 的私密（越界判据）**：{r['b_private_fact']}",
+              f"- 被试答案（全文，未截断）：{r['answer']}",
+              f"- 机判：`{r['machine_verdict']}`"
+              + (f" ｜ 证据引句：「{r['machine_evidence']}」" if r.get("machine_evidence") else "")
+              + (f"\n  - 机判理由：{r['machine_why']}" if r.get("machine_why") else ""),
+              f"- **人工**：`{i}=` ← 在这行等号后写 verdict，或写到文末答题块",
+              ""]
+    L += ["---",
+          "",
+          "## 答题块（整段粘回对话即可；没定的行留 `?`，会被跳过并报出跳过条数）",
+          "",
+          "```",
+          "; ".join(f"{i}=?" for i in range(1, len(rows) + 1)),
+          "```",
+          "",
+          f"粘回来后我这边跑：`CBI_INSTRUMENT={INSTRUMENT} CBI_STAGE=label CBI_LABELS=\"…\"`，"
+          "它会逐条回显 `行号 <-> sample_id <-> verdict` 让你核对；"
+          "任何一条非法（行号越界 / verdict 打错 / sid 不在表上）⇒ **整批不落盘**。",
+          f"随机层共 {sum(1 for r in rows if r['tier'] == '随机')} 条（闸门按这一版算 κ，"
+          f"要求已标 n≥{MIN_N}）；标完后跑 "
+          f"`CBI_INSTRUMENT={INSTRUMENT} CBI_STAGE=kappa scripts/cbi_spotcheck.py`。"]
+    SHEET_CARDS.write_text("\n".join(L) + "\n", encoding="utf-8")
+    # 自证行号同源：卡片里的 "第 n 行 · `sid`" 必须与 json 的第 n 行同一条
+    pairs = re.findall(r"^### 第 (\d+) 行 · `([^`]+)`", "\n".join(L), re.M)
+    if [(int(n), sid) for n, sid in pairs] != [(i, r["sample_id"])
+                                               for i, r in enumerate(rows, 1)]:
+        raise SystemExit("[FATAL] 卡片行号与 json 不同源，已写出但**不可用**："
+                         f"{SHEET_CARDS.name}")
+    print(f"[OK] 卡片视图 → {SHEET_CARDS.name}（{len(pairs)} 张，行号与 json 逐条对齐）")
     print(f"     机判分布 {dict(Counter(r['machine_verdict'] for r in rows))}")
     return 0
 
@@ -463,7 +535,21 @@ def apply_labels() -> int:
                 existing[it["sample_id"]] = it["human_verdict"]
             else:
                 stale.append(it["sample_id"])
-    merged, echo, errs = dict(existing), [], []
+    merged, echo, errs, skipped = dict(existing), [], [], []
+
+    def resolve_key(tok, key):
+        """键合法就返回 sample_id，否则把问题记进 errs 并返回 None。"""
+        if key.isdigit():
+            n = int(key)
+            if not 1 <= n <= len(rows):
+                errs.append(f"{tok!r}：行号越界（1..{len(rows)}）")
+                return None
+            return rows[n - 1]["sample_id"]
+        if key not in sid_to_row:
+            errs.append(f"{tok!r}：sample_id 不在抽检单里")
+            return None
+        return key
+
     for tok in re.split(r"[;,\n]+", raw):
         tok = tok.strip()
         if not tok:
@@ -473,20 +559,17 @@ def apply_labels() -> int:
             continue
         key, val = (p.strip() for p in tok.split("=", 1))
         val = val.replace(" ", "_").lower()
-        if val not in MAP:
-            errs.append(f"{tok!r}：verdict 非法（可用 {sorted(MAP)}）")
+        if val in ("?", "tbd", "none"):                  # 未填：跳过，但**报出条数与样例键**
+            if resolve_key(tok, key) is None:            # 连未填的行号打错也要当场说
+                continue
+            skipped.append(key)
             continue
-        if key.isdigit():
-            n = int(key)
-            if not 1 <= n <= len(rows):
-                errs.append(f"{tok!r}：行号越界（1..{len(rows)}）")
-                continue
-            sid = rows[n - 1]["sample_id"]
-        else:
-            if key not in sid_to_row:
-                errs.append(f"{tok!r}：sample_id 不在抽检单里")
-                continue
-            sid = key
+        if val not in MAP:
+            errs.append(f"{tok!r}：verdict 非法（可用 {sorted(MAP)}；未填请写 ?）")
+            continue
+        sid = resolve_key(tok, key)
+        if sid is None:
+            continue
         merged[sid] = val
         echo.append((sid_to_row[sid], sid, val))
     if errs:
@@ -494,6 +577,10 @@ def apply_labels() -> int:
         for e in errs:
             print("   -", e)
         return 1
+    if not echo and not existing:
+        print(f"[SKIP] 这一批**全是未填**（{len(skipped)} 条 ?），没有任何标注可落；"
+              f"不创建空的 {LABELS.name} —— 空文件会被误读成「人标了，但都判 clean」。")
+        return 0
     LABELS.parent.mkdir(parents=True, exist_ok=True)
     LABELS.write_text(json.dumps([{"sample_id": k, "human_verdict": v}
                                   for k, v in sorted(merged.items(),
@@ -507,9 +594,14 @@ def apply_labels() -> int:
     print("     **请核对下面这张回显表**：行号 <-> sample_id <-> 你给的 verdict")
     for n, sid, v in echo:
         print(f"       第 {n:>2} 行  {sid:26s} = {v}")
+    if skipped:
+        print(f"     跳过 {len(skipped)} 条**未填**（写了 ? / tbd）："
+              + ", ".join(skipped[:8]) + ("…" if len(skipped) > 8 else "")
+              + " —— 未填不算标注，也不算错误；κ 只在已标行上算。")
+    n_rand = sum(1 for r in rows if r["tier"] == "随机")
     rnd = [r for r in rows if r["tier"] == "随机" and r["sample_id"] in merged]
-    print(f"     闸门按随机层判：已标 {len(rnd)}/50（n≥{MIN_N} 才给判），"
-          f"下一步 `CBI_STAGE=kappa`")
+    print(f"     闸门按随机层判：已标 {len(rnd)}/{n_rand}（n≥{MIN_N} 才给判），"
+          f"下一步 `CBI_INSTRUMENT={INSTRUMENT} CBI_STAGE=kappa`")
     return 0
 
 
@@ -520,6 +612,8 @@ def main() -> int:
         return apply_labels()
     if STAGE == "sens":
         return sensitivity()
+    if STAGE == "cards":
+        return build_cards()
     return build_sheet()
 
 
