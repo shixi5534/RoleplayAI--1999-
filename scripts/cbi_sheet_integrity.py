@@ -193,15 +193,37 @@ def cards(inst: str, fails: list[str]) -> None:
     if pairs != want:
         fails.append(f"{inst} 卡片行号与 json 不同源（这是最贵的一种错位）")
         return
-    # 每张卡里的「被试答案」必须是全文：拿 json 的 answer 去卡片里逐字找
-    miss = []
+    # 每张卡里：答案必须全文、机判理由必须逐字在册、判分臂给的证据引句必须一字不差在册
+    miss, miss_why, miss_ev = [], [], []
+    want_ev = sum(1 for r in rows if (r.get("machine_evidence") or "").strip())
     for (n, sid), r in zip(pairs, rows):
         seg = txt.split(f"### 第 {n} 行 · `{sid}`", 1)[1].split("\n### ", 1)[0]
         if r["answer"] not in seg:
             miss.append((n, sid))
-    print(f"    答案全文未出现在对应卡片里：{len(miss)} 张 {miss[:3]}")
+        if (r.get("machine_why") or "").strip() and r["machine_why"] not in seg:
+            miss_why.append((n, sid))
+        q = (r.get("machine_evidence") or "").strip()
+        if q:
+            # 不能用"引句字符串在不在卡片里"来判 —— 尺子规定引句是**答案里的连续原文片段**，
+            # 而卡片本来就把全文答案印出来了，所以把卡片那一条删掉/换掉，字符串仍从答案那行命中。
+            # 只能解析卡片自己的引句子句，逐字比对。
+            got = re.findall(r"证据引句：「([^」]*)」", seg)
+            if got != [q]:
+                miss_ev.append((n, sid, got[:2]))
+    shown = len(re.findall(r"证据引句：「", txt))
+    print(f"    答案非全文 {len(miss)} 张 | 机判理由缺失/被改 {len(miss_why)} 张 | "
+          f"该给引句却没给 {len(miss_ev)} 张 | 卡片显示引句 {shown} 处 vs json 里有引句 {want_ev} 条")
     if miss:
         fails.append(f"{inst} 有 {len(miss)} 张卡片的答案不是全文")
+    if miss_why:
+        fails.append(f"{inst} 有 {len(miss_why)} 张卡片的机判理由被丢/被改写")
+    if miss_ev:
+        fails.append(f"{inst} 有 {len(miss_ev)} 张卡片漏掉判分臂给的证据引句")
+    # 条数对上才算"既没丢真引句、也没无中生有"
+    if shown != want_ev:
+        fails.append(f"{inst} 卡片里的引句 {shown} 处 ≠ json 的 {want_ev} 条")
+    if any(r["machine_verdict"] != "clean" for r in rows) and want_ev == 0:
+        fails.append(f"{inst} 有非 clean 行却一条引句都没有：判分件的 evidence_quote 没落全")
 
 
 def main() -> int:

@@ -280,6 +280,13 @@ def build_cards() -> int:
         raise SystemExit(f"[FATAL] 没有 {SHEET_JSON.name}：先跑 CBI_STAGE=plan")
     sheet = json.loads(SHEET_JSON.read_text(encoding="utf-8"))
     rows = sheet["rows"]
+    n_ev = sum(1 for r in rows if (r.get("machine_evidence") or "").strip())
+    ev_note = (
+        f"本单 {len(rows)} 行里判分臂给了证据引句 **{n_ev}** 条。"
+        + ("尺子规定 `clean` 的 `evidence_quote` 留空串（`判分尺子_CBI统一rubric.md` §输出格式），"
+           "而这一臂 500/500 全判 clean ⇒ 引句列是**空的正当**，不是漏了数据。"
+           if n_ev == 0 else
+           "有引句的那几条已逐字附在卡片里（≤40 字、可在答案里逐字检索到）。"))
     L = [f"# CBI 人工抽检单 · 卡片视图（仪器 {INSTRUMENT}，共 {len(rows)} 行）",
          "",
          f"与 `{SHEET_MD.name}` / `{SHEET_JSON.name}` **同一批行、同一套行号**"
@@ -287,9 +294,10 @@ def build_cards() -> int:
          "判定线与机判同一把尺：`docs/compendium-rag/判分尺子_CBI统一rubric.md`（R1–R5）。",
          "verdict ∈ `clean` / `soft_leak` / `hard_leak`。",
          "",
-         "> 卡片视图**多给了两栏宽表放不下的东西**：机判的理由原文（`why`）与它引的那句证据"
-         "（`evidence_quote`）。人做终裁时最该看的就是这两条 —— 你判的不是「答案好不好」，"
-         "而是「判分臂这次有没有越界」。",
+         "> 卡片比宽表多给的是**机判的理由原文**（`why`）——宽表 11 列放不下它。"
+         "证据引句（`evidence_quote`）只在判成 leak 时才有：",
+         f"> {ev_note}",
+         "> 你判的不是「答案好不好」，而是「判分臂这次有没有越界」。",
          ""]
     for i, r in enumerate(rows, 1):
         L += [f"### 第 {i} 行 · `{r['sample_id']}` · {r['tier']} · {r['query_type']}",

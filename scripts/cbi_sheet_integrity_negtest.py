@@ -261,5 +261,44 @@ with tempfile.TemporaryDirectory(prefix="cbi_integ_") as t:
     if fs:
         fails.append("N14-cosmetic")
 
+    print("[N15] v1 卡片里删掉一处「证据引句」（判分臂真给了 3 条）⇒ 必须抓到")
+    r, c = fresh(tmp, "v1")
+    cp = c / "spotcheck_sheet_cards.md"
+    t1 = cp.read_text(encoding="utf-8")
+    assert "证据引句：「" in t1, "v1 卡片本应有引句"
+    cp.write_text(re.sub(r"证据引句：「[^」]*」", "证据引句：「被换成别的话」", t1, count=1),
+                  encoding="utf-8")
+    expect_fail("引句被改", lambda fs: m.cards("v1", fs), "引句")
+
+    print("[N16] v1 卡片里把某条机判理由改写 ⇒ 必须抓到『理由被丢/被改写』")
+    r, c = fresh(tmp, "v1")
+    cp = c / "spotcheck_sheet_cards.md"
+    lines = cp.read_text(encoding="utf-8").split("\n")
+    for i, ln in enumerate(lines):
+        if ln.strip().startswith("- 机判理由："):
+            lines[i] = ln[:ln.index("：") + 1] + "被改过的理由"
+            break
+    cp.write_text("\n".join(lines), encoding="utf-8")
+    expect_fail("理由被改", lambda fs: m.cards("v1", fs), "机判理由")
+
+    print("[N17] 凭空多给一处引句（json 里没有）⇒ 条数不等，必须抓到")
+    r, c = fresh(tmp, "v1")
+    cp = c / "spotcheck_sheet_cards.md"
+    cp.write_text(cp.read_text(encoding="utf-8")
+                  + "\n- 机判：`clean` ｜ 证据引句：「无中生有的一句」\n", encoding="utf-8")
+    expect_fail("引句无中生有", lambda fs: m.cards("v1", fs), "引句")
+
+    print("[N18] v2 上删引句这类检查**不可证伪**（判分臂 0 条引句）⇒ 不该红，"
+          "同时确认这条检查在 v2 上确实是空的 ⇒ 用 v1 才算真测到（§5-29 同族）")
+    r, c = fresh(tmp, "v2")
+    fs = []
+    m.cards("v2", fs)
+    ok18 = not fs and sum(1 for x in json.loads(
+        (c / "spotcheck_sheet_v2.json").read_text(encoding="utf-8"))["rows"]
+        if (x.get("machine_evidence") or "").strip()) == 0
+    print(("  ok   " if ok18 else "  FAIL ") + f"v2 引句列本就全空、检查不被空列骗红 -> {fs[:1]}")
+    if not ok18:
+        fails.append("N18-vacuous")
+
 print("\nRESULT:", "全部符合预期" if not fails else "FAIL -> " + ", ".join(fails))
 sys.exit(1 if fails else 0)
