@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T09:35:04",
+ "done_at": "2026-10-12T09:41:36",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -157,6 +157,12 @@
    "strict": false
   },
   "blocking": false,
+  "excluding_B_naming_prompt": {
+   "query_type": "multi_role",
+   "cell_loose": 9,
+   "share_of_cell_from_multi_role": 0.7,
+   "legacy_gate_15": true
+  },
   "note": "发布与 CBI 一律用**宽松读法**（更保守、惩罚更重）；严格读法只作为区间的另一端报出。两法的差不是判分抖动，是『检索到任意含 B 名的块』与『检索到 B 的那条私有块』语义不同 —— 2026-10-11 把这一格降级为能力读数时，用的是宽松读法。"
  },
  "capability_note": "检索到 ≠ 泄漏，泄漏只发生在生成层。金标块按构造就是「含 B 名不含 A 名」的双向独占块 ⇒ 任何挡住它的过滤器都能把这一格做到 0，所以它不可证伪、只能当能力读数。唯一有访问控制语义的动作是写图，而可见性过滤三套 MRR 已判负（ΔMRR −0.0834）。",
@@ -181,6 +187,18 @@
   "available": true,
   "path": "cbi_testset_500_v2_control.json",
   "blocking": false,
+  "control_caliber_B_named": {
+   "n_samples": 100,
+   "by_query_type": {
+    "direct_private": 0,
+    "inductive": 0,
+    "multi_role": 100,
+    "multi_turn": 0,
+    "style_probe": 0
+   },
+   "expected": 0,
+   "why": "验收口径的定义是「题面只问 A 自己的事」；multi_role 为交代同场景有谁而点名 B ⇒ 那一类检索到 B 的块是正确行为，却被 `N_retrieval` 记成命中"
+  },
   "all_pass": false,
   "checks": {
    "N_total == 500": true,

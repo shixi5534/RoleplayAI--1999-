@@ -434,7 +434,24 @@ def spec_block() -> dict:
             checks["人工抽检覆盖 10%（随机层）"] = False
     else:
         checks["人工抽检覆盖 10%（随机层）"] = False
+    # 控制口径的**自检**：验收口径的定义就是"题面只问 A 自己的事"，所以题面里不该出现 B 的名号。
+    # 实测有一条题型（multi_role，100/500）为了交代"同场景有谁"直接把 B 点名了 ⇒
+    # 那一类里"检索到 B 的章节"是**正确行为**，却被这一格记成泄漏 —— 与当初判死
+    # 字面口径是同一条理由，而且它占掉这一格的 70–76%。
+    # 这里只做**测量并报出来**：放进 `checks` 会污染 `all_pass` 的含义（那条要求是规格给的，
+    # 这条不是），所以单列一个字段，`blocking=False`，改判据属于口径变更、要用户裁（P10 §R10）。
+    def _names_b(s):
+        forms = (s.get("retrieval_gold") or {}).get("b_name_forms") or []
+        return any(nm and len(nm) >= 2 and nm in (s.get("prompt") or "") for nm in forms)
+    b_named = sum(1 for s in sm if _names_b(s))
+    by_type_named = {qt: sum(1 for s in sm if s.get("query_type") == qt and _names_b(s))
+                     for qt in sorted({s.get("query_type") for s in sm})}
     return {"available": True, "path": path.name, "blocking": False,
+            "control_caliber_B_named": {"n_samples": b_named, "by_query_type": by_type_named,
+                                        "expected": 0,
+                                        "why": "验收口径的定义是「题面只问 A 自己的事」；"
+                                               "multi_role 为交代同场景有谁而点名 B ⇒ 那一类检索到 B 的块"
+                                               "是正确行为，却被 `N_retrieval` 记成命中"},
             "all_pass": all(checks.values()), "checks": checks,
             "conflict_classes_measured": bal,
             "conflict_classes_via_mapping": via_map,
@@ -498,6 +515,16 @@ def main() -> int:
             "loose": n_retr <= RETR_MAX,
             "strict": (n_strict <= RETR_MAX) if n_strict is not None else None},
         "blocking": False,
+        # 读法三：把"题面自己点名 B"的那一类（multi_role）从**判据**里排除（分母仍 500）。
+        # 报出来只为说明这一格的构成——它不是发布口径，也不许用来重算发布值。
+        "excluding_B_naming_prompt": {
+            "query_type": "multi_role",
+            "cell_loose": n_retr - (acc.get("by_query_type", {}).get("multi_role", {}).get("leak", 0)),
+            "share_of_cell_from_multi_role": (round(acc.get("by_query_type", {})
+                                                    .get("multi_role", {}).get("leak", 0) / n_retr, 4)
+                                              if n_retr else None),
+            "legacy_gate_15": (n_retr - (acc.get("by_query_type", {})
+                                          .get("multi_role", {}).get("leak", 0))) <= RETR_MAX},
         "note": ("发布与 CBI 一律用**宽松读法**（更保守、惩罚更重）；严格读法只作为区间的另一端报出。"
                  "两法的差不是判分抖动，是『检索到任意含 B 名的块』与『检索到 B 的那条私有块』"
                  "语义不同 —— 2026-10-11 把这一格降级为能力读数时，用的是宽松读法。"),
@@ -685,7 +712,16 @@ def main() -> int:
            f"- 旧子标准 `≤{RETR_MAX}` 在两读法下分别是："
            f"{rb['legacy_gate_15_under_each']['loose']} / {rb['legacy_gate_15_under_each']['strict']}"
            "（照实报，两者都**不再阻塞发布**）",
-           f"- {rb['note']}", "", "## 机械屏幕（`N_hard=0` 的正交证据）", ""]
+           f"- {rb['note']}",
+           f"- 构成说明（**只测不判**）：`{rb['excluding_B_naming_prompt']['query_type']}` "
+           f"这一类题面仍然点名 B，占掉这一格 "
+           f"{rb['excluding_B_naming_prompt']['share_of_cell_from_multi_role']:.1%}；"
+           f"把它从判据里剔除后 `N_retrieval="
+           f"{rb['excluding_B_naming_prompt']['cell_loose']}`"
+           f"（旧闸门 ≤{RETR_MAX} 会过："
+           f"{rb['excluding_B_naming_prompt']['legacy_gate_15']}）。"
+           f"**发布值不用这一读法** —— 见报告 §2.11 与 P10 §R10。",
+           "", "## 机械屏幕（`N_hard=0` 的正交证据）", ""]
     ms = res["mechanical_screen"]
     if not ms.get("available"):
         ln.append(f"- 不available：{ms.get('why')}（产物 `{ms.get('path')}`）")
