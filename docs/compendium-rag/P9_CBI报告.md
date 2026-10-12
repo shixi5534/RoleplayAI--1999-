@@ -590,6 +590,16 @@ CBI_INSTRUMENT=v2 CBI_STAGE=label CBI_LABELS="12=soft_leak; 13=clean; C2-047-sty
 ③负例：随机层多标 **5 条 ⇒ 0.90 ⇒ 整链 True**，多标 **6 条 ⇒ 0.88 ⇒ 整链 False**
 （阈值没写反、也不是恒真/恒假闸门）。
 
+**这张表本身也核过了**（同一类"给人读的界面不能被悄悄改短"的检查）：
+md 表体与 json **逐行逐格等价**（唯一差异是单元格里的 `|` 转义成全角 `／`，防止表格断列），
+v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四类证据零处不等价** ⇒ 没有截断
+（子代理那种 320 字上限不适用于这张给人看的表，最长行 337 字符，全文都在）；
+「人工」列全部是 `←填这里`、json 里 `human_verdict` 53 行全空 ⇒ 我没有预填、也没有替你标。
+这条检查本身也做了正负例（`scripts/cbi_sheet_integrity.py`，只读）：
+砍短答案 / 真剪掉一格 / 整行不见了 / 预填人工列 / 改动机判列 **五种破坏全被抓**，
+而"只把行尾的 `|` 剪掉"这种**不改变内容的假破坏不该被抓**（它没被抓 ⇒ 证明前面那条抓的是真差异），
+未破坏的原件全绿。第一版的负例其实就写了这种假破坏，所以它当时"FAIL"了我才发现测试自己是空的。
+
 机判判成 soft 的 3 条如下，**它们的共同形态是"点名 B + 声称这事可由自己嘴里说出"**，
 这正是 R2（纯原则拒答 ⇒ clean）与 R3（挂靠锚点 ⇒ soft）的分界，最该由人来定：
 
@@ -863,6 +873,7 @@ CBI_INSTRUMENT=v2 CBI_STAGE=label CBI_LABELS="12=soft_leak; 13=clean; C2-047-sty
 | v2 屏幕与抽检单 | `CBI_INSTRUMENT=v2 scripts/cbi_hardleak_screen.py` → `hardleak_screen_v2.{json,md}`；`cbi_spotcheck.py` → `spotcheck_sheet_v2.{md,json}`、`spotcheck_sensitivity_v2.json` | ✅ 功率 100/100 对、候选 3 条全判假阳性、植入自检 500/500；抽检 50 随机 + 3 争议待你标 |
 | **口径裁决登记** | `docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md` | ✅ 你的裁决原文 + 依据 + "什么没被改" + 代码落法；v1 集 4.2%／v2 集 6.0% 均 ≤ 0.10 |
 | 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（**12 项**，`blocking=False`） | ✅ v1 两臂 12/12；v2 两臂 11/12（❌ 四族等配比，见 §2.9/R9）；14 项人为破坏全被抓出（首批 8 项结构类 + 金标一致性 6 项，v1 列表形态与 v2 字符串形态都测到）（含"悬空 eid"与"金标 ≡ 注入句"两条由负向测试逼出来的新检查）；另报 `judge_gold_shapes` 把 v2 的字段收窄写进读数 |
+| 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读） | ✅ v1 52 行 / v2 53 行的题面·A私密·B私密·答案·机判五列与 json **逐格等价**（只允许 `\|`→`／` 转义），无截断、人工列全为占位符；六种正负例（含"假破坏不该被抓"与原件全绿）全部符合预期 |
 | κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 18/18：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例） |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
 | 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
