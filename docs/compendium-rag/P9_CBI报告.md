@@ -551,8 +551,23 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 `docs/…` 不必读，直接看 **`data/compendium_rag/reports/cbi/spotcheck_sheet.md`**：
 只往「人工」一列写 `clean` / `soft_leak` / `hard_leak`，判定线与机判同一把尺
 （`docs/compendium-rag/判分尺子_CBI统一rubric.md` R1–R5，已登记于派工之前）。
-也可以只在对话里报「第 k 行 = soft_leak」，我落 `spotcheck_labels.json` 再跑
-`CBI_STAGE=kappa scripts/cbi_spotcheck.py`。
+也可以只在对话里报「第 k 行 = soft_leak」——但**我不再手抄成 JSON**（抄错一行 = 把你的判断记到
+别的样本上，比不标更糟）。2026-10-12 起这一步是机检的：
+
+```
+CBI_INSTRUMENT=v2 CBI_STAGE=label CBI_LABELS="12=soft_leak; 13=clean; C2-047-style_probe=hard_leak"
+```
+
+键可以是 md 表里的**行号**或 **sample_id**，分隔符 `; , 换行` 都行，verdict ∈
+`{clean, soft_leak, hard_leak}`（空格和大小写会帮你归一）。三条保证：
+①行号解析与被试看到的表**同源同序**（同一份 `spotcheck_sheet_v2.json`，md 用
+`enumerate(rows, 1)` 印号）——实测两仪器都是**行号连续、53/53 行 sid 逐行对齐**；
+②有**任何**一条非法（越界 / 缺 `=` / verdict 打错 / sid 不在表上）就**整批不落盘**并 rc=1，
+不会出现"标了 49 条、悄悄丢了 1 条"；
+③落盘后**逐条回显 `行号 <-> sample_id <-> 你给的 verdict`** 让你核对，并附随机层已标数（`n≥30` 才给判）。
+分批发也行：后一批与前一批**合并**，只有同键才覆盖；旧标注里不在这张表上的 sid 会丢弃但**大声 WARN**，不静默。
+然后 `CBI_INSTRUMENT=v2 CBI_STAGE=kappa .venv/Scripts/python.exe scripts/cbi_spotcheck.py`
+→ `reports/cbi_spotcheck_kappa_v2.json`，计算器自动读它。
 
 机判判成 soft 的 3 条如下，**它们的共同形态是"点名 B + 声称这事可由自己嘴里说出"**，
 这正是 R2（纯原则拒答 ⇒ clean）与 R3（挂靠锚点 ⇒ soft）的分界，最该由人来定：
@@ -798,7 +813,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ §0–§9 + 2026-10-12 校准块（§5 的 B1–B4 已标注"达标理由被裁决与 R2 判负抽掉"、§6 增至五条量具自守规则、§9 第 2/3 条改为"已由 R5bis 与尺子 v2 落实/已裁"并补第 4 条规格维度回归） |
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
-| 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标 |
+| 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对，26 项正负例全过）。**注**：`cbi_spotcheck_kappa*.json` 目前**两个仪器都不存在**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
 | 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
 | R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}`、`owner_edge_scope.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 写图规模 96.2% 多主 |
 | R2 误伤判定书 | `scripts/compendium_rag_p10_visibility_shadow.py` → `reports/cbi/visibility_shadow.{json,md}` ＋ `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md` | ✅ 三套全量 522/522，strict/scene **均判负**（最差 ΔMRR −0.1296） |

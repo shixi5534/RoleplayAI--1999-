@@ -3,11 +3,14 @@
 为什么不能拿第二遍机判顶：全 clean 的单一类别里 Cohen κ 的期望一致率等于观测一致率，
 κ=0 属于退化而非一致性差（`P9_CBI报告.md` §2.3）。
 
-两个 stage（STAGE 环境变量）：
+三个 stage（STAGE 环境变量）：
     plan    随机分层抽 50 条（5 个查询类型各 10，SEED=42）+ 追加全部机判非 clean 条，
             写 `reports/cbi/spotcheck_sheet.{md,json}` 给人标；
+    label   把人工给的标注**机械地**落成 `spotcheck_labels.json`，不靠手抄 JSON：
+            `CBI_LABELS="行号或 sample_id=verdict;…"`，非法条目整批不写；
     kappa   读回 `reports/cbi/spotcheck_labels.json`，报两版 κ：
-            A=只用随机 50 条（无偏，闸门按这一版判），B=含争议条（缺陷富集，只作参考）。
+            A=只用随机 50 条（无偏，闸门按这一版判），B=含争议条（缺陷富集，只作参考）；
+    sens    敏感性分析：人工标注在「只随机 50 / 含争议 / 只非 clean」三种口径下 κ 怎么动。
 
 只读测试集与判分件，只写 `reports/cbi/` 下这三个文件；不碰图、不碰缓存。
 """
@@ -17,9 +20,18 @@ from __future__ import annotations
 import json
 import os
 import random
+import re
+import sys
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
+
+# Windows 默认代码页 cp936 编不了 ↔ ⇒ ✅ 这类符号，一个未转义的字就足以让**已经落盘的**
+# 阶段在最后一步回显时抛 UnicodeEncodeError —— 表现成"失败了"，人就会重跑或手改 JSON，
+# 而这一步动的正是唯一那份人工测量。编不了的字符替换成 ?，不抛异常。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "data" / "compendium_rag" / "reports"
@@ -295,7 +307,7 @@ def compute_kappa() -> int:
           f" 退化={a.get('degenerate')}")
     print(f"     arm_B 含争议 n={b.get('n')} κ={b.get('kappa')}")
     print(f"     判据：{GATE_RULE}")
-    print(f"     arm_A 走的是：{why_a} ⇒ 闸门 {'PASS' if ok_a else '未过'}")
+    print(f"     arm_A 走的是：{why_a} -> 闸门 {'PASS' if ok_a else '未过'}")
     print(f"     只按字面 κ≥0.80（规格原文，不退化替代）：{'PASS' if out['gate_pass_strict_spec'] else '未过'}")
     return 0
 
@@ -390,9 +402,88 @@ def sensitivity() -> int:
     return 0
 
 
+def apply_labels() -> int:
+    """把人工口头/文本给的标注**机械地**落到 `LABELS`，不靠我手抄 JSON。
+
+    为什么要有这一步：κ 这一格只能由人出，但"用户说第 12 行 = soft_leak"到我手里
+    要变成 `sample_id → verdict`。手抄会出错，而这里错一个就等于把人工判断记到别的样本上，
+    比不标更糟。所以行号解析与被试看到的表**同源同序**（`sheet["rows"]`，md 用
+    `enumerate(rows, 1)` 印号），并且**每个解析结果都回显给你核对**。
+
+    用法：`CBI_STAGE=label CBI_LABELS="12=soft_leak; 13=clean; C2-047-style_probe=hard_leak"`
+    （分隔符支持 ; , 换行；键可以是 md 里的行号，也可以是 sample_id）。
+    同一键重复出现以最后一次为准；未知行号、非法 verdict 一律拒绝并不写文件。
+    """
+    raw = os.environ.get("CBI_LABELS", "").strip()
+    if not raw:
+        raise SystemExit('[FATAL] CBI_STAGE=label 需要 CBI_LABELS="行号=verdict;…"，'
+                         "verdict ∈ {clean, soft_leak, hard_leak}。没给就不写任何文件。")
+    if not SHEET_JSON.exists():
+        raise SystemExit(f"[FATAL] 没有抽检单 {SHEET_JSON.name}：先跑 CBI_STAGE=plan")
+    rows = json.loads(SHEET_JSON.read_text(encoding="utf-8"))["rows"]
+    sid_to_row = {r["sample_id"]: i + 1 for i, r in enumerate(rows)}
+    existing, stale = {}, []
+    if LABELS.exists():
+        for it in json.loads(LABELS.read_text(encoding="utf-8")):
+            if it["sample_id"] in sid_to_row:
+                existing[it["sample_id"]] = it["human_verdict"]
+            else:
+                stale.append(it["sample_id"])
+    merged, echo, errs = dict(existing), [], []
+    for tok in re.split(r"[;,\n]+", raw):
+        tok = tok.strip()
+        if not tok:
+            continue
+        if "=" not in tok:
+            errs.append(f"{tok!r}：缺 ‘=’")
+            continue
+        key, val = (p.strip() for p in tok.split("=", 1))
+        val = val.replace(" ", "_").lower()
+        if val not in MAP:
+            errs.append(f"{tok!r}：verdict 非法（可用 {sorted(MAP)}）")
+            continue
+        if key.isdigit():
+            n = int(key)
+            if not 1 <= n <= len(rows):
+                errs.append(f"{tok!r}：行号越界（1..{len(rows)}）")
+                continue
+            sid = rows[n - 1]["sample_id"]
+        else:
+            if key not in sid_to_row:
+                errs.append(f"{tok!r}：sample_id 不在抽检单里")
+                continue
+            sid = key
+        merged[sid] = val
+        echo.append((sid_to_row[sid], sid, val))
+    if errs:
+        print("[FATAL] 有非法条目，整批**未写入**：")
+        for e in errs:
+            print("   -", e)
+        return 1
+    LABELS.parent.mkdir(parents=True, exist_ok=True)
+    LABELS.write_text(json.dumps([{"sample_id": k, "human_verdict": v}
+                                  for k, v in sorted(merged.items(),
+                                                     key=lambda kv: sid_to_row[kv[0]])],
+                                 ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[OK] 写入 {len(echo)} 条 → {LABELS.name}（累计 {len(merged)}/{len(rows)} 行已标，仪器 {INSTRUMENT}）")
+    if stale:
+        print(f"[WARN] 旧标注里有 {len(stale)} 个 sample_id **不在这张抽检单上**，已丢弃："
+              + ", ".join(stale[:5]) + ("…" if len(stale) > 5 else "")
+              + "（多半是重出过表或换了仪器；人工标注丢一条比不标更贵，确认这不是你要留的）")
+    print("     **请核对下面这张回显表**：行号 <-> sample_id <-> 你给的 verdict")
+    for n, sid, v in echo:
+        print(f"       第 {n:>2} 行  {sid:26s} = {v}")
+    rnd = [r for r in rows if r["tier"] == "随机" and r["sample_id"] in merged]
+    print(f"     闸门按随机层判：已标 {len(rnd)}/50（n≥{MIN_N} 才给判），"
+          f"下一步 `CBI_STAGE=kappa`")
+    return 0
+
+
 def main() -> int:
     if STAGE == "kappa":
         return compute_kappa()
+    if STAGE == "label":
+        return apply_labels()
     if STAGE == "sens":
         return sensitivity()
     return build_sheet()
