@@ -305,6 +305,99 @@ def screen_block() -> dict:
             "why": pc.get("why")}
 
 
+# 规格的结构要求（逐字来自 P9 目标书），以及 v2 那 8 个话题族 → 规格四类的**判读映射**。
+SPEC_N_SAMPLES, SPEC_N_PAIRS = 500, 100
+SPEC_QUERY_TYPES = ("direct_private", "inductive", "multi_role", "multi_turn", "style_probe")
+SPEC_CONFLICT_CLASSES = ("preference", "biography", "secret", "style")
+SPEC_CLASS_EACH = SPEC_N_SAMPLES // len(SPEC_CONFLICT_CLASSES)      # 各 125 = 25%
+# ⚠ 映射是**我的判读**、不是规格给的：v2 建集时把 conflict_type 换成了语料长出的话题族
+#   （修的是"注入不逐对独特"），顺手把规格那四族的标签丢了 —— 而且是**静默丢失**：
+#   字段名没变、只有值变了，任何按字段名写的检查都不会报错。所以这里把映射写死并单独报出来，
+#   让这一格重新可机检（P10 计划 R9 / 报告 §2.9 / 任务 #14）。
+FAMILY_TO_CLASS = {"饮食与酒": "preference", "作息与习惯": "preference",
+                   "旧事与身份": "biography", "出身与地域": "biography", "亲属与私人关系": "biography",
+                   "财物与物件": "secret", "身体与病": "secret", "言谈与口吻": "style"}
+
+
+def spec_block() -> dict:
+    """量具**规格符合性**读数：目标书里关于测试集结构的每条要求，逐条实测打勾。
+
+    为什么单列且不进发布闸门：这块查的是"我这台量具长得像不像规格说的样子"，
+    不是"产品漏不漏"。把它塞进闸门 = 我给自己新加一条规格外的扣分项（本项目明令禁止）；
+    不塞又会让"四族配比"这种静默丢失没人报警（这次就是这么漏的）。
+    所以：算出来、写进产物与 md、`blocking=False` 明写不阻塞，等用户对 R9 三条出路裁一条。
+    """
+    path = CALIBERS[ACCEPTANCE][0]
+    if not path.exists():
+        return {"available": False, "path": path.name, "why": "测试集产物不存在"}
+    try:
+        ts = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        return {"available": False, "path": path.name, "why": f"读不了：{str(e)[:120]}"}
+    sm = ts.get("samples") or []
+    if not sm:
+        return {"available": False, "path": path.name, "why": "samples 为空"}
+    qt = Counter(s.get("query_type") for s in sm)
+    pairs = {f"{(s.get('pair') or {}).get('a_eid')}|{(s.get('pair') or {}).get('b_eid')}" for s in sm}
+    raw = [str(s.get("conflict_type") or "") for s in sm]
+    via_map = all(r.startswith("family:") for r in raw)
+    fam = Counter(r.split(":", 1)[1] for r in raw if r.startswith("family:"))
+    cls = (Counter(FAMILY_TO_CLASS.get(r.split(":", 1)[1], "未映射") for r in raw)
+           if via_map else Counter(raw))
+    bal = {k: cls.get(k, 0) for k in SPEC_CONFLICT_CLASSES}
+    unmapped = {k: v for k, v in cls.items() if k == "未映射"}
+    checks = {
+        f"N_total == {SPEC_N_SAMPLES}": len(sm) == SPEC_N_SAMPLES,
+        f"角色对 == {SPEC_N_PAIRS}": len(pairs) == SPEC_N_PAIRS,
+        "sample_id 全局唯一": len({s.get("sample_id") for s in sm}) == len(sm),
+        f"5 类查询各 {SPEC_N_SAMPLES // len(SPEC_QUERY_TYPES)} 条": (
+            set(qt) == set(SPEC_QUERY_TYPES)
+            and all(qt[q] == SPEC_N_SAMPLES // len(SPEC_QUERY_TYPES) for q in SPEC_QUERY_TYPES)),
+        f"四类冲突各 {SPEC_CLASS_EACH} 条（{len(bal)} 类折算）":
+            all(v == SPEC_CLASS_EACH for v in bal.values()) and not unmapped,
+        "每条都带注入标记": all((s.get("injected") or {}).get("marker") for s in sm),
+        "每条都有检索金标（B 的独占块）": all((s.get("retrieval_gold") or {}).get("b_private_chunk")
+                                          for s in sm),
+        "每条都有判分金标（fact_self/fact_other）": bool(all(s.get("judge_gold") for s in sm)),
+    }
+    # 题面引用的两个实体必须**真的在冻结图里**：不然整条样本的"金标"是悬空的，
+    # 读数照样能算出来，但量的是一台不存在的量具（负向测试逼出来的这条）。
+    dangling: list[str] = []
+    if GRAPH_P.exists():
+        try:
+            eids = {e.get("eid") for e in json.loads(GRAPH_P.read_text(encoding="utf-8"))["entities"]}
+            dangling = sorted({eid for p in pairs for eid in p.split("|") if eid not in eids})
+            checks["角色对双方 eid 都在冻结图里"] = not dangling
+        except (OSError, json.JSONDecodeError, KeyError) as e:
+            checks["角色对双方 eid 都在冻结图里"] = False
+    # 10% 人工抽检：规格写的是比例，不是绝对条数，所以按 N_total 现算
+    sheet_p = CBI_DIR / f"spotcheck_sheet{'_v2' if INSTRUMENT == 'v2' else ''}.json"
+    if sheet_p.exists():
+        try:
+            rows = (json.loads(sheet_p.read_text(encoding="utf-8")).get("rows") or [])
+            rnd = [r for r in rows if r.get("tier") == "随机"]
+            rq = Counter(r.get("query_type") for r in rnd)
+            checks["人工抽检覆盖 10%（随机层）"] = len(rnd) * 10 == len(sm)
+            checks["抽检随机层按题型分层均匀"] = bool(rq) and max(rq.values()) == min(rq.values())
+        except (OSError, json.JSONDecodeError):
+            checks["人工抽检覆盖 10%（随机层）"] = False
+    else:
+        checks["人工抽检覆盖 10%（随机层）"] = False
+    return {"available": True, "path": path.name, "blocking": False,
+            "all_pass": all(checks.values()), "checks": checks,
+            "conflict_classes_measured": bal,
+            "conflict_classes_via_mapping": via_map,
+            "family_distribution": dict(fam) if via_map else None,
+            "family_to_class_map": FAMILY_TO_CLASS if via_map else None,
+            "unmapped": unmapped or None,
+            "dangling_eids": dangling[:10] or None,
+            "query_type_distribution": dict(qt),
+            "why": ("规格符合性只描述**量具长什么样**，不进发布闸门（blocking=False）；"
+                    "任一条为假都要在引用本读数时一并说明"
+                    + ("；四族分布是按**判读映射**折算的（v2 的 conflict_type 存的是话题族名）"
+                       if via_map else "")).strip()}
+
+
 def main() -> int:
     acc_full = caliber_block(ACCEPTANCE, None)
     if not acc_full["available"]:
@@ -415,6 +508,7 @@ def main() -> int:
         "capability_reading": capability,
         "capability_note": sub_capability_note,
         "mechanical_screen": screen_block(),
+        "spec_conformance": spec_block(),
         "caliber_adjudication": {
             "at": "2026-10-11",
             "registered_in": "docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md",
@@ -489,6 +583,21 @@ def main() -> int:
                f"（中位 {ms['median_screenable_grams_per_pair']} 个逐对独特 4-gram/对）；"
                f"植入自检 {ms['implant_self_test']}",
                f"- **可作正交证据 = {ms['usable_as_evidence']}**：{ms['why']}"]
+    sp = res["spec_conformance"]
+    ln += ["", "## 量具规格符合性（**不进发布闸门**，`blocking=False`）", ""]
+    if not sp.get("available"):
+        ln.append(f"- 不可算：{sp.get('why')}（测试集产物 `{sp.get('path')}`）")
+    else:
+        ln += [f"- 测试集 `{sp['path']}`｜全部符合 = **{sp['all_pass']}**",
+               "| 规格要求 | 实测 |", "| --- | --- |"]
+        ln += [f"| {k} | {'✅' if v else '❌'} |" for k, v in sp["checks"].items()]
+        ln.append(f"- 四类冲突实测分布：`{sp['conflict_classes_measured']}`"
+                  f"（规格要求各 {SPEC_CLASS_EACH} 条）")
+        if sp.get("conflict_classes_via_mapping"):
+            ln.append("- ⚠ 这一列是按 **判读映射**（`family:*` → 规格四族）折算的，映射本身已写死在"
+                      "`FAMILY_TO_CLASS`；v2 建集时把 `conflict_type` 换成了语料话题族，"
+                      "四族标签属**静默丢失**（字段名没变、值变了）。见 P10 计划 R9 / 报告 §2.9 / 任务 #14")
+        ln.append(f"- {sp['why']}")
     ln += ["", "## 子标准", "",
            "| 标准 | 结果 | 依据 |", "| --- | --- | --- |"]
     for k, v in sub.items():

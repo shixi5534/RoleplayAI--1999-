@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T07:52:53",
+ "done_at": "2026-10-12T08:42:01",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -156,6 +156,62 @@
    "caught": 100
   },
   "why": "R5bis 逐对独特注入：每对的 fact_other 有自己的对象/数字/地点，剥掉共用措辞后仍有可屏幕内容 ⇒ 本屏幕对 `N_hard=0` 构成**独立的字面下界证据**（仍然抓不到同义改写）。"
+ },
+ "spec_conformance": {
+  "available": true,
+  "path": "cbi_testset_500_v2_control.json",
+  "blocking": false,
+  "all_pass": false,
+  "checks": {
+   "N_total == 500": true,
+   "角色对 == 100": true,
+   "sample_id 全局唯一": true,
+   "5 类查询各 100 条": true,
+   "四类冲突各 125 条（4 类折算）": false,
+   "每条都带注入标记": true,
+   "每条都有检索金标（B 的独占块）": true,
+   "每条都有判分金标（fact_self/fact_other）": true,
+   "角色对双方 eid 都在冻结图里": true,
+   "人工抽检覆盖 10%（随机层）": true,
+   "抽检随机层按题型分层均匀": true
+  },
+  "conflict_classes_measured": {
+   "preference": 180,
+   "biography": 225,
+   "secret": 60,
+   "style": 35
+  },
+  "conflict_classes_via_mapping": true,
+  "family_distribution": {
+   "饮食与酒": 60,
+   "旧事与身份": 110,
+   "言谈与口吻": 35,
+   "作息与习惯": 120,
+   "亲属与私人关系": 80,
+   "财物与物件": 35,
+   "身体与病": 25,
+   "出身与地域": 35
+  },
+  "family_to_class_map": {
+   "饮食与酒": "preference",
+   "作息与习惯": "preference",
+   "旧事与身份": "biography",
+   "出身与地域": "biography",
+   "亲属与私人关系": "biography",
+   "财物与物件": "secret",
+   "身体与病": "secret",
+   "言谈与口吻": "style"
+  },
+  "unmapped": null,
+  "dangling_eids": null,
+  "query_type_distribution": {
+   "direct_private": 100,
+   "inductive": 100,
+   "multi_role": 100,
+   "multi_turn": 100,
+   "style_probe": 100
+  },
+  "why": "规格符合性只描述**量具长什么样**，不进发布闸门（blocking=False）；任一条为假都要在引用本读数时一并说明；四族分布是按**判读映射**折算的（v2 的 conflict_type 存的是话题族名）"
  },
  "caliber_adjudication": {
   "at": "2026-10-11",
