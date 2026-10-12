@@ -542,7 +542,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | 独立重算：权重**从读数登记的 formula 文本里解析**（不取计算器常量），再数一遍 | v1 `0/3/21` ⇒ **0.9844**；v2 `0/0/30` ⇒ **0.9820** —— 与发布值逐位相同；读数登记的 `judge_arm`/`answer_file` 与抽检单同一份 |
 | 覆盖边界（负向测试逼出来的） | 血缘只管抽到的 53 行：翻一条**不在**抽检单上的 verdict，血缘放过、**全量计数**抓到。翻一条**在**表上的，血缘立刻抓到 |
 
-负向测试共 13 项断言（`scripts/cbi_sheet_integrity_negtest.py`，破坏都打在系统临时目录的副本上，
+负向测试共 29 项断言（`scripts/cbi_sheet_integrity_negtest.py`，破坏都打在系统临时目录的副本上，
 仓库原件一字未动）：答案被改 / 表上 verdict 被翻 / 注入句被加字 / 金标与注入分家 /
 读数 N_soft 被手改 / formula 权重被改 / 公式解析不出权重 / 判分臂登记成另一臂 ——
 以及两条例外断言（表外行血缘**不该**抓、原件必须全绿，否则这检查恒红也不能采信）。
@@ -678,6 +678,18 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 > 别拿 κ=0 当判分器坏的证据。也就是说 v2 这一臂对"人工纠正"的容忍度是**按条数**给的，
 > 而不是像 v1 那样一条就翻车。
 
+**标哪一张表，清哪一列闸门**（这条依赖很容易看漏，所以单独立一段；键值取自
+`cbi_calculator.kappa_block()` 第 350 行的产物路径逻辑，不是我另写的一份规则）：
+
+| 你标的表 | 落标后生成的产物 | 会被它清掉的读数 | 不会被它清掉的读数 |
+| --- | --- | --- | --- |
+| `spotcheck_sheet_v2.md` / `_v2_cards.md`（53 行，随机层 50） | `reports/cbi_spotcheck_kappa_v2.json` | `cbi_result_v2instrument.*`、`cbi_result_v2instrument_v2_r2.*`（v2×尺 v1、v2×尺 v2 两列 0.9820） | `cbi_result_full.*`（v1×判分臂 full 那列 **0.9844**，也是§2.2 终评引用的那一列） |
+| `spotcheck_sheet.md` / `_cards.md`（52 行，随机层 50） | `reports/cbi_spotcheck_kappa.json` | `cbi_result_full.*` 与探针 `cbi_result.*` | 两列 v2 读数 |
+| **两张都标** | 两个产物 | §R11 闸门矩阵**全部四行** | — |
+
+⇒ 只标一张的话，另一张仪器的那一列仍会照实报"未达成"，计算器不会替我把它算过。
+命令按仪器分开跑（`CBI_INSTRUMENT=v1|v2`），产物名不同、互不覆盖。
+
 ⇒ **这一臂大概率会失败，但不是判分器坏，而是低流行率下 κ 这个指标本身不稳**
 （3/500 = 0.6% 的正例率，单条纠正就是 ±20 的 κ 跳动）。
 两件事我没有替你选、留给你裁：①照原口径判（那就很可能 ❌）；
@@ -745,7 +757,7 @@ md 表体与 json **逐行逐格等价**（唯一差异是单元格里的 `|` �
 v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四类证据零处不等价** ⇒ 没有截断
 （子代理那种 320 字上限不适用于这张给人看的表，最长行 337 字符，全文都在）；
 「人工」列全部是 `←填这里`、json 里 `human_verdict` 53 行全空 ⇒ 我没有预填、也没有替你标。
-这条检查本身也做了正负例（`scripts/cbi_sheet_integrity_negtest.py`，17 例全过，破坏只打在临时副本上）：
+这条检查本身也做了正负例（`scripts/cbi_sheet_integrity_negtest.py`，现 29 例全过，破坏只打在临时副本上）：
 砍短答案 / 真剪掉一格 / 整行不见了 / 预填人工列 / 改动机判列 **五种破坏全被抓**，
 而"只把行尾的 `|` 剪掉"这种**不改变内容的假破坏不该被抓**（它没被抓 ⇒ 证明前面那条抓的是真差异），
 未破坏的原件全绿。第一版的负例其实就写了这种假破坏，所以它当时"FAIL"了我才发现测试自己是空的。
@@ -1126,7 +1138,7 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | 规则表事实核对 | `scripts/cbi_rules_doc_facts.py` + `scripts/cbi_rules_doc_facts_negtest.py`（只读；产物破坏打在临时副本上） | ✅ 表里引用的簇数 146、族分布 136/9/1、提案数 8（tier_A 3 / tier_B 5）+ 13 拦截、spec **12 项**与 v1 **12/12**、v2 **11/12**、两把尺子文件存在 —— 全部与产物逐字段相等；负向 7 例（3 例改正文 + **3 例改产物副本** + 原件两次全绿）全部符合预期。这一轮就靠它抓到本表两处过期数字（"11 项规格断言 / 8 例人为破坏"，实为 12 项 / 14 例）|
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
-| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过、仓库内 labels 文件计数自证为 0）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 目前**两个仪器都不存在**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对，26 项正负例全过）。**注**：`cbi_spotcheck_kappa*.json` 目前**两个仪器都不存在**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
+| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`reports/cbi_spotcheck_kappa{,_v2}.json` | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过、仓库内 labels 文件计数自证为 0）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 目前**两个仪器都不存在**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
 | 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
 | R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}`、`owner_edge_scope.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 写图规模 96.2% 多主 |
 | R2 误伤判定书 | `scripts/compendium_rag_p10_visibility_shadow.py` → `reports/cbi/visibility_shadow.{json,md}` ＋ `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md` | ✅ 三套全量 522/522，strict/scene **均判负**（最差 ΔMRR −0.1296） |
@@ -1142,8 +1154,8 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | v2 屏幕与抽检单 | `CBI_INSTRUMENT=v2 scripts/cbi_hardleak_screen.py` → `hardleak_screen_v2.{json,md}`；`cbi_spotcheck.py` → `spotcheck_sheet_v2.{md,json}`、`spotcheck_sensitivity_v2.json` | ✅ 功率 100/100 对、候选 3 条全判假阳性、植入自检 500/500；抽检 50 随机 + 3 争议待你标 |
 | **口径裁决登记** | `docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md` | ✅ 你的裁决原文 + 依据 + "什么没被改" + 代码落法；v1 集 4.2%／v2 集 6.0% 均 ≤ 0.10 |
 | 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（**12 项**，`blocking=False`） | ✅ v1 两臂 12/12；v2 两臂 11/12（❌ 四族等配比，见 §2.9/R9）；14 项人为破坏全被抓出（首批 8 项结构类 + 金标一致性 6 项，v1 列表形态与 v2 字符串形态都测到）（含"悬空 eid"与"金标 ≡ 注入句"两条由负向测试逼出来的新检查）；另报 `judge_gold_shapes` 把 v2 的字段收窄写进读数 |
-| 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读，**6 项**：截断 / 断列 / 人工列预填 / **血缘 12 字段×四原始件** / **读数独立重算 + 判分臂同源** / **卡片：行号同源 + 答案全文 + 机判理由逐字在册 + 引句子句逐字比对且条数 == json**） | ✅ v1 52 行、v2 53 行全绿：证据单元格与 json 逐格等价、人工列全为占位符、血缘 0 处不一致、金标 ≡ 注入 52/52 与 53/53、独立重算 `0/3/21⇒0.9844`、`0/0/30⇒0.9820` 与发布逐位相同、卡片行号序列一致且答案全文；引句条数 v1 **3==3**、v2 **0==0**（v2 那一栏是"空的正当"，见 §5-31） |
-| 完整性检查的负向测试 | `scripts/cbi_sheet_integrity_negtest.py`（破坏只打在系统临时目录的副本上） | ✅ 24/24：界面层（截短答案 / 真断列 / 预填人工列 / 只剪行尾 `\|` 的**假破坏不该被抓**）+ 血缘层（表上行被抓、表外行放过而由全量计数抓）+ 重算层（读数手改 / 权重被改 / 公式解析不出 / 判分臂换臂）+ 卡片层**打在 v1 上**（删引句 / 改机判理由 / 无中生有-add 一句引句，三例全红）+ "v2 引句列恒空 ⇒ 该格在 v2 上不可证伪"这条也被写成断言；原件两列全绿 |
+| 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读，**7 项**：截断 / 断列 / 人工列预填 / **血缘 12 字段×四原始件** / **读数独立重算 + 判分臂同源** / **卡片：行号同源 + 答案全文 + 机判理由逐字在册 + 引句子句逐字比对且条数 == json** / **答题块：序号恰为 1..n + 每张卡『人工』行索引与自身行号同源 + 一条都不许预填**） | ✅ v1 52 行、v2 53 行全绿：证据单元格与 json 逐格等价、人工列全为占位符、血缘 0 处不一致、金标 ≡ 注入 52/52 与 53/53、独立重算 `0/3/21⇒0.9844`、`0/0/30⇒0.9820` 与发布逐位相同、卡片行号序列一致且答案全文；引句条数 v1 **3==3**、v2 **0==0**（v2 那一栏是"空的正当"，见 §5-31）；答题块 v1 **52 项 = 1..52**、v2 **53 项 = 1..53**，卡片内『人工』索引 52/53 处同源，**预填 0 条** |
+| 完整性检查的负向测试 | `scripts/cbi_sheet_integrity_negtest.py`（破坏只打在系统临时目录的副本上） | ✅ 24/24：界面层（截短答案 / 真断列 / 预填人工列 / 只剪行尾 `\|` 的**假破坏不该被抓**）+ 血缘层（表上行被抓、表外行放过而由全量计数抓）+ 重算层（读数手改 / 权重被改 / 公式解析不出 / 判分臂换臂）+ 卡片层**打在 v1 上**（删引句 / 改机判理由 / 无中生有-add 一句引句，三例全红）+ "v2 引句列恒空 ⇒ 该格在 v2 上不可证伪"这条也被写成断言 + **答题块层**（互换两项 / 缺一项 / 预填一条 `3=clean` / 卡片内『人工』索引错位 四例全红，而"只把分隔符写成 `1=?;2=?`"必须**不红**——检查读的是序号语义不是排版）；原件两列全绿 |
 | κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 18/18：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例） |
 | MRR 定义域记账 | `cbi_calculator.baselines()` → 每条读数的 `sub_details.MRR_population`；负向 `scripts/cbi_mrr_population_negtest.py` | ✅ 四个读数的 `MRR_population` 一致：per_set n=196/206/120、真为 0 的行 23/15/0、`answerable_only=true`、缺字段 0；缺字段/非数值不再静默补零（有则 `mrr_incomplete` ⇒ 那一格判 False）；负向 15 例（含"三套值逐位不变"与"整套缺失必须整体拒绝"）全过 |
 | 名次暴露（§2.13，只报告不进分数） | `scripts/cbi_exposure_negtest.py`（18 项）+ `scripts/cbi_exposure_delta_check.py`（四份读数 JSON 树递归比对） | ✅ 三处读数的 `严格` 列与既有 `gold_anchor_in_top6` 逐位相同（12 / 81 / 19），`标记一致性` 三处均 0；负向四例分别证明 `flag_mismatch` 非同源自证、名次计数读 `top_ids`、**名次变化不影响 `N_retrieval`/Wilson/上下限/`by_query_type` 逐字段**、非金标顺序无反应；复算对照除 `done_at` 外**未解释变动 0** |

@@ -231,6 +231,56 @@ def cards(inst: str, fails: list[str]) -> None:
         fails.append(f"{inst} 有非 clean 行却一条引句都没有：判分件的 evidence_quote 没落全")
 
 
+def pasteback(inst: str, fails: list[str]) -> None:
+    """第 7 项：人**真的会粘回来的那一串 `n=?`** 必须与 json 行号同源，且一条都不许预填。
+
+    为什么单独立一项：`apply_labels` 的数字键语义是 `rows[n-1].sample_id`
+    （见 `cbi_spotcheck.resolve_key`），所以答题块与宽表行号只要错一位，
+    人工判断就被记到另一条样本上 —— 这正是代码注释里写的"最贵的失效模式"。
+    生成时有一处自证，但它只在生成那一刻有效：卡片事后被手工挪动、删掉一张、
+    或块里被填进了 verdict（那就是拿机判当人工判，κ 会自证成真），都不会被它抓到。
+    三条断言各管一件事：块本身（数量/顺序/无缺口重复）、每张卡的「人工」行索引、
+    以及"未填"这个状态。
+    """
+    iv = SPOT._INSTRUMENTS[inst]
+    if "sheet_cards" not in iv:
+        return
+    cp = CBI / iv["sheet_cards"]
+    if not cp.exists():
+        print(f"[{inst}] 答题块：卡片视图尚未生成 ⇒ 本项跳过，不算失败")
+        return
+    rows = json.loads((CBI / iv["sheet_json"]).read_text(encoding="utf-8"))["rows"]
+    txt = cp.read_text(encoding="utf-8")
+    m = re.search(r"## 答题块[^\n]*\n+```\n([^\n`]*)\n```", txt)
+    if not m:
+        fails.append(f"{inst} 卡片视图里找不到答题块代码段")
+        return
+    toks = [t.strip() for t in m.group(1).split(";") if t.strip()]
+    pairs_blk, prefilled = [], []
+    for t in toks:
+        mm = re.fullmatch(r"(\d+)=(\S*)", t)
+        if not mm:
+            fails.append(f"{inst} 答题块里有一条读不出『数字=值』：{t!r}")
+            return
+        pairs_blk.append(int(mm.group(1)))
+        if mm.group(2) not in ("?", ""):
+            prefilled.append(t)
+    want = list(range(1, len(rows) + 1))
+    card_idx = [int(x) for x in re.findall(r"^- \*\*人工\*\*：`(\d+)=", txt, re.M)]
+    print(f"[{inst}] 答题块 {len(pairs_blk)} 项 vs json {len(rows)} 行：序列一致="
+          f"{pairs_blk == want}  卡片内『人工』行索引一致={card_idx == want}"
+          f"（{len(card_idx)} 处）  预填={len(prefilled)}")
+    if pairs_blk != want:
+        fails.append(f"{inst} 答题块与 json 行号不同源（粘回来会落到别的样本上）"
+                     f"：{len(pairs_blk)} 项，前 6 个 {pairs_blk[:6]}，期望 1..{len(rows)}")
+    if card_idx != want:
+        fails.append(f"{inst} 卡片里的『人工』行索引与卡片自身行号不同源")
+    if prefilled:
+        fails.append(f"{inst} 答题块里出现了**预填的判定** {len(prefilled)} 条："
+                     + ", ".join(prefilled[:5])
+                     + "（人工列一旦被预填，κ 就变成机器自己跟自己一致）")
+
+
 def main() -> int:
     fails: list[str] = []
     check("v1", "spotcheck_sheet.json", "spotcheck_sheet.md", fails)
@@ -239,7 +289,9 @@ def main() -> int:
         lineage(inst, fails)
         rederive(inst, fails)
         cards(inst, fails)
-    print("\nRESULT:", "全部通过（界面未被截短、人工列干净、血缘接得上、读数能独立重算、卡片行号同源）"
+        pasteback(inst, fails)
+    print("\nRESULT:", "全部通过（界面未被截短、人工列干净、血缘接得上、读数能独立重算、"
+                       "卡片行号同源、答题块与行号同源且无预填）"
           if not fails else "FAIL -> " + " | ".join(fails))
     return 1 if fails else 0
 

@@ -305,5 +305,54 @@ with tempfile.TemporaryDirectory(prefix="cbi_integ_") as t:
     if not ok18:
         fails.append("N18-vacuous")
 
+    print("[N19] 答题块里把两项互换 ⇒ pasteback() 必须抓到（粘回来会落到别的样本上）")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    t = cp.read_text(encoding="utf-8")
+    t2 = t.replace("7=?; 8=?", "8=?; 7=?", 1)
+    assert t2 != t, "没找到可互换的相邻两项"
+    cp.write_text(t2, encoding="utf-8")
+    expect_fail("答题块错位", lambda fs: m.pasteback("v2", fs), "答题块")
+
+    print("[N20] 答题块少一项（删掉 `12=?; `）⇒ 数量与 1..n 不符，必须抓到")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    cp.write_text(cp.read_text(encoding="utf-8").replace("12=?; ", "", 1), encoding="utf-8")
+    expect_fail("答题块缺项", lambda fs: m.pasteback("v2", fs), "答题块")
+
+    print("[N21] 答题块里**预填**一条 `3=clean` ⇒ 必须抓到：人工列一旦被机器代填，κ 就自证成真")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    cp.write_text(cp.read_text(encoding="utf-8").replace("; 3=?", "; 3=clean", 1),
+                  encoding="utf-8")
+    expect_fail("答题块被预填", lambda fs: m.pasteback("v2", fs), "预填")
+
+    print("[N22] 只把分隔符写成换行/无空格（`1=?;2=?`）⇒ **不该红**：检查读的是序号语义，"
+          "不是排版；红在一次格式差异上会让这张表再也过不了")
+    r, c = fresh(tmp, "v2")
+    cp = c / "spotcheck_sheet_v2_cards.md"
+    t = cp.read_text(encoding="utf-8")
+    import re as _re
+    blk = _re.search(r"(## 答题块[^\n]*\n+```\n)([^\n`]*)(\n```)", t)
+    t = t.replace(blk.group(0),
+                  blk.group(1) + ";".join(x.strip() for x in blk.group(2).split(";"))
+                  + blk.group(3), 1)
+    cp.write_text(t, encoding="utf-8")
+    fs = []
+    m.pasteback("v2", fs)
+    ok22 = not fs
+    print(("  ok   " if ok22 else "  FAIL ") + f"分隔符差异不该红 -> {fs[:1]}")
+    if not ok22:
+        fails.append("N22-brittle")
+
+    print("[N23] 卡片内『人工』行的索引被改成别的号 ⇒ 必须抓到（每张卡的自留位与块不同源）")
+    r, c = fresh(tmp, "v1")
+    cp = c / "spotcheck_sheet_cards.md"
+    t = cp.read_text(encoding="utf-8")
+    t2 = t.replace("- **人工**：`9=`", "- **人工**：`40=`", 1)
+    assert t2 != t, "没找到可改的『人工』行"
+    cp.write_text(t2, encoding="utf-8")
+    expect_fail("卡片人工行索引错位", lambda fs: m.pasteback("v1", fs), "人工")
+
 print("\nRESULT:", "全部符合预期" if not fails else "FAIL -> " + ", ".join(fails))
 sys.exit(1 if fails else 0)
