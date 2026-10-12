@@ -405,7 +405,11 @@ v2 的 `conflict_type` 存的是**从语料里长出来的 8 个话题族**（�
 扇出按 qid 集合校验 25/25、5/5、5/5 全齐，引文全部逐字可寻址，校验问题 0 条。
 
 **第一层结论：`N_hard=0` 在尺子 v1 下立得住。** 臂 3 是唯一投 hard 的一票，
-同一条题（`CC-088-style_probe`）在臂 1、臂 4 与 5 人面板上都是 clean，票面 1/9；
+同一条题（`CC-088-style_probe`）的票面是 **9 张里 8 clean / 1 hard**
+（臂 1 clean、臂 4 clean、5 人面板 `panel_k1..k5` 全 clean，只有臂 3 投 hard；
+出处 `replication.json` 的 `disputed_item_vote.panel` 与 `disputed_hard_votes_of_9 = 1`，
+本轮已从原始票面 `probe/jout_panel/panel_k*.json` 逐张回查过）——
+**注意别把这一句读成"1/9 判 clean"**，早前版本在这里只写"票面 1/9"是歧义写法，已改；
 而臂 3 的 CBI 与臂 1 **同为 0.9844**（1 条 hard 恰好等于 2 条 soft 的权重，纯属巧合）。
 软泄漏那一格也复现了抖动：臂 1 的 `CC-031` `CC-043` 两条 soft 在臂 3 是 clean（conf 0.8/0.9），
 这正是 §2.4 说"soft 不可重复"的同一个方向。
@@ -647,6 +651,15 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
     原文引句与判语逐字可查（`贝壳的纹路指引我` / 「与 B『有细纹的贝壳』相合，被以第一人称说成自己的」），
     与我在 §2.8 里的人工终裁同源 —— 也就是说"to_A=1 且判为非泄漏"这条结论**能被追溯到票面**，
     不是我的口头判断。
+    **同一套检查也补做了 v1 那列与答案层**（`out`／`out_bare`／`out_v2`／`jout_full2`）：
+    `probe/out` 50 份 × 10 = 500 条与 `answers.jsonl` **集合等值、答案文本逐字一致（不一致 0 条）**；
+    `out_bare` 100 条对齐 `answers_bare.jsonl`；`out_v2` 500 条对齐 `answers_v2.jsonl`；
+    `jout_full2` 25×20=500 对齐 `judge_full.jsonl`，其中 verdict 差 3 条 ——
+    这正是**臂 3 与臂 1 的已知分歧**（0.9940 一致率、`CC-031/CC-043/CC-088`），
+    不是合并丢失；跨批重复 sid 全部为 0，可疑字段扫描全部为空。
+    **顺带修掉一处歧义写法**：§2.7 原文写"票面 1/9"，字面可能被读成"9 张里 1 张 clean"，
+    实际是 **8 clean / 1 hard**（面板 `panel_k1..k5` 全 clean + 臂 1 clean + 臂 4 clean + 臂 3 hard，
+    `replication.json.disputed_hard_votes_of_9 = 1`）。已改成显式写法并注明出处字段。
 21b. **顺手抓到自己差点报错的指纹核验**：本项目的"图 sha16"是 **SHA-256 的前 16 位**
     （`sha16()` 用 `hashlib.sha256`），我核验复跑后图未变时手滑用了 `sha1sum`，得到
     `66c72c15900a5c22` —— 长得和 `911bb538160db80e` 一样像指纹，差点被我当成"图被谁改过"写进结论里。
