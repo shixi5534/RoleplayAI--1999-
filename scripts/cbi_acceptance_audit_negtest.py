@@ -3,12 +3,13 @@
 
 审计最容易犯的两种错：① 永远绿（没在读东西），② 永远红（读的东西与预期对不上却没人发现）。
 所以这里两头都测：
-  · 该红的 8 例，各自打在审计真会读的一条支路上：闸门键被删 / 旧子标准整块消失 /
+  · 该红的 9 例，各自打在审计真会读的一条支路上：闸门键被删 / 旧子标准整块消失 /
     权重被改 / 分母被改 / 交付物缺失 / 测试集少一类题 / 图上出现 owner 边 /
-    脚本里出现真实网络调用形状；外加两例语义题：
+    脚本里出现真实网络调用形状 / 裁决登记件被抽走；外加三例语义题：
     κ 产物存在但为 false ⇒ 必须是 **fail** 而不是"等人"（把失败洗成等人的那种写法要被抓），
     读数档位与现算不符 ⇒ 必须抓到（分档是独立复算的，不是抄 `gate` 字段）。
-  · 该绿的 3 例：原件全绿且只挂 3 条 pending；把 κ 产物补成真 ⇒ pending 清零；
+  · 该绿的 4 例：原件全绿且只挂 3 条 pending + 3 条 waived（`检索泄漏<=15` 那格永远不许是 pass）；
+    把 κ 产物补成真 ⇒ pending 清零；
     扫描器不能被**自己的正则定义行**抓红（第一版就是自我误伤）。
 所有破坏只打在系统临时目录的副本上；仓库原件与图 sha 前后必须一致。
 
@@ -235,6 +236,23 @@ def main() -> int:
           lambda d: d["cbi"].__setitem__("measured", 0.90))
     items11, _, _ = result(m11)
     ck("被抓到", "G:v1 × judge_full（终评列）" in failing_ids(items11), True)
+
+    print("[N12] 目标原文的 `检索泄漏<=15` 那格：实际 false ⇒ 只许记 `waived`（靠登记裁决），"
+          "**永远不许记 pass**；把裁决登记件抽掉 ⇒ 必须立刻退回 fail")
+    ck("对照：三列都记 waived 而不是 pass",
+       sum(1 for x in items if x["id"].endswith(":legacy") and x["status"] == "waived"), 3)
+    ck("对照：没有任何 legacy 行是 pass",
+       any(x["id"].endswith(":legacy") and x["status"] == "pass" for x in items), False)
+    ck("对照：waived 不计入 fail，所以此刻仍不算『目标原文全过』但也不阻塞",
+       (ov["waived"] and not ov["failing"]) is True, True)
+    t = Path(tempfile.mkdtemp(prefix="aud_n12_"))
+    m12 = sandbox(t)
+    patch(m12.REPORTS / "cbi_result_full.json",
+          lambda d: d.__setitem__("caliber_adjudication", {}))
+    items12, _, ov12 = result(m12)
+    ck("裁决登记件没了 ⇒ 三列的该格全变 fail",
+       sum(1 for f in ov12["failing"] if f.endswith(":legacy")), 3)
+    ck("且不再有任何 waived", ov12["waived"], [])
 
     print("[C2] 原件再跑一次 ⇒ 必须回到只有三条 pending")
     items_c2, prob_c2, ov_c2 = result(sandbox(Path(tempfile.mkdtemp(prefix="aud_c2_"))))

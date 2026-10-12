@@ -133,6 +133,8 @@ def row(items, rid, requirement, status, evidence, scope="acceptance"):
 
 def build() -> tuple[list, list]:
     items, problems = [], []
+    # 裁决登记件（legacy 那格的"放行"凭证）——先取一次，后面每列共用
+    adj_info = j(REPORTS / "cbi_result_full.json").get("caliber_adjudication") or {}
 
     # ---- R1 交付物
     for name, p in DELIVERABLES:
@@ -216,12 +218,24 @@ def build() -> tuple[list, list]:
                           "status": st, "scope": "acceptance",
                           "evidence": (f"读数 {p.name} 的 sub_criteria[{k}]="
                                        f"{json.dumps(sub[k])}；{d['sub_details'].get(k, '')}"[:220])})
+        # legacy 那格：值本身是 false，所以它**永远不该是 pass**。
+        # 它现在不计入阻塞，是因为有一条登记过的裁决把它降级成能力读数 ——
+        # 那就是 `waived`（放行），不是 `pass`（通过）。裁决登记件一旦不见了就立刻退回 fail，
+        # 免得"当时批过"变成永久免检。（第一版这里写成 `not list(leg.values())`，
+        # 那是"字典非空就为假"的真值陷阱，三列全被印成 pass。）
+        adj_live = bool(adj_info.get("registered_in")) and (
+            ROOT / "docs" / "compendium-rag" / adj_info["registered_in"].split("/")[-1]).exists()
+        leg_pass = bool(leg) and all(leg.values())
         items.append({"id": f"gate:{label}:legacy",
-                      "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
-                      "status": ("fail" if not list(leg.values()) else "pass"),
+                      "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列的一格，实际未过，"
+                                     "靠 2026-10-11 登记裁决降级为能力读数",
+                      "status": ("pass" if leg_pass else ("waived" if adj_live else "fail")),
                       "scope": "acceptance",
                       "evidence": f"legacy_sub_criteria={json.dumps(leg, ensure_ascii=False)}；"
-                                  f"能力读数（≤0.10）={json.dumps(d.get('capability_reading'), ensure_ascii=False)[:120]}"})
+                                  f"裁决登记在册={adj_live}"
+                                  f"（{adj_info.get('registered_in', '—')} @ {adj_info.get('at', '—')}）；"
+                                  f"能力读数（≤0.10，不阻塞）="
+                                  f"{json.dumps(d.get('capability_reading'), ensure_ascii=False)[:120]}"})
         if not all_ok:
             problems.append(f"{label}：闸门键/权重/档位核对不通过")
 
@@ -327,24 +341,30 @@ def overall(items) -> dict:
     acc = [x for x in items if x["scope"] == "acceptance"]
     disc = [x for x in items if x["scope"] != "acceptance"]
     pend = [x for x in items if x["status"] == "pending"]
+    # `waived` 不阻塞达成，但它永远不是 `pass`：它是"目标原文这一格没过、
+    # 由一条查得到的登记裁决放行"。裁决登记件没了就自动退回 fail（见 legacy 那一行）。
     bad = ([x for x in acc if x["status"] == "fail"]
            + [x for x in disc if x["status"] == "fail"])
     unver = [x for x in disc if x["status"] == "unverified"]
+    waived = [x for x in items if x["status"] == "waived"]
     return {"objective_achieved": not pend and not bad,
             "blocking": [x["id"] for x in pend],
             "failing": [x["id"] for x in bad],
             "unverified": [x["id"] for x in unver],
+            "waived": [x["id"] for x in waived],
             "n_items": len(items),
             "n_acceptance": len(acc),
             "n_pass": sum(1 for x in items if x["status"] == "pass")}
 
 
 def md(items, ov, problems) -> str:
-    mark = {"pass": "✅", "fail": "❌", "pending": "⏳", "unverified": "❓", "na": "➖"}
+    mark = {"pass": "✅", "fail": "❌", "pending": "⏳", "unverified": "❓",
+            "na": "➖", "waived": "🚩"}
     L = ["# P9 验收审计：目标 → 证据（只读实算）", "",
          f"条目 {ov['n_items']}（其中验收条款 {ov['n_acceptance']}）："
          f"通过 {ov['n_pass']}｜待人来出 {len(ov['blocking'])}｜"
-         f"不符 {len(ov['failing'])}｜无凭证 {len(ov['unverified'])}。",
+         f"不符 {len(ov['failing'])}｜无凭证 {len(ov['unverified'])}｜"
+         f"靠登记裁决放行 {len(ov['waived'])}。",
          f"**目标是否达成：{'是' if ov['objective_achieved'] else '否'}**"
          f"（阻塞：{', '.join(ov['blocking']) or '—'}；"
          f"不符：{', '.join(ov['failing']) or '—'}）", "",

@@ -10,9 +10,14 @@
   "unverified": [
    "D:零云端"
   ],
+  "waived": [
+   "gate:v1 × judge_full（终评列）:legacy",
+   "gate:v2 × 尺子 v1:legacy",
+   "gate:v2 × 尺子 v2:legacy"
+  ],
   "n_items": 38,
   "n_acceptance": 33,
-  "n_pass": 34
+  "n_pass": 31
  },
  "problems": [],
  "items": [
@@ -34,7 +39,7 @@
    "id": "D:P9_CBI报告.md",
    "requirement": "交付物 P9_CBI报告.md 存在且非空",
    "status": "pass",
-   "evidence": "docs/compendium-rag/P9_CBI报告.md size=129196 sha16=648a983b4fb038b2",
+   "evidence": "docs/compendium-rag/P9_CBI报告.md size=130892 sha16=fe1415c8f4520526",
    "scope": "acceptance"
   },
   {
@@ -109,10 +114,10 @@
   },
   {
    "id": "gate:v1 × judge_full（终评列）:legacy",
-   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
-   "status": "pass",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列的一格，实际未过，靠 2026-10-11 登记裁决降级为能力读数",
+   "status": "waived",
    "scope": "acceptance",
-   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；裁决登记在册=True（docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md @ 2026-10-11）；能力读数（≤0.10，不阻塞）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
   },
   {
    "id": "G:v2 × 尺子 v1",
@@ -165,10 +170,10 @@
   },
   {
    "id": "gate:v2 × 尺子 v1:legacy",
-   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
-   "status": "pass",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列的一格，实际未过，靠 2026-10-11 登记裁决降级为能力读数",
+   "status": "waived",
    "scope": "acceptance",
-   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；裁决登记在册=True（docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md @ 2026-10-11）；能力读数（≤0.10，不阻塞）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
   },
   {
    "id": "G:v2 × 尺子 v2",
@@ -221,10 +226,10 @@
   },
   {
    "id": "gate:v2 × 尺子 v2:legacy",
-   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列，已被 10-11 裁决降级，仍照实报",
-   "status": "pass",
+   "requirement": "闸门「检索泄漏 ≤3%(≤15/500)」——目标明列的一格，实际未过，靠 2026-10-11 登记裁决降级为能力读数",
+   "status": "waived",
    "scope": "acceptance",
-   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；能力读数（≤0.10）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
+   "evidence": "legacy_sub_criteria={\"N_retrieval<=15（旧子标准·已降级，照实报）\": false}；裁决登记在册=True（docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md @ 2026-10-11）；能力读数（≤0.10，不阻塞）={\"N_retrieval_rate<=0.10（能力读数·不阻塞）\": true}"
   },
   {
    "id": "V:档位口径",
