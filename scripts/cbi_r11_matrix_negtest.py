@@ -8,13 +8,14 @@
 **"不可算"那行被填成数字** / **"两臂同"被推翻** / **§2.13 节锚被改名**。
 配三例**该绿**的：κ 变 true（测量完成不该让检查变红）、
 只改 `exposure.definition`（正文不印的字段，证明检查读的是那 8 个格子而不是整块 blob）、
-以及首尾两次原件全绿（证明上面这些不是恒红）。共 15 例 = 11 红 + 4 绿。
+以及首尾两次原件全绿（证明上面这些不是恒红）。§2.2 那一支又加 8 例（7 红 + 1 该绿），合计 **24 例 = 18 红 + 6 绿**。
 
 用法：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/cbi_r11_matrix_negtest.py`
 """
 import importlib.util
 import json
 import sys
+import tempfile
 from pathlib import Path
 # Windows 控制台常见 cp936：产物落盘后才抛 UnicodeEncodeError 最难查（写了一半、退出码非零）。
 for _stream in (sys.stdout, sys.stderr):
@@ -150,7 +151,65 @@ m.REPORT = REAL_REP.replace("### 2.13", "### 2.1X", 1)
 run("expo-section-missing", True)
 m.REPORT = REAL_REP
 
-print("[N12] 恢复原样 ⇒ 必须重新全绿（证明上面这些不是恒红）")
+
+print("[N13] §2.2 的 Faithfulness 0.9845 改成 0.9846 ⇒ 该红（门面表与现算复算对不上）")
+m.REPORT = REAL_REP.replace("L3.3 = **0.9845**", "L3.3 = **0.9846**", 1)
+run("sec22-faith", True)
+m.REPORT = REAL_REP
+
+print("[N14] §2.2 的 MRR 第三个值 0.82188 改成 0.8219 ⇒ 该红")
+m.REPORT = REAL_REP.replace("**0.66528 / 0.6808 / 0.82188**", "**0.66528 / 0.6808 / 0.8219**", 1)
+run("sec22-mrr", True)
+m.REPORT = REAL_REP
+
+print("[N15] §2.2 的含零行数 23/15/0 改成 23/15/1 ⇒ 该红（定义域记账也是门面的一部分）")
+m.REPORT = REAL_REP.replace("真为 0 的行 23/15/0 条", "真为 0 的行 23/15/1 条", 1)
+run("sec22-mrr-zero", True)
+m.REPORT = REAL_REP
+
+print("[N16] §2.2 的联合判定退回缩写「+ P10 必修」⇒ 该红（必须与读数 gate 逐字一致）")
+m.REPORT = REAL_REP.replace("**有条件发布 + 必须出 P10 修复计划**", "**有条件发布 + P10 必修**", 1)
+run("sec22-verdict", True)
+m.REPORT = REAL_REP
+
+print("[N17] 把 §2.2 检索行里的「≤ 0.10」擦掉 ⇒ 该红（裁决后的能力线不许从门面表消失）")
+_line = next(l for l in REAL_REP.splitlines() if l.startswith("| N_retrieval"))
+assert "→ **能力读数 ≤ 0.10**" in _line, "锚文本变了，这一例要改"
+m.REPORT = REAL_REP.replace(_line, _line.replace("→ **能力读数 ≤ 0.10**", "→ **能力读数**"), 1)
+run("sec22-capability-line", True)
+m.REPORT = REAL_REP
+
+print("[N18] 节锚改名（### 2.2 → ### 2.X）⇒ 该红，不许因找不到段落而静默通过")
+m.REPORT = REAL_REP.replace("### 2.2 答案通道", "### 2.X 答案通道", 1)
+run("sec22-heading-missing", True)
+m.REPORT = REAL_REP
+
+print("[N19] κ 产物凭空出现而 §2.2 仍写「未标」⇒ 该红（门面过期要被抓）")
+_fake = Path(tempfile.mkdtemp(prefix="kappa_fake_")) / "cbi_spotcheck_kappa.json"
+_fake.write_text('{"gate_pass": true}', encoding="utf-8")
+_kap_real = m.KAPPA_FILE_V1
+m.KAPPA_FILE_V1 = _fake
+run("sec22-kappa-stale", True)
+m.KAPPA_FILE_V1 = _kap_real
+print("     补一句：这一例只动内存里的路径，仓库里仍然不许有 κ 产物或人工标注")
+_k = [f.name for f in (ROOT / "data" / "compendium_rag" / "reports").glob("cbi_spotcheck_kappa*")]
+_l = [f.name for f in (ROOT / "data" / "compendium_rag" / "reports" / "cbi").glob("spotcheck_labels*")]
+print(("  ok   " if not _k and not _l else "  FAIL ") + f"仓库内 κ 产物/标注文件计数 = {len(_k)}/{len(_l)}")
+if _k or _l:
+    fails.append("repo-artifact-leak")
+
+print("[N20] 只改 §2.2 **之外**的一个数（§2.15 正文里的语料字符数）⇒ 不该红："
+      "检查只管门面那张表，做成恒红同样不能采信")
+_anchor = "3,392,739 字符"
+assert _anchor in REAL_REP, "N20 的锚文本变了，这一例要改"
+_line2 = next(l for l in REAL_REP.splitlines() if _anchor in l)
+_sec = REAL_REP.split("### 2.2", 1)[1].split(chr(10) + "### ", 1)[0]
+assert _line2 not in _sec, "N20 挑的行必须落在 §2.2 之外"
+m.REPORT = REAL_REP.replace(_line2, _line2.replace("3,392,739", "3,392,740"), 1)
+run("sec22-outside-untouched", False)
+m.REPORT = REAL_REP
+
+print("[N21] 恢复原样 ⇒ 必须重新全绿（证明上面这些不是恒红）")
 run("control-again", False)
 
 print("\nRESULT:", "全部符合预期" if not fails else "FAIL -> " + ", ".join(fails))

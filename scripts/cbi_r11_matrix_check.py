@@ -10,6 +10,12 @@
      那两条是三个仪器读数共用的基线，引用叠加列时不能顺手替它答。
 另外核正文里的四个数字串确实出现在表里（防止脚本与文字各说各话）。
 
+2026-10-12 两次扩容：`check_expo()` 管报告 §2.13 那张名次暴露表；
+`check_22()` 管**§2.2 门面表**（发布判定就是从这张表读出去的，此前它是纯手写散文）——
+MRR 与 Faithfulness 两格**从 audit_l2/audit_l3 现算复算**（含定义域与含零行数），
+总式也由 counts 再算一遍，联合判定要求与读数 `gate` **逐字**一致，
+而「κ 未标」必须与 κ 产物的在册状态一致。
+
 用法：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/cbi_r11_matrix_check.py`
 """
 from __future__ import annotations
@@ -30,6 +36,107 @@ INSTRUMENT_READINGS = {
     "cbi_result_v2instrument_v2_r2.json": (0, 0, 30, 0.982),
 }
 KAPPA_KEY = "人工抽检 kappa>=0.80"
+KAPPA_FILE_V1 = R / "cbi_spotcheck_kappa.json"      # §2.2 的"未标"这一格的真凭证
+AUDIT_L2 = R / "audit_l2.json"
+AUDIT_L3 = R / "audit_l3.json"
+FAITH_SETS = ("300cn", "blind", "gen")
+
+
+def sec_22() -> str:
+    if "### 2.2" not in REPORT:
+        return ""
+    return REPORT.split("### 2.2", 1)[-1].split("\n### ", 1)[0]
+
+
+def row_of(sec: str, label: str) -> str:
+    return next((ln for ln in sec.splitlines()
+                 if ln.startswith("|") and label in ln), "")
+
+
+def recompute_l3() -> tuple:
+    """Faithfulness 两个口径**从 audit_l3.json 现算**，不抄读数的字符串。"""
+    pc = json.loads(AUDIT_L3.read_text(encoding="utf-8"))["per_case"]
+    ins = [r.get("faithfulness") for r in pc if r.get("set") in FAITH_SETS]
+    allo = [r.get("faithfulness") for r in pc]
+    if not ins or not allo:
+        raise SystemExit("[FATAL] audit_l3.per_case 里没有 faithfulness 字段 ⇒ 无从复算")
+    return (round(sum(ins) / len(ins), 4), round(sum(allo) / len(allo), 4),
+            len(ins), len(allo))
+
+
+def recompute_l2() -> tuple:
+    """MRR 三套均值/定义域/含零行数，同样现算（含 answerable 过滤与缺字段跳过）。"""
+    per, zero, n_miss, n_un = {}, {}, 0, 0
+    for r in json.loads(AUDIT_L2.read_text(encoding="utf-8"))["per_case"]:
+        if not r.get("answerable", True):
+            n_un += 1
+            continue
+        v = r.get("mrr@10", None)
+        if not isinstance(v, (int, float)):
+            n_miss += 1
+            continue
+        per.setdefault(r["set"], []).append(float(v))
+        zero[r["set"]] = zero.get(r["set"], 0) + (1 if v == 0 else 0)
+    means = {k: round(sum(v) / len(v), 5) for k, v in per.items()}
+    ns = {k: len(v) for k, v in per.items()}
+    return means, ns, zero, n_miss, n_un
+
+
+def check_22(fails: list) -> None:
+    """报告 §2.2 是**门面表**：发布判定就是从这张表读出去的，
+    可它此前是纯手写散文 —— 没有一格回到产物核过。这一条把它变成机器可核。"""
+    sec = sec_22()
+    if not sec:
+        fails.append("报告里没有 §2.2（门面闸门表的唯一落点）")
+        return
+    d = load("cbi_result_full.json")
+    c, cb = d["counts"], d["cbi"]
+    # 总式自己再算一遍：0.9844 必须是 (0,3,21)/500 的结果，而不是抄来的小数
+    mine = round(1 - (1.0 * c["N_hard"] + 0.5 * c["N_soft"]
+                      + 0.3 * c["N_retrieval"]) / c["N_total_effective"], 4)
+    want_rows = {
+        "**CBI 实测**": [f"{cb['measured']}"],
+        "N_hard": [f"{c['N_hard']}"],
+        "N_soft": [f"{c['N_soft']}", f"{c['N_soft'] / c['N_total_effective']:.1%}"],
+        "N_retrieval": [f"{c['N_retrieval']}",
+                        f"{c['N_retrieval'] / c['N_total_effective']:.1%}",
+                        "≤ 15", "≤ 0.10"],
+    }
+    if mine != cb["measured"]:
+        fails.append(f"§2.2 的 CBI 与总式现算不符：现算 {mine} vs 读数 {cb['measured']}")
+    for lab, toks in want_rows.items():
+        line = row_of(sec, lab)
+        if not line:
+            fails.append(f"§2.2 找不到「{lab}」那一行")
+            continue
+        for t in toks:
+            if t not in line:
+                fails.append(f"§2.2「{lab}」行缺 {t!r}：{line[:120]}")
+    f_in, f_all, n_in, n_all = recompute_l3()
+    m_means, m_ns, m_zero, m_miss, m_un = recompute_l2()
+    line = row_of(sec, "MRR")
+    for t in [str(m_means["300cn"]), str(m_means["blind"]), str(m_means["gen"]),
+              f"300cn {m_ns['300cn']}/300", f"blind {m_ns['blind']}", f"gen {m_ns['gen']}",
+              f"{m_zero['300cn']}/{m_zero['blind']}/{m_zero['gen']}"]:
+        if t not in line:
+            fails.append(f"§2.2 的 MRR 行缺现算值 {t!r}（现算 {m_means} n={m_ns} 含零={m_zero}）")
+    if m_miss or m_un:
+        fails.append(f"§2.2 的 MRR 是在缺字段 {m_miss} 行 / 跳过非 answerable {m_un} 行的情况下算的，"
+                     "这张表没写")
+    line = row_of(sec, "Faithfulness")
+    for t in [str(f_in), str(n_in), str(f_all), str(n_all)]:
+        if t not in line:
+            fails.append(f"§2.2 的 Faithfulness 行缺现算值 {t!r}（现算 in-scope={f_in}(n={n_in}) "
+                         f"全体={f_all}(n={n_all})）")
+    # 「未标」必须与真凭证同步：产物出现了却还写"未标"，就是门面在撒谎
+    line = row_of(sec, "人工 κ")
+    if KAPPA_FILE_V1.exists() and "未标" in line:
+        fails.append(f"§2.2 仍写「未标」，但 {KAPPA_FILE_V1.name} 已在册 ⇒ 这张表过期了")
+    if not KAPPA_FILE_V1.exists() and "未标" not in line:
+        fails.append("§2.2 的 κ 行没写「未标」，可 κ 产物根本不存在（没测不能含糊）")
+    if row_of(sec, "联合判定") and d["gate"] not in row_of(sec, "联合判定"):
+        fails.append(f"§2.2 的联合判定与读数的 gate 不一致：读数={d['gate']!r}")
+
 
 # §2.13 那张名次暴露表是**正文里的数字**，按 §5-28 的纪律它必须有资格变红：
 # 每个格子都回到读数产物的 `both_calibers.<口径>.exposure` 去取。
@@ -162,6 +269,7 @@ def main() -> int:
         fails.append("报告里 R2/R3 的命名冲突（尺子条款 vs P10 项）没被澄清")
 
     check_expo(fails)
+    check_22(fails)
 
     print("\nRESULT:", "§R11 的每个数都来自产物" if not fails else "FAIL -> " + " | ".join(fails))
     return 1 if fails else 0
