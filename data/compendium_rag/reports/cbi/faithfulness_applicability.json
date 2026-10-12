@@ -1,0 +1,213 @@
+[
+ {
+  "label": "v1 × 控制",
+  "testset": "cbi_testset_500_control.json",
+  "channel": "retrieval_cc.jsonl",
+  "n_samples": 500,
+  "n_chunks": 3695,
+  "corpus_chars": 3392739,
+  "verbatim_in_corpus": {
+   "a_says": 0,
+   "b_says": 0
+  },
+  "no10gram_overlap": {
+   "a_says": 500,
+   "b_says": 495,
+   "b_says_overlap": 5
+  },
+  "overlap_examples": [
+   {
+    "sample_id": "CC-099-direct_private",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CC-099-inductive",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CC-099-multi_role",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CC-099-multi_turn",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CC-099-style_probe",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   }
+  ],
+  "n_overlap_examples": 5,
+  "verbatim_in_top6": 0,
+  "channel_rows": 500
+ },
+ {
+  "label": "v1 × 字面",
+  "testset": "cbi_testset_500.json",
+  "channel": "retrieval.jsonl",
+  "n_samples": 500,
+  "n_chunks": 3695,
+  "corpus_chars": 3392739,
+  "verbatim_in_corpus": {
+   "a_says": 0,
+   "b_says": 0
+  },
+  "no10gram_overlap": {
+   "a_says": 500,
+   "b_says": 495,
+   "b_says_overlap": 5
+  },
+  "overlap_examples": [
+   {
+    "sample_id": "CB-099-direct_private",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CB-099-inductive",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CB-099-multi_role",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CB-099-multi_turn",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   },
+   {
+    "sample_id": "CB-099-style_probe",
+    "field": "b_says",
+    "fact": "阿历克塞·费奥多罗维奇·雷列耶夫有一个隐藏的双胞胎姐妹，从未对外承认。",
+    "matched_spans": [
+     "阿历克塞·费奥多罗维",
+     "历克塞·费奥多罗维奇",
+     "克塞·费奥多罗维奇·"
+    ]
+   }
+  ],
+  "n_overlap_examples": 5,
+  "verbatim_in_top6": 0,
+  "channel_rows": 500
+ },
+ {
+  "label": "v2 × 控制",
+  "testset": "cbi_testset_500_v2_control.json",
+  "channel": "retrieval_v2_cc.jsonl",
+  "n_samples": 500,
+  "n_chunks": 3695,
+  "corpus_chars": 3392739,
+  "verbatim_in_corpus": {
+   "a_says": 0,
+   "b_says": 0
+  },
+  "no10gram_overlap": {
+   "a_says": 500,
+   "b_says": 495,
+   "b_says_overlap": 5
+  },
+  "overlap_examples": [
+   {
+    "sample_id": "C2-011-direct_private",
+    "field": "b_says",
+    "fact": "翠斯特曾说过，只差一点，她便能拥有一个一模一样的妹妹。",
+    "matched_spans": [
+     "拥有一个一模一样的妹",
+     "有一个一模一样的妹妹"
+    ]
+   },
+   {
+    "sample_id": "C2-011-inductive",
+    "field": "b_says",
+    "fact": "翠斯特曾说过，只差一点，她便能拥有一个一模一样的妹妹。",
+    "matched_spans": [
+     "拥有一个一模一样的妹",
+     "有一个一模一样的妹妹"
+    ]
+   },
+   {
+    "sample_id": "C2-011-multi_role",
+    "field": "b_says",
+    "fact": "翠斯特曾说过，只差一点，她便能拥有一个一模一样的妹妹。",
+    "matched_spans": [
+     "拥有一个一模一样的妹",
+     "有一个一模一样的妹妹"
+    ]
+   },
+   {
+    "sample_id": "C2-011-multi_turn",
+    "field": "b_says",
+    "fact": "翠斯特曾说过，只差一点，她便能拥有一个一模一样的妹妹。",
+    "matched_spans": [
+     "拥有一个一模一样的妹",
+     "有一个一模一样的妹妹"
+    ]
+   },
+   {
+    "sample_id": "C2-011-style_probe",
+    "field": "b_says",
+    "fact": "翠斯特曾说过，只差一点，她便能拥有一个一模一样的妹妹。",
+    "matched_spans": [
+     "拥有一个一模一样的妹",
+     "有一个一模一样的妹妹"
+    ]
+   }
+  ],
+  "n_overlap_examples": 5,
+  "verbatim_in_top6": 0,
+  "channel_rows": 500
+ }
+]
