@@ -59,6 +59,18 @@
 
 ### 2.1 检索通道（两条口径，同一判据，只换题面）
 
+> **这一格量的确实是发布路径本身**（2026-10-12 复跑实测，之前只说过"块级判定"，没证明通道是谁）：
+> `compendium_rag_p9_cbi_run.py` 调的是产品的 `kb.retrieve()`（`src/compendium_rag/pipeline.py:314`，
+> 本地 Ollama `bge-m3` 嵌入 ⇒ 零云端指的是不调 LLM 网关，本地嵌入器不算），
+> 起跑前钉死图 sha、不符即退出且不写文件。**但 `pipeline.py:327-330` 有一条
+> 「嵌入不可用 ⇒ 静默退化为纯符号检索」的分支**，光看"日志里没有警告"不算证据，
+> 所以做了复执行：**取前 25 条重跑**（`CBI_LIMIT=25`，按测试集顺序、**不是随机抽样**；
+> 另存 `retrieval_verify_rerun.jsonl`，不覆盖已发布通道）⇒ `top_ids`、`seeds`、`retrieval_leak` **25/25 逐位相同**，
+> 这批泄漏数 5 = 5；延迟 1.51s vs 录制 2.975s 只是缓存冷热，判定未变。
+> ⇒ `N_retrieval=21/30` 不是脚本自己重实现了一套排名量出来的自洽数，
+> 而且这台量具**可复现**；但要说全覆盖，我只重跑了 25/500，其余 475 条是"同一条代码路径 +
+> 图与块 sha 未变"的推定，不是逐条重跑过。
+
 | 口径 | n | 检索泄漏 | 率 | Wilson95 | 由此上限 |
 | --- | --- | --- | --- | --- | --- |
 | `literal`（题面**点名问 B**） | 500 | 260 | **0.520** | [0.476, 0.564] | **0.844** |
@@ -615,6 +627,13 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
     发现后把 R9 真写进 P10 计划、另起一条 commit，并在正文里明写上一条超报。
     **规矩：写完 commit 要按 `git show --stat` 对一遍正文点名过的文件**，不然提交信息就成了
     又一个"引用别人的数不如现算一遍"的反面教材（同 §14 那条硬写基线的错同类）。
+21. **「没有警告」不等于「没有降级」**：产品 `retrieve()` 里有一条
+    `except Exception: 嵌入不可用 ⇒ 退化为纯符号检索`（`pipeline.py:327-330`）的静默分支，
+    嵌入器挂了读数会照算、只是量的不是同一套行为。而通道日志里只写进度、不写警告，
+    `grep 嵌入不可用 = 0` 因此**什么也不能证明**。
+    换成复执行才有效：25 条重跑逐位相同（见 §2.1）。
+    **规矩：凡是量具依赖的代码里存在"降级后仍继续跑"的分支，就要用重跑而不是用日志来背书；**
+    并且要写清覆盖范围（25/500，其余是推定），别让"可复现"这句话超出实测。
 
 ## 6. 交付物与产物清单
 
@@ -642,7 +661,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | **口径裁决登记** | `docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md` | ✅ 你的裁决原文 + 依据 + "什么没被改" + 代码落法；v1 集 4.2%／v2 集 6.0% 均 ≤ 0.10 |
 | 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（11 项，`blocking=False`） | ✅ v1 两臂 11/11；v2 两臂 10/11（❌ 四族等配比，见 §2.9/R9）；8 种人为破坏全被抓出，含"悬空 eid"这条由负向测试逼出来的新检查 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
-| 通道产物 | `reports/cbi/retrieval{,_cc}.jsonl`、`probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验 |
+| 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,cbi-judge-full2,cbi-judge-sprobe,cbi-judge-panel,cbi-diag-d1,cbi-diag-d1b,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐，每个臂都按 qid 集合等值结案 |
 
 **未做（截至 2026-10-11 深夜，闸门状态以此为准）**：
