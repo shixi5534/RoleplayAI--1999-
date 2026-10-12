@@ -141,9 +141,16 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 **已做负向测试**：把输入换成 r10 备份图（`329671bba0988c68`）后检查即报 `unchanged=False`
 ⇒ 两格转 False，必须回三套主题集重量才能重新声明。本轮实测相符，所以两格真为 ✅，
 且这条 ✅ 现在是证据而不是引用。
-**范围要说清**：这两个 sha 只覆盖 KB 的**数据输入**（图 + 块），不覆盖 `src/` 的代码；
-本轮 `src/` 一个文件都没改（本会话只动 `scripts/`、`docs/`、`reports/`，工作树提交后干净），
-所以"检索与生成行为未变"成立 —— 但它是"数据 sha + 代码未改"两条合起来的事实，不是单靠 sha。
+**范围要说清**（2026-10-12 起这条也机检了）：以前两个 sha 只覆盖 KB 的**数据输入**（图 + 块），
+代码侧靠一句"本轮 `src/` 一个文件都没改" —— 而那句话不会在有人改了 `src/` 之后自动变假，
+正是 §5-14/§5-24 那一类"引用而非实测"。现在计算器实测**第三个输入**：
+`src/**/*.py`（排除 `__pycache__`，91 个文件）按路径排序做 SHA-256 摘要，
+`src_sha16 = da22eba5bb399313`，与图 `911bb538160db80e`、块 `43106214066ccd60` 一起，
+**三个都相符才允许沿用 r11 的 MRR / Faithfulness 基线**。
+基线指纹对应 r11 记分卡那次提交（`git diff 31a1573..HEAD -- src/` 为空，已核）。
+**负向实测**：在临时目录里往 `src/compendium_rag/config.py` 追加一行注释 ⇒
+摘要立刻变、`layers_unchanged()` 返回 False ⇒ 两格转 ❌，逼着回三套主题集与 L3 重量，
+而不是继续拿 r11 的数顶。
 
 **顺带抓出一个出处错误**（就是这次改成"现算"才暴露的）：计算器里原先硬写的
 `0.66165 / 0.677346 / 0.820694` 并不是 r11 的读数，而是 `baseline_v9_plan.json` 里的 **`mrr_v9`**
@@ -787,7 +794,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | 交付 | 路径 | 状态 |
 | --- | --- | --- |
 | 测试集 | `reports/cbi_testset_500.json`（字面口径）+ `cbi_testset_500_control.json`（验收口径） | ✅ 各 500 条 / 100 对 |
-| 计算器 | `scripts/cbi_calculator.py` → `cbi_result_full.{json,md}`（终评）；`cbi_result{,2}.*`（探针两臂，保留）；`CBI_INSTRUMENT=v2` → `cbi_result_v2instrument{,_v2_r2}.{json,md}` | ✅ 双口径并排 + 上下限 + 容忍度边界 + 覆盖率门 + **屏幕块（含功率）** + **κ 读产物**；四条读数重跑逐位复现 |
+| 计算器 | `scripts/cbi_calculator.py` → `cbi_result_full.{json,md}`（终评）；`cbi_result{,2}.*`（探针两臂，保留）；`CBI_INSTRUMENT=v2` → `cbi_result_v2instrument{,_v2_r2}.{json,md}` | ✅ 双口径并排 + 上下限 + 容忍度边界 + 覆盖率门 + **屏幕块（含功率）** + **κ 读产物** + **检索读法区间** + **三输入指纹实测（图 / 块 / src 摘要）**；四条读数重跑逐位复现 |
 | 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ §0–§9 + 2026-10-12 校准块（§5 的 B1–B4 已标注"达标理由被裁决与 R2 判负抽掉"、§6 增至五条量具自守规则、§9 第 2/3 条改为"已由 R5bis 与尺子 v2 落实/已裁"并补第 4 条规格维度回归） |
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |

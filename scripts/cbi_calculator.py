@@ -101,6 +101,24 @@ R11_SHA = "911bb538160db80e"     # 冻结图 r11
 CHUNKS_SHA = "43106214066ccd60"  # KB 的另一半输入
 GRAPH_P = ROOT / "data" / "compendium_rag" / "graph.json"
 CHUNKS_P = ROOT / "data" / "compendium_rag" / "chunks.json"
+# 第三个输入：**代码**。以前"检索与生成行为未变"只靠一句"本轮 src/ 一个文件都没改"，
+# 那句话不会在有人改了 `src/` 之后自动变假 —— 与 §5-14/§5-24 同类的"引用而非实测"。
+# 摘要 = 对 `src/**/*.py`（排除 __pycache__）按路径排序，逐文件喂 (相对路径, 内容字节) 进 SHA-256，
+# 取前 16 位十六进制。基线值对应 r11 记分卡那次提交（`git diff 31a1573..HEAD -- src/` 为空，
+# 91 个文件），由 `src_digest()` 现算可复现。
+SRC_P = ROOT / "src"
+SRC_SHA = "da22eba5bb399313"
+
+
+def src_digest() -> tuple[str, int]:
+    h = hashlib.sha256()
+    files = sorted(p for p in SRC_P.rglob("*.py") if "__pycache__" not in p.parts)
+    for p in files:
+        h.update(str(p.relative_to(SRC_P)).replace("\\", "/").encode("utf-8"))
+        h.update(b"\0")
+        h.update(p.read_bytes())
+        h.update(b"\0")
+    return h.hexdigest()[:16], len(files)
 
 
 def sha16(p: Path) -> str:
@@ -174,9 +192,18 @@ def layers_unchanged() -> tuple[bool, dict]:
     现在写过 ⇒ `unchanged=False` ⇒ 两格直接判 False，必须回三个主口径重量才能重新声明。
     """
     g, c = sha16(GRAPH_P), sha16(CHUNKS_P)
-    return (g == R11_SHA and c == CHUNKS_SHA), {
+    s, n_src = src_digest()
+    data_ok = (g == R11_SHA and c == CHUNKS_SHA)
+    src_ok = s == SRC_SHA
+    return data_ok and src_ok, {
         "graph_sha16": g, "graph_expect": R11_SHA,
-        "chunks_sha16": c, "chunks_expect": CHUNKS_SHA}
+        "chunks_sha16": c, "chunks_expect": CHUNKS_SHA,
+        "src_sha16": s, "src_expect": SRC_SHA, "src_files": n_src,
+        "data_inputs_unchanged": data_ok, "src_unchanged": src_ok,
+        "why": ("三个输入都要相符才能沿用 r11 的 MRR/Faithfulness 基线："
+                "图 + 块（数据）+ src/（行为）。src 变过 ⇒ 这两格自动转 False，"
+                "必须回三套主题集与 L3 重量后更新 SRC_SHA 才能重新声明")
+    }
 
 
 def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:

@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T09:41:35",
+ "done_at": "2026-10-12T09:44:12",
  "graph_sha": "911bb538160db80e",
  "mode": "probe",
  "acceptance_caliber": "control",
@@ -153,7 +153,13 @@
    "graph_sha16": "911bb538160db80e",
    "graph_expect": "911bb538160db80e",
    "chunks_sha16": "43106214066ccd60",
-   "chunks_expect": "43106214066ccd60"
+   "chunks_expect": "43106214066ccd60",
+   "src_sha16": "da22eba5bb399313",
+   "src_expect": "da22eba5bb399313",
+   "src_files": 91,
+   "data_inputs_unchanged": true,
+   "src_unchanged": true,
+   "why": "三个输入都要相符才能沿用 r11 的 MRR/Faithfulness 基线：图 + 块（数据）+ src/（行为）。src 变过 ⇒ 这两格自动转 False，必须回三套主题集与 L3 重量后更新 SRC_SHA 才能重新声明"
   },
   "MRR_baselines_measured": {
    "300cn_full": 0.66528,
