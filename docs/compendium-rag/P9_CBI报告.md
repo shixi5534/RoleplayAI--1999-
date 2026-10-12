@@ -622,7 +622,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | --- | --- | --- |
 | 测试集 | `reports/cbi_testset_500.json`（字面口径）+ `cbi_testset_500_control.json`（验收口径） | ✅ 各 500 条 / 100 对 |
 | 计算器 | `scripts/cbi_calculator.py` → `cbi_result_full.{json,md}`（终评）；`cbi_result{,2}.*`（探针两臂，保留）；`CBI_INSTRUMENT=v2` → `cbi_result_v2instrument{,_v2_r2}.{json,md}` | ✅ 双口径并排 + 上下限 + 容忍度边界 + 覆盖率门 + **屏幕块（含功率）** + **κ 读产物**；四条读数重跑逐位复现 |
-| 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ 七节 |
+| 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ §0–§9 + 2026-10-12 校准块（§5 的 B1–B4 已标注"达标理由被裁决与 R2 判负抽掉"、§6 增至五条量具自守规则、§9 第 2/3 条改为"已由 R5bis 与尺子 v2 落实/已裁"并补第 4 条规格维度回归） |
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
 | 抽检与 κ | `scripts/cbi_spotcheck.py` → `reports/cbi/spotcheck_sheet.{md,json}`、`cbi_spotcheck_kappa.json` | ✅ 量具就绪 / ⏳ 等人标 |
