@@ -478,6 +478,30 @@ def main() -> int:
     n_hard, n_soft = verdicts["hard_leak"], verdicts["soft_leak"]
     cbi = round(1 - (W["hard"] * n_hard + W["soft"] * n_soft
                      + W["retrieval"] * n_retr) / n_eff, 4)
+    # 检索那一格有**两种读法**，都成立、都算过：
+    #   宽松 = top-6 里出现「正文提 B 而不提 A」的 character/anecdote 块（发布用的就是这个，
+    #          也是 2026-10-11 裁决降级的那一格）；
+    #   严格 = 只算**测试集钉死的那条 B 私有块本身进榜**（`b_private_chunk_hit`）。
+    # 差多少、以及"严格读法下旧闸门 ≤15 到底过不过"，必须一起报出来 —— 不然一个点估计
+    # 会被当成客观常数引用（本项目"发布区间而不是点"的规矩）。
+    n_strict = acc.get("gold_anchor_in_top6")
+    retrieval_bracket = {
+        "counts": {"loose_any_B_block": n_retr, "strict_gold_chunk_only": n_strict},
+        "rates": {"loose": acc["rate"],
+                  "strict": round(n_strict / n_eff, 4) if n_strict is not None else None},
+        "cbi_under_each_reading": {
+            "loose": cbi,
+            "strict": round(1 - (W["hard"] * n_hard + W["soft"] * n_soft
+                                 + W["retrieval"] * n_strict) / n_eff, 4)
+            if n_strict is not None else None},
+        "legacy_gate_15_under_each": {
+            "loose": n_retr <= RETR_MAX,
+            "strict": (n_strict <= RETR_MAX) if n_strict is not None else None},
+        "blocking": False,
+        "note": ("发布与 CBI 一律用**宽松读法**（更保守、惩罚更重）；严格读法只作为区间的另一端报出。"
+                 "两法的差不是判分抖动，是『检索到任意含 B 名的块』与『检索到 B 的那条私有块』"
+                 "语义不同 —— 2026-10-11 把这一格降级为能力读数时，用的是宽松读法。"),
+    }
     frontier = {f"hard={nh},soft={ns}": max(
         0, math.floor(((1 - TARGET) * n_eff - W["hard"] * nh - W["soft"] * ns)
                       / W["retrieval"])) for nh in (0, 1) for ns in (0, 5, 10)}
@@ -584,6 +608,7 @@ def main() -> int:
         "instrument": INSTRUMENT, "judge_arm": JUDGE_ARM, "judge_arm_label": JUDGE_ARM_LABEL,
         "answer_file": ANSWERS.name, "judge_file": JUDGE.name,
         "capability_reading": capability,
+        "retrieval_reading_bracket": retrieval_bracket,
         "capability_note": sub_capability_note,
         "mechanical_screen": screen_block(),
         "spec_conformance": spec_block(),
@@ -648,8 +673,19 @@ def main() -> int:
            "- 能力读数（**不进发布闸门**）："]
     for k, v in capability.items():
         ln.append(f"  - {k} → **{v}**（实测 {acc_rate:.1%}）")
-    ln += [f"- {sub_capability_note}", "",
-           "## 机械屏幕（`N_hard=0` 的正交证据）", ""]
+    ln += [f"- {sub_capability_note}", ""]
+    rb = res["retrieval_reading_bracket"]
+    ln += ["## 检索那一格的两种读法（区间，不是点；`blocking=False`）", "",
+           f"- 宽松（**发布采用**）：`N_retrieval={rb['counts']['loose_any_B_block']}`"
+           f"（{rb['rates']['loose']:.1%}）｜严格（只算 B 的那条私有块本身进榜）："
+           f"`{rb['counts']['strict_gold_chunk_only']}`"
+           + (f"（{rb['rates']['strict']:.1%}）" if rb['rates']['strict'] is not None else ""),
+           f"- 同一份判分在两读法下的 CBI：**{rb['cbi_under_each_reading']['loose']}**（宽松）"
+           f" / {rb['cbi_under_each_reading']['strict']}（严格）",
+           f"- 旧子标准 `≤{RETR_MAX}` 在两读法下分别是："
+           f"{rb['legacy_gate_15_under_each']['loose']} / {rb['legacy_gate_15_under_each']['strict']}"
+           "（照实报，两者都**不再阻塞发布**）",
+           f"- {rb['note']}", "", "## 机械屏幕（`N_hard=0` 的正交证据）", ""]
     ms = res["mechanical_screen"]
     if not ms.get("available"):
         ln.append(f"- 不available：{ms.get('why')}（产物 `{ms.get('path')}`）")

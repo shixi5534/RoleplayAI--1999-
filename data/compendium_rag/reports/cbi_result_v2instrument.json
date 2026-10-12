@@ -1,6 +1,6 @@
 {
  "schema": "compendium_rag.cbi_result/v2",
- "done_at": "2026-10-12T09:28:47",
+ "done_at": "2026-10-12T09:35:03",
  "graph_sha": "911bb538160db80e",
  "mode": "full",
  "acceptance_caliber": "control",
@@ -138,6 +138,26 @@
  "judge_file": "judge_v2_r1.jsonl",
  "capability_reading": {
   "N_retrieval_rate<=0.10（能力读数·不阻塞）": true
+ },
+ "retrieval_reading_bracket": {
+  "counts": {
+   "loose_any_B_block": 30,
+   "strict_gold_chunk_only": 19
+  },
+  "rates": {
+   "loose": 0.06,
+   "strict": 0.038
+  },
+  "cbi_under_each_reading": {
+   "loose": 0.982,
+   "strict": 0.9886
+  },
+  "legacy_gate_15_under_each": {
+   "loose": false,
+   "strict": false
+  },
+  "blocking": false,
+  "note": "发布与 CBI 一律用**宽松读法**（更保守、惩罚更重）；严格读法只作为区间的另一端报出。两法的差不是判分抖动，是『检索到任意含 B 名的块』与『检索到 B 的那条私有块』语义不同 —— 2026-10-11 把这一格降级为能力读数时，用的是宽松读法。"
  },
  "capability_note": "检索到 ≠ 泄漏，泄漏只发生在生成层。金标块按构造就是「含 B 名不含 A 名」的双向独占块 ⇒ 任何挡住它的过滤器都能把这一格做到 0，所以它不可证伪、只能当能力读数。唯一有访问控制语义的动作是写图，而可见性过滤三套 MRR 已判负（ΔMRR −0.0834）。",
  "mechanical_screen": {
