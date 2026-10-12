@@ -217,6 +217,17 @@ def caliber_block(name: str, scope_ids: set[str] | None) -> dict:
     }
 
 
+# κ 闸门的判据，与 `scripts/cbi_spotcheck.py` 里的 GATE_RULE **必须逐字相同**。
+# 两个脚本没有共享模块（scripts/ 是平铺脚本、不是包），所以不 import 而是**互检字符串**：
+# 任一边改了阈值、另一边没跟上 ⇒ 这里直接判 False 并写「判据漂移」，
+# 不允许出现「抽检产物说未过、读数那边给 ✅」这种同一闸门两个结论的场面。
+KAP_MIN_N = 30
+KAP_TARGET = 0.80                  # 规格线（κ 非退化时才有效）
+KAP_AGREE = 0.90                   # 退化时的替代线 = **自选阈值**，报出来供人否决
+KAP_RULE = (f"n>={KAP_MIN_N}; degenerate => observed_agreement>={KAP_AGREE}(自选线); "
+            f"else kappa>={KAP_TARGET}(规格线)")
+
+
 def kappa_block() -> dict:
     """人工抽检一致性闸门 —— **读产物**，不硬写。
 
@@ -227,12 +238,12 @@ def kappa_block() -> dict:
     """
     p = REPORTS / f"cbi_spotcheck_kappa{'_v2' if INSTRUMENT == 'v2' else ''}.json"
     if not p.exists():
-        return {"available": False, "ok": False, "path": p.name,
+        return {"available": False, "ok": False, "path": p.name, "rule": KAP_RULE,
                 "why": "未达成 —— 只能由人出（产物不存在）"}
     try:
         d = json.loads(p.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
-        return {"available": False, "ok": False, "path": p.name,
+        return {"available": False, "ok": False, "path": p.name, "rule": KAP_RULE,
                 "why": f"产物读不了：{str(e)[:120]}"}
     arm = d.get("arm_A_random_only") or (d.get("arms") or {}).get("A") or d.get("arm_A") or {}
     n = arm.get("n", 0)
@@ -240,19 +251,27 @@ def kappa_block() -> dict:
     deg = bool(arm.get("degenerate"))
     obs = arm.get("observed_agreement")
     # κ 退化的处理：机判臂在抽检行里只有单一类别（v2 就是 500/500 clean）时，
-    # 期望一致率=观测一致率 ⇒ κ 恒为 0，而「人工完全同意」那一格反而算出 κ=1.0 也算退化。
-    # 这不是一致性差，是 κ 这个统计量在单类别下没有定义。本项目的结论函数
-    # （reports/cbi/spotcheck_sensitivity{,_v2}.json）早就写明此时读**观测一致率**。
-    # 阈值 0.90 是本格唯一的自选参数（κ≥0.80 在单类别下的对应值没有公认换算），已单独记在
-    # `route` 里报出来，供人否决；不隐藏、不默认。
+    # 期望一致率=观测一致率 ⇒ 有不一致时 κ 恒为 0，而「人工完全同意」那一角被 `pe==1`
+    # 约定成 κ=1.0 —— 两端都不是"一致性"的量，这个统计量在单类别下没有定义。
+    # 本项目的结论函数（reports/cbi/spotcheck_sensitivity{,_v2}.json）此时读**观测一致率**。
+    # 阈值 0.90 是本格唯一的自选参数（κ≥0.80 在单类别下没有公认换算），已单独报出供人否决。
+    if str(d.get("rule") or "") != KAP_RULE:
+        return {"available": True, "ok": False, "path": p.name, "n": n, "kappa": k,
+                "observed_agreement": obs, "degenerate": deg, "rule": KAP_RULE,
+                "drift": d.get("rule"),
+                "route": "判据漂移 ⇒ 不判",
+                "why": f"抽检产物记的判据是 {d.get('rule')!r}，本计算器用的是 {KAP_RULE!r}；"
+                       f"两边必须同改，否则这一格的布尔值没有意义"}
     if deg:
-        ok = bool(n >= 30 and isinstance(obs, (int, float)) and obs >= 0.90)
-        route = f"κ 退化 ⇒ 按结论函数读观测一致率（≥0.90，本格自选阈值）：{obs}"
+        ok = bool(n >= KAP_MIN_N and isinstance(obs, (int, float)) and obs >= KAP_AGREE)
+        route = (f"κ 退化 ⇒ 按结论函数读观测一致率（≥{KAP_AGREE}，本格自选阈值）：{obs}；"
+                 f"字面 κ 规格线（≥{KAP_TARGET}）在这一臂上不可测")
     else:
-        ok = bool(n >= 30 and isinstance(k, (int, float)) and k >= 0.80)
-        route = f"κ（非退化）：{k}"
+        ok = bool(n >= KAP_MIN_N and isinstance(k, (int, float)) and k >= KAP_TARGET)
+        route = f"κ（非退化）：{k} vs {KAP_TARGET}"
     return {"available": True, "ok": ok, "path": p.name, "n": n, "kappa": k,
-            "observed_agreement": obs, "degenerate": deg, "route": route,
+            "observed_agreement": obs, "degenerate": deg, "route": route, "rule": KAP_RULE,
+            "gate_pass_strict_spec": d.get("gate_pass_strict_spec"),
             "why": f"arm_A（随机层）n={n} κ={k} 观测一致率={obs} degenerate={deg}"}
 
 

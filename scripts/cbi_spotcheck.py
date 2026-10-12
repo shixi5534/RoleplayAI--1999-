@@ -73,6 +73,31 @@ SOFT_MAX = 5                         # 用户给的子标准（500 样本口径�
 N_TOTAL = 500
 REV = {v: k for k, v in MAP.items()}
 
+# 闸门判据（**必须与 cbi_calculator.kappa_block() 逐字一致**，两边各留一份、由 `rule` 字段互检）。
+# 为什么要三条而不是一条：v2 仪器上机判臂 500/500 clean ⇒ 单一类别 ⇒ κ 无定义
+# （有不一致时恒为 0、全同意时被 `pe==1` 那支约定成 1.0）。规格给的 κ≥0.80 在这一臂上
+# 既不能过也不能败，它压根没被测到；此时唯一有含义的量是**观测一致率**。
+MIN_N = 30                         # 标够 30 条才给判（规格外的自加保护）
+TARGET_KAPPA = 0.80                # 用户给的规格线（非退化时才用）
+TARGET_AGREE = 0.90                # 退化时的替代线 = **自选阈值**，产物里明写、供人否决
+GATE_RULE = (f"n>={MIN_N}; degenerate => observed_agreement>={TARGET_AGREE}"
+             f"(自选线); else kappa>={TARGET_KAPPA}(规格线)")
+
+
+def gate(arm: dict) -> tuple[bool, str]:
+    """按 GATE_RULE 判一格，并把"走的是哪条线"一起返回（不返回光秃秃的布尔）。"""
+    n = arm.get("n", 0) or 0
+    if n < MIN_N:
+        return False, f"n={n} < {MIN_N}：标注不足，不给判"
+    if arm.get("degenerate"):
+        obs = arm.get("observed_agreement") or 0.0
+        return (obs >= TARGET_AGREE,
+                f"κ 退化（机判臂单一类别：有不一致时 κ 恒为 0、全同意时被 pe==1 约定成 1.0，"
+                f"两端都无统计含义）⇒ 读观测一致率 {obs} vs 自选线 {TARGET_AGREE}")
+    k = arm.get("kappa")
+    return (isinstance(k, (int, float)) and k >= TARGET_KAPPA,
+            f"κ（非退化）= {k} vs 规格线 {TARGET_KAPPA}")
+
 
 def load_all():
     ts = json.loads(TESTSET.read_text(encoding="utf-8"))
@@ -246,21 +271,32 @@ def compute_kappa() -> int:
         grouped[r["tier"] == "随机"].append((MAP[r["machine_verdict"]], MAP[r["human_verdict"]]))
     a = cohen(grouped[True])          # 只用随机行：无偏
     b = cohen([(m, h) for k in grouped for m, h in grouped[k]])   # 全量：缺陷富集
+    ok_a, why_a = gate(a)
+    ok_b, why_b = gate(b)
     out = {
         "schema": "compendium_rag.cbi_kappa/v1", "at": datetime.now().isoformat(timespec="seconds"),
-        "target": 0.80,
+        "instrument": INSTRUMENT,
+        "target": TARGET_KAPPA, "target_agreement_self_chosen": TARGET_AGREE,
         "arm_A_random_only": a, "arm_B_with_disputed": b,
         "n_labeled": len(rows), "n_random_labeled": len(grouped[True]),
-        "gate_pass": bool(a.get("n", 0) >= 30 and a.get("kappa", -1) >= 0.80 and not a.get("degenerate")),
+        # 判据字符串两边各存一份，计算器读它并**逐字比对**：改了一边忘了另一边 ⇒ 报漂移而不是各说各话
+        "rule": GATE_RULE, "arm_A_route": why_a, "arm_B_route": why_b,
+        "gate_pass": ok_a,
+        "gate_pass_strict_spec": bool(a.get("n", 0) >= MIN_N and a.get("kappa", -1) >= TARGET_KAPPA
+                                      and not a.get("degenerate")),
         "note": ("闸门按 arm_A（无偏随机 50）判；arm_B 把全部缺陷条塞进样本，正类比例被人为抬高，"
-                 "只作参考。标注不足 30 条时 κ 数字不稳，不给判。"),
+                 "只作参考。标注不足 30 条时 κ 数字不稳，不给判。"
+                 "v2 仪器上机判臂单一类别 ⇒ κ 无定义，`gate_pass` 走观测一致率那条线，"
+                 "`gate_pass_strict_spec` 是「只按字面 κ≥0.80」的读法（v2 上必然为假，照实并存）。"),
     }
     RESULT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"[OK] κ 报告 → {RESULT.name}")
+    print(f"[OK] κ 报告 → {RESULT.name}（仪器 {INSTRUMENT}）")
     print(f"     arm_A 随机 n={a.get('n')} κ={a.get('kappa')} 一致率={a.get('observed_agreement')}"
           f" 退化={a.get('degenerate')}")
     print(f"     arm_B 含争议 n={b.get('n')} κ={b.get('kappa')}")
-    print(f"     闸门（arm_A κ≥0.80 且 n≥30 且非退化）：{'PASS' if out['gate_pass'] else '未过'}")
+    print(f"     判据：{GATE_RULE}")
+    print(f"     arm_A 走的是：{why_a} ⇒ 闸门 {'PASS' if ok_a else '未过'}")
+    print(f"     只按字面 κ≥0.80（规格原文，不退化替代）：{'PASS' if out['gate_pass_strict_spec'] else '未过'}")
     return 0
 
 
