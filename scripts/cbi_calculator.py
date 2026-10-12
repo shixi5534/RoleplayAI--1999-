@@ -343,6 +343,18 @@ FAMILY_TO_CLASS = {"饮食与酒": "preference", "作息与习惯": "preference"
                    "财物与物件": "secret", "身体与病": "secret", "言谈与口吻": "style"}
 
 
+def _gold_equals(gold, b_says) -> bool:
+    """`must_not_state` 两版形态不同：v1 是 `[b_says]`（列表），v2 是 `b_says`（字符串）。
+    比对必须两者都收 —— 只按一种形态写，会给另一版造出**假 ❌**（假过与假败一样有害）。"""
+    if b_says is None:
+        return False
+    if isinstance(gold, str):
+        return gold == b_says
+    if isinstance(gold, list):
+        return bool(gold) and b_says in gold
+    return False
+
+
 def spec_block() -> dict:
     """量具**规格符合性**读数：目标书里关于测试集结构的每条要求，逐条实测打勾。
 
@@ -382,8 +394,23 @@ def spec_block() -> dict:
         "每条都带注入标记": all((s.get("injected") or {}).get("marker") for s in sm),
         "每条都有检索金标（B 的独占块）": all((s.get("retrieval_gold") or {}).get("b_private_chunk")
                                           for s in sm),
-        "每条都有判分金标（fact_self/fact_other）": bool(all(s.get("judge_gold") for s in sm)),
+        # 原来这条写的是「每条都有判分金标（fact_self/fact_other）」——**标签在骗人**：
+        # `fact_self/fact_other` 根本不在 `judge_gold` 里（它们在 `injected`，由判分批取用），
+        # 而 `judge_gold` 只被真值性检查过 ⇒ v2 建集时把 `hard_target`/`must_not_hint` 丢了，
+        # 这一格照样打勾。改成逐字比对判分金标与注入句，缺字段就报出来。
+        "判分金标与注入句逐字一致（must_not_state ≡ injected.b_says）": all(
+            _gold_equals((s.get("judge_gold") or {}).get("must_not_state"),
+                         (s.get("injected") or {}).get("b_says")) for s in sm),
+        "注入件两侧陈述齐全": all((s.get("injected") or {}).get("a_says")
+                              and (s.get("injected") or {}).get("b_says") for s in sm),
     }
+    # v1 与 v2 的 judge_gold **字段集不同**（v1 有 hard_target/must_not_hint，v2 只有 must_not_state）。
+    # 这不影响任何读数（判分批走 injected，没人读 judge_gold），但它是 R9 同一类的静默收窄，
+    # 所以要如实报出来，而不是让"金标齐全"这种词把它盖过去。
+    gk = defaultdict(set)
+    for s in sm:
+        gk[s["sample_id"].rsplit("-", 1)[0]] |= set((s.get("judge_gold") or {}).keys())
+    shapes = sorted({tuple(sorted(v)) for v in gk.values()})
     # 题面引用的两个实体必须**真的在冻结图里**：不然整条样本的"金标"是悬空的，
     # 读数照样能算出来，但量的是一台不存在的量具（负向测试逼出来的这条）。
     dangling: list[str] = []
@@ -415,7 +442,14 @@ def spec_block() -> dict:
             "family_to_class_map": FAMILY_TO_CLASS if via_map else None,
             "unmapped": unmapped or None,
             "dangling_eids": dangling[:10] or None,
+            "judge_gold_shapes": ["+".join(s) for s in shapes],
             "query_type_distribution": dict(qt),
+            "notes": ([f"judge_gold 字段集 = {'+'.join(shapes[0])}；"
+                       f"v1 建集器还写 hard_target/must_not_state(list)/must_not_hint(list)，"
+                       f"v2 只留 must_not_state(str) ⇒ 属**静默字段收窄**。"
+                       "对读数无影响（判分批取的是 injected 两侧陈述，没有程序读 judge_gold），"
+                       "但若将来要用 `must_not_hint` 那类部分短语锚来判软泄漏，v2 上没有现成原料。"]
+                      if shapes and set(shapes[0]) == {"must_not_state"} else []),
             "why": ("规格符合性只描述**量具长什么样**，不进发布闸门（blocking=False）；"
                     "任一条为假都要在引用本读数时一并说明"
                     + ("；四族分布是按**判读映射**折算的（v2 的 conflict_type 存的是话题族名）"

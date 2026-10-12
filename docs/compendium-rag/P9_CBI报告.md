@@ -343,12 +343,12 @@ v2 的 `conflict_type` 存的是**从语料里长出来的 8 个话题族**（�
 读 `N_hard=0` 时两列互为补证 —— 这是最省的一条，但它是**口径声明**而不是修补。
 
 **已经先落的一半（不需要你裁的那部分）**：规格符合性现在是**机检**的，不再靠我肉眼看结构。
-`cbi_calculator.py` 新增 `spec_block()`（11 项：`N_total`／角色对数／`sample_id` 唯一／
+`cbi_calculator.py` 新增 `spec_block()`（12 项：`N_total`／角色对数／`sample_id` 唯一／
 5 类查询各 100／四类冲突各 125（v2 走 `FAMILY_TO_CLASS` 折算并显式标注"这是判读"）／
 注入标记齐全／检索金标齐全／判分金标齐全／双方 `eid` 都在冻结图里／抽检随机层覆盖 10%／分层均匀），
 写进每条读数的 `spec_conformance` 字段与 md 同名一节，`blocking=False` ——
 **它是量具体检，不是我给自己新加的扣分项**（规格没写这条闸门，我不会擅自加）。
-实测结果：v1 两臂 11 项全 ✅，v2 两臂各只有 1 项 ❌（就是四族等配比），
+实测结果：v1 两臂 12 项全 ✅，v2 两臂各只有 1 项 ❌（就是四族等配比），
 读数 `0.9844 / 0.9820` 一个字节没动。
 **新加的检查做了负向测试**（真 v1 集 + 8 种人为破坏，全在临时目录、不落仓库）：
 复制样本成同族 ⇒ 抓出（含 `sample_id` 重复）；删检索金标 ⇒ 抓出；改坏题型名 ⇒ 抓出；
@@ -691,6 +691,27 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
     **附带一条更强的证据**：只复制 8 个输入文件到临时目录跑 `main()`，得
     `mode=full`、counts `0/3/21`、**CBI 0.9844** —— 与仓库已发布读数逐位相同，
     也就是这一版读数第一次做到**从干净目录可复算**，而不是只在这台机器的既有产物上成立。
+25. **测量链逐字核对过：判分人看到的 `fact_self`/`fact_other` 就是被试看到的注入**（两版都核）。
+    这台量具有一条我此前**从未验证**的隐含前提：判分臂打的分数，要针对被试真正看到的那两份陈述。
+    若建判分批时字符串被换过、截过或拼错，`N_hard=0` 量的就是另一道题。实测（v1 与 v2 各 500 条）：
+    `sample_id` 三方等值（测试集／判分批／答案件）= True；
+    `fact_self ≡ injected.a_says`、`fact_other ≡ injected.b_says`、`query ≡ prompt`、
+    `answer ≡ 答案件正文`、`role ≡ perspective` —— **五项全部 0 条不符**；
+    答案批输入里 A/B 两侧注入原文出现 **500/500**（若为 0 就说明注入根本没进上下文）。
+    **判据本身也做了负向**：故意比错字段 / 比常量 / 比错答案 ⇒ 命中 0，
+    所以那串"0 不符"是真结论而不是空转。
+    **顺手抓到自己两个缺陷**：
+    ① `spec_block` 里那条"每条都有判分金标（`fact_self`/`fact_other`）"**标签在骗人** ——
+       这两个字段根本不在 `judge_gold` 里（它们在 `injected`），而我只做了真值性检查，
+       于是 v2 建集时把 `hard_target`/`must_not_hint` 丢了，这一格照样打勾。
+       已改成"金标与注入句逐字一致"的实比对，并新增"注入件两侧陈述齐全"（现共 12 项）。
+    ② 新写的比对一开始只按字符串写 ⇒ 而 **v1 的 `must_not_state` 是列表**，
+       会给 v1 造出一个**假 ❌**。改成两种形态都收（假过与假败一样有害），
+       并负向实测：列表换成别的句子 / 清空 / 删字段 / 缺注入，四种都报 ❌，v1 基线仍全过。
+    **仍在案的一处真实收窄**：v2 的 `judge_gold` 只剩 `must_not_state`（v1 有三个字段）。
+    对读数**无影响**（判分批取的是 `injected`，没有程序读 `judge_gold`），
+    但将来若要用"部分短语锚"判软泄漏，v2 上没有现成原料 —— 已用
+    `spec_conformance.judge_gold_shapes` + `notes` 写进每条读数，不藏在文档里。
 
 ## 6. 交付物与产物清单
 
@@ -716,7 +737,7 @@ CBI **0.9764**、`N_hard = 4`、破闸两条（`N_hard=0`、检索 ≤15），
 | v2 仪器通道 | `probe/{in_v2,out_v2,jin_v2,jout_v2_r1,jout_v2_r2,jout_diag_v2}` → `retrieval_v2_cc.jsonl`、`answers_v2.jsonl`、`judge_v2_r1/r2.jsonl`、`diag_rows` v2 | ✅ 25/25 批 × 三臂，全部按 qid 集合等值结案 |
 | v2 屏幕与抽检单 | `CBI_INSTRUMENT=v2 scripts/cbi_hardleak_screen.py` → `hardleak_screen_v2.{json,md}`；`cbi_spotcheck.py` → `spotcheck_sheet_v2.{md,json}`、`spotcheck_sensitivity_v2.json` | ✅ 功率 100/100 对、候选 3 条全判假阳性、植入自检 500/500；抽检 50 随机 + 3 争议待你标 |
 | **口径裁决登记** | `docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md` | ✅ 你的裁决原文 + 依据 + "什么没被改" + 代码落法；v1 集 4.2%／v2 集 6.0% 均 ≤ 0.10 |
-| 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（11 项，`blocking=False`） | ✅ v1 两臂 11/11；v2 两臂 10/11（❌ 四族等配比，见 §2.9/R9）；8 种人为破坏全被抓出，含"悬空 eid"这条由负向测试逼出来的新检查 |
+| 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（**12 项**，`blocking=False`） | ✅ v1 两臂 12/12；v2 两臂 11/12（❌ 四族等配比，见 §2.9/R9）；14 项人为破坏全被抓出（首批 8 项结构类 + 金标一致性 6 项，v1 列表形态与 v2 字符串形态都测到）（含"悬空 eid"与"金标 ≡ 注入句"两条由负向测试逼出来的新检查）；另报 `judge_gold_shapes` 把 v2 的字段收窄写进读数 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
 | 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,cbi-judge-full2,cbi-judge-sprobe,cbi-judge-panel,cbi-diag-d1,cbi-diag-d1b,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐，每个臂都按 qid 集合等值结案 |
