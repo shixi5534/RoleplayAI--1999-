@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <title>RoleplayAI · 无名者</title>
-  <link rel="stylesheet" href="./css/index.css?v=2">
+  <link rel="stylesheet" href="./css/index.css?v=7">
   <link rel="stylesheet" href="./css/pet-subtitle.css?v=5">
 </head>
 <body data-theme="dark">
@@ -74,19 +74,27 @@
         <div>正在唤醒数字人…</div>
       </div>
       <div class="live2d-status" id="live2d-status" hidden></div>
+      <!-- 刊头：只有文字，没有卡片背景。
+           旧版把 name/tag/tabs/reset 全塞进一张 298×141 的磨砂玻璃卡片，
+           卡片正好压在角色头部上（用户反馈「头被截住」的直接原因），
+           这里拆成「刊头行 + 工具行」，且都不带底色。 -->
       <div class="stage-overlay">
-        <div class="stage-name" id="stage-name">无名者</div>
-        <div class="stage-tag" id="stage-tag">Ms. Stranger · Live2D</div>
-        <!-- 模型切换 tabs(segmented control) -->
-        <div class="model-tabs" role="tablist" aria-label="选择模型">
-          <button class="model-tab" type="button" role="tab" data-model="314701" aria-selected="true">无名·初见</button>
-          <button class="model-tab" type="button" role="tab" data-model="314702" aria-selected="false">无名·无尽路</button>
-          <button class="model-tab" type="button" role="tab" data-model="314704" aria-selected="false">无名·沉影探戈</button>
+        <div class="stage-masthead">
+          <div class="stage-name" id="stage-name">无名者</div>
+          <div class="stage-tag" id="stage-tag">Ms. Stranger · Live2D</div>
         </div>
-        <button class="reset-pos-btn" id="reset-pos-btn" type="button" title="重置位置 (F / 双击舞台)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          重置位置
-        </button>
+        <div class="stage-tools">
+          <!-- 模型切换 tabs(segmented control) -->
+          <div class="model-tabs" role="tablist" aria-label="选择模型">
+            <button class="model-tab" type="button" role="tab" data-model="314701" aria-selected="true">无名·初见</button>
+            <button class="model-tab" type="button" role="tab" data-model="314702" aria-selected="false">无名·无尽路</button>
+            <button class="model-tab" type="button" role="tab" data-model="314704" aria-selected="false">无名·沉影探戈</button>
+          </div>
+          <button class="reset-pos-btn" id="reset-pos-btn" type="button" title="重置位置 (F / 双击舞台)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            重置位置
+          </button>
+        </div>
       </div>
       <!-- 关键变量:常驻显示当前值与对应按键 -->
       <div class="stage-hud" id="stage-hud">
@@ -287,7 +295,9 @@
   <script src="./assets/lib/pixi.min.js?v=7"></script>
   <script src="./assets/lib/pixi-live2d-display-cubism4.min.js?v=7"></script>
   <script src="./js/rain.js?v=1"></script>
-  <script src="./js/live2d.js?v=11"></script>
+  <!-- 画布装饰层：白炽灯 + 飞蛾（纯装饰,失败静默,prefers-reduced-motion 时画静帧） -->
+  <script src="./js/canvas-fx.js?v=6"></script>
+  <script src="./js/live2d.js?v=12"></script>
   <script src="./js/voice.js?v=7"></script>
   <!-- 模型切换(本地 Ollama ↔ 云端):在 chat.js 之前加载,chat.js 依赖 window.RoleplayLLM -->
   <script src="./js/llm-switch.js?v=3"></script>

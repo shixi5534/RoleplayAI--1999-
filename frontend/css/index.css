@@ -331,6 +331,69 @@
     /* Live2D 渲染容器:绝对铺满舞台,拖拽时切换光标 */
     #live2d-canvas { position: absolute; inset: 0; cursor: grab; }
     .stage.dragging #live2d-canvas { cursor: grabbing; }
+    /* ── 角色受光(rim):让角色「站进」右上那盏灯里,而不是贴在暗背景上 ──
+       为什么用 drop-shadow 而不是在 canvas-fx.js 里另画一道光:
+       drop-shadow 取的是**元素 alpha 通道**的形状,也就是 Live2D 的真实剪影,
+       所以它随模型动作、缩放、拖拽自动贴合,零维护;手画的光边一旦错位,
+       就会在身体内部留下一条亮线,比没有更难看(实测过,已放弃)。
+       方向:灯在右上 → 偏移 (+x, -y),受光边落在右上轮廓;
+       不使用向下偏移的暗投影 —— 背景本来就接近纯黑,压暗量测不出(实测 0.0001)。
+       强度经 A/B 定档:右上缘增益 +0.21、左上缘 +0.09(方向比 2.27,光确实只从上方来),
+       脸上增益仅 +0.001、过曝率不变(2.83%),即「不糊脸」。
+       开销:软件光栅下约 +13%,真机 GPU 由合成器承担,量级更低。 */
+    /* 两层 drop-shadow 叠出「衰减」而不是「一条等宽带子」：
+       单层 drop-shadow 的剖面是「2px 台阶 + 等宽平台 + 线性衰减到 45px」，
+       评审判定为「角色轮廓右侧贴了一条 4% 画宽的橙色带子」。
+       拆成「紧贴的亮芯 + 外扩的暗晕」后，近边是高光、往外是渐隐的散射，
+       剖面才有两层斜率；峰值也降下来，不再读成描边。
+
+       ★ 方向性的物理约束（这一条最容易被忽略）：
+       drop-shadow 的模糊半径 b 一旦接近或超过偏移量 m，阴影会**绕过**轮廓，
+       把整圈剪影都点亮 —— 那就是评审说的「360° 等亮的描边 = 发光滤镜」。
+       第一版 m=5 / b=5（比值 1.0），实测背光侧仍漏 50% 的光（AWAY/NEAR = 0.50）。
+
+       ★★ 同一个坑踩了第二次，记在这里免得再犯：
+       上一版第二层写的是 drop-shadow(20px -17px 38px)：偏移 m=26.2，模糊 b=38，
+       m/b = 0.69 —— 比第一版还差。实测 AWAY/NEAR = 0.42，评审直接判成
+       「角色自带一圈米白发光外轮廓，等于第二个光源，这是贴纸感的最大单一来源」。
+       所以判据不是「偏移够不够大」，而是**每一层的 m/b 都必须 >= 1.5**：
+
+         档位  m/b（芯/晕）   NEAR   AWAY   AWAY/NEAR   判定
+         c5    2.0 / 0.69    2.26   0.96     0.42      描边（淘汰）
+         c1    2.03 / 1.97   2.92   0.49     0.17      受光（采用）
+         b1    —/2.2..       2.67   0.44     0.17      受光，但晕太远读不出
+
+       ★★★ 第三个坑：测量口径。ab6 的掩膜必须用 filter:none 拍「有人/没人」两张做差，
+       不能拿生产图做差 —— 否则掩膜把 rim 光晕本身算成角色，环带被推到光晕外面，
+       测出来「紧芯贡献 ≈ 0」，于是错误地得出「只留紧芯太弱看不见，必须靠宽晕」。
+       修正口径后同一个脚本给出完全相反的结论（噪声底从 0.0316 降到 0.0000）：
+
+         档位  芯/晕半径   NEAR    AWAY  方向比  AWAY/NEAR  过曝%
+         c1    7 / 17     +46.51  +11.86  3.92    0.25      2.77%
+         e1    7 / —      +45.11  +10.65  4.23    0.24      2.74%   ← 采用
+         e3    5 / —      +45.08   +9.32  4.83    0.21      3.14%
+         f1    7 / 13     +45.81  +11.22  4.08    0.24      2.75%
+
+       结论：宽晕只贡献 3% 的 NEAR 增益，却带来全部的多余泄漏和一条
+       恒定宽度的暖金光带（评审点名的「右侧身后一条光带 = 贴纸感来源」）。
+       所以只留紧芯。方向性的关键变量是「偏移要大于模糊」，不是「晕要不要大」。
+
+       终审（对 final1）：「角色轮廓外有一圈均匀的暖白发光描边，沿头发和裙摆
+       整圈包裹，精度极高 —— 这是典型的抠图后描边」。根因是 alpha 1.00 + 7px 模糊
+       = 一条实边。ab6 实测四档（同一套 16 扇区口径，none 档为基线）：
+
+         plan                                NEAR   AWAY  方向比  AWAY/NEAR  过曝%
+         c1  11/-9 b7 a1.00                 +40.69 +11.61  3.50     0.29     2.97%
+         g1   8/-6.5 b6.5 a0.62             +21.55  +6.20  3.48     0.29     2.87%   ← 采用
+         g2  10/-8 b8 a0.55                 +20.04  +6.04  3.32     0.30     2.87%
+         g3   7/-5.7 b5.5 a0.50             +17.02  +4.59  3.71     0.27     2.87%
+
+       取 g1：受光侧增益从 +40.7 降到 +21.6（仍然明确可见），背光泄漏同步从
+       +11.6 降到 +6.2，方向比保持 3.48，过曝率还降了 0.10 个百分点。
+       再往下压（g3 以下）NEAR 增益掉到 +17 就只剩「一圈淡光」，读不出受光。 */
+    #live2d-canvas canvas {
+      filter: drop-shadow(8px -6.5px 6.5px rgba(255, 228, 192, 0.62));
+    }
     /* 齿孔档案角标(左上/右下),呼应官网邮票与档案元素 */
     .stage-corner {
       position: absolute;
@@ -342,40 +405,98 @@
     .stage-corner.tl { left: 10px; top: 8px; }
     .stage-corner.br { right: 10px; bottom: 8px; transform: rotate(180deg); }
     .stage-corner svg { width: 14px; height: 14px; }
-    /* 舞台角色名:复古衬线 + 罗马式分隔 */
+    /* 舞台刊头（原来是「磨砂玻璃卡片」）
+       旧版把 name / tag / tabs / reset 全塞进一张 298×141 的半透明卡片里，
+       卡片正好压在角色头部上 —— 这是用户反馈「头被截住」的直接原因
+       （实测卡片 rect [33,91,298,141]、底边 y=232，而角色脸在 y 180~300）。
+       现在改成**无容器的横排刊头**：只有文字本身，没有底色 / 描边 / 模糊，
+       控件缩小右对齐，让头部完整露出。 */
     .stage-overlay {
       position: absolute;
-      left: 14px;
-      top: 14px;
+      left: 16px;
+      right: 16px;
+      top: 12px;
       z-index: 5;
       pointer-events: none;
-      /* 排版修复：name/tag/tabs/reset 与 Live2D 模型大面积重叠 →
-         套一个磨砂玻璃小卡片把控件区与模型视觉分离，不挡拖拽与点击穿透 */
-      padding: 10px 14px;
-      max-width: 56%;
-      border-radius: var(--radius-sm);
-      background: rgba(8, 11, 14, 0.62);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 0;
+      max-width: none;
+      border-radius: 0;
+      background: none;
+      border: 0;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+    }
+    /* 刊头行：角色名 + 副标，一行排开 */
+    .stage-masthead {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .stage-name {
       font-family: var(--font-cn);
-      font-size: 24px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.30em;
+      line-height: 1.1;
       color: var(--fg);
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.92);
     }
     .stage-tag {
-      margin-top: 5px;
-      font-size: 10.5px;
+      margin: 0;
+      font-size: 9.5px;
       font-family: var(--font-mono);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.20em;
       color: var(--accent);
       text-transform: uppercase;
+      opacity: 0.82;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
     }
+    /* 工具行：低频操作收进这一行，默认压到很淡，hover 才浮起来。
+       目的是让视觉主区（头、胸、灯、蛾）不被任何控件盒子侵占。 */
+    .stage-tools {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.42;
+      transition: opacity 0.25s ease;
+    }
+    .stage:hover .stage-tools,
+    .stage-tools:focus-within { opacity: 1; }
+    .stage-overlay .model-tabs {
+      margin: 0;
+      padding: 0;
+      gap: 0;
+      background: none;
+      border: 0;
+    }
+    .stage-overlay .model-tab {
+      padding: 2px 8px;
+      font-size: 10.5px;
+      color: var(--fg-dim);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+    }
+    .stage-overlay .model-tab[aria-selected="true"] {
+      color: var(--accent);
+      background: none;
+      border-radius: 0;
+      box-shadow: inset 0 -1px 0 var(--accent);
+    }
+    .stage-overlay .reset-pos-btn {
+      margin: 0 0 0 6px;
+      padding: 2px 6px;
+      font-size: 10px;
+      color: var(--fg-dim);
+      background: none;
+      border: 0;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+    }
+    .stage-overlay .reset-pos-btn svg { width: 10px; height: 10px; }
     .stage-tag::before {
       content: "◆ ";
       opacity: 0.6;
@@ -393,9 +514,22 @@
       gap: 4px 0;
       padding: 10px 12px;
       border-radius: var(--radius-sm);
-      background: rgba(8, 11, 14, 0.78);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      /* 曾经是 rgba(8,11,14,0.78) 的实底 + blur(10px) —— 那等于在舞台底部压了一块
+         全宽 78% 黑的面板。实测它的上沿在 y=86.85% 处 3 行内把亮度从 69 砸到 25,
+         是全图最硬的一条人造边;更要紧的是 canvas-fx.js 里 drawLightPool 的第
+         4/5/6 层「地面光」整片躺在它底下,被这块 UI 一次性吃掉 78% ——
+         于是角色脚下没有地面、看起来像悬空,右下四角死黑也补不上。
+         改成向上化开的渐变:底部仍够黑,保证 kbd / 数值可读;上沿完全透明,
+         让地面的光能透出来。 */
+      background: linear-gradient(
+        to top,
+        rgba(8, 11, 14, 0.82) 0%,
+        rgba(8, 11, 14, 0.62) 42%,
+        rgba(8, 11, 14, 0.24) 78%,
+        rgba(8, 11, 14, 0) 100%
+      );
+      border: 0;
+      backdrop-filter: none;
       pointer-events: none;
     }
     .hud-chip {
@@ -481,7 +615,13 @@
       display: flex;
       flex-direction: column;
       border-radius: var(--radius-md);
-      background: var(--bg-1);
+      /* 终审：「聊天区大片空黑 —— 面板底色近乎纯黑 #0a0a0a，下半截完全空着，
+         死黑从舞台转移到了这里」。舞台是暖色单一光源，右侧面板却纯冷黑，
+         两半不是一个空间。改成「被那盏灯扫到的暖褐纸面」：左上角留一点暖，
+         右下角沉下去，色相和舞台的 #c9a86a 同一族，不再另起一个色系。 */
+      background:
+        radial-gradient(120% 70% at 18% -10%, rgba(176, 134, 78, 0.26) 0%, rgba(176, 134, 78, 0) 64%),
+        linear-gradient(168deg, #2b241a 0%, #241e16 46%, #1d1811 100%);
       border: 1px solid var(--line-strong);
       overflow: hidden;
       box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
@@ -502,7 +642,7 @@
       gap: 12px;
       padding: 13px 18px;
       border-bottom: 1px solid var(--line);
-      background: var(--bg-1);
+      background: linear-gradient(180deg, rgba(58, 47, 33, 0.78), rgba(34, 28, 20, 0.46));
     }
     .avatar {
       width: 40px;
@@ -583,7 +723,7 @@
     }
     .bubble.assistant {
       align-self: flex-start;
-      background: var(--bg-2);
+      background: rgba(44, 36, 26, 0.78);
       border: 1px solid var(--line);
       color: var(--fg);
       border-left: 2px solid var(--accent);
@@ -644,7 +784,8 @@
       gap: 8px;
       padding: 12px 16px;
       border-top: 1px solid var(--line);
-      background: var(--bg-1);
+      /* 与 .chat 同一块暖褐色面，别在底部又接回冷黑 #10161c */
+      background: linear-gradient(180deg, rgba(38, 31, 22, 0.52), rgba(26, 21, 15, 0.80));
     }
     #message-input {
       flex: 1;
@@ -652,7 +793,7 @@
       padding: 11px 14px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--line);
-      background: var(--bg-2);
+      background: rgba(18, 14, 10, 0.72);
       color: var(--fg);
       font-size: 15px;
       font-family: var(--font-cn);
@@ -1315,17 +1456,18 @@
        只调整字号 / 字距 / 留白等视觉属性,不动任何布局结构与 id
        ══════════════════════════════════════════════════════════ */
     @media (min-width: 861px) {
-      /* 角色名:版面锚点,放大并收紧字距 */
+      /* 角色名：刊头一行里的主字，不能回到 28px 的大标题 ——
+         那样会把舞台顶部整块让给标题，角色头又被挤下去。
+         这里只微调字距，字号沿用基础规则的 17px。 */
       .stage-name {
-        font-size: var(--fs-display);
-        letter-spacing: 0.22em;
-        line-height: 1.2;
+        letter-spacing: 0.34em;
+        line-height: 1.1;
       }
       /* 副标签:与主标题拉开对比,强化档案标签感 */
       .stage-tag {
-        font-size: var(--fs-micro);
-        letter-spacing: 0.28em;
-        opacity: 0.85;
+        font-size: 9.5px;
+        letter-spacing: 0.24em;
+        opacity: 0.82;
       }
       /* 聊天区:加大留白,形成不对称版面 */
       .messages {
