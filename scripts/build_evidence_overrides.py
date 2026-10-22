@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """生成证据组 override 清单（不改题集，供评测增量口径使用）。
 
-来源：docs/plot-graph-rag/eval/题集证据组复核.md（2026-09-16 逐题复核 43 道多组失分题）
+来源：docs/plot-graph-rag/CHRONICLE.md §2026-09-16·题集证据组复核（2026-09-16 逐题复核 43 道多组失分题）
 
 处置三类：
   A. 冗余辅助组（39 题）→ keep 只保留答案组，drop 其余
@@ -132,7 +132,7 @@ def main() -> int:
         "meta": {
             "tool": "scripts/build_evidence_overrides.py",
             "created": "2026-09-16",
-            "source": "docs/plot-graph-rag/eval/题集证据组复核.md",
+            "source": "docs/plot-graph-rag/CHRONICLE.md §2026-09-16·题集证据组复核",
             "note": "不改动题集 rag_testset_300.json；评测脚本读本文件产出『主组口径』指标，"
                     "与『全组口径』并列报告。",
             "counts": {

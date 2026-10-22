@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """角色扮演质量自动化评估（P2-2）。
 
-计划目标（docs/roleplay-core/prompt/ROLEPLAY_PROMPT_OPTIMIZATION_PLAN.md §P2-2）：约 20 条覆盖不同场景的
+计划目标（见 docs/roleplay-core/CHRONICLE.md 2026-09-01 提示词优化计划条 §P2-2）：约 20 条覆盖不同场景的
 测试输入，六个维度量化角色扮演质量，每次提示词改动后对比基线，防止负向优化。
 
 维度与达标线（计划表）：

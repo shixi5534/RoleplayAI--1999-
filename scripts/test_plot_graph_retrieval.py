@@ -74,7 +74,7 @@ def _clean_names(store, ent_name: str) -> list[str]:
 def _noise_canonical_hits(retr) -> list[str]:
     """不变式①：图中不得存在以**光杆称谓/语气词**为正名的实体。
 
-    历史缺陷（docs/plot-graph-rag/audit/剧情图谱全量审查报告.md §三）：抽取模型把「Madam Lucy」写进
+    历史缺陷（docs/plot-graph-rag/CHRONICLE.md §2026-09-08·全量审查 §三）：抽取模型把「Madam Lucy」写进
     227 个正文根本没有 Lucy 的块。落图后的可观测形态有两类：
       a. 光杆称谓被当成实体正名（``ma'am``/``señora``/``okay``…）——本不变式检查它；
       b. 带称谓的正常英文名（``Madam Lucy``/``St. Pavlov Foundation``）本身**合法**

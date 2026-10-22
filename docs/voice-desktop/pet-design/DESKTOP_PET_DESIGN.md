@@ -284,5 +284,5 @@ roleplay-ai/
 - 协议唤起：[Electron 实现网页唤醒本地应用](https://juejin.cn/post/7371986999164633098)
 - Live2D：[pixi-live2d-display](https://github.com/Hengle/pixi-live2d-display)（本项目网页版同款，已线上验证）
 - OCR：[tesseract.js 中文识别实践](https://blog.csdn.net/weixin_29016315/article/details/159367884)
-- 语音现状：网页版 `docs/voice-desktop/voice/VOICE_ITERATION_REPORT.md`（faster-whisper 本地 STT 6 轮迭代结论，直接沿用）
+- 语音现状：见 `docs/voice-desktop/CHRONICLE.md`「2026-08-13 · 语音后端 STT/TTS 自我迭代」（faster-whisper 本地 STT 8 轮迭代结论与最终参数，直接沿用）
 - Ollama API：[REST 调用说明](https://eastondev.com/blog/zh/posts/ai/ollama-api-calls/)

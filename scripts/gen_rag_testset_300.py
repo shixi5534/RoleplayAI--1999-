@@ -162,7 +162,7 @@ def validate_and_tag(oracle: Oracle) -> tuple[list[dict], list[dict]]:
                 "_idx": idx,
                 "oracle_min_blocks": min(d["hits"] for d in detail)}
         # 题干限定词（场景锚点）：2026-09-16 起不再进 evidence，作为独立字段透传，
-        # 供分析/可选校验使用，不参与 PASS 判定（见 docs/plot-graph-rag/eval/题集证据组复核.md）。
+        # 供分析/可选校验使用，不参与 PASS 判定（见 docs/plot-graph-rag/CHRONICLE.md §2026-09-16·题集证据组复核）。
         if cand.get("scenario_hints"):
             item["scenario_hints"] = cand["scenario_hints"]
         valid.append(item)

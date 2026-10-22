@@ -3,7 +3,7 @@
 
 背景
 ----
-``docs/plot-graph-rag/eval/RAG召回优化下一步计划_20260917.md`` 把主瓶颈定为「seeds 为空」，
+``docs/plot-graph-rag/CHRONICLE.md §2026-09-17·下一步计划`` 把主瓶颈定为「seeds 为空」，
 路径 A 是「seeds 为空时做描述性解析回填」。
 
 但 ``scripts/diag_seedless_ceiling.py`` 全量实测：300 题里 seeds 为空只有 **6 题**，

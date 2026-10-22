@@ -336,7 +336,7 @@ class Settings(BaseSettings):
     plot_min_semantic_kept: int = Field(0, ge=0, le=8)
     plot_min_chapter_kept: int = Field(0, ge=0, le=8)
     # 召回率修复（60 题 never_candidate 专项）：融合后「语义补位重排」。
-    # 诊断链（2026-09-17，详见 docs/plot-graph-rag/eval/RAG召回_60题专项与补位重排_20260917.md）：
+    # 诊断链（2026-09-17，详见 docs/plot-graph-rag/CHRONICLE.md §2026-09-17·60 题专项）：
     #   失败 105 题里 60 题的正解块**从未进入任何通道候选池**；这些正解块 100% 存在
     #   于语义索引（全库排名 p50=54），且 60/60 的块文本含真阳实体名——本该被 mention
     #   通道取到。把 mention 截断放大（5/10 → 20/50）后 19 题的 gold 进了池，

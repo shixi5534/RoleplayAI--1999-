@@ -9,7 +9,7 @@
 
 额外观测（比汇总指标更能说明机制）
     · ``top2_hit``：证据块是否落在**前 2 名**——产品按 2400 字符装配只装得下约 2 块，
-      这才是重排真正要改善的东西（见 docs/plot-graph-rag/eval/排序靶子_证据块名次分布_20260916.md）。
+      这才是重排真正要改善的东西（见 docs/plot-graph-rag/CHRONICLE.md §2026-09-16·排序靶子）。
 
 用法：
     .venv/Scripts/python.exe -X utf8 scripts/ab_cross_encoder.py

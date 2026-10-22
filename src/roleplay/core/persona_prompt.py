@@ -63,7 +63,7 @@ def _score_group(meta: dict) -> str:
     历史缺陷：合并列表后套同一个 ``0.85 × top1``，导致 lore 命中强时长期记忆
     被整段丢弃、剧情图谱块被词法块挤掉（见 deliverables/rag-graphrag-audit）。
 
-    P2 更新（2026-09-12，见 docs/plot-graph-rag/audit/plot-rag-audit-20260912.md）：剧情层两条通道
+    P2 更新（2026-09-12，见 docs/plot-graph-rag/CHRONICLE.md §2026-09-12·plot 检索层审计）：剧情层两条通道
     原先分别是 0.1–0.2（PPR×confidence）与 30–75（BM25 原始分），**组内相对门因此把
     边证据块整批丢掉**（阈值≈0.85×1.2=1.04 > 0.2）。现在剧情检索器在内部用 RRF 融合
     并按名次归一到 0.6–1.0，两条通道量纲一致：相对门只在"同一通道内"筛掉明显劣后

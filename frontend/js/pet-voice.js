@@ -5,7 +5,8 @@
  *   （faster-whisper 听录官方语音视频 → 按时间戳切分的中/英双配音切片，
  *     每条带 subtitle:{zh,en} 双语字幕文本）
  *
- * v4 解决的问题（详见 docs/语音点击交互设计.md 与 docs/voice-desktop/voice/调研-点击触发语音交互规范.md）：
+ * v4 解决的问题（详见 docs/voice-desktop/voice/调研-点击触发语音交互规范.md §7 决策摘要；
+ * 历史根因分析见 docs/voice-desktop/CHRONICLE.md「2026-07-27 · 点击触发语音播放」条目）：
  *   1. 旧版 25s 冷却从"音频结束"起算 → 台词越短惩罚越重（1.84s 台词死等 26.8s），
  *      且冷却期零反馈。v4：冷却从"起播"起算、分层取值（click 抢占 1.5s 可换播 /
  *      被动槽 8s / battle·enter 60s），冷却命中时广播 pet:voice-blocked 供 UI 反馈
@@ -44,8 +45,8 @@
   const LS_MUTE_KEY = "rp_pet_voice_muted";
   const LS_LANG_KEY = "rp_pet_voice_lang";
 
-  // ── 交互参数（取值依据：docs/voice-desktop/voice/调研-点击触发语音交互规范.md §3/§7
-  //    与 docs/语音点击交互设计.md「参数定稿」，调整前先读推导链） ──
+  // ── 交互参数（取值依据：docs/voice-desktop/voice/调研-点击触发语音交互规范.md §3.2/§7
+  //    推导链，调整前先读该文档；实现落地值为下方常量） ──
   const SLOT_COOLDOWN_MS = 8000;      // 被动槽冷却，从起播起算（旧值 25s 从结束起算）
   const SLOT_COOLDOWN_OVERRIDE = {    // 长叙事/被动槽差异化：防待机刷屏、长台词防打断刷屏
     idle: 12000, battle: 60000, enter: 60000,

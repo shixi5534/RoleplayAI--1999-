@@ -97,7 +97,7 @@ ROLEPLAY_WHISPER_MODEL_PATH=C:/Users/<你>/fw_model   # 推荐：本地模型目
 
 - STT 全链路平均相似度约 **88.8%**（6 句测试），含 VAD 预过滤、推理参数抑制、后处理幻觉过滤三层防御。
 - 语音合成带 LRU 音频缓存（100 条），重复文本命中缓存仅 **0.0001s**。
-- 详细迭代过程见 `docs/voice-desktop/voice/VOICE_ITERATION_REPORT.md`。
+- 详细迭代过程见 `docs/voice-desktop/CHRONICLE.md`（条目「2026-08-13 · 语音后端 STT/TTS 自我迭代」含最终参数表与 8 轮修复全过程）。
 
 ## 目录结构
 
@@ -112,12 +112,20 @@ roleplay-ai/
 │   ├── voice-desktop/         #   语音与桌面宠物
 │   └── qq/                    #   QQ 通道
 ├── src/roleplay/              # 后端源码（分层：api / core / errors / models）
+├── src/compendium_rag/        # 正典 GraphRAG 独立库（读 vendor/ 的第三方剧情数据）
 ├── frontend/                  # Web 表现层（聊天 / Live2D / 语音 / 模型切换 / 知识库 / 宠物页）
 ├── desktop/                   # Electron 桌面宠物薄壳（主进程 / preload / renderer）
 ├── data/                      # 运行时数据（角色 / 知识库 / 会话）
+├── vendor/                    # 第三方数据源：Reverse1999-Story-Compendium（只读）
+├── models/                    # 本地 reranker 模型（bge-reranker，约 5.7 GB，勿删）
 ├── scripts/                   # 运维与验证脚本（入库 / 迁移 / E2E）
 └── tests/                     # 镜像 src 的测试
 ```
+
+> 🗺️ **找文件先看这张总表**：[`PROJECT_MAP.md`](PROJECT_MAP.md) —— 项目文件索引与数据检索入口。
+> 收录：两套 RAG 的判别与归属（剧情 RAG vs 正典 RAG）、17 个顶层目录的文件数/体积/可删性、
+> `core/knowledge/` 逐文件职责、`data/` 与 `models/` 的大文件清单、409 个脚本的前缀约定、
+> 文档地图、「我想做什么→去哪」任务速查，以及 7 条必知陷阱。
 
 > 📚 **文档导航**：本仓库并存三套 RAG/系统，文档已按子系统分类，入口见
 > [`docs/README.md`](docs/README.md)（含各类判别指纹与「哪两份不可混用指标」的警示）。

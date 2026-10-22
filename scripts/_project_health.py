@@ -34,6 +34,8 @@ print("=" * 88)
 ROOT_OK = {
     ".env", ".env.example", ".gitattributes", ".gitignore",
     "pyproject.toml", "README.md", "requirements.txt", "start_server.bat",
+    # 文件级地图（目录/源码/脚本/测试 + 常见任务入口），docs/README.md 指向它
+    "PROJECT_MAP.md",
     # ⚠ git worktree 下 `.git` 是**文件**（指向真实 gitdir），非目录 —— 必须放行，
     #   否则本检查在干净副本（worktree）里必然误报。
     ".git",
@@ -43,6 +45,12 @@ IGNORED_OK = {
     ".env.env.bak.20260831_232917": "本地 .env 备份（.env.*.bak* 已忽略）",
     "_shuzhi_extract.txt": "一次性抽取产物（已忽略）",
     "_tmp_pron_edges.txt": "一次性探针产物（已忽略）",
+    # 2026-10-09/10 P4–P7 派工残留（.gitignore 已有显式规则，见「根级作业清单」段）
+    "_jobs.json": "P4–P7 派工清单（已忽略）",
+    "_jobs2.json": "P4–P7 派工清单（已忽略）",
+    "_p7_jobs.json": "P7 派工清单（已忽略）",
+    "_p7_plan.json": "P7 派工计划（已忽略）",
+    "p4_diag2.py": "P4 诊断脚本残留（已忽略）",
 }
 actual_root = {p.name for p in ROOT.iterdir() if p.is_file()}
 extra = sorted(actual_root - ROOT_OK - set(IGNORED_OK))
@@ -105,8 +113,7 @@ ck("docs 索引在库", (ROOT / "docs/README.md").exists())
 ck("data/compendium_rag/graph.json 在库",
    (ROOT / "data/compendium_rag/graph.json").exists())
 # 关键脚本仍在
-for s in ("_accept_all_phases.py", "_verify_v8_locks.py", "_docs_health.py",
-          "_project_tidy.py"):
+for s in ("_verify_v8_locks.py", "_docs_health.py", "_project_tidy.py"):
     ck(f"scripts/{s} 在库", (ROOT / "scripts" / s).exists())
 
 print()

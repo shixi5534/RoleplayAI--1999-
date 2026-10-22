@@ -128,3 +128,12 @@ data/knowledge/_audit/*/_flatten/
 data/knowledge/_audit/*/_jl/
 data/knowledge/_audit/*/_tmp_*/
 data/knowledge/_audit/*/l3_answers/_parts/
+
+# ── 文档整理（2026-10-21）补充的排除项 ────────────────────────────────
+#   r11 影子图的完整干跑副本（215 MB，与 data/compendium_rag/ 同构）。
+#   它是 P10 修复计划里「真图未动」的证据物，但属**可再生派生物**：
+#   由 data/compendium_rag/ + 三条 merge/alias 修复重放即可重建，故不入库。
+#   （口径见 docs/compendium-rag/P10修复计划_CBI收口.md「影子图 scratch_r12」一节）
+/scratch_r12/
+#   本机沙箱 ACL / 权限排障报告（DSH 环境产物，与项目内容无关）
+/_acl-recovery/

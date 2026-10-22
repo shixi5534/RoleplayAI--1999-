@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """抽取质量审计 · 全量版：2477 块逐块过缺陷规则（不抽样）。
 
-缺陷规则（全部可机械判定，来自 `docs/plot-graph-rag/audit/剧情图谱抽取质量审计.md` 的人工审计结论）：
+缺陷规则（全部可机械判定，来自 `docs/plot-graph-rag/CHRONICLE.md §2026-09-08·抽取质量审计` 的人工审计结论）：
 
 | 标记 | 含义 | 严重度 |
 |---|---|---|
@@ -19,7 +19,7 @@
 产物：
   data/knowledge/_audit/full_issues.jsonl  逐块明细（含命中规则与证据）
   data/knowledge/_audit/full_report.json   汇总统计
-  docs/plot-graph-rag/audit/剧情图谱全量审查报告.md              可读报告
+  docs/plot-graph-rag/CHRONICLE.md §2026-09-08·全量审查              可读报告
 
 可选修复（``--fix``）：自环边、悬空边、别名自指/重复、非中文谓语（默认不删，见 --drop-non-cn）。
 臆造类只标记不自动删（需模型复核），除非显式 ``--fix-hallucinated``。

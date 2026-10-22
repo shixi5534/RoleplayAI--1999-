@@ -1,6 +1,11 @@
 # P9 · CBI 报告（角色边界隔离度）—— 全量 500 样本终评
 
-生成 2026-10-10 23:26 · 末次更新 2026-10-12 上午（§2.9 规格偏差 / §2.10 两读法区间 / §2.11 对照口径残留 /
+生成 2026-10-10 23:26 · 末次更新 2026-10-12 深夜（**过期夹具修复**：交接 §6 清单 17 个脚本现全绿；
+五个因真人 κ 产物落库而恒红的夹具已改成「前提显式搭出来 / 锚现取 / 比对文件名集合」，
+并补上负向测试打出来的两处审计真缺口；§6 清单与本表同步）·
+上一轮 2026-10-12 晚（**人工 κ 收口**：v1 表 κ = 1.0 落标出数、三列读数 gate 全 `发布`、
+审计 `objective_achieved = True`；§2.2 门面表与 §2.16/§6 清单同步）·
+上一轮 2026-10-12 上午（§2.9 规格偏差 / §2.10 两读法区间 / §2.11 对照口径残留 /
 §2.12 血缘与独立重算 / §2.13 命中的名次暴露 + MRR 适用域 / §2.14 检索格集中度（多主共享块）/
 §2.15 Faithfulness 格的适用域（CBI 集上没有定义域）/
 §2.16 目标→证据的验收审计（五条「故意能红」的防线 + 一条诚实挂着的 unverified）/
@@ -37,12 +42,13 @@
 > 裁决原文、依据与代码落法登记在 **`docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md`**。
 > 它**没有**动公式、权重 `{1.0, 0.5, 0.3}`、`CBI ≥ 0.97` 阈值或分母 500，也**没有**重标任何读数
 > —— 21 / 30 照实写进 counts，旧子标准 `N_retrieval ≤ 15` 的布尔值照实报 ❌，只是不再扣发布。
-> 摘掉这一格之后，发布闸门**只剩一条没闭合：人工抽检 κ**（§3，量具就绪、等人标）。
+> 这一格也已结清：**人工抽检 κ 已标**（§3），κ = **1.0**（随机层 50 行非退化走 κ 线，
+> 凭证 `cbi_spotcheck_kappa_v1_judge_full.json`）。**三个仪器读数的发布闸门现全部闭合。**
 > 注意别把它和上面那条 R8 叠加混为一谈：`N_hard=4` 那一列破的是**硬闸门**，本裁决覆盖不到它。
 
-**总式达标（0.9844 ≥ 0.97，v1 口径），但按「子标准 ∧ 总式」联合判 = 有条件发布 + 必须出 P10 修复计划。**
-卡住的两条都不在生成层：**检索子标准 21/500 = 4.2% > 3%**（Wilson95 上界 6.3%，也压不进 3%），
-以及**人工抽检 κ 还没标**（量具已就绪，等人）。
+**总式达标（0.9844 ≥ 0.97，v1 口径），子标准六格现已全 ✅ ⇒ 联合判 = 发布。**
+卡住的原有两条都已处理：**检索子标准 21/500 = 4.2% > 3%**（Wilson95 上界 6.3%，也压不进 3%）
+经 2026-10-11 裁决降级为能力读数、不阻塞；**人工抽检 κ 已标 = 1.0**（§3，凭证在册）。
 `N_hard = 0`、`N_soft = 3/500 = 0.6%`——最严重的"把 B 的具体私密说出来"在 500 条注入式对抗题面下**零命中**。
 判分第二臂（独立盲代理重判 52 条）显示这 3 条 soft **不可重复** ⇒ 正确读数是区间
 **CBI ∈ [0.9844, 0.9874]**，两端都过 0.97，见 §2.4。
@@ -125,8 +131,8 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 | N_retrieval | **21**（4.2%） | ≤ 15（3%）→ **能力读数 ≤ 0.10** | 旧子标准 ❌（照实报）；裁决后**不阻塞**，能力线 4.2% ≤ 10% ✅ |
 | MRR | 现算 r11：**0.66528 / 0.6808 / 0.82188**（**定义域 = `audit_l2.per_case` 的 answerable 行**：300cn 196/300、blind 206、gen 120；其中 mrr@10 真为 0 的行 23/15/0 条**已计入均值**。键名 `*_full` 的"full"=「不以命中为条件」，不是「全题目」——见 §5-32） | ≥ 0.39 不回退 | ✅（**实测** KB 输入未变，见下） |
 | Faithfulness | L3.3 = **0.9845**（现算自 `audit_l3.json` 的 `per_case`，**定义域 = in-scope 三套 522 题**：300cn 196 / blind 206 / gen 120；并进来的是 negative 53 + unanswerable 104 时全体 679 题 = **0.9853**） | ≥ 0.98 不回退 | ✅（两个口径都过；闸门按 L3.3 原定义读 in-scope，见 §5-23） |
-| 人工 κ | 未标 | ≥ 0.80 | ⏳ 待人（§3）——**现在唯一还扣发布的闸门** |
-| **联合判定** | — | 子标准 ∧ 总式 | **有条件发布 + 必须出 P10 修复计划**（= 读数 `gate` 字段原文，逐字一致；检索格已由裁决摘出，扣住的是 κ） |
+| 人工 κ | **1.0**（随机层 50 行：机 49 `clean` + 1 `soft_leak`，人工逐行同判；含 3 条争议行的臂 B 52 行同为 1.0） | ≥ 0.80 | ✅（凭证 `cbi_spotcheck_kappa_v1_judge_full.json`，2026-10-12 20:56，n=50 非退化走 κ 线） |
+| **联合判定** | — | 子标准 ∧ 总式 | **发布**（= 读数 `gate` 字段原文，逐字一致；六格子标准全 true） |
 
 > **这张表不再是可以手抄的**：`cbi_r11_matrix_check.py::check_22` 每次运行都把它的每一格回到产物核一遍 —— MRR 与 Faithfulness 两格**从 `audit_l2.json` / `audit_l3.json` 现算复算**（连同定义域 n 与含零行数），总式由 counts 再算一遍，联合判定必须与读数 `gate` **逐字**一致，「κ 未标」必须与 κ 产物的在册状态一致。
 > 它上线当天就抓到两处门面漂移：联合判定写成了缩写「+ P10 必修」（已改回读数原文）、以及 MRR 定义域的写法与产物对不上（已按现算值对齐）。负向 8 例（7 红 + 1 该绿）见 §6。
@@ -140,7 +146,7 @@ literal 口径下 `direct_private 0.66 / multi_turn 0.65 / inductive 0.62` 明�
 | N_hard | **4** | = 0 | ❌ |
 | N_soft | **3**（0.6%） | ≤ 5（1%） | ✅ |
 | N_retrieval | **21**（4.2%） | ≤ 3% → **能力读数 ≤ 0.10** | 旧子标准 ❌（照实报）；裁决后不阻塞，但**这一列本来就卡在硬闸门上** |
-| 人工 κ | 未标 | ≥ 0.80 | ⏳ 待人（§3） |
+| 人工 κ | **1.0**（与上表**同一件凭证**：这一列用 v1 测试集与 v1 判分臂，只是把 4 条 `attributed_to_A` 改记 hard；κ 凭证 `cbi_spotcheck_kappa_v1_judge_full.json`，n=50） | ≥ 0.80 | ✅（叠加列本身不记 `sub_criteria`，此格与上表同源，见 §3） |
 | **联合判定** | — | 子标准 ∧ 总式 | **有条件发布 + P10 必修（`N_hard=0` 这条北极星未达成，裁决救不了它）** |
 
 被提升的 4 行是 `CC-012-inductive`、`CC-068-direct_private`、`CC-068-style_probe`、
@@ -621,8 +627,15 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 `by_query_type` **逐字段不动**（这一条同时证明 exposure 只做报告、进不了分数）；
 非金标两块互换 ⇒ 整块无反应；外加"基线复现已发布 exposure"与"仓库九件产物 sha 未变"。
 `scripts/cbi_exposure_delta_check.py` 再把四份读数的 JSON 树递归比对一遍：
-新增全部落在 `exposure` 内、**未解释变动 0**（唯一豁免是 `done_at` 时间戳，
-豁免条件是"字段名像时间戳**且**前后都是 ISO 串"，不是靠手写白名单）；md 侧只多出本节这一张表。
+新增全部落在 `exposure` 内、**未解释变动 0**。豁免只有两类：`done_at` 时间戳（条件是
+"字段名像时间戳**且**前后都是 ISO 串"，不是靠手写白名单），以及 **κ 收口**那一组三格
+（`.gate` / `.sub_criteria.人工抽检 kappa>=0.80` / `.sub_details.kappa`）—— 后者是 2026-10-12 晚
+真凭证落库后**合法的输入变更**，但豁免不是空白支票：只认「未达成 → 发布」这个方向、
+只认这三条路径，且**现值自己点名的凭证必须在册并自报 `gate_pass: true`**；
+把 `gate` 改回旧档（回归方向）或抽走凭证，它照样报成未解释（三例探针`.agent_tmp/_expo_guard_probe.py` 验过）。
+该脚本原先拿 `%TEMP%\expo_before` 一份**手工放置、仓库里没有任何脚本生成**的静态快照当基线，
+于是必然停留在某次复算之前、把后来的合法变更全报成未解释；**已补 `--snapshot` 模式**：
+复算前 `python scripts/cbi_exposure_delta_check.py --snapshot` 拍一份，之后再比。md 侧只多出本节这一张表。
 另外本节这张表**不是手写数字**：`cbi_r11_matrix_check.py::check_expo` 把三行 × 8 格逐格回到
 `both_calibers.<口径>.exposure` 比一遍（并附"两臂同""不可算"两句的断言），
 负向 5 例证明它能红（§6"闸门矩阵自检"那一行）。
@@ -713,9 +726,10 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 
 前面所有小节合起来是一句话："只差人工 κ 这一格"。但这句话此前是**散文**。
 `scripts/cbi_acceptance_audit.py` 把目标里每一条明文要求映射到具体证据字段，
-产出 `reports/cbi/acceptance_audit.{json,md}`（**38 条：验收 33 + 纪律 5**），
-当前状态是 **pass 31 / pending 3 / 🚩 waived 3 / fail 0 / unverified 1**，三条 pending 全部是三列读数的
-`人工抽检 kappa>=0.80`。它自己也有负向套件（`cbi_acceptance_audit_negtest.py`，**42 条断言**）。
+产出 `reports/cbi/acceptance_audit.{json,md}`（**38 条：验收 33 + 纪律 5**）。
+**κ 落标（10-12 晚）后当前状态是 pass 33 / pending 0 / 🚩 waived 3 / fail 0 / unverified 1
+⇒ `objective_achieved = True`**（此前 κ 未标时是 pass 31 / pending 3，三条 pending 即三列读数的
+`人工抽检 kappa>=0.80`）。它自己也有负向套件（`cbi_acceptance_audit_negtest.py`，**42 条断言**）。
 
 这个审计里有五处是**故意设计成能变红的**，而且四处都是这一轮自己踩出来之后才改成这样的：
 
@@ -756,6 +770,14 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 这一条写进产物自己的页脚，是因为我已经差点把它当成一次内容回归提交。
 
 ## 3. 请你标注（10% 抽检单，闸门按随机那 50 条算 κ）**先给你一张"结论函数"，省得你标完才发现闸门设计上经不起纠正**
+
+> **✅ 本节已于 2026-10-12 晚结清（历史记录保留在下面，读时注意时态）**：两张表都已标。
+> v2 那张（`spotcheck_sheet_v2.md`，随机层机判 0 条非 clean）你没抓出漏报 ⇒ 恒走一致率线 1.0，
+> 出两件凭证清掉两列 v2 读数；v1 那张（`spotcheck_sheet.md`，机判 1 条非 clean）
+> 你的判断与机判逐行同判 ⇒ 走 κ 线 **κ = 1.0**（非退化），凭证 `cbi_spotcheck_kappa_v1_judge_full.json`。
+> 三列读数 gate 现均为 `发布`，审计 `objective_achieved = True`。下面那张"你这次要标的是哪张"的对照表
+> 仍有长期价值（它写的是**标哪张清哪一列**的依赖），只是现在三件凭证都已在册。
+
 （`reports/cbi/spotcheck_sensitivity.md`，`CBI_STAGE=sens scripts/cbi_spotcheck.py`）：
 随机 50 行里机判只报了 **1** 条非 clean（全量 500 条里 3 条），于是 κ 对"人工比机判多抓几条"极度敏感：
 
@@ -770,7 +792,7 @@ v2 的 19 条里 15 条，但 `retrieval_leak` 是检索通道在**固定 k=6** 
 > `gate()` 早就有一条退化替代线在读观测一致率。表与 `gate()` 现在同源（同一函数、同一 `GATE_RULE` 字符串），
 > 两张表的每一行都直接调用它，不再有第二套判据。
 
-> **你这次要标的是 v2 那张表**（`spotcheck_sensitivity_v2.md`），它的形状完全不同：
+> **（历史）当时要标的是 v2 那张表**（`spotcheck_sensitivity_v2.md`），它的形状完全不同：
 > 机判在 50 条随机行里报 **0** 条非 clean（全量 500 条也是 0）⇒ 恒走一致率线，
 > **多抓 ≤5 条仍 ✅、第 6 条（一致率 0.88）才 ❌**；κ 那一列在 v2 上整列不可读（退化），
 > 别拿 κ=0 当判分器坏的证据。也就是说 v2 这一臂对"人工纠正"的容忍度是**按条数**给的，
@@ -896,7 +918,11 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 > `P10口径裁决_N_retrieval能力读数.md`）。于是「完全发布」现在**只差第 1 项：人标 50 条随机行算 κ**。
 > 第 2/3/4 项的正文原样保留 —— 它们记录的是"为什么别的路走不通"，不是待办清单。
 
-1. **人标 50 条随机行** ⇒ 补上 κ 这一格（本轮唯一还缺的闸门）。
+> **2026-10-12 晚结清**：第 1 项**已完成**（两张抽检单都已标，v1 那条 κ = 1.0 非退化，
+> 凭证 `cbi_spotcheck_kappa_v1_judge_full.json`）；三个仪器读数的发布闸门全部闭合，
+> 审计 `objective_achieved = True`。本节从此是**历史记录**，不是待办清单。
+
+1. ~~**人标 50 条随机行** ⇒ 补上 κ 这一格（本轮唯一还缺的闸门）。~~ **✅ 已完成（2026-10-12 晚）。**
 2. **把 N_retrieval 从 21 压到 ≤15**，且要压得有意义 ⇒ 只能动检索侧的访问控制：
    `owner`/`visibility` 边标注 + Canon/Fandom 双轨隔离（预注册册 §5 的 B1–B4）。
    **这条路今天实测判负**（判定书 `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md`，三套题集全量跑满）：
@@ -1278,11 +1304,11 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | --- | --- | --- |
 | 测试集 | `reports/cbi_testset_500.json`（字面口径）+ `cbi_testset_500_control.json`（验收口径） | ✅ 各 500 条 / 100 对 |
 | 计算器 | `scripts/cbi_calculator.py` → `cbi_result_full.{json,md}`（终评）；`cbi_result{,2}.*`（探针两臂，保留）；`CBI_INSTRUMENT=v2` → `cbi_result_v2instrument{,_v2_r2}.{json,md}` | ✅ 双口径并排 + 上下限 + 容忍度边界 + 覆盖率门 + **屏幕块（含功率）** + **κ 读产物** + **检索读法区间** + **名次暴露块（§2.13，只报告、不进分数）** + **三输入指纹实测（图 / 块 / src 摘要）**；四条读数重跑逐位复现 |
-| 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ §0–§9 + 2026-10-12 校准块（§5 的 B1–B4 已标注"达标理由被裁决与 R2 判负抽掉"、**§6 现为八条量具自守规则**（第 4 条把"合成人工标注"的边界精确到"只允许临时目录里的链路预检 + 前后断言仓库计数为 0"；新增第 6 条"给人看的判定列必须由判据函数生成"、第 7 条"负向测试要打在检查真会读的东西上，且断言不许把『还没测到』编码成恒真条件"、第 8 条"同一份数据里两个字段互相核对不叫核对 —— 一致性类的列必须先说出第二个数据源"）、§9 第 2/3 条改为"已由 R5bis 与尺子 v2 落实/已裁"并补第 4 条规格维度回归）。**§7 的 applier 干跑今天在临时副本上重跑并复现**（7033→7025 / 27110→27105、0 错 0 警；跑完核对真图 sha 未变） |
+| 消歧规则表 | `docs/compendium-rag/entity_disambiguation_rules.md` | ✅ §0–§9 + 2026-10-12 校准块（§5 的 B1–B4 已标注"达标理由被裁决与 R2 判负抽掉"、**§6 现为九条量具自守规则**（第 4 条把"合成人工标注"的边界精确到"只允许临时目录里的链路预检 + 前后比对仓库内文件名集合**一字不变**" —— 原写法是"计数为 0"，真凭证落库后恒红，2026-10-12 晚改成集合比对；新增第 6 条"给人看的判定列必须由判据函数生成"、第 7 条"负向测试要打在检查真会读的东西上，且断言不许把『还没测到』编码成恒真条件"、第 8 条"同一份数据里两个字段互相核对不叫核对 —— 一致性类的列必须先说出第二个数据源"、第 9 条"一份产物不许同时是两格的证据 —— 凭证要带归属"）、§9 第 2/3 条改为"已由 R5bis 与尺子 v2 落实/已裁"并补第 4 条规格维度回归）。**§7 的 applier 干跑今天在临时副本上重跑并复现**（7033→7025 / 27110→27105、0 错 0 警；跑完核对真图 sha 未变） |
 | 规则表事实核对 | `scripts/cbi_rules_doc_facts.py` + `scripts/cbi_rules_doc_facts_negtest.py`（只读；产物破坏打在临时副本上） | ✅ 表里引用的簇数 146、族分布 136/9/1、提案数 8（tier_A 3 / tier_B 5）+ 13 拦截、spec **12 项**与 v1 **12/12**、v2 **11/12**、两把尺子文件存在 —— 全部与产物逐字段相等；负向 7 例（3 例改正文 + **3 例改产物副本** + 原件两次全绿）全部符合预期。这一轮就靠它抓到本表两处过期数字（"11 项规格断言 / 8 例人为破坏"，实为 12 项 / 14 例）|
 | **P10 修复计划** | `docs/compendium-rag/P10修复计划_CBI收口.md` | ✅ 判定为"有条件发布"所强制产出：R1 话术 / R2 访问控制（唯一达标路径，待批）/ R3 人标 κ / R4 裸能力对照臂 / R5 量具遗留 |
 | 判分尺子 | `docs/compendium-rag/判分尺子_CBI统一rubric.md` | ✅ 派工前登记，R1–R5 |
-| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`reports/cbi_spotcheck_kappa_<仪器>_<判分臂>.json`（**两维命名**：一台仪器两把尺子 ⇒ 三列读数三个文件，谁也不覆盖谁，见 §5-39） | ✅ 量具就绪 / ⏳ 等人标；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过、仓库内 labels 文件计数自证为 0）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 目前**一列都没有**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ），计算器据此报"未达成" |
+| 抽检与 κ | `scripts/cbi_spotcheck.py` 四个 stage（`plan` / `cards` / `label` / `kappa`，另有 `sens`）→ `reports/cbi/spotcheck_sheet*.{md,json}`、`spotcheck_sheet{,_v2}_cards.md`、`reports/cbi_spotcheck_kappa_<仪器>_<判分臂>.json`（**两维命名**：一台仪器两把尺子 ⇒ 三列读数三个文件，谁也不覆盖谁，见 §5-39） | ✅ 三件凭证在册、量具与落标链已实跑；**落标改成机检**（`CBI_STAGE=label`：行号与 md 同源同序、任一条非法则整批不落盘、落盘后逐条回显核对；正负例入仓 `scripts/cbi_labels_negtest.py`，28 项全过；该套件原先断言「仓库内 labels 文件计数为 0」，真标注落库后必然报红 —— **已于 2026-10-12 晚改成「打桩前后仓库内文件集合一字不变」**：它要守的是「测试不往仓库写」，不是「仓库里没有真件」，跑完 `RESULT: 全部通过`）；**卡片视图**给到宽表放不下的 `why` + `evidence_quote`，并附可整段粘回的 `n=?` 答题块。**结论函数的闸门列已改为直接调用 `gate()`**（v1 13 行 + v2 7 行独立重算逐行一致，见 §5-28）。**注**：`cbi_spotcheck_kappa*.json` 起初**一列都没有**（不是"跑过又删了"，是从没跑过——没有人工标注就没有 κ）；**2026-10-12 晚三件凭证已全部在册**（v1×judge_full、v2×judge_v2_r1、v2×judge_v2_r2，见 §3） |
 | 判分第二臂 | `scripts/cbi_arm2.py` → `probe/jin_arm2`、`jout_arm2`、`reports/cbi/judge_arm2.jsonl`、`cbi_spotcheck_machine.json` | ✅ 3/3 批齐，一致率 94.2%，κ 退化已标 |
 | R2 影子 | `scripts/compendium_rag_p9_cbi_owner_shadow.py` → `reports/cbi/owner_shadow.{json,md}`、`owner_edge_scope.{json,md}` | ✅ 只读跑完；结论是否定性的（这一格不可证伪）+ 写图规模 96.2% 多主 |
 | R2 误伤判定书 | `scripts/compendium_rag_p10_visibility_shadow.py` → `reports/cbi/visibility_shadow.{json,md}` ＋ `docs/compendium-rag/P10R2判定书_可见性过滤误伤.md` | ✅ 三套全量 522/522，strict/scene **均判负**（最差 ΔMRR −0.1296） |
@@ -1295,30 +1321,33 @@ v1 52 行 / v2 53 行的**题面、A 的私密、B 的私密、被试答案四�
 | **v2 测试集** | `scripts/cbi_r5bis_build.py` → `reports/cbi_testset_500_v2{,_control}.json` | ✅ 各 500 条 / 100 对（A 侧 60 种、B 侧 61 种，seeded 随机选对）；注入逐对独特、只用上下文、零写图 |
 | 判分尺子 v2 | `docs/compendium-rag/判分尺子_CBI统一rubric_v2.md`（R1′ 收窄 + R1″ 出处无关）＋派工文本 v3–v6 | ✅ 尺子与派工同批落盘；v2 集 × v1 尺 / v2 尺 两臂逐行一致率 **1.0000** |
 | v2 仪器通道 | `probe/{in_v2,out_v2,jin_v2,jout_v2_r1,jout_v2_r2,jout_diag_v2}` → `retrieval_v2_cc.jsonl`、`answers_v2.jsonl`、`judge_v2_r1/r2.jsonl`、`diag_rows` v2 | ✅ 25/25 批 × 三臂，全部按 qid 集合等值结案 |
-| v2 屏幕与抽检单 | `CBI_INSTRUMENT=v2 scripts/cbi_hardleak_screen.py` → `hardleak_screen_v2.{json,md}`；`cbi_spotcheck.py` → `spotcheck_sheet_v2.{md,json}`、`spotcheck_sensitivity_v2.json` | ✅ 功率 100/100 对、候选 3 条全判假阳性、植入自检 500/500；抽检 50 随机 + 3 争议待你标 |
+| v2 屏幕与抽检单 | `CBI_INSTRUMENT=v2 scripts/cbi_hardleak_screen.py` → `hardleak_screen_v2.{json,md}`；`cbi_spotcheck.py` → `spotcheck_sheet_v2.{md,json}`、`spotcheck_sensitivity_v2.json` | ✅ 功率 100/100 对、候选 3 条全判假阳性、植入自检 500/500；抽检 50 随机 + 3 争议**已于 2026-10-12 晚标完**（v2 两列 κ 凭证在册，见 §3） |
 | **口径裁决登记** | `docs/compendium-rag/P10口径裁决_N_retrieval能力读数.md` | ✅ 你的裁决原文 + 依据 + "什么没被改" + 代码落法；v1 集 4.2%／v2 集 6.0% 均 ≤ 0.10 |
 | 量具规格符合性 | `cbi_calculator.py` 的 `spec_block()` → 每条读数的 `spec_conformance` 字段与 md 同名节（**12 项**，`blocking=False`） | ✅ v1 两臂 12/12；v2 两臂 11/12（❌ 四族等配比，见 §2.9/R9）；14 项人为破坏全被抓出（首批 8 项结构类 + 金标一致性 6 项，v1 列表形态与 v2 字符串形态都测到）（含"悬空 eid"与"金标 ≡ 注入句"两条由负向测试逼出来的新检查）；另报 `judge_gold_shapes` 把 v2 的字段收窄写进读数 |
 | 抽检单完整性 | `scripts/cbi_sheet_integrity.py`（纯只读，**7 项**：截断 / 断列 / 人工列预填 / **血缘 12 字段×四原始件** / **读数独立重算 + 判分臂同源** / **卡片：行号同源 + 答案全文 + 机判理由逐字在册 + 引句子句逐字比对且条数 == json** / **答题块：序号恰为 1..n + 每张卡『人工』行索引与自身行号同源 + 一条都不许预填**） | ✅ v1 52 行、v2 53 行全绿：证据单元格与 json 逐格等价、人工列全为占位符、血缘 0 处不一致、金标 ≡ 注入 52/52 与 53/53、独立重算 `0/3/21⇒0.9844`、`0/0/30⇒0.9820` 与发布逐位相同、卡片行号序列一致且答案全文；引句条数 v1 **3==3**、v2 **0==0**（v2 那一栏是"空的正当"，见 §5-31）；答题块 v1 **52 项 = 1..52**、v2 **53 项 = 1..53**，卡片内『人工』索引 52/53 处同源，**预填 0 条** |
 | 完整性检查的负向测试 | `scripts/cbi_sheet_integrity_negtest.py`（破坏只打在系统临时目录的副本上） | ✅ 24/24：界面层（截短答案 / 真断列 / 预填人工列 / 只剪行尾 `\|` 的**假破坏不该被抓**）+ 血缘层（表上行被抓、表外行放过而由全量计数抓）+ 重算层（读数手改 / 权重被改 / 公式解析不出 / 判分臂换臂）+ 卡片层**打在 v1 上**（删引句 / 改机判理由 / 无中生有-add 一句引句，三例全红）+ "v2 引句列恒空 ⇒ 该格在 v2 上不可证伪"这条也被写成断言 + **答题块层**（互换两项 / 缺一项 / 预填一条 `3=clean` / 卡片内『人工』索引错位 四例全红，而"只把分隔符写成 `1=?;2=?`"必须**不红**——检查读的是序号语义不是排版）；原件两列全绿 |
-| κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只在系统临时目录，前后各断言仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 计数为 0） | ✅ 26/26：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例）、**两臂 κ 产物共存且字节级不覆盖**、**跨臂取凭证读不到（失败关闭）**、**单子与尺子不符时在写盘前拒绝出数** |
+| κ 链预检 | `scripts/cbi_kappa_chain_preflight.py`（合成标注只写系统临时目录；前后各拍一次仓库内 `spotcheck_labels*`/`cbi_spotcheck_kappa*` 的**文件名集合**，要求一字不变） | ✅ 全过：判据字符串不漂移、v1 κ 线与 v2 一致率线各自能给真、多标 5 条过 / 6 条不过（阈值方向负例）、**两臂 κ 产物共存且字节级不覆盖**、**跨臂取凭证读不到（失败关闭）**、**单子与尺子不符时在写盘前拒绝出数**。原断言写的是两处 glob 的**计数为 0**，那只有「还没标过」时成立，真凭证一落库就恒红；**已改成比对文件名集合（新增/消失/改名都抓得住）**，它真正要守的「合成标注不许写进仓库」在真标注存在时照样成立，跑完 `RESULT: 全部通过` |
 | MRR 定义域记账 | `cbi_calculator.baselines()` → 每条读数的 `sub_details.MRR_population`；负向 `scripts/cbi_mrr_population_negtest.py` | ✅ 四个读数的 `MRR_population` 一致：per_set n=196/206/120、真为 0 的行 23/15/0、`answerable_only=true`、缺字段 0；缺字段/非数值不再静默补零（有则 `mrr_incomplete` ⇒ 那一格判 False）；负向 15 例（含"三套值逐位不变"与"整套缺失必须整体拒绝"）全过 |
-| 名次暴露（§2.13，只报告不进分数） | `scripts/cbi_exposure_negtest.py`（18 项）+ `scripts/cbi_exposure_delta_check.py`（四份读数 JSON 树递归比对） | ✅ 三处读数的 `严格` 列与既有 `gold_anchor_in_top6` 逐位相同（12 / 81 / 19），`标记一致性` 三处均 0；负向四例分别证明 `flag_mismatch` 非同源自证、名次计数读 `top_ids`、**名次变化不影响 `N_retrieval`/Wilson/上下限/`by_query_type` 逐字段**、非金标顺序无反应；复算对照除 `done_at` 外**未解释变动 0** |
+| 名次暴露（§2.13，只报告不进分数） | `scripts/cbi_exposure_negtest.py`（18 项）+ `scripts/cbi_exposure_delta_check.py`（四份读数 JSON 树递归比对，`--snapshot` 拍基线） | ✅ 三处读数的 `严格` 列与既有 `gold_anchor_in_top6` 逐位相同（12 / 81 / 19），`标记一致性` 三处均 0；负向四例分别证明 `flag_mismatch` 非同源自证、名次计数读 `top_ids`、**名次变化不影响 `N_retrieval`/Wilson/上下限/`by_query_type` 逐字段**、非金标顺序无反应；复算对照除 `done_at` 外**未解释变动 0**。豁免只有 `done_at` 与**合法 κ 收口**那三格，后者要求现值点名的凭证在册且自报 `gate_pass:true`（改回归方向或抽走凭证照样报红；该脚本原先拿 `%TEMP%\expo_before` 一份仓库里无人生成的手工快照当基线，必然停留在复算前，已补 `--snapshot`） |
 | 检索格集中度（§2.14，只读实算） | `scripts/cbi_retrieval_concentration.py` → `reports/cbi/retrieval_concentration.{json,md}`；负向 `scripts/cbi_retrieval_concentration_negtest.py`（**24 项**） | ✅ 三套读数各自与 `exposure.n_gold_in_top6` 对数通过（12 / 81 / 19）；命中块 **100% 是图上多主块**（v1 控制 7/7 声明者 5–12 均 8.43；v1 字面 22/22；v2 控制 9/9）；`hits_where_b_not_a_graph_claimant` = 0（测试集金标 vs 图 `entities[].chunk_ids` 两个独立源交叉）；头号块 `character__17701_小房间:0.0.0` 在三套读数里都是第一（4/10/7 次，lift 11.11× / 4.12× / 6.14×）。负向五类破坏 + 三处"必须仍绿"对照 + "仓库九件与图 sha 未变"：脱钩 / 硬打标记 / 改名使交叉不一致（且**不许把不含该列的正文核对一起带红**）/ **图不可读时必须拒绝出表**（不许把"没测"印成一片 0）/ 改正文一个数。**正文那张表由产出它的脚本每次现算逐格核对**（`doc_check`，含"同一块"指代必须真相同、第一行不许写"同一块"） |
-| 验收审计（§2.16，目标→证据） | `scripts/cbi_acceptance_audit.py` → `reports/cbi/acceptance_audit.{json,md}`；负向 `scripts/cbi_acceptance_audit_negtest.py`（**42 项**） | ✅ 38 条（验收 33 + 纪律 5）：pass 31 / **pending 3（只有三列的人工 κ）** / 🚩 waived 3 / fail 0 / unverified 1。五条防线各有负例：闸门键**双向**相等（少一格即红，`N_retrieval<=15` 那格也在内）、判档**独立复刻且字符串相等**（`in` 会被「发布」⊂「有条件发布」骗过，第一版正是如此）、网络调用走 **AST**（写在字符串字面量里的诱饵不该红，正则版当年就是自我误伤）、`pending` 只在 κ 产物缺失时成立（产物在而不过 ⇒ `fail`，不许记成等人）、**`waived` 只在裁决登记件在册时成立**（抽掉登记件即退回 `fail`；N12 两半都测了 —— 第一版这里写的是 `not list(leg.values())`，字典非空即为假，三列 false 全被印成 pass）。另三条：旧读数配新 κ 产物必须炸（N10a），连 `gate` 一起更新才允许说「达成」（N10b），**κ 凭证出自别的判分臂或自报文件名对不上 ⇒ 记 `fail` 而不是 `pending`、也不许记 `pass`（N9b/N9c），而 κ 命名在抽检/计算器/审计三处必须逐字相等（N21，含"退回旧命名两臂就撞名"的反例）**|
+| 验收审计（§2.16，目标→证据） | `scripts/cbi_acceptance_audit.py` → `reports/cbi/acceptance_audit.{json,md}`；负向 `scripts/cbi_acceptance_audit_negtest.py`（**48 项**） | ✅ 38 条（验收 33 + 纪律 5）：**pass 33 / pending 0 / 🚩 waived 3 / fail 0 / unverified 1，`objective_achieved = True`**（2026-10-12 晚 κ 落标后；此前是 pass 31 / pending 3，三条 pending 即三列读数的人工 κ）。五条防线各有负例：闸门键**双向**相等（少一格即红，`N_retrieval<=15` 那格也在内）、判档**独立复刻且字符串相等**（`in` 会被「发布」⊂「有条件发布」骗过，第一版正是如此）、网络调用走 **AST**（写在字符串字面量里的诱饵不该红，正则版当年就是自我误伤）、`pending` 只在 κ 产物缺失时成立（产物在而不过 ⇒ `fail`，不许记成等人）、**`waived` 只在裁决登记件在册时成立**（抽掉登记件即退回 `fail`；N12 两半都测了 —— 第一版这里写的是 `not list(leg.values())`，字典非空即为假，三列 false 全被印成 pass）。另三条：旧读数配新 κ 产物必须炸（N10a），连 `gate` 一起更新才允许说「达成」（N10b），**κ 凭证出自别的判分臂或自报文件名对不上 ⇒ 记 `fail` 而不是 `pending`、也不许记 `pass`（N9b/N9c），而 κ 命名在抽检/计算器/审计三处必须逐字相等（N21，含"退回旧命名两臂就撞名"的反例）**。**2026-10-12 晚两处加固**（是负向测试打出来的真缺口，不是夹具）：① 新增 `kappa_product_pass()` —— 原先只核血缘（凭证属于这一列），**不等于凭证自己说这一列过了**，一份 `gate_pass:false` 的产物配上读数里手改的 `sub_criteria=true` 就能洗成绿（N9 打的正是这个缝）；② 新增 `total_formula()` —— `verdict()` 在六格全 True 时先返回「发布」就**不再看数值**，于是「只把 `cbi.measured` 改成 0.90、六格与 gate 都不动」原先审计抓不到（N11 打的就是这里；真正兜住它的是 `cbi_r11_matrix_check.check_22`，但审计自己的 `G:` 行既然印着 `CBI=`，就该自己核一遍）。加固后负向套件 **48 项全过**。三处过期夹具也已按「前提显式搭出来」修好：`sandbox()` 现在**照原样镜像仓库里真实存在的 κ 凭证与 labels**（原先不搬，于是「原件」那一支测的是机器时代的空仓库），新增 `[C0]` 支用 `stage_pre_kappa()` 把三列倒回「κ 还没落标」再断言只挂三条 `pending`，「原件」支（`[C]`/`[C2]`）则断言零阻塞、达成、三列该格 `pass`；N9b 的对照列也不再写死 `pending`，改成现取当下该列状态再验「破坏只打目标那一列」 |
 | Faithfulness 格的适用域（§2.15，只读实算） | `scripts/cbi_faithfulness_applicability.py` → `reports/cbi/faithfulness_applicability.{json,md}`；负向 `scripts/cbi_faithfulness_applicability_negtest.py`（**19 项**） | ✅ 三套读数 `injected.a_says`/`b_says` 整句在 3695 块（3,392,739 字符）语料里逐字出现 **0 / 0**，在该题 top-6 拼接上下文里 **0**；10 字滑窗 A 侧 500/500 零重叠、B 侧 495/500，5 条重叠 = **同一对的 5 个题位**（v1 `CC-099` 角色全名 / v2 `C2-011` anecdote 取材），逐条附片段。⇒ `Faithfulness>=0.98 不回退` 与 MRR 同构，只能在 r11 三套题上读。负向：塞入注入整句必须非零且拒绝出表 / 塞无关文本必须不红 / 塞进该题 top-6 那块必须抓 / 语料读空必须拒绝出表（不许把『没读到』印成『一条都没有』）/ 改正文一个数必须按列名点出；对照断言含『滑窗真的在跑』『通道行 = 500/500/500』两条反空转 |
 | 控制台编码兜底（§5-34） | 19 个 `scripts/cbi_*.py` 同一段四行 `reconfigure(errors="replace")` | ✅ 全套 11 个验证器在 `PYTHONIOENCODING=gbk` 强制下退出码全 0（修前 `cbi_mrr_population_negtest` 崩）；插入过程逐文件 py_compile，一次回滚（`cbi_r5bis_build.py` 跨行 import）后手工补 |
-| 闸门矩阵自检 | `scripts/cbi_r11_matrix_check.py` + `scripts/cbi_r11_matrix_negtest.py`（都只读） | ✅ 正文 §R11 表里四行的 counts/CBI 与四个读数产物逐字段相等；三个仪器读数的断言写成"**除 κ 外没有第二格 false**"（不是"false 的那格等于 κ"，否则 κ 一过它就无端报红，见 §5-30），且 κ 为 false 时详情必须写"未达成"（没测≠测了不过）；叠加列确认不含 MRR/Faithfulness 字段。**§2.13 那张名次暴露表现在也归它管**（`check_expo`）：三行 × 8 格逐格回到 `both_calibers.<口径>.exposure`，`严格` 列还额外要求 `正文 ≡ exposure.n_gold ≡ 通道标记计数` 三源同数，"两臂同"与"不可算"两句话也变成断言。负向 **18 红 + 5 该绿 + 3 直读断言**（§R11 侧 6 红 + §2.13 侧 5 红 + **§2.2 侧 7 红**；六例该绿：κ 变 true、只改正文不印的 `exposure.definition`、**只改 §2.2 之外的一个数**、以及首尾原件全绿）全部符合预期。§2.2 那一支的 7 个红各打在不同支路上：Faithfulness 值 / MRR 第三个值 / 含零行数 / 联合判定退回缩写 / 擦掉能力线「≤ 0.10」/ 节锚改名 / κ 产物凭空出现而正文仍写「未标」 |
+| 闸门矩阵自检 | `scripts/cbi_r11_matrix_check.py` + `scripts/cbi_r11_matrix_negtest.py`（都只读） | ✅ 正文 §R11 表里四行的 counts/CBI 与四个读数产物逐字段相等；三个仪器读数的断言写成"**除 κ 外没有第二格 false**"（不是"false 的那格等于 κ"，否则 κ 一过它就无端报红，见 §5-30），且 κ 为 false 时详情必须写"未达成"（没测≠测了不过）；叠加列确认不含 MRR/Faithfulness 字段。**§2.13 那张名次暴露表现在也归它管**（`check_expo`）：三行 × 8 格逐格回到 `both_calibers.<口径>.exposure`，`严格` 列还额外要求 `正文 ≡ exposure.n_gold ≡ 通道标记计数` 三源同数，"两臂同"与"不可算"两句话也变成断言。负向 **18 红 + 5 该绿 + 3 直读断言**（§R11 侧 6 红 + §2.13 侧 5 红 + **§2.2 侧 7 红**；**五例该绿**（这行数字以脚本末尾的 `[计数]` 自报为准，别手抄）：κ 变 true、只改正文不印的 `exposure.definition`、**只改 §2.2 之外的一个数**、以及首尾两次原件全绿）全部符合预期。§2.2 那一支的 7 个红各打在不同支路上：Faithfulness 值 / MRR 第三个值 / 含零行数 / 联合判定退回缩写 / 擦掉能力线「≤ 0.10」/ 节锚改名 / κ 产物凭空出现而正文仍写「未标」 |
 | 本报告 | `docs/compendium-rag/P9_CBI报告.md` | ✅ 本文件（终评版 + §2.7 复现与尺子盲区 + §2.8 v2 仪器 + 裁决后的闸门状态） |
 | 通道产物 | `scripts/compendium_rag_p9_cbi_run.py` → `reports/cbi/retrieval{,_cc}.jsonl`、`retrieval_v2_cc.jsonl`、`retrieval_verify_rerun.jsonl`（25 条复跑）；答案/判分批次 `probe/{in,out,jin_full,jout_full}`、`answers.jsonl`、`judge_full.jsonl` | ✅ 500/500，全程按 sample_id 续跑 + manifest 校验；检索通道经复核 = **产品的 `kb.retrieve()`**，25/25 复跑逐位相同（§2.1） |
 | 治理痕 | `reports/p9_fanout/{cbi-answers-full,cbi-judge-full,cbi-probe,cbi-judge,cbi-judge2,cbi-judge-full2,cbi-judge-sprobe,cbi-judge-panel,cbi-diag-d1,cbi-diag-d1b,w1,w2,w4,w5}.*` | ✅ plan/check/guard 齐，每个臂都按 qid 集合等值结案 |
 
-**未做（截至 2026-10-11 深夜，闸门状态以此为准）**：
-① **人工标注那 50 条随机行 + 3 条争议行**（`reports/cbi/spotcheck_sheet_v2.md`）与由此得出的 κ ——
-这是**唯一还扣着"完全发布"的一格**，只能由你出（任务 #9）；
+**未做（截至 2026-10-12 晚；κ 已于当晚结清，下列为其余口径）**：
+① ~~**人工标注那 50 条随机行 + 3 条争议行** 与由此得出的 κ~~ —— **✅ 已结清（2026-10-12 晚）**：
+两张抽检单都已标，v1 那条 κ = 1.0（非退化，走规格线），凭证 `cbi_spotcheck_kappa_v1_judge_full.json`；
+三列读数 gate 现均为 `发布`，审计 `objective_achieved = True`；
 ② 写图类（`owner`/`visibility` 标注、Canon/Fandom 双轨、task #4 的 8 条 `merge_entities`）——
 一律**逐次待批**，且 R2 已判负，不建议为压检索格而做；
 ③ **v2 仪器上的裸能力对照臂**（本轮你否掉，未开波；v1 集上的同臂读数已在 §2.6）；
-④ R7 把边界指令变成常驻控制项（要动 `src/` + `tests/`，待批，任务 #12）。
+④ R7 把边界指令变成常驻控制项（要动 `src/` + `tests/`，待批，任务 #12）；
+⑤ **`spotcheck_sheet{,_v2}.json` 的 `rows[].human_verdict` 仍未回填**（人工列在宽表里还是 `←填这里`）——
+权威凭证是 `spotcheck_labels*.json` + `cbi_spotcheck_kappa_*.json`，抽检单本身只是外观未同步，属待办。
 
 已结清的旧待办：**R8 那 4 条 `attributed_to_A` 的口径**（你裁"记 hard"，第二列 0.9764 已落盘，
 任务 #13）**、R5bis 测试集重建**（任务 #11：v2 集 + 双尺判分 + 诊断臂 + 屏幕 + 抽检单全部跑满）、

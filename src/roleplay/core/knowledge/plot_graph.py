@@ -906,7 +906,7 @@ class PlotGraphRetriever:
     def seed_gate(self, seeds: dict[str, dict]) -> dict[str, float]:
         """过滤链接结果，只留「值得信」的种子（P3 精度门控）。
 
-        三条规则（全部实测驱动，见 docs/plot-graph-rag/audit/plot-rag-audit-20260912.md §P3）：
+        三条规则（全部实测驱动，见 docs/plot-graph-rag/CHRONICLE.md §2026-09-12·plot 检索层审计 §P3）：
         1. **人工别名表锚定**的实体一律保留（人写的名字最可信）；
         2. **词元兜底**（path=token）种子必须被锚定——实测 300 题里只有 7 题落到这条
            路径且种子全是碎片，而离题问句几乎全靠它蹭上 restaurant / this place；

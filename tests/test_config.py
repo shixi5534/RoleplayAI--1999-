@@ -41,7 +41,7 @@ def test_settings_reject_out_of_range(field, value):
 def test_settings_defaults_still_valid():
     s = Settings()
     # 0.8 → 0.6：RAGAS 2.0 评估显示 7B 在 0.8 下倾向"表演"（纯修辞/编造场景），
-    # Faithfulness 仅 0.75；0.6 保留角色灵动性同时显著抑制放飞。见 rag-knowledge-audit.md。
+    # Faithfulness 仅 0.75；0.6 保留角色灵动性同时显著抑制放飞。见 docs/roleplay-core/CHRONICLE.md 2026-08-31 条。
     assert s.llm_temperature == 0.6
     assert s.chunk_size == 600
     assert s.static_no_cache is True
