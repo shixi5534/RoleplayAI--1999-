@@ -147,36 +147,43 @@
     "method": "同日对照：同库/同题集/同 harness，只换 src 树（HEAD 导出至 scratch_r12/headsrc/src vs 工作区 src）",
     "head": {"retriever_bytes": 33646},
     "current": {"retriever_bytes": 41233},
+    "config_used": {
+      "note": "生产检索配置，必须显式给；默认值 (lex_weight=0, rrf_k=60) 是历史行为，不是 README/r11 口径",
+      "CMPRAG_LEX_WEIGHT": 1.0, "CMPRAG_LEX_TOP": 30, "CMPRAG_LEX_FIRST": 0,
+      "CMPRAG_RRF_K": 1, "top_k": 6,
+      "other_gap_knobs": {"CMPRAG_RETRIEVAL_POOL_TOP_N": null, "CMPRAG_RETRIEVAL_VECTOR_MIN_SCORE": null}
+    },
     "results": {
-      "full_all": {"n": 300, "head": {"hit@6": 0.5267, "MRR": 0.4056, "seed_recall": 0.2767}, "current": {"hit@6": 0.53, "MRR": 0.4043, "seed_recall": 0.2767}},
-      "full_answerable": {"n": 196, "head": {"hit@6": 0.801, "MRR": 0.6156, "seed_recall": 0.4235}, "current": {"hit@6": 0.8061, "MRR": 0.6138, "seed_recall": 0.4235}},
-      "full_answerable_cn_keyword": {"n": 184, "head": {"hit@6": 0.8098, "MRR": 0.6235}, "current": {"hit@6": 0.8152, "MRR": 0.6215}},
-      "graph_only_all": {"n": 300, "head": {"hit@6": 0.44, "MRR": 0.3226, "seed_recall": 0.2333}, "current": {"hit@6": 0.44, "MRR": 0.3243, "seed_recall": 0.2333}},
-      "graph_only_answerable": {"n": 196, "head": {"hit@6": 0.6684, "MRR": 0.4887}, "current": {"hit@6": 0.6684, "MRR": 0.4912}}
+      "full_all": {"n": 300, "head": {"hit@6": 0.56, "MRR": 0.435611, "seed_recall": 0.2767}, "current": {"hit@6": 0.563333, "MRR": 0.436, "seed_recall": 0.2767}},
+      "full_answerable": {"n": 196, "head": {"hit@6": 0.852041, "MRR": 0.66165, "seed_recall": 0.4235}, "current": {"hit@6": 0.857143, "MRR": 0.662245, "seed_recall": 0.4235}},
+      "full_answerable_cn_keyword": {"n": 184, "head": {"hit@6": 0.858696, "MRR": 0.669475}, "current": {"hit@6": 0.86413, "MRR": 0.670109}},
+      "graph_only_all": {"n": 300, "head": {"hit@6": 0.53, "MRR": 0.396111, "seed_recall": 0.2333}, "current": {"hit@6": 0.53, "MRR": 0.396111, "seed_recall": 0.2333}},
+      "graph_only_answerable": {"n": 196, "head": {"hit@6": 0.806122, "MRR": 0.60119}, "current": {"hit@6": 0.806122, "MRR": 0.60119}},
+      "graph_only_answerable_cn_keyword": {"n": 184, "head": {"hit@6": 0.815217, "MRR": 0.605978}, "current": {"hit@6": 0.815217, "MRR": 0.605978}}
     },
     "per_question_diff": {
-      "full": {"hit_up": ["R167"], "hit_down": [], "rr_changed": {"R007": [1.0, 0.5], "R135": [0.2, 0.166667], "R167": [0.0, 0.166667]}},
-      "graph_only": {"hit_up": [], "hit_down": [], "rr_changed": {"R104": [0.5, 1.0]}}
+      "full": {"hit_up": ["R263"], "hit_down": [], "rr_changed": {"R167": [0.25, 0.2], "R263": [0.0, 0.166667]}},
+      "graph_only": {"hit_up": [], "hit_down": [], "rr_changed": {}}
     },
     "verdict": {
       "hit@6_no_regression": true,
-      "mrr_no_regression": false,
-      "mrr_note": "full 模式 MRR -0.0018（3 题）；graph_only +0.0017。归因：G4 dangling 回流是唯一影响排名的改动（把 HEAD 的 personalized_pagerank 塞回当前代码后 top-6 逐位恢复）。"
+      "mrr_no_regression": true,
+      "net_effect": "full 净 +1 命中（R263 救回）/1 位次下滑（R167）；graph_only 三种口径逐位完全不变。属噪声量级的 1 换 1，不得宣称提升。",
+      "attribution": "R263 与 R167 的变动唯一来源是 G4（dangling 回流）。G1/G2/G3 默认路径对排名零影响；graph_only 零变动即其佐证。"
     },
-    "attribution": "scratch_r12/probe_nog4.py 证明 G1/G2/G3 默认路径对排名零影响，排名变化全部来自 G4。",
     "r11_baseline_reproducibility": {
-      "claimed": {"source": "data/compendium_rag/reports/eval_300cn_k1_r11.{log,json}", "full/answerable": {"hit@6": 0.852, "MRR": 0.6616}, "graph_only/all": {"hit@6": 0.53, "MRR": 0.396}},
-      "reproduced_with_head": {"full/answerable": {"hit@6": 0.801, "MRR": 0.6156}, "graph_only/all": {"hit@6": 0.44, "MRR": 0.3226}},
-      "full_hit_diff_questions": 18,
-      "ruled_out": {
-        "artifact_change": "graph.json mtime 2026-10-10 09:46 早于 r11 报告 11:17；chunk_index/entity_index 2026-09-27；chunks.json 2026-09-21；题集 2026-09-25",
-        "code_change": "src/compendium_rag/ 最后提交 c20f3ff 2026-10-10 09:40，早于 r11 报告",
-        "embedding_drift": "24 块 fresh 重嵌 vs 索引内向量 cos min 0.996969 / mean 0.9987；且 graph_only 不走向量通道仍有同量级差异"
-      },
-      "conclusion": "r11 报告产生于当前不可复现的代码/运行态（残留未知）。验收一律用同日 HEAD vs CUR 对照。",
-      "recommendation": "在目标环境重建一次基线并重新锁定读数，停止引用 2026-10-10 的数字。"
+      "claimed": {"source": "data/compendium_rag/reports/eval_300cn_k1_r11.{log,json}", "full/answerable": {"hit@6": 0.852041, "MRR": 0.66165}, "graph_only_answerable": {"hit@6": 0.806122, "MRR": 0.60119}},
+      "reproduced_with_head_production_config": {"full/answerable": {"hit@6": 0.852041, "MRR": 0.66165}, "graph_only_answerable": {"hit@6": 0.806122, "MRR": 0.60119}},
+      "verdict": "r11 完全可复现，逐位吻合。",
+      "retracted_claim": {
+        "what_was_claimed": "r11 在本机不可复现，HEAD 只跑出 0.8010/0.6156",
+        "why_wrong": "对照实验未设 CMPRAG_LEX_WEIGHT=1.0 / CMPRAG_RRF_K=1，跑的是默认配置（lex_weight=0, rrf_k=60）",
+        "actual_meaning": "0.8010/0.6156 是默认配置下的 HEAD 读数；词面通道在本数据集值约 +5.1pt hit@6 / +4.6pt MRR",
+        "signal_that_was_missed": "seed_hit 全 300 题逐题相同、n_evidence 也相同，只有 18 题 hit 不同 —— 指向排序/融合而非检索覆盖，天然排除嵌入漂移与索引变更",
+        "status": "已撤回，正文（§0/§7.2/§9）与 architecture.md、README 均已改正"
+      }
     },
-    "harness_caveat": "scratch_r12/eval_head.py 按 EVAL_SRC 绑定 src 树并打印 == 绑定校验 ==；本机存在多个 checkout，不锁 sys.path 会静默导入他人的 compendium_rag，本轮早期因此得出过错误的「退化 4.6pt」结论，那批读数已作废。"
+    "harness_caveat": "scratch_r12/eval_head.py 按 EVAL_SRC 绑定 src 树并打印 == 绑定校验 ==；本机存在多个 checkout，不锁 sys.path 会静默导入他人的 compendium_rag，本轮早期因此得出过错误的「退化 4.6pt」结论，那批读数已作废。配置错误（上文 retracted_claim）是另一个独立错误。"
   },
   "tests": {
     "suite": "tests/compendium_rag/",

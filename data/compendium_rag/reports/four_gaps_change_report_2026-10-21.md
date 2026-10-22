@@ -12,15 +12,19 @@
 ## 0. 一句话结论
 
 **四条缺口全部在代码层修复，测试 383 → 398 passed（新增 15 条），默认值路径与改造前逐位一致。**
-**同日 HEAD vs CUR 对照（eval300 cn 集，top_k=6）：hit@6 不退化且略升**
-（full/answerable 0.8010→0.8061，graph_only 持平），
-**MRR 在 full 模式 −0.0018（3 道题，归因于 G4 的预期副作用，见 §7.3）。**
+**验收（生产配置 `lex_weight=1.0 / rrf_k=1 / lex_top=30`，eval300 cn 集，top_k=6）：**
+**同日 HEAD vs CUR 对照 —— full/answerable hit@6 0.8520 → 0.8571、MRR 0.6616 → 0.6622；**
+**graph_only 三种口径逐位完全不变（answerable hit@6 0.8061、MRR 0.6012）。**
+**既无退化，也无显著提升——净效应是 1 换 1 的位次波动（救回 R263、R167 掉一位）。**
 **`graph.json` 未重建** —— G3 的重建口径净增量为 **0**，而重建本身会带来 840/583 条
 边的变动（全部来自归一化/合并规则的代码演进，与本轮无关），属独立的**数据刷新决策**，
 需拍板后单独执行。**本轮不宣称任何召回提升。**
 
-> ⚠️ 2026-10-10 的 r11 基线（0.852/0.662）**在本机当前环境不可复现**（未改动的 HEAD
-> 代码只跑出 0.8010/0.6156），所以验收改用同日对照。细节见 §7.2。
+> ✅ 2026-10-10 的 r11 基线（0.852041 / 0.661650）**可以复现**：用未改动的 HEAD 代码
+> + 生产配置重跑得 0.8520 / 0.6616，逐位吻合。
+> 早前本报告写的「不可复现（0.8010/0.6156）」是**一次实验错误**——那批读数用的是
+> 默认配置 `lex_weight=0, rrf_k=60`（历史上没开词面通道），与 r11 的生产口径不同。
+> 错误结论已全部撤回，细节与教训见 §7.2。
 
 ---
 
@@ -223,8 +227,8 @@ tests/compendium_rag/    383 passed, 7 skipped  →  398 passed, 7 skipped  (+15
 | # | 要求 | 状态 |
 |---|---|---|
 | 1 | `pytest tests/compendium_rag/` 全绿，含新增 ≥9 测试 | ✅ 398 passed，新增 15 |
-| 2 | 每条缺口默认值关闭路径与原行为逐字节一致 | ✅ G1 公式等价；G2 `None` 不走过滤分支 |
-| 3 | eval300（cn 集，`--top-k 6`）hit@6 与 MRR 不退化 | ⚠️ **hit@6 不退化（两个模式都 ≥ 对照）**；full 模式 MRR **−0.0018**（3 道题，归因见 §7.3）。严格按「逐位相等」不成立，按「不退化且有归因」成立 |
+| 2 | 每条缺口默认值关闭路径与原行为逐字节一致 | ✅ G1 公式等价；G2 `None` 不走过滤分支；G3 空操作（见 §3）；G4 是**有意的**排名修复，非等价改动，已单列 |
+| 3 | eval300（cn 集，`--top-k 6`）hit@6 与 MRR 不退化 | ✅ **两个模式、三个口径全部不退化**：full/answerable hit@6 0.852041→0.857143、MRR 0.661650→0.662245；graph_only 三种口径**逐位完全相同** |
 | 4 | G3 不得宣称召回提升 | ✅ 全文无召回提升声明 |
 | 5 | 产出变更报告 JSON + md | ✅ 本文件 + 同名 `.json` |
 
@@ -235,66 +239,84 @@ tests/compendium_rag/    383 passed, 7 skipped  →  398 passed, 7 skipped  (+15
 **只换 `src` 树**：HEAD（`git show HEAD:src/...` 导出到 `scratch_r12/headsrc/src`，
 `retriever.py` 33646 B）vs 本轮工作区（41233 B）。
 
+**必须用生产检索配置**：
+`CMPRAG_LEX_WEIGHT=1.0 CMPRAG_LEX_TOP=30 CMPRAG_LEX_FIRST=0 CMPRAG_RRF_K=1`。
+默认值（`lex_weight=0, rrf_k=60`）是**历史行为**，只用于等价性检查，
+拿来跟 README/r11 指标表对账会凭空差 5 个点（见 §7.2）。
+
 | 模式 | 口径 | HEAD hit@6 | CUR hit@6 | HEAD MRR | CUR MRR | HEAD seed | CUR seed |
 |---|---|---|---|---|---|---|---|
-| full | all（n=300） | 0.5267 | **0.5300** | 0.4056 | 0.4043 | 0.2767 | 0.2767 |
-| full | **answerable（n=196）** | 0.8010 | **0.8061** | 0.6156 | 0.6138 | 0.4235 | 0.4235 |
-| full | answerable+cn（n=184） | 0.8098 | **0.8152** | 0.6235 | 0.6215 | 0.4348 | 0.4348 |
-| graph_only | all（n=300） | 0.4400 | 0.4400 | 0.3226 | **0.3243** | 0.2333 | 0.2333 |
-| graph_only | answerable（n=196） | 0.6684 | 0.6684 | 0.4887 | **0.4912** | 0.3571 | 0.3571 |
-| graph_only | answerable+cn（n=184） | 0.6739 | 0.6739 | 0.4946 | **0.4973** | 0.3696 | 0.3696 |
+| full | all（n=300） | 0.560000 | **0.563333** | 0.435611 | **0.436000** | 0.2767 | 0.2767 |
+| full | **answerable（n=196）** | **0.852041** | **0.857143** | **0.661650** | **0.662245** | 0.4235 | 0.4235 |
+| full | answerable+cn（n=184） | 0.858696 | **0.864130** | 0.669475 | **0.670109** | 0.4348 | 0.4348 |
+| graph_only | all（n=300） | 0.530000 | 0.530000 | 0.396111 | 0.396111 | 0.2333 | 0.2333 |
+| graph_only | answerable（n=196） | 0.806122 | 0.806122 | 0.601190 | 0.601190 | 0.3571 | 0.3571 |
+| graph_only | answerable+cn（n=184） | 0.815217 | 0.815217 | 0.605978 | 0.605978 | 0.3696 | 0.3696 |
 
-逐题（`scratch_r12/eval_diff` 口径）：
+逐题（answerable 196 题，`scratch_r12/acceptance_final.json`）：
 
-- **full**：hit 上升 1 题（R167），下降 **0** 题；RR 变动 3 题
-  （R007 `1.0→0.5`、R135 `0.2→0.1667`、R167 `0.0→0.1667`）。
-- **graph_only**：hit 升降均为 0；RR 变动 1 题（R104 `0.5→1.0`）。
+- **full**：hit 上升 **1** 题（R263 `0.0 → 0.1667`）、下降 **0** 题；
+  RR 变动 2 题（R167 `0.25 → 0.2`、R263 `0.0 → 0.1667`）。
+- **graph_only**：hit、RR **均零变动**。
 
-### 7.2 「2026-10-10 的 r11 基线」不可复现
+> 净效应：`full` 的 R263 被救回（G4 让孤立种子不再把激活平摊给全图），
+> R167 掉一个位次。1 换 1 的位次波动落在噪声内，**不足以宣称提升**。
+
+### 7.2 r11 基线可复现 —— 以及一次必须记下的实验错误
 
 `data/compendium_rag/reports/eval_300cn_k1_r11.{log,json}` 记的是 full/answerable
-**0.852 / 0.662**，其它历史报告（`eval_300cn_k1_v9p1`、`eval_300cn_k1_r10`）也复现同一读数。
-但**用未改动的 HEAD 代码、同一批工件重跑，只能得到 0.8010 / 0.6156**——full 模式逐题 hit
-差 **18 题**，graph_only 更是 0.530（报告）vs **0.4400**（实测）。
+**0.852041 / 0.661650**。用**未改动的 HEAD 代码 + 生产配置**重跑，得
+**0.852041 / 0.661650** —— **逐位吻合**。`graph_only` 同样逐位吻合（0.806122 / 0.601190）。
+**r11 完全可复现。**
 
-排除过程（全部实测过，不是推测）：
+本报告早前版本写过一段「r11 在本机不可复现，HEAD 只跑出 0.8010/0.6156」，
+并据此把验收判据降级为同日对照。**那段是错的，已撤回**。真实原因很简单：
 
-| 可能原因 | 结论 |
+| 项 | 事实 |
 |---|---|
-| 工件变过 | ❌ `graph.json` mtime 2026-10-10 09:46 < r11 报告 11:17；`chunk_index.npz`/`entity_index.npz` 9/27；`chunks.json` 9/21；题集 9/25 —— 全部早于 r11 |
-| 代码变过 | ❌ `git log -1 -- src/compendium_rag/` = `c20f3ff 2026-10-10 09:40`，也早于 r11 |
-| 索引/嵌入漂移 | ❌ 24 个随机块 fresh 重嵌 vs 索引内向量：cos **min 0.996969 / mean 0.9987**；且 graph_only 根本不走向量通道，却有同样量级的差 |
-| 结论 | ⚠️ r11 报告产生于一个**当前不可复现的代码/运行态**（残留未知，见 §9）。因此它**不能**当验收门槛 |
+| 错误读数的来源 | 对照实验忘了设 `CMPRAG_LEX_WEIGHT=1.0` / `CMPRAG_RRF_K=1`，跑的是默认配置 |
+| 默认配置下 HEAD 的读数 | 0.8010 hit@6 / 0.6156 MRR（**这才是** `0.8010` 的出处） |
+| 生产配置下 HEAD 的读数 | 0.852041 / 0.661650 = r11，逐位相同 |
+| 差值的含义 | 词面通道（`lex_weight=1.0`）在本数据集上值约 **+5.1pt hit@6 / +4.6pt MRR**，与 README 的「Production value」注记一致 |
+| 为什么当时「排除了代码/工件/嵌入」 | 因为这三者确实都没问题 —— 排除全对，但漏掉的是**配置**这一维 |
 
-**所以本轮验收一律用 §7.1 的同日 HEAD vs CUR 对照**，不用跨日报告数字。
+留给后续的教训（已写进 `docs/compendium-rag/architecture.md` 与 README 的指标表旁）：
 
-### 7.3 MRR −0.0018 的归因（G4 是唯一影响排名的改动）
+1. 对账前先确认**配置**，再怀疑代码/工件/环境。三项「排除」全对也可能整体错。
+2. `seed_hit` 全 300 题逐题相同、`n_evidence` 也相同，只有 18 题 hit 不同 ——
+   这形态指向**排序/融合**而非**检索覆盖**，天然排除嵌入漂移与索引变更。
+   这个信号当时就在手上，没有被读出来。
+3. 默认值「等于历史行为」不代表「等于 README 的生产读数」。两者差 5 个点。
+
+### 7.3 G4 的排名影响归因
 
 `scratch_r12/probe_nog4.py` 用 `ast` 把 HEAD 的 `personalized_pagerank` 抽出来塞回当前
-代码（其余改动保持），逐题重跑 R007 / R135 / R167：**top-6 顺序逐位恢复成 HEAD 的样子**。
-⇒ full 模式那 3 题的 RR 变动，唯一来源是 **G4 的 dangling 回流**；G1/G2/G3 的默认路径
-对排名零影响（graph_only 只差 R104 一题的一个位次，也由 G4 引起）。
+代码（其余改动保持），逐题重跑翻转题：**top-6 顺序恢复成 HEAD 的样子**。
+⇒ 生产配置下那 2 题的 RR 变动，唯一来源是 **G4 的 dangling 回流**；
+G1/G2/G3 的默认路径对排名**零影响**（`graph_only` 零变动，也印证这一点 ——
+该模式下 G1 的截断与 G2 的阈值都不参与）。
 
-这是 G4 的**预期**副作用（dangling 质量回流改变了平稳分布，孤立种子不再污染全图），
-不是回归；但必须如实记下来，不能宣称"对排名完全无影响"。
+这是 G4 的**预期**副作用（悬挂质量回流改变了平稳分布，孤立种子不再污染全图），
+不是回归。如实记下，不宣称"对排名完全无影响"。
 
 回归命令（两次跑，用 `EVAL_SRC` 切换 src 树；`scratch_r12/eval_head.py` 会打印绑定校验）：
 
 ```powershell
-$env:EVAL_SRC = "$PWD\scratch_r12\headsrc\src"
-.\.venv\Scripts\python.exe scripts\compendium_rag_eval300.py `
-    --set data/knowledge/_audit/rag_testset_300_cn.json --top-k 6 `
-    --out scratch_r12\eval_head_full.json
+# 生产配置必须显式给，否则跑出来的不是 r11 口径
+$env:CMPRAG_LEX_WEIGHT='1.0'; $env:CMPRAG_LEX_TOP='30'
+$env:CMPRAG_LEX_FIRST='0';     $env:CMPRAG_RRF_K='1';  $env:EVAL_MODE='full'
 
-$env:EVAL_SRC = "$PWD\src"
-.\.venv\Scripts\python.exe scripts\compendium_rag_eval300.py `
-    --set data/knowledge/_audit/rag_testset_300_cn.json --top-k 6 `
-    --out scratch_r12\eval_cur_full.json
+$env:EVAL_SRC = "$PWD\scratch_r12\headsrc\src"; $env:EVAL_OUT = "$PWD\scratch_r12\eval_head_r11cfg_full.json"
+.\.venv\Scripts\python.exe scratch_r12\eval_head.py
+
+$env:EVAL_SRC = "$PWD\src"; $env:EVAL_OUT = "$PWD\scratch_r12\eval_cur_r11cfg_full.json"
+.\.venv\Scripts\python.exe scratch_r12\eval_head.py
 ```
 
 > ⚠️ **跑 eval 前必须核 `== 绑定校验 ==` 那三行**（`EVAL_SRC` / `compendium_rag from` /
 > `retriever.py bytes`）。本轮早期有一批实验没锁 `sys.path`，实际一直导入的是另一个
 > checkout 的 `compendium_rag`，导致得出过"退化 4.6pt"的错误结论——那批读数全部作废。
+> 这是本轮**第二个**实验错误（第一个是 §7.2 的配置错误），两个都已留档。
 
 ---
 
@@ -310,8 +332,10 @@ $env:EVAL_SRC = "$PWD\src"
 | 代码 | `src/compendium_rag/{retriever,graph_store,pipeline,config,cli}.py` |
 | 测试 | `tests/compendium_rag/{test_retriever,test_graph_store}.py` |
 | 证据工件 | `scratch_r12/{drift_report,g3_blind_report,g3_delta_report,blast_HEAD,blast_prev,blast_radius_report}.json` |
-| eval 同日对照原始结果 | `scratch_r12/{eval_head_full,eval_cur_full,eval_head_gonly,eval_cur_gonly}.json` + 同名 `.log` |
+| eval 最终对照原始结果（生产配置） | `scratch_r12/{eval_head_r11cfg_full,eval_cur_r11cfg_full,eval_head_r11cfg_gonly,eval_cur_r11cfg_gonly}.json` |
+| eval 最终三口径汇总 | `scratch_r12/acceptance_final.json` |
 | eval 对照脚手架 | `scratch_r12/eval_head.py`（按 `EVAL_SRC` 绑定 src 树并打印绑定校验） |
+| ~~eval 早期对照（作废）~~ | `scratch_r12/{eval_head_full,eval_cur_full,eval_head_gonly,eval_cur_gonly}.json` —— 用的是默认配置，**不得**用于任何结论 |
 
 ---
 
@@ -319,11 +343,11 @@ $env:EVAL_SRC = "$PWD\src"
 
 1. **`graph.json` 是否重建** —— 见 §6.2。当前：不重建。
 2. **G2 阈值是否开启** —— 需先跑标定扫描 + eval300 验证，当前保持 `None`。
-3. **r11 基线残留未知** —— `eval_300cn_k1_r11.{log,json}` 的 0.852/0.662 在本机能查到的
-   任何代码/工件状态（HEAD、本轮改动前后）下都复现不出来。已排除工件变更、代码变更、
-   嵌入漂移；graph_only 模式（不走向量通道）也有同量级差异，说明问题在
-   `graph/mention/lex` 通道或该次运行的 harness/环境。**要恢复跨日可比性，需要在
-   目标环境重建一次基线并重新锁定读数**，不能继续引用 10-10 的数字。
-4. **full 模式 MRR 严格口径** —— 计划 §5-3 写的是「hit@6 与 MRR 不退化」。实测 hit@6 不退
-   化且略升，MRR −0.0018（3 题，归因于 G4）。是否接受这一口径需要拍板：
-   接受（G4 换来孤立种子不污染全图）／或把 G4 加开关默认关闭（则恢复逐位相等）。
+3. **G4 是否需要开关** —— 它是四条里唯一改变排名的（生产配置下 full 模式救回 R263、
+   R167 掉一位；graph_only 零变动）。净效应在噪声内，但严格「逐位相等」不成立。
+   若要绝对等价，可加 `ppr_dangling_backflow=False` 开关默认关闭；
+   当前判断**不必**，因为 G4 修的是真实缺陷（孤立种子污染全图）。
+4. **本报告的两处已撤回结论** —— §7.2 的「r11 不可复现」与更早的「退化 4.6pt」
+   均已被实测推翻，正文已改正。这两次错误的**共同机制**是实验环境（配置 / 导入路径）
+   未锁死；其代价是本轮返工了相当一部分测量工作。留档以警示后续。
+

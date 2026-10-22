@@ -473,60 +473,82 @@ $env:PYTHONDONTWRITEBYTECODE='1'
 
 1. `pytest tests/compendium_rag/` 全绿，含新增 ≥9 测试 —— **已满足（15 条）**。
 2. 每条缺口的**默认值关闭路径与原行为逐字节一致** —— G2 `min_score=None`、
-   G1 `pool_top_n=None` 公式等价。
-3. eval300（`data/knowledge/_audit/rag_testset_300_cn.json`，`--top-k 6`）：
-   hit@6 与 MRR **不退化** —— hit@6 ✅（两个模式都不退化且略升）；
-   MRR full 模式 **−0.0018**（3 题，归因见 §7.3），graph_only **+0.0017**。
+   G1 `pool_top_n=None` 公式等价、G3 在现有抽取管线上是空操作；
+   **G4 例外**：它是有意的排名修复，不是等价改动，已单列（§7.3）。
+3. eval300（`data/knowledge/_audit/rag_testset_300_cn.json`，`--top-k 6`，
+   **生产配置** `lex_weight=1.0 / lex_top=30 / lex_first=0 / rrf_k=1`）：
+   hit@6 与 MRR **两者都不退化** —— ✅ 见 §7.1。
 4. **G3 不得宣称召回提升**，只验契约对称性。
 5. 产出变更报告 JSON + md，含受影响实体数 / 块对数 / 边分数变化 —— ✅
    `data/compendium_rag/reports/four_gaps_change_report_2026-10-21.{md,json}`。
 
-### 7.1 同日对照（唯一有效的验收判据）
+### 7.1 同日对照
 
-跨日比数字是不可靠的：工件、代码、嵌入、`sys.path` 任一变动都会污染读数。本轮的验收
-一律用**同一天、同一工件、同一 harness，只换 `src` 树**的对照。
+同一库（chunks 3695 / entities 7033 / edges 27110）、同题集、同 harness、`top_k=6`，
+**只换 `src` 树**：HEAD（`git show HEAD:src/…` → `scratch_r12/headsrc/src`）vs 本版。
 
-同一库（chunks 3695 / entities 7033 / edges 27110）、同题集、`top_k=6`：
+⚠️ **必须显式给生产配置。** 默认值 `lex_weight=0 / rrf_k=60` 是「历史行为」，
+不是 README 指标表的口径 —— 用它去对账会凭空差约 5 个点（§7.2）。
 
 | 模式 | 口径 | HEAD hit@6 | 本版 hit@6 | HEAD MRR | 本版 MRR |
 |---|---|---|---|---|---|
-| full | all（n=300） | 0.5267 | **0.5300** | 0.4056 | 0.4043 |
-| full | **answerable（n=196）** | 0.8010 | **0.8061** | 0.6156 | 0.6138 |
-| graph_only | all（n=300） | 0.4400 | 0.4400 | 0.3226 | **0.3243** |
-| graph_only | answerable（n=196） | 0.6684 | 0.6684 | 0.4887 | **0.4912** |
+| full | all（n=300） | 0.560000 | **0.563333** | 0.435611 | **0.436000** |
+| full | **answerable（n=196）** | **0.852041** | **0.857143** | **0.661650** | **0.662245** |
+| full | answerable+cn（n=184） | 0.858696 | **0.864130** | 0.669475 | **0.670109** |
+| graph_only | all（n=300） | 0.530000 | 0.530000 | 0.396111 | 0.396111 |
+| graph_only | answerable（n=196） | 0.806122 | 0.806122 | 0.601190 | 0.601190 |
+| graph_only | answerable+cn（n=184） | 0.815217 | 0.815217 | 0.605978 | 0.605978 |
 
-逐题：full 模式 hit 上升 1 题（R167）、下降 0 题，RR 变动 3 题；
-graph_only hit 升降均为 0，RR 变动 1 题（R104）。
+逐题（answerable 196 题）：full 模式 hit 上升 1 题（R263 `0→0.1667`）、下降 0 题，
+RR 变动 2 题（R167 `0.25→0.2`）；**graph_only hit、RR 全部零变动**。
 
-### 7.2 「r11 基线」不可复现
+净效应是 1 换 1 的位次波动（救回 R263，R167 掉一位），落在噪声内 ——
+**不得据此宣称提升**。graph_only 的零变动同时佐证 G1/G2/G3 的默认路径对排名无影响。
+
+### 7.2 r11 基线可复现 —— 以及一次必须留档的实验错误
 
 `data/compendium_rag/reports/eval_300cn_k1_r11.{log,json}` 的 full/answerable
-**0.852 / 0.662** 在本机复现不出来：未改动的 HEAD 代码 + 同一批工件只跑出
-**0.8010 / 0.6156**（逐题差 18 题）；graph_only 更是 0.530（报告）vs **0.4400**（实测）。
+**0.852041 / 0.661650**，用**未改动的 HEAD + 生产配置**重跑得到
+**0.852041 / 0.661650**，逐位吻合；graph_only 同样逐位吻合（0.806122 / 0.601190）。
+**r11 完全可复现。**
 
-已排除：工件变更（`graph.json` mtime 10-10 09:46 < 报告 11:17；索引 9/27；题集 9/25）、
-代码变更（`src/compendium_rag/` 最后提交 `c20f3ff` 10-10 09:40，也早于报告）、
-嵌入漂移（fresh 重嵌 vs 索引向量 cos min 0.9969 / mean 0.9987，且 graph_only 不走向量通道
-却同样有差）。**结论：该报告产生于一个当前不可复现的代码/运行态，不能当门槛。**
+> ⚠️ **已撤回的旧结论**：本文件与变更报告的早期版本曾写「r11 在本机不可复现，
+> HEAD 只跑出 0.8010 / 0.6156」，并据此把验收降级为「同日对照」。
+> 真实原因是那次对照**没设** `CMPRAG_LEX_WEIGHT=1.0` / `CMPRAG_RRF_K=1`，
+> 跑的是默认配置。`0.8010 / 0.6156` 是默认配置（无词面通道）下的读数，
+> 词面通道在本数据集上值约 **+5.1pt hit@6 / +4.6pt MRR**。
+>
+> 当时「排除工件、代码、嵌入漂移」三项全对 —— 却整体错，因为漏掉了**配置**这一维。
+> 而能一眼看穿的信号当时就在手上：`seed_hit` 全 300 题逐题相同、`n_evidence` 也相同，
+> 只有 18 题 hit 不同 —— 这形态指向**排序/融合**而非**检索覆盖**，
+> 天然排除嵌入漂移与索引变更。
 
-### 7.3 MRR 归因
+**教训（写进流程）**：对账前先确认配置，再怀疑代码/工件/环境；
+「默认值 = 历史行为」不等于「默认值 = README 的生产读数」。
+
+### 7.3 排名变动的归因（G4）
 
 把 HEAD 的 `personalized_pagerank` 用 `ast` 抽出来塞回当前代码（其余改动保持），
-R007 / R135 / R167 的 top-6 顺序**逐位恢复成 HEAD**。⇒ 排名变化唯一来源是
+翻转题的 top-6 顺序**逐位恢复成 HEAD**。⇒ 生产配置下那 2 题的 RR 变动，唯一来源是
 **G4 的 dangling 回流**（默认开启，属预期副作用，不是 G1/G2/G3 引入的）。
+graph_only 零变动进一步佐证：该模式下 G1 的截断与 G2 的阈值都不参与。
 
 回归命令（`scratch_r12/eval_head.py` 按 `EVAL_SRC` 绑定 src 树并打印绑定校验）：
 
 ```powershell
-$env:EVAL_SRC = "$PWD\scratch_r12\headsrc\src"   # 或 "$PWD\src"
-.\.venv\Scripts\python.exe scripts\compendium_rag_eval300.py `
-    --set data/knowledge/_audit/rag_testset_300_cn.json --top-k 6 `
-    --out scratch_r12\eval_head_full.json
+# 生产配置必须显式给，否则跑出来的不是 r11 口径
+$env:CMPRAG_LEX_WEIGHT='1.0'; $env:CMPRAG_LEX_TOP='30'
+$env:CMPRAG_LEX_FIRST='0';     $env:CMPRAG_RRF_K='1';  $env:EVAL_MODE='full'
+
+$env:EVAL_SRC = "$PWD\scratch_r12\headsrc\src"
+$env:EVAL_OUT = "$PWD\scratch_r12\eval_head_r11cfg_full.json"
+.\.venv\Scripts\python.exe scratch_r12\eval_head.py
 ```
 
 > ⚠️ **务必先核 `== 绑定校验 ==` 三行**（`EVAL_SRC` / `compendium_rag from` /
 > `retriever.py bytes`）。本机存在多个 checkout，不锁 `sys.path` 会静默导入别人的
-> `compendium_rag`，读数全废（本轮早期踩过）。
+> `compendium_rag`，读数全废（本轮早期踩过，是第二个独立错误）。
+
 
 ---
 
