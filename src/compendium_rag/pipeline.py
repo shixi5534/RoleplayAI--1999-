@@ -312,8 +312,17 @@ class KnowledgeBase:
         return self.retriever.entity_index
 
     async def retrieve(self, query: str, top_k: int | None = None,
-                       use_vector: bool = True) -> dict:
-        """异步检索（需要嵌入时用本地 Ollama）。"""
+                       use_vector: bool = True,
+                       pool_top_n: int | None = None,
+                       vector_min_score: float | None = None,
+                       want_pool: bool = False) -> dict:
+        """异步检索（需要嵌入时用本地 Ollama）。
+
+        ``top_k`` 只控**输出条数**（G1）；``pool_top_n`` 控融合候选池宽度，
+        ``None`` = 按 ``max(top_k*4,24)`` 推导（等价旧行为）。
+        ``vector_min_score`` = 向量余弦下限，``None``（默认）= 关闭（G2）。
+        ``want_pool=True`` 时结果里额外带 ``evidence_pool``（全池）。
+        """
         s = self.settings
         qvec = None
         ent_hits = None
@@ -337,20 +346,35 @@ class KnowledgeBase:
                      "vector": s.vector_weight},
             lex_weight=s.lex_weight, lex_top=s.lex_top, lex_first=s.lex_first,
             rrf_k=s.rrf_k, ppr_damping=s.ppr_damping, ppr_max_iter=s.ppr_max_iter,
-            graph_max_edges=s.graph_max_edges)
+            graph_max_edges=s.graph_max_edges,
+            # G1：池宽与输出数解耦。None → 按 max(top_k*4,24) 推导（等价旧行为）。
+            pool_top_n=pool_top_n if pool_top_n is not None else s.retrieval_pool_top_n,
+            # G2：向量余弦下限。None（默认）→ 完全关闭，逐结果与改造前一致。
+            vector_min_score=(vector_min_score if vector_min_score is not None
+                              else s.retrieval_vector_min_score),
+            want_pool=want_pool)
         return res.to_dict()
 
     def context(self, query_res: dict, top_k: int | None = None) -> str:
-        from .retriever import RetrievalResult, Seed
+        from .retriever import RetrievalResult, Seed, Evidence
         rr = RetrievalResult(query=query_res.get("query", ""))
         rr.seeds = [Seed(s["eid"], s["name"], s["score"], s["how"])
                     for s in query_res.get("seeds", [])]
         rr.edges = [(e["src"], e["relation"], e["dst"], e["edge_score"])
                     for e in query_res.get("edges", [])]
-        from .retriever import Evidence
-        rr.evidence = [Evidence(e["chunk_id"], e["score"], e.get("channels", {}),
-                                e.get("graph_score", 0.0), e.get("reasons", []))
-                       for e in query_res.get("evidence", [])]
+
+        def _ev(e: dict) -> Evidence:
+            # 关键字构造（计划 §4 遗漏 #2）：原先按位置传 5 个参数，
+            # Evidence 一旦加字段/调序就会**静默错位**（把 reasons 塞进
+            # graph_score 之类）。关键字构造让缺字段回落到默认值、多字段报错。
+            return Evidence(chunk_id=e["chunk_id"], score=e["score"],
+                            channels=e.get("channels", {}),
+                            graph_score=e.get("graph_score", 0.0),
+                            reasons=e.get("reasons", []))
+
+        rr.evidence = [_ev(e) for e in query_res.get("evidence", [])]
+        if query_res.get("evidence_pool") is not None:
+            rr.evidence_pool = [_ev(e) for e in query_res["evidence_pool"]]
         s = self.settings
         return self.retriever.context(rr, top_k=top_k or s.top_k,
                                       max_chars=s.context_max_chars)

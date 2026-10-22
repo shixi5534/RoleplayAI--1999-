@@ -14,8 +14,9 @@ from compendium_rag.extract import ExtractedEntity, ExtractedRelation, Extractio
 from compendium_rag.graph_store import GraphStore
 from compendium_rag.retriever import (ChunkIndex, EntityVectorIndex, Evidence,
                                       FALLBACK_MARK, GraphRetriever,
-                                      build_adjacency,
-                                      personalized_pagerank)
+                                      build_adjacency, default_pool_top_n,
+                                      personalized_pagerank,
+                                      resolve_pool_top_n)
 
 
 # ── 构造 ──
@@ -123,6 +124,47 @@ def test_ppr_damping_effect():
     low = personalized_pagerank(adj, {"A": 1.0}, damping=0.1)
     high = personalized_pagerank(adj, {"A": 1.0}, damping=0.99)
     assert high["B"] > low["B"]
+
+
+# ── G4：dangling 质量回流 teleport（2026-10-21）──
+#
+# 旧实现把悬挂质量 `damping*dangling/len(nodes)` **均摊给全图**。真实工件上
+# 7033 实体里 1133 个孤立，于是一个孤立种子查询会让全图 5901 个节点全部非零、
+# 27110 条边全部 sc>0，graph_channel 产出 91 个无关块。下面三条用例把这个
+# 行为钉死；**不得**写成「召回提升」。
+
+def test_ppr_isolated_seed_keeps_mass_on_seed():
+    """孤立种子：质量不得泄漏给图里其他任何节点。"""
+    g = _mk_graph([("X", "认识", "Y", "c1", 0.9)])   # A 不在图里 → 孤立
+    adj, _, _ = build_adjacency(g)
+    ppr = personalized_pagerank(adj, {"A": 1.0})
+    assert ppr["A"] == pytest.approx(1.0)
+    assert ppr.get("X", 0.0) == 0.0, "孤立种子的质量被均摊给了无关节点（G4 未修复）"
+    assert ppr.get("Y", 0.0) == 0.0
+
+
+def test_ppr_dangling_mass_follows_teleport():
+    """悬挂质量按 teleport 权重回流：两个种子按 3:1 分，不是均分给全图。"""
+    # A 是叶子（悬挂），种子只有 A 与 D；B/C 为 A 的邻居
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9),
+                   ("A", "认识", "C", "c2", 0.9),
+                   ("D", "认识", "E", "c3", 0.9)])
+    adj, _, _ = build_adjacency(g)
+    ppr = personalized_pagerank(adj, {"A": 3.0, "D": 1.0})
+    # A 的邻居拿到的转移质量必须大于完全无关的 E（E 只可能通过 D 到达）
+    assert ppr["B"] > ppr.get("E", 0.0)
+    assert ppr["A"] == pytest.approx(1.0), "归一化语义必须保持（seed_score=1.0）"
+
+
+def test_ppr_single_seed_no_leak_to_disconnected_component():
+    """连通分量隔离：A 所在分量之外的所有节点必须严格为 0。"""
+    g = _mk_graph([("A", "认识", "B", "c1", 0.9),
+                   ("X", "认识", "Y", "c2", 0.9),
+                   ("Y", "认识", "Z", "c3", 0.9)])
+    adj, _, _ = build_adjacency(g)
+    ppr = personalized_pagerank(adj, {"A": 1.0})
+    for name in ("X", "Y", "Z"):
+        assert ppr.get(name, 0.0) == 0.0, f"{name} 位于不相连分量，却被激活"
 
 
 # ── 实体链接 ──
@@ -272,6 +314,126 @@ def test_vector_channel_ranks_by_similarity():
     r = _retriever([("A", "认识", "B", "c1", 0.9)], chunks, vec_map=vec)
     ch = r.vector_channel(_onehot(4, 1), top_k=2)
     assert ch and max(ch, key=ch.get) == "c2"
+
+
+# ── G1：池宽 vs 输出宽（2026-10-21）──
+#
+# 旧实现把两者绑死在同一个 `top_k` 上（`top_n=max(top_k*4,24)` 又把结果原样
+# 返回），于是「top_k 只控输出条数」名不副实。拆成 rank_window_size / size
+# 两个参数（Elasticsearch RRF 同款）。
+
+def test_default_pool_top_n_matches_legacy_formula():
+    """默认公式必须与改造前逐位等价：max(top_k*4, 24)。"""
+    for tk in (1, 2, 5, 6, 10, 20):
+        assert default_pool_top_n(tk) == max(tk * 4, 24)
+    assert resolve_pool_top_n(6) == 24
+    assert resolve_pool_top_n(10) == 40
+
+
+def test_top_k_truncates_evidence():
+    """`top_k` 只控输出条数：evidence 长度恰为 top_k（池里有更多）。"""
+    chunks = [_mk_chunk(f"c{i}", f"文本{i}") for i in range(1, 13)]
+    g = _mk_graph([(f"E{i}", "认识", f"E{i+1}", f"c{i}", 0.9)
+                   for i in range(1, 12)])
+    r = GraphRetriever(g, chunks)
+    res = r.retrieve("E1", top_k=3, want_pool=True)
+    assert len(res.evidence) == 3, f"evidence 未截断到 top_k：{len(res.evidence)}"
+    assert res.evidence_pool is not None
+    assert len(res.evidence_pool) > len(res.evidence), "池应比窗口宽"
+    # 窗口必须是池的前缀（同序，不是另一批块）
+    assert [e.chunk_id for e in res.evidence] == \
+        [e.chunk_id for e in res.evidence_pool[:3]]
+
+
+def test_pool_top_n_decoupled_from_top_k():
+    """显式池宽只改池，不改窗口；默认路径与显式传默认值逐位等价。"""
+    chunks = [_mk_chunk(f"c{i}", f"文本{i}") for i in range(1, 13)]
+    g = _mk_graph([(f"E{i}", "认识", f"E{i+1}", f"c{i}", 0.9)
+                   for i in range(1, 12)])
+    r = GraphRetriever(g, chunks)
+
+    wide = r.retrieve("E1", top_k=3, want_pool=True)
+    narrow = r.retrieve("E1", top_k=3, pool_top_n=4, want_pool=True)
+    assert len(narrow.evidence) == 3, "改池宽不得影响窗口宽度"
+    assert len(narrow.evidence_pool) == 4
+    assert len(wide.evidence_pool) >= len(narrow.evidence_pool)
+
+    # 默认（None）与显式传默认公式必须完全一致 —— 这是「行为不变的硬门」
+    a = r.retrieve("E1", top_k=3, want_pool=True)
+    b = r.retrieve("E1", top_k=3, pool_top_n=default_pool_top_n(3), want_pool=True)
+    assert [e.chunk_id for e in a.evidence_pool] == \
+        [e.chunk_id for e in b.evidence_pool]
+    assert [e.score for e in a.evidence] == [e.score for e in b.evidence]
+
+
+def test_evidence_pool_optional_and_not_serialized_by_default():
+    """`evidence_pool` 默认不填、`to_dict()` 不输出该键（避免工件膨胀 4 倍）。"""
+    r = _retriever([("A", "认识", "B", "c1", 0.9)], [_mk_chunk("c1", "A与B")])
+    res = r.retrieve("A", top_k=6)
+    assert res.evidence_pool is None
+    assert "evidence_pool" not in res.to_dict()
+
+    res2 = r.retrieve("A", top_k=6, want_pool=True)
+    assert res2.evidence_pool is not None
+    assert "evidence_pool" in res2.to_dict()
+
+
+# ── G2：向量相似度阈值（2026-10-21）──
+#
+# 阈值是**可选过滤**，默认 `None` = 完全关闭。理由：bge-m3 中文语料实测
+# cos 分布 0.32–0.67 / 中位 0.50，硬套模型卡的 [0.6,1] 会把证据砍空
+# （LightRAG 就因为该副作用撤掉过 cosine threshold）。
+
+def test_vector_min_score_filters():
+    ci = ChunkIndex.build(["a", "b", "c"],
+                          [[1.0, 0.0], [0.6, 0.8], [0.0, 1.0]])
+    q = [1.0, 0.0]
+    assert [cid for cid, _ in ci.search(q, top_k=3)] == ["a", "b", "c"]
+    kept = ci.search(q, top_k=3, min_score=0.5)
+    assert [cid for cid, _ in kept] == ["a", "b"], "阈值应砍掉 cos=0 的块"
+    assert ci.search(q, top_k=3, min_score=1.01) == [], "全砍光时应空手而非报错"
+
+
+def test_zero_cosine_block_excluded():
+    """零相关（正交）块在阈值开启后不得进入向量通道。"""
+    ci = ChunkIndex.build(["hit", "ortho"], [[1.0, 0.0], [0.0, 1.0]])
+    r = GraphRetriever(_mk_graph([("A", "认识", "B", "c1", 0.9)]), [])
+    r.chunk_index = ci
+    ch_off = r.vector_channel([1.0, 0.0], top_k=2)
+    assert "ortho" in ch_off
+    ch_on = r.vector_channel([1.0, 0.0], top_k=2, min_score=0.01)
+    assert "ortho" not in ch_on, "cos=0 的块不应拿到 RRF 分"
+
+
+def test_vector_min_score_none_is_legacy():
+    """`None` 必须与改造前逐结果一致（同序、同分、同长度）。"""
+    ci = ChunkIndex.build(["a", "b", "c"],
+                          [[1.0, 0.0], [0.6, 0.8], [0.0, 1.0]])
+    q = [1.0, 0.0]
+    legacy = ci.search(q, top_k=3)          # 位置参数、不传阈值
+    explicit = ci.search(q, top_k=3, min_score=None)
+    assert legacy == explicit
+
+
+def test_vector_min_score_filters_before_truncation():
+    """过滤必须在截断**之前**：否则 top_k 全是低分块时过滤后空手。"""
+    ci = ChunkIndex.build(["hi", "lo"], [[1.0, 0.0], [0.0, 1.0]])
+    # top_k=1 且阈值为 0.5：若先截断会先取到 hi 再过滤，结果看似正常；
+    # 换成查询正交于 hi 时才暴露顺序问题。
+    hits = ci.search([1.0, 0.0], top_k=1, min_score=0.5)
+    assert [cid for cid, _ in hits] == ["hi"]
+    # 阈值把唯一命中砍掉 → 空列表，而不是「先截断后剩 0 个再报错」
+    assert ci.search([1.0, 0.0], top_k=1, min_score=2.0) == []
+
+
+def test_retrieve_passes_vector_min_score_through():
+    """端到端：`retrieve(vector_min_score=…)` 必须传到向量通道。"""
+    chunks = [_mk_chunk("c1", "A与B"), _mk_chunk("c2", "无关")]
+    vec = {"c1": _onehot(4, 0), "c2": _onehot(4, 1)}
+    r = _retriever([("A", "认识", "B", "c1", 0.9)], chunks, vec_map=vec)
+    res = r.retrieve("A和B什么关系", qvec=_onehot(4, 0), vector_min_score=0.99)
+    ids = {e.chunk_id for e in res.evidence}
+    assert "c2" not in ids, "低相似块应被阈值挡在融合之外"
 
 
 # ── ChunkIndex ──

@@ -306,6 +306,12 @@ def arm_rank(arm, pool: list[dict], ctx: Ctx, win: int = TOP_K_MAIN) -> list[dic
 # ── 检索（一次检索喂所有档，按 qid 续跑）──
 
 def _dump(res) -> dict:
+    # G1（2026-10-21）：`kb.retrieve` 现在把 `evidence` 截到 top_k，全池在
+    # `evidence_pool` 里。本脚本按池宽设计（POOL_L23=40 > TOP_K_L23=10），
+    # 必须取池、不能取窗口；池缺失时回落到窗口以免旧缓存/旧工件直接崩。
+    pool = res.get("evidence_pool")
+    if pool is None:
+        pool = res.get("evidence", [])
     return {
         "seeds": [{"eid": s["eid"], "name": s["name"], "score": s["score"],
                    "how": s["how"]} for s in res.get("seeds", [])],
@@ -313,7 +319,7 @@ def _dump(res) -> dict:
         "evidence": [{"chunk_id": e["chunk_id"], "score": e["score"],
                       "graph_score": e.get("graph_score", 0.0),
                       "channels": e.get("channels", {})}
-                     for e in res.get("evidence", [])][:POOL_L23],
+                     for e in pool][:POOL_L23],
     }
 
 
@@ -335,7 +341,8 @@ async def collect(kb, tag: str, cases: list, mode: str, use_vector: bool) -> lis
     with out.open("a", encoding="utf-8") as fh:
         for i, c in enumerate(todo, 1):
             t0 = time.time()
-            res = await kb.retrieve(c.query, top_k=TOP_K_L23, use_vector=use_vector)
+            res = await kb.retrieve(c.query, top_k=TOP_K_L23,
+                                    use_vector=use_vector, want_pool=True)
             r = {"qid": c.qid, "query": c.query, "keywords": list(c.keywords),
                  "seconds": round(time.time() - t0, 3), **_dump(res)}
             rows.append(r)
@@ -428,7 +435,7 @@ def main() -> int:
         with p_out.open("a", encoding="utf-8") as fh:
             for i, p in enumerate(todo, 1):
                 res = asyncio.run(kb.retrieve(p["query"], top_k=TOP_K_L23,
-                                              use_vector=True))
+                                              use_vector=True, want_pool=True))
                 r = {"qid": p["query"], "query": p["query"], **_dump(res)}
                 prows.append(r)
                 fh.write(json.dumps(r, ensure_ascii=False) + "\n")

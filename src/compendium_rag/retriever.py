@@ -49,17 +49,47 @@ class Evidence:
                 "graph_score": round(self.graph_score, 6), "reasons": self.reasons}
 
 
+# ── 池宽 / 输出宽（G1）──
+
+def default_pool_top_n(top_k: int) -> int:
+    """池宽的历史公式：``max(top_k * 4, 24)``。
+
+    单独抽成函数是为了让**所有**消费者引用同一处（计划 D2-5）：这个字面量
+    原先散落在 ``retrieve`` 与十余个影子/诊断脚本里，改一处漏一处就会让
+    "同一口径"的对照脚本悄悄跑在不同池宽上。
+    """
+    return max(int(top_k) * 4, 24)
+
+
+def resolve_pool_top_n(top_k: int, pool_top_n: int | None = None) -> int:
+    """显式池宽优先；``None`` → 回落 :func:`default_pool_top_n`（等价旧行为）。"""
+    return default_pool_top_n(top_k) if pool_top_n is None else max(1, int(pool_top_n))
+
+
 @dataclass
 class RetrievalResult:
+    """检索结果。
+
+    **两个宽度的分工（G1 修复）**：``evidence`` 是**输出窗口**，条数 = ``top_k``；
+    ``evidence_pool`` 是**融合候选池**（宽 = ``pool_top_n``，默认 ``max(top_k*4,24)``），
+    只有显式索要时才填充（影子脚本 / 诊断 / 二次重排需要看池外的东西）。
+    池宽与输出数曾经被同一个 ``top_k`` 绑死（``top_n=max(top_k*4,24)`` 又把结果原样
+    返回），于是「``top_k`` 只控输出条数」这个契约名不副实——照 Elasticsearch 的
+    ``rank_window_size`` / ``size`` 拆分。
+    """
+
     query: str
     seeds: list[Seed] = field(default_factory=list)
     evidence: list[Evidence] = field(default_factory=list)
     edges: list[tuple[str, str, str, float]] = field(default_factory=list)
     graph_ok: bool = True
     note: str = ""
+    # 融合候选池（宽 = pool_top_n）。None = 未索要，``to_dict`` 不输出该键
+    # （默认关闭是为了不让工件/报告无谓膨胀——池比窗口大 4 倍）。
+    evidence_pool: list[Evidence] | None = None
 
     def to_dict(self) -> dict:
-        return {
+        d = {
             "query": self.query,
             "graph_ok": self.graph_ok,
             "note": self.note,
@@ -69,6 +99,9 @@ class RetrievalResult:
                       for s, r, d, p in self.edges],
             "evidence": [e.to_dict() for e in self.evidence],
         }
+        if self.evidence_pool is not None:
+            d["evidence_pool"] = [e.to_dict() for e in self.evidence_pool]
+        return d
 
 
 class ChunkIndex:
@@ -96,7 +129,19 @@ class ChunkIndex:
         norms[norms == 0] = 1.0
         return ChunkIndex(list(chunk_ids), m / norms)
 
-    def search(self, qvec: list[float], top_k: int) -> list[tuple[str, float]]:
+    def search(self, qvec: list[float], top_k: int,
+               min_score: float | None = None) -> list[tuple[str, float]]:
+        """向量近邻检索。
+
+        ``min_score``（G2）：**可选**的余弦相似度下限，``None`` = 完全关闭，
+        此时逐结果与接线前完全一致（本仓库 bge-m3 中文语料实测分布
+        0.32–0.67 / 中位 0.50，绝对阈值很容易把证据砍空，LightRAG 就因为这个
+        副作用撤掉过 cosine threshold，所以默认必须关）。
+
+        为什么过滤要放在**截断之前**：先取 top_k 再过滤，会出现「top_k 全是低分块
+        → 过滤后空手」；而阈值语义是「这个查询没有足够相似的块」，应当是
+        「在全部超阈值块里取前 top_k」。
+        """
         if self.matrix.size == 0:
             return []
         q = np.asarray(qvec, dtype=np.float32)
@@ -105,10 +150,22 @@ class ChunkIndex:
             return []
         q = q / n
         sims = self.matrix @ q
-        k = min(top_k, len(sims))
-        idx = np.argpartition(-sims, k - 1)[:k]
-        idx = idx[np.argsort(-sims[idx])]
-        return [(self.chunk_ids[i], float(sims[i])) for i in idx]
+        if min_score is not None:
+            keep = np.flatnonzero(sims >= float(min_score))
+            if keep.size == 0:
+                return []
+            k = min(top_k, keep.size)
+            idx = keep[np.argpartition(-sims[keep], k - 1)[:k]]
+        else:
+            k = min(top_k, len(sims))
+            idx = np.argpartition(-sims, k - 1)[:k]
+        idx = idx[np.argsort(-sims[idx], kind="stable")]
+        # 次级键 chunk_id：`argsort` 在并列（同 cos、重复块）时保留的是
+        # `argpartition` 的候选序，那是选择算法的内部产物，不该决定证据先后。
+        # 全序 (-score, chunk_id) 与 rrf_fuse / LexicalIndex 的纪律一致。
+        hits = [(self.chunk_ids[i], float(sims[i])) for i in idx]
+        hits.sort(key=lambda kv: (-kv[1], kv[0]))
+        return hits
 
     def save(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -145,7 +202,14 @@ class EntityVectorIndex:
         norms[norms == 0] = 1.0
         return EntityVectorIndex(list(eids), list(names), m / norms)
 
-    def search(self, qvec: list[float], top_k: int) -> list[tuple[str, str, float]]:
+    def search(self, qvec: list[float], top_k: int,
+               min_score: float | None = None) -> list[tuple[str, str, float]]:
+        """实体向量近邻。
+
+        ``min_score``（G2）与 :meth:`ChunkIndex.search` 同语义：过滤在截断之前，
+        ``None`` = 关闭（默认）。实体名向量由名称拼串编码，短名/单字母名的
+        向量本身区分度就低，阈值在这里比在块上更危险，所以同样默认关。
+        """
         if self.matrix.size == 0:
             return []
         q = np.asarray(qvec, dtype=np.float32)
@@ -154,10 +218,20 @@ class EntityVectorIndex:
             return []
         q = q / n
         sims = self.matrix @ q
-        k = min(top_k, len(sims))
-        idx = np.argpartition(-sims, k - 1)[:k]
-        idx = idx[np.argsort(-sims[idx])]
-        return [(self.eids[i], self.names[i], float(sims[i])) for i in idx]
+        if min_score is not None:
+            keep = np.flatnonzero(sims >= float(min_score))
+            if keep.size == 0:
+                return []
+            k = min(top_k, keep.size)
+            idx = keep[np.argpartition(-sims[keep], k - 1)[:k]]
+        else:
+            k = min(top_k, len(sims))
+            idx = np.argpartition(-sims, k - 1)[:k]
+        idx = idx[np.argsort(-sims[idx], kind="stable")]
+        # 并列时按 eid 定序（理由同 ChunkIndex.search）。
+        hits = [(self.eids[i], self.names[i], float(sims[i])) for i in idx]
+        hits.sort(key=lambda kv: (-kv[2], kv[0]))
+        return hits
 
     def save(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -243,7 +317,25 @@ def personalized_pagerank(
     max_iter: int = 50,
     tol: float = 1e-6,
 ) -> dict[str, float]:
-    """PPR 幂迭代。seeds 会先归一化为个性化向量。"""
+    """PPR 幂迭代。seeds 会先归一化为个性化向量。
+
+    **dangling 质量按 teleport 向量回流**（G4 修复，2026-10-21）。
+
+    旧实现把悬挂/孤立节点的质量 ``damping * dangling / len(nodes)`` **均摊给全图**，
+    这不是 PPR，而是「把种子质量稀释进所有节点」：本仓库 7033 实体里 1133 个是
+    孤立节点，于是一个**孤立种子**查询会让全图 5901 个节点全部非零、27110 条边
+    全部 ``sc > 0``，top-30 边裁剪退化成「按置信度随机抽边」，``graph_channel``
+    产出 91 个与该查询无关的块。修完后同一查询 ``nonzero = 1``、``edges = 0``、
+    自然回落到 lex/vector 通道——这才是「图谱零命中」应有的语义。
+
+    依据（教科书 + 主流实现一致）：NetworkX ``pagerank`` 的 ``dangling`` 参数默认
+    按 personalization 向量分配；igraph ``personalized_pagerank`` 源码注释原文
+    「Dangling nodes also distribute according to norm_reset」，其
+    ``isolated_vertices_with_biased_reset`` 测试断言孤立节点上 reset=1.0、其余=0。
+
+    归一化语义保持不变（末尾除以 max，故 ``seed_score = 1.0``），ppr 字段的
+    下游消费方无感。
+    """
     if not seeds:
         return {}
     total = sum(seeds.values()) or 1.0
@@ -268,9 +360,13 @@ def personalized_pagerank(
             for m, w in nbrs:
                 nxt[m] = nxt.get(m, 0.0) + damping * s * (w / wsum)
         if dangling:
-            share = damping * dangling / len(nodes)
+            # 回流到 teleport 向量（而非均摊全图）。dangling 节点本身若同时是
+            # 种子，这里会把自己那份质量收回去，符合 igraph 的 reset 语义。
+            share = damping * dangling
             for n in nodes:
-                nxt[n] = nxt.get(n, 0.0) + share
+                tp = teleport.get(n, 0.0)
+                if tp:
+                    nxt[n] = nxt.get(n, 0.0) + share * tp
         delta = sum(abs(nxt[n] - score[n]) for n in nodes)
         score = nxt
         if delta < tol:
@@ -437,7 +533,14 @@ class GraphRetriever:
             if cur is None or sc > cur.score:
                 seeds[eid] = Seed(eid, ent.name, sc, how)
 
-        return sorted(seeds.values(), key=lambda s: -s.score)[:top_k]
+        # 次级键 = **名长降序**再 eid（计划 §4 遗漏 #3）：只按 -score 排时，并列种子
+        # 的先后由 dict 插入序决定，而插入序在暖进程/冷启动之间不同；端点提及（D4）
+        # 会让并列变多，届时不加次级键就会重新引入 #39 那类"暖冷不一致"缺陷。
+        # 名长优先不是随手取的：`cands` 按 (-len, k) 处理就是为了让「伊索尔德」
+        # 先于「伊索」入种子集，最终排序必须保持同一偏好，否则长名又会被短名顶掉
+        # （`test_link_longest_name_wins` 正是钉这一条）。
+        return sorted(seeds.values(),
+                      key=lambda s: (-s.score, -len(s.name), s.eid))[:top_k]
 
     def merge_vector_seeds(self, seeds: list[Seed], hits: list[tuple[str, str, float]],
                            threshold: float, top_k: int) -> list[Seed]:
@@ -451,7 +554,8 @@ class GraphRetriever:
                 by_eid[eid] = Seed(eid, name, sc, "vector")
             elif sc > cur.score:
                 cur.score, cur.how = sc, "vector"
-        return sorted(by_eid.values(), key=lambda s: -s.score)[:top_k]
+        return sorted(by_eid.values(),
+                      key=lambda s: (-s.score, -len(s.name), s.eid))[:top_k]
 
     # ── ② 图通道：PPR → 边 → 证据块 ──
 
@@ -493,10 +597,14 @@ class GraphRetriever:
 
     # ── ④ 向量通道 ──
 
-    def vector_channel(self, qvec: list[float], top_k: int) -> dict[str, float]:
+    def vector_channel(self, qvec: list[float], top_k: int,
+                       min_score: float | None = None) -> dict[str, float]:
+        """向量通道。``min_score`` 是**keyword、可选**参数（G2），位置参数保持
+        向后兼容——现有十余处脚本都以 ``vector_channel(qv, 30)`` 位置传参。
+        ``None`` = 关闭过滤，逐结果与接线前一致。"""
         if self.chunk_index is None:
             return {}
-        hits = self.chunk_index.search(qvec, top_k)
+        hits = self.chunk_index.search(qvec, top_k, min_score=min_score)
         return {cid: sc for cid, sc in hits}
 
     # ── 融合（RRF）──
@@ -540,14 +648,29 @@ class GraphRetriever:
                  lex_first: int = 0, rrf_k: int = 60,
                  ppr_damping: float = 0.85, ppr_max_iter: int = 50,
                  graph_max_edges: int = 30,
+                 pool_top_n: int | None = None,
+                 vector_min_score: float | None = None,
+                 want_pool: bool = False,
                  ) -> RetrievalResult:
         """端到端检索。
 
-        lex_weight > 0 时启用**词面通道**（默认 0 = 保持历史行为，便于回滚与
+        ``lex_weight > 0`` 时启用**词面通道**（默认 0 = 保持历史行为，便于回滚与
         逐位对照）。该通道不依赖实体链接与嵌入，实测（权重仅在 300cn 上选定、
         盲测 206 题留出）把裸检索从 0.6748 提到 0.8301，up=32 / down=0。
+
+        **``top_k`` 只控输出条数**（G1 修复）。池宽是另一个参数 ``pool_top_n``：
+        - ``pool_top_n=None`` → 取 ``max(top_k*4, 24)``，**与改造前逐位等价**；
+        - ``res.evidence`` 截断到 ``top_k``；全池另放 ``res.evidence_pool``
+          （仅 ``want_pool=True`` 时填充，默认不填以免工件膨胀 4 倍）。
+        先例：Elasticsearch RRF 的 ``rank_window_size``（池）vs ``size``（输出），
+        LlamaIndex 的 ``similarity_top_k``（召回池）+ ``LLMRerank(top_n=)``（输出）。
+
+        ``vector_min_score``（G2）：向量通道余弦下限，``None`` = 完全关闭
+        （默认；关掉时逐结果与改造前一致）。不要用 BGE 模型卡那个 [0.6,1] 区间
+        硬套——本仓库 bge-m3 中文语料实测分布 0.32–0.67 / 中位 0.50。
         """
         res = RetrievalResult(query=query)
+        pool = resolve_pool_top_n(top_k, pool_top_n)
         seeds = self.link(query, top_k=entity_link_top)
         if entity_vec_hits:
             seeds = self.merge_vector_seeds(seeds, entity_vec_hits,
@@ -570,7 +693,7 @@ class GraphRetriever:
             if channels:
                 # 零种子但有词面候选：直接以词面通道出结果（原先只能空手或靠向量兜底）
                 evs = self.rrf_fuse(channels, k=rrf_k, weights=weights,
-                                    top_n=max(top_k * 4, 24))
+                                    top_n=pool)
                 res.evidence = evs
                 res.note += "；已回落词面通道"
         else:
@@ -581,9 +704,16 @@ class GraphRetriever:
             channels["graph"] = g_chunks
             channels["mention"] = self.mention_channel(seeds)
             if qvec is not None:
-                channels["vector"] = self.vector_channel(qvec, vector_top)
-            evs = self.rrf_fuse(channels, k=rrf_k, weights=weights,
-                                top_n=max(top_k * 4, 24))
+                channels["vector"] = self.vector_channel(
+                    qvec, vector_top, min_score=vector_min_score)
+            if not g_chunks and not channels.get("mention"):
+                # D1 修复后新增的真实状态：**有种子但图谱通道零产出**。
+                # 旧 PPR 把 dangling 质量均摊全图，这种情形永远不会发生（它总是
+                # 伪造出 91 个无关块）。现在孤立种子诚实地零命中，`graph_ok` 必须
+                # 跟着说真话（计划 §4 遗漏 #4），否则下游拿 True 却看到空图证据。
+                res.graph_ok = False
+                res.note = "种子实体在图谱中孤立，图通道零产出"
+            evs = self.rrf_fuse(channels, k=rrf_k, weights=weights, top_n=pool)
             # 这里原先是**再跑一遍** graph_channel 只为取同一个 chunk 分数 map：
             # 默认 damping/max_iter 与上面完全相同，两次返回值逐位相等（2026-10-09 实测
             # 24 条证据 0 处不一致），而单次调用要 1.5–2.1 s，等于每题白烧 22–36% 墙钟。
@@ -617,9 +747,15 @@ class GraphRetriever:
             res.evidence = rebuilt
         if not res.evidence and qvec is not None:
             # 图谱零命中时的向量兜底，保证不空手而归
-            v = self.vector_channel(qvec, vector_top)
-            res.evidence = self.rrf_fuse({"vector": v}, top_n=top_k)
+            v = self.vector_channel(qvec, vector_top, min_score=vector_min_score)
+            res.evidence = self.rrf_fuse({"vector": v}, top_n=pool)
             res.note = (res.note + "；" if res.note else "") + "图谱零命中，回落向量通道"
+
+        # ── 池 / 窗口分离（G1）──
+        # 全池留在 evidence_pool（可选），窗口 evidence 按契约只到 top_k。
+        if want_pool:
+            res.evidence_pool = list(res.evidence)
+        res.evidence = res.evidence[:max(0, int(top_k))]
         return res
 
     def context(self, res: RetrievalResult, top_k: int = 6,

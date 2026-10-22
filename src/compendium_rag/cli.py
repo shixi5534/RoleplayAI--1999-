@@ -216,7 +216,9 @@ async def _query(args) -> int:
     s = get_settings()
     kb = P.load_kb(s)
     res = await kb.retrieve(args.text, top_k=args.top_k,
-                            use_vector=not args.no_vector)
+                            use_vector=not args.no_vector,
+                            pool_top_n=args.pool_top_n,
+                            vector_min_score=args.vector_min_score)
     if args.json:
         print(json.dumps(res, ensure_ascii=False, indent=2))
         return 0
@@ -309,6 +311,12 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("query", help="检索")
     p.add_argument("text")
     p.add_argument("--top-k", type=int, default=6)
+    # G1：池宽与输出数解耦。不传 = 按 max(top_k*4,24) 推导（等价旧行为）。
+    p.add_argument("--pool-top-n", type=int, default=None,
+                   help="融合候选池宽度（默认按 max(top_k*4,24) 推导）")
+    # G2：向量余弦下限。不传 = 关闭（默认，行为与改造前逐位一致）。
+    p.add_argument("--vector-min-score", type=float, default=None,
+                   help="向量通道余弦相似度下限（默认不启用）")
     p.add_argument("--no-vector", action="store_true")
     p.add_argument("--json", action="store_true")
     p.set_defaults(fn=cmd_query)

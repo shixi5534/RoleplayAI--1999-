@@ -296,9 +296,35 @@ class GraphStore:
         return self.stats()
 
     def _count_mentions(self, per_chunk: list[tuple[str, object]]) -> None:
+        """统计实体的提及次数与出现块（G3 修复，2026-10-21）。
+
+        **关系端点也算命中**。旧实现只看 ``ex.entities``（块内显式声明的实体），
+        于是「只在某块里作为关系 src/dst 出现、却没被该块声明为实体」的实体
+        在该块上是**永久盲区**：``chunk_ids`` 里没有它，``mention_channel`` 就
+        永远取不到那些块。主流做法（GraphRAG local_search、HippoRAG、LightRAG）
+        都把「实体是关系端点」当一等命中，这是本仓库的**契约不对称**。
+
+        实测口径（本会话在真实工件上量过，写进验收标准）：全图只新增
+        **11 个 (entity, block) 对**、只影响 **1 个实体**（店主），且
+        **零个实体的 chunk_ids 为空**——本版本不存在「纯端点实体」。
+        故这是**正确性修复，召回收益 ≈ 0**，不得宣称性能提升。
+
+        顺序确定化（计划 §4 遗漏 #5）：``mention_channel`` 取 ``cids[:per_entity]``
+        （默认 3），若 chunk_ids 顺序随插入序漂移，截断结果就会漂移。
+        这里统一按 **（块在语料中的序, chunk_id）** 排序：块序来自 ``per_chunk``
+        的给定顺序（调用方按语料顺序传入），同块内再按 chunk_id 字典序兜底。
+        """
+        # chunk_id -> 语料块序（同 id 取首次出现）
+        block_ord: dict[str, int] = {}
+        for i, (chunk_id, _ex) in enumerate(per_chunk):
+            block_ord.setdefault(chunk_id, i)
+
+        # ① 块内显式声明（与原实现逐位一致：每条声明计一次提及）
+        covered: dict[str, set[str]] = {}
         for chunk_id, ex in per_chunk:  # type: ignore[assignment]
             if ex is None:
                 continue
+            seen: set[str] = set()
             for e in ex.entities:  # type: ignore[attr-defined]
                 eid = self.alias_index.get(e.name)
                 if not eid:
@@ -309,6 +335,30 @@ class GraphStore:
                 ent.mentions += 1
                 if chunk_id not in ent.chunk_ids:
                     ent.chunk_ids.append(chunk_id)
+                seen.add(eid)
+            covered[chunk_id] = seen
+
+        # ② 关系端点（G3）：同一块内该实体已声明过则只算一次，不重复计数
+        for chunk_id, ex in per_chunk:  # type: ignore[assignment]
+            if ex is None:
+                continue
+            seen = covered.setdefault(chunk_id, set())
+            for r in getattr(ex, "relations", None) or []:  # type: ignore[attr-defined]
+                for name in (r.src, r.dst):
+                    eid = self.alias_index.get(name)
+                    if not eid or eid in seen:
+                        continue
+                    ent = self.entities.get(eid)
+                    if ent is None:
+                        continue
+                    seen.add(eid)
+                    ent.mentions += 1
+                    if chunk_id not in ent.chunk_ids:
+                        ent.chunk_ids.append(chunk_id)
+
+        # ③ 顺序确定化：与插入序无关，暖进程/冷启动恒等
+        for ent in self.entities.values():
+            ent.chunk_ids.sort(key=lambda cid: (block_ord.get(cid, len(block_ord)), cid))
 
     # ── 查询 ──
 

@@ -150,6 +150,72 @@ def test_relations_mentioning_speaker_add_entity():
     assert len(g.edges) == 1
 
 
+# ── G3：关系端点算提及（契约对称性修复，2026-10-21）──
+#
+# 旧实现只看 `ex.entities`（块内显式声明）。「在某块里只作为关系 src/dst
+# 出现、却没被该块声明」的实体，其 chunk_ids 里没有那个块 —— `mention_channel`
+# 于是永久取不到它。这三条用例把修复钉死；**不得**把它们写成「召回提升」。
+
+def test_endpoint_entity_counts_as_mention():
+    """只作关系端点出现的实体，其出现块必须被记进 chunk_ids。"""
+    g = _store()
+    g.build_from_extractions([
+        # c1：B 只作关系端点，未被声明
+        ("c1", _ex([("A", "角色", [], "")], [("A", "认识", "B", "", 0.9)])),
+    ])
+    eid = g.resolve("B")
+    assert eid is not None, "端点应被补成实体（既有行为）"
+    b = g.entities[eid]
+    assert "c1" in b.chunk_ids, "端点出现块是提及盲区（G3 未修复）"
+
+
+def test_endpoint_mention_deduped_against_declaration():
+    """同块内既声明又作端点 → 只计一次提及（不重复计数）。"""
+    g = _store()
+    g.build_from_extractions([
+        ("c1", _ex([("A", "角色", [], ""), ("B", "角色", [], "")],
+                   [("A", "认识", "B", "", 0.9)])),
+    ])
+    for name in ("A", "B"):
+        eid = g.resolve(name)
+        assert eid is not None
+        e = g.entities[eid]
+        assert e.mentions == 1, f"{name} 提及被重复计数：{e.mentions}"
+        assert e.chunk_ids == ["c1"]
+
+
+def test_mention_chunk_ids_order_is_deterministic():
+    """chunk_ids 必须按**语料块序**排，而非「先声明块、后端点块」的追加序。
+
+    ② 关系端点在① 全部声明之后才追加，若不排序，端点块会一律排到声明块
+    之后（这里会得到 ['c1','c3','c2']），而 `mention_channel` 取
+    `cids[:per_entity]`，截断结果就会与语料顺序无关地漂移。
+    """
+    g = _store()
+    g.build_from_extractions([
+        ("c1", _ex([("A", "角色", [], "")], [])),                       # 声明
+        ("c2", _ex([("X", "角色", [], "")],
+                   [("A", "认识", "X", "", 0.9)])),                     # 仅端点
+        ("c3", _ex([("A", "角色", [], "")], [])),                       # 声明
+    ])
+    eid = g.resolve("A")
+    assert eid is not None
+    assert g.entities[eid].chunk_ids == ["c1", "c2", "c3"], \
+        f"chunk_ids 未按语料块序确定化：{g.entities[eid].chunk_ids}"
+
+    # 同一语料重复构建必须逐位相同（暖进程/冷启动恒等）
+    g2 = _store()
+    g2.build_from_extractions([
+        ("c1", _ex([("A", "角色", [], "")], [])),
+        ("c2", _ex([("X", "角色", [], "")],
+                   [("A", "认识", "X", "", 0.9)])),
+        ("c3", _ex([("A", "角色", [], "")], [])),
+    ])
+    eid2 = g2.resolve("A")
+    assert eid2 is not None
+    assert g2.entities[eid2].chunk_ids == g.entities[eid].chunk_ids
+
+
 # ── 查询 ──
 
 def test_neighbors_both_directions():

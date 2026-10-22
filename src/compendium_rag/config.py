@@ -69,6 +69,28 @@ def _env_bool(name: str, default: bool) -> bool:
     return raw in ("1", "true", "yes", "on", "y")
 
 
+def _env_opt_int(name: str) -> int | None:
+    """未设置 / 空 / 非法 → ``None``（不是 0）。用于「None 表示关闭」的旋钮。"""
+    raw = _env(name, "").strip()
+    if not raw:
+        return None
+    try:
+        return int(raw)
+    except ValueError:
+        return None
+
+
+def _env_opt_float(name: str) -> float | None:
+    """未设置 / 空 / 非法 → ``None``（不是 0.0）。用于「None 表示关闭」的旋钮。"""
+    raw = _env(name, "").strip()
+    if not raw:
+        return None
+    try:
+        return float(raw)
+    except ValueError:
+        return None
+
+
 @dataclass(frozen=True)
 class Settings:
     """Compendium GraphRAG 设置。全部可用 ``CMPRAG_`` 环境变量覆盖。"""
@@ -131,6 +153,18 @@ class Settings:
     # 默认值必须仍是 30；真要改就得按 §4bis 冷启动重校准，并两档同报。
     graph_max_edges: int = field(default_factory=lambda: _env_int("CMPRAG_GRAPH_MAX_EDGES", 30))
     top_k: int = field(default_factory=lambda: _env_int("CMPRAG_TOP_K", 6))
+    # 融合候选池宽度（G1 修复）：**与 top_k 解耦**。top_k 只控输出条数，
+    # 池宽控"进入 RRF 融合的候选有多少"。None = 按 max(top_k*4, 24) 推导，
+    # 与改造前的行为逐位等价；显式设值则直接用它（ES 的 rank_window_size 语义）。
+    retrieval_pool_top_n: int | None = field(
+        default_factory=lambda: _env_opt_int("CMPRAG_RETRIEVAL_POOL_TOP_N"))
+    # 向量通道余弦相似度下限（G2 修复）。**默认 None = 完全关闭**，
+    # 关掉时逐结果与改造前一致（LightRAG 曾因绝对阈值造成"全空"而移除该字段）。
+    # 本仓库 bge-m3 中文语料实测分布 0.32–0.67 / 中位 0.50（k1c300 n=4578，
+    # p10=0.4247），不要套用 BGE 模型卡那个 [0.6,1] 区间。
+    # 标定流程见计划 D3；未标定前不得默认开启。
+    retrieval_vector_min_score: float | None = field(
+        default_factory=lambda: _env_opt_float("CMPRAG_RETRIEVAL_VECTOR_MIN_SCORE"))
     entity_link_top: int = field(default_factory=lambda: _env_int("CMPRAG_ENTITY_LINK_TOP", 6))
     seed_score_threshold: float = field(
         default_factory=lambda: _env_float("CMPRAG_SEED_SCORE_THRESHOLD", 0.34))

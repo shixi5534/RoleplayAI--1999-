@@ -63,7 +63,10 @@ def main() -> int:
         kws = kws_of(c)
         gold = {cid for cid, t in blob.items() if any(k in t for k in kws)}
         # 全库向量排序（用 chunk_index 的全量矩阵）
-        hits = r.chunk_index.search(qv, 10 ** 6)
+        # ⚠ 必须显式 min_score=None（G2 计划 D3-4）：本脚本的语义是「全库排名」，
+        #   一旦生产侧把 `CMPRAG_RETRIEVAL_VECTOR_MIN_SCORE` 设成非 None 并被
+        #   继承，这里会静默变成「先过滤再排名」，rank 全部虚高、诊断结论作废。
+        hits = r.chunk_index.search(qv, 10 ** 6, min_score=None)
         rank = None
         for i, (cid, _sc) in enumerate(hits, 1):
             if cid in gold:
