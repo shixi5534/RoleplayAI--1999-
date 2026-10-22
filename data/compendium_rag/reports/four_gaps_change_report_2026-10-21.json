@@ -6,6 +6,9 @@
     "code_fixed": true,
     "graph_json_rebuilt": false,
     "graph_rebuild_reason": "G3 的重建口径净增量为 0（B vs C 全零）；重建 graph.json 会带来 840/583 条边变动，全部来自归一化/合并规则的代码演进，与本轮四缺口无关。属独立的数据刷新决策，需拍板后单独执行。",
+    "graph_rebuild_evaluated_at": "2026-10-22",
+    "graph_rebuild_verdict": "lossy_and_metric_neutral",
+    "graph_rebuild_note": "已实测（见 graph_rebuild_impact）：rebuild_from_cache 会回退人工别名裁决 —— 卡卡尼亚焊组块数 118→204、4 个规范名回退（兀尔德/玛尔塔/店主米拉/玩具盒），属数据丢失；同时 full 通路 hit@6 零翻转、graph_only −0.51pt。故重建默认不可用，前置条件是先把 cache 补齐到与 graph 一致。",
     "recall_claim": "none",
     "recall_claim_note": "G3 是契约正确性修复，不得宣称召回提升；G4 对孤立种子查询是纠错（移除注入的无关块），非召回提升。"
   },
@@ -139,6 +142,74 @@
     "finding": "指纹与工件相同（14daf1bbfa407388 / n2）却边数不同，说明工件落盘后代码演进改变了归一化/合并结果——指纹对本类变更不敏感，任何「图有没有变」的判断必须同时比对 fingerprint + normalizer + 边数。",
     "edge_diff_nature": "边差异几乎全是关系谓语归组/方向裁决的差异（例：工件 `重塑之手 攻击 APPLe号` vs 重建 `重塑之手 炮击 APPLe号`；`暴雨 发生于 1966英国伦敦` vs `暴雨 临近 …`），与四缺口无关。",
     "relation_vocab_drift": {"artifact_distinct_relations": 1609, "rebuilt_distinct_relations": 1543, "sample": {"告知": [2784, 2810], "询问": [955, 958]}}
+  },
+  "graph_rebuild_impact": {
+    "evaluated_at": "2026-10-22",
+    "purpose": "把 blast_radius 留下的「重建收益尚未评估」补成实测：在当前代码 + 当前 cache 上真跑一遍重建，双向对账（图结构 + eval300）",
+    "reproduce": {
+      "build_script": "scratch_r12/build_rebuild_kb.py",
+      "rebuilt_kb": "scratch_r12/kb_rebuild/",
+      "eval_script": "scratch_r12/eval_head.py（EVAL_SRC 分别指向两棵树）",
+      "eval_outputs": ["scratch_r12/eval_rebuilt_full.json", "scratch_r12/eval_rebuilt_gonly.json"],
+      "cloud_calls": 0
+    },
+    "verdict": "lossy_and_metric_neutral",
+    "p0_finding": "rebuild_from_cache 对本库不是无损操作：审查期的人工实体裁决只落在 graph.json、没回到 cache，重建会把它们整体回退。这是数据丢失，不是指标波动。",
+    "adjudication_regression": {
+      "canonical_name_4in_4out": {
+        "artifact": ["兀尔德", "玛尔塔", "店主米拉", "玩具盒"],
+        "rebuilt": ["传记作家兀尔德", "旅行队的别斯米尔", "伦敦煤烟污染勘察与清除大使", "暴雨小组组长乌尔里希"],
+        "matches_v9_doc": "docs/compendium-rag/优化计划_v9_2026-10-08.md:87-90（P1 执行记录）逐字复现"
+      },
+      "kakania_weld_regression": {
+        "note": "v9 文档未点名、本轮实测新发现",
+        "chunk_ids": {"artifact": 118, "rebuilt": 204},
+        "aliases_rebuilt_extra": ["兀尔德", "兀尔德女士", "德洛丝", "德洛丝医生", "德洛丝女士", "别斯米尔"],
+        "evidence": "204 正是 R1 拆分前的块数（docs/compendium-rag/CHRONICLE.md:290：204 块重新归属，78 块真属卡卡尼亚）⇒ 重建把 R1 的 P0 错焊原样装回去了",
+        "analogous_case": "乌尔里希 工件 125 块 = 重建 乌尔里希 53 + 暴雨小组组长乌尔里希 72"
+      },
+      "root_cause": "审查期的实体修复（规范名裁决、灰机 wiki 出处的 desc 考据）只落在 graph.json，没回到 cache；cache 只覆盖了 graph 的一个子集，rebuild 会把这批裁决整体回退。"
+    },
+    "structure_delta": {
+      "edges": {"artifact": 27110, "rebuilt": 26853, "delta": -257},
+      "only_in_artifact": 840,
+      "only_in_rebuilt": 583,
+      "entities": {"artifact": 7033, "rebuilt": 7033},
+      "distinct_relations": {"artifact": 1609, "rebuilt": 1543},
+      "entities_with_chunk_ids_changed": {
+        "卡卡尼亚": [118, 204],
+        "乌尔里希": [125, 53],
+        "探险家别斯米尔": [71, 67],
+        "雾气净化器": [13, 10],
+        "店主": [3, 14],
+        "APPLe号摇滚巨轮二世": [2, 1]
+      },
+      "dianzhu_note": "店主 3→14 印证 §4.2：工件里那 11 个「盲对」是工件陈旧度，改动前代码（B 口径）重建时已是 14 块，G3 既修不了也修不着。"
+    },
+    "eval_delta": {
+      "config": "生产配置 r11（CMPRAG_LEX_WEIGHT=1.0 / LEX_TOP=30 / LEX_FIRST=0 / RRF_K=1），top_k=6，rag_testset_300_cn.json",
+      "full": {
+        "all_300": {"artifact": {"hit@6": 0.5633, "MRR": 0.4360}, "rebuilt": {"hit@6": 0.5633, "MRR": 0.4357}, "delta": {"hit@6": 0.0, "MRR": -0.0003}},
+        "answerable_196": {"artifact": {"hit@6": 0.8571, "MRR": 0.6622}, "rebuilt": {"hit@6": 0.8571, "MRR": 0.6618}, "delta": {"hit@6": 0.0, "MRR": -0.0004}},
+        "hit_flips": {"up": [], "down": []},
+        "rr_changed": {"R038": [1.0, 0.5], "R055": [0.3333, 0.25], "R253": [0.5, 1.0]}
+      },
+      "graph_only": {
+        "all_300": {"artifact": {"hit@6": 0.53, "MRR": 0.3961}, "rebuilt": {"hit@6": 0.5267, "MRR": 0.3925}, "delta": {"hit@6": -0.0033, "MRR": -0.0036}},
+        "answerable_196": {"artifact": {"hit@6": 0.8061, "MRR": 0.6012}, "rebuilt": {"hit@6": 0.8010, "MRR": 0.5957}, "delta": {"hit@6": -0.0051, "MRR": -0.0055}},
+        "hit_flips": {"up": [], "down": ["R031"]},
+        "rr_changed": {"R022": [0.5, 0.25], "R027": [1.0, 0.5], "R031": [0.3333, 0.0], "R043": [1.0, 0.5], "R046": [1.0, 0.5], "R247": [0.5, 1.0], "R265": [0.5, 1.0]}
+      },
+      "seed_hit_changed": "两模式全 300 题零变动 ⇒ 差异全在排序/融合层，不在检索覆盖层",
+      "claim": "full 通路中性（噪声量级），graph_only 略降；不得宣称重建有益。p0_finding 的数据丢失与指标中性不可加权抵消。"
+    },
+    "collateral_costs": [
+      "entity_index.npz 必须同步重建（实体名变了），否则 4 个新名在实体链接通道静默漏召；需重嵌 7033 条名字（本轮对照复用了旧向量以保证可比）",
+      "chunk_index.npz 不用动（块没变）",
+      "指纹不变（14daf1bbfa407388 / n2 前后一致）⇒ 指纹验不出这次变化，与 blast_radius.finding 同源",
+      "所有既有基线读数（r11 工件）立刻不可比，必须重新 lock"
+    ],
+    "recommendation": "不要把 rebuild_from_cache 当全量重建用。既定管线（_union_duplicate_chunks.py → _fix_alias_welds.py → 就地变换 _graph_apply_repairs.py 提案式）必须保持；若坚持重建，前置条件是先把 cache 补齐到与 graph 一致，否则即 v9:196 所述「把两个年代的记录搅在一起」。"
   },
   "eval_acceptance": {
     "set": "data/knowledge/_audit/rag_testset_300_cn.json",
