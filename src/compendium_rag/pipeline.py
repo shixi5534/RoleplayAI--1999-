@@ -356,7 +356,7 @@ class KnowledgeBase:
         return res.to_dict()
 
     def context(self, query_res: dict, top_k: int | None = None) -> str:
-        from .retriever import RetrievalResult, Seed, Evidence
+        from .retriever import Evidence, RetrievalResult, Seed
         rr = RetrievalResult(query=query_res.get("query", ""))
         rr.seeds = [Seed(s["eid"], s["name"], s["score"], s["how"])
                     for s in query_res.get("seeds", [])]
