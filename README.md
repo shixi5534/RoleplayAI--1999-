@@ -116,7 +116,7 @@ roleplay-ai/
 ├── frontend/                  # Web 表现层（聊天 / Live2D / 语音 / 模型切换 / 知识库 / 宠物页）
 ├── desktop/                   # Electron 桌面宠物薄壳（主进程 / preload / renderer）
 ├── data/                      # 运行时数据（角色 / 知识库 / 会话）
-├── vendor/                    # 第三方数据源：Reverse1999-Story-Compendium（只读）
+├── vendor/                    # 第三方数据源：Reverse1999-Story-Compendium（只读，剧情更新至 3.8）
 ├── models/                    # 本地 reranker 模型（bge-reranker，约 5.7 GB，勿删）
 ├── scripts/                   # 运维与验证脚本（入库 / 迁移 / E2E）
 └── tests/                     # 镜像 src 的测试
